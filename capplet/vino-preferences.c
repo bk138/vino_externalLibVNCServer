@@ -29,11 +29,9 @@
 #include <gtk/gtk.h>
 #include <glade/glade.h>
 #include <gconf/gconf-client.h>
-#include <libgnomeui/gnome-icon-theme.h>
-#include <libgnomevfs/gnome-vfs-init.h>
+#include <libgnome/libgnome.h>
+#include <libgnomeui/libgnomeui.h>
 #include "vino-url.h"
-
-#define _(x) dgettext (GETTEXT_PACKAGE, x)
 
 #define VINO_PREFS_DIR                    "/desktop/gnome/remote_access"
 #define VINO_PREFS_ENABLED                VINO_PREFS_DIR "/enabled"
@@ -823,15 +821,35 @@ vino_preferences_dialog_response (GtkWidget             *widget,
 				  int                    response,
 				  VinoPreferencesDialog *dialog)
 {
-  switch (response)
+  GError *error;
+
+  if (response != GTK_RESPONSE_HELP)
     {
-    case GTK_RESPONSE_CLOSE:
-    default:
       gtk_widget_destroy (widget);
-      break;
-    case GTK_RESPONSE_HELP:
-      /* FIXME: hook up the help docs when they're written */
-      break;
+      return;
+    }
+
+  error = NULL;
+  gnome_help_display_desktop (NULL, "user-guide", "user-guide.xml", "goscustdesk-90", &error);
+  if (error)
+    {
+      GtkWidget *message_dialog;
+
+      message_dialog = gtk_message_dialog_new (GTK_WINDOW (dialog),
+					       GTK_DIALOG_DESTROY_WITH_PARENT,
+					       GTK_MESSAGE_ERROR,
+					       GTK_BUTTONS_CLOSE,
+					       _("There was an error displaying help:\n%s"),
+					       error->message);
+      gtk_window_set_resizable (GTK_WINDOW (message_dialog), FALSE);
+
+      g_signal_connect (message_dialog, "response",
+			G_CALLBACK (gtk_widget_destroy),
+			NULL);
+
+      gtk_widget_show (message_dialog);
+
+      g_error_free (error);
     }
 }
 
@@ -941,12 +959,12 @@ main (int argc, char **argv)
 {
   VinoPreferencesDialog dialog = { NULL, };
 
-  gtk_init (&argc, &argv);
-  gnome_vfs_init ();
-
   bindtextdomain (GETTEXT_PACKAGE, VINO_LOCALEDIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
+
+  gnome_program_init (PACKAGE, VERSION, LIBGNOMEUI_MODULE,
+		      argc, argv, NULL);
 
   if (!vino_preferences_dialog_init (&dialog))
     {
@@ -957,8 +975,6 @@ main (int argc, char **argv)
   gtk_main ();
 
   vino_preferences_dialog_finalize (&dialog);
-  
-  gnome_vfs_shutdown ();
 
   return 0;
 }
