@@ -1,3 +1,7 @@
+2004-08-25  Maxim Dziumanenko <mvd@mylinux.com.ua>
+
+	* configure.in: Added uk (Ukrainian) to ALL_LINGUAS.
+
 2004-08-22  Sami Pesonen  <sampeson@iki.fi>
 
 	* configure.in: Added "fi" to ALL_LINGUAS.
