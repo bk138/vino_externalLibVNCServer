@@ -1,3 +1,16 @@
+2004-08-17  Mark McLoughlin  <mark@skynet.ie>
+
+	Make the DAMAGE support actually work.
+
+	* server/vino-fb.c:
+	(vino_fb_get_image),
+	(vino_fb_xdamage_event_filter): spew X error details in debug mode.
+	(vino_fb_create_image),
+	(vino_fb_init_fb_image): don't confuse the pixmap's bits_per_pixel
+	with the pixmap's depth.
+	(vino_fb_init_from_screen): query the MIT-XSHM extension before
+	setting up the damage stuff.
+	
 2004-08-14  Artur Flinta <aflinta@cvs.gnome.org>
 
 	* configure.in: Added "pl" to ALL_LINGUAS.

@@ -173,7 +173,7 @@ vino_fb_get_image (VinoFB          *vfb,
 
   if ((error = gdk_error_trap_pop ()))
     {
-#if 0
+#ifdef G_ENABLE_DEBUG
       char error_text [64];
 
       XGetErrorText (vfb->priv->xdisplay, error, error_text, 63);
@@ -223,7 +223,7 @@ vino_fb_create_image (VinoFB           *vfb,
 		      gboolean          must_use_x_shm,
 		      int               width,
 		      int               height,
-		      int               bits_per_pixel)
+		      int               depth)
 {
   int n_screen;
 
@@ -234,7 +234,7 @@ vino_fb_create_image (VinoFB           *vfb,
     {
       *image = XShmCreateImage (vfb->priv->xdisplay,
 			       DefaultVisual (vfb->priv->xdisplay, n_screen),
-			       bits_per_pixel,
+			       depth,
 			       ZPixmap,
 			       NULL,
 			       x_shm_info,
@@ -275,13 +275,13 @@ vino_fb_create_image (VinoFB           *vfb,
       *image = NULL;
       
       return vino_fb_create_image (vfb, image, x_shm_info, FALSE,
-				   width, height, bits_per_pixel);
+				   width, height, depth);
     }
 #endif /* HAVE_XSHM */
 
   if (!must_use_x_shm)
     {
-      int   rowstride = width * (bits_per_pixel / 8);
+      int   rowstride = width * (depth / 8);
       char *data;
 
       data = malloc (rowstride * height);
@@ -290,7 +290,7 @@ vino_fb_create_image (VinoFB           *vfb,
 
       *image = XCreateImage (vfb->priv->xdisplay,
 			     DefaultVisual (vfb->priv->xdisplay, 0),
-			     bits_per_pixel,
+			     depth,
 			     ZPixmap,
 			     0,
 			     data,
@@ -574,7 +574,7 @@ vino_fb_xdamage_event_filter (GdkXEvent *xevent,
 
   if ((error = gdk_error_trap_pop ()))
     {
-#if 0
+#ifdef G_ENABLE_DEBUG
       char error_text [64];
 
       XGetErrorText (vfb->priv->xdisplay, error, error_text, 63);
@@ -582,7 +582,10 @@ vino_fb_xdamage_event_filter (GdkXEvent *xevent,
       g_warning ("Received a '%s' X Window System error while copying damaged pixels",
 		 error_text);
       g_warning ("Failed image = %d, %d %dx%d - screen = %dx%d",
-		 x, y, width, height,
+		 damage.x,
+		 damage.y,
+		 damage.width,
+		 damage.height,
 		 gdk_screen_get_width (vfb->priv->screen),
 		 gdk_screen_get_height (vfb->priv->screen));
 #endif
@@ -660,16 +663,12 @@ vino_fb_init_polling (VinoFB *vfb)
 {
   g_assert (!vfb->priv->use_xdamage);
 
-#ifdef HAVE_XSHM
-  vfb->priv->use_x_shm = XShmQueryExtension (vfb->priv->xdisplay) != False;
-#endif
-
   vfb->priv->scanline_is_x_shm_segment =
     vino_fb_create_image (vfb,
 			  &vfb->priv->scanline,
 			  &vfb->priv->scanline_x_shm_info, FALSE,
 			  gdk_screen_get_width (vfb->priv->screen), 1,
-			  vfb->priv->fb_image->bits_per_pixel);
+			  vfb->priv->fb_image->depth);
   if (!vfb->priv->scanline)
     {
       g_warning (G_STRLOC ": failed to initialize scanline XImage\n");
@@ -687,7 +686,7 @@ vino_fb_init_polling (VinoFB *vfb)
 			  &vfb->priv->tile,
 			  &vfb->priv->tile_x_shm_info, FALSE,
 			  TILE_WIDTH, TILE_HEIGHT,
-			  vfb->priv->fb_image->bits_per_pixel);
+			  vfb->priv->fb_image->depth);
   if (!vfb->priv->tile)
     {
       g_warning (G_STRLOC ": failed to initialize tile XImage\n");
@@ -734,7 +733,7 @@ vino_fb_init_fb_image (VinoFB *vfb)
 					       &vfb->priv->fb_image_x_shm_info,
 					       vfb->priv->fb_image->width,
 					       vfb->priv->fb_image->height,
-					       vfb->priv->fb_image->bits_per_pixel);
+					       vfb->priv->fb_image->depth);
 #endif
       if (vfb->priv->fb_pixmap == None)
 	{
@@ -771,6 +770,10 @@ vino_fb_init_from_screen (VinoFB    *vfb,
   vfb->priv->xdisplay    = GDK_DISPLAY_XDISPLAY (gdk_screen_get_display (screen));
   vfb->priv->root_window = gdk_screen_get_root_window (screen);
 
+#ifdef HAVE_XSHM
+  vfb->priv->use_x_shm = XShmQueryExtension (vfb->priv->xdisplay) != False;
+#endif
+
   g_signal_connect_swapped (vfb->priv->screen, "size-changed",
 			    G_CALLBACK (vino_fb_screen_size_changed),
 			    vfb);
@@ -789,7 +792,7 @@ vino_fb_init_from_screen (VinoFB    *vfb,
 	   gdk_screen_get_number (vfb->priv->screen),
 	   vfb->priv->fb_image->width,
 	   vfb->priv->fb_image->height,
-	   vfb->priv->fb_image->bits_per_pixel);
+	   vfb->priv->fb_image->depth);
 
   if (!vfb->priv->use_xdamage)
     vino_fb_init_polling (vfb);
