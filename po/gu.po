@@ -1,0 +1,354 @@
+# translation of vino.HEAD.po to Gujarati
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Ankit Patel <ankit@redhat.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vino.HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-07-13 21:28+0200\n"
+"PO-Revision-Date: 2004-07-20 16:26+0530\n"
+"Last-Translator: Ankit Patel <ankit@redhat.com>\n"
+"Language-Team: Gujarati\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3.1\n"
+
+#: capplet/vino-preferences.c:809
+msgid "Send this command by email"
+msgstr "આ આદેશ ઈ-મેઈલ દ્વારા મોકલો"
+
+#: capplet/vino-preferences.desktop.in.h:1
+msgid "Remote Desktop"
+msgstr "રીમોટ ડેસ્કટોપ"
+
+#: capplet/vino-preferences.desktop.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "તમારા રીમોટ ડેસ્કટોપ ચલાવવાની પસંદગીઓ સુયોજિત કરો"
+
+#: capplet/vino-preferences.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: capplet/vino-preferences.glade.h:2
+msgid "        "
+msgstr "        "
+
+#: capplet/vino-preferences.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: capplet/vino-preferences.glade.h:4
+msgid "<b>Security</b>"
+msgstr "<b>સુરક્ષા</b>"
+
+#: capplet/vino-preferences.glade.h:5
+msgid "<b>Sharing</b>"
+msgstr "<b>ભાગીદારી</b>"
+
+#: capplet/vino-preferences.glade.h:6
+msgid "A_sk you for confirmation"
+msgstr "તમને ખાતરી માટે પૂછે છે (_s)"
+
+#: capplet/vino-preferences.glade.h:7
+msgid "Allow other users to _view your desktop"
+msgstr "તમારી ડેસ્કટોપ બીજા વપરાશકર્તાઓને વાપરવા માટેની પરવાનગી આપે છે (_v)"
+
+#: capplet/vino-preferences.glade.h:8
+msgid "Remote Desktop Preferences"
+msgstr "રીમોટ ડેસ્કટોપ પસંદગીઓ"
+
+#: capplet/vino-preferences.glade.h:9
+msgid "Some of these preferences are locked down"
+msgstr "તેમાંની અમુક પસંદગીઓને તાળુ લગાવી દેવામાં આવ્યું"
+
+#: capplet/vino-preferences.glade.h:10
+msgid "Users can view your desktop using this command:"
+msgstr "વપરાશકર્તાઓ આ આદેશ દ્વારા તમારી ડેસ્કટોપ જોઈ શકે છે:"
+
+#: capplet/vino-preferences.glade.h:11
+msgid "When a user tries to view or control your desktop:"
+msgstr "જ્યારે વપરાશકર્તા તમારી ડેસ્કટોપ જોવાની અથવા નિયંત્રિત કરવાનો પ્રયત્ન કરે છે:"
+
+#: capplet/vino-preferences.glade.h:12
+msgid "_Allow other users to control your desktop"
+msgstr "બીજા વપરાશકર્તાઓને તમારી ડેસ્કટોપ નિયંત્રિત કરવાની પરવાનગી આપે છે (_A)"
+
+#: capplet/vino-preferences.glade.h:13
+msgid "_Password:"
+msgstr "પાસવર્ડ (_P):"
+
+#: capplet/vino-preferences.glade.h:14
+msgid "_Require the user to enter this password:"
+msgstr "વપરાશકર્તાને આ પાસવર્ડ દાખલ કરવો જરુરી છે (_R):"
+
+#: capplet/vino-url.c:158
+msgid "Address"
+msgstr "સરનામુ"
+
+#: capplet/vino-url.c:159
+msgid "The address pointed to by the widget"
+msgstr "વિજેટ દ્વારા દર્શાવાતુ સરનામુ"
+
+#: capplet/vino-url.c:166
+msgid "Tooltip"
+msgstr "સાધનમદદ"
+
+#: capplet/vino-url.c:167
+msgid "A tooltip for this URL"
+msgstr "આ URL માટે સાધનમદદ"
+
+#: capplet/vino-url.c:173
+msgid "URL color"
+msgstr "URL રંગ"
+
+#: capplet/vino-url.c:174
+msgid "The color of the URL's label"
+msgstr "URL ના લેબલનો રંગ"
+
+#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:832
+msgid "Screen"
+msgstr "સ્ક્રીન"
+
+#: server/vino-fb.c:886
+msgid "The screen to be monitored"
+msgstr "જોવા માટેની સ્ક્રીન"
+
+#: server/vino-main.c:78
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"તમારુ X સર્વર X ચકાસો પ્રત્યયને આધાર આપતું નથી - રીમોટ ડેસ્કટોપ ચલાવવાનું "
+"માત્ર દેખાડવાનું હશે\n"
+
+#: server/vino-prompt.c:145
+msgid "The screen on which to display the prompt"
+msgstr "સ્ક્રીન કે જેના ઉપર પ્રોમ્પ્ટ પ્રદર્શિત કરવાનું છે"
+
+#: server/vino-prompt.c:385
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"આ કમ્પ્યુટર પરનો વપરાશકર્તા '%s' એ તમારી ડેસ્કટોપ દૂરથી નિયંત્રિત "
+"કરવાનો અથવા જોવાનો પ્રયત્ન કરે છે."
+
+#: server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "<big><b>બીજો વપરાશકર્તા તમારી ડેસ્કટોપ જોવાનો પ્રયત્ન કરે છે.</b></big>"
+
+#: server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"બીજા કમ્પ્યુટર પરનો વપરાશકર્તા એ તમારા કમ્પ્યુટરને દૂરથી જોવાનો અથવા "
+"નિયંત્રિત કરવાનો પ્રયત્ન કરે છે."
+
+#: server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr "શું તમે એમને આ કરવા માટેની પરવાનગી આપો છો?"
+
+#: server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "પ્રશ્ન"
+
+#: server/vino-prompt.glade.h:5 server/vino-util.c:64
+msgid "_Allow"
+msgstr "પરવાનગી આપો (_A)"
+
+#: server/vino-prompt.glade.h:6 server/vino-util.c:65
+msgid "_Refuse"
+msgstr "જવા દો (_R)"
+
+#: server/vino-server.c:833
+msgid "The screen for which to create a VNC server"
+msgstr "સ્ક્રીન કે જેના માટે VNC સર્વર બનાવવાનું છે"
+
+#: server/vino-server.c:840
+msgid "On Hold"
+msgstr "પકડી રાખો"
+
+#: server/vino-server.c:841
+msgid "Place all clients on hold"
+msgstr "બધા ક્લાઈન્ટોને પકડી રાખો"
+
+#: server/vino-server.c:848
+msgid "Prompt enabled"
+msgstr "પ્રોમ્પ્ટ સક્રિય કરેલ છે"
+
+#: server/vino-server.c:849
+msgid "Prompt the user about connection attempts"
+msgstr "જોડાણ લીધેલ હોય તેવા વપરાશકર્તાઓ માટે પ્રોમ્પ્ટ કરો"
+
+#: server/vino-server.c:856
+msgid "View Only"
+msgstr "માત્ર દેખાડો"
+
+#: server/vino-server.c:857
+msgid "Disallow keyboard/pointer input from clients"
+msgstr "ક્લાઈન્ટ તરફથી કીબોર્ડ/પોઈન્ટર ઈનપુટની પરવાનગી આપો નહિ"
+
+#: server/vino-server.c:864
+msgid "Require Encryption"
+msgstr "એનક્રિપ્શન જરુરી છે"
+
+#: server/vino-server.c:865
+msgid "Require clients to use encryption"
+msgstr "ક્લાઈન્ટોને એનક્રિપ્શન વાપરવું જરુરી છે"
+
+#: server/vino-server.c:872
+msgid "Authentication methods"
+msgstr "સત્તાધિકરણ પદ્ધતિઓ"
+
+#: server/vino-server.c:873
+msgid "The authentication methods this server should allow"
+msgstr "સત્તાધિકરણ પદ્ધતિઓ કે જેની આ સર્વર પરવાનગી આપે છે"
+
+#: server/vino-server.c:881
+msgid "VNC Password"
+msgstr "VNC પાસવર્ડ"
+
+#: server/vino-server.c:882
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr ""
+"પ્રકારોનું સત્તાધિકરણ કરવા માટે વપરાતો પાસવર્ડ (૬૪ એનકોડેડ) "
+"VncAuth પદ્ધતિ વાપરે છે"
+
+#: server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "સત્તાધિકરણ પદ્ધતિઓને પરવાનગી આપે છે"
+
+#: server/vino-server.schemas.in.h:2
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "ઈ-મેઈલ સરનામુ કે જેને રીમોટ ડેસ્કટોપ URL મોકલવાની છે"
+
+#: server/vino-server.schemas.in.h:3
+msgid "Enable remote desktop access"
+msgstr "રીમોટ ડેસ્કટોપ ચલાવવાનું સક્રિય કરો"
+
+#: server/vino-server.schemas.in.h:4
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+"જો સાચું હોય, તો RFB પ્રોટોકોલ દ્વારા ડેસ્કટોપને દૂરથી ચલાવવાની પરવાનગી "
+"આપે છે. આથી દૂરના કમ્પ્યુટર પરના વપરાશકર્તાઓ vncviewer ની મદદથી "
+"ડેસ્કટોપ સાથે જોડાઈ શકે છે."
+
+#: server/vino-server.schemas.in.h:5
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"જો સાચું હોય, તો ડેસ્કટોપ વાપરતા દૂરના વપરાશકર્તાઓને જ્યાં સુધી યજમાન "
+"કમ્પ્યુટર પરના વપરાશકર્તા ખાતરી નહિં કરે ત્યાં સુધી ચલાવી નહિં શકે. "
+"આ ત્યારે જ જરુરી છે જ્યારે ચલાવવાનું કામ પાસવર્ડથી સુરક્ષિત નહિં હોય."
+
+#: server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr ""
+"જો સાચું હોય, ડેસ્કટોપ વાપરી રહેલા દૂરના વપરાશકર્તાઓ માત્ર ડેસ્કટોપ ચલાવી "
+"શકે છે. દૂરના વપરાશકર્તાઓ માઉસ અથવા કીબોર્ડ વાપરવા માટે સમર્થ નહિં હોય."
+
+#: server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encyrption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+"જો સાચું હોય, તો ડેસ્કટોપ વાપરી રહેલા દૂરના વપરાશકર્તાઓને એનક્રિપ્શન "
+"આધાર હોવો જોઈએ. એ ખૂબ જરુરી છે કે તમે ક્લાઈન્ટ વાપરો કે જેને એનક્રિપ્શન "
+"આધાર હોય નહિં કે આંતરિક નેટવર્ક દ્વારા વિશ્વાસમાં હોય."
+
+#: server/vino-server.schemas.in.h:8
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+"સત્તાધિકરણની પદ્ધતિઓ યાદી કરે છે કે જેના દ્વારા વપરાશકર્તાઓ ડેસ્કટોપ "
+"ચલાવી શકે છે. ત્યાં બે શક્ય સત્તાધિકરણની પદ્ધતિઓ છે;\"vnc\" કે જે દૂરના "
+"વપરાશકર્તાને સંપર્ક થયા પહેલા પાસવર્ડ પૂછે છે (vnc_password દ્વારા "
+"સ્પષ્ટ થયેલ પાસવર્ડ) અને \"none\" કે જે કોઈપણ દૂરસ્થ વપરાશકર્તાને સંપર્ક "
+"કરવાની પરવાનગી આપે છે."
+
+#: server/vino-server.schemas.in.h:9
+msgid "Only allow remote users to view the desktop"
+msgstr "માત્ર દૂરસ્થ વપરાશકર્તાઓને ડેસ્કટોપ જોવાની પરવાનગી આપે છે"
+
+#: server/vino-server.schemas.in.h:10
+msgid "Password required for \"vnc\" authentication"
+msgstr "\"vnc\" સત્તાધિકરણ માટે જરુરી પાસવર્ડ"
+
+#: server/vino-server.schemas.in.h:11
+msgid "Prompt the user before completing a connection"
+msgstr "જોડાણ પૂરુ કરતાં પહેલા વપરાશકર્તાને પૂછે છે"
+
+#: server/vino-server.schemas.in.h:12
+msgid "Require encryption"
+msgstr "એનક્રિપ્શન જરુરી છે"
+
+#: server/vino-server.schemas.in.h:13
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+
+#: server/vino-server.schemas.in.h:14
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+
+#: server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "રીમોટ ડેસ્કટોપ સર્વર પહેલાથી જ ચાલુ છે; બહાર નીકળી રહ્યા છીએ ...\n"
+
+#: server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr ""
+"બોનોબો-એક્ટીવેશન સાથે રીમોટ ડેસ્કટોપ સર્વર નોંધ કરતી વખતે સમસ્યા; "
+"બહાર નીકળી રહ્યા છીએ ...\n"
+
+#: session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr "રીમોટ ડેસ્કટોપ સર્વર મરી ગયું, ફરીથી શરુ કરી રહ્યા છીએ\n"
+
+#: session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "%s નું સક્રિયકરણ નિષ્ફળ: %s\n"
+
+#: session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "%s ને સક્રિય કરવામાં નિષ્ફળ: અજાણી ભૂલ\n"
+
+#: session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr "રીમોટ ડેસ્કટોપ સર્વર સક્રિય કરવામાં નિષ્ફળ: ઘણી વખત પ્રયત્ન કર્યો છે\n"
+
+#: session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr "રીમોટ ડેસ્કટોપ સર્વર શરુ કરી રહ્યા છીએ"
+
+#: session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr "રીમોટ ડેસ્કટોપ સર્વર શરુ કરી રહ્યા નથી"
+
