@@ -1,3 +1,7 @@
+2004-07-17  Dennis Cranston <dennis_cranston at yahoo com>
+
+	* capplet/vino-prefences.glade:  HIG alignment adjustments.
+	
 2004-07-13  Mark McLoughlin  <mark@skynet.ie>
 
 	* configure.in: post-release bump to 2.7.4.
