@@ -1,5 +1,10 @@
 2004-07-12  Mark McLoughlin  <mark@skynet.ie>
 
+	* server/vino-server.schemas.in: by default don't require
+	clients which support encryption.
+
+2004-07-12  Mark McLoughlin  <mark@skynet.ie>
+
 	* capplet/vino-preferences.c,
 	  capplet/vino-preferences.glade: remove the "require
 	encryption" stuff since vncviewer doesn't support it

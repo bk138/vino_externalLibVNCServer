@@ -55,7 +55,7 @@
       <applyto>/desktop/gnome/remote_access/require_encryption</applyto>
       <owner>gnome</owner>
       <type>bool</type>
-      <default>true</default>
+      <default>false</default>
       <locale name="C">
          <short>Require encryption</short>
          <long>
