@@ -1,3 +1,8 @@
+2004-10-27  Alexander Shopov  <ash@contact.bg>
+
+	* bg.po: Updated Bulgarian translation by
+	Rostislav Raykov <zbrox@i-space.org>
+
 2004-10-25  Sanlig Badral  <badral@openmn.org>
 
 	* mn.po: Added Mongolian translation by Erkhembaatar.
@@ -19,9 +24,9 @@
 ==================== 2.8.0.1 ====================
 
 2004-09-28  Gora Mohanty  <gmohanty@cvs.gnome.org>
-                                                                                
-        * or.po: Updated Oriya translation.
-      
+
+	* or.po: Updated Oriya translation.
+
 2004-09-28  Åsmund Skjæveland <aasmunds@fys.uio.no>
 
 	* nn.po: Started Norwegian Nynorsk translation.
