@@ -1,3 +1,19 @@
+Vino 0.14
+=========
+
+  Server
+
+    + Modify the way the protocol uses TLS
+
+  Client
+
+    + Update for protocol changes
+    + Fix compile failure
+
+  Preferences Dialog
+
+    + Use new gtk+ APIs rather than egg_screen_blah()
+
 Vino 0.12
 =========
 
