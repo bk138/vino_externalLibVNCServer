@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-12 17:58+0100\n"
+"POT-Creation-Date: 2004-11-30 07:11+0000\n"
 "PO-Revision-Date: 2004-09-27 20:31+0300\n"
 "Last-Translator: Leonid Kanter <leon@asplinux.ru>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -29,11 +29,11 @@ msgid ""
 "%s"
 msgstr ""
 
-#: capplet/vino-preferences.desktop.in.h:1
+#: capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
 msgstr "Удаленный рабочий стол"
 
-#: capplet/vino-preferences.desktop.in.h:2
+#: capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
 msgstr "Параметры удаленного рабочего стола"
 

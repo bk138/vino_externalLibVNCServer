@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.7.92\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-12 17:58+0100\n"
+"POT-Creation-Date: 2004-11-30 07:11+0000\n"
 "PO-Revision-Date: 2004-08-30 12:02+0200\n"
 "Last-Translator: Christian Neumair <chris@gnome-de.org>\n"
 "Language-Team: \n"
@@ -31,11 +31,11 @@ msgstr ""
 "Beim Anzeigen der Hilfe ist ein Fehler aufgetreten:\n"
 "%s"
 
-#: capplet/vino-preferences.desktop.in.h:1
+#: capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
 msgstr "Entfernter Desktop"
 
-#: capplet/vino-preferences.desktop.in.h:2
+#: capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
 msgstr "Ihre Zugrifsseinstellungen auf entfernte Desktops festlegen"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-12 17:58+0100\n"
+"POT-Creation-Date: 2004-11-30 07:11+0000\n"
 "PO-Revision-Date: 2004-07-15 15:23+0530\n"
 "Last-Translator: Runa Bhattacharjee <runa@bengalinux.org>\n"
 "Language-Team: Bangla <gnome-translation@bengalinux.org>\n"
@@ -29,11 +29,11 @@ msgstr ""
 "সহায়িকা প্রদর্শনে সমস্যা দেখা দিয়েছে:\n"
 "%s"
 
-#: capplet/vino-preferences.desktop.in.h:1
+#: capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
 msgstr "দূরবর্তী ডেস্কটপ"
 
-#: capplet/vino-preferences.desktop.in.h:2
+#: capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
 msgstr "দূরবর্তী ডেস্কটপ ব্যবহার সংক্রান্ত অাপনার পছন্দ-সমূহ নির্ধারণ করুন"
 

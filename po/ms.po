@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tsclient\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-12 17:58+0100\n"
+"POT-Creation-Date: 2004-11-30 07:11+0000\n"
 "PO-Revision-Date: 2004-08-19 01:53+0730\n"
 "Last-Translator: Hasbullah Bin Pit <sebol@my-penguin.org>\n"
 "Language-Team: Projek Gabai <gabai-penyumbang@lists.sourceforge.net>\n"
@@ -27,11 +27,11 @@ msgstr ""
 "Terdapat ralat memapar bantuan:\n"
 "%s"
 
-#: capplet/vino-preferences.desktop.in.h:1
+#: capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
 msgstr "Desktop Jauh"
 
-#: capplet/vino-preferences.desktop.in.h:2
+#: capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
 msgstr "Tetapkan keutamaan akses desktop jauh anda"
 

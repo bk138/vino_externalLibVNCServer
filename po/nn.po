@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-12 17:58+0100\n"
+"POT-Creation-Date: 2004-11-30 07:11+0000\n"
 "PO-Revision-Date: 2004-09-28 09:22+0000\n"
 "Last-Translator: Åsmund Skjæveland <aasmunds@fys.uio.no>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -30,11 +30,11 @@ msgstr ""
 "Ein feil oppstod under framsyning av hjelp:\n"
 "%s"
 
-#: capplet/vino-preferences.desktop.in.h:1
+#: capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
 msgstr "Skrivebord over nettet"
 
-#: capplet/vino-preferences.desktop.in.h:2
+#: capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
 msgstr "Brukarval for skrivebord over nettet"
 

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-12 17:58+0100\n"
+"POT-Creation-Date: 2004-11-30 07:11+0000\n"
 "PO-Revision-Date: 2004-09-06 12:00-0300\n"
 "Last-Translator: Nikos Charonitakis <charosn@her.forthnet.gr>\n"
 "Language-Team:  <nls@tux.hellug.gr>\n"
@@ -32,11 +32,11 @@ msgstr ""
 "Υπήρξε σφάλμα κατά την εμφάνιση της βοήθειας:\n"
 "%s"
 
-#: capplet/vino-preferences.desktop.in.h:1
+#: capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
 msgstr "Απομακρυσμένη Επιφάνεια Εργασίας"
 
-#: capplet/vino-preferences.desktop.in.h:2
+#: capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
 msgstr ""
 "Ορισμός των προτιμήσεων πρόσβασης της απομακρυσμένης επιφάνειας εργασίας"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.7.92\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-12 17:58+0100\n"
+"POT-Creation-Date: 2004-11-30 07:11+0000\n"
 "PO-Revision-Date: 2004-08-18 00:39+0200\n"
 "Last-Translator: Audrey Simons <asimons@redhat.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -29,11 +29,11 @@ msgstr ""
 "Impossible d'afficher l'aide :\n"
 "%s"
 
-#: capplet/vino-preferences.desktop.in.h:1
+#: capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
 msgstr "Bureau à distance"
 
-#: capplet/vino-preferences.desktop.in.h:2
+#: capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
 msgstr "Définir les préférences d'accès de votre bureau à distance"
 

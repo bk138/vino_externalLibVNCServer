@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-12 17:58+0100\n"
+"POT-Creation-Date: 2004-11-30 07:11+0000\n"
 "PO-Revision-Date: 2004-07-24 13:47+0100\n"
 "Last-Translator: Gareth Owen <gowen72@yahoo.com>\n"
 "Language-Team:  <en@li.org>\n"
@@ -29,11 +29,11 @@ msgstr ""
 "There was an error displaying help:\n"
 "%s"
 
-#: capplet/vino-preferences.desktop.in.h:1
+#: capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
 msgstr "Remote Desktop"
 
-#: capplet/vino-preferences.desktop.in.h:2
+#: capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
 msgstr "Set your remote desktop access preferences"
 

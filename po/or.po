@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD.or\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-12 17:58+0100\n"
+"POT-Creation-Date: 2004-11-30 07:11+0000\n"
 "PO-Revision-Date: 2004-09-27 14:34+0530\n"
 "Last-Translator: Gora Mohanty <gora_mohanty@yahoo.co.in>\n"
 "Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
@@ -29,11 +29,11 @@ msgstr ""
 "ସହାୟତା ଦେଖାଇବାରେ ତ୍ରୁଟି:\n"
 "%s"
 
-#: capplet/vino-preferences.desktop.in.h:1
+#: capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
 msgstr "ଦୂର ଡେସ୍କଟପ"
 
-#: capplet/vino-preferences.desktop.in.h:2
+#: capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
 msgstr "ଦୂର ଡେସ୍କଟପ ପ୍ରବେଶାନୁମତି ପସନ୍ଦ ବିନ୍ଯାସ କରନ୍ତୁ"
 

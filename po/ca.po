@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-12 17:58+0100\n"
+"POT-Creation-Date: 2004-11-30 07:11+0000\n"
 "PO-Revision-Date: 2004-09-11 01:35+0200\n"
 "Last-Translator: Josep Puigdemont <josep@imatge-sintetica.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -28,11 +28,11 @@ msgstr ""
 "S'ha produït un error en mostrar l'ajuda:\n"
 "%s"
 
-#: capplet/vino-preferences.desktop.in.h:1
+#: capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
 msgstr "Escriptori remot"
 
-#: capplet/vino-preferences.desktop.in.h:2
+#: capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
 msgstr "Especifiqueu les preferències per a l'accés a l'escriptori remot"
 

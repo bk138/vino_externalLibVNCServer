@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNOME-2.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-23 05:05+0200\n"
+"POT-Creation-Date: 2004-11-30 07:11+0000\n"
 "PO-Revision-Date: 2004-10-24 18:23+0100\n"
 "Last-Translator: Badral <badral@openmn.org>\n"
 "Language-Team: OpenMN <zealot@openmn.org>\n"
@@ -30,11 +30,11 @@ msgstr ""
 "Тусламжыг үзүүлэх үед алдаа гарлаа: \n"
 "%s"
 
-#: capplet/vino-preferences.desktop.in.h:1
+#: capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
 msgstr "Зайн Дэсктоп"
 
-#: capplet/vino-preferences.desktop.in.h:2
+#: capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
 msgstr "Таны зайн дэсктопд хандах параметрүүдийг тохируулах"
 
@@ -118,9 +118,7 @@ msgstr "URL өнгө"
 msgid "The color of the URL's label"
 msgstr "URL-ын текстны өнгө"
 
-#: server/vino-fb.c:947
-#: server/vino-prompt.c:144
-#: server/vino-server.c:851
+#: server/vino-fb.c:947 server/vino-prompt.c:144 server/vino-server.c:851
 msgid "Screen"
 msgstr "Дэлгэц"
 
@@ -129,8 +127,12 @@ msgid "The screen to be monitored"
 msgstr "Харуулах дэлгэц"
 
 #: server/vino-main.c:78
-msgid "Your XServer does not support the XTest extension - remote desktop access will be view-only\n"
-msgstr "Таны XServer нь XTest өргөтгөлийг дэмжихгүй байна - зайн дэсктоп зөвхөн харагдахаар хандах боломжтой\n"
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"Таны XServer нь XTest өргөтгөлийг дэмжихгүй байна - зайн дэсктоп зөвхөн "
+"харагдахаар хандах боломжтой\n"
 
 #: server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -138,16 +140,25 @@ msgstr "Сонордуулга харуулах дэлгэц"
 
 #: server/vino-prompt.c:385
 #, c-format
-msgid "A user on the computer '%s' is trying to remotely view or control your desktop."
-msgstr "'%s' компьютер дэх хэрэглэгч таны дэсктопыг харахаар эсвэл удирдахаар оролдож байна."
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"'%s' компьютер дэх хэрэглэгч таны дэсктопыг харахаар эсвэл удирдахаар "
+"оролдож байна."
 
 #: server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>Өөр нэг хэрэглэгч таны дэсктопыг харахаар оролдож байна.</b></big>"
+msgstr ""
+"<big><b>Өөр нэг хэрэглэгч таны дэсктопыг харахаар оролдож байна.</b></big>"
 
 #: server/vino-prompt.glade.h:2
-msgid "A user on another computer is trying to remotely view or control your desktop."
-msgstr "Өөр компьютерийн хэрэглэгч таны дэсктопыг харахаар эсвэл удирдахаар оролдож байна."
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Өөр компьютерийн хэрэглэгч таны дэсктопыг харахаар эсвэл удирдахаар оролдож "
+"байна."
 
 #: server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
@@ -157,13 +168,11 @@ msgstr "Та түүнийг уг үйлдэлийг хийхийг нь зөвш
 msgid "Question"
 msgstr "Асуулт"
 
-#: server/vino-prompt.glade.h:5
-#: server/vino-util.c:64
+#: server/vino-prompt.glade.h:5 server/vino-util.c:64
 msgid "_Allow"
 msgstr "_Зөвшөөрөх"
 
-#: server/vino-prompt.glade.h:6
-#: server/vino-util.c:65
+#: server/vino-prompt.glade.h:6 server/vino-util.c:65
 msgid "_Refuse"
 msgstr "_Татгалзах"
 
@@ -216,8 +225,12 @@ msgid "VNC Password"
 msgstr "VNC Нууц үг"
 
 #: server/vino-server.c:901
-msgid "The password (base64 encoded) used to authenticate types using the VncAuth method"
-msgstr "VncAuth-ыг ашигласан нэвтрэх төрлүүдэд base64-оор кодлогдсон нууц үг хэрэглэнэ"
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr ""
+"VncAuth-ыг ашигласан нэвтрэх төрлүүдэд base64-оор кодлогдсон нууц үг "
+"хэрэглэнэ"
 
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -232,23 +245,42 @@ msgid "Enable remote desktop access"
 msgstr "Зайн дэсктоп хандалтыг нээх"
 
 #: server/vino-server.schemas.in.h:4
-msgid "If true, allows remote access to the desktop via the RFB protocol. Users on remote machines may then connect to the desktop using a vncviewer."
-msgstr "Үнэн бол, зайн дэсктоп руу RFB протоколоор хандахыг зөвшөөрнө. Зайн машин дахь хэрэглэгчид дэсктопд холбогдохдоо vncviewer-ыг ашиглаж магадгүй."
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+"Үнэн бол, зайн дэсктоп руу RFB протоколоор хандахыг зөвшөөрнө. Зайн машин "
+"дахь хэрэглэгчид дэсктопд холбогдохдоо vncviewer-ыг ашиглаж магадгүй."
 
 #: server/vino-server.schemas.in.h:5
-msgid "If true, remote users accessing the desktop are not allowed access until the user on the host machine approves the connection. Recommended especially when access is not password protected."
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
 msgstr ""
 
 #: server/vino-server.schemas.in.h:6
-msgid "If true, remote users accessing the desktop are only allowed to view the desktop. Remote user's will not be able to use the mouse or keyboard."
-msgstr "Үнэн бол, зайн хэрэглэгчид дэсктопд зөвхөн харах боломжтойгоор хандана. Зайн хэрэглэгчид хулгана эсвэл гарыг ашиглах боломжгүй."
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr ""
+"Үнэн бол, зайн хэрэглэгчид дэсктопд зөвхөн харах боломжтойгоор хандана. Зайн "
+"хэрэглэгчид хулгана эсвэл гарыг ашиглах боломжгүй."
 
 #: server/vino-server.schemas.in.h:7
-msgid "If true, remote users accessing the desktop are required to be able support encyrption. It is highly recommended that you use a client which supports encryption unless the intervening network is trusted."
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encyrption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
 msgstr "Үнэн бол, зайн хэрэглэгчид дэсктопд боломжит шифрлэлттэйгээр хандана."
 
 #: server/vino-server.schemas.in.h:8
-msgid "Lists the authentication methods with which remote users may access the desktop. There are two possible authentication methods; \"vnc\" causes the remote user to be prompted for a password (the password is specified by the vnc_password key) before connecting and \"none\" which allows any remote user to connect."
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
 msgstr ""
 
 #: server/vino-server.schemas.in.h:9
@@ -268,11 +300,17 @@ msgid "Require encryption"
 msgstr "Шифрлэлт шаардлагатай"
 
 #: server/vino-server.schemas.in.h:13
-msgid "The password which the remote user will be prompted for if the \"vnc\" authentication method is used. The password specified by the key is base64 encoded."
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
 msgstr ""
 
 #: server/vino-server.schemas.in.h:14
-msgid "This key specifies the e-mail address to which the remote desktop URL should be sent if the user clicks on the URL in the Remote Desktop preferences dialog."
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
 msgstr ""
 
 #: server/vino-shell.c:76
@@ -280,8 +318,12 @@ msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "Зайн Дэсктоп сервер аль хэдийнэ ажиллаж байна; дууслаа  ....\n"
 
 #: server/vino-shell.c:79
-msgid "Problem registering the remote desktop server with bonobo-activation; exiting ...\n"
-msgstr "Зайн дэсктоп сервер bonobo-идэвхжилтийн хамтаар гарсан асуудлууд бүртгэгдлээ. дууслаа ...\n"
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr ""
+"Зайн дэсктоп сервер bonobo-идэвхжилтийн хамтаар гарсан асуудлууд "
+"бүртгэгдлээ. дууслаа ...\n"
 
 #: session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
@@ -299,7 +341,8 @@ msgstr "%s-ийн идэвхжүүлэлт амжилтгүй боллоо: То
 
 #: session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "Зайн дэсктоп серверийг идэвхжүүлэж чадсангүй: маш олон удаагийн оролдлого\n"
+msgstr ""
+"Зайн дэсктоп серверийг идэвхжүүлэж чадсангүй: маш олон удаагийн оролдлого\n"
 
 #: session/vino-session.c:295
 msgid "Starting remote desktop server"
@@ -308,4 +351,3 @@ msgstr "Зайн дэсктоп серверийг ажиллуулах"
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Зайн дэсктопын серверийг ажиллуулахгүй"
-

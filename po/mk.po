@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-12 17:58+0100\n"
+"POT-Creation-Date: 2004-11-30 07:11+0000\n"
 "PO-Revision-Date: 2004-09-05 19:01+0200\n"
 "Last-Translator: Томислав Марковски <tome@users.ossm.org.mk>\n"
 "Language-Team: English <i18n-nb@lister.ping.uio.no>\n"
@@ -30,11 +30,11 @@ msgstr ""
 "Се појави грешка при прикажувањето на помош:\n"
 "%s"
 
-#: capplet/vino-preferences.desktop.in.h:1
+#: capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
 msgstr "Далечна работна површина"
 
-#: capplet/vino-preferences.desktop.in.h:2
+#: capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
 msgstr "Подесете ги параметрите за далечен пристап на Вашата работна површина"
 

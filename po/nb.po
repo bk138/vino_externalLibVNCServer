@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-25 11:02+0100\n"
+"POT-Creation-Date: 2004-11-30 07:11+0000\n"
 "PO-Revision-Date: 2004-11-25 11:09+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmÃ¥l <i18n-nb@lister.ping.uio.no>\n"
@@ -28,11 +28,11 @@ msgstr ""
 "Det oppsto en feil under visning av hjelp:\n"
 "%s"
 
-#: capplet/vino-preferences.desktop.in.h:1
+#: capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
 msgstr "Eksternt skrivebord"
 
-#: capplet/vino-preferences.desktop.in.h:2
+#: capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
 msgstr "Sett brukervalg for tilgang til skrivebord eksternt"
 
@@ -128,7 +128,9 @@ msgstr "Skjerm som skal overvåkes"
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
-msgstr "Din X-tjener støtter ikke XTest-utvidelsen - fjerntilgang vil kun fungere med visning\n"
+msgstr ""
+"Din X-tjener støtter ikke XTest-utvidelsen - fjerntilgang vil kun fungere "
+"med visning\n"
 
 #: server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -139,7 +141,8 @@ msgstr "Skjermen hvor spørsmålsdialogen skal vises"
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
-msgstr "En bruker på datamaskin «%s» prøver å vise eller kontrollere ditt skrivebord."
+msgstr ""
+"En bruker på datamaskin «%s» prøver å vise eller kontrollere ditt skrivebord."
 
 #: server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
@@ -149,7 +152,9 @@ msgstr "<big><b>En annen bruker prøver å vise ditt skrivebord.</b></big>"
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
-msgstr "En bruker på en annen datamaskin prøver å vise eller kontrollere ditt skrivebord eksternt."
+msgstr ""
+"En bruker på en annen datamaskin prøver å vise eller kontrollere ditt "
+"skrivebord eksternt."
 
 #: server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"

@@ -1,3 +1,24 @@
+Vino 2.9.2
+==========
+
+  Fixes
+
+   + New icon (Jakub Steiner)
+   + Add X-GNOME-Bugzilla-Version to .desktop file for bug-buddy (Christoffer Olsen)
+   + Install icon into hicolor icon theme (Mark)
+   + Update to automake 1.7 (Mark)
+   + Install .desktop file in $(datadir)/applications (Mark)
+
+  Translators
+
+   + Rostislav Raykov (bg)
+   + Alessio Frusciante (it)
+   + Žygimantas Beručka (lt)
+   + Badral (mn)
+   + Kjartan Maraas (nb)
+   + Gora Mohanty (or)
+   + Marcel Telka (sk)
+
 Vino 2.8.1
 ==========
 
