@@ -1,3 +1,18 @@
+2004-07-05  Mark McLoughlin  <mark@skynet.ie>
+
+	Add code to allow using the XDAMAGE extension if available.
+	Based on a patch from Federico Mena Quintero <federico@ximian.com>.
+
+	* server/vino-fb.c: 
+	(vino_fb_copy_tile): clean up substantially.
+	(vino_fb_finalize_xdamage): free XDAMAGE releated resources.
+	(vino_fb_finalize_polling): split out from finalize_screen_data().
+	(vino_fb_xdamage_event_filter),
+	(vino_fb_init_xdamage): XDAMAGE support.
+	(vino_fb_init_fb_image): if using XDAMAGE, create an XShm image for
+	the framebuffer and wrap it with an XShm Pixmap.
+	(vino_fb_init_from_screen): upd. for XDAMAGE support.
+
 2004-06-10  Gustavo Noronha Silva  <kov@debian.org>
 
 	* configure.in: added "pt_BR" to ALL_LINGUAS

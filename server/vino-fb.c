@@ -40,6 +40,9 @@
 #ifdef HAVE_XSHM
 #include <X11/extensions/XShm.h>
 #endif
+#ifdef HAVE_DAMAGE
+#include <X11/extensions/Xdamage.h>
+#endif
 
 #include "vino-util.h"
 
@@ -52,9 +55,13 @@ typedef struct { int dummy; } XShmSegmentInfo;
 
 struct _VinoFBPrivate
 {
+  Display         *xdisplay;
   GdkScreen       *screen;
   GdkWindow       *root_window;
+
   XImage          *fb_image;
+  XShmSegmentInfo  fb_image_x_shm_info;
+  Pixmap           fb_pixmap;
 
   XImage          *scanline;
   XShmSegmentInfo  scanline_x_shm_info;
@@ -67,7 +74,16 @@ struct _VinoFBPrivate
 
   guint            update_timeout;
 
+#ifdef HAVE_DAMAGE
+  Damage           xdamage;
+  int              xdamage_notify_event;
+  XserverRegion    xdamage_region;
+#endif
+
   guint            use_x_shm : 1;
+  guint            use_xdamage : 1;
+
+  guint            fb_image_is_x_shm_segment : 1;
   guint            scanline_is_x_shm_segment : 1;
   guint            tile_is_x_shm_segment : 1;
 };
@@ -89,6 +105,12 @@ enum
 
 static void vino_fb_init_from_screen (VinoFB    *vfb,
 				      GdkScreen *screen);
+
+#ifdef HAVE_DAMAGE
+static GdkFilterReturn vino_fb_xdamage_event_filter (GdkXEvent *xevent,
+						     GdkEvent  *event,
+						     VinoFB    *vfb);
+#endif
 
 static gpointer parent_class;
 static guint    signals [LAST_SIGNAL] = { 0 };
@@ -117,13 +139,11 @@ vino_fb_get_image (VinoFB          *vfb,
 		   int              width,
 		   int              height)
 {
-  Display  *xdisplay;
-  Drawable  xdrawable;
-  int       error;
+  Drawable xdrawable;
+  int      error;
 
   g_assert (vfb != NULL && drawable != NULL && image != NULL && x_shm_info != NULL);
 
-  xdisplay  = GDK_DISPLAY_XDISPLAY (gdk_screen_get_display (vfb->priv->screen));
   xdrawable = GDK_DRAWABLE_XID (drawable);
 
   gdk_error_trap_push ();
@@ -131,14 +151,17 @@ vino_fb_get_image (VinoFB          *vfb,
 #ifdef HAVE_XSHM  
   if (is_x_shm_segment && image->width == width && image->height && height)
     {
-      XShmGetImage (xdisplay, xdrawable,
-		    image, x, y,
+      XShmGetImage (vfb->priv->xdisplay,
+		    xdrawable,
+		    image,
+		    x, y,
 		    AllPlanes);
     }
   else
 #endif /* HAVE_XSHM */
     {
-      XGetSubImage (xdisplay, xdrawable,
+      XGetSubImage (vfb->priv->xdisplay,
+		    xdrawable,
 		    x, y, width, height,
 		    AllPlanes, ZPixmap,
 		    image, 0, 0);
@@ -149,7 +172,7 @@ vino_fb_get_image (VinoFB          *vfb,
 #if 0
       char error_text [64];
 
-      XGetErrorText (xdisplay, error, error_text, 63);
+      XGetErrorText (vfb->priv->xdisplay, error, error_text, 63);
 
       g_warning ("Received a '%s' X Window System error while copying a tile",
 		 error_text);
@@ -176,8 +199,7 @@ vino_fb_destroy_image (VinoFB          *vfb,
   if (is_x_shm_segment)
     {
       if (is_attached)
-	XShmDetach (GDK_DISPLAY_XDISPLAY (gdk_screen_get_display (vfb->priv->screen)),
-		    x_shm_info);
+	XShmDetach (vfb->priv->xdisplay, x_shm_info);
 
       if (x_shm_info->shmaddr != (char *)-1)
 	shmdt (x_shm_info->shmaddr);
@@ -194,21 +216,20 @@ static gboolean
 vino_fb_create_image (VinoFB           *vfb,
 		      XImage          **image,
 		      XShmSegmentInfo  *x_shm_info,
+		      gboolean          must_use_x_shm,
 		      int               width,
 		      int               height,
 		      int               bits_per_pixel)
 {
-  Display *xdisplay;
-  int      n_screen;
+  int n_screen;
 
-  xdisplay = GDK_DISPLAY_XDISPLAY (gdk_screen_get_display (vfb->priv->screen));
   n_screen = gdk_screen_get_number (vfb->priv->screen);
 
 #ifdef HAVE_XSHM
   if (vfb->priv->use_x_shm)
     {
-      *image = XShmCreateImage (xdisplay,
-			       DefaultVisual (xdisplay, n_screen),
+      *image = XShmCreateImage (vfb->priv->xdisplay,
+			       DefaultVisual (vfb->priv->xdisplay, n_screen),
 			       bits_per_pixel,
 			       ZPixmap,
 			       NULL,
@@ -233,8 +254,8 @@ vino_fb_create_image (VinoFB           *vfb,
 
       gdk_error_trap_push ();
 
-      XShmAttach (xdisplay, x_shm_info);
-      XSync (xdisplay, False);
+      XShmAttach (vfb->priv->xdisplay, x_shm_info);
+      XSync (vfb->priv->xdisplay, False);
       
       if (gdk_error_trap_pop ())
 	goto x_shm_error;
@@ -249,11 +270,12 @@ vino_fb_create_image (VinoFB           *vfb,
       vino_fb_destroy_image (vfb, *image, x_shm_info, TRUE, FALSE);
       *image = NULL;
       
-      return vino_fb_create_image (vfb, image, x_shm_info,
+      return vino_fb_create_image (vfb, image, x_shm_info, FALSE,
 				   width, height, bits_per_pixel);
     }
-  else
 #endif /* HAVE_XSHM */
+
+  if (!must_use_x_shm)
     {
       int   rowstride = width * (bits_per_pixel / 8);
       char *data;
@@ -262,8 +284,8 @@ vino_fb_create_image (VinoFB           *vfb,
       if (!data)
 	return FALSE;
 
-      *image = XCreateImage (xdisplay,
-			     DefaultVisual (xdisplay, 0),
+      *image = XCreateImage (vfb->priv->xdisplay,
+			     DefaultVisual (vfb->priv->xdisplay, 0),
 			     bits_per_pixel,
 			     ZPixmap,
 			     0,
@@ -277,17 +299,21 @@ vino_fb_create_image (VinoFB           *vfb,
 
       return FALSE;
     }
-}
 
+  return FALSE;
+}
 
 static gboolean
 vino_fb_copy_tile (VinoFB       *vfb,
-		   GdkRectangle *rect,
-		   int           bytes_per_pixel)
+		   GdkRectangle *rect)
 {
-  char *dest;
-  int   bytes_per_line;
-  int   i;
+  XImage *fb_image;
+  char   *src;
+  char   *dest;
+  int     bytes_per_pixel;
+  int     src_bytes_per_line;
+  int     dest_bytes_per_line;
+  int     i;
 
   if (!vino_fb_get_image (vfb,
 			  vfb->priv->root_window,
@@ -300,17 +326,21 @@ vino_fb_copy_tile (VinoFB       *vfb,
 			  rect->height))
     return FALSE;
 
-  bytes_per_line = vfb->priv->fb_image->bytes_per_line;
+  fb_image = vfb->priv->fb_image;
 
-  dest = vfb->priv->fb_image->data + (rect->y * bytes_per_line) + (rect->x * bytes_per_pixel);
-  
+  src_bytes_per_line  = vfb->priv->tile->bytes_per_line;
+  dest_bytes_per_line = fb_image->bytes_per_line;
+  bytes_per_pixel     = fb_image->bits_per_pixel >> 3;
+
+  src  = vfb->priv->tile->data;
+  dest = fb_image->data + rect->y * dest_bytes_per_line + rect->x * bytes_per_pixel;
+
   for (i = 0; i < rect->height; i++)
     {
-      memcpy (dest,
-	      vfb->priv->tile->data + i * bytes_per_pixel * rect->width,
-	      rect->width * bytes_per_pixel);
+      memcpy (dest, src, rect->width * bytes_per_pixel);
 
-      dest += bytes_per_line;
+      src  += src_bytes_per_line;
+      dest += dest_bytes_per_line;
     }
 
   return TRUE;
@@ -361,7 +391,7 @@ vino_fb_poll_scanline (VinoFB *vfb,
 
 	  dprintf (POLLING, "damage: (%d, %d) (%d x %d)\n", rect.x, rect.y, rect.width, rect.height);
 
-	  if (vino_fb_copy_tile (vfb, &rect, bytes_per_pixel))
+	  if (vino_fb_copy_tile (vfb, &rect))
 	    {
 	      if (!vfb->priv->damage_region)
 		vfb->priv->damage_region = gdk_region_rectangle (&rect);
@@ -415,15 +445,34 @@ vino_fb_poll_screen (VinoFB *vfb)
 }
 
 static void
-vino_fb_finalize_screen_data (VinoFB *vfb)
+vino_fb_finalize_xdamage (VinoFB *vfb)
 {
-  if (vfb->priv->damage_region)
-    gdk_region_destroy (vfb->priv->damage_region);
-  vfb->priv->damage_region = NULL;
+#ifdef HAVE_DAMAGE
+  if (vfb->priv->fb_pixmap)
+    XFreePixmap (vfb->priv->xdisplay, vfb->priv->fb_pixmap);
+  vfb->priv->fb_pixmap = None;
 
-  if (vfb->priv->fb_image)
-    XDestroyImage (vfb->priv->fb_image);
-  vfb->priv->fb_image = NULL;
+  gdk_window_add_filter (vfb->priv->root_window,
+			 (GdkFilterFunc) vino_fb_xdamage_event_filter,
+			 vfb);
+
+  if (vfb->priv->xdamage != None)
+    XFixesDestroyRegion (vfb->priv->xdisplay, vfb->priv->xdamage_region);
+  vfb->priv->xdamage_region = None;
+
+  if (vfb->priv->xdamage != None)
+    XDamageDestroy (vfb->priv->xdisplay, vfb->priv->xdamage);
+  vfb->priv->xdamage = None;
+#endif
+}
+
+/* Frees the scanline and tile data */
+static void
+vino_fb_finalize_polling (VinoFB *vfb)
+{
+  if (vfb->priv->update_timeout)
+    g_source_remove (vfb->priv->update_timeout);
+  vfb->priv->update_timeout = 0;
 
   if (vfb->priv->scanline)
     vino_fb_destroy_image (vfb,
@@ -443,6 +492,28 @@ vino_fb_finalize_screen_data (VinoFB *vfb)
 }
 
 static void
+vino_fb_finalize_screen_data (VinoFB *vfb)
+{
+  if (vfb->priv->damage_region)
+    gdk_region_destroy (vfb->priv->damage_region);
+  vfb->priv->damage_region = NULL;
+
+  if (vfb->priv->use_xdamage)
+    vino_fb_finalize_xdamage (vfb);
+  else
+    vino_fb_finalize_polling (vfb);
+
+  if (vfb->priv->fb_image)
+    vino_fb_destroy_image (vfb,
+			   vfb->priv->fb_image,
+			   &vfb->priv->fb_image_x_shm_info,
+			   vfb->priv->fb_image_is_x_shm_segment,
+			   TRUE);
+  vfb->priv->fb_image = NULL;
+
+}
+
+static void
 vino_fb_screen_size_changed (VinoFB    *vfb,
 			     GdkScreen *screen)
 {
@@ -454,53 +525,131 @@ vino_fb_screen_size_changed (VinoFB    *vfb,
   emit_size_changed (vfb);
 }
 
-static void
-vino_fb_init_from_screen (VinoFB    *vfb,
-			  GdkScreen *screen)
+#ifdef HAVE_DAMAGE
+static GdkFilterReturn
+vino_fb_xdamage_event_filter (GdkXEvent *xevent,
+			      GdkEvent  *event,
+			      VinoFB    *vfb)
 {
-  Display *xdisplay;
+  XEvent             *xev = (XEvent *) xevent;
+  XDamageNotifyEvent *notify;
+  GdkRectangle        damage;
 
-  g_return_if_fail (screen != NULL);
+  if (xev->type != priv->xdamage_notify_event)
+    return GDK_FILTER_CONTINUE;
 
-  xdisplay = GDK_DISPLAY_XDISPLAY (gdk_screen_get_display (screen));
+  notify = (XDamageNotifyEvent *) xev;
 
-  vfb->priv->screen      = screen;
-  vfb->priv->root_window = gdk_screen_get_root_window (screen);
+  damage.x      = notify->area.x;
+  damage.y      = notify->area.y;
+  damage.width  = notify->area.width;
+  damage.height = notify->area.height;
 
-  g_signal_connect_swapped (vfb->priv->screen, "size-changed",
-			    G_CALLBACK (vino_fb_screen_size_changed),
-			    vfb);
+  dprintf (POLLING, "Got DamageNotify event: %d %d %dx%d\n",
+	   damage.x, damage.y, damage.width, damage.height);
 
-  vfb->priv->fb_image =
-    XGetImage (xdisplay,
-	       GDK_WINDOW_XWINDOW (vfb->priv->root_window),
-	       0, 0,
-	       gdk_screen_get_width  (screen),
-	       gdk_screen_get_height (screen),
-	       AllPlanes,
-	       ZPixmap);
-  if (!vfb->priv->fb_image)
+  gdk_error_trap_push ();
+
+  /* Copy the damaged pixels from the server */
+  XCopyArea (vfb->priv->xdisplay,
+	     GDK_WINDOW_XWINDOW (vfb->priv->root_window),
+	     vfb->priv->fb_image_pixmap,
+	     vfb->priv->xdamage_copy_gc,
+	     rect->x, rect->y,
+	     rect->width, rect->height,
+	     rect->x, rect->y);
+  XSync (vfb->priv->xdisplay, False);
+
+  if ((error = gdk_error_trap_pop ()))
     {
-      g_warning (G_STRLOC ": failed to copy frame buffer contents with XGetImage");
+#if 0
+      char error_text [64];
+
+      XGetErrorText (vfb->priv->xdisplay, error, error_text, 63);
+
+      g_warning ("Received a '%s' X Window System error while copying damaged pixels",
+		 error_text);
+      g_warning ("Failed image = %d, %d %dx%d - screen = %dx%d",
+		 x, y, width, height,
+		 gdk_screen_get_width (vfb->priv->screen),
+		 gdk_screen_get_height (vfb->priv->screen));
+#endif
+      return GDK_FILTER_REMOVE;
+    }
+
+  /* add damage to our region */
+  if (vfb->priv->damage_region)
+    gdk_region_union_with_rect (vfb->priv->damage_region, &rect);
+  else
+    vfb->priv->damage_region = gdk_region_rectangle (&rect);
+
+  /* subtract damage from server */
+  XFixesSetRegion (vfb->priv->xdisplay, vfb->priv->xdamage_region, &notify->area, 1);
+  XDamageSubtract (vfb->priv->xdisplay,
+		   vfb->priv->xdamage,
+		   vfb->priv->xdamage_region,
+		   None);
+
+  emit_damage_notify (vfb);
+
+  return GDK_FILTER_REMOVE;
+}
+#endif /* HAVE_DAMAGE */
+
+static void
+vino_fb_init_xdamage (VinoFB *vfb)
+{
+#ifdef HAVE_DAMAGE
+  int event_base, error_base;
+  int major, minor;
+
+  if (!XDamageQueryExtension (vfb->priv->xdisplay, &event_base, &error_base))
+    return;
+
+  if (!XDamageQueryVersion (vfb->priv->xdisplay, &major, &minor) || major != 1)
+    return;
+
+  vfb->priv->xdamage_notify_event = event_base + XDamageNotify;
+
+  vfb->priv->xdamage = XDamageCreate (vfb->priv->xdisplay,
+				      GDK_WINDOW_XWINDOW (vfb->priv->root_window),
+				      XDamageReportRawRectangles);
+  if (vfb->priv->xdamage == None)
+    return;
+
+  vfb->priv->xdamage_region = XFixesCreateRegion (vfb->priv->xdisplay, NULL, 0);
+  if (vfb->priv->xdamage_region == None)
+    {
+      XDamageDestroy (vfb->priv->xdisplay, vfb->priv->xdamage);
+      vfb->priv->xdamage = None;
       return;
     }
 
-  dprintf (POLLING, "Initialized framebuffer contents (%p) for screen %d: %dx%d %dbpp\n",
-	   vfb->priv->fb_image,
-	   gdk_screen_get_number (vfb->priv->screen),
-	   vfb->priv->fb_image->width,
-	   vfb->priv->fb_image->height,
-	   vfb->priv->fb_image->bits_per_pixel);
+  gdk_x11_register_standard_event_type (gdk_screen_get_display (vfb->priv->screen),
+					vfb->priv->xdamage_event_base,
+					XDamageNumberEvents);
+  gdk_window_add_filter (vfb->priv->root_window,
+			 (GdkFilterFunc) vino_fb_xdamage_event_filter,
+			 vfb);
+
+  priv->use_xdamage = TRUE;
+#endif
+}
+
+static void
+vino_fb_init_polling (VinoFB *vfb)
+{
+  g_assert (!vfb->priv->use_xdamage);
 
 #ifdef HAVE_XSHM
-  vfb->priv->use_x_shm = XShmQueryExtension (xdisplay) != False;
+  vfb->priv->use_x_shm = XShmQueryExtension (vfb->priv->xdisplay) != False;
 #endif
 
   vfb->priv->scanline_is_x_shm_segment =
     vino_fb_create_image (vfb,
 			  &vfb->priv->scanline,
-			  &vfb->priv->scanline_x_shm_info,
-			  gdk_screen_get_width (screen), 1,
+			  &vfb->priv->scanline_x_shm_info, FALSE,
+			  gdk_screen_get_width (vfb->priv->screen), 1,
 			  vfb->priv->fb_image->bits_per_pixel);
   if (!vfb->priv->scanline)
     {
@@ -517,7 +666,7 @@ vino_fb_init_from_screen (VinoFB    *vfb,
   vfb->priv->tile_is_x_shm_segment =
     vino_fb_create_image (vfb,
 			  &vfb->priv->tile,
-			  &vfb->priv->tile_x_shm_info,
+			  &vfb->priv->tile_x_shm_info, FALSE,
 			  TILE_WIDTH, TILE_HEIGHT,
 			  vfb->priv->fb_image->bits_per_pixel);
   if (!vfb->priv->tile)
@@ -542,16 +691,97 @@ vino_fb_init_from_screen (VinoFB    *vfb,
     g_timeout_add (20, (GSourceFunc) vino_fb_poll_screen, vfb);
 }
 
+static void
+vino_fb_init_fb_image (VinoFB *vfb)
+{
+  if (vfb->priv->use_xdamage)
+      {
+	vfb->priv->fb_image_is_x_shm_segment =
+	  vino_fb_create_image (vfb,
+				&vfb->priv->fb_image,
+				&vfb->priv->fb_image_x_shm_info,
+				TRUE,
+				gdk_screen_get_width (vfb->priv->screen),
+				gdk_screen_get_height (vfb->priv->screen),
+				DefaultDepthOfScreen (GDK_SCREEN_XSCREEN (vfb->priv->screen)));
+      }
+
+  if (vfb->priv->fb_image)
+    {
+#ifdef HAVE_XSHM
+      vfb->priv->fb_pixmap = XShmCreatePixmap (vfb->priv->xdisplay,
+					       GDK_WINDOW_XWINDOW (vfb->priv->root_window),
+					       vfb->priv->fb_image->data,
+					       &vfb->priv->fb_image_x_shm_info,
+					       vfb->priv->fb_image->width,
+					       vfb->priv->fb_image->height,
+					       vfb->priv->fb_image->bits_per_pixel);
+#endif
+      if (vfb->priv->fb_pixmap == None)
+	{
+	  vino_fb_destroy_image (vfb,
+				 vfb->priv->fb_image,
+				 &vfb->priv->fb_image_x_shm_info,
+				 vfb->priv->fb_image_is_x_shm_segment,
+				 TRUE);
+	  vfb->priv->fb_image = NULL;
+	  vfb->priv->fb_image_is_x_shm_segment = FALSE;
+	}
+    }
+
+  if (!vfb->priv->fb_image)
+    {
+      vfb->priv->fb_image =
+	XGetImage (vfb->priv->xdisplay,
+		   GDK_WINDOW_XWINDOW (vfb->priv->root_window),
+		   0, 0,
+		   gdk_screen_get_width  (vfb->priv->screen),
+		   gdk_screen_get_height (vfb->priv->screen),
+		   AllPlanes,
+		   ZPixmap);
+    }
+}
+
+static void
+vino_fb_init_from_screen (VinoFB    *vfb,
+			  GdkScreen *screen)
+{
+  g_return_if_fail (screen != NULL);
+
+  vfb->priv->screen      = screen;
+  vfb->priv->xdisplay    = GDK_DISPLAY_XDISPLAY (gdk_screen_get_display (screen));
+  vfb->priv->root_window = gdk_screen_get_root_window (screen);
+
+  g_signal_connect_swapped (vfb->priv->screen, "size-changed",
+			    G_CALLBACK (vino_fb_screen_size_changed),
+			    vfb);
+
+  vino_fb_init_xdamage (vfb);
+  vino_fb_init_fb_image (vfb);
+
+  if (!vfb->priv->fb_image)
+    {
+      g_warning (G_STRLOC ": failed to initialize frame buffer XImage");
+      return;
+    }
+
+  dprintf (POLLING, "Initialized framebuffer contents (%p) for screen %d: %dx%d %dbpp\n",
+	   vfb->priv->fb_image,
+	   gdk_screen_get_number (vfb->priv->screen),
+	   vfb->priv->fb_image->width,
+	   vfb->priv->fb_image->height,
+	   vfb->priv->fb_image->bits_per_pixel);
+
+  if (!vfb->priv->use_xdamage)
+    vino_fb_init_polling (vfb);
+}
+
 
 static void
 vino_fb_finalize (GObject *object)
 {
   VinoFB *vfb = VINO_FB (object);
   
-  if (vfb->priv->update_timeout)
-    g_source_remove (vfb->priv->update_timeout);
-  vfb->priv->update_timeout = 0;
-
   vino_fb_finalize_screen_data (vfb);
  
   g_free (vfb->priv);
@@ -605,6 +835,9 @@ vino_fb_instance_init (VinoFB *vfb)
   vfb->priv = g_new0 (VinoFBPrivate, 1);
 
 #ifdef HAVE_XSHM
+  vfb->priv->fb_image_x_shm_info.shmid   = -1;
+  vfb->priv->fb_image_x_shm_info.shmaddr = (char *) -1;
+
   vfb->priv->scanline_x_shm_info.shmid   = -1;
   vfb->priv->scanline_x_shm_info.shmaddr = (char *) -1;
   
