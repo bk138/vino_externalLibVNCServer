@@ -1,3 +1,17 @@
+Vino 2.7.4
+==========
+
+  Fixes
+
+    + Don't crash with an RFB 3.3 client when require_encryption is set (Mark)
+    + Change the layout of the preferences dialog to be HIG compliant (Dennis Cranston)
+
+  Translators
+
+    + Miloslav Trmac (cs)
+    + Raphael Higino (pt_BR)
+    + Christian Rose (sv)
+
 Vino 2.7.3.1
 ============
 

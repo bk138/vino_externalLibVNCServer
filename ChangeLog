@@ -1,5 +1,9 @@
 2004-07-21  Mark McLoughlin  <mark@skynet.ie>
 
+	* configure.in: Version 2.7.4.
+
+2004-07-21  Mark McLoughlin  <mark@skynet.ie>
+
 	Fix for bug #143567 - crasher when connecting with a
 	RFB 3.3 client and require_encryption is TRUE.
 
