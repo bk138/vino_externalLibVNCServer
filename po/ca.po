@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-30 07:11+0000\n"
-"PO-Revision-Date: 2004-09-11 01:35+0200\n"
+"PO-Revision-Date: 2005-03-02 12:47+0100\n"
 "Last-Translator: Josep Puigdemont <josep@imatge-sintetica.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
@@ -93,7 +93,7 @@ msgstr "_Contrasenya:"
 
 #: capplet/vino-preferences.glade.h:14
 msgid "_Require the user to enter this password:"
-msgstr "Demana la següent contrasenya:"
+msgstr "Demana la següent cont_rasenya:"
 
 #: capplet/vino-url.c:158
 msgid "Address"
@@ -145,7 +145,7 @@ msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"Un usuari de l'ordinador \"%s\" està intentant visualitzar o controlar "
+"Un usuari de l'ordinador «%s» està intentant visualitzar o controlar "
 "remotament el vostre escriptori."
 
 #: server/vino-prompt.glade.h:1
@@ -164,7 +164,7 @@ msgstr ""
 
 #: server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
-msgstr "Els voleu permetre fer-ho?"
+msgstr "Els ho voleu permetre?"
 
 #: server/vino-prompt.glade.h:4
 msgid "Question"
@@ -231,8 +231,8 @@ msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
 msgstr ""
-"La contrasenya (codificada en base64) per autenticar tipus fent servir el "
-"mètode VncAuth"
+"La contrasenya (codificada en base64) per autenticar el tipus, fent servir "
+"el mètode VncAuth"
 
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -295,9 +295,9 @@ msgid ""
 "user to connect."
 msgstr ""
 "Llista els mètodes d'autenticació amb els que els usuaris remots poden "
-"accedir a l'escriptori. Hi ha dos possibles mètodes d'autenticació: \"vnc\" "
+"accedir a l'escriptori. Hi ha dos possibles mètodes d'autenticació: «vnc» "
 "farà que abans de connectar es demani una contrasenya a l'usuari remot (la "
-"contrasenya s'especifica amb la clau vnc_password), i \"cap\" que permet a "
+"contrasenya s'especifica amb la clau vnc_password), i «cap» que permet a "
 "qualsevol usuari remot es connecti."
 
 #: server/vino-server.schemas.in.h:9
@@ -306,7 +306,7 @@ msgstr "Només permet que els usuaris remots visualitzin l'escriptori"
 
 #: server/vino-server.schemas.in.h:10
 msgid "Password required for \"vnc\" authentication"
-msgstr "Es requereix una contrasenya per a l'autenticació \"vnc\""
+msgstr "Es requereix una contrasenya per a l'autenticació «vnc»"
 
 #: server/vino-server.schemas.in.h:11
 msgid "Prompt the user before completing a connection"
@@ -323,7 +323,7 @@ msgid ""
 "encoded."
 msgstr ""
 "La contrasenya que es demanarà a l'usuari remot si es fa servir el mètode "
-"d'autenticació \"vnc\". La contrasenya especificada en aquesta clau es "
+"d'autenticació «vnc». La contrasenya especificada en aquesta clau es "
 "codifica en base64."
 
 #: server/vino-server.schemas.in.h:14
