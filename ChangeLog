@@ -1,3 +1,7 @@
+2004-06-10  Gustavo Noronha Silva  <kov@debian.org>
+
+	* configure.in: added "pt_BR" to ALL_LINGUAS
+
 2004-06-06  Alexander Shopov <ash@contact.bg>
 
 	* configure.in: Added "bg" (Bulgarian) to ALL_LINGUAS
