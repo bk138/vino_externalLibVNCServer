@@ -9,13 +9,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-05 12:22+0200\n"
+"POT-Creation-Date: 2004-09-14 09:40+0100\n"
 "PO-Revision-Date: 2004-09-05 19:01+0200\n"
 "Last-Translator: Томислав Марковски <tome@users.ossm.org.mk>\n"
 "Language-Team: English <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: capplet/vino-preferences.c:809
 msgid "Send this command by email"
@@ -67,7 +67,8 @@ msgstr "Некои од овие параметри се заклучени"
 
 #: capplet/vino-preferences.glade.h:10
 msgid "Users can view your desktop using this command:"
-msgstr "Корисниците можат да ј гледаат Вашата работна околина со следнава команда:"
+msgstr ""
+"Корисниците можат да ј гледаат Вашата работна околина со следнава команда:"
 
 #: capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
@@ -133,20 +134,21 @@ msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"Корисникот на компјутерот '%s' се обидува да ја гледа или контролира "
-"Вашата работна површина."
+"Корисникот на компјутерот '%s' се обидува да ја гледа или контролира Вашата "
+"работна површина."
 
 #: server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>Друг корисник се обидува да ја гледа Вашата работна површина.</b></big>"
+msgstr ""
+"<big><b>Друг корисник се обидува да ја гледа Вашата работна површина.</b></"
+"big>"
 
 #: server/vino-prompt.glade.h:2
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"Корисник на друг компјутер се обидува да ја гледа Вашата работна "
-"површина"
+"Корисник на друг компјутер се обидува да ја гледа Вашата работна површина"
 
 #: server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
@@ -330,4 +332,3 @@ msgstr ""
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr ""
-

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-11 04:22+0200\n"
+"POT-Creation-Date: 2004-09-14 09:40+0100\n"
 "PO-Revision-Date: 2004-08-15 00:21+0300\n"
 "Last-Translator: Ayman Hourieh <aymanh@gmail.com>\n"
 "Language-Team: Arabic <support@arabeyes.org>\n"
@@ -107,11 +107,11 @@ msgstr "لون العنوان"
 msgid "The color of the URL's label"
 msgstr "لون علامة العنوان"
 
-#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:832
+#: server/vino-fb.c:888 server/vino-prompt.c:144 server/vino-server.c:840
 msgid "Screen"
 msgstr "الشّاشة"
 
-#: server/vino-fb.c:886
+#: server/vino-fb.c:889
 msgid "The screen to be monitored"
 msgstr "الشّاشة المراقَبة"
 
@@ -158,59 +158,61 @@ msgstr "_سماح"
 msgid "_Refuse"
 msgstr "_رفض"
 
-#: server/vino-server.c:833
+#: server/vino-server.c:841
 msgid "The screen for which to create a VNC server"
 msgstr "الشّاشة التي سيُنشأ من أجلها نادل VNC"
 
-#: server/vino-server.c:840
+#: server/vino-server.c:848
 msgid "On Hold"
 msgstr "تحت الانتظار"
 
-#: server/vino-server.c:841
+#: server/vino-server.c:849
 msgid "Place all clients on hold"
 msgstr "وضع كلّ العملاء تحت الانتظار"
 
-#: server/vino-server.c:848
+#: server/vino-server.c:856
 msgid "Prompt enabled"
 msgstr "المساءلة ممكّنة"
 
-#: server/vino-server.c:849
+#: server/vino-server.c:857
 msgid "Prompt the user about connection attempts"
 msgstr "مساءلة المستخدم حول محاولات الاتّصال"
 
-#: server/vino-server.c:856
+#: server/vino-server.c:864
 msgid "View Only"
 msgstr "عرض فقط"
 
-#: server/vino-server.c:857
+#: server/vino-server.c:865
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "عدم السّماح لدخل لوحة المفاتيح و المؤشّر من العملاء"
 
-#: server/vino-server.c:864
+#: server/vino-server.c:872
 msgid "Require Encryption"
 msgstr "التّشفير مطلوب"
 
-#: server/vino-server.c:865
+#: server/vino-server.c:873
 msgid "Require clients to use encryption"
 msgstr "التّشفير مطلوب من العملاء"
 
-#: server/vino-server.c:872
+#: server/vino-server.c:880
 msgid "Authentication methods"
 msgstr "طرق التّوثّق"
 
-#: server/vino-server.c:873
+#: server/vino-server.c:881
 msgid "The authentication methods this server should allow"
 msgstr "طرق التّوثّق التي على هذا النادل السّماح بها"
 
-#: server/vino-server.c:881
+#: server/vino-server.c:889
 msgid "VNC Password"
 msgstr "كلمة مرور VNC"
 
-#: server/vino-server.c:882
+#: server/vino-server.c:890
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
-msgstr "كلمة المرور (بترميز قاعدة 64) المستخدمة للتّوثّق من الانواع باستخدام طريقة توثّق VNC."
+msgstr ""
+"كلمة المرور (بترميز قاعدة 64) المستخدمة للتّوثّق من الانواع باستخدام طريقة "
+"توثّق VNC."
 
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -228,31 +230,36 @@ msgstr "تمكين وصول سطح المكتب البعيد"
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
-msgstr "إذا ضبط لـtrue، سيسمح بالوصول البعيد لسطح المكتب من خلال بروتوكول RFB."
-"يمكن أن يتّصل المستخدمون على أجهزة بعيدة إلى سطح المكتب من خلال عارض VNC."
+msgstr ""
+"إذا ضبط لـtrue، سيسمح بالوصول البعيد لسطح المكتب من خلال بروتوكول RFB.يمكن "
+"أن يتّصل المستخدمون على أجهزة بعيدة إلى سطح المكتب من خلال عارض VNC."
 
 #: server/vino-server.schemas.in.h:5
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
-msgstr "إذا ضبط لـtrue، لن يسمح للمستخدمين البعيدين بالوصول إلى سطح المكتب حتى يوافق المستخدم على الجهاز"
-" المضيف على الاتّصال. ينصح به خاصة عندما لا يكون الوصول محمياً بكلمة مرور."
+msgstr ""
+"إذا ضبط لـtrue، لن يسمح للمستخدمين البعيدين بالوصول إلى سطح المكتب حتى يوافق "
+"المستخدم على الجهاز المضيف على الاتّصال. ينصح به خاصة عندما لا يكون الوصول "
+"محمياً بكلمة مرور."
 
 #: server/vino-server.schemas.in.h:6
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote user's will not be able to use the mouse or keyboard."
-msgstr "إذا ضبط لـtrue، لن يسمح للمستخدمين البعيدين بعرض سطح المكتب."
-" لن يتمكّن المستخدمون البعيدون من استخدام الفأرة أو لوحة المفاتيح."
+msgstr ""
+"إذا ضبط لـtrue، لن يسمح للمستخدمين البعيدين بعرض سطح المكتب. لن يتمكّن "
+"المستخدمون البعيدون من استخدام الفأرة أو لوحة المفاتيح."
 
 #: server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are required to be able support "
 "encyrption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
-msgstr "إذا ضبط لـtrue، يطلب من المستخدمين البعيدين أن يدعموا التّشفير."
-" ينصح بشكل كبير أن تستخدم عميلاً يدعم التّشفير ما لم تكن الشبكة موثوقة."
+msgstr ""
+"إذا ضبط لـtrue، يطلب من المستخدمين البعيدين أن يدعموا التّشفير. ينصح بشكل "
+"كبير أن تستخدم عميلاً يدعم التّشفير ما لم تكن الشبكة موثوقة."
 
 #: server/vino-server.schemas.in.h:8
 msgid ""
@@ -261,9 +268,11 @@ msgid ""
 "remote user to be prompted for a password (the password is specified by the "
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
-msgstr "يعرض قائمة بطرق التّوثّق الممكن للمستخدمين البعيدين استخدامها للوصول لسطح المكتب."
-" هناك طريقتان ممكنتان للتّوثّق، \"vnc\" التي تسائل المستخدم البعيد عن كلمة مرور"
-" (تحدّد كلمة المرور بمفتاح vnc_password( قبل الاتّصال، و \"none\" التي تسمح لأي مستخدم بعيد بالاتّصال."
+msgstr ""
+"يعرض قائمة بطرق التّوثّق الممكن للمستخدمين البعيدين استخدامها للوصول لسطح "
+"المكتب. هناك طريقتان ممكنتان للتّوثّق، \"vnc\" التي تسائل المستخدم البعيد عن "
+"كلمة مرور (تحدّد كلمة المرور بمفتاح vnc_password( قبل الاتّصال، و \"none\" "
+"التي تسمح لأي مستخدم بعيد بالاتّصال."
 
 #: server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
@@ -286,16 +295,18 @@ msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
-msgstr "كلمة المرور التي سيُساءل المستخدم عنها إذا استخدمت طريقة توثّق \"vnc\"."
-" كلمة المرور المحدّدة بالمفتاح مرمّزة بترميز قاعدة 64."
+msgstr ""
+"كلمة المرور التي سيُساءل المستخدم عنها إذا استخدمت طريقة توثّق \"vnc\". كلمة "
+"المرور المحدّدة بالمفتاح مرمّزة بترميز قاعدة 64."
 
 #: server/vino-server.schemas.in.h:14
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
-msgstr "يحدّد هذا المفتاح عنوان البريد الإلكتروني الذي سيتمّ إرسال عنوان سطح المكتب البعيد إليه"
-" إذا نقر المستخدم على العنوان في حوار تفضيلات سطح المكتب البعيد."
+msgstr ""
+"يحدّد هذا المفتاح عنوان البريد الإلكتروني الذي سيتمّ إرسال عنوان سطح المكتب "
+"البعيد إليه إذا نقر المستخدم على العنوان في حوار تفضيلات سطح المكتب البعيد."
 
 #: server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -305,8 +316,7 @@ msgstr "نادل سطح المكتب البعيد يعمل حالياً، خرو
 msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
-msgstr "مشكلة في تسجيل نادل سطح المكتب البعيد بتنشيط بونوبو،"
-" خروج ...\n"
+msgstr "مشكلة في تسجيل نادل سطح المكتب البعيد بتنشيط بونوبو، خروج ...\n"
 
 #: session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
@@ -333,4 +343,3 @@ msgstr "بدء نادل سطح المكتب البعيد"
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "عدم بدء نادل سطح المكتب البعيد"
-

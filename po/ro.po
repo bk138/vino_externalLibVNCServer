@@ -1,12 +1,11 @@
 # Romanian translation for vino
 # Copyright (C) 2004, Free Software Foundation, Inc
 # Mişu Moldovan <dumol@go.ro>
-
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-12 04:24+0200\n"
+"POT-Creation-Date: 2004-09-14 09:40+0100\n"
 "PO-Revision-Date: 2004-09-12 12:02+0300\n"
 "Last-Translator: Mişu Moldovan <dumol@go.ro>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
@@ -133,8 +132,8 @@ msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"Un utilizator al calculatorului „%s” încearcă să vă acceseze sau să vă"
-"controleze de la distanţă desktopul."
+"Un utilizator al calculatorului „%s” încearcă să vă acceseze sau să "
+"văcontroleze de la distanţă desktopul."
 
 #: server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
@@ -216,8 +215,7 @@ msgstr "Parolă VNC"
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
-msgstr ""
-"Parola (codată base64) utilizată la autentificarea prin metoda VncAuth"
+msgstr "Parola (codată base64) utilizată la autentificarea prin metoda VncAuth"
 
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -236,7 +234,8 @@ msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
 msgstr ""
-"La activare, permite accesul la distanţă la desktop utilizând protocolul RFB, Utilizatorii la distanţă se vor putea conecta utilizând vncviewer."
+"La activare, permite accesul la distanţă la desktop utilizând protocolul "
+"RFB, Utilizatorii la distanţă se vor putea conecta utilizând vncviewer."
 
 #: server/vino-server.schemas.in.h:5
 msgid ""
@@ -310,7 +309,9 @@ msgid ""
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
-"Această cheie specifică adresa de mail la care se va trimite URL-ul desktopului la distanţă când utilizatorul dă click pe URL-ul din fereastra cu preferinţe „Remote Desktop."
+"Această cheie specifică adresa de mail la care se va trimite URL-ul "
+"desktopului la distanţă când utilizatorul dă click pe URL-ul din fereastra "
+"cu preferinţe „Remote Desktop."
 
 #: server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -340,7 +341,8 @@ msgstr "Activarea %s a eşuat: eroare necunoscută\n"
 
 #: session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "Nu am reuşit activarea serverului „Remote Desktop”. Prea multe încercări.\n"
+msgstr ""
+"Nu am reuşit activarea serverului „Remote Desktop”. Prea multe încercări.\n"
 
 #: session/vino-session.c:295
 msgid "Starting remote desktop server"
@@ -349,4 +351,3 @@ msgstr "Pornesc serverul „Remote Desktop”"
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Nu pornesc serverului „Remote Desktop”"
-
