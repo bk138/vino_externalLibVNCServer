@@ -1,6 +1,6 @@
 AC_INIT(server/vino-fb.c)
 
-AM_INIT_AUTOMAKE(vino, 2.7.92)
+AM_INIT_AUTOMAKE(vino, 2.7.93)
 AM_CONFIG_HEADER(config.h)
 
 AM_MAINTAINER_MODE
@@ -50,8 +50,8 @@ AC_SUBST(VINO_CAPPLET_CFLAGS)
 
 dnl --enable-session-support=(yes|no)
 AC_ARG_ENABLE(session_support,
-	      [  --disable-session-support=[no/yes] don't build session management utility program [default=no]],,
-	      enable_session_support=yes)
+	      [  --enable-session-support=[no/yes] build session management utility program [default=no]],,
+	      enable_session_support=no)
 if test "$enable_session_support" = "yes"; then
   PKG_CHECK_MODULES(VINO_SESSION, gconf-2.0 libgnomeui-2.0)
   AC_SUBST(VINO_SESSION_LIBS)
