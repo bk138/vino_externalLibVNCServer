@@ -1,0 +1,358 @@
+# Japanese messsage catalogue for vino
+# Copyright (C) 2004 THE vino'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the vino package.
+# SATOH, Satoru <ss@gnome.gr.jp>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vino 0.14\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-08-20 00:38+0900\n"
+"PO-Revision-Date: 2004-08-19 17:28+0900\n"
+"Last-Translator: Satrou SATOH <ss@gnome.gr.jp>\n"
+"Language-Team: Japanese <translation@gnome.gr.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: capplet/vino-preferences.c:809
+msgid "Send this command by email"
+msgstr ""
+
+#: capplet/vino-preferences.desktop.in.h:1
+msgid "Remote Desktop"
+msgstr "リモートデスクトップ"
+
+#: capplet/vino-preferences.desktop.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "リモートデスクトップアクセスを設定します"
+
+#: capplet/vino-preferences.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: capplet/vino-preferences.glade.h:2
+msgid "        "
+msgstr "        "
+
+#: capplet/vino-preferences.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: capplet/vino-preferences.glade.h:4
+msgid "<b>Security</b>"
+msgstr "<b>セキュリティ</b>"
+
+#: capplet/vino-preferences.glade.h:5
+msgid "<b>Sharing</b>"
+msgstr "<b>共有</b>"
+
+#: capplet/vino-preferences.glade.h:6
+msgid "A_sk you for confirmation"
+msgstr "承認が必要(_S)"
+
+#: capplet/vino-preferences.glade.h:7
+msgid "Allow other users to _view your desktop"
+msgstr "他のユーザーがデスクトップを見れるようにする"
+
+#: capplet/vino-preferences.glade.h:8
+msgid "Remote Desktop Preferences"
+msgstr "リモートデスクトップ設定"
+
+#: capplet/vino-preferences.glade.h:9
+msgid "Some of these preferences are locked down"
+msgstr "設定のいくつかは変更不可となっています"
+
+#: capplet/vino-preferences.glade.h:10
+#, fuzzy
+msgid "Users can view your desktop using this command:"
+msgstr "ユーザーがデスクトップを見るときのアドレス:"
+
+#: capplet/vino-preferences.glade.h:11
+msgid "When a user tries to view or control your desktop:"
+msgstr "ユーザーがデスクトップを見る/コントロールしようとするとき:"
+
+#: capplet/vino-preferences.glade.h:12
+msgid "_Allow other users to control your desktop"
+msgstr "他のユーザーがデスクトップをコントロールできるように(_A)"
+
+#: capplet/vino-preferences.glade.h:13
+msgid "_Password:"
+msgstr "パスワード(_P):"
+
+#: capplet/vino-preferences.glade.h:14
+msgid "_Require the user to enter this password:"
+msgstr "必ずパスワードを入力:"
+
+#: capplet/vino-url.c:158
+msgid "Address"
+msgstr ""
+
+#: capplet/vino-url.c:159
+msgid "The address pointed to by the widget"
+msgstr ""
+
+#: capplet/vino-url.c:166
+msgid "Tooltip"
+msgstr ""
+
+#: capplet/vino-url.c:167
+msgid "A tooltip for this URL"
+msgstr ""
+
+#: capplet/vino-url.c:173
+msgid "URL color"
+msgstr ""
+
+#: capplet/vino-url.c:174
+msgid "The color of the URL's label"
+msgstr ""
+
+#: server/vino-fb.c:888 server/vino-prompt.c:144 server/vino-server.c:840
+msgid "Screen"
+msgstr "スクリーン"
+
+#: server/vino-fb.c:889
+msgid "The screen to be monitored"
+msgstr "モニターされるスクリーン"
+
+#: server/vino-main.c:78
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"あなたの XServer は XTest 拡張をサポートしていません - リモートデスクトップア"
+"クセスは見るだけになります\n"
+
+#: server/vino-prompt.c:145
+msgid "The screen on which to display the prompt"
+msgstr "プロンプトを表示するスクリーン"
+
+#: server/vino-prompt.c:385
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"コンピュータ '%s' のユーザーがあなたのデスクトップをリモートから見る/コント"
+"ロールしようとしています"
+
+#: server/vino-prompt.glade.h:1
+#, fuzzy
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "他のユーザーがデスクトップを見れるようにする"
+
+#: server/vino-prompt.glade.h:2
+#, fuzzy
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"コンピュータ '%s' のユーザーがあなたのデスクトップをリモートから見る/コント"
+"ロールしようとしています"
+
+#: server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr ""
+
+#: server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr ""
+
+#: server/vino-prompt.glade.h:5 server/vino-util.c:64
+msgid "_Allow"
+msgstr "許可(_A)"
+
+#: server/vino-prompt.glade.h:6 server/vino-util.c:65
+msgid "_Refuse"
+msgstr "拒否(_R)"
+
+#: server/vino-server.c:841
+msgid "The screen for which to create a VNC server"
+msgstr "VNC サーバーを起動するスクリーン"
+
+#: server/vino-server.c:848
+msgid "On Hold"
+msgstr "ホールド"
+
+#: server/vino-server.c:849
+msgid "Place all clients on hold"
+msgstr "すべてのクライアントをホールド"
+
+#: server/vino-server.c:856
+msgid "Prompt enabled"
+msgstr "プロンプト有効"
+
+#: server/vino-server.c:857
+msgid "Prompt the user about connection attempts"
+msgstr "接続しようとするとプロンプトを表示"
+
+#: server/vino-server.c:864
+msgid "View Only"
+msgstr "見るだけ"
+
+#: server/vino-server.c:865
+msgid "Disallow keyboard/pointer input from clients"
+msgstr "クライアントのキーボード/マウス入力を無効にする"
+
+#: server/vino-server.c:872
+msgid "Require Encryption"
+msgstr "暗号"
+
+#: server/vino-server.c:873
+msgid "Require clients to use encryption"
+msgstr "クライアントの暗号使用を必須にする"
+
+#: server/vino-server.c:880
+msgid "Authentication methods"
+msgstr "認証方法"
+
+#: server/vino-server.c:881
+msgid "The authentication methods this server should allow"
+msgstr "サーバーが許可する認証方法"
+
+#: server/vino-server.c:889
+msgid "VNC Password"
+msgstr "VNC パスワード"
+
+#: server/vino-server.c:890
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr "VncAuth を使って認証する際のパスワード (base64 エンコード)"
+
+#: server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "許可される認証方法"
+
+#: server/vino-server.schemas.in.h:2
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "リモートデスクトップ URL の送信先メールアドレス"
+
+#: server/vino-server.schemas.in.h:3
+msgid "Enable remote desktop access"
+msgstr "リモートデスクトップアクセスを有効にする"
+
+#: server/vino-server.schemas.in.h:4
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+"真なら RFB プロトコルを介したリモートデスクトップアクセスを許可。リモートマシ"
+"ンのユーザーはそれから vncviewer でデスクトップに接続できます"
+
+#: server/vino-server.schemas.in.h:5
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"真ならリモートユーザーはそのホストのユーザーが承認するまでデスクトップに接続"
+"できません。特にアクセスがパスワードで保護されていない場合に推奨します"
+
+#: server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr ""
+"真ならリモートユーザーはデスクトップにアクセスして見ることしかできません。リ"
+"モートユーザーはマウス/キーボードでデスクトップをコントロールすることはできま"
+"せん"
+
+#: server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encyrption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+"真ならリモートユーザーがデスクトップにアクセスするには暗号をサポートしていな"
+"ければなりません。得に介在するネットワークが信頼できるものでないなら暗号をサ"
+"ポートするクライアントを使うことを強く推奨します"
+
+#: server/vino-server.schemas.in.h:8
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+"リモートユーザーがデスクトップにアクセスする際の認証方法のリストvnc がリモー"
+"トユーザーにパスワード (vnc_password キーで指定)の入力を求めるか、none (認証"
+"なし; 任意のリモートユーザーが接続可能)の二つあります"
+
+#: server/vino-server.schemas.in.h:9
+msgid "Only allow remote users to view the desktop"
+msgstr "リモートユーザーはデスクトップを見られるだけ"
+
+#: server/vino-server.schemas.in.h:10
+msgid "Password required for \"vnc\" authentication"
+msgstr "\"vnc\" 認証時にパスワードが必須"
+
+#: server/vino-server.schemas.in.h:11
+msgid "Prompt the user before completing a connection"
+msgstr "接続完了前にユーザーにパスワード入力を求める"
+
+#: server/vino-server.schemas.in.h:12
+msgid "Require encryption"
+msgstr "暗号必須"
+
+#: server/vino-server.schemas.in.h:13
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+"\"vnc\" 認証利用時にリモートユーザーに入力を求めるパスワードパスワードはキー"
+"で指定され base64 エンコードされる"
+
+#: server/vino-server.schemas.in.h:14
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+"このキーは、リモートデスクトップ設定ダイアログでユーザーがクリックすると送信"
+"されるリモートデスクトップ URL の送信先メールアドレスを指定します"
+
+#: server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr ""
+
+#: server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr ""
+
+#: session/vino-session.c:133
+#, fuzzy
+msgid "Remote desktop server died, restarting\n"
+msgstr "リモートデスクトップ設定"
+
+#: session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr ""
+
+#: session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr ""
+
+#: session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr ""
+
+#: session/vino-session.c:295
+#, fuzzy
+msgid "Starting remote desktop server"
+msgstr "リモートデスクトップアクセスを設定します"
+
+#: session/vino-session.c:300
+#, fuzzy
+msgid "Not starting remote desktop server"
+msgstr "リモートデスクトップアクセスを設定します"
+
+#~ msgid "_Ensure the user is using encryption"
+#~ msgstr "必ず暗号を使用(_E)"
