@@ -1,5 +1,10 @@
 2004-11-10  Mark McLoughlin  <mark@skynet.ie>
 
+	* icons/Makefile.am: install icon into hicolor
+	icon theme.
+
+2004-11-10  Mark McLoughlin  <mark@skynet.ie>
+
 	* autogen.sh: require automake 1.7.
 	
 	* configure.in: modernise.
