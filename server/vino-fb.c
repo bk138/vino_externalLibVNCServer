@@ -153,7 +153,7 @@ vino_fb_get_image (VinoFB          *vfb,
   gdk_error_trap_push ();
 
 #ifdef HAVE_XSHM  
-  if (is_x_shm_segment && image->width == width && image->height && height)
+  if (is_x_shm_segment && image->width == width && image->height == height)
     {
       XShmGetImage (vfb->priv->xdisplay,
 		    xdrawable,
