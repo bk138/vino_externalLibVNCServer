@@ -1,8 +1,13 @@
+2005-03-07  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: Version 2.10.0.
+
 2005-03-05  Abel Cheung  <maddog@linuxhall.org>
 
 	* configure.in: Added "vi" to ALL_LINGUAS.
 
 2005-03-02  Rajesh Ranjan <rranjan@redhat.com>
+
 	* configure.in : Added hi to ALL_LINGUAS.
 
 2005-02-21  Pawan Chitrakar  <pawan@nplinux.org>
