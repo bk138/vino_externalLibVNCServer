@@ -1,0 +1,350 @@
+# vino korean translation
+# Copyright (C) 2004 vino'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the vino package.
+# Young-Ho Cha, <ganadist@mizi.com> 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vino 2.7.91\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-08-21 20:52+0900\n"
+"PO-Revision-Date: 2004-08-21 21:26+0900\n"
+"Last-Translator: Young-Ho Cha <ganadist at mizi.com>\n"
+"Language-Team: GNOME Korea <gnome-kr-hackers@lists.kldp.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: capplet/vino-preferences.c:809
+msgid "Send this command by email"
+msgstr "이 명령을 전자우편으로 보냅니다"
+
+#: capplet/vino-preferences.desktop.in.h:1
+msgid "Remote Desktop"
+msgstr "원격 데스크탑"
+
+#: capplet/vino-preferences.desktop.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "원격 데스크탑 접근 설정을 합니다"
+
+#: capplet/vino-preferences.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: capplet/vino-preferences.glade.h:2
+msgid "        "
+msgstr "        "
+
+#: capplet/vino-preferences.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: capplet/vino-preferences.glade.h:4
+msgid "<b>Security</b>"
+msgstr "<b>보안</b>"
+
+#: capplet/vino-preferences.glade.h:5
+msgid "<b>Sharing</b>"
+msgstr "<b>공유</b>"
+
+#: capplet/vino-preferences.glade.h:6
+msgid "A_sk you for confirmation"
+msgstr "확인을 하도록 물어보기(_S)"
+
+#: capplet/vino-preferences.glade.h:7
+msgid "Allow other users to _view your desktop"
+msgstr "다른 사용자가 데스크탑을 볼 수 있도록 합니다(_V)"
+
+#: capplet/vino-preferences.glade.h:8
+msgid "Remote Desktop Preferences"
+msgstr "원격 데스크탑 기본 설정"
+
+#: capplet/vino-preferences.glade.h:9
+msgid "Some of these preferences are locked down"
+msgstr "몇몇 설정이 잠겨져 있습니다"
+
+#: capplet/vino-preferences.glade.h:10
+msgid "Users can view your desktop using this command:"
+msgstr "사용자는 다음 명령으로 데스크탑 화면을 볼 수 있습니다:"
+
+#: capplet/vino-preferences.glade.h:11
+msgid "When a user tries to view or control your desktop:"
+msgstr "사용자가 데스크탑을 보거나 제어하려 할 때:"
+
+#: capplet/vino-preferences.glade.h:12
+msgid "_Allow other users to control your desktop"
+msgstr "다른 사용자가 데스크탑을 제어할 수 있도록 합니다(_A)"
+
+#: capplet/vino-preferences.glade.h:13
+msgid "_Password:"
+msgstr "열쇠글(_P):"
+
+#: capplet/vino-preferences.glade.h:14
+msgid "_Require the user to enter this password:"
+msgstr "사용자가 이 열쇠글을 입력하여야 합니다(_R):"
+
+#: capplet/vino-url.c:158
+msgid "Address"
+msgstr "주소"
+
+#: capplet/vino-url.c:159
+msgid "The address pointed to by the widget"
+msgstr "위젯이 가르키는 주소"
+
+#: capplet/vino-url.c:166
+msgid "Tooltip"
+msgstr "풍선 도움말"
+
+#: capplet/vino-url.c:167
+msgid "A tooltip for this URL"
+msgstr "이 URL의 풍선 도움말"
+
+#: capplet/vino-url.c:173
+msgid "URL color"
+msgstr "URL 색상"
+
+#: capplet/vino-url.c:174
+msgid "The color of the URL's label"
+msgstr "URL 레이블의 색상"
+
+#: server/vino-fb.c:888 server/vino-prompt.c:144 server/vino-server.c:840
+msgid "Screen"
+msgstr "화면"
+
+#: server/vino-fb.c:889
+msgid "The screen to be monitored"
+msgstr "감시할 화면"
+
+#: server/vino-main.c:78
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"X서버에서 XTest 확장기능을 지원하지 않습니다 - 원격 데스크탑에 보기전용으로만 "
+"접근할 수 있습니다\n"
+
+
+#: server/vino-prompt.c:145
+msgid "The screen on which to display the prompt"
+msgstr "확인을 보여줄 화면"
+
+#: server/vino-prompt.c:385
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"컴퓨터 '%s'의 사용자가 원격에서 데스크탑을 보거나 제어하려 합니다."
+
+#: server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "<big><b>다른 사용자가 데스크탑을 보려합니다.</b></big>"
+
+#: server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"다른 컴퓨터의 사용자가 원격에서 데스크탑을 보거나 제어하려 합니다."
+
+#: server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr "허용하겠습니까?"
+
+#: server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "질문"
+
+#: server/vino-prompt.glade.h:5 server/vino-util.c:64
+msgid "_Allow"
+msgstr "허용(_A)"
+
+#: server/vino-prompt.glade.h:6 server/vino-util.c:65
+msgid "_Refuse"
+msgstr "거부(_R)"
+
+#: server/vino-server.c:841
+msgid "The screen for which to create a VNC server"
+msgstr "VNC 서버가 만들어 지는 화면"
+
+#: server/vino-server.c:848
+msgid "On Hold"
+msgstr "보류"
+
+#: server/vino-server.c:849
+msgid "Place all clients on hold"
+msgstr "모든 클라이언트를 보류합니다"
+
+#: server/vino-server.c:856
+msgid "Prompt enabled"
+msgstr "물어보기"
+
+#: server/vino-server.c:857
+msgid "Prompt the user about connection attempts"
+msgstr "연결을 시도한 사용자에 대해서 물어봅니다"
+
+#: server/vino-server.c:864
+msgid "View Only"
+msgstr "보기 전용"
+
+#: server/vino-server.c:865
+msgid "Disallow keyboard/pointer input from clients"
+msgstr "클라이언트로 부터 키보드/마우스 입력 허용하지 않습니다"
+
+#: server/vino-server.c:872
+msgid "Require Encryption"
+msgstr "암호화 요구"
+
+#: server/vino-server.c:873
+msgid "Require clients to use encryption"
+msgstr "클라이언트에 암호화를 쓰도록 요구합니다"
+
+#: server/vino-server.c:880
+msgid "Authentication methods"
+msgstr "인증 방법"
+
+#: server/vino-server.c:881
+msgid "The authentication methods this server should allow"
+msgstr "이 서버에서 허용할 인증 방법"
+
+#: server/vino-server.c:889
+msgid "VNC Password"
+msgstr "VNC 열쇠글"
+
+#: server/vino-server.c:890
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr ""
+"Vnc 인증방법으로 쓰일 인증 형식으로 만들어진 (base64로 인코딩된)열쇠글"
+
+#: server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "허용된 인증 방법"
+
+#: server/vino-server.schemas.in.h:2
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "원격 데스크탑 URL을 보낼 전자우편 주소"
+
+#: server/vino-server.schemas.in.h:3
+msgid "Enable remote desktop access"
+msgstr "원격 데스크탑 접근 사용"
+
+#: server/vino-server.schemas.in.h:4
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+"참이면 RFB프로토콜을 통해서 원격으로 데스크탑에 접근합니다. 원격 컴퓨터의 "
+"사용자는 vncviewer를 써서 데스크탑에 접근할 수 있습니다."
+
+#: server/vino-server.schemas.in.h:5
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"참이면 로컬 사용자가 연결을 허용할 때 까지 원격사용자가 데스크탑에 접근할 "
+"수 없습니다. 열쇠글로 접근을 막아두지 않았을 때 쓰는 것이 좋습니다."
+
+#: server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr ""
+"참이면 원격 사용자가 데스크탑을 보는 것만 허용합니다. 원격 사용자는 마우스나 "
+"키보드를 쓸 수 없습니다."
+
+#: server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encyrption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+"참이면 원격사용자가 데스크탑에 접근할 때 암호화를 필요로 하게 됩니다. "
+"외부 네트워크가 신뢰할 수 없다면 암호화를 지원하는 클라이언트를 쓰는 것이 "
+"좋습니다."
+
+#: server/vino-server.schemas.in.h:8
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+"원격 사용자가 데스크탑에 접근할 때 쓰일 인증 방법의 목록입니다. 쓸 수 있는 "
+"인증방법은 두가지가 있습니다; \"vnc\"는 원격 사용자가 연결하기 전에 "
+"열쇠글 인증을 합니다. \"none\"은 아무 원격 사용자에게 연결을 허용합니다."
+
+#: server/vino-server.schemas.in.h:9
+msgid "Only allow remote users to view the desktop"
+msgstr "원격 사용자에게 데스크탑을 보기 전용으로만 허용"
+
+#: server/vino-server.schemas.in.h:10
+msgid "Password required for \"vnc\" authentication"
+msgstr "\"vnc\"인증에 필요한 열쇠글"
+
+#: server/vino-server.schemas.in.h:11
+msgid "Prompt the user before completing a connection"
+msgstr "연결을 하기전에 사용자에게 물어봄"
+
+#: server/vino-server.schemas.in.h:12
+msgid "Require encryption"
+msgstr "암호화 필요"
+
+#: server/vino-server.schemas.in.h:13
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+"\"vnc\"인증방법이 쓰였을 때 원격 사용자에게 물어볼 열쇠글입니다. 이 열쇠글은 "
+"base64 인코딩된 키이여야 합니다."
+
+#: server/vino-server.schemas.in.h:14
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+"원격 데스크탑 기본 설정 대화상자에서 사용자가 URL을 눌렀을 때 원격 데스크탑 "
+"URL을 보낼 메일주소를 지정합니다."
+
+#: server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "원격 데스크탑 서버가 이미 실행 중입니다; 마칩니다...\n"
+
+#: server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr ""
+"원격 데스크탑 서버를 bonobo-activation에 등록하는데 문제가 있습니다; "
+"마칩니다...\n"
+
+#: session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr "원격 데스크탑 서버가 죽었습니다, 다시 시작합니다\n"
+
+#: session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "%s 활성 실패: %s\n"
+
+#: session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "%s 활성 실패: 알 수 없는 오류\n"
+
+#: session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr "원격 데스크탑 서버를 활성화 실패: 너무 많은 시도\n"
+
+#: session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr "원격 데스크탑 서버가 시작했습니다"
+
+#: session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr "원격 데스크탑 서버를 시작하지 않고 있습니다"
