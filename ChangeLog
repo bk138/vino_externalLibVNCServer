@@ -1,5 +1,13 @@
 2004-07-12  Mark McLoughlin  <mark@skynet.ie>
 
+	* capplet/vino-preferences.c,
+	  capplet/vino-preferences.glade: remove the "require
+	encryption" stuff since vncviewer doesn't support it
+	yet and change it to display the vncviewer command to
+	run rather than the url to the java applet.
+
+2004-07-12  Mark McLoughlin  <mark@skynet.ie>
+
 	* configure.in: fix the check for XDAMAGE.
 	
 	* server/vino-fb.c: make it actually build with XDAMAGE.

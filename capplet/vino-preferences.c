@@ -39,12 +39,11 @@
 #define VINO_PREFS_ENABLED                VINO_PREFS_DIR "/enabled"
 #define VINO_PREFS_PROMPT_ENABLED         VINO_PREFS_DIR "/prompt_enabled"
 #define VINO_PREFS_VIEW_ONLY              VINO_PREFS_DIR "/view_only"
-#define VINO_PREFS_REQUIRE_ENCRYPTION     VINO_PREFS_DIR "/require_encryption"
 #define VINO_PREFS_AUTHENTICATION_METHODS VINO_PREFS_DIR "/authentication_methods"
 #define VINO_PREFS_VNC_PASSWORD           VINO_PREFS_DIR "/vnc_password"
 #define VINO_PREFS_MAILTO                 VINO_PREFS_DIR "/mailto"
 
-#define N_LISTENERS 7
+#define N_LISTENERS 6
 
 typedef struct {
   GladeXML    *xml;
@@ -60,7 +59,6 @@ typedef struct {
   GtkWidget   *allowed_toggle;
   GtkWidget   *prompt_enabled_toggle;
   GtkWidget   *view_only_toggle;
-  GtkWidget   *encryption_toggle;
   GtkWidget   *password_toggle;
   GtkWidget   *password_box;
   GtkWidget   *password_entry;
@@ -248,7 +246,6 @@ vino_preferences_dialog_update_for_allowed (VinoPreferencesDialog *dialog,
   gtk_widget_set_sensitive (dialog->prompt_enabled_toggle, allowed);
   gtk_widget_set_sensitive (dialog->view_only_toggle,      allowed);
   gtk_widget_set_sensitive (dialog->url_labels_box,        allowed);
-  gtk_widget_set_sensitive (dialog->encryption_toggle,     allowed);
   gtk_widget_set_sensitive (dialog->password_toggle,       allowed);
   gtk_widget_set_sensitive (dialog->password_box,          allowed ? dialog->use_password : FALSE);
 }
@@ -430,64 +427,6 @@ vino_preferences_dialog_setup_view_only_toggle (VinoPreferencesDialog *dialog)
     gconf_client_notify_add (dialog->client,
 			     VINO_PREFS_VIEW_ONLY,
 			     (GConfClientNotifyFunc) vino_preferences_dialog_view_only_notify,
-			     dialog, NULL, NULL);
-  dialog->n_listeners++;
-}
-
-static void
-vino_preferences_dialog_encryption_toggled (GtkToggleButton       *toggle,
-					   VinoPreferencesDialog *dialog)
-{
-  gconf_client_set_bool (dialog->client,
-			 VINO_PREFS_REQUIRE_ENCRYPTION,
-			 gtk_toggle_button_get_active (toggle),
-			 NULL);
-}
-
-static void
-vino_preferences_dialog_encryption_notify (GConfClient           *client,
-					   guint                  cnx_id,
-					   GConfEntry            *entry,
-					   VinoPreferencesDialog *dialog)
-{
-  gboolean encryption;
-
-  if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
-    return;
-
-  encryption = gconf_value_get_bool (entry->value) != FALSE;
-
-  if (encryption != gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->encryption_toggle)))
-    {
-      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->encryption_toggle), encryption);
-    }
-}
-
-static void
-vino_preferences_dialog_setup_encryption_toggle (VinoPreferencesDialog *dialog)
-{
-  gboolean encryption;
-
-  dialog->encryption_toggle = glade_xml_get_widget (dialog->xml, "require_encryption_toggle");
-  g_assert (dialog->encryption_toggle != NULL);
-
-  encryption = gconf_client_get_bool (dialog->client, VINO_PREFS_REQUIRE_ENCRYPTION, NULL);
-
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->encryption_toggle), encryption);
-
-  g_signal_connect (dialog->encryption_toggle, "toggled",
-		    G_CALLBACK (vino_preferences_dialog_encryption_toggled), dialog);
-
-  if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_REQUIRE_ENCRYPTION, NULL))
-    {
-      gtk_widget_set_sensitive (dialog->encryption_toggle, FALSE);
-      gtk_widget_show (dialog->writability_warning);
-    }
-
-  dialog->listeners [dialog->n_listeners] = 
-    gconf_client_notify_add (dialog->client,
-			     VINO_PREFS_REQUIRE_ENCRYPTION,
-			     (GConfClientNotifyFunc) vino_preferences_dialog_encryption_notify,
 			     dialog, NULL, NULL);
   dialog->n_listeners++;
 }
@@ -762,7 +701,7 @@ vino_preferences_get_local_hostname (void)
 }
 
 static char *
-vino_preferences_dialog_get_server_url (VinoPreferencesDialog *dialog)
+vino_preferences_dialog_get_server_command (VinoPreferencesDialog *dialog)
 {
   char *local_host;
   char *server_url;
@@ -770,11 +709,11 @@ vino_preferences_dialog_get_server_url (VinoPreferencesDialog *dialog)
   local_host = vino_preferences_get_local_hostname ();
   if (!local_host)
     {
-      return g_strdup ("http://localhost:5800");
+      return g_strdup ("vncviewer localhost:0");
     }
 
   /* FIXME: get the actual port number for the server on this screen */
-  server_url = g_strdup_printf ("http://%s:5800", local_host);
+  server_url = g_strdup_printf ("vncviewer %s:0", local_host);
 
   g_free (local_host);
 
@@ -800,16 +739,16 @@ vino_preferences_dialog_construct_mailto (VinoPreferencesDialog *dialog,
 static void
 vino_preferences_dialog_update_url_label (VinoPreferencesDialog *dialog)
 {
-  char *url;
+  char *command;
   char *mailto;
 
-  url = vino_preferences_dialog_get_server_url (dialog);
-  mailto = vino_preferences_dialog_construct_mailto (dialog, url);
+  command = vino_preferences_dialog_get_server_command (dialog);
+  mailto = vino_preferences_dialog_construct_mailto (dialog, command);
 
-  gtk_label_set_text (GTK_LABEL (dialog->url_label), url);
+  gtk_label_set_text (GTK_LABEL (dialog->url_label), command);
   vino_url_set_address (VINO_URL (dialog->url_label), mailto);
   
-  g_free (url);
+  g_free (command);
   g_free (mailto);
 }
 
@@ -843,7 +782,7 @@ vino_preferences_dialog_mailto_notify (GConfClient           *client,
 static void
 vino_preferences_dialog_setup_url_labels (VinoPreferencesDialog *dialog)
 {
-  char *url;
+  char *command;
   char *mailto;
 
   dialog->url_labels_box = glade_xml_get_widget (dialog->xml, "url_labels_box");
@@ -863,12 +802,12 @@ vino_preferences_dialog_setup_url_labels (VinoPreferencesDialog *dialog)
       dialog->mailto = NULL;
     }
 
-  url = vino_preferences_dialog_get_server_url (dialog);
-  mailto = vino_preferences_dialog_construct_mailto (dialog, url);
+  command = vino_preferences_dialog_get_server_command (dialog);
+  mailto = vino_preferences_dialog_construct_mailto (dialog, command);
   
-  dialog->url_label = vino_url_new (mailto, url,
-				    _("Send this web address by email"));
-  g_free (url);
+  dialog->url_label = vino_url_new (mailto, command,
+				    _("Send this command by email"));
+  g_free (command);
   g_free (mailto);
 
   gtk_misc_set_alignment (GTK_MISC (dialog->url_label), 0.0, 0.0);
@@ -949,7 +888,6 @@ vino_preferences_dialog_init (VinoPreferencesDialog *dialog)
 
   vino_preferences_dialog_setup_prompt_enabled_toggle (dialog);
   vino_preferences_dialog_setup_view_only_toggle      (dialog);
-  vino_preferences_dialog_setup_encryption_toggle     (dialog);
   vino_preferences_dialog_setup_password_toggle       (dialog);
   vino_preferences_dialog_setup_password_entry        (dialog);
 
