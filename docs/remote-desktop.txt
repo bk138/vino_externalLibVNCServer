@@ -1,0 +1,1086 @@
+                      Remote Desktop Project
+                      ======================
+                        (Work In Progress)
+
+                   Mark McLoughlin (mark@skynet.ie)
+                        December 1st, 2003
+
+1. Problem Description
+======================
+
+	In enterprise installations system administrators typically
+have to deal with a large number of pretty basic problems on users'
+machines. Remotely taking control of a user's desktop to fix the
+problem while at the same time training the user as to how to resolve
+the problem for themselves is an effective and simple way to handle
+these types of support scenarios.
+
+	Currently there is no way to do this with GNOME.
+
+2. Overview
+===========
+
+	The basic requirement for such a tool is some method of
+sharing a desktop session between multiple users. The sysadmin sees
+what the user sees and the user sees what the sysadmin sees.
+
+	However, the technology behind this is obviously useful in
+other ways. Here in Sun, for example, we make widespread use of VNC
+for some basic collaboration. Targetting this project purely at the
+Remote Assistance use case will leave some users wondering "why
+... why on earth did you make it impossible for us to use this like
+VNC?".
+
+	This project, therefore, also encompasses the use case of
+a simple form of collaboration by sharing access to a desktop
+session.
+
+	There are various existing technologies in this area which all
+work in very similar ways. This project will follow those same basic
+architectural principals.
+
+	The core part of such a system is a protocol by which
+information about what is happening on the screen of the "host"
+machine (in this case, the user's machine) is sent to the "client"
+machine (the sysadmin's machine). The client also needs to be able to
+relay back key presses and pointer manipulation information to the
+host.
+
+	There are several existing such protocols available - the RFB
+(Remote FrameBuffer) protocol used by VNC, RDP (Remote Desktop
+Protocol) used by Window's Remote Desktop and the Sun Ray protocol.
+
+	On the host machine a mechanism is needed by which all drawing
+primitives are proxied via the protocol to the client machine as well
+as a mechanism by which key/pointer events from the client are passed
+to the windowing system. Also needed is an authentication mechanism by
+which access to the host system can be restricted.
+
+	On the client machine an application which allows the user to
+connect to the host machine, authenticate, display the contents of the
+host display and forward input events to the host is required.
+
+3. Task List, by Commonality and Frequency
+==========================================
+
+	Below, each of the user tasks the project aims to facilitate
+is listed, grouped by the proportion of users who will perform the
+task and how often it will be performed. In the absence of personas to
+encapsulate our target user base, the groupings are judgement based.
+
+	Each task also has (C), (I) or (NTH) depicting whether support
+for that task is core, important or nice to have functionality.
+
+
+	First lets take a look at the "Remote Assistance" use case on
+the host side and then on the client side.
+
+ => Host
+
+  * Frequent by Many:
+
+	1. Verify/approve a connection before it can be
+	   established. (C)  
+
+  * Frequent by Few:
+
+	1. Request assistance from a colleague or system
+	   administrator. (I)
+
+ => Client
+
+  * Frequent by Many:
+
+	1. View a desktop remotely. (C)
+	2. Interact with a remote desktop. (C)
+	3. Browse the network for a machine to connect to. (I)
+	4. Make the remote desktop occupy the entire local screen
+	   i.e. a fullscreen option. (NTH)
+
+  * Occasional by Many:
+
+	1. Open a connection to a user's desktop given only the
+	   hostname of the user's machine (C)
+	2. Open a connection to a user's desktop without having the
+	   user be aware of your connection. (I)
+	3. Receive a remote assitance request and open a connection to
+	   that user's desktop. (I)
+
+
+  	Now, lets take a look at the additional tasks with a simple
+VNC-like collaboration tool.
+
+ => Host
+
+  * Frequent by Many:
+
+	1. Inform others how to connect to your desktop. (I)
+
+  * Frequent by Few:
+
+	1. View the number of and the details of established
+	   connections. (I)
+	2. Close established connections. (I)
+	3. Toggle established connections between interactive and
+	   non-interactive. (NTH)
+
+  * Occasional by Many:
+
+	1. Allow/dis-allow remote connections to the desktop. (C)
+	2. Allow/dis-allow interactive connections. (C)
+	2. Restrict remote access to your desktop in some way
+	   (e.g. set a password, specify specific users ...) (C)
+
+ => Client
+
+  * Frequent by Many:
+
+	1. Open a connection to a remote desktop given some details
+	   from the host user (C)
+
+4. Functional Requirements
+==========================
+
+ => Host
+
+    1.  Ability to approve or reject a request to remotely connect to
+        the desktop. (C)
+
+    2.  Ability to request assistance from a pre-defined source. (I)
+    3.  Ability to request assistance from a colleague. (I)
+
+    4.  Ability to allow/dis-allow remote connections to the desktop. (C)
+    5.  Ability to allow/dis-allow interactive connections. (C)
+    6.  Ability to restrict access to the desktop in some way
+        (e.g. assign a password) (C)
+
+    7.  Ability to give, to another user, enough details for that user
+        to connect to your desktop. (I)
+       
+    8.  A list of currently open connections, including details of
+        the other endpoint of the connection and whether or not the
+        connection is interactive. (I)
+    9.  Ability to close a connection. (I)
+    10. Ability to toggle a connection between interactive and
+        non-interactive. (I)
+
+ => Client
+
+    1.  Ability to view a desktop remotely. (C)
+    2.  Ability to interact with a desktop remotely. (C)
+
+    3.  Ability (for a user with sufficient priviledges) to connect to
+        a given user's desktop on a given host. (C)
+    4.  Ability to browse the network for hosts which you can then connect
+        to. (I)
+    5.  Ability (for a system administrator) to connect to a given user's
+        desktop without the user being aware of the connection. (I)
+
+    6.  Ability to view the remote desktop in fullscreen mode. (NTH)
+
+    7.  Ability to connect to a desktop given a remote assitance
+        request. (I)
+    8.  Ability to connect to a desktop given some details from the
+        host user. (I)
+
+5. Notes/Design Constraints/Caveats
+===================================
+
+ * I don't think the "Request Assistance" task is a very important
+   one. In most cases where a user has support personnel available I
+   think picking up the phone will be a much more common way of
+   requesting assistance rather than clicking a button and twidling
+   your thumbs waiting for someone to respond.
+
+6. Review of Existing Technologies
+==================================
+
+6.1. Existing Products - VNC/RFB
+================================
+
+	RFB[1] (Remote FrameBuffer) is the protocol used by VNC. The
+emphasis in the design of the protocol was to make very few
+requirements of the client. The client has no need to maintain
+explicit state and clients are able to disconnect and re-connect to
+the server while preserving the state of the user interface.
+
+	The dislay part of the protocol is based around a single
+simple graphics primitive "put a rectangle of pixel data at a given
+position". Each rectangle may be encoded in any one of a number of
+encodings allowing for compression or usage of parts of the client's
+existing copy of the framebuffer. Updates are requested by the client
+rather than pushed out by the server allowing the protcol to adapt to
+slower networks and/or clients - i.e. with a slow network or client
+the rate of updates are greatly reduced and the client ignores the
+transient state of the framebuffer.
+
+	The protocol is quite extensible. Extra encodings can be
+advertised by the server and used if the client supports the
+encoding. Use of encodings are not only limited to how frame buffer
+updates are encoded on the wire, but also extra psuedo-encodings may
+be added which can do anything from inform the client of a change in
+cursor shape, a change in the size of the screen or even things like
+extra in-band communication between the server and client.
+
+	There seems to be many different implementations of VNC
+available. Available RFB server implementations include:
+
+	* libvncserver[2]: a "library" for implementing VNC
+servers. It basically just seems to be a hacked up version of an
+existing VNC server in an archive with some header files. Not a very
+nice API, but quite a few projects are using it successfully.
+
+	* xf4vnc[3]: a controlled fork of XFree86 which allows you to
+run an Xserver which doubles as a VNC server or export your local
+framebuffer through a loadable module.
+
+	* realVNC[4]: seems to be a continuation of the original VNC
+project which has an Xserver which doubles as a VNC server. Thus,
+there is no method by which you can remote the local framebuffer.
+
+	* x0rfbserver: an X11 client which acts as an RFB server and
+exports the local display by polling the display for updates using X
+and pushing the updates out to clients using RFB.
+
+	* krfb[5]: a pretty nice looking VNC server for KDE which is
+based on the same concept (and indeed uses some of the code of)
+x0rfbserver. It also uses libvncserver.
+
+	I won't list the VNC client's available, there seem to be
+many, but suffice to say there are X11, Windows and OS X clients
+available along with, interestingly, several implementations of a Java
+client which can be run embedded in the browser as an applet.
+
+	Tim Waugh has written a nice article[6] on VNC and the many
+projects around the technology.
+
+	In summary, the RFB protocol has a number of advantages:
+
+	1) Simple and open protocol.
+	2) Rate-limited by the client, pretty low bandwidth/latency
+	   requirements. 
+	3) Extensible.
+	4) Several open source implementations available.
+	5) Many existing clients available for different platforms.
+
+6.2. Existing Protocols - Remote Desktop/RDP
+============================================
+
+	"Remote Desktop"[7,8,9] is Microsoft's technology in this
+area. The RDP protocol itself is essentially an extension of the
+ITU-T T.128 (aka T.SHARE) application sharing protocol[10].
+
+	The protocol is a good deal more complex than the RFB protocol
+and the protocol supports a very much larger set of functionality than
+the RFB protocol e.g. 
+
+	* Printer re-direction - you can print something on the host
+machine to a printer local to the remote desktop client.
+
+	* Sound re-direction - sounds from the host can be heard at
+the client.
+
+	* Multi-point sharing - the remote desktop session does not
+neccessarily consist of only windows/applications on a single
+host. Multiple hosts can share applications to the session.
+
+	None of these features are needed here given the functional
+requirements above.
+
+	Also, the protocol has been further extended by Microsoft to
+such an extent that it hardly be considered an "open" protocol.
+
+	Another problem with Window's Remote Desktop compared to VNC
+is the limited client availability. On Linux, the rdesktop[11] project
+provides a Remote Desktop client (tsclient[12] is a GNOME-like frontend
+for it) but on Windows, the only client I know of is the Window's
+Remote Desktop client.
+
+6.3. Existing Protocols - Sun Ray
+=================================
+
+	There's not a lot of information out there on SLIM, the
+protocol behind Sun Ray. About the only details available are from a
+paper[13] investigating the performace of the protocol.
+
+	SLIM, like RDP, is designed to immediately push all frame
+buffer updates to the client. Therefore, on low bandwidth connections
+the updates would just pile up. One would assume this is the reason
+Sun Ray requires a dedicated network.
+
+	Also, Sun Ray has no client implementation available apart
+from the Sun Ray Enterprise Appliance itself.
+
+7. System Design
+================
+
+7.1. Overview
+=============
+
+	The host side is to be implemented as a VNC server using the
+libvncserver library. The VNC server will act as an X client and poll
+the local X display for the contents of the framebuffer and notify the
+VNC clients if there have been any changes. Input events coming from
+the clients will be injected into the X display using the XTEST[14,15]
+extension.
+
+	The VNC client we will most likely be a modified version of
+an existing Java client. The advantage of having a Java client is that
+it may be used to connect to the host from any platform.
+
+7.2. Monitoring The Local Display
+=================================
+
+	To implement a VNC server you need to know the contents of the
+local framebuffer in order to pass this information onto the VNC
+clients.
+
+	Currently, as an X client, there is only one way to do this
+and that is by doing a GetImage on the root window which basically
+copies the entire framebuffer from the X server to the X client. The
+main problem with this approach is that without knowing what parts of
+the framebuffer has actually changed since the last time you updated,
+you are wasting an enormous amount of resources copying the entire
+framebuffer each time.
+
+	There are a number of possiblities to lessen the inefficiency
+here. The first is to limit the amount of polling you do per update of
+the framebuffer. For example, every update you could just check a
+certain number of scanlines against your local copy of the frame
+buffer and if parts of the scanline differ, then do a GetImage on a
+number of tiles which capture those changes to the scanline. This is
+the approach taken by krfb and x0rfbserver.
+
+	Another possibility is an X extension to notify the X client
+of changes to the framebuffer, thereby negating the need for
+continually polling the X server. When the client receives the
+notification it can do a GetImage to update its copy of the
+framebuffer with the latest changes. Keith Packard is currently
+working on an extension to do exactly this called XDAMAGE[16].
+
+	Initially we will use the x0rfbserver approach of polling the
+screen, but will later implement support for the XDAMAGE extension
+when it becomes available.
+
+7.3. Input Event Handling
+=========================
+
+	The VNC server will need to handle two types of input events
+coming from VNC clients - keyboard and pointer events. These events
+will be injected into the Xserver using the XTEST extension.
+
+	To inject a keyboard event into the X server you invoke
+XTestFakeKeyEvent with the appropriate keycode. The X server then maps
+this keycode, according to the current modifier state, to a keysym. We
+need to make sure that they keycode we pass to the X server maps to
+the same keysym as the keysym we received from the VNC client. We can
+reverse map a keysym to a keycode, but we also need to make sure the
+modifier state is such that the keycode will map back to that
+keycode. Both krfb and x11vnc use the same code for ensuring this and
+we can just copy that.
+
+	You can inject into the X server button presses/releases using
+XTestFakeButtonEvent() and pointer movement using
+XTestFakeMotionEvent(). The PointerEvent you receive from the client
+contains information on the state of each button and the current
+pointer location. The only slightly difficult part here is translating
+the button state information to button presses/releases, but it merely
+involves keeping track of the previous button state.
+
+7.4. Cursor Handling
+====================
+
+	The basic problem here is how to allow the VNC client to see
+the cursor. There are several possible approaches:
+
+  1. Draw the cursor directly to the VNC server's copy of the
+     framebuffer and send framebuffer updates as the cursor is moved
+     around. The client will see the cursor being moved in all cases. 
+
+  2. Provide the cursor image to the client using the RichCursor or
+     XCursor psuedo encoding and let the client draw the cursor
+     locally. The client only sees cursor movement when that client is
+     the one moving the cursor.
+
+  3. Again provide the cursor image to the client, but also send the
+     client updates on the pointer position using the PointerPos
+     pseudo-encoding which the client can use to update the position
+     of its locally drawn cursor. Again, the client will see the
+     cursor movement no matter who is moving it.
+
+	Approach (2) isn't very useful - the client needs to be able to
+see cursor movement on the host. For that reason, we will not
+advertise the cursor image to the client unless it supports *both*
+cursor position and cursor shape updates. If the client only supports
+one or the other, we ignore the support for that encoding and always
+draw the cursor to the framebuffer.
+
+	One problem here is that, in the screen polling case, because
+we will be comparing the local copy of the framebuffer (which may,
+with approach (1) above, have the cursor drawn in it) to the actual
+framebuffer (which will not contain the cursor image) we will need to
+undraw the cursor before doing any comparison. Instead of complicating
+the screen polling code with this detail we will draw the cursor image
+to the framebuffer just before sending a frame buffer update to the
+client and then immediately undraw it.
+
+	Of course, with either approach (1) or (2) we need some
+mechanism by which we can determine the current cursor position and
+shape. The only way to determine the current cursor position is by
+regularily polling using XQueryPointer(). Determining the current
+cursor shape is not possible but such support is to be added to the
+XFIXES extension. [FIXME: more details on this].
+
+7.5. libvncserver Work
+======================
+
+	libvncserver contains lots of code from different VNC server
+implementations. The intent is to bring all that code together under
+one API which makes it easy to write VNC servers. However, rather than
+being a library, it seems more like a full VNC server implementation
+around which you can wrap a main function.
+
+	There are a number of problems with the library which can be
+fixed in a fairly straightforward manner, by extending the API
+slightly and cleaning bits up.
+
+	Other concerns around the library containing way more
+implementation that we would like/need, many private functions exposed
+in the API, structures that will likely need to be expanded being
+exposed in the API and a general feeling that the library cannot
+hope to maintain ABI compatibility are much harder to address. We have
+the option of just statically linking to the library, and so, the
+project will not be held up by these problems, but we should continue
+to consider coming up with a plan to fix these problems.
+
+	Initially, the project will contain a copy of libvncserver
+with the following changes:
+
+  + API to allow glib mainloop integration.
+  + Support for version 3.7 of the RFB protocol - this adds security
+    type negotiation.
+  + A hook so that we can allow the user to decide whether or not an
+    authenticated client should be allowed to connect.
+  + Re-worked cursor handling so that the cursor remains drawn to the
+    server's copy of the framebuffer only for the duration of
+    rfbSendFrameBufferUpdate(). 
+  + API to set the current cursor postion.
+  + Only send cursor shape updates when the client also has support
+    for cursor position updates and vice versa.
+  + Removed default implementations of hooks and make that the default
+    action when the hook isn't implemented.
+  + TRUE == 1 instead of -1 to match glib.
+  + Warnings fixes.
+  + LIBVNCSERVER prefix removed from the #ifdefs so that we can use a
+    normal config.h. libvncserver really shouldn't have platform
+    dependant defines in its header anyway.
+  + Threading support disabled but not removed.
+  + Lots of code which we don't need removed:
+      - UDP support
+      - Vestiges of CORBA support
+      - Back channel support
+      - setTranslateFunction(), getCursorPtr and displayHook hooks
+      - HTTP server implementation
+      - Support for drawing GUIs to the framebuffer on the server
+        side. 
+      - Command line argument processing.
+
+7.6. Service Discovery
+======================
+
+	In order to implement the ability to browse the network for
+available remote desktop servers there must be some way to enumerate
+the available servers. One possible mechanism for doing this is DNS
+Based Service Discovery[17], a draft of which is currently on the IETF
+standards track.
+
+	DNS-SD is a convention for naming and structuring DNS resource
+records such that a client can query the DNS for a list of named
+instances of a particular service. The client can then resolve one of
+these named instances to an address and port number via a SRV[18]
+record.
+
+	In the remote desktop case, a client could query the DNS for
+PTR records of _rfb._tcp.<domain> and would be returned a list of
+named instances of RFB servers, using TCP, on the domain. For example:
+
+PTR:_rfb._tcp.ireland.sun.com -> SRV:Mark's Desktop._rfb._tcp.ireland.sun.com
+                                 SRV:Gman's Desktop._rfb._tcp.ireland.sun.com
+
+	(Note the way the Service Instance Name is a user-friendly
+name containing arbitrary UTF-8 encoded text. It is not a host name.)
+
+	The client would then display the list of available remote
+desktop servers - i.e. "Mark's Desktop" and "Gman's Desktop" - and
+allow the user to choose one. If the user chooses "Mark's Desktop" the
+client can then resolve that SRV record associated with the remote
+desktop instance.
+
+SRV:Mark's Desktop._rfb._tcp.ireland.sun.com -> markmc-box.ireland.sun.com:5900
+
+	The client can then resolve the "markmc-box.ireland.sun.com"
+hostname and using the resulting ip address connect to the remote
+desktop server on port 5900.
+
+
+	While DNS-SD seems like a perfect mechanism by which remote
+desktop instances may be queried for, there remains the problem of how
+the DNS is populated with the details of these services to begin with.
+
+	A related draft proposal on the IETF standards track is
+Multicast DNS[19]. The idea behind Multicast DNS is to allow a group
+of hosts on a local link, in the absence of a convetionally managed
+DNS server, to co-operatively manage a collection of DNS records and
+allow clients on that same local link query those records.
+
+	The scheme works by each client connecting to the mDNS
+multicast IPv4 address and sending/receiving DNS-like queries/answers
+to port 5353. Between them, the clients manage the top-level ".local."
+domain and negotiate any conflicts that arise. So, for example, the
+host referenced by "markmc-box.ireland.sun.com" in the above example
+could also be resolved using the host name "markmc-box.local" by other
+Multicast DNS clients on the same link.
+
+	In order to be queriable by Multicast DNS, our remote desktop
+server could act as a Multicast DNS Responder and Querier and register
+the remote desktop service there. Here's how the example above would
+look like if we were using mDNS:
+
+	Client queries the local link for remote desktop servers ...
+
+PTR:_rfb._tcp.local
+
+	... and receives a reply first from markmc-box ...
+
+                    -> SRV:Mark's Desktop._rfb._tcp.local
+
+	... and then a reply from gman-box:
+	
+                    -> SRV:Gman's Desktop._rfb._tcp.local
+
+	Once the user has selected "Mark's Desktop" from the displayed
+list, the client resolves that service and receives a reply once again
+from markmc-box:
+
+SRV:Mark's Desktop._rfb._tcp.ireland.sun.com -> markmc-box.local:5900
+
+	The client then resolves "markmc-box.local" to an ip address
+(still using Multicast DNS) and connects to that address on port 5900.
+
+	Luckily, implementing this won't require writing an mDNS
+implementation from scratch. There is an existing implementation in
+GNOME CVS which integrates nicely with glib's main loop and there are
+plans to centralise this in a desktop service advertisement and
+discovery daemon.
+
+
+	Another possible mechanism for making remote desktop service
+information available via DNS is to use Dynamic DNS Updates[20] to add
+DNS-SD records to a conventional DNS server. However, the majority of
+DNS server deployments restrict (for obvious security reasons) the
+ability to update DNS records completely or to only a few known
+hosts. Because using this mechanism would require installation sites
+to change their DNS administration policies, this is obviously not an
+attractive option.
+
+7.7. Security Considerations
+============================
+
+7.7.1. VNC Authentication
+=========================
+
+	VNC uses a simple DES based challenge-response authentication
+scheme. In order to authenticate the client, the server sends a random
+16 byte challenge and the client then encrypts the challenge with DES
+using the user supplied password as a key. If the response matches the
+expected result, the client is authenticated. Otherwise, the server
+closes the connection. There are a number of possible vulnerabilities
+with this mechanism.
+
+	Firstly, the password, being limited to 8 characters, could be
+brute force guessed by an attacker who continually tries to
+authenticate using different passwords[21]. The standard way of
+making such attacks unfeasible is to enforce a delay between failed
+authentication attempts - i.e. if there has been a failed
+authentication attempt, delay sending the challenge to the next client
+who connects for a number of seconds.
+
+	Another possible vulnerability is the predictability of the
+random challenge sent by the server. If the server, under any
+circumstances, sends a challenge which has previously been used in a
+successful authentication attempt there is the possibility that an
+attacker may use the previously observered valid response again. An
+example[22] of such is if the server re-seeds the random number
+generator used to produce the challenge with the current time on each
+connection attempt. In this case, if an attacker connects to the VNC
+server within the same one second window as a valid client, then the
+attacker will receive the same challenge as the valid client and use
+the response from that client to authenticate. To avoid such a
+vulnerability the server should produce highly unpredictable
+challenges using the cryptographically strong random number generator
+providied with the GNU TLS library.
+
+	Challenge-response authentication schemes are inherently
+susceptible to man-in-the-middle attacks. The basic idea is that
+attacker uses a client to generate a valid response for a given
+challenge. One way[23] of carrying out such an attack is if the attack
+can intercept and modify the packets flowing between the client and
+the server. The attacker can then replace the challenge from the
+server with a challenge the attacker has received in a pending
+authentication attempt. The client then returns a valid response for
+that challenge with which the attacker can use to complete its
+authentication.
+
+	Given that this tool is aimed mainly at system administrators
+administering a network of many desktop machines, and given that an
+administrator would likely set the same password for the remote
+desktop server on each of these machines, a more worrying
+man-in-the-middle attack is:
+
+	("C" is the administrator using a VNC client, "S" is the VNC
+server under attack and "M" is the attacker.)
+
+	1. M starts a modified VNC server which advertises itself on
+	   the local link using mDNS and DNS-SD (see the "Service
+	   Discovery" above)
+	2. C connects to M's modified VNC server by selecting it from
+	   the list of available VNC servers
+	3. M then connects to S and receives a challenge
+	4. M sends this challenge to C
+	5. C sends back a valid response to M
+	6. M sends a failed authentication message to C.
+	7. M uses this response to authenticate against S and is
+	   granted access.
+
+	There is no way to protect VNC's challenge response
+authentication mechanism from such an attack.
+
+	DES[24], by today's standards, is quite a weak encryption
+mechanism. Given that in this case that both plaintext and ciphertext
+(the challenge and response) are both available a brute force attack
+to find the key (the password in the VNC case) is possible. Brute
+force cracking of DES is a much discussed[25]. A large amount of
+computing power would be required for such an attack and given that
+this tool would only deployed on private networks, it is perhaps not
+an immediate concern. However, in the years to come it is to be
+expected that such attacks would beome much more common and easy to
+perform.
+
+7.7.2. Encryption
+=================
+
+	RFB protocol messages are sent across the network
+unencrypted. This is an obvious security concern because an attacker
+may snoop the protocol packets and, using a modified VNC viewer,
+observe a VNC session in progress. Even more worrying, is that all key
+presses are sent in the open and may be snooped. Considering that
+system administrators are the primary target audience and that they
+are likely to enter the root password when running some system
+utility, the password could be snooped and used to gain root-level
+access to the machine.
+
+	In order to protect the VNC session from such attacks, the
+protocol should be extended to allow the stream to be
+encrypted. Luckily, the RFB protocol was designed to allow such
+extensions while maintaining compatibility.
+
+	The encryption of the RFB stream will be implemented with
+TLS/SSL[26] using the gnutls[27] library and, for the Java client, the
+Java Secure Socket Extension (JSSE)[28].
+
+	TLS is a protocol designed to provide privacy, data integrity,
+compression and, optionally, peer authentication using public key
+cryptography. The protocol mainly consists of two parts - the Record
+Protocol and the Handshake Protocol. The Record Protocol is
+responsible for fragmenting, compressing, hashing and encrypting the
+data to be transmitted. The Handshake Protocol involves the peers
+agreeing on a protocol version, cipher suite and compression method,
+generating a shared secret and, optionally, exchanging certificates to
+allow the peers to authenticate one another (either or both peers may
+be authenticated).
+
+	New security types will be added (see below) which will cause
+the client and server to begin the TLS handshaking protocol
+immediately after one of those security types has been agreed upon. If
+VNC authentication is required, that challenge-response exchange will
+happen immediately after the TLS handshake has completed.
+
+	The peer authentication which may take place as part of the
+TLS handshake involves the peers exchanging certificates (currently
+only X.509[29] certificates are supported by the protocol but support
+for OpenPGP[30] certificates has been proposed[31]) and verifying
+their identity. In order to support server certificate authentication
+the VNC client will need have some sort of certificate store which
+contains the server certificates the client trusts - this is useful
+because it prevents a man-in-the middle attack. To support client
+certificate authentication, the VNC server will also require a
+certificate store listing the clients who are authorised to connect -
+this is useful because the password is no longer a weak point, but
+also that it would be generally more convenient for a system
+administrator to distribute his certicate to each of the desktop
+systems he administers and never have to type in a password.
+
+	If certificate based peer authentication is not used the
+client and server agree on a secret using anonymous Diffie-Hellman key
+exchange.
+
+	TLS supports compression of the communication stream. Some
+investigation should be carried out to see if using this compression
+mechanism is with uncompressed RFB tiles results in better bandwidth
+usage than no TLS compression and compressed RFB tiles.
+
+7.7.3. New RFB Security Types
+=============================
+
+	The negotiated security-type in the RFB protocol is an 8 bit
+unsigned integer. Currently there are only two possible values:
+"None"(1) to indicate no authentication is needed and "VNC
+authentication"(2) to indicate that the client is to be authenticated
+using the challenge-response scheme detailed above. 0 indicates and
+error condition.
+
+	We will add a further four security types:
+
+  + Anonymous TLS (3)
+  + TLS With VNC Authentication (4)
+  + TLS With Server Certificate and VNC Authentication (5)
+  + TLS With Server and Client Certificate Authentication (6)
+
+	In order to ensure interoperability with other
+implementations, these security types must be registered with RealVNC
+who maintain the RFB protocol specification.
+
+7.7.4. Security Related Preferences
+===================================
+
+	A number of preferences will be provided which will have a
+direct impact of the security of the system. Their meaning and
+rationale for their existance is detailed below:
+
+ /desktop/gnome/remote_access/enabled (boolean, default=false)
+
+	If false, the Remote Desktop server will not be started at
+    login time and if running will not allow any new remote
+    connections, put all existing clients on hold and exit after a 30
+    second timeout.
+
+        The rationale for the preference is that unless Remote Desktop
+    access is to actually be used, it is much more preferable to not
+    have the server running for both resource consumption and security
+    reasons. 
+
+        The default for the preference is false under the assumption
+    that Remote Desktop access will not be used by the majority of the
+    user base.
+
+
+ /desktop/gnome/remote_access/prompt_enabled (boolean, default=true)
+
+       If true, once a client has connected and been authenticated the
+    user is prompted on whether the client connection should be
+    allowed to be completed.
+
+       The rationale here is that in the majority of scenarios, the
+    user on the host machine should be in control of whether or not
+    remote users are allowed to connect to their desktop. Even if the
+    host user has enabled remote access, set a password and informed
+    some other user of that password, the host user may still want to
+    both be aware of another user connecting and also decide whether
+    that particular time is suitable for the remote user to connect.
+
+      The default is true for two reasons. Firstly, it is assumed that
+    most users will want to vet new connections and, secondly, because
+    by default there is no authentication required to connect this
+    prompt will provide some level of manual authentication.
+
+
+ /desktop/gnome/remote_access/view_only (boolean, default=false)
+
+     If true, remote users will only be allowed to view the remote
+   desktop and all keyboard, pointer and clipboard events from the
+   remote user will be ignored.
+
+     The view only preference is intended to support the simple
+   collaboration scenario where a number of remote users will connect
+   to a single host to observe something happening on the host
+   machine. In this scenario the host will no want any of the remote
+   users to use the pointer or keyboard on the host.
+
+     The default is false because this is not the primary scenario we
+   are expecting to target.
+
+
+ /desktop/gnome/remote_access/require_encryption (bool, default=true)
+
+     If true, the host requires that all connecting client use TLS
+   encryption. Any clients attempting to use the "None" and "VNC
+   Authentication" security types will be refused. This will only have
+   affect the cases where the VNC viewer being used by remote user
+   does not have support for TLS encryption. If the viewer does have
+   support, it will always be used.
+
+     The preferences is provided so that the host may make the policy
+   decision on whether unencrypted connections should be allowed.
+
+     However, in most cases it is expected that the host will require
+   that only encrypted connections be allowed so as to not allow any
+   information on the host to be compromised. For this reason, the
+   default value for the preference is true.
+   
+
+ /desktop/gnome/remote_access/authentication_methods (list, default=[none])
+
+      The list of authentication which the server will
+    advertise. Currently the supported values are "none" and "vnc",
+    but when certificate based authentication is implemented
+    "server-cert-with-vnc" and "server-cert-with-client-cert" will
+    also be supported.
+
+      The preference is provided so as to allow the host user decide
+    on how remote users should be authenticated. The host may decide
+    that no authentication is required, that password or certificate
+    based authentication should be used.
+
+      The default value is "none" because there is no point in having
+    the default value be "vnc" because no password would be set.
+ 
+
+ /desktop/gnome/remote_access/vnc_password (base64 encoded string, default=<unset>)
+
+      The password used to authenticate the remote user when VNC
+    authentication is being used. The password is stored in GConf
+    base64 encoded to provide an extra level of secrecy. However, the
+    secrecy of the password is guaranteed by the fact that the files
+    which GConf stores preference values in are only readable by the
+    user in question.
+
+
+7.7.5. Summary of Security Considerations
+=========================================
+
+  (
+    How to put this ? There must be some standard methodology to lay
+    out the specific types of attacks you are and are not protecting
+    against with different configurations e.g. given the following
+    configuration: 
+
+      + allowed = true
+      + require_encryption = true
+      + authentication_methods = [vnc]
+      + vnc_password = strong-password
+
+    and based on the following assumptions about potential attackers:
+
+      + Has the ability to snoop the intervening network stream.
+      - Does not have the ability to modify the intervening network
+        stream. 
+      - Does not have the ability to brute force crack the DES key
+        given the challenge and response.
+      - Does not have the ability to spoof an IP address.
+      + Does not have access to the host machine as either root or the
+        user who is running the server.
+      + Does not have any prior knowledge of what the password may be.
+      + Does not have access to the user's X display.
+      + Does not have access to the user's GConf daemon.
+
+    then no attacker should be able to:
+
+      + Snoop the host's screen contents from the VNC session.
+      + Snoop keyboard/pointer/clipboard events from the client.
+      + Obtain access to the VNC session.
+      + Obtain shell access to the host machine as root or the user
+        who is running the server.
+
+    But you are also making assumptions about the behaviour of the
+    user on both sides - e.g. that the remote user has the correct IP
+    address and port number for the host she wishes to connect to, and
+    not the IP address and port number of an attacker.
+  )
+
+	What problems remain ?
+
+  + No peer authentication - possibility of man-in-the-middle attacks.
+
+
+8. Host User Interface
+======================
+
+8.1. Preferences Dialog
+=======================
+
+  Menu Entry:
+    Name       = Remote Desktop
+    Comment    = Set your remote desktop access preferences
+    Categories = GNOME;Application;Settings;
+
+ +-+-------------------------------------------------------+-+-+
+ |#|              Remote Desktop Preferences               |_|X|
+ +-+-------------------------------------------------------+-+-+
+ |                                                             |
+ | ! Some of these preferences are locked down                 |
+ |                                                             |
+ | Sharing                                                     |
+ | -------                                                     |
+ | [ ] Allow other users to view my desktop on their computer  |
+ |     [ ] Also allow other users to control my desktop        |
+ |                                                             |
+ | Security                                                    |
+ | --------                                                    |
+ | When a user tries to view or control my desktop:            |
+ |     [ ] Ask me for confirmation                             |
+ |     [ ] Ensure they are using encryption                    |
+ |     [ ] Require them to enter this password:                |
+ |         Password: ________                                  |
+ |                                                             |
+ +-------------------------------------------------------------+
+ |  <Help>                                            <Close>  |
+ +-------------------------------------------------------------+
+
+  Notes:
+    o The "locked down" warning is only displayed if one of the GConf
+      keys associated with the preferences isn't writable. Each such
+      non-writable key also causes the appropriate control to be made
+      insensitive. 
+    o When "Enable remote desktop access" is inactive, the rest of the
+      controls are insensitive.
+    o When "Require password for remote access" is inactive, the
+      "Password" entry is insensitive.
+
+8.2. Connection Query Dialog
+============================
+
+	This dialog appears when the "Prompt me before allowing
+access" preference is set and a remote user connects to the server and
+is authenticated.
+
+ +-+----------------------------------------------------------+-+-+
+ |#|                      Question                            |_|X|
+ +-+----------------------------------------------------------+-+-+
+ |                                                                |
+ | ???   An attempt is being made to access your deskop remotely  |
+ | ???   from '<hostname>'                                        |
+ | ???                                                            |
+ |       Allow this connection to be completed?                   |
+ |                                                                |
+ +----------------------------------------------------------------+
+ |                                             <Refuse>  <Allow>  |
+ +----------------------------------------------------------------+
+
+8.3. Notification Area Icon
+===========================
+
+	Icon which will appear in the notification area when there are
+any remote users connected. Clicking on the icon will show the
+connections details dialog.
+
+8.4. Connection Details Dialog
+==============================
+
+	Dialog will show the list of remote desktop users, the host
+they are connected from and how long they have been connected. You
+will be able to disconnect a given user using the dialog.
+
+9. Client User Interface
+========================
+
+  + Initially a patched version of RealVNC's Java vncviewer.
+  + Later possibly a integrated into a lockhart type GUI.
+
+10. See Also
+============
+
+[1] - The RFB Protocol Specification
+	http://www.uk.research.att.com/vnc/rfbproto.pdf
+
+[2] - libvncserver:
+	http://libvncserver.sourceforge.net/
+
+[3] - xf4vnc:
+	http://xf4vnc.sourceforge.net/
+
+[4] - realVNC:
+	http://www.realvnc.com/
+
+[5] - krfb:
+	http://www.tjansen.de/krfb/
+
+[6] - VNC: Where it came from, where it's going:
+	http://cyberelk.net/tim/articles/VNC/
+
+[7] - Using Remote Desktop:
+	https://www.microsoft.com/windowsxp/pro/using/howto/gomobile/remotedesktop/default.asp
+
+[8] - Using Remote Assitance:
+	https://www.microsoft.com/windowsxp/pro/using/howto/gethelp/remoteassist/default.asp
+
+[9] - FAQ on Remote Desktop:
+	https://www.microsoft.com/windowsxp/remotedesktop/faq.asp
+
+[10] - ITU-T T.128 Application Sharing Protocol:
+	http://www.rdesktop.org/docs/t128.zip
+
+[11] - rdesktop: A Remote Desktop Protocol Client:
+	http://www.rdesktop.org/
+
+[12] - tsclient: A Frontend for rdesktop:
+	http://www.gnomepro.com/tsclient/
+
+[13] - The Interactive Performace of SLIM: A Stateless, Thin-Client
+       Architecture:
+	http://research.sun.com/research/features/tenyears/volcd/papers/nrthcutt.htm
+
+[14] - XTEST Extension Protocol:
+	http://www.x.org/pub/R6.6/xc/doc/hardcopy/Xext/xtest.PS.gz
+
+[15] - XTEST Extension Library:
+	http://www.x.org/pub/R6.6/xc/doc/hardcopy/Xext/xtestlib.PS.gz
+
+[16] - XDAMAGE Extension Wiki
+	http://xlibs.freedesktop.org/Software/DamageExt
+
+[17] - DNS-Based Service Discovery:
+	http://files.dns-sd.org/draft-cheshire-dnsext-dns-sd.txt
+
+[18] - A DNS RR for specifying the location of services (DNS SRV):
+	http://www.ietf.org/rfc/rfc2782.txt
+
+[19] - Performing DNS Queries via IP Multicast:
+	http://files.multicastdns.org/draft-cheshire-dnsext-multicastdns.txt
+
+[20] - Dynamic Updates in the Domain Name System (DNS UPDATE):
+	http://www.ietf.org/rfc/rfc2136.txt
+
+[21] - Example of a brute force VNC passwords cracking tool:
+	http://www.securiteam.com/tools/Brute_forcing_VNC_passwords.html
+
+[22] - Example of VNC challenge predictability vulnerability:
+	http://www.securityfocus.com/archive/1/284064/2003-09-02/2003-09-08/2
+
+[23] - Details of how a man-in-the-middle attack on VNC might be
+       performed: 
+	http://www1.corest.com/common/showdoc.php?idx=117&idxseccion=10
+
+[24] - A nice overview of DES encryption:
+	http://www.tropsoft.com/strongenc/des.htm
+
+[25] - Cracking DES: Secrets of Encryption Research, Wiretap Politics
+       & Chip Design
+	http://cryptome.org/cracking-des.htm
+
+[26] - Transport Layer Security (TLS) - IETF standardisation of SSL
+	http://www.ietf.org/html.charters/tls-charter.html
+
+[27] -  The GNU Transport Layer Security Library (gnutls)
+	http://www.gnu.org/software/gnutls/
+
+[28] - Java Secure Sockets Extension
+	http://java.sun.com/products/jsse/index-14.html
+
+[29] - Public-Key Infrastructure (X.509) (pkix)
+	http://www.ietf.org/html.charters/pkix-charter.html
+
+[30] - OpenPGP Message Format (rfc2440)
+	http://www.ietf.org/rfc/rfc2440.txt
+
+[31] - Using OpenPGP keys for TLS authentication
+	http://www.ietf.org/internet-drafts/draft-ietf-tls-openpgp-keys-03.txt

@@ -1,0 +1,437 @@
+/*
+ * Copyright (C) 2003 Sun Microsystems, Inc.
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
+ *
+ * Authors:
+ *      Mark McLoughlin <mark@skynet.ie>
+ */
+
+#include <config.h>
+
+#include "vino-prompt.h"
+
+#include <gtk/gtk.h>
+#include <glade/glade.h>
+#include <libgnomeui/gnome-icon-theme.h>
+#include "vino-util.h"
+#include "vino-enums.h"
+#include "vino-marshal.h"
+
+struct _VinoPromptPrivate
+{
+  GdkScreen     *screen;
+  GtkWidget     *dialog;
+  GtkWidget     *sharing_icon;
+  GtkWidget     *host_label;
+  rfbClientPtr   current_client;
+  GSList        *pending_clients;
+};
+
+enum
+{
+  PROP_0,
+  PROP_SCREEN
+};
+
+enum
+{
+  RESPONSE,
+  LAST_SIGNAL
+};
+
+static gboolean vino_prompt_display (VinoPrompt   *prompt,
+				     rfbClientPtr  rfb_client);
+
+static gpointer parent_class;
+static guint    prompt_signals [LAST_SIGNAL] = { 0 };
+
+static void
+vino_prompt_finalize (GObject *object)
+{
+  VinoPrompt *prompt = VINO_PROMPT (object);
+
+  g_slist_free (prompt->priv->pending_clients);
+  prompt->priv->pending_clients = NULL;
+
+  if (prompt->priv->dialog)
+    gtk_widget_destroy (prompt->priv->dialog);
+  prompt->priv->dialog = NULL;
+  prompt->priv->sharing_icon = NULL;
+  prompt->priv->host_label = NULL;
+
+  g_free (prompt->priv);
+  prompt->priv = NULL;
+
+  if (G_OBJECT_CLASS (parent_class)->finalize)
+    G_OBJECT_CLASS (parent_class)->finalize (object);
+}
+
+static void
+vino_prompt_set_property (GObject      *object,
+			  guint         prop_id,
+			  const GValue *value,
+			  GParamSpec   *pspec)
+{
+  VinoPrompt *prompt = VINO_PROMPT (object);
+
+  switch (prop_id)
+    {
+    case PROP_SCREEN:
+      vino_prompt_set_screen (prompt, g_value_get_object (value));
+      break;
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+      break;
+    }
+}
+
+static void
+vino_prompt_get_property (GObject    *object,
+			  guint       prop_id,
+			  GValue     *value,
+			  GParamSpec *pspec)
+{
+  VinoPrompt *prompt = VINO_PROMPT (object);
+
+  switch (prop_id)
+    {
+    case PROP_SCREEN:
+      g_value_set_object (value, prompt->priv->screen);
+      break;
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+      break;
+    }
+}
+
+static void
+vino_prompt_instance_init (VinoPrompt *prompt)
+{
+  prompt->priv = g_new0 (VinoPromptPrivate, 1);
+}
+
+static void
+vino_prompt_class_init (VinoPromptClass *klass)
+{
+  GObjectClass    *gobject_class = G_OBJECT_CLASS (klass);
+  VinoPromptClass *prompt_class  = VINO_PROMPT_CLASS (klass);
+  
+  parent_class = g_type_class_peek_parent (klass);
+  
+  gobject_class->finalize     = vino_prompt_finalize;
+  gobject_class->set_property = vino_prompt_set_property;
+  gobject_class->get_property = vino_prompt_get_property;
+
+  prompt_class->response = NULL;
+  
+  g_object_class_install_property (gobject_class,
+				   PROP_SCREEN,
+				   g_param_spec_object ("screen",
+							_("Screen"),
+							_("The screen on which to display the prompt"),
+							GDK_TYPE_SCREEN,
+							G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
+
+  prompt_signals [RESPONSE] =
+    g_signal_new ("response",
+                  G_OBJECT_CLASS_TYPE (gobject_class),
+                  G_SIGNAL_RUN_LAST,
+                  G_STRUCT_OFFSET (VinoPromptClass, response),
+                  NULL, NULL,
+                  vino_marshal_VOID__POINTER_ENUM,
+                  G_TYPE_NONE,
+		  2,
+		  G_TYPE_POINTER,
+		  VINO_TYPE_PROMPT_RESPONSE);
+
+  vino_init_stock_items ();
+}
+
+GType
+vino_prompt_get_type (void)
+{
+  static GType object_type = 0;
+
+  if (!object_type)
+    {
+      static const GTypeInfo object_info =
+	{
+	  sizeof (VinoPromptClass),
+	  (GBaseInitFunc) NULL,
+	  (GBaseFinalizeFunc) NULL,
+	  (GClassInitFunc) vino_prompt_class_init,
+	  NULL,           /* class_finalize */
+	  NULL,           /* class_data */
+	  sizeof (VinoPrompt),
+	  0,              /* n_preallocs */
+	  (GInstanceInitFunc) vino_prompt_instance_init,
+	};
+      
+      object_type = g_type_register_static (G_TYPE_OBJECT,
+                                            "VinoPrompt",
+                                            &object_info, 0);
+    }
+
+  return object_type;
+}
+
+VinoPrompt *
+vino_prompt_new (GdkScreen *screen)
+{
+  g_return_val_if_fail (GDK_IS_SCREEN (screen), NULL);
+
+  return g_object_new (VINO_TYPE_PROMPT,
+		       "screen", screen,
+		       NULL);
+}
+
+GdkScreen *
+vino_prompt_get_screen (VinoPrompt *prompt)
+{
+  g_return_val_if_fail (VINO_IS_PROMPT (prompt), NULL);
+
+  return prompt->priv->screen;
+}
+
+void
+vino_prompt_set_screen (VinoPrompt *prompt,
+			GdkScreen  *screen)
+{
+  g_return_if_fail (VINO_IS_PROMPT (prompt));
+
+  if (prompt->priv->screen != screen)
+    {
+      prompt->priv->screen = screen;
+
+      g_object_notify (G_OBJECT (prompt), "screen");
+    }
+}
+
+static void
+vino_prompt_process_pending_clients (VinoPrompt *prompt)
+{
+  if (prompt->priv->pending_clients)
+    {
+      rfbClientPtr rfb_client = (rfbClientPtr) prompt->priv->pending_clients->data;
+
+      prompt->priv->pending_clients =
+	g_slist_delete_link (prompt->priv->pending_clients,
+			     prompt->priv->pending_clients);
+
+      vino_prompt_display (prompt, rfb_client);
+    }
+}
+
+static void
+emit_response_signal (VinoPrompt   *prompt,
+		      rfbClientPtr  rfb_client,
+		      int           response)
+{
+  dprintf (PROMPT, "Emiting response signal for %p: %s\n",
+	   rfb_client,
+	   response == VINO_RESPONSE_ACCEPT ? "accept" : "reject");
+
+  g_signal_emit (prompt,
+		 prompt_signals [RESPONSE],
+		 0,
+		 rfb_client,
+		 response);
+}
+
+static void
+vino_prompt_handle_dialog_response (VinoPrompt *prompt,
+				    int         response,
+				    GtkDialog  *dialog)
+{
+  rfbClientPtr rfb_client;
+  int          prompt_response = VINO_RESPONSE_INVALID;
+
+  dprintf (PROMPT, "Got a response for client %p: %s\n",
+	   prompt->priv->current_client,
+	   response == GTK_RESPONSE_ACCEPT ? "accept" :
+	   response == GTK_RESPONSE_REJECT ? "reject" : "unknown");
+
+  switch (response)
+    {
+    case GTK_RESPONSE_ACCEPT:
+      prompt_response = VINO_RESPONSE_ACCEPT;
+      break;
+    case GTK_RESPONSE_REJECT:
+    default:
+      prompt_response = VINO_RESPONSE_REJECT;
+      break;
+    }
+
+  rfb_client = prompt->priv->current_client;
+  prompt->priv->current_client = NULL;
+
+  prompt->priv->dialog = NULL;
+  prompt->priv->sharing_icon = NULL;
+  prompt->priv->host_label = NULL;
+  gtk_widget_destroy (GTK_WIDGET (dialog));
+
+  if (rfb_client != NULL)
+    {
+      emit_response_signal (prompt, rfb_client, prompt_response);
+    }
+
+  vino_prompt_process_pending_clients (prompt);
+}
+
+static void
+vino_prompt_setup_icons (VinoPrompt *prompt,
+			 GladeXML   *xml)
+{
+#define ICON_SIZE_STANDARD 48
+
+  GnomeIconTheme *icon_theme;
+  char           *icon_path;
+
+  prompt->priv->sharing_icon = glade_xml_get_widget (xml, "sharing_icon");
+  g_assert (prompt->priv->sharing_icon != NULL);
+  
+  icon_theme = gnome_icon_theme_new ();
+  gnome_icon_theme_set_allow_svg (icon_theme, TRUE);
+
+  icon_path = gnome_icon_theme_lookup_icon (icon_theme,
+					    "gnome-remote-desktop",
+					    ICON_SIZE_STANDARD,
+					    NULL, NULL);
+  if (icon_path)
+    {
+      gtk_window_set_icon_from_file (GTK_WINDOW (prompt->priv->dialog),
+				     icon_path,
+				     NULL);
+      gtk_image_set_from_file (GTK_IMAGE (prompt->priv->sharing_icon),
+			       icon_path);
+      g_free (icon_path);
+    }
+
+  g_object_unref (icon_theme);
+  
+#undef ICON_SIZE_STANDARD
+}
+
+static gboolean
+vino_prompt_setup_dialog (VinoPrompt *prompt)
+{
+#define VINO_GLADE_FILE "vino-prompt.glade"
+
+  GladeXML   *xml;
+  const char *glade_file;
+      
+  if (g_file_test (VINO_GLADE_FILE, G_FILE_TEST_EXISTS))
+    glade_file = VINO_GLADE_FILE;
+  else
+    glade_file = VINO_GLADEDIR "/" VINO_GLADE_FILE;
+
+  xml = glade_xml_new (glade_file, "vino_dialog", NULL);
+  if (!xml)
+    {
+      g_warning ("Unable to locate glade file '%s'", glade_file);
+      return FALSE;
+    }
+
+  prompt->priv->dialog = glade_xml_get_widget (xml, "vino_dialog");
+  g_assert (prompt->priv->dialog != NULL);
+
+  g_signal_connect_swapped (prompt->priv->dialog, "response",
+			    G_CALLBACK (vino_prompt_handle_dialog_response), prompt);
+
+  vino_prompt_setup_icons (prompt, xml);
+
+  prompt->priv->host_label = glade_xml_get_widget (xml, "host_label");
+  g_assert (prompt->priv->host_label != NULL);
+
+  g_object_unref (xml);
+
+  return TRUE;
+
+#undef VINO_GLADE_FILE
+}
+
+static gboolean
+vino_prompt_display (VinoPrompt   *prompt,
+		     rfbClientPtr  rfb_client)
+{
+  char *host_label;
+
+  if (prompt->priv->current_client)
+    {
+      g_assert (prompt->priv->dialog);
+      gtk_window_present (GTK_WINDOW (prompt->priv->dialog));
+      return prompt->priv->current_client == rfb_client;
+    }
+
+  g_assert (prompt->priv->dialog == NULL);
+
+  if (!vino_prompt_setup_dialog (prompt))
+    return FALSE;
+
+  host_label = g_strdup_printf (_("A user on the computer '%s' is trying to remotely view or control your desktop."),
+				rfb_client->host);
+
+  gtk_label_set_text (GTK_LABEL (prompt->priv->host_label), host_label);
+
+  g_free (host_label);
+
+  prompt->priv->current_client = rfb_client;
+
+  gtk_widget_show_all (prompt->priv->dialog);
+
+  dprintf (PROMPT, "Prompting for client %p\n", rfb_client);
+
+  return TRUE;
+}
+
+void
+vino_prompt_add_client (VinoPrompt   *prompt,
+			rfbClientPtr  rfb_client)
+{
+  g_return_if_fail (VINO_IS_PROMPT (prompt));
+  g_return_if_fail (rfb_client != NULL);
+
+  if (!vino_prompt_display (prompt, rfb_client))
+    {
+      dprintf (PROMPT, "Prompt in progress for %p: queueing %p\n",
+	       prompt->priv->current_client, rfb_client);
+      prompt->priv->pending_clients =
+	g_slist_append (prompt->priv->pending_clients, rfb_client);
+    }
+}
+
+void
+vino_prompt_remove_client (VinoPrompt   *prompt,
+			   rfbClientPtr  rfb_client)
+{
+  g_return_if_fail (VINO_IS_PROMPT (prompt));
+  g_return_if_fail (rfb_client != NULL);
+
+  if (prompt->priv->current_client == rfb_client)
+    {
+      g_assert (prompt->priv->dialog != NULL);
+
+      gtk_widget_destroy (prompt->priv->dialog);
+      prompt->priv->dialog = NULL;
+      prompt->priv->current_client = NULL;
+    }
+  else
+    {
+      prompt->priv->pending_clients =
+	g_slist_remove (prompt->priv->pending_clients, rfb_client);
+    }
+}

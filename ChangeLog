@@ -1,0 +1,1258 @@
+==================== 0.12 ====================
+
+2004-01-16  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: Version 0.12.
+
+2004-01-16  Mark McLoughlin  <mark@skynet.ie>
+
+	Based on patch from Leen Gunda.
+
+	* server/vino-server.c: (vino_server_set_client_on_hold):
+	Set the rfbClient's onHold flag.
+
+2004-01-16  Mark McLoughlin  <mark@skynet.ie>
+
+	* capplet/vino-preferences.c:
+	(vino_preferences_get_local_hostname): use the fully
+	qualified host name.
+	
+	* session/vino-session.c: (remote_desktop_start):
+	Fix minor indendation issue.
+
+2003-12-12  Mark McLoughlin  <mark@skynet.ie>
+
+	* capplet/vino-preferences.c:
+	(vino_preferences_get_local_hostname),
+	(vino_preferences_dialog_get_server_url): actuall use
+	the proper host name in the url.
+
+==================== 0.11 ====================
+
+2003-12-11  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: Version 0.11.
+
+2003-12-05  Mark McLoughlin  <mark@skynet.ie>
+
+	* capplet/vino-preferences.c:
+	(vino_preferences_dialog_update_for_allowed): make the URL
+	insensitive if allowed is FALSE.
+	(vino_preferences_vnc_password_notify): fix crasher when
+	unsetting the key.
+	(vino_preferences_dialog_construct_mailto): simplify to
+	just use the e-mail address and URL.
+	(vino_preferences_dialog_update_url_label),
+	(vino_preferences_dialog_mailto_notify),
+	(vino_preferences_dialog_setup_url_labels): Don't make the
+	URL small or italicised. Also, use the "mailto" key when
+	constructing the mailto and handle notifications on the key.
+	(vino_preferences_dialog_finalize): free up some stuff.
+	
+	* capplet/vino-preferences.glade: Fix mnemonic conflicts and
+	put the URL labels on a row of their own so they are padded
+	more.
+	
+	* capplet/vino-url.c:
+	(vino_url_realize): only set the cursor if we're sensitive.
+	(vino_url_state_changed): set/unset the cursor based on
+	the sensitivity.
+	(vino_url_set_address): don't set the label with the
+	address.
+	
+	* server/vino-server.schemas.in: add a "mailto" key.
+
+2003-12-04  Mark McLoughlin  <mark@skynet.ie>
+
+	* capplet/vino-url.c: (vino_url_class_init),
+	(vino_url_instance_init), (vino_url_finalize):
+	Don't use GObject's new instance private data as
+	we don't want to depend on glib 2.3.
+
+2003-12-03  Mark McLoughlin  <mark@skynet.ie>
+
+	First bit of work to allow the URL in the preferences
+	dialog be clicked on allowing you to send it by email.
+
+	* capplet/vino-preferences.c:
+	(vino_preferences_dialog_get_server_url):
+	(vino_preferences_dialog_construct_mailto):
+	Impl. skeletal versions of these. More work
+	needed here.
+	(vino_preferences_dialog_setup_url_labels):
+	Set up the server URL label.
+	(vino_preferences_dialog_init): use it.
+	(main): init and shutdown gnome-vfs. Its needed
+	for the url handler.
+	
+	* capplet/vino-preferences.glade: Remove the
+	default URL label.
+	
+	* capplet/vino-url.[ch]: implementation of a
+	clickable label which points at a URL. Basically,
+	just GnomeHref as a label.
+
+	* configure.in: Build the cut-n-paste stuff.
+	
+	* cut-n-paste/screen-exec/*: add the screen exec
+	stuff here as a utility library.
+
+2003-12-03  Mark McLoughlin  <mark@skynet.ie>
+
+	* capplet/vino-preferences.glade: updates from Calum.
+	Main change is to shove the URL in there the best way
+	we can.
+
+2003-12-01  Mark McLoughlin  <mark@skynet.ie>
+
+	Remove the update_timeout when the client is on hold.
+
+	* server/vino-server.c:
+	(vino_server_handle_client_gone): conditionally remove
+	the update timeout.
+	(vino_server_set_client_priority): move into set_client_on_hold().
+	(vino_server_set_client_on_hold): add and remove the update timeout
+	depending on whether the client is on hold.
+	(vino_server_handle_new_client): don't add the update timeout
+	here.
+	(vino_server_handle_authenticated_client):
+	use set_client_on_hold() instead of set_client_priority().
+	(vino_server_set_on_hold): add FIXME.
+
+2003-12-01  Mark McLoughlin  <mark@skynet.ie>
+
+	Implement deferring authentication attempts by 5 seconds
+	if the previous attempt failed. Simple protection against
+	brute force guessing the password.
+
+	* server/vino-server.c:
+	(vino_server_handle_client_gone): free up the deferred auth
+	resources.
+	(vino_server_set_client_on_hold): don't process input from
+	the client directly here - if there is data pending the
+	io_watch will be triggered and we'll process it then.
+	(vino_server_auth_client_deferred),
+	(vino_server_defer_client_auth): impl. verifying the password
+	after a 5 second timeout.
+	(vino_server_auth_client),
+	(vino_server_check_vnc_password): if the check fails, flag the
+	server to delay the next attempt by 5 seconds.
+	(vino_server_set_on_hold): don't touch existing clients unless
+	they have been fully initialized.
+	
+	* server/libvncserver/auth.c:
+	(rfbAuthProcessClientMessage): split out returning the result
+	to the client.
+	(rfbAuthPasswordChecked): Allow the deferred authentication.
+	
+	* server/libvncserver/rfb/rfb.h: add RFB_CLIENT_AUTH_DEFERRED
+	state.
+	
+	* server/libvncserver/rfbserver.c: if we're in the AUTH_DEFERRED
+	state ignore any client messages. We'll be onHold so this is
+	just paranoia.
+	
+	* docs/TODO, docs/remote-desktop.txt: update.
+
+2003-12-01  Mark McLoughlin  <mark@skynet.ie>
+
+	* docs/TODO: update.
+	
+	* server/libvncserver/auth.c:
+	(rfbAuthClientAuthenticated): return FALSE by default.
+	(rfbAuthNewClient3_3): change error message.
+	(rfbAuthNewClient), (rfbAuthCleanupClient): fixup
+	coding style.
+	
+	* server/libvncserver/main.c:
+	(rfbClearSecurityTypes): fix up coding style.
+	
+	* server/vino-server.c:
+	(vino_server_check_vnc_password): ditto.
+
+2003-12-01  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: detect the location of libcrypt.
+	
+	* server/Makefile.am,
+	  server/libvncserver/Makefile.am: link against libgcrypt
+	
+	* server/libvncserver/vncauth.c: (vncRandomBytes): use
+	libgcrypt to generate the challenge to ensure it is
+	wholly unpredictable.
+	
+	* server/libvncserver/CHANGES: document the change.
+
+	* server/libvncserver/auth.c: (rfbAuthTlsHandshake): fix
+	coding style.
+	
+2003-11-22  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/vino-prompt.c:
+	(vino_prompt_process_pending_clients): impl. processing
+	pending clients.
+	(vino_prompt_handle_dialog_response): use it.
+	
+	* server/vino-server.c:
+	(vino_server_init_from_screen): make the server
+	shared always.
+	
+	* docs/TODO: update.
+
+==================== 0.10 ====================
+
+2003-11-18  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: Version 0.10.
+
+2003-11-18  Mark McLoughlin  <mark@skynet.ie>
+
+	* client/java/Makefile.am: distcheck fix.
+
+2003-11-18  Mark McLoughlin  <mark@skynet.ie>
+
+	* client/java/vncviewer/VNCViewer.java:
+	(VNCViewer.init): get vino-client.png as the logo.
+	(VNCViewer.paint): draw the logo and a label for now.
+	Pretty crappy, but it will do for the moment.
+	
+	* server/vino-http.c:
+	(vino_http_lookup_client_logo): lookup the icon according
+	to the icon theme.
+	(vino_http_construct_response): if the client requests
+	"vino-client.png" return them "gnome-remote-desktop"
+	(vino_http_data_pending): don't return an invalid response
+	on EOF. Just close the connection.
+
+2003-11-18  Mark McLoughlin  <mark@skynet.ie>
+
+	* docs/TODO: add a "why does the cursor flicker" item.
+	
+	* server/vino-prompt.glade: remove the seperator and
+	tweak some padding.
+
+2003-11-18  Mark McLoughlin  <mark@skynet.ie>
+
+	Fix problem when we block on writing the HTTP response.
+
+	* server/vino-http.c:
+	(vino_http_finalize_client): impl.
+	(vino_http_queue_pending_response),
+	(vino_http_write_string): implement queueing the rest
+	of the response if we block half way through.
+	(vino_http_data_writable): finish writing.
+	(vino_http_write_response): use write_string().
+	(vino_http_new_connection_pending): update.
+	(vino_http_finalize): use finalize_client().
+
+2003-11-18  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/libvncserver/rfbserver.c: re-try the handshake
+	if the client is in the RFB_TLS_HANDSHAKE state.
+	
+	* server/libvncserver/auth.c:
+	(rfbAuthTlsHandshake): don't block until the handshake
+	completes.
+	(rfbAuthProcessSecurityTypeMessage): update.
+	(rfbAuthProcessTlsHandshake): implement re-trying the
+	handshake if it hasn't completed and there is data
+	pending.
+	
+	* server/libvncserver/rfb/rfb.h: add rfbAuthProcessTlsHandshake
+	and the RFB_TLS_HANDSHAKE client state.
+
+2003-11-18  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/vino-http.[ch]:
+	(vino_http_insert_applet_text),
+	(vino_http_perform_substitutions),
+	(vino_http_construct_response): implement substituting
+	$APPLET with an <applet> tag.
+	(start_probing_at), (vino_http_create_listening_socket):
+	die magic numbers.
+	(vino_http_set_property), 
+	(vino_http_get_property),
+	(vino_http_class_init): remove the "rfb-port" property.
+	(vino_http_get): rename from vino_http_new() - its
+	a singleton now.
+	(vino_http_sort_ports), (vino_http_add_rfb_port),
+	(vino_http_remove_rfb_port): maintain a list of rfb
+	ports.
+	
+	* server/vino-server.c: (vino_server_init_from_screen),
+	(vino_server_finalize): update for VinoHTTP changes.
+
+	* client/java/Makefile.am: install vino-client.html.
+	* client/java/vino-client.html: Template file for the
+	client web page. $APPLET gets substituted with the
+	appropriate <applet>.
+	
+2003-11-17  Mark McLoughlin  <mark@skynet.ie>
+
+	* capplet/vino-preferences.c:
+	(vino_preferences_dialog_setup_icons): make
+	the icon size #define local to the function.
+	
+	* configure.in: make the server require libgnomeui
+	(for GnomeIconTheme) and libglade. Suck.
+	
+	* docs/TODO: add item.
+
+2003-11-17  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/Makefile.am: install the glade file.
+	
+	* server/vino-prompt.glade: glade file for the message dialog
+	according to Calum's input.
+	
+	* server/vino-prompt.c:
+	(vino_prompt_setup_icons), (vino_prompt_setup_dialog),
+	(vino_prompt_display): re-implement the dialog.
+
+2003-11-17  Mark McLoughlin  <mark@skynet.ie>
+
+	* docs/remote-desktop.txt: update for changes to the capplet.
+
+2003-11-17  Mark McLoughlin  <mark@skynet.ie>
+
+	* capplet/vino-preferences.glade: add the fairly widespread
+	changes suggested by Calum. Looks much better now.
+	
+	* capplet/vino-preferences.c:
+	(vino_preferences_dialog_encryption_toggled),
+	(vino_preferences_dialog_encryption_notify),
+	(vino_preferences_dialog_setup_encryption_toggle): Change
+	the sense to reflect the changed semantics in the UI.
+	(vino_preferences_dialog_setup_icons): setup the icons
+	using the icon theme.
+	(vino_preferences_dialog_init): upd.
+	
+	* configure.in: make the capplet require libgnomeui for
+	GnomeIconTheme.
+
+2003-11-17  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/vino-http.[ch]: implement a http server which listens
+	in the range 5800-5899 and returns a html page pointing which
+	loads the Java client.
+	
+	* server/Makefile.am: build vino-http.[ch].
+	
+	* server/vino-server.c:
+	(vino_server_init_from_screen): set up the http server.
+	(vino_server_finalize): chain up to the parent finalize.
+	
+	* server/vino-util.[ch]: (vino_setup_debug_flags): setup
+	http debugging.
+	
+	* server/vino-fb.c: (vino_fb_finalize): chain up to parent
+	finalize.
+
+	* server/vino-prompt.c: (vino_prompt_finalize): ditto.
+	
+2003-11-14  Mark McLoughlin  <mark@skynet.ie>
+
+	* client/java/rfb/CConnection.java: (CConnection):
+	Show the security type in the connection info dialog.
+
+	* client/java/vncviewer/CConn.java: (CConn.showInfo):
+	Make the CSecurity protected.
+
+2003-11-14  Mark McLoughlin  <mark@skynet.ie>
+
+	* capplet/vino-preferences.c: (vino_preferences_dialog_init):
+	Find the glade file correctly.
+	
+	* docs/TODO: update.
+	
+	* docs/remote-desktop.txt: add back the require_encryption
+	toggle button.
+
+2003-11-14  Mark McLoughlin  <mark@skynet.ie>
+
+	* client/java/vncviewer/CConn.java: (CConn.recreateViewport):
+	Focus the DesktopWindow. It took me way too long to figure
+	out that one :/
+
+2003-11-13  Mark McLoughlin  <mark@skynet.ie>
+
+	* session/gsm-remote-desktop.diff: actually add the
+	gnome-session patch.
+
+2003-11-13  Mark McLoughlin  <mark@skynet.ie>
+
+	Make the client only support 24 bit colour instead of 8 bit
+	colour. Not ideal ... it would have been nicer to support
+	all colour depths but ...
+
+	* client/java/rdr/InStream.java:
+	(InStream.readPixel), (InStream.readPixels): impl reading a
+	number of 32 bit pixels.
+	(InStream.readCPixel), (InStream.readCPixels): impl reading
+	a number of compressed pixels. We can assume they will be
+	compressed into 24 bits because of our pixel format.
+	
+	* client/java/rfb/CMsgHandler.java:
+	(CMsgHandler.setCursor), (CMsgHandler.imageRect): Take an
+	int[] instead of a byte[] for the image data.
+	
+	* client/java/rfb/CMsgReader.java:
+	(CMsgReader.getImageBuf): simplify - we never used imageBufIdealSize
+	and hence always returned the "required" number of bytes and never
+	the "requested". Take only a single "size" now and always return
+	a buffer of that size. Also, return an int[] instead of a byte[].
+	(CMsgReader.readSetCursor), (CMsgReader): store the image data
+	in an int[].
+	
+	* client/java/rfb/HextileDecoder.java:
+	(HextileDecoder.readRect): update for 24 bit colour.
+	
+	* client/java/rfb/ManagedPixelBuffer.java:
+	(ManagedPixelBuffer.dataLen), (ManagedPixelBuffer.checkDataSize):
+	data is an int[] now.
+	
+	* client/java/rfb/PixelBuffer.java:
+	(PixelBuffer.setPF): pixel format must be 32 bits per pixel now
+	instead of 8.
+	(getStride): remove, just use the width.
+	(PixelBuffer.fillRect), (PixelBuffer.imageRect),
+	(PixelBuffer.copyRect), (PixelBuffer.maskRect): update to use
+	an int[] for the image data.
+	
+	* client/java/rfb/PixelFormat.java:
+	(PixelFormat.PixelFormat): change the default pixel format to
+	24 bit depth, 32 bits per pixel and true-colour rgb888 packed
+	encoding.
+	
+	* client/java/rfb/RREDecoder.java:
+	(RREDecoder.readRect): update to decode 24 bit color.
+	
+	* client/java/rfb/RawDecoder.java:
+	(RawDecoder.readRect): simplify because we know getImageBuf()
+	will always return the required buffer size. Also, update for
+	24 bit colour.
+	
+	* client/java/rfb/ZRLEDecoder.java:
+	(ZRLEDecoder.readRect): update to decode 24 bit colour.
+	
+	* client/java/vncviewer/CConn.java:
+	(CConn.setColourMapEntries): kill - we use true-colour now.
+	(CConn.imageRect): don't take an offset and take an int[]
+	instead of a byte[].
+	(CConn.setCursor): take an int[] for the cursor data. Mask
+	is still a byte[], though.
+	
+	* client/java/vncviewer/DesktopWindow.java:
+	(DesktopWindow): don't implement Runnable anymore.
+	(DesktopWindow.setCursor): take an int[].
+	(DesktopWindow.setColourMapEntries): kill, unneeded.
+	(DesktopWindow.imageRect): don't take an offset and take an int[]
+        instead of a byte[].
+	(DesktopWindow.run): kill.
+	
+	* client/java/vncviewer/PixelBufferImage.java:
+	(PixelBufferImage.PixelBufferImage): change the default pixel
+	format to 24 bit depth, 32 bits per pixel and true-colour
+	rgb888 packed encoding. Use DirectColorModel instead of
+	IndexColorModel.
+	(PixelBufferImage.resize): update to use an int[] for the
+	image data.
+	(PixelBufferImage.setColourMapEntries),
+	(PixelBufferImage.updateColourMap): Kill, we do true-color now.
+
+2003-11-12  Mark McLoughlin  <mark@skynet.ie>
+
+	* capplet/vino-preferences.c,
+	  capplet/vino-preferences.glade: add back
+	the "Allow unencrypted connections" preference.
+	
+	* docs/remote-desktop.txt: update.
+
+2003-11-11  Mark McLoughlin  <mark@skynet.ie>
+
+	* client/java/vncviewer/CConn.java:
+	(CConn.autoSelectFormatAndEncoding),
+	(requestNewUpdate): we don't actually support anything
+	but 8 bit colour, so comment out the code that pretends
+	to support more.
+	
+	* docs/TODO: add a couple more items.
+
+2003-11-10  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/libvncserver/rfbserver.c:
+	(rfbSendFrameBufferUpdate): undraw the cursor *after*
+	encoding the modified rectangles. Doh. Fixes cursor
+	display on clients which don't support position updates.
+
+2003-11-10  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/vino-server.c:
+	(vino_server_setup_framebuffer),
+	(vino_server_release_framebuffer): only monitor the
+	cursor when we actually have a client.
+	(vino_server_init_from_screen): don't init the cursor
+	here.
+
+2003-11-10  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/Makefile.am: distcheck fix.
+	
+	* server/vino-server.c:
+	(vino_server_handle_client_gone): release the framebuffer copy
+	if this is the last client.
+	(vino_server_handle_new_client): setup our copy of the framebuffer
+	if this is the first client.
+	(vino_server_setup_framebuffer), (vino_server_release_framebuffer):
+	implement.
+	(vino_server_init_from_screen): split bits out.
+
+2003-11-10  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/vino-prefs.c:
+	(vino_prefs_enabled_changed),
+	(vino_prefs_create_server),
+	(vino_prefs_init): put the server on hold when "enabled"
+	is FALSE.
+	
+	* server/vino-server.c:
+	(vino_server_set_client_on_hold): take a VinoServerClientInfo
+	instead of a rfbClientPtr.
+	(vino_server_handle_prompt_response): update.
+
+2003-11-10  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: add --enable-session-support argument.
+	
+	* server/vino-shell.c:
+	(vino_shell_idle_quit),	(vino_shell_destroy),
+	(vino_shell_class_init): quit the server in idle when
+	the shell is unrefed and chain up to the BonoboObject
+	destroy() implementatin.
+	
+	* session/README: blurb.
+	
+	* session/vino-session.c: small session managed program
+	to control the lifecyle of the server. Alternative to
+	the gnome-session patch.
+
+2003-11-10  Mark McLoughlin  <mark@skynet.ie>
+
+	Lots of voodoo goodness to allow the server to
+	be activated and shutdown by gnome-session depending
+	on the /desktop/gnome/remote_access/enabled key.
+
+	* configure.in: make the server require libbbonob, figure
+	out the location of orbit-idl and Bonobo's IDL files.
+	
+	* server/GNOME_RemoteDesktop.idl: add dummy interface for
+	the service.
+	
+	* server/GNOME_RemoteDesktop.server.in.in: bonobo-activation
+	service definition file.
+	
+	* server/Makefile.am: create and install the .server file.
+	Install	vino-server into libexec instead of bin. Build the
+	CORBA skels from the IDL.
+	
+	* server/vino-main.c: (main): quit if we fail to
+	register the service.
+	
+	* server/vino-shell.[ch]: implement registering the
+	GNOME_RemoteDesktop service with bonobo-activation.
+	* server/vino-shell.h:
+
+2003-11-10  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/vino-server.schemas.in,
+	  capplet/vino-preferences.c,
+	  docs/remote-desktop.txt: rename the "allowed" key
+	to "enabled".
+
+2003-11-06  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/vino-fb.c:
+	(vino_fb_get_image): handle X errors and return a bool.
+	(vino_fb_copy_tile): return a bool.
+	(vino_fb_poll_scanline): only mark a region as damaged
+	if we sucessfully copied the tile.
+
+2003-11-05  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/vino-fb.c: (vino_fb_init_from_screen): remove
+	pre-condition causing us to crash when the screen
+	size changed. Handling screen size changes is still
+	pretty broken though - we seem to not get the
+	ConfigureNotify on the root window for ages and in the
+	mean time we get a BadMatch for doing a GetImage with
+	the wrong size.
+
+2003-11-05  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/vino-fb.[ch]:
+	(emit_size_changed): emit "size-changed" signal.
+	(vino_fb_finalize_screen_data): split out from finalize().
+	(vino_fb_screen_size_changed): re-initialize the screen.
+	(vino_fb_init_from_screen): connect to the GdkScreen
+	"size-changed" signal.
+	(vino_fb_finalize): update.
+	(vino_fb_class_init): initialize the "size-changed" signal.
+	
+	* server/vino-server.c:
+	(vino_server_update_client), (vino_server_handle_new_client),
+	(vino_server_handle_prompt_response),
+	(vino_server_handle_authenticated_client),
+	(vino_server_new_connection_pending),
+	(vino_server_handle_key_event), (vino_server_handle_pointer_event),
+	(vino_server_handle_clipboard_event),
+	(vino_server_check_vnc_password),
+	(vino_server_handle_damage_notify): add a bunch of preconditions.
+	(vino_server_screen_size_changed): re-initialize the screen.
+	(vino_server_init_from_screen): connect to the VinoFB "size-changed"
+	signal.
+	
+	* docs/TODO: update.
+
+==================== 0.9 ====================
+
+2003-11-05  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: Version 0.9.
+
+2003-11-05  Mark McLoughlin  <mark@skynet.ie>
+
+	* docs/remote-desktop.txt: update.
+
+2003-11-05  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/vino-server.schemas.in: change
+	require_encryption default to true.
+	
+	* docs/TODO: move from toplevel dir.
+	
+	* docs/remote-desktop.txt: add.
+
+==================== 0.8 ====================
+
+2003-11-05  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: Version 0.8.
+
+2003-11-05  Mark McLoughlin  <mark@skynet.ie>
+
+	* client/java/Makefile.am: fixed distcheck build.
+	
+	* server/libvncserver/cursor.c,
+	  server/libvncserver/main.c,
+	  server/libvncserver/rfb/rfb.h,
+	  server/libvncserver/rfb/rfbregion.h,
+	  server/libvncserver/rfbregion.c,
+	  server/libvncserver/sockets.c,
+	  server/libvncserver/tight.c,
+	  server/libvncserver/zlib.c,
+	  server/libvncserver/zrleencodetemplate.c: loads
+	of warnings fixes.
+
+	* server/libvncserver/CHANGES: update.
+	
+2003-11-05  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: define JAVA_SDK_AVAILABLE if both
+	jar and javac are found.
+	
+	* client/java/Makefile.am: only rebuild if the SDK
+	is available.
+	
+	* client/java/vino-client.jar: check in to CVS.
+
+2003-11-04  Mark McLoughlin  <mark@skynet.ie>
+
+	* capplet/vino-preferences.glade: removed the "label-for" and
+	"labelled-by" a11y relations - apparently gail does that
+	automatically if you set the focus target.
+	
+	* server/vino-server.c:
+	(vino_server_set_client_priority): impl. setting down the priority
+	on the io watch for the client's socket. If we put the client on
+	hold we don't want any pending data on the socket starving the
+	rest of the mainloop.
+	(vino_server_set_client_on_hold), (vino_server_handle_new_client),
+	(vino_server_handle_authenticated_client): use it here.
+
+2003-11-04  Mark McLoughlin  <mark@skynet.ie>
+
+	* client/java/rfb/CSecurity.java: (CSecurity): added
+	a getDescription() abstract methdo.
+	
+	* client/java/rfb/CSecurityNone.java,
+	  client/java/rfb/CSecurityTls.java,
+	  client/java/rfb/CSecurityVncAuth.java: implement the
+	getDescription() methods.
+	
+	* client/java/vncviewer/CConn.java: (CConn.getCSecurity):
+	Output the security type description here.
+
+2003-11-04  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/vino-server.schemas.in: change the require_encryption
+	default to false. In the common case this will be a policy
+	decision of the client, not the server.
+
+2003-11-04  Mark McLoughlin  <mark@skynet.ie>
+
+	* capplet/vino-preferences.desktop.in: add a .desktop
+	file for the capplet.
+
+	* capplet/Makefile.am: install the .desktop file.
+	
+	* capplet/vino-preferences.c,
+	  capplet/vino-preferences.glade: remove the "Allow
+	unencrypted connections" preference from here. We'll
+	have it on by default and you can turn it off using
+	gconf-editor.
+	
+2003-11-04  Mark McLoughlin  <mark@skynet.ie>
+
+	* capplet/vino-preferences.c:
+	(vino_preferences_dialog_init): use the icon
+	as the window icon.
+	
+	* server/vino-prompt.c:
+	(vino_prompt_display): ditto.
+
+2003-11-04  Mark McLoughlin  <mark@skynet.ie>
+
+	* icons/gnome-remote-desktop.png: add an icon.
+
+	* Makefile.am, configure.in: build icons dir.
+	
+2003-11-03  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/vino-server.schemas.in: add prompt_enabled
+	preference.
+
+	* capplet/vino-preferences.glade: add it here.
+	
+	* capplet/vino-preferences.c: hook it up in here.
+	
+	* server/vino-prefs.c: hook it up here too.
+	
+	* server/vino-prompt.c: some random stuff to try and
+	make this a little less broken.
+
+2003-11-03  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: check for glib-genmarshal.
+	
+	* server/Makefile.am: generate the masrhallers and
+	build against vino-prompt.[ch]
+	
+	* server/vino-marshal.list: add.
+	
+	* server/vino-prompt.[ch]: implement a dialog to
+	prompt the user before allowing someone to connect.
+	
+	* server/vino-server.[ch]: use it here.
+
+	* server/vino-util.[ch]:
+	(vino_init_stock_items): impl registering a couple
+	of stock items for the prompt dialog.
+
+	* server/libvncserver/auth.c,
+	  server/libvncserver/rfb/rfb.h: add a hook to enable
+	reject/accepting clients which have alread been
+	authenticated.
+	
+	* server/libvncserver/rfbserver.c: if newClientHook
+	isn't defined, accept by default.
+	
+	* server/libvncserver/CHANGES: upd.
+	
+2003-11-03  Mark McLoughlin  <mark@skynet.ie>
+
+	* capplet/vino-preferences.glade: setup the label-for
+	and labelled-by relations.
+
+2003-11-03  Mark McLoughlin  <mark@skynet.ie>
+
+	* capplet/vino-preferences.c: impl. the capplet.
+	
+	* capplet/Makefile.am: build it.
+	
+	* capplet/vino-preferences.glade: add writability warning thing
+	and a label for the password entry.
+	
+	* server/vino-main.c: (main): initialize i18n stuff.
+	
+	* server/vino-prefs.c: (vino_prefs_authentication_methods_changed):
+	check the list consists of strings.
+
+2003-11-01  Mark McLoughlin  <mark@skynet.ie>
+
+	* Makefile.am: build the capplet subdir.
+	
+	* capplet/Makefile.am: install the glade file.
+	
+	* capplet/vino-preferences.glade: glade file for
+	the preferences dialog.
+	
+	* client/java/Makefile.am: install jar file to
+	$(datadir)/gnome/vino
+	
+	* configure.in: require libglade for the capplet.
+
+2003-11-01  Mark McLoughlin  <mark@skynet.ie>
+
+	* client/java/vncviewer/CConn.java:
+	(CConn.CConn): choose a TLS based SecurityType over
+	a non-encrypted type.
+
+2003-11-01  Mark McLoughlin  <mark@skynet.ie>
+
+	* client/java/Makefile.am: put ViewportFrame.class in
+	the jar file.
+	
+	* server/libvncserver/auth.c:
+	(rfbAuthProcessSecurityTypeMessage): actually do something
+	after completing the handshake.
+	
+	* server/libvncserver/sockets.c:
+	(WriteExactOverTls): fix silly buglet.
+
+2003-10-31  Mark McLoughlin  <mark@skynet.ie>
+
+	* client/java/Makefile.am: add rfb/CSecurityTls.java.
+	
+	* client/java/rfb/CSecurityTls.java: implement TLS security
+	handler.
+
+	* client/java/rfb/SecTypes.java: add tlsWithNone and
+	tlsWithVncAuth.
+	
+	* client/java/vncviewer/CConn.java:
+	(CConn.CConn): use tlsWithNone and tlsWithVncAuth.
+	(CConn.init): don't set jis and jos here.
+	(CConn.getCSecurity): handle creating rfb.CSecurityTls.
+	(CConn.serverInit): set jis and jos here after the
+	handshake has completed.
+	
+	* server/libvncserver/auth.c: (rfbAuthTlsHandshake),
+	(rfbAuthCleanupClient): don't crash if the handshake fails.
+
+2003-10-30  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/Makefile.am: distcheck fix.
+
+2003-10-30  Mark McLoughlin  <mark@skynet.ie>
+	
+	* configure.in: check for javac and jar. Output
+	Makefiles.
+
+	* client/java/*: add Java vncview from realVNC.
+
+2003-10-30  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/libvncserver/sockets.c:
+	(ReadExactOverTls), (WriteExactOverTls): imlement
+	reading/writing from/to the TLS stream.
+
+2003-10-30  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: check for gnutls.
+	
+	* server/libvncserver/Makefile.am: build against gnutls.
+	
+	* server/libvncserver/auth.c:
+	(rfbAuthInitScreen), (rfbAuthCleanupScreen): implement
+	global initialisation.
+	(rfbAuthTlsHandshake): implement TLS handshaking.
+	(rfbAuthCleanupClient): impl cleaning up TLS session.
+	(rfbAuthProcessSecurityTypeMessage): initiate a TLS handshake
+	for rfbTlsWithNoAuth and rfbTlsWithVncAuth.
+	
+	* server/libvncserver/main.c: 
+	(rfbGetScreen): init auth params.
+	(rfbScreenCleanup): cleanup auth params.
+	
+	* server/libvncserver/rfb/rfb.h: add anonCredentials and
+	dhParams to rfbScreenInfo and tlsSession and useTls to
+	rfbClientRec. Also add rfbAuthInitScreen, 
+	rfbAuthCleanupScreen and rfbAuthCleanupClient.
+	
+	* server/libvncserver/sockets.c:
+	(rfbCloseClient): cleanup client's auth params.
+	
+	* server/Makefile.am: build against gnutls.
+	
+	* server/vino-main.c,
+	  server/vino-util.[ch]: setup gnutls debugging.
+
+2003-10-30  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/vino-main.c: (main): create a server for each
+	screen.
+	
+	* server/vino-prefs.[ch]:
+	(vino_prefs_create_server): rename from add_server()
+	and set all the properties in one go
+	(vino_prefs_init): split out from add_server() and
+	only honour the view_only preference if the XServer
+	has support for XTest.
+	(vino_prefs_shutdown): unref the servers here.
+	
+	* server/vino-server.[ch]:
+	(vino_server_set_client_on_hold): implement starting an
+	on hold client.
+	(vino_server_update_client_timeout): don't update on
+	hold clients.
+	(vino_server_handle_new_client): put the client on
+	hold if the server is on hold.
+	(vino_server_set_property),
+	(vino_server_get_property), (vino_server_class_init),
+	(vino_server_get_on_hold), (vino_server_set_on_hold):
+	implement the "on-hold" property.
+	(vino_server_update_security_types): impl. setting
+	the security types.
+	(vino_server_set_require_encryption),
+	(vino_server_set_auth_methods): use it here.
+
+	* server/libvncserver/auth.c:
+	(rfbAuthNewClient3_3): only send rfbNoAuth or rfbVncAuth,
+	otherwise error out.
+	
+	* server/libvncserver/main.c:
+	(securityTypeToName): impl for debuggin.
+	(rfbAddSecurityType): add support for encrypted security
+	types.
+	(rfbClearSecurityTypes): don't clear unless there's
+	actually something to clear.
+	
+	* server/libvncserver/rfb/rfbproto.h: add rfbTlsWithNoAuth
+	and rfbTlsWithVncAuth. Not implement yet, though.
+		
+2003-10-30  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/libvncserver/auth.c:
+	(rfbAuthNewClient3_7), (rfbAuthNewClient3_3),
+	(rfbAuthNewClient): implement support for sending the security
+	types list if the client is using version 3.7 of the protocol.
+	(rfbAuthProcessSecurityTypeMessage): complete the security
+	type negotiation.
+	
+	* server/libvncserver/main.c: (rfbAddSecurityType): upd.
+	
+	* server/libvncserver/rfbserver.c: add support for version
+	3.7 of the protocol.
+	
+	* server/libvncserver/rfb/rfb.h: add SECURITY_TYPE state,
+	securityType and minorVersion client members and add
+	rfbProcessClientInitMessage() and
+	rfbAuthProcessSecurityTypeMessage();
+	
+	* server/libvncserver/rfb/rfbproto.h: add details of RFB 3.7.
+	
+	* server/libvncserver/CHANGES: update.
+	
+	* server/vino-prefs.c: (vino_prefs_translate_auth_methods_list):
+	Return VINO_SERVER_NONE if none of the authentication methods
+	are recognised.
+
+2003-10-29  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: add --disable-rebuilds option.
+	
+	* server/Makefile.am: build vino-enums.[ch] with
+	glib-mkenums.
+	
+	* server/vino-prefs.c:
+	(vino_prefs_view_only_changed),
+	(vino_prefs_require_encryption_changed): fix buglets and
+	add debugging.
+	(vino_prefs_translate_auth_methods_list): sometimes its a
+	list of strings. Sometimes its a list of values. Sigh.
+	(vino_prefs_authentication_methods_changed),
+	(vino_prefs_vnc_password_changed): fix buglets and add
+	debugging.
+	(vino_prefs_add_server): monitor the directory so we get
+	notifications, add debugging and initialize the VinoServer
+	with the values we got from GConf.
+	
+	* server/vino-server.c:
+	(vino_server_check_vnc_password): implement VNC authentication.
+	(vino_server_init_from_screen): hook up.
+	(vino_server_finalize): free the password.
+	(vino_server_set_property), (vino_server_get_property),
+	(vino_server_class_init), (vino_server_set_require_encryption),
+	(vino_server_get_require_encryption),
+	(vino_server_set_auth_methods), (vino_server_get_auth_methods),
+	(vino_server_set_vnc_password), (vino_server_get_vnc_password):
+	impl the view-only, require-encryption, auth-methods and
+	vnc-password properties.
+
+	* server/vino-server.h: make 0 and invalid auth method.
+	
+	* server/vino-util.[ch]:
+	(vino_setup_debug_flags): add prefs debug flag.
+	(vino_base64_unencode): add base64 encoding implementation.
+
+	* server/libvncserver/main.c,
+	  server/libvncserver/rfb/rfb.h:
+	(rfbClearSecurityTypes): add function to clear the
+	securityTypes array.
+	
+	* server/libvncserver/rfb/rfbproto.h: make TRUE == 1 to
+	agree with glib's idea of the truth.
+	
+	* server/libvncserver/CHANGES: upd.
+	
+2003-10-29  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/vino-prefs.c:
+	(vino_prefs_add_server), (vino_prefs_shutdown): make
+	it compile.
+	
+	* server/vino-main.c: (main): hook up the prefs.
+	
+	* server/vino-server.[ch]:
+	(vino_server_set_require_encryption),
+	(vino_server_get_require_encryption),
+	(vino_server_set_auth_methods),
+	(vino_server_get_auth_methods),
+	(vino_server_set_vnc_password),
+	(vino_server_get_vnc_password): add stubs for these.
+
+2003-10-29  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/Makefile.am: add vino-prefs.[ch].
+	
+	* server/vino-prefs.[ch]: first cut at implementing
+	preferences handling.
+
+2003-10-29  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: require gconf.
+	
+	* server/vino-server.schemas.in: first draft of
+	configuration schemas.
+	
+	* server/Makefile.am: install the schemas.
+
+2003-10-29  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/libvncserver/rfb/rfb.h: remove rfbAuthPasswdData
+	and rfbAuthPasswdFirstViewOnly from the screen struct.
+	Add securityTypes, nSecurityTypes and rfbAddSecurityType.
+	
+	* server/libvncserver/main.c:
+	(defaultPasswordCheck), (rfbCheckPasswordByList):
+	remove default password checking implementations.
+	(rfbGetScreen): upd.
+	(rfbAddSecurityType): implement.
+	
+	* server/libvncserver/rfb/rfbproto.h: add
+	RFB_MAX_SECURITY_TYPES. Remove vncEncryptAndStorePasswd
+	and vncDecryptPasswdFromFile.
+	
+	* server/libvncserver/vncauth.c:
+	(vncEncryptAndStorePasswd),
+	(vncDecryptPasswdFromFile): remove.
+	
+	* server/libvncserver/auth.c: decide on which
+	authentication method to use using securityTypes.
+
+	* server/libvncserver/CHANGES: upd.
+
+2003-10-29  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/libvncserver/auth.c:
+	* server/libvncserver/rfb/rfb.h:
+	* server/libvncserver/rfbserver.c: remove
+	reverseConnection support.
+
+	* server/libvncserver/CHANGES: upd.
+
+2003-10-29  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/Makefile.am: add vino-cursor.[ch].
+	
+	* server/vino-cursor.[ch]: simple implementation of
+	cursor position and shape monitoring.
+
+	* server/vino-server.c:
+	(vino_server_update_client): update the cursor shape
+	and position.
+	(vino_server_init_from_screen),
+	(vino_server_finalize): initialize and finalize the
+	cursor monitor.
+	
+	* server/libvncserver/cursor.c:
+	(rfbMakeXCursor): take const char *.
+	(rfbDrawCursor): fix indexing bug.
+	(rfbSetCursorPosition): don't unset cursorHasMoved
+	on the client if its NULL.
+	
+	* server/libvncserver/rfb/rfb.h: make rfbMakeXCursor
+	take const char *.
+
+2003-10-29  Mark McLoughlin  <mark@skynet.ie>
+	
+	* server/libvncserver/cursor.c,
+	  server/libvncserver/rfb/rfb.h:
+	(rfbSetCursorPosition): expose function to set the
+	cursor position.
+	
+	* server/libvncserver/main.c: (defaultPtrAddEvent):
+	Use it here.
+	
+	* server/libvncserver/CHANGES: upd.
+
+2003-10-28  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/vino-server.c:
+	(vino_server_handle_client_gone): remove the timeout.
+	(vino_server_update_client): split out from data_pending.
+	(vino_server_client_data_pending): upd.
+	(vino_server_update_client_timeout),
+	(vino_server_handle_new_client): add timeout to periodically
+	update the client.
+	
+2003-10-23  Mark McLoughlin  <mark@skynet.ie>
+
+	Re-work libvncserver's cursor handling so that the cursor
+	is drawn to the frame buffer only for the purpose of
+	sending the FramebufferUpdate message - i.e. we immediately
+	undraw it after updating the client.
+
+	This should simplify things quite a bit - exposing the
+	posibility of the cursor being drawn into the frame buffer
+	made implementing cursor hadnling a lot more complex.
+
+	* server/libvncserver/cursor.c:
+	(rfbGetCursorBounds): split out from draw/undraw and
+	cleanup.
+	(rfbUndrawCursor), (rfbDrawCursor): allow the pre-computed
+	bounds to be passed in. Clean up these functions a lot.
+	(rfbSetCursor): no need to undraw the cursor.
+	
+	* server/libvncserver/main.c: upd. for the fact that
+	the cursor doesn't need to be undrawn and that the
+	enableCursorPosUpdates and enableCursorShapeUpdates
+	flags have been combined.
+	
+	* server/libvncserver/rfb/rfb.h: kill the cursorIsDrawn
+	and dontConvertRichCursorToXCursor ScreenInfo flags.
+	Add a ClientRec member which saves the last region we
+	drew the cursor so that we can update this region with
+	the client when the cursor moves.
+	Combine the ShapeUpdates and PosUpdates flags.
+	Add rfbGetCursorBounds and update rfbDraw/UndrawCursor.
+	Upd. the FB_UPDATE_PENDING macro.
+	
+	* server/libvncserver/rfbserver.c:
+	(rfbProcessClientNormalMessage): combine the enableCursorPosUpdates
+	and enableCursorShapeUpdates flags. We either use support
+	for both or neither.
+	(rfbSendFramebufferUpdate): draw the cursor before sending
+	the update and then undraw it after.
+
+2003-10-22  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/libvncserver/main.c: (rfbGetScreen):
+	* server/libvncserver/rfb/rfb.h:
+	remove unused dontSendFramebufferUpdate flag.
+	
+	* server/libvncserver/rfbserver.c: disable
+	both shape/position updates if support for either
+	is not available.
+
+	* server/libvncserver/CHANGES: upd.
+
+2003-10-22  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: test for the MIT-SHM and XTest
+	extensions. Also include standard "did pango include
+	-lX11?" check.
+	
+	* server/Makefile.am: link against $X_LIBS, $XSHM_LIBS
+	and $XTEST_LIBS.
+	
+	* server/vino-fb.c: compile without XShm.
+	
+	* server/vino-input.[ch]: implement keyboard and pointer
+	event handling.
+	
+	* server/vino-main.c: (main): make the server view-only
+	if XTest isn't supported.
+	
+	* server/vino-server.[ch]:
+	(vino_server_new): add "view-only" flag to constructor.
+	
+	* server/vino-util.[ch]: rename "server" debug flag
+	to "rfb" and add new "input" debug flag.
+
+2003-10-22  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/libvncserver/*: fixup the various hooks and kill
+	the UDP and backchannel crackrock.
+	
+	* server/Makefile.am: add vino-input.[ch].
+
+	* server/vino-input.[ch]: add skeletal input event handling.
+	
+	* server/vino-fb.c: fixup the pre-conditions.
+
+	* server/vino-server.[ch]:
+	(vino_server_handle_pointer_event),
+	(vino_server_handle_clipboard_event),
+	(vino_server_handle_damage_notify),
+	(vino_server_init_from_screen): hook up the input event
+	handling.
+	(vino_server_set_property), (vino_server_get_property),
+	(vino_server_class_init), (vino_server_new),
+	(vino_server_set_view_only),
+	(vino_server_get_view_only): add a "view-only" property.
+
+2003-10-21  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: add a bunch of autoconf crap
+	for libvncserver.
+	
+	* server/Makefile.am: add libvncserver.
+	
+	* server/libvncserver/*: import a copy of libvncserver,
+	hack it up a bit and cut out some stuff we don't need.
+	Changes are documented in the CHANGES file.
+
+2003-10-21  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/vino-fb.c, server/vino-server.c: get it all
+	more or less working, re-factor and cleanup a bit.
+
+2003-10-20  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/Makefile.am: link against libvncserver.
+	
+	* server/vino-main.c: (main): use VinoServer.
+	
+	* server/vino-server.c: flesh out some more.
+	
+	* server/vino-util.[ch]: (vino_setup_debug_flags):
+	Add server debug flags.
+
+2003-10-20  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/Makefile.am: add vinfo-server.[ch] and
+	vinfo-util.c.
+	
+	* server/vino-fb.[ch]: get a first cut of the screen
+	polling going.
+	
+	* server/vino-main.c: test it out.
+	
+	* server/vino-util.[ch]: add debugging foo.
+	
+	* server/vino-server.[ch]: skeletal server object.
+
+2003-10-20  Mark McLoughlin  <mark@skynet.ie>
+
+	* Initial import.

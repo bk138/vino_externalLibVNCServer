@@ -1,0 +1,13 @@
+#include <Bonobo_Unknown.idl>
+
+module GNOME
+{
+  module RemoteDesktop
+  {
+    /* dummy interface */
+    interface Shell : Bonobo::Unknown
+    {
+      void dummy ();
+    };
+  };
+};

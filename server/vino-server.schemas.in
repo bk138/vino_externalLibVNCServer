@@ -1,0 +1,123 @@
+<gconfschemafile>
+  <schemalist>
+
+    <schema>
+      <key>/schemas/desktop/gnome/remote_access/enabled</key>
+      <applyto>/desktop/gnome/remote_access/enabled</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+         <short>Enable remote desktop access</short>
+         <long>
+           If true, allows remote access to the desktop via the
+           RFB protocol. Users on remote machines may then
+           connect to the desktop using a vncviewer.
+         </long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/desktop/gnome/remote_access/prompt_enabled</key>
+      <applyto>/desktop/gnome/remote_access/prompt_enabled</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+         <short>Prompt the user before completing a connection</short>
+         <long>
+           If true, remote users accessing the desktop are not
+           allowed access until the user on the host machine
+           approves the connection. Recommended especially when
+           access is not password protected.
+         </long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/desktop/gnome/remote_access/view_only</key>
+      <applyto>/desktop/gnome/remote_access/view_only</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+         <short>Only allow remote users to view the desktop</short>
+         <long>
+           If true, remote users accessing the desktop are only
+           allowed to view the desktop. Remote user's will not
+           be able to use the mouse or keyboard.
+         </long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/desktop/gnome/remote_access/require_encryption</key>
+      <applyto>/desktop/gnome/remote_access/require_encryption</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+         <short>Require encryption</short>
+         <long>
+           If true, remote users accessing the desktop are required
+           to be able support encyrption. It is highly recommended
+           that you use a client which supports encryption unless the
+           intervening network is trusted.
+         </long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/desktop/gnome/remote_access/authentication_methods</key>
+      <applyto>/desktop/gnome/remote_access/authentication_methods</applyto>
+      <owner>gnome</owner>
+      <type>list</type>
+      <list_type>string</list_type>
+      <default>[none]</default>
+      <locale name="C">
+         <short>Allowed authentication methods</short>
+         <long>
+           Lists the authentication methods with which remote users
+           may access the desktop. There are two possible authentication
+           methods; "vnc" causes the remote user to be prompted for
+           a password (the password is specified by the vnc_password
+           key) before connecting and "none" which allows any remote
+           user to connect.
+         </long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/desktop/gnome/remote_access/vnc_password</key>
+      <applyto>/desktop/gnome/remote_access/vnc_password</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <default></default>
+      <locale name="C">
+         <short>Password required for "vnc" authentication</short>
+         <long>
+           The password which the remote user will be prompted for
+           if the "vnc" authentication method is used. The password
+           specified by the key is base64 encoded.
+         </long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/desktop/gnome/remote_access/mailto</key>
+      <applyto>/desktop/gnome/remote_access/mailto</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <default></default>
+      <locale name="C">
+         <short>E-mail address to which the remote desktop URL should be sent</short>
+         <long>
+           This key specifies the e-mail address to which the remote
+           desktop URL should be sent if the user clicks on the URL
+           in the Remote Desktop preferences dialog.
+         </long>
+      </locale>
+    </schema>
+
+  </schemalist>  
+</gconfschemafile>

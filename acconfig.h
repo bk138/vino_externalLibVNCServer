@@ -1,0 +1,6 @@
+#undef PACKAGE
+#undef VERSION
+#undef HAVE_GETTEXT
+#undef GETTEXT_PACKAGE
+#undef HAVE_XSHM
+#undef HAVE_XTEST

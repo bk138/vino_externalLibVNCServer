@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+_Name=Remote Desktop
+_Comment=Set your remote desktop access preferences
+Exec=vino-preferences
+Icon=gnome-remote-desktop.png
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GNOME;Application;Settings;

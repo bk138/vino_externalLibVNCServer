@@ -1,0 +1,79 @@
+Vino 0.12
+=========
+
+  Server
+
+    + Don't leave the client on hold after user accepts them (Leena Gunda)
+
+  Preferences Dialog
+
+    + Display the correct hostname in the URL (Mark)
+
+Vino 0.11
+=========
+
+  Server
+
+    + Fix inefficiency when clients are on hold
+    + After an unsuccessful authentication attempt, defer the next one for 5 seconds
+    + Use libgcrypt to generate a wholly unpredictable challenge
+    + Properly manage the prompt dialog when multiple clients connect
+
+
+  Preferences Dialog
+
+    + Fix some mnemonic conflicts
+    + Put HTTP URL for the server in the dialog based on Calum's feedback
+
+Vino 0.10
+=========
+
+  Server
+
+    + Implement a HTTP server which returns a web page with the applet
+    + Handle RandR screen size changes
+    + Register with bonobo-activation-server to support activation
+    + Don't poll the screen/pointer unless a client is connected
+    + Fix cursor updates for clients that don't support CursorShape encoding
+    + Re-do the prompt dialog incorporating suggestions from Calum
+    + Fix problem with blocking during the TLS handshake
+
+  Preferences Dialog
+
+    + Completely new look designed by Calum
+    + Add back the "Allow encrypted connections" preference
+
+  Client
+
+    + Support 24-bit color instead of 8-bit color
+    + Focus the window on startup
+    + Show the security type in the info dialog
+    + Make the applet draw our icon instead of a RealVNC blurb
+
+  Misc
+
+    + Add a session managed client to handle activating the server
+
+Vino 0.9
+========
+
+  Server
+
+    + VNC server based on the same concepts as x0rfbserver, krfb etc.
+    + TLS/SSL support for encrypted communication
+    + Preferences in GConf
+    + User may authorize each connection individually
+    + Uses GTK+, GDK, GObject and glib
+
+  Preferences Dialog
+
+    + GNOME HIG compliant preferences dialog
+
+  Client
+
+    + Java client from RealVNC's distribution
+    + Support for TLS/SSL
+
+
+
+

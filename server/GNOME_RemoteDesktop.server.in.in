@@ -1,0 +1,17 @@
+<oaf_info>
+
+  <oaf_server iid="OAFIID:GNOME_RemoteDesktopServer"
+              type="exe"
+              location="@LIBEXECDIR@/vino-server">
+
+    <oaf_attribute name="repo_ids" type="stringv">
+      <item value="IDL:GNOME/RemoteDesktop/Shell:1.0"/>
+      <item value="IDL:Bonobo/Unknown:1.0"/>
+    </oaf_attribute>
+
+    <oaf_attribute name="name" type="string" value="Remote Desktop Server"/>
+    <oaf_attribute name="description" type="string" value="Remote Desktop Server"/>
+
+  </oaf_server>
+
+</oaf_info>

@@ -1,0 +1,15 @@
+.deps
+.libs
+Makefile
+Makefile.in
+vino-server
+vino-server.schemas
+vino-enums.[ch]
+vino-marshal.[ch]
+GNOME_RemoteDesktop.server.in
+GNOME_RemoteDesktop.server
+GNOME_RemoteDesktop.h
+GNOME_RemoteDesktop-skels.c
+GNOME_RemoteDesktop-common.c
+*.gladep
+*~

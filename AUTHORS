@@ -1,0 +1,18 @@
+Mark McLoughlin  <mark@skynet.ie>
+Calum Benson <calum.benson@sun.com>
+
+
+This is just another re-incarnation of many other similar projects:
+
+ + libvncserver by Johannes E. Schindelin
+     which in turn is based on:
+       - OSXvnc by Dan McGuirk
+       - The original Xvnc by AT&T Laboratories, Cambridge
+       - TightVNC by Const Kaplinsky
+       - RealVNC by James "Wez" Weatherall
+     
+ + krfb, KDE's desktop sharing server, by Tim Jansen
+ + x11vnc.c (from libvncserver) by Karl J. Runge
+ + x0rfbserver, the original native X vnc server, by Jens Wagner
+
+Much code and ideas from each of those projects is re-used here.

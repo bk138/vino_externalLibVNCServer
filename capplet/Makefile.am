@@ -1,0 +1,41 @@
+NULL =
+
+INCLUDES = \
+	-I$(top_srcdir)/cut-n-paste/screen-exec \
+	-DVINO_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"  \
+	-DVINO_GLADEDIR=\""$(datadir)/gnome/vino"\" \
+	-DVINO_ICONDIR=\""$(datadir)/pixmaps\"" \
+	$(VINO_CAPPLET_CFLAGS) \
+	$(WARN_CFLAGS) \
+	$(NULL)
+
+bin_PROGRAMS = vino-preferences
+
+vino_preferences_SOURCES = \
+	vino-preferences.c \
+	vino-url.c \
+	vino-url.h \
+	$(NULL)
+vino_preferences_LDADD = \
+	$(VINO_CAPPLET_LIBS) \
+	$(X_LIBS) \
+	$(top_builddir)/cut-n-paste/screen-exec/libscreen-exec.la \
+	$(NULL)
+
+gladedir   = $(datadir)/gnome/vino
+glade_DATA = vino-preferences.glade
+
+desktopdir       = $(datadir)/control-center-2.0/capplets
+desktop_in_files = vino-preferences.desktop.in
+desktop_DATA     = $(desktop_in_files:.desktop.in=.desktop)
+
+@INTLTOOL_DESKTOP_RULE@
+
+CLEANFILES = \
+	vino-preferences.desktop \
+	$(NULL)
+
+EXTRA_DIST = \
+	vino-preferences.glade \
+	vino-preferences.desktop.in \
+	$(NULL)

@@ -1,0 +1,10 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+capplet/vino-preferences.desktop.in
+capplet/vino-preferences.glade
+server/vino-fb.c
+server/vino-main.c
+server/vino-prompt.c
+server/vino-server.c
+server/vino-server.schemas.in
+server/vino-util.c

@@ -1,0 +1,126 @@
+
+ + Broken out rfbProcessNewConnection() from rfbCheckFds()
+   (basically the chunk of code that begins with accept()
+   and ends with rfbNewClient) and rfbUpdateClient from
+   rfbProcessEvents (the code between FB_UPDATE_PENDING
+   and rfbSendFrameBufferUpdate). This is for mainloop
+   integration.
+
+ + Added support for version 3.7 of the RFB protocol. The
+   only difference between 3.7 and 3.3 is security type
+   negotiation.
+
+ + Removed the default password checking implementations
+   along with the password storage imeplementation.
+   Add a securityTypes array (and functions to initialize it)
+   instead of doing the challenge-response if rfbAuthPasswdData
+   is non-NULL.
+
+ + Added the rfbTlsWithNoAuth and rfbTlsWithVncAuth security
+   types which cause a TLS handshake to be negotiated
+   immediately after the security type is agreed upon. TLS
+   support is added using libgnutls.
+
+ + Changed vncRandomBytes to use libgcrypt's
+   cryptographically strong random number generator to
+   ensure the challenge is wholly unpredictable reducing the
+   risk of a replay attack.
+
+ + Added a authenticatedClientHook hook so that the user can
+   be prompted on whether to allow authenticated clients to
+   connect. A second level of authentication.
+
+ + Removed defaultNewClientHook and made accept new clients
+   by default.
+
+ + Made TRUE == 1 to agree with glib's idea of the truth.
+
+ + Completely re-worked cursor handling such that the fact
+   that the cursor is sometimes drawn on the frame buffer
+   is not exposed in the API. The cursor is undrawn
+   immediately after sending the update to the client.
+
+ + Warning fixes:
+     o killed rfbPrintXCursor() - not used
+     o put rfbIncrClientRef(), rfbIncrClientRef() and
+       rfbClientIteratorHead() into rfb/rfb.h. They weren't
+       put there originally because they're "private", but
+       there's loads of private stuff there already. Fixes
+       "no previous prototype" warnings.
+     o Renamed TightCleanup to rfbTightCleanup and put it
+       into rfb/rfb.h for the same reason.
+     o made rfbDefaultLog() static.
+     o Made a load of sraSpan functions static.
+     o Killed sraSpanCheck() - unused.
+     o Removed unused addr, addrlen and buf variables from
+       rfbCheckFds().
+     o Made rfbSendOneRectEncodingZlib() static.
+     o Made ZRLE_ENCODE_TILE and ZRLE_ENCODE template functions
+       static.
+     o Added "void" to the sraRgnCreate so it gets recognised
+       as a valid prototype.
+
+ + Added rfbSetCursorPosition and used it in defaultPtrAddEvent.
+
+ + Made rfbMakeXCursor take const char *.
+
+ + Removed all the UDP code. The comment said:
+
+"
+UDP can be used for keyboard and pointer events when the underlying
+network is highly reliable.  This is really here to support ORL's
+videotile, whose TCP implementation doesn't like sending lots of small
+packets (such as 100s of pen readings per second!).
+"
+
+   we obviously don't need it.
+
+ + Removed reverseConnection and CORBA support.
+
+ + Removed the back channel support.
+
+ + Removed dontSendFramebufferUpdate and comment - must be remnants
+   of Xvnc.
+
+ + Disable support for shape updates when there is no support
+   for position updates. Position updates were already disabled
+   if shape updates aren't supported.
+
+ + Don't call clientGoneHook if its NULL and don't initialize
+   clientGoneHook to a doNothing function.
+
+ + Removed all references to the kbdReleaseAllKeys hook. Its
+   not used.
+
+ + Removed doNothingWithClient.
+
+ + Removed the setTranslateFunction hook and always call
+   rfbSetTranslateFunction().
+
+ + Removed the getCursorPtr hook and always just use
+   screen->cursor.
+
+ + Removed displayHook.
+
+ + Removed defaultKbdAddEvent and handled NULL for
+   kbdAddEvent. Same for setXCutText.
+
+ + removed the LIBVNCSERVER prefix from all the #ifdefs
+
+ + left all the threaded code disabled (LIBVNCSERVER_HAVE_LIBPTHREAD
+   is undefined)
+
+ + disabled the rfbInitServer name mangling in rfb/rfb.h
+
+ + disabled include rfbconfig.h and rfbint.h from rfbproto.h
+
+ + removed the conditional defines of encoding types in rfbproto.h.
+   They should always be defined.
+
+ + removed LIBVNCSERVER_ALLOW24BPP - always enabled.
+
+ + removed all the http server crackrock.
+
+ + removed font.c, draw.c and selbox.c.
+
+ + removed cargs.c.
