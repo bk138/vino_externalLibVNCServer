@@ -2,21 +2,21 @@
 # Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the vino package.
 # Gareth Owen <gowen72@yahoo.com>, 2004.
-#
+# 
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-21 14:42+0100\n"
-"PO-Revision-Date: 2004-06-02 20:45-0400\n"
+"POT-Creation-Date: 2004-07-24 13:46+0100\n"
+"PO-Revision-Date: 2004-07-24 13:47+0100\n"
 "Last-Translator: Gareth Owen <gowen72@yahoo.com>\n"
-"Language-Team: \n"
+"Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
 #: capplet/vino-preferences.c:809
-#, fuzzy
 msgid "Send this command by email"
 msgstr "Send this web address by email"
 
@@ -65,9 +65,8 @@ msgid "Some of these preferences are locked down"
 msgstr "Some of these preferences are locked down"
 
 #: capplet/vino-preferences.glade.h:10
-#, fuzzy
 msgid "Users can view your desktop using this command:"
-msgstr "Users can view your desktop at this web address:"
+msgstr "Users can view your desktop using this command:"
 
 #: capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
