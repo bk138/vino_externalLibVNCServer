@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-30 07:11+0000\n"
+"POT-Creation-Date: 2005-03-29 05:03+0200\n"
 "PO-Revision-Date: 2004-08-03 13:50+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <gnome@gnome.hu>\n"
@@ -214,11 +214,11 @@ msgstr "A klienseknek titkosítást kell használniuk"
 
 #: server/vino-server.c:891
 msgid "Authentication methods"
-msgstr "Azonosítási módok"
+msgstr "Hitelesítési eljárások"
 
 #: server/vino-server.c:892
 msgid "The authentication methods this server should allow"
-msgstr "Ezen kiszolgáló által engedélyezett azonosítási módok"
+msgstr "Ezen kiszolgáló által engedélyezett hitelesítési eljárások"
 
 #: server/vino-server.c:900
 msgid "VNC Password"
@@ -229,12 +229,12 @@ msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
 msgstr ""
-"A VncAuth eljárást használó azonosítási módokhoz használt (base64 kódolású) "
+"A VncAuth eljárást használó hitelesítési eljárásokhoz használt (base64 kódolású) "
 "jelszó"
 
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
-msgstr "Engedélyezett azonosítási módok"
+msgstr "Engedélyezett hitelesítési eljárások"
 
 #: server/vino-server.schemas.in.h:2
 msgid "E-mail address to which the remote desktop URL should be sent"
@@ -290,8 +290,8 @@ msgid ""
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
 msgstr ""
-"Felsorolja azokat az azonosítási eljárásokat, amelyekkel a távoli "
-"felhasználók kapcsolódhatnak a munkaasztalhoz. Két lehetséges azonosítási "
+"Felsorolja azokat a hitelesítési eljárásokat, amelyekkel a távoli "
+"felhasználók kapcsolódhatnak a munkaasztalhoz. Két lehetséges hitelesítési "
 "eljárás létezik, a \"vnc\" hatására a távoli felhasználónak kapcsolódás "
 "előtt meg kell adnia a vnc_password kulcsban lévő jelszót, illetve a \"none"
 "\", (nincs) mely bárki számára lehetővé teszi a kapcsolódást."
@@ -302,7 +302,7 @@ msgstr "A távoli felhasználók csak megnézhetik a munkaasztalt"
 
 #: server/vino-server.schemas.in.h:10
 msgid "Password required for \"vnc\" authentication"
-msgstr "A \"vnc\" azonosításhoz szükséges jelszó"
+msgstr "A \"vnc\" hitelesítéshez szükséges jelszó"
 
 #: server/vino-server.schemas.in.h:11
 msgid "Prompt the user before completing a connection"
@@ -318,7 +318,7 @@ msgid ""
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
 msgstr ""
-"A távoli felhasználótól kért jelszó a \"vnc\" azonosítási eljárás "
+"A távoli felhasználótól kért jelszó a \"vnc\" hitelesítési eljárás "
 "használatakor. A kulcs által tartalmazott jelszó base64 kódolású."
 
 #: server/vino-server.schemas.in.h:14
