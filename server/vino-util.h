@@ -42,7 +42,9 @@ typedef enum
   VINO_DEBUG_RFB     = 1 << 1,
   VINO_DEBUG_INPUT   = 1 << 2,
   VINO_DEBUG_PREFS   = 1 << 3,
+#ifdef HAVE_GNUTLS
   VINO_DEBUG_TLS     = 1 << 4,
+#endif
   VINO_DEBUG_PROMPT  = 1 << 5,
   VINO_DEBUG_HTTP    = 1 << 6
 } VinoDebugFlags;

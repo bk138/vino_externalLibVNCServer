@@ -1,5 +1,23 @@
 2004-07-12  Mark McLoughlin  <mark@skynet.ie>
 
+	Support building without GNU TLS.
+
+	* configure.in: only warn if gnutls or libgcrypt isn't
+	found.
+	
+	* server/libvncserver/auth.c,
+	  server/libvncserver/main.c,
+	  server/libvncserver/rfb/rfb.h,
+	  server/libvncserver/rfb/rfbproto.h,
+	  server/libvncserver/rfbserver.c,
+	  server/libvncserver/sockets.c,
+	  server/libvncserver/vncauth.c,
+	  server/vino-main.c,
+	  server/vino-server.c,
+	  server/vino-util.[ch]: add a bunch of #ifdef HAVE_GNUTLS.
+
+2004-07-12  Mark McLoughlin  <mark@skynet.ie>
+
 	* server/vino-server.schemas.in: by default don't require
 	clients which support encryption.
 

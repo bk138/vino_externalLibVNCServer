@@ -1029,7 +1029,9 @@ vino_server_update_security_types (VinoServer *server)
   rfbClearSecurityTypes (server->priv->rfb_screen);
   rfbClearAuthTypes (server->priv->rfb_screen);
 
+#ifdef HAVE_GNUTLS
   rfbAddSecurityType (server->priv->rfb_screen, rfbTLS);
+#endif
       
   if (server->priv->auth_methods & VINO_AUTH_VNC)
     {

@@ -335,6 +335,7 @@ rfbConnect(rfbScreen, host, port)
     return sock;
 }
 
+#ifdef HAVE_GNUTLS
 static int
 ReadExactOverTLS(rfbClientPtr cl, char* buf, int len, int timeout)
 {
@@ -360,6 +361,7 @@ ReadExactOverTLS(rfbClientPtr cl, char* buf, int len, int timeout)
 
     return 1;
 }
+#endif /* HAVE_GNUTLS */
 
 /*
  * ReadExact reads an exact number of bytes from a client.  Returns 1 if
@@ -375,8 +377,10 @@ ReadExactTimeout(rfbClientPtr cl, char* buf, int len, int timeout)
     fd_set fds;
     struct timeval tv;
 
+#ifdef HAVE_GNUTLS
     if (cl->useTLS)
 	return ReadExactOverTLS(cl, buf, len, timeout);
+#endif
 
     while (len > 0) {
         n = read(sock, buf, len);
@@ -424,6 +428,7 @@ int ReadExact(rfbClientPtr cl,char* buf,int len)
   return(ReadExactTimeout(cl,buf,len,rfbMaxClientWait));
 }
 
+#ifdef HAVE_GNUTLS
 static int
 WriteExactOverTLS(rfbClientPtr cl, const char* buf, int len)
 {
@@ -453,6 +458,7 @@ WriteExactOverTLS(rfbClientPtr cl, const char* buf, int len)
 
     return 1;
 }
+#endif /* HAVE_GNUTLS */
 
 /*
  * WriteExact writes an exact number of bytes to a client.  Returns 1 if
@@ -469,8 +475,10 @@ WriteExact(rfbClientPtr cl, const char* buf, int len)
     struct timeval tv;
     int totalTimeWaited = 0;
 
+#ifdef HAVE_GNUTLS
     if (cl->useTLS)
 	return WriteExactOverTLS(cl, buf, len);
+#endif
 
     LOCK(cl->outputMutex);
     while (len > 0) {

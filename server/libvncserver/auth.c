@@ -31,6 +31,7 @@
 void
 rfbAuthInitScreen(rfbScreenInfoPtr rfbScreen)
 {
+#ifdef HAVE_GNUTLS
 #define DH_BITS 1024
 
     gnutls_global_init();
@@ -44,18 +45,22 @@ rfbAuthInitScreen(rfbScreenInfoPtr rfbScreen)
 				     rfbScreen->dhParams);
 
 #undef DH_BITS
+#endif /* HAVE_GNUTLS */
 }
 
 void
 rfbAuthCleanupScreen(rfbScreenInfoPtr rfbScreen)
 {
+#ifdef HAVE_GNUTLS
     gnutls_dh_params_deinit(rfbScreen->dhParams);
 
     gnutls_anon_free_server_credentials(rfbScreen->anonCredentials);
   
     gnutls_global_deinit();
+#endif /* HAVE_GNUTLS */
 }
 
+#ifdef HAVE_GNUTLS
 static rfbBool
 rfbAuthTLSHandshake(rfbClientPtr cl)
 {
@@ -90,6 +95,7 @@ rfbAuthTLSHandshake(rfbClientPtr cl)
 
     return TRUE;
 }
+#endif /* HAVE_GNUTLS */
 
 static rfbBool
 rfbAuthClientAuthenticated(rfbClientPtr cl)
@@ -198,6 +204,7 @@ rfbAuthNewClient(rfbClientPtr cl)
 void
 rfbAuthCleanupClient(rfbClientPtr cl)
 {
+#ifdef HAVE_GNUTLS
     if (cl->tlsSession) {
 	if (cl->sock)
 	    gnutls_bye(cl->tlsSession, GNUTLS_SHUT_WR);
@@ -205,6 +212,7 @@ rfbAuthCleanupClient(rfbClientPtr cl)
 	gnutls_deinit(cl->tlsSession);
 	cl->tlsSession = NULL;
     }
+#endif /* HAVE_GNUTLS */
 }
 
 static void
@@ -255,11 +263,13 @@ rfbAuthProcessSecurityTypeMessage(rfbClientPtr cl)
     }
 
     switch (securityType) {
+#ifdef HAVE_GNUTLS
     case rfbTLS:
 	if (!rfbAuthTLSHandshake(cl))
 	    return;
 	rfbAuthListAuthTypes(cl);
 	break;
+#endif
     case rfbVncAuth:
         vncRandomBytes(cl->authChallenge);
 	if (WriteExact(cl, (char *)&cl->authChallenge, CHALLENGESIZE) < 0) {
@@ -280,6 +290,7 @@ rfbAuthProcessSecurityTypeMessage(rfbClientPtr cl)
     }
 }
 
+#ifdef HAVE_GNUTLS
 void
 rfbAuthProcessTLSHandshake(rfbClientPtr cl)
 {
@@ -301,6 +312,7 @@ rfbAuthProcessTLSHandshake(rfbClientPtr cl)
 
     rfbAuthListAuthTypes(cl);
 }
+#endif /* HAVE_GNUTLS */
 
 void
 rfbAuthProcessAuthTypeMessage(rfbClientPtr cl)

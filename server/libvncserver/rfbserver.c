@@ -428,9 +428,11 @@ rfbProcessClientMessage(cl)
     case RFB_SECURITY_TYPE:
 	rfbAuthProcessSecurityTypeMessage(cl);
 	return;
+#ifdef HAVE_GNUTLS
     case RFB_TLS_HANDSHAKE:
 	rfbAuthProcessTLSHandshake(cl);
 	return;
+#endif
     case RFB_AUTH_TYPE:
 	rfbAuthProcessAuthTypeMessage(cl);
 	return;

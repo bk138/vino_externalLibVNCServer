@@ -111,7 +111,9 @@ AC_SUBST(BONOBO_IDLDIR)
 #
 # Check for gnutls
 #
-AM_PATH_LIBGNUTLS(0.9.8,, AC_MSG_ERROR([[
+AM_PATH_LIBGNUTLS(1.0.0,
+	          [AC_DEFINE(HAVE_GNUTLS)],
+                  AC_MSG_WARN([[
 ***
 *** libgnutls was not found. You may want to get it from
 *** ftp://ftp.gnutls.org/pub/gnutls/
@@ -120,7 +122,9 @@ AM_PATH_LIBGNUTLS(0.9.8,, AC_MSG_ERROR([[
 #
 # Check for gcrypt
 #
-AM_PATH_LIBGCRYPT(1.1.43,, AC_MSG_ERROR([[
+AM_PATH_LIBGCRYPT(1.1.90,
+                  [AC_DEFINE(HAVE_GCRYPT)],
+                  AC_MSG_WARN([[
 ***
 *** libgcrypt was not found. You may want to get it from
 *** ftp://ftp.gnupg.org/pub/gcrypt/alpha/libgcrypt/

@@ -24,7 +24,9 @@
 #include <rfb/rfbproto.h>
 #include "d3des.h"
 
+#ifdef HAVE_GCRYPT
 #include <gcrypt.h>
+#endif
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
@@ -42,7 +44,21 @@
 void
 vncRandomBytes(unsigned char *bytes)
 {
+#ifdef HAVE_GCRYPT
     gcry_randomize(bytes, CHALLENGESIZE, GCRY_STRONG_RANDOM);
+#else
+    int i;
+    static rfbBool s_srandom_called = FALSE;
+
+    if (!s_srandom_called) {
+      srandom((unsigned int)time(0) ^ (unsigned int)getpid());
+      s_srandom_called = TRUE;
+    }
+
+    for (i = 0; i < CHALLENGESIZE; i++) {
+      bytes[i] = (unsigned char)(random() & 255);
+    }
+#endif /* HAVE_GCRYPT */
 }
 
 

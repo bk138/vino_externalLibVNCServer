@@ -37,7 +37,9 @@ extern "C"
 #include <string.h>
 #include <rfb/rfbproto.h>
 #include <rfb/rfbregion.h>
+#ifdef HAVE_GNUTLS
 #include <gnutls/gnutls.h>
+#endif
 
 #ifdef HAVE_SYS_TYPES_H
 #include <sys/types.h>
@@ -185,8 +187,10 @@ typedef struct _rfbScreenInfo
     int authTypes[RFB_MAX_N_AUTH_TYPES];
     int nAuthTypes;
     PasswordCheckProcPtr passwordCheck;
+#ifdef HAVE_GNUTLS
     gnutls_anon_server_credentials anonCredentials;
     gnutls_dh_params dhParams;
+#endif
 
     /* send only this many rectangles in one update */
     int maxRectsPerUpdate;
@@ -265,8 +269,10 @@ typedef struct _rfbClientRec {
     ClientGoneHookPtr clientGoneHook;
 
     SOCKET sock;
+#ifdef HAVE_GNUTLS
     gnutls_session tlsSession;
     rfbBool useTLS;
+#endif
     char *host;
 
 #ifdef LIBVNCSERVER_HAVE_LIBPTHREAD
@@ -276,7 +282,9 @@ typedef struct _rfbClientRec {
     enum {
         RFB_PROTOCOL_VERSION,   /* establishing protocol version */
         RFB_SECURITY_TYPE,      /* negotiating security type */
+#ifdef HAVE_GNUTLS
 	RFB_TLS_HANDSHAKE,      /* completing the TLS handshake */
+#endif
 	RFB_AUTH_TYPE,          /* negotiating authentication type */
         RFB_AUTHENTICATION,     /* authenticating */
         RFB_AUTH_DEFERRED,      /* authentication deferred */
@@ -535,7 +543,9 @@ extern void rfbAuthCleanupClient(rfbClientPtr cl);
 extern void rfbAuthProcessSecurityTypeMessage(rfbClientPtr cl);
 extern void rfbAuthProcessAuthTypeMessage(rfbClientPtr cl);
 extern void rfbAuthProcessClientMessage(rfbClientPtr cl);
+#ifdef HAVE_GNUTLS
 extern void rfbAuthProcessTLSHandshake(rfbClientPtr cl);
+#endif
 extern void rfbAuthPasswordChecked(rfbClientPtr cl, enum rfbNewClientAction result);
 
 

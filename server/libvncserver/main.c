@@ -718,8 +718,10 @@ securityTypeToName(int securityType)
 	return "No Authentication";
     case rfbVncAuth:
 	return "VNC Authentication";
+#ifdef HAVE_GNUTLS
     case rfbTLS:
 	return "TLS";
+#endif
     default:
 	return "unknown";
     }
@@ -736,7 +738,9 @@ void rfbAddSecurityType(rfbScreenInfoPtr rfbScreen, int securityType)
     switch (securityType) {
     case rfbNoAuth:
     case rfbVncAuth:
+#ifdef HAVE_GNUTLS
     case rfbTLS:
+#endif
 	rfbScreen->securityTypes[rfbScreen->nSecurityTypes] = securityType;
 	rfbScreen->nSecurityTypes++;
 	break;

@@ -39,7 +39,9 @@ vino_setup_debug_flags (void)
       { "rfb",     VINO_DEBUG_RFB },
       { "input",   VINO_DEBUG_INPUT },
       { "prefs",   VINO_DEBUG_PREFS },
+#ifdef HAVE_GNUTLS
       { "tls",     VINO_DEBUG_TLS },
+#endif
       { "prompt",  VINO_DEBUG_PROMPT },
       { "http",    VINO_DEBUG_HTTP}
     };
