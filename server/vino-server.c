@@ -34,6 +34,7 @@
 #include "vino-prompt.h"
 #include "vino-util.h"
 #include "vino-enums.h"
+#include <sys/poll.h>
 
 /* If an authentication attempt failes, delay the next
  * authentication attempt for 5 seconds.
@@ -232,6 +233,14 @@ vino_server_set_client_on_hold (VinoServer            *server,
     }
 }
 
+static inline gboolean
+more_data_pending (int fd)
+{
+  struct pollfd pollfd = { fd, POLLIN|POLLPRI, 0 };
+
+  return poll (&pollfd, 1, 0) == 1;
+}
+
 static gboolean
 vino_server_client_data_pending (GIOChannel   *source,
 				 GIOCondition  condition,
@@ -240,7 +249,9 @@ vino_server_client_data_pending (GIOChannel   *source,
   if (rfb_client->onHold)
     return TRUE;
 
-  rfbProcessClientMessage (rfb_client);
+  do {
+    rfbProcessClientMessage (rfb_client);
+  } while (more_data_pending (rfb_client->sock));
   
   return vino_server_update_client (rfb_client);
 }

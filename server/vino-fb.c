@@ -78,6 +78,9 @@ struct _VinoFBPrivate
   guint            update_timeout;
 
 #ifdef HAVE_XDAMAGE
+  GdkRegion       *pending_damage;
+  guint            damage_idle_handler;
+
   Damage           xdamage;
   int              xdamage_notify_event;
   XserverRegion    xdamage_region;
@@ -452,6 +455,14 @@ static void
 vino_fb_finalize_xdamage (VinoFB *vfb)
 {
 #ifdef HAVE_XDAMAGE
+  if (vfb->priv->damage_idle_handler)
+    g_source_remove (vfb->priv->damage_idle_handler);
+  vfb->priv->damage_idle_handler = 0;
+
+  if (vfb->priv->pending_damage)
+    gdk_region_destroy (vfb->priv->pending_damage);
+  vfb->priv->pending_damage = NULL;
+
   if (vfb->priv->fb_pixmap)
     XFreePixmap (vfb->priv->xdisplay, vfb->priv->fb_pixmap);
   vfb->priv->fb_pixmap = None;
@@ -534,6 +545,97 @@ vino_fb_screen_size_changed (VinoFB    *vfb,
 }
 
 #ifdef HAVE_XDAMAGE
+
+static gboolean
+vino_fb_xdamage_idle_handler (VinoFB *vfb)
+{
+  GdkRectangle *damage = NULL;
+  XRectangle    xdamage;
+  int           n_rects;
+  int           error;
+
+  g_assert (!gdk_region_empty (vfb->priv->pending_damage));
+
+  gdk_region_get_rectangles (vfb->priv->pending_damage, &damage, &n_rects);
+
+  xdamage.x      = damage->x;
+  xdamage.y      = damage->x;
+  xdamage.width  = damage->x;
+  xdamage.height = damage->x;
+
+  dprintf (POLLING, "Updating damaged region in idle: %d %d %dx%d\n",
+	   damage->x, damage->y, damage->width, damage->height);
+
+  gdk_error_trap_push ();
+
+  /* Copy the damaged pixels from the server */
+  XCopyArea (vfb->priv->xdisplay,
+	     GDK_WINDOW_XWINDOW (vfb->priv->root_window),
+	     vfb->priv->fb_pixmap,
+	     vfb->priv->xdamage_copy_gc,
+	     damage->x,
+	     damage->y,
+	     damage->width,
+	     damage->height,
+	     damage->x,
+	     damage->y);
+  XSync (vfb->priv->xdisplay, False);
+
+  if ((error = gdk_error_trap_pop ()))
+    {
+#ifdef G_ENABLE_DEBUG
+      char error_text [64];
+
+      XGetErrorText (vfb->priv->xdisplay, error, error_text, 63);
+
+      g_warning ("Received a '%s' X Window System error while copying damaged pixels",
+		 error_text);
+      g_warning ("Failed image = %d, %d %dx%d - screen = %dx%d",
+		 damage->x,
+		 damage->y,
+		 damage->width,
+		 damage->height,
+		 gdk_screen_get_width (vfb->priv->screen),
+		 gdk_screen_get_height (vfb->priv->screen));
+#endif
+      goto out;
+    }
+
+  /* add damage to our region */
+  if (vfb->priv->damage_region)
+    gdk_region_union_with_rect (vfb->priv->damage_region, damage);
+  else
+    vfb->priv->damage_region = gdk_region_rectangle (damage);
+
+  /* subtract damage from server */
+  XFixesSetRegion (vfb->priv->xdisplay, vfb->priv->xdamage_region, &xdamage, 1);
+  XDamageSubtract (vfb->priv->xdisplay,
+		   vfb->priv->xdamage,
+		   vfb->priv->xdamage_region,
+		   None);
+
+  emit_damage_notify (vfb);
+
+ out:
+  {
+    GdkRegion *tmp;
+
+    tmp = gdk_region_rectangle (damage);
+    gdk_region_subtract (vfb->priv->pending_damage, tmp);
+    gdk_region_destroy (tmp);
+  }
+
+  g_free (damage);
+
+  if (gdk_region_empty (vfb->priv->pending_damage))
+    {
+      vfb->priv->damage_idle_handler = 0;
+      return FALSE;
+    }
+
+  return TRUE;
+}
+
 static GdkFilterReturn
 vino_fb_xdamage_event_filter (GdkXEvent *xevent,
 			      GdkEvent  *event,
@@ -542,7 +644,6 @@ vino_fb_xdamage_event_filter (GdkXEvent *xevent,
   XEvent             *xev = (XEvent *) xevent;
   XDamageNotifyEvent *notify;
   GdkRectangle        damage;
-  int                 error;
 
   if (xev->type != vfb->priv->xdamage_notify_event)
     return GDK_FILTER_CONTINUE;
@@ -557,55 +658,11 @@ vino_fb_xdamage_event_filter (GdkXEvent *xevent,
   dprintf (POLLING, "Got DamageNotify event: %d %d %dx%d\n",
 	   damage.x, damage.y, damage.width, damage.height);
 
-  gdk_error_trap_push ();
+  gdk_region_union_with_rect (vfb->priv->pending_damage, &damage);
 
-  /* Copy the damaged pixels from the server */
-  XCopyArea (vfb->priv->xdisplay,
-	     GDK_WINDOW_XWINDOW (vfb->priv->root_window),
-	     vfb->priv->fb_pixmap,
-	     vfb->priv->xdamage_copy_gc,
-	     damage.x,
-	     damage.y,
-	     damage.width,
-	     damage.height,
-	     damage.x,
-	     damage.y);
-  XSync (vfb->priv->xdisplay, False);
-
-  if ((error = gdk_error_trap_pop ()))
-    {
-#ifdef G_ENABLE_DEBUG
-      char error_text [64];
-
-      XGetErrorText (vfb->priv->xdisplay, error, error_text, 63);
-
-      g_warning ("Received a '%s' X Window System error while copying damaged pixels",
-		 error_text);
-      g_warning ("Failed image = %d, %d %dx%d - screen = %dx%d",
-		 damage.x,
-		 damage.y,
-		 damage.width,
-		 damage.height,
-		 gdk_screen_get_width (vfb->priv->screen),
-		 gdk_screen_get_height (vfb->priv->screen));
-#endif
-      return GDK_FILTER_REMOVE;
-    }
-
-  /* add damage to our region */
-  if (vfb->priv->damage_region)
-    gdk_region_union_with_rect (vfb->priv->damage_region, &damage);
-  else
-    vfb->priv->damage_region = gdk_region_rectangle (&damage);
-
-  /* subtract damage from server */
-  XFixesSetRegion (vfb->priv->xdisplay, vfb->priv->xdamage_region, &notify->area, 1);
-  XDamageSubtract (vfb->priv->xdisplay,
-		   vfb->priv->xdamage,
-		   vfb->priv->xdamage_region,
-		   None);
-
-  emit_damage_notify (vfb);
+  if (!vfb->priv->damage_idle_handler)
+    vfb->priv->damage_idle_handler =
+      g_idle_add ((GSourceFunc) vino_fb_xdamage_idle_handler, vfb);
 
   return GDK_FILTER_REMOVE;
 }
@@ -653,6 +710,8 @@ vino_fb_init_xdamage (VinoFB *vfb)
   gdk_window_add_filter (vfb->priv->root_window,
 			 (GdkFilterFunc) vino_fb_xdamage_event_filter,
 			 vfb);
+
+  vfb->priv->pending_damage = gdk_region_new ();
 
   vfb->priv->use_xdamage = TRUE;
 #endif

@@ -1,3 +1,23 @@
+2004-10-06  Mark McLoughlin  <mark@skynet.ie>
+
+	Fixes for two Fedora bugs:
+	  http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=134240
+	  http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=134451
+
+	* server/vino-fb.c:
+	(vino_fb_xdamage_idle_handler),
+	(vino_fb_xdamage_event_filter): process damage events in an
+	idle handler, compressing the events as they come in. This
+	both prevents us from ignoring incoming client messages for
+	long periods and being swamped by duplicate damage events.
+	
+	* server/vino-input.c: (vino_input_init): use XTestGrabControl()
+	to snup our noses at metacity and its nasty server grabs.
+	
+	* server/vino-server.c:
+	(vino_server_client_data_pending): process all pending client
+	messages before updating the client.
+
 2004-09-29  Mark McLoughlin  <mark@skynet.ie>
 
 	* configure.in: post-release bump to 2.8.1

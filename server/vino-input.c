@@ -153,7 +153,11 @@ vino_input_init (GdkDisplay *display)
   xdisplay = GDK_DISPLAY_XDISPLAY (display);
 
   if (XTestQueryExtension (xdisplay, i, i, i, i))
-    global_input_data.xtest_supported = TRUE;
+    {
+      XTestGrabControl (xdisplay, True);
+
+      global_input_data.xtest_supported = TRUE;
+    }
 
   vino_input_initialize_keycodes (display);
 
