@@ -6,18 +6,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
-"POT-Creation-Date: 2004-06-06 15:31+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-08-06 04:21+0200\n"
 "PO-Revision-Date: 2004-06-01 16:50+0800\n"
 "Last-Translator: storm <storm-119@163.com>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Report-Msgid-Bugs-To: \n"
 
-#: capplet/vino-preferences.c:870
-msgid "Send this web address by email"
-msgstr "用电子邮件发送 Web 地址"
+#: capplet/vino-preferences.c:809
+msgid "Send this command by email"
+msgstr "用电子邮件发送此命令"
 
 #: capplet/vino-preferences.desktop.in.h:1
 msgid "Remote Desktop"
@@ -64,8 +64,8 @@ msgid "Some of these preferences are locked down"
 msgstr "某些首选项被锁住"
 
 #: capplet/vino-preferences.glade.h:10
-msgid "Users can view your desktop at this web address:"
-msgstr "用户可以使用此 Web 地址查看您的桌面："
+msgid "Users can view your desktop using this command:"
+msgstr "用户可以使用此命令查看您的桌面："
 
 #: capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
@@ -76,14 +76,10 @@ msgid "_Allow other users to control your desktop"
 msgstr "允许其他用户控制您的桌面(_A)"
 
 #: capplet/vino-preferences.glade.h:13
-msgid "_Ensure the user is using encryption"
-msgstr "确认用户使用了加密(_E)"
-
-#: capplet/vino-preferences.glade.h:14
 msgid "_Password:"
 msgstr "密码(_P)："
 
-#: capplet/vino-preferences.glade.h:15
+#: capplet/vino-preferences.glade.h:14
 msgid "_Require the user to enter this password:"
 msgstr "请求用户输入此密码(_R)："
 
@@ -111,15 +107,15 @@ msgstr "URL 颜色"
 msgid "The color of the URL's label"
 msgstr "URL 标签的颜色"
 
-#: server/vino-fb.c:633 server/vino-prompt.c:144 server/vino-server.c:832
+#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:832
 msgid "Screen"
 msgstr "屏幕"
 
-#: server/vino-fb.c:634
+#: server/vino-fb.c:886
 msgid "The screen to be monitored"
 msgstr "要监视的屏幕"
 
-#: server/vino-main.c:73
+#: server/vino-main.c:78
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -154,11 +150,11 @@ msgstr "您允许他们这样做吗？"
 msgid "Question"
 msgstr "问题"
 
-#: server/vino-prompt.glade.h:5 server/vino-util.c:62
+#: server/vino-prompt.glade.h:5 server/vino-util.c:64
 msgid "_Allow"
 msgstr "允许(_A)"
 
-#: server/vino-prompt.glade.h:6 server/vino-util.c:63
+#: server/vino-prompt.glade.h:6 server/vino-util.c:65
 msgid "_Refuse"
 msgstr "拒绝(_R)"
 
@@ -233,8 +229,8 @@ msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
 msgstr ""
-"如果为 true，允许由 RFB 协议访问远程桌面。远程机器的的用户然后可以使用 vncviewer "
-"连接桌面。"
+"如果为 true，允许由 RFB 协议访问远程桌面。远程机器的的用户然后可以使用 "
+"vncviewer 连接桌面。"
 
 #: server/vino-server.schemas.in.h:5
 msgid ""
@@ -242,8 +238,8 @@ msgid ""
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
 msgstr ""
-"如果为 true，直到主机的用户批准了连接，远程用户才可以访问远程桌面。特别推荐使用"
-"于没有密码保护的访问。"
+"如果为 true，直到主机的用户批准了连接，远程用户才可以访问远程桌面。特别推荐使"
+"用于没有密码保护的访问。"
 
 #: server/vino-server.schemas.in.h:6
 msgid ""
@@ -258,8 +254,8 @@ msgid ""
 "encyrption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
-"如果为 true，远程用户访问桌面时要求支持加密。强烈推荐您的客户端支持加密，除非中"
-"间网络足够信任。"
+"如果为 true，远程用户访问桌面时要求支持加密。强烈推荐您的客户端支持加密，除非"
+"中间网络足够信任。"
 
 #: server/vino-server.schemas.in.h:8
 msgid ""
@@ -270,7 +266,8 @@ msgid ""
 "user to connect."
 msgstr ""
 "列出远程用户访问使用的验证方法。有两种可能的验证方法：“vnc”在连接之前提示远程"
-"用户输入密码(密码由 vnc_password 键指定)或者“没有密码”，允许任何远程用户连接。"
+"用户输入密码(密码由 vnc_password 键指定)或者“没有密码”，允许任何远程用户连"
+"接。"
 
 #: server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
@@ -303,8 +300,8 @@ msgid ""
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
-"此键指定远程桌面 URL 应发送到的 E-mail 地址。用户在点击了远程桌面首选项设置对话"
-"框的内的 URL 时，会向此地址发送邮件。"
+"此键指定远程桌面 URL 应发送到的 E-mail 地址。用户在点击了远程桌面首选项设置对"
+"话框的内的 URL 时，会向此地址发送邮件。"
 
 #: server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -341,3 +338,4 @@ msgstr "启动远程桌面服务器"
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "没有启动远程桌面服务器"
+
