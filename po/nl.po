@@ -1,25 +1,28 @@
+# translation of vino.HEAD.po to Dutch
 # Dutch translation of vino.
 # Copyright (C) 2004 Free Software Foundation, Inc.
 # This file is distributed under the same license as the vino package.
 # Elros Cyriatan <cyriatan@fastmail.fm>, 2004.
-# 
-# 
+# Vincent van Adrighem <adrighem@gnome.org>, 2004.
+#
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: vino HEAD\n"
+"Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-21 14:42+0100\n"
-"PO-Revision-Date: 2004-06-19 15:40+0200\n"
-"Last-Translator: Elros Cyriatan <cyriatan@fastmail.fm>\n"
+"POT-Creation-Date: 2004-07-23 15:59+0200\n"
+"PO-Revision-Date: 2004-07-24 02:31+0200\n"
+"Last-Translator: Vincent van Adrighem <adrighem@gnome.org>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3.1\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: capplet/vino-preferences.c:809
-#, fuzzy
 msgid "Send this command by email"
-msgstr "Dit web-adres versturen via e-mail"
+msgstr "Deze opdracht versturen via e-mail"
 
 #: capplet/vino-preferences.desktop.in.h:1
 msgid "Remote Desktop"
@@ -43,7 +46,7 @@ msgstr "*"
 
 #: capplet/vino-preferences.glade.h:4
 msgid "<b>Security</b>"
-msgstr "<b>Veiligheid</b>"
+msgstr "<b>Beveiliging</b>"
 
 #: capplet/vino-preferences.glade.h:5
 msgid "<b>Sharing</b>"
@@ -55,28 +58,27 @@ msgstr "U om bevestiging _vragen"
 
 #: capplet/vino-preferences.glade.h:7
 msgid "Allow other users to _view your desktop"
-msgstr "Andere gebruikers toestaan uw bureaublad _weer te geven"
+msgstr "_Andere gebruikers toestaan uw bureaublad te bekijken"
 
 #: capplet/vino-preferences.glade.h:8
 msgid "Remote Desktop Preferences"
-msgstr "Bureaublad op Afstand voorkeuren"
+msgstr "Bureaublad-op-afstand voorkeuren"
 
 #: capplet/vino-preferences.glade.h:9
 msgid "Some of these preferences are locked down"
 msgstr "Sommige van deze voorkeuren zijn vergrendeld"
 
 #: capplet/vino-preferences.glade.h:10
-#, fuzzy
 msgid "Users can view your desktop using this command:"
-msgstr "Gebruikers kunnen uw bureaublad zien op dit web-adres:"
+msgstr "Gebruikers kunnen uw bureaublad zien met deze opdracht:"
 
 #: capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
-msgstr "Als een gebruiker probeert uw bureaublad te zien of beheersen:"
+msgstr "Als een gebruiker uw bureaublad wil bekijken of besturen:"
 
 #: capplet/vino-preferences.glade.h:12
 msgid "_Allow other users to control your desktop"
-msgstr "Andere gebruikers _toestaan uw bureaublad te beheersen"
+msgstr "Andere gebruikers _toestaan uw bureaublad te besturen"
 
 #: capplet/vino-preferences.glade.h:13
 msgid "_Password:"
@@ -84,7 +86,7 @@ msgstr "_Wachtwoord:"
 
 #: capplet/vino-preferences.glade.h:14
 msgid "_Require the user to enter this password:"
-msgstr "_Vereisen dat de gebruiker dit wachtwoord invoert:"
+msgstr "De _gebruiker vragen om een wachtwoord in te voeren"
 
 #: capplet/vino-url.c:158
 msgid "Address"
@@ -92,15 +94,15 @@ msgstr "Adres"
 
 #: capplet/vino-url.c:159
 msgid "The address pointed to by the widget"
-msgstr "Het adres waarnaar door de widget wordt gewezen"
+msgstr "Het adres waarnaar door het element wordt gewezen"
 
 #: capplet/vino-url.c:166
 msgid "Tooltip"
-msgstr "Werktip"
+msgstr "Hulpballon"
 
 #: capplet/vino-url.c:167
 msgid "A tooltip for this URL"
-msgstr "Een werktip voor deze URL"
+msgstr "Een hulpballon voor deze URL"
 
 #: capplet/vino-url.c:173
 msgid "URL color"
@@ -122,39 +124,32 @@ msgstr "Het bij te houden scherm"
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
-msgstr ""
-"Uw XServer ondersteunt niet de XTest uitbreiding - toegang tot bureaubladen "
-"op afstand is alleen-weergeven\n"
+msgstr "Uw X-server ondersteunt de XTest uitbreiding niet - het bureaublad kan niet op afstand bestuurd worden\n"
 
 #: server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
-msgstr "Het scherm waarop de waarschuwing wordt weergegeven"
+msgstr "Het scherm waarop de melding wordt weergegeven"
 
 #: server/vino-prompt.c:385
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
-msgstr ""
-"Een gebruiker van computer '%s' probeert op afstand uw bureaublad weer te "
-"geven of te beheersen."
+msgstr "Een gebruiker van computer '%s' wil op afstand uw bureaublad bekijken of besturen."
 
 #: server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr ""
-"<big><b>Een andere gebruiker probeert uw bureaublad weer te geven.</b></big>"
+msgstr "<big><b>Een andere gebruiker wil uw bureaublad bekijken.</b></big>"
 
 #: server/vino-prompt.glade.h:2
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
-msgstr ""
-"Een gebruiker van een andere computer probeert uw bureaublad te zien of te "
-"beheersen."
+msgstr "Een gebruiker van een andere computer probeert uw bureaublad te bekijken of te besturen."
 
 #: server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
-msgstr "Wilt u dit echt toestaan?"
+msgstr "Wilt u dit toestaan?"
 
 #: server/vino-prompt.glade.h:4
 msgid "Question"
@@ -170,19 +165,19 @@ msgstr "_Weigeren"
 
 #: server/vino-server.c:833
 msgid "The screen for which to create a VNC server"
-msgstr "Het scherm waarop een VNC-server moet worden aangemaakt"
+msgstr "Het scherm waarvoor een VNC-server moet worden aangemaakt"
 
 #: server/vino-server.c:840
 msgid "On Hold"
-msgstr "In verwerking"
+msgstr "In wachtstand"
 
 #: server/vino-server.c:841
 msgid "Place all clients on hold"
-msgstr "Alle clients in verwerking plaatsen"
+msgstr "Alle clients in wachtstand plaatsen"
 
 #: server/vino-server.c:848
 msgid "Prompt enabled"
-msgstr "Waarschuwing aan gezet"
+msgstr "Melding aangezet"
 
 #: server/vino-server.c:849
 msgid "Prompt the user about connection attempts"
@@ -190,7 +185,7 @@ msgstr "De gebruiker waarschuwen bij verbindingspogingen"
 
 #: server/vino-server.c:856
 msgid "View Only"
-msgstr "Alleen-weergeven"
+msgstr "Alleen-bekijken"
 
 #: server/vino-server.c:857
 msgid "Disallow keyboard/pointer input from clients"
@@ -202,7 +197,7 @@ msgstr "Codering vereisen"
 
 #: server/vino-server.c:865
 msgid "Require clients to use encryption"
-msgstr "Vereisen dat clients codering gebruiken"
+msgstr "Vereisen dat clients datacodering gebruiken"
 
 #: server/vino-server.c:872
 msgid "Authentication methods"
@@ -221,7 +216,7 @@ msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
 msgstr ""
-"Het (grondtal-64 gecodeerde) wachtwoord dat gebruikt wordt om soorten te "
+"Het (base64 gecodeerde) wachtwoord dat gebruikt wordt om soorten te "
 "authentificeren met de VncAuth-methode"
 
 #: server/vino-server.schemas.in.h:1
@@ -230,12 +225,11 @@ msgstr "Toegestane authentificatiemethoden"
 
 #: server/vino-server.schemas.in.h:2
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr ""
-"E-mail adressen waarheen de bureaublad-op-afstand URL moet worden gestuurd"
+msgstr "E-mail adressen waarheen de bureaublad-op-afstand URL moet worden gestuurd"
 
 #: server/vino-server.schemas.in.h:3
 msgid "Enable remote desktop access"
-msgstr "Bureablad toegang op afstand aan zetten"
+msgstr "Bureablad-op-afstand inschakelen"
 
 #: server/vino-server.schemas.in.h:4
 msgid ""
@@ -293,7 +287,7 @@ msgstr ""
 
 #: server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
-msgstr "Gebruikers op afstand alleen toestaan het bureaublad te zien"
+msgstr "Gebruikers op afstand alleen toestaan het bureaublad te bekijken"
 
 #: server/vino-server.schemas.in.h:10
 msgid "Password required for \"vnc\" authentication"
@@ -315,7 +309,7 @@ msgid ""
 msgstr ""
 "Het wachtwoord waar de gebruiker op afstand naar wordt gevraagd als de \"vnc"
 "\" authentificatiemethode wordt gebruikt. Het wachtwoord aangegeven door de "
-"sleutel wordt grondtal-64 gecodeerd."
+"sleutel wordt base64 gecodeerd."
 
 #: server/vino-server.schemas.in.h:14
 msgid ""
@@ -324,8 +318,7 @@ msgid ""
 "dialog."
 msgstr ""
 "Deze sleutel geeft het e-mail adres aan waarnaar de bureaublad-op-afstand "
-"URL moet worden verstuurd als de gebruiker klikt op de URL in de Bureaublad-"
-"op-Afstand voorkeuren dialoog."
+"URL moet worden verstuurd als de gebruiker klikt op de URL in de voorkeuren van Bureaublad-op-afstand."
 
 #: server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -361,11 +354,9 @@ msgstr ""
 
 #: session/vino-session.c:295
 msgid "Starting remote desktop server"
-msgstr "Bezig met opstarten bureaublad-op-afstand server"
+msgstr "Opstarten van bureaublad-op-afstand server"
 
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "De bureaublad-op-afstand server wordt niet gestart"
 
-#~ msgid "_Ensure the user is using encryption"
-#~ msgstr "_Verzekeren dat de gebruiker codering gebruikt"
