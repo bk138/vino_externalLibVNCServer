@@ -13,9 +13,9 @@ PKG_NAME=vino
     exit 1
 }
 
-
 which gnome-autogen.sh || {
     echo "You need to install gnome-common from the GNOME CVS"
     exit 1
 }
-USE_GNOME2_MACROS=1 . gnome-autogen.sh
+
+REQUIRED_AUTOMAKE_VERSION=1.7 . gnome-autogen.sh

@@ -1,20 +1,24 @@
-AC_INIT(server/vino-fb.c)
+AC_INIT([vino], [2.9.1],
+        [http://bugzilla.gnome.org/enter_bug.cgi?product=vino])
+AC_CONFIG_SRCDIR(server/vino-fb.c)
 
-AM_INIT_AUTOMAKE(vino, 2.9.1)
+AM_INIT_AUTOMAKE
 AM_CONFIG_HEADER(config.h)
 
 AM_MAINTAINER_MODE
 
+dnl make sure we keep ACLOCAL_FLAGS around for maintainer builds to work
+AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
+
 GETTEXT_PACKAGE=vino
 AC_SUBST(GETTEXT_PACKAGE)
-AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE")
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [gettext package])
 
 AC_PROG_CC
 AC_ISC_POSIX
 AC_HEADER_STDC
 AC_C_BIGENDIAN
 
-AC_ARG_PROGRAM
 AM_PROG_LIBTOOL
 AC_PROG_INTLTOOL
 AC_PATH_PROG(GCONFTOOL, gconftool-2)
@@ -41,12 +45,8 @@ if test "x$enable_deprecations" = "xyes"; then
 fi
 
 PKG_CHECK_MODULES(VINO_SERVER, gtk+-x11-2.0 gconf-2.0 libglade-2.0 libgnomeui-2.0)
-AC_SUBST(VINO_SERVER_LIBS)
-AC_SUBST(VINO_SERVER_CFLAGS)
 	
 PKG_CHECK_MODULES(VINO_CAPPLET, gtk+-2.0 gconf-2.0 libglade-2.0 libgnomeui-2.0 >= 2.5.2)
-AC_SUBST(VINO_CAPPLET_LIBS)
-AC_SUBST(VINO_CAPPLET_CFLAGS)
 
 dnl --enable-session-support=(yes|no)
 AC_ARG_ENABLE(session_support,
@@ -54,8 +54,6 @@ AC_ARG_ENABLE(session_support,
 	      enable_session_support=no)
 if test "$enable_session_support" = "yes"; then
   PKG_CHECK_MODULES(VINO_SESSION, gconf-2.0 libgnomeui-2.0)
-  AC_SUBST(VINO_SESSION_LIBS)
-  AC_SUBST(VINO_SESSION_CFLAGS)
 fi
 AM_CONDITIONAL(SESSION_SUPPORT, [test "$enable_session_support" = "yes"])
 
@@ -119,7 +117,7 @@ AC_ARG_ENABLE(gnutls,
 	      enable_gnutls=yes)
 if test "$enable_gnutls" = "yes"; then
   AM_PATH_LIBGNUTLS(1.0.0,
-	            [AC_DEFINE(HAVE_GNUTLS)],
+	            [AC_DEFINE(HAVE_GNUTLS, 1, [Defined if the GNU TLS library is present])],
                     AC_MSG_WARN([[
 ***
 *** libgnutls was not found. You may want to get it from
@@ -135,7 +133,7 @@ AC_ARG_ENABLE(gcrypt,
 	      enable_gcrypt=yes)
 if test "$enable_gcrypt" = "yes"; then
   AM_PATH_LIBGCRYPT(1.1.90,
-                    [AC_DEFINE(HAVE_GCRYPT)],
+                    [AC_DEFINE(HAVE_GCRYPT, 1, [Defined if the libgcrypt library is present])],
                     AC_MSG_WARN([[
 ***
 *** libgcrypt was not found. You may want to get it from
@@ -149,7 +147,7 @@ fi
 XSHM_LIBS=
 AC_CHECK_HEADER(X11/extensions/Xdamage.h, [
     AC_CHECK_LIB(Xdamage, XDamageQueryExtension, [
-      AC_DEFINE(HAVE_XDAMAGE)
+      AC_DEFINE(HAVE_XDAMAGE, 1, [Defined if the DAMAGE X extension is present])
       XDAMAGE_LIBS="-lXdamage -lXfixes"],, $X_LIBS)
   ],, [#include <X11/Xlib.h>])
 AC_SUBST(XDAMAGE_LIBS)
@@ -160,7 +158,7 @@ AC_SUBST(XDAMAGE_LIBS)
 XSHM_LIBS=
 AC_CHECK_HEADER(X11/extensions/XShm.h, [
     AC_CHECK_LIB(Xext, XShmQueryExtension, [
-      AC_DEFINE(HAVE_XSHM)
+      AC_DEFINE(HAVE_XSHM, 1, [Defined if the MIT-SHM X extension is present])
       XSHM_LIBS="-lXext"],, $X_LIBS)
   ],, [#include <X11/Xlib.h>])
 AC_SUBST(XSHM_LIBS)
@@ -171,7 +169,7 @@ AC_SUBST(XSHM_LIBS)
 XTEST_LIBS=
 AC_CHECK_HEADER(X11/extensions/XTest.h, [
     AC_CHECK_LIB(Xtst, XTestQueryExtension, [
-      AC_DEFINE(HAVE_XTEST)
+      AC_DEFINE(HAVE_XTEST, 1, [Defined if the XTEST X extension is present])
       XTEST_LIBS="-lXtst"],, $X_LIBS)
   ])
 AC_SUBST(XTEST_LIBS)
@@ -243,7 +241,7 @@ if test "x$enable_rebuilds" = "xyes" && \
 fi
 AC_SUBST(REBUILD)
 
-AC_OUTPUT([
+AC_CONFIG_FILES([
 Makefile
 server/Makefile
 server/libvncserver/Makefile
@@ -254,3 +252,5 @@ icons/Makefile
 docs/Makefile
 po/Makefile.in
 ])
+
+AC_OUTPUT

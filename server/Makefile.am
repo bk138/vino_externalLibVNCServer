@@ -151,13 +151,11 @@ BUILT_SOURCES = \
 	vino-marshal.h \
 	$(NULL)
 
-CLEANFILES = \
+DISTCLEANFILES = \
 	GNOME_RemoteDesktop.server.in \
 	GNOME_RemoteDesktop.server \
+	$(schemas_DATA) \
 	$(BUILT_SOURCES) \
 	$(NULL)
-
-dist-hook:
-	cd $(distdir) ; rm -f $(CLEANFILES)
 
 $(vino_server_OBJECTS): $(BUILT_SOURCES)

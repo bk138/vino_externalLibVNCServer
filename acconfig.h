@@ -1,9 +1,0 @@
-#undef PACKAGE
-#undef VERSION
-#undef HAVE_GETTEXT
-#undef GETTEXT_PACKAGE
-#undef HAVE_XSHM
-#undef HAVE_XTEST
-#undef HAVE_XDAMAGE
-#undef HAVE_GNUTLS
-#undef HAVE_GCRYPT
