@@ -1,3 +1,7 @@
+2004-09-02  Alessio Frusciante  <algol@firenze.linux.it>
+
+	* configure.in: Added "it" (Italian) to ALL_LINGUAS.
+
 2004-08-31  Mark McLoughlin  <mark@skynet.ie>
 
 	Fixes bug where authentication would hang if built without
