@@ -9,16 +9,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-05-30 14:22-0700\n"
+"POT-Creation-Date: 2004-07-12 13:31+0100\n"
 "PO-Revision-Date: 2004-05-30 14:24-0700\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: English/Canada <adamw@FreeBSD.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
-#: capplet/vino-preferences.c:870
-msgid "Send this web address by email"
+#: capplet/vino-preferences.c:809
+#, fuzzy
+msgid "Send this command by email"
 msgstr "Send this web address by email"
 
 #: capplet/vino-preferences.desktop.in.h:1
@@ -66,7 +67,8 @@ msgid "Some of these preferences are locked down"
 msgstr "Some of these preferences are locked down"
 
 #: capplet/vino-preferences.glade.h:10
-msgid "Users can view your desktop at this web address:"
+#, fuzzy
+msgid "Users can view your desktop using this command:"
 msgstr "Users can view your desktop at this web address:"
 
 #: capplet/vino-preferences.glade.h:11
@@ -78,14 +80,10 @@ msgid "_Allow other users to control your desktop"
 msgstr "_Allow other users to control your desktop"
 
 #: capplet/vino-preferences.glade.h:13
-msgid "_Ensure the user is using encryption"
-msgstr "_Ensure the user is using encryption"
-
-#: capplet/vino-preferences.glade.h:14
 msgid "_Password:"
 msgstr "_Password:"
 
-#: capplet/vino-preferences.glade.h:15
+#: capplet/vino-preferences.glade.h:14
 msgid "_Require the user to enter this password:"
 msgstr "_Require the user to enter this password:"
 
@@ -113,15 +111,15 @@ msgstr "URL colour"
 msgid "The color of the URL's label"
 msgstr "The colour of the URL's label"
 
-#: server/vino-fb.c:633 server/vino-prompt.c:144 server/vino-server.c:832
+#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:832
 msgid "Screen"
 msgstr "Screen"
 
-#: server/vino-fb.c:634
+#: server/vino-fb.c:886
 msgid "The screen to be monitored"
 msgstr "The screen to be monitored"
 
-#: server/vino-main.c:73
+#: server/vino-main.c:78
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -162,11 +160,11 @@ msgstr "Do you want to allow them to do so?"
 msgid "Question"
 msgstr "Question"
 
-#: server/vino-prompt.glade.h:5 server/vino-util.c:62
+#: server/vino-prompt.glade.h:5 server/vino-util.c:64
 msgid "_Allow"
 msgstr "_Allow"
 
-#: server/vino-prompt.glade.h:6 server/vino-util.c:63
+#: server/vino-prompt.glade.h:6 server/vino-util.c:65
 msgid "_Refuse"
 msgstr "_Refuse"
 
@@ -362,3 +360,5 @@ msgstr "Starting remote desktop server"
 msgid "Not starting remote desktop server"
 msgstr "Not starting remote desktop server"
 
+#~ msgid "_Ensure the user is using encryption"
+#~ msgstr "_Ensure the user is using encryption"

@@ -1,3 +1,34 @@
+Vino 2.7.3
+==========
+
+  Server
+
+    + Add support for XDAMAGE (Federico Mena, Mark)
+    + Don't require clients to support encryption by default (Mark)
+    + Fix a shared memory leak (Mark)
+
+  Capplet
+
+    + Remove the require encryption toggle (Mark)
+    + Display a vncviewer command line instead of a url (Mark)
+
+  Build Stuff
+
+    + Make GNU TLS a conditional build requirement (Mark)
+    + Add a --enable-java configure arg (Mark)
+
+  Translators
+
+    + Rostislav Raykov (bg)
+    + Miloslav Trmac (cs)
+    + Adam Weinberger (en_CA)
+    + Gareth Owen (en_GB)
+    + Elros Cyriatan (nl)
+    + Raphael Higino (pt_BR)
+    + Duarte Loreto (pt)
+    + Christian Rose (sv)
+    + storm (zh_CN)
+
 Vino 0.14
 =========
 

@@ -1,5 +1,9 @@
 2004-07-12  Mark McLoughlin  <mark@skynet.ie>
 
+	* configure.in: Version 2.7.3.
+
+2004-07-12  Mark McLoughlin  <mark@skynet.ie>
+
 	Support building without GNU TLS.
 
 	* configure.in: only warn if gnutls or libgcrypt isn't

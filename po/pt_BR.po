@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-05-28 20:35+0200\n"
+"POT-Creation-Date: 2004-07-12 13:31+0100\n"
 "PO-Revision-Date: 2004-05-29 20:59-0300\n"
 "Last-Translator: Raphael Higino <raphaelh@uai.com.br>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
@@ -15,8 +15,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: capplet/vino-preferences.c:870
-msgid "Send this web address by email"
+#: capplet/vino-preferences.c:809
+#, fuzzy
+msgid "Send this command by email"
 msgstr "Enviar esse endereço por email"
 
 #: capplet/vino-preferences.desktop.in.h:1
@@ -64,7 +65,8 @@ msgid "Some of these preferences are locked down"
 msgstr "Algumas dessas preferências estão travadas"
 
 #: capplet/vino-preferences.glade.h:10
-msgid "Users can view your desktop at this web address:"
+#, fuzzy
+msgid "Users can view your desktop using this command:"
 msgstr "Usuários podem ver sua área de trabalho nesse endereço web:"
 
 #: capplet/vino-preferences.glade.h:11
@@ -76,14 +78,10 @@ msgid "_Allow other users to control your desktop"
 msgstr "Permitir que _outros usuários controlem sua área de trabalho"
 
 #: capplet/vino-preferences.glade.h:13
-msgid "_Ensure the user is using encryption"
-msgstr "_Garantir que o usuário esteja usando criptografia"
-
-#: capplet/vino-preferences.glade.h:14
 msgid "_Password:"
 msgstr "_Senha:"
 
-#: capplet/vino-preferences.glade.h:15
+#: capplet/vino-preferences.glade.h:14
 msgid "_Require the user to enter this password:"
 msgstr "Exigi_r que o usuário digite essa senha:"
 
@@ -111,19 +109,21 @@ msgstr "Cor da URL"
 msgid "The color of the URL's label"
 msgstr "A cor do rótulo da URL"
 
-#: server/vino-fb.c:633 server/vino-prompt.c:144 server/vino-server.c:832
+#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:832
 msgid "Screen"
 msgstr "Tela"
 
-#: server/vino-fb.c:634
+#: server/vino-fb.c:886
 msgid "The screen to be monitored"
 msgstr "A tela a ser monitorada"
 
-#: server/vino-main.c:73
+#: server/vino-main.c:78
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
-msgstr "Seu servidor X não suporta a extensão XTest - o acesso à área de trabalho remota será apenas para visualização\n"
+msgstr ""
+"Seu servidor X não suporta a extensão XTest - o acesso à área de trabalho "
+"remota será apenas para visualização\n"
 
 #: server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -134,17 +134,22 @@ msgstr "A tela na qual exibir a notificação"
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
-msgstr "Um usuário no computador '%s' está tentando ver ou controlar sua área de trabalho remotamente."
+msgstr ""
+"Um usuário no computador '%s' está tentando ver ou controlar sua área de "
+"trabalho remotamente."
 
 #: server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>Outro usuário está tentando ver sua área de trabalho.</b></big>"
+msgstr ""
+"<big><b>Outro usuário está tentando ver sua área de trabalho.</b></big>"
 
 #: server/vino-prompt.glade.h:2
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
-msgstr "Um usuário em um outro computador está tentando ver ou controlar sua área de trabalho remotamente."
+msgstr ""
+"Um usuário em um outro computador está tentando ver ou controlar sua área de "
+"trabalho remotamente."
 
 #: server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
@@ -154,11 +159,11 @@ msgstr "Você deseja permitir que eles façam isso?"
 msgid "Question"
 msgstr "Pergunta"
 
-#: server/vino-prompt.glade.h:5 server/vino-util.c:62
+#: server/vino-prompt.glade.h:5 server/vino-util.c:64
 msgid "_Allow"
 msgstr "_Permitir"
 
-#: server/vino-prompt.glade.h:6 server/vino-util.c:63
+#: server/vino-prompt.glade.h:6 server/vino-util.c:65
 msgid "_Refuse"
 msgstr "_Recusar"
 
@@ -214,7 +219,9 @@ msgstr "Senha do VNC"
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
-msgstr "A senha (codificada em base64) usada para autenticar tipos usando o método VncAuth"
+msgstr ""
+"A senha (codificada em base64) usada para autenticar tipos usando o método "
+"VncAuth"
 
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -222,7 +229,9 @@ msgstr "Métodos de autenticação permitidos"
 
 #: server/vino-server.schemas.in.h:2
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr "Endereço de e-mail para o qual a URL da área de trabalho remota deve ser enviada"
+msgstr ""
+"Endereço de e-mail para o qual a URL da área de trabalho remota deve ser "
+"enviada"
 
 #: server/vino-server.schemas.in.h:3
 msgid "Enable remote desktop access"
@@ -232,27 +241,38 @@ msgstr "Habilitar o acesso a área de trabalho remota"
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
-msgstr "Se verdadeiro, permite o acesso remoto à área de trabalho via protocolo RFB. Usuários em máquinas remotas poderão se conectar à área de trabalho usando um visualizador VNC."
+msgstr ""
+"Se verdadeiro, permite o acesso remoto à área de trabalho via protocolo RFB. "
+"Usuários em máquinas remotas poderão se conectar à área de trabalho usando "
+"um visualizador VNC."
 
 #: server/vino-server.schemas.in.h:5
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
-msgstr "Se verdadeiro, usuários remotos acessando a área de trabalho não poderão acessar até que o usuário na máquina acessada aprove a conexão. Recomendado especialmente quando o acesso não é protegido por senha."
+msgstr ""
+"Se verdadeiro, usuários remotos acessando a área de trabalho não poderão "
+"acessar até que o usuário na máquina acessada aprove a conexão. Recomendado "
+"especialmente quando o acesso não é protegido por senha."
 
 #: server/vino-server.schemas.in.h:6
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote user's will not be able to use the mouse or keyboard."
-msgstr "Se verdadeiro, usuários remotos acessando a área de trabalho apenas poderão vê-la. Usuários remotos não poderão usar o mouse ou o teclado."
+msgstr ""
+"Se verdadeiro, usuários remotos acessando a área de trabalho apenas poderão "
+"vê-la. Usuários remotos não poderão usar o mouse ou o teclado."
 
 #: server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are required to be able support "
 "encyrption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
-msgstr "Se verdadeiro, usuários remotos acessando a área de trabalho precisarão ter habilitado o suporte a criptografia. É altamente recomendado que você use um cliente que suporte criptografia, a não ser que a rede envolvida seja segura."
+msgstr ""
+"Se verdadeiro, usuários remotos acessando a área de trabalho precisarão ter "
+"habilitado o suporte a criptografia. É altamente recomendado que você use um "
+"cliente que suporte criptografia, a não ser que a rede envolvida seja segura."
 
 #: server/vino-server.schemas.in.h:8
 msgid ""
@@ -261,7 +281,12 @@ msgid ""
 "remote user to be prompted for a password (the password is specified by the "
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
-msgstr "Lista os métodos de autenticação com os quais usuários remotos podem acessar a área de trabalho. Há dois métodos de autenticação possíveis; \"vnc\" faz com que seja pedida uma senha ao usuário remoto (a senha é especificada pela chave vnc_password) antes de conectar e \"nenhum\" que permite a qualquer usuário remoto conectar."
+msgstr ""
+"Lista os métodos de autenticação com os quais usuários remotos podem acessar "
+"a área de trabalho. Há dois métodos de autenticação possíveis; \"vnc\" faz "
+"com que seja pedida uma senha ao usuário remoto (a senha é especificada pela "
+"chave vnc_password) antes de conectar e \"nenhum\" que permite a qualquer "
+"usuário remoto conectar."
 
 #: server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
@@ -284,24 +309,32 @@ msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
-msgstr "A senha que será pedida ao usuário remoto se o método de autenticação \"vnc\" for usado. A senha especificada pela chave é codificada em base64."
+msgstr ""
+"A senha que será pedida ao usuário remoto se o método de autenticação \"vnc"
+"\" for usado. A senha especificada pela chave é codificada em base64."
 
 #: server/vino-server.schemas.in.h:14
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
-msgstr "Essa chave especifica o endereço de e-mail para o qual a URL da área de trabalho remota deve ser enviada se o usuário clicar nela na caixa de diálogo Preferências de Área de Trabalho Remota."
+msgstr ""
+"Essa chave especifica o endereço de e-mail para o qual a URL da área de "
+"trabalho remota deve ser enviada se o usuário clicar nela na caixa de "
+"diálogo Preferências de Área de Trabalho Remota."
 
 #: server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "O servidor de Área de Trabalho Remota já está sendo executado; saindo...\n"
+msgstr ""
+"O servidor de Área de Trabalho Remota já está sendo executado; saindo...\n"
 
 #: server/vino-shell.c:79
 msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
-msgstr "Problemas ao registrar o servidor de área de trabalho remota com bonobo-activation; saindo...\n"
+msgstr ""
+"Problemas ao registrar o servidor de área de trabalho remota com bonobo-"
+"activation; saindo...\n"
 
 #: session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
@@ -319,7 +352,8 @@ msgstr "A ativação de %s falhou: Erro Desconhecido\n"
 
 #: session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "Falha ao ativar o servidor de área de trabalho remota: tentei várias vezes\n"
+msgstr ""
+"Falha ao ativar o servidor de área de trabalho remota: tentei várias vezes\n"
 
 #: session/vino-session.c:295
 msgid "Starting remote desktop server"
@@ -328,3 +362,6 @@ msgstr "Iniciando o servidor de área de trabalho remota"
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Não iniciando o servidor de área de trabalho remota"
+
+#~ msgid "_Ensure the user is using encryption"
+#~ msgstr "_Garantir que o usuário esteja usando criptografia"

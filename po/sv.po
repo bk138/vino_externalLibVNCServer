@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-05-27 19:49+0200\n"
+"POT-Creation-Date: 2004-07-12 13:31+0100\n"
 "PO-Revision-Date: 2004-05-27 19:49+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -17,8 +17,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: capplet/vino-preferences.c:870
-msgid "Send this web address by email"
+#: capplet/vino-preferences.c:809
+#, fuzzy
+msgid "Send this command by email"
 msgstr "Skicka denna webbadress med e-post"
 
 #: capplet/vino-preferences.desktop.in.h:1
@@ -66,7 +67,8 @@ msgid "Some of these preferences are locked down"
 msgstr "En del av dessa inställningar är låsta"
 
 #: capplet/vino-preferences.glade.h:10
-msgid "Users can view your desktop at this web address:"
+#, fuzzy
+msgid "Users can view your desktop using this command:"
 msgstr "Användare kan se ditt skrivbord på denna webbadress:"
 
 #: capplet/vino-preferences.glade.h:11
@@ -78,14 +80,10 @@ msgid "_Allow other users to control your desktop"
 msgstr "_Tillåt andra användare att styra ditt skrivbord"
 
 #: capplet/vino-preferences.glade.h:13
-msgid "_Ensure the user is using encryption"
-msgstr "_Försäkra att användaren använder kryptering"
-
-#: capplet/vino-preferences.glade.h:14
 msgid "_Password:"
 msgstr "_Lösenord:"
 
-#: capplet/vino-preferences.glade.h:15
+#: capplet/vino-preferences.glade.h:14
 msgid "_Require the user to enter this password:"
 msgstr "_Kräv att användaren anger detta lösenord:"
 
@@ -113,15 +111,15 @@ msgstr "URL-färg"
 msgid "The color of the URL's label"
 msgstr "Färgen på URL:ens etikett"
 
-#: server/vino-fb.c:628 server/vino-prompt.c:144 server/vino-server.c:832
+#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:832
 msgid "Screen"
 msgstr "Skärm"
 
-#: server/vino-fb.c:629
+#: server/vino-fb.c:886
 msgid "The screen to be monitored"
 msgstr "Skärmen som ska övervakas"
 
-#: server/vino-main.c:73
+#: server/vino-main.c:78
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -158,11 +156,11 @@ msgstr "Vill du tillåta dem att göra detta?"
 msgid "Question"
 msgstr "Fråga"
 
-#: server/vino-prompt.glade.h:5 server/vino-util.c:62
+#: server/vino-prompt.glade.h:5 server/vino-util.c:64
 msgid "_Allow"
 msgstr "_Tillåt"
 
-#: server/vino-prompt.glade.h:6 server/vino-util.c:63
+#: server/vino-prompt.glade.h:6 server/vino-util.c:65
 msgid "_Refuse"
 msgstr "_Vägra"
 
@@ -335,6 +333,9 @@ msgstr "Ställ in dina inställningar för åtkomst till fjärrskrivbord"
 #, fuzzy
 msgid "Not starting remote desktop server"
 msgstr "Ställ in dina inställningar för åtkomst till fjärrskrivbord"
+
+#~ msgid "_Ensure the user is using encryption"
+#~ msgstr "_Försäkra att användaren använder kryptering"
 
 #~ msgid "Security"
 #~ msgstr "Säkerhet"
