@@ -1,5 +1,9 @@
 2004-02-05  Mark McLoughlin  <mark@skynet.ie>
 
+	* docs/TODO: update.
+
+2004-02-05  Mark McLoughlin  <mark@skynet.ie>
+
 	* configure.in: require libgnomeui >= 2.5.2
 	
 	* capplet/vino-url.c: (vino_url_activate):

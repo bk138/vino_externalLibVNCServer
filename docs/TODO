@@ -13,8 +13,6 @@ TODO
    - Review the screen polling implementation.
    - Use the debugging utils for libvncserver debugging.
    - Why don't we get the hostname in the prompt dialog ?
-   - Figure out why the cursor flickers - is it the GetImage
-     or the QueryPointer ?
    - Get libvncserver patches upstream.
    * Use the XDAMAGE extension.
    * Investigate if we can conjure up a nice cursor from the
@@ -27,19 +25,23 @@ TODO
      and DNS-SD.
 
 => Client:
-   + i18n support ?
-   * Could we make the client support all pixel formats, or
+   + Native gtk+ based client
+   + i18n support for Java client ?
+   * Could we make the Java client support all pixel formats, or
      at least 8 bit colour as well as 24 bit colour?
 
 => Security:
-   - Get the new security types registered.
    - Export control ?
    * Implement support for server certificate and client
      certificate authentication.
+   * Kerberos support ?
 
 => Bugs
    + Fix the screen size-changed handling. We seem to not get
      the ConfigureNotify on the root window for ages and thus
      get a BadMatch when we try and do a GetImage with the
      wrong size image.
-   + Make RFB 3.3 clients not crash the server
+
+=> Protocol
+   - Get the new security types registered.
+   * Multi-screen support ?
