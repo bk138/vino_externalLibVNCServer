@@ -1,0 +1,331 @@
+# translation of ta.po to Tamil
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Jayaradha N <jaya@pune.redhat.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ta\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-09-04 12:20+0200\n"
+"PO-Revision-Date: 2004-09-04 17:14+0530\n"
+"Last-Translator: Jayaradha N <jaya@pune.redhat.com>\n"
+"Language-Team: Tamil <zhakanini@yahoogroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3.1\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
+
+#: capplet/vino-preferences.c:809
+msgid "Send this command by email"
+msgstr "இந்த கட்டளையை மின்னஞ்சல் வழியாக அனுப்பவும்"
+
+#: capplet/vino-preferences.desktop.in.h:1
+msgid "Remote Desktop"
+msgstr "தொலை மேல்மேசை"
+
+#: capplet/vino-preferences.desktop.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "உங்கள் தொலை மேல்மேசை விருப்பங்களை அமைக்கவும்"
+
+#: capplet/vino-preferences.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: capplet/vino-preferences.glade.h:2
+msgid "        "
+msgstr "        "
+
+#: capplet/vino-preferences.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: capplet/vino-preferences.glade.h:4
+msgid "<b>Security</b>"
+msgstr "<b>பாதுகாப்பு</b>"
+
+#: capplet/vino-preferences.glade.h:5
+msgid "<b>Sharing</b>"
+msgstr "<b>பகிர்வு</b>"
+
+#: capplet/vino-preferences.glade.h:6
+msgid "A_sk you for confirmation"
+msgstr "(_s)உறுதிப்படுத்த கேள்"
+
+#: capplet/vino-preferences.glade.h:7
+msgid "Allow other users to _view your desktop"
+msgstr "(_v)மற்ற பயனீட்டாளர் உங்கள் மேல் மேசையை பார்க்க அனுமதி"
+
+#: capplet/vino-preferences.glade.h:8
+msgid "Remote Desktop Preferences"
+msgstr "தொலை மேல்மேசை விருப்பங்கள்"
+
+#: capplet/vino-preferences.glade.h:9
+msgid "Some of these preferences are locked down"
+msgstr "சில விருப்பங்கள் பூட்டப்பட்டுள்ளது"
+
+#: capplet/vino-preferences.glade.h:10
+msgid "Users can view your desktop using this command:"
+msgstr "இந்த கட்டளையை பயன்படுத்தி பயனீட்டாளர் உங்கள் மேல் மேசையை பார்க்க முடியும்"
+
+#: capplet/vino-preferences.glade.h:11
+msgid "When a user tries to view or control your desktop:"
+msgstr "பயனர் உங்கள் மேல் மேசையை பார்க்க மட்டும் கட்டுப்படுத்த"
+
+#: capplet/vino-preferences.glade.h:12
+msgid "_Allow other users to control your desktop"
+msgstr "(_A)பயனர் உங்கள் மேல் மேசையை கட்டுப்படுத்துவதை அனுமதிக்கவும்"
+
+#: capplet/vino-preferences.glade.h:13
+msgid "_Password:"
+msgstr "(_P)கடவுச்சொல்:"
+
+#: capplet/vino-preferences.glade.h:14
+msgid "_Require the user to enter this password:"
+msgstr "(_R)பயனர் கடவுச்சொல்லை உள்ளிட வேண்டும்:"
+
+#: capplet/vino-url.c:158
+msgid "Address"
+msgstr "முகவரி"
+
+#: capplet/vino-url.c:159
+msgid "The address pointed to by the widget"
+msgstr "சிறு சாளரத்தை குறிக்கும் முகவரி"
+
+#: capplet/vino-url.c:166
+msgid "Tooltip"
+msgstr "கருவிக்குறிப்பு"
+
+#: capplet/vino-url.c:167
+msgid "A tooltip for this URL"
+msgstr "இந்த URL க்கான கருவிக்குறிப்பு"
+
+#: capplet/vino-url.c:173
+msgid "URL color"
+msgstr "URL நிறம்"
+
+#: capplet/vino-url.c:174
+msgid "The color of the URL's label"
+msgstr " URL's விளக்கசீட்டின் நிறம்"
+
+#: server/vino-fb.c:888 server/vino-prompt.c:144 server/vino-server.c:840
+msgid "Screen"
+msgstr "திரை"
+
+#: server/vino-fb.c:889
+msgid "The screen to be monitored"
+msgstr "கண்காணிக்க வேண்டிய திரை"
+
+#: server/vino-main.c:78
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr "உங்கள் Xசேவகன் XTest விரிவாக்கத்தை ஆதரிககது - தொலை மேல்மேசை அணுகலால் மட்டுமே பார்க்க முடியும்\n"
+
+#: server/vino-prompt.c:145
+msgid "The screen on which to display the prompt"
+msgstr "ப்ராம்டை காட்டவேண்டிய திரை"
+
+#: server/vino-prompt.c:385
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr "கணிப்பொறி '%s' இன் பயனர் உங்கள் மேல்மேசையை தொலைவிலிருந்து பார்க்க முயல்கிறார்"
+
+#: server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "<big><b>மற்ற பயனர் உங்கள் மேல் மேசையை பார்க்க முயல்கிறார்.</b></big>"
+
+#: server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr "மற்ற பயனர் உங்கள் மேல் மேசையை பார்க்க முயல்கிறார்."
+
+#: server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr "அவரை அனுமதிக்க விரும்புகிறீர்களா?"
+
+#: server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "கேள்வி"
+
+#: server/vino-prompt.glade.h:5 server/vino-util.c:64
+msgid "_Allow"
+msgstr "(_A)அனுமதி"
+
+#: server/vino-prompt.glade.h:6 server/vino-util.c:65
+msgid "_Refuse"
+msgstr "(_R)மறுக்கவும்"
+
+#: server/vino-server.c:841
+msgid "The screen for which to create a VNC server"
+msgstr "VNC சேவகனை உருவாக்க வேண்டிய திரை"
+
+#: server/vino-server.c:848
+msgid "On Hold"
+msgstr "காத்திரு"
+
+#: server/vino-server.c:849
+msgid "Place all clients on hold"
+msgstr "எல்லா புரவலன்களையும் காத்திருக்க செய்"
+
+#: server/vino-server.c:856
+msgid "Prompt enabled"
+msgstr "ப்ராம்ச் செயல்படுத்தப்பட்ட"
+
+#: server/vino-server.c:857
+msgid "Prompt the user about connection attempts"
+msgstr "முற்சிகளை பயனருக்கு தெரியப்படுத்து"
+
+#: server/vino-server.c:864
+msgid "View Only"
+msgstr "பார்க்க மட்டும்"
+
+#: server/vino-server.c:865
+msgid "Disallow keyboard/pointer input from clients"
+msgstr "விசைப்பலகை/குறி உள்ளிடு சாதனங்களை மறுக்கவும்"
+
+#: server/vino-server.c:872
+msgid "Require Encryption"
+msgstr "குறிமுறையாக்கம் தேவை"
+
+#: server/vino-server.c:873
+msgid "Require clients to use encryption"
+msgstr "புரவலன் குறிமுறையாக்கத்தை பயன்படுத்த வேண்டும்"
+
+#: server/vino-server.c:880
+msgid "Authentication methods"
+msgstr "அனுமதி முறைமை"
+
+#: server/vino-server.c:881
+msgid "The authentication methods this server should allow"
+msgstr "இந்த சேவகன் அனுமதிக்க வேண்டிய அனுமதி முறைமை"
+
+#: server/vino-server.c:889
+msgid "VNC Password"
+msgstr "VNC கடவுச்சொல்"
+
+#: server/vino-server.c:890
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr "(64 பிட் குறிமுறை)  VncAuth முறை பயன்படுத்தும் அனுமதி முறைமை"
+
+#: server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "அனுமதி முறைமையை அனுமதி"
+
+#: server/vino-server.schemas.in.h:2
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "தொலை கணினி URL அனுப்பவ் வேண்டிய மின்னஞ்சல் முகவரி "
+
+#: server/vino-server.schemas.in.h:3
+msgid "Enable remote desktop access"
+msgstr "தொலை மேல்மேசை சேவகன் அனுகலை செயல்படுத்து"
+
+#: server/vino-server.schemas.in.h:4
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr "உண்மையெனில், RFB விதிமுறைபடி மேல்மேசையை அனுக முடியும். vncviewer வழியாக மேல்மேசையை இணைக்க முடியும்"
+
+#: server/vino-server.schemas.in.h:5
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr "உண்மையெனில், தொலை பயனர் மேல் மேசையை பார்க்க அனுமதி இல்லை. பயனர் அனுமதிக்கும் வரை காத்திருக்க வேண்டும்."
+
+#: server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr "உண்மையெனில், மேல்மேசையை பார்க்க மட்டும் அனுமதி உண்டு. சுட்டி விசைப்பலகையை பயன்படுத்த அனுமதி இல்லை"
+
+#: server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encyrption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr "உண்மையெனில், குறிமுறையாக்க ஆதரவோடு தொலை கணினியை அணுகலாம். புரவலன் குறிமுறையாக்க ஆதரவை பெற்றிருக்க வேண்டும்."
+
+#: server/vino-server.schemas.in.h:8
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr "மேல் மேசையை அணுக அனுமதி முறைமைகளின் பட்டியல். ; \"vnc\" கடவுச்சொல்லோடு உள்நுழைய (vnc_password விசையால் கடவுச்சொல் குறிக்கப்படும்) \"none\" அனைவரையும் சுலபமாக அனுமதிக்கும்"
+
+#: server/vino-server.schemas.in.h:9
+msgid "Only allow remote users to view the desktop"
+msgstr "பயனர் மேல்மேசையை மட்டும் பார்க்க அனுமதி"
+
+#: server/vino-server.schemas.in.h:10
+msgid "Password required for \"vnc\" authentication"
+msgstr "\"vnc\" அனுமதிக்கான கடவுச்சொல் தேவை"
+
+#: server/vino-server.schemas.in.h:11
+msgid "Prompt the user before completing a connection"
+msgstr "இணைப்பை முடிக்க பயனருக்கு நினைவூட்டு"
+
+#: server/vino-server.schemas.in.h:12
+msgid "Require encryption"
+msgstr "குறிமுறையாக்கம் தேவை"
+
+#: server/vino-server.schemas.in.h:13
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+"\"vnc\" அனுமதி முறை கடவுச்சொல்லை கேட்க பயன்பட்டிருக்கிறது. கடவுச்சொல் base64 "
+"குறிமுறையாக்கப்பட்டுள்ளது."
+
+#: server/vino-server.schemas.in.h:14
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr "பயனர் URL ஐ தொலை மேல்மேசையிலிருந்து க்ளிக் செய்யும் போது அது அனுப்பப்பட வேண்டிய மின்னஞ்சல் முகவரியை குறிக்க இது பயன்படும்."
+
+#: server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "தொலை மேல்மேசை சேவகன் ஏற்கெனவே இயங்குகிறது; வெளியேறுகிறது ...\n"
+
+#: server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr "போனபோ செயல்பாடோடு மேல்மேசை சேவகனை இணைப்பதில் பிழை ...\n"
+
+#: session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr "தொலை மேல் மேசை சேவகன் இல்லை. மீண்டும் துவங்குகிறது\n"
+
+#: session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "%s செயல்படுத்துவதில் தோல்வி: %s\n"
+
+#: session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "செயல்படுத்துவதில் %s தோல்வி: தெரியாத பிழை\n"
+
+#: session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr "தொலை மேல் மேசை சேவகனை செயல்படுத்துவதில் தோல்வி. அதிக முறை முயற்சி செய்யப்பட்டது\n"
+
+#: session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr "தொலை மேல் மேசை சேவகன் துவங்குகிறது"
+
+#: session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr "தொலை மேல் மேசை சேவகன் துவங்க வில்லை"
+
