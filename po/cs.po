@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-12 13:31+0100\n"
-"PO-Revision-Date: 2004-05-29 18:43+0200\n"
+"POT-Creation-Date: 2004-07-13 05:15+0200\n"
+"PO-Revision-Date: 2004-07-13 19:40+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,9 +17,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: capplet/vino-preferences.c:809
-#, fuzzy
 msgid "Send this command by email"
-msgstr "Odeslat tuto adresu WWW e-mailem"
+msgstr "Odeslat tento příkaz e-mailem"
 
 #: capplet/vino-preferences.desktop.in.h:1
 msgid "Remote Desktop"
@@ -66,9 +65,8 @@ msgid "Some of these preferences are locked down"
 msgstr "Některá z těchto nastavení nejsou přístupná"
 
 #: capplet/vino-preferences.glade.h:10
-#, fuzzy
 msgid "Users can view your desktop using this command:"
-msgstr "Uživatelé mohou zobrazit vaši pracovní plochu na této adrese WWW:"
+msgstr "Uživatelé mohou zobrazit vaši pracovní plochu pomocí tohoto příkazu:"
 
 #: capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
