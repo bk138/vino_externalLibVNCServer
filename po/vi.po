@@ -98,15 +98,15 @@ msgstr "Địa chỉ"
 
 #: capplet/vino-url.c:159
 msgid "The address pointed to by the widget"
-msgstr ""
+msgstr "Địa chỉ trỏ bởi widget"
 
 #: capplet/vino-url.c:166
 msgid "Tooltip"
-msgstr ""
+msgstr "Chỉ dẫn"
 
 #: capplet/vino-url.c:167
 msgid "A tooltip for this URL"
-msgstr ""
+msgstr "Chỉ dẫn cho URL này"
 
 #: capplet/vino-url.c:173
 msgid "URL color"
@@ -173,19 +173,19 @@ msgstr "Screen cần tạo máy chủ VNC"
 
 #: server/vino-server.c:848
 msgid "On Hold"
-msgstr ""
+msgstr "Chờ"
 
 #: server/vino-server.c:849
 msgid "Place all clients on hold"
-msgstr ""
+msgstr "Đặt mọi con vào chế độ chờ"
 
 #: server/vino-server.c:856
 msgid "Prompt enabled"
-msgstr ""
+msgstr "Cho phép hỏi"
 
 #: server/vino-server.c:857
 msgid "Prompt the user about connection attempts"
-msgstr ""
+msgstr "Hỏi người dùng khi tạo kết nối"
 
 #: server/vino-server.c:864
 msgid "View Only"
@@ -219,7 +219,7 @@ msgstr "Mật khẩu VNC"
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
-msgstr ""
+msgstr "Mật khẩu (mã hoá base64) được dùng để xác thực bằng phương thức VncAuth"
 
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
