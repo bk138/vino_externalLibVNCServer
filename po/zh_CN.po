@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-14 09:40+0100\n"
+"POT-Creation-Date: 2004-09-27 17:34+0100\n"
 "PO-Revision-Date: 2004-06-01 16:50+0800\n"
 "Last-Translator: storm <storm-119@163.com>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -15,9 +15,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: capplet/vino-preferences.c:809
+#: capplet/vino-preferences.c:807
 msgid "Send this command by email"
 msgstr "用电子邮件发送此命令"
+
+#: capplet/vino-preferences.c:842
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"显示帮助时出错：\n"
+"%s"
 
 #: capplet/vino-preferences.desktop.in.h:1
 msgid "Remote Desktop"

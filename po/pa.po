@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-14 09:40+0100\n"
+"POT-Creation-Date: 2004-09-27 17:34+0100\n"
 "PO-Revision-Date: 2004-07-30 13:02+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@redhat.com>\n"
 "Language-Team: Punjabi <pa@li.org>\n"
@@ -19,9 +19,18 @@ msgstr ""
 "Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
 
-#: capplet/vino-preferences.c:809
+#: capplet/vino-preferences.c:807
 msgid "Send this command by email"
 msgstr "ਇਹ ਕਮਾਂਡ ਈ-ਪੱਤਰ ਰਾਹੀ ਭੇਜੋ"
+
+#: capplet/vino-preferences.c:842
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"ਸਹਾਇਤਾ ਵੇਖਾਉਣ ਵਿੱਚ ਗਲਤੀ ਹੈ|\n"
+"%s"
 
 #: capplet/vino-preferences.desktop.in.h:1
 msgid "Remote Desktop"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 0.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-14 09:40+0100\n"
+"POT-Creation-Date: 2004-09-27 17:34+0100\n"
 "PO-Revision-Date: 2004-08-25 09:28+0900\n"
 "Last-Translator: Satrou SATOH <ss@gnome.gr.jp>\n"
 "Language-Team: Japanese <translation@gnome.gr.jp>\n"
@@ -15,9 +15,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: capplet/vino-preferences.c:809
+#: capplet/vino-preferences.c:807
 msgid "Send this command by email"
 msgstr "このコマンドを電子メールで送信"
+
+#: capplet/vino-preferences.c:842
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"ヘルプを表示する際にエラーが発生しました:\n"
+"%s"
 
 #: capplet/vino-preferences.desktop.in.h:1
 msgid "Remote Desktop"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-14 09:40+0100\n"
+"POT-Creation-Date: 2004-09-27 17:34+0100\n"
 "PO-Revision-Date: 2004-07-31 13:07+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
@@ -15,9 +15,18 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: capplet/vino-preferences.c:809
+#: capplet/vino-preferences.c:807
 msgid "Send this command by email"
 msgstr "Send denne kommandoen via e-post"
+
+#: capplet/vino-preferences.c:842
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"Det oppsto en feil under visning av hjelp:\n"
+"%s"
 
 #: capplet/vino-preferences.desktop.in.h:1
 msgid "Remote Desktop"
