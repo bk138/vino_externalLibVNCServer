@@ -1,6 +1,6 @@
 AC_INIT(server/vino-fb.c)
 
-AM_INIT_AUTOMAKE(vino, 2.8.2)
+AM_INIT_AUTOMAKE(vino, 2.9.1)
 AM_CONFIG_HEADER(config.h)
 
 AM_MAINTAINER_MODE
