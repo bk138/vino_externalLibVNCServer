@@ -1,3 +1,7 @@
+2004-08-27  Kostas Papadimas  <pkst@gnome.org>
+
+	* configure.in: Added "el" to ALL_LINGUAS.
+
 2004-08-27  Mark McLoughlin  <mark@skynet.ie>
 
 	* Makefile.am: add MAINTAINERS to EXTRA_DIST.
