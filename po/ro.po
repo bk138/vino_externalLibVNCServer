@@ -1,0 +1,352 @@
+# Romanian translation for vino
+# Copyright (C) 2004, Free Software Foundation, Inc
+# Mişu Moldovan <dumol@go.ro>
+
+msgid ""
+msgstr ""
+"Project-Id-Version: vino\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-09-12 04:24+0200\n"
+"PO-Revision-Date: 2004-09-12 12:02+0300\n"
+"Last-Translator: Mişu Moldovan <dumol@go.ro>\n"
+"Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: capplet/vino-preferences.c:809
+msgid "Send this command by email"
+msgstr "Trimite această comandă prin mail"
+
+#: capplet/vino-preferences.desktop.in.h:1
+msgid "Remote Desktop"
+msgstr "Desktop la distanţă"
+
+#: capplet/vino-preferences.desktop.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "Setaţi opţiunile de accesare a desktopului la distanţă"
+
+#: capplet/vino-preferences.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: capplet/vino-preferences.glade.h:2
+msgid "        "
+msgstr "        "
+
+#: capplet/vino-preferences.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: capplet/vino-preferences.glade.h:4
+msgid "<b>Security</b>"
+msgstr "<b>Securitate</b>"
+
+#: capplet/vino-preferences.glade.h:5
+msgid "<b>Sharing</b>"
+msgstr "<b>Partajare</b>"
+
+#: capplet/vino-preferences.glade.h:6
+msgid "A_sk you for confirmation"
+msgstr "_Vă cere confirmarea"
+
+#: capplet/vino-preferences.glade.h:7
+msgid "Allow other users to _view your desktop"
+msgstr "Permite altora să vadă des_ktopul"
+
+#: capplet/vino-preferences.glade.h:8
+msgid "Remote Desktop Preferences"
+msgstr "Preferinţe desktop la distanţă"
+
+#: capplet/vino-preferences.glade.h:9
+msgid "Some of these preferences are locked down"
+msgstr "O parte din aceste preferinţe sunt blocate"
+
+#: capplet/vino-preferences.glade.h:10
+msgid "Users can view your desktop using this command:"
+msgstr "Utilizatorii vă pot vedea desktopul utilizând comanda:"
+
+#: capplet/vino-preferences.glade.h:11
+msgid "When a user tries to view or control your desktop:"
+msgstr "Când un utilizator încearcă să vă vadă sau să vă controleze desktopul:"
+
+#: capplet/vino-preferences.glade.h:12
+msgid "_Allow other users to control your desktop"
+msgstr "Permite _altor utilizatori controlul desktopului"
+
+#: capplet/vino-preferences.glade.h:13
+msgid "_Password:"
+msgstr "_Parolă:"
+
+#: capplet/vino-preferences.glade.h:14
+msgid "_Require the user to enter this password:"
+msgstr "Ce_re utilizatorului să introducă această parolă:"
+
+#: capplet/vino-url.c:158
+msgid "Address"
+msgstr "Adresă"
+
+#: capplet/vino-url.c:159
+msgid "The address pointed to by the widget"
+msgstr "Adresa indicată prin widget"
+
+#: capplet/vino-url.c:166
+msgid "Tooltip"
+msgstr "Sugestie"
+
+#: capplet/vino-url.c:167
+msgid "A tooltip for this URL"
+msgstr "O sugestie pentru acest URL"
+
+#: capplet/vino-url.c:173
+msgid "URL color"
+msgstr "Culoare URL"
+
+#: capplet/vino-url.c:174
+msgid "The color of the URL's label"
+msgstr "Culoarea etichetei URL-ului"
+
+#: server/vino-fb.c:888 server/vino-prompt.c:144 server/vino-server.c:840
+msgid "Screen"
+msgstr "Ecran"
+
+#: server/vino-fb.c:889
+msgid "The screen to be monitored"
+msgstr "Ecranul de monitorizat"
+
+#: server/vino-main.c:78
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"Acest server X nu suportă extensia XTest, accesul la desktopul la distanţă "
+"va fi de tip „view-only”\n"
+
+#: server/vino-prompt.c:145
+msgid "The screen on which to display the prompt"
+msgstr "Ecranul pe care se va afişa promptul"
+
+#: server/vino-prompt.c:385
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Un utilizator al calculatorului „%s” încearcă să vă acceseze sau să vă"
+"controleze de la distanţă desktopul."
+
+#: server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "<big><b>Un alt utilizator încearcă să vă acceseze desktopul.</b></big>"
+
+#: server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Un utilizator al unui alt calculator încearcă să vă acceseze sau să vă "
+"controleze de la distanţă desktopul."
+
+#: server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr "Doriţi să le permiteţi acest lucru?"
+
+#: server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "Întrebare"
+
+#: server/vino-prompt.glade.h:5 server/vino-util.c:64
+msgid "_Allow"
+msgstr "_Permite"
+
+#: server/vino-prompt.glade.h:6 server/vino-util.c:65
+msgid "_Refuse"
+msgstr "_Refuză"
+
+#: server/vino-server.c:841
+msgid "The screen for which to create a VNC server"
+msgstr "Ecranul pentru care se va crea un server VNC"
+
+#: server/vino-server.c:848
+msgid "On Hold"
+msgstr "În aşteptare"
+
+#: server/vino-server.c:849
+msgid "Place all clients on hold"
+msgstr "Trece toţi clienţii în aşteptare"
+
+#: server/vino-server.c:856
+msgid "Prompt enabled"
+msgstr "Avertizare activată"
+
+#: server/vino-server.c:857
+msgid "Prompt the user about connection attempts"
+msgstr "Avertizează utilizatorul asupra încercărilor de conectare"
+
+#: server/vino-server.c:864
+msgid "View Only"
+msgstr "„View only”"
+
+#: server/vino-server.c:865
+msgid "Disallow keyboard/pointer input from clients"
+msgstr "Nu permite input din partea clienţilor pentru tastatură şi mouse"
+
+#: server/vino-server.c:872
+msgid "Require Encryption"
+msgstr "Cere criptare"
+
+#: server/vino-server.c:873
+msgid "Require clients to use encryption"
+msgstr "Cere clienţilor să utilizeze criptare"
+
+#: server/vino-server.c:880
+msgid "Authentication methods"
+msgstr "Metode de autentificare"
+
+#: server/vino-server.c:881
+msgid "The authentication methods this server should allow"
+msgstr "Metodele de autentificare ale acestui server"
+
+#: server/vino-server.c:889
+msgid "VNC Password"
+msgstr "Parolă VNC"
+
+#: server/vino-server.c:890
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr ""
+"Parola (codată base64) utilizată la autentificarea prin metoda VncAuth"
+
+#: server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "Metode de autentificare permise"
+
+#: server/vino-server.schemas.in.h:2
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "Adresă de mail la care se va trimite URL-ul desktopului"
+
+#: server/vino-server.schemas.in.h:3
+msgid "Enable remote desktop access"
+msgstr "Activare acces de tip desktop la distanţă"
+
+#: server/vino-server.schemas.in.h:4
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+"La activare, permite accesul la distanţă la desktop utilizând protocolul RFB, Utilizatorii la distanţă se vor putea conecta utilizând vncviewer."
+
+#: server/vino-server.schemas.in.h:5
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"La activare, utilizatorii la distanţă nu vor putea accesa desktopul decât "
+"după ce utilizatorul de pe calculatorul gazdă le aprobă conexiunea. Setarea "
+"este recomandată în special atunci când accesul nu este protejat prin parolă."
+
+#: server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr ""
+"La activare, utilizatorilor la distanţă li se va permite doar vizualizarea "
+"desktopului. Ei nu vor putea folosi tastatura sau mouse-ul."
+
+#: server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encyrption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+"La activare, utilizatorii la distanţă vor trebui să utilizeze conexiuni "
+"criptate. Este puternic recomandat să se utilizeze clienţi ce suportă "
+"criptarea în cazurile în care reţeaua nu este una sigură"
+
+#: server/vino-server.schemas.in.h:8
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+"Listează metodele de autentificare prin care utilizatorii la distanţă vă pot "
+"accesa desktopul. Există două metode de autentificare posibile: „vnc” (care "
+"cere utilizatorului la distanţă parola specificată în cheia „vnc_password” "
+"şi „none” care permite conectarea oricărui utilizator la distanţă."
+
+#: server/vino-server.schemas.in.h:9
+msgid "Only allow remote users to view the desktop"
+msgstr "Permite doar vizualizarea desktopului utilizatorilor la distanţă"
+
+#: server/vino-server.schemas.in.h:10
+msgid "Password required for \"vnc\" authentication"
+msgstr "Cere parolă la autentificarea „vnc”"
+
+#: server/vino-server.schemas.in.h:11
+msgid "Prompt the user before completing a connection"
+msgstr "Avertizează utilizatorul înainte de încheierea conexiunii"
+
+#: server/vino-server.schemas.in.h:12
+msgid "Require encryption"
+msgstr "Cere criptare"
+
+#: server/vino-server.schemas.in.h:13
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+"Parola cerută utilizatorilor la distanţă când se utilizează metoda de "
+"autentificare „vnc”. Parola specificată de cheie este codate base64."
+
+#: server/vino-server.schemas.in.h:14
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+"Această cheie specifică adresa de mail la care se va trimite URL-ul desktopului la distanţă când utilizatorul dă click pe URL-ul din fereastra cu preferinţe „Remote Desktop."
+
+#: server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "Serverul „Remote Desktop” este deja pornit, ies...\n"
+
+#: server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr ""
+"Probleme la înregistrarea serverului „Remote Desktop” cu bonobo-activation, "
+"ies...\n"
+
+#: session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr "Serverul „Remote Desktop” a murit, restartez\n"
+
+#: session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "Activarea %s a eşuat: %s\n"
+
+#: session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "Activarea %s a eşuat: eroare necunoscută\n"
+
+#: session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr "Nu am reuşit activarea serverului „Remote Desktop”. Prea multe încercări.\n"
+
+#: session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr "Pornesc serverul „Remote Desktop”"
+
+#: session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr "Nu pornesc serverului „Remote Desktop”"
+
