@@ -20,7 +20,7 @@ AC_PROG_INTLTOOL
 AC_PATH_PROG(GCONFTOOL, gconftool-2)
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
-ALL_LINGUAS="bg bn cs en_CA en_GB es gu hu nl no pa pt pt_BR sq sr sr@Latn sv"
+ALL_LINGUAS="bg bn cs en_CA en_GB es gu hu nl no pa pl pt pt_BR sq sr sr@Latn sv"
 AM_GLIB_GNU_GETTEXT
 
 GNOME_COMPILE_WARNINGS(yes)

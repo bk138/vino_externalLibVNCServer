@@ -1,3 +1,7 @@
+2004-08-14  Artur Flinta <aflinta@cvs.gnome.org>
+
+	* configure.in: Added "pl" to ALL_LINGUAS.
+
 2004-08-12  Mark McLoughlin  <mark@skynet.ie>
 
 	* configure.in: link against Xfixes when building
