@@ -1,5 +1,11 @@
 2004-09-27  Mark McLoughlin  <mark@skynet.ie>
 
+	* capplet/vino-preferences.c:
+	(vino_preferences_dialog_response): pass the correct point
+	as the error dialog's parent.
+
+2004-09-27  Mark McLoughlin  <mark@skynet.ie>
+
 	Hook up the help button to the docs in gnome-user-docs.
 	Fixes bug #153804.
 

@@ -835,7 +835,7 @@ vino_preferences_dialog_response (GtkWidget             *widget,
     {
       GtkWidget *message_dialog;
 
-      message_dialog = gtk_message_dialog_new (GTK_WINDOW (dialog),
+      message_dialog = gtk_message_dialog_new (GTK_WINDOW (dialog->dialog),
 					       GTK_DIALOG_DESTROY_WITH_PARENT,
 					       GTK_MESSAGE_ERROR,
 					       GTK_BUTTONS_CLOSE,
