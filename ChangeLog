@@ -1,3 +1,8 @@
+2004-10-12  Mohammad DAMT  <mdamt@bisnisweb.com>
+
+	* configure.in: added "id" (Indonesian) to ALL_LINGUAS
+	* po/id.po: added Indonesian translation
+
 2004-10-07  Leonid Kanter <leon@asplinux.ru>
 
 	* configure.in: added "ru" (Russian) to ALL_LINGUAS

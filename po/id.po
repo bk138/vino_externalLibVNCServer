@@ -1,0 +1,367 @@
+# Indonesian translation of vino.
+# Copyright (C) 2004 THE vino'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the vino package.
+# Mohammad DAMT <mdamt@bisnisweb.com>, 2004.
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: vino HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-10-12 13:40+0700\n"
+"PO-Revision-Date: 2004-10-11 22:14+0700\n"
+"Last-Translator: Mohammad DAMT <mdamt@bisnisweb.com>\n"
+"Language-Team: Indonesian <l10n@gnome.linux.or.id>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: capplet/vino-preferences.c:807
+msgid "Send this command by email"
+msgstr "Kirim perintah ini melalui email"
+
+#: capplet/vino-preferences.c:842
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"Ada kesalahan menampilkan bantuan: \n"
+"%s"
+
+#: capplet/vino-preferences.desktop.in.h:1
+msgid "Remote Desktop"
+msgstr "Desktop Remote"
+
+#: capplet/vino-preferences.desktop.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "Atur hak akses desktop remote"
+
+#: capplet/vino-preferences.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: capplet/vino-preferences.glade.h:2
+msgid "        "
+msgstr "        "
+
+#: capplet/vino-preferences.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: capplet/vino-preferences.glade.h:4
+msgid "<b>Security</b>"
+msgstr "<b>Keamanan</b>"
+
+#: capplet/vino-preferences.glade.h:5
+msgid "<b>Sharing</b>"
+msgstr "<b>Pemakaian Bersama</b>"
+
+#: capplet/vino-preferences.glade.h:6
+msgid "A_sk you for confirmation"
+msgstr "Haru_s ada konfirmasi"
+
+#: capplet/vino-preferences.glade.h:7
+msgid "Allow other users to _view your desktop"
+msgstr "_Perbolehkan orang lain melihat tampilan desktop Anda"
+
+#: capplet/vino-preferences.glade.h:8
+msgid "Remote Desktop Preferences"
+msgstr "Pengaturan Desktop Remote"
+
+#: capplet/vino-preferences.glade.h:9
+msgid "Some of these preferences are locked down"
+msgstr "Beberapa pengaturan di bawah ini telah dikunci"
+
+#: capplet/vino-preferences.glade.h:10
+msgid "Users can view your desktop using this command:"
+msgstr "Orang lain dapat mengakses desktop Anda dengan menjalankan perintah:"
+
+#: capplet/vino-preferences.glade.h:11
+msgid "When a user tries to view or control your desktop:"
+msgstr "Saat ada orang yang ingin mengakses atau mengambil alih desktop Anda:"
+
+#: capplet/vino-preferences.glade.h:12
+msgid "_Allow other users to control your desktop"
+msgstr "Perbolehk_an orang lain mengambil alih desktop"
+
+#: capplet/vino-preferences.glade.h:13
+msgid "_Password:"
+msgstr "_Kata Sandi:"
+
+#: capplet/vino-preferences.glade.h:14
+msgid "_Require the user to enter this password:"
+msgstr "Ha_rus mengetikkan kata sandi:"
+
+#: capplet/vino-url.c:158
+msgid "Address"
+msgstr "Alamat"
+
+#: capplet/vino-url.c:159
+msgid "The address pointed to by the widget"
+msgstr "Alamat yang ditunjukkan widget"
+
+#: capplet/vino-url.c:166
+msgid "Tooltip"
+msgstr "Tooltip"
+
+#: capplet/vino-url.c:167
+msgid "A tooltip for this URL"
+msgstr "Tooltip URL ini"
+
+#: capplet/vino-url.c:173
+msgid "URL color"
+msgstr "Warna URL"
+
+#: capplet/vino-url.c:174
+msgid "The color of the URL's label"
+msgstr "Warna label URL"
+
+#: server/vino-fb.c:947 server/vino-prompt.c:144 server/vino-server.c:851
+msgid "Screen"
+msgstr "Layar"
+
+#: server/vino-fb.c:948
+msgid "The screen to be monitored"
+msgstr "Layar yang hendak dipantau"
+
+#: server/vino-main.c:78
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"XServer ini tidak mendukung ekstensi XTest - akses ke desktop remote "
+"dibatasi hanya untuk melihat saja\n"
+
+#: server/vino-prompt.c:145
+msgid "The screen on which to display the prompt"
+msgstr "Layar tempat menampilkan prompt"
+
+#: server/vino-prompt.c:385
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Pemakai komputer '%s' hendak mengakses atau mengambil alih desktop Anda."
+
+#: server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "<big><b>Ada orang yang hendak mengakses desktop Anda.</b></big>"
+
+#: server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Ada pemakai komputer lain yang hendak mengakses atau mengambil alih desktop "
+"ini."
+
+#: server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr "Beri izin?"
+
+#: server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "Pertanyaan"
+
+#: server/vino-prompt.glade.h:5 server/vino-util.c:64
+msgid "_Allow"
+msgstr "Izink_an"
+
+#: server/vino-prompt.glade.h:6 server/vino-util.c:65
+msgid "_Refuse"
+msgstr "_Tolak"
+
+#: server/vino-server.c:852
+msgid "The screen for which to create a VNC server"
+msgstr "Layar untuk server VNC"
+
+#: server/vino-server.c:859
+msgid "On Hold"
+msgstr "Tunggu Dulu"
+
+#: server/vino-server.c:860
+msgid "Place all clients on hold"
+msgstr "Masukkan semua klien ke daftar tunggu"
+
+#: server/vino-server.c:867
+msgid "Prompt enabled"
+msgstr "Prompt aktif"
+
+#: server/vino-server.c:868
+msgid "Prompt the user about connection attempts"
+msgstr "Prompt pemakai saat ada yang mengakses desktop"
+
+#: server/vino-server.c:875
+msgid "View Only"
+msgstr "Lihat Saja"
+
+#: server/vino-server.c:876
+msgid "Disallow keyboard/pointer input from clients"
+msgstr "Matikan input keyboard/mouse dari kliem"
+
+#: server/vino-server.c:883
+msgid "Require Encryption"
+msgstr "Pilihan Enkripsi"
+
+#: server/vino-server.c:884
+msgid "Require clients to use encryption"
+msgstr "Mengharuskan klien menggunakan enkripsi"
+
+#: server/vino-server.c:891
+msgid "Authentication methods"
+msgstr "Metode otentikasi"
+
+#: server/vino-server.c:892
+msgid "The authentication methods this server should allow"
+msgstr "Metode otentikasi yang digunakan server"
+
+#: server/vino-server.c:900
+msgid "VNC Password"
+msgstr "Kata Sandi VNC"
+
+#: server/vino-server.c:901
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr ""
+"Kata sandi (diacak dengan metode base64) digunakan pada metode otentikasi "
+"VncAuth"
+
+#: server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "Metode otentikasi yang tersedia"
+
+#: server/vino-server.schemas.in.h:2
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "Alamat email untuk dikirimi alamat URL desktop remote ini"
+
+#: server/vino-server.schemas.in.h:3
+msgid "Enable remote desktop access"
+msgstr "Aktifkan akses desktop remote"
+
+#: server/vino-server.schemas.in.h:4
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+"Bila aktif akses ke desktop remote melalui protokol RFB akan dibuka. "
+"Pengguna pada komputer lain dapat menghubungkan diri ke desktop dengan "
+"program vncviewer."
+
+#: server/vino-server.schemas.in.h:5
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"Bila aktif orang lain tidak dapat mengakses ke dalam desktop kecuali bila "
+"diizinkan oleh pemilik desktop. Aktifkan ini bila akses tidak menggunakan "
+"kata sandi."
+
+#: server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr ""
+"Bila aktif, orang yang mengakses desktop dari jarak jauh hanya diizinkan "
+"untuk melihat-lihat saja. Orang tersebut tidak dapat menggunakan mouse atau "
+"keyboard."
+
+#: server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encyrption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+"Bila aktif, orang yang mengakses desktop dari jarak jauh harus menggunakan "
+"enkripsi. Penggunaan enkripsi sangat dianjurkan kecuali bila Anda berada "
+"pada jaringan yang Anda percayai."
+
+#: server/vino-server.schemas.in.h:8
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+"Menampilkan daftar metode otentikasi yang tersedia untuk mengakses desktop. "
+"Ada dua metode yang umum digunakan, yaitu: \"vnc\" bila ingin menggunakan "
+"kata sandi (kata sandi ditentukan menggunakan kunci vnc_password) dan "
+"\"tidak ada\" bila tidak ingin menggunakan sandi."
+
+#: server/vino-server.schemas.in.h:9
+msgid "Only allow remote users to view the desktop"
+msgstr "Hanya mengizinkan orang untuk melihat-lihat saja"
+
+#: server/vino-server.schemas.in.h:10
+msgid "Password required for \"vnc\" authentication"
+msgstr "Kata sandi otentikasi \"vnc\""
+
+#: server/vino-server.schemas.in.h:11
+msgid "Prompt the user before completing a connection"
+msgstr "Tanyakan ke pemakai sebelum koneksi sempurna"
+
+#: server/vino-server.schemas.in.h:12
+msgid "Require encryption"
+msgstr "Membutuhkan enkripsi"
+
+#: server/vino-server.schemas.in.h:13
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+"Kata sandi yang diinginkan pada metode otentikasi \"vnc\" Kata sandi ini "
+"ditentukan dengan kunci yang diacak menggunakan base64."
+
+#: server/vino-server.schemas.in.h:14
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+"Kunci ini berisi alamat email untuk dikirimi alamat URL desktop remote. "
+"Email akan dikirim bila pada dialog Pengaturan Desktop Remote diatur "
+"demikian."
+
+#: server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "Server Desktop Remote sudah jalan; keluar saja ...\n"
+
+#: server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr ""
+"Ada kegagalan mendaftarkan diri ke server desktop remote menggunakan bonobo-"
+"activation; keluar saja...\n"
+
+#: session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr "Server desktop remote mati, jalankan ulang\n"
+
+#: session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "Aktivasi %s mengalami kegagalan: %s\n"
+
+#: session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "Aktivasi %s mengalami kegagalan: Error tidak diketahui\n"
+
+#: session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr ""
+"Gagal mengaktifkan server desktop remote: sudah diulang beberapa kali\n"
+
+#: session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr "Menjalankan server desktop remote"
+
+#: session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr "Server desktop remote tidak dijalankan"
