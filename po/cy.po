@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-02-09 08:06+0000\n"
-"PO-Revision-Date: 2004-12-01 18:05+0000\n"
+"PO-Revision-Date: 2005-02-09 23:00+0000\n"
 "Last-Translator: Rhys Jones <rhys@sucs.org>\n"
 "Language-Team: Cymraeg <gnome-cy@pengwyn.linux.org.uk>\n"
 "MIME-Version: 1.0\n"
@@ -38,7 +38,7 @@ msgstr "Penbwrdd Pell"
 
 #: capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
-msgstr "Gosodwch eich hoffterau mynediad penbwrdd pell"
+msgstr "Gosodwch eich hoffterau mynediad Penbwrdd Pell"
 
 #: capplet/vino-preferences.glade.h:1
 msgid "    "
@@ -79,7 +79,7 @@ msgstr "Mae rhai o'r hoffterau yma wedi eu cloi i lawr"
 #: capplet/vino-preferences.glade.h:10
 msgid "Users can view your desktop using this command:"
 msgstr ""
-"Bydd defnyddwyr yn gallu gweld eich penbwrdd trwy ddefnyddio'r gorchymun:"
+"Bydd defnyddwyr yn gallu gweld eich penbwrdd trwy ddefnyddio'r gorchymyn:"
 
 #: capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
@@ -103,7 +103,7 @@ msgstr "Cyfeiriad"
 
 #: capplet/vino-url.c:159
 msgid "The address pointed to by the widget"
-msgstr "Y cyfeiriad cyfeirwyd at gan y teclyn"
+msgstr "Y cyfeiriad cyfeirwyd ato gan y teclyn"
 
 #: capplet/vino-url.c:166
 msgid "Tooltip"
@@ -127,7 +127,7 @@ msgstr "Sgrîn"
 
 #: server/vino-fb.c:948
 msgid "The screen to be monitored"
-msgstr "Y sgrin i'w arolygu"
+msgstr "Y sgrîn i'w arolygu"
 
 #: server/vino-main.c:78
 msgid ""
@@ -180,7 +180,7 @@ msgstr "Gwr_thod"
 
 #: server/vino-server.c:852
 msgid "The screen for which to create a VNC server"
-msgstr "Y sgrîn i greu gweinydd VNC ato"
+msgstr "Y sgrîn i greu gweinydd VNC ar ei chyfer"
 
 #: server/vino-server.c:859
 msgid "On Hold"
@@ -236,15 +236,15 @@ msgstr ""
 
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
-msgstr "Dulliau dilysiant a chaniateir"
+msgstr "Dulliau dilysiant a ganiateir"
 
 #: server/vino-server.schemas.in.h:2
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr "Cyfeiriad e-bost i yrru LAU'r penbwrdd pell ato"
+msgstr "Cyfeiriad e-bost i yrru LAU'r Penbwrdd Pell ato"
 
 #: server/vino-server.schemas.in.h:3
 msgid "Enable remote desktop access"
-msgstr "Galluogi mynediad penbwrdd pell"
+msgstr "Galluogi mynediad Penbwrdd Pell"
 
 #: server/vino-server.schemas.in.h:4
 msgid ""
@@ -261,9 +261,9 @@ msgid ""
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
 msgstr ""
-"Os gwir, ni fydd defnyddwyr pell yn gallu cyrchu ei penbwrdd tan fod y "
-"defnyddiwr ar y gweinydd yn caniatáu’r cysylltiad. Argymhellir yn enwedig "
-"pan fod mynediad heb ei amddiffyn gyda chyfrinair."
+"Os yn wir, ni fydd defnyddwyr pell yn gallu cyrchu eu penbwrdd nes bod y "
+"defnyddiwr ar y gweinydd yn caniatáu’r cysylltiad. Argymhellir hyn, yn enwedig "
+"pan fod posib cael mynediad heb gyfrinair."
 
 #: server/vino-server.schemas.in.h:6
 msgid ""
@@ -331,7 +331,7 @@ msgid ""
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
-"Mae'r allwedd yma yn penodi'r cyfeiriad e-bost bydd LAU'r penbwrdd pell yn "
+"Mae'r allwedd yma yn penodi'r cyfeiriad e-bost bydd LAU'r Penbwrdd Pell yn "
 "cael ei yrru, os bydd y defnyddiwr yn clicio ar y ddeialog hoffterau "
 "Penbwrdd Pell."
 
@@ -344,7 +344,7 @@ msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
 msgstr ""
-"Gwall wrth gofrestru'r gweinydd penbwrdd pell gyda bonobo-activation; yn "
+"Gwall wrth gofrestru'r gweinydd Penbwrdd Pell gyda bonobo-activation; yn "
 "terfynu ...\n"
 
 #: session/vino-session.c:133
@@ -364,13 +364,13 @@ msgstr "Gweithrediad %s wedi methu: gwall anhysbys\n"
 #: session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
 msgstr ""
-"Methu gweithredu gweinydd penbwrdd pell: wedi ceisio gormod o weithiau\n"
+"Methu gweithredu gweinydd Penbwrdd Pell: wedi ceisio gormod o weithiau\n"
 
 #: session/vino-session.c:295
 msgid "Starting remote desktop server"
-msgstr "Cychwyn gweinydd penbwrdd pell"
+msgstr "Cychwyn gweinydd Penbwrdd Pell"
 
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
-msgstr "Ddim yn cychwyn gweinydd penbwrdd pell"
+msgstr "Ddim yn cychwyn gweinydd Penbwrdd Pell"
 
