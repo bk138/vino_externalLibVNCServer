@@ -1,3 +1,28 @@
+Vino 2.7.90
+===========
+
+  Fixes
+
+   + Remove the Java client (Mark)
+   + Don't build the http server by default but add a --enable-http-server arg (Mark)
+
+  Translators
+
+   + Rostislav Raykov (bg)
+   + Runa Bhattacharjee (bn)
+   + Adam Weinberger (en_CA)
+   + Gareth Owen (en_GB)
+   + Francisco Javier F. Serrador (es)
+   + Ankit Patel (gu)
+   + Gabor Kelemen (hu)
+   + Vincent van Adrighem (nl)
+   + Kjartan Maraas (no)
+   + Amanpreet Singh Alam (pa)
+   + Duarte Loreto (pt)
+   + Elian Myftiu (sq)
+   + Данило Шеган (sr)
+   + storm (zh_CN)
+
 Vino 2.7.4
 ==========
 

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-23 15:59+0200\n"
+"POT-Creation-Date: 2004-08-11 19:16+0100\n"
 "PO-Revision-Date: 2004-07-24 02:31+0200\n"
 "Last-Translator: Vincent van Adrighem <adrighem@gnome.org>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
@@ -112,7 +112,7 @@ msgstr "URL-kleur"
 msgid "The color of the URL's label"
 msgstr "De kleur van het URL label"
 
-#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:832
+#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:840
 msgid "Screen"
 msgstr "Scherm"
 
@@ -124,7 +124,9 @@ msgstr "Het bij te houden scherm"
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
-msgstr "Uw X-server ondersteunt de XTest uitbreiding niet - het bureaublad kan niet op afstand bestuurd worden\n"
+msgstr ""
+"Uw X-server ondersteunt de XTest uitbreiding niet - het bureaublad kan niet "
+"op afstand bestuurd worden\n"
 
 #: server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -135,7 +137,9 @@ msgstr "Het scherm waarop de melding wordt weergegeven"
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
-msgstr "Een gebruiker van computer '%s' wil op afstand uw bureaublad bekijken of besturen."
+msgstr ""
+"Een gebruiker van computer '%s' wil op afstand uw bureaublad bekijken of "
+"besturen."
 
 #: server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
@@ -145,7 +149,9 @@ msgstr "<big><b>Een andere gebruiker wil uw bureaublad bekijken.</b></big>"
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
-msgstr "Een gebruiker van een andere computer probeert uw bureaublad te bekijken of te besturen."
+msgstr ""
+"Een gebruiker van een andere computer probeert uw bureaublad te bekijken of "
+"te besturen."
 
 #: server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
@@ -163,55 +169,55 @@ msgstr "_Toestaan"
 msgid "_Refuse"
 msgstr "_Weigeren"
 
-#: server/vino-server.c:833
+#: server/vino-server.c:841
 msgid "The screen for which to create a VNC server"
 msgstr "Het scherm waarvoor een VNC-server moet worden aangemaakt"
 
-#: server/vino-server.c:840
+#: server/vino-server.c:848
 msgid "On Hold"
 msgstr "In wachtstand"
 
-#: server/vino-server.c:841
+#: server/vino-server.c:849
 msgid "Place all clients on hold"
 msgstr "Alle clients in wachtstand plaatsen"
 
-#: server/vino-server.c:848
+#: server/vino-server.c:856
 msgid "Prompt enabled"
 msgstr "Melding aangezet"
 
-#: server/vino-server.c:849
+#: server/vino-server.c:857
 msgid "Prompt the user about connection attempts"
 msgstr "De gebruiker waarschuwen bij verbindingspogingen"
 
-#: server/vino-server.c:856
+#: server/vino-server.c:864
 msgid "View Only"
 msgstr "Alleen-bekijken"
 
-#: server/vino-server.c:857
+#: server/vino-server.c:865
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Toetsenbord/muisinvoer van clients niet toestaan"
 
-#: server/vino-server.c:864
+#: server/vino-server.c:872
 msgid "Require Encryption"
 msgstr "Codering vereisen"
 
-#: server/vino-server.c:865
+#: server/vino-server.c:873
 msgid "Require clients to use encryption"
 msgstr "Vereisen dat clients datacodering gebruiken"
 
-#: server/vino-server.c:872
+#: server/vino-server.c:880
 msgid "Authentication methods"
 msgstr "Authentificatiemethoden"
 
-#: server/vino-server.c:873
+#: server/vino-server.c:881
 msgid "The authentication methods this server should allow"
 msgstr "De authentificatiemethoden die de server moet toestaan"
 
-#: server/vino-server.c:881
+#: server/vino-server.c:889
 msgid "VNC Password"
 msgstr "VNC-wachtwoord"
 
-#: server/vino-server.c:882
+#: server/vino-server.c:890
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
@@ -225,7 +231,8 @@ msgstr "Toegestane authentificatiemethoden"
 
 #: server/vino-server.schemas.in.h:2
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr "E-mail adressen waarheen de bureaublad-op-afstand URL moet worden gestuurd"
+msgstr ""
+"E-mail adressen waarheen de bureaublad-op-afstand URL moet worden gestuurd"
 
 #: server/vino-server.schemas.in.h:3
 msgid "Enable remote desktop access"
@@ -318,7 +325,8 @@ msgid ""
 "dialog."
 msgstr ""
 "Deze sleutel geeft het e-mail adres aan waarnaar de bureaublad-op-afstand "
-"URL moet worden verstuurd als de gebruiker klikt op de URL in de voorkeuren van Bureaublad-op-afstand."
+"URL moet worden verstuurd als de gebruiker klikt op de URL in de voorkeuren "
+"van Bureaublad-op-afstand."
 
 #: server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -359,4 +367,3 @@ msgstr "Opstarten van bureaublad-op-afstand server"
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "De bureaublad-op-afstand server wordt niet gestart"
-

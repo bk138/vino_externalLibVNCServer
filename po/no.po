@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-31 13:06+0200\n"
+"POT-Creation-Date: 2004-08-11 19:16+0100\n"
 "PO-Revision-Date: 2004-07-31 13:07+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
@@ -107,7 +107,7 @@ msgstr "Farge for URL"
 msgid "The color of the URL's label"
 msgstr ""
 
-#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:832
+#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:840
 msgid "Screen"
 msgstr "Skjerm"
 
@@ -158,55 +158,55 @@ msgstr "Till_at"
 msgid "_Refuse"
 msgstr "_Nekt"
 
-#: server/vino-server.c:833
+#: server/vino-server.c:841
 msgid "The screen for which to create a VNC server"
 msgstr ""
 
-#: server/vino-server.c:840
+#: server/vino-server.c:848
 msgid "On Hold"
 msgstr "På vent"
 
-#: server/vino-server.c:841
+#: server/vino-server.c:849
 msgid "Place all clients on hold"
 msgstr ""
 
-#: server/vino-server.c:848
+#: server/vino-server.c:856
 msgid "Prompt enabled"
 msgstr ""
 
-#: server/vino-server.c:849
+#: server/vino-server.c:857
 msgid "Prompt the user about connection attempts"
 msgstr ""
 
-#: server/vino-server.c:856
+#: server/vino-server.c:864
 msgid "View Only"
 msgstr ""
 
-#: server/vino-server.c:857
+#: server/vino-server.c:865
 msgid "Disallow keyboard/pointer input from clients"
 msgstr ""
 
-#: server/vino-server.c:864
+#: server/vino-server.c:872
 msgid "Require Encryption"
 msgstr "Krev kryptering"
 
-#: server/vino-server.c:865
+#: server/vino-server.c:873
 msgid "Require clients to use encryption"
 msgstr ""
 
-#: server/vino-server.c:872
+#: server/vino-server.c:880
 msgid "Authentication methods"
 msgstr "Autentiseringsmetoder"
 
-#: server/vino-server.c:873
+#: server/vino-server.c:881
 msgid "The authentication methods this server should allow"
 msgstr ""
 
-#: server/vino-server.c:881
+#: server/vino-server.c:889
 msgid "VNC Password"
 msgstr "VNC-passord"
 
-#: server/vino-server.c:882
+#: server/vino-server.c:890
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"

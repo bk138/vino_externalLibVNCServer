@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-05 01:10+0100\n"
+"POT-Creation-Date: 2004-08-11 19:16+0100\n"
 "PO-Revision-Date: 2004-08-05 01:12+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
@@ -66,7 +66,8 @@ msgstr "Algumas destas preferências estão trancadas"
 #: capplet/vino-preferences.glade.h:10
 msgid "Users can view your desktop using this command:"
 msgstr ""
-"Os utilizadores podem visualizar a sua área de trabalho utilizando este comando:"
+"Os utilizadores podem visualizar a sua área de trabalho utilizando este "
+"comando:"
 
 #: capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
@@ -108,7 +109,7 @@ msgstr "Cor do URL"
 msgid "The color of the URL's label"
 msgstr "A cor da etiqueta do URL"
 
-#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:832
+#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:840
 msgid "Screen"
 msgstr "Ecrã"
 
@@ -167,55 +168,55 @@ msgstr "_Permitir"
 msgid "_Refuse"
 msgstr "_Recusar"
 
-#: server/vino-server.c:833
+#: server/vino-server.c:841
 msgid "The screen for which to create a VNC server"
 msgstr "O ecrã em que criar um servidor VNC"
 
-#: server/vino-server.c:840
+#: server/vino-server.c:848
 msgid "On Hold"
 msgstr "A Aguardar"
 
-#: server/vino-server.c:841
+#: server/vino-server.c:849
 msgid "Place all clients on hold"
 msgstr "Colocar todos os clientes a aguardar"
 
-#: server/vino-server.c:848
+#: server/vino-server.c:856
 msgid "Prompt enabled"
 msgstr "Zona de introdução activa"
 
-#: server/vino-server.c:849
+#: server/vino-server.c:857
 msgid "Prompt the user about connection attempts"
 msgstr "Questionar o utilizador sobre tentativas de ligação"
 
-#: server/vino-server.c:856
+#: server/vino-server.c:864
 msgid "View Only"
 msgstr "Apenas Visualizar"
 
-#: server/vino-server.c:857
+#: server/vino-server.c:865
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Recusar introdução de teclado/ponteiro dos clientes"
 
-#: server/vino-server.c:864
+#: server/vino-server.c:872
 msgid "Require Encryption"
 msgstr "Requerer Encriptação"
 
-#: server/vino-server.c:865
+#: server/vino-server.c:873
 msgid "Require clients to use encryption"
 msgstr "Requerer que os clientes utilizem encriptação"
 
-#: server/vino-server.c:872
+#: server/vino-server.c:880
 msgid "Authentication methods"
 msgstr "Métodos de autenticação"
 
-#: server/vino-server.c:873
+#: server/vino-server.c:881
 msgid "The authentication methods this server should allow"
 msgstr "Os métodos de autenticação que este servidor deverá permitir"
 
-#: server/vino-server.c:881
+#: server/vino-server.c:889
 msgid "VNC Password"
 msgstr "Senha VNC"
 
-#: server/vino-server.c:882
+#: server/vino-server.c:890
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"

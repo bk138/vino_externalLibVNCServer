@@ -9,14 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-07 16:02+0200\n"
+"POT-Creation-Date: 2004-08-11 19:16+0100\n"
 "PO-Revision-Date: 2004-08-07 16:16+0200\n"
 "Last-Translator: Данило Шеган <danilo@prevod.org>\n"
 "Language-Team: Serbian (sr) <gnom@prevod.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3;    plural=n%10==1 && n%100!=11 ? 0 :    n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3;    plural=n%10==1 && n%100!=11 ? 0 :    n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: capplet/vino-preferences.c:809
 msgid "Send this command by email"
@@ -110,7 +111,7 @@ msgstr "Боја адресе"
 msgid "The color of the URL's label"
 msgstr "Боја ознаке адресе"
 
-#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:832
+#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:840
 msgid "Screen"
 msgstr "Екран"
 
@@ -122,7 +123,9 @@ msgstr "Екран који да пратим"
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
-msgstr "Ваш XServer не подржава проширење XTest extension — могуће је само гледати удаљену радну површ\n"
+msgstr ""
+"Ваш XServer не подржава проширење XTest extension — могуће је само гледати "
+"удаљену радну површ\n"
 
 #: server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -133,7 +136,9 @@ msgstr "Екран на ком да прикаже упит"
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
-msgstr "Корисник рачунара „%s“ покушава да издалека прегледа или управља вашом радном површи."
+msgstr ""
+"Корисник рачунара „%s“ покушава да издалека прегледа или управља вашом "
+"радном површи."
 
 #: server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
@@ -143,7 +148,9 @@ msgstr "<big><b>Неки корисник покушава да прегледа
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
-msgstr "Корисник неког другог рачунара покушава да прегледа или управља вашом радном површи издалека."
+msgstr ""
+"Корисник неког другог рачунара покушава да прегледа или управља вашом радном "
+"површи издалека."
 
 #: server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
@@ -161,59 +168,61 @@ msgstr "_Допусти"
 msgid "_Refuse"
 msgstr "_Одбиј"
 
-#: server/vino-server.c:833
+#: server/vino-server.c:841
 msgid "The screen for which to create a VNC server"
 msgstr "Екран за који да образује VNC сервер"
 
-#: server/vino-server.c:840
+#: server/vino-server.c:848
 msgid "On Hold"
 msgstr "Задржи"
 
-#: server/vino-server.c:841
+#: server/vino-server.c:849
 msgid "Place all clients on hold"
 msgstr "Смести све клијенте на задржавање"
 
-#: server/vino-server.c:848
+#: server/vino-server.c:856
 msgid "Prompt enabled"
 msgstr "Упит укључен"
 
-#: server/vino-server.c:849
+#: server/vino-server.c:857
 msgid "Prompt the user about connection attempts"
 msgstr "Питај корисника за покушаје повезивања"
 
-#: server/vino-server.c:856
+#: server/vino-server.c:864
 msgid "View Only"
 msgstr "Само гледање"
 
-#: server/vino-server.c:857
+#: server/vino-server.c:865
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Искључи унос са тастатуре/показивача клијента"
 
-#: server/vino-server.c:864
+#: server/vino-server.c:872
 msgid "Require Encryption"
 msgstr "Обавезно шифровање"
 
-#: server/vino-server.c:865
+#: server/vino-server.c:873
 msgid "Require clients to use encryption"
 msgstr "Захтевај да клијенти користе шифровање"
 
-#: server/vino-server.c:872
+#: server/vino-server.c:880
 msgid "Authentication methods"
 msgstr "Начини идентификације"
 
-#: server/vino-server.c:873
+#: server/vino-server.c:881
 msgid "The authentication methods this server should allow"
 msgstr "Начини идентификације које овај сервер допушта"
 
-#: server/vino-server.c:881
+#: server/vino-server.c:889
 msgid "VNC Password"
 msgstr "VNC лозинка"
 
-#: server/vino-server.c:882
+#: server/vino-server.c:890
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
-msgstr "Лозинка (кодирана као base64) која се користи за идентификацију помоћу VncAuth начина"
+msgstr ""
+"Лозинка (кодирана као base64) која се користи за идентификацију помоћу "
+"VncAuth начина"
 
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -231,20 +240,28 @@ msgstr "Укључи приступ удаљеној радној површи"
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
-msgstr "Ако је постављено, дозвољава удаљени приступ радној површи помоћу RFB протокола. Корисници удаљених машина се онда могу повезати на радну површ помоћу vncviewer-а."
+msgstr ""
+"Ако је постављено, дозвољава удаљени приступ радној површи помоћу RFB "
+"протокола. Корисници удаљених машина се онда могу повезати на радну површ "
+"помоћу vncviewer-а."
 
 #: server/vino-server.schemas.in.h:5
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
-msgstr "Ако је постављено, удаљеним корисницима приступ радној површи се не одобрава док корисник домаћина не одобри везу. Препоручује се нарочито када приступ није заштићен лозинком."
+msgstr ""
+"Ако је постављено, удаљеним корисницима приступ радној површи се не одобрава "
+"док корисник домаћина не одобри везу. Препоручује се нарочито када приступ "
+"није заштићен лозинком."
 
 #: server/vino-server.schemas.in.h:6
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote user's will not be able to use the mouse or keyboard."
-msgstr "Ако је постављено, удаљеним корисницима се дозвољава једино преглед радне површи. Удаљени корисник неће моћи да користи миша или тастатуру."
+msgstr ""
+"Ако је постављено, удаљеним корисницима се дозвољава једино преглед радне "
+"површи. Удаљени корисник неће моћи да користи миша или тастатуру."
 
 # bug: s/encyrption/encryption/
 #: server/vino-server.schemas.in.h:7
@@ -252,7 +269,10 @@ msgid ""
 "If true, remote users accessing the desktop are required to be able support "
 "encyrption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
-msgstr "Ако је постављено, удаљени корисници који приступају радној површи морају да подржавају шифровање. Препоручује се да користите клијента који подржава шифровање осим ако се налазите у поузданој мрежи."
+msgstr ""
+"Ако је постављено, удаљени корисници који приступају радној површи морају да "
+"подржавају шифровање. Препоручује се да користите клијента који подржава "
+"шифровање осим ако се налазите у поузданој мрежи."
 
 #: server/vino-server.schemas.in.h:8
 msgid ""
@@ -261,7 +281,11 @@ msgid ""
 "remote user to be prompted for a password (the password is specified by the "
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
-msgstr "Исписује начине идентификације којима удаљени корисник може приступити радној површи. Постоје два могућа начина идентификације; „vnc“ од удаљеног корисника тражи лозинку (лозинка се наводи у кључу vnc_password) пре повезивања, а „none“ допушта свим удаљеним корисницима да се повежу."
+msgstr ""
+"Исписује начине идентификације којима удаљени корисник може приступити "
+"радној површи. Постоје два могућа начина идентификације; „vnc“ од удаљеног "
+"корисника тражи лозинку (лозинка се наводи у кључу vnc_password) пре "
+"повезивања, а „none“ допушта свим удаљеним корисницима да се повежу."
 
 #: server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
@@ -284,14 +308,19 @@ msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
-msgstr "Лозинка која ће се тражити од удаљеног корисника ако се користи „vnc“ начин идентификације. Лозинка у кључу је кодирана base64 алгоритмом."
+msgstr ""
+"Лозинка која ће се тражити од удаљеног корисника ако се користи „vnc“ начин "
+"идентификације. Лозинка у кључу је кодирана base64 алгоритмом."
 
 #: server/vino-server.schemas.in.h:14
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
-msgstr "Овај кључ наводи адресу е-поште на коју ће се слати адреса удаљене радне површи када корисник кликне на адресу у прозорчету за поставке удаљене радне површи."
+msgstr ""
+"Овај кључ наводи адресу е-поште на коју ће се слати адреса удаљене радне "
+"површи када корисник кликне на адресу у прозорчету за поставке удаљене радне "
+"површи."
 
 #: server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -301,7 +330,9 @@ msgstr "Сервер удаљене радне површи је већ покр
 msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
-msgstr "Неприлика при пријави сервера удаљене радне површи у Бонобо активацију; завршавам ...\n"
+msgstr ""
+"Неприлика при пријави сервера удаљене радне површи у Бонобо активацију; "
+"завршавам ...\n"
 
 #: session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
@@ -319,7 +350,8 @@ msgstr "Неуспешна активација %s: непозната греш�
 
 #: session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "Неуспешно покретање сервера удаљене радне површи: покушано сувише пута\n"
+msgstr ""
+"Неуспешно покретање сервера удаљене радне површи: покушано сувише пута\n"
 
 #: session/vino-session.c:295
 msgid "Starting remote desktop server"
@@ -328,4 +360,3 @@ msgstr "Покрећем сервер удаљене радне површи"
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Не покрећем сервер удаљене радне површи"
-

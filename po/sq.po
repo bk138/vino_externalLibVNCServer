@@ -9,13 +9,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-27 04:29+0200\n"
+"POT-Creation-Date: 2004-08-11 19:16+0100\n"
 "PO-Revision-Date: 2004-07-27 21:04+0200\n"
 "Last-Translator: Elian Myftiu <elian@lycos.com>\n"
 "Language-Team: Albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: capplet/vino-preferences.c:809
 msgid "Send this command by email"
@@ -67,11 +67,15 @@ msgstr "Disa nga këto pëlqime janë bllokuar"
 
 #: capplet/vino-preferences.glade.h:10
 msgid "Users can view your desktop using this command:"
-msgstr "Përdoruesit mund të shikojnë hapësirën tënde të punës me anë të kësaj komande:"
+msgstr ""
+"Përdoruesit mund të shikojnë hapësirën tënde të punës me anë të kësaj "
+"komande:"
 
 #: capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
-msgstr "Kur një përdorues përpiqet të shikojë apo kontrollojë hapësirën tënde të punës:"
+msgstr ""
+"Kur një përdorues përpiqet të shikojë apo kontrollojë hapësirën tënde të "
+"punës:"
 
 #: capplet/vino-preferences.glade.h:12
 msgid "_Allow other users to control your desktop"
@@ -109,7 +113,7 @@ msgstr "Ngjyra e URL-së"
 msgid "The color of the URL's label"
 msgstr "Ngjyra e etiketës së URL-së"
 
-#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:832
+#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:840
 msgid "Screen"
 msgstr "Ekrani"
 
@@ -140,7 +144,9 @@ msgstr ""
 
 #: server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>Një tjetër përdorues po përpiqet të shikojë hapësirën tënde të punës.</b></big>"
+msgstr ""
+"<big><b>Një tjetër përdorues po përpiqet të shikojë hapësirën tënde të punës."
+"</b></big>"
 
 #: server/vino-prompt.glade.h:2
 msgid ""
@@ -166,61 +172,61 @@ msgstr "_Lejo"
 msgid "_Refuse"
 msgstr "_Ndalo"
 
-#: server/vino-server.c:833
+#: server/vino-server.c:841
 msgid "The screen for which to create a VNC server"
 msgstr "Ekrani ku të nis serverin VNC"
 
-#: server/vino-server.c:840
+#: server/vino-server.c:848
 msgid "On Hold"
 msgstr "Në Pritje"
 
-#: server/vino-server.c:841
+#: server/vino-server.c:849
 msgid "Place all clients on hold"
 msgstr "Vër gjithë klientët në pritje"
 
-#: server/vino-server.c:848
+#: server/vino-server.c:856
 msgid "Prompt enabled"
 msgstr "Zbatuesi i komandës i aktivizuar"
 
-#: server/vino-server.c:849
+#: server/vino-server.c:857
 msgid "Prompt the user about connection attempts"
 msgstr "Pyet përdoruesin rreth përpjekjeve për tu lidhur"
 
-#: server/vino-server.c:856
+#: server/vino-server.c:864
 msgid "View Only"
 msgstr "Vetëm Shiko"
 
-#: server/vino-server.c:857
+#: server/vino-server.c:865
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Mos lejo përdorim tastiere/miu nga klientët"
 
-#: server/vino-server.c:864
+#: server/vino-server.c:872
 msgid "Require Encryption"
 msgstr "Kërko Kriptim"
 
-#: server/vino-server.c:865
+#: server/vino-server.c:873
 msgid "Require clients to use encryption"
 msgstr "Kërko që klientët të përdorin kriptim"
 
-#: server/vino-server.c:872
+#: server/vino-server.c:880
 msgid "Authentication methods"
 msgstr "Mënyrat e autentikimit"
 
-#: server/vino-server.c:873
+#: server/vino-server.c:881
 msgid "The authentication methods this server should allow"
 msgstr "Mënyrat e autentikimit që shërbyesi duhet të lejojë"
 
-#: server/vino-server.c:881
+#: server/vino-server.c:889
 msgid "VNC Password"
 msgstr "Fjalëkalimi i VNC-së"
 
-#: server/vino-server.c:882
+#: server/vino-server.c:890
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
 msgstr ""
-"Fjalëkalimi (kodifikuar në bazë64) përdorur për të autentikuar llojet që përdorin "
-"metodën VncAuth"
+"Fjalëkalimi (kodifikuar në bazë64) përdorur për të autentikuar llojet që "
+"përdorin metodën VncAuth"
 
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -249,9 +255,9 @@ msgid ""
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
 msgstr ""
-"Nëse e vërtetë, përdoruesit që hyjnë në hapësirë e punës nuk lejohen të futen "
-"deri kur përdoruesi në kompjuterin strehë lejon lidhjen. E këshillueshme sidomos "
-"kur lidhja nuk është e mbrojtur me fjalëkalim."
+"Nëse e vërtetë, përdoruesit që hyjnë në hapësirë e punës nuk lejohen të "
+"futen deri kur përdoruesi në kompjuterin strehë lejon lidhjen. E "
+"këshillueshme sidomos kur lidhja nuk është e mbrojtur me fjalëkalim."
 
 #: server/vino-server.schemas.in.h:6
 msgid ""
@@ -267,10 +273,10 @@ msgid ""
 "encyrption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
-"Nëse e vërtetë, përdoruesve që hyjnë në hapësirën e punës i kërkohet të "
-"kenë mundësi të përdorin kriptimin. Është tepër e këshillueshme që të "
-"përdorësh një klient i cili përdor kriptimin deri kur rrjeti ku punohet është "
-"i sigurtë."
+"Nëse e vërtetë, përdoruesve që hyjnë në hapësirën e punës i kërkohet të kenë "
+"mundësi të përdorin kriptimin. Është tepër e këshillueshme që të përdorësh "
+"një klient i cili përdor kriptimin deri kur rrjeti ku punohet është i "
+"sigurtë."
 
 #: server/vino-server.schemas.in.h:8
 msgid ""
@@ -283,8 +289,8 @@ msgstr ""
 "Rradhit mënyrat e autentikimit me të cilat përdoruesit në distancë mund të "
 "lidhen me hapësirën e punës. Ka dy mënyra të mundshme autentikimi; \"vnc\" "
 "pyet përdoruesin në distancë për një fjalëkalim (i cili është përcaktuar nga "
-"çelësi vnc_password) përpara lidhjes dhe \"asnjë\" e cila lejon çdo përdorues "
-"të lidhet në distancë."
+"çelësi vnc_password) përpara lidhjes dhe \"asnjë\" e cila lejon çdo "
+"përdorues të lidhet në distancë."
 
 #: server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
@@ -309,7 +315,8 @@ msgid ""
 "encoded."
 msgstr ""
 "Fjalëkalimi që përdoruesi në distancë do pyetet nëse përdoret mënyra e "
-"autentikimit \"vnc\". Fjalëkalimi i përcaktuar nga çelësi është kodifikuar në bazë64."
+"autentikimit \"vnc\". Fjalëkalimi i përcaktuar nga çelësi është kodifikuar "
+"në bazë64."
 
 #: server/vino-server.schemas.in.h:14
 msgid ""
@@ -317,12 +324,15 @@ msgid ""
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
-"Ky çelës përcakton adresën e-mail tek e cila URL e hapësirës së punës në distancë "
-"duhet dërguar nëse përdoruesi klikon mbi URL në dialogun e pëlqimeve të programit."
+"Ky çelës përcakton adresën e-mail tek e cila URL e hapësirës së punës në "
+"distancë duhet dërguar nëse përdoruesi klikon mbi URL në dialogun e "
+"pëlqimeve të programit."
 
 #: server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "Shërbyesi i Hapësirës së Punës në Distancë është në ekzekutim e sipër; duke dalë ...\n"
+msgstr ""
+"Shërbyesi i Hapësirës së Punës në Distancë është në ekzekutim e sipër; duke "
+"dalë ...\n"
 
 #: server/vino-shell.c:79
 msgid ""
@@ -334,7 +344,9 @@ msgstr ""
 
 #: session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
-msgstr "Shërbyesi i hapësirës së punës në distancë përfundoi papritmas, duke e rifilluar\n"
+msgstr ""
+"Shërbyesi i hapësirës së punës në distancë përfundoi papritmas, duke e "
+"rifilluar\n"
 
 #: session/vino-session.c:154
 #, c-format
@@ -348,7 +360,9 @@ msgstr "Aktivizimi i %s dështoi: Gabim i Panjohur\n"
 
 #: session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "Dështoi në aktivizimin e shërbyesit të hapësirës së punës në distancë: e provova shumë herë\n"
+msgstr ""
+"Dështoi në aktivizimin e shërbyesit të hapësirës së punës në distancë: e "
+"provova shumë herë\n"
 
 #: session/vino-session.c:295
 msgid "Starting remote desktop server"
@@ -357,4 +371,3 @@ msgstr "Duke filluar shërbyesin e hapësirës së punës në distancë"
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Nuk po e filloj shërbyesin e hapësirës së punës në distancë"
-

@@ -1,5 +1,9 @@
 2004-08-11  Mark McLoughlin  <mark@skynet.ie>
 
+	* configure.in: Version 2.7.90.
+
+2004-08-11  Mark McLoughlin  <mark@skynet.ie>
+
 	* configure.in: add a --enable-http-server arg which
 	is off by default, disable all Java stuff.
 	

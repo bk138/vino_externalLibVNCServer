@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-31 12:23+0200\n"
+"POT-Creation-Date: 2004-08-11 19:16+0100\n"
 "PO-Revision-Date: 2004-08-01 14:10+0200\n"
 "Last-Translator: Francisco Javier F. Serrador <serrador@cvs.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
@@ -109,7 +109,7 @@ msgstr "Color de la URL"
 msgid "The color of the URL's label"
 msgstr "El color de la etiqueta de la URL"
 
-#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:832
+#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:840
 msgid "Screen"
 msgstr "Pantalla"
 
@@ -121,7 +121,9 @@ msgstr "La pantalla a ser monitorizada"
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
-msgstr "Su servidor XServer no soporta la extensión XTest - el acceso al escritorio remoto se realizará en modo sólo lectura\n"
+msgstr ""
+"Su servidor XServer no soporta la extensión XTest - el acceso al escritorio "
+"remoto se realizará en modo sólo lectura\n"
 
 #: server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -132,7 +134,9 @@ msgstr "La pantalla en la que se mostrará el indicador de órdenes"
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
-msgstr "Un usuario en el equipo «%s» está intentando ver o controlar remotamente tu escritorio."
+msgstr ""
+"Un usuario en el equipo «%s» está intentando ver o controlar remotamente tu "
+"escritorio."
 
 #: server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
@@ -142,7 +146,9 @@ msgstr "<big><b>Otro usuario está intentando ver su escritorio.</b></big>"
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
-msgstr "Un usuario en otra computadora está intentando ver o controlar remotamente tu escritorio."
+msgstr ""
+"Un usuario en otra computadora está intentando ver o controlar remotamente "
+"tu escritorio."
 
 #: server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
@@ -160,59 +166,61 @@ msgstr "_Permitir"
 msgid "_Refuse"
 msgstr "_Rechazar"
 
-#: server/vino-server.c:833
+#: server/vino-server.c:841
 msgid "The screen for which to create a VNC server"
 msgstr "La pantalla para la que se creará el servidor VNC"
 
-#: server/vino-server.c:840
+#: server/vino-server.c:848
 msgid "On Hold"
 msgstr "Poner en espera"
 
-#: server/vino-server.c:841
+#: server/vino-server.c:849
 msgid "Place all clients on hold"
 msgstr "Colocar todos los clientes en espera"
 
-#: server/vino-server.c:848
+#: server/vino-server.c:856
 msgid "Prompt enabled"
 msgstr "Pregunta activada"
 
-#: server/vino-server.c:849
+#: server/vino-server.c:857
 msgid "Prompt the user about connection attempts"
 msgstr "Preguntar al usuario acerca de los intentos de conexión"
 
-#: server/vino-server.c:856
+#: server/vino-server.c:864
 msgid "View Only"
 msgstr "Ver sólo"
 
-#: server/vino-server.c:857
+#: server/vino-server.c:865
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "No permitir entrada de teclado/puntero desde los clientes"
 
-#: server/vino-server.c:864
+#: server/vino-server.c:872
 msgid "Require Encryption"
 msgstr "Requerir encriptación"
 
-#: server/vino-server.c:865
+#: server/vino-server.c:873
 msgid "Require clients to use encryption"
 msgstr "Requerir que los clientes usen encriptación"
 
-#: server/vino-server.c:872
+#: server/vino-server.c:880
 msgid "Authentication methods"
 msgstr "Métodos de autenticación"
 
-#: server/vino-server.c:873
+#: server/vino-server.c:881
 msgid "The authentication methods this server should allow"
 msgstr "Los métodos de autenticación que este servidor debe permitir"
 
-#: server/vino-server.c:881
+#: server/vino-server.c:889
 msgid "VNC Password"
 msgstr "Contraseña VNC"
 
-#: server/vino-server.c:882
+#: server/vino-server.c:890
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
-msgstr "La contraseña (codificada en base64) usada para tipos de autenticación usando el método VncAuth"
+msgstr ""
+"La contraseña (codificada en base64) usada para tipos de autenticación "
+"usando el método VncAuth"
 
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -220,7 +228,8 @@ msgstr "Métodos de autenticación"
 
 #: server/vino-server.schemas.in.h:2
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr "Dirección de correo-e a la cual debería enviarse la URL del escritorio remoto"
+msgstr ""
+"Dirección de correo-e a la cual debería enviarse la URL del escritorio remoto"
 
 #: server/vino-server.schemas.in.h:3
 msgid "Enable remote desktop access"
@@ -230,27 +239,41 @@ msgstr "Activar acceso remoto al escritorio"
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
-msgstr "Si es verdadero, permite el acceso al escritorio por medio del protocolo RFB. Los usuarios en las máquinas remotas entonces podrán conectarse al escritorio usando un visor vnc."
+msgstr ""
+"Si es verdadero, permite el acceso al escritorio por medio del protocolo "
+"RFB. Los usuarios en las máquinas remotas entonces podrán conectarse al "
+"escritorio usando un visor vnc."
 
 #: server/vino-server.schemas.in.h:5
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
-msgstr "Si es verdadero, los usuarios remotos que accedan al escritorio, no se les concede el acceso hasta que el usuario en la máquina anfitriona aprueba la conexión. Recomendado especialmente cuando el acceso no está protegido por contraseña."
+msgstr ""
+"Si es verdadero, los usuarios remotos que accedan al escritorio, no se les "
+"concede el acceso hasta que el usuario en la máquina anfitriona aprueba la "
+"conexión. Recomendado especialmente cuando el acceso no está protegido por "
+"contraseña."
 
 #: server/vino-server.schemas.in.h:6
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote user's will not be able to use the mouse or keyboard."
-msgstr "Si es verdadero, los usuarios remotos que accedan al escritorio sólo se les permite ver el escritorio. Los usuarios remotos no podrán usar el ratón o el teclado."
+msgstr ""
+"Si es verdadero, los usuarios remotos que accedan al escritorio sólo se les "
+"permite ver el escritorio. Los usuarios remotos no podrán usar el ratón o el "
+"teclado."
 
 #: server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are required to be able support "
 "encyrption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
-msgstr "Si es verdadero, se requerirá que los usuarios remotos que accedan al escritorio soporten encriptación. Se recomienda encarecidamente usar un cliente que soporte encriptación a no ser que la red interviniente sea de confianza."
+msgstr ""
+"Si es verdadero, se requerirá que los usuarios remotos que accedan al "
+"escritorio soporten encriptación. Se recomienda encarecidamente usar un "
+"cliente que soporte encriptación a no ser que la red interviniente sea de "
+"confianza."
 
 #: server/vino-server.schemas.in.h:8
 msgid ""
@@ -259,7 +282,12 @@ msgid ""
 "remote user to be prompted for a password (the password is specified by the "
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
-msgstr "Lista los métodos de autenticación con los cuales los usuarios remotos pueden acceder al escritorio. Hay dos métodos de autenticación posibles: «vnc» hace que se le pregunte una contraseña al usuario remoto (la contraseña se especifica en la clave vnc_password) antes de conectarse y «none» permite conectarse a cualquier usuario remoto."
+msgstr ""
+"Lista los métodos de autenticación con los cuales los usuarios remotos "
+"pueden acceder al escritorio. Hay dos métodos de autenticación posibles: "
+"«vnc» hace que se le pregunte una contraseña al usuario remoto (la "
+"contraseña se especifica en la clave vnc_password) antes de conectarse y "
+"«none» permite conectarse a cualquier usuario remoto."
 
 #: server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
@@ -282,14 +310,20 @@ msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
-msgstr "La contraseña por la que se le preguntará al usuario remoto si se usa el método de autenticación «vnc». La contraseña especificada por la clave está codificada en base64."
+msgstr ""
+"La contraseña por la que se le preguntará al usuario remoto si se usa el "
+"método de autenticación «vnc». La contraseña especificada por la clave está "
+"codificada en base64."
 
 #: server/vino-server.schemas.in.h:14
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
-msgstr "Esta clave especifica la dirección de correo-e a la cual se envía la URL del escritorio remoto si el usuario pulsa en la URL en el diálogo de preferencias del Escritorio Remoto."
+msgstr ""
+"Esta clave especifica la dirección de correo-e a la cual se envía la URL del "
+"escritorio remoto si el usuario pulsa en la URL en el diálogo de "
+"preferencias del Escritorio Remoto."
 
 #: server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -299,7 +333,9 @@ msgstr "El servidor de Escritorio Remoto ya está en ejecución; saliendo ...\n"
 msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
-msgstr "Problema registrando el servidor de escritorio remoto con bonobo-activation; saliendo ...\n"
+msgstr ""
+"Problema registrando el servidor de escritorio remoto con bonobo-activation; "
+"saliendo ...\n"
 
 #: session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
@@ -317,7 +353,9 @@ msgstr "La activación de %s falló: Error desconocido\n"
 
 #: session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "Falló al activar el servidor de escritorio remoto: se intentó demasiadas veces\n"
+msgstr ""
+"Falló al activar el servidor de escritorio remoto: se intentó demasiadas "
+"veces\n"
 
 #: session/vino-session.c:295
 msgid "Starting remote desktop server"
@@ -326,4 +364,3 @@ msgstr "Iniciando el servidor de escritorio remoto"
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "No iniciando el servidor de escritorio remoto"
-
