@@ -1,0 +1,376 @@
+# Xhosa translation of vino
+# Copyright (C) 2005 Canonical Ltd.
+# This file is distributed under the same license as the vino package.
+# Translation by Canonical Ltd <translations@canonical.com> with thanks to
+# Translation World CC in South Africa, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vino\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-03-30 16:14+0200\n"
+"PO-Revision-Date: 2005-03-22 17:15+0200\n"
+"Last-Translator: Canonical Ltd <translations@canonical.com>\n"
+"Language-Team: Xhosa <xh-translate@ubuntu.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../capplet/vino-preferences.c:807
+msgid "Send this command by email"
+msgstr "Thumela lo myalelo nge-imeyile"
+
+#: ../capplet/vino-preferences.c:842
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"Kwabakho impazamo ekuboniseni unceda:\n"
+"%s"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:1
+msgid "Remote Desktop"
+msgstr "i-Desktop Ekude"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "Misela uluhlu lwezinto ezikhethekayo ezifikelelekayo kwi-desktop ekude"
+
+#: ../capplet/vino-preferences.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../capplet/vino-preferences.glade.h:2
+msgid "        "
+msgstr "        "
+
+#: ../capplet/vino-preferences.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: ../capplet/vino-preferences.glade.h:4
+msgid "<b>Security</b>"
+msgstr "<b>Ukhuseleko</b>"
+
+#: ../capplet/vino-preferences.glade.h:5
+msgid "<b>Sharing</b>"
+msgstr "<b>Iyabelana</b>"
+
+#: ../capplet/vino-preferences.glade.h:6
+msgid "A_sk you for confirmation"
+msgstr "Ic_ela wena yenzela uqinisekiso"
+
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Allow other users to _view your desktop"
+msgstr "Vumela abanye abasebenzisi ba _bonise i-desktop yakho"
+
+#: ../capplet/vino-preferences.glade.h:8
+msgid "Remote Desktop Preferences"
+msgstr "Izinto Ekunokukhethwa kuzo Ezikude ze-Desktop"
+
+#: ../capplet/vino-preferences.glade.h:9
+msgid "Some of these preferences are locked down"
+msgstr "Ezinye zezi zinto ekunokukhethwa kuzo zitshixelwe phantsi"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid "Users can view your desktop using this command:"
+msgstr "Abasebenzisi bangabonisa i-desktop yakho besebenzisa lo myalelo:"
+
+#: ../capplet/vino-preferences.glade.h:11
+msgid "When a user tries to view or control your desktop:"
+msgstr "Xa umsebenzisi ezama ukubonisa okanye elawula i-desktop yakho:"
+
+#: ../capplet/vino-preferences.glade.h:12
+msgid "_Allow other users to control your desktop"
+msgstr "_Vumela abanye abasebenzisi ukuba balawulu i-desktop yakho"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid "_Password:"
+msgstr "i-_Password:"
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "_Require the user to enter this password:"
+msgstr "_Cela umsebenzisi angenise le-password:"
+
+#: ../capplet/vino-url.c:158
+msgid "Address"
+msgstr "Idilesi"
+
+#: ../capplet/vino-url.c:159
+msgid "The address pointed to by the widget"
+msgstr "Idilesi ekhonjwe yi-widget"
+
+#: ../capplet/vino-url.c:166
+msgid "Tooltip"
+msgstr "Inkcazelo yesixhobo"
+
+#: ../capplet/vino-url.c:167
+msgid "A tooltip for this URL"
+msgstr "Inkcazelo yesixhobo yale-URL"
+
+#: ../capplet/vino-url.c:173
+msgid "URL color"
+msgstr "Umbala we-URL"
+
+#: ../capplet/vino-url.c:174
+msgid "The color of the URL's label"
+msgstr "Umbala welebhile ye-URL"
+
+#: ../server/vino-fb.c:947 ../server/vino-prompt.c:144
+#: ../server/vino-server.c:851
+msgid "Screen"
+msgstr "Iskrini"
+
+#: ../server/vino-fb.c:948
+msgid "The screen to be monitored"
+msgstr "Iskrini emasonganyelwe"
+
+#: ../server/vino-main.c:78
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"I-XSeva ayisixhasi isongezo esiyi XTest - ukufikelela okude kwe-desktop kuya "
+"bonisa-kuphela\n"
+
+#: ../server/vino-prompt.c:145
+msgid "The screen on which to display the prompt"
+msgstr "I-screen apho kuboniswa kwesiqhubi"
+
+#: ../server/vino-prompt.c:385
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Umsebenzisi kwikhompyutha '%s' uzama ukuyibonisa kude okanye ukuyilawula i-"
+"desktop yakho."
+
+#: ../server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "<big><b>Omnye umsebenzisi uzama ukubonisa i-desktop yakho.</b></big>"
+
+#: ../server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Umsebenzisi kwenye ikhompyutha uzama ukubonisa kude okanye ukulawula "
+"ikhompyutha yakho."
+
+#: ../server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr "Uyafuna ukubavumela ukuba benze oko?"
+
+#: ../server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "Umbuzo"
+
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
+msgid "_Allow"
+msgstr "_Vumela"
+
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
+msgid "_Refuse"
+msgstr "_Landula"
+
+#: ../server/vino-server.c:852
+msgid "The screen for which to create a VNC server"
+msgstr "Isikrini ekuza kudalwa kuso iseva ye-VNC"
+
+#: ../server/vino-server.c:859
+msgid "On Hold"
+msgstr "Ekumiso"
+
+#: ../server/vino-server.c:860
+msgid "Place all clients on hold"
+msgstr "Beka bonke abaxhasi kumiso"
+
+#: ../server/vino-server.c:867
+msgid "Prompt enabled"
+msgstr "Isiqhubi senziwe ukuba sisebenze"
+
+#: ../server/vino-server.c:868
+msgid "Prompt the user about connection attempts"
+msgstr "Qhuba umsebenzi ngeenzame zoqhagamshelwano"
+
+#: ../server/vino-server.c:875
+msgid "View Only"
+msgstr "Bonisa kuphela"
+
+#: ../server/vino-server.c:876
+msgid "Disallow keyboard/pointer input from clients"
+msgstr "Musa ukuvumela ingeniso ye-keyboard/isikhombisi usuke kubaxhasi"
+
+#: ../server/vino-server.c:883
+msgid "Require Encryption"
+msgstr "Cela Ukuvulwa Kombhalo Ofihlakeleyo"
+
+#: ../server/vino-server.c:884
+msgid "Require clients to use encryption"
+msgstr "Cela abaxhasi ukuba basebenzise ukuvulwa kombhalo ofihlakeleyo"
+
+#: ../server/vino-server.c:891
+msgid "Authentication methods"
+msgstr "Iindlela zokuqinisekisa"
+
+#: ../server/vino-server.c:892
+msgid "The authentication methods this server should allow"
+msgstr "Iindlela zokuqinisekisa emazivunyelwe yile seva"
+
+#: ../server/vino-server.c:900
+msgid "VNC Password"
+msgstr "I-VNC Password"
+
+#: ../server/vino-server.c:901
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr ""
+"I-password (base64 inxulunyanisiwe) esetyenziswe ukuqinisekisa iintlobo "
+"ezisebenzisa indlela ye-VncAuth"
+
+#: ../server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "Iindlela zokuqinisekisa ezivunyelweyo"
+
+#: ../server/vino-server.schemas.in.h:2
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "Idilesi ye-imeyile apho i-desktop ekude ye-URL mayithunyelwe khona"
+
+#: ../server/vino-server.schemas.in.h:3
+msgid "Enable remote desktop access"
+msgstr "Yenza ukuba kubekho ukufikelela kwe-desktop ekude"
+
+#: ../server/vino-server.schemas.in.h:4
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+"Ukuba yinyani, ivumela ukufikelela okukude ukuba kuye kwi-desktop ngendlela "
+"edlula kwimithetho yokusebenza ye-RFB. Abasebenzisi kwiimatshini ezikude "
+"banganxulumana ne-deskto besebenzisa isibonisi se-vnc."
+
+#: ../server/vino-server.schemas.in.h:5
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"Ukuba yinyani, abasebenzisi abakude abafikelela i-desktop abavunyelwanga "
+"ukufikelela de umsebenzisi kwimatshini engumququzeli alwamkele "
+"uqhagamshelwano. Iyakhuthazwa ikakhulu xa ufikelelo lungakhuselwanga yi-"
+"password."
+
+#: ../server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr ""
+"Ukuba yinyani, abasebenzisi abakude abafikelela i-desktop bavunyelwa kuphela "
+"ukubonisa i-desktop. Abasebenzisi abakude abasayi kuvunyelwa ukusebenzisa i-"
+"mouse okanye i-keyboard."
+
+#: ../server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encyrption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+"Ukuba yinyani, abasebenzisi abakude abafikelela kwi-desktop bayacelwa ukuba "
+"babe nako ukuxhasa ukuvulwa kombhalo ofihlakeleyo. Iyakhuthazwa kakhulu into "
+"yokuba usebenzise umxhasi oxhasa inkqubo yokuvulwa kombhalo ofihlakeleyo "
+"ngaphandle kokuba uthungelwano olulamlayo luthenjiwe."
+
+#: ../server/vino-server.schemas.in.h:8
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+"Idwelisa iindlela zoqinisekiso ekuthi ngazo abasebenzisi abakude "
+"bangayifikelela i-desktop, Zimbini iindlela ezingakhoyo zoqinisekiso; i \"vnc"
+"\" yenza ukuba umsebenzisi okude aqhutywe afunwe i-password (i-password "
+"ibalulwe ngesitshixo se-password ye_vnc) ngaphambi kokuba aqhagamshelane "
+"kwakunye ne \"none\" evumela nawuphi na umsebenzisi okude ukuba "
+"aqhagamshelane."
+
+#: ../server/vino-server.schemas.in.h:9
+msgid "Only allow remote users to view the desktop"
+msgstr "Ivumela kuphela abasebenzisi abakude ukubonisa i-desktop"
+
+#: ../server/vino-server.schemas.in.h:10
+msgid "Password required for \"vnc\" authentication"
+msgstr "i-Password ecelelwa uqinisekiso lwe \"vnc\""
+
+#: ../server/vino-server.schemas.in.h:11
+msgid "Prompt the user before completing a connection"
+msgstr "Qhuba umsebenzisi ngaphambi kokugqiba uqhagamshelwano"
+
+#: ../server/vino-server.schemas.in.h:12
+msgid "Require encryption"
+msgstr "Cela ukuvulwa kombhalo ofihlakeleyo"
+
+#: ../server/vino-server.schemas.in.h:13
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+"I-password ekuya kuthi ngayo umsebenzisi aqhutywe ngayo ukuba indlela "
+"yoqinisekiso i \"vnc\" iyasetyenziswa. I-password ebalulwa ngesitshixo "
+"inxulumana ne-base64."
+
+#: ../server/vino-server.schemas.in.h:14
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+"Esi sitshixo sibalula idilesi ye-imeyile apho i-URL ye-desktop ekude "
+"kufuneka ithunyelwe khona ukuba umsebenzisi ucofa kwi-URL ekunxibelelwano "
+"lwezinto ekunokukhethwa kuzo kwi-Desktop Ekude."
+
+#: ../server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "Iseva ye-Desktop Ekude sele iphumeza; iyaphuma...\n"
+
+#: ../server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr ""
+"Ingxaki ekuboniseni iseva ye-desktop ekude kwi-bonobo-activation; "
+"iyaphuma...\n"
+
+#: ../session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr "Iseva ye-desktop ekude ifile, iyaqalisa kwakhona\n"
+
+#: ../session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "Ukwenza ukuba i %s isebenze kwakhona akuphumelelanga: %s\n"
+
+#: ../session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr ""
+"Ukwenza ukuba i %s isebenze kwakhona akuphumelelanga: Impazamo Engaziwayo\n"
+
+#: ../session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr ""
+"Ayiphumelelanga ukwenza ukuba iseva ye-desktop ekude isebenze: izama "
+"amaxesha amaninzi kakhulu\n"
+
+#: ../session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr "Iqalisa iseva ye-desktop ekude"
+
+#: ../session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr "Ayiqalisi seva ye-desktop ekude"
