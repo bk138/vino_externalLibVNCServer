@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 0.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-20 00:38+0900\n"
-"PO-Revision-Date: 2004-08-19 17:28+0900\n"
+"POT-Creation-Date: 2004-08-26 11:48+0900\n"
+"PO-Revision-Date: 2004-08-25 09:28+0900\n"
 "Last-Translator: Satrou SATOH <ss@gnome.gr.jp>\n"
 "Language-Team: Japanese <translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: capplet/vino-preferences.c:809
 msgid "Send this command by email"
-msgstr ""
+msgstr "このコマンドを電子メールで送信"
 
 #: capplet/vino-preferences.desktop.in.h:1
 msgid "Remote Desktop"
@@ -64,9 +64,8 @@ msgid "Some of these preferences are locked down"
 msgstr "設定のいくつかは変更不可となっています"
 
 #: capplet/vino-preferences.glade.h:10
-#, fuzzy
 msgid "Users can view your desktop using this command:"
-msgstr "ユーザーがデスクトップを見るときのアドレス:"
+msgstr "このコマンドでユーザーはあなたのデスクトップを見ることができます:"
 
 #: capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
@@ -86,27 +85,27 @@ msgstr "必ずパスワードを入力:"
 
 #: capplet/vino-url.c:158
 msgid "Address"
-msgstr ""
+msgstr "アドレス"
 
 #: capplet/vino-url.c:159
 msgid "The address pointed to by the widget"
-msgstr ""
+msgstr "ウィジェットが示すアドレス"
 
 #: capplet/vino-url.c:166
 msgid "Tooltip"
-msgstr ""
+msgstr "ツールチップ"
 
 #: capplet/vino-url.c:167
 msgid "A tooltip for this URL"
-msgstr ""
+msgstr "この URL のツールチップ"
 
 #: capplet/vino-url.c:173
 msgid "URL color"
-msgstr ""
+msgstr "URL 色"
 
 #: capplet/vino-url.c:174
 msgid "The color of the URL's label"
-msgstr ""
+msgstr "URL ラベルの色"
 
 #: server/vino-fb.c:888 server/vino-prompt.c:144 server/vino-server.c:840
 msgid "Screen"
@@ -138,26 +137,25 @@ msgstr ""
 "ロールしようとしています"
 
 #: server/vino-prompt.glade.h:1
-#, fuzzy
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "他のユーザーがデスクトップを見れるようにする"
+msgstr ""
+"<big><b>他のユーザーがあなたのデスクトップを見ようとしています</b></big>"
 
 #: server/vino-prompt.glade.h:2
-#, fuzzy
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"コンピュータ '%s' のユーザーがあなたのデスクトップをリモートから見る/コント"
-"ロールしようとしています"
+"他のコンピュータのユーザーがあなたのデスクトップをリモートから見る/コントロー"
+"ルしようとしています"
 
 #: server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
-msgstr ""
+msgstr "許可しますか?"
 
 #: server/vino-prompt.glade.h:4
 msgid "Question"
-msgstr ""
+msgstr "質問"
 
 #: server/vino-prompt.glade.h:5 server/vino-util.c:64
 msgid "_Allow"
@@ -317,42 +315,43 @@ msgstr ""
 
 #: server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr ""
+msgstr "リモートデスクトップサーバーは既に起動しています: 終了します...\n"
 
 #: server/vino-shell.c:79
 msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
 msgstr ""
+"bonobo-activation でリモートデスクトップサーバーを登録中に障害: 終了しま"
+"す...\n"
 
 #: session/vino-session.c:133
-#, fuzzy
 msgid "Remote desktop server died, restarting\n"
-msgstr "リモートデスクトップ設定"
+msgstr "リモートデスクトップ終了しました. 再起動中\n"
 
 #: session/vino-session.c:154
 #, c-format
 msgid "Activation of %s failed: %s\n"
-msgstr ""
+msgstr "%s をアクティブにするのに失敗: %s\n"
 
 #: session/vino-session.c:160
 #, c-format
 msgid "Activation of %s failed: Unknown Error\n"
-msgstr ""
+msgstr "%s をアクティブにするのに失敗: 不明なエラー\n"
 
 #: session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
 msgstr ""
+"リモートデスクトップサーバーをアクティブにするのに失敗: 何回もトライし過ぎで"
+"す\n"
 
 #: session/vino-session.c:295
-#, fuzzy
 msgid "Starting remote desktop server"
-msgstr "リモートデスクトップアクセスを設定します"
+msgstr "リモートデスクトップサーバー起動中"
 
 #: session/vino-session.c:300
-#, fuzzy
 msgid "Not starting remote desktop server"
-msgstr "リモートデスクトップアクセスを設定します"
+msgstr "リモートデスクトップサーバーが起動していません"
 
 #~ msgid "_Ensure the user is using encryption"
 #~ msgstr "必ず暗号を使用(_E)"
