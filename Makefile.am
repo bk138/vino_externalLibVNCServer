@@ -1,4 +1,4 @@
-SUBDIRS = server client capplet session icons docs po
+SUBDIRS = server capplet session icons docs po
 
 EXTRA_DIST =                \
 	intltool-extract.in \

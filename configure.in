@@ -20,15 +20,6 @@ AC_PROG_INTLTOOL
 AC_PATH_PROG(GCONFTOOL, gconftool-2)
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
-AC_PATH_PROG(JAVAC, javac)
-AC_PATH_PROG(JAR, jar)
-
-AC_ARG_ENABLE(java,
-              [AC_HELP_STRING([--enable-java],
-                              [rebuild the Java applet [default=no]])],,
-              [enable_java=no])
-AM_CONDITIONAL(JAVA_SDK_AVAILABLE, test "x$JAVAC" != "x" -a "x$JAR" != "x" -a "$enable_java" != "no")
-
 ALL_LINGUAS="bg bn cs en_CA en_GB es gu hu nl no pa pt pt_BR sq sr sr@Latn sv"
 AM_GLIB_GNU_GETTEXT
 
@@ -67,6 +58,18 @@ if test "$enable_session_support" = "yes"; then
   AC_SUBST(VINO_SESSION_CFLAGS)
 fi
 AM_CONDITIONAL(SESSION_SUPPORT, [test "$enable_session_support" = "yes"])
+
+dnl --enable-http-server=(yes|no)
+AC_ARG_ENABLE(http_server,
+	      [  --enable-http-server=[no/yes] enable an HTTP server for serving a Java applet client [default=no]],,
+	      enable_http_server=no)
+if test "$enable_http_server" = "yes"; then
+  VINO_HTTP_CFLAGS="-DVINO_ENABLE_HTTP_SERVER"
+else
+  VINO_HTTP_CFLAGS=""
+fi
+AC_SUBST(VINO_HTTP_CFLAGS)
+AM_CONDITIONAL(HTTP_SERVER, [test "$enable_http_server" = "yes"])
 
 #
 # If Pango included the shared library dependencies from X11 in
@@ -245,8 +248,6 @@ Makefile
 server/Makefile
 server/libvncserver/Makefile
 server/libvncserver/rfb/Makefile
-client/Makefile
-client/java/Makefile
 capplet/Makefile
 session/Makefile
 icons/Makefile

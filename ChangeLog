@@ -1,3 +1,19 @@
+2004-08-11  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: add a --enable-http-server arg which
+	is off by default, disable all Java stuff.
+	
+	* Makefile.am: remove the client subdir.
+	
+	* client/*: remove.
+	
+	* server/Makefile.am: don't build http-server.[ch] unless
+	built with --enable-http-server.
+	
+	* server/vino-server.c:
+	(vino_server_init_from_screen),	(vino_server_finalize):
+	#ifdef the http server initialization/destruction.
+
 2004-08-07  Danilo Šegan  <dsegan@gmx.net>
 
 	* configure.in: Added "sr" and "sr@Latn" to ALL_LINGUAS.

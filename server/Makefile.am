@@ -6,6 +6,7 @@ INCLUDES = \
 	-I$(top_srcdir)/server/libvncserver \
 	$(VINO_SERVER_CFLAGS) \
 	$(VINO_DEBUG_CFLAGS) \
+	$(VINO_HTTP_CFLAGS) \
 	$(LIBGNUTLS_CFLAGS) \
 	$(LIBGCRYPT_CFLAGS) \
 	$(WARN_CFLAGS) \
@@ -25,6 +26,13 @@ vino_server_LDADD = \
 	$(top_builddir)/server/libvncserver/libvncserver.la \
 	$(NULL)
 
+if HTTP_SERVER
+VINO_HTTP_SRC = \
+	vino-http.c \
+	vino-http.h \
+	$(NULL)
+endif
+
 vino_server_SOURCES = \
 	vino-cursor.c \
 	vino-cursor.h \
@@ -32,8 +40,6 @@ vino_server_SOURCES = \
 	vino-enums.h \
 	vino-fb.c \
 	vino-fb.h \
-	vino-http.c \
-	vino-http.h \
 	vino-input.c \
 	vino-input.h \
 	vino-main.c \
@@ -49,6 +55,7 @@ vino_server_SOURCES = \
 	vino-shell.h \
 	vino-util.c \
 	vino-util.h \
+	$(VINO_HTTP_SRC) \
 	$(CORBA_SRCLIST) \
 	$(NULL)
 
