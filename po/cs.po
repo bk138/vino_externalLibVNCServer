@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-17 11:42+0100\n"
-"PO-Revision-Date: 2004-07-13 19:40+0200\n"
+"POT-Creation-Date: 2004-09-05 12:22+0200\n"
+"PO-Revision-Date: 2004-09-05 16:46+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -70,7 +70,7 @@ msgstr "Uživatelé mohou zobrazit vaši pracovní plochu pomocí tohoto příka
 
 #: capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
-msgstr "Když se uživate pokusí zobrazit nebo ovládat vaši pracovní plochu:"
+msgstr "Když se uživatel pokusí zobrazit nebo ovládat vaši pracovní plochu:"
 
 #: capplet/vino-preferences.glade.h:12
 msgid "_Allow other users to control your desktop"
@@ -309,9 +309,7 @@ msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
-msgstr ""
-"Heslo, na které bude vzdálený uživatel dotázán, pokud se používá metoda "
-"autentizace \"vnc\". Heslo určené tímo klíčem je kódování s base64."
+msgstr "Heslo, na které bude vzdálený uživatel dotázán, pokud se používá metoda autentizace \"vnc\". Heslo určené tímto klíčem je kódování s base64."
 
 #: server/vino-server.schemas.in.h:14
 msgid ""
@@ -331,9 +329,7 @@ msgstr "Server vzdálené pracovní plochy již běží; končím ...\n"
 msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
-msgstr ""
-"Probém při registraci serveru pro vzdálenou pracovní plochu u bonobo-"
-"activation; končím ...\n"
+msgstr "Problém při registraci serveru pro vzdálenou pracovní plochu u bonobo-activation; končím ...\n"
 
 #: session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
