@@ -1,16 +1,15 @@
 # English/Canada translation of vino.
-# Copyright (C) 2004 THE vino'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the vino package.
+# Copyright (C) 2004 Adam Weinberger and the GNOME Foundation
+# This file is distributed under the same licence as the vino package.
 # Adam Weinberger <adamw@gnome.org>, 2004.
-# , fuzzy
 # 
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-21 14:42+0100\n"
-"PO-Revision-Date: 2004-05-30 14:24-0700\n"
+"POT-Creation-Date: 2004-08-02 16:12-0400\n"
+"PO-Revision-Date: 2004-08-02 14:24-0700\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: English/Canada <adamw@FreeBSD.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,9 +17,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: capplet/vino-preferences.c:809
-#, fuzzy
 msgid "Send this command by email"
-msgstr "Send this web address by email"
+msgstr "Send this command by email"
 
 #: capplet/vino-preferences.desktop.in.h:1
 msgid "Remote Desktop"
@@ -67,9 +65,8 @@ msgid "Some of these preferences are locked down"
 msgstr "Some of these preferences are locked down"
 
 #: capplet/vino-preferences.glade.h:10
-#, fuzzy
 msgid "Users can view your desktop using this command:"
-msgstr "Users can view your desktop at this web address:"
+msgstr "Users can view your desktop using this command:"
 
 #: capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
@@ -359,6 +356,3 @@ msgstr "Starting remote desktop server"
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Not starting remote desktop server"
-
-#~ msgid "_Ensure the user is using encryption"
-#~ msgstr "_Ensure the user is using encryption"
