@@ -1,3 +1,7 @@
+2004-09-11  Jordi Mallach  <jordi@sindominio.net>
+
+	* configure.in (ALL_LINGUAS): Added "ca" (Catalan).
+
 2004-09-11  Baris Cicek <baris@teamforce.name.tr>
 
 	* configure.in: Added 'tr' to ALL_LINGUAS.
