@@ -1,0 +1,375 @@
+# Slovak translations for vino package.
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# This file is distributed under the same license as the vino package.
+# Marcel Telka <marcel@telka.sk>, 2004.
+#
+# $Id$
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vino\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-10-16 13:17+0200\n"
+"PO-Revision-Date: 2004-10-16 13:16+0200\n"
+"Last-Translator: Marcel Telka <marcel@telka.sk>\n"
+"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: capplet/vino-preferences.c:807
+msgid "Send this command by email"
+msgstr "Odoslať tento príkaz elektronickou poštou"
+
+#: capplet/vino-preferences.c:842
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"Vyskytla sa chyba pri zobrazovaní pomocníka:\n"
+"%s"
+
+#: capplet/vino-preferences.desktop.in.h:1
+msgid "Remote Desktop"
+msgstr "Vzdialená pracovná plocha"
+
+#: capplet/vino-preferences.desktop.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "Nastaviť predvoľby vášho prístupu k vzdialenej pracovnej ploche"
+
+#: capplet/vino-preferences.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: capplet/vino-preferences.glade.h:2
+msgid "        "
+msgstr "        "
+
+#: capplet/vino-preferences.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: capplet/vino-preferences.glade.h:4
+msgid "<b>Security</b>"
+msgstr "<b>Bezpečnosť</b>"
+
+#: capplet/vino-preferences.glade.h:5
+msgid "<b>Sharing</b>"
+msgstr "<b>Zdieľanie</b>"
+
+#: capplet/vino-preferences.glade.h:6
+msgid "A_sk you for confirmation"
+msgstr "_Pýtať vaše potvrdenie"
+
+#: capplet/vino-preferences.glade.h:7
+msgid "Allow other users to _view your desktop"
+msgstr "Povoliť ostatným používateľom _vidieť vašu pracovnú plochu"
+
+#: capplet/vino-preferences.glade.h:8
+msgid "Remote Desktop Preferences"
+msgstr "Predvoľby vzdialenej pracovnej plochy"
+
+#: capplet/vino-preferences.glade.h:9
+msgid "Some of these preferences are locked down"
+msgstr "Niektoré z týchto nastavení sú uzamknuté"
+
+#: capplet/vino-preferences.glade.h:10
+msgid "Users can view your desktop using this command:"
+msgstr "Používatelia môžu vidieť vašu pracovnú plochu pomocou tohoto príkazu:"
+
+#: capplet/vino-preferences.glade.h:11
+msgid "When a user tries to view or control your desktop:"
+msgstr "Keď sa používateľ pokúša vidieť alebo ovládať vašu pracovnú plochu:"
+
+#: capplet/vino-preferences.glade.h:12
+msgid "_Allow other users to control your desktop"
+msgstr "_Povoliť ostatným používateľom ovládať vašu pracovnú plochu"
+
+#: capplet/vino-preferences.glade.h:13
+msgid "_Password:"
+msgstr "_Heslo:"
+
+#: capplet/vino-preferences.glade.h:14
+msgid "_Require the user to enter this password:"
+msgstr "_Vyžadovať od používateľa zadanie tohoto hesla:"
+
+#: capplet/vino-url.c:158
+msgid "Address"
+msgstr "Adresa"
+
+#: capplet/vino-url.c:159
+msgid "The address pointed to by the widget"
+msgstr "Adresa, na ktorú ukazuje prvok"
+
+#: capplet/vino-url.c:166
+msgid "Tooltip"
+msgstr "Bublinová nápoveda"
+
+#: capplet/vino-url.c:167
+msgid "A tooltip for this URL"
+msgstr "Bublinová nápoveda pre toto URL"
+
+#: capplet/vino-url.c:173
+msgid "URL color"
+msgstr "Farba URL"
+
+#: capplet/vino-url.c:174
+msgid "The color of the URL's label"
+msgstr "Farba pre URL návestie"
+
+#: server/vino-fb.c:947 server/vino-prompt.c:144 server/vino-server.c:851
+msgid "Screen"
+msgstr "Obrazovka"
+
+#: server/vino-fb.c:948
+msgid "The screen to be monitored"
+msgstr "Obrazovka, ktorá bude sledovaná"
+
+#: server/vino-main.c:78
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"Váš XServer nepodporuje rozšírenie XTest - prístup k vzdialenej pracovnej "
+"ploche bude len pre pozeranie\n"
+
+#: server/vino-prompt.c:145
+msgid "The screen on which to display the prompt"
+msgstr "Obrazovka, na ktorej zobraziť výzvu"
+
+#: server/vino-prompt.c:385
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Používateľ na počítači '%s' sa pokúša vzdialene pozerať alebo ovládať vašu "
+"pracovnú plochu."
+
+#: server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr ""
+"<big><b>Iný používateľ sa pokúša pozerať na vašu pracovnú plochu.</b></big>"
+
+#: server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Používateľ na inom počítačí sa pokúša vzdialene pozerať alebo ovládať vašu "
+"pracovnú plochu."
+
+#: server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr "Checete im to povoliť?"
+
+#: server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "Otázka"
+
+#: server/vino-prompt.glade.h:5 server/vino-util.c:64
+msgid "_Allow"
+msgstr "_Povoliť"
+
+#: server/vino-prompt.glade.h:6 server/vino-util.c:65
+msgid "_Refuse"
+msgstr "_Odmietnuť"
+
+#: server/vino-server.c:852
+msgid "The screen for which to create a VNC server"
+msgstr "Obrazovka, pre ktorú vytvoriť VNC server"
+
+#: server/vino-server.c:859
+msgid "On Hold"
+msgstr "Pozastaviť"
+
+#: server/vino-server.c:860
+msgid "Place all clients on hold"
+msgstr "Pozastaviť všetkých klientov"
+
+#: server/vino-server.c:867
+msgid "Prompt enabled"
+msgstr "Výzva povolená"
+
+#: server/vino-server.c:868
+msgid "Prompt the user about connection attempts"
+msgstr "Vyzvať používateľa pri pokusoch o spojenie"
+
+#: server/vino-server.c:875
+msgid "View Only"
+msgstr "Len pozerať"
+
+#: server/vino-server.c:876
+msgid "Disallow keyboard/pointer input from clients"
+msgstr "Nepovoliť vstup z klávesnice/ukazovateľa z klientov"
+
+#: server/vino-server.c:883
+msgid "Require Encryption"
+msgstr "Vyžadovať šifrovanie"
+
+#: server/vino-server.c:884
+msgid "Require clients to use encryption"
+msgstr "Vyžadovať od klientov použitie šifrovania"
+
+#: server/vino-server.c:891
+msgid "Authentication methods"
+msgstr "Metódy overenia totožnosti"
+
+#: server/vino-server.c:892
+msgid "The authentication methods this server should allow"
+msgstr "Metódy overenia totožnosti, ktoré by mal tento server povoliť"
+
+#: server/vino-server.c:900
+msgid "VNC Password"
+msgstr "VNC heslo"
+
+#: server/vino-server.c:901
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr ""
+"Heslo (kódované base64) použité pri overení totožnosti pomocou metódy VncAuth"
+
+#: server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "Povolené motódy overenia totožnosti"
+
+#: server/vino-server.schemas.in.h:2
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr ""
+"Adresa elktronickej pošty, na ktorú by malo byť odoslané URL vzdialenej "
+"pracovnej plochy"
+
+#: server/vino-server.schemas.in.h:3
+msgid "Enable remote desktop access"
+msgstr "Povoliž prístup k vzdialenej pracovnej ploche"
+
+#: server/vino-server.schemas.in.h:4
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+"Ak je pravda, povolí vzdialený prístup k pracovnej ploche cez RFB protokol. "
+"Používatelia na vzdialených počítačoch sa potom môžu pripojiť k pracovnej "
+"ploche pomocou aplikácie vncviewer."
+
+#: server/vino-server.schemas.in.h:5
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"Ak je pravda, vzdialení používatelia pristupujúci k pracovnej ploche nemajú "
+"povolený prístup, kým používateľ na hostiteľskom počítači nepovolí spojenie. "
+"Odporúčané špeciálne pri prístupe, ktorý nie je chránený heslom."
+
+#: server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr ""
+"Ak je pravda, vzdialení používatelia pristupujúci k pracovnej ploche majú "
+"povolené len pozeranie na pracovnú plochu. Vzdialení používatelia nebudú "
+"môcť používať myš alebo klávesnicu."
+
+#: server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encyrption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+"Ak je pravda, je vyžadované od vzdialených používateľov pristupujúcich k "
+"pracovnej ploche, aby použili šifrovanie. Je veľmi odporúčané, aby ste "
+"požívali klientov, ktorí podporujú šifrovanie, iba ak by bola "
+"sprostredkujúca sieť dôveryhodná."
+
+#: server/vino-server.schemas.in.h:8
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+"Zoznam metód overenia totožnosti, pomocou ktorých môžu vzdialní používatelia "
+"pristupovať k pracovnej ploche. Sú dve možné metódy overenia totožnosti; "
+"\"vnc\"spôsobí, že vzdialený používateľ bude vyzvaný na zadanie hesla (heslo "
+"je určené pomocou kľúča vnc_password) pred pripojením a \"none\", ktoré "
+"povolí každému vzdialenému používateľovi pripojenie."
+
+#: server/vino-server.schemas.in.h:9
+msgid "Only allow remote users to view the desktop"
+msgstr "Povoliť vzdialeným používateľom len pozeranie pracovnej plochy"
+
+#: server/vino-server.schemas.in.h:10
+msgid "Password required for \"vnc\" authentication"
+msgstr "Vyžadované heslo pre overenie totožnosti \"vnc\""
+
+#: server/vino-server.schemas.in.h:11
+msgid "Prompt the user before completing a connection"
+msgstr "Vyzvať používateľa pred dokončením spojenia"
+
+#: server/vino-server.schemas.in.h:12
+msgid "Require encryption"
+msgstr "Vyžadovať šifrovanie"
+
+#: server/vino-server.schemas.in.h:13
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+"Heslo, ktoré bude vyžadované od vzdialeného používateľa, ak je použitá "
+"metóda overenia totožnosti \"vnc\". Heslo zadané v tomto kľúči je zakódované "
+"pomocou base64."
+
+#: server/vino-server.schemas.in.h:14
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+"Tento kľúč určuje adresu elektronickej pošty, na ktorú by malo byť odoslané "
+"URL, ak používateľ klikne na URL v dialógovom okne Predvolieb vzdialenej "
+"pracovnej plochy."
+
+#: server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "Server vzdialenej pracovnej plochy už beží; končím ...\n"
+
+#: server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr ""
+"Problém pri registrácii servera vzdialenej pracovnej plochy pomocou bonobo-"
+"activation; končím ...\n"
+
+#: session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr "Server vzdialenej pracovnej plochy umrel, reštartujem\n"
+
+#: session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "Aktivácia %s zlyhala: %s\n"
+
+#: session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "Aktivácia %s zlyhala: Neznáma chyba\n"
+
+#: session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr ""
+"Aktivácia servera vzdialenej pracovnej plochy zlyhala: skúšal som príliš "
+"veľa krát\n"
+
+#: session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr "Spúšťam server vzdialenej pracovnej plochy"
+
+#: session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr "Nespúšťam server vzdialenej pracovnej plochy"
