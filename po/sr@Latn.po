@@ -1,0 +1,331 @@
+# Serbian translation of vino
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2003, 2004.
+#
+# This file is distributed under the same license as the vino package.
+#
+# Maintainer: Danilo Šegan <dsegan@gmx.net>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vino\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-08-07 16:02+0200\n"
+"PO-Revision-Date: 2004-08-07 16:16+0200\n"
+"Last-Translator: Danilo Šegan <danilo@prevod.org>\n"
+"Language-Team: Serbian (sr) <gnom@prevod.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3;    plural=n%10==1 && n%100!=11 ? 0 :    n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: capplet/vino-preferences.c:809
+msgid "Send this command by email"
+msgstr "Pošalji ovu naredbu e-poštom"
+
+#: capplet/vino-preferences.desktop.in.h:1
+msgid "Remote Desktop"
+msgstr "Udaljena radna površ"
+
+#: capplet/vino-preferences.desktop.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "Postavke za pristup vašoj udaljenoj radnoj površi"
+
+#: capplet/vino-preferences.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: capplet/vino-preferences.glade.h:2
+msgid "        "
+msgstr "        "
+
+#: capplet/vino-preferences.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: capplet/vino-preferences.glade.h:4
+msgid "<b>Security</b>"
+msgstr "<b>Bezbednost</b>"
+
+#: capplet/vino-preferences.glade.h:5
+msgid "<b>Sharing</b>"
+msgstr "<b>Deljenje</b>"
+
+#: capplet/vino-preferences.glade.h:6
+msgid "A_sk you for confirmation"
+msgstr "_Traži odobrenje"
+
+#: capplet/vino-preferences.glade.h:7
+msgid "Allow other users to _view your desktop"
+msgstr "Dopusti ostalim _korisnicima da gledaju vašu radnu površ"
+
+#: capplet/vino-preferences.glade.h:8
+msgid "Remote Desktop Preferences"
+msgstr "Postavke udaljene radne površi"
+
+#: capplet/vino-preferences.glade.h:9
+msgid "Some of these preferences are locked down"
+msgstr "Neke od ovih postavki su zaključane"
+
+#: capplet/vino-preferences.glade.h:10
+msgid "Users can view your desktop using this command:"
+msgstr "Korisnici mogu da gledaju vašu radnu površ pomoću ove naredbe:"
+
+#: capplet/vino-preferences.glade.h:11
+msgid "When a user tries to view or control your desktop:"
+msgstr "Kada korisnik pokuša da gleda ili upravlja vašom radnom površi:"
+
+#: capplet/vino-preferences.glade.h:12
+msgid "_Allow other users to control your desktop"
+msgstr "_Dopusti ostalim korisnicima da upravljaju vašom radnom površi"
+
+#: capplet/vino-preferences.glade.h:13
+msgid "_Password:"
+msgstr "_Lozinka:"
+
+#: capplet/vino-preferences.glade.h:14
+msgid "_Require the user to enter this password:"
+msgstr "_Zahtevaj da korisnik unese ovu lozinku:"
+
+#: capplet/vino-url.c:158
+msgid "Address"
+msgstr "Adresa"
+
+#: capplet/vino-url.c:159
+msgid "The address pointed to by the widget"
+msgstr "Adresa na koju ukazuje element"
+
+#: capplet/vino-url.c:166
+msgid "Tooltip"
+msgstr "Oblačić"
+
+#: capplet/vino-url.c:167
+msgid "A tooltip for this URL"
+msgstr "Oblačić sa obaveštenjem za ovu adresu"
+
+#: capplet/vino-url.c:173
+msgid "URL color"
+msgstr "Boja adrese"
+
+#: capplet/vino-url.c:174
+msgid "The color of the URL's label"
+msgstr "Boja oznake adrese"
+
+#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:832
+msgid "Screen"
+msgstr "Ekran"
+
+#: server/vino-fb.c:886
+msgid "The screen to be monitored"
+msgstr "Ekran koji da pratim"
+
+#: server/vino-main.c:78
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr "Vaš XServer ne podržava proširenje XTest extension — moguće je samo gledati udaljenu radnu površ\n"
+
+#: server/vino-prompt.c:145
+msgid "The screen on which to display the prompt"
+msgstr "Ekran na kom da prikaže upit"
+
+#: server/vino-prompt.c:385
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr "Korisnik računara „%s“ pokušava da izdaleka pregleda ili upravlja vašom radnom površi."
+
+#: server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "<big><b>Neki korisnik pokušava da pregleda vašu radnu površ.</b></big>"
+
+#: server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr "Korisnik nekog drugog računara pokušava da pregleda ili upravlja vašom radnom površi izdaleka."
+
+#: server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr "Želite li da mu to dopustite?"
+
+#: server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "Pitanje"
+
+#: server/vino-prompt.glade.h:5 server/vino-util.c:64
+msgid "_Allow"
+msgstr "_Dopusti"
+
+#: server/vino-prompt.glade.h:6 server/vino-util.c:65
+msgid "_Refuse"
+msgstr "_Odbij"
+
+#: server/vino-server.c:833
+msgid "The screen for which to create a VNC server"
+msgstr "Ekran za koji da obrazuje VNC server"
+
+#: server/vino-server.c:840
+msgid "On Hold"
+msgstr "Zadrži"
+
+#: server/vino-server.c:841
+msgid "Place all clients on hold"
+msgstr "Smesti sve klijente na zadržavanje"
+
+#: server/vino-server.c:848
+msgid "Prompt enabled"
+msgstr "Upit uključen"
+
+#: server/vino-server.c:849
+msgid "Prompt the user about connection attempts"
+msgstr "Pitaj korisnika za pokušaje povezivanja"
+
+#: server/vino-server.c:856
+msgid "View Only"
+msgstr "Samo gledanje"
+
+#: server/vino-server.c:857
+msgid "Disallow keyboard/pointer input from clients"
+msgstr "Isključi unos sa tastature/pokazivača klijenta"
+
+#: server/vino-server.c:864
+msgid "Require Encryption"
+msgstr "Obavezno šifrovanje"
+
+#: server/vino-server.c:865
+msgid "Require clients to use encryption"
+msgstr "Zahtevaj da klijenti koriste šifrovanje"
+
+#: server/vino-server.c:872
+msgid "Authentication methods"
+msgstr "Načini identifikacije"
+
+#: server/vino-server.c:873
+msgid "The authentication methods this server should allow"
+msgstr "Načini identifikacije koje ovaj server dopušta"
+
+#: server/vino-server.c:881
+msgid "VNC Password"
+msgstr "VNC lozinka"
+
+#: server/vino-server.c:882
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr "Lozinka (kodirana kao base64) koja se koristi za identifikaciju pomoću VncAuth načina"
+
+#: server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "Dopušteni načini identifikacije"
+
+#: server/vino-server.schemas.in.h:2
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "Adresa e-pošte na koju treba poslati adresu udaljene radne površi"
+
+#: server/vino-server.schemas.in.h:3
+msgid "Enable remote desktop access"
+msgstr "Uključi pristup udaljenoj radnoj površi"
+
+#: server/vino-server.schemas.in.h:4
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr "Ako je postavljeno, dozvoljava udaljeni pristup radnoj površi pomoću RFB protokola. Korisnici udaljenih mašina se onda mogu povezati na radnu površ pomoću vncviewer-a."
+
+#: server/vino-server.schemas.in.h:5
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr "Ako je postavljeno, udaljenim korisnicima pristup radnoj površi se ne odobrava dok korisnik domaćina ne odobri vezu. Preporučuje se naročito kada pristup nije zaštićen lozinkom."
+
+#: server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr "Ako je postavljeno, udaljenim korisnicima se dozvoljava jedino pregled radne površi. Udaljeni korisnik neće moći da koristi miša ili tastaturu."
+
+# bug: s/encyrption/encryption/
+#: server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encyrption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr "Ako je postavljeno, udaljeni korisnici koji pristupaju radnoj površi moraju da podržavaju šifrovanje. Preporučuje se da koristite klijenta koji podržava šifrovanje osim ako se nalazite u pouzdanoj mreži."
+
+#: server/vino-server.schemas.in.h:8
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr "Ispisuje načine identifikacije kojima udaljeni korisnik može pristupiti radnoj površi. Postoje dva moguća načina identifikacije; „vnc“ od udaljenog korisnika traži lozinku (lozinka se navodi u ključu vnc_password) pre povezivanja, a „none“ dopušta svim udaljenim korisnicima da se povežu."
+
+#: server/vino-server.schemas.in.h:9
+msgid "Only allow remote users to view the desktop"
+msgstr "Dozvoli udaljenim korisnicima samo da gledaju radnu površ"
+
+#: server/vino-server.schemas.in.h:10
+msgid "Password required for \"vnc\" authentication"
+msgstr "Lozinka neophodna za „vnc“ identifikaciju"
+
+#: server/vino-server.schemas.in.h:11
+msgid "Prompt the user before completing a connection"
+msgstr "Pitaj korisnika pre uspostavljanja veze"
+
+#: server/vino-server.schemas.in.h:12
+msgid "Require encryption"
+msgstr "Obavezno šifrovanje"
+
+#: server/vino-server.schemas.in.h:13
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr "Lozinka koja će se tražiti od udaljenog korisnika ako se koristi „vnc“ način identifikacije. Lozinka u ključu je kodirana base64 algoritmom."
+
+#: server/vino-server.schemas.in.h:14
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr "Ovaj ključ navodi adresu e-pošte na koju će se slati adresa udaljene radne površi kada korisnik klikne na adresu u prozorčetu za postavke udaljene radne površi."
+
+#: server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "Server udaljene radne površi je već pokrenut; završavam...\n"
+
+#: server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr "Neprilika pri prijavi servera udaljene radne površi u Bonobo aktivaciju; završavam ...\n"
+
+#: session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr "Server udaljene radne površi je zatvoren, ponovo pokrećem\n"
+
+#: session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "Neuspešna aktivacija %s: %s\n"
+
+#: session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "Neuspešna aktivacija %s: nepoznata greška\n"
+
+#: session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr "Neuspešno pokretanje servera udaljene radne površi: pokušano suviše puta\n"
+
+#: session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr "Pokrećem server udaljene radne površi"
+
+#: session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr "Ne pokrećem server udaljene radne površi"
+
