@@ -2,12 +2,16 @@
 # Copyright (C) 2004 Free Software Foundation, Inc.
 # Ole Laursen <olau@hardworking.dk>, 2004.
 #
+# Konventioner:
+# remote -> udefra, udefrakommende
+# remote desktop -> fjernskrivebord
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-17 23:02+0200\n"
-"PO-Revision-Date: 2004-08-17 23:02+0200\n"
+"POT-Creation-Date: 2004-08-25 17:11+0200\n"
+"PO-Revision-Date: 2004-08-25 17:11+0200\n"
 "Last-Translator: Ole Laursen <olau@hardworking.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
@@ -49,7 +53,7 @@ msgstr "<b>Deling</b>"
 
 #: capplet/vino-preferences.glade.h:6
 msgid "A_sk you for confirmation"
-msgstr "S_pørg dig efter bekræftelse"
+msgstr "S_pørg dig om bekræftelse"
 
 #: capplet/vino-preferences.glade.h:7
 msgid "Allow other users to _view your desktop"
@@ -134,7 +138,7 @@ msgid ""
 "desktop."
 msgstr ""
 "En bruger på maskinen \"%s\" forsøger at se eller kontrollere dit skrivebord "
-"fjernt."
+"udefra."
 
 #: server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
@@ -146,7 +150,7 @@ msgid ""
 "desktop."
 msgstr ""
 "En bruger på en anden maskine forsøger at se eller kontrollere dit "
-"skrivebord fjernt."
+"skrivebord udefra."
 
 #: server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
@@ -182,7 +186,7 @@ msgstr "Spørgsmål aktiveret"
 
 #: server/vino-server.c:857
 msgid "Prompt the user about connection attempts"
-msgstr "Spørg brugeren om tilslutningsforsøg"
+msgstr "Spørg brugeren ved forsøg på tilslutning"
 
 #: server/vino-server.c:864
 msgid "View Only"
@@ -238,7 +242,8 @@ msgid ""
 "remote machines may then connect to the desktop using a vncviewer."
 msgstr ""
 "Tillader fjernadgang til skrivebordet vha. RFB-protokollen. Brugere på "
-"fjerne maskiner kan så tilslutte til skrivebordet med en VNC-fremviser."
+"udefrakommende maskiner kan så tilslutte til skrivebordet med en VNC-"
+"fremviser."
 
 #: server/vino-server.schemas.in.h:5
 msgid ""
@@ -246,8 +251,8 @@ msgid ""
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
 msgstr ""
-"Hvis sand, får fjerne brugere der tilgår skrivebordet, ikke adgang før "
-"brugeren på værtsmaskinen godkender tilslutningen. Anbefales især hvis "
+"Hvis sand, får udefrakommende brugere der tilgår skrivebordet, ikke adgang "
+"før brugeren på værtsmaskinen godkender tilslutningen. Anbefales især hvis "
 "adgangen ikke er beskyttet med en adgangskode."
 
 #: server/vino-server.schemas.in.h:6
@@ -255,8 +260,8 @@ msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote user's will not be able to use the mouse or keyboard."
 msgstr ""
-"Hvis sand, får fjerne brugere der tilgår skrivebordet, kun lov til at se "
-"skrivebordet og kan ikke benytte musen eller tastaturet."
+"Hvis sand, får udefrakommende brugere der tilgår skrivebordet, kun lov til "
+"at se skrivebordet og kan ikke benytte musen eller tastaturet."
 
 #: server/vino-server.schemas.in.h:7
 msgid ""
@@ -264,9 +269,10 @@ msgid ""
 "encyrption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
-"Hvis sand, skal fjerne brugere der tilgår skrivebordet, anvende kryptering. "
-"Der er stærkt anbefalet at du anvender en klient som understøtter "
-"kryptering, medmindre du kan stole på det mellemliggende netværk."
+"Hvis sand, skal udefrakommende brugere der tilgår skrivebordet, anvende "
+"kryptering. Der er stærkt anbefalet at du anvender en klient som "
+"understøtter kryptering, medmindre du kan stole på det mellemliggende "
+"netværk."
 
 #: server/vino-server.schemas.in.h:8
 msgid ""
@@ -276,14 +282,15 @@ msgid ""
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
 msgstr ""
-"Lister de godkendelsesmetoder som fjerne brugere kan tilgå skrivebordet med. "
-"Der er to mulige godkendelsesmetoder; \"vnc\" gør at den fjerne bruger "
-"bliver spurgt efter en adgangskode (som angives i nøglen vnc_password) før "
-"tilslutning, og \"none\" tillader enhver fjern brugere at tilslutte."
+"Lister de godkendelsesmetoder som udefrakommende brugere kan tilgå "
+"skrivebordet med. Der er to mulige godkendelsesmetoder; \"vnc\" gør at den "
+"udefrakommende bruger bliver spurgt efter en adgangskode (som angives i "
+"nøglen vnc_password) før tilslutning, og \"none\" tillader enhver "
+"udefrakommende bruger at tilslutte."
 
 #: server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
-msgstr "Tillad kun at fjerne brugere ser skrivebordet"
+msgstr "Tillad kun at udefrakommende brugere kan se skrivebordet"
 
 #: server/vino-server.schemas.in.h:10
 msgid "Password required for \"vnc\" authentication"
@@ -291,7 +298,7 @@ msgstr "Adgangskode påkrævet for \"vnc\"-godkendelse"
 
 #: server/vino-server.schemas.in.h:11
 msgid "Prompt the user before completing a connection"
-msgstr "Spørg brugeren før fuldbyrdelse af en tilslutning"
+msgstr "Spørg brugeren før tilslutning"
 
 #: server/vino-server.schemas.in.h:12
 msgid "Require encryption"
@@ -303,8 +310,9 @@ msgid ""
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
 msgstr ""
-"Den adgangskode som den fjerne bruger bliver spurgt efter hvis \"vnc\"-"
-"godkendelsesmetoden benyttes. Den angivne adgangskode skal være base64-kodet."
+"Den adgangskode som den udefrakommende bruger bliver spurgt efter hvis \"vnc"
+"\"-godkendelsesmetoden benyttes. Den angivne adgangskode skal være base64-"
+"kodet."
 
 #: server/vino-server.schemas.in.h:14
 msgid ""
@@ -325,7 +333,7 @@ msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
 msgstr ""
-"Problem ved registrering af den fjerne skrivebordsserver med bonobo-"
+"Problem ved registrering af den udefrakommende skrivebordsserver med bonobo-"
 "activation; afslutter...\n"
 
 #: session/vino-session.c:133
