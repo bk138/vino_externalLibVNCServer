@@ -1,26 +1,23 @@
 # Bulgarian translation of vino.
 # Copyright (C) 2004 THE vino'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the vino package.
-# Rostislav Raykov <zbrox@i-space.org>, 2004.
-# 
-# 
+# Rostislav Raykov <zbrox@i-space.org>, 2004
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-21 14:42+0100\n"
-"PO-Revision-Date: 2004-06-03 15:36+0300\n"
+"POT-Creation-Date: 2004-07-22 04:41+0200\n"
+"PO-Revision-Date: 2004-07-22 16:40+0300\n"
 "Last-Translator: Rostislav Raykov <zbrox@i-space.org>\n"
 "Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
 #: capplet/vino-preferences.c:809
-#, fuzzy
 msgid "Send this command by email"
-msgstr "Изпраща този интернет адрес по имейл"
+msgstr ""
 
 #: capplet/vino-preferences.desktop.in.h:1
 msgid "Remote Desktop"
@@ -52,11 +49,11 @@ msgstr "<b>Споделяне</b>"
 
 #: capplet/vino-preferences.glade.h:6
 msgid "A_sk you for confirmation"
-msgstr "Пита за потвърждение"
+msgstr "Питане за потвърждение"
 
 #: capplet/vino-preferences.glade.h:7
 msgid "Allow other users to _view your desktop"
-msgstr "Позволява на други потребители да виждат вашото работно място"
+msgstr "Позволяване на други потребители да виждат вашото работно място"
 
 #: capplet/vino-preferences.glade.h:8
 msgid "Remote Desktop Preferences"
@@ -67,19 +64,16 @@ msgid "Some of these preferences are locked down"
 msgstr "Някои от тези настройки са заключени"
 
 #: capplet/vino-preferences.glade.h:10
-#, fuzzy
 msgid "Users can view your desktop using this command:"
-msgstr ""
-"Потребителите могат да видят вашето работно място на този интернет адрес:"
+msgstr "Потребителите могат да наблюдават вашето работно място, използвайки тази команда:"
 
 #: capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
-msgstr ""
-"Когато потребител се опита да види или контролира вашето работно място:"
+msgstr "Когато потребител се опита да види или контролира вашето работно място:"
 
 #: capplet/vino-preferences.glade.h:12
 msgid "_Allow other users to control your desktop"
-msgstr "Позволява на други потребители да контролират вашето работно място"
+msgstr "Позволяване на други потребители да контролират вашето работно място"
 
 #: capplet/vino-preferences.glade.h:13
 msgid "_Password:"
@@ -87,7 +81,7 @@ msgstr "Парола:"
 
 #: capplet/vino-preferences.glade.h:14
 msgid "_Require the user to enter this password:"
-msgstr "Изисква от потребителя парола:"
+msgstr "Изискване на парола от потребителя:"
 
 #: capplet/vino-url.c:158
 msgid "Address"
@@ -162,11 +156,11 @@ msgstr "Въпрос"
 
 #: server/vino-prompt.glade.h:5 server/vino-util.c:64
 msgid "_Allow"
-msgstr "Позволява"
+msgstr "Позволение"
 
 #: server/vino-prompt.glade.h:6 server/vino-util.c:65
 msgid "_Refuse"
-msgstr "Отказва"
+msgstr "Отказ"
 
 #: server/vino-server.c:833
 msgid "The screen for which to create a VNC server"
@@ -178,7 +172,7 @@ msgstr "На пауза"
 
 #: server/vino-server.c:841
 msgid "Place all clients on hold"
-msgstr "Слага всички клиенти на пауза"
+msgstr "Поставяне на всички клиенти на пауза"
 
 #: server/vino-server.c:848
 msgid "Prompt enabled"
@@ -194,15 +188,15 @@ msgstr "Само преглед"
 
 #: server/vino-server.c:857
 msgid "Disallow keyboard/pointer input from clients"
-msgstr "Забранява вход от клавиатурата или мишката на клиенти"
+msgstr "Забраняване на използването на клавиатурата или мишката от клиенти"
 
 #: server/vino-server.c:864
 msgid "Require Encryption"
-msgstr "Изисква кодиране"
+msgstr "Изискване на кодиране"
 
 #: server/vino-server.c:865
 msgid "Require clients to use encryption"
-msgstr ""
+msgstr "Изискване от потребителите да използват криптиране"
 
 #: server/vino-server.c:872
 msgid "Authentication methods"
@@ -210,7 +204,7 @@ msgstr ""
 
 #: server/vino-server.c:873
 msgid "The authentication methods this server should allow"
-msgstr ""
+msgstr "Методите на идентификация, които този сървър разрешава"
 
 #: server/vino-server.c:881
 msgid "VNC Password"
@@ -271,7 +265,7 @@ msgstr ""
 
 #: server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
-msgstr "Позволява на отдалечените потребители само да гледат работното място"
+msgstr "Позволение на отдалечените потребители само да гледат работното място"
 
 #: server/vino-server.schemas.in.h:10
 msgid "Password required for \"vnc\" authentication"
@@ -279,11 +273,11 @@ msgstr "Нужна е парола за \"vnc\" идентификация"
 
 #: server/vino-server.schemas.in.h:11
 msgid "Prompt the user before completing a connection"
-msgstr ""
+msgstr "Запитване до потребителя преди завършване на връзката"
 
 #: server/vino-server.schemas.in.h:12
 msgid "Require encryption"
-msgstr "Изисква кодиране"
+msgstr "Изискване на кодиране"
 
 #: server/vino-server.schemas.in.h:13
 msgid ""
@@ -336,3 +330,4 @@ msgstr "Стартира се сървър за отдалечено работ�
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Не се стартира сървъра за отдалечено работно място"
+
