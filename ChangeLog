@@ -1,3 +1,16 @@
+2004-11-29  Christoffer Olsen  <co@deworks.net>
+
+	This adds support for bug buddy autocompletion of
+	version number when filing a bug report.
+
+	* capplet/vino-preferences.desktop.in: Removed and
+	replaced with *.desktop.in.in
+	* capplet/vino-preferences.desktop.in.in: Added
+	X-GNOME-Bugzilla-Version header
+	* configure.in: Generates capplet/vino-preferences.desktop.in
+	from AC_OUTPUT
+	* po/POTFILES.in: Lists *.desktop.in.in instead
+
 2004-11-14  Žygimantas Beručka  <uid0@akl.lt>
 
 	* configure.in: Added "lt" (Lithuanian) to ALL_LINGUAS.

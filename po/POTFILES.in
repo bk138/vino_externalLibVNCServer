@@ -1,7 +1,7 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
 capplet/vino-preferences.c
-capplet/vino-preferences.desktop.in
+capplet/vino-preferences.desktop.in.in
 capplet/vino-preferences.glade
 capplet/vino-url.c
 server/vino-fb.c

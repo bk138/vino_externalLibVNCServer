@@ -9,3 +9,7 @@ Type=Application
 StartupNotify=true
 Categories=GNOME;Application;Settings;
 OnlyShowIn=GNOME;
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=vino
+X-GNOME-Bugzilla-Component=Preferences Dialog
+X-GNOME-Bugzilla-Version=@VERSION@

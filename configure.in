@@ -253,4 +253,6 @@ docs/Makefile
 po/Makefile.in
 ])
 
-AC_OUTPUT
+AC_OUTPUT([
+capplet/vino-preferences.desktop.in
+])
