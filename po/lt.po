@@ -1,15 +1,15 @@
 # Lithuanian translation of vino.
-# Copyright (C) 2004 Free Software Foundation, Inc.
+# Copyright (C) 2004-2005 Free Software Foundation, Inc.
 # This file is distributed under the same license as the vino package.
-# Žygimantas Beručka <uid0@akl.lt>, 2004.
+# Žygimantas Beručka <uid0@akl.lt>, 2004-2005.
 # 
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: vino HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-30 07:11+0000\n"
-"PO-Revision-Date: 2004-11-14 09:12+0200\n"
+"POT-Creation-Date: 2005-01-27 13:21+0200\n"
+"PO-Revision-Date: 2005-01-27 13:21+0200\n"
 "Last-Translator: Žygimantas Beručka <uid0@akl.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "MIME-Version: 1.0\n"
@@ -31,11 +31,11 @@ msgstr ""
 
 #: capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
-msgstr "Nuotolinis darbastalis"
+msgstr "Nuotolęs darbastalis"
 
 #: capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
-msgstr "Konfigūruoti nuotolinio darbastalio priėjimą"
+msgstr "Priėjimo prie nutolusio darbastalio konfigūravimas"
 
 #: capplet/vino-preferences.glade.h:1
 msgid "    "
@@ -59,7 +59,7 @@ msgstr "<b>Bendrinimas</b>"
 
 #: capplet/vino-preferences.glade.h:6
 msgid "A_sk you for confirmation"
-msgstr "Paklau_ti Jūsų patvirtinimo"
+msgstr "Paklaus_ti Jūsų patvirtinimo"
 
 #: capplet/vino-preferences.glade.h:7
 msgid "Allow other users to _view your desktop"
@@ -91,7 +91,7 @@ msgstr "_Slaptažodis:"
 
 #: capplet/vino-preferences.glade.h:14
 msgid "_Require the user to enter this password:"
-msgstr "_Vartotojas turi įvesti šį slaptažodį:"
+msgstr "_Naudotojas turi įvesti šį slaptažodį:"
 
 #: capplet/vino-url.c:158
 msgid "Address"
@@ -172,7 +172,7 @@ msgstr "_Leisti"
 
 #: server/vino-prompt.glade.h:6 server/vino-util.c:65
 msgid "_Refuse"
-msgstr "_Atsakyti"
+msgstr "_Neleisti"
 
 #: server/vino-server.c:852
 msgid "The screen for which to create a VNC server"
@@ -303,7 +303,7 @@ msgstr "Nutolusiems naudotojams leisti tik matyti darbastalį"
 
 #: server/vino-server.schemas.in.h:10
 msgid "Password required for \"vnc\" authentication"
-msgstr "Slaptažodis reikalingas \"vnc\" autentikacijai"
+msgstr "Slaptažodis, reikalingas „vnc“ autentikacijai"
 
 #: server/vino-server.schemas.in.h:11
 msgid "Prompt the user before completing a connection"
