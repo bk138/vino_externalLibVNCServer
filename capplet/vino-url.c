@@ -26,7 +26,7 @@
 
 #include <libintl.h>
 #include <gtk/gtktooltips.h>
-#include <egg-screen-url.h>
+#include <libgnomeui/gnome-url.h>
 
 #define _(x) dgettext (GETTEXT_PACKAGE, x)
 
@@ -513,7 +513,7 @@ vino_url_activate (VinoURL *url)
   if (!url->priv->address)
     return;
 
-  if (!egg_url_show_on_screen (url->priv->address, screen, &error))
+  if (!gnome_url_show_on_screen (url->priv->address, screen, &error))
     {
       /* FIXME better error handling!
        *       What best to do? For the specific case

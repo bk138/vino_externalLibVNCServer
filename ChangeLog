@@ -1,3 +1,13 @@
+2004-02-05  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: require libgnomeui >= 2.5.2
+	
+	* capplet/vino-url.c: (vino_url_activate):
+	Use gnome_url_show_on_screen() instead of the
+	egg-screen-help thing.
+	
+	* cut-n-paste/screen-exec/*: kill all this.
+
 ==================== 0.12 ====================
 
 2004-01-16  Mark McLoughlin  <mark@skynet.ie>

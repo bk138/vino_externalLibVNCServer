@@ -1,7 +1,6 @@
 NULL =
 
 INCLUDES = \
-	-I$(top_srcdir)/cut-n-paste/screen-exec \
 	-DVINO_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"  \
 	-DVINO_GLADEDIR=\""$(datadir)/gnome/vino"\" \
 	-DVINO_ICONDIR=\""$(datadir)/pixmaps\"" \
@@ -19,7 +18,6 @@ vino_preferences_SOURCES = \
 vino_preferences_LDADD = \
 	$(VINO_CAPPLET_LIBS) \
 	$(X_LIBS) \
-	$(top_builddir)/cut-n-paste/screen-exec/libscreen-exec.la \
 	$(NULL)
 
 gladedir   = $(datadir)/gnome/vino
