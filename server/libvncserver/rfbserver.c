@@ -429,7 +429,10 @@ rfbProcessClientMessage(cl)
 	rfbAuthProcessSecurityTypeMessage(cl);
 	return;
     case RFB_TLS_HANDSHAKE:
-	rfbAuthProcessTlsHandshake(cl);
+	rfbAuthProcessTLSHandshake(cl);
+	return;
+    case RFB_AUTH_TYPE:
+	rfbAuthProcessAuthTypeMessage(cl);
 	return;
     case RFB_AUTHENTICATION:
         rfbAuthProcessClientMessage(cl);

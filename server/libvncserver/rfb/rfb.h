@@ -182,6 +182,8 @@ typedef struct _rfbScreenInfo
 
     int securityTypes[RFB_MAX_N_SECURITY_TYPES];
     int nSecurityTypes;
+    int authTypes[RFB_MAX_N_AUTH_TYPES];
+    int nAuthTypes;
     PasswordCheckProcPtr passwordCheck;
     gnutls_anon_server_credentials anonCredentials;
     gnutls_dh_params dhParams;
@@ -264,7 +266,7 @@ typedef struct _rfbClientRec {
 
     SOCKET sock;
     gnutls_session tlsSession;
-    rfbBool useTls;
+    rfbBool useTLS;
     char *host;
 
 #ifdef LIBVNCSERVER_HAVE_LIBPTHREAD
@@ -275,6 +277,7 @@ typedef struct _rfbClientRec {
         RFB_PROTOCOL_VERSION,   /* establishing protocol version */
         RFB_SECURITY_TYPE,      /* negotiating security type */
 	RFB_TLS_HANDSHAKE,      /* completing the TLS handshake */
+	RFB_AUTH_TYPE,          /* negotiating authentication type */
         RFB_AUTHENTICATION,     /* authenticating */
         RFB_AUTH_DEFERRED,      /* authentication deferred */
         RFB_INITIALISATION,     /* sending initialisation messages */
@@ -285,7 +288,6 @@ typedef struct _rfbClientRec {
     rfbBool readyForSetColourMapEntries;
     rfbBool useCopyRect;
     int minorVersion;
-    int securityType;
     int preferredEncoding;
     int correMaxWidth, correMaxHeight;
 
@@ -531,8 +533,9 @@ extern void rfbAuthCleanupScreen(rfbScreenInfoPtr rfbScreen);
 extern void rfbAuthNewClient(rfbClientPtr cl);
 extern void rfbAuthCleanupClient(rfbClientPtr cl);
 extern void rfbAuthProcessSecurityTypeMessage(rfbClientPtr cl);
+extern void rfbAuthProcessAuthTypeMessage(rfbClientPtr cl);
 extern void rfbAuthProcessClientMessage(rfbClientPtr cl);
-extern void rfbAuthProcessTlsHandshake(rfbClientPtr cl);
+extern void rfbAuthProcessTLSHandshake(rfbClientPtr cl);
 extern void rfbAuthPasswordChecked(rfbClientPtr cl, enum rfbNewClientAction result);
 
 
@@ -672,6 +675,8 @@ extern void rfbUpdateClient(rfbClientPtr cl);
 
 extern void rfbAddSecurityType(rfbScreenInfoPtr rfbScreen, int securityType);
 extern void rfbClearSecurityTypes(rfbScreenInfoPtr rfbScreen);
+extern void rfbAddAuthType(rfbScreenInfoPtr rfbScreen, int securityType);
+extern void rfbClearAuthTypes(rfbScreenInfoPtr rfbScreen);
 
 #endif
 

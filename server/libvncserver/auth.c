@@ -57,7 +57,7 @@ rfbAuthCleanupScreen(rfbScreenInfoPtr rfbScreen)
 }
 
 static rfbBool
-rfbAuthTlsHandshake(rfbClientPtr cl)
+rfbAuthTLSHandshake(rfbClientPtr cl)
 {
     static const int kx_priority[] = { GNUTLS_KX_ANON_DH, 0 };
     int              err;
@@ -86,7 +86,7 @@ rfbAuthTlsHandshake(rfbClientPtr cl)
 	return FALSE;
     }
 
-    cl->useTls = TRUE;
+    cl->useTLS = TRUE;
 
     return TRUE;
 }
@@ -207,6 +207,27 @@ rfbAuthCleanupClient(rfbClientPtr cl)
     }
 }
 
+static void
+rfbAuthListAuthTypes(rfbClientPtr cl)
+{
+    rfbAuthTypesMsg st;
+    int i;
+
+    cl->state = RFB_AUTH_TYPE;
+
+    st.nAuthTypes = cl->screen->nAuthTypes;
+    for (i = 0; i < cl->screen->nAuthTypes; i++) {
+	rfbLog("Advertising authentication type %d\n", cl->screen->authTypes[i]);
+	st.authTypes[i] = cl->screen->authTypes[i];
+    }
+
+    if (WriteExact(cl, (char *)&st, cl->screen->nAuthTypes + 1) < 0) {
+        rfbLogPerror("rfbAuthNewClient: write");
+        rfbCloseClient(cl);
+        return;
+    }
+}
+
 void
 rfbAuthProcessSecurityTypeMessage(rfbClientPtr cl)
 {
@@ -233,16 +254,12 @@ rfbAuthProcessSecurityTypeMessage(rfbClientPtr cl)
 	return;
     }
 
-    cl->securityType = securityType;
-
-    if (securityType == rfbTlsWithNoAuth ||
-	securityType == rfbTlsWithVncAuth) {
-	if (!rfbAuthTlsHandshake(cl))
-	    return;
-	securityType = (securityType == rfbTlsWithNoAuth) ? rfbNoAuth : rfbVncAuth;
-    }
-
     switch (securityType) {
+    case rfbTLS:
+	if (!rfbAuthTLSHandshake(cl))
+	    return;
+	rfbAuthListAuthTypes(cl);
+	break;
     case rfbVncAuth:
         vncRandomBytes(cl->authChallenge);
 	if (WriteExact(cl, (char *)&cl->authChallenge, CHALLENGESIZE) < 0) {
@@ -264,7 +281,7 @@ rfbAuthProcessSecurityTypeMessage(rfbClientPtr cl)
 }
 
 void
-rfbAuthProcessTlsHandshake(rfbClientPtr cl)
+rfbAuthProcessTLSHandshake(rfbClientPtr cl)
 {
     int err;
 
@@ -280,19 +297,48 @@ rfbAuthProcessTlsHandshake(rfbClientPtr cl)
 	return;
     }
 
-    cl->useTls = TRUE;
+    cl->useTLS = TRUE;
 
-    switch (cl->securityType) {
-    case rfbTlsWithVncAuth:
+    rfbAuthListAuthTypes(cl);
+}
+
+void
+rfbAuthProcessAuthTypeMessage(rfbClientPtr cl)
+{
+    uint8_t authType;
+    int n, i;
+
+    if ((n = ReadExact(cl, (char *)&authType, 1)) <= 0) {
+        if (n != 0)
+            rfbLogPerror("rfbAuthProcessAuthTypeMessage: read");
+        rfbCloseClient(cl);
+        return;
+    }
+
+    rfbLog("Client returned authentication type %d\n", authType);
+
+    for (i = 0; i < cl->screen->nAuthTypes; i++)
+	if (cl->screen->authTypes[i] == authType)
+	    break;
+
+    if (i == cl->screen->nAuthTypes) {
+	rfbErr("rfbAuthProcessAuthTypeMessage: client returned unadvertised authentication type %d\n",
+	       authType);
+	rfbCloseClient(cl);
+	return;
+    }
+
+    switch (authType) {
+    case rfbVncAuth:
         vncRandomBytes(cl->authChallenge);
 	if (WriteExact(cl, (char *)&cl->authChallenge, CHALLENGESIZE) < 0) {
-	    rfbLogPerror("rfbAuthProcessSecurityTypeMessage: write");
+	    rfbLogPerror("rfbAuthProcessAuthTypeMessage: write");
 	    rfbCloseClient(cl);
 	    return;
 	}
 	cl->state = RFB_AUTHENTICATION;
 	break;
-    case rfbTlsWithNoAuth:
+    case rfbNoAuth:
         cl->state = RFB_INITIALISATION;
 	if (rfbAuthClientAuthenticated(cl))
 	    rfbProcessClientInitMessage(cl);

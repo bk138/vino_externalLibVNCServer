@@ -22,7 +22,8 @@ abstract public class CConnection extends CMsgHandler {
 
   public CConnection() {
     state_ = RFBSTATE_UNINITIALISED;
-    secTypes = new int[maxSecTypes];
+    secTypes  = new int[maxSecTypes];
+    authTypes = new int[maxAuthTypes];
   }
 
   // Methods to initialise the connection
@@ -49,6 +50,12 @@ abstract public class CConnection extends CMsgHandler {
     if (nSecTypes == maxSecTypes)
       throw new Exception("too many security types");
     secTypes[nSecTypes++] = secType;
+  }
+
+  public void addAuthType(int authType) {
+    if (nAuthTypes == maxAuthTypes)
+      throw new Exception("too many authentication types");
+    authTypes[nAuthTypes++] = authType;
   }
 
   // setShared sets the value of the shared flag which will be sent to the
@@ -185,10 +192,10 @@ abstract public class CConnection extends CMsgHandler {
 
       // 3.7 server will offer us a list
 
-      nServerSecTypes = is.readU8();
+      int nServerSecTypes = is.readU8();
       if (nServerSecTypes == 0)
         throwConnFailedException();
-      serverSecTypes = new int[nServerSecTypes];
+      int[] serverSecTypes = new int[nServerSecTypes];
       for (int i = 0; i < nServerSecTypes; i++) {
         serverSecTypes[i] = is.readU8();
         vlog.debug("Server offers security type "+
@@ -223,14 +230,67 @@ abstract public class CConnection extends CMsgHandler {
 
   void processSecurityMsg() {
     vlog.debug("processing security message");
-    int rc = security.processMsg(this);
-    if (rc == 0) {
+
+    switch (security.processMsg(this)) {
+    case CSecurity.MSG_ERROR:
       state_ = RFBSTATE_INVALID;
       vlog.error("Authentication failure");
       throw new AuthFailureException("Authentication failure");
-    }
-    if (rc == 1)
+
+    case CSecurity.MSG_COMPLETED:
       securityCompleted();
+      break;
+
+    case CSecurity.MSG_DEFER:
+      break;
+
+    case CSecurity.MSG_AUTH_TYPES:
+      processAuthTypesMsg();
+      break;
+
+    default:
+      throw new Exception("CConnection.processMsg: invalid state");
+    }
+  }
+
+  private void processAuthTypesMsg() {
+    vlog.debug("processing authentication types message");
+
+    int authType = SecTypes.invalid;
+
+    int nServerAuthTypes = is.readU8();
+    if (nServerAuthTypes == 0)
+      throwConnFailedException();
+
+    int[] serverAuthTypes = new int[nServerAuthTypes];
+    for (int i = 0; i < nServerAuthTypes; i++) {
+      serverAuthTypes[i] = is.readU8();
+      vlog.debug("Server offers security type "+
+		 SecTypes.name(serverAuthTypes[i])+"("+serverAuthTypes[i]+")");
+    }
+
+    for (int j = 0; j < nAuthTypes; j++) {
+      for (int i = 0; i < nServerAuthTypes; i++) {
+	if (authTypes[j] == serverAuthTypes[i]) {
+	  authType = authTypes[j];
+	  os.writeU8(authType);
+	  os.flush();
+	  vlog.debug("Choosing security type "+SecTypes.name(authType)+
+		     "("+authType+")");
+	  break;
+	}
+      }
+      if (authType != SecTypes.invalid) break;
+    }
+    
+    if (authType == SecTypes.invalid) {
+      state_ = RFBSTATE_INVALID;
+      vlog.error("No matching authentication types");
+      throw new Exception("No matching authentication types");
+    }
+
+    security = getCSecurity(authType);
+    processSecurityMsg();
   }
 
   void processInitMsg() {
@@ -259,11 +319,12 @@ abstract public class CConnection extends CMsgHandler {
   CMsgWriter writer_;
   boolean shared;
   protected CSecurity security;
-  public static final int maxSecTypes = 8;
+  public static final int maxSecTypes = 3;
+  public static final int maxAuthTypes = 2;
   int nSecTypes;
   int[] secTypes;
-  int nServerSecTypes;
-  int[] serverSecTypes;
+  int nAuthTypes;
+  int[] authTypes;
   int state_;
 
   String serverName;

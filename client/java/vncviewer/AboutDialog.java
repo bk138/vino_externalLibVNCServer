@@ -21,12 +21,18 @@ package vncviewer;
 import java.awt.*;
 
 class AboutDialog extends vncviewer.Dialog {
+  public static final String version = "4.0b4";
+  public static final String about1 = "VNC viewer for Java version "+version;
+  public static final String about2 = "Copyright (C) 2002-2003 RealVNC Ltd.";
+  public static final String about3 = ("See http://www.realvnc.com for "+
+				       "information on VNC.");
+  public static final String aboutText = about1+"\n"+about2+"\n"+about3;
 
   public AboutDialog() { 
     super(false);
     setTitle("About VNCViewer");
     Panel p1 = new Panel();
-    aboutLabel = new TextArea(VNCViewer.aboutText);
+    aboutLabel = new TextArea(aboutText);
     aboutLabel.setEditable(false);
     p1.add(aboutLabel);
     add("Center", p1);

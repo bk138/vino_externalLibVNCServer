@@ -33,6 +33,11 @@
 package rfb;
 
 abstract public class CSecurity {
+  public static final int MSG_ERROR = 0;
+  public static final int MSG_COMPLETED = 1;
+  public static final int MSG_DEFER = 2;
+  public static final int MSG_AUTH_TYPES = 3;
+
   abstract public int processMsg(CConnection cc);
   abstract public String getDescription();
 }

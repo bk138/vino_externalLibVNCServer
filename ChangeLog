@@ -1,3 +1,75 @@
+2004-02-06  Mark McLoughlin  <mark@skynet.ie>
+
+	Change the way we use TLS with the RFB protocol after discussions
+	with the RFB maintainers:
+	
+	  + Only use a single extra security type (rfbTLS == 18) which has
+	    been registered with the RFB maintainers rather than the original
+	    rfbTlsWithNoAuth(3) and rfbTlsWithVncAuth(4).
+	  + Negotiation the authentication type (rfbNoAuth or rfbVncAuth) once
+	    the TLS handshake has completed. The authentication type negotiation
+	    is exactly the same format as the security type negotiation.
+
+	Server changes:
+	
+	* server/vino-server.c: (vino_server_update_security_types):
+	Update for security/authentication types split.
+
+	* server/libvncserver/auth.c:
+	(rfbAuthListAuthTypes): impl. listing the authentication types.
+	(rfbAuthProcessSecurityTypeMessage): don't start authenticating
+	when the TLS handshake has completed. Instead, just list the
+	security types and wait for a response.
+	(rfbAuthProcessTLSHandshake): ditto.
+	(rfbAuthProcessAuthTypeMessage): begin authenticating with whatever
+	authentication type the client returns.
+	
+	* server/libvncserver/main.c:
+	(rfbAddAuthType), (rfbClearAuthTypes): API for maintaining the
+	authentication types list.
+	
+	* server/libvncserver/rfb/rfb.h: add the RFB_AUTH_TYPE client
+	processing state and add the authTypes list to the server
+	structure.
+	
+	* server/libvncserver/rfb/rfbproto.h: update with details of
+	new TLS security type protocol.
+	
+	Client changes:
+	
+	* client/java/rfb/CConnection.java:
+	(CConnection.addAuthType): function for building up a list
+	of supported authentication types.
+	(CConnection.processSecurityMsg): handle new return values
+	from CSecurity::processMsg().
+	(CConnection.processAuthTypesMsg): impl. negotiating authentication
+	type.
+	
+	* client/java/rfb/CSecurity.java: (CSecurity): define return values
+	for processMsg() rather than using silly magic numbers.
+	
+	* client/java/rfb/CSecurityNone.java: (CSecurityNone.processMsg): upd.
+	
+	* client/java/rfb/CSecurityTls.java:
+	(CSecurityTls.CSecurityTls.processMsg): re-work so as to not chain
+	up to the authentication implementation.
+	
+	* client/java/rfb/CSecurityVncAuth.java:
+	(CSecurityVncAuth.processMsg): return proper return codes.
+	
+	* client/java/rfb/SecTypes.java: remove the TlsWithNone(3) and
+	TlsWithVncAuth(4) and add the TLS(18) security type which has
+	been registered with the protocol maintainers.
+
+	* client/java/vncviewer/CConn.java: update for security types
+	change.
+	
+2004-02-06  Mark McLoughlin  <mark@skynet.ie>
+	
+	* client/java/vncviewer/AboutDialog.java:
+	(AboutDialog.AboutDialog): fix bug #133529 - compile failure
+	because the about dialog text wasn't defined.
+
 2004-02-05  Mark McLoughlin  <mark@skynet.ie>
 
 	* docs/TODO: update.

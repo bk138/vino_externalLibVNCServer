@@ -24,56 +24,37 @@ import javax.net.ssl.*;
 
 public class CSecurityTls extends CSecurity {
 
-  public CSecurityTls(Socket sock_, int authType_, PasswdGetter pg) {
+  public CSecurityTls(Socket sock_) {
       sock = sock_;
-      authType = authType_;
-      handshakeComplete = false;
-      
-      switch (authType) {
-      case rfb.SecTypes.none:
-	  authSecurity = new rfb.CSecurityNone();
-	  break;
-      case rfb.SecTypes.vncAuth:
-	  authSecurity = new rfb.CSecurityVncAuth(pg);
-	  break;
-      default:
-	  throw new rfb.Exception("Unsupported authType?");
-      }
   }
 
   public int processMsg(CConnection cc) {
-      if (!handshakeComplete) {
-	  try {
-	      SSLSocketFactory sslfactory;
-	      SSLSocket        sslsock;
+      try {
+	  SSLSocketFactory sslfactory;
+	  SSLSocket        sslsock;
 
-	      sslfactory = (SSLSocketFactory)SSLSocketFactory.getDefault();
-	      sslsock = (SSLSocket)sslfactory.createSocket (sock,
-							    sock.getInetAddress().getHostName(),
-							    sock.getPort(),
-							    true);
+	  sslfactory = (SSLSocketFactory)SSLSocketFactory.getDefault();
+	  sslsock = (SSLSocket)sslfactory.createSocket (sock,
+							sock.getInetAddress().getHostName(),
+							sock.getPort(),
+							true);
 
-	      setAnonDHKeyExchangeEnabled(sslsock);
+	  setAnonDHKeyExchangeEnabled(sslsock);
 	  
-	      /* Not neccessary - just ensures that we know what cipher
-	       * suite we are using for the output of toString()
-	       */
-	      sslsock.startHandshake();
+	  /* Not neccessary - just ensures that we know what cipher
+	   * suite we are using for the output of toString()
+	   */
+	  sslsock.startHandshake();
 
-	      tlog.debug("Completed handshake with server " + sslsock.toString ());
+	  tlog.debug("Completed handshake with server " + sslsock.toString ());
 
-	      cc.setStreams(new rdr.JavaInStream(sslsock.getInputStream()),
-			    new rdr.JavaOutStream(sslsock.getOutputStream()));
+	  cc.setStreams(new rdr.JavaInStream(sslsock.getInputStream()),
+			new rdr.JavaOutStream(sslsock.getOutputStream()));
 
-	      handshakeComplete = true;
-
-	      return 2;
-	  } catch (java.io.IOException e) {
-	      tlog.error("TLS handshake failed " + e.toString());
-	      return 0;
-	  }
-      } else {
-	  return authSecurity.processMsg(cc);
+	  return MSG_AUTH_TYPES;
+      } catch (java.io.IOException e) {
+	  tlog.error("TLS handshake failed " + e.toString());
+	  return MSG_ERROR;
       }
   }
 
@@ -91,20 +72,10 @@ public class CSecurityTls extends CSecurity {
   }
 
   public String getDescription() {
-      switch (authType) {
-      case rfb.SecTypes.none:
-	  return "No Authentication With TLS Encryption";
-      case rfb.SecTypes.vncAuth:
-	  return "Password Authentication With TLS Encryption";
-      default:
-	  throw new rfb.Exception("Unsupported authType?");
-      }
+      return "TLS Encryption";
   }
 
   Socket sock;
-  int authType;
-  CSecurity authSecurity;
-  boolean handshakeComplete;
 
   static LogWriter tlog = new LogWriter("TLS");
 }

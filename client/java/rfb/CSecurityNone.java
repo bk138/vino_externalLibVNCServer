@@ -20,7 +20,7 @@ package rfb;
 
 public class CSecurityNone extends CSecurity {
   public int processMsg(CConnection cc) {
-    return 1;
+    return MSG_COMPLETED;
   }
   public String getDescription() {
     return "No Authentication Or Encryption";

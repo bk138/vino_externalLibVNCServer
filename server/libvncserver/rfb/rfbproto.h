@@ -228,12 +228,27 @@ typedef char rfbProtocolVersionMsg[13];	/* allow extra byte for null */
  * supports:
  */
 
-#define RFB_MAX_N_SECURITY_TYPES 4
+/* rfbNoAuth, rfbVncAuth and rfbTLS */
+#define RFB_MAX_N_SECURITY_TYPES 3
 
 typedef struct {
     uint8_t nSecurityTypes;
     uint8_t securityTypes[RFB_MAX_N_SECURITY_TYPES];
 } rfbSecurityTypesMsg;
+
+
+/* If the client and server decide on using the TLS security type, they must
+ * then negotiate the authentication type in a similar manner
+ */
+
+/* rfbNoAuth and rfbVncAuth */
+#define RFB_MAX_N_AUTH_TYPES 3
+
+typedef struct {
+    uint8_t nAuthTypes;
+    uint8_t authTypes[RFB_MAX_N_AUTH_TYPES];
+} rfbAuthTypesMsg;
+
 
 /* If the server listed at least one valid security type supported by the client,
  * the client sends back a single byte indicating which security type is to be
@@ -261,8 +276,9 @@ typedef struct {
  */
 #define rfbNoAuth         1
 #define rfbVncAuth        2
-#define rfbTlsWithNoAuth  3
-#define rfbTlsWithVncAuth 4
+
+/* Allocated security type for TLS */
+#define rfbTLS            18
 
 /*
  * rfbNoAuth:		No authentication is needed.
@@ -279,10 +295,13 @@ typedef struct {
  *			server should not allow an immediate reconnection by
  *			the client.
  *
- * rfbTlsWithNoAuth     A TLS handshake is initiated immediately by the server
- * rfbTlsWithVncAuth    using anonymous Diffie Hellman key exchange. Once the
- *                      handshake is complete, the protocol continues over the
- *                      secure stream as specified for NoAuth or VncAuth.
+ * rfbTLS:              A TLS handshake is initiated immediately by the client
+ *                      using anonymous Diffie Hellman key exchange. Once the
+ *                      handshake is complete, the server then sends the list
+ *                      of authentication types it supports (NoAuth or VncAuth)
+ *                      and the client responds with its chosen authentication
+ *                      method. This negotiation is identical to the security
+ *                      type negotiation.
  */
 
 #define rfbVncAuthOK 0

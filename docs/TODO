@@ -43,5 +43,5 @@ TODO
      wrong size image.
 
 => Protocol
-   - Get the new security types registered.
+   - Document the TLS security type
    * Multi-screen support ?

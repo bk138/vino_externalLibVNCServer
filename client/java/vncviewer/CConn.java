@@ -81,10 +81,14 @@ public class CConn extends rfb.CConnection
     clipboardDialog = new ClipboardDialog(this);
 
     setShared(shared);
-    addSecType(rfb.SecTypes.tlsWithNone);
-    addSecType(rfb.SecTypes.tlsWithVncAuth);
+
+    addSecType(rfb.SecTypes.TLS);
     addSecType(rfb.SecTypes.none);
     addSecType(rfb.SecTypes.vncAuth);
+
+    addAuthType(rfb.SecTypes.none);
+    addAuthType(rfb.SecTypes.vncAuth);
+
     String encStr = viewer.preferredEncoding.getValue();
     if (encStr != null) {
       int encNum = rfb.Encodings.num(encStr);
@@ -164,11 +168,8 @@ public class CConn extends rfb.CConnection
     case rfb.SecTypes.vncAuth:
       security = new rfb.CSecurityVncAuth(this);
       break;
-    case rfb.SecTypes.tlsWithNone:
-      security = new rfb.CSecurityTls(this.sock, rfb.SecTypes.none, null);
-      break;
-    case rfb.SecTypes.tlsWithVncAuth:
-      security = new rfb.CSecurityTls(this.sock, rfb.SecTypes.vncAuth, this);
+    case rfb.SecTypes.TLS:
+      security = new rfb.CSecurityTls(this.sock);
       break;
     default:
       throw new rfb.Exception("Unsupported secType?");

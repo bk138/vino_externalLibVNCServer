@@ -25,23 +25,20 @@ public class SecTypes {
   public static final int invalid = 0;
   public static final int none = 1;
   public static final int vncAuth = 2;
-  public static final int tlsWithNone = 3;
-  public static final int tlsWithVncAuth = 4;
+  public static final int TLS = 18;
 
   public static String name(int num) {
     switch (num) {
-    case none:           return "None";
-    case vncAuth:        return "VncAuth";
-    case tlsWithNone:    return "TlsWithNone";
-    case tlsWithVncAuth: return "TlsWithVncAuth";
-    default:             return "[unknown secType]";
+    case none:    return "None";
+    case vncAuth: return "VncAuth";
+    case TLS:     return "TLS";
+    default:      return "[unknown secType]";
     }
   }
   public static int num(String name) {
-    if (name.equalsIgnoreCase("None"))           return none;
-    if (name.equalsIgnoreCase("VncAuth"))        return vncAuth;
-    if (name.equalsIgnoreCase("TlsWithNone"))    return tlsWithNone;
-    if (name.equalsIgnoreCase("TlsWithVncAuth")) return tlsWithVncAuth;
+    if (name.equalsIgnoreCase("None"))    return none;
+    if (name.equalsIgnoreCase("VncAuth")) return vncAuth;
+    if (name.equalsIgnoreCase("TTLS"))    return TLS;
     return invalid;
   }
   //std::list<int> parseSecTypes(const char* types);

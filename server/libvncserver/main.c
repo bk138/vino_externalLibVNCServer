@@ -468,6 +468,8 @@ rfbScreenInfoPtr rfbGetScreen(int* argc,char** argv,
 
    rfbScreen->securityTypes[0] = rfbNoAuth;
    rfbScreen->nSecurityTypes = 0;
+   rfbScreen->authTypes[0] = rfbNoAuth;
+   rfbScreen->nAuthTypes = 0;
    rfbScreen->passwordCheck = NULL;
 
 #ifdef WIN32
@@ -716,10 +718,8 @@ securityTypeToName(int securityType)
 	return "No Authentication";
     case rfbVncAuth:
 	return "VNC Authentication";
-    case rfbTlsWithNoAuth:
-	return "TLS With no Authentication";
-    case rfbTlsWithVncAuth:
-	return "TLS With VNC Authentication";
+    case rfbTLS:
+	return "TLS";
     default:
 	return "unknown";
     }
@@ -736,8 +736,7 @@ void rfbAddSecurityType(rfbScreenInfoPtr rfbScreen, int securityType)
     switch (securityType) {
     case rfbNoAuth:
     case rfbVncAuth:
-    case rfbTlsWithNoAuth:
-    case rfbTlsWithVncAuth:
+    case rfbTLS:
 	rfbScreen->securityTypes[rfbScreen->nSecurityTypes] = securityType;
 	rfbScreen->nSecurityTypes++;
 	break;
@@ -754,5 +753,48 @@ void rfbClearSecurityTypes(rfbScreenInfoPtr rfbScreen)
 	memset (&rfbScreen->securityTypes, 0, sizeof (rfbScreen->securityTypes));
 	rfbScreen->securityTypes [0] = rfbNoAuth;
 	rfbScreen->nSecurityTypes = 0;
+    }
+}
+
+static char *
+authTypeToName(int authType)
+{
+    switch (authType) {
+    case rfbNoAuth:
+	return "No Authentication";
+    case rfbVncAuth:
+	return "VNC Authentication";
+    default:
+	return "unknown";
+    }
+}
+
+void rfbAddAuthType(rfbScreenInfoPtr rfbScreen, int authType)
+{
+    if (rfbScreen->nAuthTypes >= RFB_MAX_N_AUTH_TYPES)
+	return;
+
+    rfbLog("Advertising authentication type: '%s' (%d)\n",
+	   authTypeToName(authType), authType);
+    
+    switch (authType) {
+    case rfbNoAuth:
+    case rfbVncAuth:
+	rfbScreen->authTypes[rfbScreen->nAuthTypes] = authType;
+	rfbScreen->nAuthTypes++;
+	break;
+    default:
+	break;
+    }
+}
+
+void rfbClearAuthTypes(rfbScreenInfoPtr rfbScreen)
+{
+    if (rfbScreen->nAuthTypes > 0) {
+	rfbLog("Clearing authTypes\n");
+
+	memset (&rfbScreen->authTypes, 0, sizeof (rfbScreen->authTypes));
+	rfbScreen->authTypes [0] = rfbNoAuth;
+	rfbScreen->nAuthTypes = 0;
     }
 }

@@ -33,29 +33,29 @@ public class CSecurityVncAuth extends CSecurity {
       String passwd = pg.getPasswd();
       if (passwd == null || passwd.length() == 0) {
         vlog.error("Getting password failed");
-        return 0;
+        return MSG_ERROR;
       }
       VncAuth.encryptChallenge(challenge, passwd);
       os.writeBytes(challenge, 0, VncAuth.challengeSize);
       os.flush();
       hadChallenge = true;
-      return 2;
+      return MSG_DEFER;
 
     } else {
 
       int result = is.readU32();
       switch (result) {
       case VncAuth.ok:
-        return 1;
+        return MSG_COMPLETED;
       case VncAuth.failed:
         vlog.debug("auth failed");
-        return 0;
+        return MSG_ERROR;
       case VncAuth.tooMany:
         vlog.debug("auth failed - too many tries");
-        return 0;
+        return MSG_ERROR;
       default:
         vlog.error("unknown auth result");
-        return 0;
+        return MSG_ERROR;
       }
     }
   }

@@ -336,7 +336,7 @@ rfbConnect(rfbScreen, host, port)
 }
 
 static int
-ReadExactOverTls(rfbClientPtr cl, char* buf, int len, int timeout)
+ReadExactOverTLS(rfbClientPtr cl, char* buf, int len, int timeout)
 {
     while (len > 0) {
 	int n;
@@ -375,8 +375,8 @@ ReadExactTimeout(rfbClientPtr cl, char* buf, int len, int timeout)
     fd_set fds;
     struct timeval tv;
 
-    if (cl->useTls)
-	return ReadExactOverTls(cl, buf, len, timeout);
+    if (cl->useTLS)
+	return ReadExactOverTLS(cl, buf, len, timeout);
 
     while (len > 0) {
         n = read(sock, buf, len);
@@ -425,7 +425,7 @@ int ReadExact(rfbClientPtr cl,char* buf,int len)
 }
 
 static int
-WriteExactOverTls(rfbClientPtr cl, const char* buf, int len)
+WriteExactOverTLS(rfbClientPtr cl, const char* buf, int len)
 {
     LOCK(cl->outputMutex);
 
@@ -469,8 +469,8 @@ WriteExact(rfbClientPtr cl, const char* buf, int len)
     struct timeval tv;
     int totalTimeWaited = 0;
 
-    if (cl->useTls)
-	return WriteExactOverTls(cl, buf, len);
+    if (cl->useTLS)
+	return WriteExactOverTLS(cl, buf, len);
 
     LOCK(cl->outputMutex);
     while (len > 0) {
