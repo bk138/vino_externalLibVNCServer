@@ -1,5 +1,7 @@
 /*
  * Copyright (C) 2003 Sun Microsystems, Inc.
+ * Copyright (C) 2004 Red Hat, Inc.
+ * Copyright (C) 2004 Novell, Inc.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -18,6 +20,7 @@
  *
  * Authors:
  *      Mark McLoughlin <mark@skynet.ie>
+ *      Federico Mena Quintero <federico@ximian.com>
  *
  *
  *   The screen polling code is based on XUpdateScanner from
@@ -40,7 +43,7 @@
 #ifdef HAVE_XSHM
 #include <X11/extensions/XShm.h>
 #endif
-#ifdef HAVE_DAMAGE
+#ifdef HAVE_XDAMAGE
 #include <X11/extensions/Xdamage.h>
 #endif
 
@@ -74,7 +77,7 @@ struct _VinoFBPrivate
 
   guint            update_timeout;
 
-#ifdef HAVE_DAMAGE
+#ifdef HAVE_XDAMAGE
   Damage           xdamage;
   int              xdamage_notify_event;
   XserverRegion    xdamage_region;
@@ -106,7 +109,7 @@ enum
 static void vino_fb_init_from_screen (VinoFB    *vfb,
 				      GdkScreen *screen);
 
-#ifdef HAVE_DAMAGE
+#ifdef HAVE_XDAMAGE
 static GdkFilterReturn vino_fb_xdamage_event_filter (GdkXEvent *xevent,
 						     GdkEvent  *event,
 						     VinoFB    *vfb);
@@ -447,7 +450,7 @@ vino_fb_poll_screen (VinoFB *vfb)
 static void
 vino_fb_finalize_xdamage (VinoFB *vfb)
 {
-#ifdef HAVE_DAMAGE
+#ifdef HAVE_XDAMAGE
   if (vfb->priv->fb_pixmap)
     XFreePixmap (vfb->priv->xdisplay, vfb->priv->fb_pixmap);
   vfb->priv->fb_pixmap = None;
@@ -525,7 +528,7 @@ vino_fb_screen_size_changed (VinoFB    *vfb,
   emit_size_changed (vfb);
 }
 
-#ifdef HAVE_DAMAGE
+#ifdef HAVE_XDAMAGE
 static GdkFilterReturn
 vino_fb_xdamage_event_filter (GdkXEvent *xevent,
 			      GdkEvent  *event,
@@ -594,12 +597,12 @@ vino_fb_xdamage_event_filter (GdkXEvent *xevent,
 
   return GDK_FILTER_REMOVE;
 }
-#endif /* HAVE_DAMAGE */
+#endif /* HAVE_XDAMAGE */
 
 static void
 vino_fb_init_xdamage (VinoFB *vfb)
 {
-#ifdef HAVE_DAMAGE
+#ifdef HAVE_XDAMAGE
   int event_base, error_base;
   int major, minor;
 

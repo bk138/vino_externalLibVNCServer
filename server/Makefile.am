@@ -21,7 +21,7 @@ vino_server_LDADD = \
 	$(VINO_SERVER_LIBS) \
 	$(LIBGNUTLS_LIBS) \
 	$(LIBGCRYPT_LIBS) \
-	$(X_LIBS) $(XTEST_LIBS) $(XSHM_LIBS) \
+	$(X_LIBS) $(XTEST_LIBS) $(XSHM_LIBS) $(XDAMAGE_LIBS) \
 	$(top_builddir)/server/libvncserver/libvncserver.la \
 	$(NULL)
 

@@ -127,6 +127,17 @@ AM_PATH_LIBGCRYPT(1.1.43,, AC_MSG_ERROR([[
 ]]))
 
 #
+# Check for XDAMAGE extension
+#
+XSHM_LIBS=
+AC_CHECK_HEADER(X11/extensions/Xdamage.h, [
+    AC_CHECK_LIB(Xext, XDamageQueryExtension, [
+      AC_DEFINE(HAVE_XDAMAGE)
+      XDAMAGE_LIBS="-lXdamage"],, $X_LIBS)
+  ],, [#include <X11/Xlib.h>])
+AC_SUBST(XDAMAGE_LIBS)
+
+#
 # Check for MIT-SHM extension
 #
 XSHM_LIBS=

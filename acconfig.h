@@ -4,3 +4,4 @@
 #undef GETTEXT_PACKAGE
 #undef HAVE_XSHM
 #undef HAVE_XTEST
+#undef HAVE_XDAMAGE
