@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-23 18:27+0300\n"
+"POT-Creation-Date: 2004-08-17 11:42+0100\n"
 "PO-Revision-Date: 2004-08-23 18:34+0300\n"
 "Last-Translator: Maxim Dziumanenko <mvd@mylinux.com.ua>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -69,7 +69,8 @@ msgstr "Користувачі можуть переглядати вашу ст
 
 #: capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
-msgstr "Коли користувач намагається переглянути чи контролювати вашу стільницю:"
+msgstr ""
+"Коли користувач намагається переглянути чи контролювати вашу стільницю:"
 
 #: capplet/vino-preferences.glade.h:12
 msgid "_Allow other users to control your desktop"
@@ -120,8 +121,8 @@ msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
-"Ваш XServer не підтримує розширення XTest - режим доступу до віддаленої стільниці буде лише для "
-"перегляду\n"
+"Ваш XServer не підтримує розширення XTest - режим доступу до віддаленої "
+"стільниці буде лише для перегляду\n"
 
 #: server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -133,18 +134,21 @@ msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"Користувач на комп'ютері '%s' намагається віддалено переглянути вашу стільницю."
+"Користувач на комп'ютері '%s' намагається віддалено переглянути вашу "
+"стільницю."
 
 #: server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>Інший користувач намагається переглянути вашу стільницю.</b></big>"
+msgstr ""
+"<big><b>Інший користувач намагається переглянути вашу стільницю.</b></big>"
 
 #: server/vino-prompt.glade.h:2
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"Користувач з іншого комп'ютера намагається віддалено переглянути вашу стільницю."
+"Користувач з іншого комп'ютера намагається віддалено переглянути вашу "
+"стільницю."
 
 #: server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
@@ -215,8 +219,8 @@ msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
 msgstr ""
-"Пароль (зашифрований base64), що використовується для автентифікації типів використовуючи "
-"метод VncAuth"
+"Пароль (зашифрований base64), що використовується для автентифікації типів "
+"використовуючи метод VncAuth"
 
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -224,7 +228,8 @@ msgstr "Дозволені методи автентифікації"
 
 #: server/vino-server.schemas.in.h:2
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr "E-mail адреса, на яку слід надсилати посилання (URL) віддаленої стільниці"
+msgstr ""
+"E-mail адреса, на яку слід надсилати посилання (URL) віддаленої стільниці"
 
 #: server/vino-server.schemas.in.h:3
 msgid "Enable remote desktop access"
@@ -235,8 +240,9 @@ msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
 msgstr ""
-"Дозволяє віддалений доступ до стільниці через протокол RFB. Користувачі віддалених "
-"комп'ютерів зможуть приєднуватись до стільниці використовуючи vncviewer."
+"Дозволяє віддалений доступ до стільниці через протокол RFB. Користувачі "
+"віддалених комп'ютерів зможуть приєднуватись до стільниці використовуючи "
+"vncviewer."
 
 #: server/vino-server.schemas.in.h:5
 msgid ""
@@ -244,16 +250,18 @@ msgid ""
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
 msgstr ""
-"Якщо ввімкнено, віддалений доступ до стільниці не дозволяється, доки користувач "
-"головної машини не схвалить з'єднання. Особливо рекомендується при використанні захисту паролем."
+"Якщо ввімкнено, віддалений доступ до стільниці не дозволяється, доки "
+"користувач головної машини не схвалить з'єднання. Особливо рекомендується "
+"при використанні захисту паролем."
 
 #: server/vino-server.schemas.in.h:6
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote user's will not be able to use the mouse or keyboard."
 msgstr ""
-"Якщо ввімкнено, віддалений доступ до стільниці дозволяється лише для перегляду. "
-"Віддалені користувачі не зможуть використовувати клавіатуру та мишу."
+"Якщо ввімкнено, віддалений доступ до стільниці дозволяється лише для "
+"перегляду. Віддалені користувачі не зможуть використовувати клавіатуру та "
+"мишу."
 
 #: server/vino-server.schemas.in.h:7
 msgid ""
@@ -261,9 +269,10 @@ msgid ""
 "encyrption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
-"Якщо ввімкнено, віддалений доступ до стільниці дозволяється лише при використанні шифрування. "
-"Наполегливо рекомендується, щоб ви використовували, який підтримує шифрування, "
-"крім випадку коли доступ відбувається через захищену мережу."
+"Якщо ввімкнено, віддалений доступ до стільниці дозволяється лише при "
+"використанні шифрування. Наполегливо рекомендується, щоб ви використовували, "
+"який підтримує шифрування, крім випадку коли доступ відбувається через "
+"захищену мережу."
 
 #: server/vino-server.schemas.in.h:8
 msgid ""
@@ -273,10 +282,11 @@ msgid ""
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
 msgstr ""
-"Перелік методів автентифікації, з якими віддалені користувачі можуть отримати доступ до "
-"стільниці. Є два можливі методи автентифікації; \"vnc\" змушує віддаленого "
-"користувача перед з'єднанням вводити пароль (пароль визначається ключем vnc_password) та "
-"\"none\", який дозволяє підключатись будь-якому користувачу."
+"Перелік методів автентифікації, з якими віддалені користувачі можуть "
+"отримати доступ до стільниці. Є два можливі методи автентифікації; \"vnc\" "
+"змушує віддаленого користувача перед з'єднанням вводити пароль (пароль "
+"визначається ключем vnc_password) та \"none\", який дозволяє підключатись "
+"будь-якому користувачу."
 
 #: server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
@@ -300,8 +310,8 @@ msgid ""
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
 msgstr ""
-"Пароль, який буде питатись у віддаленого користувача при використанні \"vnc\" "
-"методу автентифікації. Пароль вказується у кодуванні base64."
+"Пароль, який буде питатись у віддаленого користувача при використанні \"vnc"
+"\" методу автентифікації. Пароль вказується у кодуванні base64."
 
 #: server/vino-server.schemas.in.h:14
 msgid ""
@@ -309,8 +319,8 @@ msgid ""
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
-"Цей ключ визначає адресу ел.пошти  на яку потрібно надіслати URL якщо користувач "
-"клацає на URL у діалоговому вікні параметрів віддаленої стільниці."
+"Цей ключ визначає адресу ел.пошти  на яку потрібно надіслати URL якщо "
+"користувач клацає на URL у діалоговому вікні параметрів віддаленої стільниці."
 
 #: server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -321,8 +331,8 @@ msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
 msgstr ""
-"Проблема при реєстрації сервера віддаленої стільниці з використанням bonobo-activation; "
-"завершення ...\n"
+"Проблема при реєстрації сервера віддаленої стільниці з використанням bonobo-"
+"activation; завершення ...\n"
 
 #: session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
@@ -340,7 +350,9 @@ msgstr "Помилка при активації %s: Невідома помил
 
 #: session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "Не вдається активувати сервер віддаленої стільниці: зроблено надто багато спроб\n"
+msgstr ""
+"Не вдається активувати сервер віддаленої стільниці: зроблено надто багато "
+"спроб\n"
 
 #: session/vino-session.c:295
 msgid "Starting remote desktop server"

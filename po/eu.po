@@ -9,14 +9,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
-"POT-Creation-Date: 2004-08-27 21:32+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-08-17 11:42+0100\n"
 "PO-Revision-Date: 2004-08-27 22:31+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Report-Msgid-Bugs-To: \n"
 "X-Generator: KBabel 1.0.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
@@ -138,18 +138,22 @@ msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"'%s' ordenagailuko erabiltzaile bat zure mahaigaina urrunetik "
-"ikusten edo kontrolatzen saiatzen ari da"
+"'%s' ordenagailuko erabiltzaile bat zure mahaigaina urrunetik ikusten edo "
+"kontrolatzen saiatzen ari da"
 
 #: server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>Beste erabiltzaile bat zure mahaigaina ikusten saiatzen ari da.</b></big>"
+msgstr ""
+"<big><b>Beste erabiltzaile bat zure mahaigaina ikusten saiatzen ari da.</b></"
+"big>"
 
 #: server/vino-prompt.glade.h:2
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
-msgstr "Beste ordenagailuko erabiltzaile bat zure mahaigaina ikusten edo kontrolatzen saiatzen ari da"
+msgstr ""
+"Beste ordenagailuko erabiltzaile bat zure mahaigaina ikusten edo "
+"kontrolatzen saiatzen ari da"
 
 #: server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
@@ -261,7 +265,8 @@ msgid ""
 "desktop. Remote user's will not be able to use the mouse or keyboard."
 msgstr ""
 "Egia bada, mahaigainera sarbidetzen diren urruneko erabiltzaileak ikusteko "
-"baimena soilik edukiko dute. Urruneko erabiltzaileek ezin izango dute teklatua edo sagurik erabili."
+"baimena soilik edukiko dute. Urruneko erabiltzaileek ezin izango dute "
+"teklatua edo sagurik erabili."
 
 #: server/vino-server.schemas.in.h:7
 msgid ""
@@ -270,9 +275,9 @@ msgid ""
 "encryption unless the intervening network is trusted."
 msgstr ""
 "Egia bada, mahaigainera sarbidetzen diren urruneko erabiltzaileak "
-"enkriptazio euskarria eduki beharko dute. Oso aholkagarria da "
-"enkriptazio euskarria duen bezeroa erabiltzea, sareko segurtasun maila "
-"konfidantzakoa izandakoan ezik."
+"enkriptazio euskarria eduki beharko dute. Oso aholkagarria da enkriptazio "
+"euskarria duen bezeroa erabiltzea, sareko segurtasun maila konfidantzakoa "
+"izandakoan ezik."
 
 #: server/vino-server.schemas.in.h:8
 msgid ""
@@ -283,10 +288,10 @@ msgid ""
 "user to connect."
 msgstr ""
 "Autentifikazio-metodoen zerrenda, honekin urruneko erabiltzaileak "
-"mahaigainera sarbidetzeko aukera izango dute. Bi autentifikazio-metodo daude: "
-"\"vnc\" bidez urruneko erabiltzaileari pasahitza eskatzen zaio konektatu aurretik (pasahitza "
-"vnc_password gakoan zehazten da); \"none\"-ek berriz urruneko edozein "
-"erabiltzaileri konexioa lantzea baimentzen dio."
+"mahaigainera sarbidetzeko aukera izango dute. Bi autentifikazio-metodo "
+"daude: \"vnc\" bidez urruneko erabiltzaileari pasahitza eskatzen zaio "
+"konektatu aurretik (pasahitza vnc_password gakoan zehazten da); \"none\"-ek "
+"berriz urruneko edozein erabiltzaileri konexioa lantzea baimentzen dio."
 
 #: server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
@@ -320,21 +325,22 @@ msgid ""
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
-"Giltza honek urruneko mahaigaineko URLa bidaliko den helbide "
-"elektronikoa zehazten du, baldin eta erabiltzaileak "
-"\"Urruneko mahaigainaren hobespenak\" elkarrizketa-koadroan URL gainean klik egiten badu."
+"Giltza honek urruneko mahaigaineko URLa bidaliko den helbide elektronikoa "
+"zehazten du, baldin eta erabiltzaileak \"Urruneko mahaigainaren hobespenak\" "
+"elkarrizketa-koadroan URL gainean klik egiten badu."
 
 #: server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "Urruneko mahaigaineko zerbitzaria jadanik exekutatzen ari da: irtetzen ...\n"
+msgstr ""
+"Urruneko mahaigaineko zerbitzaria jadanik exekutatzen ari da: irtetzen ...\n"
 
 #: server/vino-shell.c:79
 msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
 msgstr ""
-"Arazoak daude urruneko mahaigaineko zerbitzaria 'bonobo-activation'-ekin erregistratzean: "
-"irtetzen ...\n"
+"Arazoak daude urruneko mahaigaineko zerbitzaria 'bonobo-activation'-ekin "
+"erregistratzean: irtetzen ...\n"
 
 #: session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
@@ -352,7 +358,9 @@ msgstr "%s-(r)en aktibazioak huts egin du: errore ezezaguna\n"
 
 #: session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "Huts egin du urruneko mahaigaineko zerbitzaria aktibatzean: gehiegi saiatu da\n"
+msgstr ""
+"Huts egin du urruneko mahaigaineko zerbitzaria aktibatzean: gehiegi saiatu "
+"da\n"
 
 #: session/vino-session.c:295
 msgid "Starting remote desktop server"
@@ -361,4 +369,3 @@ msgstr "Urruneko mahaigaineko zerbitzaria abiarazten"
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Ez abiaratzen urruneko mahaigaineko zerbitzaria"
-

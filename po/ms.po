@@ -5,7 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tsclient\n"
-"POT-Creation-Date: 2004-08-19 01:10+0800\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-08-17 11:42+0100\n"
 "PO-Revision-Date: 2004-08-19 01:53+0730\n"
 "Last-Translator: Hasbullah Bin Pit <sebol@my-penguin.org>\n"
 "Language-Team: Projek Gabai <gabai-penyumbang@lists.sourceforge.net>\n"
@@ -105,9 +106,7 @@ msgstr "Warna URL"
 msgid "The color of the URL's label"
 msgstr "Warna bagi label URL"
 
-#: server/vino-fb.c:888
-#: server/vino-prompt.c:144
-#: server/vino-server.c:840
+#: server/vino-fb.c:888 server/vino-prompt.c:144 server/vino-server.c:840
 msgid "Screen"
 msgstr "Skrin"
 
@@ -116,8 +115,12 @@ msgid "The screen to be monitored"
 msgstr "Skrin untuk dimonitor"
 
 #: server/vino-main.c:78
-msgid "Your XServer does not support the XTest extension - remote desktop access will be view-only\n"
-msgstr "Pelayan X anda tak menyokong sambungan XTest  - akses desktop jauh akan menjadi lihat-sahaja\n"
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"Pelayan X anda tak menyokong sambungan XTest  - akses desktop jauh akan "
+"menjadi lihat-sahaja\n"
 
 #: server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -125,16 +128,24 @@ msgstr "Skrin dimana untuk memapar pemakluman"
 
 #: server/vino-prompt.c:385
 #, c-format
-msgid "A user on the computer '%s' is trying to remotely view or control your desktop."
-msgstr "Pengguna pada komputer '%s' cuba melihat atau mengawal desktop anda secara jauh."
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Pengguna pada komputer '%s' cuba melihat atau mengawal desktop anda secara "
+"jauh."
 
 #: server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
 msgstr "<big><b>Pengguna lain cuba melihat desktop anda.</b></big>"
 
 #: server/vino-prompt.glade.h:2
-msgid "A user on another computer is trying to remotely view or control your desktop."
-msgstr "Pengguna pada komputer lain cuba melihat atau mengawal desktop anda secara jauh."
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Pengguna pada komputer lain cuba melihat atau mengawal desktop anda secara "
+"jauh."
 
 #: server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
@@ -144,13 +155,11 @@ msgstr "Adakah anda ingin mengizinkannya?"
 msgid "Question"
 msgstr "Soalan"
 
-#: server/vino-prompt.glade.h:5
-#: server/vino-util.c:64
+#: server/vino-prompt.glade.h:5 server/vino-util.c:64
 msgid "_Allow"
 msgstr "_Izin"
 
-#: server/vino-prompt.glade.h:6
-#: server/vino-util.c:65
+#: server/vino-prompt.glade.h:6 server/vino-util.c:65
 msgid "_Refuse"
 msgstr "_Nafi"
 
@@ -203,8 +212,12 @@ msgid "VNC Password"
 msgstr "Katalaluan vnc"
 
 #: server/vino-server.c:890
-msgid "The password (base64 encoded) used to authenticate types using the VncAuth method"
-msgstr "Katalaluan (dienkod oleh base64) digunakan sebagai jenis autentikasi menggunakan kaedah VncAuth"
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr ""
+"Katalaluan (dienkod oleh base64) digunakan sebagai jenis autentikasi "
+"menggunakan kaedah VncAuth"
 
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -219,23 +232,38 @@ msgid "Enable remote desktop access"
 msgstr "Hidupkan akses desktop jauh"
 
 #: server/vino-server.schemas.in.h:4
-msgid "If true, allows remote access to the desktop via the RFB protocol. Users on remote machines may then connect to the desktop using a vncviewer."
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
 msgstr ""
 
 #: server/vino-server.schemas.in.h:5
-msgid "If true, remote users accessing the desktop are not allowed access until the user on the host machine approves the connection. Recommended especially when access is not password protected."
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
 msgstr ""
 
 #: server/vino-server.schemas.in.h:6
-msgid "If true, remote users accessing the desktop are only allowed to view the desktop. Remote user's will not be able to use the mouse or keyboard."
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
 msgstr ""
 
 #: server/vino-server.schemas.in.h:7
-msgid "If true, remote users accessing the desktop are required to be able support encyrption. It is highly recommended that you use a client which supports encryption unless the intervening network is trusted."
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encyrption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
 msgstr ""
 
 #: server/vino-server.schemas.in.h:8
-msgid "Lists the authentication methods with which remote users may access the desktop. There are two possible authentication methods; \"vnc\" causes the remote user to be prompted for a password (the password is specified by the vnc_password key) before connecting and \"none\" which allows any remote user to connect."
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
 msgstr ""
 
 #: server/vino-server.schemas.in.h:9
@@ -255,11 +283,17 @@ msgid "Require encryption"
 msgstr "Memerlukan peng_enkripsian"
 
 #: server/vino-server.schemas.in.h:13
-msgid "The password which the remote user will be prompted for if the \"vnc\" authentication method is used. The password specified by the key is base64 encoded."
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
 msgstr ""
 
 #: server/vino-server.schemas.in.h:14
-msgid "This key specifies the e-mail address to which the remote desktop URL should be sent if the user clicks on the URL in the Remote Desktop preferences dialog."
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
 msgstr ""
 
 #: server/vino-shell.c:76
@@ -267,8 +301,11 @@ msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "Pelayan Desktop Jauh telah dilaksanakan; keluar...\n"
 
 #: server/vino-shell.c:79
-msgid "Problem registering the remote desktop server with bonobo-activation; exiting ...\n"
-msgstr "Masalah mendaftar pelayan desktop jauh dengan bonodo-activation; keluar ...\n"
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr ""
+"Masalah mendaftar pelayan desktop jauh dengan bonodo-activation; keluar ...\n"
 
 #: session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
@@ -295,4 +332,3 @@ msgstr "Memulakan pelayan desktop jauh"
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Tak memulakan pelayan desktop jauh"
-

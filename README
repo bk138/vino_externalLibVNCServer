@@ -1,15 +1,11 @@
-Vino 2.7.91
+Vino 2.7.92
 ===========
 
 	This package is free software and is part of the
 GNOME project.
 
-	The package contains an integrated GNOME VNC server
-and a VNC client written in Java.
-
-	In order to build Vino you must first have the GNU
-TLS library installed. You may download it from:
-   http://www.gnu.org/software/gnutls
+	The package contains an integrated VNC server for
+GNOME.
 
 You may download updates to the package from:
    ftp://ftp.gnome.org/pub/GNOME/sources/vino
