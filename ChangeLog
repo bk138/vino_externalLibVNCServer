@@ -1,5 +1,9 @@
 2004-02-06  Mark McLoughlin  <mark@skynet.ie>
 
+	* configure.in: Version 0.14.
+
+2004-02-06  Mark McLoughlin  <mark@skynet.ie>
+
 	Change the way we use TLS with the RFB protocol after discussions
 	with the RFB maintainers:
 	
