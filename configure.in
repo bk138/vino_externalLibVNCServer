@@ -29,7 +29,7 @@ AC_ARG_ENABLE(java,
               [enable_java=no])
 AM_CONDITIONAL(JAVA_SDK_AVAILABLE, test "x$JAVAC" != "x" -a "x$JAR" != "x" -a "$enable_java" != "no")
 
-ALL_LINGUAS="cs en_CA pt sv"
+ALL_LINGUAS="cs en_CA en_GB pt sv"
 AM_GLIB_GNU_GETTEXT
 
 GNOME_COMPILE_WARNINGS(yes)
