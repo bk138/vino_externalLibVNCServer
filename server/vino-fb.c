@@ -169,17 +169,19 @@ static void
 vino_fb_destroy_image (VinoFB          *vfb,
 		       XImage          *image,
 		       XShmSegmentInfo *x_shm_info,
-		       gboolean         is_x_shm_segment)
+		       gboolean         is_x_shm_segment,
+		       gboolean         is_attached)
 {
 #ifdef HAVE_XSHM
   if (is_x_shm_segment)
     {
+      if (is_attached)
+	XShmDetach (GDK_DISPLAY_XDISPLAY (gdk_screen_get_display (vfb->priv->screen)),
+		    x_shm_info);
+
       if (x_shm_info->shmaddr != (char *)-1)
 	shmdt (x_shm_info->shmaddr);
       x_shm_info->shmaddr = (char *)-1;
-
-      if (x_shm_info->shmid != -1)
-	shmctl (x_shm_info->shmid, IPC_RMID, 0);
       x_shm_info->shmid = -1;
     }
 #endif /* HAVE_XSHM */
@@ -244,7 +246,7 @@ vino_fb_create_image (VinoFB           *vfb,
     x_shm_error:
       vfb->priv->use_x_shm = FALSE;
 
-      vino_fb_destroy_image (vfb, *image, x_shm_info, TRUE);
+      vino_fb_destroy_image (vfb, *image, x_shm_info, TRUE, FALSE);
       *image = NULL;
       
       return vino_fb_create_image (vfb, image, x_shm_info,
@@ -427,14 +429,16 @@ vino_fb_finalize_screen_data (VinoFB *vfb)
     vino_fb_destroy_image (vfb,
 			   vfb->priv->scanline,
 			   &vfb->priv->scanline_x_shm_info,
-			   vfb->priv->scanline_is_x_shm_segment);
+			   vfb->priv->scanline_is_x_shm_segment,
+			   TRUE);
   vfb->priv->scanline = NULL;
   
   if (vfb->priv->tile)
     vino_fb_destroy_image (vfb,
 			   vfb->priv->tile,
 			   &vfb->priv->tile_x_shm_info,
-			   vfb->priv->tile_is_x_shm_segment);
+			   vfb->priv->tile_is_x_shm_segment,
+			   TRUE);
   vfb->priv->tile = NULL;
 }
 
@@ -522,7 +526,8 @@ vino_fb_init_from_screen (VinoFB    *vfb,
       vino_fb_destroy_image (vfb,
 			     vfb->priv->scanline,
 			     &vfb->priv->scanline_x_shm_info,
-			     vfb->priv->scanline_is_x_shm_segment);
+			     vfb->priv->scanline_is_x_shm_segment,
+			     TRUE);
       vfb->priv->scanline = NULL;
       XDestroyImage (vfb->priv->fb_image);
       vfb->priv->fb_image = NULL;
