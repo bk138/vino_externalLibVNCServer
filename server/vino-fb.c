@@ -81,6 +81,7 @@ struct _VinoFBPrivate
   Damage           xdamage;
   int              xdamage_notify_event;
   XserverRegion    xdamage_region;
+  GC               xdamage_copy_gc;
 #endif
 
   guint            use_x_shm : 1;
@@ -455,9 +456,13 @@ vino_fb_finalize_xdamage (VinoFB *vfb)
     XFreePixmap (vfb->priv->xdisplay, vfb->priv->fb_pixmap);
   vfb->priv->fb_pixmap = None;
 
-  gdk_window_add_filter (vfb->priv->root_window,
-			 (GdkFilterFunc) vino_fb_xdamage_event_filter,
-			 vfb);
+  gdk_window_remove_filter (vfb->priv->root_window,
+			    (GdkFilterFunc) vino_fb_xdamage_event_filter,
+			    vfb);
+
+  if (vfb->priv->xdamage_copy_gc != None)
+    XFreeGC (vfb->priv->xdisplay, vfb->priv->xdamage_copy_gc);
+  vfb->priv->xdamage_copy_gc = None;
 
   if (vfb->priv->xdamage != None)
     XFixesDestroyRegion (vfb->priv->xdisplay, vfb->priv->xdamage_region);
@@ -537,8 +542,9 @@ vino_fb_xdamage_event_filter (GdkXEvent *xevent,
   XEvent             *xev = (XEvent *) xevent;
   XDamageNotifyEvent *notify;
   GdkRectangle        damage;
+  int                 error;
 
-  if (xev->type != priv->xdamage_notify_event)
+  if (xev->type != vfb->priv->xdamage_notify_event)
     return GDK_FILTER_CONTINUE;
 
   notify = (XDamageNotifyEvent *) xev;
@@ -556,11 +562,14 @@ vino_fb_xdamage_event_filter (GdkXEvent *xevent,
   /* Copy the damaged pixels from the server */
   XCopyArea (vfb->priv->xdisplay,
 	     GDK_WINDOW_XWINDOW (vfb->priv->root_window),
-	     vfb->priv->fb_image_pixmap,
+	     vfb->priv->fb_pixmap,
 	     vfb->priv->xdamage_copy_gc,
-	     rect->x, rect->y,
-	     rect->width, rect->height,
-	     rect->x, rect->y);
+	     damage.x,
+	     damage.y,
+	     damage.width,
+	     damage.height,
+	     damage.x,
+	     damage.y);
   XSync (vfb->priv->xdisplay, False);
 
   if ((error = gdk_error_trap_pop ()))
@@ -582,9 +591,9 @@ vino_fb_xdamage_event_filter (GdkXEvent *xevent,
 
   /* add damage to our region */
   if (vfb->priv->damage_region)
-    gdk_region_union_with_rect (vfb->priv->damage_region, &rect);
+    gdk_region_union_with_rect (vfb->priv->damage_region, &damage);
   else
-    vfb->priv->damage_region = gdk_region_rectangle (&rect);
+    vfb->priv->damage_region = gdk_region_rectangle (&damage);
 
   /* subtract damage from server */
   XFixesSetRegion (vfb->priv->xdisplay, vfb->priv->xdamage_region, &notify->area, 1);
@@ -603,8 +612,9 @@ static void
 vino_fb_init_xdamage (VinoFB *vfb)
 {
 #ifdef HAVE_XDAMAGE
-  int event_base, error_base;
-  int major, minor;
+  int       event_base, error_base;
+  int       major, minor;
+  XGCValues values;
 
   if (!XDamageQueryExtension (vfb->priv->xdisplay, &event_base, &error_base))
     return;
@@ -628,14 +638,20 @@ vino_fb_init_xdamage (VinoFB *vfb)
       return;
     }
 
+  values.subwindow_mode = IncludeInferiors;
+  vfb->priv->xdamage_copy_gc = XCreateGC (vfb->priv->xdisplay,
+					  GDK_WINDOW_XWINDOW (vfb->priv->root_window),
+					  GCSubwindowMode,
+					  &values);
+
   gdk_x11_register_standard_event_type (gdk_screen_get_display (vfb->priv->screen),
-					vfb->priv->xdamage_event_base,
+					event_base,
 					XDamageNumberEvents);
   gdk_window_add_filter (vfb->priv->root_window,
 			 (GdkFilterFunc) vino_fb_xdamage_event_filter,
 			 vfb);
 
-  priv->use_xdamage = TRUE;
+  vfb->priv->use_xdamage = TRUE;
 #endif
 }
 

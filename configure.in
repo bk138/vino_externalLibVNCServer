@@ -131,7 +131,7 @@ AM_PATH_LIBGCRYPT(1.1.43,, AC_MSG_ERROR([[
 #
 XSHM_LIBS=
 AC_CHECK_HEADER(X11/extensions/Xdamage.h, [
-    AC_CHECK_LIB(Xext, XDamageQueryExtension, [
+    AC_CHECK_LIB(Xdamage, XDamageQueryExtension, [
       AC_DEFINE(HAVE_XDAMAGE)
       XDAMAGE_LIBS="-lXdamage"],, $X_LIBS)
   ],, [#include <X11/Xlib.h>])

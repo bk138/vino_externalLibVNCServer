@@ -1,5 +1,13 @@
 2004-07-12  Mark McLoughlin  <mark@skynet.ie>
 
+	* configure.in: fix the check for XDAMAGE.
+	
+	* server/vino-fb.c: make it actually build with XDAMAGE.
+	No guarantees that it really works since the Xnest I built
+	with damage support core dumps all over the shop.
+
+2004-07-12  Mark McLoughlin  <mark@skynet.ie>
+
 	* configure.in: add a test for XDAMAGE.
 	
 	* server/Makefile.am: use XDAMAGE libs.
