@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-11 19:16+0100\n"
-"PO-Revision-Date: 2004-08-05 01:12+0000\n"
+"POT-Creation-Date: 2004-08-15 00:44+0100\n"
+"PO-Revision-Date: 2004-08-15 00:45+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -236,7 +236,7 @@ msgstr ""
 
 #: server/vino-server.schemas.in.h:3
 msgid "Enable remote desktop access"
-msgstr "Acrivar o acesso remoto à área de trabalho"
+msgstr "Activar o acesso remoto à área de trabalho"
 
 #: server/vino-server.schemas.in.h:4
 msgid ""
