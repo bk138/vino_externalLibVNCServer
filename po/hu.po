@@ -1,0 +1,363 @@
+# Hungarian translation of vino.
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# This file is distributed under the same license as the vino package.
+# Gabor Kelemen <kelemeng@gnome.hu>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vino\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-08-03 13:00+0200\n"
+"PO-Revision-Date: 2004-08-03 13:50+0200\n"
+"Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
+"Language-Team: Hungarian <gnome@gnome.hu>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: capplet/vino-preferences.c:809
+msgid "Send this command by email"
+msgstr "Ezen parancs küldése e-mailben"
+
+#: capplet/vino-preferences.desktop.in.h:1
+msgid "Remote Desktop"
+msgstr "Távoli munkaasztal"
+
+#: capplet/vino-preferences.desktop.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "Távoli munkaasztal elérésének beállításai"
+
+#: capplet/vino-preferences.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: capplet/vino-preferences.glade.h:2
+msgid "        "
+msgstr "        "
+
+#: capplet/vino-preferences.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: capplet/vino-preferences.glade.h:4
+msgid "<b>Security</b>"
+msgstr "<b>Biztonság</b>"
+
+#: capplet/vino-preferences.glade.h:5
+msgid "<b>Sharing</b>"
+msgstr "<b>Megosztás</b>"
+
+#: capplet/vino-preferences.glade.h:6
+msgid "A_sk you for confirmation"
+msgstr "_Megerősítést kér"
+
+#: capplet/vino-preferences.glade.h:7
+msgid "Allow other users to _view your desktop"
+msgstr "Más felhasználók _láthatják a munkaasztalát"
+
+#: capplet/vino-preferences.glade.h:8
+msgid "Remote Desktop Preferences"
+msgstr "Távoli munkaasztal beállításai"
+
+#: capplet/vino-preferences.glade.h:9
+msgid "Some of these preferences are locked down"
+msgstr "Ezen beállítások közül néhány zárolva van"
+
+#: capplet/vino-preferences.glade.h:10
+msgid "Users can view your desktop using this command:"
+msgstr "A felhasználók a következő paranccsal láthatják a munkaasztalát:"
+
+#: capplet/vino-preferences.glade.h:11
+msgid "When a user tries to view or control your desktop:"
+msgstr ""
+"Ha egy felhasználó megpróbálja megnézni vagy irányítani az Ön munkaasztalát:"
+
+#: capplet/vino-preferences.glade.h:12
+msgid "_Allow other users to control your desktop"
+msgstr "Más _felhasználók irányíthatják a munkaasztalát"
+
+#: capplet/vino-preferences.glade.h:13
+msgid "_Password:"
+msgstr "_Jelszó:"
+
+#: capplet/vino-preferences.glade.h:14
+msgid "_Require the user to enter this password:"
+msgstr "A felhasználónak meg kell adnia ezt a _jelszót:"
+
+#: capplet/vino-url.c:158
+msgid "Address"
+msgstr "Cím"
+
+#: capplet/vino-url.c:159
+msgid "The address pointed to by the widget"
+msgstr "A grafikai elem erre a címre mutat"
+
+#: capplet/vino-url.c:166
+msgid "Tooltip"
+msgstr "Buboréksúgó"
+
+#: capplet/vino-url.c:167
+msgid "A tooltip for this URL"
+msgstr "Buboréksúgó ehhez az URL-hez"
+
+#: capplet/vino-url.c:173
+msgid "URL color"
+msgstr "URL színe"
+
+#: capplet/vino-url.c:174
+msgid "The color of the URL's label"
+msgstr "Az URL címkéjének színe"
+
+#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:832
+msgid "Screen"
+msgstr "Képernyő"
+
+#: server/vino-fb.c:886
+msgid "The screen to be monitored"
+msgstr "Az ellenőrzendő képernyő"
+
+#: server/vino-main.c:78
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"Az Ön X kiszolgálója nem támogatja az XTest kiterjesztést - a távoli "
+"munkaasztal csak látható lesz\n"
+
+#: server/vino-prompt.c:145
+msgid "The screen on which to display the prompt"
+msgstr "A képernyő, amelyen a készenléti jel megjelenik"
+
+#: server/vino-prompt.c:385
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Egy felhasználó '%s' távoli számítógépről megpróbálja távolról megnézni vagy "
+"irányítani az Ön munkaasztalát."
+
+#: server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr ""
+"<big><b>Egy másik felhasználó megpróbálja megnézni az Ön munkaasztalát.</b></"
+"big>"
+
+#: server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Egy másik számítógép felhasználója megpróbálja távolról megnézni vagy "
+"irányítani az Ön munkaasztalát."
+
+#: server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr "Engedélyezi, hogy ezt tegyék?"
+
+#: server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "Kérdés"
+
+#: server/vino-prompt.glade.h:5 server/vino-util.c:64
+msgid "_Allow"
+msgstr "_Engedélyezés"
+
+#: server/vino-prompt.glade.h:6 server/vino-util.c:65
+msgid "_Refuse"
+msgstr "_Visszautasítás"
+
+#: server/vino-server.c:833
+msgid "The screen for which to create a VNC server"
+msgstr "A képernyő, amelyhez VNC kiszolgálót hoz létre"
+
+#: server/vino-server.c:840
+msgid "On Hold"
+msgstr "Tartva"
+
+#: server/vino-server.c:841
+msgid "Place all clients on hold"
+msgstr "Minden kliens tartása"
+
+#: server/vino-server.c:848
+msgid "Prompt enabled"
+msgstr "Készenléti jel engedélyezve"
+
+#: server/vino-server.c:849
+msgid "Prompt the user about connection attempts"
+msgstr "Felhasználó megkérdezése a kapcsolódási kísérletekről"
+
+#: server/vino-server.c:856
+msgid "View Only"
+msgstr "Csak látható"
+
+#: server/vino-server.c:857
+msgid "Disallow keyboard/pointer input from clients"
+msgstr "Billentyűzet/mutatóeszköz bemenetének tiltása a kliensektől"
+
+#: server/vino-server.c:864
+msgid "Require Encryption"
+msgstr "Titkosítás szükséges"
+
+#: server/vino-server.c:865
+msgid "Require clients to use encryption"
+msgstr "A klienseknek titkosítást kell használniuk"
+
+#: server/vino-server.c:872
+msgid "Authentication methods"
+msgstr "Azonosítási módok"
+
+#: server/vino-server.c:873
+msgid "The authentication methods this server should allow"
+msgstr "Ezen kiszolgáló által engedélyezett azonosítási módok"
+
+#: server/vino-server.c:881
+msgid "VNC Password"
+msgstr "VNC jelszó"
+
+#: server/vino-server.c:882
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr ""
+"A VncAuth eljárást használó azonosítási módokhoz használt (base64 kódolású) "
+"jelszó"
+
+#: server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "Engedélyezett azonosítási módok"
+
+#: server/vino-server.schemas.in.h:2
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "E-mail cím, amelyre a távoli asztal URL-jét küldi"
+
+#: server/vino-server.schemas.in.h:3
+msgid "Enable remote desktop access"
+msgstr "Távoli munkaasztal-hozzáférés engedélyezése"
+
+#: server/vino-server.schemas.in.h:4
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+"Engedélyezi-e a munkaasztalhoz való hozzáférést RFB protokollon keresztül? "
+"Ekkor távoli gépek felhasználói egy vnc-néző programmal kapcsolódhatnak a "
+"munkaasztalához."
+
+#: server/vino-server.schemas.in.h:5
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"Ha ez igaz, a távoli felhasználók hozzáférése a munkaasztalhoz nem "
+"engedélyezett, amíg a kiszolgáló gép felhasználója nem hagyja azt jóvá. "
+"Különösen akkor javasolt, ha a hozzáférés nincs jelszóval védve."
+
+#: server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr ""
+"Ha ez igaz, a munkaasztalhoz kapcsolódó távoli felhasználóknak csak a "
+"munkaasztal megnézése engedélyezett. A távoli felhasználó nem lesz képes az "
+"egeret vagy a billentyűzetet használni."
+
+#: server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encyrption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+"Ha ez igaz, a munkaasztalhoz kapcsolódó távoli felhasználóknak képeseknek "
+"kell lenniük titkosítás használatára. Erősen ajánlott titkosítást támogató "
+"klienst használni, kivéve ha a beavatkozó hálózat teljesen megbízható."
+
+#: server/vino-server.schemas.in.h:8
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+"Felsorolja azokat az azonosítási eljárásokat, amelyekkel a távoli "
+"felhasználók kapcsolódhatnak a munkaasztalhoz. Két lehetséges azonosítási "
+"eljárás létezik, a \"vnc\" hatására a távoli felhasználónak kapcsolódás "
+"előtt meg kell adnia a vnc_password kulcsban lévő jelszót, illetve a \"none"
+"\", (nincs) mely bárki számára lehetővé teszi a kapcsolódást."
+
+#: server/vino-server.schemas.in.h:9
+msgid "Only allow remote users to view the desktop"
+msgstr "A távoli felhasználók csak megnézhetik a munkaasztalt"
+
+#: server/vino-server.schemas.in.h:10
+msgid "Password required for \"vnc\" authentication"
+msgstr "A \"vnc\" azonosításhoz szükséges jelszó"
+
+#: server/vino-server.schemas.in.h:11
+msgid "Prompt the user before completing a connection"
+msgstr "Kapcsolat befejezése előtt a felhasználó figyelmeztetése"
+
+#: server/vino-server.schemas.in.h:12
+msgid "Require encryption"
+msgstr "Titkosítás szükséges"
+
+#: server/vino-server.schemas.in.h:13
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+"A távoli felhasználótól kért jelszó a \"vnc\" azonosítási eljárás "
+"használatakor. A kulcs által tartalmazott jelszó base64 kódolású."
+
+#: server/vino-server.schemas.in.h:14
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+"Ez a kulcs megadja azt az e-mail címet, amelyre a távoli munkaasztal URL-je "
+"el lesz küldve, ha a felhasználó az URL-re kattint a Távoli munkaasztal "
+"beállításai párbeszédablakban."
+
+#: server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "Távoli munkaasztal kiszolgáló már fut, kilépek ...\n"
+
+#: server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr ""
+"Probléma a távoli munkaasztal kiszolgáló regisztrálásakor a bonobo-"
+"activationnél; kilépek ...\n"
+
+#: session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr "A távoli munkaasztal kiszolgáló megdöglött, újraindítom\n"
+
+#: session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "%s aktiválása sikertelen: %s\n"
+
+#: session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "%s aktiválása sikertelen: Ismeretlen hiba\n"
+
+#: session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr ""
+"Távoli munkaasztal kiszolgáló aktiválása sikertelen: túl sok sikertelen "
+"próbálkozás\n"
+
+#: session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr "Távoli munkaasztal-kiszolgáló indítása"
+
+#: session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr "Nem indítom el a távoli munkaasztal-kiszolgálót"
