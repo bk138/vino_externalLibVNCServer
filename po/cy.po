@@ -1,0 +1,366 @@
+# Vino yn Gymraeg.
+# This file is distributed under the same license as vino.
+#
+# Bryn Salisbury <bryn@randomlyevil.org.uk>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vino\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-12-01 14:18+0100\n"
+"PO-Revision-Date: 2004-12-01 18:05GMT\n"
+"Last-Translator: Bryn Salisbury <bryn@randomlyevil.org.uk>\n"
+"Language-Team: Cymraeg <gnome-cy@pengwyn.linux.org.uk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: capplet/vino-preferences.c:807
+msgid "Send this command by email"
+msgstr "Gyrrwch y gorchymyn yma trwy ebost"
+
+#: capplet/vino-preferences.c:842
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"Roedd gwall tra'n dangos cymorth:\n"
+"%s"
+
+#: capplet/vino-preferences.desktop.in.in.h:1
+msgid "Remote Desktop"
+msgstr "Penfwrdd Pell"
+
+#: capplet/vino-preferences.desktop.in.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "Gosodwch eich hoffterau mynediad penfwrdd pell"
+
+#: capplet/vino-preferences.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: capplet/vino-preferences.glade.h:2
+msgid "        "
+msgstr "        "
+
+#: capplet/vino-preferences.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: capplet/vino-preferences.glade.h:4
+msgid "<b>Security</b>"
+msgstr "<b>Diogelwch</b>"
+
+#: capplet/vino-preferences.glade.h:5
+msgid "<b>Sharing</b>"
+msgstr "<b>Rhannu</b>"
+
+#: capplet/vino-preferences.glade.h:6
+msgid "A_sk you for confirmation"
+msgstr "_Gofyn i chi am cadarnhad"
+
+#: capplet/vino-preferences.glade.h:7
+msgid "Allow other users to _view your desktop"
+msgstr "Gadaek i defnyddwyr eraill g_weld eich penfwrdd"
+
+#: capplet/vino-preferences.glade.h:8
+msgid "Remote Desktop Preferences"
+msgstr "Hoffterau Penfwrdd Pell"
+
+#: capplet/vino-preferences.glade.h:9
+msgid "Some of these preferences are locked down"
+msgstr "Mae rhai o'r hoffterau yma wedi ei cloi i lawr"
+
+#: capplet/vino-preferences.glade.h:10
+msgid "Users can view your desktop using this command:"
+msgstr "Bydd defnyddwyr yn gallu gweld eich penfwrdd trwy defnyddio'r gorchymun:"
+
+#: capplet/vino-preferences.glade.h:11
+msgid "When a user tries to view or control your desktop:"
+msgstr "Pan fydd defnyddiwr yn ceisio gweld neu rheoli eich penfwrdd:"
+
+#: capplet/vino-preferences.glade.h:12
+msgid "_Allow other users to control your desktop"
+msgstr "Ga_dael i defnyddwyr eraill rheoli eich penfwrdd"
+
+#: capplet/vino-preferences.glade.h:13
+msgid "_Password:"
+msgstr "_Cyfrinair:"
+
+#: capplet/vino-preferences.glade.h:14
+msgid "_Require the user to enter this password:"
+msgstr "Gorfodi y defnyddwyr i _mewnosod y cyfrinair yma:"
+
+#: capplet/vino-url.c:158
+msgid "Address"
+msgstr "Cyfeiriad"
+
+#: capplet/vino-url.c:159
+msgid "The address pointed to by the widget"
+msgstr "Y cyfeiriad cyfeirwyd at gan y teclyn"
+
+#: capplet/vino-url.c:166
+msgid "Tooltip"
+msgstr "Brysgymorth"
+
+#: capplet/vino-url.c:167
+msgid "A tooltip for this URL"
+msgstr "Brysgymorth ar gyfer y LAU yma"
+
+#: capplet/vino-url.c:173
+msgid "URL color"
+msgstr "lliw y LAU"
+
+#: capplet/vino-url.c:174
+msgid "The color of the URL's label"
+msgstr "Lliw label y LAU"
+
+#: server/vino-fb.c:947 server/vino-prompt.c:144 server/vino-server.c:851
+msgid "Screen"
+msgstr "Sgrin"
+
+#: server/vino-fb.c:948
+msgid "The screen to be monitored"
+msgstr "Y sgrin yw arolygu"
+
+#: server/vino-main.c:78
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"Nid yw eich Gweinydd X yn cefnogi yr estyniad XTest - bydd mynediad penfwrdd "
+"allanol yn gweld yn unig\n"
+
+#: server/vino-prompt.c:145
+msgid "The screen on which to display the prompt"
+msgstr "Y Sgrin i ddangos yr annog arno"
+
+#: server/vino-prompt.c:385
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Mae defnyddiwr ar y cyfrifiadur '%s' yn ceisio gweld neu rheoli eich penfwrdd"
+" o bell."
+
+#: server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "<big><b>Mae defnyddiwr arall yn ceisio gweld eich penfwrdd.</b></big>"
+
+#: server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Mae defnyddiwr ar cyfrifiadur arall yn ceisio gweld neu rheoli eich penfwrdd "
+"o bell."
+
+#: server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr "Ydych eisiau gadael iddo gwneud felly?"
+
+#: server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "Cwestiwn"
+
+#: server/vino-prompt.glade.h:5 server/vino-util.c:64
+msgid "_Allow"
+msgstr "Gad_ael"
+
+#: server/vino-prompt.glade.h:6 server/vino-util.c:65
+msgid "_Refuse"
+msgstr "Gwr_thod"
+
+#: server/vino-server.c:852
+msgid "The screen for which to create a VNC server"
+msgstr "Y sgrin i creu gweinydd VNC i"
+
+#: server/vino-server.c:859
+msgid "On Hold"
+msgstr "Yn Aros"
+
+#: server/vino-server.c:860
+msgid "Place all clients on hold"
+msgstr "Gosod pob gleientau ar aros"
+
+#: server/vino-server.c:867
+msgid "Prompt enabled"
+msgstr "Annog wedi ei alluogi"
+
+#: server/vino-server.c:868
+msgid "Prompt the user about connection attempts"
+msgstr "Annog y defnyddwyr am ceisiadau cysylltu"
+
+#: server/vino-server.c:875
+msgid "View Only"
+msgstr "Gweld yn Unig"
+
+#: server/vino-server.c:876
+msgid "Disallow keyboard/pointer input from clients"
+msgstr "Rhwystro mewnbwn bysellfwrdd/pwyntydd gan y gleientau"
+
+#: server/vino-server.c:883
+msgid "Require Encryption"
+msgstr "Mynnu Amgryptiad"
+
+#: server/vino-server.c:884
+msgid "Require clients to use encryption"
+msgstr "Mynnu bod gleientau defyddio amgryptiad"
+
+#: server/vino-server.c:891
+msgid "Authentication methods"
+msgstr "Dulliau dilysiant"
+
+#: server/vino-server.c:892
+msgid "The authentication methods this server should allow"
+msgstr "Y dulliau dilysiant dylid y gweinydd yma caniatau"
+
+#: server/vino-server.c:900
+msgid "VNC Password"
+msgstr "Cyfrinair VNC"
+
+#: server/vino-server.c:901
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr ""
+"Mae'r cyfrinair (amgodio sail64) a defnyddir i dilysu mathau gan defnyddio dull "
+"VncAuth"
+
+#: server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "Dulliau dilysiant a chaniateir"
+
+#: server/vino-server.schemas.in.h:2
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "Cyfeiriad e-bost i yrru LAU y penfwrdd pell i"
+
+#: server/vino-server.schemas.in.h:3
+msgid "Enable remote desktop access"
+msgstr "Galluogi mynediad penfwrdd pell"
+
+#: server/vino-server.schemas.in.h:4
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+"Os gwir, yn galluogi mynediad o bell i'r penfwrdd trwy'r brotocol RFB. Bydd Defnyddwyr "
+"ar y peiriant pell yn gallu cysylltu i'r penfwrdd gan defnyddio gweledwraig VNC."
+
+#: server/vino-server.schemas.in.h:5
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"Os gwir, ni fydd defnyddwyr pell yn gallu cyrchu ei penfwrdd tan fod y "
+"defnyddiwr ar y gweinydd yn caniatau'r cysyslltiad. Argymhellir yn enwedig "
+"pan fod mynediad heb ei amddifyn gyda cyfrinair."
+
+#: server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr ""
+"Os gwir, fydd defnyddwyr pell sydd yn cyrchu y penfwrdd ond yn gallu gweld "
+"y penfwrdd. Bedd defnyddwyr pell ddim yn gallu defnyddio y llygoden na'r bysellfwrdd."
+
+#: server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encyrption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+"Os gwir, fydd rhaid i defnyddwyr pell sydd yn cyrchu'r penfwrdd fod gallu cefnogi "
+"amgryptiad. Argymhellir yn cryf ei bod chi'n defnyddio gleient sydd yn cefnogi "
+"amgryptiad os nad oes hyder yn y rhwydwaith ymyrgar."
+
+#: server/vino-server.schemas.in.h:8
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+"Rhestru'r dulliau dilysiant bydd defnyddwyr pell yn gallu eu defnyddio i cyrchu "
+"y penfwrdd. Mae yna ddwy dull dilysiant ar gael; \"vnc\" sydd yn achosi i'r defnyddiwr "
+"pell cael ei gofyn am cyfrinair (mae'r cyfrinair yn cael ei penodi gan y goriad vnc_password) cyn cysylltu a \"dim\" sydd yn gadael i unrhyw defnyddiwr pell "
+"i cysylltu."
+
+#: server/vino-server.schemas.in.h:9
+msgid "Only allow remote users to view the desktop"
+msgstr "Ond gadael i defnyddwyr pell i weld y penfwrdd"
+
+#: server/vino-server.schemas.in.h:10
+msgid "Password required for \"vnc\" authentication"
+msgstr "Cyfrinair a mynnir ar gyfer dilysiant \"vnc\""
+
+#: server/vino-server.schemas.in.h:11
+msgid "Prompt the user before completing a connection"
+msgstr "Annog y defnyddwyr cyn cwbwlhau'r cysylltiad"
+
+#: server/vino-server.schemas.in.h:12
+msgid "Require encryption"
+msgstr "Mynnu Amgryptiad"
+
+#: server/vino-server.schemas.in.h:13
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+"Y cyfrinair a fydd y defnyddwyr pell yn cael ei annog am os mai'r dull \"vnc\" "
+"o dilysiant sydd yn cael ei defnyddio. Mae'r cyfrinair penodwyd gan yr allwedd "
+"i wedi ei amgodio sail64. "
+
+#: server/vino-server.schemas.in.h:14
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+"Mae'r allwedd yma yn penodi y cyfeiriad e-bost bydd y LAU y penfwrdd pell yn "
+"cael ei gyrru os bod y defnyddiwr yn glicio ar y deialog hoffterau penfwrdd "
+"pell."
+
+#: server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "Mae gweinydd Penfwrdd Pell yn rhedeg yn barod; terfynu ...\n"
+
+#: server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr ""
+"Gwall tra'n cofrestru'r gweinydd penfwrdd pell gyda bonobo-activation; "
+"terfynu ...\n"
+
+#: session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr "Bu farw gweinydd Penfwrdd Pell, ail-cychwyn\n"
+
+#: session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "Gweithrediad %s wedi methu: %s\n"
+
+#: session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "Gweithrediad %s wedi methu: gwall anhysbys\n"
+
+#: session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr "Methu gweithredu gweinydd penfwrdd pell: wedi ceisio gormod o weithiau\n"
+
+#: session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr "Cychwyn gweinydd penfwrdd pell"
+
+#: session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr "Ddim yn cychwyn gweinydd penfwrdd pell"
