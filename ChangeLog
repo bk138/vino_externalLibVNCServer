@@ -1,3 +1,7 @@
+2004-09-11  Baris Cicek <baris@teamforce.name.tr>
+
+	* configure.in: Added 'tr' to ALL_LINGUAS.
+
 2004-09-08  Arafat Medini  <lumina@arabeyes.org>
 
 	* configure.in: Added Arabic locale "ar" to ALL_LINGUAS.
