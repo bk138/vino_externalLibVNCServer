@@ -1,5 +1,13 @@
 2004-11-09  Mark McLoughlin  <mark@skynet.ie>
 
+	* capplet/Makefile.am: install .desktop file
+	in $(datadir)/applications.
+	
+	* capplet/vino-preferences.desktop.in:
+	add OnlyShowIn=GNOME;
+
+2004-11-09  Mark McLoughlin  <mark@skynet.ie>
+
 	* configure.in: bump version to 2.9.1 - 2.8.x
 	development continues on the gnome-2-8 branch.
 

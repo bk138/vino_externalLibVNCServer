@@ -23,7 +23,7 @@ vino_preferences_LDADD = \
 gladedir   = $(datadir)/gnome/vino
 glade_DATA = vino-preferences.glade
 
-desktopdir       = $(datadir)/control-center-2.0/capplets
+desktopdir       = $(datadir)/applications
 desktop_in_files = vino-preferences.desktop.in
 desktop_DATA     = $(desktop_in_files:.desktop.in=.desktop)
 

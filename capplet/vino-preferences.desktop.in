@@ -8,3 +8,4 @@ Terminal=false
 Type=Application
 StartupNotify=true
 Categories=GNOME;Application;Settings;
+OnlyShowIn=GNOME;
