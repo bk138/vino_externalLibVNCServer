@@ -1,3 +1,4 @@
+# translation of gu.po to Gujarati
 # translation of vino.HEAD.po to Gujarati
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
@@ -5,10 +6,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vino.HEAD\n"
+"Project-Id-Version: gu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-07-13 21:28+0200\n"
-"PO-Revision-Date: 2004-07-20 16:26+0530\n"
+"PO-Revision-Date: 2004-07-26 10:58+0530\n"
 "Last-Translator: Ankit Patel <ankit@redhat.com>\n"
 "Language-Team: Gujarati\n"
 "MIME-Version: 1.0\n"
@@ -306,6 +307,9 @@ msgid ""
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
 msgstr ""
+"પાસવર્ડ કે જે દૂરસ્થ વપરાશકર્તાને સત્તાધિકરણ માટે પૂછવામાં આવે છે "
+"જો \"vnc\" પદ્ધતિ વાપરવામાં આવે તો. કી દ્વારા સ્પષ્ટ કરેલ પાસવર્ડ એ base64 "
+"તિ સંગ્રહપદ્ધતિમાં હોય છે."
 
 #: server/vino-server.schemas.in.h:14
 msgid ""
@@ -313,6 +317,8 @@ msgid ""
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
+"કી ઈ-મેઈલ સરનામું સ્પષ્ટ કરે છે કે જેને દૂરસ્થ ડેસ્કટોપ URL મોકલવાની છે"
+"જો વપરાશકર્તા દૂરસ્થ ડેસ્કટોપ પસંદગી સંવાદમાં URL પર ક્લિક કરે તો."
 
 #: server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
