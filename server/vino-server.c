@@ -1044,14 +1044,18 @@ vino_server_update_security_types (VinoServer *server)
   if (server->priv->auth_methods & VINO_AUTH_VNC)
     {
       rfbAddAuthType (server->priv->rfb_screen, rfbVncAuth);
+#ifdef HAVE_GNUTLS
       if (!server->priv->require_encryption)
+#endif
 	rfbAddSecurityType (server->priv->rfb_screen, rfbVncAuth);
     }
       
   if (server->priv->auth_methods & VINO_AUTH_NONE)
     {
       rfbAddAuthType (server->priv->rfb_screen, rfbNoAuth);
+#ifdef HAVE_GNUTLS
       if (!server->priv->require_encryption)
+#endif
 	rfbAddSecurityType (server->priv->rfb_screen, rfbNoAuth);
     }
 }

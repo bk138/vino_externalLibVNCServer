@@ -214,6 +214,7 @@ rfbAuthCleanupClient(rfbClientPtr cl)
 #endif /* HAVE_GNUTLS */
 }
 
+#ifdef HAVE_GNUTLS
 static void
 rfbAuthListAuthTypes(rfbClientPtr cl)
 {
@@ -234,6 +235,7 @@ rfbAuthListAuthTypes(rfbClientPtr cl)
         return;
     }
 }
+#endif /* HAVE_GNUTLS */
 
 void
 rfbAuthProcessSecurityTypeMessage(rfbClientPtr cl)

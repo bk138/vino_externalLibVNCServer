@@ -1,5 +1,16 @@
 2004-08-31  Mark McLoughlin  <mark@skynet.ie>
 
+	Fixes bug where authentication would hang if built without
+	GNU TLS and require_encryption is TRUE.
+
+	* server/libvncserver/auth.c: append non-TLS security types
+	if built without GNU TLS.
+	
+	* server/vino-server.c: (vino_server_update_security_types):
+	Fix warning when built without GNU TLS.
+
+2004-08-31  Mark McLoughlin  <mark@skynet.ie>
+
 	* configure.in: don't build vino-session by default - we
 	have a patch in gnome-session now which does the same thing.
 
