@@ -1,0 +1,336 @@
+# translation of vino.po to Arabic
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Ayman Hourieh <aymanh@gmail.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vino\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-08-11 04:22+0200\n"
+"PO-Revision-Date: 2004-08-15 00:21+0300\n"
+"Last-Translator: Ayman Hourieh <aymanh@gmail.com>\n"
+"Language-Team: Arabic <support@arabeyes.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: capplet/vino-preferences.c:809
+msgid "Send this command by email"
+msgstr "إرسال هذا الأمر بالبريد الإلكتروني"
+
+#: capplet/vino-preferences.desktop.in.h:1
+msgid "Remote Desktop"
+msgstr "سطح مكتب بعيد"
+
+#: capplet/vino-preferences.desktop.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "إعداد تفضيلات الوصول لسطح المكتب البعيد"
+
+#: capplet/vino-preferences.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: capplet/vino-preferences.glade.h:2
+msgid "        "
+msgstr "        "
+
+#: capplet/vino-preferences.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: capplet/vino-preferences.glade.h:4
+msgid "<b>Security</b>"
+msgstr "<b>الأمن</b>"
+
+#: capplet/vino-preferences.glade.h:5
+msgid "<b>Sharing</b>"
+msgstr "<b>المشاركة</b>"
+
+#: capplet/vino-preferences.glade.h:6
+msgid "A_sk you for confirmation"
+msgstr "ال_سّؤال عن التّأكيد"
+
+#: capplet/vino-preferences.glade.h:7
+msgid "Allow other users to _view your desktop"
+msgstr "السّماح للمستخدمين الآخرين ب_عرض سطح مكتبك"
+
+#: capplet/vino-preferences.glade.h:8
+msgid "Remote Desktop Preferences"
+msgstr "تفضيلات سطح المكتب البعيد"
+
+#: capplet/vino-preferences.glade.h:9
+msgid "Some of these preferences are locked down"
+msgstr "بعض هذه التّفضيلات مقفل"
+
+#: capplet/vino-preferences.glade.h:10
+msgid "Users can view your desktop using this command:"
+msgstr "يمكن للمستخدمين عرض سطح مكتبك باستخدام هذا الأمر:"
+
+#: capplet/vino-preferences.glade.h:11
+msgid "When a user tries to view or control your desktop:"
+msgstr "عندما يحاول مستخدم عرض أو التّحكم بسطح مكتبك:"
+
+#: capplet/vino-preferences.glade.h:12
+msgid "_Allow other users to control your desktop"
+msgstr "_السّماح للمستخدمين الآخرين بالتّحكّم بسطح مكتبك."
+
+#: capplet/vino-preferences.glade.h:13
+msgid "_Password:"
+msgstr "_كلمة المرور:"
+
+#: capplet/vino-preferences.glade.h:14
+msgid "_Require the user to enter this password:"
+msgstr "إ_دخال كلمة المرور هذه مطلوب من المستخدم:"
+
+#: capplet/vino-url.c:158
+msgid "Address"
+msgstr "العنوان"
+
+#: capplet/vino-url.c:159
+msgid "The address pointed to by the widget"
+msgstr "العنوان المؤشّر عليه من قبل القطعة"
+
+#: capplet/vino-url.c:166
+msgid "Tooltip"
+msgstr "التّلميحة"
+
+#: capplet/vino-url.c:167
+msgid "A tooltip for this URL"
+msgstr "تلميحة لهذا العنوان"
+
+#: capplet/vino-url.c:173
+msgid "URL color"
+msgstr "لون العنوان"
+
+#: capplet/vino-url.c:174
+msgid "The color of the URL's label"
+msgstr "لون علامة العنوان"
+
+#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:832
+msgid "Screen"
+msgstr "الشّاشة"
+
+#: server/vino-fb.c:886
+msgid "The screen to be monitored"
+msgstr "الشّاشة المراقَبة"
+
+#: server/vino-main.c:78
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr "لايدعم نادل X الامتداد XTest - سيكون سطح المكتب البعيد للعرض فقط\n"
+
+#: server/vino-prompt.c:145
+msgid "The screen on which to display the prompt"
+msgstr "الشّاشة التي ستعرض عليها المساءلة"
+
+#: server/vino-prompt.c:385
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr "يحاول مستخدم على الكمبيوتر '%s' عرض أو التّحكم بسطح مكتبك عن بعد."
+
+#: server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "<big><b>يحاول مستخدم آخر عرض سطح مكتبك.</b></big>"
+
+#: server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr "يحاول مستخدم  على كمبيوتر آخر عرض أو التّحكم بسطح مكتبك عن بعد."
+
+#: server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr "هل تريد السّماح لهم بفعل ذلك؟"
+
+#: server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "السّؤال"
+
+#: server/vino-prompt.glade.h:5 server/vino-util.c:64
+msgid "_Allow"
+msgstr "_سماح"
+
+#: server/vino-prompt.glade.h:6 server/vino-util.c:65
+msgid "_Refuse"
+msgstr "_رفض"
+
+#: server/vino-server.c:833
+msgid "The screen for which to create a VNC server"
+msgstr "الشّاشة التي سيُنشأ من أجلها نادل VNC"
+
+#: server/vino-server.c:840
+msgid "On Hold"
+msgstr "تحت الانتظار"
+
+#: server/vino-server.c:841
+msgid "Place all clients on hold"
+msgstr "وضع كلّ العملاء تحت الانتظار"
+
+#: server/vino-server.c:848
+msgid "Prompt enabled"
+msgstr "المساءلة ممكّنة"
+
+#: server/vino-server.c:849
+msgid "Prompt the user about connection attempts"
+msgstr "مساءلة المستخدم حول محاولات الاتّصال"
+
+#: server/vino-server.c:856
+msgid "View Only"
+msgstr "عرض فقط"
+
+#: server/vino-server.c:857
+msgid "Disallow keyboard/pointer input from clients"
+msgstr "عدم السّماح لدخل لوحة المفاتيح و المؤشّر من العملاء"
+
+#: server/vino-server.c:864
+msgid "Require Encryption"
+msgstr "التّشفير مطلوب"
+
+#: server/vino-server.c:865
+msgid "Require clients to use encryption"
+msgstr "التّشفير مطلوب من العملاء"
+
+#: server/vino-server.c:872
+msgid "Authentication methods"
+msgstr "طرق التّوثّق"
+
+#: server/vino-server.c:873
+msgid "The authentication methods this server should allow"
+msgstr "طرق التّوثّق التي على هذا النادل السّماح بها"
+
+#: server/vino-server.c:881
+msgid "VNC Password"
+msgstr "كلمة مرور VNC"
+
+#: server/vino-server.c:882
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr "كلمة المرور (بترميز قاعدة 64) المستخدمة للتّوثّق من الانواع باستخدام طريقة توثّق VNC."
+
+#: server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "طرق التّوثّق المسموحة"
+
+#: server/vino-server.schemas.in.h:2
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "عنوان البريد الإلكتروني الذي سيتمّ إرسال عنوان سطح المكتب البعيد إليه"
+
+#: server/vino-server.schemas.in.h:3
+msgid "Enable remote desktop access"
+msgstr "تمكين وصول سطح المكتب البعيد"
+
+#: server/vino-server.schemas.in.h:4
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr "إذا ضبط لـtrue، سيسمح بالوصول البعيد لسطح المكتب من خلال بروتوكول RFB."
+"يمكن أن يتّصل المستخدمون على أجهزة بعيدة إلى سطح المكتب من خلال عارض VNC."
+
+#: server/vino-server.schemas.in.h:5
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr "إذا ضبط لـtrue، لن يسمح للمستخدمين البعيدين بالوصول إلى سطح المكتب حتى يوافق المستخدم على الجهاز"
+" المضيف على الاتّصال. ينصح به خاصة عندما لا يكون الوصول محمياً بكلمة مرور."
+
+#: server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr "إذا ضبط لـtrue، لن يسمح للمستخدمين البعيدين بعرض سطح المكتب."
+" لن يتمكّن المستخدمون البعيدون من استخدام الفأرة أو لوحة المفاتيح."
+
+#: server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encyrption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr "إذا ضبط لـtrue، يطلب من المستخدمين البعيدين أن يدعموا التّشفير."
+" ينصح بشكل كبير أن تستخدم عميلاً يدعم التّشفير ما لم تكن الشبكة موثوقة."
+
+#: server/vino-server.schemas.in.h:8
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr "يعرض قائمة بطرق التّوثّق الممكن للمستخدمين البعيدين استخدامها للوصول لسطح المكتب."
+" هناك طريقتان ممكنتان للتّوثّق، \"vnc\" التي تسائل المستخدم البعيد عن كلمة مرور"
+" (تحدّد كلمة المرور بمفتاح vnc_password( قبل الاتّصال، و \"none\" التي تسمح لأي مستخدم بعيد بالاتّصال."
+
+#: server/vino-server.schemas.in.h:9
+msgid "Only allow remote users to view the desktop"
+msgstr "السّماح للمستخدمين البعيدين بعرض سطح المكتب فقط"
+
+#: server/vino-server.schemas.in.h:10
+msgid "Password required for \"vnc\" authentication"
+msgstr "كلمة المرور المطلوبة لتوثّق \"vnc\""
+
+#: server/vino-server.schemas.in.h:11
+msgid "Prompt the user before completing a connection"
+msgstr "سؤال المستخدم قبل إكمال اتصال"
+
+#: server/vino-server.schemas.in.h:12
+msgid "Require encryption"
+msgstr "التّشفير مطلوب"
+
+#: server/vino-server.schemas.in.h:13
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr "كلمة المرور التي سيُساءل المستخدم عنها إذا استخدمت طريقة توثّق \"vnc\"."
+" كلمة المرور المحدّدة بالمفتاح مرمّزة بترميز قاعدة 64."
+
+#: server/vino-server.schemas.in.h:14
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr "يحدّد هذا المفتاح عنوان البريد الإلكتروني الذي سيتمّ إرسال عنوان سطح المكتب البعيد إليه"
+" إذا نقر المستخدم على العنوان في حوار تفضيلات سطح المكتب البعيد."
+
+#: server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "نادل سطح المكتب البعيد يعمل حالياً، خروج...\n"
+
+#: server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr "مشكلة في تسجيل نادل سطح المكتب البعيد بتنشيط بونوبو،"
+" خروج ...\n"
+
+#: session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr "توقّف نادل سطح المكتب، إعادة التّشغيل\n"
+
+#: session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "فشل تنشيط %s: %s\n"
+
+#: session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "فشل تنشيط %s: خطأ مجهول\n"
+
+#: session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr "فشل تنشيط نادل سطح المكتب البعيد، حاولت عدداً كبيراً من المرّات\n"
+
+#: session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr "بدء نادل سطح المكتب البعيد"
+
+#: session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr "عدم بدء نادل سطح المكتب البعيد"
+
