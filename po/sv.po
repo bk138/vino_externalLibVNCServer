@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-12 13:31+0100\n"
-"PO-Revision-Date: 2004-05-27 19:49+0200\n"
+"POT-Creation-Date: 2004-07-14 20:49+0200\n"
+"PO-Revision-Date: 2004-07-14 20:49+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,9 +18,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: capplet/vino-preferences.c:809
-#, fuzzy
 msgid "Send this command by email"
-msgstr "Skicka denna webbadress med e-post"
+msgstr "Skicka detta kommando med e-post"
 
 #: capplet/vino-preferences.desktop.in.h:1
 msgid "Remote Desktop"
@@ -67,9 +66,8 @@ msgid "Some of these preferences are locked down"
 msgstr "En del av dessa inställningar är låsta"
 
 #: capplet/vino-preferences.glade.h:10
-#, fuzzy
 msgid "Users can view your desktop using this command:"
-msgstr "Användare kan se ditt skrivbord på denna webbadress:"
+msgstr "Användare kan se ditt skrivbord med hjälp av detta kommando:"
 
 #: capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
@@ -124,6 +122,8 @@ msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
+"Din X-server stöder inte XTest-tillägget -- åtkomst till fjärrskrivbord "
+"kommer att vara endast med visning\n"
 
 #: server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -135,10 +135,12 @@ msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr ""
+"En användare på datorn \"%s\" försöker att se eller styra ditt skrivbord "
+"över nätverket."
 
 #: server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr ""
+msgstr "<big><b>En annan användare försöker att se ditt skrivbord.</b></big>"
 
 #: server/vino-prompt.glade.h:2
 msgid ""
@@ -166,15 +168,15 @@ msgstr "_Vägra"
 
 #: server/vino-server.c:833
 msgid "The screen for which to create a VNC server"
-msgstr ""
+msgstr "Skärmen för vilken en VNC-server ska skapas"
 
 #: server/vino-server.c:840
 msgid "On Hold"
-msgstr ""
+msgstr "Vänta"
 
 #: server/vino-server.c:841
 msgid "Place all clients on hold"
-msgstr ""
+msgstr "Placera alla klienter i vänteläge"
 
 #: server/vino-server.c:848
 msgid "Prompt enabled"
@@ -297,42 +299,56 @@ msgstr ""
 
 #: server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr ""
+msgstr "Fjärrskrivbordsservern kör redan. Avslutar...\n"
 
 #: server/vino-shell.c:79
 msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
 msgstr ""
+"Problem vid registrering av fjärrskrivbordsservern i bonobo-activation. "
+"Avslutar...\n"
 
 #: session/vino-session.c:133
-#, fuzzy
 msgid "Remote desktop server died, restarting\n"
-msgstr "Inställningar för fjärrskrivbord"
+msgstr "Fjärrskrivbordsservern dog, startar om\n"
 
 #: session/vino-session.c:154
 #, c-format
 msgid "Activation of %s failed: %s\n"
-msgstr ""
+msgstr "Aktivering av %s misslyckades: %s\n"
 
 #: session/vino-session.c:160
 #, c-format
 msgid "Activation of %s failed: Unknown Error\n"
-msgstr ""
+msgstr "Aktivering av %s misslyckades: Okänt fel\n"
 
 #: session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
 msgstr ""
+"Misslyckades med att aktivera fjärrskrivbordsservern: försökte för många "
+"gånger\n"
 
 #: session/vino-session.c:295
-#, fuzzy
 msgid "Starting remote desktop server"
-msgstr "Ställ in dina inställningar för åtkomst till fjärrskrivbord"
+msgstr "Startar fjärrskrivbordsserver"
 
 #: session/vino-session.c:300
-#, fuzzy
 msgid "Not starting remote desktop server"
-msgstr "Ställ in dina inställningar för åtkomst till fjärrskrivbord"
+msgstr "Startar inte fjärrskrivbordsserver"
+
+#~ msgid "Another user is trying to view your desktop."
+#~ msgstr "En annan användare försöker att se ditt skrivbord."
+
+#~ msgid "Remote Desktop server already running; exiting...\n"
+#~ msgstr "Fjärrskrivbordsservern kör redan. Avslutar...\n"
+
+#~ msgid ""
+#~ "Problem registering the remote desktop server with bonobo-activation; "
+#~ "exiting...\n"
+#~ msgstr ""
+#~ "Problem vid registrering av fjärrskrivbordsservern i bonobo-activation. "
+#~ "Avslutar...\n"
 
 #~ msgid "_Ensure the user is using encryption"
 #~ msgstr "_Försäkra att användaren använder kryptering"
