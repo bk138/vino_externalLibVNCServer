@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD.or\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-28 22:42+0530\n"
+"POT-Creation-Date: 2004-09-29 13:06+0100\n"
 "PO-Revision-Date: 2004-09-27 14:34+0530\n"
 "Last-Translator: Gora Mohanty <gora_mohanty@yahoo.co.in>\n"
 "Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
@@ -25,7 +25,8 @@ msgstr "ଏହି ନିର୍ଦ୍ଦେଶକୁ ଇ-ଡାକରେ ପଠ�
 msgid ""
 "There was an error displaying help:\n"
 "%s"
-msgstr "ସହାୟତା ଦେଖାଇବାରେ ତ୍ରୁଟି:\n"
+msgstr ""
+"ସହାୟତା ଦେଖାଇବାରେ ତ୍ରୁଟି:\n"
 "%s"
 
 #: capplet/vino-preferences.desktop.in.h:1

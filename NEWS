@@ -1,3 +1,17 @@
+Vino 2.8.0.1
+============
+
+  Fixes
+
+   + Fix typo which caused problems at 800x600 (Gregory Thiemong)
+   + Hook up help dialog to docs in gnome-user-docs (Mark)
+
+  Translators
+
+   + Adam Weinberger (en_CA)
+   + Åsmund Skjæveland (nn)
+   + Gora Mohanty (or)
+
 Vino 2.8.0
 ==========
 
