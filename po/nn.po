@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-30 07:11+0000\n"
-"PO-Revision-Date: 2004-09-28 09:22+0000\n"
+"POT-Creation-Date: 2004-11-30 11:01+0100\n"
+"PO-Revision-Date: 2004-11-30 11:00+0100\n"
 "Last-Translator: Åsmund Skjæveland <aasmunds@fys.uio.no>\n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.3.1\n"
+"X-Generator: KBabel 1.0.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: capplet/vino-preferences.c:807
@@ -144,20 +144,24 @@ msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr ""
+"Ein brukar på datamaskinen %s prøver å sjå eller styra skrivebordet ditt "
+"over nettverket."
 
 #: server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr ""
+msgstr "<big><b>Ein annan brukar prøver å sjå på skrivebordet ditt.</b></big>"
 
 #: server/vino-prompt.glade.h:2
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
 msgstr ""
+"Ein brukar på ein annan datamaskin prøver å sjå eller styra skrivebordet "
+"ditt over nettverket."
 
 #: server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
-msgstr ""
+msgstr "Vil du tillata det?"
 
 #: server/vino-prompt.glade.h:4
 msgid "Question"
@@ -165,31 +169,31 @@ msgstr "Spørsmål"
 
 #: server/vino-prompt.glade.h:5 server/vino-util.c:64
 msgid "_Allow"
-msgstr ""
+msgstr "_Tillat"
 
 #: server/vino-prompt.glade.h:6 server/vino-util.c:65
 msgid "_Refuse"
-msgstr ""
+msgstr "_Nekt"
 
 #: server/vino-server.c:852
 msgid "The screen for which to create a VNC server"
-msgstr ""
+msgstr "Skjermen det skal lagast ein VNC-tenar til"
 
 #: server/vino-server.c:859
 msgid "On Hold"
-msgstr ""
+msgstr "På vent"
 
 #: server/vino-server.c:860
 msgid "Place all clients on hold"
-msgstr ""
+msgstr "Sett alle klientane på vent"
 
 #: server/vino-server.c:867
 msgid "Prompt enabled"
-msgstr ""
+msgstr "Spør"
 
 #: server/vino-server.c:868
 msgid "Prompt the user about connection attempts"
-msgstr ""
+msgstr "Spør brukaren om forsøk på tilkopling"
 
 #: server/vino-server.c:875
 msgid "View Only"
@@ -197,51 +201,57 @@ msgstr "Berre sjå"
 
 #: server/vino-server.c:876
 msgid "Disallow keyboard/pointer input from clients"
-msgstr ""
+msgstr "Sperr tastatur og peikar for klientar"
 
 #: server/vino-server.c:883
 msgid "Require Encryption"
-msgstr ""
+msgstr "Krev kryptering"
 
 #: server/vino-server.c:884
 msgid "Require clients to use encryption"
-msgstr ""
+msgstr "Krev at klientar brukar kryptering"
 
 #: server/vino-server.c:891
 msgid "Authentication methods"
-msgstr ""
+msgstr "Autentiseringsmetodar"
 
 #: server/vino-server.c:892
 msgid "The authentication methods this server should allow"
-msgstr ""
+msgstr "Autentiseringsmetodane denne tenaren skal tillata"
 
 #: server/vino-server.c:900
 msgid "VNC Password"
-msgstr ""
+msgstr "VNC-passord"
 
 #: server/vino-server.c:901
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
 msgstr ""
+"Passordet (koda i base64) som vert brukt til å autentisera typar som brukar "
+"VncAuth-metoden"
 
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
-msgstr ""
+msgstr "Tillatne autentiserinsmetodar"
 
 #: server/vino-server.schemas.in.h:2
 msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr ""
+"E-post-adresse som adressa til det eksterne skrivebordet skal sendast til"
 
 #: server/vino-server.schemas.in.h:3
 msgid "Enable remote desktop access"
-msgstr ""
+msgstr "Slå på tilgang til skrivebordet over nettverket"
 
 #: server/vino-server.schemas.in.h:4
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
 msgstr ""
+"Dersom sann, vert det opna for tilgang til skrivebordet over nettverket ved "
+"hjelp av RFB-protokollen. Brukarar på andre maskinar kan då kopla til "
+"skrivebordet med ein VNC-framvisar."
 
 #: server/vino-server.schemas.in.h:5
 msgid ""
@@ -311,29 +321,32 @@ msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
 msgstr ""
+"Problem under registrering av eksternt skrivebord-tenaren i bonobo-"
+"activation. Avsluttar.\n"
 
 #: session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
-msgstr ""
+msgstr "Eksternt skrivebord-tenaren døydde. Startar på nytt\n"
 
 #: session/vino-session.c:154
 #, c-format
 msgid "Activation of %s failed: %s\n"
-msgstr ""
+msgstr "Aktivering av %s feila: %s\n"
 
 #: session/vino-session.c:160
 #, c-format
 msgid "Activation of %s failed: Unknown Error\n"
-msgstr ""
+msgstr "Aktivering av %s feila: Ukjend feil\n"
 
 #: session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
 msgstr ""
+"Klarte ikkje aktivera eksternt skrivebord-tenar: Prøvd for mange gongar\n"
 
 #: session/vino-session.c:295
 msgid "Starting remote desktop server"
-msgstr ""
+msgstr "Startar eksternt skrivebord-tenar"
 
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
-msgstr ""
+msgstr "Startar ikkje eksternt skrivebord-tenar"
