@@ -161,7 +161,6 @@ rfbAuthNewClient3_3(rfbClientPtr cl)
 
     if (i == cl->screen->nSecurityTypes) {
 	rfbClientConnFailed(cl, "No security type suitable for RFB 3.3 supported");
-	rfbCloseClient(cl);
 	return;
     }
 

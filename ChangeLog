@@ -1,3 +1,11 @@
+2004-07-21  Mark McLoughlin  <mark@skynet.ie>
+
+	Fix for bug #143567 - crasher when connecting with a
+	RFB 3.3 client and require_encryption is TRUE.
+
+	* server/libvncserver/auth.c: (rfbAuthNewClient3_3): don't
+	call rfbCloseClient() after calling rfbClientConnFailed().
+
 2004-07-17  Dennis Cranston <dennis_cranston at yahoo com>
 
 	* capplet/vino-prefences.glade:  HIG alignment adjustments.
