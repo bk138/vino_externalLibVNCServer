@@ -1,3 +1,8 @@
+2004-08-12  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: link against Xfixes when building
+	with DAMAGE support.
+
 2004-08-11  Mark McLoughlin  <mark@skynet.ie>
 
 	* configure.in: post-release bump to 2.7.91.

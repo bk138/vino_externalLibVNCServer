@@ -150,7 +150,7 @@ XSHM_LIBS=
 AC_CHECK_HEADER(X11/extensions/Xdamage.h, [
     AC_CHECK_LIB(Xdamage, XDamageQueryExtension, [
       AC_DEFINE(HAVE_XDAMAGE)
-      XDAMAGE_LIBS="-lXdamage"],, $X_LIBS)
+      XDAMAGE_LIBS="-lXdamage -lXfixes"],, $X_LIBS)
   ],, [#include <X11/Xlib.h>])
 AC_SUBST(XDAMAGE_LIBS)
 
