@@ -2,14 +2,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Luca Ferretti <elle.uca@infinito.it>, 2004.
+# Alessio Frusciante <algol@firenze.linux.it>, 2004.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-12 17:58+0100\n"
-"PO-Revision-Date: 2004-09-02 19:49+0200\n"
-"Last-Translator: Luca Ferretti <elle.uca@infinito.it>\n"
+"POT-Creation-Date: 2004-10-22 22:23+0200\n"
+"PO-Revision-Date: 2004-10-22 22:24+0200\n"
+"Last-Translator: Alessio Frusciante <algol@firenze.linux.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -162,7 +163,7 @@ msgstr ""
 
 #: server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
-msgstr ""
+msgstr "Si desidera permettere di farlo?"
 
 #: server/vino-prompt.glade.h:4
 msgid "Question"
@@ -194,7 +195,7 @@ msgstr "Prompt abilitato"
 
 #: server/vino-server.c:868
 msgid "Prompt the user about connection attempts"
-msgstr ""
+msgstr "Informa l'utente dei tentativi di connessione"
 
 #: server/vino-server.c:875
 msgid "View Only"
@@ -210,25 +211,27 @@ msgstr "Richiedi crittografia"
 
 #: server/vino-server.c:884
 msgid "Require clients to use encryption"
-msgstr ""
+msgstr "Richiedi ai client di usare la cifratura"
 
 #: server/vino-server.c:891
 msgid "Authentication methods"
-msgstr ""
+msgstr "Metodi di autenticazione"
 
 #: server/vino-server.c:892
 msgid "The authentication methods this server should allow"
-msgstr ""
+msgstr "I metodi di autenticazione consentiti da questo server"
 
 #: server/vino-server.c:900
 msgid "VNC Password"
-msgstr ""
+msgstr "Password VNC"
 
 #: server/vino-server.c:901
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
 msgstr ""
+"La password (codificata base64) usata per autenticare i tipi usando il "
+"metodo VncAuth"
 
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -247,6 +250,9 @@ msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
 msgstr ""
+"Se impostato a vero permette l'accesso remoto al desktop attraverso il "
+"protocollo RFB. Gli utenti su macchine remote possono connettersi tramite un "
+"vncviewer."
 
 #: server/vino-server.schemas.in.h:5
 msgid ""
@@ -254,12 +260,17 @@ msgid ""
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
 msgstr ""
+"Se impostato a vero gli utenti che tentano di accedere al desktop non posso "
+"farlo finché l'utente sull' host non approva la connessione. Raccomandato in "
+"special modo quando l'accesso non è protetto da password."
 
 #: server/vino-server.schemas.in.h:6
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote user's will not be able to use the mouse or keyboard."
 msgstr ""
+"Se impostato a vero agli utenti remoti che accedono al desktop sarà "
+"consentita solo la vista del desktop. Non potranno usare mouse o tastiera."
 
 #: server/vino-server.schemas.in.h:7
 msgid ""
@@ -267,6 +278,9 @@ msgid ""
 "encyrption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
+"Se impostato a vero gli utenti remoti che accedono al desktop devono "
+"supportare la cifratura. È caldamente consigliato che si usi un client che "
+"supporta la cifratura, a meno che non ci si trovi su una rete fidata."
 
 #: server/vino-server.schemas.in.h:8
 msgid ""
@@ -276,22 +290,27 @@ msgid ""
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
 msgstr ""
+"Elenca i metodi di autenticazione tramite i quali gli utenti remoti possono "
+"accedere al desktop. Ci sono due possibili metodi: \"vnc\" chiede una "
+"password all'utente remoto (la password è specificata dalla chiave "
+"vnc_passsword) prima di connettersi e \"none\" che permette ad ogni utente "
+"remoto di connettersi."
 
 #: server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
-msgstr ""
+msgstr "Consenti solo ad utenti remoti di vedere il desktop"
 
 #: server/vino-server.schemas.in.h:10
 msgid "Password required for \"vnc\" authentication"
-msgstr ""
+msgstr "Password richiesta per l'autenticazione \"vnc\""
 
 #: server/vino-server.schemas.in.h:11
 msgid "Prompt the user before completing a connection"
-msgstr ""
+msgstr "Chiedi all'utente prima di completare una connessione"
 
 #: server/vino-server.schemas.in.h:12
 msgid "Require encryption"
-msgstr ""
+msgstr "Richiedi cifratura"
 
 #: server/vino-server.schemas.in.h:13
 msgid ""
@@ -299,6 +318,9 @@ msgid ""
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
 msgstr ""
+"La password che verrà richiesta all'utente remoto se viene usato il metodo "
+"di autenticazione \"vnc\". La password specificata dalla chiave è codificata "
+"base64."
 
 #: server/vino-server.schemas.in.h:14
 msgid ""
@@ -306,16 +328,21 @@ msgid ""
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
+"Questa chiave specifica l'indirizzo email al quale verrà mandato l'URL del "
+"desktop remoto se l'utente clicca sull'URL nella finestra di dialogo delle "
+"preferenze del desktop remoto."
 
 #: server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr ""
+msgstr "Il server del desktop remoto sta già girando; uscita...\n"
 
 #: server/vino-shell.c:79
 msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
 msgstr ""
+"Problema nella registrazione del server del desktop remoto con bonobo-"
+"activation; uscita...\n"
 
 #: session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
@@ -324,16 +351,16 @@ msgstr "Server desktop remoto terminato, riavvio in corso\n"
 #: session/vino-session.c:154
 #, c-format
 msgid "Activation of %s failed: %s\n"
-msgstr ""
+msgstr "Attivazione di %s fallita: %s\n"
 
 #: session/vino-session.c:160
 #, c-format
 msgid "Activation of %s failed: Unknown Error\n"
-msgstr ""
+msgstr "Attivazione di %s fallita: errore sconosciuto\n"
 
 #: session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr ""
+msgstr "Impossibile attivare il desktop remoto: troppi tentativi falliti\n"
 
 #: session/vino-session.c:295
 msgid "Starting remote desktop server"
@@ -341,4 +368,4 @@ msgstr "Avvio server desktop remoto"
 
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
-msgstr ""
+msgstr "Server desktop remoto non avviato"
