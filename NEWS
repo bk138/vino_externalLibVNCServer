@@ -1,3 +1,15 @@
+Vino 2.8.1
+==========
+
+  Fixes
+
+   + Improve the key repeat rate situation a lot (Mark)
+   + Don't get screwed up with Metacity's reduced_resources mode (Mark)
+
+  Translators
+
+   + Mohammad DAMT (id)
+
 Vino 2.8.0.1
 ============
 

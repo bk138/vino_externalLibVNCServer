@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-29 13:06+0100\n"
+"POT-Creation-Date: 2004-10-12 17:58+0100\n"
 "PO-Revision-Date: 2004-09-12 12:02+0300\n"
 "Last-Translator: Mişu Moldovan <dumol@go.ro>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
@@ -115,11 +115,11 @@ msgstr "Culoare URL"
 msgid "The color of the URL's label"
 msgstr "Culoarea etichetei URL-ului"
 
-#: server/vino-fb.c:888 server/vino-prompt.c:144 server/vino-server.c:840
+#: server/vino-fb.c:947 server/vino-prompt.c:144 server/vino-server.c:851
 msgid "Screen"
 msgstr "Ecran"
 
-#: server/vino-fb.c:889
+#: server/vino-fb.c:948
 msgid "The screen to be monitored"
 msgstr "Ecranul de monitorizat"
 
@@ -172,55 +172,55 @@ msgstr "_Permite"
 msgid "_Refuse"
 msgstr "_Refuză"
 
-#: server/vino-server.c:841
+#: server/vino-server.c:852
 msgid "The screen for which to create a VNC server"
 msgstr "Ecranul pentru care se va crea un server VNC"
 
-#: server/vino-server.c:848
+#: server/vino-server.c:859
 msgid "On Hold"
 msgstr "În aşteptare"
 
-#: server/vino-server.c:849
+#: server/vino-server.c:860
 msgid "Place all clients on hold"
 msgstr "Trece toţi clienţii în aşteptare"
 
-#: server/vino-server.c:856
+#: server/vino-server.c:867
 msgid "Prompt enabled"
 msgstr "Avertizare activată"
 
-#: server/vino-server.c:857
+#: server/vino-server.c:868
 msgid "Prompt the user about connection attempts"
 msgstr "Avertizează utilizatorul asupra încercărilor de conectare"
 
-#: server/vino-server.c:864
+#: server/vino-server.c:875
 msgid "View Only"
 msgstr "„View only”"
 
-#: server/vino-server.c:865
+#: server/vino-server.c:876
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Nu permite input din partea clienţilor pentru tastatură şi mouse"
 
-#: server/vino-server.c:872
+#: server/vino-server.c:883
 msgid "Require Encryption"
 msgstr "Cere criptare"
 
-#: server/vino-server.c:873
+#: server/vino-server.c:884
 msgid "Require clients to use encryption"
 msgstr "Cere clienţilor să utilizeze criptare"
 
-#: server/vino-server.c:880
+#: server/vino-server.c:891
 msgid "Authentication methods"
 msgstr "Metode de autentificare"
 
-#: server/vino-server.c:881
+#: server/vino-server.c:892
 msgid "The authentication methods this server should allow"
 msgstr "Metodele de autentificare ale acestui server"
 
-#: server/vino-server.c:889
+#: server/vino-server.c:900
 msgid "VNC Password"
 msgstr "Parolă VNC"
 
-#: server/vino-server.c:890
+#: server/vino-server.c:901
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"

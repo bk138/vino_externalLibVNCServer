@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.7.92\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-29 13:06+0100\n"
+"POT-Creation-Date: 2004-10-12 17:58+0100\n"
 "PO-Revision-Date: 2004-08-18 00:39+0200\n"
 "Last-Translator: Audrey Simons <asimons@redhat.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -118,11 +118,11 @@ msgstr "Couleur de l'URL"
 msgid "The color of the URL's label"
 msgstr "La couleur de l'étiquette de l'URL"
 
-#: server/vino-fb.c:888 server/vino-prompt.c:144 server/vino-server.c:840
+#: server/vino-fb.c:947 server/vino-prompt.c:144 server/vino-server.c:851
 msgid "Screen"
 msgstr "Écran"
 
-#: server/vino-fb.c:889
+#: server/vino-fb.c:948
 msgid "The screen to be monitored"
 msgstr "L'écran à contrôler"
 
@@ -176,55 +176,55 @@ msgstr "_Autoriser"
 msgid "_Refuse"
 msgstr "_Refuser"
 
-#: server/vino-server.c:841
+#: server/vino-server.c:852
 msgid "The screen for which to create a VNC server"
 msgstr "L'écran pour lequel créer un serveur VNC"
 
-#: server/vino-server.c:848
+#: server/vino-server.c:859
 msgid "On Hold"
 msgstr "En attente"
 
-#: server/vino-server.c:849
+#: server/vino-server.c:860
 msgid "Place all clients on hold"
 msgstr "Mettre tous les clients en attente"
 
-#: server/vino-server.c:856
+#: server/vino-server.c:867
 msgid "Prompt enabled"
 msgstr "Invite activée"
 
-#: server/vino-server.c:857
+#: server/vino-server.c:868
 msgid "Prompt the user about connection attempts"
 msgstr "Afficher à l'utilisateur les essais de connexions"
 
-#: server/vino-server.c:864
+#: server/vino-server.c:875
 msgid "View Only"
 msgstr "Vue seule"
 
-#: server/vino-server.c:865
+#: server/vino-server.c:876
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Refuser l'entrée clavier/pointeur aux clients"
 
-#: server/vino-server.c:872
+#: server/vino-server.c:883
 msgid "Require Encryption"
 msgstr "Requiert le chiffrement"
 
-#: server/vino-server.c:873
+#: server/vino-server.c:884
 msgid "Require clients to use encryption"
 msgstr "Requiert les clients d'utiliser le chiffrement"
 
-#: server/vino-server.c:880
+#: server/vino-server.c:891
 msgid "Authentication methods"
 msgstr "Méthodes d'authentification"
 
-#: server/vino-server.c:881
+#: server/vino-server.c:892
 msgid "The authentication methods this server should allow"
 msgstr "Les méthodes d'authentification autorisées par ce serveur"
 
-#: server/vino-server.c:889
+#: server/vino-server.c:900
 msgid "VNC Password"
 msgstr "Mot de passe VNC"
 
-#: server/vino-server.c:890
+#: server/vino-server.c:901
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"

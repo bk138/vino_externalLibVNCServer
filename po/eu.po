@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-29 13:06+0100\n"
+"POT-Creation-Date: 2004-10-12 17:58+0100\n"
 "PO-Revision-Date: 2004-08-27 22:31+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
@@ -121,11 +121,11 @@ msgstr "URL-aren kolorea"
 msgid "The color of the URL's label"
 msgstr "URL-aren etiketaren kolorea"
 
-#: server/vino-fb.c:888 server/vino-prompt.c:144 server/vino-server.c:840
+#: server/vino-fb.c:947 server/vino-prompt.c:144 server/vino-server.c:851
 msgid "Screen"
 msgstr "Pantaila"
 
-#: server/vino-fb.c:889
+#: server/vino-fb.c:948
 msgid "The screen to be monitored"
 msgstr "Monitorizatuko den pantaila"
 
@@ -180,55 +180,55 @@ msgstr "_Baimendu"
 msgid "_Refuse"
 msgstr "_Debekatu"
 
-#: server/vino-server.c:841
+#: server/vino-server.c:852
 msgid "The screen for which to create a VNC server"
 msgstr "Pantaila, VNC zerbitzaria sortzeko"
 
-#: server/vino-server.c:848
+#: server/vino-server.c:859
 msgid "On Hold"
 msgstr "Itxaron"
 
-#: server/vino-server.c:849
+#: server/vino-server.c:860
 msgid "Place all clients on hold"
 msgstr "Jarri bezero guztiak itxaroten"
 
-#: server/vino-server.c:856
+#: server/vino-server.c:867
 msgid "Prompt enabled"
 msgstr "Gonbitea aktibatua"
 
-#: server/vino-server.c:857
+#: server/vino-server.c:868
 msgid "Prompt the user about connection attempts"
 msgstr "Galdetu erabiltzaileari konexio saiakerei buruz"
 
-#: server/vino-server.c:864
+#: server/vino-server.c:875
 msgid "View Only"
 msgstr "Ikusteko soilik"
 
-#: server/vino-server.c:865
+#: server/vino-server.c:876
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Ez utzi teklatu/sagu sarrerak bezeroen eskutik"
 
-#: server/vino-server.c:872
+#: server/vino-server.c:883
 msgid "Require Encryption"
 msgstr "Behartu enkriptazioa"
 
-#: server/vino-server.c:873
+#: server/vino-server.c:884
 msgid "Require clients to use encryption"
 msgstr "Behartu erabiltzaileei enkripazioa erabiltzea"
 
-#: server/vino-server.c:880
+#: server/vino-server.c:891
 msgid "Authentication methods"
 msgstr "Autentifikazio-metodoak"
 
-#: server/vino-server.c:881
+#: server/vino-server.c:892
 msgid "The authentication methods this server should allow"
 msgstr "Zerbitzari honek baimendu ditzakeen autentifikazio-metodoak"
 
-#: server/vino-server.c:889
+#: server/vino-server.c:900
 msgid "VNC Password"
 msgstr "VNC pasahitza"
 
-#: server/vino-server.c:890
+#: server/vino-server.c:901
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"

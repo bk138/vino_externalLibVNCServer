@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-27 04:24+0200\n"
+"POT-Creation-Date: 2004-10-12 17:58+0100\n"
 "PO-Revision-Date: 2004-09-27 20:31+0300\n"
 "Last-Translator: Leonid Kanter <leon@asplinux.ru>\n"
 "Language-Team:  <ru@li.org>\n"
@@ -15,11 +15,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3.1\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: capplet/vino-preferences.c:809
+#: capplet/vino-preferences.c:807
 msgid "Send this command by email"
 msgstr "Отправить эту команду по эл. почте"
+
+#: capplet/vino-preferences.c:842
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
 
 #: capplet/vino-preferences.desktop.in.h:1
 msgid "Remote Desktop"
@@ -71,7 +79,8 @@ msgstr "Команда для доступа к вашему рабочему с
 
 #: capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
-msgstr "Когда пользователь пытается просматривать или управлять вашим рабочим столом:"
+msgstr ""
+"Когда пользователь пытается просматривать или управлять вашим рабочим столом:"
 
 #: capplet/vino-preferences.glade.h:12
 msgid "_Allow other users to control your desktop"
@@ -109,11 +118,11 @@ msgstr "Цвет URL"
 msgid "The color of the URL's label"
 msgstr "Цвет ярлыка URL"
 
-#: server/vino-fb.c:888 server/vino-prompt.c:144 server/vino-server.c:840
+#: server/vino-fb.c:947 server/vino-prompt.c:144 server/vino-server.c:851
 msgid "Screen"
 msgstr "Экран"
 
-#: server/vino-fb.c:889
+#: server/vino-fb.c:948
 msgid "The screen to be monitored"
 msgstr "Отслеживаемый экран"
 
@@ -121,7 +130,9 @@ msgstr "Отслеживаемый экран"
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
-msgstr "Ваш X-сервер не поддерживает расширение XTest - удаленный доступ будет только для просмотра\n"
+msgstr ""
+"Ваш X-сервер не поддерживает расширение XTest - удаленный доступ будет "
+"только для просмотра\n"
 
 #: server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -132,17 +143,23 @@ msgstr "Экран, на котором должен выводиться зап
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
-msgstr "Пользователь компьютера '%s' пытается подключиться для просмотра или управления вашим рабочим столом."
+msgstr ""
+"Пользователь компьютера '%s' пытается подключиться для просмотра или "
+"управления вашим рабочим столом."
 
 #: server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>Другой пользователь пытается подключиться к вашему рабочему столу.</b></big>"
+msgstr ""
+"<big><b>Другой пользователь пытается подключиться к вашему рабочему столу.</"
+"b></big>"
 
 #: server/vino-prompt.glade.h:2
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
-msgstr "Пользователь с другого компьютера пытается удаленно просматривать или управлять вашим рабочим столом."
+msgstr ""
+"Пользователь с другого компьютера пытается удаленно просматривать или "
+"управлять вашим рабочим столом."
 
 #: server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
@@ -160,59 +177,61 @@ msgstr "_Разрешить"
 msgid "_Refuse"
 msgstr "_Отклонить"
 
-#: server/vino-server.c:841
+#: server/vino-server.c:852
 msgid "The screen for which to create a VNC server"
 msgstr "Экран, для которого должен быть создан сервер VNC"
 
-#: server/vino-server.c:848
+#: server/vino-server.c:859
 msgid "On Hold"
 msgstr "Приостановить"
 
-#: server/vino-server.c:849
+#: server/vino-server.c:860
 msgid "Place all clients on hold"
 msgstr "Приостановить работу со всеми клиентами"
 
-#: server/vino-server.c:856
+#: server/vino-server.c:867
 msgid "Prompt enabled"
 msgstr "Запрос включен"
 
-#: server/vino-server.c:857
+#: server/vino-server.c:868
 msgid "Prompt the user about connection attempts"
 msgstr "Запрашивать пользователя при попытке соединения"
 
-#: server/vino-server.c:864
+#: server/vino-server.c:875
 msgid "View Only"
 msgstr "Только просмотр"
 
-#: server/vino-server.c:865
+#: server/vino-server.c:876
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Запретить ввод с клавиатуры и указателя от клиентов"
 
-#: server/vino-server.c:872
+#: server/vino-server.c:883
 msgid "Require Encryption"
 msgstr "Требовать шифрования"
 
-#: server/vino-server.c:873
+#: server/vino-server.c:884
 msgid "Require clients to use encryption"
 msgstr "Требовать от клиентов использовать шифрование"
 
-#: server/vino-server.c:880
+#: server/vino-server.c:891
 msgid "Authentication methods"
 msgstr "Методы аутентификации"
 
-#: server/vino-server.c:881
+#: server/vino-server.c:892
 msgid "The authentication methods this server should allow"
 msgstr "Методы аутентификации, которые должен позволять этот сервер"
 
-#: server/vino-server.c:889
+#: server/vino-server.c:900
 msgid "VNC Password"
 msgstr "Пароль VNC"
 
-#: server/vino-server.c:890
+#: server/vino-server.c:901
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
-msgstr "Пароль (зашифрованный по алгоритму base64), используемый для аутентификации по методу VncAuth"
+msgstr ""
+"Пароль (зашифрованный по алгоритму base64), используемый для аутентификации "
+"по методу VncAuth"
 
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -220,7 +239,9 @@ msgstr "Разрешенные методы аутентификации"
 
 #: server/vino-server.schemas.in.h:2
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr "Адрес эл. почты, по которому должен быть отправлен URL удаленного рабочего стола"
+msgstr ""
+"Адрес эл. почты, по которому должен быть отправлен URL удаленного рабочего "
+"стола"
 
 #: server/vino-server.schemas.in.h:3
 msgid "Enable remote desktop access"
@@ -230,27 +251,38 @@ msgstr "Включить удаленный доступ к рабочему с�
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
-msgstr "Если установлен, разрешает удаленный доступ к рабочему столу по протоколу RFB. Пользователи других компьютеров смогут подключиться к рабочему столу, используя vncviewer."
+msgstr ""
+"Если установлен, разрешает удаленный доступ к рабочему столу по протоколу "
+"RFB. Пользователи других компьютеров смогут подключиться к рабочему столу, "
+"используя vncviewer."
 
 #: server/vino-server.schemas.in.h:5
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
-msgstr "Если установлено, пользователи с других компьютеров не смогут подключиться к рабочему столу, пока локальный пользователь не подтвердит соединение. Особенно рекомендуется, если доступ не защищен паролем."
+msgstr ""
+"Если установлено, пользователи с других компьютеров не смогут подключиться к "
+"рабочему столу, пока локальный пользователь не подтвердит соединение. "
+"Особенно рекомендуется, если доступ не защищен паролем."
 
 #: server/vino-server.schemas.in.h:6
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote user's will not be able to use the mouse or keyboard."
-msgstr "Если установлен, рабочий стол доступен удаленным пользователям только для просмотра. Они не смогут пользоваться "
+msgstr ""
+"Если установлен, рабочий стол доступен удаленным пользователям только для "
+"просмотра. Они не смогут пользоваться "
 
 #: server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are required to be able support "
 "encyrption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
-msgstr "Если если этот параметр установлен, от удаленных пользователей требуется поддержка шифрования. Настоятельно рекомендуется использовать шифрование, если сеть между узлами не надежна."
+msgstr ""
+"Если если этот параметр установлен, от удаленных пользователей требуется "
+"поддержка шифрования. Настоятельно рекомендуется использовать шифрование, "
+"если сеть между узлами не надежна."
 
 #: server/vino-server.schemas.in.h:8
 msgid ""
@@ -259,7 +291,12 @@ msgid ""
 "remote user to be prompted for a password (the password is specified by the "
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
-msgstr "Перечиcляет методы аутентификации, пр помощи которых удаленные пользователи могут получить доступ к рабочему столу. Существует два возможных метода - \"vnc\" (заставляет удаленного пользователя вводить пароль, указанный в ключе vnc_password) и \"none\", который позволяет подключиться любому удаленному пользователю."
+msgstr ""
+"Перечиcляет методы аутентификации, пр помощи которых удаленные пользователи "
+"могут получить доступ к рабочему столу. Существует два возможных метода - "
+"\"vnc\" (заставляет удаленного пользователя вводить пароль, указанный в "
+"ключе vnc_password) и \"none\", который позволяет подключиться любому "
+"удаленному пользователю."
 
 #: server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
@@ -289,7 +326,10 @@ msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
-msgstr "Этот ключ указывает адрес эл. почты, по которому должна быть отправлена ссылка, если пользователь нажимает на URL в диалоге \"Свойства удаленного рабочего стола\"."
+msgstr ""
+"Этот ключ указывает адрес эл. почты, по которому должна быть отправлена "
+"ссылка, если пользователь нажимает на URL в диалоге \"Свойства удаленного "
+"рабочего стола\"."
 
 #: server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -299,11 +339,15 @@ msgstr "Сервер удаленного рабочего стола уже р�
 msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
-msgstr "Проблема регистрации сервера рабочего стола при помощи bonobo-activation; выходим...\n"
+msgstr ""
+"Проблема регистрации сервера рабочего стола при помощи bonobo-activation; "
+"выходим...\n"
 
 #: session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
-msgstr "Работа сервера удаленного рабочего стола неожиданно завершилась, перезапускается\n"
+msgstr ""
+"Работа сервера удаленного рабочего стола неожиданно завершилась, "
+"перезапускается\n"
 
 #: session/vino-session.c:154
 #, c-format
@@ -317,7 +361,9 @@ msgstr "Не удалось активировать %s: Неизвестная 
 
 #: session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "Не удалось активировать сервер удаленного рабочего стола: слишком много попыток\n"
+msgstr ""
+"Не удалось активировать сервер удаленного рабочего стола: слишком много "
+"попыток\n"
 
 #: session/vino-session.c:295
 msgid "Starting remote desktop server"
@@ -326,4 +372,3 @@ msgstr "Запускается сервер удаленного рабочег�
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Не запускается сервер удаленного рабочего стола"
-

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-29 13:06+0100\n"
+"POT-Creation-Date: 2004-10-12 17:58+0100\n"
 "PO-Revision-Date: 2004-09-04 17:14+0530\n"
 "Last-Translator: Jayaradha N <jaya@pune.redhat.com>\n"
 "Language-Team: Tamil <zhakanini@yahoogroups.com>\n"
@@ -119,11 +119,11 @@ msgstr "URL நிறம்"
 msgid "The color of the URL's label"
 msgstr " URL's விளக்கசீட்டின் நிறம்"
 
-#: server/vino-fb.c:888 server/vino-prompt.c:144 server/vino-server.c:840
+#: server/vino-fb.c:947 server/vino-prompt.c:144 server/vino-server.c:851
 msgid "Screen"
 msgstr "திரை"
 
-#: server/vino-fb.c:889
+#: server/vino-fb.c:948
 msgid "The screen to be monitored"
 msgstr "கண்காணிக்க வேண்டிய திரை"
 
@@ -172,55 +172,55 @@ msgstr "(_A)அனுமதி"
 msgid "_Refuse"
 msgstr "(_R)மறுக்கவும்"
 
-#: server/vino-server.c:841
+#: server/vino-server.c:852
 msgid "The screen for which to create a VNC server"
 msgstr "VNC சேவகனை உருவாக்க வேண்டிய திரை"
 
-#: server/vino-server.c:848
+#: server/vino-server.c:859
 msgid "On Hold"
 msgstr "காத்திரு"
 
-#: server/vino-server.c:849
+#: server/vino-server.c:860
 msgid "Place all clients on hold"
 msgstr "எல்லா புரவலன்களையும் காத்திருக்க செய்"
 
-#: server/vino-server.c:856
+#: server/vino-server.c:867
 msgid "Prompt enabled"
 msgstr "ப்ராம்ச் செயல்படுத்தப்பட்ட"
 
-#: server/vino-server.c:857
+#: server/vino-server.c:868
 msgid "Prompt the user about connection attempts"
 msgstr "முற்சிகளை பயனருக்கு தெரியப்படுத்து"
 
-#: server/vino-server.c:864
+#: server/vino-server.c:875
 msgid "View Only"
 msgstr "பார்க்க மட்டும்"
 
-#: server/vino-server.c:865
+#: server/vino-server.c:876
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "விசைப்பலகை/குறி உள்ளிடு சாதனங்களை மறுக்கவும்"
 
-#: server/vino-server.c:872
+#: server/vino-server.c:883
 msgid "Require Encryption"
 msgstr "குறிமுறையாக்கம் தேவை"
 
-#: server/vino-server.c:873
+#: server/vino-server.c:884
 msgid "Require clients to use encryption"
 msgstr "புரவலன் குறிமுறையாக்கத்தை பயன்படுத்த வேண்டும்"
 
-#: server/vino-server.c:880
+#: server/vino-server.c:891
 msgid "Authentication methods"
 msgstr "அனுமதி முறைமை"
 
-#: server/vino-server.c:881
+#: server/vino-server.c:892
 msgid "The authentication methods this server should allow"
 msgstr "இந்த சேவகன் அனுமதிக்க வேண்டிய அனுமதி முறைமை"
 
-#: server/vino-server.c:889
+#: server/vino-server.c:900
 msgid "VNC Password"
 msgstr "VNC கடவுச்சொல்"
 
-#: server/vino-server.c:890
+#: server/vino-server.c:901
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"

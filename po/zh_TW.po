@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.7.93\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-29 13:06+0100\n"
+"POT-Creation-Date: 2004-10-12 17:58+0100\n"
 "PO-Revision-Date: 2004-09-13 00:26+0800\n"
 "Last-Translator: Chi-Wei Chen <michelin@seed.net.tw>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -116,11 +116,11 @@ msgstr "網址顏色"
 msgid "The color of the URL's label"
 msgstr "網址標籤的顏色"
 
-#: server/vino-fb.c:888 server/vino-prompt.c:144 server/vino-server.c:840
+#: server/vino-fb.c:947 server/vino-prompt.c:144 server/vino-server.c:851
 msgid "Screen"
 msgstr "螢幕"
 
-#: server/vino-fb.c:889
+#: server/vino-fb.c:948
 msgid "The screen to be monitored"
 msgstr "要被監視的螢幕"
 
@@ -167,57 +167,57 @@ msgstr "允許(_A)"
 msgid "_Refuse"
 msgstr "拒絕(_R)"
 
-#: server/vino-server.c:841
+#: server/vino-server.c:852
 msgid "The screen for which to create a VNC server"
 msgstr "創造 VNC 伺服端的畫面"
 
-#: server/vino-server.c:848
+#: server/vino-server.c:859
 #, fuzzy
 msgid "On Hold"
 msgstr "繼續連線"
 
-#: server/vino-server.c:849
+#: server/vino-server.c:860
 #, fuzzy
 msgid "Place all clients on hold"
 msgstr "讓所用的客戶端繼續連線"
 
-#: server/vino-server.c:856
+#: server/vino-server.c:867
 msgid "Prompt enabled"
 msgstr "能夠給予提示"
 
-#: server/vino-server.c:857
+#: server/vino-server.c:868
 msgid "Prompt the user about connection attempts"
 msgstr "嘗試連線時提示使用者"
 
-#: server/vino-server.c:864
+#: server/vino-server.c:875
 msgid "View Only"
 msgstr "只能觀看"
 
-#: server/vino-server.c:865
+#: server/vino-server.c:876
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "不允許從客戶端使用鍵盤和滑鼠"
 
-#: server/vino-server.c:872
+#: server/vino-server.c:883
 msgid "Require Encryption"
 msgstr "需要加密"
 
-#: server/vino-server.c:873
+#: server/vino-server.c:884
 msgid "Require clients to use encryption"
 msgstr "客戶端必須使用加密"
 
-#: server/vino-server.c:880
+#: server/vino-server.c:891
 msgid "Authentication methods"
 msgstr "驗證方式"
 
-#: server/vino-server.c:881
+#: server/vino-server.c:892
 msgid "The authentication methods this server should allow"
 msgstr "此伺服端允許使用的驗證方式"
 
-#: server/vino-server.c:889
+#: server/vino-server.c:900
 msgid "VNC Password"
 msgstr "VNC 密碼"
 
-#: server/vino-server.c:890
+#: server/vino-server.c:901
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"

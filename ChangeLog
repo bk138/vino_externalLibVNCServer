@@ -1,3 +1,7 @@
+2004-10-12  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: Version 2.8.1.
+
 2004-10-12  Mohammad DAMT  <mdamt@bisnisweb.com>
 
 	* configure.in: added "id" (Indonesian) to ALL_LINGUAS
