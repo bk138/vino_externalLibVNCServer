@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-30 07:11+0000\n"
-"PO-Revision-Date: 2004-11-25 11:09+0100\n"
+"POT-Creation-Date: 2005-01-19 12:57+0100\n"
+"PO-Revision-Date: 2005-01-19 13:00+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmÃ¥l <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -174,7 +174,7 @@ msgstr "_Nekt"
 
 #: server/vino-server.c:852
 msgid "The screen for which to create a VNC server"
-msgstr ""
+msgstr "Skjerm det skal opprettes en VNC-tjener for"
 
 #: server/vino-server.c:859
 msgid "On Hold"
@@ -224,7 +224,7 @@ msgstr "VNC-passord"
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
-msgstr ""
+msgstr "Passord (base64-kodet) som brukes til å autentisere typer som bruker VncAuth-metoden"
 
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -232,7 +232,7 @@ msgstr "Tillatte autentiseringsmetoder"
 
 #: server/vino-server.schemas.in.h:2
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr ""
+msgstr "E-postadresse som URLen til det eksterne skrivebordet skal sendes til"
 
 #: server/vino-server.schemas.in.h:3
 msgid "Enable remote desktop access"
@@ -279,11 +279,11 @@ msgstr ""
 
 #: server/vino-server.schemas.in.h:10
 msgid "Password required for \"vnc\" authentication"
-msgstr ""
+msgstr "Passord kreves for «vnc»-autentisering"
 
 #: server/vino-server.schemas.in.h:11
 msgid "Prompt the user before completing a connection"
-msgstr ""
+msgstr "Spør bruker før en tilkobling fullføres"
 
 #: server/vino-server.schemas.in.h:12
 msgid "Require encryption"
@@ -311,11 +311,11 @@ msgstr ""
 msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
-msgstr ""
+msgstr "Problem under registrering av det eksterne skrivebordet med bonobo-activation. Avslutter...\n"
 
 #: session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
-msgstr ""
+msgstr "Tjener for eksternt skrivebord terminerte. Starter på nytt\n"
 
 #: session/vino-session.c:154
 #, c-format
@@ -329,7 +329,7 @@ msgstr "Aktivering av %s feilet. Ukjent feil\n"
 
 #: session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr ""
+msgstr "Kunne ikke aktivere tjener for eksternt skrivebord: prøvde for mange ganger\n"
 
 #: session/vino-session.c:295
 msgid "Starting remote desktop server"
