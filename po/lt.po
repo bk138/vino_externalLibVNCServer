@@ -1,0 +1,370 @@
+# Lithuanian translation of vino.
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# This file is distributed under the same license as the vino package.
+# Žygimantas Beručka <uid0@akl.lt>, 2004.
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: vino HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-11-13 12:28+0200\n"
+"PO-Revision-Date: 2004-11-14 09:12+0200\n"
+"Last-Translator: Žygimantas Beručka <uid0@akl.lt>\n"
+"Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+#: capplet/vino-preferences.c:807
+msgid "Send this command by email"
+msgstr "Siųsti šią komandą el.paštu"
+
+#: capplet/vino-preferences.c:842
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"Bandant parodyti pagalbą įvyko klaida:\n"
+"%s"
+
+#: capplet/vino-preferences.desktop.in.h:1
+msgid "Remote Desktop"
+msgstr "Nuotolinis darbastalis"
+
+#: capplet/vino-preferences.desktop.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "Konfigūruoti nuotolinio darbastalio priėjimą"
+
+#: capplet/vino-preferences.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: capplet/vino-preferences.glade.h:2
+msgid "        "
+msgstr "        "
+
+#: capplet/vino-preferences.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: capplet/vino-preferences.glade.h:4
+msgid "<b>Security</b>"
+msgstr "<b>Saugumas</b>"
+
+#: capplet/vino-preferences.glade.h:5
+msgid "<b>Sharing</b>"
+msgstr "<b>Bendrinimas</b>"
+
+#: capplet/vino-preferences.glade.h:6
+msgid "A_sk you for confirmation"
+msgstr "Paklau_ti Jūsų patvirtinimo"
+
+#: capplet/vino-preferences.glade.h:7
+msgid "Allow other users to _view your desktop"
+msgstr "Leisti kitiems naudotojams _matyti Jūsų darbastalį"
+
+#: capplet/vino-preferences.glade.h:8
+msgid "Remote Desktop Preferences"
+msgstr "Nuotolinio darbastalio nustatymai"
+
+#: capplet/vino-preferences.glade.h:9
+msgid "Some of these preferences are locked down"
+msgstr "Kai kurie iš šių nustatymų yra užrakinti"
+
+#: capplet/vino-preferences.glade.h:10
+msgid "Users can view your desktop using this command:"
+msgstr "Naudotojai gali matyti Jūsų darbastalį naudodami šią komandą:"
+
+#: capplet/vino-preferences.glade.h:11
+msgid "When a user tries to view or control your desktop:"
+msgstr "Kai naudotojas bando pamatyti ar valdyti Jūsų darbastalį:"
+
+#: capplet/vino-preferences.glade.h:12
+msgid "_Allow other users to control your desktop"
+msgstr "_Leisti kitiems naudotojams valdyti Jūsų darbastalį"
+
+#: capplet/vino-preferences.glade.h:13
+msgid "_Password:"
+msgstr "_Slaptažodis:"
+
+#: capplet/vino-preferences.glade.h:14
+msgid "_Require the user to enter this password:"
+msgstr "_Vartotojas turi įvesti šį slaptažodį:"
+
+#: capplet/vino-url.c:158
+msgid "Address"
+msgstr "Adresas"
+
+#: capplet/vino-url.c:159
+msgid "The address pointed to by the widget"
+msgstr "Adresas į kurį rodo šis valdymo elementas"
+
+#: capplet/vino-url.c:166
+msgid "Tooltip"
+msgstr "Patarimas"
+
+#: capplet/vino-url.c:167
+msgid "A tooltip for this URL"
+msgstr "Šio URL paaiškinimas"
+
+#: capplet/vino-url.c:173
+msgid "URL color"
+msgstr "URL spalva"
+
+#: capplet/vino-url.c:174
+msgid "The color of the URL's label"
+msgstr "URL užrašų spalva"
+
+#: server/vino-fb.c:947 server/vino-prompt.c:144 server/vino-server.c:851
+msgid "Screen"
+msgstr "Ekranas"
+
+#: server/vino-fb.c:948
+msgid "The screen to be monitored"
+msgstr "Stebimas ekranas"
+
+#: server/vino-main.c:78
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"Jūsų XServeris nepalaiko XTest plėtinio - nuotolinio darbastalio priėjimas bus tik "
+"skaitymui\n"
+
+#: server/vino-prompt.c:145
+msgid "The screen on which to display the prompt"
+msgstr "Ekranas, kuriame parodyti kvietinį"
+
+#: server/vino-prompt.c:385
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Naudotojas iš nutolusio kompiuterio „%s“ bando pamatyti arba valdyti Jūsų "
+"darbastalį."
+
+#: server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "<big><b>Kitas naudotojas bando pamatyti Jūsų darbastalį.</b></big>"
+
+#: server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Naudotojas iš nutolusio kompiuterio bando pamatyti arba valdyti Jūsų darbastalį."
+
+#: server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr "Ar norite leisti jiems tai daryti?"
+
+#: server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "Klausimas"
+
+#: server/vino-prompt.glade.h:5 server/vino-util.c:64
+msgid "_Allow"
+msgstr "_Leisti"
+
+#: server/vino-prompt.glade.h:6 server/vino-util.c:65
+msgid "_Refuse"
+msgstr "_Atsakyti"
+
+#: server/vino-server.c:852
+msgid "The screen for which to create a VNC server"
+msgstr "Ekranas, kuriam sukurti VNC serverį"
+
+#: server/vino-server.c:859
+msgid "On Hold"
+msgstr "Sulaikyti"
+
+#: server/vino-server.c:860
+msgid "Place all clients on hold"
+msgstr "Sulaikyti visus klientus"
+
+#: server/vino-server.c:867
+msgid "Prompt enabled"
+msgstr "Kvietinys įjungtas"
+
+#: server/vino-server.c:868
+msgid "Prompt the user about connection attempts"
+msgstr "Pranešti naudotojui apie bandymus prisijungti"
+
+#: server/vino-server.c:875
+msgid "View Only"
+msgstr "Tik matymas"
+
+#: server/vino-server.c:876
+msgid "Disallow keyboard/pointer input from clients"
+msgstr "Neleisti klientams naudotis klaviatūra/žymekliu"
+
+#: server/vino-server.c:883
+msgid "Require Encryption"
+msgstr "Reikalingas šifravimas"
+
+#: server/vino-server.c:884
+msgid "Require clients to use encryption"
+msgstr "Klientai privalo naudoti šifravimą"
+
+#: server/vino-server.c:891
+msgid "Authentication methods"
+msgstr "Autentikacijos metodai"
+
+#: server/vino-server.c:892
+msgid "The authentication methods this server should allow"
+msgstr "Autentikacijos metodas, kurį turėtų leisti šis serveris"
+
+#: server/vino-server.c:900
+msgid "VNC Password"
+msgstr "VNC slaptažodis"
+
+#: server/vino-server.c:901
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr ""
+"Slaptažodis (koduotas base64) naudojamas autentikuoti tipams naudojantiems "
+"VncAuth metodą"
+
+#: server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "Leistini autentikacijos metodai"
+
+#: server/vino-server.schemas.in.h:2
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "El.pašto adresas į kurį turi būti siunčiamas nuotolinio darbastalio URL"
+
+#: server/vino-server.schemas.in.h:3
+msgid "Enable remote desktop access"
+msgstr "Įjungti priėjimą prie nuotolinio darbastalio"
+
+#: server/vino-server.schemas.in.h:4
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+"Jei reikšmė teigiama, nuotolinis priėjimas prie darbastalio per RFB protokolą "
+"yra leidžiamas. Tada naudotojai nutolusiuose kompiuteriuose gali prisijungti "
+"prie darbastalio naudodami vncviewer."
+
+#: server/vino-server.schemas.in.h:5
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"Jei reikšmė teigiama, nutolę naudotojai bandantys prieiti prie darbastalio yra "
+"neleidžiami, kol naudotojas vietiniame kompiuteryje nepatvirtins prisijungimo."
+"Ypač rekomenduojama, kada priėjimas yra neapsaugotas slaptažodžiu."
+
+#: server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr ""
+"Jei reikšmė teigiama, nutolę naudotojai bandantys prieiti prie darbastalio "
+"yra leidžiami tik matyti darbastalį. Nutolę naudotojai negalės naudotis "
+"pele ar klaviatūra."
+
+#: server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encyrption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+"Jei reikšmė teigiama, nutolusiems naudotojams, bandantiems prieiti prie "
+"darbastalio, yra reikalingas šifravimo palaikymas. Labai rekomenduojama, "
+"kad Jūs naudotomėt klientą, kuris palaiko šifravimą, nebent įsiterpiantis "
+"tinklas yra patikimas."
+
+#: server/vino-server.schemas.in.h:8
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+"Parodo autentikacijos metodus, su kuriais nutolę naudotojai gali prieiti prie "
+"darbastalio. Yra du galimi autentikacijos metodai; „vnc“ - nutolusio naudotojo "
+"prieš prisijungiant paprašoma įvesti slaptažodį (slaptažodis nurodomas "
+"vnc_password rakte) ir „none“ - leidžia prisijungti visiems nutolusiems "
+"naudotojams."
+
+#: server/vino-server.schemas.in.h:9
+msgid "Only allow remote users to view the desktop"
+msgstr "Nutolusiems naudotojams leisti tik matyti darbastalį"
+
+#: server/vino-server.schemas.in.h:10
+msgid "Password required for \"vnc\" authentication"
+msgstr "Slaptažodis reikalingas \"vnc\" autentikacijai"
+
+#: server/vino-server.schemas.in.h:11
+msgid "Prompt the user before completing a connection"
+msgstr "Perspėti naudotoją prieš užbaigiant prisijungimą"
+
+#: server/vino-server.schemas.in.h:12
+msgid "Require encryption"
+msgstr "Reikalingas šifravimas"
+
+#: server/vino-server.schemas.in.h:13
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+"Slaptažodis, kurio bus paklaustas bandantis prisijungti nutolęs naudotojas, jei "
+"naudojamas „vnc“ autentikacijos metodas. Rakto nurodytas slaptažodis yra "
+"užšifruotas base64."
+
+#: server/vino-server.schemas.in.h:14
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+"Šis raktas nurodo el.pašto adresą, į kurį turėtų būti nusiųstas nutolusio "
+"darbastalio URL, jeigu naudotojas nutolusio darbastalio nustatymų lange "
+"spragteli ant URL."
+
+#: server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "Nutolusio darbastalio serveris jau veikia; uždaroma...\n"
+
+#: server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr ""
+"Registruojant nutolusio darbastalio serverį su bonobo-activation įvyko klaida; "
+"uždaroma...\n"
+
+#: session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr "Nutolęs darbastalis užsidarė, perkraunama\n"
+
+#: session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "%s aktyvacija nepavyko: %s\n"
+
+#: session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "%s aktyvacija nepavyko: nežinoma klaida\n"
+
+#: session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr "Nepavyko aktyvuoti nutolusio darbastalio serverio: bandyta per daug kartų\n"
+
+#: session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr "Paleidžiamas nutolusio darbastalio serveris"
+
+#: session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr "Nutolusio darbastalio serveris nepaleidžiamas"
+

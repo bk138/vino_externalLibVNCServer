@@ -1,3 +1,7 @@
+2004-11-14  Žygimantas Beručka  <uid0@akl.lt>
+
+	* configure.in: Added "lt" (Lithuanian) to ALL_LINGUAS.
+
 2004-11-12  Mark McLoughlin  <mark@skynet.ie>
 
 	* icons/gnome-remote-desktop.png: new icon
