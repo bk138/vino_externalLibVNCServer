@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-11 19:16+0100\n"
+"POT-Creation-Date: 2004-08-17 11:42+0100\n"
 "PO-Revision-Date: 2004-07-31 13:07+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
@@ -107,11 +107,11 @@ msgstr "Farge for URL"
 msgid "The color of the URL's label"
 msgstr ""
 
-#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:840
+#: server/vino-fb.c:888 server/vino-prompt.c:144 server/vino-server.c:840
 msgid "Screen"
 msgstr "Skjerm"
 
-#: server/vino-fb.c:886
+#: server/vino-fb.c:889
 msgid "The screen to be monitored"
 msgstr "Skjerm som skal overvåkes"
 

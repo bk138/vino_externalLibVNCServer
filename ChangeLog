@@ -1,5 +1,9 @@
 2004-08-17  Mark McLoughlin  <mark@skynet.ie>
 
+	* configure.in: Version 2.7.91.
+
+2004-08-17  Mark McLoughlin  <mark@skynet.ie>
+
 	Make the DAMAGE support actually work.
 
 	* server/vino-fb.c:

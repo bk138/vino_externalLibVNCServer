@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-11 19:16+0100\n"
+"POT-Creation-Date: 2004-08-17 11:42+0100\n"
 "PO-Revision-Date: 2004-07-27 21:04+0200\n"
 "Last-Translator: Elian Myftiu <elian@lycos.com>\n"
 "Language-Team: Albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
@@ -113,11 +113,11 @@ msgstr "Ngjyra e URL-së"
 msgid "The color of the URL's label"
 msgstr "Ngjyra e etiketës së URL-së"
 
-#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:840
+#: server/vino-fb.c:888 server/vino-prompt.c:144 server/vino-server.c:840
 msgid "Screen"
 msgstr "Ekrani"
 
-#: server/vino-fb.c:886
+#: server/vino-fb.c:889
 msgid "The screen to be monitored"
 msgstr "Ekrani që duhet vëzhguar"
 

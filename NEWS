@@ -1,3 +1,16 @@
+Vino 2.7.91
+===========
+
+  Fixes
+
+   + Make the DAMAGE support actually work (Mark)
+   + Link against Xfixes when building DAMAGE support (Mark)
+
+  Translators
+
+   + Gnome PL Team (pl)
+   + Duarte Loreto (pt)
+
 Vino 2.7.90
 ===========
 

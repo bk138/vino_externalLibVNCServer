@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-15 00:44+0100\n"
+"POT-Creation-Date: 2004-08-17 11:42+0100\n"
 "PO-Revision-Date: 2004-08-15 00:45+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
@@ -109,11 +109,11 @@ msgstr "Cor do URL"
 msgid "The color of the URL's label"
 msgstr "A cor da etiqueta do URL"
 
-#: server/vino-fb.c:885 server/vino-prompt.c:144 server/vino-server.c:840
+#: server/vino-fb.c:888 server/vino-prompt.c:144 server/vino-server.c:840
 msgid "Screen"
 msgstr "Ecrã"
 
-#: server/vino-fb.c:886
+#: server/vino-fb.c:889
 msgid "The screen to be monitored"
 msgstr "O ecrã a ser monitorizado"
 
