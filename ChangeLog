@@ -1,3 +1,7 @@
+2004-07-31  Francisco Javier F. Serrador  <serrador@cvs.gnome.org>
+
+	* configure.in: added Spanish (es) translation
+
 2004-07-21  Mark McLoughlin  <mark@skynet.ie>
 
 	* configure.in: post-release bump to 2.7.5.
