@@ -1,3 +1,8 @@
+2004-09-28  Åsmund Skjæveland  <aasmunds@fys.uio.no>
+
+	* configure.in: Added nn to ALL_LINGUAS.
+	* po/nn.po: Started Norwegian Nynorsk translation.
+
 2004-09-27  Mark McLoughlin  <mark@skynet.ie>
 
 	* capplet/vino-preferences.c:
