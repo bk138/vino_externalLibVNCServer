@@ -22,7 +22,12 @@ AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
 AC_PATH_PROG(JAVAC, javac)
 AC_PATH_PROG(JAR, jar)
-AM_CONDITIONAL(JAVA_SDK_AVAILABLE, test "x$JAVAC" != "x" -a "x$JAR" != "x")
+
+AC_ARG_ENABLE(java,
+              [AC_HELP_STRING([--enable-java],
+                              [rebuild the Java applet [default=no]])],,
+              [enable_java=no])
+AM_CONDITIONAL(JAVA_SDK_AVAILABLE, test "x$JAVAC" != "x" -a "x$JAR" != "x" -a "$enable_java" != "no")
 
 ALL_LINGUAS=""
 AM_GLIB_GNU_GETTEXT
