@@ -1,3 +1,7 @@
+2005-02-21  Pawan Chitrakar  <pawan@nplinux.org>
+
+	* configure.in: Added ne "Nepali" in ALL_LINGUAS
+
 2004-12-01  Dafydd Harries  <daf@muse.19inch.net>
 
 	* configure.in: Add "cy" (Welsh) to ALL_LINGUAS.
