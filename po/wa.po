@@ -1,0 +1,360 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Pablo Saratxaga <pablo@mandriva.com>, 2005.
+# Pablo Saratxaga <pablo@walon.org>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vino\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-04-01 21:01+0200\n"
+"PO-Revision-Date: 2005-04-19 17:19+0200\n"
+"Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
+"Language-Team: Walloon <linux-wa@walon.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: KBabel 1.3.1\n"
+
+#: capplet/vino-preferences.c:807
+msgid "Send this command by email"
+msgstr "Emile cisse comande ci"
+
+#: capplet/vino-preferences.c:842
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"Åk n' a nén stî tot håynant l' aidance:\n"
+"%s"
+
+#: capplet/vino-preferences.desktop.in.in.h:1
+msgid "Remote Desktop"
+msgstr "Sicribanne å lon"
+
+#: capplet/vino-preferences.desktop.in.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "Definixhoz vos preferinces po l' accès å scribanne å lon"
+
+#: capplet/vino-preferences.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: capplet/vino-preferences.glade.h:2
+msgid "        "
+msgstr "        "
+
+#: capplet/vino-preferences.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: capplet/vino-preferences.glade.h:4
+msgid "<b>Security</b>"
+msgstr "<b>Såvrité</b>"
+
+#: capplet/vino-preferences.glade.h:5
+msgid "<b>Sharing</b>"
+msgstr "<b>Pårtaedje</b>"
+
+#: capplet/vino-preferences.glade.h:6
+msgid "A_sk you for confirmation"
+msgstr "_Dimander èn acertinaedje"
+
+#: capplet/vino-preferences.glade.h:7
+msgid "Allow other users to _view your desktop"
+msgstr "Permete ki ds ôtes uzeus voeyexhe _vosse sicribanne"
+
+#: capplet/vino-preferences.glade.h:8
+msgid "Remote Desktop Preferences"
+msgstr "Preferinces do scribanne då lon"
+
+#: capplet/vino-preferences.glade.h:9
+msgid "Some of these preferences are locked down"
+msgstr "Sacwantes di ces preferinces ci sont serêyes"
+
+#: capplet/vino-preferences.glade.h:10
+msgid "Users can view your desktop using this command:"
+msgstr "Les uzeus polèt vey vosse sicribanne avou l' comande:"
+
+#: capplet/vino-preferences.glade.h:11
+msgid "When a user tries to view or control your desktop:"
+msgstr "Cwand èn uzeu saye di vey ou d' controler vosse sicribanne:"
+
+#: capplet/vino-preferences.glade.h:12
+msgid "_Allow other users to control your desktop"
+msgstr "_Permete a ds ôtes uzeus di controler vosse sicribanne"
+
+#: capplet/vino-preferences.glade.h:13
+msgid "_Password:"
+msgstr "_Sicret:"
+
+#: capplet/vino-preferences.glade.h:14
+msgid "_Require the user to enter this password:"
+msgstr "_Oblidjî l' uzeu a dner on scret:"
+
+#: capplet/vino-url.c:158
+msgid "Address"
+msgstr "Adresse"
+
+#: capplet/vino-url.c:159
+msgid "The address pointed to by the widget"
+msgstr "L' adresse pontieye pa l' ahesse (widget)"
+
+#: capplet/vino-url.c:166
+msgid "Tooltip"
+msgstr "Racsegne"
+
+#: capplet/vino-url.c:167
+msgid "A tooltip for this URL"
+msgstr "Ene racsegne po cisse hårdêye ci"
+
+#: capplet/vino-url.c:173
+msgid "URL color"
+msgstr "Coleur pol hårdêye"
+
+#: capplet/vino-url.c:174
+msgid "The color of the URL's label"
+msgstr "Li coleur po l' etikete del hårdêye"
+
+#: server/vino-fb.c:947 server/vino-prompt.c:144 server/vino-server.c:851
+msgid "Screen"
+msgstr "Waitroûle"
+
+#: server/vino-fb.c:948
+msgid "The screen to be monitored"
+msgstr "Li waitroûle a corwaitî"
+
+#: server/vino-main.c:78
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"Li sierveu X da vosse ni sopoite nén l' fonccion d' rawete XTest - ça fwait "
+"k' l' accès då lon å scribanne ni pout esse k' e môde seulmint-lére\n"
+
+#: server/vino-prompt.c:145
+msgid "The screen on which to display the prompt"
+msgstr "Li waitroûle k' on-z î håynêye li kesse"
+
+#: server/vino-prompt.c:385
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Èn uzeu sol copiutrece «%s» å lon saye di vey ou d' controler vosse "
+"sicribanne."
+
+#: server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "<big><b>Èn ôte uzeu saye di vey vosse sicribanne.</b></big>"
+
+#: server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Èn uzeu so ene ôte copiutrece å lon saye di vey ou d' controler vosse "
+"sicribanne."
+
+#: server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr "Voloz vs elzî permete di fé çoula?"
+
+#: server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "Kesse"
+
+#: server/vino-prompt.glade.h:5 server/vino-util.c:64
+msgid "_Allow"
+msgstr "_Permete"
+
+#: server/vino-prompt.glade.h:6 server/vino-util.c:65
+msgid "_Refuse"
+msgstr "_Rifuzer"
+
+#: server/vino-server.c:852
+msgid "The screen for which to create a VNC server"
+msgstr "Li waitroûle k' on ndè vout fé on sierveu VNC"
+
+#: server/vino-server.c:859
+msgid "On Hold"
+msgstr "Fé ratinde"
+
+#: server/vino-server.c:860
+msgid "Place all clients on hold"
+msgstr "Fé ratinde tos les cliyints"
+
+#: server/vino-server.c:867
+msgid "Prompt enabled"
+msgstr "Mete èn alaedje li kesse"
+
+#: server/vino-server.c:868
+msgid "Prompt the user about connection attempts"
+msgstr "Dimander a l' uzeu cwè fé avou les sayes di raloyaedje"
+
+#: server/vino-server.c:875
+msgid "View Only"
+msgstr "Vey seulmint"
+
+#: server/vino-server.c:876
+msgid "Disallow keyboard/pointer input from clients"
+msgstr "Dismete l' intrêye taprece/sori po les cliyints"
+
+#: server/vino-server.c:883
+msgid "Require Encryption"
+msgstr "Oblidjî l' ecriptaedje"
+
+#: server/vino-server.c:884
+msgid "Require clients to use encryption"
+msgstr "Oblidjî les cliyints a-z eployî l' ecriptaedje"
+
+#: server/vino-server.c:891
+msgid "Authentication methods"
+msgstr "Metôdes d' otintifiaedje"
+
+#: server/vino-server.c:892
+msgid "The authentication methods this server should allow"
+msgstr "Les metôdes d' otintifiaedje ki ç' sierveu ci acceptêye"
+
+#: server/vino-server.c:900
+msgid "VNC Password"
+msgstr "Sicret VNC"
+
+#: server/vino-server.c:901
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr ""
+"Li scret (ecôdé e base64) eployî po les sôres d' otintifiaedje avou "
+"l' metôde VncAuth"
+
+#: server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "Metôdes d' otintifiaedje permetowes"
+
+#: server/vino-server.schemas.in.h:2
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "Adresse emile kel hårdêye do scribanne å lon doet esse evoyeye"
+
+#: server/vino-server.schemas.in.h:3
+msgid "Enable remote desktop access"
+msgstr "Mete en alaedje l' accès å scribanne då lon"
+
+#: server/vino-server.schemas.in.h:4
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+"Si vraiy, permete les accès då lon å scribanne åd triviè do protocole RFB. "
+"Les uzeus so des copiutreces å lon polèt adon si raloyî sol sicribanne avou "
+"on cliyint vncviewer."
+
+#: server/vino-server.schemas.in.h:5
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"Si vraiy, les uzeus so des copiutreces å lon n' ont nén accès å scribanne "
+"disk' a tant ki l' uzeu so l' éndjole lodjoe ni dene nén si acoird pol "
+"raloyaedje. Ricmandé tot pårticulirmint cwand l' accès n' est nén protedjî "
+"avou on scret."
+
+#: server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr ""
+"Si vraiy, les uzeus so des copiutreces å lon n' ont èn accès å scribanne "
+"k' e môde seulmint-lére. Les uzeus då lon èn polèt nén eployî l' taprece ou "
+"l' sori."
+
+#: server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encyrption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+"Si vraiy, les uzeus so des copiutreces å lon sont-st oblidjîs d' eployî "
+"l' ecriptaedje divant d' aveur accès å scribanne. C' est foitmint ricmande "
+"d' eployî on cliyint ki sopoite l' ecriptaedje, a moens ki vos årîz pår "
+"fiyate dins l' rantoele."
+
+#: server/vino-server.schemas.in.h:8
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+
+#: server/vino-server.schemas.in.h:9
+msgid "Only allow remote users to view the desktop"
+msgstr "Peremete ås uzeus då lon d' seulmint di seulmint vey li scribanne"
+
+#: server/vino-server.schemas.in.h:10
+msgid "Password required for \"vnc\" authentication"
+msgstr "I gn a mezåjhe d' on scret po l' otintifiaedje «vnc»"
+
+#: server/vino-server.schemas.in.h:11
+msgid "Prompt the user before completing a connection"
+msgstr "Dimander a l' uzeu divant d' completer l' raloyaedje"
+
+#: server/vino-server.schemas.in.h:12
+msgid "Require encryption"
+msgstr "Oblidjî l' ecriptaedje"
+
+#: server/vino-server.schemas.in.h:13
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+
+#: server/vino-server.schemas.in.h:14
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+
+#: server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr ""
+
+#: server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr ""
+
+#: session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr ""
+
+#: session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr ""
+
+#: session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr ""
+
+#: session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr ""
+
+#: session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr "Enondant li sierveu di scribanne då lon"
+
+#: session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr ""

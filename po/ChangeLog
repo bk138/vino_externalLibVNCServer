@@ -1,10 +1,14 @@
+2005-04-19  Pablo Saratxaga  <pablo@mandriva.com>
+
+	* wa.po: Added Walloon file
+
 2005-4-14  Abduxukur Abdurixit <abduxukur.abdurixit@t-systems.ch>
 
-        * ug.po: Added Uighur translation.
+	* ug.po: Added Uighur translation.
 
 2005-03-31  Steve Murphy  <murf@e-tools.com>
 
-        * rw.po: Added Kinyarwanda translation.
+	* rw.po: Added Kinyarwanda translation.
 
 2005-03-30  Adi Attar  <aattar@cvs.gnome.org>
 
