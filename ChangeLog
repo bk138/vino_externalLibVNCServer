@@ -1,5 +1,17 @@
 2005-05-16  Mark McLoughlin  <mark@skynet.ie>
 
+	Patch from Leena Gunda in bug #166167
+
+	* server/vino-fb.c: (vino_fb_finalize_screen_data):
+	Disconnect the size-changed handler.
+	
+2005-05-16  Mark McLoughlin  <mark@skynet.ie>
+	
+	* server/vino-server.c: (vino_server_init_from_screen):
+	update comment
+
+2005-05-16  Mark McLoughlin  <mark@skynet.ie>
+
 	Fix for bug #168904 - clicking on help terminates vino-server
 
 	* server/vino-prompt.c: (vino_prompt_setup_dialog): Set the

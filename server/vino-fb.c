@@ -112,6 +112,8 @@ enum
 
 static void vino_fb_init_from_screen (VinoFB    *vfb,
 				      GdkScreen *screen);
+static void vino_fb_screen_size_changed (VinoFB    *vfb,
+					 GdkScreen *screen);
 
 #ifdef HAVE_XDAMAGE
 static GdkFilterReturn vino_fb_xdamage_event_filter (GdkXEvent *xevent,
@@ -529,6 +531,10 @@ vino_fb_finalize_screen_data (VinoFB *vfb)
 			   vfb->priv->fb_image_is_x_shm_segment,
 			   TRUE);
   vfb->priv->fb_image = NULL;
+  
+  g_signal_handlers_disconnect_by_func (vfb->priv->screen,
+					G_CALLBACK (vino_fb_screen_size_changed),
+					vfb);
 
 }
 

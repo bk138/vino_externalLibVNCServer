@@ -645,7 +645,7 @@ vino_server_init_from_screen (VinoServer *server,
    *   we don't pass in argc or argv
    *   samplesPerPixel is totally unused (3 below)
    *   bitsPerSample and bytesPerPixel get set in
-   *   set_pixel_format()
+   *   init_pixel_format()
    */
   server->priv->rfb_screen = rfb_screen = 
     rfbGetScreen (NULL, NULL,
