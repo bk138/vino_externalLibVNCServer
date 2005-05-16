@@ -333,6 +333,7 @@ vino_prompt_setup_dialog (VinoPrompt *prompt)
 
   GladeXML   *xml;
   const char *glade_file;
+  GtkWidget  *help_button;
       
   if (g_file_test (VINO_GLADE_FILE, G_FILE_TEST_EXISTS))
     glade_file = VINO_GLADE_FILE;
@@ -356,6 +357,10 @@ vino_prompt_setup_dialog (VinoPrompt *prompt)
 
   prompt->priv->host_label = glade_xml_get_widget (xml, "host_label");
   g_assert (prompt->priv->host_label != NULL);
+
+  help_button = glade_xml_get_widget (xml, "help_button");
+  g_assert (help_button != NULL);
+  gtk_widget_set_sensitive (help_button, FALSE);
 
   g_object_unref (xml);
 

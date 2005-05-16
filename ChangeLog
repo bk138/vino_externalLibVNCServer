@@ -1,5 +1,14 @@
 2005-05-16  Mark McLoughlin  <mark@skynet.ie>
 
+	Fix for bug #168904 - clicking on help terminates vino-server
+
+	* server/vino-prompt.c: (vino_prompt_setup_dialog): Set the
+	help button to be insensitive.
+	
+	* server/vino-prompt.glade: put an id on the help_button.
+
+2005-05-16  Mark McLoughlin  <mark@skynet.ie>
+
 	Fix for bug #158710
 
 	* capplet/vino-preferences.c:
