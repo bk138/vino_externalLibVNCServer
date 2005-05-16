@@ -1,3 +1,11 @@
+2005-05-16  Mark McLoughlin  <mark@skynet.ie>
+
+	Fix for bug #158710
+
+	* capplet/vino-preferences.c:
+	(vino_preferences_vnc_password_notify): Don't pass
+	NULL to gtk_entry_set_text()
+
 2005-04-19  Pablo Saratxaga  <pablo@mandriva.com>
 
 	* configure.in: Added Walloon (wa) to ALL_LINGUAS.

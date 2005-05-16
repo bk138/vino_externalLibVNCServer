@@ -556,7 +556,7 @@ vino_preferences_vnc_password_notify (GConfClient           *client,
 
   if (!password || !password [0])
     {
-      gtk_entry_set_text (GTK_ENTRY (dialog->password_entry), NULL);
+      gtk_entry_set_text (GTK_ENTRY (dialog->password_entry), "");
     }
   else
     {
