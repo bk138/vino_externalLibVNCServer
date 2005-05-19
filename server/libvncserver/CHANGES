@@ -40,6 +40,10 @@
    is not exposed in the API. The cursor is undrawn
    immediately after sending the update to the client.
 
+ + Removed the bitsPerSample, samplesPerPixel and
+   bytesPerPixel arguments to rfbNewFramebuffer() such that
+   you can only update the size and buffer of the framebuffer.
+
  + Warning fixes:
      o killed rfbPrintXCursor() - not used
      o put rfbIncrClientRef(), rfbIncrClientRef() and

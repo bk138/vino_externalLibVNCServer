@@ -663,8 +663,7 @@ extern rfbScreenInfoPtr rfbGetScreen(int* argc,char** argv,
  int bytesPerPixel);
 extern void rfbInitServer(rfbScreenInfoPtr rfbScreen);
 extern void rfbNewFramebuffer(rfbScreenInfoPtr rfbScreen,char *framebuffer,
- int width,int height, int bitsPerSample,int samplesPerPixel,
- int bytesPerPixel);
+ int width,int height);
 
 extern void rfbScreenCleanup(rfbScreenInfoPtr screenInfo);
 

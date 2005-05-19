@@ -1,3 +1,16 @@
+2005-05-19  Mark McLoughlin  <mark@skynet.ie>
+
+	Fix crash when switching resolution in bug #166167.
+	Root cause identified by Leena Gunda <leena.gunda@wipro.com>.
+
+	* server/libvncserver/rfb/rfb.h,
+	  server/libvncserver/main.c: (rfbNewFramebuffer): remove the
+	arguments relating to format switching, we only ever want to
+	just update the size of the framebuffer.
+	
+	* server/vino-server.c: (vino_server_screen_size_changed):
+	Update for above change.
+
 2005-05-16  Mark McLoughlin  <mark@skynet.ie>
 
 	Patch from Leena Gunda in bug #166167

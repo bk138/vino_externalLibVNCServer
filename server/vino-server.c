@@ -580,8 +580,7 @@ vino_server_screen_size_changed (VinoServer *server)
   rfbNewFramebuffer (server->priv->rfb_screen,
 		     vino_fb_get_pixels (server->priv->fb),
 		     gdk_screen_get_width (server->priv->screen),
-		     gdk_screen_get_height (server->priv->screen),
-		     -1, -1, -1);
+		     gdk_screen_get_height (server->priv->screen));
 
   vino_server_init_pixel_format (server, server->priv->rfb_screen);
 }

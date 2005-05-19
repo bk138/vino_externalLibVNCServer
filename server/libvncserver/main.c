@@ -516,42 +516,26 @@ rfbScreenInfoPtr rfbGetScreen(int* argc,char** argv,
 }
 
 /*
- * Switch to another framebuffer (maybe of different size and color
- * format). Clients supporting NewFBSize pseudo-encoding will change
- * their local framebuffer dimensions if necessary.
+ * Switch to another sized framebuffer. Clients supporting NewFBSize
+ * pseudo-encoding will change their local framebuffer dimensions
+ * if necessary.
  * NOTE: Rich cursor data should be converted to new pixel format by
  * the caller.
  */
 
 void rfbNewFramebuffer(rfbScreenInfoPtr rfbScreen, char *framebuffer,
-                       int width, int height,
-                       int bitsPerSample, int samplesPerPixel,
-                       int bytesPerPixel)
+                       int width, int height)
 {
-  rfbPixelFormat old_format;
-  rfbBool format_changed = FALSE;
   rfbClientIteratorPtr iterator;
   rfbClientPtr cl;
-
-  /* Update information in the rfbScreenInfo structure */
-
-  old_format = rfbScreen->rfbServerFormat;
 
   if (width & 3)
     rfbErr("WARNING: New width (%d) is not a multiple of 4.\n", width);
 
+  /* Update information in the rfbScreenInfo structure */
+
   rfbScreen->width = width;
   rfbScreen->height = height;
-  rfbScreen->bitsPerPixel = rfbScreen->depth = 8*bytesPerPixel;
-  rfbScreen->paddedWidthInBytes = width*bytesPerPixel;
-
-  rfbInitServerFormat(rfbScreen, bitsPerSample);
-
-  if (memcmp(&rfbScreen->rfbServerFormat, &old_format,
-             sizeof(rfbPixelFormat)) != 0) {
-    format_changed = TRUE;
-  }
-
   rfbScreen->frameBuffer = framebuffer;
 
   /* Adjust pointer position if necessary */
@@ -564,11 +548,6 @@ void rfbNewFramebuffer(rfbScreenInfoPtr rfbScreen, char *framebuffer,
   /* For each client: */
   iterator = rfbGetClientIterator(rfbScreen);
   while ((cl = rfbClientIteratorNext(iterator)) != NULL) {
-
-    /* Re-install color translation tables if necessary */
-
-    if (format_changed)
-      rfbSetTranslateFunction(cl);
 
     /* Mark the screen contents as changed, and schedule sending
        NewFBSize message if supported by this client. */
