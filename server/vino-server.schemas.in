@@ -60,7 +60,7 @@
          <short>Require encryption</short>
          <long>
            If true, remote users accessing the desktop are required
-           to be able support encyrption. It is highly recommended
+           to be able support encryption. It is highly recommended
            that you use a client which supports encryption unless the
            intervening network is trusted.
          </long>

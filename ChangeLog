@@ -1,5 +1,16 @@
 2005-05-19  Mark McLoughlin  <mark@skynet.ie>
 
+	* configure.in: Version 2.11.1.
+
+2005-05-19  Mark McLoughlin  <mark@skynet.ie>
+
+	Patch from Thierry Moisan <thierryn@videotron.ca> in
+	bug #150460
+
+	* server/vino-server.schemas.in: fix typo.
+
+2005-05-19  Mark McLoughlin  <mark@skynet.ie>
+
 	Fix crash when switching resolution in bug #166167.
 	Root cause identified by Leena Gunda <leena.gunda@wipro.com>.
 

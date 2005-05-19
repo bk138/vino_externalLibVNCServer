@@ -1,3 +1,24 @@
+Vino 2.11.1
+===========
+
+  Fixes
+
+   + Fix crasher when changing screen size (Leena Gunda, Mark)
+   + Fix accumulation of signal handlers with ever screen size change (Leena Gunda)
+   + Don't let the help button on the prompt dialog terminate it (Mark)
+   + Fix warning spew when deleting password in capplet (Mark)
+
+  Translators
+
+   + Adam Weinberger (en_CA)
+   + Priit Laes (et)
+   + Gabor Kelemen (hu)
+   + Jyotsna Shrestha (ne)
+   + Steve Murphy (rw)
+   + Abduxukur Abdurixit (ug)
+   + Pablo Saratxaga (wa)
+   + Canonical Ltd (xh)
+
 Vino 2.10.0
 ===========
 
