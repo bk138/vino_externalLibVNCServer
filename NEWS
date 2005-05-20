@@ -1,3 +1,10 @@
+Vino 2.11.1.1
+=============
+
+  Fixes
+
+   + Fix build failure with not-CVS-HEAD ORBit2 (Mark)
+
 Vino 2.11.1
 ===========
 

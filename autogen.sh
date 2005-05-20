@@ -18,4 +18,4 @@ which gnome-autogen.sh || {
     exit 1
 }
 
-REQUIRED_AUTOMAKE_VERSION=1.7 . gnome-autogen.sh
+REQUIRED_AUTOMAKE_VERSION=1.8 . gnome-autogen.sh

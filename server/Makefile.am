@@ -158,4 +158,7 @@ DISTCLEANFILES = \
 	$(BUILT_SOURCES) \
 	$(NULL)
 
+dist-hook:
+	cd $(distdir) ; rm -f $(DISTCLEANFILES)
+
 $(vino_server_OBJECTS): $(BUILT_SOURCES)
