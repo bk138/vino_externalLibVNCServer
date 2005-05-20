@@ -1,5 +1,22 @@
 2005-05-20  Mark McLoughlin  <mark@skynet.ie>
 
+	Fix some keyboard handling bugs:
+	  1) Shift key not working for some charactes (bug #155900)
+	  2) Caps lock not working (bug #157685)
+	  3) Key repeat issue:
+	       https://bugzilla.redhat.com/134451
+
+	* server/vino-input.c:
+	(vino_input_initialize_keycodes): if the keysym is
+	defined multiple times in the mapping, choose the
+	first one.
+	(vino_input_handle_key_event): ignore Caps Lock altogether
+	and send a key press/release pair to the Xserver for
+	each press, rather than waiting for the release. The
+	Xserver on the client can handle key repeating.
+
+2005-05-20  Mark McLoughlin  <mark@skynet.ie>
+
 	* configure.in: post-release bump to 2.11.2
 
 ==================== 2.11.1.1 ====================

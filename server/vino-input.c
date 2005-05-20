@@ -125,6 +125,9 @@ vino_input_initialize_keycodes (GdkDisplay *display)
 	  if (VINO_IS_LATIN1_KEYSYM (keysym) &&
 	      XKeysymToKeycode (xdisplay, keysym) == keycode)
 	    {
+	      if (global_input_data.keycodes [keysym] != 0)
+		continue;
+
 	      global_input_data.keycodes  [keysym] = keycode;
 	      global_input_data.modifiers [keysym] = modifier;
 
@@ -291,7 +294,15 @@ vino_input_handle_key_event (GdkScreen *screen,
 {
 #ifdef HAVE_XTEST
   Display *xdisplay;
-  
+
+  /* 
+   * We inject a key press/release pair for all key presses 
+   * and ignore key releases. The exception is modifiers.
+   */
+
+  if (!key_press && !(keysym >= XK_Shift_L && keysym <= XK_Hyper_R))
+    return;
+
   xdisplay = GDK_DISPLAY_XDISPLAY (gdk_screen_get_display (screen));
   
   vino_input_update_modifier_state (&global_input_data,
@@ -313,19 +324,20 @@ vino_input_handle_key_event (GdkScreen *screen,
 
       if (keycode != NoSymbol)
 	{
-	  if (key_press)
-	    vino_input_fake_modifier (screen, &global_input_data, modifier, TRUE);
+	  g_assert (key_press != FALSE);
+
+	  vino_input_fake_modifier (screen, &global_input_data, modifier, TRUE);
 
 	  dprintf (INPUT, "Injecting keysym 0x%.2x %s (keycode %d, modifier %d)\n",
 		   keysym, key_press ? "press" : "release", keycode, modifier);
 
-	  XTestFakeKeyEvent (xdisplay, keycode, key_press, CurrentTime);
+	  XTestFakeKeyEvent (xdisplay, keycode, TRUE,  CurrentTime);
+	  XTestFakeKeyEvent (xdisplay, keycode, FALSE, CurrentTime);
 
-	  if (key_press)
-	    vino_input_fake_modifier (screen, &global_input_data, modifier, FALSE);
+	  vino_input_fake_modifier (screen, &global_input_data, modifier, FALSE);
 	}
     }
-  else
+  else if (keysym != XK_Caps_Lock)
     {
       KeyCode keycode;
 
@@ -335,8 +347,16 @@ vino_input_handle_key_event (GdkScreen *screen,
 		   keysym, key_press ? "press" : "release", keycode);
 
 	  XTestFakeKeyEvent (xdisplay, keycode, key_press, CurrentTime);
+
+	  if (key_press && !(keysym >= XK_Shift_L && keysym <= XK_Hyper_R))
+	    {
+	      XTestFakeKeyEvent (xdisplay, keycode, FALSE, CurrentTime);
+	    }
 	}
     }
+
+  XFlush (xdisplay);
+
 #endif /* HAVE_XTEST */
 }
 
