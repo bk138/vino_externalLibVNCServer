@@ -1,3 +1,12 @@
+Vino 2.11.1.2
+=============
+
+  Fixes
+
+   + Fix Caps Lock not working (Mark)
+   + Fix Shift not working for some keys (Mark)
+   + Fix over-eager key repeat issue (Mark)
+
 Vino 2.11.1.1
 =============
 

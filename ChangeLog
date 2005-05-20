@@ -1,5 +1,9 @@
 2005-05-20  Mark McLoughlin  <mark@skynet.ie>
 
+	* configure.in: Version 2.11.1.2.
+
+2005-05-20  Mark McLoughlin  <mark@skynet.ie>
+
 	Fix some keyboard handling bugs:
 	  1) Shift key not working for some charactes (bug #155900)
 	  2) Caps lock not working (bug #157685)
