@@ -9,9 +9,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Vino\n"
-"Report-Msgid-Bugs-To: gnome-et@linux.ee\n"
-"POT-Creation-Date: 2005-05-03 14:04+0000\n"
-"PO-Revision-Date: 2005-05-03 19:47+0300\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-05-23 14:08+0000\n"
+"PO-Revision-Date: 2005-05-23 22:59+0300\n"
 "Last-Translator: Priit Laes <amd@store20.com>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "MIME-Version: 1.0\n"
@@ -120,13 +120,13 @@ msgstr "URL'i värv"
 msgid "The color of the URL's label"
 msgstr "URL'i etiketi värv"
 
-#: ../server/vino-fb.c:947
+#: ../server/vino-fb.c:953
 #: ../server/vino-prompt.c:144
-#: ../server/vino-server.c:851
+#: ../server/vino-server.c:850
 msgid "Screen"
 msgstr "Ekraan"
 
-#: ../server/vino-fb.c:948
+#: ../server/vino-fb.c:954
 msgid "The screen to be monitored"
 msgstr "Jälgitav ekraan"
 
@@ -138,7 +138,7 @@ msgstr "Sinu XServer ei toeta XTest laiendusi - võrgus asuv töölaud on ligip�
 msgid "The screen on which to display the prompt"
 msgstr "Ekraan, kus kuvada viipa"
 
-#: ../server/vino-prompt.c:385
+#: ../server/vino-prompt.c:390
 #, c-format
 msgid "A user on the computer '%s' is trying to remotely view or control your desktop."
 msgstr "Kasutaja arvutist '%s' proovib üle võrgu vaadata või kasutada sinu töölauda."
@@ -169,55 +169,55 @@ msgstr "_Luba"
 msgid "_Refuse"
 msgstr "_Keeldu"
 
-#: ../server/vino-server.c:852
+#: ../server/vino-server.c:851
 msgid "The screen for which to create a VNC server"
 msgstr "Ekraan, mille jaoks luua VNC serverit"
 
-#: ../server/vino-server.c:859
+#: ../server/vino-server.c:858
 msgid "On Hold"
 msgstr "Ootel"
 
-#: ../server/vino-server.c:860
+#: ../server/vino-server.c:859
 msgid "Place all clients on hold"
 msgstr "Jäta kõik kliendid ootele"
 
-#: ../server/vino-server.c:867
+#: ../server/vino-server.c:866
 msgid "Prompt enabled"
 msgstr "Viip lubatud"
 
-#: ../server/vino-server.c:868
+#: ../server/vino-server.c:867
 msgid "Prompt the user about connection attempts"
 msgstr "Kasutaja teavitamine sissenevatest ühendustest"
 
-#: ../server/vino-server.c:875
+#: ../server/vino-server.c:874
 msgid "View Only"
 msgstr "Ainult vaade"
 
-#: ../server/vino-server.c:876
+#: ../server/vino-server.c:875
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Klaviatuuri ja hiire sisend on klientidelt keelatud"
 
-#: ../server/vino-server.c:883
+#: ../server/vino-server.c:882
 msgid "Require Encryption"
 msgstr "Nõua krüptimist"
 
-#: ../server/vino-server.c:884
+#: ../server/vino-server.c:883
 msgid "Require clients to use encryption"
 msgstr "Nõua klientidelt krüptimise kasutamist"
 
-#: ../server/vino-server.c:891
+#: ../server/vino-server.c:890
 msgid "Authentication methods"
 msgstr "Autentimismeetodid"
 
-#: ../server/vino-server.c:892
+#: ../server/vino-server.c:891
 msgid "The authentication methods this server should allow"
 msgstr "Selle serveri poolt lubatavad autentimismeetodid"
 
-#: ../server/vino-server.c:900
+#: ../server/vino-server.c:899
 msgid "VNC Password"
 msgstr "VNC parool"
 
-#: ../server/vino-server.c:901
+#: ../server/vino-server.c:900
 msgid "The password (base64 encoded) used to authenticate types using the VncAuth method"
 msgstr "Parooli (base64 kodeeritult) kasutatakse VncAuth meetodi abil autentiseerimiseks"
 
@@ -246,8 +246,8 @@ msgid "If true, remote users accessing the desktop are only allowed to view the 
 msgstr "Kui tõene, siis kaugjuurdepääsu kasutajatel on luba töölauda ainult vaadata. Välistel kasutajatel pole võimalik kasutada hiirt ega klaviatuuri."
 
 #: ../server/vino-server.schemas.in.h:7
-msgid "If true, remote users accessing the desktop are required to be able support encyrption. It is highly recommended that you use a client which supports encryption unless the intervening network is trusted."
-msgstr "Kui tõene, siis kaugtöölaua kasutajatel peab olema võimalus kasutada krüpteeringut. Väga soovitatav oleks kasutada klienti, millel on krüpteeringu tugi, välja arvatud juhul kui kaugtöölaua ja kasutaja masina vahele olev võrk on usaldusväärne."
+msgid "If true, remote users accessing the desktop are required to be able support encryption. It is highly recommended that you use a client which supports encryption unless the intervening network is trusted."
+msgstr "Kui tõene, siis kaugtöölaua kasutajatel peab olema võimalus kasutada krüpteeringut. Väga soovitatav oleks kasutada klienti, millel on krüpteeringu tugi, isegi juhul kui kaugtöölaua ning kasutaja masina vahele jääv võrk on usaldusväärne."
 
 #: ../server/vino-server.schemas.in.h:8
 msgid "Lists the authentication methods with which remote users may access the desktop. There are two possible authentication methods; \"vnc\" causes the remote user to be prompted for a password (the password is specified by the vnc_password key) before connecting and \"none\" which allows any remote user to connect."
