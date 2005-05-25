@@ -1,0 +1,139 @@
+Debugging Vino
+==============
+
+  Because gnome-session launches vino-server based on the value of the
+/desktop/gnome/remote_access/enabled key, it can be a bit of a pain to
+debug Vino. Here's what I do:
+
+  1) Disable Vino:
+
+       $> gconftool-2 -s /desktop/gnome/remote_access/enabled -t bool false
+
+  2) Kill the running server:
+
+      $> killall vino-server
+
+  3) Run vino-server from the command line - e.g. in gdb:
+
+       $> gdb /usr/libexec/vino-server
+
+  4) Enable Vino again:
+
+       $> gconftool-2 -s /desktop/gnome/remote_access/enabled -t bool true
+
+  Once you've done that, its possible to connect a client and get
+started debugging.
+
+
+  Also, if you compile with --enable-debug there's a VINO_SERVER_DEBUG
+environment variable which you can set to any of the following values
+in order to get debug spew from various parts of the code:
+
+  + "polling" - the code in vino-fb.c which grabs the contents of the
+                screen from the Xserver. Even though it doesn't sound
+                like it, this also applies to the XDAMAGE code.
+  + "rfb"     - the code in vino-server.c relating to the RFB protocol
+  + "input"   - the code in vino-input.c; relates to Vino injects key
+                presses and mouse invents into the Xserver
+  + "prefs"   - spews information about the state of GConf preferences
+  + "prompt"  - information about the prompt dialog displayed when a
+                client connects
+
+
+  When tracking down performance problems, I've found strace very
+useful - especially strace -ttt. With a small bit of patience its very
+possible to see in a very detailed way what's going on in Vino in
+terms of the the order things happen, how long we block on roundtrips
+to the Xserver etc.
+
+  Using strace, one trick that I picked up from Michael Meeks is to
+insert something like 
+
+    access ("/tmp/foo-key-press", R_OK);
+
+  at various points in the code to help you identify how those points
+in the code relate to the strace spew.
+
+  Also, with the "-x" option to strace, it becomes pretty
+straightforward to get a better idea of what X traffic is happening
+too e.g.
+
+1117012824.955091 access("/tmp/foo-bar", R_OK) = -1 ENOENT (No such file or directory)
+1117012824.955262 write(3, "\x3e\x05\x07\x00\x48\x00\x00\x00\x07\x00\x40\x03\x05\x00"..., 32) = 32
+1117012824.972020 read(3, 0xbffe8ed0, 32) = -1 EAGAIN (Resource temporarily unavailable)
+1117012824.992585 select(4, [3], NULL, NULL, NULL) = 1 (in [3])
+1117012825.696356 read(3, "\x0e\x00\x5b\x00\x07\x00\x40\x03\x00\x00\x3e\x00\x00\x00"..., 32) = 32
+1117012825.696488 read(3, "\x75\x00\x5b\x00\x48\x00\x00\x00\x03\x00\x40\x03\xc9\x79"..., 32) = 32
+1117012825.696598 read(3, "\x75\x00\x5b\x00\x48\x00\x00\x00\x03\x00\x40\x03\xc9\x79"..., 32) = 32
+1117012825.696703 read(3, "\x75\x00\x5b\x00\x48\x00\x00\x00\x03\x00\x40\x03\xca\x79"..., 32) = 32
+
+  Now, I know from where I put the access() call, that this is in
+vino_fb_xdamage_idle_handler() where we call XCopyArea().
+
+  Lets go through it in detail. The first write() is likely to be the
+CopyArea message. We can verify that because every X request is 32
+bytes long (see the write() is 32 bytes too) and the first byte is the
+opcode. What's the opcode for CopyArea?
+
+[markmc@blaa ~]$ grep X_CopyArea /usr/include/X11/Xproto.h
+#define X_CopyArea                     62
+
+  i.e. 62 binary or 0x3E hex.
+
+  Following the write() we try and read() from the Xserver, get EAGAIN
+because there's no data available and then select() on the file
+descriptor until data does become available.
+
+  When we do get some data, we read and the first message has an
+opcode of 0x0E. This is most likely an event (an error's first byte is
+always zero and a reply's first byte is one) so ...
+
+[markmc@blaa ~]$ grep 14 /usr/include/X11/X.h
+#define NoExpose                14
+
+  Sure enough, its a NoExpose event. Look XCopyArea() man page to
+figure out why we're getting that.
+
+  Following that event are gobs and gobs of messages beginning with
+0x75. They're likely to be events as well, but what are they? Well,
+with a bit of debugging you can figure out that they're actually
+XDamageNotify events - we calculate the value in
+vino_fb_init_xdamage():
+
+   vfb->priv->xdamage_notify_event = event_base + XDamageNotify;
+
+  Indeed, if we want to be really anal we can go back and look for the
+QueryExtension. First, we need the opcode:
+
+[markmc@blaa ~]$ grep -rn X_QueryExtension /usr/include/X11/Xproto.h
+2091:#define X_QueryExtension               98
+
+  That's 0x62 in hex. So, we're looking for a write to the X
+connection (file descriptor 3) with 0x62 as the first byte. What do ya
+know:
+
+1117012824.950683 writev(3, [{"\x62\x01\x04\x00\x06\x00\x01\x00", 8}, {"DAMAGE", 6}, {"\x00\x00", 2}], 3) = 16
+1117012824.950939 read(3, "\x01\x00\x52\x00\x00\x00\x00\x00\x01\x9d\x75\xba\x00\x00"..., 32) = 32
+
+  Thay's pretty clear that its QueryExtension for DAMAGE. Now, lets
+figure out the event base from the reply. The format for the reply is:
+
+typedef struct {
+    BYTE type;  /* X_Reply */
+    BYTE pad1;
+    CARD16 sequenceNumber B16;
+    CARD32 length B32; /* 0 */
+    BOOL  present;
+    CARD8 major_opcode;
+    CARD8 first_event;
+    CARD8 first_error;
+    CARD32 pad3 B32;
+    CARD32 pad4 B32;
+    CARD32 pad5 B32;
+    CARD32 pad6 B32;
+    CARD32 pad7 B32;
+} xQueryExtensionReply;
+
+   first_event is 11 bytes in. Looking at the read, that's 0x75. The
+value of XDamageNotify is zero, so we can be 100% sure that all those
+events after our NoExpose events are XDamageNotify events.
