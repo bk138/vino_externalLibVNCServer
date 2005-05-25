@@ -115,7 +115,7 @@ know:
 1117012824.950683 writev(3, [{"\x62\x01\x04\x00\x06\x00\x01\x00", 8}, {"DAMAGE", 6}, {"\x00\x00", 2}], 3) = 16
 1117012824.950939 read(3, "\x01\x00\x52\x00\x00\x00\x00\x00\x01\x9d\x75\xba\x00\x00"..., 32) = 32
 
-  Thay's pretty clear that its QueryExtension for DAMAGE. Now, lets
+  It's pretty clear that its QueryExtension for DAMAGE. Now, lets
 figure out the event base from the reply. The format for the reply is:
 
 typedef struct {
@@ -126,12 +126,7 @@ typedef struct {
     BOOL  present;
     CARD8 major_opcode;
     CARD8 first_event;
-    CARD8 first_error;
-    CARD32 pad3 B32;
-    CARD32 pad4 B32;
-    CARD32 pad5 B32;
-    CARD32 pad6 B32;
-    CARD32 pad7 B32;
+    ...
 } xQueryExtensionReply;
 
    first_event is 11 bytes in. Looking at the read, that's 0x75. The
