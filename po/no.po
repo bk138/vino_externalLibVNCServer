@@ -1,4 +1,4 @@
-# Norwegian (bokmÃ¥l) translation of vino.
+# Norwegian (bokmÃƒÂ¥l) translation of vino.
 # Copyright (C) 2004, Red Hat, Inc.
 # This file is distributed under the same license as the vino package.
 # Kjartan Maraas <kmaraas@gnome.org>, 2004.
@@ -7,19 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-19 12:57+0100\n"
+"POT-Creation-Date: 2005-05-29 23:30+0200\n"
 "PO-Revision-Date: 2005-01-19 13:00+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
-"Language-Team: Norwegian bokmÃ¥l <i18n-nb@lister.ping.uio.no>\n"
+"Language-Team: Norwegian bokmÃƒÂ¥l <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: capplet/vino-preferences.c:807
+#: ../capplet/vino-preferences.c:807
 msgid "Send this command by email"
 msgstr "Send denne kommandoen via e-post"
 
-#: capplet/vino-preferences.c:842
+#: ../capplet/vino-preferences.c:842
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -28,243 +28,256 @@ msgstr ""
 "Det oppsto en feil under visning av hjelp:\n"
 "%s"
 
-#: capplet/vino-preferences.desktop.in.in.h:1
+#: ../capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
 msgstr "Eksternt skrivebord"
 
-#: capplet/vino-preferences.desktop.in.in.h:2
+#: ../capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
 msgstr "Sett brukervalg for tilgang til skrivebord eksternt"
 
-#: capplet/vino-preferences.glade.h:1
+#: ../capplet/vino-preferences.glade.h:1
 msgid "    "
 msgstr "    "
 
-#: capplet/vino-preferences.glade.h:2
+#: ../capplet/vino-preferences.glade.h:2
 msgid "        "
 msgstr "        "
 
-#: capplet/vino-preferences.glade.h:3
+#: ../capplet/vino-preferences.glade.h:3
 msgid "*"
 msgstr "*"
 
-#: capplet/vino-preferences.glade.h:4
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Security</b>"
 msgstr "<b>Sikkerhet</b>"
 
-#: capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:5
 msgid "<b>Sharing</b>"
 msgstr "<b>Deling</b>"
 
-#: capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:6
 msgid "A_sk you for confirmation"
-msgstr "_Spør deg om bekreftelse"
+msgstr "_SpÃ¸r deg om bekreftelse"
 
-#: capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:7
 msgid "Allow other users to _view your desktop"
 msgstr "La andre brukere _se ditt skrivebord"
 
-#: capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Remote Desktop Preferences"
 msgstr "Brukervalg for eksternt skrivebord"
 
-#: capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:9
 msgid "Some of these preferences are locked down"
-msgstr "Noen av disse brukervalgene er låst"
+msgstr "Noen av disse brukervalgene er lÃ¥st"
 
-#: capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:10
 msgid "Users can view your desktop using this command:"
-msgstr "Brukere kan se ditt skrivebord ved å bruke denne kommandoen:"
+msgstr "Brukere kan se ditt skrivebord ved Ã¥ bruke denne kommandoen:"
 
-#: capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
-msgstr "Når en bruker prøver å vise eller kontrollere ditt skrivebord:"
+msgstr "NÃ¥r en bruker prÃ¸ver Ã¥ vise eller kontrollere ditt skrivebord:"
 
-#: capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.glade.h:12
 msgid "_Allow other users to control your desktop"
 msgstr "L_a andre brukere kontrollere ditt skrivebord"
 
-#: capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.glade.h:13
 msgid "_Password:"
 msgstr "_Passord:"
 
-#: capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:14
 msgid "_Require the user to enter this password:"
 msgstr "K_rev at bruker oppgir dette passordet:"
 
-#: capplet/vino-url.c:158
+#: ../capplet/vino-url.c:158
 msgid "Address"
 msgstr "Adresse"
 
-#: capplet/vino-url.c:159
+#: ../capplet/vino-url.c:159
 msgid "The address pointed to by the widget"
 msgstr "Adressen komponenten peker til"
 
-#: capplet/vino-url.c:166
+#: ../capplet/vino-url.c:166
 msgid "Tooltip"
-msgstr "Verktøytips"
+msgstr "VerktÃ¸ytips"
 
-#: capplet/vino-url.c:167
+#: ../capplet/vino-url.c:167
 msgid "A tooltip for this URL"
-msgstr "Verktøytips for denne URLen"
+msgstr "VerktÃ¸ytips for denne URLen"
 
-#: capplet/vino-url.c:173
+#: ../capplet/vino-url.c:173
 msgid "URL color"
 msgstr "Farge for URL"
 
-#: capplet/vino-url.c:174
+#: ../capplet/vino-url.c:174
 msgid "The color of the URL's label"
-msgstr "Farge på URLens etikett"
+msgstr "Farge pÃ¥ URLens etikett"
 
-#: server/vino-fb.c:947 server/vino-prompt.c:144 server/vino-server.c:851
+#: ../server/vino-fb.c:953 ../server/vino-prompt.c:144
+#: ../server/vino-server.c:850
 msgid "Screen"
 msgstr "Skjerm"
 
-#: server/vino-fb.c:948
+#: ../server/vino-fb.c:954
 msgid "The screen to be monitored"
-msgstr "Skjerm som skal overvåkes"
+msgstr "Skjerm som skal overvÃ¥kes"
 
-#: server/vino-main.c:78
+#: ../server/vino-main.c:78
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
-"Din X-tjener støtter ikke XTest-utvidelsen - fjerntilgang vil kun fungere "
+"Din X-tjener stÃ¸tter ikke XTest-utvidelsen - fjerntilgang vil kun fungere "
 "med visning\n"
 
-#: server/vino-prompt.c:145
+#: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
-msgstr "Skjermen hvor spørsmålsdialogen skal vises"
+msgstr "Skjermen hvor spÃ¸rsmÃ¥lsdialogen skal vises"
 
-#: server/vino-prompt.c:385
+#: ../server/vino-prompt.c:390
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"En bruker på datamaskin «%s» prøver å vise eller kontrollere ditt skrivebord."
+"En bruker pÃ¥ datamaskin Â«%sÂ» prÃ¸ver Ã¥ vise eller kontrollere ditt "
+"skrivebord."
 
-#: server/vino-prompt.glade.h:1
+#: ../server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>En annen bruker prøver å vise ditt skrivebord.</b></big>"
+msgstr "<big><b>En annen bruker prÃ¸ver Ã¥ vise ditt skrivebord.</b></big>"
 
-#: server/vino-prompt.glade.h:2
+#: ../server/vino-prompt.glade.h:2
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"En bruker på en annen datamaskin prøver å vise eller kontrollere ditt "
+"En bruker pÃ¥ en annen datamaskin prÃ¸ver Ã¥ vise eller kontrollere ditt "
 "skrivebord eksternt."
 
-#: server/vino-prompt.glade.h:3
+#: ../server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
-msgstr "Vil du la dem gjøre dette?"
+msgstr "Vil du la dem gjÃ¸re dette?"
 
-#: server/vino-prompt.glade.h:4
+#: ../server/vino-prompt.glade.h:4
 msgid "Question"
-msgstr "Spørsmål"
+msgstr "SpÃ¸rsmÃ¥l"
 
-#: server/vino-prompt.glade.h:5 server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
 msgid "_Allow"
 msgstr "Till_at"
 
-#: server/vino-prompt.glade.h:6 server/vino-util.c:65
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
 msgid "_Refuse"
 msgstr "_Nekt"
 
-#: server/vino-server.c:852
+#: ../server/vino-server.c:851
 msgid "The screen for which to create a VNC server"
 msgstr "Skjerm det skal opprettes en VNC-tjener for"
 
-#: server/vino-server.c:859
+#: ../server/vino-server.c:858
 msgid "On Hold"
-msgstr "På vent"
+msgstr "PÃ¥ vent"
 
-#: server/vino-server.c:860
+#: ../server/vino-server.c:859
 msgid "Place all clients on hold"
-msgstr "Sett alle klienter på vent"
+msgstr "Sett alle klienter pÃ¥ vent"
 
-#: server/vino-server.c:867
+#: ../server/vino-server.c:866
 msgid "Prompt enabled"
 msgstr "Melding aktivert"
 
-#: server/vino-server.c:868
+#: ../server/vino-server.c:867
 msgid "Prompt the user about connection attempts"
-msgstr "Gi beskjed til bruker om forsøk på tilkobling"
+msgstr "Gi beskjed til bruker om forsÃ¸k pÃ¥ tilkobling"
 
-#: server/vino-server.c:875
+#: ../server/vino-server.c:874
 msgid "View Only"
 msgstr "Kun visning"
 
-#: server/vino-server.c:876
+#: ../server/vino-server.c:875
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Deaktiver tastatur/peker for klienter"
 
-#: server/vino-server.c:883
+#: ../server/vino-server.c:882
 msgid "Require Encryption"
 msgstr "Krev kryptering"
 
-#: server/vino-server.c:884
+#: ../server/vino-server.c:883
 msgid "Require clients to use encryption"
 msgstr "Krev at klienter bruker kryptering"
 
-#: server/vino-server.c:891
+#: ../server/vino-server.c:890
 msgid "Authentication methods"
 msgstr "Autentiseringsmetoder"
 
-#: server/vino-server.c:892
+#: ../server/vino-server.c:891
 msgid "The authentication methods this server should allow"
 msgstr "Autentiseringsmetoder tjeneren skal tillate"
 
-#: server/vino-server.c:900
+#: ../server/vino-server.c:899
 msgid "VNC Password"
 msgstr "VNC-passord"
 
-#: server/vino-server.c:901
+#: ../server/vino-server.c:900
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
-msgstr "Passord (base64-kodet) som brukes til å autentisere typer som bruker VncAuth-metoden"
+msgstr ""
+"Passord (base64-kodet) som brukes til Ã¥ autentisere typer som bruker "
+"VncAuth-metoden"
 
-#: server/vino-server.schemas.in.h:1
+#: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
 msgstr "Tillatte autentiseringsmetoder"
 
-#: server/vino-server.schemas.in.h:2
+#: ../server/vino-server.schemas.in.h:2
 msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "E-postadresse som URLen til det eksterne skrivebordet skal sendes til"
 
-#: server/vino-server.schemas.in.h:3
+#: ../server/vino-server.schemas.in.h:3
 msgid "Enable remote desktop access"
 msgstr "Aktiver fjerntilgang til skrivebordet"
 
-#: server/vino-server.schemas.in.h:4
+#: ../server/vino-server.schemas.in.h:4
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
 msgstr ""
+"Tillat ekstern tilgang til skrivebordet via RFB-protokollen. Brukere pÃ¥ "
+"eksterne maskiner kan da koble til skrivebordet med vncviwer."
 
-#: server/vino-server.schemas.in.h:5
+#: ../server/vino-server.schemas.in.h:5
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
 msgstr ""
+"Eksterne brukere fÃ¥r ikke tilgang til skrivebordet fÃ¸r brukeren pÃ¥ "
+"vertsmaskinen godkjenner tilkoblingen. Spesielt anbefalt nÃ¥r tilgangen ikke "
+"er passordbeskyttet."
 
-#: server/vino-server.schemas.in.h:6
+#: ../server/vino-server.schemas.in.h:6
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote user's will not be able to use the mouse or keyboard."
 msgstr ""
+"Eksterne brukere som kan bare se skrivebordet. De vil ikke vÃ¦re i stand til "
+"Ã¥ bruke verken musen eller tastaturet."
 
-#: server/vino-server.schemas.in.h:7
+#: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are required to be able support "
-"encyrption. It is highly recommended that you use a client which supports "
+"encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
+"Eksterne brukere mÃ¥ stÃ¸tte kryptering. Det er anbefalt Ã¥ bruke en klient "
+"som stÃ¸tter kryptering med mindre det mellomliggende nettverket er sikkert."
 
-#: server/vino-server.schemas.in.h:8
+#: ../server/vino-server.schemas.in.h:8
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -272,69 +285,83 @@ msgid ""
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
 msgstr ""
+"Lister autentiseringsmetodene som eksterne brukere kan fÃ¥ tilgang pÃ¥ "
+"skrivebordet med. Det er to mulige autentiseringsmetoder; med Â«vncÂ» blir "
+"den eksterne brukeren spurt etter et passord (passordet er lagret i "
+"Â«vnc_passwordÂ»-nÃ¸kkelen) fÃ¸r tilkobling. Â«noneÂ» tillater alle eksterne "
+"brukere Ã¥ koble til."
 
-#: server/vino-server.schemas.in.h:9
+#: ../server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
-msgstr ""
+msgstr "Bare tillat eksterne brukere Ã¥ se skrivebordet"
 
-#: server/vino-server.schemas.in.h:10
+#: ../server/vino-server.schemas.in.h:10
 msgid "Password required for \"vnc\" authentication"
-msgstr "Passord kreves for «vnc»-autentisering"
+msgstr "Passord kreves for Â«vncÂ»-autentisering"
 
-#: server/vino-server.schemas.in.h:11
+#: ../server/vino-server.schemas.in.h:11
 msgid "Prompt the user before completing a connection"
-msgstr "Spør bruker før en tilkobling fullføres"
+msgstr "SpÃ¸r bruker fÃ¸r en tilkobling fullfÃ¸res"
 
-#: server/vino-server.schemas.in.h:12
+#: ../server/vino-server.schemas.in.h:12
 msgid "Require encryption"
 msgstr "Krev kryptering"
 
-#: server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:13
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
 msgstr ""
+"Passordet som den eksterne brukeren vil bli spurt etter hvis Â«vncÂ»-"
+"autentisering blir brukt. Passordet som blir spesifisert har base64 "
+"kryptering."
 
-#: server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:14
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
+"Denne nÃ¸kkelen inneholder e-postadressen som eksternt skrivebord URL-en "
+"blir sendt til hvis brukeren klikker pÃ¥ URL-en i instillingene."
 
-#: server/vino-shell.c:76
+#: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr ""
+msgstr "Eksternt skrivebord kjÃ¸rer allerede; avslutter...\n"
 
-#: server/vino-shell.c:79
+#: ../server/vino-shell.c:79
 msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
-msgstr "Problem under registrering av det eksterne skrivebordet med bonobo-activation. Avslutter...\n"
+msgstr ""
+"Problem under registrering av det eksterne skrivebordet med bonobo-"
+"activation. Avslutter...\n"
 
-#: session/vino-session.c:133
+#: ../session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
-msgstr "Tjener for eksternt skrivebord terminerte. Starter på nytt\n"
+msgstr "Tjener for eksternt skrivebord terminerte. Starter pÃ¥ nytt\n"
 
-#: session/vino-session.c:154
+#: ../session/vino-session.c:154
 #, c-format
 msgid "Activation of %s failed: %s\n"
 msgstr "Aktivering av %s feilet: %s\n"
 
-#: session/vino-session.c:160
+#: ../session/vino-session.c:160
 #, c-format
 msgid "Activation of %s failed: Unknown Error\n"
 msgstr "Aktivering av %s feilet. Ukjent feil\n"
 
-#: session/vino-session.c:231
+#: ../session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "Kunne ikke aktivere tjener for eksternt skrivebord: prøvde for mange ganger\n"
+msgstr ""
+"Kunne ikke aktivere tjener for eksternt skrivebord: prÃ¸vde for mange "
+"ganger\n"
 
-#: session/vino-session.c:295
+#: ../session/vino-session.c:295
 msgid "Starting remote desktop server"
 msgstr "Starter tjener for eksternt skrivebord"
 
-#: session/vino-session.c:300
+#: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Starter ikke tjener for eksternt skrivebord"
