@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.9.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-03-05 16:25+0800\n"
+"POT-Creation-Date: 2005-06-23 22:10+0000\n"
 "PO-Revision-Date: 2005-03-05 16:29+0800\n"
 "Last-Translator: Chi-Wei Chen <michelin@seed.net.tw>\n"
-"Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
+"Language-Team: Chinese (traditional) <community@linuxhall.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -116,12 +116,12 @@ msgstr "網址顏色"
 msgid "The color of the URL's label"
 msgstr "網址標籤的顏色"
 
-#: ../server/vino-fb.c:947 ../server/vino-prompt.c:144
-#: ../server/vino-server.c:851
+#: ../server/vino-fb.c:953 ../server/vino-prompt.c:144
+#: ../server/vino-server.c:850
 msgid "Screen"
 msgstr "螢幕"
 
-#: ../server/vino-fb.c:948
+#: ../server/vino-fb.c:954
 msgid "The screen to be monitored"
 msgstr "要被監視的螢幕"
 
@@ -135,7 +135,7 @@ msgstr "您的 X Server 不支援 XTest 延伸功能 ─ 只可以觀看遠端�
 msgid "The screen on which to display the prompt"
 msgstr "顯示提示的螢幕"
 
-#: ../server/vino-prompt.c:385
+#: ../server/vino-prompt.c:390
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -168,55 +168,55 @@ msgstr "允許(_A)"
 msgid "_Refuse"
 msgstr "拒絕(_R)"
 
-#: ../server/vino-server.c:852
+#: ../server/vino-server.c:851
 msgid "The screen for which to create a VNC server"
 msgstr "創造 VNC 伺服端的畫面"
 
-#: ../server/vino-server.c:859
+#: ../server/vino-server.c:858
 msgid "On Hold"
 msgstr "暫停"
 
-#: ../server/vino-server.c:860
+#: ../server/vino-server.c:859
 msgid "Place all clients on hold"
 msgstr "讓所用的客戶端暫停"
 
-#: ../server/vino-server.c:867
+#: ../server/vino-server.c:866
 msgid "Prompt enabled"
 msgstr "能夠給予提示"
 
-#: ../server/vino-server.c:868
+#: ../server/vino-server.c:867
 msgid "Prompt the user about connection attempts"
 msgstr "嘗試連線時提示使用者"
 
-#: ../server/vino-server.c:875
+#: ../server/vino-server.c:874
 msgid "View Only"
 msgstr "只能觀看"
 
-#: ../server/vino-server.c:876
+#: ../server/vino-server.c:875
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "不允許從客戶端使用鍵盤和滑鼠"
 
-#: ../server/vino-server.c:883
+#: ../server/vino-server.c:882
 msgid "Require Encryption"
 msgstr "需要加密"
 
-#: ../server/vino-server.c:884
+#: ../server/vino-server.c:883
 msgid "Require clients to use encryption"
 msgstr "客戶端必須使用加密"
 
-#: ../server/vino-server.c:891
+#: ../server/vino-server.c:890
 msgid "Authentication methods"
 msgstr "驗證方式"
 
-#: ../server/vino-server.c:892
+#: ../server/vino-server.c:891
 msgid "The authentication methods this server should allow"
 msgstr "此伺服端允許使用的驗證方式"
 
-#: ../server/vino-server.c:900
+#: ../server/vino-server.c:899
 msgid "VNC Password"
 msgstr "VNC 密碼"
 
-#: ../server/vino-server.c:901
+#: ../server/vino-server.c:900
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
@@ -258,9 +258,10 @@ msgid ""
 msgstr "若為真，遠端使用者僅被允許觀看桌面，無法使用滑鼠或鍵盤。"
 
 #: ../server/vino-server.schemas.in.h:7
+#, fuzzy
 msgid ""
 "If true, remote users accessing the desktop are required to be able support "
-"encyrption. It is highly recommended that you use a client which supports "
+"encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
 "若為真，要存取桌面的遠端使用者必須支援加密。強烈建議使用支援加密的客戶端，除"
