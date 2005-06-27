@@ -1,3 +1,8 @@
+2005-06-27  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* nb.po: Fix the header so we get the right charset.
+	* no.po: Same.
+
 2005-06-25  Francisco Javier F. Serrador  <serrador@cvs.gnome.org>
 
 	* es.po: Updated Spanish translation.
