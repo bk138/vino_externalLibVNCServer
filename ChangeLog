@@ -1,3 +1,8 @@
+2005-06-28  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* capplet/vino-url.c: (vino_url_finalize): Plug a
+	leak. Closes bug #309177.
+
 2005-06-06  Ignacio Casal Quinteiro  <nacho.resa@gmail.com>
 
 	* configure.in: Added 'gl' to ALL_LINGUAS.

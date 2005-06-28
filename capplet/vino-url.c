@@ -221,6 +221,10 @@ vino_url_finalize (GObject *object)
     g_object_unref (url->priv->tooltips);
   url->priv->tooltips = NULL;
 
+  if (url->priv->tooltip)
+    g_free (url->priv->tooltip);
+  url->priv->tooltip = NULL;
+
   g_free (url->priv);
   url->priv = NULL;
 
