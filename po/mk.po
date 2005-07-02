@@ -9,19 +9,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-30 07:11+0000\n"
-"PO-Revision-Date: 2005-01-16 21:43+0100\n"
+"POT-Creation-Date: 2005-07-02 06:23+0000\n"
+"PO-Revision-Date: 2005-07-02 12:27+0200\n"
 "Last-Translator: Томислав Марковски <tome@users.ossm.org.mk>\n"
 "Language-Team: English <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit"
 
-#: capplet/vino-preferences.c:807
+#: ../capplet/vino-preferences.c:807
 msgid "Send this command by email"
 msgstr "Прати ја оваа команда преку е-пошта"
 
-#: capplet/vino-preferences.c:842
+#: ../capplet/vino-preferences.c:842
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -30,115 +30,117 @@ msgstr ""
 "Се појави грешка при прикажувањето на помош:\n"
 "%s"
 
-#: capplet/vino-preferences.desktop.in.in.h:1
+#: ../capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
 msgstr "Далечна работна површина"
 
-#: capplet/vino-preferences.desktop.in.in.h:2
+#: ../capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
 msgstr "Подесете ги параметрите за далечен пристап на Вашата работна површина"
 
-#: capplet/vino-preferences.glade.h:1
+#: ../capplet/vino-preferences.glade.h:1
 msgid "    "
 msgstr "    "
 
-#: capplet/vino-preferences.glade.h:2
+#: ../capplet/vino-preferences.glade.h:2
 msgid "        "
 msgstr "        "
 
-#: capplet/vino-preferences.glade.h:3
+#: ../capplet/vino-preferences.glade.h:3
 msgid "*"
 msgstr "*"
 
-#: capplet/vino-preferences.glade.h:4
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Security</b>"
 msgstr "<b>Безбедност</b>"
 
-#: capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:5
 msgid "<b>Sharing</b>"
 msgstr "<b>Делење</b>"
 
-#: capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:6
 msgid "A_sk you for confirmation"
 msgstr "_Прашај за потврда"
 
-#: capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:7
 msgid "Allow other users to _view your desktop"
 msgstr "Дозволи им на корисниците да ја _гледаат Вашата работна површина"
 
-#: capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Remote Desktop Preferences"
 msgstr "Параметри за далечна работна површина"
 
-#: capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:9
 msgid "Some of these preferences are locked down"
 msgstr "Некои од овие параметри се заклучени"
 
-#: capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:10
 msgid "Users can view your desktop using this command:"
 msgstr ""
 "Корисниците можат да ј гледаат Вашата работна околина со следнава команда:"
 
-#: capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
 msgstr "Кога корисникот ќе се обиде да ја гледа Вашата работна површина:"
 
-#: capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.glade.h:12
 msgid "_Allow other users to control your desktop"
 msgstr "_Дозволи им на корисниците да ја контролираат Вашата работна површина"
 
-#: capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.glade.h:13
 msgid "_Password:"
 msgstr "_Лозинка:"
 
-#: capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:14
 msgid "_Require the user to enter this password:"
 msgstr "_Корисниците мора да ја внесат следнава лозинка:"
 
-#: capplet/vino-url.c:158
+#: ../capplet/vino-url.c:158
 msgid "Address"
 msgstr "Адреса"
 
-#: capplet/vino-url.c:159
+#: ../capplet/vino-url.c:159
 msgid "The address pointed to by the widget"
 msgstr "Адресата која ја покажува виџетот"
 
-#: capplet/vino-url.c:166
+#: ../capplet/vino-url.c:166
 msgid "Tooltip"
 msgstr "Совет"
 
-#: capplet/vino-url.c:167
+#: ../capplet/vino-url.c:167
 msgid "A tooltip for this URL"
 msgstr "Совет за адресата"
 
-#: capplet/vino-url.c:173
+#: ../capplet/vino-url.c:173
 msgid "URL color"
 msgstr "URL боја"
 
-#: capplet/vino-url.c:174
+#: ../capplet/vino-url.c:174
 msgid "The color of the URL's label"
 msgstr "Бојата со која ќе биде означена адресата"
 
-#: server/vino-fb.c:947 server/vino-prompt.c:144 server/vino-server.c:851
+#: ../server/vino-fb.c:953 ../server/vino-prompt.c:144
+#: ../server/vino-server.c:850
 msgid "Screen"
 msgstr "Екран"
 
-#: server/vino-fb.c:948
+#: ../server/vino-fb.c:954
 msgid "The screen to be monitored"
 msgstr "Екранот за надгледување"
 
-#: server/vino-main.c:78
+#: ../server/vino-main.c:78
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
-msgstr "Вашиот XServer не ја поддржува екстензијата XTest - далечната работна површина ќе можете "
-"само да ја гледате\n"
+msgstr ""
+"Вашиот XServer не ја поддржува екстензијата XTest - далечната работна "
+"површина ќе можете само да ја гледате\n"
 
-#: server/vino-prompt.c:145
+#: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
 msgstr "Екранот на кој што треба да биде прикажна сликата"
 
-#: server/vino-prompt.c:385
+#: ../server/vino-prompt.c:390
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -147,209 +149,232 @@ msgstr ""
 "Корисникот на компјутерот '%s' се обидува да ја гледа или контролира Вашата "
 "работна површина."
 
-#: server/vino-prompt.glade.h:1
+#: ../server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
 msgstr ""
 "<big><b>Друг корисник се обидува да ја гледа Вашата работна површина.</b></"
 "big>"
 
-#: server/vino-prompt.glade.h:2
+#: ../server/vino-prompt.glade.h:2
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
 msgstr ""
 "Корисник на друг компјутер се обидува да ја гледа Вашата работна површина"
 
-#: server/vino-prompt.glade.h:3
+#: ../server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
 msgstr "Дали сакате да им дадете дозвола за тоа?"
 
-#: server/vino-prompt.glade.h:4
+#: ../server/vino-prompt.glade.h:4
 msgid "Question"
 msgstr "Прашање"
 
-#: server/vino-prompt.glade.h:5 server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
 msgid "_Allow"
 msgstr "_Дозволи"
 
-#: server/vino-prompt.glade.h:6 server/vino-util.c:65
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
 msgid "_Refuse"
 msgstr "_Одбиј"
 
-#: server/vino-server.c:852
+#: ../server/vino-server.c:851
 msgid "The screen for which to create a VNC server"
 msgstr "Екранот за кој ќе се креира VNC сервер"
 
-#: server/vino-server.c:859
+#: ../server/vino-server.c:858
 msgid "On Hold"
 msgstr "На чекање"
 
-#: server/vino-server.c:860
+#: ../server/vino-server.c:859
 msgid "Place all clients on hold"
 msgstr "Стави ги сите клиенти на чекање"
 
-#: server/vino-server.c:867
+#: ../server/vino-server.c:866
 msgid "Prompt enabled"
 msgstr "Прикажувањето е вклучено."
 
-#: server/vino-server.c:868
+#: ../server/vino-server.c:867
 msgid "Prompt the user about connection attempts"
 msgstr "Прикажи му ги обидите за врзување на корисникот"
 
-#: server/vino-server.c:875
+#: ../server/vino-server.c:874
 msgid "View Only"
 msgstr "Само преглед"
 
-#: server/vino-server.c:876
+#: ../server/vino-server.c:875
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Оневозможи тастатура"
 
-#: server/vino-server.c:883
+#: ../server/vino-server.c:882
 msgid "Require Encryption"
 msgstr "Бара кодирање"
 
-#: server/vino-server.c:884
+#: ../server/vino-server.c:883
 msgid "Require clients to use encryption"
 msgstr "Бара клиентите да користат кодирање"
 
-#: server/vino-server.c:891
+#: ../server/vino-server.c:890
 msgid "Authentication methods"
 msgstr "Начини за автентикација"
 
-#: server/vino-server.c:892
+#: ../server/vino-server.c:891
 msgid "The authentication methods this server should allow"
 msgstr "Методите за автентикација кои што треба да ги дозволува овој сервер"
 
-#: server/vino-server.c:900
+#: ../server/vino-server.c:899
 msgid "VNC Password"
 msgstr "Лозинка за VNC"
 
-#: server/vino-server.c:901
+#: ../server/vino-server.c:900
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
-msgstr "Лозинката користена за проверка на типови кои што го користат „VncAuth“ методот"
+msgstr ""
+"Лозинката користена за проверка на типови кои што го користат „VncAuth“ "
+"методот"
 
-#: server/vino-server.schemas.in.h:1
+#: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
 msgstr "Дозволени начини на автентикација"
 
-#: server/vino-server.schemas.in.h:2
+#: ../server/vino-server.schemas.in.h:2
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr "Адреса за е-пошта каде што треба да биде испратена адресата за далечната работна површина"
+msgstr ""
+"Адреса за е-пошта каде што треба да биде испратена адресата за далечната "
+"работна површина"
 
-#: server/vino-server.schemas.in.h:3
+#: ../server/vino-server.schemas.in.h:3
 msgid "Enable remote desktop access"
 msgstr "Овозможи далечен пристап до работната површина"
 
-#: server/vino-server.schemas.in.h:4
+#: ../server/vino-server.schemas.in.h:4
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
-msgstr "Ако е вклучено, се овозможува пристап на работната површина преку протоколот RFB. Корисниците на"
-"далечните машини можат да се врзуваат на работната површина со користење на „vncviewer“."
+msgstr ""
+"Ако е вклучено, се овозможува пристап на работната површина преку протоколот "
+"RFB. Корисниците надалечните машини можат да се врзуваат на работната "
+"површина со користење на „vncviewer“."
 
-#: server/vino-server.schemas.in.h:5
+#: ../server/vino-server.schemas.in.h:5
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
-msgstr "Ако е вклучено, далечните корисници кои што пристапуваат на работната површина немаат пристап "
-"се додека корисникот на машината која што е хост не им овозможи. Препорачливо, посебно кога при пристапувањето не е потребна лозинка."
+msgstr ""
+"Ако е вклучено, далечните корисници кои што пристапуваат на работната "
+"површина немаат пристап се додека корисникот на машината која што е хост не "
+"им овозможи. Препорачливо, посебно кога при пристапувањето не е потребна "
+"лозинка."
 
-#: server/vino-server.schemas.in.h:6
+#: ../server/vino-server.schemas.in.h:6
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote user's will not be able to use the mouse or keyboard."
-msgstr "Ако е вклучено, далечните корисници кои што пристапуваат на работната површина можат само да ја гледаат истата. Далечните корисници нема да можат да ја користат тастатурата или глувчето."
+msgstr ""
+"Ако е вклучено, далечните корисници кои што пристапуваат на работната "
+"површина можат само да ја гледаат истата. Далечните корисници нема да можат "
+"да ја користат тастатурата или глувчето."
 
-#: server/vino-server.schemas.in.h:7
+#: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are required to be able support "
-"encyrption. It is highly recommended that you use a client which supports "
+"encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
-msgstr "Ако е вклучено, далечните корисници кои што пристапуваат на работната површина мора да "
-"користат кодирање. Доколку мрежата на која што сте не е поверлива, високо препорачлво е да "
-"користите клиент кој што поддржува кодирање."
+msgstr ""
+"Ако е вклучено, далечните корисници кои што пристапуваат на работната "
+"површина мора да користат кодирање. Доколку мрежата на која што сте не е "
+"поверлива, високо препорачлво е да користите клиент кој што поддржува "
+"кодирање."
 
-#: server/vino-server.schemas.in.h:8
+#: ../server/vino-server.schemas.in.h:8
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
 "remote user to be prompted for a password (the password is specified by the "
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
-msgstr "Ги листа методите за проверка преку кои што далечните корисници можат да пристапат "
-"на работната површина. Има два типа на методи за проверка; „vnc“ наметнува дијалог во "
-"кој што далечниот корисник мора да внесе лозинка (лозинката се одредува според клучот „vnc_password“) "
-"пред да се врзе и „none“ кој што дозволува слободно врзување на секој далечен корисник."
+msgstr ""
+"Ги листа методите за проверка преку кои што далечните корисници можат да "
+"пристапат на работната површина. Има два типа на методи за проверка; „vnc“ "
+"наметнува дијалог во кој што далечниот корисник мора да внесе лозинка "
+"(лозинката се одредува според клучот „vnc_password“) пред да се врзе и "
+"„none“ кој што дозволува слободно врзување на секој далечен корисник."
 
-#: server/vino-server.schemas.in.h:9
+#: ../server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
 msgstr "Дозволувај користење на работната површина само на далечни корисници"
 
-#: server/vino-server.schemas.in.h:10
+#: ../server/vino-server.schemas.in.h:10
 msgid "Password required for \"vnc\" authentication"
 msgstr "Потребна е лозинка за проверка на „vnc“"
 
-#: server/vino-server.schemas.in.h:11
+#: ../server/vino-server.schemas.in.h:11
 msgid "Prompt the user before completing a connection"
 msgstr "Прикажи го корисникот пред да завршувањето на врската"
 
-#: server/vino-server.schemas.in.h:12
+#: ../server/vino-server.schemas.in.h:12
 msgid "Require encryption"
 msgstr "Барај енкрипција"
 
-#: server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:13
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
-msgstr "Лозинката која што ќе му биде побарана на далечниот корисник ако се користи за проверка се користи „vnc“ методот. Лозинката одредена од клучот е кодирана како base64."
+msgstr ""
+"Лозинката која што ќе му биде побарана на далечниот корисник ако се користи "
+"за проверка се користи „vnc“ методот. Лозинката одредена од клучот е "
+"кодирана како base64."
 
-#: server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:14
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
-"Клучот ја одредува адресата за е-пошта на која што треба да биде испратена адресата на далечната "
-"работна површина доколку корисникот кликне на адресата во параметрите на „Далечна работна површина“."
+"Клучот ја одредува адресата за е-пошта на која што треба да биде испратена "
+"адресата на далечната работна површина доколку корисникот кликне на адресата "
+"во параметрите на „Далечна работна површина“."
 
-#: server/vino-shell.c:76
+#: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "Серверот за далечна работна површина веќе работи; излегувам ...\n"
 
-#: server/vino-shell.c:79
+#: ../server/vino-shell.c:79
 msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
-msgstr "Проблем при регистрација на далечната површина со bonobo-activation; "
+msgstr ""
+"Проблем при регистрација на далечната површина со bonobo-activation; "
 "излегувам ...\n"
 
-#: session/vino-session.c:133
+#: ../session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
 msgstr "Серверот за далечна работна површина умре, рестартирам\n"
 
-#: session/vino-session.c:154
+#: ../session/vino-session.c:154
 #, c-format
 msgid "Activation of %s failed: %s\n"
 msgstr "Активирањето на %s неуспеа: %s\n"
 
-#: session/vino-session.c:160
+#: ../session/vino-session.c:160
 #, c-format
 msgid "Activation of %s failed: Unknown Error\n"
 msgstr "Активирањето на %s не успеа: Непозната грешка\n"
 
-#: session/vino-session.c:231
+#: ../session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "Не успеав да го активирам серверот за далечна работна површина: пробав премногу пати\n"
+msgstr ""
+"Не успеав да го активирам серверот за далечна работна површина: пробав "
+"премногу пати\n"
 
-#: session/vino-session.c:295
+#: ../session/vino-session.c:295
 msgid "Starting remote desktop server"
 msgstr "Подигнувам сервер за далечна работна површина"
 
-#: session/vino-session.c:300
+#: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Не го подигувам серверот за далечена работа површина"
 
