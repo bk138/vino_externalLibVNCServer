@@ -1,3 +1,4 @@
+# translation of vino.HEAD.po to Punjabi
 # translation of pa.po to Punjabi
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
@@ -7,12 +8,12 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: pa\n"
+"Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-30 07:11+0000\n"
-"PO-Revision-Date: 2005-02-23 10:53+0530\n"
+"POT-Creation-Date: 2005-07-13 22:36+0000\n"
+"PO-Revision-Date: 2005-07-14 09:25+0530\n"
 "Last-Translator: Amanpreet Singh Alam <amanpreetalam@yahoo.com>\n"
-"Language-Team: Punjabi <fedora-trans-pa@redhat.com>\n"
+"Language-Team: Punjabi <fedora-transa-pa@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,11 +21,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
 
-#: capplet/vino-preferences.c:807
+#: ../capplet/vino-preferences.c:807
 msgid "Send this command by email"
-msgstr "ਇਹ ਕਮਾਂਡ ਈ-ਪੱਤਰ ਰਾਹੀ ਭੇਜੋ"
+msgstr "ਇਹ ਕਮਾਂਡ ਈ-ਮੇਲ ਰਾਹੀ ਭੇਜੋ"
 
-#: capplet/vino-preferences.c:842
+#: ../capplet/vino-preferences.c:842
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -33,246 +34,249 @@ msgstr ""
 "ਸਹਾਇਤਾ ਵੇਖਾਉਣ ਵਿੱਚ ਗਲਤੀ ਹੈ।\n"
 "%s"
 
-#: capplet/vino-preferences.desktop.in.in.h:1
+#: ../capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
 msgstr "ਰਿਮੋਟ ਵਿਹੜਾ"
 
-#: capplet/vino-preferences.desktop.in.in.h:2
+#: ../capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
 msgstr "ਆਪਣੀ ਰਿਮੋਟ ਵਿਹੜਾ ਪਹੁੰਚ ਪਸੰਦ ਨਿਰਧਾਰਿਤ ਕਰੋ"
 
-#: capplet/vino-preferences.glade.h:1
+#: ../capplet/vino-preferences.glade.h:1
 msgid "    "
 msgstr "    "
 
-#: capplet/vino-preferences.glade.h:2
+#: ../capplet/vino-preferences.glade.h:2
 msgid "        "
 msgstr "        "
 
-#: capplet/vino-preferences.glade.h:3
+#: ../capplet/vino-preferences.glade.h:3
 msgid "*"
 msgstr "1*"
 
-#: capplet/vino-preferences.glade.h:4
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Security</b>"
 msgstr "<b>ਸੁਰੱਖਿਆ</b>"
 
-#: capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:5
 msgid "<b>Sharing</b>"
 msgstr "<b>ਸਾਂਝ</b>"
 
-#: capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:6
 msgid "A_sk you for confirmation"
 msgstr "ਪੁਸ਼ਟੀ ਲਈ ਪੁੱਛੋ(_s)"
 
-#: capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:7
 msgid "Allow other users to _view your desktop"
-msgstr "ਹੋਰ ਉਪਭੋਗਤਾਵਾਂ ਨੂੰ ਆਪਣਾ ਵਿਹੜਾ ਵੇਖਣ ਦੀ ਇਜ਼ਾਜਤ ਦਿਓ(_v)"
+msgstr "ਹੋਰ ਉਪਭੋਗੀਆਂ ਨੂੰ ਆਪਣਾ ਵਿਹੜਾ ਵੇਖਣ ਦੀ ਇਜ਼ਾਜਤ ਦਿਓ(_v)"
 
-#: capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Remote Desktop Preferences"
 msgstr "ਰਿਮੋਟ ਵਿਹੜਾ ਪਸੰਦ"
 
-#: capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:9
 msgid "Some of these preferences are locked down"
-msgstr "ਕੁਝ ਪਸੰਦਾਂ ਲਾੱਕ ਕੀਤੀਆਂ ਜਾ ਚੁੱਕੀਆਂ ਹਨ"
+msgstr "ਇਹਨਾਂ 'ਚੋਂ ਕੁਝ ਪਸੰਦ ਲਾਕ ਕੀਤੀਆਂ ਜਾ ਚੁੱਕੀਆਂ ਹਨ"
 
-#: capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:10
 msgid "Users can view your desktop using this command:"
-msgstr "ਉਪਭੋਗਤਾ ਤੁਹਾਡਾ ਵਿਹੜਾ ਇਸ ਕਮਾਂਡ ਨਾਲ ਵੇਖ ਸਕਦਾ ਹੈ:"
+msgstr "ਉਪਭੋਗੀ ਤੁਹਾਡਾ ਵਿਹੜਾ ਇਸ ਕਮਾਂਡ ਨਾਲ ਵੇਖ ਸਕਦਾ ਹੈ:"
 
-#: capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
-msgstr "ਜਦੋਂ ਇੱਕ ਉਪਭੋਗਤਾ ਤੁਹਾਡਾ ਵਿਹੜਾ ਵੇਖਣ ਜਾਂ ਕੰਟਰੋਲ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ ਕਰੇ:"
+msgstr "ਜਦੋਂ ਇੱਕ ਉਪਭੋਗੀ ਤੁਹਾਡਾ ਵਿਹੜਾ ਵੇਖਣ ਜਾਂ ਕੰਟਰੋਲ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ ਕਰੇ:"
 
-#: capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.glade.h:12
 msgid "_Allow other users to control your desktop"
-msgstr "ਹੋਰ ਉਪਭੋਗਤਾਵਾਂ ਨੂੰ ਆਪਣਾ ਵਿਹੜਾ ਵੇਖਣ ਦਾ ਇਜ਼ਾਜਤ ਦਿਓ(_A)"
+msgstr "ਹੋਰ ਉਪਭੋਗੀਆਂ ਨੂੰ ਆਪਣਾ ਵਿਹੜਾ ਵੇਖਣ ਦਾ ਇਜ਼ਾਜਤ ਦਿਓ(_A)"
 
-#: capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.glade.h:13
 msgid "_Password:"
 msgstr "ਗੁਪਤ-ਕੋਡ(_P):"
 
-#: capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:14
 msgid "_Require the user to enter this password:"
-msgstr "ਲੋੜੀਦਾ ਉਪਭੋਗਤਾ ਗੁਪਤ-ਕੋਡ ਵੀ ਇਥੇ ਦਿਓ(_R):"
+msgstr "ਲੋੜੀਦਾ ਉਪਭੋਗੀ ਗੁਪਤ-ਕੋਡ ਵੀ ਇਥੇ ਦਿਓ(_R):"
 
-#: capplet/vino-url.c:158
+#: ../capplet/vino-url.c:158
 msgid "Address"
 msgstr "ਸਿਰਨਾਵਾਂ"
 
-#: capplet/vino-url.c:159
+#: ../capplet/vino-url.c:159
 msgid "The address pointed to by the widget"
 msgstr "ਵਿਦਗਿਟ ਨੇ ਉਪਲੱਬਧ ਕਰਵਾਇਆ ਸਿਰਨਾਵਾਂ"
 
-#: capplet/vino-url.c:166
+#: ../capplet/vino-url.c:166
 msgid "Tooltip"
 msgstr "ਇਸ਼ਾਰਾ"
 
-#: capplet/vino-url.c:167
+#: ../capplet/vino-url.c:167
 msgid "A tooltip for this URL"
 msgstr "ਇਸ URL ਲਈ ਇਸ਼ਾਰਾ"
 
-#: capplet/vino-url.c:173
+#: ../capplet/vino-url.c:173
 msgid "URL color"
 msgstr "URL ਰੰਗ"
 
-#: capplet/vino-url.c:174
+#: ../capplet/vino-url.c:174
 msgid "The color of the URL's label"
 msgstr "URL ਦੇ ਲੇਬਲ ਲਈ ਰੰਗ"
 
-#: server/vino-fb.c:947 server/vino-prompt.c:144 server/vino-server.c:851
+#: ../server/vino-fb.c:953 ../server/vino-prompt.c:144
+#: ../server/vino-server.c:850
 msgid "Screen"
-msgstr "ਪਰਦਾ"
+msgstr "ਸਕਰੀਨ"
 
-#: server/vino-fb.c:948
+#: ../server/vino-fb.c:954
 msgid "The screen to be monitored"
-msgstr "ਜਾਂਚ ਲਈ ਪਰਦਾ"
+msgstr "ਜਾਂਚ ਲਈ ਸਕਰੀਨ"
 
-#: server/vino-main.c:78
+#: ../server/vino-main.c:78
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
-msgstr "ਤੁਹਾਡਾ XServer XTest ਐਕਸਟੇਸ਼ਨ ਲਈ ਸਹਾਇਕ ਨਹੀਂ ਹੈ - ਰਿਮੋਟ ਵਿਹੜਾ ਪਹੁੰਚ ਸਿਰਫ਼ ਵੇਖਣ ਲਈ ਹੋਵੇਗੀ।\n"
+msgstr ""
+"ਤੁਹਾਡਾ XServer XTest ਐਕਸਟੇਸ਼ਨ ਲਈ ਸਹਾਇਕ ਨਹੀਂ ਹੈ - ਰਿਮੋਟ ਵਿਹੜਾ ਪਹੁੰਚ ਸਿਰਫ਼ ਵੇਖਣ ਲਈ "
+"ਹੋਵੇਗੀ।\n"
 
-#: server/vino-prompt.c:145
+#: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
 msgstr "ਪਰਦਾ, ਜੋ ਕਿ ਪਰਾਉਟ ਵੇਖਾਏਗਾ"
 
-#: server/vino-prompt.c:385
+#: ../server/vino-prompt.c:390
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
-msgstr "'%s' ਕੰਪਿਊਟਰ ਉਪਭੋਗਤਾ ਤੁਹਾਡੇ ਵਿਹੜਾ ਨੂੰ ਵੇਖਣ ਜਾਂ ਕੰਟਰੋਲ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਿਹਾ ਹੈ।"
+msgstr "'%s' ਕੰਪਿਊਟਰ ਉਪਭੋਗੀ ਤੁਹਾਡੇ ਵਿਹੜਾ ਨੂੰ ਵੇਖਣ ਜਾਂ ਕੰਟਰੋਲ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਿਹਾ ਹੈ।"
 
-#: server/vino-prompt.glade.h:1
+#: ../server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>ਇੱਕ ਹੋਰ ਉਪਭੋਗਤਾ ਤੁਹਾਡਾ ਵਿਹੜਾ ਵੇਖਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਿਹਾ ਹੈ।</b></big>"
+msgstr "<big><b>ਇੱਕ ਹੋਰ ਉਪਭੋਗੀ ਤੁਹਾਡਾ ਵਿਹੜਾ ਵੇਖਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਿਹਾ ਹੈ।</b></big>"
 
-#: server/vino-prompt.glade.h:2
+#: ../server/vino-prompt.glade.h:2
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
-msgstr "ਹੋਰ ਕੰਪਿਊਟਰ ਤੋਂ ਰਿਮੋਟਲੀ ਇੱਕ ਉਪਭੋਗਤਾ ਤੁਹਾਡਾ ਵਿਹੜਾ ਵੇਖ ਜਾਂ ਕੰਟਰੋਲ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਿਹਾ ਹੈ।"
+msgstr "ਹੋਰ ਕੰਪਿਊਟਰ ਤੋਂ ਰਿਮੋਟਲੀ ਇੱਕ ਉਪਭੋਗੀ ਤੁਹਾਡਾ ਵਿਹੜਾ ਵੇਖ ਜਾਂ ਕੰਟਰੋਲ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ ਕਰ ਰਿਹਾ ਹੈ।"
 
-#: server/vino-prompt.glade.h:3
+#: ../server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
-msgstr "ਕੀ ਤੁਸੀ ਉਹਨਾਂ ਨੂੰ ਇਸਤਰਾਂ ਕਰਨ ਦਾ ਇਜ਼ਾਜਤ ਦਿੰਦੇ ਹੋ?"
+msgstr "ਕੀ ਤੁਸੀ ਉਹਨਾਂ ਨੂੰ ਏਦਾਂ ਕਰਨ ਦਾ ਇਜ਼ਾਜਤ ਦਿੰਦੇ ਹੋ?"
 
-#: server/vino-prompt.glade.h:4
+#: ../server/vino-prompt.glade.h:4
 msgid "Question"
 msgstr "ਸਵਾਲ"
 
-#: server/vino-prompt.glade.h:5 server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
 msgid "_Allow"
-msgstr "ਇਜ਼ਾਜਤ(_A)"
+msgstr "ਮੰਨਜ਼ੂਰ(_A)"
 
-#: server/vino-prompt.glade.h:6 server/vino-util.c:65
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
 msgid "_Refuse"
 msgstr "ਇਨਕਾਰ(_R)"
 
-#: server/vino-server.c:852
+#: ../server/vino-server.c:851
 msgid "The screen for which to create a VNC server"
 msgstr "ਪਰਦਾ, ਜੋ ਕਿ VNC ਸਰਵਰ ਬਣਾਏਗਾ"
 
-#: server/vino-server.c:859
+#: ../server/vino-server.c:858
 msgid "On Hold"
 msgstr "ਚਾਲੂ ਰੱਖੋ"
 
-#: server/vino-server.c:860
+#: ../server/vino-server.c:859
 msgid "Place all clients on hold"
 msgstr "ਸਭ ਕਲਾਂਈਟ ਚਾਲੂ ਰੱਖੋ"
 
-#: server/vino-server.c:867
+#: ../server/vino-server.c:866
 msgid "Prompt enabled"
 msgstr "ਪਰਾਉਟ ਯੋਗ"
 
-#: server/vino-server.c:868
+#: ../server/vino-server.c:867
 msgid "Prompt the user about connection attempts"
-msgstr "ਕੁਨੈਕਸ਼ਨ ਕੋਸ਼ਿਸ ਲਈ ਉਪਭੋਗਤਾ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ"
+msgstr "ਕੁਨੈਕਸ਼ਨ ਕੋਸ਼ਿਸ ਲਈ ਉਪਭੋਗੀ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ"
 
-#: server/vino-server.c:875
+#: ../server/vino-server.c:874
 msgid "View Only"
-msgstr "ਸਿਰਫ਼ ਦਰਿਸ਼"
+msgstr "ਸਿਰਫ਼ ਝਲਕ"
 
-#: server/vino-server.c:876
+#: ../server/vino-server.c:875
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "ਕਲਾਂਈਟ ਤੋਂ ਕੀ-ਬੋਰਡ/ਸੰਕੇਤਕ ਇੰਪੁੱਟ ਅਯੋਗ"
 
-#: server/vino-server.c:883
+#: ../server/vino-server.c:882
 msgid "Require Encryption"
-msgstr "ਇੰਕ੍ਰਿਪਸ਼ਨ ਲੋੜੀਦੀ ਹੈ"
+msgstr "ਇੰਕਰਿਿਪਸ਼ਨ ਲੋੜੀਦੀ ਹੈ"
 
-#: server/vino-server.c:884
+#: ../server/vino-server.c:883
 msgid "Require clients to use encryption"
-msgstr "ਕਲਾਂਈਟਾਂ ਵੱਲੋਂ ਇੰਕ੍ਰਿਪਸ਼ਨ ਲੋੜੀਦੀ ਹੈ"
+msgstr "ਕਲਾਂਈਟਾਂ ਵੱਲੋਂ ਇੰਕਰਿਪਸ਼ਨ ਲੋੜੀਦੀ ਹੈ"
 
-#: server/vino-server.c:891
+#: ../server/vino-server.c:890
 msgid "Authentication methods"
-msgstr "ਪ੍ਰਮਾਣਕਿਤਾ ਮਾਡਲ"
+msgstr "ਪਰਮਾਣਕਿਤਾ ਮਾਡਲ"
 
-#: server/vino-server.c:892
+#: ../server/vino-server.c:891
 msgid "The authentication methods this server should allow"
-msgstr "ਪ੍ਰਮਾਣਿਕਤ ਢੰਗ, ਜਿਸ ਲਈ ਸਰਵਰ ਲੋੜੀਦਾ ਹੈ"
+msgstr "ਪਰਮਾਣਿਕਤ ਢੰਗ, ਜਿਸ ਲਈ ਸਰਵਰ ਲੋੜੀਦਾ ਹੈ"
 
-#: server/vino-server.c:900
+#: ../server/vino-server.c:899
 msgid "VNC Password"
 msgstr "VNC ਗੁਪਤ-ਕੋਡ"
 
-#: server/vino-server.c:901
+#: ../server/vino-server.c:900
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
-msgstr "ਪ੍ਰਮਾਣਕਿਤਾ ਕਿਸਮ ਲਈ VncAuth ਢੰਗ ਵਰਤ ਕੇ ਗੁਪਤ ਕੋਡ ਵਰਤਿਆ ਜਾਦਾ ਹੈ (ਇੰਕੋਡਿੰਗ base64 )"
+msgstr "ਪਰਮਾਣਕਿਤਾ ਕਿਸਮ ਲਈ VncAuth ਢੰਗ ਵਰਤ ਕੇ ਗੁਪਤ ਕੋਡ ਵਰਤਿਆ ਜਾਦਾ ਹੈ (ਇੰਕੋਡਿੰਗ base64 )"
 
-#: server/vino-server.schemas.in.h:1
+#: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
-msgstr "ਸਵੀਕਾਰ ਪ੍ਰਮਾਣਕਿਤ ਢੰਗ"
+msgstr "ਸਵੀਕਾਰ ਪਰਮਾਣਕਿਤ ਢੰਗ"
 
-#: server/vino-server.schemas.in.h:2
+#: ../server/vino-server.schemas.in.h:2
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr "ਈ-ਪੱਤਰ ਸਿਰਨਾਵਾਂ, ਜਿਸ ਲਈ ਰਿਮੋਟ ਵਿਹੜਾ URL ਭੇਜਿਆ ਜਾਵੇ"
+msgstr "ਈ-ਮੇਲ ਸਿਰਨਾਵਾਂ, ਜਿਸ ਲਈ ਰਿਮੋਟ ਵਿਹੜਾ URL ਭੇਜਿਆ ਜਾਵੇ"
 
-#: server/vino-server.schemas.in.h:3
+#: ../server/vino-server.schemas.in.h:3
 msgid "Enable remote desktop access"
 msgstr "ਰਿਮੋਟ ਵਿਹੜਾ ਪਹੁੰਚ ਯੋਗ"
 
-#: server/vino-server.schemas.in.h:4
+#: ../server/vino-server.schemas.in.h:4
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
 msgstr ""
-"ਜੇਕਰ ਸੱਚ ਹੈ ਤਾਂ, RFB ਪ੍ਰੋਟੋਕਾਲ ਰਾਹੀਂ ਵਿਹੜਾ ਖੋਲਿਆ ਜਾ ਸਕੇਗਾ। ਉਪਭੋਗਤਾ ਮਸ਼ੀਨਾਂ ਤੱਦ vncviewer "
+"ਜੇਕਰ ਸੱਚ ਹੈ ਤਾਂ, RFB ਪਰੋਟੋਕਾਲ ਰਾਹੀਂ ਵਿਹੜਾ ਖੋਲਿਆ ਜਾ ਸਕੇਗਾ। ਉਪਭੋਗੀ ਮਸ਼ੀਨਾਂ ਤੱਦ vncviewer "
 "ਰਾਹੀਂ ਵਿਹੜੇ ਨਾਲ ਜੁੜ ਸਕਣਗੀਆਂ।"
 
-#: server/vino-server.schemas.in.h:5
+#: ../server/vino-server.schemas.in.h:5
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
 msgstr ""
-"ਜੇਕਰ ਸੱਚ ਹੈ ਤਾਂ ਉਪਭੋਗਤਾ ਨੂੰ ਤਦ ਤੱਕ ਪਹੁੰਚ ਨਹੀਂ ਮਿਲੇਗੀ, ਜਦ ਤੱਕ ਕਿ ਮੇਜ਼ਬਾਨ ਮਸ਼ੀਨ ਤੇ ਕੁਨੈਕਸ਼ਨ ਸਵੀਕਾਰ "
+"ਜੇਕਰ ਸੱਚ ਹੈ ਤਾਂ ਉਪਭੋਗੀ ਨੂੰ ਤਦ ਤੱਕ ਪਹੁੰਚ ਨਹੀਂ ਮਿਲੇਗੀ, ਜਦ ਤੱਕ ਕਿ ਮੇਜ਼ਬਾਨ ਮਸ਼ੀਨ ਤੇ ਕੁਨੈਕਸ਼ਨ ਸਵੀਕਾਰ "
 "ਨਹੀਂ ਕਰਦਾ ਹੈ। ਇਹ ਖਾਸ ਤੌਰ ਤੇ ਤਾਂ ਸਵੀਕਾਰ ਹੈ, ਜੇਕਰ ਪਹੁੰਚ ਗੁਪਤ-ਕੋਡ ਨਾਲ ਸੁਰੱਖਿਅਤ ਨਹੀਂ ਹੈ"
 
-#: server/vino-server.schemas.in.h:6
+#: ../server/vino-server.schemas.in.h:6
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote user's will not be able to use the mouse or keyboard."
 msgstr ""
-"ਜੇਕਰ ਸਹੀ ਕੀਤਾ ਗਿਆ ਤਾਂ ਰਿਮੋਟ ਉਪਭੋਗਤਾ ਕੇਵਲ ਵਿਹੜਾ ਵੇਖ ਸਕਦੇ ਹਨ, ਪਰ ਉਹਨਾਂ ਨੂੰ ਕੀਬੋਰਡ ਜਾਂ ਮਾਊਸ "
+"ਜੇਕਰ ਸਹੀ ਕੀਤਾ ਗਿਆ ਤਾਂ ਰਿਮੋਟ ਉਪਭੋਗੀ ਕੇਵਲ ਵਿਹੜਾ ਵੇਖ ਸਕਦੇ ਹਨ, ਪਰ ਉਹਨਾਂ ਨੂੰ ਕੀਬੋਰਡ ਜਾਂ ਮਾਊਸ "
 "ਵਰਤਣ ਦੀ ਇਜ਼ਾਜਤ ਨਹੀਂ ਹੋਵੇਗੀ।"
 
-#: server/vino-server.schemas.in.h:7
+#: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are required to be able support "
-"encyrption. It is highly recommended that you use a client which supports "
+"encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
-"ਜੇਕਰ ਸੱਚ ਹੈ ਤਾਂ, ਰਿਮੋਟ ਉਪਭੋਗਤਾ ਲਈ ਇੰਕ੍ਰਿਪਸ਼ਨ ਸਹਾਇਤਾ ਚਾਲੂ ਹੋ ਜਾਵੇਗੀ। ਇਸ ਦੀ ਸਲਾਹ ਦਿੱਤੀ ਜਾਦੀ "
+"ਜੇਕਰ ਸੱਚ ਹੈ ਤਾਂ, ਰਿਮੋਟ ਉਪਭੋਗੀ ਲਈ ਇੰਕਰਿਪਸ਼ਨ ਸਹਾਇਤਾ ਚਾਲੂ ਹੋ ਜਾਵੇਗੀ। ਇਸ ਦੀ ਸਲਾਹ ਦਿੱਤੀ ਜਾਦੀ "
 "ਹੈ, ਜਦੋਂ ਤੱਕ ਕਲਾਂਇਟ ਉਹ ਨਾ ਹੋਵੇ, ਜਿਸ ਦਾ ਨੈੱਟਵਰਕ ਭਰੋਸੇਯੋਗ ਨਾ ਹੋਵੇ।"
 
-#: server/vino-server.schemas.in.h:8
+#: ../server/vino-server.schemas.in.h:8
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -280,80 +284,80 @@ msgid ""
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
 msgstr ""
-"ਪ੍ਰਮਾਣਿਤ ਢੰਗ ਜਿਨਾਂ ਨਾਲ ਰਿਮੋਟ ਉਪਭੋਗਤਾ ਵਿਹੜਾ ਖੋਲ ਸਕਦੇ ਹਨ। ਇਥੇ ਪ੍ਰਮਾਣਕਿਤਾ ਦੇ ਦੋ ਢੰਗ ਹਨ, "
+"ਪ੍ਰਮਾਣਿਤ ਢੰਗ ਜਿਨਾਂ ਨਾਲ ਰਿਮੋਟ ਉਪਭੋਗੀ ਵਿਹੜਾ ਖੋਲ ਸਕਦੇ ਹਨ। ਇਥੇ ਪ੍ਰਮਾਣਕਿਤਾ ਦੇ ਦੋ ਢੰਗ ਹਨ, "
 "\"vnc\" ਉਪਭੋਗਤਾ ਤੋਂ ਕੁਨੈਕਟ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਗੁਪਤ-ਕੋਡ ਕੋਲ ਦੀ ਪੁਸ਼ਟੀ ਕਰਾਏਗਾ (ਗੁਪਤ-ਕੋਡ "
-"vnc_password ਕੁੰਜੀ ਨਾਲ ਨਿਰਧਾਰਿਤ ਹੁੰਦਾ ਹੈ ਅਤੇ ਇਹ ਕਿਸੇ ਵੀ ਰਿਮੋਟ ਉਪਭੋਗਤਾ ਨੂੰ ਜੁੜਨ ਦੀ ਇਜ਼ਾਜਤ "
+"vnc_password ਕੁੰਜੀ ਨਾਲ ਨਿਰਧਾਰਿਤ ਹੁੰਦਾ ਹੈ ਅਤੇ ਇਹ ਕਿਸੇ ਵੀ ਰਿਮੋਟ ਉਪਭੋਗੀ ਨੂੰ ਜੁੜਨ ਦੀ ਇਜ਼ਾਜਤ "
 "ਦਿੰਦਾ ਹੈ।)"
 
-#: server/vino-server.schemas.in.h:9
+#: ../server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
-msgstr "ਕੇਵਲ ਰਿਮੋਟ ਉਪਭੋਗਤਾ ਹੀ ਵਿਹੜਾ ਵੇਖ ਸਕਣਗੇ"
+msgstr "ਕੇਵਲ ਰਿਮੋਟ ਉਪਭੋਗੀ ਹੀ ਵਿਹੜਾ ਵੇਖ ਸਕਣਗੇ"
 
-#: server/vino-server.schemas.in.h:10
+#: ../server/vino-server.schemas.in.h:10
 msgid "Password required for \"vnc\" authentication"
-msgstr "\"vnc\" ਪ੍ਰਮਾਣਿਕਤਾ ਲਈ ਗੁਪਤ-ਕੋਡ ਲੋੜੀਦਾ ਹੈ"
+msgstr "\"vnc\" ਪਰਮਾਣਿਕਤਾ ਲਈ ਗੁਪਤ-ਕੋਡ ਲੋੜੀਦਾ ਹੈ"
 
-#: server/vino-server.schemas.in.h:11
+#: ../server/vino-server.schemas.in.h:11
 msgid "Prompt the user before completing a connection"
-msgstr "ਕੁਨੈਕਸ਼ਨ ਬਣਾਉਣ ਤੋਂ ਪਹਿਲਾਂ ਉਪਭੋਗਤਾ ਤੋਂ ਪੁਸ਼ਟੀ ਕਰਵਾਉ"
+msgstr "ਕੁਨੈਕਸ਼ਨ ਬਣਾਉਣ ਤੋਂ ਪਹਿਲਾਂ ਉਪਭੋਗੀ ਤੋਂ ਪੁਸ਼ਟੀ ਕਰਵਾਉ"
 
-#: server/vino-server.schemas.in.h:12
+#: ../server/vino-server.schemas.in.h:12
 msgid "Require encryption"
-msgstr "ਇੰਕ੍ਰਿਪਸ਼ਨ ਲਾਜ਼ਮੀ"
+msgstr "ਇੰਕਰਿਪਸ਼ਨ ਲਾਜ਼ਮੀ"
 
-#: server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:13
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
 msgstr ""
-"ਜੇਕਰ \"vnc\" ਪ੍ਰਮਾਣਕਿਤਾ ਢੰਗ ਵਰਤਿਆ ਜਾਵੇ ਤਾਂ ਗੁਪਤ ਕੋਡ ਰਿਮੋਟ ਉਪਭੋਗਤਾ ਨੂੰ ਪੁਛਿਆ ਜਾਵੇਗਾ। ਇਹ "
+"ਜੇਕਰ \"vnc\" ਪਰਮਾਣਕਿਤਾ ਢੰਗ ਵਰਤਿਆ ਜਾਵੇ ਤਾਂ ਗੁਪਤ ਕੋਡ ਰਿਮੋਟ ਉਪਭੋਗੀ ਨੂੰ ਪੁਛਿਆ ਜਾਵੇਗਾ। ਇਹ "
 "ਗੁਪਤ ਕੋਡ ਇੰਕੋਡਿੰਗ base64 ਤੇ ਅਧਾਰਿਤ ਕੁੰਜੀ ਨਾਲ ਨਿਰਧਾਰਿਤ ਕੀਤਾ ਗਿਆ ਹੈ।"
 
-#: server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:14
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
-"ਜੇਕਰ ਉਪਭੋਗਤਾ ਨੇ ਰਿਮੋਟ ਵਿਹੜਾ ਪਸੰਦ ਵਾਰਤਾਲਾਪ ਤੇ URL ਨੂੰ ਦਬਾਇਆ ਤਾਂ ਕਿਸ ਈ-ਪੱਤਰ ਸਿਰਨਾਵੇਂ ਤੇ ਰਿਮੋਟ "
-"ਵਿਹੜਾ URL ਭੇਜਿਆ ਜਾਵੇ, ਉਹ ਇਹ ਕੁੰਜੀ ਨਿਰਧਾਰਿਤ ਕਰਦੀ ਹੈ।"
+"ਜੇਕਰ ਉਪਭੋਗੀ ਨੇ ਰਿਮੋਟ ਵਿਹੜਾ ਪਸੰਦ ਵਾਰਤਾਲਾਪ ਤੇ URL ਨੂੰ ਦਬਾਇਆ ਤਾਂ ਕਿਸ ਈ-ਮੇਲ ਸਿਰਨਾਵੇਂ ਤੇ "
+"ਰਿਮੋਟ ਵਿਹੜਾ URL ਭੇਜਿਆ ਜਾਵੇ, ਉਹ ਇਹ ਕੁੰਜੀ ਨਿਰਧਾਰਿਤ ਕਰਦੀ ਹੈ।"
 
-#: server/vino-shell.c:76
+#: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "ਰਿਮੋਟ ਵਿਹੜਾ ਸਰਵਰ ਪਹਿਲਾਂ ਹੀ ਚੱਲ ਰਿਹਾ ਹੈ, ਬੰਦ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ ...\n"
 
-#: server/vino-shell.c:79
+#: ../server/vino-shell.c:79
 msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
 msgstr ""
-"bonobo-activation ਨਾਲ ਰਿਮੋਟ ਵਿਹੜਾ ਸਰਵਰ ਨੂੰ ਰਜਿਸਟਰ ਕਰਵਾਉਣ ਵਿੱਚ ਗਲਤੀ ਹੈ; "
-"ਬੰਦ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ ...\n"
+"bonobo-activation ਨਾਲ ਰਿਮੋਟ ਵਿਹੜਾ ਸਰਵਰ ਨੂੰ ਰਜਿਸਟਰ ਕਰਵਾਉਣ ਵਿੱਚ ਗਲਤੀ ਹੈ; ਬੰਦ ਕੀਤਾ ਜਾ "
+"ਰਿਹਾ ਹੈ ...\n"
 
-#: session/vino-session.c:133
+#: ../session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
 msgstr "ਰਿਮੋਟ ਵਿਹੜਾ ਸਰਵਰ ਅਸਫਲ ਹੈ, ਮੁੜ ਚਾਲੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ\n"
 
-#: session/vino-session.c:154
+#: ../session/vino-session.c:154
 #, c-format
 msgid "Activation of %s failed: %s\n"
 msgstr "%s ਦੀ ਸਰਗਰਮੀ ਅਸਫਲ: %s\n"
 
-#: session/vino-session.c:160
+#: ../session/vino-session.c:160
 #, c-format
 msgid "Activation of %s failed: Unknown Error\n"
 msgstr "%s ਦੀ ਸਰਗਰਮੀ ਅਸਫਲ, ਅਣਜਾਣੀ ਗਲਤੀ\n"
 
-#: session/vino-session.c:231
+#: ../session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
 msgstr "ਰਿਮੋਟ ਸਰਵਰ ਨੂੰ ਸਰਗਰਮ ਕਰਨ ਵਿੱਚ ਅਸਫਲ, ਬਹੁਤ ਵਾਰ ਕੋਸ਼ਿਸ ਵੀ ਅਸਫਲ ਰਹੀ\n"
 
-#: session/vino-session.c:295
+#: ../session/vino-session.c:295
 msgid "Starting remote desktop server"
 msgstr "ਰਿਮੋਟ ਵਿਹੜਾ ਸਰਵਰ ਆਰੰਭ ਹੋ ਰਿਹਾ ਹੈ"
 
-#: session/vino-session.c:300
+#: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "ਰਿਮੋਟ ਵਿਹੜਾ ਸਰਵਰ ਸ਼ੁਰੂ ਨਹੀਂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
