@@ -66,7 +66,8 @@ SOURCES =
 POFILES = @POFILES@
 GMOFILES = @GMOFILES@
 DISTFILES = ChangeLog Makefile.in.in POTFILES.in \
-$(POFILES) $(GMOFILES) $(SOURCES)
+$(POFILES) $(SOURCES)
+EXTRA_DISTFILES = POTFILES.skip Makevars LINGUAS
 
 POTFILES = \
 
@@ -82,7 +83,7 @@ INSTOBJEXT = @INSTOBJEXT@
 
 .po.pox:
 	$(MAKE) $(GETTEXT_PACKAGE).pot
-	$(MSGMERGE) $< $(top_builddir)/po/$(GETTEXT_PACKAGE).pot -o $*pox
+	$(MSGMERGE) $< $(GETTEXT_PACKAGE).pot -o $*.pox
 
 .po.mo:
 	$(MSGFMT) -o $@ $<
@@ -179,7 +180,7 @@ uninstall:
 	  rm -f $(DESTDIR)$(gettextsrcdir)/Makefile.in.in; \
 	fi
 
-check: all
+check: all $(GETTEXT_PACKAGE).pot
 
 dvi info tags TAGS ID:
 
@@ -191,16 +192,21 @@ mostlyclean:
 clean: mostlyclean
 
 distclean: clean
-	rm -f Makefile Makefile.in POTFILES *.mo *.msg *.cat *.cat.m
+	rm -f Makefile Makefile.in POTFILES
+	rm -f *.mo *.msg *.cat *.cat.m $(GMOFILES)
 
 maintainer-clean: distclean
 	@echo "This command is intended for maintainers to use;"
 	@echo "it deletes files that may require special tools to rebuild."
-	rm -f $(GMOFILES)
+	rm -f Makefile.in.in
 
 distdir = ../$(GETTEXT_PACKAGE)-$(VERSION)/$(subdir)
-dist distdir: $(DISTFILES) $(GETTEXT_PACKAGE).pot
+dist distdir: $(DISTFILES)
 	dists="$(DISTFILES)"; \
+	extra_dists="$(EXTRA_DISTFILES)"; \
+	for file in $$extra_dists; do \
+	  test -f $$file && dists="$$dists $$file"; \
+	done; \
 	for file in $$dists; do \
 	  ln $(srcdir)/$$file $(distdir) 2> /dev/null \
 	    || cp -p $(srcdir)/$$file $(distdir); \
