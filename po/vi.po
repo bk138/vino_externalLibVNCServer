@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino GNOME 2.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-07-21 06:47+0000\n"
-"PO-Revision-Date: 2005-07-09 20:08+0930\n"
+"POT-Creation-Date: 2005-07-23 22:43+0000\n"
+"PO-Revision-Date: 2005-07-24 14:59+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -132,8 +132,7 @@ msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
-"XServer của bạn không hỗ trợ phần mở rộng XTest — chỉ có thể xem màn hình "
-"làm việc từ xa thôi.\n"
+"XServer (trình hỗ trợ hệ thống cửa sổ X) của bạn không hỗ trợ phần mở rộng XTest — chỉ có thể xem màn hình làm việc từ xa thôi.\n"
 
 #: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -145,7 +144,7 @@ msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"Người dùng trên máy «%s» đang cố xem hoặc điều khiển màn hình làm việc của "
+"Người dùng trên máy « %s » đang cố xem hoặc điều khiển màn hình làm việc của "
 "bạn từ xa."
 
 #: ../server/vino-prompt.glade.h:1
@@ -163,7 +162,7 @@ msgstr ""
 
 #: ../server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
-msgstr "Bạn có cho phép họ thực hiện không?"
+msgstr "Bạn có muốn cho phép họ làm như thế không?"
 
 #: ../server/vino-prompt.glade.h:4
 msgid "Question"
@@ -179,7 +178,7 @@ msgstr "_Từ chối"
 
 #: ../server/vino-server.c:851
 msgid "The screen for which to create a VNC server"
-msgstr "Màn hình cần tạo máy phục vụ VNC"
+msgstr "Màn hình cần tạo trình phục vụ VNC"
 
 #: ../server/vino-server.c:858
 msgid "On Hold"
@@ -195,7 +194,7 @@ msgstr "Cho phép hỏi"
 
 #: ../server/vino-server.c:867
 msgid "Prompt the user about connection attempts"
-msgstr "Hỏi người dùng khi tạo kết nối"
+msgstr "Hỏi người dùng khi cố kết nối"
 
 #: ../server/vino-server.c:874
 msgid "View Only"
@@ -215,11 +214,11 @@ msgstr "Yêu cầu khách dùng mật mã"
 
 #: ../server/vino-server.c:890
 msgid "Authentication methods"
-msgstr "Cách xác thực"
+msgstr "Phương pháp xác thực"
 
 #: ../server/vino-server.c:891
 msgid "The authentication methods this server should allow"
-msgstr "Các cách xác thực máy phục vụ này sẽ chấp nhận"
+msgstr "Các cách xác thực máy phục vụ này nên chấp nhận"
 
 #: ../server/vino-server.c:899
 msgid "VNC Password"
@@ -235,7 +234,7 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
-msgstr "Cách xác thực chấp nhận"
+msgstr "Phương pháp xác thực chấp nhận"
 
 #: ../server/vino-server.schemas.in.h:2
 msgid "E-mail address to which the remote desktop URL should be sent"
@@ -273,7 +272,6 @@ msgstr ""
 "sử dụng con trỏ hay bàn phím."
 
 #: ../server/vino-server.schemas.in.h:7
-#, fuzzy
 msgid ""
 "If true, remote users accessing the desktop are required to be able support "
 "encryption. It is highly recommended that you use a client which supports "
@@ -357,7 +355,7 @@ msgstr "Lỗi kích hoạt %s: %s\n"
 #: ../session/vino-session.c:160
 #, c-format
 msgid "Activation of %s failed: Unknown Error\n"
-msgstr "Lỗi kích hoạt «%s»: không biết sao\n"
+msgstr "Lỗi kích hoạt « %s »: không biết sao\n"
 
 #: ../session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
