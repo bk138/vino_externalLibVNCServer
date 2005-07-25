@@ -2,25 +2,26 @@
 # Copyright (C) 2004 Free Software Foundation, Inc.
 # This file is distributed under the same license as the vino package.
 # Sami Pesonen <sampeson@iki.fi>, 2004.
+# Ilkka Tuohela <hile@iki.fi>, 2005.
 # 
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-30 07:11+0000\n"
-"PO-Revision-Date: 2004-08-23 21:42+0300\n"
-"Last-Translator: Sami Pesonen <sampeson@iki.fi>\n"
+"POT-Creation-Date: 2005-07-25 09:53+0300\n"
+"PO-Revision-Date: 2005-07-25 09:54+0300\n"
+"Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: capplet/vino-preferences.c:807
+#: ../capplet/vino-preferences.c:807
 msgid "Send this command by email"
 msgstr "Lähetä tämä komento sähköpostilla"
 
-#: capplet/vino-preferences.c:842
+#: ../capplet/vino-preferences.c:842
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -29,103 +30,104 @@ msgstr ""
 "Ohjetta näytettäessä tapahtui virhe:\n"
 "%s"
 
-#: capplet/vino-preferences.desktop.in.in.h:1
+#: ../capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
 msgstr "Etätyöpöytä"
 
-#: capplet/vino-preferences.desktop.in.in.h:2
+#: ../capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
 msgstr "Aseta etätyöpöydän käyttöasetuksia"
 
-#: capplet/vino-preferences.glade.h:1
+#: ../capplet/vino-preferences.glade.h:1
 msgid "    "
 msgstr "    "
 
-#: capplet/vino-preferences.glade.h:2
+#: ../capplet/vino-preferences.glade.h:2
 msgid "        "
 msgstr "        "
 
-#: capplet/vino-preferences.glade.h:3
+#: ../capplet/vino-preferences.glade.h:3
 msgid "*"
 msgstr "*"
 
-#: capplet/vino-preferences.glade.h:4
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Security</b>"
 msgstr "<b>Turvallisuus</b>"
 
-#: capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:5
 msgid "<b>Sharing</b>"
 msgstr "<b>Jakaminen</b>"
 
-#: capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:6
 msgid "A_sk you for confirmation"
 msgstr "_Kysy varmistusta"
 
-#: capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:7
 msgid "Allow other users to _view your desktop"
 msgstr "Salli muiden käyttäjien _katsella työpöytääsi"
 
-#: capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Remote Desktop Preferences"
 msgstr "Etätyöpöydän asetukset"
 
-#: capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:9
 msgid "Some of these preferences are locked down"
 msgstr "Osa näistä asetuksista on lukittu"
 
-#: capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:10
 msgid "Users can view your desktop using this command:"
 msgstr "Käyttäjät voivat katsella työpöytääsi käyttämällä tätä komentoa:"
 
-#: capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
 msgstr "Kun käyttäjä yrittää katsella tai hallita työpöytääsi:"
 
-#: capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.glade.h:12
 msgid "_Allow other users to control your desktop"
 msgstr "_Salli toisten käyttäjien hallita työpöytääsi"
 
-#: capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.glade.h:13
 msgid "_Password:"
 msgstr "_Salasana:"
 
-#: capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:14
 msgid "_Require the user to enter this password:"
 msgstr "_Vaadi käyttäjältä tämä salasana:"
 
-#: capplet/vino-url.c:158
+#: ../capplet/vino-url.c:158
 msgid "Address"
 msgstr "Osoite"
 
-#: capplet/vino-url.c:159
+#: ../capplet/vino-url.c:159
 msgid "The address pointed to by the widget"
 msgstr "Säätimen osoittama osoite"
 
-#: capplet/vino-url.c:166
+#: ../capplet/vino-url.c:166
 msgid "Tooltip"
 msgstr "Vinkki"
 
-#: capplet/vino-url.c:167
+#: ../capplet/vino-url.c:167
 msgid "A tooltip for this URL"
 msgstr "Tämän URL:in vinkki"
 
-#: capplet/vino-url.c:173
+#: ../capplet/vino-url.c:173
 msgid "URL color"
 msgstr "URL:in väri"
 
-#: capplet/vino-url.c:174
+#: ../capplet/vino-url.c:174
 msgid "The color of the URL's label"
 msgstr "URL:in nimiön väri"
 
-#: server/vino-fb.c:947 server/vino-prompt.c:144 server/vino-server.c:851
+#: ../server/vino-fb.c:953 ../server/vino-prompt.c:144
+#: ../server/vino-server.c:850
 msgid "Screen"
 msgstr "Näyttö"
 
-#: server/vino-fb.c:948
+#: ../server/vino-fb.c:954
 msgid "The screen to be monitored"
 msgstr "Tarkkailtava näyttö"
 
-#: server/vino-main.c:78
+#: ../server/vino-main.c:78
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -133,11 +135,11 @@ msgstr ""
 "XServerisi ei tue XTest-laajennusta - etätyöpöytäyhteys sallii vain "
 "katselun\n"
 
-#: server/vino-prompt.c:145
+#: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
 msgstr "Näyttö, jossa kehote näytetään"
 
-#: server/vino-prompt.c:385
+#: ../server/vino-prompt.c:390
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -145,11 +147,11 @@ msgid ""
 msgstr ""
 "Käyttäjä tietokoneessa \"%s\" yrittää etänä katsella tai hallita työpöytääsi."
 
-#: server/vino-prompt.glade.h:1
+#: ../server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
 msgstr "<big><b>Toinen käyttäjä yrittää katsella työpöytääsi.</b></big>"
 
-#: server/vino-prompt.glade.h:2
+#: ../server/vino-prompt.glade.h:2
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
@@ -157,90 +159,90 @@ msgstr ""
 "Käyttäjä toisessa tietokoneessa yrittää etänä katsella tai hallita "
 "työpöytääsi."
 
-#: server/vino-prompt.glade.h:3
+#: ../server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
 msgstr "Sallitko heidän tehdä niin?"
 
-#: server/vino-prompt.glade.h:4
+#: ../server/vino-prompt.glade.h:4
 msgid "Question"
 msgstr "Kysymys"
 
-#: server/vino-prompt.glade.h:5 server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
 msgid "_Allow"
 msgstr "_Salli"
 
-#: server/vino-prompt.glade.h:6 server/vino-util.c:65
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
 msgid "_Refuse"
 msgstr "_Kieltäydy"
 
-#: server/vino-server.c:852
+#: ../server/vino-server.c:851
 msgid "The screen for which to create a VNC server"
 msgstr "Näyttö, johon VNC-palvelin luodaan"
 
-#: server/vino-server.c:859
+#: ../server/vino-server.c:858
 msgid "On Hold"
 msgstr "Odotustila"
 
-#: server/vino-server.c:860
+#: ../server/vino-server.c:859
 msgid "Place all clients on hold"
 msgstr "Aseta kaikki asiakkaat odotustilaan"
 
-#: server/vino-server.c:867
+#: ../server/vino-server.c:866
 msgid "Prompt enabled"
 msgstr "Kehote päällä"
 
-#: server/vino-server.c:868
+#: ../server/vino-server.c:867
 msgid "Prompt the user about connection attempts"
 msgstr "Ilmoita käyttäjälle yhteysyrityksistä"
 
-#: server/vino-server.c:875
+#: ../server/vino-server.c:874
 msgid "View Only"
 msgstr "Vain katselu"
 
-#: server/vino-server.c:876
+#: ../server/vino-server.c:875
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Estä näppäimistön/hiiren käyttö asiakkailta"
 
-#: server/vino-server.c:883
+#: ../server/vino-server.c:882
 msgid "Require Encryption"
 msgstr "Vaadi salausta"
 
-#: server/vino-server.c:884
+#: ../server/vino-server.c:883
 msgid "Require clients to use encryption"
 msgstr "Vaadi salausta asiakkailta"
 
-#: server/vino-server.c:891
+#: ../server/vino-server.c:890
 msgid "Authentication methods"
 msgstr "Todentamismenetelmät"
 
-#: server/vino-server.c:892
+#: ../server/vino-server.c:891
 msgid "The authentication methods this server should allow"
 msgstr "Tämän palvelimen hyväksymät todentamismenetelmät"
 
-#: server/vino-server.c:900
+#: ../server/vino-server.c:899
 msgid "VNC Password"
 msgstr "VNC-salasana"
 
-#: server/vino-server.c:901
+#: ../server/vino-server.c:900
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
 msgstr ""
 "Salasana (base64-koodattu) jolla todennetaan käyttäen VncAuth-menetelmää"
 
-#: server/vino-server.schemas.in.h:1
+#: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
 msgstr "Sallitut todentamismenetelmät"
 
-#: server/vino-server.schemas.in.h:2
+#: ../server/vino-server.schemas.in.h:2
 msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "Sähköpostiosoite johon etäyhteyden URL lähetetään"
 
-#: server/vino-server.schemas.in.h:3
+#: ../server/vino-server.schemas.in.h:3
 msgid "Enable remote desktop access"
 msgstr "Aseta työpöydän etäyhteydet päälle"
 
-#: server/vino-server.schemas.in.h:4
+#: ../server/vino-server.schemas.in.h:4
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
@@ -248,7 +250,7 @@ msgstr ""
 "Jos tosi, salli etäyhteys työpöydälle RFB-protokollaa käyttäen. Käyttäjät "
 "etäkoneissa voivat sitten ottaa yhteyden vncvieweriä käyttämällä."
 
-#: server/vino-server.schemas.in.h:5
+#: ../server/vino-server.schemas.in.h:5
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
@@ -258,7 +260,7 @@ msgstr ""
 "ennenkuin työpöydän omistaja hyväksyy yhteyden. Suositeltavaa erityisesti "
 "kun yhteys ei ole salasanasuojattu."
 
-#: server/vino-server.schemas.in.h:6
+#: ../server/vino-server.schemas.in.h:6
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote user's will not be able to use the mouse or keyboard."
@@ -266,17 +268,17 @@ msgstr ""
 "Jos tosi, työpöydälle etäyhteyttä haluavat käyttäjät saavat pelkästään "
 "katsella työpöytää. Etäkäyttäjät eivät voi käyttää hiirtä tai näppäimistöä."
 
-#: server/vino-server.schemas.in.h:7
+#: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are required to be able support "
-"encyrption. It is highly recommended that you use a client which supports "
+"encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
 "Jos tosi, työpöydälle etäyhteyttä haluavien käyttäjien pitää tukea salausta. "
-"On erittäin suositeltavaa, että käytetään salausta tukevia asiakkaita ellei "
+"On erittäin suositeltavaa, että käytetään salausta tukevia asiakkaita, ellei "
 "käytetty verkko ole luotettava."
 
-#: server/vino-server.schemas.in.h:8
+#: ../server/vino-server.schemas.in.h:8
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -290,23 +292,23 @@ msgstr ""
 "määritellään vnc_password avaimeen) ennen yhteyden muodostusta ja \"none\" "
 "mikä mahdollistaa minkä tahansa yhteyden."
 
-#: server/vino-server.schemas.in.h:9
+#: ../server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
 msgstr "Salli etäkäyttäjiltä vain työpöydän katselu"
 
-#: server/vino-server.schemas.in.h:10
+#: ../server/vino-server.schemas.in.h:10
 msgid "Password required for \"vnc\" authentication"
 msgstr "\"vnc\"-todentamiselle vaaditaan salasana"
 
-#: server/vino-server.schemas.in.h:11
+#: ../server/vino-server.schemas.in.h:11
 msgid "Prompt the user before completing a connection"
 msgstr "Kysy käyttäjältä ennen kuin yhteys luodaan lopullisesti"
 
-#: server/vino-server.schemas.in.h:12
+#: ../server/vino-server.schemas.in.h:12
 msgid "Require encryption"
 msgstr "Vaadi salausta"
 
-#: server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:13
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -315,7 +317,7 @@ msgstr ""
 "Etäkäyttäjän tarvitsema salasana \"vnc\"-todennusmenetelmää käytettäessä. "
 "Avaimen määrittelemä salasana on base64-koodattu."
 
-#: server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:14
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
@@ -324,11 +326,11 @@ msgstr ""
 "Avain määrittelee sähköpostiosoitteen johon etätyöpöydän URL pitäisi "
 "lähettää jos käyttäjä napsauttaa URL:ia etätyöpöydän asetusikkunassa."
 
-#: server/vino-shell.c:76
+#: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "Etätyöpöydän palvelin on jo käynnissä; poistutaan...\n"
 
-#: server/vino-shell.c:79
+#: ../server/vino-shell.c:79
 msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
@@ -336,28 +338,28 @@ msgstr ""
 "Ongelma etätyöpöydän palvelimelle rekisteröitymisessä bonobo-activationin "
 "kanssa; poistutaan...\n"
 
-#: session/vino-session.c:133
+#: ../session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
 msgstr "Etätyöpöydän palvelin kuoli, käynnistetään\n"
 
-#: session/vino-session.c:154
+#: ../session/vino-session.c:154
 #, c-format
 msgid "Activation of %s failed: %s\n"
 msgstr "%s:n aktivointi epäonnistui: %s\n"
 
-#: session/vino-session.c:160
+#: ../session/vino-session.c:160
 #, c-format
 msgid "Activation of %s failed: Unknown Error\n"
 msgstr "%s:n aktivointi epäonnistui: tuntematon virhe\n"
 
-#: session/vino-session.c:231
+#: ../session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
 msgstr "Etätyöpöydän palvelimen aktivointi epäonnistui: liian monta yritystä\n"
 
-#: session/vino-session.c:295
+#: ../session/vino-session.c:295
 msgid "Starting remote desktop server"
 msgstr "Käynnistetään etätyöpöydän palvelinta"
 
-#: session/vino-session.c:300
+#: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Etätyöpöydän palvelinta ei käynnistetä"
