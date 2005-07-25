@@ -1,3 +1,17 @@
+2005-07-25  Mark McLoughlin  <mark@skynet.ie>
+
+	Use DamageReportDeltaRectangles rather than
+	DamageReportRawRectangles, hopefully speeding things
+	up a tad.
+
+	* server/vino-fb.c:
+	(vino_fb_xdamage_idle_handler): correctly subtract
+	the updated region from the damage region *before*
+	calling CopyArea in order to avoid a race condition.
+	(vino_fb_xdamage_event_filter): add a small bit more
+	debug spew.
+	(vino_fb_init_xdamage): use DamageReportDeltaRectangles
+
 2005-07-18  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	* configure.in: Added "th" (Thai) to ALL_LINGUAS.

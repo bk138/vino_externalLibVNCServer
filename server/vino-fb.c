@@ -565,12 +565,19 @@ vino_fb_xdamage_idle_handler (VinoFB *vfb)
   gdk_region_get_rectangles (vfb->priv->pending_damage, &damage, &n_rects);
 
   xdamage.x      = damage->x;
-  xdamage.y      = damage->x;
-  xdamage.width  = damage->x;
-  xdamage.height = damage->x;
+  xdamage.y      = damage->y;
+  xdamage.width  = damage->width;
+  xdamage.height = damage->height;
 
   dprintf (POLLING, "Updating damaged region in idle: %d %d %dx%d\n",
 	   damage->x, damage->y, damage->width, damage->height);
+
+  /* subtract damage from server */
+  XFixesSetRegion (vfb->priv->xdisplay, vfb->priv->xdamage_region, &xdamage, 1);
+  XDamageSubtract (vfb->priv->xdisplay,
+		   vfb->priv->xdamage,
+		   vfb->priv->xdamage_region,
+		   None);
 
   gdk_error_trap_push ();
 
@@ -613,13 +620,6 @@ vino_fb_xdamage_idle_handler (VinoFB *vfb)
   else
     vfb->priv->damage_region = gdk_region_rectangle (damage);
 
-  /* subtract damage from server */
-  XFixesSetRegion (vfb->priv->xdisplay, vfb->priv->xdamage_region, &xdamage, 1);
-  XDamageSubtract (vfb->priv->xdisplay,
-		   vfb->priv->xdamage,
-		   vfb->priv->xdamage_region,
-		   None);
-
   emit_damage_notify (vfb);
 
  out:
@@ -661,8 +661,9 @@ vino_fb_xdamage_event_filter (GdkXEvent *xevent,
   damage.width  = notify->area.width;
   damage.height = notify->area.height;
 
-  dprintf (POLLING, "Got DamageNotify event: %d %d %dx%d\n",
-	   damage.x, damage.y, damage.width, damage.height);
+  dprintf (POLLING, "Got DamageNotify event: %d %d %dx%d, more = %s, level = %d\n",
+	   damage.x, damage.y, damage.width, damage.height,
+	   notify->more ? "(true)" : "(false)", notify->level);
 
   gdk_region_union_with_rect (vfb->priv->pending_damage, &damage);
 
@@ -692,7 +693,7 @@ vino_fb_init_xdamage (VinoFB *vfb)
 
   vfb->priv->xdamage = XDamageCreate (vfb->priv->xdisplay,
 				      GDK_WINDOW_XWINDOW (vfb->priv->root_window),
-				      XDamageReportRawRectangles);
+				      XDamageReportDeltaRectangles);
   if (vfb->priv->xdamage == None)
     return;
 
