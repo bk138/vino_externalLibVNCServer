@@ -1,3 +1,32 @@
+Vino 2.11.90
+============
+
+  Fixes
+
+   + Performance improvement using DamageReportDeltaRectangles (Mark)
+   + Plug a leak (Kjartan Maraas)
+
+  Translators
+
+   + Rostislav "zbrox" Raykov (bg)
+   + Miloslav Trmac (cs)
+   + Martin Willemoes Hansen (da)
+   + Hendrik Richter (de)
+   + Adam Weinberger (en_CA)
+   + Francisco Javier F. Serrador (es)
+   + Priit Laes (et)
+   + Ilkka Tuohela (fi)
+   + Ignacio Casal Quinteiro (gl)
+   + Ankit Patel (gu)
+   + Oldie (he)
+   + Kjartan Maraas (nb, no)
+   + Ronald van Engelen (nl)
+   + Marcel Telka (sk)
+   + Elian Myftiu (sq)
+   + Theppitak Karoonboonyanan (th)
+   + Clytie Siddall (vi)
+   + Chi-Wei Chen (zh_TW)
+
 Vino 2.11.1.2
 =============
 
