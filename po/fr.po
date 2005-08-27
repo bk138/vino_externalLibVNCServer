@@ -1,16 +1,17 @@
 # French translation of vino.
+# Copyright (C) 2004-2005 The Free Software Foundation, Inc.
 # This file is distributed under the same license as the vino package.
-# Copyright (C) 2004 The Free Software Foundation, Inc.
 #
 # Audrey Simons <asimons@redhat.com>, 2004.
+# Christophe Merlet (RedFox) <redfox@redfoxcenter.org>, 2005.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vino 2.7.92\n"
+"Project-Id-Version: vino 2.11.93\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-30 07:11+0000\n"
-"PO-Revision-Date: 2004-08-18 00:39+0200\n"
-"Last-Translator: Audrey Simons <asimons@redhat.com>\n"
+"POT-Creation-Date: 2005-08-27 15:29+0200\n"
+"PO-Revision-Date: 2005-08-27 15:24+0200\n"
+"Last-Translator: Christophe Merlet (RedFox) <redfox@redfoxcenter.org>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +27,7 @@ msgid ""
 "There was an error displaying help:\n"
 "%s"
 msgstr ""
-"Impossible d'afficher l'aide :\n"
+"Impossible d'afficher l'aide :\n"
 "%s"
 
 #: capplet/vino-preferences.desktop.in.in.h:1
@@ -118,11 +119,11 @@ msgstr "Couleur de l'URL"
 msgid "The color of the URL's label"
 msgstr "La couleur de l'étiquette de l'URL"
 
-#: server/vino-fb.c:947 server/vino-prompt.c:144 server/vino-server.c:851
+#: server/vino-fb.c:954 server/vino-prompt.c:144 server/vino-server.c:850
 msgid "Screen"
 msgstr "Écran"
 
-#: server/vino-fb.c:948
+#: server/vino-fb.c:955
 msgid "The screen to be monitored"
 msgstr "L'écran à contrôler"
 
@@ -138,7 +139,7 @@ msgstr ""
 msgid "The screen on which to display the prompt"
 msgstr "L'écran sur lequel afficher l'invite"
 
-#: server/vino-prompt.c:385
+#: server/vino-prompt.c:390
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -176,55 +177,55 @@ msgstr "_Autoriser"
 msgid "_Refuse"
 msgstr "_Refuser"
 
-#: server/vino-server.c:852
+#: server/vino-server.c:851
 msgid "The screen for which to create a VNC server"
 msgstr "L'écran pour lequel créer un serveur VNC"
 
-#: server/vino-server.c:859
+#: server/vino-server.c:858
 msgid "On Hold"
 msgstr "En attente"
 
-#: server/vino-server.c:860
+#: server/vino-server.c:859
 msgid "Place all clients on hold"
 msgstr "Mettre tous les clients en attente"
 
-#: server/vino-server.c:867
+#: server/vino-server.c:866
 msgid "Prompt enabled"
 msgstr "Invite activée"
 
-#: server/vino-server.c:868
+#: server/vino-server.c:867
 msgid "Prompt the user about connection attempts"
 msgstr "Afficher à l'utilisateur les essais de connexions"
 
-#: server/vino-server.c:875
+#: server/vino-server.c:874
 msgid "View Only"
 msgstr "Vue seule"
 
-#: server/vino-server.c:876
+#: server/vino-server.c:875
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Refuser l'entrée clavier/pointeur aux clients"
 
-#: server/vino-server.c:883
+#: server/vino-server.c:882
 msgid "Require Encryption"
 msgstr "Requiert le chiffrement"
 
-#: server/vino-server.c:884
+#: server/vino-server.c:883
 msgid "Require clients to use encryption"
 msgstr "Requiert les clients d'utiliser le chiffrement"
 
-#: server/vino-server.c:891
+#: server/vino-server.c:890
 msgid "Authentication methods"
 msgstr "Méthodes d'authentification"
 
-#: server/vino-server.c:892
+#: server/vino-server.c:891
 msgid "The authentication methods this server should allow"
 msgstr "Les méthodes d'authentification autorisées par ce serveur"
 
-#: server/vino-server.c:900
+#: server/vino-server.c:899
 msgid "VNC Password"
 msgstr "Mot de passe VNC"
 
-#: server/vino-server.c:901
+#: server/vino-server.c:900
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
@@ -276,10 +277,10 @@ msgstr ""
 #: server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are required to be able support "
-"encyrption. It is highly recommended that you use a client which supports "
+"encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
-"Si vrai, les utilisateurs à distance accédant au bureau doivent pouvoir "
+"Si vrai, les utilisateurs distants accédant au bureau doivent pouvoir "
 "supporter le chiffrement. Il est hautement recommandé que vous utilisiez un "
 "client qui supporte le chiffrement à moins que le réseau en question soit de "
 "confiance."
