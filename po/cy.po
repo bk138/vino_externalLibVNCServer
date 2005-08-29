@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-02-09 08:06+0000\n"
-"PO-Revision-Date: 2005-02-09 23:00+0000\n"
+"POT-Creation-Date: 2005-08-29 14:02+0100\n"
+"PO-Revision-Date: 2005-08-29 14:04+0100\n"
 "Last-Translator: Rhys Jones <rhys@sucs.org>\n"
 "Language-Team: Cymraeg <gnome-cy@pengwyn.linux.org.uk>\n"
 "MIME-Version: 1.0\n"
@@ -121,11 +121,11 @@ msgstr "lliw'r LAU"
 msgid "The color of the URL's label"
 msgstr "Lliw label y LAU"
 
-#: server/vino-fb.c:947 server/vino-prompt.c:144 server/vino-server.c:851
+#: server/vino-fb.c:954 server/vino-prompt.c:144 server/vino-server.c:850
 msgid "Screen"
 msgstr "Sgrîn"
 
-#: server/vino-fb.c:948
+#: server/vino-fb.c:955
 msgid "The screen to be monitored"
 msgstr "Y sgrîn i'w arolygu"
 
@@ -141,7 +141,7 @@ msgstr ""
 msgid "The screen on which to display the prompt"
 msgstr "Y sgrîn i ddangos yr anogwr arni"
 
-#: server/vino-prompt.c:385
+#: server/vino-prompt.c:390
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -178,55 +178,55 @@ msgstr "Gad_ael"
 msgid "_Refuse"
 msgstr "Gwr_thod"
 
-#: server/vino-server.c:852
+#: server/vino-server.c:851
 msgid "The screen for which to create a VNC server"
 msgstr "Y sgrîn i greu gweinydd VNC ar ei chyfer"
 
-#: server/vino-server.c:859
+#: server/vino-server.c:858
 msgid "On Hold"
 msgstr "Yn Aros"
 
-#: server/vino-server.c:860
+#: server/vino-server.c:859
 msgid "Place all clients on hold"
 msgstr "Gosod pob cleient ar aros"
 
-#: server/vino-server.c:867
+#: server/vino-server.c:866
 msgid "Prompt enabled"
 msgstr "Annog wedi ei alluogi"
 
-#: server/vino-server.c:868
+#: server/vino-server.c:867
 msgid "Prompt the user about connection attempts"
 msgstr "Annog y defnyddwyr am geisiadau cysylltu"
 
-#: server/vino-server.c:875
+#: server/vino-server.c:874
 msgid "View Only"
 msgstr "Gweld yn Unig"
 
-#: server/vino-server.c:876
+#: server/vino-server.c:875
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Rhwystro mewnbwn bysellfwrdd/pwyntydd gan y cleientau"
 
-#: server/vino-server.c:883
+#: server/vino-server.c:882
 msgid "Require Encryption"
 msgstr "Mynnu Amgryptiad"
 
-#: server/vino-server.c:884
+#: server/vino-server.c:883
 msgid "Require clients to use encryption"
 msgstr "Mynnu i gleientiau ddefnyddio amgryptiad"
 
-#: server/vino-server.c:891
+#: server/vino-server.c:890
 msgid "Authentication methods"
 msgstr "Dulliau dilysiant"
 
-#: server/vino-server.c:892
+#: server/vino-server.c:891
 msgid "The authentication methods this server should allow"
 msgstr "Y dulliau dilysiant ddylai'r gweinydd ganiatau"
 
-#: server/vino-server.c:900
+#: server/vino-server.c:899
 msgid "VNC Password"
 msgstr "Cyfrinair VNC"
 
-#: server/vino-server.c:901
+#: server/vino-server.c:900
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
@@ -262,8 +262,8 @@ msgid ""
 "when access is not password protected."
 msgstr ""
 "Os yn wir, ni fydd defnyddwyr pell yn gallu cyrchu eu penbwrdd nes bod y "
-"defnyddiwr ar y gweinydd yn caniatáu’r cysylltiad. Argymhellir hyn, yn enwedig "
-"pan fod posib cael mynediad heb gyfrinair."
+"defnyddiwr ar y gweinydd yn caniatáu’r cysylltiad. Argymhellir hyn, yn "
+"enwedig pan fod posib cael mynediad heb gyfrinair."
 
 #: server/vino-server.schemas.in.h:6
 msgid ""
@@ -277,7 +277,7 @@ msgstr ""
 #: server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are required to be able support "
-"encyrption. It is highly recommended that you use a client which supports "
+"encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
 "Os yn wir, bydd rhaid i ddefnyddwyr pell sydd yn cyrchu'r penbwrdd fedru "
@@ -322,8 +322,8 @@ msgid ""
 "encoded."
 msgstr ""
 "Y cyfrinair bydd y defnyddiwr pell yn cael ei annog amdano os mai'r dull "
-"\"vnc\" o ddilysiant sydd yn cael ei ddefnyddio. Mae'r cyfrinair benodwyd gan "
-"yr allwedd wedi ei amgodio sail64. "
+"\"vnc\" o ddilysiant sydd yn cael ei ddefnyddio. Mae'r cyfrinair benodwyd "
+"gan yr allwedd wedi ei amgodio sail64. "
 
 #: server/vino-server.schemas.in.h:14
 msgid ""
@@ -373,4 +373,3 @@ msgstr "Cychwyn gweinydd Penbwrdd Pell"
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Ddim yn cychwyn gweinydd Penbwrdd Pell"
-
