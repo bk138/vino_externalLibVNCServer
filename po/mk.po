@@ -1,21 +1,24 @@
+# translation of mk.po to Macedonian
 # English translation of PACKAGE.
 # Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Томислав Марковски <tome@users.ossm.org.mk>, 2004.
-# 
-# 
-# 
+# Арангел Ангов <ufo@linux.net.mk>, 2005.
+#
+#
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: vino\n"
+"Project-Id-Version: mk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-07-02 06:23+0000\n"
-"PO-Revision-Date: 2005-07-02 12:27+0200\n"
-"Last-Translator: Томислав Марковски <tome@users.ossm.org.mk>\n"
-"Language-Team: English <i18n-nb@lister.ping.uio.no>\n"
+"PO-Revision-Date: 2005-09-04 16:45+0200\n"
+"Last-Translator: Арангел Ангов <ufo@linux.net.mk>\n"
+"Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
 
 #: ../capplet/vino-preferences.c:807
 msgid "Send this command by email"
@@ -36,7 +39,7 @@ msgstr "Далечна работна површина"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
-msgstr "Подесете ги параметрите за далечен пристап на Вашата работна површина"
+msgstr "Поставете ги параметрите за далечен пристап на Вашата работна површина"
 
 #: ../capplet/vino-preferences.glade.h:1
 msgid "    "
@@ -64,11 +67,11 @@ msgstr "_Прашај за потврда"
 
 #: ../capplet/vino-preferences.glade.h:7
 msgid "Allow other users to _view your desktop"
-msgstr "Дозволи им на корисниците да ја _гледаат Вашата работна површина"
+msgstr "Дозволи им на корисниците да ја _гледаат мојата работна површина"
 
 #: ../capplet/vino-preferences.glade.h:8
 msgid "Remote Desktop Preferences"
-msgstr "Параметри за далечна работна површина"
+msgstr "Преференци за далечна работна површина"
 
 #: ../capplet/vino-preferences.glade.h:9
 msgid "Some of these preferences are locked down"
@@ -76,8 +79,7 @@ msgstr "Некои од овие параметри се заклучени"
 
 #: ../capplet/vino-preferences.glade.h:10
 msgid "Users can view your desktop using this command:"
-msgstr ""
-"Корисниците можат да ј гледаат Вашата работна околина со следнава команда:"
+msgstr "Корисниците можат да ј гледаат Вашата работна околина со следнава команда:"
 
 #: ../capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
@@ -85,7 +87,7 @@ msgstr "Кога корисникот ќе се обиде да ја гледа 
 
 #: ../capplet/vino-preferences.glade.h:12
 msgid "_Allow other users to control your desktop"
-msgstr "_Дозволи им на корисниците да ја контролираат Вашата работна површина"
+msgstr "_Дозволи им на корисниците да ја контролираат мојата работна површина"
 
 #: ../capplet/vino-preferences.glade.h:13
 msgid "_Password:"
@@ -101,7 +103,7 @@ msgstr "Адреса"
 
 #: ../capplet/vino-url.c:159
 msgid "The address pointed to by the widget"
-msgstr "Адресата која ја покажува виџетот"
+msgstr "Адресата која ја покажува копчето"
 
 #: ../capplet/vino-url.c:166
 msgid "Tooltip"
@@ -159,12 +161,11 @@ msgstr ""
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
-msgstr ""
-"Корисник на друг компјутер се обидува да ја гледа Вашата работна површина"
+msgstr "Корисник на друг компјутер се обидува да ја гледа Вашата работна површина"
 
 #: ../server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
-msgstr "Дали сакате да им дадете дозвола за тоа?"
+msgstr "Дали сакате да му дозволите?"
 
 #: ../server/vino-prompt.glade.h:4
 msgid "Question"
