@@ -1,0 +1,355 @@
+# Persian translation of vino.
+# Copyright (C) 2005 Sharif FarsiWeb, Inc.
+# This file is distributed under the same license as the vino package.
+# Elnaz Sarbar <elnaz@farsiweb.info>, 2005.
+# Meelad Zakaria <meelad@farsiweb.info>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vino HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-08-28 23:42+0000\n"
+"PO-Revision-Date: 2005-09-01 15:03+0430\n"
+"Last-Translator: Meelad Zakaria <meelad@farsiweb.info>\n"
+"Language-Team: Persian <farsi@lists.sharif.edu>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../capplet/vino-preferences.c:807
+msgid "Send this command by email"
+msgstr "فرستادن این فرمان با پست الکترونیکی"
+
+#: ../capplet/vino-preferences.c:842
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"خطایی هنگام نمایش راهنما رخ داد\n"
+"%s"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:1
+msgid "Remote Desktop"
+msgstr "رومیزی دوردست"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "ترجیحات دسترسی رومیزی دوردست‌تان را تنظیم کنید"
+
+#: ../capplet/vino-preferences.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../capplet/vino-preferences.glade.h:2
+msgid "        "
+msgstr "        "
+
+#: ../capplet/vino-preferences.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: ../capplet/vino-preferences.glade.h:4
+msgid "<b>Security</b>"
+msgstr "<b>امنیت</b>"
+
+#: ../capplet/vino-preferences.glade.h:5
+msgid "<b>Sharing</b>"
+msgstr "<b>اشتراک‌گذاری</b>"
+
+#: ../capplet/vino-preferences.glade.h:6
+msgid "A_sk you for confirmation"
+msgstr "برای تأیید از شما _سئوال شود"
+
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Allow other users to _view your desktop"
+msgstr "به کاربران دیگر اجازه‌ی _نمایش رومیزی شما داده شود"
+
+#: ../capplet/vino-preferences.glade.h:8
+msgid "Remote Desktop Preferences"
+msgstr "ترجیحات رومیزی دوردست"
+
+#: ../capplet/vino-preferences.glade.h:9
+msgid "Some of these preferences are locked down"
+msgstr "بعضی از این ترجیحات قفل شده‌اند"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid "Users can view your desktop using this command:"
+msgstr "کاربران با استفاده از این فرمان می‌توانند رومیزی شما را نمایش دهند:"
+
+#: ../capplet/vino-preferences.glade.h:11
+msgid "When a user tries to view or control your desktop:"
+msgstr "وقتی که یک کاربر تلاش می‌کند رومیزی شما را نمایش دهند یا کنترل کند:"
+
+#: ../capplet/vino-preferences.glade.h:12
+msgid "_Allow other users to control your desktop"
+msgstr "به کاربران دیگر _اجازه‌ی کنترل رومیزی شما داده شود"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid "_Password:"
+msgstr "_گذرواژه:"
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "_Require the user to enter this password:"
+msgstr "_لازم باشد کاربر این گذرواژه را وارد کند:"
+
+#: ../capplet/vino-url.c:158
+msgid "Address"
+msgstr "نشانی"
+
+#: ../capplet/vino-url.c:159
+msgid "The address pointed to by the widget"
+msgstr "نشانی‌ای که ویجت به آن اشاره می‌کند"
+
+#: ../capplet/vino-url.c:166
+msgid "Tooltip"
+msgstr "راهنمای آنی"
+
+#: ../capplet/vino-url.c:167
+msgid "A tooltip for this URL"
+msgstr "راهنمای آنی برای این نشانی اینترنتی"
+
+#: ../capplet/vino-url.c:173
+msgid "URL color"
+msgstr "رنگ نشانی اینترنتی"
+
+#: ../capplet/vino-url.c:174
+msgid "The color of the URL's label"
+msgstr "رنگ برچسب نشانی اینترنتی"
+
+#: ../server/vino-fb.c:954 ../server/vino-prompt.c:144
+#: ../server/vino-server.c:850
+msgid "Screen"
+msgstr "صفحه"
+
+#: ../server/vino-fb.c:955
+msgid "The screen to be monitored"
+msgstr "صفحه‌ای که پایش شود"
+
+#: ../server/vino-main.c:78
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr "کارگزار X شما از ضمیمه‌ی XTest پشتیبانی نمی‌کند ـ دسترسی رومیزی دوردست فقط نمایش خواهد بود\n"
+
+#: ../server/vino-prompt.c:145
+msgid "The screen on which to display the prompt"
+msgstr "صفحه‌ای که محاوره‌ی کسب تکلیف در آن نمایش داده شود"
+
+#: ../server/vino-prompt.c:390
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr "کاربری از کامپیوتر «%s» تلاش می‌کند رومیزی شما را از دوردست نمایش دهد یا کنترل کند."
+
+#: ../server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "<big><b>کاربر دیگری در حال تلاش برای نمایش رومیزی شما است.</b></big>"
+
+#: ../server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr "کاربری از یک کامپیوتر دیگر تلاش می‌کند رومیزی شما را از دوردست نمایش دهد یا کنترل کند."
+
+#: ../server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr "آیا مایلید به آن‌ها اجازه‌ی این کار را دهید؟"
+
+#: ../server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "پرسش"
+
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
+msgid "_Allow"
+msgstr "_اجازه"
+
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
+msgid "_Refuse"
+msgstr "_رد"
+
+#: ../server/vino-server.c:851
+msgid "The screen for which to create a VNC server"
+msgstr "صفحه‌ای که کارگزار VNC روی آن ایجاد می‌شود"
+
+#: ../server/vino-server.c:858
+msgid "On Hold"
+msgstr "پشت خط"
+
+#: ../server/vino-server.c:859
+msgid "Place all clients on hold"
+msgstr "پشت خط نگه داشتن همه‌ی کارگیران"
+
+#: ../server/vino-server.c:866
+msgid "Prompt enabled"
+msgstr "کسب تکلیف به کار انداخته شد"
+
+#: ../server/vino-server.c:867
+msgid "Prompt the user about connection attempts"
+msgstr "کسب تکلیف از کاربر درباره‌ی تلاش‌های اتصال"
+
+#: ../server/vino-server.c:874
+msgid "View Only"
+msgstr "فقط نمایش"
+
+#: ../server/vino-server.c:875
+msgid "Disallow keyboard/pointer input from clients"
+msgstr "اجازه‌ندادن به ورودی‌های اشاره‌گر/صفحه‌کلید کارگیران"
+
+#: ../server/vino-server.c:882
+msgid "Require Encryption"
+msgstr "الزامی کردن رمزنگاری"
+
+#: ../server/vino-server.c:883
+msgid "Require clients to use encryption"
+msgstr "ملزم کردن کارگیران به استفاده از رمزنگاری"
+
+#: ../server/vino-server.c:890
+msgid "Authentication methods"
+msgstr "روش‌های تأیید هویت"
+
+#: ../server/vino-server.c:891
+msgid "The authentication methods this server should allow"
+msgstr "روش‌های تأیید هویت مجاز این کارگزار"
+
+#: ../server/vino-server.c:899
+msgid "VNC Password"
+msgstr "گذرواژه‌ی VNC"
+
+#: ../server/vino-server.c:900
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr ""
+"گذرواژه‌ی (کدگذاری شده با base64) استفاده شده برای انواعی از تأیید هویت که از روش VncAuth استفاده می‌کنند"
+
+#: ../server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "روش‌های تأیید هویت مجاز"
+
+#: ../server/vino-server.schemas.in.h:2
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "آدرس پست الکترونیکی‌ای که نشانی اینترنتی رومیزی باید به آن فرستاده شود"
+
+#: ../server/vino-server.schemas.in.h:3
+msgid "Enable remote desktop access"
+msgstr "به کار انداختن دسترسی رومیزی دوردست"
+
+#: ../server/vino-server.schemas.in.h:4
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+"اگر درست باشد، اجازه‌ی دسترسی دوردست به رومیزی از طریق قرارداد RFB را می‌دهد. آن وقت کاربران "
+"ماشین‌های دوردست می‌توانند با استفاده از vncviewer به رومیزی متصل شوند."
+
+#: ../server/vino-server.schemas.in.h:5
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"اگر درست باشد، کاربران دوردست هنگام دسترسی به رومیزی، اجازه‌ی دسترسی را ندارند مگر این که کاربر ماشین"
+" میزبان اتصال را تأیید کند. برای مواقعی که دسترسی با گذرواژه محافظت نشده است توصیه می‌شود."
+
+#: ../server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr ""
+"اگر درست باشد، کاربران دوردست هنگام دسترسی به رومیزی تنها اجازه‌ی نمایش رومیزی را دارند."
+" کاربران دوردست قادر با استفاده از موشی یا صفحه‌کلید نخواهندبود."
+
+#: ../server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encryption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+"اگر درست باشد، کاربران دوردست هنگام دسترسی به رومیزی ملزم به پشتیبانی رمزنگاری هستند. "
+"به شدت توصیه می‌شود که شما از کارگیری که از رمزنگاری پشتیبانی می‌کنند استفاده کنید مگر"
+"این که شبکه‌ی متصل شونده مورد اعتماد باشد."
+
+#: ../server/vino-server.schemas.in.h:8
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+"روش‌های تأیید هویتی که کاربران دوردست می‌توانند با آن‌ها به رومیزی دسترسی داشته باشند فهرست می‌کند."
+"دو روش تأیید هویت ممکن است: «vnc» که قبل از اتصال از کاربر دوردست تقاضای گذرواژه می‌کند (گذرواژه "
+"با کلید vnc_password تعریف می‌شود) و «هیچ‌کدام» که به هر کاربر دوردستی اجازه‌ی اتصال می‌دهد."
+
+
+#: ../server/vino-server.schemas.in.h:9
+msgid "Only allow remote users to view the desktop"
+msgstr "فقط کاربران دوردست مجاز با نمایش رومیزی باشند"
+
+#: ../server/vino-server.schemas.in.h:10
+msgid "Password required for \"vnc\" authentication"
+msgstr "برای تأیید هویت «vcn» گذرواژه لازم است"
+
+#: ../server/vino-server.schemas.in.h:11
+msgid "Prompt the user before completing a connection"
+msgstr "کسب تکلیف از کاربر قبل از تکمیل اتصال"
+
+#: ../server/vino-server.schemas.in.h:12
+msgid "Require encryption"
+msgstr "ملزم کردن رمزنگاری"
+
+#: ../server/vino-server.schemas.in.h:13
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+"گذرواژه‌ای که از کاربر دوردست تقاضا خواهد شد اگر از روش تأیید هویت «vnc» استفاده"
+" شود. گذرواژه تعریف شده با کلید با base64 کدگذاری می‌شود."
+
+#: ../server/vino-server.schemas.in.h:14
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+"این کلید آدرس پست الکترونیکی‌ای را تعریف می‌کند که در صورتی که کاربر روی نشانی اینترنتی "
+"محاوره‌ی ترجیحات رومیزی دوردست کلیک کند،‌ نشانی اینترنتی رومیزی دوردست به‌ آن فرستاده می‌شود."
+
+#: ../server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "کارگزار رومیزی دوردست از قبل در حال اجرا است؛ در حال خروج ...\n"
+
+#: ../server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr "اشکال هنگام ثبت کارگزار رومیزی دوردست با فعال‌سازی بونوبو؛ در حال خروج ...\n"
+
+#: ../session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr "کارگزار رومیزی دوردست مرد، در حال راه‌اندازی مجدد\n"
+
+#: ../session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "فعال‌سازی %s شکست خورد: %s\n"
+
+#: ../session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "فعال‌سازی %s شکست خورد: خطای نامعلوم\n"
+
+#: ../session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr "فعال‌سازی کارگزار رومیزی دوردست شکست خورد: دفعات بسیاری تلاش شد\n"
+
+#: ../session/vino-session.c:295
+msgid "Svncviewertarting remote desktop server"
+msgstr "در حال آغاز کارگزار رومیزی دوردست"
+
+#: ../session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr "کارگزار رومیزی دوردست آغاز نمی‌شود"
