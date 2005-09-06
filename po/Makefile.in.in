@@ -32,13 +32,13 @@ VPATH = @srcdir@
 prefix = @prefix@
 exec_prefix = @exec_prefix@
 datadir = @datadir@
-datarootdir = @datarootdir@
 libdir = @libdir@
 localedir = $(libdir)/locale
 gnulocaledir = $(datadir)/locale
 gettextsrcdir = $(datadir)/glib-2.0/gettext/po
 subdir = po
 install_sh = @install_sh@
+mkdir_p = @mkdir_p@
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 
 INSTALL = @INSTALL@
@@ -243,13 +243,17 @@ update-po: Makefile
 # and Intltool tags (enclosed in square brackets), and appending a full
 # relative path to them
 POTFILES: POTFILES.in
-	( posrcprefix='$(top_srcdir)/'; \
+	( if test 'x$(srcdir)' != 'x.'; then \
+	    posrcprefix='$(top_srcdir)/'; \
+	  else \
+	    posrcprefix="../"; \
+	  fi; \
 	  rm -f $@-t $@ \
-	    && (sed -e '/^#/d' 					\
-		    -e 's/^[[].*] *//' 				\
-		    -e '/^[ 	]*$$/d' 			\
-		    -e "s@^@	$$posrcprefix@" $(srcdir)/$@.in	\
-		| sed -e '$$!s/$$/ \\/') > $@-t \
+	    && (sed -e '/^#/d' 						\
+		    -e "s/^\[.*\] +//" 					\
+		    -e '/^[ 	]*$$/d' 				\
+		    -e "s@.*@	$$posrcprefix& \\\\@" < $(srcdir)/$@.in	\
+		| sed -e '$$s/\\$$//') > $@-t \
 	    && chmod a-w $@-t \
 	    && mv $@-t $@ )
 
