@@ -49,6 +49,10 @@
  */
 #define VINO_IS_LATIN1_KEYSYM(k) ((k) != NoSymbol && ((k) & 0x0f00) == 0)
 
+#define VINO_IS_MODIFIER_KEYSYM(k) (((k) >= XK_Shift_L && (k) <= XK_Hyper_R) || \
+                                     (k) == XK_Mode_switch                   || \
+                                     (k) == XK_ISO_Level3_Shift)
+
 typedef enum
 {
   VINO_LEFT_SHIFT  = 1 << 0,
@@ -300,7 +304,7 @@ vino_input_handle_key_event (GdkScreen *screen,
    * and ignore key releases. The exception is modifiers.
    */
 
-  if (!key_press && !(keysym >= XK_Shift_L && keysym <= XK_Hyper_R))
+  if (!key_press && !VINO_IS_MODIFIER_KEYSYM (keysym))
     return;
 
   xdisplay = GDK_DISPLAY_XDISPLAY (gdk_screen_get_display (screen));
@@ -348,7 +352,7 @@ vino_input_handle_key_event (GdkScreen *screen,
 
 	  XTestFakeKeyEvent (xdisplay, keycode, key_press, CurrentTime);
 
-	  if (key_press && !(keysym >= XK_Shift_L && keysym <= XK_Hyper_R))
+	  if (key_press && !VINO_IS_MODIFIER_KEYSYM (keysym))
 	    {
 	      XTestFakeKeyEvent (xdisplay, keycode, FALSE, CurrentTime);
 	    }
