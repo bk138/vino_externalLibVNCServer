@@ -3,6 +3,8 @@
 	Based on patch from  Alexandre Oliva <oliva@lsd.ic.unicamp.br>
 	Fixes keyboard brokeness with some X server configurations.
 
+	https://bugzilla.redhat.com/158713
+
 	* server/vino-input.c: (vino_input_handle_key_event): don't
 	send press/release pairs for each XK_Mode_switch and XK_ISO_Level3_Shift
 	keypress.
