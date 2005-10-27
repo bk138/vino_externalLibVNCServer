@@ -1,0 +1,337 @@
+# translation of vino.HEAD.po to Kurdish
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Erdal Ronahi <erdal.ronahi@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vino.HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-09-09 13:44+0200\n"
+"PO-Revision-Date: 2005-10-15 16:21+0200\n"
+"Last-Translator: Erdal Ronahi <erdal.ronahi@gmail.com>\n"
+"Language-Team: Kurdish <gnu-ku-wergerandin@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+"Plural-Forms: nplurals=2; plural= n != 1\n"
+
+#: ../capplet/vino-preferences.c:807
+msgid "Send this command by email"
+msgstr ""
+
+#: ../capplet/vino-preferences.c:842
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+
+#: ../capplet/vino-preferences.desktop.in.in.h:1
+msgid "Remote Desktop"
+msgstr "Sermaseya Dûr"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr ""
+
+#: ../capplet/vino-preferences.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../capplet/vino-preferences.glade.h:2
+msgid "        "
+msgstr ""
+
+#: ../capplet/vino-preferences.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: ../capplet/vino-preferences.glade.h:4
+msgid "<b>Security</b>"
+msgstr "<b>Ewlekarî</b>"
+
+#: ../capplet/vino-preferences.glade.h:5
+msgid "<b>Sharing</b>"
+msgstr "<b>Parvekirin</b>"
+
+#: ../capplet/vino-preferences.glade.h:6
+msgid "A_sk you for confirmation"
+msgstr ""
+
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Allow other users to _view your desktop"
+msgstr ""
+
+#: ../capplet/vino-preferences.glade.h:8
+msgid "Remote Desktop Preferences"
+msgstr "Vebijêrkên Sermaseya Dûr"
+
+#: ../capplet/vino-preferences.glade.h:9
+msgid "Some of these preferences are locked down"
+msgstr ""
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid "Users can view your desktop using this command:"
+msgstr ""
+
+#: ../capplet/vino-preferences.glade.h:11
+msgid "When a user tries to view or control your desktop:"
+msgstr ""
+
+#: ../capplet/vino-preferences.glade.h:12
+msgid "_Allow other users to control your desktop"
+msgstr ""
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid "_Password:"
+msgstr "Şî_fre:"
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "_Require the user to enter this password:"
+msgstr ""
+
+#: ../capplet/vino-url.c:158
+msgid "Address"
+msgstr "Navnîşan"
+
+#: ../capplet/vino-url.c:159
+msgid "The address pointed to by the widget"
+msgstr ""
+
+#: ../capplet/vino-url.c:166
+msgid "Tooltip"
+msgstr ""
+
+#: ../capplet/vino-url.c:167
+msgid "A tooltip for this URL"
+msgstr ""
+
+#: ../capplet/vino-url.c:173
+msgid "URL color"
+msgstr ""
+
+#: ../capplet/vino-url.c:174
+msgid "The color of the URL's label"
+msgstr ""
+
+#: ../server/vino-fb.c:954 ../server/vino-prompt.c:144
+#: ../server/vino-server.c:850
+msgid "Screen"
+msgstr "Dîmen"
+
+#: ../server/vino-fb.c:955
+msgid "The screen to be monitored"
+msgstr ""
+
+#: ../server/vino-main.c:78
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+
+#: ../server/vino-prompt.c:145
+msgid "The screen on which to display the prompt"
+msgstr ""
+
+#: ../server/vino-prompt.c:390
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+
+#: ../server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr ""
+
+#: ../server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+
+#: ../server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr ""
+
+#: ../server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "Pirs"
+
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
+msgid "_Allow"
+msgstr "_Destûr bide"
+
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
+msgid "_Refuse"
+msgstr "_Red bike"
+
+#: ../server/vino-server.c:851
+msgid "The screen for which to create a VNC server"
+msgstr ""
+
+#: ../server/vino-server.c:858
+msgid "On Hold"
+msgstr ""
+
+#: ../server/vino-server.c:859
+msgid "Place all clients on hold"
+msgstr ""
+
+#: ../server/vino-server.c:866
+msgid "Prompt enabled"
+msgstr ""
+
+#: ../server/vino-server.c:867
+msgid "Prompt the user about connection attempts"
+msgstr ""
+
+#: ../server/vino-server.c:874
+msgid "View Only"
+msgstr ""
+
+#: ../server/vino-server.c:875
+msgid "Disallow keyboard/pointer input from clients"
+msgstr ""
+
+#: ../server/vino-server.c:882
+msgid "Require Encryption"
+msgstr ""
+
+#: ../server/vino-server.c:883
+msgid "Require clients to use encryption"
+msgstr ""
+
+#: ../server/vino-server.c:890
+msgid "Authentication methods"
+msgstr ""
+
+#: ../server/vino-server.c:891
+msgid "The authentication methods this server should allow"
+msgstr ""
+
+#: ../server/vino-server.c:899
+msgid "VNC Password"
+msgstr ""
+
+#: ../server/vino-server.c:900
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:2
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:3
+msgid "Enable remote desktop access"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:4
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:5
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encryption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:8
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:9
+msgid "Only allow remote users to view the desktop"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:10
+msgid "Password required for \"vnc\" authentication"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:11
+msgid "Prompt the user before completing a connection"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:12
+msgid "Require encryption"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:13
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:14
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+
+#: ../server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr ""
+
+#: ../server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr ""
+
+#: ../session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr ""
+
+#: ../session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr ""
+
+#: ../session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr ""
+
+#: ../session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr ""
+
+#: ../session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr ""
+
+#: ../session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr ""
+

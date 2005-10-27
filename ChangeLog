@@ -1,3 +1,7 @@
+2005-10-27  Erdal Ronahi  <erdal.ronahi@gmail.com>
+
+	* configure.in: Added ku (Kurdish) to ALL_LINGUAS
+
 2005-09-26  Mark McLoughlin  <mark@skynet.ie>
 
 	Based on patch from  Alexandre Oliva <oliva@lsd.ic.unicamp.br>
