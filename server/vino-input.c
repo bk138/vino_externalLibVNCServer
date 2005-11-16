@@ -45,9 +45,9 @@
 
 #include "vino-util.h"
 
-/* See <X11/keysymdef.h> - "Latin 1: Byte 3 = 0"
+/* See <X11/keysymdef.h> - "Latin 1: Byte 3 and 4 = 0"
  */
-#define VINO_IS_LATIN1_KEYSYM(k) ((k) != NoSymbol && ((k) & 0x0f00) == 0)
+#define VINO_IS_LATIN1_KEYSYM(k) ((k) != NoSymbol && ((k) & 0xff00) == 0)
 
 #define VINO_IS_MODIFIER_KEYSYM(k) (((k) >= XK_Shift_L && (k) <= XK_Hyper_R) || \
                                      (k) == XK_Mode_switch                   || \

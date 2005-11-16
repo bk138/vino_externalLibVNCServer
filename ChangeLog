@@ -1,3 +1,11 @@
+2005-11-16  Mark McLoughlin  <mark@skynet.ie>
+
+	Fix crash with unicode mapped keysyms (bug #321516)
+	Patch from Gary Coady <gary@lyranthe.org>
+
+	* server/vino-input.c: update VINO_IS_LATIN1_KEYSYM
+	to not match keysyms with byte 4 set.
+
 2005-10-27  Erdal Ronahi  <erdal.ronahi@gmail.com>
 
 	* configure.in: Added ku (Kurdish) to ALL_LINGUAS
