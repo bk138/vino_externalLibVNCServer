@@ -29,6 +29,7 @@
 #ifdef VINO_ENABLE_HTTP_SERVER
 #include "vino-http.h"
 #endif
+#include "vino-mdns.h"
 #include "vino-input.h"
 #include "vino-cursor.h"
 #include "vino-prompt.h"
@@ -696,6 +697,8 @@ vino_server_init_from_screen (VinoServer *server,
 #ifdef VINO_ENABLE_HTTP_SERVER
   server->priv->http = vino_http_get (rfb_screen->rfbPort);
 #endif
+
+  vino_mdns_add_service ("_rfb._tcp", rfb_screen->rfbPort);
 }
 
 static void

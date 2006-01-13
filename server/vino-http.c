@@ -34,6 +34,7 @@
 #include <libgnomeui/gnome-icon-theme.h>
 
 #include "vino-util.h"
+#include "vino-mdns.h"
 
 #define VINO_CLIENT_HTML_FILE "vino-client.html"
 #define VINO_CLIENT_ARCHIVE   "vino-client.jar"
@@ -670,6 +671,8 @@ vino_http_create_listening_socket (VinoHTTP *http)
 					   G_IO_IN|G_IO_PRI,
 					   (GIOFunc) vino_http_new_connection_pending,
 					   http);
+
+  vino_mdns_add_service ("_http._tcp", http_port);
 }
 
 static void

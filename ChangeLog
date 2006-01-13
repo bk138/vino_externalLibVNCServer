@@ -1,5 +1,33 @@
 2006-01-13  Mark McLoughlin  <mark@skynet.ie>
 
+	Add support for publishing over mDNS. Based on patch from very
+	patient Sebastien Estienne <sebastien.estienne@gmail.com> in
+	bug #159874
+
+	* configure.in: add --enable-avahi
+	
+	* server/Makefile.am: add vino-mdns.[ch] and build against
+	avahi if enabled
+	
+	* server/vino-mdns.[ch]:
+	(vino_mdns_add_service),
+	(vino_mdns_start),
+	(vino_mdns_stop): add internal publishing API.
+	
+	* server/vino-main.c: (main): start and stop the mDNS support
+	before and after entering the mainloop.
+	
+	* server/vino-server.c: (vino_server_init_from_screen): advertise
+	the rfb service
+	
+	* server/vino-http.c: (vino_http_create_listening_socket): advertise
+	the http service
+	
+	* server/vino-util.[ch]: (vino_setup_debug_flags): add mdns
+	debugging flag
+
+2006-01-13  Mark McLoughlin  <mark@skynet.ie>
+
 	* configure.in: bump version to 2.13.1 - 2.12 development
 	continues on the gnome-2-12 branch
 

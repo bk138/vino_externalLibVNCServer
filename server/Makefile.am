@@ -7,6 +7,7 @@ INCLUDES = \
 	$(VINO_SERVER_CFLAGS) \
 	$(VINO_DEBUG_CFLAGS) \
 	$(VINO_HTTP_CFLAGS) \
+	$(AVAHI_CFLAGS) \
 	$(LIBGNUTLS_CFLAGS) \
 	$(LIBGCRYPT_CFLAGS) \
 	$(WARN_CFLAGS) \
@@ -20,6 +21,7 @@ libexec_PROGRAMS = vino-server
 
 vino_server_LDADD = \
 	$(VINO_SERVER_LIBS) \
+	$(AVAHI_LIBS) \
 	$(LIBGNUTLS_LIBS) \
 	$(LIBGCRYPT_LIBS) \
 	$(X_LIBS) $(XTEST_LIBS) $(XSHM_LIBS) $(XDAMAGE_LIBS) \
@@ -45,6 +47,8 @@ vino_server_SOURCES = \
 	vino-main.c \
 	vino-marshal.c \
 	vino-marshal.h \
+	vino-mdns.c \
+	vino-mdns.h \
 	vino-prefs.c \
 	vino-prefs.h \
 	vino-prompt.c \

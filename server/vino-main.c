@@ -22,12 +22,14 @@
 
 #include <config.h>
 
+#include <gtk/gtk.h>
+
 #include "vino-input.h"
+#include "vino-mdns.h"
 #include "vino-server.h"
 #include "vino-shell.h"
 #include "vino-prefs.h"
 #include "vino-util.h"
-#include <gtk/gtk.h>
 
 #ifdef HAVE_GNUTLS
 #include <gnutls/gnutls.h>
@@ -86,7 +88,11 @@ main (int argc, char **argv)
   for (i = 0; i < n_screens; i++)
     vino_prefs_create_server (gdk_display_get_screen (display, i));
 
+  vino_mdns_start ();
+
   gtk_main ();
+
+  vino_mdns_stop ();
 
   vino_prefs_shutdown ();
 
