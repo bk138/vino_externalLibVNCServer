@@ -1,3 +1,7 @@
+2006-01-15  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: Version 2.13.5.
+
 2006-01-13  Mark McLoughlin  <mark@skynet.ie>
 
 	Add support for publishing over mDNS. Based on patch from very

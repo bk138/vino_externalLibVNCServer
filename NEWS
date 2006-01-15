@@ -1,3 +1,22 @@
+Vino 2.13.5
+===========
+
+  Features
+
+    + Publish services over mDNS (Sebastien Estienne, Mark McLoughlin)
+
+  Fixes
+
+    + Fix keyboard brokeness with some X server configurations (Alexandre Oliva)
+    + Fix crash with unicode mapped keysyms (Gary Coady)
+
+  Translators
+
+    + Rostislav Raykov (bg)
+    + Iñaki Larrañaga Murgoitio (eu)
+    + Alessio Frusciante (it)
+    + Erdal Ronahi (ku)
+
 Vino 2.12.0
 ===========
 
