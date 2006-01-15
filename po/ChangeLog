@@ -1,3 +1,7 @@
+2006-01-15  Mark McLoughlin  <mark@skynet.ie>
+
+	* POTFILES.in: add server/vino-mdns.c
+
 ==================== 2.13.5 ====================
 
 2005-11-14  Alexander Shopov  <ash@contact.bg>

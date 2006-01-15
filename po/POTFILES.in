@@ -6,6 +6,7 @@ capplet/vino-preferences.glade
 capplet/vino-url.c
 server/vino-fb.c
 server/vino-main.c
+server/vino-mdns.c
 server/vino-prompt.c
 server/vino-prompt.glade
 server/vino-server.c
