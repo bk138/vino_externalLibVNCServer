@@ -1,14 +1,14 @@
 # English/Canada translation of vino.
-# Copyright (C) 2004 Adam Weinberger and the GNOME Foundation
+# Copyright (C) 2004-2006 Adam Weinberger and the GNOME Foundation
 # This file is distributed under the same licence as the vino package.
-# Adam Weinberger <adamw@gnome.org>, 2004.
+# Adam Weinberger <adamw@gnome.org>, 2004, 2005, 2006.
 # 
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-23 13:20-0400\n"
+"POT-Creation-Date: 2006-01-15 23:35-0500\n"
 "PO-Revision-Date: 2004-05-23 14:24-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: Canadian English <adamw@gnome.org>\n"
@@ -117,22 +117,40 @@ msgstr "URL colour"
 msgid "The color of the URL's label"
 msgstr "The colour of the URL's label"
 
-#: ../server/vino-fb.c:953 ../server/vino-prompt.c:144
-#: ../server/vino-server.c:850
+#: ../server/vino-fb.c:954 ../server/vino-prompt.c:144
+#: ../server/vino-server.c:853
 msgid "Screen"
 msgstr "Screen"
 
-#: ../server/vino-fb.c:954
+#: ../server/vino-fb.c:955
 msgid "The screen to be monitored"
 msgstr "The screen to be monitored"
 
-#: ../server/vino-main.c:78
+#: ../server/vino-main.c:80
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
+
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#: ../server/vino-mdns.c:59
+msgid "vino-mdns:showusername"
+msgstr "vino-mdns:showusername"
+
+#.
+#. * Translators: this string is used ONLY if you
+#. * translated "vino-mdns:showusername" to "1"
+#.
+#: ../server/vino-mdns.c:70
+#, c-format
+msgid "%s's remote desktop"
+msgstr "%s's remote desktop"
 
 #: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -167,63 +185,63 @@ msgstr "Do you want to allow them to do so?"
 msgid "Question"
 msgstr "Question"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
 msgid "_Allow"
 msgstr "_Allow"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "_Refuse"
 
-#: ../server/vino-server.c:851
+#: ../server/vino-server.c:854
 msgid "The screen for which to create a VNC server"
 msgstr "The screen for which to create a VNC server"
 
-#: ../server/vino-server.c:858
+#: ../server/vino-server.c:861
 msgid "On Hold"
 msgstr "On Hold"
 
-#: ../server/vino-server.c:859
+#: ../server/vino-server.c:862
 msgid "Place all clients on hold"
 msgstr "Place all clients on hold"
 
-#: ../server/vino-server.c:866
+#: ../server/vino-server.c:869
 msgid "Prompt enabled"
 msgstr "Prompt enabled"
 
-#: ../server/vino-server.c:867
+#: ../server/vino-server.c:870
 msgid "Prompt the user about connection attempts"
 msgstr "Prompt the user about connection attempts"
 
-#: ../server/vino-server.c:874
+#: ../server/vino-server.c:877
 msgid "View Only"
 msgstr "View Only"
 
-#: ../server/vino-server.c:875
+#: ../server/vino-server.c:878
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Disallow keyboard/pointer input from clients"
 
-#: ../server/vino-server.c:882
+#: ../server/vino-server.c:885
 msgid "Require Encryption"
 msgstr "Require Encryption"
 
-#: ../server/vino-server.c:883
+#: ../server/vino-server.c:886
 msgid "Require clients to use encryption"
 msgstr "Require clients to use encryption"
 
-#: ../server/vino-server.c:890
+#: ../server/vino-server.c:893
 msgid "Authentication methods"
 msgstr "Authentication methods"
 
-#: ../server/vino-server.c:891
+#: ../server/vino-server.c:894
 msgid "The authentication methods this server should allow"
 msgstr "The authentication methods this server should allow"
 
-#: ../server/vino-server.c:899
+#: ../server/vino-server.c:902
 msgid "VNC Password"
 msgstr "VNC Password"
 
-#: ../server/vino-server.c:900
+#: ../server/vino-server.c:903
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
