@@ -1,18 +1,19 @@
 # Vino eesti keele tõlge.
-# Estonian translation of Vino
+# Estonian translation of Vino.
 #
 # Copyright (C) 2005 Free Software Foundation, Inc.
 # This file is distributed under the same license as the Vino package.
 #
 # Priit Laes <amd store20 com>, 2005
 # Ain Vagula <avagula gmail com>, 2005
+# Ivar Smolin <okul linux ee>, 2006
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Vino\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-05-23 14:08+0000\n"
-"PO-Revision-Date: 2005-08-20 12:16+0300\n"
+"PO-Revision-Date: 2006-01-13 21:26+0200\n"
 "Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +31,7 @@ msgid ""
 "There was an error displaying help:\n"
 "%s"
 msgstr ""
-"Vea kuvamisel tekkis viga:\n"
+"Abiteabe kuvamisel tekkis viga:\n"
 "%s"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
