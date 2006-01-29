@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.11.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-07-18 15:31+0700\n"
-"PO-Revision-Date: 2005-07-18 16:42+0700\n"
+"POT-Creation-Date: 2006-01-29 17:20+0700\n"
+"PO-Revision-Date: 2006-01-29 17:37+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <l10n@opentle.org>\n"
 "MIME-Version: 1.0\n"
@@ -117,22 +117,40 @@ msgstr "สีของ URL"
 msgid "The color of the URL's label"
 msgstr "สีของป้าย URL"
 
-#: server/vino-fb.c:953 server/vino-prompt.c:144
-#: server/vino-server.c:850
+#: server/vino-fb.c:954 server/vino-prompt.c:144
+#: server/vino-server.c:853
 msgid "Screen"
 msgstr "สกรีน"
 
-#: server/vino-fb.c:954
+#: server/vino-fb.c:955
 msgid "The screen to be monitored"
 msgstr "สกรีนที่จะเฝ้ามอง"
 
-#: server/vino-main.c:78
+#: server/vino-main.c:80
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
 "X server ของคุณไม่สนับสนุนส่วนขยาย XTest - "
 "การเข้าถึงพื้นโต๊ะจากระยะไกลจะเป็นแบบมองได้เท่านั้น\n"
+
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#: server/vino-mdns.c:59
+msgid "vino-mdns:showusername"
+msgstr "0"
+
+#.
+#. * Translators: this string is used ONLY if you
+#. * translated "vino-mdns:showusername" to "1"
+#.
+#: server/vino-mdns.c:70
+#, c-format
+msgid "%s's remote desktop"
+msgstr "พื้นโต๊ะระยะไกลของ %s"
 
 #: server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -143,8 +161,7 @@ msgstr "สกรีนที่จะแสดงคำถาม"
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
-msgstr ""
-"มีผู้ใช้จากเครื่อง '%s' กำลังพยายามมองหรือควบคุมพื้นโต๊ะของคุณจากระยะไกล"
+msgstr "มีผู้ใช้จากเครื่อง '%s' กำลังพยายามมองหรือควบคุมพื้นโต๊ะของคุณจากระยะไกล"
 
 #: server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
@@ -154,8 +171,7 @@ msgstr "<big><b>มีผู้ใช้อื่นกำลังพยาย�
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
-msgstr ""
-"มีผู้ใช้จากเครื่องอื่นกำลังพยายามมองหรือควบคุมพื้นโต๊ะของคุณจากระยะไกล"
+msgstr "มีผู้ใช้จากเครื่องอื่นกำลังพยายามมองหรือควบคุมพื้นโต๊ะของคุณจากระยะไกล"
 
 #: server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
@@ -165,68 +181,67 @@ msgstr "คุณจะอนุญาตหรือไม่?"
 msgid "Question"
 msgstr "คำถาม"
 
-#: server/vino-prompt.glade.h:5 server/vino-util.c:64
+#: server/vino-prompt.glade.h:5 server/vino-util.c:63
 msgid "_Allow"
 msgstr "_อนุญาต"
 
-#: server/vino-prompt.glade.h:6 server/vino-util.c:65
+#: server/vino-prompt.glade.h:6 server/vino-util.c:64
 msgid "_Refuse"
 msgstr "_ปฏิเสธ"
 
-#: server/vino-server.c:851
+#: server/vino-server.c:854
 msgid "The screen for which to create a VNC server"
 msgstr "สกรีนที่จะสร้างเซิร์ฟเวอร์ VNC"
 
-#: server/vino-server.c:858
+#: server/vino-server.c:861
 msgid "On Hold"
 msgstr "ยับยั้งไว้"
 
-#: server/vino-server.c:859
+#: server/vino-server.c:862
 msgid "Place all clients on hold"
 msgstr "ยับยั้งไคลเอนต์ทั้งหมดไว้"
 
-#: server/vino-server.c:866
+#: server/vino-server.c:869
 msgid "Prompt enabled"
 msgstr "เปิดใช้การถาม"
 
-#: server/vino-server.c:867
+#: server/vino-server.c:870
 msgid "Prompt the user about connection attempts"
 msgstr "ถามผู้ใช้เมื่อมีความพยายามเชื่อมต่อ"
 
-#: server/vino-server.c:874
+#: server/vino-server.c:877
 msgid "View Only"
 msgstr "มองอย่างเดียว"
 
-#: server/vino-server.c:875
+#: server/vino-server.c:878
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "ไม่รับข้อมูลแป้นพิมพ์/เมาส์จากไคลเอนต์"
 
-#: server/vino-server.c:882
+#: server/vino-server.c:885
 msgid "Require Encryption"
 msgstr "บังคับการเข้ารหัส"
 
-#: server/vino-server.c:883
+#: server/vino-server.c:886
 msgid "Require clients to use encryption"
 msgstr "บังคับให้ไคลเอนต์ต้องเข้ารหัสข้อมูล"
 
-#: server/vino-server.c:890
+#: server/vino-server.c:893
 msgid "Authentication methods"
 msgstr "วิธีตรวจสอบสิทธิ์"
 
-#: server/vino-server.c:891
+#: server/vino-server.c:894
 msgid "The authentication methods this server should allow"
 msgstr "วิธีตรวจสอบสิทธิ์ทั้งหมดที่เซิร์ฟเวอร์นี้อนุญาต"
 
-#: server/vino-server.c:899
+#: server/vino-server.c:902
 msgid "VNC Password"
 msgstr "รหัสผ่าน VNC"
 
-#: server/vino-server.c:900
+#: server/vino-server.c:903
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
-msgstr ""
-"รหัสผ่าน (ลงรหัสแบบ base64) ที่จะใช้ตรวจสอบสิทธิ์ด้วยวิธี VncAuth"
+msgstr "รหัสผ่าน (ลงรหัสแบบ base64) ที่จะใช้ตรวจสอบสิทธิ์ด้วยวิธี VncAuth"
 
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -254,9 +269,8 @@ msgid ""
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
 msgstr ""
-"ถ้าเป็นค่าจริง จะไม่อนุญาตให้ผู้ใช้จากระยะไกลเข้าถึงพื้นโต๊ะ "
-"จนกว่าผู้ใช้บนเครื่องโฮสต์จะตอบรับ ขอแนะนำให้ใช้วิธีนี้ "
-"โดยเฉพาะเมื่อการเข้าถึงไม่มีการป้องกันไว้ด้วยรหัสผ่าน"
+"ถ้าเป็นค่าจริง จะไม่อนุญาตให้ผู้ใช้จากระยะไกลเข้าถึงพื้นโต๊ะ จนกว่าผู้ใช้บนเครื่องโฮสต์จะตอบรับ "
+"ขอแนะนำให้ใช้วิธีนี้ โดยเฉพาะเมื่อการเข้าถึงไม่มีการป้องกันไว้ด้วยรหัสผ่าน"
 
 #: server/vino-server.schemas.in.h:6
 msgid ""
@@ -285,9 +299,8 @@ msgid ""
 "user to connect."
 msgstr ""
 "รายการวิธีการตรวจสอบสิทธิ์ที่จะใช้ตรวจสอบผู้ใช้จากระยะไกลในการเข้าถึงพื้นโต๊ะ "
-"ค่าที่เป็นไปได้มีสองค่า; \"vnc\" จะถามรหัสผ่านกับผู้ใช้ระยะไกล "
-"(ตัวรหัสผ่านจะเก็บไว้ที่คีย์ vnc_password) ก่อนเชื่อมต่อ และ \"none\" "
-"จะอนุญาตให้ผู้ใช้ระยะไกลที่ไหนก็ได้เชื่อมต่อทั้งหมด"
+"ค่าที่เป็นไปได้มีสองค่า; \"vnc\" จะถามรหัสผ่านกับผู้ใช้ระยะไกล (ตัวรหัสผ่านจะเก็บไว้ที่คีย์ "
+"vnc_password) ก่อนเชื่อมต่อ และ \"none\" จะอนุญาตให้ผู้ใช้ระยะไกลที่ไหนก็ได้เชื่อมต่อทั้งหมด"
 
 #: server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
@@ -360,4 +373,3 @@ msgstr "กำลังเริ่มใช้งานเซิร์ฟเว
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "จะไม่เรียกใช้เซิร์ฟเวอร์พื้นโต๊ะระยะไกล"
-
