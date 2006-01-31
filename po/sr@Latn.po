@@ -1,5 +1,5 @@
 # Serbian translation of vino
-# Courtesy of Prevod.org team (http://prevod.org/) -- 2003, 2004, 2005.
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2003, 2004, 2005, 2006.
 #
 # This file is distributed under the same license as the vino package.
 #
@@ -10,14 +10,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-09-03 22:05+0200\n"
+"POT-Creation-Date: 2006-01-31 03:03+0100\n"
 "PO-Revision-Date: 2005-09-03 22:05+0200\n"
 "Last-Translator: Andrija Zarić <andrija@gmail.com>\n"
 "Language-Team: Serbian (sr) <gnom@prevod.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3;    plural=n%10==1 && n%100!=11 ? 0 :    n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3;    plural=n%10==1 && n%100!=11 ? 0 :    n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: ../capplet/vino-preferences.c:807
 msgid "Send this command by email"
@@ -121,21 +122,39 @@ msgid "The color of the URL's label"
 msgstr "Boja oznake adrese"
 
 #: ../server/vino-fb.c:954 ../server/vino-prompt.c:144
-#: ../server/vino-server.c:850
+#: ../server/vino-server.c:853
 msgid "Screen"
 msgstr "Ekran"
 
 #: ../server/vino-fb.c:955
 msgid "The screen to be monitored"
-msgstr "Ekran koji da pratim"
+msgstr "Ekran koji da nadgledam"
 
-#: ../server/vino-main.c:78
+#: ../server/vino-main.c:80
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
 "Vaš XServer ne podržava proširenje XTest — moguće je samo gledati udaljenu "
 "radnu površ\n"
+
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#: ../server/vino-mdns.c:59
+msgid "vino-mdns:showusername"
+msgstr "1"
+
+#.
+#. * Translators: this string is used ONLY if you
+#. * translated "vino-mdns:showusername" to "1"
+#.
+# note(slobo): ovo nama ne treba...
+#: ../server/vino-mdns.c:70
+msgid "%s's remote desktop"
+msgstr "Udaljena radna površ"
 
 #: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -170,63 +189,63 @@ msgstr "Želite li da mu to dopustite?"
 msgid "Question"
 msgstr "Pitanje"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
 msgid "_Allow"
 msgstr "_Dopusti"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "_Odbij"
 
-#: ../server/vino-server.c:851
+#: ../server/vino-server.c:854
 msgid "The screen for which to create a VNC server"
 msgstr "Ekran za koji da obrazuje VNC server"
 
-#: ../server/vino-server.c:858
+#: ../server/vino-server.c:861
 msgid "On Hold"
 msgstr "Zadrži"
 
-#: ../server/vino-server.c:859
+#: ../server/vino-server.c:862
 msgid "Place all clients on hold"
 msgstr "Smesti sve klijente na čekanje"
 
-#: ../server/vino-server.c:866
+#: ../server/vino-server.c:869
 msgid "Prompt enabled"
 msgstr "Upit uključen"
 
-#: ../server/vino-server.c:867
+#: ../server/vino-server.c:870
 msgid "Prompt the user about connection attempts"
 msgstr "Pitaj korisnika za pokušaje povezivanja"
 
-#: ../server/vino-server.c:874
+#: ../server/vino-server.c:877
 msgid "View Only"
 msgstr "Samo gledanje"
 
-#: ../server/vino-server.c:875
+#: ../server/vino-server.c:878
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Isključi unos sa tastature/pokazivača klijenta"
 
-#: ../server/vino-server.c:882
+#: ../server/vino-server.c:885
 msgid "Require Encryption"
 msgstr "Obavezno šifrovanje"
 
-#: ../server/vino-server.c:883
+#: ../server/vino-server.c:886
 msgid "Require clients to use encryption"
 msgstr "Zahtevaj da klijenti koriste šifrovanje"
 
-#: ../server/vino-server.c:890
+#: ../server/vino-server.c:893
 msgid "Authentication methods"
 msgstr "Načini identifikacije"
 
-#: ../server/vino-server.c:891
+#: ../server/vino-server.c:894
 msgid "The authentication methods this server should allow"
 msgstr "Načini identifikacije koje ovaj server dopušta"
 
-#: ../server/vino-server.c:899
+#: ../server/vino-server.c:902
 msgid "VNC Password"
 msgstr "VNC lozinka"
 
-#: ../server/vino-server.c:900
+#: ../server/vino-server.c:903
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
