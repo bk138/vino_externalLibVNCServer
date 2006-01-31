@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-31 03:03+0100\n"
+"POT-Creation-Date: 2006-01-31 11:16+0100\n"
 "PO-Revision-Date: 2005-09-03 22:05+0200\n"
 "Last-Translator: Andrija Zarić <andrija@gmail.com>\n"
 "Language-Team: Serbian (sr) <gnom@prevod.org>\n"
@@ -147,14 +147,14 @@ msgstr ""
 msgid "vino-mdns:showusername"
 msgstr "1"
 
+# note(slobo): ovo nama ne treba...nejasni su u ovom trenutku :(
 #.
 #. * Translators: this string is used ONLY if you
 #. * translated "vino-mdns:showusername" to "1"
 #.
-# note(slobo): ovo nama ne treba...
 #: ../server/vino-mdns.c:70
 msgid "%s's remote desktop"
-msgstr "Udaljena radna površ"
+msgstr "Udaljena radna površ korisnika %s"
 
 #: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
