@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-08-22 23:41+0900\n"
-"PO-Revision-Date: 2005-08-05 17:26+0900\n"
-"Last-Translator: Young-Ho Cha <ganadist at mizi.com>\n"
+"POT-Creation-Date: 2006-02-04 20:21+0900\n"
+"PO-Revision-Date: 2006-02-04 20:22+0900\n"
+"Last-Translator: Young-Ho Cha <ganadist@gmail.com>\n"
 "Language-Team: GNOME Korea <gnome-kr-hackers@lists.kldp.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -117,7 +117,7 @@ msgid "The color of the URL's label"
 msgstr "URL 레이블의 색상"
 
 #: ../server/vino-fb.c:954 ../server/vino-prompt.c:144
-#: ../server/vino-server.c:850
+#: ../server/vino-server.c:853
 msgid "Screen"
 msgstr "화면"
 
@@ -125,13 +125,32 @@ msgstr "화면"
 msgid "The screen to be monitored"
 msgstr "감시할 화면"
 
-#: ../server/vino-main.c:78
+#: ../server/vino-main.c:80
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
 "X서버에서 XTest 확장기능을 지원하지 않습니다 - 원격 데스크탑에 보기전용으로"
 "만 접근할 수 있습니다\n"
+
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#: ../server/vino-mdns.c:59
+msgid "vino-mdns:showusername"
+msgstr "vino-mdns:showusername"
+
+#.
+#. * Translators: this string is used ONLY if you
+#. * translated "vino-mdns:showusername" to anything
+#. * other than "1"
+#.
+#: ../server/vino-mdns.c:71
+#, c-format
+msgid "%s's remote desktop"
+msgstr "%s의 원격 데스크탑"
 
 #: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -162,63 +181,63 @@ msgstr "허용하겠습니까?"
 msgid "Question"
 msgstr "질문"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
 msgid "_Allow"
 msgstr "허용(_A)"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "거부(_R)"
 
-#: ../server/vino-server.c:851
+#: ../server/vino-server.c:854
 msgid "The screen for which to create a VNC server"
 msgstr "VNC 서버가 만들어 지는 화면"
 
-#: ../server/vino-server.c:858
+#: ../server/vino-server.c:861
 msgid "On Hold"
 msgstr "보류"
 
-#: ../server/vino-server.c:859
+#: ../server/vino-server.c:862
 msgid "Place all clients on hold"
 msgstr "모든 클라이언트를 보류합니다"
 
-#: ../server/vino-server.c:866
+#: ../server/vino-server.c:869
 msgid "Prompt enabled"
 msgstr "물어보기"
 
-#: ../server/vino-server.c:867
+#: ../server/vino-server.c:870
 msgid "Prompt the user about connection attempts"
 msgstr "연결을 시도한 사용자에 대해서 물어봅니다"
 
-#: ../server/vino-server.c:874
+#: ../server/vino-server.c:877
 msgid "View Only"
 msgstr "보기 전용"
 
-#: ../server/vino-server.c:875
+#: ../server/vino-server.c:878
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "클라이언트로 부터 키보드/마우스 입력 허용하지 않습니다"
 
-#: ../server/vino-server.c:882
+#: ../server/vino-server.c:885
 msgid "Require Encryption"
 msgstr "암호화 요구"
 
-#: ../server/vino-server.c:883
+#: ../server/vino-server.c:886
 msgid "Require clients to use encryption"
 msgstr "클라이언트에 암호화를 쓰도록 요구합니다"
 
-#: ../server/vino-server.c:890
+#: ../server/vino-server.c:893
 msgid "Authentication methods"
 msgstr "인증 방법"
 
-#: ../server/vino-server.c:891
+#: ../server/vino-server.c:894
 msgid "The authentication methods this server should allow"
 msgstr "이 서버에서 허용할 인증 방법"
 
-#: ../server/vino-server.c:899
+#: ../server/vino-server.c:902
 msgid "VNC Password"
 msgstr "VNC 열쇠글"
 
-#: ../server/vino-server.c:900
+#: ../server/vino-server.c:903
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
