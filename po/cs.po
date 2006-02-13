@@ -1,15 +1,15 @@
 # Czech translation of vino.
-# Copyright (C) 2004, 2005 vino'S COPYRIGHT HOLDER
-# Copyright (C) 2004, 2005 Miloslav Trmac <mitr@volny.cz>
+# Copyright (C) 2004, 2005, 2006 vino'S COPYRIGHT HOLDER
+# Copyright (C) 2004, 2005, 2006 Miloslav Trmac <mitr@volny.cz>
 # This file is distributed under the same license as the vino package.
-# Miloslav Trmac <mitr@volny.cz>, 2004, 2005.
+# Miloslav Trmac <mitr@volny.cz>, 2004 - 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-29 06:53+0000\n"
-"PO-Revision-Date: 2005-05-29 14:12+0200\n"
+"POT-Creation-Date: 2006-02-10 00:29+0100\n"
+"PO-Revision-Date: 2006-02-13 05:28+0100\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -117,23 +117,42 @@ msgstr "Barva URL"
 msgid "The color of the URL's label"
 msgstr "Barva popisku s URL"
 
-#: ../server/vino-fb.c:953 ../server/vino-prompt.c:144
-#: ../server/vino-server.c:850
+#: ../server/vino-fb.c:954 ../server/vino-prompt.c:144
+#: ../server/vino-server.c:853
 msgid "Screen"
 msgstr "Obrazovka"
 
-#: ../server/vino-fb.c:954
+#: ../server/vino-fb.c:955
 msgid "The screen to be monitored"
 msgstr "Obrazovka, kterou sledovat"
 
 # FIXME: s/XServer/X server/
-#: ../server/vino-main.c:78
+#: ../server/vino-main.c:80
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
 "Váš X server nepodporuje rozšíření XTest - vzdálený přístup k pracovní ploše "
 "bude jen pro zobrazování\n"
+
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#: ../server/vino-mdns.c:59
+msgid "vino-mdns:showusername"
+msgstr "1"
+
+#.
+#. * Translators: this string is used ONLY if you
+#. * translated "vino-mdns:showusername" to anything
+#. * other than "1"
+#.
+#: ../server/vino-mdns.c:71
+#, c-format
+msgid "%s's remote desktop"
+msgstr ""
 
 #: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -169,63 +188,63 @@ msgstr "Chcete jim to povolit?"
 msgid "Question"
 msgstr "Otázka"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
 msgid "_Allow"
 msgstr "_Povolit"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "_Odmítnout"
 
-#: ../server/vino-server.c:851
+#: ../server/vino-server.c:854
 msgid "The screen for which to create a VNC server"
 msgstr "Obrazovka, pro kterou vytvořit VNC server"
 
-#: ../server/vino-server.c:858
+#: ../server/vino-server.c:861
 msgid "On Hold"
 msgstr "Dočasně odpojit"
 
-#: ../server/vino-server.c:859
+#: ../server/vino-server.c:862
 msgid "Place all clients on hold"
 msgstr "Dočasně odpojit všechny klienty"
 
-#: ../server/vino-server.c:866
+#: ../server/vino-server.c:869
 msgid "Prompt enabled"
 msgstr "Výzva povolena"
 
-#: ../server/vino-server.c:867
+#: ../server/vino-server.c:870
 msgid "Prompt the user about connection attempts"
 msgstr "Vyzvat uživatele při pokusech o připojení"
 
-#: ../server/vino-server.c:874
+#: ../server/vino-server.c:877
 msgid "View Only"
 msgstr "Jen zobrazovat"
 
-#: ../server/vino-server.c:875
+#: ../server/vino-server.c:878
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Zakázat vstup z klávesnice/ukazatele od klientů"
 
-#: ../server/vino-server.c:882
+#: ../server/vino-server.c:885
 msgid "Require Encryption"
 msgstr "Vyžadovat šifrování"
 
-#: ../server/vino-server.c:883
+#: ../server/vino-server.c:886
 msgid "Require clients to use encryption"
 msgstr "Vyžadovat, aby klienti používali šifrování"
 
-#: ../server/vino-server.c:890
+#: ../server/vino-server.c:893
 msgid "Authentication methods"
 msgstr "Metody autentizace"
 
-#: ../server/vino-server.c:891
+#: ../server/vino-server.c:894
 msgid "The authentication methods this server should allow"
 msgstr "Metody autentizace, které má tento server povolit"
 
-#: ../server/vino-server.c:899
+#: ../server/vino-server.c:902
 msgid "VNC Password"
 msgstr "Heslo VNC"
 
-#: ../server/vino-server.c:900
+#: ../server/vino-server.c:903
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
@@ -280,7 +299,10 @@ msgid ""
 "If true, remote users accessing the desktop are required to be able support "
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
-msgstr "Je-li true, vzdálení uživatelé přistupující k pracovní ploše musí podporovat šifrování. Důrazně se doporučuje používat klienta, který podporuje šifrování, ledaže je síť propojující počítače důvěryhodná."
+msgstr ""
+"Je-li true, vzdálení uživatelé přistupující k pracovní ploše musí podporovat "
+"šifrování. Důrazně se doporučuje používat klienta, který podporuje "
+"šifrování, ledaže je síť propojující počítače důvěryhodná."
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
