@@ -2,7 +2,7 @@
 # Copyright (C) 2003, 2004 Free Software Foundation, Inc.
 # This file is distributed under the same license as the vino package.
 # Christian Neumair <chris@gnome-de.org>, 2004.
-# Hendrik Richter <hendi@gnome-de.org>, 2005.
+# Hendrik Richter <hendi@gnome-de.org>, 2005, 2006.
 # 
 # FIXME
 # Manche der GConf-Schemabeschreibungen sind etwas abenteuerlich, sowohl im
@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.7.92\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-08-30 16:39+0200\n"
-"PO-Revision-Date: 2005-08-30 16:42+0200\n"
+"POT-Creation-Date: 2006-02-14 18:39+0100\n"
+"PO-Revision-Date: 2006-02-14 18:40+0100\n"
 "Last-Translator: Hendrik Richter <hendi@gnome-de.org>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -121,7 +121,7 @@ msgid "The color of the URL's label"
 msgstr "Die Farbe der URL-Beschriftung"
 
 #: ../server/vino-fb.c:954 ../server/vino-prompt.c:144
-#: ../server/vino-server.c:850
+#: ../server/vino-server.c:853
 msgid "Screen"
 msgstr "Bildschirm"
 
@@ -129,13 +129,32 @@ msgstr "Bildschirm"
 msgid "The screen to be monitored"
 msgstr "Der zu überwachende Bildschirm"
 
-#: ../server/vino-main.c:78
+#: ../server/vino-main.c:80
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
 "Ihr X-Server unterstützt die XTest-Erweiterung nicht - entfernter Desktop-"
 "Zugriff beschränkt sich auf das Anzeigen\n"
+
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#: ../server/vino-mdns.c:59
+msgid "vino-mdns:showusername"
+msgstr "0"
+
+#.
+#. * Translators: this string is used ONLY if you
+#. * translated "vino-mdns:showusername" to anything
+#. * other than "1"
+#.
+#: ../server/vino-mdns.c:71
+#, c-format
+msgid "%s's remote desktop"
+msgstr "Entfernter Desktop von %s"
 
 #: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -172,64 +191,64 @@ msgstr "Wollen Sie ihm dies gestatten?"
 msgid "Question"
 msgstr "Frage"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
 msgid "_Allow"
 msgstr "_Erlauben"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "_Abweisen"
 
-#: ../server/vino-server.c:851
+#: ../server/vino-server.c:854
 msgid "The screen for which to create a VNC server"
 msgstr "Der Bildschirm, für den ein VNC-Server angelegt werden soll"
 
-#: ../server/vino-server.c:858
+#: ../server/vino-server.c:861
 msgid "On Hold"
 msgstr "Auf warten"
 
-#: ../server/vino-server.c:859
+#: ../server/vino-server.c:862
 msgid "Place all clients on hold"
 msgstr "Alle Clients in die Warteschleife schicken"
 
-#: ../server/vino-server.c:866
+#: ../server/vino-server.c:869
 msgid "Prompt enabled"
 msgstr "Abfrage aktiviert"
 
-#: ../server/vino-server.c:867
+#: ../server/vino-server.c:870
 msgid "Prompt the user about connection attempts"
 msgstr "Den Benutzer bei Verbindungsversuchen rückfragen"
 
-#: ../server/vino-server.c:874
+#: ../server/vino-server.c:877
 msgid "View Only"
 msgstr "Nur anzeigen"
 
-#: ../server/vino-server.c:875
+#: ../server/vino-server.c:878
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Tastatur-/Zeigereingaben durch Clients unterbinden"
 
-#: ../server/vino-server.c:882
+#: ../server/vino-server.c:885
 msgid "Require Encryption"
 msgstr "Verschlüsselung erforderlich machen"
 
-#: ../server/vino-server.c:883
+#: ../server/vino-server.c:886
 msgid "Require clients to use encryption"
 msgstr "Verwenden von Verschlüsselung durch Clients erforderlich machen"
 
-#: ../server/vino-server.c:890
+#: ../server/vino-server.c:893
 msgid "Authentication methods"
 msgstr "Legitimationsmethoden"
 
-#: ../server/vino-server.c:891
+#: ../server/vino-server.c:894
 msgid "The authentication methods this server should allow"
 msgstr "Die Legitimationsmethoden, die dieser Server zulassen soll"
 
-#: ../server/vino-server.c:899
+#: ../server/vino-server.c:902
 msgid "VNC Password"
 msgstr "VNC-Passwort"
 
 # CHECK
-#: ../server/vino-server.c:900
+#: ../server/vino-server.c:903
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"

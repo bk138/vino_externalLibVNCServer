@@ -39,7 +39,9 @@ gnulocaledir = $(datadir)/locale
 gettextsrcdir = $(datadir)/glib-2.0/gettext/po
 subdir = po
 install_sh = @install_sh@
-mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+# Automake >= 1.8 provides @mkdir_p@.
+# Until it can be supposed, use the safe fallback:
+mkdir_p = $(install_sh) -d
 
 INSTALL = @INSTALL@
 INSTALL_DATA = @INSTALL_DATA@
@@ -108,11 +110,7 @@ install-exec:
 install-data: install-data-@USE_NLS@
 install-data-no: all
 install-data-yes: all
-	if test -n "$(MKINSTALLDIRS)"; then \
-	  $(MKINSTALLDIRS) $(DESTDIR)$(datadir); \
-	else \
-	  $(SHELL) $(top_srcdir)/mkinstalldirs $(DESTDIR)$(datadir); \
-	fi
+	$(mkdir_p) $(DESTDIR)$(datadir)
 	@catalogs='$(CATALOGS)'; \
 	for cat in $$catalogs; do \
 	  cat=`basename $$cat`; \
@@ -122,11 +120,7 @@ install-data-yes: all
 	  esac; \
 	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
 	  dir=$(DESTDIR)$$destdir/$$lang/LC_MESSAGES; \
-	  if test -n "$(MKINSTALLDIRS)"; then \
-	    $(MKINSTALLDIRS) $$dir; \
-	  else \
-	    $(SHELL) $(top_srcdir)/mkinstalldirs $$dir; \
-	  fi; \
+	  $(mkdir_p) $$dir; \
 	  if test -r $$cat; then \
 	    $(INSTALL_DATA) $$cat $$dir/$(GETTEXT_PACKAGE).mo; \
 	    echo "installing $$cat as $$dir/$(GETTEXT_PACKAGE).mo"; \
@@ -150,11 +144,7 @@ install-data-yes: all
 	  fi; \
 	done
 	if test "$(PACKAGE)" = "glib"; then \
-	  if test -n "$(MKINSTALLDIRS)"; then \
-	    $(MKINSTALLDIRS) $(DESTDIR)$(gettextsrcdir); \
-	  else \
-	    $(SHELL) $(top_srcdir)/mkinstalldirs $(DESTDIR)$(gettextsrcdir); \
-	  fi; \
+	  $(mkdir_p) $(DESTDIR)$(gettextsrcdir); \
 	  $(INSTALL_DATA) $(srcdir)/Makefile.in.in \
 			  $(DESTDIR)$(gettextsrcdir)/Makefile.in.in; \
 	else \
@@ -190,8 +180,8 @@ mostlyclean:
 clean: mostlyclean
 
 distclean: clean
-	rm -f Makefile Makefile.in POTFILES
-	rm -f *.mo *.msg *.cat *.cat.m $(GMOFILES)
+	rm -f Makefile Makefile.in POTFILES stamp-it
+	rm -f *.mo *.msg *.cat *.cat.m *.gmo
 
 maintainer-clean: distclean
 	@echo "This command is intended for maintainers to use;"
@@ -203,11 +193,12 @@ dist distdir: $(DISTFILES)
 	dists="$(DISTFILES)"; \
 	extra_dists="$(EXTRA_DISTFILES)"; \
 	for file in $$extra_dists; do \
-	  test -f $$file && dists="$$dists $$file"; \
+	  test -f $(srcdir)/$$file && dists="$$dists $(srcdir)/$$file"; \
 	done; \
 	for file in $$dists; do \
-	  ln $(srcdir)/$$file $(distdir) 2> /dev/null \
-	    || cp -p $(srcdir)/$$file $(distdir); \
+	  test -f $$file || file="$(srcdir)/$$file"; \
+	  ln $$file $(distdir) 2> /dev/null \
+	    || cp -p $$file $(distdir); \
 	done
 
 update-po: Makefile
@@ -237,23 +228,15 @@ update-po: Makefile
 	  fi; \
 	done
 
-# POTFILES is created from POTFILES.in by stripping comments, empty lines
-# and Intltool tags (enclosed in square brackets), and appending a full
-# relative path to them
-POTFILES: POTFILES.in
-	( posrcprefix='$(top_srcdir)/'; \
-	  rm -f $@-t $@ \
-	    && (sed -e '/^#/d' 					\
-		    -e 's/^[[].*] *//' 				\
-		    -e '/^[ 	]*$$/d' 			\
-		    -e "s@^@	$$posrcprefix@" $(srcdir)/$@.in	\
-		| sed -e '$$!s/$$/ \\/') > $@-t \
-	    && chmod a-w $@-t \
-	    && mv $@-t $@ )
+Makefile POTFILES: stamp-it
+	@if test ! -f $@; then \
+	  rm -f stamp-it; \
+	  $(MAKE) stamp-it; \
+	fi
 
-Makefile: Makefile.in.in ../config.status POTFILES
+stamp-it: Makefile.in.in ../config.status POTFILES.in
 	cd .. \
-	  && CONFIG_FILES=$(subdir)/$@.in CONFIG_HEADERS= \
+	  && CONFIG_FILES=$(subdir)/Makefile.in CONFIG_HEADERS= CONFIG_LINKS= \
 	       $(SHELL) ./config.status
 
 # Tell versions [3.59,3.63) of GNU make not to export all variables.
