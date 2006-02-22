@@ -1,23 +1,20 @@
 # translation of eu.po to Basque
-# translation of es.po to Basque
-# traducción de es.po al Spanish
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004.
-# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2004.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2004, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-09-08 09:32+0200\n"
-"PO-Revision-Date: 2004-08-27 22:31+0200\n"
-"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
+"POT-Creation-Date: 2006-02-22 18:58+0100\n"
+"PO-Revision-Date: 2006-02-22 18:59+0100\n"
+"Last-Translator: Iñaki Larrañaga <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0.2\n"
+"X-Generator: KBabel 1.10.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ../capplet/vino-preferences.c:807
@@ -122,7 +119,7 @@ msgid "The color of the URL's label"
 msgstr "URL-aren etiketaren kolorea"
 
 #: ../server/vino-fb.c:954 ../server/vino-prompt.c:144
-#: ../server/vino-server.c:850
+#: ../server/vino-server.c:853
 msgid "Screen"
 msgstr "Pantaila"
 
@@ -130,13 +127,32 @@ msgstr "Pantaila"
 msgid "The screen to be monitored"
 msgstr "Monitorizatuko den pantaila"
 
-#: ../server/vino-main.c:78
+#: ../server/vino-main.c:80
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
 "Zure XServer-ek ez du XTest luzapena onartzen - urruneko mahaigaineko "
 "sarbidetza ikusteko soilik izango da\n"
+
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#: ../server/vino-mdns.c:59
+msgid "vino-mdns:showusername"
+msgstr "1"
+
+#.
+#. * Translators: this string is used ONLY if you
+#. * translated "vino-mdns:showusername" to anything
+#. * other than "1"
+#.
+#: ../server/vino-mdns.c:71
+#, c-format
+msgid "%s's remote desktop"
+msgstr "%s(r)en urruneko mahaigaina"
 
 #: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -173,63 +189,63 @@ msgstr "Baimentzea nahi duzu hori egiteko?"
 msgid "Question"
 msgstr "Galdera"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
 msgid "_Allow"
 msgstr "_Baimendu"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "_Debekatu"
 
-#: ../server/vino-server.c:851
+#: ../server/vino-server.c:854
 msgid "The screen for which to create a VNC server"
 msgstr "Pantaila, VNC zerbitzaria sortzeko"
 
-#: ../server/vino-server.c:858
+#: ../server/vino-server.c:861
 msgid "On Hold"
 msgstr "Itxaron"
 
-#: ../server/vino-server.c:859
+#: ../server/vino-server.c:862
 msgid "Place all clients on hold"
 msgstr "Jarri bezero guztiak itxaroten"
 
-#: ../server/vino-server.c:866
+#: ../server/vino-server.c:869
 msgid "Prompt enabled"
 msgstr "Gonbitea aktibatua"
 
-#: ../server/vino-server.c:867
+#: ../server/vino-server.c:870
 msgid "Prompt the user about connection attempts"
 msgstr "Galdetu erabiltzaileari konexio saiakerei buruz"
 
-#: ../server/vino-server.c:874
+#: ../server/vino-server.c:877
 msgid "View Only"
 msgstr "Ikusteko soilik"
 
-#: ../server/vino-server.c:875
+#: ../server/vino-server.c:878
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Ez utzi teklatu/sagu sarrerak bezeroen eskutik"
 
-#: ../server/vino-server.c:882
+#: ../server/vino-server.c:885
 msgid "Require Encryption"
 msgstr "Behartu enkriptazioa"
 
-#: ../server/vino-server.c:883
+#: ../server/vino-server.c:886
 msgid "Require clients to use encryption"
 msgstr "Behartu erabiltzaileei enkripazioa erabiltzea"
 
-#: ../server/vino-server.c:890
+#: ../server/vino-server.c:893
 msgid "Authentication methods"
 msgstr "Autentifikazio-metodoak"
 
-#: ../server/vino-server.c:891
+#: ../server/vino-server.c:894
 msgid "The authentication methods this server should allow"
 msgstr "Zerbitzari honek baimendu ditzakeen autentifikazio-metodoak"
 
-#: ../server/vino-server.c:899
+#: ../server/vino-server.c:902
 msgid "VNC Password"
 msgstr "VNC pasahitza"
 
-#: ../server/vino-server.c:900
+#: ../server/vino-server.c:903
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
@@ -341,8 +357,7 @@ msgstr ""
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr ""
-"Urruneko mahaigaineko zerbitzaria jadanik exekutatzen ari da: irtetzen ...\n"
+msgstr "Urruneko mahaigaineko zerbitzaria jadanik exekutatzen ari da: irtetzen ...\n"
 
 #: ../server/vino-shell.c:79
 msgid ""
@@ -379,3 +394,4 @@ msgstr "Urruneko mahaigaineko zerbitzaria abiarazten"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Ez abiaratzen urruneko mahaigaineko zerbitzaria"
+
