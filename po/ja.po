@@ -1,14 +1,14 @@
 # ja.po for vino
 # Copyright (C) 2004, 2005 THE vino'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the vino package.
-# Satoru SATOH <ss@gnome.gr.jp>, 2004, 2005.
+# Satoru SATOH <ss@gnome.gr.jp>, 2004-2006.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vino 2.11.92\n"
+"Project-Id-Version: vino HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-08-31 00:53+0900\n"
-"PO-Revision-Date: 2005-08-31 00:58+0900\n"
+"POT-Creation-Date: 2006-02-23 21:18+0900\n"
+"PO-Revision-Date: 2006-02-23 21:20+0900\n"
 "Last-Translator: Satrou SATOH <ss@gnome.gr.jp>\n"
 "Language-Team: Japanese <translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -24,8 +24,7 @@ msgstr "このコマンドを電子メールで送信"
 msgid ""
 "There was an error displaying help:\n"
 "%s"
-msgstr ""
-"ヘルプを表示する際にエラーが発生しました:\n"
+msgstr "ヘルプを表示する際にエラーが発生しました:\n"
 "%s"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
@@ -117,7 +116,7 @@ msgid "The color of the URL's label"
 msgstr "URL ラベルの色"
 
 #: ../server/vino-fb.c:954 ../server/vino-prompt.c:144
-#: ../server/vino-server.c:850
+#: ../server/vino-server.c:853
 msgid "Screen"
 msgstr "スクリーン"
 
@@ -125,13 +124,31 @@ msgstr "スクリーン"
 msgid "The screen to be monitored"
 msgstr "モニターされるスクリーン"
 
-#: ../server/vino-main.c:78
+#: ../server/vino-main.c:80
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
-msgstr ""
-"あなたの XServer は XTest 拡張をサポートしていません - リモートデスクトップア"
+msgstr "あなたの XServer は XTest 拡張をサポートしていません - リモートデスクトップア"
 "クセスは見るだけになります\n"
+
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#: ../server/vino-mdns.c:59
+msgid "vino-mdns:showusername"
+msgstr "2"
+
+#.
+#. * Translators: this string is used ONLY if you
+#. * translated "vino-mdns:showusername" to anything
+#. * other than "1"
+#.
+#: ../server/vino-mdns.c:71
+#, c-format
+msgid "%s's remote desktop"
+msgstr "%s のリモートデスクトップ"
 
 #: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -142,21 +159,18 @@ msgstr "プロンプトを表示するスクリーン"
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
-msgstr ""
-"コンピュータ '%s' のユーザーがあなたのデスクトップをリモートから見る/コント"
+msgstr "コンピュータ '%s' のユーザーがあなたのデスクトップをリモートから見る/コント"
 "ロールしようとしています"
 
 #: ../server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr ""
-"<big><b>他のユーザーがあなたのデスクトップを見ようとしています</b></big>"
+msgstr "<big><b>他のユーザーがあなたのデスクトップを見ようとしています</b></big>"
 
 #: ../server/vino-prompt.glade.h:2
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
-msgstr ""
-"他のコンピュータのユーザーがあなたのデスクトップをリモートから見る/コントロー"
+msgstr "他のコンピュータのユーザーがあなたのデスクトップをリモートから見る/コントロー"
 "ルしようとしています"
 
 #: ../server/vino-prompt.glade.h:3
@@ -167,63 +181,63 @@ msgstr "許可しますか?"
 msgid "Question"
 msgstr "質問"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
 msgid "_Allow"
 msgstr "許可(_A)"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "拒否(_R)"
 
-#: ../server/vino-server.c:851
+#: ../server/vino-server.c:854
 msgid "The screen for which to create a VNC server"
 msgstr "VNC サーバーを起動するスクリーン"
 
-#: ../server/vino-server.c:858
+#: ../server/vino-server.c:861
 msgid "On Hold"
 msgstr "ホールド"
 
-#: ../server/vino-server.c:859
+#: ../server/vino-server.c:862
 msgid "Place all clients on hold"
 msgstr "すべてのクライアントをホールド"
 
-#: ../server/vino-server.c:866
+#: ../server/vino-server.c:869
 msgid "Prompt enabled"
 msgstr "プロンプト有効"
 
-#: ../server/vino-server.c:867
+#: ../server/vino-server.c:870
 msgid "Prompt the user about connection attempts"
 msgstr "接続しようとするとプロンプトを表示"
 
-#: ../server/vino-server.c:874
+#: ../server/vino-server.c:877
 msgid "View Only"
 msgstr "見るだけ"
 
-#: ../server/vino-server.c:875
+#: ../server/vino-server.c:878
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "クライアントのキーボード/マウス入力を無効にする"
 
-#: ../server/vino-server.c:882
+#: ../server/vino-server.c:885
 msgid "Require Encryption"
 msgstr "暗号"
 
-#: ../server/vino-server.c:883
+#: ../server/vino-server.c:886
 msgid "Require clients to use encryption"
 msgstr "クライアントの暗号使用を必須にする"
 
-#: ../server/vino-server.c:890
+#: ../server/vino-server.c:893
 msgid "Authentication methods"
 msgstr "認証方法"
 
-#: ../server/vino-server.c:891
+#: ../server/vino-server.c:894
 msgid "The authentication methods this server should allow"
 msgstr "サーバーが許可する認証方法"
 
-#: ../server/vino-server.c:899
+#: ../server/vino-server.c:902
 msgid "VNC Password"
 msgstr "VNC パスワード"
 
-#: ../server/vino-server.c:900
+#: ../server/vino-server.c:903
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
@@ -274,8 +288,8 @@ msgid ""
 "encryption unless the intervening network is trusted."
 msgstr ""
 "真ならリモートユーザーがデスクトップにアクセスするには暗号をサポートしていな"
-"ければなりません。経路のネットワークが信頼できるものでないのなら暗号を"
-"サポートするクライアントを使うことを強く推奨します"
+"ければなりません。経路のネットワークが信頼できるものでないのなら暗号をサポー"
+"トするクライアントを使うことを強く推奨します"
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
