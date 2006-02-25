@@ -17,7 +17,7 @@ msgstr ""
 
 #: ../capplet/vino-preferences.c:807
 msgid "Send this command by email"
-msgstr "以電子郵件寄送本指令"
+msgstr "以電郵寄送本指令"
 
 #: ../capplet/vino-preferences.c:842
 #, c-format
@@ -34,7 +34,7 @@ msgstr "遠端桌面"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
-msgstr "設定您的遠端桌面存取偏好"
+msgstr "設定你的遠端桌面存取偏好"
 
 #: ../capplet/vino-preferences.glade.h:1
 msgid "    "
@@ -58,11 +58,11 @@ msgstr "<b>共享</b>"
 
 #: ../capplet/vino-preferences.glade.h:6
 msgid "A_sk you for confirmation"
-msgstr "詢問您以確認(_S)"
+msgstr "詢問你以確認(_S)"
 
 #: ../capplet/vino-preferences.glade.h:7
 msgid "Allow other users to _view your desktop"
-msgstr "允許其他使用者觀看您的桌面(_V)"
+msgstr "允許其他使用者觀看你的桌面(_V)"
 
 #: ../capplet/vino-preferences.glade.h:8
 msgid "Remote Desktop Preferences"
@@ -74,15 +74,15 @@ msgstr "一部份偏好設定已被鎖定"
 
 #: ../capplet/vino-preferences.glade.h:10
 msgid "Users can view your desktop using this command:"
-msgstr "使用者可以用這個指令來觀看您的桌面："
+msgstr "使用者可以用這個指令來觀看你的桌面："
 
 #: ../capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
-msgstr "當有使用者嘗試觀看或控制您的桌面時："
+msgstr "當有使用者嘗試觀看或控制你的桌面時："
 
 #: ../capplet/vino-preferences.glade.h:12
 msgid "_Allow other users to control your desktop"
-msgstr "允許其他使用者控制您的桌面(_A)"
+msgstr "允許其他使用者控制你的桌面(_A)"
 
 #: ../capplet/vino-preferences.glade.h:13
 msgid "_Password:"
@@ -129,7 +129,7 @@ msgstr "要被監視的螢幕"
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
-msgstr "您的 X Server 不支援 XTest 延伸功能 ─ 只可以觀看遠端桌面\n"
+msgstr "你的 X Server 不支援 XTest 延伸功能 ─ 只可以觀看遠端桌面\n"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -159,21 +159,21 @@ msgstr "顯示提示的螢幕"
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
-msgstr "在電腦‘%s’上的使用者正嘗試觀看或控制您的桌面"
+msgstr "在電腦‘%s’上的使用者正嘗試觀看或控制你的桌面"
 
 #: ../server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>另一個使用者正嘗試觀看您的桌面</b></big>"
+msgstr "<big><b>另一個使用者正嘗試觀看你的桌面</b></big>"
 
 #: ../server/vino-prompt.glade.h:2
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
-msgstr "在另一台電腦上的使用者正嘗試觀看或控制您的桌面。"
+msgstr "在另一台電腦上的使用者正嘗試觀看或控制你的桌面。"
 
 #: ../server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
-msgstr "您允許他們這樣做嗎？"
+msgstr "你允許他們這樣做嗎？"
 
 #: ../server/vino-prompt.glade.h:4
 msgid "Question"
@@ -283,7 +283,7 @@ msgid ""
 "encryption unless the intervening network is trusted."
 msgstr ""
 "如設定為 true，要存取桌面的遠端使用者必須支援加密。強烈建議使用支援加密的客戶"
-"端，除非兩者間的網路是可信賴的。"
+"端，除非兩者間的網絡是可信賴的。"
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
@@ -329,7 +329,7 @@ msgid ""
 "dialog."
 msgstr ""
 "如果使用者按下遠端桌面偏好設定對話方塊中的 URL，遠端桌面網址應寄送至此設定鍵"
-"所指定的電子郵件地址。"
+"所指定的電郵地址。"
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
