@@ -1,14 +1,14 @@
 # Ukrainian translation to vino.
 # Copyright (C) Free Software Foundation
 # This file is distributed under the same license as the vino package.
-# Maxim Dziumanenko <mvd@mylinux.ua>, 2004-2005.
+# Maxim Dziumanenko <mvd@mylinux.ua>, 2004-2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-08-15 23:50+0300\n"
-"PO-Revision-Date: 2005-08-15 18:34+0300\n"
+"POT-Creation-Date: 2006-03-03 14:47+0200\n"
+"PO-Revision-Date: 2006-03-03 18:34+0300\n"
 "Last-Translator: Maxim Dziumanenko <mvd@mylinux.ua>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -118,7 +118,7 @@ msgid "The color of the URL's label"
 msgstr "Колір позначки URL"
 
 #: ../server/vino-fb.c:954 ../server/vino-prompt.c:144
-#: ../server/vino-server.c:850
+#: ../server/vino-server.c:853
 msgid "Screen"
 msgstr "Екран"
 
@@ -126,13 +126,32 @@ msgstr "Екран"
 msgid "The screen to be monitored"
 msgstr "Екран, який контролюється"
 
-#: ../server/vino-main.c:78
+#: ../server/vino-main.c:80
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
 "Ваш XServer не підтримує розширення XTest - режим доступу до віддаленої "
 "стільниці буде лише для перегляду\n"
+
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#: ../server/vino-mdns.c:59
+msgid "vino-mdns:showusername"
+msgstr "0"
+
+#.
+#. * Translators: this string is used ONLY if you
+#. * translated "vino-mdns:showusername" to anything
+#. * other than "1"
+#.
+#: ../server/vino-mdns.c:71
+#, c-format
+msgid "%s's remote desktop"
+msgstr "Віддалена стільниця користувача %s"
 
 #: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -168,63 +187,63 @@ msgstr "Бажаєте дозволити це йому?"
 msgid "Question"
 msgstr "Запитання"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
 msgid "_Allow"
 msgstr "_Дозволити"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "_Відмовити"
 
-#: ../server/vino-server.c:851
+#: ../server/vino-server.c:854
 msgid "The screen for which to create a VNC server"
 msgstr "Екран для якого створюється VNC сервер"
 
-#: ../server/vino-server.c:858
+#: ../server/vino-server.c:861
 msgid "On Hold"
 msgstr "Відкласти"
 
-#: ../server/vino-server.c:859
+#: ../server/vino-server.c:862
 msgid "Place all clients on hold"
 msgstr "Відкласти усіх клієнтів"
 
-#: ../server/vino-server.c:866
+#: ../server/vino-server.c:869
 msgid "Prompt enabled"
 msgstr "Підказку увімкнено"
 
-#: ../server/vino-server.c:867
+#: ../server/vino-server.c:870
 msgid "Prompt the user about connection attempts"
 msgstr "Підказує користувачу про спроби з'єднання"
 
-#: ../server/vino-server.c:874
+#: ../server/vino-server.c:877
 msgid "View Only"
 msgstr "Лише перегляд"
 
-#: ../server/vino-server.c:875
+#: ../server/vino-server.c:878
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Не дозволяти ввід від клавіатури/вказівника клієнта"
 
-#: ../server/vino-server.c:882
+#: ../server/vino-server.c:885
 msgid "Require Encryption"
 msgstr "Вимагати шифрування"
 
-#: ../server/vino-server.c:883
+#: ../server/vino-server.c:886
 msgid "Require clients to use encryption"
 msgstr "Вимагає від клієнтів використання шифрування"
 
-#: ../server/vino-server.c:890
+#: ../server/vino-server.c:893
 msgid "Authentication methods"
 msgstr "Методи автентифікації"
 
-#: ../server/vino-server.c:891
+#: ../server/vino-server.c:894
 msgid "The authentication methods this server should allow"
 msgstr "Методи автентифікації, які повинен допускати цей сервер"
 
-#: ../server/vino-server.c:899
+#: ../server/vino-server.c:902
 msgid "VNC Password"
 msgstr "Пароль VNC"
 
-#: ../server/vino-server.c:900
+#: ../server/vino-server.c:903
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
@@ -280,9 +299,9 @@ msgid ""
 "encryption unless the intervening network is trusted."
 msgstr ""
 "Якщо увімкнено, віддалений доступ до стільниці дозволяється лише при "
-"використанні шифрування. Наполегливо рекомендується, щоб ви використовували клієнт, "
-"який підтримує шифрування, крім випадку коли доступ відбувається через "
-"захищену мережу."
+"використанні шифрування. Наполегливо рекомендується, щоб ви використовували "
+"клієнт, який підтримує шифрування, крім випадку коли доступ відбувається "
+"через захищену мережу."
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
