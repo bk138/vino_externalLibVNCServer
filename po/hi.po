@@ -2,14 +2,14 @@
 # translation of hi.po to Hindi
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Rajesh Ranjan <rranjan@redhat.com>, 2005.
+# Rajesh Ranjan <rranjan@redhat.com>, 2005, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD.hi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-06-21 07:02+0000\n"
-"PO-Revision-Date: 2005-06-21 15:25+0530\n"
+"POT-Creation-Date: 2006-03-07 07:23+0100\n"
+"PO-Revision-Date: 2006-03-07 14:03+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"\n"
 "\n"
 
 #: ../capplet/vino-preferences.c:807
@@ -120,22 +121,41 @@ msgstr "यूआरएल रंग"
 msgid "The color of the URL's label"
 msgstr "यूआरएल लेबल के लिये रंग"
 
-#: ../server/vino-fb.c:953 ../server/vino-prompt.c:144
-#: ../server/vino-server.c:850
+#: ../server/vino-fb.c:954 ../server/vino-prompt.c:144
+#: ../server/vino-server.c:853
 msgid "Screen"
 msgstr "स्क्रीन"
 
-#: ../server/vino-fb.c:954
+#: ../server/vino-fb.c:955
 msgid "The screen to be monitored"
 msgstr "परीक्षित किया जाने वाला स्क्रीन"
 
-#: ../server/vino-main.c:78
+#: ../server/vino-main.c:80
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
 "आपका XServer XTest विस्तार का समर्थन नहीं करता - दूरस्थ डेस्कटॉप पहुंच सिर्फ देखा "
 "जायेगा\n"
+
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#: ../server/vino-mdns.c:59
+msgid "vino-mdns:showusername"
+msgstr "vino-mdns:showusername"
+
+#.
+#. * Translators: this string is used ONLY if you
+#. * translated "vino-mdns:showusername" to anything
+#. * other than "1"
+#.
+#: ../server/vino-mdns.c:71
+#, c-format
+msgid "%s's remote desktop"
+msgstr "%s का दूरस्थ डेस्कटॉप"
 
 #: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -168,63 +188,63 @@ msgstr "क्या आप उनको ऐसा करने की अनु
 msgid "Question"
 msgstr "प्रश्न"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
 msgid "_Allow"
 msgstr "अनुमति दें (_A)"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "ठुकरायें (_R)"
 
-#: ../server/vino-server.c:851
+#: ../server/vino-server.c:854
 msgid "The screen for which to create a VNC server"
 msgstr "स्क्रीन जिसके लिये VNC सर्वर बनाया जाना है"
 
-#: ../server/vino-server.c:858
+#: ../server/vino-server.c:861
 msgid "On Hold"
 msgstr "चालू पकड़ें"
 
-#: ../server/vino-server.c:859
+#: ../server/vino-server.c:862
 msgid "Place all clients on hold"
 msgstr "सभी क्लाइंट को रोककर रखें"
 
-#: ../server/vino-server.c:866
+#: ../server/vino-server.c:869
 msgid "Prompt enabled"
 msgstr "संकेत सक्षम"
 
-#: ../server/vino-server.c:867
+#: ../server/vino-server.c:870
 msgid "Prompt the user about connection attempts"
 msgstr "संबंधन प्रयास के बारे में उपयोक्ता को प्रांप्ट करें"
 
-#: ../server/vino-server.c:874
+#: ../server/vino-server.c:877
 msgid "View Only"
 msgstr "सिर्फ दिखाएँ"
 
-#: ../server/vino-server.c:875
+#: ../server/vino-server.c:878
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "क्लाइंट से कुंजीपट/प्वांइटर को मना करें"
 
-#: ../server/vino-server.c:882
+#: ../server/vino-server.c:885
 msgid "Require Encryption"
 msgstr "गोपन की जरूरत"
 
-#: ../server/vino-server.c:883
+#: ../server/vino-server.c:886
 msgid "Require clients to use encryption"
 msgstr "गोपन के प्रयोग के लिये क्लाइंट की जरूरत"
 
-#: ../server/vino-server.c:890
+#: ../server/vino-server.c:893
 msgid "Authentication methods"
 msgstr "प्रमाणीकरण विधि"
 
-#: ../server/vino-server.c:891
+#: ../server/vino-server.c:894
 msgid "The authentication methods this server should allow"
 msgstr "प्रमाणीकरण विधि इस सर्वर को अनुमति देनी चाहिये"
 
-#: ../server/vino-server.c:899
+#: ../server/vino-server.c:902
 msgid "VNC Password"
 msgstr "VNC शब्दकूट"
 
-#: ../server/vino-server.c:900
+#: ../server/vino-server.c:903
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
@@ -285,7 +305,11 @@ msgid ""
 "remote user to be prompted for a password (the password is specified by the "
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
-msgstr "सत्यापन विधि की सूची देता है जिससे दूरस्थ उपयोक्ता डेस्कटॉप की पहुंच रख सकते हैं. दो संभव सत्यापन विधि है; \"vnc\" दूरस्थ उपयोक्ता को एख शब्दकूट के लिये प्रांप्ट करता है (शब्दकूट vnc_password कुंजी के द्वारा निर्दिष्ट शब्दकूट) संबंधन के पहले और \"कोई नहीं\" जो किसी दूरस्थ उपयोक्ता को संबंधन के लिये अनुमति देता है."
+msgstr ""
+"सत्यापन विधि की सूची देता है जिससे दूरस्थ उपयोक्ता डेस्कटॉप की पहुंच रख सकते हैं. दो संभव "
+"सत्यापन विधि है; \"vnc\" दूरस्थ उपयोक्ता को एख शब्दकूट के लिये प्रांप्ट करता है (शब्दकूट "
+"vnc_password कुंजी के द्वारा निर्दिष्ट शब्दकूट) संबंधन के पहले और \"कोई नहीं\" जो किसी "
+"दूरस्थ उपयोक्ता को संबंधन के लिये अनुमति देता है."
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
@@ -309,16 +333,17 @@ msgid ""
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
 msgstr ""
-"शब्दकूट जिसके लिये दूरस्थ उपयोक्ता प्रांप्ट किया जायेगा अगर \"vnc\" "
-"सत्यापन विधि प्रयुक्त होती है. कुंजी द्वारा निर्दिष्ट शब्दकूट base64 "
-"एनकोडेड है."
+"शब्दकूट जिसके लिये दूरस्थ उपयोक्ता प्रांप्ट किया जायेगा अगर \"vnc\" सत्यापन विधि प्रयुक्त "
+"होती है. कुंजी द्वारा निर्दिष्ट शब्दकूट base64 एनकोडेड है."
 
 #: ../server/vino-server.schemas.in.h:14
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
-msgstr "यह कुंजी उन ईमेल पता को निर्दिष्ट करता है जिसमें दूरस्थ डेस्कटॉप URL भेजा जाना चाहिये अगर उपयोक्ता URL पर दूरस्थ डेस्कटॉप वरीयता संवाद में क्लिक करता है."
+msgstr ""
+"यह कुंजी उन ईमेल पता को निर्दिष्ट करता है जिसमें दूरस्थ डेस्कटॉप URL भेजा जाना चाहिये अगर "
+"उपयोक्ता URL पर दूरस्थ डेस्कटॉप वरीयता संवाद में क्लिक करता है."
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
