@@ -1,24 +1,24 @@
 # translation of vino.HEAD.po to Punjabi
-# translation of pa.po to Punjabi
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+#
 # Amanpreet Singh Alam <amanlinux@netscpe.net>, 2004.
 # Amanpreet Singh Alam <aalam@redhat.com>, 2004.
 # Amanpreet Singh Alam <amanpreetalam@yahoo.com>, 2005.
-#
+# A S Alam <apbrar@gmail.com>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-07-13 22:36+0000\n"
-"PO-Revision-Date: 2005-07-14 09:25+0530\n"
-"Last-Translator: Amanpreet Singh Alam <amanpreetalam@yahoo.com>\n"
-"Language-Team: Punjabi <fedora-transa-pa@redhat.com>\n"
+"POT-Creation-Date: 2006-03-12 08:53+0100\n"
+"PO-Revision-Date: 2006-03-12 23:50+0530\n"
+"Last-Translator: A S Alam <apbrar@gmail.com>\n"
+"Language-Team: Punjabi <fedora-trans-pa@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "\n"
 
 #: ../capplet/vino-preferences.c:807
@@ -122,22 +122,41 @@ msgstr "URL ਰੰਗ"
 msgid "The color of the URL's label"
 msgstr "URL ਦੇ ਲੇਬਲ ਲਈ ਰੰਗ"
 
-#: ../server/vino-fb.c:953 ../server/vino-prompt.c:144
-#: ../server/vino-server.c:850
+#: ../server/vino-fb.c:954 ../server/vino-prompt.c:144
+#: ../server/vino-server.c:853
 msgid "Screen"
 msgstr "ਸਕਰੀਨ"
 
-#: ../server/vino-fb.c:954
+#: ../server/vino-fb.c:955
 msgid "The screen to be monitored"
 msgstr "ਜਾਂਚ ਲਈ ਸਕਰੀਨ"
 
-#: ../server/vino-main.c:78
+#: ../server/vino-main.c:80
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
 "ਤੁਹਾਡਾ XServer XTest ਐਕਸਟੇਸ਼ਨ ਲਈ ਸਹਾਇਕ ਨਹੀਂ ਹੈ - ਰਿਮੋਟ ਵਿਹੜਾ ਪਹੁੰਚ ਸਿਰਫ਼ ਵੇਖਣ ਲਈ "
 "ਹੋਵੇਗੀ।\n"
+
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#: ../server/vino-mdns.c:59
+msgid "vino-mdns:showusername"
+msgstr "vino-mdns:showusername"
+
+#.
+#. * Translators: this string is used ONLY if you
+#. * translated "vino-mdns:showusername" to anything
+#. * other than "1"
+#.
+#: ../server/vino-mdns.c:71
+#, c-format
+msgid "%s's remote desktop"
+msgstr "%s ਦਾ ਰਿਮੋਟ ਵੇਹੜਾ"
 
 #: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -168,63 +187,63 @@ msgstr "ਕੀ ਤੁਸੀ ਉਹਨਾਂ ਨੂੰ ਏਦਾਂ ਕਰਨ ਦ
 msgid "Question"
 msgstr "ਸਵਾਲ"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
 msgid "_Allow"
 msgstr "ਮੰਨਜ਼ੂਰ(_A)"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "ਇਨਕਾਰ(_R)"
 
-#: ../server/vino-server.c:851
+#: ../server/vino-server.c:854
 msgid "The screen for which to create a VNC server"
 msgstr "ਪਰਦਾ, ਜੋ ਕਿ VNC ਸਰਵਰ ਬਣਾਏਗਾ"
 
-#: ../server/vino-server.c:858
+#: ../server/vino-server.c:861
 msgid "On Hold"
 msgstr "ਚਾਲੂ ਰੱਖੋ"
 
-#: ../server/vino-server.c:859
+#: ../server/vino-server.c:862
 msgid "Place all clients on hold"
 msgstr "ਸਭ ਕਲਾਂਈਟ ਚਾਲੂ ਰੱਖੋ"
 
-#: ../server/vino-server.c:866
+#: ../server/vino-server.c:869
 msgid "Prompt enabled"
 msgstr "ਪਰਾਉਟ ਯੋਗ"
 
-#: ../server/vino-server.c:867
+#: ../server/vino-server.c:870
 msgid "Prompt the user about connection attempts"
 msgstr "ਕੁਨੈਕਸ਼ਨ ਕੋਸ਼ਿਸ ਲਈ ਉਪਭੋਗੀ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ"
 
-#: ../server/vino-server.c:874
+#: ../server/vino-server.c:877
 msgid "View Only"
 msgstr "ਸਿਰਫ਼ ਝਲਕ"
 
-#: ../server/vino-server.c:875
+#: ../server/vino-server.c:878
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "ਕਲਾਂਈਟ ਤੋਂ ਕੀ-ਬੋਰਡ/ਸੰਕੇਤਕ ਇੰਪੁੱਟ ਅਯੋਗ"
 
-#: ../server/vino-server.c:882
+#: ../server/vino-server.c:885
 msgid "Require Encryption"
 msgstr "ਇੰਕਰਿਿਪਸ਼ਨ ਲੋੜੀਦੀ ਹੈ"
 
-#: ../server/vino-server.c:883
+#: ../server/vino-server.c:886
 msgid "Require clients to use encryption"
 msgstr "ਕਲਾਂਈਟਾਂ ਵੱਲੋਂ ਇੰਕਰਿਪਸ਼ਨ ਲੋੜੀਦੀ ਹੈ"
 
-#: ../server/vino-server.c:890
+#: ../server/vino-server.c:893
 msgid "Authentication methods"
 msgstr "ਪਰਮਾਣਕਿਤਾ ਮਾਡਲ"
 
-#: ../server/vino-server.c:891
+#: ../server/vino-server.c:894
 msgid "The authentication methods this server should allow"
 msgstr "ਪਰਮਾਣਿਕਤ ਢੰਗ, ਜਿਸ ਲਈ ਸਰਵਰ ਲੋੜੀਦਾ ਹੈ"
 
-#: ../server/vino-server.c:899
+#: ../server/vino-server.c:902
 msgid "VNC Password"
 msgstr "VNC ਗੁਪਤ-ਕੋਡ"
 
-#: ../server/vino-server.c:900
+#: ../server/vino-server.c:903
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
@@ -284,10 +303,9 @@ msgid ""
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
 msgstr ""
-"ਪ੍ਰਮਾਣਿਤ ਢੰਗ ਜਿਨਾਂ ਨਾਲ ਰਿਮੋਟ ਉਪਭੋਗੀ ਵਿਹੜਾ ਖੋਲ ਸਕਦੇ ਹਨ। ਇਥੇ ਪ੍ਰਮਾਣਕਿਤਾ ਦੇ ਦੋ ਢੰਗ ਹਨ, "
-"\"vnc\" ਉਪਭੋਗਤਾ ਤੋਂ ਕੁਨੈਕਟ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਗੁਪਤ-ਕੋਡ ਕੋਲ ਦੀ ਪੁਸ਼ਟੀ ਕਰਾਏਗਾ (ਗੁਪਤ-ਕੋਡ "
-"vnc_password ਕੁੰਜੀ ਨਾਲ ਨਿਰਧਾਰਿਤ ਹੁੰਦਾ ਹੈ ਅਤੇ ਇਹ ਕਿਸੇ ਵੀ ਰਿਮੋਟ ਉਪਭੋਗੀ ਨੂੰ ਜੁੜਨ ਦੀ ਇਜ਼ਾਜਤ "
-"ਦਿੰਦਾ ਹੈ।)"
+"ਪ੍ਰਮਾਣਿਤ ਢੰਗ ਜਿਨਾਂ ਨਾਲ ਰਿਮੋਟ ਉਪਭੋਗੀ ਵਿਹੜਾ ਖੋਲ ਸਕਦੇ ਹਨ। ਇਥੇ ਪ੍ਰਮਾਣਕਿਤਾ ਦੇ ਦੋ ਢੰਗ ਹਨ, \"vnc"
+"\" ਉਪਭੋਗਤਾ ਤੋਂ ਕੁਨੈਕਟ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਗੁਪਤ-ਕੋਡ ਕੋਲ ਦੀ ਪੁਸ਼ਟੀ ਕਰਾਏਗਾ (ਗੁਪਤ-ਕੋਡ vnc_password "
+"ਕੁੰਜੀ ਨਾਲ ਨਿਰਧਾਰਿਤ ਹੁੰਦਾ ਹੈ ਅਤੇ ਇਹ ਕਿਸੇ ਵੀ ਰਿਮੋਟ ਉਪਭੋਗੀ ਨੂੰ ਜੁੜਨ ਦੀ ਇਜ਼ਾਜਤ ਦਿੰਦਾ ਹੈ।)"
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
@@ -311,8 +329,8 @@ msgid ""
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
 msgstr ""
-"ਜੇਕਰ \"vnc\" ਪਰਮਾਣਕਿਤਾ ਢੰਗ ਵਰਤਿਆ ਜਾਵੇ ਤਾਂ ਗੁਪਤ ਕੋਡ ਰਿਮੋਟ ਉਪਭੋਗੀ ਨੂੰ ਪੁਛਿਆ ਜਾਵੇਗਾ। ਇਹ "
-"ਗੁਪਤ ਕੋਡ ਇੰਕੋਡਿੰਗ base64 ਤੇ ਅਧਾਰਿਤ ਕੁੰਜੀ ਨਾਲ ਨਿਰਧਾਰਿਤ ਕੀਤਾ ਗਿਆ ਹੈ।"
+"ਜੇਕਰ \"vnc\" ਪਰਮਾਣਕਿਤਾ ਢੰਗ ਵਰਤਿਆ ਜਾਵੇ ਤਾਂ ਗੁਪਤ ਕੋਡ ਰਿਮੋਟ ਉਪਭੋਗੀ ਨੂੰ ਪੁਛਿਆ ਜਾਵੇਗਾ। ਇਹ ਗੁਪਤ "
+"ਕੋਡ ਇੰਕੋਡਿੰਗ base64 ਤੇ ਅਧਾਰਿਤ ਕੁੰਜੀ ਨਾਲ ਨਿਰਧਾਰਿਤ ਕੀਤਾ ਗਿਆ ਹੈ।"
 
 #: ../server/vino-server.schemas.in.h:14
 msgid ""
@@ -320,8 +338,8 @@ msgid ""
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
-"ਜੇਕਰ ਉਪਭੋਗੀ ਨੇ ਰਿਮੋਟ ਵਿਹੜਾ ਪਸੰਦ ਵਾਰਤਾਲਾਪ ਤੇ URL ਨੂੰ ਦਬਾਇਆ ਤਾਂ ਕਿਸ ਈ-ਮੇਲ ਸਿਰਨਾਵੇਂ ਤੇ "
-"ਰਿਮੋਟ ਵਿਹੜਾ URL ਭੇਜਿਆ ਜਾਵੇ, ਉਹ ਇਹ ਕੁੰਜੀ ਨਿਰਧਾਰਿਤ ਕਰਦੀ ਹੈ।"
+"ਜੇਕਰ ਉਪਭੋਗੀ ਨੇ ਰਿਮੋਟ ਵਿਹੜਾ ਪਸੰਦ ਵਾਰਤਾਲਾਪ ਤੇ URL ਨੂੰ ਦਬਾਇਆ ਤਾਂ ਕਿਸ ਈ-ਮੇਲ ਸਿਰਨਾਵੇਂ ਤੇ ਰਿਮੋਟ "
+"ਵਿਹੜਾ URL ਭੇਜਿਆ ਜਾਵੇ, ਉਹ ਇਹ ਕੁੰਜੀ ਨਿਰਧਾਰਿਤ ਕਰਦੀ ਹੈ।"
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
