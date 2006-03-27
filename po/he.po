@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-07-03 13:42+0000\n"
+"POT-Creation-Date: 2006-04-27 17:42+0300\n"
 "PO-Revision-Date: 2005-07-18 19:18+0300\n"
 "Last-Translator: Oldie <yonatanhak@yahoo.com>\n"
 "Language-Team: Hebrew\n"
@@ -118,20 +118,42 @@ msgstr "צבע כתובת"
 msgid "The color of the URL's label"
 msgstr "הצבע של תג הכתובת"
 
-#: ../server/vino-fb.c:953 ../server/vino-prompt.c:144
-#: ../server/vino-server.c:850
+#: ../server/vino-fb.c:954 ../server/vino-prompt.c:144
+#: ../server/vino-server.c:853
 msgid "Screen"
 msgstr "מסך"
 
-#: ../server/vino-fb.c:954
+#: ../server/vino-fb.c:955
 msgid "The screen to be monitored"
 msgstr "המסך שיש לנטרו"
 
-#: ../server/vino-main.c:78
+#: ../server/vino-main.c:80
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
-msgstr "השרת הגרפי (XServer) שלך אינו תומך בהרחבת XTest - הגישה לשולחן העבודה המרוחק תוגבל לצפיה בלבד\n"
+msgstr ""
+"השרת הגרפי (XServer) שלך אינו תומך בהרחבת XTest - הגישה לשולחן העבודה המרוחק "
+"תוגבל לצפיה בלבד\n"
+
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#: ../server/vino-mdns.c:59
+msgid "vino-mdns:showusername"
+msgstr "1"
+
+#.
+#. * Translators: this string is used ONLY if you
+#. * translated "vino-mdns:showusername" to anything
+#. * other than "1"
+#.
+#: ../server/vino-mdns.c:71
+#, c-format
+msgid "%s's remote desktop"
+msgstr "%s's remote desktop"
+
 
 #: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
@@ -162,63 +184,63 @@ msgstr "האם ברצונך לאפשר להם לעשות זאת?"
 msgid "Question"
 msgstr "שאלה"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
 msgid "_Allow"
 msgstr "_הרשה"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "_סרב"
 
-#: ../server/vino-server.c:851
+#: ../server/vino-server.c:854
 msgid "The screen for which to create a VNC server"
 msgstr "המסך שעליו יש ליצור שרת VNC"
 
-#: ../server/vino-server.c:858
+#: ../server/vino-server.c:861
 msgid "On Hold"
 msgstr "בהמתנה"
 
-#: ../server/vino-server.c:859
+#: ../server/vino-server.c:862
 msgid "Place all clients on hold"
 msgstr "שים את כל הלקוחות בהמתנה"
 
-#: ../server/vino-server.c:866
+#: ../server/vino-server.c:869
 msgid "Prompt enabled"
 msgstr "סמן-מנחה מאופשר"
 
-#: ../server/vino-server.c:867
+#: ../server/vino-server.c:870
 msgid "Prompt the user about connection attempts"
 msgstr "הודע למשתמש על נסיונות התחברות"
 
-#: ../server/vino-server.c:874
+#: ../server/vino-server.c:877
 msgid "View Only"
 msgstr "צפיה בלבד"
 
-#: ../server/vino-server.c:875
+#: ../server/vino-server.c:878
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "מנע גישת לקוחות ללוח מקשים / עכבר "
 
-#: ../server/vino-server.c:882
+#: ../server/vino-server.c:885
 msgid "Require Encryption"
 msgstr "הצפנה נדרשת"
 
-#: ../server/vino-server.c:883
+#: ../server/vino-server.c:886
 msgid "Require clients to use encryption"
 msgstr "דרוש מהלקוחות להשתמש בהצפנה"
 
-#: ../server/vino-server.c:890
+#: ../server/vino-server.c:893
 msgid "Authentication methods"
 msgstr "שיטות אימות זהות"
 
-#: ../server/vino-server.c:891
+#: ../server/vino-server.c:894
 msgid "The authentication methods this server should allow"
 msgstr "שיטות אימות הזהות ששרת זה יאפשר"
 
-#: ../server/vino-server.c:899
+#: ../server/vino-server.c:902
 msgid "VNC Password"
 msgstr "סיסמת VNC"
 
-#: ../server/vino-server.c:900
+#: ../server/vino-server.c:903
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
@@ -240,27 +262,35 @@ msgstr "אפשר גישה מרחוק לשולחן העבודה"
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
-msgstr "אם נכון, אפשר גישה מרחוק לשולחן העבודה תוך שימוש בפרוטוקול RFB. משתמשים במחשבים מרוחקים יוכלו להתחבר לשולחן העבודה תוך שימוש ב vncviewer."
+msgstr ""
+"אם נכון, אפשר גישה מרחוק לשולחן העבודה תוך שימוש בפרוטוקול RFB. משתמשים "
+"במחשבים מרוחקים יוכלו להתחבר לשולחן העבודה תוך שימוש ב vncviewer."
 
 #: ../server/vino-server.schemas.in.h:5
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
-msgstr "אם נכון, הגישה אל שולחן העבודה עבור משתמשים מרוחקים תימנע עד אשר המשתמש במחשב המארח יאשר את ההתחברות. מומלץ במיוחד כאשר הגישה אינה מוגנת בסיסמה."
+msgstr ""
+"אם נכון, הגישה אל שולחן העבודה עבור משתמשים מרוחקים תימנע עד אשר המשתמש "
+"במחשב המארח יאשר את ההתחברות. מומלץ במיוחד כאשר הגישה אינה מוגנת בסיסמה."
 
 #: ../server/vino-server.schemas.in.h:6
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote user's will not be able to use the mouse or keyboard."
-msgstr "אם נכון, משתמשים מרוחקים המנסים לגשת לשולחן העבודה יורשו רק לצפות. המשתמשים המרוחקים לא יוכלו להשתמש בלוח המקשים או בעכבר."
+msgstr ""
+"אם נכון, משתמשים מרוחקים המנסים לגשת לשולחן העבודה יורשו רק לצפות. המשתמשים "
+"המרוחקים לא יוכלו להשתמש בלוח המקשים או בעכבר."
 
 #: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are required to be able support "
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
-msgstr "אם נכון, משתמשים מרוחקים הניגשים לשולחן העבודה נדרשים להיות מסוגלים לתמוך בהצפנה. ממולץ מאד שתשתמש בלקוח התומך בהצפנה אלא אם הרשת המתווכת מאובטחת."
+msgstr ""
+"אם נכון, משתמשים מרוחקים הניגשים לשולחן העבודה נדרשים להיות מסוגלים לתמוך "
+"בהצפנה. ממולץ מאד שתשתמש בלקוח התומך בהצפנה אלא אם הרשת המתווכת מאובטחת."
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
@@ -269,7 +299,11 @@ msgid ""
 "remote user to be prompted for a password (the password is specified by the "
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
-msgstr "רושם את שיטות האימות שבאמצעותן משתמשים מרוחקים רשאים לגשת לשולחן העבודה. קיימות 2 שיטות אימות; \"vnc\" דורשת סיסמה מהמשתמש המרוחק (הסיסמה מוגדרת על ידי המשתנה vnc_password), לפני ההתחברות. \"none\" מאפשרת לכל משתמש מרוחק להתחבר."
+msgstr ""
+"רושם את שיטות האימות שבאמצעותן משתמשים מרוחקים רשאים לגשת לשולחן העבודה. "
+"קיימות 2 שיטות אימות; \"vnc\" דורשת סיסמה מהמשתמש המרוחק (הסיסמה מוגדרת על "
+"ידי המשתנה vnc_password), לפני ההתחברות. \"none\" מאפשרת לכל משתמש מרוחק "
+"להתחבר."
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "Only allow remote users to view the desktop"
@@ -292,14 +326,19 @@ msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
-msgstr "הסיסמה שהמשתמש המרוחק ידרש לה אם שיטת האימות \"vnc\" נמצאת בשימוש. הססמה המצוינת מקודדת בקוד base64."
+msgstr ""
+"הסיסמה שהמשתמש המרוחק ידרש לה אם שיטת האימות \"vnc\" נמצאת בשימוש. הססמה "
+"המצוינת מקודדת בקוד base64."
 
 #: ../server/vino-server.schemas.in.h:14
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
-msgstr "משתנה זה מציין את כתובת הדוא\"ל שאליה צריך לשלוח את כתובת האינטרנט של שולחן העבודה המרוחק, במידה ובהמשתמש מקליד את כתובת האינטרנט בתפריט האפשרויות של שולחן העבודה המרוחק. "
+msgstr ""
+"משתנה זה מציין את כתובת הדוא\"ל שאליה צריך לשלוח את כתובת האינטרנט של שולחן "
+"העבודה המרוחק, במידה ובהמשתמש מקליד את כתובת האינטרנט בתפריט האפשרויות של "
+"שולחן העבודה המרוחק. "
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -336,4 +375,3 @@ msgstr "מתחיל את שרת שולחן העבודה המרוחק"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "לא מתחיל את שרת שולחן העבודה המרוחק"
-
