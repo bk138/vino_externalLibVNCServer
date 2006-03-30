@@ -1,0 +1,313 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vino.HEAD.dz\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-03-06 05:29+0100\n"
+"PO-Revision-Date: 2006-03-28 11:14-0500\n"
+"Last-Translator: \n"
+"Language-Team: DZONGKHA <pgeyleg@dit.gov.bt>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2;plural=(n!=1);\n"
+"X-Poedit-Language: Dzongkha\n"
+"X-Poedit-Country: BHUTAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../capplet/vino-preferences.c:807
+msgid "Send this command by email"
+msgstr "བརྡ་བཀོད་འདི་ གློག་འཕྲིན་ཐོག་ལས་གཏང་།"
+
+#: ../capplet/vino-preferences.c:842
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"གྲོགས་རམ་བཀྲམ་སྟོན་འབད་ནི་ལུ་ འཛོལ་བ་ཅིག་འདུག\n"
+"%s"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:1
+msgid "Remote Desktop"
+msgstr "ཐག་རིང་ཌེཀསི་ཊོཔ།"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "ཁྱོད་རའི་ཐག་རིང་ཌེཀསི་ཊོཔ་གི་ འཛུལ་སྤྱོད་དགའ་གདམ་ཚུ་ གཞི་སྒྲིག་འབད།"
+
+#: ../capplet/vino-preferences.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../capplet/vino-preferences.glade.h:2
+msgid "        "
+msgstr "        "
+
+#: ../capplet/vino-preferences.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: ../capplet/vino-preferences.glade.h:4
+msgid "<b>Security</b>"
+msgstr "<b>སྲུང་སྐྱོབ་</b>"
+
+#: ../capplet/vino-preferences.glade.h:5
+msgid "<b>Sharing</b>"
+msgstr "<b>རུབ་སྤྱོད་</b>"
+
+#: ../capplet/vino-preferences.glade.h:6
+msgid "A_sk you for confirmation"
+msgstr "ངེས་དཔྱད་ཀྱི་དོན་ལུ་ ཁྱོད་ལུ་དྲིས།(_s)"
+
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Allow other users to _view your desktop"
+msgstr "ལག་ལེན་པ་གཞན་ཚུ་གིས་ ཁྱོད་ཀྱི་ཌེཀསི་ཊོཔ་མཐོང་བཅུག(_v)"
+
+#: ../capplet/vino-preferences.glade.h:8
+msgid "Remote Desktop Preferences"
+msgstr "ཐག་རིང་ཌེཀསི་ཊོཔ་གི་དགའ་གདམ་ཚུ།"
+
+#: ../capplet/vino-preferences.glade.h:9
+msgid "Some of these preferences are locked down"
+msgstr "དགའ་གདམ་དེ་ཚུ་ ལ་ལོ་ཅིག་ ལྡེ་མིག་བརྐྱབས་ནུག"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid "Users can view your desktop using this command:"
+msgstr "ལག་ལེན་པ་ཚུ་གིས་ བརྡ་བཀོད་འདི་ ལག་ལེན་འཐབ་ཐོག་ལས་ ཁྱོད་ཀྱི་ཌེཀསི་ཊོཔ་མཐོང་ཚུགས།"
+
+#: ../capplet/vino-preferences.glade.h:11
+msgid "When a user tries to view or control your desktop:"
+msgstr "ལག་ལེན་པ་ཅིག་གིས་ ཁྱོད་ཀྱི་ཌེཀསི་ཊོཔ་བལྟ་ནི་ ཡང་ན་ ཚད་འཛིན་འབད་ནིའི་ འབད་རྩོལ་བསྐྱེད་པའི་སྐབས་:"
+
+#: ../capplet/vino-preferences.glade.h:12
+msgid "_Allow other users to control your desktop"
+msgstr "ལག་ལེན་པ་གཞན་ཚུ་གིས་ ཁྱོད་ཀྱི་ཌེཀསི་ཊོཔ་ ཚད་འཛིན་འབད་བཅུག(_A)"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid "_Password:"
+msgstr "ཆོག་ཡིག:(_P)"
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "_Require the user to enter this password:"
+msgstr "ཆོག་ཡིག་འདི་བཙུགས་ནི་ལུ་ ལག་ལེན་པ་དགོ(_R)"
+
+#: ../capplet/vino-url.c:158
+msgid "Address"
+msgstr "ཁ་བྱང་།"
+
+#: ../capplet/vino-url.c:159
+msgid "The address pointed to by the widget"
+msgstr "ཝི་གེཊི་གིས་ རྩེ་དཔག་མི་ ཁ་བྱང་དེ"
+
+#: ../capplet/vino-url.c:166
+msgid "Tooltip"
+msgstr "ལག་ཆས་ཕན་བསླབ།"
+
+#: ../capplet/vino-url.c:167
+msgid "A tooltip for this URL"
+msgstr "ཡུ་ཨར་ཨེལ་འདི་གི་དོན་ལུ་ ལག་ཆས་ཕན་བསླབ་ཅིག"
+
+#: ../capplet/vino-url.c:173
+msgid "URL color"
+msgstr "ཡུ་ཨར་ཨེལ་གྱི་ཚོས་གཞི།"
+
+#: ../capplet/vino-url.c:174
+msgid "The color of the URL's label"
+msgstr "ཡུ་ཨར་ཨེལ་གྱི་ ཁ་ཡིག་གི་ཚོས་གཞི།"
+
+#: ../server/vino-fb.c:954
+#: ../server/vino-prompt.c:144
+#: ../server/vino-server.c:850
+msgid "Screen"
+msgstr "གསལ་གཞི།"
+
+#: ../server/vino-fb.c:955
+msgid "The screen to be monitored"
+msgstr "ལྟ་རྟོག་འབད་དགོ་པའི་གསལ་གཞི།"
+
+#: ../server/vino-main.c:78
+msgid "Your XServer does not support the XTest extension - remote desktop access will be view-only\n"
+msgstr "ཁྱོད་ཀྱི་ཨེགསི་སར་བར་དེ་གིས་ ཨེགསི་ཞིབ་དཔྱད་རྒྱ་བསྐྱེད་ལུ་ རྒྱབ་སྐྱོར་མི་འབད་བས་- ཐག་རིང་ཌོཀསི་ཊོཔ་གི་ འཛུལ་སྤྱོད་རྐྱངམ་གཅིག་མཐོང་ཚུགས་\n"
+
+#: ../server/vino-prompt.c:145
+msgid "The screen on which to display the prompt"
+msgstr "ནུས་སྤེལ་བཀྲམ་སྟོན་འབད་སའི་གསལ་གཞི།"
+
+#: ../server/vino-prompt.c:390
+#, c-format
+msgid "A user on the computer '%s' is trying to remotely view or control your desktop."
+msgstr "གློག་རིག་ '%s' ལག་ལེན་འཐབ་མི་ཅིག་གིས་ ཐག་རིང་ལས་ ཁྱོད་ཀྱི་ཌེཀསི་ཊོཔ་ལུ་ བལྟ་ནིའམ་ཚད་འཛིན་འབད་ནིའི་ འབད་རྩོལ་བསྐྱེད་དོ།"
+
+#: ../server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "<big><b> ལག་ལེན་པ་གཞན་ཅིག་གིས་ ཁྱོད་ཀྱི་ཌེཀསི་ཊོཔ་ བལྟ་ནིའི་འབད་རྩོལ་བསྐྱེད་དོ་</b></big་>"
+
+#: ../server/vino-prompt.glade.h:2
+msgid "A user on another computer is trying to remotely view or control your desktop."
+msgstr "གློག་རིག་གཞན་ ལག་ལེན་འཐབ་མི་ཅིག་གིས་ ཐག་རིང་ལས་ ཁྱོད་ཀྱི་ཌེཀསི་ཊོཔ་ལུ་ བལྟ་ནིའམ་ཚད་འཛིན་འབད་ནིའི་ འབད་རྩོལ་བསྐྱེད་དོ།"
+
+#: ../server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr "ཁྱོད་ཀྱིས་ཁོང་ལུ་ དེ་སྦེ་འབད་བཅུག་ནི་ཨིན་ན?"
+
+#: ../server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "དྲི་བ།"
+
+#: ../server/vino-prompt.glade.h:5
+#: ../server/vino-util.c:64
+msgid "_Allow"
+msgstr "འབད་བཅུག(_A)"
+
+#: ../server/vino-prompt.glade.h:6
+#: ../server/vino-util.c:65
+msgid "_Refuse"
+msgstr "འབད་མ་བཅུག(_R)"
+
+#: ../server/vino-server.c:851
+msgid "The screen for which to create a VNC server"
+msgstr "ཝི་ཨེན་སི་ སར་བར་ གསར་བསྐྲུན་འབད་སའི་གསལ་གཞི།"
+
+#: ../server/vino-server.c:858
+msgid "On Hold"
+msgstr "འཛིན་བཞག་གུ"
+
+#: ../server/vino-server.c:859
+msgid "Place all clients on hold"
+msgstr "ཞབས་ཏོག་སྤྱོད་མི་ཆ་མཉམ་ འཛིན་བཞག་གུ་བཀལ།"
+
+#: ../server/vino-server.c:866
+msgid "Prompt enabled"
+msgstr "ནུས་སྤེལ་ ལྕོགས་ཅན་བཟོ་ཡི།"
+
+#: ../server/vino-server.c:867
+msgid "Prompt the user about connection attempts"
+msgstr "ལག་ལེན་པ་དེ་ལུ་ མཐུད་ནིའི་དཔའ་བཅམ་པའི་སྐོར་ལས་ ནུས་སྤེལ་འབད།"
+
+#: ../server/vino-server.c:874
+msgid "View Only"
+msgstr "བལྟ་ནི་ཙམ།"
+
+#: ../server/vino-server.c:875
+msgid "Disallow keyboard/pointer input from clients"
+msgstr "ཞབས་ཏོག་སྤྱོད་མི་ཚུ་ནང་ལས་ ལྡེ་སྒྲོམ་/དཔག་བྱེད་ཨིན་པུཊི་ མ་ཆོགཔ་བཟོ།"
+
+#: ../server/vino-server.c:882
+msgid "Require Encryption"
+msgstr "གསང་བ་བཟོ་དགོ"
+
+#: ../server/vino-server.c:883
+msgid "Require clients to use encryption"
+msgstr "ཡོངས་འབྲེལ་ཡན་ཡག་ཚུ་གིས་ གསང་བཟོ་ལག་ལེན་འཐབ་དགོ"
+
+#: ../server/vino-server.c:890
+msgid "Authentication methods"
+msgstr "བདེན་བཤད་ཀྱི་ ཐབས་ལམ་ཚུ།"
+
+#: ../server/vino-server.c:891
+msgid "The authentication methods this server should allow"
+msgstr "སར་བར་འདི་གིས་ འབད་ཆོག་དགོ་པའི་ བདེན་བཤད་ཐམས་ལམ་ཚུ།"
+
+#: ../server/vino-server.c:899
+msgid "VNC Password"
+msgstr "ཝི་ཨེན་སི་ ཆོག་ཡིག"
+
+#: ../server/vino-server.c:900
+msgid "The password (base64 encoded) used to authenticate types using the VncAuth method"
+msgstr "ཝི་ཨེན་སི་བདེན་བཤད་ཐབས་ལམ་ ལག་ལེན་འཐབ་ཐོག་ལས་ དབྱེ་བ་བདེན་བཤད་འབད་ནི་ལུ་ ལག་ལེན་པའི་ཆོག་ཡིག་ (གཞི་རྟེན་༦༤ ཨིན་ཀོ་ཌེཌི་)"
+
+#: ../server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "ཆོག་པའི་བདེན་བཤད་ཐབས་ལམ་ཚུ།"
+
+#: ../server/vino-server.schemas.in.h:2
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "ཐག་རིང་ཌེཀསི་ཊོཔ་གི་ ཡུ་ཨར་ཨེལ་གཏང་དགོ་པའི་ གློག་འཕྲིན་ཁ་བྱང་།"
+
+#: ../server/vino-server.schemas.in.h:3
+msgid "Enable remote desktop access"
+msgstr "ཐག་རིང་ཌེཀསི་ཊོཔ་གི་འཛུལ་སྤྱོད་ ལྕོགས་ཅན་བཟོ།"
+
+#: ../server/vino-server.schemas.in.h:4
+msgid "If true, allows remote access to the desktop via the RFB protocol. Users on remote machines may then connect to the desktop using a vncviewer."
+msgstr "བདེན་པ་ཨིན་པ་ཅིན་ ཨར་ཨེཕ་བི་ གནད་སྤེལ་ལམ་ལུགས་བརྒྱུད་དེ་ ཌེཀསི་ཊོཔ་ལུ་ ཐག་རིང་འཛུལ་སྤྱོད་འབད་བཅུགཔ་ཨིན། ཐག་རིང་གློག་འཕྲུལ་ཚུ་ལུ་ ལག་ལེན་འཐབ་མི་ཚུ་གིས་ ཝི་ཨེན་སི་མཐོང་བྱེད་ ལག་ལེན་འཐབ་ཐོག་ལས་ ཌེཀསི་ཊོཔ་ལུ་མཐུད་བཏུབ།"
+
+#: ../server/vino-server.schemas.in.h:5
+msgid "If true, remote users accessing the desktop are not allowed access until the user on the host machine approves the connection. Recommended especially when access is not password protected."
+msgstr "བདེན་པ་ཨིན་པ་ཅིན་ ཌེཀསི་ཊོཔ་ལུ་ འཛུལ་སྤྱོད་འབད་མི་ ཐག་རིང་ལག་ལེན་པ་ཚུ་ ཧོསིཊི་གློག་འཕྲུལ་དེ་གིས་ གནང་བ་མ་བྱིན་ཚུན་ཚོད་ འཛུལ་སྤྱོད་འབད་མི་བཅུགཔ་ཨིན། དེ་ཡང་གཙོ་བོར་ འཛུལ་སྤྱོད་འབད་ནི་ལུ་ ཆོག་ཡིག་ཐོག་གིས་ ཉེན་སྐྱོབ་མེད་པའི་སྐབས་ ལག་ལེན་འཐབ་དགོ"
+
+#: ../server/vino-server.schemas.in.h:6
+msgid "If true, remote users accessing the desktop are only allowed to view the desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr "བདེན་པ་ཨིན་པ་ཅིན་ ཌེཀསི་ཊོཔ་ལུ་ འཛུལ་སྤྱོད་འབད་མི་ ཐག་རིང་ལག་ལེན་པ་ཚུ་ ཌེཀསི་ཊོཔ་ལུ་ བལྟ་ནི་ཙམ་ཅིག་ཆོགཔ་ཨིན། ཐག་རིང་ལག་ལེན་པ་ཚུ་གིས་ མཱའུསི་དང་ ལྡེ་སྒྲོམ་ཚུ་ ལག་ལེན་འཐབ་མི་ཚུགས།"
+
+#: ../server/vino-server.schemas.in.h:7
+msgid "If true, remote users accessing the desktop are required to be able support encryption. It is highly recommended that you use a client which supports encryption unless the intervening network is trusted."
+msgstr "བདེན་པ་ཨིན་པ་ཅིན་ ཌེཀསི་ཊོཔ་ལུ་ འཛུལ་སྤྱོད་འབད་མི་ ཐག་རིང་ལག་ལེན་པ་ཚུ་གིས་ གསང་བཟོ་ལུ་རྒྱབ་སྐྱོར་འབད་ཚུགས་དགོ དེ་གིས་སྦེ་ བར་དཀྲོགས་ཡོངས་འབྲེལ་དེ་ བློ་གཏད་ཅན་ཅིག་ཨིན་ན་མ་གཏོགས་ དེ་མིན་གསང་བཟོ་ལུ་ རྒྱབ་སྐྱོར་ཡོད་པའི་ ཞབས་ཏོག་སྤྱོད་མི་ཅིག་ ལག་ལེན་འཐབ་དགོ"
+
+#: ../server/vino-server.schemas.in.h:8
+msgid "Lists the authentication methods with which remote users may access the desktop. There are two possible authentication methods; \"vnc\" causes the remote user to be prompted for a password (the password is specified by the vnc_password key) before connecting and \"none\" which allows any remote user to connect."
+msgstr "ཐག་རིང་ལག་ལེན་པ་ཚུ་གིས་ ཌེཀསི་ཊོཔ་ལུ་ འཛུལ་སྤྱོད་འབད་ཚུགས་པའི་ བདེན་བཤད་ཐབས་ལམ་ཚུ་ ཐོ་བཀོད་འབད། འོས་ལྡན་གྱི་བདེན་བཤད་ཐབས་ལམ་གཉིས་ཡོད། \"vnc\" དེ་གིས་ཐག་རིང་ལག་ལེན་པ་ལུ་ ཆོག་ཡིག་ཅིག་གི་དོན་ལུ་ ནུས་སྤེལ་འབདཝ་ཨིན། (ཆོག་ཡིག་དེ་ཡང་ ཝི་ཨེན་སི་ཆོག་ཡིག་ལྡེ་མིག་) དེ་གིས་ མ་མཐུད་པའི་ཧེ་མར་ གསལ་བཀོད་འབདཝ་ཨིནམ་དང་ \"none\" དེ་གིས་ ཐག་རིང་ལག་ལེན་པ་ཚུ་ མཐུད་བཅུགཔ་ཨིན།(_p)"
+
+#: ../server/vino-server.schemas.in.h:9
+msgid "Only allow remote users to view the desktop"
+msgstr "ཐག་རིང་ལག་ལེན་པ་ཚུ་ ཌེཀསི་ཊོཔ་ལུ་ བལྟ་ནི་ཙམ་ཅིག་ཆོགཔ་བཟོ།"
+
+#: ../server/vino-server.schemas.in.h:10
+msgid "Password required for \"vnc\" authentication"
+msgstr "\"vnc\" བདེན་བཤད་ཀྱི་དོན་ལུ་ ཆོག་ཡིག་དགོ"
+
+#: ../server/vino-server.schemas.in.h:11
+msgid "Prompt the user before completing a connection"
+msgstr "མཐུད་ལམ་མ་ཚར་བའི་གོང་ལས་ ལག་ལེན་པ་ལུ་ ནུས་སྤེལ་འབད།"
+
+#: ../server/vino-server.schemas.in.h:12
+msgid "Require encryption"
+msgstr "གསང་བཟོ་འབད་དགོ"
+
+#: ../server/vino-server.schemas.in.h:13
+msgid "The password which the remote user will be prompted for if the \"vnc\" authentication method is used. The password specified by the key is base64 encoded."
+msgstr "\"vnc\" བདེན་བཤད་ཐབས་ལམ་དེ་ ལག་ལེན་འཐབ་པ་ཅིན་ ཐག་རིང་ལག་ལེན་པ་དེ་ལུ་ ནུས་སྤེལ་འབད་ནིའི་ཆོག་ཡིག ལྡེ་མིག་གིས་ གསལ་བཀོད་འབད་མི་ ཆོག་ཡིག་དེ་ གཞི་རྟེན་ ༦༤ ཨིན་ཀོ་ཌེཌི་ཨིན།"
+
+#: ../server/vino-server.schemas.in.h:14
+msgid "This key specifies the e-mail address to which the remote desktop URL should be sent if the user clicks on the URL in the Remote Desktop preferences dialog."
+msgstr "ལག་ལེན་པ་དེ་གིས་ ཐག་རིང་ཌེཀསི་ཊོཔ་གི་ དགའ་གདམ་གྱི་ཌའི་ལོག་ནང་གི་ ཡུ་ཨར་ཨེལ་གུ་ ཨེབ་གཏང་འབད་བ་ཅིན་ ལྡེ་མིག་འདི་གིས་ ཐག་རིང་ཌེཀསི་ཊོཔ་གི་ ཡུ་ཨར་ཨེལ་གཏང་སའི་ གློག་འཕྲིན་ཁ་བྱང་དེ་ གསལ་བཀོད་འབདཝ་ཨིན། "
+
+#: ../server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "ཐག་རིང་ཌེཀསི་ཊོཔ་སར་བར་དེ་ ཧེ་མ་ལས་ གཡོག་བཀོལ་བཞིན་ཡོདཔ་ལས་ ཕྱིར་འཐོན་འབད་དོ་...\n"
+
+#: ../server/vino-shell.c:79
+msgid "Problem registering the remote desktop server with bonobo-activation; exiting ...\n"
+msgstr "བོ་ནོ་བོ་ཤུགས་བཟོ་བའི་ཐོག་ལས་ ཐག་རིང་ཌེཀསི་ཊོཔ་སར་བར་ ཐོ་བཀོད་འབད་ནི་ལུ་དཀའ་ངལ་ཡོདཔ་ལས་ ཕྱིར་འཐོན་འབད་དོ།\n"
+
+#: ../session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr "ཐག་རིང་ཌེཀསི་ཊོཔ་སར་བར་ མེདཔ་ཐལ་སོངམ་ལས་ ལོག་འགོ་བཙུགས་དོ། \n"
+
+#: ../session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "%s ཤུགས་ལྡན་བཟོ་མ་ཤུགས། %s\n"
+
+#: ../session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "%s ཤུགས་ལྡན་བཟོ་མ་ཚུགས་: མ་ཤེས་པའི་འཛོལ་བ། \n"
+
+#: ../session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr "ཐག་རིང་ཌེཀསི་ཊོཔ་སར་བར་ ཤུགས་ལྡན་བཟོ་མ་ཚུགས་: ལན་ཐེངས་མང་རབས་ཅིག་ འབད་རྩོལ་བསྐྱེད་ཅི། \n"
+
+#: ../session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr "ཐག་རིང་ཌེཀསི་ཊོཔ་སར་བར་ འགོ་བཙུགས་དོ།"
+
+#: ../session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr "ཐག་རིང་ཌེཀསི་ཊོཔ་སར་བར་ འགོ་མི་བཙུགས་པས།"
+
