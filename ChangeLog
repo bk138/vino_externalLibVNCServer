@@ -1,3 +1,11 @@
+2006-04-18  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* .cvsignore: Update
+	* capplet/.cvsignore: Update
+	* configure.in: Remove obsolete entry for no_NO
+	* po/.cvsignore: Update
+	* po/no.po: Remove.
+
 2006-03-28 Vladimer Sichinava  <vlsichinava@gmail.com>
 
         * configure.in: Added "ka" (Georgian) to ALL_LINGUAS

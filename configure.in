@@ -24,7 +24,7 @@ AC_PROG_INTLTOOL
 AC_PATH_PROG(GCONFTOOL, gconftool-2)
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
-ALL_LINGUAS="ar az bg bn bs ca cs cy da de el en_CA en_GB es et eu fa fi fr gl gu he hi hu id it ja ka ko ku lt mk mn ms nb ne nl nn no or pa pl pt pt_BR ro ru rw sk sq sr sr@Latn sv ta th tr ug uk vi wa xh zh_CN zh_HK zh_TW"
+ALL_LINGUAS="ar az bg bn bs ca cs cy da de el en_CA en_GB es et eu fa fi fr gl gu he hi hu id it ja ka ko ku lt mk mn ms nb ne nl nn or pa pl pt pt_BR ro ru rw sk sq sr sr@Latn sv ta th tr ug uk vi wa xh zh_CN zh_HK zh_TW"
 
 AM_GLIB_GNU_GETTEXT
 

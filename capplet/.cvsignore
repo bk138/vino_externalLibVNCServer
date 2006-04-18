@@ -6,4 +6,5 @@ Makefile.in
 *.bak
 vino-preferences
 vino-preferences.desktop
+vino-preferences.desktop.in
 *~
