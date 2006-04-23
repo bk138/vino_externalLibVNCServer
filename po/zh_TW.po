@@ -1,5 +1,5 @@
 # Chinese (Taiwan) translation of vino.
-# Copyright (C) 2004, 06 Free Software Foundation, Inc.
+# Copyright (C) 2004-06 Free Software Foundation, Inc.
 # Chi-Wei Chen <michelin@seed.net.tw>, 2004.
 # 
 # 
@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-22 23:39+0100\n"
+"POT-Creation-Date: 2006-04-18 05:37+0200\n"
 "PO-Revision-Date: 2006-02-20 10:40+0800\n"
 "Last-Translator: Chi-Wei Chen <michelin@seed.net.tw>\n"
 "Language-Team: Chinese (Taiwan) <community@linuxhall.org>\n"
@@ -239,7 +239,7 @@ msgstr "VNC 密碼"
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
-msgstr "使用·VncAuth·方式用來驗證的密碼（以 base64 編碼）"
+msgstr "使用 VncAuth 方式用來驗證的密碼（以 base64 編碼）"
 
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
