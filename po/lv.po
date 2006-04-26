@@ -1,0 +1,392 @@
+# translation of vino.HEAD.po to Latvian
+# translation of vino.HEAD.po to latvian
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Eriks <eriks.skipars@gmail.com>, 2006.
+# Raivis Dejus <orvils@gmail.com>, 2006.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: vino.HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-04-27 02:27+0530\n"
+"PO-Revision-Date: 2006-04-24 10:54+0300\n"
+"Last-Translator: Raivis Dejus <orvils@gmail.com>\n"
+"Language-Team: Latvian <locale@laka.lv>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.2\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+
+#: ../capplet/vino-preferences.c:807
+msgid "Send this command by email"
+msgstr "Nosūtūt šo komandu pa e-pastu"
+
+#: ../capplet/vino-preferences.c:842
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"Šeit bij kļuda atver palīdzību:\n"
+"%s"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:1
+msgid "Remote Desktop"
+msgstr "Attālinātā darbvirsma"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "Uzstādīt jūsu attālinātās darbvirsmas pieejas preferences"
+
+#: ../capplet/vino-preferences.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../capplet/vino-preferences.glade.h:2
+msgid "        "
+msgstr "        "
+
+#: ../capplet/vino-preferences.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: ../capplet/vino-preferences.glade.h:4
+msgid "<b>Security</b>"
+msgstr "<b>Drošība</b>"
+
+#: ../capplet/vino-preferences.glade.h:5
+msgid "<b>Sharing</b>"
+msgstr "<b>Koplietošana</b>"
+
+#: ../capplet/vino-preferences.glade.h:6
+msgid "A_sk you for confirmation"
+msgstr "Jautāt ap_stiptinājumu"
+
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Allow other users to _view your desktop"
+msgstr "Atļaut citiem lietotājiem skatīt jūsu darb_virsmu"
+
+#: ../capplet/vino-preferences.glade.h:8
+msgid "Remote Desktop Preferences"
+msgstr "Attālinātās darbvirsmas preferences"
+
+#: ../capplet/vino-preferences.glade.h:9
+msgid "Some of these preferences are locked down"
+msgstr "Dažas no šīm preferencēm ir slēgtas"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid "Users can view your desktop using this command:"
+msgstr "Lietotāji var apskatīt jūsu darbvirsmu lietojot šo komandu:"
+
+#: ../capplet/vino-preferences.glade.h:11
+msgid "When a user tries to view or control your desktop:"
+msgstr "Kad kāds lietotājs cenšas piekļūt vai kontrolēt jūsu darbvirsmu:"
+
+#: ../capplet/vino-preferences.glade.h:12
+msgid "_Allow other users to control your desktop"
+msgstr "_Atļaut citiem lietotājiem kontrolēt jūsu darbvirsmu"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid "_Password:"
+msgstr "_Parole:"
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "_Require the user to enter this password:"
+msgstr "P_rasīt lietotājam ievadīt paroli:"
+
+#: ../capplet/vino-url.c:158
+msgid "Address"
+msgstr "Adrese"
+
+#: ../capplet/vino-url.c:159
+msgid "The address pointed to by the widget"
+msgstr "Adrese, uz ko ir norādījis vidžets"
+
+#: ../capplet/vino-url.c:166
+msgid "Tooltip"
+msgstr "Paskaidre"
+
+#: ../capplet/vino-url.c:167
+msgid "A tooltip for this URL"
+msgstr "Paskaidre šai URL"
+
+#: ../capplet/vino-url.c:173
+msgid "URL color"
+msgstr "URL krāsa"
+
+#: ../capplet/vino-url.c:174
+msgid "The color of the URL's label"
+msgstr "URL marķējuma krāsa"
+
+#: ../server/vino-fb.c:954 ../server/vino-prompt.c:144
+#: ../server/vino-server.c:853
+msgid "Screen"
+msgstr "Ekrāns"
+
+#: ../server/vino-fb.c:955
+msgid "The screen to be monitored"
+msgstr "Pārbaudāmais ekrāns"
+
+#: ../server/vino-main.c:80
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"Taavs Xserveris neatbalsta Xtest paplašinājumu - attālinātās darbvirsmas "
+"pieeja būs tikai-skatāma\n"
+
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#: ../server/vino-mdns.c:59
+msgid "vino-mdns:showusername"
+msgstr "vino-mdns:showusername"
+
+#.
+#. * Translators: this string is used ONLY if you
+#. * translated "vino-mdns:showusername" to anything
+#. * other than "1"
+#.
+#: ../server/vino-mdns.c:71
+#, c-format
+msgid "%s's remote desktop"
+msgstr "%s's attālinātā darbvirsma"
+
+#: ../server/vino-prompt.c:145
+msgid "The screen on which to display the prompt"
+msgstr "Ekrāns, kur atvērt paziņojumus"
+
+#: ../server/vino-prompt.c:390
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Lietotājs uz darora '%s' mēģina attālināti apskatīt vai kontrolēt jūsu "
+"darbvirsmu."
+
+#: ../server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "<big><b>CIts lietotājs mēģina apskatīt jūsu darbvirsmu.</b></big>"
+
+#: ../server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Lietotājs no cita darora mēģina attālināti apskatīt vai kontrolēt jūsu "
+"darbvirsmu."
+
+#: ../server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr "Vai jūs vēlaties atļaiut viņam tā rīkoties?"
+
+#: ../server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "Jautājums"
+
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
+msgid "_Allow"
+msgstr "_Atļaut"
+
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
+msgid "_Refuse"
+msgstr "No_raidīt"
+
+#: ../server/vino-server.c:854
+msgid "The screen for which to create a VNC server"
+msgstr "Ekrāns kuram uztaisīt VNC serveri"
+
+#: ../server/vino-server.c:861
+msgid "On Hold"
+msgstr "Aiztur"
+
+#: ../server/vino-server.c:862
+msgid "Place all clients on hold"
+msgstr "Aizturēt visus klientus"
+
+#: ../server/vino-server.c:869
+msgid "Prompt enabled"
+msgstr "Aktivizēti paziņojumi"
+
+#: ../server/vino-server.c:870
+msgid "Prompt the user about connection attempts"
+msgstr "Paziņot lietotājam par pieslēgšanās mēģinājumiem"
+
+#: ../server/vino-server.c:877
+msgid "View Only"
+msgstr "Tikai-skatāms"
+
+#: ../server/vino-server.c:878
+msgid "Disallow keyboard/pointer input from clients"
+msgstr "Liegt klientam ievadi ar tastatūru/peli"
+
+#: ../server/vino-server.c:885
+msgid "Require Encryption"
+msgstr "Pieprasīt šifrēšanu"
+
+#: ../server/vino-server.c:886
+msgid "Require clients to use encryption"
+msgstr "Prasīt klientiem lietot šifrēšanu"
+
+#: ../server/vino-server.c:893
+msgid "Authentication methods"
+msgstr "Autentificēšanas metodes"
+
+#: ../server/vino-server.c:894
+msgid "The authentication methods this server should allow"
+msgstr "Autentificēšanas metodes, kuras šim serverim būtu jāatļauj"
+
+#: ../server/vino-server.c:902
+msgid "VNC Password"
+msgstr "VNC parole"
+
+#: ../server/vino-server.c:903
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr ""
+"Parole (base64 šifrēta), kastiek lietota tipu autentifikācijai lietojot "
+"VncAuth metodi"
+
+#: ../server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "Atļautās autentificēšanas metodes"
+
+#: ../server/vino-server.schemas.in.h:2
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "E-pasta adrese, kurp jāsūta attālinātās darbvirsmas URL"
+
+#: ../server/vino-server.schemas.in.h:3
+msgid "Enable remote desktop access"
+msgstr "Aktivizēta attālinātās darbvirsmas pieeja"
+
+#: ../server/vino-server.schemas.in.h:4
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+"Ja patiess, atļauj attālinātu pieeju darblirsmai izmantojot RFB protokolu. "
+"Lietotāji no attālinātām ierīcēm varēs pieslēgties darbvirsmai izmantojot "
+"vncviewer."
+
+#: ../server/vino-server.schemas.in.h:5
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"ja patiess, attālinātie lietotājiem, kuri pikļūst darbvirsmai, tiek slēgta "
+"pieeja, kamēr lietotājs no saimniekdatora apstiprina savienojumu. "
+"Rekomendēts, itīpaši, kad  pieeja nav aizsargāta ar paroli."
+
+#: ../server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr ""
+"ja patiess, attālinātiem lietotājiem, kuri piekļūst darbvirsmai, tiek "
+"atļauts tikai skatīt darbvirsmu. Attālinātie lietotāji nevarēs izmantot peli "
+"vai tastatūru."
+
+#: ../server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encryption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+"ja patiess, attālinātiem lietotājiem, kuri piekļūst darbvirsmai, tiek "
+"prasīts atbalstīt šifrēšanu. Sevišķi ieteicama, ja izmantojat klientu, kas "
+"atbalsta šifrēšanu, izņemot ja savienojošais tīkls ir uzticams."
+
+#: ../server/vino-server.schemas.in.h:8
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+"Uzskaita autentificēšanas metodes ar kurām attālinātie lietotāji var piekļūt "
+"darbvirsmai. Ir divas iespējamās autentificēšanas metodes \"vnc\" liekot "
+"attālinātam lietotājam ievadīt paroli (paroli norāda ar vnc_password key) "
+"pirms pievienošanās un \"neviena\" kas pieļauj jebkuram attālinātam "
+"lietotājam pievienoties."
+
+#: ../server/vino-server.schemas.in.h:9
+msgid "Only allow remote users to view the desktop"
+msgstr "Attālinātiem lietotājiem atļaut tikai apskatīt darbvirsmu"
+
+#: ../server/vino-server.schemas.in.h:10
+msgid "Password required for \"vnc\" authentication"
+msgstr "Nepieciešama parole priekš \"vnc\" autentificēšanas"
+
+#: ../server/vino-server.schemas.in.h:11
+msgid "Prompt the user before completing a connection"
+msgstr "Jautāt lietotājam, pirms pabeigt pievienošanos"
+
+#: ../server/vino-server.schemas.in.h:12
+msgid "Require encryption"
+msgstr "Pieprasīt šifrēšanu"
+
+#: ../server/vino-server.schemas.in.h:13
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+"Parole, kury pieprasīs attālinātam lietotājam, ja tiks lietota \"vnc\" "
+"autentificēšanas metode. Atslēgas norādītā parole ir base64 šifrēta."
+
+#: ../server/vino-server.schemas.in.h:14
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+"Šī atslēga norāda e-pasta adresi, kurp attālinātas darbvirsmas URL tiks "
+"sūtīts, ja lietotājs uzklikšķinās uz URL, kas ir norādītā attālinātās "
+"darbvirsmas preferenču dialogā."
+
+#: ../server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "attālinātās darbvirsmas serveris jau strādā; iziet ...\n"
+
+#: ../server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr ""
+"Problēma reģistrējot attālinātās darbvirsmas serveri ar bonobo-aktivēšanu; "
+"iziet ...\n"
+
+#: ../session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr "Attālinātās darbvirsmas serveris nomira, restartējas\n"
+
+#: ../session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "%s aktivizācija neizdevās: %s\n"
+
+#: ../session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "%s aktivizācija neizdevās: Nezināma kļūda\n"
+
+#: ../session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr "neizdevās aktivizēt darbvirsmas severi: pārāk bieži jau mēģināts\n"
+
+#: ../session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr "Startē attālinātās darbvirsmas serveri"
+
+#: ../session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr "Nestartē attālinātās darbvirsmas serveri"
