@@ -1,3 +1,7 @@
+2006-08-05  Ani Peter <peter.ani@gmail.com>
+
+	* configure.in: Added Malayalam (ml.po) to ALL_LINGUAS
+
 2006-08-01 Arangel Angov <ufo@linux.net.mk>
 
 	* configure.in: Added Slovenian Translation.
