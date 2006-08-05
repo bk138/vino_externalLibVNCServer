@@ -1,0 +1,360 @@
+# translation of vino.HEAD.ml.po to Malayalam
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Ani Peter <apeter@redhat.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vino.HEAD.ml\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-08-05 08:24+0200\n"
+"PO-Revision-Date: 2006-08-05 16:34+0530\n"
+"Last-Translator: Ani Peter <apeter@redhat.com>\n"
+"Language-Team: Malayalam\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
+
+#: ../capplet/vino-preferences.c:807
+msgid "Send this command by email"
+msgstr "ഈ നിര്‍ദ്ദേശം ഈമെയില്‍ വഴി അയയ്കുക"
+
+#: ../capplet/vino-preferences.c:842
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"സഹായം ലഭിക്കുന്നതില്‍ പിശക്:\n"
+"%s"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:1
+msgid "Remote Desktop"
+msgstr "വിദൂരത്തിലുളള ഡസ്ക്-ടോപ്പ്"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "നിങ്ങളുടെ വിദൂരത്തിലുളള ഡസ്ക്-ടോപ്പ് ലഭ്യമാക്കുന്നതിനുളള മുന്‍ഗണനകള്‍ ക്രമീകരിക്കുക"
+
+#: ../capplet/vino-preferences.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../capplet/vino-preferences.glade.h:2
+msgid "        "
+msgstr "        "
+
+#: ../capplet/vino-preferences.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: ../capplet/vino-preferences.glade.h:4
+msgid "<b>Security</b>"
+msgstr "<b>സുരക്ഷിതത്വം</b>"
+
+#: ../capplet/vino-preferences.glade.h:5
+msgid "<b>Sharing</b>"
+msgstr "<b>കൊടുക്കല്‍ വാങ്ങല്‍</b>"
+
+#: ../capplet/vino-preferences.glade.h:6
+msgid "A_sk you for confirmation"
+msgstr "നിങ്ങളില്‍ നിന്നും ഉറപ്പ് വരുത്തുന്നു (_s)"
+
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Allow other users to _view your desktop"
+msgstr "മറ്റുളള ഉപയോക്താക്കള്‍ക്ക് നിങ്ങളുടെ ഡസ്ക്-ടോപ്പ് കാണുവാന്‍ അനുവദിക്കുക (_v)"
+
+#: ../capplet/vino-preferences.glade.h:8
+msgid "Remote Desktop Preferences"
+msgstr "വിദൂരത്തിലുളള ഡസ്ക്ക്-ടോപ്പ് മുന്‍ഗണനകള്‍"
+
+#: ../capplet/vino-preferences.glade.h:9
+msgid "Some of these preferences are locked down"
+msgstr "ഇവയില്‍ ചില മുന്‍ഗണനകള്‍ ലോക്ക്ഡ് ഡൌണ്‍ ആണ്"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid "Users can view your desktop using this command:"
+msgstr "ഉപയോക്താക്കള്‍ക്ക് ഈ നിര്‍ദ്ദേശം ഉപയോഗിച്ച് താങ്കളുടെ ഡസ്ക്ക്-ടോപ്പ് കാണാന്‍ സാധ്യമാണ്:"
+
+#: ../capplet/vino-preferences.glade.h:11
+msgid "When a user tries to view or control your desktop:"
+msgstr "ഒരു ഉപയോക്താവ് നിങ്ങളുടെ ഡസ്ക്-ടോപ്പ് കാണുവാനോ നിയന്ത്രിക്കുവാനോ ശ്രമിക്കുന്പോള്‍:"
+
+#: ../capplet/vino-preferences.glade.h:12
+msgid "_Allow other users to control your desktop"
+msgstr "മറ്റുളള ഉപയോക്താക്കള്‍ക്ക് നിങ്ങളുടെ ഡസ്ക്-ടോപ്പ് നിയന്ത്രിക്കുവാന്‍ അനുവദിക്കുക (_A)"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid "_Password:"
+msgstr "പാസ്‍വേര്‍ഡ് (_P):"
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "_Require the user to enter this password:"
+msgstr "ഉപയോക്താവ് ഈ പാസ്‍വേര്‍ഡ് എന്‍റര്‍ ചെയ്യേണ്ടതാണ് (_R):"
+
+#: ../capplet/vino-url.c:158
+msgid "Address"
+msgstr "മേല്‍വിലാസം"
+
+#: ../capplet/vino-url.c:159
+msgid "The address pointed to by the widget"
+msgstr "വിഡ്ജറ്റ് നിര്‍ദ്ദേശിക്കുന്ന മേല്‍വിലാസം"
+
+#: ../capplet/vino-url.c:166
+msgid "Tooltip"
+msgstr "ടൂള്‍ ടിപ്പ്"
+
+#: ../capplet/vino-url.c:167
+msgid "A tooltip for this URL"
+msgstr "ഈ URL-നുളള ടൂള്‍ ടിപ്പ്"
+
+#: ../capplet/vino-url.c:173
+msgid "URL color"
+msgstr "URL-ന്‍റെ നിറം"
+
+#: ../capplet/vino-url.c:174
+msgid "The color of the URL's label"
+msgstr "URL-ന്‍റെ ലേബലിന്‍റെ നിറം"
+
+#: ../server/vino-fb.c:954 ../server/vino-prompt.c:144
+#: ../server/vino-server.c:853
+msgid "Screen"
+msgstr "സ്ക്രീന്‍"
+
+#: ../server/vino-fb.c:955
+msgid "The screen to be monitored"
+msgstr "സ്ക്രീന്‍ നിരീക്ഷിക്കുക"
+
+#: ../server/vino-main.c:80
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#: ../server/vino-mdns.c:59
+msgid "vino-mdns:showusername"
+msgstr "vino-mdns:showusername"
+
+#.
+#. * Translators: this string is used ONLY if you
+#. * translated "vino-mdns:showusername" to anything
+#. * other than "1"
+#.
+#: ../server/vino-mdns.c:71
+#, c-format
+msgid "%s's remote desktop"
+msgstr "%s-ന്‍റെ വിദൂരതയിലുളള ഡസ്ക്-ടോപ്പ്"
+
+#: ../server/vino-prompt.c:145
+msgid "The screen on which to display the prompt"
+msgstr "ഏത് സ്ക്രീന്‍ ഉപയോഗിക്കണമെന്ന കാണിക്കുക (പ്രോമ്പ്റ്റ് ഉളള സ്ക്രീന്‍)"
+
+#: ../server/vino-prompt.c:390
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr "കംപ്യൂട്ടര്‍ '%s'-ലുളള ഉപയോക്താവ് നിങ്ങളുടെ ഡസ്ക്-ടോപ്പ് കാണുന്നതിനോ നിയന്ത്രിക്കുന്നതിനോ ശ്രമിക്കുന്നു."
+
+#: ../server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "<big><b>മറ്റൊരു ഉപയോക്താവ് നിങ്ങളുടെ ഡസ്ക്-ടോപ്പ് കാണുന്നതിനായി ശ്രമിക്കുന്നു.</b></big>"
+
+#: ../server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr "മറ്റൊരു കംപ്യൂട്ടറിലുളള ഉപയോക്താവ് നിങ്ങളുടെ ഡസ്ക്-ടോപ്പ് കാണുന്നതിനോ നിയന്ത്രിക്കുന്നതിനോ ശ്രമിക്കുന്നു."
+
+#: ../server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr "നിങ്ങള്‍ക്ക് ഇതിനായി ഇവരെ അനുവദിക്കണമോ?"
+
+#: ../server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "ചോദ്യം"
+
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
+msgid "_Allow"
+msgstr "അനുവദിക്കുക (_A)"
+
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
+msgid "_Refuse"
+msgstr "നിഷേധിക്കുക (_R)"
+
+#: ../server/vino-server.c:854
+msgid "The screen for which to create a VNC server"
+msgstr "ഒരു VNC സര്‍വര്‍ ആവശ്യമുളള സ്ക്രീന്‍"
+
+#: ../server/vino-server.c:861
+msgid "On Hold"
+msgstr "കാത്തിരിപ്പിലാണ്"
+
+#: ../server/vino-server.c:862
+msgid "Place all clients on hold"
+msgstr "എല്ലാ ക്ളൈന്‍റുകളേയും കാത്തിരിപ്പിക്കുക"
+
+#: ../server/vino-server.c:869
+msgid "Prompt enabled"
+msgstr "പ്രോമ്പ്റ്റ് പ്രവവര്‍ത്തന സജ്ജമാക്കിയിരിക്കുന്നു"
+
+#: ../server/vino-server.c:870
+msgid "Prompt the user about connection attempts"
+msgstr "കണക്ഷനായുളള ശ്രമങ്ങളെ പറ്റി ഉപയോക്താവിനെ അറിയിക്കുക"
+
+#: ../server/vino-server.c:877
+msgid "View Only"
+msgstr "കാണുക മാത്രം ചെയ്യുക"
+
+#: ../server/vino-server.c:878
+msgid "Disallow keyboard/pointer input from clients"
+msgstr "ക്ളൈന്‍റില്‍ നിന്നുമുളള കീബോര്‍ഡ്/പോയിന്‍റര്‍ ഇന്‍പുട്ട് അനുവദിക്കാതിരിക്കുക"
+
+#: ../server/vino-server.c:885
+msgid "Require Encryption"
+msgstr "രഹസ്യ ഭാഷയിലാക്കണം"
+
+#: ../server/vino-server.c:886
+msgid "Require clients to use encryption"
+msgstr "ക്ളൈന്‍റുകള്‍ രഹസ്യ ഭാഷയിലാക്കിയത് ഉപയോഗിക്കേണ്ടതാണ്"
+
+#: ../server/vino-server.c:893
+msgid "Authentication methods"
+msgstr "ഓഥന്‍റിക്കേഷന്‍ മാര്‍ഗ്ഗങ്ങള്‍"
+
+#: ../server/vino-server.c:894
+msgid "The authentication methods this server should allow"
+msgstr "ഈ സര്‍വറിന്‍റെ അനുവാദം കിട്ടേണ്ട ഓഥന്‍റിക്കേഷന്‍ മാര്‍ഗ്ഗങ്ങള്‍"
+
+#: ../server/vino-server.c:902
+msgid "VNC Password"
+msgstr "VNC പാസ്‍വേര്‍ഡ്"
+
+#: ../server/vino-server.c:903
+msgid ""
+"The password (base64 encoded) used to authenticate types using the VncAuth "
+"method"
+msgstr ""
+"VncAuth മാര്‍ഗ്ഗം ഉപയോഗിക്കുന്നവയുടെ ആധികാര്യം സ്ഥാപിക്കുന്നതിനുളള "
+"പാസ്‍വേര്‍ഡ് (base64 എന്‍കോഡഡ്)"
+
+#: ../server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "ഓഥന്‍റിക്കേഷന്‍ മാര്‍ഗ്ഗങ്ങള്‍ അനുവദിക്കുക"
+
+#: ../server/vino-server.schemas.in.h:2
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "വിദൂരത്തുളള ഡസ്ക്-ടോപ്പ്-ന്‍റെ URL അയയ്ക്കേണ്ട ഈമെയില്‍ മേല്‍വിലാസം"
+
+#: ../server/vino-server.schemas.in.h:3
+msgid "Enable remote desktop access"
+msgstr "വിദൂരത്തുളള ഡസ്ക്-ടോപ്പ് പ്രവേശനം സജ്ജമാക്കുക"
+
+#: ../server/vino-server.schemas.in.h:4
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr "ഉത്തരം ശരി എന്നാണെങ്കില്‍, RFB സന്പ്രദായം വഴി ഡസ്ക്-ടോപ്പിലേക്ക് വിദൂരത്തുളള കംപ്യൂട്ടറുകള്‍ക്ക്  പ്രവേശനത്തിനുളള അനുവാദം നല്‍കുക. ഒരു vncviewer ഉപയോഗിച്ച് പിന്നീട് ഇവയ്ക് ഡസ്ക്-ടോപ്പിലേക്ക് കണക്ട് ചെയ്യാവുന്നതാണ്. "
+
+#: ../server/vino-server.schemas.in.h:5
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote user's will not be able to use the mouse or keyboard."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encryption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:8
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:9
+msgid "Only allow remote users to view the desktop"
+msgstr "വിദൂരത്തുളള ഉപയോക്താക്കള്‍ക്ക് മാത്രം ഡസ്ക്-ടോപ്പ് കാണുന്നതിന് അനുവദിക്കുക"
+
+#: ../server/vino-server.schemas.in.h:10
+msgid "Password required for \"vnc\" authentication"
+msgstr "\"vnc\" ഓഥമന്‍റിക്കേഷന് പാസ്‍വേര്‍ഡ് ആവശ്യമുണ്ട്"
+
+#: ../server/vino-server.schemas.in.h:11
+msgid "Prompt the user before completing a connection"
+msgstr "ഒരു കണക്ഷന്‍ പൂര്‍ത്തിയാക്കുന്നതിന് മുന്പ് ഉപയോക്താവിനെ അറിയിക്കുക"
+
+#: ../server/vino-server.schemas.in.h:12
+msgid "Require encryption"
+msgstr "എന്‍ക്രിപ്ഷന്‍ ആവശ്യമുണ്ട്"
+
+#: ../server/vino-server.schemas.in.h:13
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:14
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+
+#: ../server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "വിദൂര ഡസ്ക്-ടോപ്പ് നിലവില്‍ പ്രവര്‍ത്തിക്കുന്നു; പുറത്തേക്ക് പോകുന്നു...\n"
+
+#: ../server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr ""
+
+#: ../session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr ""
+
+#: ../session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "%s-ന്‍റെ പ്രവര്‍ത്തനം പരാജയപ്പെട്ടിരിക്കുന്നു: %s\n"
+
+#: ../session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "%s-ന്‍റെ പ്രവര്‍ത്തനം പരാജയപ്പെട്ടിരിക്കുന്നു: അപരിചിതമായ പിശക്\n"
+
+#: ../session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr ""
+
+#: ../session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr "വിദൂര ഡസ്ക്-ടോപ്പ് സര്‍വര്‍ ആരംഭിക്കുന്നു"
+
+#: ../session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr "വിദൂരത്തിലുളള ഡസ്ക്-ടോപ്പ് സര്‍വര്‍ ആരംഭിക്കുന്നതില്ല"
+
