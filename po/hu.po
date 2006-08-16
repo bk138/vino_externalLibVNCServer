@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD.hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-28 07:36+0100\n"
+"POT-Creation-Date: 2006-08-15 12:38+0200\n"
 "PO-Revision-Date: 2005-08-14 14:44+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <gnome@gnome.hu>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10\n"
-"Plural-Forms:  nplurals=1; plural=0;\n"
+"Plural-Forms:   nplurals=2; plural=(n != 1);\n"
 
 #: ../capplet/vino-preferences.c:807
 msgid "Send this command by email"
@@ -80,7 +80,8 @@ msgstr "A felhasználók a következő paranccsal láthatják a munkaasztalát:"
 
 #: ../capplet/vino-preferences.glade.h:11
 msgid "When a user tries to view or control your desktop:"
-msgstr "Ha egy felhasználó megpróbálja megnézni vagy irányítani az Ön munkaasztalát:"
+msgstr ""
+"Ha egy felhasználó megpróbálja megnézni vagy irányítani az Ön munkaasztalát:"
 
 #: ../capplet/vino-preferences.glade.h:12
 msgid "_Allow other users to control your desktop"
@@ -146,9 +147,10 @@ msgstr "1"
 
 #.
 #. * Translators: this string is used ONLY if you
-#. * translated "vino-mdns:showusername" to "1"
+#. * translated "vino-mdns:showusername" to anything
+#. * other than "1"
 #.
-#: ../server/vino-mdns.c:70
+#: ../server/vino-mdns.c:71
 #, c-format
 msgid "%s's remote desktop"
 msgstr "%s távoli munkaasztala"
@@ -390,4 +392,3 @@ msgstr "Távoli munkaasztal-kiszolgáló indítása"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Nem indítom el a távoli munkaasztal-kiszolgálót"
-
