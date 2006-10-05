@@ -201,39 +201,6 @@ vino_server_update_client_timeout (rfbClientPtr rfb_client)
   return TRUE;
 }
 
-static void
-vino_server_set_client_on_hold (VinoServer            *server,
-				VinoServerClientInfo  *client,
-				gboolean               on_hold)
-{
-  rfbClientPtr rfb_client = client->rfb_client;
-
-  dprintf (RFB, "Setting client '%s' on hold: %s\n",
-	   rfb_client->host, on_hold ? "(true)" : "(false)");
-
-  rfb_client->onHold = on_hold;
-
-  /* We don't process any pending data from an client which is
-   * on hold, so don't let it starve the rest of the mainloop.
-   */
-  g_source_set_priority (g_main_context_find_source_by_id (NULL, client->io_watch),
-			 on_hold ? G_PRIORITY_LOW : G_PRIORITY_DEFAULT);
-
-  if (!on_hold)
-    {
-      if (!client->update_timeout)
-	client->update_timeout = g_timeout_add (50,
-						(GSourceFunc) vino_server_update_client_timeout,
-						rfb_client);
-    }
-  else
-    {
-      if (client->update_timeout)
-	g_source_remove (client->update_timeout);
-      client->update_timeout = 0;
-    }
-}
-
 static inline gboolean
 more_data_pending (int fd)
 {
@@ -255,6 +222,51 @@ vino_server_client_data_pending (GIOChannel   *source,
   } while (more_data_pending (rfb_client->sock));
   
   return vino_server_update_client (rfb_client);
+}
+
+static void
+vino_server_set_client_on_hold (VinoServer            *server,
+				VinoServerClientInfo  *client,
+				gboolean               on_hold)
+{
+  rfbClientPtr rfb_client = client->rfb_client;
+
+  dprintf (RFB, "Setting client '%s' on hold: %s\n",
+	   rfb_client->host, on_hold ? "(true)" : "(false)");
+
+  rfb_client->onHold = on_hold;
+
+  if (on_hold)
+  {
+    if (client->io_watch)
+    {
+      g_source_remove(client->io_watch);
+      client->io_watch = 0;
+    }
+
+    if (client->update_timeout)
+    {
+      g_source_remove (client->update_timeout);
+      client->update_timeout = 0;
+    }
+  }
+  else
+  {
+    if (!client->io_watch)
+    {
+      client->io_watch = g_io_add_watch (client->io_channel,
+					G_IO_IN|G_IO_PRI,
+					(GIOFunc) vino_server_client_data_pending,
+					rfb_client);
+    }
+
+    if (!client->update_timeout)
+    {
+      client->update_timeout = g_timeout_add (50,
+					(GSourceFunc) vino_server_update_client_timeout,
+					rfb_client);
+    }
+  }
 }
 
 static enum rfbNewClientAction
@@ -279,11 +291,6 @@ vino_server_handle_new_client (rfbClientPtr rfb_client)
   client->rfb_client->clientGoneHook = vino_server_handle_client_gone;
 
   client->io_channel = g_io_channel_unix_new (rfb_client->sock);
-
-  client->io_watch = g_io_add_watch (client->io_channel,
-				     G_IO_IN|G_IO_PRI,
-				     (GIOFunc) vino_server_client_data_pending,
-				     rfb_client);
 
   server->priv->clients = g_slist_prepend (server->priv->clients, client);
 

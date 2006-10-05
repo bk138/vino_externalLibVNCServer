@@ -1,5 +1,12 @@
 2006-10-05  Kjartan Maraas  <kmaraas@gnome.org>
 
+	* server/vino-server.c: (vino_server_set_client_on_hold),
+	(vino_server_handle_new_client): Fix from Gary Coady to fix
+	problem where vino-server takes 90% CPU on wrong login.
+	Closes bug #332011.
+
+2006-10-05  Kjartan Maraas  <kmaraas@gnome.org>
+
 	* server/libvncserver/rfb/rfbproto.h:
 	* server/vino-fb.c: Build fixes for FreeBSD. Patch from
 	Diego Pettenò. Closes bug 314311.
