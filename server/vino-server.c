@@ -237,36 +237,36 @@ vino_server_set_client_on_hold (VinoServer            *server,
   rfb_client->onHold = on_hold;
 
   if (on_hold)
-  {
-    if (client->io_watch)
     {
-      g_source_remove(client->io_watch);
-      client->io_watch = 0;
-    }
+      if (client->io_watch)
+        {
+          g_source_remove(client->io_watch);
+          client->io_watch = 0;
+        }
 
-    if (client->update_timeout)
-    {
-      g_source_remove (client->update_timeout);
-      client->update_timeout = 0;
+      if (client->update_timeout)
+        {
+          g_source_remove (client->update_timeout);
+          client->update_timeout = 0;
+        }
     }
-  }
   else
-  {
-    if (!client->io_watch)
     {
-      client->io_watch = g_io_add_watch (client->io_channel,
-					G_IO_IN|G_IO_PRI,
-					(GIOFunc) vino_server_client_data_pending,
-					rfb_client);
-    }
+      if (!client->io_watch)
+        {
+          client->io_watch = g_io_add_watch (client->io_channel,
+					     G_IO_IN|G_IO_PRI,
+					     (GIOFunc) vino_server_client_data_pending,
+					     rfb_client);
+        }
 
-    if (!client->update_timeout)
-    {
-      client->update_timeout = g_timeout_add (50,
+      if (!client->update_timeout)
+        {
+          client->update_timeout = g_timeout_add (50,
 					(GSourceFunc) vino_server_update_client_timeout,
 					rfb_client);
+        }
     }
-  }
 }
 
 static enum rfbNewClientAction
