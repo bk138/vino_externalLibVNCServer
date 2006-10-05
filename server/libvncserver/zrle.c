@@ -28,6 +28,8 @@
 #include <zrleoutstream.h>
 
 
+#ifdef HAVE_LIBZ
+
 #define GET_IMAGE_INTO_BUF(tx,ty,tw,th,buf)                                \
 {  char *fbptr = (cl->screen->frameBuffer                                   \
 		 + (cl->screen->paddedWidthInBytes * ty)                   \
@@ -181,3 +183,4 @@ void FreeZrleData(rfbClientPtr cl)
   cl->zrleData = NULL;
 }
 
+#endif  /* HAVE_LIBZ */

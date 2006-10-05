@@ -306,6 +306,7 @@ vino_prefs_init (gboolean view_only)
 					       VINO_PREFS_VNC_PASSWORD,
 					       NULL);
   dprintf (PREFS, "Encoded password: %s\n", vino_vnc_password ? vino_vnc_password : "(null)");
+  g_free (vino_vnc_password);
 
   vino_listeners [i] =
     gconf_client_notify_add (vino_client,
