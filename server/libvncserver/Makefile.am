@@ -32,6 +32,10 @@ libvncserver_la_SOURCES = 	\
 	zrletypes.h 		\
 	$(NULL)
 
+libvncserver_la_LIBADD =	\
+	$(LIBGNUTLS_LIBS)		\
+	$(LIBGCRYPT_LIBS)
+
 EXTRA_DIST =			\
 	tableinit24.c		\
 	tableinittctemplate.c	\

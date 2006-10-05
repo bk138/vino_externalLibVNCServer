@@ -1,3 +1,12 @@
+Vino 2.16.0
+===========
+
+  Fixes
+
+    + Fix hang on wrong login (Gary Coady)
+    + Build fixes for FreeBSD (Diego Pettenò) 
+    + Build fixes (Leonardo Boshell)
+
 Vino 2.13.5
 ===========
 

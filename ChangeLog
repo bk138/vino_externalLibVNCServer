@@ -1,5 +1,12 @@
 2006-10-05  Kjartan Maraas  <kmaraas@gnome.org>
 
+	* NEWS: Updated.
+	* server/libvncserver/Makefile.am: Fix for compile error with
+	LDFLAGS="-Wl,--as-needed". Patch from dgrenier at easyconnect fr.
+	Closes bug #340377.
+
+2006-10-05  Kjartan Maraas  <kmaraas@gnome.org>
+
 	* server/vino-server.c: (vino_server_set_client_on_hold),
 	(vino_server_handle_new_client): Fix from Gary Coady to fix
 	problem where vino-server takes 90% CPU on wrong login.
