@@ -1,5 +1,11 @@
 2006-10-05  Kjartan Maraas  <kmaraas@gnome.org>
 
+	* server/libvncserver/rfb/rfbproto.h:
+	* server/vino-fb.c: Build fixes for FreeBSD. Patch from
+	Diego Pettenò. Closes bug 314311.
+
+2006-10-05  Kjartan Maraas  <kmaraas@gnome.org>
+
 	* server/libvncserver/zrle.c: Fix compilation if
 	--without-zlib and --withoug-libz are passed. Patch from
 	Leonardo Boshell. Closes bug #314224.
