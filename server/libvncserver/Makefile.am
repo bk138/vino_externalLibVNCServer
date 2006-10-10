@@ -33,8 +33,9 @@ libvncserver_la_SOURCES = 	\
 	$(NULL)
 
 libvncserver_la_LIBADD =	\
-	$(LIBGNUTLS_LIBS)		\
-	$(LIBGCRYPT_LIBS)
+	$(LIBGNUTLS_LIBS)	\
+	$(LIBGCRYPT_LIBS)	\
+	$(NULL)
 
 EXTRA_DIST =			\
 	tableinit24.c		\

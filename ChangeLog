@@ -1,5 +1,11 @@
 2006-10-10  Mark McLoughlin  <mark@skynet.ie>
 
+	* server/libvncserver/Makefile.am:
+	* server/vino-server.c: (vino_server_set_client_on_hold):
+	Fix couple of nits
+
+2006-10-10  Mark McLoughlin  <mark@skynet.ie>
+
 	* configure.in: bump version to 2.17.1 - 2.16 development
 	continues on the gnome-2-16 branch.
 	

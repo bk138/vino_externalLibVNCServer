@@ -240,7 +240,7 @@ vino_server_set_client_on_hold (VinoServer            *server,
     {
       if (client->io_watch)
         {
-          g_source_remove(client->io_watch);
+          g_source_remove (client->io_watch);
           client->io_watch = 0;
         }
 
@@ -263,8 +263,8 @@ vino_server_set_client_on_hold (VinoServer            *server,
       if (!client->update_timeout)
         {
           client->update_timeout = g_timeout_add (50,
-					(GSourceFunc) vino_server_update_client_timeout,
-					rfb_client);
+                                                  (GSourceFunc) vino_server_update_client_timeout,
+                                                  rfb_client);
         }
     }
 }
