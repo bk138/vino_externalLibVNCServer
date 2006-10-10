@@ -1,3 +1,9 @@
+2006-10-10  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: post-release bump to 2.16.1
+
+==================== 2.16.0 ====================
+
 2006-10-05  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* NEWS: Updated.
