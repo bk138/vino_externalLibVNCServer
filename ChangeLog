@@ -1,3 +1,8 @@
+2006-10-10  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* server/vino-prefs.c: (vino_prefs_init):
+	Revert the broken leak fix here too.
+
 2006-10-10  Mark McLoughlin  <mark@skynet.ie>
 
 	* server/libvncserver/Makefile.am:
