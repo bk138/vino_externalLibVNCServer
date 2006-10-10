@@ -1,5 +1,10 @@
 2006-10-10  Mark McLoughlin  <mark@skynet.ie>
 
+	* configure.in: bump version to 2.17.1 - 2.16 development
+	continues on the gnome-2-16 branch.
+	
+2006-10-10  Mark McLoughlin  <mark@skynet.ie>
+
 	* configure.in: post-release bump to 2.16.1
 
 ==================== 2.16.0 ====================
