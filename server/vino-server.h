@@ -58,32 +58,32 @@ struct _VinoServerClass
   GObjectClass base_class;
 };
 
-GType                vino_server_get_type               (void) G_GNUC_CONST;
+GType                vino_server_get_type                 (void) G_GNUC_CONST;
 
-VinoServer          *vino_server_new                    (GdkScreen      *screen,
-							 gboolean        view_only);
-GdkScreen           *vino_server_get_screen             (VinoServer     *server);
-void                 vino_server_set_on_hold            (VinoServer     *server,
-							 gboolean        on_hold);
-gboolean             vino_server_get_on_hold            (VinoServer     *server);
-void                 vino_server_set_prompt_enabled     (VinoServer     *server,
-							 gboolean        enable_prompt);
-gboolean             vino_server_get_prompt_enabled     (VinoServer     *server);
-void                 vino_server_set_view_only          (VinoServer     *server,
-							 gboolean        view_only);
-gboolean             vino_server_get_view_only          (VinoServer     *server);
-void                 vino_server_set_local_only         (VinoServer     *server,
-							 gboolean        local_only);
-gboolean             vino_server_get_local_only         (VinoServer     *server);
-void                 vino_server_set_require_encryption (VinoServer     *server,
-							 gboolean        require_encryption);
-gboolean             vino_server_get_require_encryption (VinoServer     *server);
-void                 vino_server_set_auth_methods       (VinoServer     *server,
-							 VinoAuthMethod  auth_methods);
-VinoAuthMethod       vino_server_get_auth_methods       (VinoServer     *server);
-void                 vino_server_set_vnc_password       (VinoServer     *server,
-							 const char     *vnc_password);
-G_CONST_RETURN char *vino_server_get_vnc_password       (VinoServer     *server);
+VinoServer          *vino_server_new                      (GdkScreen      *screen,
+							   gboolean        view_only);
+GdkScreen           *vino_server_get_screen               (VinoServer     *server);
+void                 vino_server_set_on_hold              (VinoServer     *server,
+							   gboolean        on_hold);
+gboolean             vino_server_get_on_hold              (VinoServer     *server);
+void                 vino_server_set_prompt_enabled       (VinoServer     *server,
+							   gboolean        enable_prompt);
+gboolean             vino_server_get_prompt_enabled       (VinoServer     *server);
+void                 vino_server_set_view_only            (VinoServer     *server,
+							   gboolean        view_only);
+gboolean             vino_server_get_view_only            (VinoServer     *server);
+void                 vino_server_set_local_only           (VinoServer     *server,
+							   gboolean        local_only);
+gboolean             vino_server_get_local_only           (VinoServer     *server);
+void                 vino_server_set_require_encryption   (VinoServer     *server,
+							   gboolean        require_encryption);
+gboolean             vino_server_get_require_encryption   (VinoServer     *server);
+void                 vino_server_set_auth_methods         (VinoServer     *server,
+							   VinoAuthMethod  auth_methods);
+VinoAuthMethod       vino_server_get_auth_methods         (VinoServer     *server);
+void                 vino_server_set_vnc_password         (VinoServer     *server,
+							   const char     *vnc_password);
+G_CONST_RETURN char *vino_server_get_vnc_password         (VinoServer     *server);
 
 G_END_DECLS
 

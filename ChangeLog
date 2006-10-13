@@ -1,3 +1,9 @@
+2006-10-13  Mark McLoughlin  <mark@skynet.ie>
+
+	* vino/server/vino-prefs.c,
+	  vino/server/vino-server.h: re-indent some stuff
+	for the next patch.
+
 2006-10-12  Mark McLoughlin  <mark@skynet.ie>
 
 	Add a "local_only" GConf key, for people who want to exclusively

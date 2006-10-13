@@ -43,13 +43,13 @@ static GConfClient *vino_client  = NULL;
 static GSList      *vino_servers = NULL;
 static guint        vino_listeners [VINO_N_LISTENERS] = { 0, };
 
-static gboolean        vino_enabled            = FALSE;
-static gboolean        vino_prompt_enabled     = FALSE;
-static gboolean        vino_view_only          = FALSE;
-static gboolean        vino_local_only         = FALSE;
-static gboolean        vino_require_encryption = FALSE;
-static VinoAuthMethod  vino_auth_methods       = VINO_AUTH_VNC;
-static char           *vino_vnc_password       = NULL;
+static gboolean        vino_enabled              = FALSE;
+static gboolean        vino_prompt_enabled       = FALSE;
+static gboolean        vino_view_only            = FALSE;
+static gboolean        vino_local_only           = FALSE;
+static gboolean        vino_require_encryption   = FALSE;
+static VinoAuthMethod  vino_auth_methods         = VINO_AUTH_VNC;
+static char           *vino_vnc_password         = NULL;
 
 
 static void
@@ -265,14 +265,14 @@ vino_prefs_create_server (GdkScreen *screen)
   VinoServer *server;
 
   server = g_object_new (VINO_TYPE_SERVER,
-			 "prompt-enabled",     vino_prompt_enabled,
-			 "view-only",          vino_view_only,
-			 "local-only",	       vino_local_only,
-			 "auth-methods",       vino_auth_methods,
-			 "require-encryption", vino_require_encryption,
-			 "vnc-password",       vino_vnc_password,
-			 "on-hold",            !vino_enabled,
-			 "screen",             screen,
+			 "prompt-enabled",       vino_prompt_enabled,
+			 "view-only",            vino_view_only,
+			 "local-only",           vino_local_only,
+			 "auth-methods",         vino_auth_methods,
+			 "require-encryption",   vino_require_encryption,
+			 "vnc-password",         vino_vnc_password,
+			 "on-hold",              !vino_enabled,
+			 "screen",               screen,
 			 NULL);
 
   vino_servers = g_slist_prepend (vino_servers, server);
