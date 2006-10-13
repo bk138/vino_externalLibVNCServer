@@ -823,7 +823,7 @@ vino_server_get_property (GObject    *object,
       g_value_set_boolean (value, server->priv->view_only);
       break;
     case PROP_REQUIRE_ENCRYPTION:
-      g_value_set_boolean (value, server->priv->view_only);
+      g_value_set_boolean (value, server->priv->require_encryption);
       break;
     case PROP_AUTH_METHODS:
       g_value_set_flags (value, server->priv->auth_methods);
