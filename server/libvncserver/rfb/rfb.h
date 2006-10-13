@@ -469,6 +469,8 @@ extern char rfbEndianTest;
 extern int rfbMaxClientWait;
 
 extern void rfbInitSockets(rfbScreenInfoPtr rfbScreen);
+extern void rfbSetAutoPort(rfbScreenInfoPtr rfbScreen, rfbBool autoPort);
+extern void rfbSetPort(rfbScreenInfoPtr rfbScreen, int Port);
 extern void rfbSetLocalOnly(rfbScreenInfoPtr rfbScreen, rfbBool localOnly);
 extern void rfbCloseClient(rfbClientPtr cl);
 extern int ReadExact(rfbClientPtr cl, char *buf, int len);

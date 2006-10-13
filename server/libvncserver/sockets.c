@@ -104,6 +104,8 @@ int rfbMaxClientWait = 20000;   /* time (ms) after which we decide client has
  * connections.  It does nothing if called again.
  */
 
+static void rfbInitListenSock(rfbScreenInfoPtr rfbScreen);
+
 void
 rfbInitSockets(rfbScreenInfoPtr rfbScreen)
 {
@@ -134,6 +136,12 @@ rfbInitSockets(rfbScreenInfoPtr rfbScreen)
 	return;
     }
 
+    rfbInitListenSock(rfbScreen);
+}
+
+static void
+rfbInitListenSock(rfbScreenInfoPtr rfbScreen)
+{
     if(rfbScreen->autoPort) {
         int i;
         rfbLog("Autoprobing TCP port \n");
@@ -167,6 +175,46 @@ rfbInitSockets(rfbScreenInfoPtr rfbScreen)
       FD_SET(rfbScreen->rfbListenSock, &(rfbScreen->allFds));
       rfbScreen->maxFd = rfbScreen->rfbListenSock;
     }
+}
+
+void
+rfbSetAutoPort(rfbScreenInfoPtr rfbScreen, rfbBool autoPort)
+{
+    if (rfbScreen->autoPort == autoPort)
+        return;
+
+    rfbScreen->autoPort = autoPort;
+
+    if (!rfbScreen->socketInitDone)
+	return;
+
+    if (rfbScreen->rfbListenSock > 0) {
+        FD_CLR(rfbScreen->rfbListenSock, &(rfbScreen->allFds));
+        close(rfbScreen->rfbListenSock);
+        rfbScreen->rfbListenSock = -1;
+    }
+
+    rfbInitListenSock(rfbScreen);
+}
+
+void
+rfbSetPort(rfbScreenInfoPtr rfbScreen, int port)
+{
+    if (rfbScreen->rfbPort == port)
+        return;
+
+    rfbScreen->rfbPort = port;
+
+    if (!rfbScreen->socketInitDone || rfbScreen->autoPort)
+	return;
+
+    if (rfbScreen->rfbListenSock > 0) {
+        FD_CLR(rfbScreen->rfbListenSock, &(rfbScreen->allFds));
+        close(rfbScreen->rfbListenSock);
+        rfbScreen->rfbListenSock = -1;
+    }
+
+    rfbInitListenSock(rfbScreen);
 }
 
 void

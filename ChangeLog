@@ -1,5 +1,43 @@
 2006-10-13  Mark McLoughlin  <mark@skynet.ie>
 
+	Add "use_alternative_port" and "alternative_port" GConf
+	keys, allowing people to specify a specific port to listen
+	on.
+
+	Based on patch from John Wendell <wendell_listas@bani.com.br>
+	in bug #333752.
+
+	* vino/server/vino-server.schemas.in: add new keys.
+
+	* vino/server/vino-prefs.c:
+	(vino_prefs_use_alternative_port_changed),
+	(vino_prefs_alternative_port_changed): handle changes to new keys
+	(vino_prefs_create_server): create server with new props
+	(vino_prefs_init): read new keys and set up notify handlers
+
+	* vino/server/vino-server.[ch]:
+	(vino_server_init_from_screen): explictly set port and turn
+	off autoPort if use_alternative_port is set.
+	(vino_server_set_property), (vino_server_get_property),
+	(vino_server_class_init): add new properties.
+	(vino_server_get_use_alternative_port),
+	(vino_server_set_use_alternative_port),
+	(vino_server_get_alternative_port),
+	(vino_server_set_alternative_port): add accessors - re-init
+	the listening port if things change after the server is running.
+
+	* vino/server/libvncserver/sockets.c:
+	(rfbInitSockets): split out some of this into
+	(rfbInitListenSock): this.
+	(rfbSetAutoPort), (rfbSetPort): add these two.
+
+	* vino/server/libvncserver/rfb/rfb.h: add rfbSetAutoPort()
+	and rfbSetPort().
+
+	* vino/server/libvncserver/CHANGES: add note.
+
+2006-10-13  Mark McLoughlin  <mark@skynet.ie>
+
 	* vino/server/vino-prefs.c,
 	  vino/server/vino-server.h: re-indent some stuff
 	for the next patch.

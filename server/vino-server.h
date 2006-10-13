@@ -28,6 +28,11 @@
 
 G_BEGIN_DECLS
 
+#define VINO_SERVER_DEFAULT_PORT  5900
+#define VINO_SERVER_MIN_PORT      5000
+#define VINO_SERVER_MAX_PORT      50000
+#define VINO_SERVER_VALID_PORT(p) ((p) > VINO_SERVER_MIN_PORT && (p) < VINO_SERVER_MAX_PORT)
+
 #define VINO_TYPE_SERVER         (vino_server_get_type ())
 #define VINO_SERVER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), VINO_TYPE_SERVER, VinoServer))
 #define VINO_SERVER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), VINO_TYPE_SERVER, VinoServerClass))
@@ -71,6 +76,12 @@ void                 vino_server_set_prompt_enabled       (VinoServer     *serve
 gboolean             vino_server_get_prompt_enabled       (VinoServer     *server);
 void                 vino_server_set_view_only            (VinoServer     *server,
 							   gboolean        view_only);
+gboolean             vino_server_get_use_alternative_port (VinoServer     *server);
+void                 vino_server_set_use_alternative_port (VinoServer     *server,
+							   gboolean        use_alternative_port);
+int                  vino_server_get_alternative_port     (VinoServer     *server);
+void                 vino_server_set_alternative_port     (VinoServer     *server,
+							   int             alternative_port);
 gboolean             vino_server_get_view_only            (VinoServer     *server);
 void                 vino_server_set_local_only           (VinoServer     *server,
 							   gboolean        local_only);

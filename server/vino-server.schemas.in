@@ -69,6 +69,38 @@
     </schema>
 
     <schema>
+      <key>/schemas/desktop/gnome/remote_access/use_alternative_port</key>
+      <applyto>/desktop/gnome/remote_access/use_alternative_port</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+         <short>Listen an alternative port</short>
+         <long>
+           If true, the server will listen another port, instead of
+           default (5900). The port must be specified in 'alternative_port'
+           key.
+         </long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/desktop/gnome/remote_access/alternative_port</key>
+      <applyto>/desktop/gnome/remote_access/alternative_port</applyto>
+      <owner>gnome</owner>
+      <type>int</type>
+      <default>5900</default>
+      <locale name="C">
+         <short>Alternative port number</short>
+         <long>
+           The port which the server will listen to if the
+           'use_alternative_port' key is set to true.
+           Valid values are in the range from 5000 to 50000.
+         </long>
+      </locale>
+    </schema>
+
+    <schema>
       <key>/schemas/desktop/gnome/remote_access/require_encryption</key>
       <applyto>/desktop/gnome/remote_access/require_encryption</applyto>
       <owner>gnome</owner>

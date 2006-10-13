@@ -33,11 +33,13 @@
 #define VINO_PREFS_PROMPT_ENABLED         VINO_PREFS_DIR "/prompt_enabled"
 #define VINO_PREFS_VIEW_ONLY              VINO_PREFS_DIR "/view_only"
 #define VINO_PREFS_LOCAL_ONLY             VINO_PREFS_DIR "/local_only"
+#define VINO_PREFS_USE_ALTERNATIVE_PORT   VINO_PREFS_DIR "/use_alternative_port"
+#define VINO_PREFS_ALTERNATIVE_PORT       VINO_PREFS_DIR "/alternative_port"
 #define VINO_PREFS_REQUIRE_ENCRYPTION     VINO_PREFS_DIR "/require_encryption"
 #define VINO_PREFS_AUTHENTICATION_METHODS VINO_PREFS_DIR "/authentication_methods"
 #define VINO_PREFS_VNC_PASSWORD           VINO_PREFS_DIR "/vnc_password"
 
-#define VINO_N_LISTENERS 7
+#define VINO_N_LISTENERS 9
 
 static GConfClient *vino_client  = NULL;
 static GSList      *vino_servers = NULL;
@@ -50,6 +52,8 @@ static gboolean        vino_local_only           = FALSE;
 static gboolean        vino_require_encryption   = FALSE;
 static VinoAuthMethod  vino_auth_methods         = VINO_AUTH_VNC;
 static char           *vino_vnc_password         = NULL;
+static gboolean        vino_use_alternative_port = FALSE;
+static int             vino_alternative_port     = VINO_SERVER_DEFAULT_PORT;
 
 
 static void
@@ -259,6 +263,55 @@ vino_prefs_vnc_password_changed (GConfClient *client,
     vino_server_set_vnc_password (l->data, vnc_password);
 }
 
+static void
+vino_prefs_use_alternative_port_changed (GConfClient *client,
+                                         guint        cnxn_id,
+                                         GConfEntry  *entry)
+{
+  gboolean  enabled;
+  GSList   *l;
+
+  if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
+    return;
+
+  enabled = gconf_value_get_bool (entry->value) != FALSE;
+
+  if (vino_use_alternative_port == enabled)
+    return;
+
+  vino_use_alternative_port = enabled;
+
+  dprintf (PREFS, "Use alternative port changed: %s\n",
+           vino_use_alternative_port ? "(true)" : "(false)");
+
+  for (l = vino_servers; l; l = l->next)
+    vino_server_set_use_alternative_port (l->data, vino_use_alternative_port);
+}
+
+static void
+vino_prefs_alternative_port_changed (GConfClient *client,
+                                     guint        cnxn_id,
+                                     GConfEntry  *entry)
+{
+  GSList *l;
+  int     port;
+
+  if (!entry->value || entry->value->type != GCONF_VALUE_INT)
+    return;
+
+  port = gconf_value_get_int (entry->value);
+
+  if (vino_alternative_port == port || !VINO_SERVER_VALID_PORT (port))
+    return;
+
+  vino_alternative_port = port;
+
+  dprintf (PREFS, "Alternative port changed: %d\n", vino_alternative_port);
+
+  for (l = vino_servers; l; l = l->next)
+    vino_server_set_alternative_port (l->data, vino_alternative_port);
+}
+
 void
 vino_prefs_create_server (GdkScreen *screen)
 {
@@ -268,6 +321,8 @@ vino_prefs_create_server (GdkScreen *screen)
 			 "prompt-enabled",       vino_prompt_enabled,
 			 "view-only",            vino_view_only,
 			 "local-only",           vino_local_only,
+			 "use-alternative-port", vino_use_alternative_port,
+			 "alternative-port",     vino_alternative_port,
 			 "auth-methods",         vino_auth_methods,
 			 "require-encryption",   vino_require_encryption,
 			 "vnc-password",         vino_vnc_password,
@@ -315,6 +370,19 @@ vino_prefs_init (gboolean view_only)
 					   VINO_PREFS_LOCAL_ONLY,
 					   NULL);
   dprintf (PREFS, "Local only: %s\n", vino_local_only ? "(true)" : "(false)");
+
+  vino_use_alternative_port = gconf_client_get_bool (vino_client,
+                                                     VINO_PREFS_USE_ALTERNATIVE_PORT,
+                                                     NULL);
+  dprintf (PREFS, "Use alternative port: %s\n",
+           vino_use_alternative_port ? "(true)" : "(false)");
+
+  vino_alternative_port = gconf_client_get_int (vino_client,
+                                                VINO_PREFS_ALTERNATIVE_PORT,
+                                                NULL);
+  if (!VINO_SERVER_VALID_PORT (vino_alternative_port))
+    vino_alternative_port = VINO_SERVER_DEFAULT_PORT;
+  dprintf (PREFS, "Alternative port: %d\n", vino_alternative_port);
 
   vino_require_encryption = gconf_client_get_bool (vino_client,
 						   VINO_PREFS_REQUIRE_ENCRYPTION,
@@ -367,6 +435,21 @@ vino_prefs_init (gboolean view_only)
     gconf_client_notify_add (vino_client,
 			     VINO_PREFS_LOCAL_ONLY,
 			     (GConfClientNotifyFunc) vino_prefs_local_only_changed,
+			     NULL, NULL, NULL);
+  i++;
+
+  vino_listeners [i] =
+    gconf_client_notify_add (vino_client,
+			     VINO_PREFS_USE_ALTERNATIVE_PORT,
+			     (GConfClientNotifyFunc) vino_prefs_use_alternative_port_changed,
+			     NULL, NULL, NULL);
+  i++;
+
+
+  vino_listeners [i] =
+    gconf_client_notify_add (vino_client,
+			     VINO_PREFS_ALTERNATIVE_PORT,
+			     (GConfClientNotifyFunc) vino_prefs_alternative_port_changed,
 			     NULL, NULL, NULL);
   i++;
 

@@ -63,12 +63,15 @@ struct _VinoServerPrivate
   VinoHTTP         *http;
 #endif
 
+  int               alternative_port;
+
   guint             on_hold : 1;
   guint             local_only : 1;
   guint             prompt_enabled : 1;
   guint             view_only : 1;
   guint             require_encryption : 1;
   guint             last_auth_failed : 1;
+  guint             use_alternative_port : 1;
 };
 
 typedef struct
@@ -92,6 +95,8 @@ enum
   PROP_PROMPT_ENABLED,
   PROP_VIEW_ONLY,
   PROP_LOCAL_ONLY,
+  PROP_USE_ALTERNATIVE_PORT,
+  PROP_ALTERNATIVE_PORT,
   PROP_REQUIRE_ENCRYPTION,
   PROP_AUTH_METHODS,
   PROP_VNC_PASSWORD
@@ -673,7 +678,14 @@ vino_server_init_from_screen (VinoServer *server,
   rfb_screen->rfbDeferUpdateTime = 0;
   rfb_screen->localOnly          = server->priv->local_only;
   rfb_screen->autoPort           = TRUE;
+  rfb_screen->rfbPort            = VINO_SERVER_DEFAULT_PORT;
   rfb_screen->rfbAlwaysShared    = TRUE;
+
+  if (server->priv->use_alternative_port)
+    {
+      rfb_screen->autoPort = FALSE;
+      rfb_screen->rfbPort  = server->priv->alternative_port;
+    }
 
   rfbInitServer (rfb_screen);
   
@@ -803,6 +815,12 @@ vino_server_set_property (GObject      *object,
     case PROP_VNC_PASSWORD:
       vino_server_set_vnc_password (server, g_value_get_string (value));
       break;
+    case PROP_USE_ALTERNATIVE_PORT:
+      vino_server_set_use_alternative_port (server, g_value_get_boolean (value));
+      break;
+    case PROP_ALTERNATIVE_PORT:
+      vino_server_set_alternative_port (server, g_value_get_int (value));
+      break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -842,6 +860,12 @@ vino_server_get_property (GObject    *object,
       break;
     case PROP_VNC_PASSWORD:
       g_value_set_string (value, server->priv->vnc_password);
+      break;
+    case PROP_USE_ALTERNATIVE_PORT:
+      g_value_set_boolean (value, server->priv->use_alternative_port);
+      break;
+    case PROP_ALTERNATIVE_PORT:
+      g_value_set_int (value, server->priv->alternative_port);
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -930,6 +954,24 @@ vino_server_class_init (VinoServerClass *klass)
 							_("The password (base64 encoded) used to authenticate types using the VncAuth method"),
 							NULL,
 							G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+
+  g_object_class_install_property (gobject_class,
+				   PROP_USE_ALTERNATIVE_PORT,
+				   g_param_spec_boolean ("use-alternative-port",
+							 _("Use an alternative port"),
+							 _("Listen on the port specified by the 'alternative-port' property"),
+							 FALSE,
+							 G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+
+  g_object_class_install_property (gobject_class,
+				   PROP_ALTERNATIVE_PORT,
+				   g_param_spec_int ("alternative-port",
+						     _("Alternative port number"),
+						     _("Listen on the specified port number if the 'use-alternative-port' property is TRUE"),
+						     VINO_SERVER_MIN_PORT,
+						     VINO_SERVER_MAX_PORT,
+						     VINO_SERVER_DEFAULT_PORT,
+						     G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
 }
 
 GType
@@ -1030,6 +1072,66 @@ vino_server_set_local_only (VinoServer *server,
                          server->priv->local_only);
 
       g_object_notify (G_OBJECT (server), "local-only");
+    }
+}
+
+gboolean
+vino_server_get_use_alternative_port (VinoServer *server)
+{
+  g_return_val_if_fail (VINO_IS_SERVER (server), FALSE);
+
+  return server->priv->use_alternative_port;
+}
+
+void
+vino_server_set_use_alternative_port (VinoServer *server,
+                                      gboolean    use_alternative_port)
+{
+  g_return_if_fail (VINO_IS_SERVER (server));
+
+  use_alternative_port = use_alternative_port != FALSE;
+
+  if (server->priv->use_alternative_port != use_alternative_port)
+    {
+      server->priv->use_alternative_port = use_alternative_port;
+
+      if (server->priv->rfb_screen)
+        {
+          if (server->priv->use_alternative_port)
+            rfbSetPort (server->priv->rfb_screen,
+                        server->priv->alternative_port);
+
+          rfbSetAutoPort (server->priv->rfb_screen,
+                          !server->priv->use_alternative_port);
+        }
+
+      g_object_notify (G_OBJECT (server), "use-alternative-port");
+    }
+}
+
+gint
+vino_server_get_alternative_port (VinoServer *server)
+{
+  g_return_val_if_fail (VINO_IS_SERVER (server), FALSE);
+
+  return server->priv->alternative_port;
+}
+
+void
+vino_server_set_alternative_port (VinoServer *server,
+                                  int         alternative_port)
+{
+  g_return_if_fail (VINO_IS_SERVER (server));
+
+  if (server->priv->alternative_port != alternative_port)
+    {
+      server->priv->alternative_port = alternative_port;
+
+      if (server->priv->rfb_screen &&
+          server->priv->use_alternative_port)
+        rfbSetPort (server->priv->rfb_screen, server->priv->alternative_port);
+
+      g_object_notify (G_OBJECT (server), "alternative-port");
     }
 }
 
