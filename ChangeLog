@@ -1,5 +1,15 @@
 2006-10-11  Mark McLoughlin  <mark@skynet.ie>
 
+	* server/vino-server.c:
+	(vino_server_init_from_screen): call update_security_types()
+	(vino_server_update_security_types): don't segv if the
+	screen hasn't been set yet.
+
+	* server/vino-prefs.c: (vino_prefs_create_server): set the
+	screen last when constructing the server
+
+2006-10-11  Mark McLoughlin  <mark@skynet.ie>
+
 	* server/vino-server.c: (vino_server_get_property):
 	Fix typo
 

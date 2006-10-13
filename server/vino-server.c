@@ -100,8 +100,9 @@ static enum rfbNewClientAction vino_server_auth_client (VinoServer           *se
 							const char           *response,
 							int                   length);
 
-static void vino_server_setup_framebuffer   (VinoServer *server);
-static void vino_server_release_framebuffer (VinoServer *server);
+static void vino_server_setup_framebuffer     (VinoServer *server);
+static void vino_server_release_framebuffer   (VinoServer *server);
+static void vino_server_update_security_types (VinoServer *server);
 
 static gpointer parent_class;
 
@@ -691,6 +692,8 @@ vino_server_init_from_screen (VinoServer *server,
 
   rfb_screen->passwordCheck = vino_server_check_vnc_password;
 
+  vino_server_update_security_types (server);
+
   dprintf (RFB, "Creating watch for listening socket %d - port %d\n",
 	   rfb_screen->rfbListenSock, rfb_screen->rfbPort);
 
@@ -1054,6 +1057,9 @@ vino_server_set_prompt_enabled (VinoServer *server,
 static void
 vino_server_update_security_types (VinoServer *server)
 {
+  if (!server->priv->rfb_screen)
+    return;
+
   rfbClearSecurityTypes (server->priv->rfb_screen);
   rfbClearAuthTypes (server->priv->rfb_screen);
 
