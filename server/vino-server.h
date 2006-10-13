@@ -72,6 +72,9 @@ gboolean             vino_server_get_prompt_enabled     (VinoServer     *server)
 void                 vino_server_set_view_only          (VinoServer     *server,
 							 gboolean        view_only);
 gboolean             vino_server_get_view_only          (VinoServer     *server);
+void                 vino_server_set_local_only         (VinoServer     *server,
+							 gboolean        local_only);
+gboolean             vino_server_get_local_only         (VinoServer     *server);
 void                 vino_server_set_require_encryption (VinoServer     *server,
 							 gboolean        require_encryption);
 gboolean             vino_server_get_require_encryption (VinoServer     *server);

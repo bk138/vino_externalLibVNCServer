@@ -139,7 +139,7 @@ rfbInitSockets(rfbScreenInfoPtr rfbScreen)
         rfbLog("Autoprobing TCP port \n");
 
         for (i = 5900; i < 6000; i++) {
-            if ((rfbScreen->rfbListenSock = ListenOnTCPPort(i)) >= 0) {
+            if ((rfbScreen->rfbListenSock = ListenOnTCPPort(i, rfbScreen->localOnly)) >= 0) {
 		rfbScreen->rfbPort = i;
 		break;
 	    }
@@ -158,7 +158,7 @@ rfbInitSockets(rfbScreenInfoPtr rfbScreen)
     else if(rfbScreen->rfbPort>0) {
       rfbLog("Listening for VNC connections on TCP port %d\n", rfbScreen->rfbPort);
 
-      if ((rfbScreen->rfbListenSock = ListenOnTCPPort(rfbScreen->rfbPort)) < 0) {
+      if ((rfbScreen->rfbListenSock = ListenOnTCPPort(rfbScreen->rfbPort, rfbScreen->localOnly)) < 0) {
 	rfbLogPerror("ListenOnTCPPort");
 	return;
       }
@@ -167,6 +167,35 @@ rfbInitSockets(rfbScreenInfoPtr rfbScreen)
       FD_SET(rfbScreen->rfbListenSock, &(rfbScreen->allFds));
       rfbScreen->maxFd = rfbScreen->rfbListenSock;
     }
+}
+
+void
+rfbSetLocalOnly(rfbScreenInfoPtr rfbScreen, rfbBool localOnly)
+{
+    if (rfbScreen->localOnly == localOnly)
+        return;
+
+    rfbScreen->localOnly = localOnly;
+
+    if (!rfbScreen->socketInitDone)
+	return;
+
+    if (rfbScreen->rfbListenSock > 0) {
+        FD_CLR(rfbScreen->rfbListenSock, &(rfbScreen->allFds));
+        close(rfbScreen->rfbListenSock);
+        rfbScreen->rfbListenSock = -1;
+    }
+
+    rfbLog("Re-binding socket to listen for %s VNC connections on TCP port %d\n",
+           rfbScreen->localOnly ? "local" : "all", rfbScreen->rfbPort);
+
+    if ((rfbScreen->rfbListenSock = ListenOnTCPPort(rfbScreen->rfbPort, rfbScreen->localOnly)) < 0) {
+	rfbLogPerror("ListenOnTCPPort");
+	return;
+    }
+
+    FD_SET(rfbScreen->rfbListenSock, &(rfbScreen->allFds));
+    rfbScreen->maxFd = max(rfbScreen->rfbListenSock, rfbScreen->maxFd);
 }
 
 void
@@ -537,8 +566,9 @@ WriteExact(rfbClientPtr cl, const char* buf, int len)
 }
 
 int
-ListenOnTCPPort(port)
+ListenOnTCPPort(port, localOnly)
     int port;
+    rfbBool localOnly;
 {
     struct sockaddr_in addr;
     int sock;
@@ -548,7 +578,7 @@ ListenOnTCPPort(port)
     addr.sin_family = AF_INET;
     addr.sin_port = htons(port);
     /* addr.sin_addr.s_addr = interface.s_addr; */
-    addr.sin_addr.s_addr = INADDR_ANY;
+    addr.sin_addr.s_addr = localOnly ? htonl(INADDR_LOOPBACK) : htonl(INADDR_ANY);
 
     if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
 	return -1;

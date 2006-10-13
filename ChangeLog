@@ -1,3 +1,39 @@
+2006-10-12  Mark McLoughlin  <mark@skynet.ie>
+
+	Add a "local_only" GConf key, for people who want to exclusively
+	use SSH tunnels to access the server.
+
+	Based on patch from Shaya Potter <spotter@cs.columbia.edu>
+	in bug #156242
+
+	* server/libvncserver/sockets.c:
+	(rfbInitSockets): pass rfbScreen->localOnly to ListenOnTcpPort()
+	(rfbSetLocalOnly): re-bind the socket if localOnly changes.
+	(ListenOnTcpPort): add localOnly argument and bind with
+	INADDR_LOOPBACK if true.
+
+	* server/libvncserver/rfb/rfb.h: modify ListenOnTcpPort()
+	prototype and add rfbSetLocalOnly()
+
+	* server/libvncserver/main.c: (rfbGetScreen): init localOnly.
+
+	* server/libvncserver/CHANGES: add note.
+
+	* server/vino-server.schemas.in: add local_only GConf key
+
+	* server/vino-prefs.c:
+	(vino_prefs_local_only_changed),
+	(vino_prefs_create_server),
+	(vino_prefs_init): add handling for local_only key
+
+	* server/vino-server.[ch]:
+	(vino_server_init_from_screen): propogate local_only to rfbScreen.
+	(vino_server_set_property), (vino_server_get_property),
+	(vino_server_class_init): add "local-only" property
+	(vino_server_get_local_only),
+	(vino_server_set_local_only): add accessors. Call rfbSetLocalOnly()
+	if it changes.
+
 2006-10-11  Mark McLoughlin  <mark@skynet.ie>
 
 	* server/vino-server.c:

@@ -30,6 +30,10 @@
    be prompted on whether to allow authenticated clients to
    connect. A second level of authentication.
 
+ + Added rfbSetLocalOnly() - i.e. make the server only accept
+   connections from localhost. Useful for people who use
+   SSH tunnels.
+
  + Removed defaultNewClientHook and made accept new clients
    by default.
 

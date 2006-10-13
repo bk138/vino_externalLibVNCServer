@@ -170,6 +170,7 @@ typedef struct _rfbScreenInfo
     char rfbThisHost[255];
 
     rfbBool autoPort;
+    rfbBool localOnly;
     int rfbPort;
     SOCKET rfbListenSock;
     int maxSock;
@@ -468,6 +469,7 @@ extern char rfbEndianTest;
 extern int rfbMaxClientWait;
 
 extern void rfbInitSockets(rfbScreenInfoPtr rfbScreen);
+extern void rfbSetLocalOnly(rfbScreenInfoPtr rfbScreen, rfbBool localOnly);
 extern void rfbCloseClient(rfbClientPtr cl);
 extern int ReadExact(rfbClientPtr cl, char *buf, int len);
 extern int ReadExactTimeout(rfbClientPtr cl, char *buf, int len,int timeout);
@@ -476,7 +478,7 @@ extern void rfbProcessNewConnection(rfbScreenInfoPtr rfbScreen);
 extern void rfbCheckFds(rfbScreenInfoPtr rfbScreen,long usec);
 extern int rfbConnect(rfbScreenInfoPtr rfbScreen, char* host, int port);
 extern int ConnectToTcpAddr(char* host, int port);
-extern int ListenOnTCPPort(int port);
+extern int ListenOnTCPPort(int port, rfbBool localOnly);
 
 /* rfbserver.c */
 

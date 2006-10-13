@@ -447,6 +447,7 @@ rfbScreenInfoPtr rfbGetScreen(int* argc,char** argv,
      rfbErr("WARNING: Width (%d) is not a multiple of 4. VncViewer has problems with that.\n",width);
 
    rfbScreen->autoPort=FALSE;
+   rfbScreen->localOnly=FALSE;
    rfbScreen->rfbClientHead=0;
    rfbScreen->rfbPort=5900;
    rfbScreen->socketInitDone=FALSE;

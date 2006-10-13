@@ -32,11 +32,12 @@
 #define VINO_PREFS_ENABLED                VINO_PREFS_DIR "/enabled"
 #define VINO_PREFS_PROMPT_ENABLED         VINO_PREFS_DIR "/prompt_enabled"
 #define VINO_PREFS_VIEW_ONLY              VINO_PREFS_DIR "/view_only"
+#define VINO_PREFS_LOCAL_ONLY             VINO_PREFS_DIR "/local_only"
 #define VINO_PREFS_REQUIRE_ENCRYPTION     VINO_PREFS_DIR "/require_encryption"
 #define VINO_PREFS_AUTHENTICATION_METHODS VINO_PREFS_DIR "/authentication_methods"
 #define VINO_PREFS_VNC_PASSWORD           VINO_PREFS_DIR "/vnc_password"
 
-#define VINO_N_LISTENERS 6
+#define VINO_N_LISTENERS 7
 
 static GConfClient *vino_client  = NULL;
 static GSList      *vino_servers = NULL;
@@ -45,6 +46,7 @@ static guint        vino_listeners [VINO_N_LISTENERS] = { 0, };
 static gboolean        vino_enabled            = FALSE;
 static gboolean        vino_prompt_enabled     = FALSE;
 static gboolean        vino_view_only          = FALSE;
+static gboolean        vino_local_only         = FALSE;
 static gboolean        vino_require_encryption = FALSE;
 static VinoAuthMethod  vino_auth_methods       = VINO_AUTH_VNC;
 static char           *vino_vnc_password       = NULL;
@@ -120,6 +122,30 @@ vino_prefs_view_only_changed (GConfClient *client,
 
   for (l = vino_servers; l; l = l->next)
     vino_server_set_view_only (l->data, view_only);
+}
+
+static void
+vino_prefs_local_only_changed (GConfClient *client,
+			       guint	    cnxn_id,
+			       GConfEntry  *entry)
+{
+  gboolean  local_only;
+  GSList   *l;
+
+  if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
+    return;
+
+  local_only = gconf_value_get_bool (entry->value) != FALSE;
+
+  if (vino_local_only == local_only)
+    return;
+
+  vino_local_only = local_only;
+
+  dprintf (PREFS, "Local only changed: %s\n", vino_local_only ? "(true)" : "(false)");
+
+  for (l = vino_servers; l; l = l->next)
+    vino_server_set_local_only (l->data, local_only);
 }
 
 static void
@@ -241,6 +267,7 @@ vino_prefs_create_server (GdkScreen *screen)
   server = g_object_new (VINO_TYPE_SERVER,
 			 "prompt-enabled",     vino_prompt_enabled,
 			 "view-only",          vino_view_only,
+			 "local-only",	       vino_local_only,
 			 "auth-methods",       vino_auth_methods,
 			 "require-encryption", vino_require_encryption,
 			 "vnc-password",       vino_vnc_password,
@@ -284,6 +311,11 @@ vino_prefs_init (gboolean view_only)
     }
   dprintf (PREFS, "View only: %s\n", vino_view_only ? "(true)" : "(false)");
       
+  vino_local_only = gconf_client_get_bool (vino_client,
+					   VINO_PREFS_LOCAL_ONLY,
+					   NULL);
+  dprintf (PREFS, "Local only: %s\n", vino_local_only ? "(true)" : "(false)");
+
   vino_require_encryption = gconf_client_get_bool (vino_client,
 						   VINO_PREFS_REQUIRE_ENCRYPTION,
 						   NULL);
@@ -329,6 +361,13 @@ vino_prefs_init (gboolean view_only)
 				 (GConfClientNotifyFunc) vino_prefs_view_only_changed,
 				 NULL, NULL, NULL);
     }
+  i++;
+
+  vino_listeners [i] =
+    gconf_client_notify_add (vino_client,
+			     VINO_PREFS_LOCAL_ONLY,
+			     (GConfClientNotifyFunc) vino_prefs_local_only_changed,
+			     NULL, NULL, NULL);
   i++;
 
   vino_listeners [i] =

@@ -51,6 +51,24 @@
     </schema>
 
     <schema>
+      <key>/schemas/desktop/gnome/remote_access/local_only</key>
+      <applyto>/desktop/gnome/remote_access/local_only</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+         <short>Only allow local connections</short>
+         <long>
+           If true, the server will only accept connections from
+           localhost and network connections will be rejected.
+
+           Set this option to true if you wish to exclusively use
+           a tunneling mechanism to access the server, such as ssh.
+         </long>
+      </locale>
+    </schema>
+
+    <schema>
       <key>/schemas/desktop/gnome/remote_access/require_encryption</key>
       <applyto>/desktop/gnome/remote_access/require_encryption</applyto>
       <owner>gnome</owner>

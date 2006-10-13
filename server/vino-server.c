@@ -64,6 +64,7 @@ struct _VinoServerPrivate
 #endif
 
   guint             on_hold : 1;
+  guint             local_only : 1;
   guint             prompt_enabled : 1;
   guint             view_only : 1;
   guint             require_encryption : 1;
@@ -90,6 +91,7 @@ enum
   PROP_ON_HOLD,
   PROP_PROMPT_ENABLED,
   PROP_VIEW_ONLY,
+  PROP_LOCAL_ONLY,
   PROP_REQUIRE_ENCRYPTION,
   PROP_AUTH_METHODS,
   PROP_VNC_PASSWORD
@@ -669,6 +671,7 @@ vino_server_init_from_screen (VinoServer *server,
    *   5900-6000
    */
   rfb_screen->rfbDeferUpdateTime = 0;
+  rfb_screen->localOnly          = server->priv->local_only;
   rfb_screen->autoPort           = TRUE;
   rfb_screen->rfbAlwaysShared    = TRUE;
 
@@ -788,6 +791,9 @@ vino_server_set_property (GObject      *object,
     case PROP_VIEW_ONLY:
       vino_server_set_view_only (server, g_value_get_boolean (value));
       break;
+    case PROP_LOCAL_ONLY:
+      vino_server_set_local_only (server, g_value_get_boolean (value));
+      break;
     case PROP_REQUIRE_ENCRYPTION:
       vino_server_set_require_encryption (server, g_value_get_boolean (value));
       break;
@@ -824,6 +830,9 @@ vino_server_get_property (GObject    *object,
       break;
     case PROP_VIEW_ONLY:
       g_value_set_boolean (value, server->priv->view_only);
+      break;
+    case PROP_LOCAL_ONLY:
+      g_value_set_boolean (value, server->priv->local_only);
       break;
     case PROP_REQUIRE_ENCRYPTION:
       g_value_set_boolean (value, server->priv->require_encryption);
@@ -886,6 +895,14 @@ vino_server_class_init (VinoServerClass *klass)
 				   g_param_spec_boolean ("view-only",
 							 _("View Only"),
 							 _("Disallow keyboard/pointer input from clients"),
+							 FALSE,
+							 G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+
+  g_object_class_install_property (gobject_class,
+				   PROP_LOCAL_ONLY,
+				   g_param_spec_boolean ("local-only",
+							 _("Local Only"),
+							 _("Only allow local connections"),
 							 FALSE,
 							 G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
 
@@ -985,6 +1002,34 @@ vino_server_set_view_only (VinoServer *server,
       server->priv->view_only = view_only;
 
       g_object_notify (G_OBJECT (server), "view-only");
+    }
+}
+
+gboolean
+vino_server_get_local_only (VinoServer *server)
+{
+  g_return_val_if_fail (VINO_IS_SERVER (server), FALSE);
+
+  return server->priv->local_only;
+}
+
+void
+vino_server_set_local_only (VinoServer *server,
+                            gboolean    local_only)
+{
+  g_return_if_fail (VINO_IS_SERVER (server));
+
+  local_only = local_only != FALSE;
+
+  if (server->priv->local_only != local_only)
+    {
+      server->priv->local_only = local_only;
+
+      if (server->priv->rfb_screen != NULL)
+        rfbSetLocalOnly (server->priv->rfb_screen,
+                         server->priv->local_only);
+
+      g_object_notify (G_OBJECT (server), "local-only");
     }
 }
 
