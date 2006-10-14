@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-16 21:33+0200\n"
-"PO-Revision-Date: 2006-01-16 21:35+0200\n"
+"POT-Creation-Date: 2006-10-14 07:31+0300\n"
+"PO-Revision-Date: 2006-10-14 07:57+0300\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -118,12 +118,12 @@ msgstr "URL:in väri"
 msgid "The color of the URL's label"
 msgstr "URL:in nimiön väri"
 
-#: ../server/vino-fb.c:954 ../server/vino-prompt.c:144
-#: ../server/vino-server.c:853
+#: ../server/vino-fb.c:955 ../server/vino-prompt.c:144
+#: ../server/vino-server.c:896
 msgid "Screen"
 msgstr "Näyttö"
 
-#: ../server/vino-fb.c:955
+#: ../server/vino-fb.c:956
 msgid "The screen to be monitored"
 msgstr "Tarkkailtava näyttö"
 
@@ -146,9 +146,10 @@ msgstr "1"
 
 #.
 #. * Translators: this string is used ONLY if you
-#. * translated "vino-mdns:showusername" to "1"
+#. * translated "vino-mdns:showusername" to anything
+#. * other than "1"
 #.
-#: ../server/vino-mdns.c:70
+#: ../server/vino-mdns.c:71
 #, c-format
 msgid "%s's remote desktop"
 msgstr "Käyttäjän \"%s\" etätyöpöytä"
@@ -193,74 +194,101 @@ msgstr "_Salli"
 msgid "_Refuse"
 msgstr "_Kieltäydy"
 
-#: ../server/vino-server.c:854
+#: ../server/vino-server.c:897
 msgid "The screen for which to create a VNC server"
 msgstr "Näyttö, johon VNC-palvelin luodaan"
 
-#: ../server/vino-server.c:861
+#: ../server/vino-server.c:904
 msgid "On Hold"
 msgstr "Odotustila"
 
-#: ../server/vino-server.c:862
+#: ../server/vino-server.c:905
 msgid "Place all clients on hold"
 msgstr "Aseta kaikki asiakkaat odotustilaan"
 
-#: ../server/vino-server.c:869
+#: ../server/vino-server.c:912
 msgid "Prompt enabled"
 msgstr "Kehote päällä"
 
-#: ../server/vino-server.c:870
+#: ../server/vino-server.c:913
 msgid "Prompt the user about connection attempts"
 msgstr "Ilmoita käyttäjälle yhteysyrityksistä"
 
-#: ../server/vino-server.c:877
+#: ../server/vino-server.c:920
 msgid "View Only"
 msgstr "Vain katselu"
 
-#: ../server/vino-server.c:878
+#: ../server/vino-server.c:921
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Estä näppäimistön/hiiren käyttö asiakkailta"
 
-#: ../server/vino-server.c:885
+#: ../server/vino-server.c:928
+msgid "Local Only"
+msgstr "Vain paikallinen"
+
+#: ../server/vino-server.c:929 ../server/vino-server.schemas.in.h:13
+msgid "Only allow local connections"
+msgstr "Salli vain paikalliset yhteydet"
+
+#: ../server/vino-server.c:936
 msgid "Require Encryption"
 msgstr "Vaadi salausta"
 
-#: ../server/vino-server.c:886
+#: ../server/vino-server.c:937
 msgid "Require clients to use encryption"
 msgstr "Vaadi salausta asiakkailta"
 
-#: ../server/vino-server.c:893
+#: ../server/vino-server.c:944
 msgid "Authentication methods"
 msgstr "Todentamismenetelmät"
 
-#: ../server/vino-server.c:894
+#: ../server/vino-server.c:945
 msgid "The authentication methods this server should allow"
 msgstr "Tämän palvelimen hyväksymät todentamismenetelmät"
 
-#: ../server/vino-server.c:902
+#: ../server/vino-server.c:953
 msgid "VNC Password"
 msgstr "VNC-salasana"
 
-#: ../server/vino-server.c:903
+#: ../server/vino-server.c:954
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
 msgstr ""
 "Salasana (base64-koodattu) jolla todennetaan käyttäen VncAuth-menetelmää"
 
+#: ../server/vino-server.c:961
+msgid "Use an alternative port"
+msgstr "Käytä muuta porttia"
+
+#: ../server/vino-server.c:962
+msgid "Listen on the port specified by the 'alternative-port' property"
+msgstr "Kuuntele ominaisuudessa \"alternative-port\" annetussa portissa"
+
+#: ../server/vino-server.c:969 ../server/vino-server.schemas.in.h:2
+msgid "Alternative port number"
+msgstr "Vaihtoehtoinen portin numero"
+
+#: ../server/vino-server.c:970
+msgid ""
+"Listen on the specified port number if the 'use-alternative-port' property "
+"is TRUE"
+msgstr ""
+"Kuuntele annetussa portissa, jos ominaisuus \"use-alternative-port\" on tosi"
+
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
 msgstr "Sallitut todentamismenetelmät"
 
-#: ../server/vino-server.schemas.in.h:2
+#: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "Sähköpostiosoite johon etäyhteyden URL lähetetään"
 
-#: ../server/vino-server.schemas.in.h:3
+#: ../server/vino-server.schemas.in.h:4
 msgid "Enable remote desktop access"
 msgstr "Aseta työpöydän etäyhteydet päälle"
 
-#: ../server/vino-server.schemas.in.h:4
+#: ../server/vino-server.schemas.in.h:5
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
@@ -268,7 +296,7 @@ msgstr ""
 "Jos tosi, salli etäyhteys työpöydälle RFB-protokollaa käyttäen. Käyttäjät "
 "etäkoneissa voivat sitten ottaa yhteyden vncvieweriä käyttämällä."
 
-#: ../server/vino-server.schemas.in.h:5
+#: ../server/vino-server.schemas.in.h:6
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
@@ -278,7 +306,7 @@ msgstr ""
 "ennenkuin työpöydän omistaja hyväksyy yhteyden. Suositeltavaa erityisesti "
 "kun yhteys ei ole salasanasuojattu."
 
-#: ../server/vino-server.schemas.in.h:6
+#: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote user's will not be able to use the mouse or keyboard."
@@ -286,7 +314,7 @@ msgstr ""
 "Jos tosi, työpöydälle etäyhteyttä haluavat käyttäjät saavat pelkästään "
 "katsella työpöytää. Etäkäyttäjät eivät voi käyttää hiirtä tai näppäimistöä."
 
-#: ../server/vino-server.schemas.in.h:7
+#: ../server/vino-server.schemas.in.h:8
 msgid ""
 "If true, remote users accessing the desktop are required to be able support "
 "encryption. It is highly recommended that you use a client which supports "
@@ -296,7 +324,29 @@ msgstr ""
 "On erittäin suositeltavaa, että käytetään salausta tukevia asiakkaita, ellei "
 "käytetty verkko ole luotettava."
 
-#: ../server/vino-server.schemas.in.h:8
+#: ../server/vino-server.schemas.in.h:9
+msgid ""
+"If true, the server will listen another port, instead of default (5900). The "
+"port must be specified in 'alternative_port' key."
+msgstr ""
+"Jos tosi, palvelin kuuntelee muussa kuin oletusportissa (5900). Portti "
+"täytyy antaa avaimessa \"alternative_port\"."
+
+#: ../server/vino-server.schemas.in.h:10
+msgid ""
+"If true, the server will only accept connections from localhost and network "
+"connections will be rejected. Set this option to true if you wish to "
+"exclusively use a tunneling mechanism to access the server, such as ssh."
+msgstr ""
+"Jos tosi, palvelin hyväksyy yhteydet ainoastaan paikalliset yhteydet "
+"ja verkkoyhteyksiä ei hyväksytä. Aseta tämä valitsin, jos aiot käyttää "
+"yhteyksiin ainoastaan tunnelointia esimerkiksi SSH:n avulla."
+
+#: ../server/vino-server.schemas.in.h:11
+msgid "Listen an alternative port"
+msgstr "Kuuntele muuta porttia"
+
+#: ../server/vino-server.schemas.in.h:12
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -310,23 +360,23 @@ msgstr ""
 "määritellään vnc_password avaimeen) ennen yhteyden muodostusta ja \"none\" "
 "mikä mahdollistaa minkä tahansa yhteyden."
 
-#: ../server/vino-server.schemas.in.h:9
+#: ../server/vino-server.schemas.in.h:14
 msgid "Only allow remote users to view the desktop"
 msgstr "Salli etäkäyttäjiltä vain työpöydän katselu"
 
-#: ../server/vino-server.schemas.in.h:10
+#: ../server/vino-server.schemas.in.h:15
 msgid "Password required for \"vnc\" authentication"
 msgstr "\"vnc\"-todentamiselle vaaditaan salasana"
 
-#: ../server/vino-server.schemas.in.h:11
+#: ../server/vino-server.schemas.in.h:16
 msgid "Prompt the user before completing a connection"
 msgstr "Kysy käyttäjältä ennen kuin yhteys luodaan lopullisesti"
 
-#: ../server/vino-server.schemas.in.h:12
+#: ../server/vino-server.schemas.in.h:17
 msgid "Require encryption"
 msgstr "Vaadi salausta"
 
-#: ../server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:18
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -335,7 +385,15 @@ msgstr ""
 "Etäkäyttäjän tarvitsema salasana \"vnc\"-todennusmenetelmää käytettäessä. "
 "Avaimen määrittelemä salasana on base64-koodattu."
 
-#: ../server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:19
+msgid ""
+"The port which the server will listen to if the 'use_alternative_port' key "
+"is set to true. Valid values are in the range from 5000 to 50000."
+msgstr ""
+"Portti, jota palvelin kuuntelee, jos avain \"use_alternative_port\" on tosi. "
+"Kelvolliset arvot ovat väliltä 5000-50000."
+
+#: ../server/vino-server.schemas.in.h:20
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
