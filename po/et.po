@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Vino HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-10-14 08:42+0200\n"
-"PO-Revision-Date: 2006-10-14 17:07+0300\n"
+"PO-Revision-Date: 2006-10-14 23:44+0300\n"
 "Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "MIME-Version: 1.0\n"
@@ -40,7 +40,7 @@ msgstr "Kaugtöölaud"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
-msgstr "Kaugtöölaua ligipääsueelistuste seadmine"
+msgstr "Kaugtöölaua ligipääsueelistuste määramine"
 
 #: ../capplet/vino-preferences.glade.h:1
 msgid "    "
@@ -136,7 +136,7 @@ msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
-"Sinu XServer ei toeta XTest laiendusi - võrgus asuv töölaud on ligipääsetav "
+"Sinu XServer ei toeta XTest laiendust - võrgus asuv töölaud on ligipääsetav "
 "ainult vaatamiseks\n"
 
 #.
@@ -160,7 +160,7 @@ msgstr "Kasutaja %s kaugtöölaud"
 
 #: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
-msgstr "Ekraan, kus kuvada viipa"
+msgstr "Viiba kuvamiseks kasutatav ekraan"
 
 #: ../server/vino-prompt.c:390
 #, c-format
@@ -179,7 +179,7 @@ msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"Kasutaja teissest arvutist proovib üle võrgu vaadata või kasutada sinu "
+"Kasutaja teisest arvutist proovib üle võrgu vaadata või kasutada sinu "
 "töölauda."
 
 #: ../server/vino-prompt.glade.h:3
@@ -216,15 +216,15 @@ msgstr "Viip lubatud"
 
 #: ../server/vino-server.c:913
 msgid "Prompt the user about connection attempts"
-msgstr "Kasutaja teavitamine sissenevatest ühendustest"
+msgstr "Kasutaja teavitamine sisenevatest ühendustest"
 
 #: ../server/vino-server.c:920
 msgid "View Only"
-msgstr "Ainult vaade"
+msgstr "Ainult vaatamiseks"
 
 #: ../server/vino-server.c:921
 msgid "Disallow keyboard/pointer input from clients"
-msgstr "Klaviatuuri ja hiire sisend on klientidelt keelatud"
+msgstr "Kliendipoolne klaviatuuri- ja hiiresisend on keelatud"
 
 #: ../server/vino-server.c:928
 msgid "Local Only"
@@ -240,7 +240,7 @@ msgstr "Nõua krüptimist"
 
 #: ../server/vino-server.c:937
 msgid "Require clients to use encryption"
-msgstr "Nõua klientidelt krüptimise kasutamist"
+msgstr "Klientidelt krüptimise kasutamise nõudmine"
 
 #: ../server/vino-server.c:944
 msgid "Authentication methods"
@@ -260,7 +260,7 @@ msgid ""
 "method"
 msgstr ""
 "Parooli (base64 kodeeritult) kasutatakse VncAuth meetodi abil "
-"autentiseerimiseks"
+"autentimiseks"
 
 #: ../server/vino-server.c:961
 msgid "Use an alternative port"
@@ -287,7 +287,7 @@ msgstr "Lubatud autentiseerimismeetodid"
 
 #: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr "E-posti aadress, kuhu võrgutöölaua URL tuleks saata"
+msgstr "E-posti aadress, millele võrgutöölaua URL tuleks saata"
 
 #: ../server/vino-server.schemas.in.h:4
 msgid "Enable remote desktop access"
@@ -298,8 +298,8 @@ msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
 msgstr ""
-"Kui tõene, siis on lubatud väline juurdepääs töölauale RFB protokolli abil. "
-"Eemalasuvate masinate kasutajad saavad seejärel töölauaga ühendada "
+"Kui märgitud, siis töölauale on lubatud väline juurdepääs RFB protokolli "
+"abil. Eemalasuvate masinate kasutajad saavad seejärel töölauaga ühendada "
 "vncviewer'i abil."
 
 #: ../server/vino-server.schemas.in.h:6
@@ -308,17 +308,18 @@ msgid ""
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
 msgstr ""
-"Kui tõene, siis enne kui kaugjuurdepääsu kasutaja saab töölauda kasutada, "
-"peab peremeesmasina kasutaja ühenduse lubama. See on soovitatav eelkõige "
-"siis kui juurdepääs pole parooliga kaitstud."
+"Kui märgitud, siis peab peremeesmasina kasutaja andma loa enne enne kui "
+"kaugjuurdepääsu kasutaja saab töölauda kasutada. See on soovitatav eelkõige "
+"parooliga kaitsmata ligipääsu korral."
 
 #: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote user's will not be able to use the mouse or keyboard."
 msgstr ""
-"Kui tõene, siis kaugjuurdepääsu kasutajatel on luba töölauda ainult vaadata. "
-"Välistel kasutajatel pole võimalik kasutada hiirt ega klaviatuuri."
+"Kui märgitud, siis kaugjuurdepääsu kasutajatel on luba töölauda ainult "
+"vaadata. Välistel kasutajatel pole võimalik kasutada ei hiirt ega "
+"klaviatuuri."
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
@@ -326,10 +327,10 @@ msgid ""
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
-"Kui tõene, siis kaugtöölaua kasutajatel peab olema võimalus kasutada "
-"krüpteeringut. Väga soovitatav oleks kasutada klienti, millel on "
-"krüpteeringu tugi, isegi juhul kui kaugtöölaua ning kasutaja masina vahele "
-"jääv võrk on usaldusväärne."
+"Kui märgitud, siis kaugtöölaua kasutajatel peab olema võimalus kasutada "
+"krüptimist. Väga soovitatav oleks kasutada klienti, millel on krüptimise "
+"tugi, isegi juhul kui kaugtöölaua ning kasutaja masinate vahel on "
+"usaldusväärne võrk."
 
 #: ../server/vino-server.schemas.in.h:9
 msgid ""
@@ -364,12 +365,12 @@ msgstr ""
 "Nimekiri autentiseerimismeetoditest mille abil kaugtöölaua kasutajad saavad "
 "juurdepääsu töölauale. On kaks võimalikku autentiseerimismeetodit; \"vnc\" "
 "küsub kaugtöölaua kasutajalt enne ühenduse loomist parooli (parooli saab "
-"määrata vnc_password võtme abil) ja \"none\", mis lubab igal kaugtöölaua "
+"määrata võtmega \"vnc_password\") ja \"none\", mis lubab igal kaugtöölaua "
 "kasutajal ühenduse luua."
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Only allow remote users to view the desktop"
-msgstr "Luba välistel kasutajatel töölauda ainult vaadata"
+msgstr "Välistel kasutajatel lubatakse töölauda ainult vaadata"
 
 #: ../server/vino-server.schemas.in.h:15
 msgid "Password required for \"vnc\" authentication"
@@ -389,8 +390,8 @@ msgid ""
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
 msgstr ""
-"Salasõna mida kaugtöölaua kasutajalt küsitakse juhul kui kasutatakse \"vnc\" "
-"autentiseerimismeetodit. Võtme poolt määratud salasõna on base64 kodeeritud."
+"\"vnc\" autentiseerimismeetodi korral kaugtöölaua kasutajailt küsitav "
+"salasõna. Võtme poolt määratud salasõna on kodeeritud base64 algoritmiga."
 
 #: ../server/vino-server.schemas.in.h:19
 msgid ""
@@ -406,12 +407,13 @@ msgid ""
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
-"See võti määrab ära e-posti aadressi, millele kaugtöölaua juurdepääsuaadress "
-"saadetakse, juhul kui kasutaja klõpsab URL-il kaugtöölaua sätetedialoogis."
+"See võti määrab e-posti aadressi, millele kaugtöölaua juurdepääsuaadress "
+"saadetakse, juhul kui kasutaja klõpsab kaugtöölaua sätete dialoogis oleval "
+"URL-il."
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "Võrgutöölaua server juba käib, lõpetan töö...\n"
+msgstr "Võrgutöölaua server juba töötab, töö lõpetatakse...\n"
 
 #: ../server/vino-shell.c:79
 msgid ""
@@ -419,11 +421,11 @@ msgid ""
 "exiting ...\n"
 msgstr ""
 "Probleem kaugtöölaua serveri registreerimisel bonobo-aktiveerimisega; "
-"väljun...\n"
+"töö lõpetatakse...\n"
 
 #: ../session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
-msgstr "Võrgutöölaua server on surnud, taaskäivitan\n"
+msgstr "Võrgutöölaua server on surnud ja käivitatakse uuesti\n"
 
 #: ../session/vino-session.c:154
 #, c-format
