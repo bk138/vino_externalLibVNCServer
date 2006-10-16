@@ -1,5 +1,14 @@
 2006-10-16  Dan Winship  <danw@novell.com>
 
+	* server/vino-fb.c (vino_fb_xdamage_idle_handler): If not using
+	XShm, use XGetSubImage to get the damaged pixels.
+	(vino_fb_init_fb_image): Don't call XShmCreatePixmap if not using
+	XShm.
+	(vino_fb_init_from_screen): Don't use XShm if the server doesn't
+	support the shared_pixmaps option. Fixes vino on Xgl. #341186
+
+2006-10-16  Dan Winship  <danw@novell.com>
+
 	* server/libvncserver/rfb/rfbproto.h (rfbProtocolMinorVersion8):
 	define this.
 

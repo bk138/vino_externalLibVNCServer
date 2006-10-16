@@ -583,17 +583,34 @@ vino_fb_xdamage_idle_handler (VinoFB *vfb)
   gdk_error_trap_push ();
 
   /* Copy the damaged pixels from the server */
-  XCopyArea (vfb->priv->xdisplay,
-	     GDK_WINDOW_XWINDOW (vfb->priv->root_window),
-	     vfb->priv->fb_pixmap,
-	     vfb->priv->xdamage_copy_gc,
-	     damage->x,
-	     damage->y,
-	     damage->width,
-	     damage->height,
-	     damage->x,
-	     damage->y);
-  XSync (vfb->priv->xdisplay, False);
+  if (vfb->priv->use_x_shm)
+    {
+      XCopyArea (vfb->priv->xdisplay,
+		 GDK_WINDOW_XWINDOW (vfb->priv->root_window),
+		 vfb->priv->fb_pixmap,
+		 vfb->priv->xdamage_copy_gc,
+		 damage->x,
+		 damage->y,
+		 damage->width,
+		 damage->height,
+		 damage->x,
+		 damage->y);
+      XSync (vfb->priv->xdisplay, False);
+    }
+  else
+    {
+      XGetSubImage (vfb->priv->xdisplay,
+		    GDK_WINDOW_XWINDOW (vfb->priv->root_window),
+		    damage->x,
+		    damage->y,
+		    damage->width,
+		    damage->height,
+		    AllPlanes,
+		    ZPixmap,
+		    vfb->priv->fb_image,
+		    damage->x,
+		    damage->y);
+    }
 
   if ((error = gdk_error_trap_pop ()))
     {
@@ -794,13 +811,16 @@ vino_fb_init_fb_image (VinoFB *vfb)
   if (vfb->priv->fb_image)
     {
 #ifdef HAVE_XSHM
-      vfb->priv->fb_pixmap = XShmCreatePixmap (vfb->priv->xdisplay,
-					       GDK_WINDOW_XWINDOW (vfb->priv->root_window),
-					       vfb->priv->fb_image->data,
-					       &vfb->priv->fb_image_x_shm_info,
-					       vfb->priv->fb_image->width,
-					       vfb->priv->fb_image->height,
-					       vfb->priv->fb_image->depth);
+      if (vfb->priv->use_x_shm)
+	{
+	  vfb->priv->fb_pixmap = XShmCreatePixmap (vfb->priv->xdisplay,
+						   GDK_WINDOW_XWINDOW (vfb->priv->root_window),
+						   vfb->priv->fb_image->data,
+						   &vfb->priv->fb_image_x_shm_info,
+						   vfb->priv->fb_image->width,
+						   vfb->priv->fb_image->height,
+						   vfb->priv->fb_image->depth);
+	}
 #endif
       if (vfb->priv->fb_pixmap == None)
 	{
@@ -839,6 +859,15 @@ vino_fb_init_from_screen (VinoFB    *vfb,
 
 #ifdef HAVE_XSHM
   vfb->priv->use_x_shm = XShmQueryExtension (vfb->priv->xdisplay) != False;
+  if (vfb->priv->use_x_shm)
+    {
+      int major, minor;
+      Bool shared_pixmaps;
+
+      XShmQueryVersion (vfb->priv->xdisplay, &major, &minor, &shared_pixmaps);
+      if (!shared_pixmaps)
+	vfb->priv->use_x_shm = FALSE;
+    }
 #endif
 
   g_signal_connect_swapped (vfb->priv->screen, "size-changed",
