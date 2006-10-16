@@ -1,3 +1,17 @@
+2006-10-16  Dan Winship  <danw@novell.com>
+
+	* server/libvncserver/rfb/rfbproto.h (rfbProtocolMinorVersion8):
+	define this.
+
+	* server/libvncserver/auth.c (rfbAuthNewClient,
+	rfbAuthProcessSecurityTypeMessage, rfbAuthPasswordChecked):
+	Minor updates to support RFB 3.8.
+
+	* server/libvncserver/rfbserver.c
+	(rfbProcessClientProtocolVersion): allow the client to specify
+	protocol version 3.8 even though we still only advertise 3.7. See
+	bug #356131.
+
 2006-10-13  Mark McLoughlin  <mark@skynet.ie>
 
 	Add "use_alternative_port" and "alternative_port" GConf

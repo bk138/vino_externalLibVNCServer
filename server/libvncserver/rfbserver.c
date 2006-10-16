@@ -496,12 +496,16 @@ rfbProcessClientProtocolVersion(cl)
         return;
     }
 
-    if (minor_ != rfbProtocolMinorVersion3 && minor_ != rfbProtocolMinorVersion7) {
+    if (minor_ != rfbProtocolMinorVersion3 &&
+	minor_ != rfbProtocolMinorVersion7 &&
+	minor_ != rfbProtocolMinorVersion8) {
         /* Minor version mismatch - warn but try to continue */
         rfbLog("Ignoring minor version mismatch\n");
     }
 
-    if (minor_ >= rfbProtocolMinorVersion7)
+    if (minor_ >= rfbProtocolMinorVersion8)
+      cl->minorVersion = rfbProtocolMinorVersion8;
+    else if (minor_ == rfbProtocolMinorVersion7)
       cl->minorVersion = rfbProtocolMinorVersion7;
     else
       cl->minorVersion = rfbProtocolMinorVersion3;

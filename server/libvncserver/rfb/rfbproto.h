@@ -214,6 +214,7 @@ typedef struct {
 #define rfbProtocolMajorVersion  3
 #define rfbProtocolMinorVersion3 3
 #define rfbProtocolMinorVersion7 7
+#define rfbProtocolMinorVersion8 8
 
 typedef char rfbProtocolVersionMsg[13];	/* allow extra byte for null */
 

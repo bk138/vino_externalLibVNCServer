@@ -194,7 +194,7 @@ rfbAuthNewClient3_3(rfbClientPtr cl)
 void
 rfbAuthNewClient(rfbClientPtr cl)
 {
-    if (cl->minorVersion == rfbProtocolMinorVersion7)
+    if (cl->minorVersion >= rfbProtocolMinorVersion7)
 	rfbAuthNewClient3_7(cl);
     else
 	rfbAuthNewClient3_3(cl);
@@ -281,9 +281,14 @@ rfbAuthProcessSecurityTypeMessage(rfbClientPtr cl)
 	cl->state = RFB_AUTHENTICATION;
 	break;
     case rfbNoAuth:
-        cl->state = RFB_INITIALISATION;
-	if (rfbAuthClientAuthenticated(cl))
-	    rfbProcessClientInitMessage(cl);
+
+	if (cl->minorVersion >= rfbProtocolMinorVersion8)
+	    rfbAuthPasswordChecked(cl, RFB_CLIENT_ACCEPT);
+	else {
+	    cl->state = RFB_INITIALISATION;
+	    if (rfbAuthClientAuthenticated(cl))
+		rfbProcessClientInitMessage(cl);
+	}
 	break;
     default:
 	/* can't be reached */
@@ -421,6 +426,26 @@ rfbAuthPasswordChecked(rfbClientPtr            cl,
 	    rfbLogPerror("rfbAuthPasswordChecked: write");
 	    rfbCloseClient(cl);
 	    return;
+	}
+
+	if (cl->minorVersion >= rfbProtocolMinorVersion8) {
+	    /* We can't really localize this string, since it has to
+	     * be iso8859-1 encoded. However, the string will only be
+	     * returned when we're using protocol version 3.8, and we
+	     * only advertise support for 3.7, so this only gets used
+	     * at all if you have a broken client.
+	     */
+	    const char errmsg[] = "Password incorrect";
+	    uint32_t len, wireLen;
+
+	    len = sizeof(errmsg) - 1;
+	    wireLen = Swap32IfLE(len);
+	    if (WriteExact(cl, (char *)&wireLen, 4) < 0 ||
+		WriteExact(cl, errmsg, len) < 0) {
+		rfbLogPerror("rfbAuthPasswordChecked: write");
+		rfbCloseClient(cl);
+		return;
+	    }
 	}
 
         rfbCloseClient(cl);
