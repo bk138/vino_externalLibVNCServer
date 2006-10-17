@@ -6,6 +6,7 @@ INCLUDES = \
 	-I$(top_srcdir)/server/libvncserver \
 	$(VINO_SERVER_CFLAGS) \
 	$(VINO_DEBUG_CFLAGS) \
+	$(VINO_KEYRING_CFLAGS) \
 	$(VINO_HTTP_CFLAGS) \
 	$(AVAHI_CFLAGS) \
 	$(LIBGNUTLS_CFLAGS) \
@@ -21,6 +22,7 @@ libexec_PROGRAMS = vino-server
 
 vino_server_LDADD = \
 	$(VINO_SERVER_LIBS) \
+	$(VINO_KEYRING_LIBS) \
 	$(AVAHI_LIBS) \
 	$(LIBGNUTLS_LIBS) \
 	$(LIBGCRYPT_LIBS) \

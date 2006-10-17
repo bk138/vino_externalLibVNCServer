@@ -1,3 +1,40 @@
+2006-10-17  Mark McLoughlin  <mark@skynet.ie>
+
+	Add a --enable-gnome-keyring option which causes Vino
+	to store its configured password in the user's keyring.
+	Disabled by default, because it's not really a good
+	idea. See comments in bug #344839
+
+	Based on a patch from Steven Zhang <steven.zhang@sun.com>
+
+	* configure.in: add --enable-gnome-keyring
+	
+	* server/vino-server.c:
+	(vino_server_get_password_from_keyring): helper to
+	read the password from the keyring.
+	(vino_server_auth_client): if keyring support is enabled,
+	authenticate against the password stored in the keyring.
+	If there's no password in the keyring, authenticate against
+	the password in GConf.
+	
+	* capplet/vino-preferences.c:
+	(vino_preferences_dialog_get_password_from_keyring): lookup
+	the password from the user's keyring.
+	(vino_preferences_dialog_set_password_in_keyring): store
+	the password in the user's keyring.
+	(vino_preferences_dialog_password_changed): store the new
+	password in the keyring, falling back to GConf if that
+	fails.
+	(vino_preferences_dialog_setup_password_entry): read the
+	password from the keyring, falling back to GConf. Only
+	watch for changes from GConf if we actually used the
+	one from GConf in the first place.
+	(vino_preferences_dialog_init): hack to allow variable
+	number of listeners.
+
+	* server/Makefile.am, capplet/Makefile.am: build against
+	gnome-keyring
+	
 2006-10-16  Dan Winship  <danw@novell.com>
 
 	* server/vino-fb.c (vino_fb_xdamage_idle_handler): If not using

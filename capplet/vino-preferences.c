@@ -33,6 +33,10 @@
 #include <libgnomeui/libgnomeui.h>
 #include "vino-url.h"
 
+#ifdef VINO_ENABLE_KEYRING
+#include <gnome-keyring.h>
+#endif
+
 #define VINO_PREFS_DIR                    "/desktop/gnome/remote_access"
 #define VINO_PREFS_ENABLED                VINO_PREFS_DIR "/enabled"
 #define VINO_PREFS_PROMPT_ENABLED         VINO_PREFS_DIR "/prompt_enabled"
@@ -63,6 +67,7 @@ typedef struct {
 
   guint        listeners [N_LISTENERS];
   int          n_listeners;
+  int          expected_listeners;
 
   guint        use_password : 1;
 } VinoPreferencesDialog;
@@ -235,6 +240,70 @@ vino_preferences_dialog_base64_unencode (const char *data)
     }
 
   return retval;
+}
+
+static char *
+vino_preferences_dialog_get_password_from_keyring (VinoPreferencesDialog *dialog)
+{
+#ifdef VINO_ENABLE_KEYRING
+  GnomeKeyringNetworkPasswordData *found_item;
+  GnomeKeyringResult               result;
+  GList                           *matches;
+  char                            *password;
+  
+  matches = NULL;
+
+  result = gnome_keyring_find_network_password_sync (
+                NULL,           /* user     */
+		NULL,           /* domain   */
+		"vino.local",   /* server   */
+		NULL,           /* object   */
+		"rfb",          /* protocol */
+		"vnc-password", /* authtype */
+		5900,           /* port     */
+		&matches);
+
+  if (result != GNOME_KEYRING_RESULT_OK)
+    return NULL;
+
+  g_assert (matches != NULL && matches->data != NULL);
+
+  found_item = (GnomeKeyringNetworkPasswordData *) matches->data;
+
+  password = g_strdup (found_item->password);
+
+  gnome_keyring_network_password_list_free (matches);
+
+  return password;
+#else
+  return NULL;
+#endif
+}
+
+static gboolean
+vino_preferences_dialog_set_password_in_keyring (VinoPreferencesDialog *dialog,
+                                                 const char            *password)
+{
+#ifdef VINO_ENABLE_KEYRING
+  GnomeKeyringResult result;
+  guint32            item_id;
+
+  result = gnome_keyring_set_network_password_sync (
+                NULL,           /* default keyring */
+                NULL,           /* user            */
+                NULL,           /* domain          */
+                "vino.local",   /* server          */
+                NULL,           /* object          */
+                "rfb",          /* protocol        */
+                "vnc-password", /* authtype        */
+                5900,           /* port            */
+                password,       /* password        */
+                &item_id);
+
+  return result == GNOME_KEYRING_RESULT_OK;
+#else
+  return FALSE;
+#endif
 }
 
 static void
@@ -580,6 +649,10 @@ vino_preferences_dialog_password_changed (GtkEntry              *entry,
   const char *password;
 
   password = gtk_entry_get_text (entry);
+
+  if (vino_preferences_dialog_set_password_in_keyring (dialog, password))
+    return;
+
   if (!password || !password [0])
     {
       gconf_client_unset (dialog->client, VINO_PREFS_VNC_PASSWORD, NULL);
@@ -599,8 +672,8 @@ vino_preferences_dialog_password_changed (GtkEntry              *entry,
 static void
 vino_preferences_dialog_setup_password_entry (VinoPreferencesDialog *dialog)
 {
-  char *password_b64;
-  char *password;
+  char     *password;
+  gboolean  password_in_keyring;
 
   dialog->password_entry = glade_xml_get_widget (dialog->xml, "password_entry");
   g_assert (dialog->password_entry != NULL);
@@ -608,15 +681,26 @@ vino_preferences_dialog_setup_password_entry (VinoPreferencesDialog *dialog)
   dialog->password_box = glade_xml_get_widget (dialog->xml, "password_box");
   g_assert (dialog->password_box != NULL);
 
-  password_b64 = gconf_client_get_string (dialog->client, VINO_PREFS_VNC_PASSWORD, NULL);
-  password = vino_preferences_dialog_base64_unencode (password_b64);
+  password_in_keyring = TRUE;
+
+  if (!(password = vino_preferences_dialog_get_password_from_keyring (dialog)))
+    {
+      char *password_b64;
+
+      password_b64 = gconf_client_get_string (dialog->client, VINO_PREFS_VNC_PASSWORD, NULL);
+
+      password = vino_preferences_dialog_base64_unencode (password_b64);
+
+      g_free (password_b64);
+
+      password_in_keyring = FALSE;
+    }
 
   if (password)
     {
       gtk_entry_set_text (GTK_ENTRY (dialog->password_entry), password);
     }
 
-  g_free (password_b64);
   g_free (password);
 
   g_signal_connect (dialog->password_entry, "changed",
@@ -624,18 +708,25 @@ vino_preferences_dialog_setup_password_entry (VinoPreferencesDialog *dialog)
 
   gtk_widget_set_sensitive (dialog->password_box, dialog->use_password);
 
-  if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_VNC_PASSWORD, NULL))
+  if (!password_in_keyring)
     {
-      gtk_widget_set_sensitive (dialog->password_box, FALSE);
-      gtk_widget_show (dialog->writability_warning);
-    }
+      if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_VNC_PASSWORD, NULL))
+        {
+          gtk_widget_set_sensitive (dialog->password_box, FALSE);
+          gtk_widget_show (dialog->writability_warning);
+        }
 
-  dialog->listeners [dialog->n_listeners] = 
-    gconf_client_notify_add (dialog->client,
-			     VINO_PREFS_VNC_PASSWORD,
-			     (GConfClientNotifyFunc) vino_preferences_vnc_password_notify,
-			     dialog, NULL, NULL);
-  dialog->n_listeners++;
+      dialog->listeners [dialog->n_listeners] = 
+        gconf_client_notify_add (dialog->client,
+                                 VINO_PREFS_VNC_PASSWORD,
+                                 (GConfClientNotifyFunc) vino_preferences_vnc_password_notify,
+                                 dialog, NULL, NULL);
+      dialog->n_listeners++;
+    }
+  else
+    {
+      dialog->expected_listeners--;
+    }
 }
 
 static void
@@ -870,6 +961,8 @@ vino_preferences_dialog_init (VinoPreferencesDialog *dialog)
   const char *glade_file;
   gboolean    allowed;
 
+  dialog->expected_listeners = N_LISTENERS;
+
   if (g_file_test (VINO_GLADE_FILE, G_FILE_TEST_EXISTS))
     glade_file = VINO_GLADE_FILE;
   else
@@ -909,7 +1002,7 @@ vino_preferences_dialog_init (VinoPreferencesDialog *dialog)
   vino_preferences_dialog_setup_password_toggle       (dialog);
   vino_preferences_dialog_setup_password_entry        (dialog);
 
-  g_assert (dialog->n_listeners == N_LISTENERS);
+  g_assert (dialog->n_listeners == dialog->expected_listeners);
 
   vino_preferences_dialog_update_for_allowed (dialog, allowed);
 

@@ -37,6 +37,10 @@
 #include "vino-enums.h"
 #include <sys/poll.h>
 
+#ifdef VINO_ENABLE_KEYRING
+#include <gnome-keyring.h>
+#endif
+
 /* If an authentication attempt failes, delay the next
  * authentication attempt for 5 seconds.
  */
@@ -447,6 +451,44 @@ vino_server_defer_client_auth (VinoServer           *server,
 					client);
 }
 
+static char *
+vino_server_get_password_from_keyring (VinoServer *server)
+{
+#ifdef VINO_ENABLE_KEYRING
+  GnomeKeyringNetworkPasswordData *found_item;
+  GnomeKeyringResult               result;
+  GList                           *matches;
+  char                            *password;
+  
+  matches = NULL;
+
+  result = gnome_keyring_find_network_password_sync (
+                NULL,           /* user     */
+		NULL,           /* domain   */
+		"vino.local",   /* server   */
+		NULL,           /* object   */
+		"rfb",          /* protocol */
+		"vnc-password", /* authtype */
+		5900,           /* port     */
+		&matches);
+
+  if (result != GNOME_KEYRING_RESULT_OK)
+    return NULL;
+
+  g_assert (matches != NULL && matches->data != NULL);
+
+  found_item = (GnomeKeyringNetworkPasswordData *) matches->data;
+
+  password = g_strdup (found_item->password);
+
+  gnome_keyring_network_password_list_free (matches);
+
+  return password;
+#else
+  return NULL;
+#endif
+}
+
 static enum rfbNewClientAction
 vino_server_auth_client (VinoServer           *server,
 			 VinoServerClientInfo *client,
@@ -459,13 +501,16 @@ vino_server_auth_client (VinoServer           *server,
   if (!(server->priv->auth_methods & VINO_AUTH_VNC))
     goto auth_failed;
 
-  if (!server->priv->vnc_password)
-    goto auth_failed;
-
-  if (!(password = vino_base64_unencode (server->priv->vnc_password)))
+  if (!(password = vino_server_get_password_from_keyring (server)))
     {
-      g_warning ("Failed to base64 unencode VNC password\n");
-      goto auth_failed;
+      if (!server->priv->vnc_password)
+        goto auth_failed;
+
+      if (!(password = vino_base64_unencode (server->priv->vnc_password)))
+        {
+          g_warning ("Failed to base64 unencode VNC password\n");
+          goto auth_failed;
+        }
     }
 
   rfb_client = client->rfb_client;

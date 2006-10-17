@@ -5,6 +5,7 @@ INCLUDES = \
 	-DVINO_GLADEDIR=\""$(datadir)/gnome/vino"\" \
 	-DVINO_ICONDIR=\""$(datadir)/pixmaps\"" \
 	$(VINO_CAPPLET_CFLAGS) \
+	$(VINO_KEYRING_CFLAGS) \
 	$(WARN_CFLAGS) \
 	$(NULL)
 
@@ -17,6 +18,7 @@ vino_preferences_SOURCES = \
 	$(NULL)
 vino_preferences_LDADD = \
 	$(VINO_CAPPLET_LIBS) \
+	$(VINO_KEYRING_LIBS) \
 	$(X_LIBS) \
 	$(NULL)
 

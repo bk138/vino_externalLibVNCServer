@@ -47,6 +47,17 @@ PKG_CHECK_MODULES(VINO_SERVER, gtk+-x11-2.0 gconf-2.0 libglade-2.0 libgnomeui-2.
 	
 PKG_CHECK_MODULES(VINO_CAPPLET, gtk+-2.0 gconf-2.0 libglade-2.0 libgnomeui-2.0 >= 2.5.2)
 
+dnl --enable-gnome-keyring=(yes|no)
+AC_ARG_ENABLE(gnome-keyring,
+              AC_HELP_STRING([--enable-gnome-keyring],
+                             [use gnome keyring for storing password [default=no]]),,
+              enable_gnome_keyring=no)
+if test "x$enable_gnome_keyring" = "xyes"; then
+    PKG_CHECK_MODULES(VINO_KEYRING,
+                      gnome-keyring-1,
+                      AC_DEFINE(VINO_ENABLE_KEYRING, [], [Set if we should use gnome-keyring]))
+fi
+
 dnl --enable-session-support=(yes|no)
 AC_ARG_ENABLE(session_support,
 	      [  --enable-session-support=[no/yes] build session management utility program [default=no]],,
