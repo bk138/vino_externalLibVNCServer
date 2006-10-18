@@ -1,3 +1,15 @@
+2006-10-18  Mark McLoughlin  <mark@skynet.ie>
+
+	Fix issue with the CoRRE encoding saying its only sending
+	a single rectangle, but sending lots more. Problem identified
+	by Detlef Schmicker <d.schmicker@physik.de>
+
+	Fix is backported from libvncserver upstream.
+
+	* server/libvncserver/rfbserver.c:
+	(rfbSendFramebufferUpdate): handle maxRectsPerUpdate for
+	CoRRE and Zlib encodings.
+
 2006-10-17  Mark McLoughlin  <mark@skynet.ie>
 
 	Add a --enable-gnome-keyring option which causes Vino

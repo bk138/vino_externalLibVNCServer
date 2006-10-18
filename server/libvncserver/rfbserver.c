@@ -1214,10 +1214,16 @@ rfbSendFramebufferUpdate(cl, givenUpdateRegion)
     fu->type = rfbFramebufferUpdate;
     if (nUpdateRegionRects != 0xFFFF) {
 	if(cl->screen->maxRectsPerUpdate>0
+	   /* CoRRE splits the screen into smaller squares */
+	   && cl->preferredEncoding != rfbEncodingCoRRE
+#ifdef HAVE_LIBZ
+	   /* Zlib encoding splits rectangles up into smaller chunks */
+	   && cl->preferredEncoding != rfbEncodingZlib
 #ifdef HAVE_LIBJPEG
 	   /* Tight encoding counts the rectangles differently */
 	   && cl->preferredEncoding != rfbEncodingTight
 #endif
+#endif /* HAVE_LIBZ */
 	   && nUpdateRegionRects>cl->screen->maxRectsPerUpdate) {
 	    sraRegion* newUpdateRegion = sraRgnBBox(updateRegion);
 	    sraRgnDestroy(updateRegion);
