@@ -1,5 +1,10 @@
 2006-10-18  Mark McLoughlin  <mark@skynet.ie>
 
+	* server/libvncserver/rfbserver.c: cherry-pick some more
+	fixes from upstream libvncserver.
+
+2006-10-18  Mark McLoughlin  <mark@skynet.ie>
+
 	Fix issue with the CoRRE encoding saying its only sending
 	a single rectangle, but sending lots more. Problem identified
 	by Detlef Schmicker <d.schmicker@physik.de>

@@ -166,9 +166,8 @@ rfbReleaseClientIterator(rfbClientIteratorPtr iterator)
  */
 
 void
-rfbNewClientConnection(rfbScreen,sock)
-    rfbScreenInfoPtr rfbScreen;
-    int sock;
+rfbNewClientConnection(rfbScreenInfoPtr rfbScreen,
+                       int sock)
 {
     rfbClientPtr cl;
 
@@ -182,9 +181,8 @@ rfbNewClientConnection(rfbScreen,sock)
  */
 
 rfbClientPtr
-rfbNewClient(rfbScreen,sock)
-    rfbScreenInfoPtr rfbScreen;
-    int sock;
+rfbNewClient(rfbScreenInfoPtr rfbScreen,
+             int sock)
 {
     rfbProtocolVersionMsg pv;
     rfbClientIteratorPtr iterator;
@@ -244,7 +242,7 @@ rfbNewClient(rfbScreen,sock)
       cl->correMaxWidth = 48;
       cl->correMaxHeight = 48;
 #ifdef HAVE_LIBZ
-      cl->zrleData = 0;
+      cl->zrleData = NULL;
 #endif
 
       cl->copyRegion = sraRgnCreate();
@@ -303,10 +301,7 @@ rfbNewClient(rfbScreen,sock)
       if (WriteExact(cl, pv, sz_rfbProtocolVersionMsg) < 0) {
         rfbLogPerror("rfbNewClient: write");
         rfbCloseClient(cl);
-	/* TODO: memory leak here (cl is never freed)
-	 * can rfbClientConnectionGone called at this time?
-	 * tim@tjansen.de
-	 */
+        rfbClientConnectionGone(cl);
         return NULL;
       }
     }
@@ -338,8 +333,7 @@ rfbNewClient(rfbScreen,sock)
  */
 
 void
-rfbClientConnectionGone(cl)
-     rfbClientPtr cl;
+rfbClientConnectionGone(rfbClientPtr cl)
 {
     int i;
 
@@ -351,6 +345,9 @@ rfbClientConnectionGone(cl)
         cl->screen->rfbClientHead = cl->next;
     if (cl->next)
         cl->next->prev = cl->prev;
+
+    if(cl->sock>0)
+        close(cl->sock);
 
 #ifdef HAVE_LIBZ
     FreeZrleData(cl);
@@ -404,7 +401,9 @@ rfbClientConnectionGone(cl)
     TINI_COND(cl->updateCond);
     TINI_MUTEX(cl->updateMutex);
 
+    /* make sure outputMutex is unlocked before destroying */
     LOCK(cl->outputMutex);
+    UNLOCK(cl->outputMutex);
     TINI_MUTEX(cl->outputMutex);
 
     rfbPrintStats(cl);
@@ -418,8 +417,7 @@ rfbClientConnectionGone(cl)
  */
 
 void
-rfbProcessClientMessage(cl)
-     rfbClientPtr cl;
+rfbProcessClientMessage(rfbClientPtr cl)
 {
     switch (cl->state) {
     case RFB_PROTOCOL_VERSION:
@@ -458,12 +456,10 @@ rfbProcessClientMessage(cl)
  */
 
 static void
-rfbProcessClientProtocolVersion(cl)
-    rfbClientPtr cl;
+rfbProcessClientProtocolVersion(rfbClientPtr cl)
 {
     rfbProtocolVersionMsg pv;
     int n, major_, minor_;
-    char failureReason[256];
 
     if ((n = ReadExact(cl, pv, sz_rfbProtocolVersionMsg)) <= 0) {
         if (n == 0)
@@ -477,7 +473,7 @@ rfbProcessClientProtocolVersion(cl)
     pv[sz_rfbProtocolVersionMsg] = 0;
     if (sscanf(pv,rfbProtocolVersionFormat,&major_,&minor_) != 2) {
         char name[1024]; 
-	if(sscanf(pv,"RFB %03d.%03d %1024s\n",&major_,&minor_,name) != 3) {
+	if(sscanf(pv,"RFB %03d.%03d %1023s\n",&major_,&minor_,name) != 3) {
 	    rfbErr("rfbProcessClientProtocolVersion: not a valid RFB client\n");
 	    rfbCloseClient(cl);
 	    return;
@@ -485,14 +481,13 @@ rfbProcessClientProtocolVersion(cl)
 	free(cl->host);
 	cl->host=strdup(name);
     }
-    rfbLog("Protocol version %d.%d\n", major_, minor_);
+    rfbLog("Client Protocol Version %d.%d\n", major_, minor_);
 
     if (major_ != rfbProtocolMajorVersion) {
-        /* Major version mismatch - send a ConnFailed message */
-        sprintf(failureReason,
-                "RFB protocol version mismatch - server %d.%d, client %d.%d",
-                rfbProtocolMajorVersion,rfbProtocolMinorVersion7,major_,minor_);
-        rfbClientConnFailed(cl, failureReason);
+        rfbErr("RFB protocol version mismatch - server %d.%d, client %d.%d",
+                rfbProtocolMajorVersion, rfbProtocolMinorVersion7,
+                major_,minor_);
+        rfbCloseClient(cl);
         return;
     }
 
@@ -520,19 +515,13 @@ rfbProcessClientProtocolVersion(cl)
  */
 
 void
-rfbClientConnFailed(cl, reason)
-    rfbClientPtr cl;
-    char *reason;
+rfbClientConnFailed(rfbClientPtr cl,
+                    char *reason)
 {
     char *buf;
     int len = strlen(reason);
 
-    rfbErr("Connection failed: %s\n", reason);
-
-    /* Note, for version 3.7 of the protocol, rfbConnFailed should
-     * be encoded in a single byte ... but we only send this message
-     * when we get an unknown major version so um ...
-     */
+    rfbLog("rfbClientConnFailed(\"%s\")\n", reason);
 
     buf = (char *)malloc(8 + len);
     ((uint32_t *)buf)[0] = 0;
@@ -542,6 +531,7 @@ rfbClientConnFailed(cl, reason)
     if (WriteExact(cl, buf, 8 + len) < 0)
         rfbLogPerror("rfbClientConnFailed: write");
     free(buf);
+
     rfbCloseClient(cl);
 }
 
@@ -552,8 +542,7 @@ rfbClientConnFailed(cl, reason)
  */
 
 void
-rfbProcessClientInitMessage(cl)
-    rfbClientPtr cl;
+rfbProcessClientInitMessage(rfbClientPtr cl)
 {
     rfbClientInitMsg ci;
     char buf[256];
@@ -571,6 +560,8 @@ rfbProcessClientInitMessage(cl)
         return;
     }
 
+    memset(buf,0,sizeof(buf));
+
     si->framebufferWidth = Swap16IfLE(cl->screen->width);
     si->framebufferHeight = Swap16IfLE(cl->screen->height);
     si->format = cl->screen->rfbServerFormat;
@@ -578,10 +569,7 @@ rfbProcessClientInitMessage(cl)
     si->format.greenMax = Swap16IfLE(si->format.greenMax);
     si->format.blueMax = Swap16IfLE(si->format.blueMax);
 
-    if (strlen(cl->screen->desktopName) > 128)      /* sanity check on desktop name len */
-        ((char*)cl->screen->desktopName)[128] = 0;
-
-    strcpy(buf + sz_rfbServerInitMsg, cl->screen->desktopName);
+    strncpy(buf + sz_rfbServerInitMsg, cl->screen->desktopName, 127);
     len = strlen(buf + sz_rfbServerInitMsg);
     si->nameLength = Swap32IfLE(len);
 
@@ -628,8 +616,7 @@ rfbProcessClientInitMessage(cl)
  */
 
 static void
-rfbProcessClientNormalMessage(cl)
-    rfbClientPtr cl;
+rfbProcessClientNormalMessage(rfbClientPtr cl)
 {
     int n=0;
     rfbClientToServerMsg msg;
@@ -727,51 +714,22 @@ rfbProcessClientNormalMessage(cl)
 		cl->useCopyRect = TRUE;
                 break;
             case rfbEncodingRaw:
-                if (cl->preferredEncoding == -1) {
-                    cl->preferredEncoding = enc;
-                    rfbLog("Using raw encoding for client %s\n",
-                           cl->host);
-                }
-                break;
             case rfbEncodingRRE:
-                if (cl->preferredEncoding == -1) {
-                    cl->preferredEncoding = enc;
-                    rfbLog("Using rre encoding for client %s\n",
-                           cl->host);
-                }
-                break;
             case rfbEncodingCoRRE:
-                if (cl->preferredEncoding == -1) {
-                    cl->preferredEncoding = enc;
-                    rfbLog("Using CoRRE encoding for client %s\n",
-                           cl->host);
-                }
-                break;
             case rfbEncodingHextile:
-                if (cl->preferredEncoding == -1) {
-                    cl->preferredEncoding = enc;
-                    rfbLog("Using hextile encoding for client %s\n",
-                           cl->host);
-                }
-                break;
 #ifdef HAVE_LIBZ
 	    case rfbEncodingZlib:
-		if (cl->preferredEncoding == -1) {
-		    cl->preferredEncoding = enc;
-		    rfbLog("Using zlib encoding for client %s\n",
-			   cl->host);
-		}
-              break;
+            case rfbEncodingZRLE:
 #ifdef HAVE_LIBJPEG
 	    case rfbEncodingTight:
-		if (cl->preferredEncoding == -1) {
-		    cl->preferredEncoding = enc;
-		    rfbLog("Using tight encoding for client %s\n",
-			   cl->host);
-		}
-		break;
 #endif
 #endif
+            /* The first supported encoding is the 'preferred' encoding */
+                if (cl->preferredEncoding == -1)
+                    cl->preferredEncoding = enc;
+
+
+                break;
 	    case rfbEncodingXCursor:
 		enableCursorShapeUpdates = TRUE;
 		break;
@@ -796,15 +754,6 @@ rfbProcessClientNormalMessage(cl)
 		    cl->useNewFBSize = TRUE;
 		}
 		break;
-#ifdef HAVE_LIBZ
-           case rfbEncodingZRLE:
-               if (cl->preferredEncoding == -1) {
-                   cl->preferredEncoding = enc;
-                   rfbLog("Using ZRLE encoding for client %s\n",
-                          cl->host);
-               }
-               break;
-#endif
             default:
 #ifdef HAVE_LIBZ
 		if ( enc >= (uint32_t)rfbEncodingCompressLevel0 &&
@@ -947,23 +896,23 @@ rfbProcessClientNormalMessage(cl)
 	    return;
 	}
 
+	msg.cct.length = Swap32IfLE(msg.cct.length);
+
+	str = (char *)malloc(msg.cct.length);
+
+	if ((n = ReadExact(cl, str, msg.cct.length)) <= 0) {
+	    if (n != 0)
+	        rfbLogPerror("rfbProcessClientNormalMessage: read");
+	    free(str);
+	    rfbCloseClient(cl);
+	    return;
+	}
+
 	if(!cl->viewOnly) {
-	    msg.cct.length = Swap32IfLE(msg.cct.length);
-
-	    str = (char *)malloc(msg.cct.length);
-
-	    if ((n = ReadExact(cl, str, msg.cct.length)) <= 0) {
-		if (n != 0)
-		    rfbLogPerror("rfbProcessClientNormalMessage: read");
-		free(str);
-		rfbCloseClient(cl);
-		return;
-	    }
-
 	    if (cl->screen->setXCutText)
 	      cl->screen->setXCutText(str, msg.cct.length, cl);
-	    free(str);
 	}
+	free(str);
 
         return;
 
@@ -987,11 +936,10 @@ rfbProcessClientNormalMessage(cl)
  */
 
 rfbBool
-rfbSendFramebufferUpdate(cl, givenUpdateRegion)
-     rfbClientPtr cl;
-     sraRegionPtr givenUpdateRegion;
+rfbSendFramebufferUpdate(rfbClientPtr cl,
+                         sraRegionPtr givenUpdateRegion)
 {
-    sraRectangleIterator* i = NULL;
+    sraRectangleIterator* i=NULL;
     sraRect rect;
     int nUpdateRegionRects;
     rfbFramebufferUpdateMsg *fu = (rfbFramebufferUpdateMsg *)cl->updateBuf;
@@ -1077,7 +1025,7 @@ rfbSendFramebufferUpdate(cl, givenUpdateRegion)
     /*
      * The client is interested in the region requestedRegion.  The region
      * which should be updated now is the intersection of requestedRegion
-     * and the union of givenUpdateRegion and copyRegion.  If it's empty then
+     * and the union of modifiedRegion and copyRegion.  If it's empty then
      * no update is needed.
      */
 
@@ -1146,7 +1094,6 @@ rfbSendFramebufferUpdate(cl, givenUpdateRegion)
      * empty both the requestedRegion and the copyRegion - note that we never
      * carry over a copyRegion for a future update.
      */
-
 
      sraRgnOr(cl->modifiedRegion,cl->copyRegion);
      sraRgnSubtract(cl->modifiedRegion,updateRegion);
@@ -1341,10 +1288,10 @@ rfbSendFramebufferUpdate(cl, givenUpdateRegion)
  */
 
 rfbBool
-rfbSendCopyRegion(cl, reg, dx, dy)
-    rfbClientPtr cl;
-    sraRegionPtr reg;
-    int dx, dy;
+rfbSendCopyRegion(rfbClientPtr cl,
+                  sraRegionPtr reg,
+                  int dx,
+                  int dy)
 {
     int x, y, w, h;
     rfbFramebufferUpdateRectHeader rect;
@@ -1391,9 +1338,11 @@ rfbSendCopyRegion(cl, reg, dx, dy)
  */
 
 rfbBool
-rfbSendRectEncodingRaw(cl, x, y, w, h)
-    rfbClientPtr cl;
-    int x, y, w, h;
+rfbSendRectEncodingRaw(rfbClientPtr cl,
+                       int x,
+                       int y,
+                       int w,
+                       int h)
 {
     rfbFramebufferUpdateRectHeader rect;
     int nlines;
@@ -1464,8 +1413,7 @@ rfbSendRectEncodingRaw(cl, x, y, w, h)
  */
 
 rfbBool
-rfbSendLastRectMarker(cl)
-    rfbClientPtr cl;
+rfbSendLastRectMarker(rfbClientPtr cl)
 {
     rfbFramebufferUpdateRectHeader rect;
 
@@ -1496,9 +1444,9 @@ rfbSendLastRectMarker(cl)
  */
 
 rfbBool
-rfbSendNewFBSize(cl, w, h)
-    rfbClientPtr cl;
-    int w, h;
+rfbSendNewFBSize(rfbClientPtr cl,
+                 int w,
+                 int h)
 {
     rfbFramebufferUpdateRectHeader rect;
 
@@ -1530,8 +1478,7 @@ rfbSendNewFBSize(cl, w, h)
  */
 
 rfbBool
-rfbSendUpdateBuf(cl)
-    rfbClientPtr cl;
+rfbSendUpdateBuf(rfbClientPtr cl)
 {
     if(cl->sock<0)
       return FALSE;
@@ -1552,10 +1499,9 @@ rfbSendUpdateBuf(cl)
  */
 
 rfbBool
-rfbSendSetColourMapEntries(cl, firstColour, nColours)
-    rfbClientPtr cl;
-    int firstColour;
-    int nColours;
+rfbSendSetColourMapEntries(rfbClientPtr cl,
+                           int firstColour,
+                           int nColours)
 {
     char buf[sz_rfbSetColourMapEntriesMsg + 256 * 3 * 2];
     rfbSetColourMapEntriesMsg *scme = (rfbSetColourMapEntriesMsg *)buf;
