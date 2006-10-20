@@ -204,7 +204,7 @@ vino_http_construct_response (VinoHTTP       *http,
   char    *path;
   char    *freeme = NULL;
   char    *contents;
-  int      len;
+  gsize    len;
 
   if (!filename)
     return invalid_request_response ();

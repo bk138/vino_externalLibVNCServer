@@ -1,3 +1,8 @@
+2006-10-20  Mark McLoughlin  <mark@skynet.ie>
+
+	* vino/server/vino-http.c: (vino_http_construct_response):
+	Fix warning
+
 2006-10-19  Mark McLoughlin  <mark@skynet.ie>
 
 	* server/vino-server.c: (vino_server_handle_client_gone):
