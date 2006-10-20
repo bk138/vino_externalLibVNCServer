@@ -589,10 +589,15 @@ start_probing_at (int rfb_port)
 static void
 vino_http_create_listening_socket (VinoHTTP *http)
 {
-  struct sockaddr_in saddr;
-  int                sock;
-  int                opt;
-  int                http_port;
+#ifdef ENABLE_IPV6
+  struct sockaddr_in6  saddr_in6;
+#endif
+  struct sockaddr_in   saddr_in;
+  struct sockaddr     *saddr;
+  socklen_t            saddr_len;
+  int                  sock;
+  int                  opt;
+  int                  http_port;
 
   if (http->priv->io_watch)
     g_source_remove (http->priv->io_watch);
@@ -608,10 +613,33 @@ vino_http_create_listening_socket (VinoHTTP *http)
 
   http->priv->http_port = 0;
 
-  if ((sock = socket (AF_INET, SOCK_STREAM, 0)) < 0)
+  sock = -1;
+
+#ifdef ENABLE_IPV6
+  sock = socket (AF_INET6, SOCK_STREAM, 0);
+
+  memset (&saddr_in6, 0, sizeof (struct sockaddr_in6));
+  saddr_in6.sin6_family = AF_INET6;
+  saddr_in6.sin6_addr = in6addr_any;
+
+  saddr = (struct sockaddr *) &saddr_in6;
+  saddr_len = sizeof (saddr_in6);
+#endif
+
+  if (sock < 0)
     {
-      g_warning ("Error creating socket: %s\n", g_strerror (errno));
-      return;
+      if ((sock = socket (AF_INET, SOCK_STREAM, 0)) < 0)
+        {
+          g_warning ("Error creating socket: %s\n", g_strerror (errno));
+          return;
+        }
+
+      memset (&saddr_in, 0, sizeof (struct sockaddr_in));
+      saddr_in.sin_family = AF_INET;
+      saddr_in.sin_addr.s_addr = htonl (INADDR_ANY);
+
+      saddr = (struct sockaddr *) &saddr_in;
+      saddr_len = sizeof (saddr_in);
     }
 
   opt = 1;
@@ -636,12 +664,14 @@ vino_http_create_listening_socket (VinoHTTP *http)
 
   while (http_port <= VINO_HTTP_MAX_PORT)
     {
-      memset (&saddr, 0, sizeof (struct sockaddr_in));
-      saddr.sin_family = AF_INET;
-      saddr.sin_port   = htons (http_port);
-      saddr.sin_addr.s_addr = htonl (INADDR_ANY);
+#ifdef ENABLE_IPV6
+      if (saddr->sa_family == AF_INET6)
+        ((struct sockaddr_in6 *) saddr)->sin6_port = htons (http_port);
+      else
+#endif
+        ((struct sockaddr_in *) saddr)->sin_port = htons (http_port);
 
-      if (bind (sock, (struct sockaddr *) &saddr, sizeof (struct sockaddr_in)) == 0 )
+      if (bind (sock, saddr, saddr_len) == 0 )
 	break;
       
       dprintf (HTTP, "Failed to probe port %d: %s\n", http_port, g_strerror (errno));

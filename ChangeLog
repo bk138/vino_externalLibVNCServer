@@ -1,5 +1,11 @@
 2006-10-20  Mark McLoughlin  <mark@skynet.ie>
 
+	* vino/server/vino-http.c: (vino_http_create_listening_socket):
+	Again, if ipv6 support is compiled in, create an ipv6 socket
+	and fallback to ipv4 if it fails
+
+2006-10-20  Mark McLoughlin  <mark@skynet.ie>
+
 	And here's where we actually create an IPv6 socket.
 
 	* vino/server/libvncserver/sockets.c:
