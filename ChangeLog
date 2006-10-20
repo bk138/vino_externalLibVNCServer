@@ -1,5 +1,8 @@
 2006-10-20  Mark McLoughlin  <mark@skynet.ie>
 
+	Thanks to Srirama Sharma <srirama.sharma@wipro.com> for
+	the first cut at ipv6 support in bug #310965
+
 	* vino/server/vino-http.c: (vino_http_create_listening_socket):
 	Again, if ipv6 support is compiled in, create an ipv6 socket
 	and fallback to ipv4 if it fails
