@@ -61,31 +61,6 @@ rfbClientPtr pointerClient = NULL;  /* Mutex for pointer events */
 static void rfbProcessClientProtocolVersion(rfbClientPtr cl);
 static void rfbProcessClientNormalMessage(rfbClientPtr cl);
 
-#ifdef LIBVNCSERVER_HAVE_LIBPTHREAD
-void rfbIncrClientRef(rfbClientPtr cl)
-{
-  LOCK(cl->refCountMutex);
-  cl->refCount++;
-  UNLOCK(cl->refCountMutex);
-}
-
-void rfbDecrClientRef(rfbClientPtr cl)
-{
-  LOCK(cl->refCountMutex);
-  cl->refCount--;
-  if(cl->refCount<=0) /* just to be sure also < 0 */
-    TSIGNAL(cl->deleteCond);
-  UNLOCK(cl->refCountMutex);
-}
-#else
-void rfbIncrClientRef(rfbClientPtr cl) {}
-void rfbDecrClientRef(rfbClientPtr cl) {}
-#endif
-
-#ifdef LIBVNCSERVER_HAVE_LIBPTHREAD
-MUTEX(rfbClientListMutex);
-#endif
-
 struct rfbClientIterator {
   rfbClientPtr next;
   rfbScreenInfoPtr screen;
@@ -101,7 +76,6 @@ rfbClientListInit(rfbScreenInfoPtr rfbScreen)
 	exit(1);
     }
     rfbScreen->rfbClientHead = NULL;
-    INIT_MUTEX(rfbClientListMutex);
 }
 
 rfbClientIteratorPtr
@@ -117,12 +91,6 @@ rfbGetClientIterator(rfbScreenInfoPtr rfbScreen)
 rfbClientPtr
 rfbClientIteratorHead(rfbClientIteratorPtr i)
 {
-#ifdef LIBVNCSERVER_HAVE_LIBPTHREAD
-  if(i->next != 0) {
-    rfbDecrClientRef(i->next);
-    rfbIncrClientRef(i->screen->rfbClientHead);
-  }
-#endif
   LOCK(rfbClientListMutex);
   i->next = i->screen->rfbClientHead;
   UNLOCK(rfbClientListMutex);
@@ -137,17 +105,8 @@ rfbClientIteratorNext(rfbClientIteratorPtr i)
     i->next = i->screen->rfbClientHead;
     UNLOCK(rfbClientListMutex);
   } else {
-    IF_PTHREADS(rfbClientPtr cl = i->next);
     i->next = i->next->next;
-    IF_PTHREADS(rfbDecrClientRef(cl));
   }
-
-#ifdef LIBVNCSERVER_HAVE_LIBPTHREAD
-    while(i->next && i->next->sock<0)
-      i->next = i->next->next;
-    if(i->next)
-      rfbIncrClientRef(i->next);
-#endif
 
     return i->next;
 }
@@ -155,7 +114,6 @@ rfbClientIteratorNext(rfbClientIteratorPtr i)
 void
 rfbReleaseClientIterator(rfbClientIteratorPtr iterator)
 {
-  IF_PTHREADS(if(iterator->next) rfbDecrClientRef(iterator->next));
   free(iterator);
 }
 
@@ -230,10 +188,6 @@ rfbNewClient(rfbScreenInfoPtr rfbScreen,
       FD_SET(sock,&(rfbScreen->allFds));
 		rfbScreen->maxFd = max(sock,rfbScreen->maxFd);
 
-      INIT_MUTEX(cl->outputMutex);
-      INIT_MUTEX(cl->refCountMutex);
-      INIT_COND(cl->deleteCond);
-
       cl->state = RFB_PROTOCOL_VERSION;
 
       cl->readyForSetColourMapEntries = FALSE;
@@ -252,9 +206,6 @@ rfbNewClient(rfbScreenInfoPtr rfbScreen,
       cl->modifiedRegion =
 	sraRgnCreateRect(0,0,rfbScreen->width,rfbScreen->height);
 
-      INIT_MUTEX(cl->updateMutex);
-      INIT_COND(cl->updateCond);
-
       cl->requestedRegion = sraRgnCreate();
 
       cl->format = cl->screen->rfbServerFormat;
@@ -263,7 +214,6 @@ rfbNewClient(rfbScreenInfoPtr rfbScreen,
 
       LOCK(rfbClientListMutex);
 
-      IF_PTHREADS(cl->refCount = 0);
       cl->next = rfbScreen->rfbClientHead;
       cl->prev = NULL;
       if (rfbScreen->rfbClientHead)
@@ -353,17 +303,6 @@ rfbClientConnectionGone(rfbClientPtr cl)
     FreeZrleData(cl);
 #endif
 
-#ifdef LIBVNCSERVER_HAVE_LIBPTHREAD
-    if(cl->screen->backgroundLoop != FALSE)
-      do {
-	LOCK(cl->refCountMutex);
-	i=cl->refCount;
-	UNLOCK(cl->refCountMutex);
-	if(i>0)
-	  WAIT(cl->deleteCond,cl->refCountMutex);
-      } while(i>0);
-#endif
-
     if(cl->sock>=0)
        FD_CLR(cl->sock,&(cl->screen->allFds));
 
@@ -397,14 +336,6 @@ rfbClientConnectionGone(rfbClientPtr cl)
     UNLOCK(rfbClientListMutex);
 
     if (cl->translateLookupTable) free(cl->translateLookupTable);
-
-    TINI_COND(cl->updateCond);
-    TINI_MUTEX(cl->updateMutex);
-
-    /* make sure outputMutex is unlocked before destroying */
-    LOCK(cl->outputMutex);
-    UNLOCK(cl->outputMutex);
-    TINI_MUTEX(cl->outputMutex);
 
     rfbPrintStats(cl);
 
@@ -831,7 +762,6 @@ rfbProcessClientNormalMessage(rfbClientPtr cl)
 	    sraRgnOr(cl->modifiedRegion,tmpRegion);
 	    sraRgnSubtract(cl->copyRegion,tmpRegion);
        }
-       TSIGNAL(cl->updateCond);
        UNLOCK(cl->updateMutex);
 
        sraRgnDestroy(tmpRegion);

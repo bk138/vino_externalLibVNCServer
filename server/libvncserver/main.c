@@ -34,10 +34,6 @@
 #include <signal.h>
 #include <time.h>
 
-#ifdef LIBVNCSERVER_HAVE_LIBPTHREAD
-MUTEX(logMutex);
-#endif
-
 int rfbEnableLogging=1;
 
 #ifdef WORDS_BIGENDIAN
@@ -130,9 +126,6 @@ void rfbScheduleCopyRegion(rfbScreenInfoPtr rfbScreen,sraRegionPtr copyRegion,in
 #if 0
        /* TODO: is this needed? Or does it mess up deferring? */
        /* while(!sraRgnEmpty(cl->copyRegion)) */ {
-#ifdef LIBVNCSERVER_HAVE_LIBPTHREAD
-	 if(!cl->screen->backgroundLoop)
-#endif
 	   {
 	     sraRegionPtr updateRegion = sraRgnCreateRgn(cl->modifiedRegion);
 	     sraRgnOr(updateRegion,cl->copyRegion);
@@ -146,7 +139,6 @@ void rfbScheduleCopyRegion(rfbScreenInfoPtr rfbScreen,sraRegionPtr copyRegion,in
      } else {
        sraRgnOr(cl->modifiedRegion,copyRegion);
      }
-     TSIGNAL(cl->updateCond);
      UNLOCK(cl->updateMutex);
    }
 
@@ -202,7 +194,6 @@ void rfbMarkRegionAsModified(rfbScreenInfoPtr rfbScreen,sraRegionPtr modRegion)
    while((cl=rfbClientIteratorNext(iterator))) {
      LOCK(cl->updateMutex);
      sraRgnOr(cl->modifiedRegion,modRegion);
-     TSIGNAL(cl->updateCond);
      UNLOCK(cl->updateMutex);
    }
 
@@ -227,131 +218,6 @@ void rfbMarkRectAsModified(rfbScreenInfoPtr rfbScreen,int x1,int y1,int x2,int y
    region = sraRgnCreateRect(x1,y1,x2,y2);
    rfbMarkRegionAsModified(rfbScreen,region);
    sraRgnDestroy(region);
-}
-
-#ifdef LIBVNCSERVER_HAVE_LIBPTHREAD
-static void *
-clientOutput(void *data)
-{
-    rfbClientPtr cl = (rfbClientPtr)data;
-    rfbBool haveUpdate;
-    sraRegion* updateRegion;
-
-    while (1) {
-        haveUpdate = false;
-        while (!haveUpdate) {
-            if (cl->sock == -1) {
-                /* Client has disconnected. */
-                return NULL;
-            }
-	    LOCK(cl->updateMutex);
-	    haveUpdate = FB_UPDATE_PENDING(cl);
-	    if(!haveUpdate) {
-		updateRegion = sraRgnCreateRgn(cl->modifiedRegion);
-		haveUpdate = sraRgnAnd(updateRegion,cl->requestedRegion);
-		sraRgnDestroy(updateRegion);
-	    }
-	    UNLOCK(cl->updateMutex);
-
-            if (!haveUpdate) {
-                WAIT(cl->updateCond, cl->updateMutex);
-		UNLOCK(cl->updateMutex); /* we really needn't lock now. */
-            }
-        }
-        
-        /* OK, now, to save bandwidth, wait a little while for more
-           updates to come along. */
-        usleep(cl->screen->rfbDeferUpdateTime * 1000);
-
-        /* Now, get the region we're going to update, and remove
-           it from cl->modifiedRegion _before_ we send the update.
-           That way, if anything that overlaps the region we're sending
-           is updated, we'll be sure to do another update later. */
-        LOCK(cl->updateMutex);
-	updateRegion = sraRgnCreateRgn(cl->modifiedRegion);
-        UNLOCK(cl->updateMutex);
-
-        /* Now actually send the update. */
-	rfbIncrClientRef(cl);
-        rfbSendFramebufferUpdate(cl, updateRegion);
-	rfbDecrClientRef(cl);
-
-	sraRgnDestroy(updateRegion);
-    }
-
-    return NULL;
-}
-
-static void *
-clientInput(void *data)
-{
-    rfbClientPtr cl = (rfbClientPtr)data;
-    pthread_t output_thread;
-    pthread_create(&output_thread, NULL, clientOutput, (void *)cl);
-
-    while (1) {
-        rfbProcessClientMessage(cl);
-        if (cl->sock == -1) {
-            /* Client has disconnected. */
-            break;
-        }
-    }
-
-    /* Get rid of the output thread. */
-    LOCK(cl->updateMutex);
-    TSIGNAL(cl->updateCond);
-    UNLOCK(cl->updateMutex);
-    IF_PTHREADS(pthread_join(output_thread, NULL));
-
-    rfbClientConnectionGone(cl);
-
-    return NULL;
-}
-
-static void*
-listenerRun(void *data)
-{
-    rfbScreenInfoPtr rfbScreen=(rfbScreenInfoPtr)data;
-    int client_fd;
-    struct sockaddr_in peer;
-    rfbClientPtr cl;
-    size_t len;
-
-    len = sizeof(peer);
-
-    /* TODO: this thread wont die by restarting the server */
-    while ((client_fd = accept(rfbScreen->rfbListenSock, 
-                               (struct sockaddr*)&peer, &len)) >= 0) {
-        cl = rfbNewClient(rfbScreen,client_fd);
-        len = sizeof(peer);
-
-	if (cl && !cl->onHold )
-		rfbStartOnHoldClient(cl);
-    }
-    return(NULL);
-}
-
-void 
-rfbStartOnHoldClient(rfbClientPtr cl)
-{
-    pthread_create(&cl->client_thread, NULL, clientInput, (void *)cl);
-}
-
-#else
-
-void 
-rfbStartOnHoldClient(rfbClientPtr cl)
-{
-	cl->onHold = FALSE;
-}
-
-#endif
-
-void 
-rfbRefuseOnHoldClient(rfbClientPtr cl)
-{
-    rfbCloseClient(cl);
-    rfbClientConnectionGone(cl);
 }
 
 void
@@ -441,8 +307,6 @@ rfbScreenInfoPtr rfbGetScreen(int* argc,char** argv,
 {
    rfbScreenInfoPtr rfbScreen=malloc(sizeof(rfbScreenInfo));
 
-   INIT_MUTEX(logMutex);
-
    if(width&3)
      rfbErr("WARNING: Width (%d) is not a multiple of 4. VncViewer has problems with that.\n",width);
 
@@ -493,9 +357,6 @@ rfbScreenInfoPtr rfbGetScreen(int* argc,char** argv,
    rfbScreen->cursorX=rfbScreen->cursorY=rfbScreen->underCursorBufferLen=0;
    rfbScreen->underCursorBuffer=NULL;
    rfbScreen->cursor = &myCursor;
-   INIT_MUTEX(rfbScreen->cursorMutex);
-
-   IF_PTHREADS(rfbScreen->backgroundLoop = FALSE);
 
    rfbScreen->rfbDeferUpdateTime=5;
    rfbScreen->maxRectsPerUpdate=50;
@@ -563,7 +424,6 @@ void rfbNewFramebuffer(rfbScreenInfoPtr rfbScreen, char *framebuffer,
     if (cl->useNewFBSize)
       cl->newFBSizePending = TRUE;
 
-    TSIGNAL(cl->updateCond);
     UNLOCK(cl->updateMutex);
   }
   rfbReleaseClientIterator(iterator);
@@ -586,7 +446,6 @@ void rfbScreenCleanup(rfbScreenInfoPtr rfbScreen)
 #define FREE_IF(x) if(rfbScreen->x) free(rfbScreen->x)
   FREE_IF(colourMap.data.bytes);
   FREE_IF(underCursorBuffer);
-  TINI_MUTEX(rfbScreen->cursorMutex);
   if(rfbScreen->cursor)
     rfbFreeCursor(rfbScreen->cursor);
   free(rfbScreen);
@@ -670,17 +529,8 @@ rfbProcessEvents(rfbScreenInfoPtr rfbScreen,long usec)
 void rfbRunEventLoop(rfbScreenInfoPtr rfbScreen, long usec, rfbBool runInBackground)
 {
   if(runInBackground) {
-#ifdef LIBVNCSERVER_HAVE_LIBPTHREAD
-       pthread_t listener_thread;
-
-       rfbScreen->backgroundLoop = TRUE;
-
-       pthread_create(&listener_thread, NULL, listenerRun, rfbScreen);
-    return;
-#else
     rfbErr("Can't run in background, because I don't have PThreads!\n");
     return;
-#endif
   }
 
   if(usec<0)

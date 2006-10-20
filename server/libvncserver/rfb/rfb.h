@@ -49,68 +49,10 @@ extern "C"
 #include <netinet/in.h>
 #endif
 
-#ifdef LIBVNCSERVER_HAVE_LIBPTHREAD
-#include <pthread.h>
-#if 0 /* debugging */
-#define LOCK(mutex) (rfbLog("%s:%d LOCK(%s,0x%x)\n",__FILE__,__LINE__,#mutex,&(mutex)), pthread_mutex_lock(&(mutex)))
-#define UNLOCK(mutex) (rfbLog("%s:%d UNLOCK(%s,0x%x)\n",__FILE__,__LINE__,#mutex,&(mutex)), pthread_mutex_unlock(&(mutex)))
-#define MUTEX(mutex) pthread_mutex_t (mutex)
-#define INIT_MUTEX(mutex) (rfbLog("%s:%d INIT_MUTEX(%s,0x%x)\n",__FILE__,__LINE__,#mutex,&(mutex)), pthread_mutex_init(&(mutex),NULL))
-#define TINI_MUTEX(mutex) (rfbLog("%s:%d TINI_MUTEX(%s)\n",__FILE__,__LINE__,#mutex), pthread_mutex_destroy(&(mutex)))
-#define TSIGNAL(cond) (rfbLog("%s:%d TSIGNAL(%s)\n",__FILE__,__LINE__,#cond), pthread_cond_signal(&(cond)))
-#define WAIT(cond,mutex) (rfbLog("%s:%d WAIT(%s,%s)\n",__FILE__,__LINE__,#cond,#mutex), pthread_cond_wait(&(cond),&(mutex)))
-#define COND(cond) pthread_cond_t (cond)
-#define INIT_COND(cond) (rfbLog("%s:%d INIT_COND(%s)\n",__FILE__,__LINE__,#cond), pthread_cond_init(&(cond),NULL))
-#define TINI_COND(cond) (rfbLog("%s:%d TINI_COND(%s)\n",__FILE__,__LINE__,#cond), pthread_cond_destroy(&(cond)))
-#define IF_PTHREADS(x) x
-#else
-#define LOCK(mutex) pthread_mutex_lock(&(mutex));
-#define UNLOCK(mutex) pthread_mutex_unlock(&(mutex));
-#define MUTEX(mutex) pthread_mutex_t (mutex)
-#define INIT_MUTEX(mutex) pthread_mutex_init(&(mutex),NULL)
-#define TINI_MUTEX(mutex) pthread_mutex_destroy(&(mutex))
-#define TSIGNAL(cond) pthread_cond_signal(&(cond))
-#define WAIT(cond,mutex) pthread_cond_wait(&(cond),&(mutex))
-#define COND(cond) pthread_cond_t (cond)
-#define INIT_COND(cond) pthread_cond_init(&(cond),NULL)
-#define TINI_COND(cond) pthread_cond_destroy(&(cond))
-#define IF_PTHREADS(x) x
-#endif
-#else
 #define LOCK(mutex)
 #define UNLOCK(mutex)
-#define MUTEX(mutex)
-#define INIT_MUTEX(mutex)
-#define TINI_MUTEX(mutex)
-#define TSIGNAL(cond)
-#define WAIT(cond,mutex) this_is_unsupported
-#define COND(cond)
-#define INIT_COND(cond)
-#define TINI_COND(cond)
-#define IF_PTHREADS(x)
-#endif
 
 /* end of stuff for autoconf */
-
-/* if you use pthreads, but don't define LIBVNCSERVER_HAVE_LIBPTHREAD, the structs
-   get all mixed up. So this gives a linker error reminding you to compile
-   the library and your application (at least the parts including rfb.h)
-   with the same support for pthreads. */
-#if 0
-#ifdef LIBVNCSERVER_HAVE_LIBPTHREAD
-#ifdef HAVE_LIBZ
-#define rfbInitServer rfbInitServerWithPthreadsAndZRLE
-#else
-#define rfbInitServer rfbInitServerWithPthreadsButWithoutZRLE
-#endif
-#else
-#ifdef HAVE_LIBZ
-#define rfbInitServer rfbInitServerWithoutPthreadsButWithZRLE
-#else
-#define rfbInitServer rfbInitServerWithoutPthreadsAndZRLE
-#endif
-#endif
-#endif
 
 struct _rfbClientRec;
 struct _rfbScreenInfo;
@@ -225,11 +167,6 @@ typedef struct _rfbScreenInfo
      */
     AuthenticatedClientHookPtr authenticatedClientHook;
 
-#ifdef LIBVNCSERVER_HAVE_LIBPTHREAD
-    MUTEX(cursorMutex);
-    rfbBool backgroundLoop;
-#endif
-
 } rfbScreenInfo, *rfbScreenInfoPtr;
 
 
@@ -275,10 +212,6 @@ typedef struct _rfbClientRec {
     rfbBool useTLS;
 #endif
     char *host;
-
-#ifdef LIBVNCSERVER_HAVE_LIBPTHREAD
-    pthread_t client_thread;
-#endif
                                 /* Possible client states: */
     enum {
         RFB_PROTOCOL_VERSION,   /* establishing protocol version */
@@ -412,21 +345,6 @@ typedef struct _rfbClientRec {
     struct _rfbClientRec *prev;
     struct _rfbClientRec *next;
 
-#ifdef LIBVNCSERVER_HAVE_LIBPTHREAD
-    /* whenever a client is referenced, the refCount has to be incremented
-       and afterwards decremented, so that the client is not cleaned up
-       while being referenced.
-       Use the functions rfbIncrClientRef(cl) and rfbDecrClientRef(cl);
-    */
-    int refCount;
-    MUTEX(refCountMutex);
-    COND(deleteCond);
-
-    MUTEX(outputMutex);
-    MUTEX(updateMutex);
-    COND(updateCond);
-#endif
-
 #ifdef HAVE_LIBZ
     void* zrleData;
 #endif
@@ -478,8 +396,6 @@ extern int ReadExactTimeout(rfbClientPtr cl, char *buf, int len,int timeout);
 extern int WriteExact(rfbClientPtr cl, const char *buf, int len);
 extern void rfbProcessNewConnection(rfbScreenInfoPtr rfbScreen);
 extern void rfbCheckFds(rfbScreenInfoPtr rfbScreen,long usec);
-extern int rfbConnect(rfbScreenInfoPtr rfbScreen, char* host, int port);
-extern int ConnectToTcpAddr(char* host, int port);
 extern int ListenOnTCPPort(int port, rfbBool localOnly);
 
 /* rfbserver.c */
@@ -496,9 +412,6 @@ extern rfbClientIteratorPtr rfbGetClientIterator(rfbScreenInfoPtr rfbScreen);
 extern rfbClientPtr rfbClientIteratorHead(rfbClientIteratorPtr iterator);
 extern rfbClientPtr rfbClientIteratorNext(rfbClientIteratorPtr iterator);
 extern void rfbReleaseClientIterator(rfbClientIteratorPtr iterator);
-
-extern void rfbIncrClientRef(rfbClientPtr cl);
-extern void rfbDecrClientRef(rfbClientPtr cl);
 
 extern void rfbNewClientConnection(rfbScreenInfoPtr rfbScreen,int sock);
 extern rfbClientPtr rfbNewClient(rfbScreenInfoPtr rfbScreen,int sock);
@@ -670,12 +583,6 @@ extern void rfbNewFramebuffer(rfbScreenInfoPtr rfbScreen,char *framebuffer,
  int width,int height);
 
 extern void rfbScreenCleanup(rfbScreenInfoPtr screenInfo);
-
-/* functions to accept/refuse a client that has been put on hold
-   by a NewClientHookPtr function. Must not be called in other
-   situations. */
-extern void rfbStartOnHoldClient(rfbClientPtr cl);
-extern void rfbRefuseOnHoldClient(rfbClientPtr cl);
 
 /* call one of these two functions to service the vnc clients.
  usec are the microseconds the select on the fds waits.

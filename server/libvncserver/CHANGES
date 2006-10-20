@@ -52,8 +52,7 @@
 
  + Warning fixes:
      o killed rfbPrintXCursor() - not used
-     o put rfbIncrClientRef(), rfbIncrClientRef() and
-       rfbClientIteratorHead() into rfb/rfb.h. They weren't
+     o put rfbClientIteratorHead() into rfb/rfb.h. It wasn't
        put there originally because they're "private", but
        there's loads of private stuff there already. Fixes
        "no previous prototype" warnings.
@@ -117,8 +116,13 @@ packets (such as 100s of pen readings per second!).
 
  + removed the LIBVNCSERVER prefix from all the #ifdefs
 
- + left all the threaded code disabled (LIBVNCSERVER_HAVE_LIBPTHREAD
-   is undefined)
+ + removed all the threading code
+
+ + removed libwrap usage
+
+ + removed rfbConnect() and ConnectToTcpAddr()
+
+ + removed rfbStartOnHoldClient() and rfbRefuseOnHoldClient()
 
  + disabled the rfbInitServer name mangling in rfb/rfb.h
 

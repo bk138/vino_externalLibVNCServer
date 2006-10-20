@@ -1,5 +1,31 @@
 2006-10-20  Mark McLoughlin  <mark@skynet.ie>
 
+	* vino/server/libvncserver/main.c,
+	vino/server/libvncserver/sockets.c,
+	vino/server/libvncserver/rfbserver.c,
+	vino/server/libvncserver/rfb/rfb.h: remove
+	a heap of threading stuff which we don't
+	use.
+
+	* vino/server/libvncserver/CHANGES: add note.
+
+2006-10-20  Mark McLoughlin  <mark@skynet.ie>
+
+	Remove some unused sockets code so we don't have
+	to fix it for IPv6 support.
+
+	* vino/server/libvncserver/sockets.c:
+	(rfbProcessNewConnection): remove libwrap usage
+	(rfbConnect), (ConnectToTcpAddr): remove unused
+	functions
+
+	* vino/server/libvncserver/rfb/rfb.h: remove
+	rfbConnect() and ConnectToTcpAddr()
+
+	* vino/server/libvncserver/CHANGES: add note
+
+2006-10-20  Mark McLoughlin  <mark@skynet.ie>
+
 	* vino/server/vino-http.c: (vino_http_construct_response):
 	Fix warning
 

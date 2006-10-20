@@ -84,13 +84,6 @@ struct timeval
 
 #include <errno.h>
 
-#ifdef USE_LIBWRAP
-#include <syslog.h>
-#include <tcpd.h>
-int allow_severity=LOG_INFO;
-int deny_severity=LOG_WARNING;
-#endif
-
 /*#ifndef WIN32
 int max(int i,int j) { return(i<j?j:i); }
 #endif
@@ -249,13 +242,10 @@ rfbSetLocalOnly(rfbScreenInfoPtr rfbScreen, rfbBool localOnly)
 void
 rfbProcessNewConnection(rfbScreenInfoPtr rfbScreen)
 {
-    struct sockaddr_in addr;
-    size_t addrlen = sizeof(addr);
     const int one = 1;
     int sock;
 
-    if ((sock = accept(rfbScreen->rfbListenSock,
-		       (struct sockaddr *)&addr, &addrlen)) < 0) {
+    if ((sock = accept(rfbScreen->rfbListenSock, NULL, NULL)) < 0) {
 	rfbLogPerror("rfbCheckFds: accept");
 	return;
     }
@@ -274,18 +264,6 @@ rfbProcessNewConnection(rfbScreenInfoPtr rfbScreen)
 	close(sock);
 	return;
     }
-
-#ifdef USE_LIBWRAP
-    if(!hosts_ctl("vnc",STRING_UNKNOWN,inet_ntoa(addr.sin_addr),
-		  STRING_UNKNOWN)) {
-	rfbLog("Rejected connection from client %s\n",
-	       inet_ntoa(addr.sin_addr));
-	close(sock);
-	return;
-    }
-#endif
-
-    rfbLog("Got connection from client %s\n", inet_ntoa(addr.sin_addr));
 
     rfbNewClient(rfbScreen,sock);
 }
@@ -364,53 +342,9 @@ rfbCloseClient(cl)
 	close(cl->sock);
 	cl->sock = -1;
       }
-    TSIGNAL(cl->updateCond);
     UNLOCK(cl->updateMutex);
 }
 
-
-/*
- * rfbConnect is called to make a connection out to a given TCP address.
- */
-
-int
-rfbConnect(rfbScreen, host, port)
-    rfbScreenInfoPtr rfbScreen;
-    char *host;
-    int port;
-{
-    int sock;
-    int one = 1;
-
-    rfbLog("Making connection to client on host %s port %d\n",
-	   host,port);
-
-    if ((sock = ConnectToTcpAddr(host, port)) < 0) {
-	rfbLogPerror("connection failed");
-	return -1;
-    }
-
-#ifndef WIN32
-    if (fcntl(sock, F_SETFL, O_NONBLOCK) < 0) {
-	rfbLogPerror("fcntl failed");
-	close(sock);
-	return -1;
-    }
-#endif
-
-    if (setsockopt(sock, IPPROTO_TCP, TCP_NODELAY,
-		   (char *)&one, sizeof(one)) < 0) {
-	rfbLogPerror("setsockopt failed");
-	close(sock);
-	return -1;
-    }
-
-    /* AddEnabledDevice(sock); */
-    FD_SET(sock, &rfbScreen->allFds);
-    rfbScreen->maxFd = max(sock,rfbScreen->maxFd);
-
-    return sock;
-}
 
 #ifdef HAVE_GNUTLS
 static int
@@ -641,40 +575,6 @@ ListenOnTCPPort(port, localOnly)
 	return -1;
     }
     if (listen(sock, 5) < 0) {
-	close(sock);
-	return -1;
-    }
-
-    return sock;
-}
-
-int
-ConnectToTcpAddr(host, port)
-    char *host;
-    int port;
-{
-    struct hostent *hp;
-    int sock;
-    struct sockaddr_in addr;
-
-    memset(&addr, 0, sizeof(addr));
-    addr.sin_family = AF_INET;
-    addr.sin_port = htons(port);
-
-    if ((addr.sin_addr.s_addr = inet_addr(host)) == INADDR_NONE)
-    {
-	if (!(hp = gethostbyname(host))) {
-	    errno = EINVAL;
-	    return -1;
-	}
-	addr.sin_addr.s_addr = *(unsigned long *)hp->h_addr;
-    }
-
-    if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
-	return -1;
-    }
-
-    if (connect(sock, (struct sockaddr *)&addr, (sizeof(addr))) < 0) {
 	close(sock);
 	return -1;
     }
