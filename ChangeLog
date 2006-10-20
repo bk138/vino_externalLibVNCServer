@@ -1,3 +1,9 @@
+2006-10-19  Mark McLoughlin  <mark@skynet.ie>
+
+	* server/vino-server.c: (vino_server_handle_client_gone):
+	Don't remove the io_watch if it's zero - fixes assertion
+	where client disconnects while it's on hold.
+
 2006-10-18  Mark McLoughlin  <mark@skynet.ie>
 
 	* server/libvncserver/rfbserver.c: cherry-pick some more

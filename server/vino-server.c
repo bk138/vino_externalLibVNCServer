@@ -151,7 +151,8 @@ vino_server_handle_client_gone (rfbClientPtr rfb_client)
 	    g_source_remove (client->update_timeout);
 	  client->update_timeout = 0;
 
-	  g_source_remove (client->io_watch);
+          if (client->io_watch)
+            g_source_remove (client->io_watch);
 	  client->io_watch = 0;
 
 	  g_io_channel_unref (client->io_channel);
