@@ -775,18 +775,27 @@ vino_preferences_dialog_setup_icons (VinoPreferencesDialog *dialog)
 static char *
 vino_preferences_get_local_hostname (void)
 {
-  static char local_host [NI_MAXHOST] = { 0, };
+  static char      local_host [NI_MAXHOST] = { 0, };
+  struct addrinfo  hints;
+  struct addrinfo *results;
+  char            *retval;
 
-  if (gethostname (local_host, NI_MAXHOST) != -1)
-    {
-      struct hostent *host;
-      
-      host = gethostbyname (local_host);
+  if (gethostname (local_host, NI_MAXHOST) == -1)
+    return NULL;
 
-      return g_strdup (host ? host->h_name : local_host);
-    }
+  memset (&hints, 0, sizeof (hints));
+  hints.ai_flags = AI_CANONNAME;
 
-  return NULL;
+  results = NULL;
+  if (getaddrinfo (local_host,  NULL, &hints, &results) != 0)
+    return NULL;
+
+  retval = g_strdup (results ? results->ai_canonname : local_host);
+
+  if (results)
+    freeaddrinfo (results);
+
+  return retval;
 }
 
 static char *

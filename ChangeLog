@@ -1,5 +1,11 @@
 2006-10-20  Mark McLoughlin  <mark@skynet.ie>
 
+	* vino/capplet/vino-preferences.c:
+	(vino_preferences_get_local_hostname): use getaddrinfo()
+	instead of gethostbyname()
+
+2006-10-20  Mark McLoughlin  <mark@skynet.ie>
+
 	* vino/server/libvncserver/main.c,
 	vino/server/libvncserver/sockets.c,
 	vino/server/libvncserver/rfbserver.c,
