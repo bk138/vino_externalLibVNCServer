@@ -552,25 +552,45 @@ ListenOnTCPPort(port, localOnly)
     int port;
     rfbBool localOnly;
 {
-    struct sockaddr_in addr;
-    int sock;
+    int sock = -1;
     int one = 1;
+    struct sockaddr_in addr_in;
+    struct sockaddr *addr;
+    socklen_t addrlen;
 
-    memset(&addr, 0, sizeof(addr));
-    addr.sin_family = AF_INET;
-    addr.sin_port = htons(port);
-    /* addr.sin_addr.s_addr = interface.s_addr; */
-    addr.sin_addr.s_addr = localOnly ? htonl(INADDR_LOOPBACK) : htonl(INADDR_ANY);
+#ifdef ENABLE_IPV6
+    struct sockaddr_in6 addr_in6;
 
-    if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
-	return -1;
+    memset(&addr_in6, 0, sizeof(addr_in6));
+    addr_in6.sin6_family = AF_INET6;
+    addr_in6.sin6_port = htons(port);
+    addr_in6.sin6_addr = localOnly ? in6addr_loopback : in6addr_any;
+
+    addr = (struct sockaddr *)&addr_in6;
+    addrlen = sizeof(addr_in6);
+
+    sock = socket(AF_INET6, SOCK_STREAM, 0);
+#endif
+
+    if (sock < 0) {
+        if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
+            return -1;
+
+        memset(&addr_in, 0, sizeof(addr_in));
+        addr_in.sin_family = AF_INET;
+        addr_in.sin_port = htons(port);
+        addr_in.sin_addr.s_addr = localOnly ? htonl(INADDR_LOOPBACK) : htonl(INADDR_ANY);
+
+        addr = (struct sockaddr *)&addr_in;
+        addrlen = sizeof(addr_in);
     }
+
     if (setsockopt(sock, SOL_SOCKET, SO_REUSEADDR,
 		   (char *)&one, sizeof(one)) < 0) {
 	close(sock);
 	return -1;
     }
-    if (bind(sock, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
+    if (bind(sock, addr, addrlen) < 0) {
 	close(sock);
 	return -1;
     }

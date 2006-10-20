@@ -1,5 +1,14 @@
 2006-10-20  Mark McLoughlin  <mark@skynet.ie>
 
+	And here's where we actually create an IPv6 socket.
+
+	* vino/server/libvncserver/sockets.c:
+	(ListenOnTCPPort): if ipv6 support is compiled in,
+	always try and create an AF_INET6 socket and fallback
+	to an AF_INET one if it fails.
+
+2006-10-20  Mark McLoughlin  <mark@skynet.ie>
+
 	* vino/configure.in: add --enable-ipv6 and check for
 	IPv6 support.
 
