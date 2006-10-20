@@ -1,5 +1,10 @@
 2006-10-20  Mark McLoughlin  <mark@skynet.ie>
 
+	* vino/configure.in: add --enable-ipv6 and check for
+	IPv6 support.
+
+2006-10-20  Mark McLoughlin  <mark@skynet.ie>
+
 	Use inet_ntop() instead of inet_ntoa()
 
 	* vino/server/libvncserver/rfbserver.c:
