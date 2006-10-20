@@ -30,6 +30,9 @@
    be prompted on whether to allow authenticated clients to
    connect. A second level of authentication.
 
+ + Added IPv6 support:
+     - Use inet_ntop() instead of inet_ntoa()
+
  + Added rfbSetLocalOnly() - i.e. make the server only accept
    connections from localhost. Useful for people who use
    SSH tunnels.
