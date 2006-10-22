@@ -1,27 +1,27 @@
 # French translation of vino.
-# Copyright (C) 2004-2005 The Free Software Foundation, Inc.
+# Copyright (C) 2004-2006 The Free Software Foundation, Inc.
 # This file is distributed under the same license as the vino package.
 #
 # Audrey Simons <asimons@redhat.com>, 2004.
-# Christophe Merlet (RedFox) <redfox@redfoxcenter.org>, 2005.
+# Christophe Merlet (RedFox) <redfox@redfoxcenter.org>, 2005-2006.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vino 2.11.93\n"
+"Project-Id-Version: vino 2.17.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-18 19:54+0100\n"
-"PO-Revision-Date: 2006-02-18 19:54+0100\n"
+"POT-Creation-Date: 2006-10-22 10:56+0200\n"
+"PO-Revision-Date: 2006-10-22 10:56+0200\n"
 "Last-Translator: Christophe Merlet (RedFox) <redfox@redfoxcenter.org>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../capplet/vino-preferences.c:807
+#: ../capplet/vino-preferences.c:907
 msgid "Send this command by email"
 msgstr "Envoyer cette commande par courrier électronique"
 
-#: ../capplet/vino-preferences.c:842
+#: ../capplet/vino-preferences.c:942
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -119,12 +119,12 @@ msgstr "Couleur de l'URL"
 msgid "The color of the URL's label"
 msgstr "La couleur de l'étiquette de l'URL"
 
-#: ../server/vino-fb.c:954 ../server/vino-prompt.c:144
-#: ../server/vino-server.c:853
+#: ../server/vino-fb.c:984 ../server/vino-prompt.c:144
+#: ../server/vino-server.c:942
 msgid "Screen"
 msgstr "Écran"
 
-#: ../server/vino-fb.c:955
+#: ../server/vino-fb.c:985
 msgid "The screen to be monitored"
 msgstr "L'écran à contrôler"
 
@@ -197,55 +197,63 @@ msgstr "_Autoriser"
 msgid "_Refuse"
 msgstr "_Refuser"
 
-#: ../server/vino-server.c:854
+#: ../server/vino-server.c:943
 msgid "The screen for which to create a VNC server"
 msgstr "L'écran pour lequel créer un serveur VNC"
 
-#: ../server/vino-server.c:861
+#: ../server/vino-server.c:950
 msgid "On Hold"
 msgstr "En attente"
 
-#: ../server/vino-server.c:862
+#: ../server/vino-server.c:951
 msgid "Place all clients on hold"
 msgstr "Mettre tous les clients en attente"
 
-#: ../server/vino-server.c:869
+#: ../server/vino-server.c:958
 msgid "Prompt enabled"
 msgstr "Invite activée"
 
-#: ../server/vino-server.c:870
+#: ../server/vino-server.c:959
 msgid "Prompt the user about connection attempts"
 msgstr "Afficher à l'utilisateur les essais de connexions"
 
-#: ../server/vino-server.c:877
+#: ../server/vino-server.c:966
 msgid "View Only"
 msgstr "Vue seule"
 
-#: ../server/vino-server.c:878
+#: ../server/vino-server.c:967
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Refuser l'entrée clavier/pointeur aux clients"
 
-#: ../server/vino-server.c:885
+#: ../server/vino-server.c:974
+msgid "Local Only"
+msgstr "Local seulement"
+
+#: ../server/vino-server.c:975 ../server/vino-server.schemas.in.h:13
+msgid "Only allow local connections"
+msgstr "N'autoriser que les connexions locales"
+
+#: ../server/vino-server.c:982
 msgid "Require Encryption"
 msgstr "Requiert le chiffrement"
 
-#: ../server/vino-server.c:886
+#: ../server/vino-server.c:983
 msgid "Require clients to use encryption"
 msgstr "Requiert les clients d'utiliser le chiffrement"
 
-#: ../server/vino-server.c:893
+#: ../server/vino-server.c:990
 msgid "Authentication methods"
 msgstr "Méthodes d'authentification"
 
-#: ../server/vino-server.c:894
+#: ../server/vino-server.c:991
 msgid "The authentication methods this server should allow"
 msgstr "Les méthodes d'authentification autorisées par ce serveur"
 
-#: ../server/vino-server.c:902
+#: ../server/vino-server.c:999
 msgid "VNC Password"
 msgstr "Mot de passe VNC"
 
-#: ../server/vino-server.c:903
+#: ../server/vino-server.c:1000
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
@@ -253,59 +261,102 @@ msgstr ""
 "Le mot de passe (codé en base 64) utilisé pour authentifier les types "
 "utilisant la méthode VncAuth"
 
+#: ../server/vino-server.c:1007
+msgid "Use an alternative port"
+msgstr "Utiliser un autre port"
+
+#: ../server/vino-server.c:1008
+msgid "Listen on the port specified by the 'alternative-port' property"
+msgstr "Écoute sur le port spécifié par la propriété « alternative-port »"
+
+#: ../server/vino-server.c:1015 ../server/vino-server.schemas.in.h:2
+msgid "Alternative port number"
+msgstr "Numéro de port alternatif"
+
+#: ../server/vino-server.c:1016
+msgid ""
+"Listen on the specified port number if the 'use-alternative-port' property "
+"is TRUE"
+msgstr ""
+"Écoute sur le numéro de port spécifié si la propriété « use-alternative-port "
+"» est VRAI"
+
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
 msgstr "Méthodes d'authentification autorisées"
 
-#: ../server/vino-server.schemas.in.h:2
+#: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "Adresse électronique à laquelle envoyer l'URL du bureau à distance"
 
-#: ../server/vino-server.schemas.in.h:3
+#: ../server/vino-server.schemas.in.h:4
 msgid "Enable remote desktop access"
 msgstr "Autoriser l'accès au bureau à distance"
 
-#: ../server/vino-server.schemas.in.h:4
+#: ../server/vino-server.schemas.in.h:5
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
 msgstr ""
-"Si vrai, permet l'accès à distance au bureau via le protocole RFB. Les "
+"Si VRAI, permet l'accès à distance au bureau via le protocole RFB. Les "
 "utilisateurs sur des ordinateurs à distance peuvent alors se connecter au "
 "bureau à l'aide de vncviewer."
 
-#: ../server/vino-server.schemas.in.h:5
+#: ../server/vino-server.schemas.in.h:6
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
 msgstr ""
-"Si vrai, les utilisateurs à distance accédant au bureau sont refusés tout "
+"Si VRAI, les utilisateurs à distance accédant au bureau sont refusés tout "
 "accès jusqu'à ce que l'utilisateur sur l'ordinateur hôte approuve la "
 "connexion. Recommandé particulièrement lorsque l'accès n'est pas protégé par "
 "un mot de passe."
 
-#: ../server/vino-server.schemas.in.h:6
+#: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote user's will not be able to use the mouse or keyboard."
 msgstr ""
-"Si vrai, les utilisateurs à distance accédant au bureau sont uniquement "
+"Si VRAI, les utilisateurs à distance accédant au bureau sont uniquement "
 "autorisés à voir le bureau. Ils ne peuvent utiliser ni la souris ni le "
 "clavier."
 
-#: ../server/vino-server.schemas.in.h:7
+#: ../server/vino-server.schemas.in.h:8
 msgid ""
 "If true, remote users accessing the desktop are required to be able support "
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
-"Si vrai, les utilisateurs distants accédant au bureau doivent pouvoir "
+"Si VRAI, les utilisateurs distants accédant au bureau doivent pouvoir "
 "supporter le chiffrement. Il est hautement recommandé que vous utilisiez un "
 "client qui supporte le chiffrement à moins que le réseau en question soit de "
 "confiance."
 
-#: ../server/vino-server.schemas.in.h:8
+#: ../server/vino-server.schemas.in.h:9
+msgid ""
+"If true, the server will listen another port, instead of default (5900). The "
+"port must be specified in 'alternative_port' key."
+msgstr ""
+"Si VRAI, le serveur écoutera sur un autre port, au lieu du port par défaut "
+"(5900). Le port doir être spécifié par la clé « alternative_port »."
+
+#: ../server/vino-server.schemas.in.h:10
+msgid ""
+"If true, the server will only accept connections from localhost and network "
+"connections will be rejected. Set this option to true if you wish to "
+"exclusively use a tunneling mechanism to access the server, such as ssh."
+msgstr ""
+"Si VRAI, le serveur n'acceptera que les connexions depuis localhost, tandis "
+"que les connexions provenant du réseau seront rejetés. Définissez cette "
+"option à VRAI si vous désirez n'utiliser qu'un système de tunnel tel que SSH "
+"pour accéder au serveur."
+
+#: ../server/vino-server.schemas.in.h:11
+msgid "Listen an alternative port"
+msgstr "Écouter sur un autre port"
+
+#: ../server/vino-server.schemas.in.h:12
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -320,23 +371,23 @@ msgstr ""
 "vnc_password) avant la connexion et « none » permet à tout utilisateur à "
 "distance de se connecter."
 
-#: ../server/vino-server.schemas.in.h:9
+#: ../server/vino-server.schemas.in.h:14
 msgid "Only allow remote users to view the desktop"
 msgstr "Autoriser uniquement les utilisateurs à distance à voir le bureau"
 
-#: ../server/vino-server.schemas.in.h:10
+#: ../server/vino-server.schemas.in.h:15
 msgid "Password required for \"vnc\" authentication"
 msgstr "Mot de passe requis pour l'authentification « vnc »"
 
-#: ../server/vino-server.schemas.in.h:11
+#: ../server/vino-server.schemas.in.h:16
 msgid "Prompt the user before completing a connection"
 msgstr "Demander à l'utilisateur avant de procéder à une connexion"
 
-#: ../server/vino-server.schemas.in.h:12
+#: ../server/vino-server.schemas.in.h:17
 msgid "Require encryption"
 msgstr "Requiert le chiffrement"
 
-#: ../server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:18
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -346,7 +397,15 @@ msgstr ""
 "d'authentification « vnc » est utilisée. Le mot de passe spécifié par la clé "
 "est codé en base 64."
 
-#: ../server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:19
+msgid ""
+"The port which the server will listen to if the 'use_alternative_port' key "
+"is set to true. Valid values are in the range from 5000 to 50000."
+msgstr ""
+"Le port sur lequel le serveur écoutera si la clé « use_alternative_port » "
+"est défini à VRAI. Les valeurs valides sont dans la plage 5000 à 50000."
+
+#: ../server/vino-server.schemas.in.h:20
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
