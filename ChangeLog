@@ -1,5 +1,12 @@
 2006-10-23  Mark McLoughlin  <mark@skynet.ie>
 
+	* capplet/vino-preferences.glade: manually mark
+	a few strings as not-translatable. Fingers crossed
+	that glade won't re-mark them again later. Fixes
+	bug #331700
+
+2006-10-23  Mark McLoughlin  <mark@skynet.ie>
+
 	* capplet/vino-preferences.desktop.in.in: add GTK
 	category. Fixes bug #328046
 
