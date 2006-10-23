@@ -732,44 +732,21 @@ vino_preferences_dialog_setup_password_entry (VinoPreferencesDialog *dialog)
 static void
 vino_preferences_dialog_setup_icons (VinoPreferencesDialog *dialog)
 {
-#define ICON_SIZE_STANDARD 48
-
-  GnomeIconTheme *icon_theme;
-  char           *icon_path;
+  gtk_window_set_icon_name (GTK_WINDOW (dialog->dialog), "gnome-remote-desktop");
 
   dialog->sharing_icon = glade_xml_get_widget (dialog->xml, "sharing_icon");
   g_assert (dialog->sharing_icon != NULL);
   
+  gtk_image_set_from_icon_name (GTK_IMAGE (dialog->sharing_icon),
+                                "gnome-remote-desktop",
+                                GTK_ICON_SIZE_DIALOG);
+
   dialog->security_icon = glade_xml_get_widget (dialog->xml, "security_icon");
   g_assert (dialog->security_icon != NULL);
 
-  icon_theme = gnome_icon_theme_new ();
-  gnome_icon_theme_set_allow_svg (icon_theme, TRUE);
-
-  icon_path = gnome_icon_theme_lookup_icon (icon_theme,
-					    "gnome-remote-desktop",
-					    ICON_SIZE_STANDARD,
-					    NULL, NULL);
-  if (icon_path)
-    {
-      gtk_window_set_icon_from_file (GTK_WINDOW (dialog->dialog), icon_path, NULL);
-      gtk_image_set_from_file (GTK_IMAGE (dialog->sharing_icon), icon_path);
-      g_free (icon_path);
-    }
-
-  icon_path = gnome_icon_theme_lookup_icon (icon_theme,
-					    "gnome-lockscreen",
-					    ICON_SIZE_STANDARD,
-					    NULL, NULL);
-  if (icon_path)
-    {
-      gtk_image_set_from_file (GTK_IMAGE (dialog->security_icon), icon_path);
-      g_free (icon_path);
-    }
-
-  g_object_unref (icon_theme);
-  
-#undef ICON_SIZE_STANDARD
+  gtk_image_set_from_icon_name (GTK_IMAGE (dialog->security_icon),
+                                "gnome-lockscreen",
+                                GTK_ICON_SIZE_DIALOG);
 }
 
 static char *

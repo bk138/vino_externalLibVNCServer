@@ -1,5 +1,15 @@
 2006-10-23  Mark McLoughlin  <mark@skynet.ie>
 
+	Fixes bug #345394 - icons do not change when the
+	icon theme changes.
+
+	* capplet/vino-preferences.c:
+	(vino_preferences_dialog_setup_icons): use GtkImage
+	and GtkWindow's icon theme support instead of
+	GnomeIconTheme.
+
+2006-10-23  Mark McLoughlin  <mark@skynet.ie>
+
 	* capplet/vino-preferences.glade: manually mark
 	a few strings as not-translatable. Fingers crossed
 	that glade won't re-mark them again later. Fixes
