@@ -80,8 +80,6 @@ void vino_setup_debug_flags (void);
 
 #endif /* G_ENABLE_DEBUG */
 
-
-char *vino_base64_unencode  (const char *data);
 void  vino_init_stock_items (void);
 
 G_END_DECLS

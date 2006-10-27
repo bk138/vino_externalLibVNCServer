@@ -1,3 +1,23 @@
+2006-10-27  Mark McLoughlin  <mark@skynet.ie>
+
+	Use glib's base64 functions instead of our own.
+
+	* vino/configure.in: require glib 2.12
+	
+	* vino/server/vino-server.c: (vino_server_auth_client):
+	Use g_base64_decode()
+	
+	* vino/server/vino-util.[ch]: kill vino_base64_unencode()
+	
+	* vino/capplet/vino-preferences.c: kill
+	vino_preferences_dialog_base64_encode() and
+	vino_preferences_dialog_base64_unencode()
+	(vino_preferences_vnc_password_notify),
+	(vino_preferences_dialog_setup_password_entry):
+	Use g_base64_decode()
+	(vino_preferences_dialog_password_changed):
+	Use g_base64_encode()
+
 2006-10-23  Mark McLoughlin  <mark@skynet.ie>
 
 	Fixes bug #345394 - icons do not change when the

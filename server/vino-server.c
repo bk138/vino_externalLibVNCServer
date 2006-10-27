@@ -504,14 +504,18 @@ vino_server_auth_client (VinoServer           *server,
 
   if (!(password = vino_server_get_password_from_keyring (server)))
     {
+      guchar *blob;
+      gsize   blob_len;
+
       if (!server->priv->vnc_password)
         goto auth_failed;
 
-      if (!(password = vino_base64_unencode (server->priv->vnc_password)))
-        {
-          g_warning ("Failed to base64 unencode VNC password\n");
-          goto auth_failed;
-        }
+      blob_len = 0;
+      blob = g_base64_decode (server->priv->vnc_password, &blob_len);
+
+      password = g_strndup ((char *) blob, blob_len);
+
+      g_free (blob);
     }
 
   rfb_client = client->rfb_client;

@@ -73,176 +73,6 @@ typedef struct {
 } VinoPreferencesDialog;
 
 static char *
-vino_preferences_dialog_base64_encode (const char *data)
-{
-#define CHARS_PER_LINE 72
-
-  static const char *to_base64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-  char              *retval, *p;
-  int                length;
-  int                div, rem;
-  int                chars, newlines;
-
-  if (!data || (length = strlen (data)) <= 0)
-    return NULL;
-
-  div      = length / 3;
-  rem      = length % 3;
-  chars    = (div * 4) + rem + 2;
-  newlines = (chars + CHARS_PER_LINE - 1) / CHARS_PER_LINE;
-
-  retval = p = g_new0 (char, chars + newlines + 1);
-
-  chars = 0;
-  while (div-- > 0)
-    {
-      p [0] = to_base64 [ (data [0] >> 2) & 0x3f];
-      p [1] = to_base64 [((data [0] << 4) & 0x30) + ((data [1] >> 4) & 0xf)];
-      p [2] = to_base64 [((data [1] << 2) & 0x3c) + ((data [2] >> 6) & 0x3)];
-      p [3] = to_base64 [  data [2] & 0x3f];
-
-      data += 3;
-      p    += 4;
-
-      if ((chars += 4) == CHARS_PER_LINE)
-	{
-	  chars = 0;
-	  *(p++) = '\n';
-	}
-    }
-
-  switch (rem)
-    {
-    case 2:
-      p [0] = to_base64 [ (data [0] >> 2) & 0x3f];
-      p [1] = to_base64 [((data [0] << 4) & 0x30) + ((data [1] >> 4) & 0xf)];
-      p [2] = to_base64 [ (data [1] << 2) & 0x3c];
-      p [3] = '=';
-      break;
-    case 1:
-      p [0] = to_base64 [(data [0] >> 2) & 0x3f];
-      p [1] = to_base64 [(data [0] << 4) & 0x30];
-      p [2] = '=';
-      p [3] = '=';
-      break;
-    }
-
-  return retval;
-
-#undef CHARS_PER_LINE
-}
-
-static char *
-vino_preferences_dialog_base64_unencode (const char *data)
-{
-  static const char *to_base64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-  const        char *p;
-  char              *retval;
-  int                i, length, count, rem;
-  int                qw, tw;
-
-  if (!data || (length = strlen (data)) <= 0)
-    return NULL;
-
-  p = data;
-  count = rem = 0;
-  while (length > 0)
-    {
-      int skip, vrfy, i;
-
-      skip = strspn (p, to_base64);
-
-      count  += skip;
-      p      += skip;
-      length -= skip;
-
-      if (length <= 0)
-	break;
-
-      vrfy = strcspn (p, to_base64);
-      
-      for (i = 0; i < vrfy; i++)
-	{
-	  if (g_ascii_isspace (p [i]))
-	    continue;
-
-	  if (p [i] != '=')
-	    return NULL;
-	  
-	  /* rem must be either 2 or 3, otherwise
-	   * no '=' should be here
-	   */
-	  if ((rem = count % 4) < 2)
-	    return NULL;
-
-	  /* end-of-message */
-	  break;
-	}
-
-      length -= vrfy;
-      p      += vrfy;
-    }
-
-  retval = g_new0 (char, (count / 4) * 3 + (rem ? rem - 1 : 0) + 1);
-
-  if (count <= 0)
-    return retval;
-
-  qw = tw = 0;
-  for (i = 0; data [i]; i++)
-    {
-      char c = data [i];
-      char bits;
-
-      if (g_ascii_isspace (c))
-	continue;
-
-      bits = 0;
-      if ((c >= 'A') && (c <= 'Z'))
-	{
-	  bits = c - 'A';
-	}
-      else if ((c >= 'a') && (c <= 'z'))
-	{
-	  bits = c - 'a' + 26;
-	}
-      else if ((c >= '0') && (c <= '9'))
-	{
-	  bits = c - '0' + 52;
-	}
-      else if (c == '=')
-	{
-	  break;
-	}
-
-      switch (qw++)
-	{
-	case 0:
-	  retval [tw + 0] = (bits << 2) & 0xfc;
-	  break;
-	case 1:
-	  retval [tw + 0] |= (bits >> 4) & 0x03;
-	  retval [tw + 1]  = (bits << 4) & 0xf0;
-	  break;
-	case 2:
-	  retval [tw + 1] |= (bits >> 2) & 0x0f;
-	  retval [tw + 2]  = (bits << 6) & 0xc0;
-	  break;
-	case 3:
-	  retval [tw + 2] |= bits & 0x3f;
-	  qw = 0;
-	  tw +=3;
-	  break;
-	default:
-	  g_assert_not_reached ();
-	  break;
-	}
-    }
-
-  return retval;
-}
-
-static char *
 vino_preferences_dialog_get_password_from_keyring (VinoPreferencesDialog *dialog)
 {
 #ifdef VINO_ENABLE_KEYRING
@@ -615,13 +445,19 @@ vino_preferences_vnc_password_notify (GConfClient           *client,
 				      VinoPreferencesDialog *dialog)
 {
   const char *password_b64;
+  guchar     *blob;
+  gsize       blob_len;
   char       *password;
 
   if (!entry->value || entry->value->type != GCONF_VALUE_STRING)
     return;
 
   password_b64 = gconf_value_get_string (entry->value);
-  password = vino_preferences_dialog_base64_unencode (password_b64);
+
+  blob_len = 0;
+  blob = g_base64_decode (password_b64, &blob_len);
+
+  password = g_strndup ((char *) blob, blob_len);
 
   if (!password || !password [0])
     {
@@ -640,6 +476,7 @@ vino_preferences_vnc_password_notify (GConfClient           *client,
     }
 
   g_free (password);
+  g_free (blob);
 }
 
 static void
@@ -661,7 +498,7 @@ vino_preferences_dialog_password_changed (GtkEntry              *entry,
     {
       char *password_b64;
 
-      password_b64 = vino_preferences_dialog_base64_encode (password);
+      password_b64 = g_base64_encode ((guchar *) password, strlen (password));
 
       gconf_client_set_string (dialog->client, VINO_PREFS_VNC_PASSWORD, password_b64, NULL);
 
@@ -685,12 +522,18 @@ vino_preferences_dialog_setup_password_entry (VinoPreferencesDialog *dialog)
 
   if (!(password = vino_preferences_dialog_get_password_from_keyring (dialog)))
     {
-      char *password_b64;
+      guchar *blob;
+      gsize   blob_len;
+      char   *password_b64;
 
       password_b64 = gconf_client_get_string (dialog->client, VINO_PREFS_VNC_PASSWORD, NULL);
 
-      password = vino_preferences_dialog_base64_unencode (password_b64);
+      blob_len = 0;
+      blob = g_base64_decode (password_b64, &blob_len);
 
+      password = g_strndup ((char *) blob, blob_len);
+
+      g_free (blob);
       g_free (password_b64);
 
       password_in_keyring = FALSE;
