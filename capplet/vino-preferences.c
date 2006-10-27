@@ -31,7 +31,6 @@
 #include <gconf/gconf-client.h>
 #include <libgnome/libgnome.h>
 #include <libgnomeui/libgnomeui.h>
-#include "vino-url.h"
 
 #ifdef VINO_ENABLE_KEYRING
 #include <gnome-keyring.h>
@@ -64,6 +63,7 @@ typedef struct {
   GtkWidget   *password_toggle;
   GtkWidget   *password_box;
   GtkWidget   *password_entry;
+  GtkTooltips *tips;
 
   guint        listeners [N_LISTENERS];
   int          n_listeners;
@@ -663,8 +663,8 @@ vino_preferences_dialog_update_url_label (VinoPreferencesDialog *dialog)
   command = vino_preferences_dialog_get_server_command (dialog);
   mailto = vino_preferences_dialog_construct_mailto (dialog, command);
 
-  gtk_label_set_text (GTK_LABEL (dialog->url_label), command);
-  vino_url_set_address (VINO_URL (dialog->url_label), mailto);
+  gtk_button_set_label (GTK_BUTTON (dialog->url_label), command);
+  gtk_link_button_set_uri (GTK_LINK_BUTTON (dialog->url_label), mailto);
   
   g_free (command);
   g_free (mailto);
@@ -698,6 +698,35 @@ vino_preferences_dialog_mailto_notify (GConfClient           *client,
 }
 
 static void
+vino_preferences_dialog_uri_hook (GtkLinkButton *button,
+                                  const gchar *link,
+                                  gpointer user_data)
+{
+  GError *error;
+  GdkScreen *screen;
+
+  screen = gtk_widget_get_screen (GTK_WIDGET (button));
+
+  error = NULL;
+  if (!gnome_url_show_on_screen (link, screen, &error))
+    {
+      /* FIXME better error handling!
+       *       What best to do? For the specific case
+       *       in this preferences dialog we want to be
+       *       able to pop up a dialog with the error
+       *       but also the vino URL as a selectable
+       *       label.
+       *
+       *       Maybe chain this up to the caller?
+       */
+
+      g_warning ("Failed to show URL '%s': %s\n",
+		 link, error->message);
+      g_error_free (error);
+    }
+}
+
+static void
 vino_preferences_dialog_setup_url_labels (VinoPreferencesDialog *dialog)
 {
   char *command;
@@ -723,12 +752,17 @@ vino_preferences_dialog_setup_url_labels (VinoPreferencesDialog *dialog)
   command = vino_preferences_dialog_get_server_command (dialog);
   mailto = vino_preferences_dialog_construct_mailto (dialog, command);
   
-  dialog->url_label = vino_url_new (mailto, command,
-				    _("Send this command by email"));
+  gtk_link_button_set_uri_hook (vino_preferences_dialog_uri_hook, NULL, NULL);
+
+  dialog->url_label = gtk_link_button_new_with_label (mailto, command);
+
+  dialog->tips = gtk_tooltips_new ();
+  gtk_tooltips_set_tip (dialog->tips, dialog->url_label,
+                        _("Send this command by email"), NULL);
+  g_object_ref_sink (dialog->tips);
+
   g_free (command);
   g_free (mailto);
-
-  gtk_misc_set_alignment (GTK_MISC (dialog->url_label), 0.0, 0.0);
 
   gtk_box_pack_start (GTK_BOX (dialog->url_labels_box),
 		      dialog->url_label,
@@ -852,6 +886,10 @@ vino_preferences_dialog_finalize (VinoPreferencesDialog *dialog)
   if (dialog->mailto)
     g_free (dialog->mailto);
   dialog->mailto = NULL;
+
+  if (dialog->tips)
+    g_object_unref (dialog->tips);
+  dialog->tips = NULL;
 
   if (dialog->client)
     {

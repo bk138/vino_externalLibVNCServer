@@ -1,5 +1,20 @@
 2006-10-27  Mark McLoughlin  <mark@skynet.ie>
 
+	Use GtkLinkButton instead of VinoURL.
+
+	Patch from Mariano Suárez-Alvarez <mariano.suarezalvarez@gmail.com>
+	in bug #159216.
+
+	* vino/configure.in: require gtk+ 2.10
+	
+	* vino/capplet/vino-preferences.c: use GtkLinkButton
+	
+	* vino/capplet/vino-url.[ch]: remove
+
+	* vino/capplet/Makefile.am: remove vino-url.[ch]
+
+2006-10-27  Mark McLoughlin  <mark@skynet.ie>
+
 	Use glib's base64 functions instead of our own.
 
 	* vino/configure.in: require glib 2.12

@@ -13,8 +13,6 @@ bin_PROGRAMS = vino-preferences
 
 vino_preferences_SOURCES = \
 	vino-preferences.c \
-	vino-url.c \
-	vino-url.h \
 	$(NULL)
 vino_preferences_LDADD = \
 	$(VINO_CAPPLET_LIBS) \
