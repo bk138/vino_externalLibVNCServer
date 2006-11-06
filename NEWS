@@ -1,3 +1,40 @@
+Vino 2.17.2
+===========
+
+  Features
+
+    + Add "local_only" GConf key for use with SSH tunnels (Mark, Shaya Potter)
+    + Add "alternative_port" GConf key (Mark, John Wendell)
+    + Add ability to use gnome-keyring to store VNC password (Mark, Steven Zhang)
+    + Add IPv6 support (Mark, Srirama Sharma)
+
+  Fixes
+
+    + Update for RFB 3.8 (Dan Winship)
+    + Fix for X servers which don't support XShm (Dan Winship)
+    + Fix CoRRE encoding problem (Mark)
+    + Back-port some fixes from upstream libvncserver (Mark)
+    + Add GTK category to .desktop file (Mark)
+    + Mark some weird glade strings as non-translatable (Mark)
+    + Fix icons not changing when icon theme changes (Mark)
+    + Use glib's base64 functions instead of our own (Mark)
+    + Use GtkLinkButton instead of VinoURL (Mariano Suárez-Alvarez)
+
+  Translators
+
+    + Rostislav \"zbrox\" Raykov (bg)
+    + Francisco Javier F. Serrador (es)
+    + Ivar Smolin (et)
+    + Ilkka Tuohela (fi)
+    + Christophe Merlet (RedFox) (fr)
+    + Ankit Patel (gu)
+    + Satrou SATOH (ja)
+    + Jovan Naumovski (mk)
+    + Shiva Prasad Pokharel (ne)
+    + Marcel Telka (sk)
+    + Daniel Nylander (sv)
+    + Clytie Siddall (vi)
+
 Vino 2.16.0
 ===========
 

@@ -1,3 +1,7 @@
+2006-11-06  Mark McLoughlin  <mark@skynet.ie>
+
+	* configure.in: Version 2.17.2.
+
 2006-10-27  Mark McLoughlin  <mark@skynet.ie>
 
 	Use GtkLinkButton instead of VinoURL.
