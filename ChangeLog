@@ -1,3 +1,11 @@
+2006-11-17  Jonh Wendell <jwendell@cvs.gnome.org>
+
+	Fixes bug #376237 - Vino shows the wrong host in 2.17.2
+
+	* vino/server/libvncserver/rfbserver.c : remove rfbSockaddrToHostname()
+	function and updated rfbNewClient() so that it gets the right ip/name
+	from remote machine.
+
 2006-11-06  Mark McLoughlin  <mark@skynet.ie>
 
 	* configure.in: post-release bump to 2.17.3.
