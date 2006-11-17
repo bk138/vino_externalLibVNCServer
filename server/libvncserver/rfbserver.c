@@ -27,6 +27,7 @@
 #include <string.h>
 #include <rfb/rfb.h>
 #include <rfb/rfbregion.h>
+#include <netdb.h>
 
 #ifdef HAVE_FCNTL_H
 #include <fcntl.h>
@@ -117,52 +118,6 @@ rfbReleaseClientIterator(rfbClientIteratorPtr iterator)
   free(iterator);
 }
 
-
-static char *
-rfbSockaddrToHostname(struct sockaddr *addr)
-{
-    char  buf_in[INET_ADDRSTRLEN];
-    char  buf_in6[INET_ADDRSTRLEN];
-    void *src;
-    char *buf;
-    int   buflen;
-
-    /*
-     * Need to handle 3 cases:
-     *  1) IPv4 address
-     *  2) IPv4-mapped IPv6 address
-     *  3) IPv6 address
-     */
-
-    if (addr->sa_family == AF_INET) {
-        struct sockaddr_in *addr_in;
-
-        addr_in = (struct sockaddr_in *) addr;
-
-        src    = &addr_in->sin_addr;
-        buf    = buf_in;
-        buflen = sizeof (buf_in);
-
-    } else /* if (addr->sa_family == AF_INET6) */ {
-        struct sockaddr_in6 *addr_in6;
-
-        addr_in6 = (struct sockaddr_in6 *) addr;
-
-        if (IN6_IS_ADDR_V4MAPPED (&addr_in6->sin6_addr))
-            src = &(addr_in6->sin6_addr.s6_addr[12]);
-        else
-            src = &addr_in6->sin6_addr;
-
-        buf    = buf_in6;
-        buflen = sizeof (buf_in6);
-    }
-
-    if (inet_ntop(addr->sa_family, src, buf, buflen) == NULL)
-        return NULL;
-
-    return strdup(buf);
-}
-
 /*
  * rfbNewClientConnection is called from sockets.c when a new connection
  * comes in.
@@ -190,9 +145,10 @@ rfbNewClient(rfbScreenInfoPtr rfbScreen,
     rfbProtocolVersionMsg pv;
     rfbClientIteratorPtr iterator;
     rfbClientPtr cl,cl_;
-    struct sockaddr_in addr;
-    size_t addrlen = sizeof(struct sockaddr_in);
+    struct sockaddr_storage addr;
+    size_t addrlen = sizeof(addr);
     int i;
+    char host[NI_MAXHOST];
 
     cl = (rfbClientPtr)calloc(sizeof(rfbClientRec),1);
 
@@ -207,7 +163,13 @@ rfbNewClient(rfbScreenInfoPtr rfbScreen,
 
       getpeername(sock, (struct sockaddr *)&addr, &addrlen);
 
-      cl->host = rfbSockaddrToHostname ((struct sockaddr *) &addr);
+      getnameinfo((struct sockaddr *)&addr,
+                  addrlen,
+                  host, sizeof(host),
+                  NULL, 0,
+                  0);
+
+      cl->host = strdup(host);
 
       rfbLog("Got connection from client %s\n", cl->host);
 
