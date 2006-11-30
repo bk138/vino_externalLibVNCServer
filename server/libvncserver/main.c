@@ -322,7 +322,7 @@ rfbScreenInfoPtr rfbGetScreen(int* argc,char** argv,
    rfbScreen->maxFd=0;
    rfbScreen->rfbListenSock=-1;
 
-   rfbScreen->desktopName = "LibVNCServer";
+   rfbScreen->desktopName = strdup("LibVNCServer");
    rfbScreen->rfbAlwaysShared = FALSE;
    rfbScreen->rfbNeverShared = FALSE;
    rfbScreen->rfbDontDisconnect = FALSE;
@@ -429,6 +429,13 @@ void rfbNewFramebuffer(rfbScreenInfoPtr rfbScreen, char *framebuffer,
   rfbReleaseClientIterator(iterator);
 }
 
+void rfbSetDesktopName(rfbScreenInfoPtr rfbScreen, const char *name)
+{
+  if (rfbScreen->desktopName)
+    free(rfbScreen->desktopName);
+  rfbScreen->desktopName = strdup(name);
+}
+
 void rfbScreenCleanup(rfbScreenInfoPtr rfbScreen)
 {
   rfbClientIteratorPtr i=rfbGetClientIterator(rfbScreen);
@@ -448,6 +455,8 @@ void rfbScreenCleanup(rfbScreenInfoPtr rfbScreen)
   FREE_IF(underCursorBuffer);
   if(rfbScreen->cursor)
     rfbFreeCursor(rfbScreen->cursor);
+  if(rfbScreen->desktopName)
+    free(rfbScreen->desktopName);
   free(rfbScreen);
 #ifdef HAVE_LIBJPEG
   rfbTightCleanup();

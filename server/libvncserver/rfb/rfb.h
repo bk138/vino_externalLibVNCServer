@@ -108,7 +108,7 @@ typedef struct _rfbScreenInfo
 
     rfbPixelFormat rfbServerFormat;
     rfbColourMap colourMap; /* set this if rfbServerFormat.trueColour==FALSE */
-    const char* desktopName;
+    char* desktopName;
     char rfbThisHost[255];
 
     rfbBool autoPort;
@@ -581,6 +581,8 @@ extern rfbScreenInfoPtr rfbGetScreen(int* argc,char** argv,
 extern void rfbInitServer(rfbScreenInfoPtr rfbScreen);
 extern void rfbNewFramebuffer(rfbScreenInfoPtr rfbScreen,char *framebuffer,
  int width,int height);
+
+extern void rfbSetDesktopName(rfbScreenInfoPtr rfbScreen, const char *name);
 
 extern void rfbScreenCleanup(rfbScreenInfoPtr screenInfo);
 

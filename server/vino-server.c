@@ -693,7 +693,8 @@ static void
 vino_server_init_from_screen (VinoServer *server,
 			      GdkScreen  *screen)
 {
-  rfbScreenInfoPtr rfb_screen;
+  rfbScreenInfoPtr  rfb_screen;
+  char             *name;
 
   g_return_if_fail (server->priv->screen == NULL);
   g_return_if_fail (screen != NULL);
@@ -717,6 +718,15 @@ vino_server_init_from_screen (VinoServer *server,
 		  gdk_screen_get_width  (screen),
 		  gdk_screen_get_height (screen),
 		  -1, -1, -1);
+
+  name = g_strjoin ("@",
+                    g_get_user_name (),
+                    g_get_host_name (),
+                    NULL);
+
+  rfbSetDesktopName(rfb_screen, name);
+
+  g_free (name);
 
   /* libvncserver NOTE:
    *   DeferUpdateTime is the number of milliseconds to wait

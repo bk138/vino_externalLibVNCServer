@@ -1,3 +1,19 @@
+2006-11-30  Mark McLoughlin  <mark@skynet.ie>
+
+	Based on patch from John Wendell <wendell_listas@bani.com.br>
+	in bug #156967.
+
+	* server/libvncserver/main.c:
+	(rfbGetScreen): strdup the default desktop name.
+	(rfbSetDesktopName): add new function.
+	(rfbScreenCleanup): free the desktop name
+	
+	* server/libvncserver/rfb/rfb.h: make desktopName not const
+	and add rfbSetDesktopName()
+	
+	* server/vino-server.c: (vino_server_init_from_screen): set the
+	desktop name here to user@host
+
 2006-11-17  Jonh Wendell <jwendell@cvs.gnome.org>
 
 	Fixes bug #376287 - Vino shows the wrong host in 2.17.2

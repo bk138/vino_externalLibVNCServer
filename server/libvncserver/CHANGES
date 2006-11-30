@@ -39,6 +39,8 @@
 
  + Added rfbSetAutoPort() and rfbSetPort()
 
+ + Added rfbSetDesktopName()
+
  + Removed defaultNewClientHook and made accept new clients
    by default.
 
