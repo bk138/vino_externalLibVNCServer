@@ -1,3 +1,16 @@
+2006-12-06  Mark McLoughlin  <mark@skynet.ie>
+
+	Fix broken keyboard handling on Xsun by making use of
+	Xlib's strange "guess lowercase keysym from upper-case
+	keycode mapping" logic in XKeycodeToKeysym()
+
+	Based on patch from Halton Huo <halton.huo@sun.com> in
+	bug #369884
+
+	* server/vino-input.c: (vino_input_initialize_keycodes): use
+	XKeycodeToKeysym() rather than XGetKeyboardMapping() to build
+	our keysym->keycode mapping.
+
 2006-11-30  Mark McLoughlin  <mark@skynet.ie>
 
 	Based on patch from John Wendell <wendell_listas@bani.com.br>

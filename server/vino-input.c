@@ -95,7 +95,6 @@ vino_input_initialize_keycodes (GdkDisplay *display)
   Display *xdisplay;
   int      min_keycodes, max_keycodes;
   int      keysyms_per_keycode;
-  KeySym  *keymap;
   int      keycode;
 
   xdisplay = GDK_DISPLAY_XDISPLAY (display);
@@ -108,26 +107,19 @@ vino_input_initialize_keycodes (GdkDisplay *display)
   g_assert (min_keycodes >= 8);
   g_assert (max_keycodes <= 255);
 
-  keymap = XGetKeyboardMapping (xdisplay,
-				min_keycodes,
-				max_keycodes - min_keycodes + 1,
-				&keysyms_per_keycode);
-
-  g_assert (keymap != NULL);
+  XGetKeyboardMapping (xdisplay, min_keycodes, 0, &keysyms_per_keycode);
 
   dprintf (INPUT, "Initializing keysym to keycode/modifier mapping\n");
 
   for (keycode = min_keycodes; keycode < max_keycodes; keycode++)
     {
-      int    keycode_index = (keycode - min_keycodes) * keysyms_per_keycode;
       guint8 modifier;
 
       for (modifier = 0; modifier < keysyms_per_keycode; modifier++)
 	{
-	  guint32 keysym = keymap [keycode_index + modifier];
+	  guint32 keysym = XKeycodeToKeysym (xdisplay, keycode, modifier);
 
-	  if (VINO_IS_LATIN1_KEYSYM (keysym) &&
-	      XKeysymToKeycode (xdisplay, keysym) == keycode)
+	  if (VINO_IS_LATIN1_KEYSYM (keysym))
 	    {
 	      if (global_input_data.keycodes [keysym] != 0)
 		continue;
@@ -139,8 +131,6 @@ vino_input_initialize_keycodes (GdkDisplay *display)
 	    }
 	}
     }
-
-  XFree (keymap);
 
   global_input_data.left_shift_keycode  = XKeysymToKeycode (xdisplay, XK_Shift_L);
   global_input_data.right_shift_keycode = XKeysymToKeycode (xdisplay, XK_Shift_R);
