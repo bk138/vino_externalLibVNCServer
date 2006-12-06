@@ -89,7 +89,7 @@ typedef struct
   guint         auth_timeout;
   char         *auth_response;
   int           auth_resp_len;
-} VinoServerClientInfo;
+} VinoClient;
 
 enum
 {
@@ -106,10 +106,10 @@ enum
   PROP_VNC_PASSWORD
 };
 
-static enum rfbNewClientAction vino_server_auth_client (VinoServer           *server,
-							VinoServerClientInfo *client,
-							const char           *response,
-							int                   length);
+static enum rfbNewClientAction vino_server_auth_client (VinoServer *server,
+							VinoClient *client,
+							const char *response,
+							int         length);
 
 static void vino_server_setup_framebuffer     (VinoServer *server);
 static void vino_server_release_framebuffer   (VinoServer *server);
@@ -120,9 +120,9 @@ static gpointer parent_class;
 static void
 vino_server_handle_client_gone (rfbClientPtr rfb_client)
 {
-  VinoServer           *server = VINO_SERVER (rfb_client->screen->screenData);
-  VinoServerClientInfo *client = NULL;
-  GSList               *l;
+  VinoServer *server = VINO_SERVER (rfb_client->screen->screenData);
+  VinoClient *client = NULL;
+  GSList     *l;
 
   g_return_if_fail (VINO_IS_SERVER (server));
 
@@ -132,7 +132,7 @@ vino_server_handle_client_gone (rfbClientPtr rfb_client)
 
   for (l = server->priv->clients; l; l = l->next)
     {
-      client = (VinoServerClientInfo *) l->data;
+      client = (VinoClient *) l->data;
 
       if (rfb_client == client->rfb_client)
 	{
@@ -238,9 +238,9 @@ vino_server_client_data_pending (GIOChannel   *source,
 }
 
 static void
-vino_server_set_client_on_hold (VinoServer            *server,
-				VinoServerClientInfo  *client,
-				gboolean               on_hold)
+vino_server_set_client_on_hold (VinoServer  *server,
+				VinoClient  *client,
+				gboolean     on_hold)
 {
   rfbClientPtr rfb_client = client->rfb_client;
 
@@ -285,8 +285,8 @@ vino_server_set_client_on_hold (VinoServer            *server,
 static enum rfbNewClientAction
 vino_server_handle_new_client (rfbClientPtr rfb_client)
 {
-  VinoServer           *server = VINO_SERVER (rfb_client->screen->screenData);
-  VinoServerClientInfo *client;
+  VinoServer *server = VINO_SERVER (rfb_client->screen->screenData);
+  VinoClient *client;
 
   g_return_val_if_fail (VINO_IS_SERVER (server), RFB_CLIENT_REFUSE);
 
@@ -295,7 +295,7 @@ vino_server_handle_new_client (rfbClientPtr rfb_client)
   if (!server->priv->fb)
     vino_server_setup_framebuffer (server);
 
-  client = g_new0 (VinoServerClientInfo, 1);
+  client = g_new0 (VinoClient, 1);
 
   rfb_client->clientData = client;
 
@@ -338,8 +338,8 @@ vino_server_handle_prompt_response (VinoServer         *server,
 static enum rfbNewClientAction
 vino_server_handle_authenticated_client (rfbClientPtr rfb_client)
 {
-  VinoServer           *server = VINO_SERVER (rfb_client->screen->screenData);
-  VinoServerClientInfo *client = (VinoServerClientInfo *) rfb_client->clientData;
+  VinoServer *server = VINO_SERVER (rfb_client->screen->screenData);
+  VinoClient *client = (VinoClient *) rfb_client->clientData;
 
   g_return_val_if_fail (VINO_IS_SERVER (server), RFB_CLIENT_REFUSE);
 
@@ -412,7 +412,7 @@ vino_server_handle_clipboard_event (char         *str,
 }
 
 static gboolean
-vino_server_auth_client_deferred (VinoServerClientInfo *client)
+vino_server_auth_client_deferred (VinoClient *client)
 {
   VinoServer              *server = VINO_SERVER (client->rfb_client->screen->screenData);
   enum rfbNewClientAction  result;
@@ -436,10 +436,10 @@ vino_server_auth_client_deferred (VinoServerClientInfo *client)
 }
 
 static void
-vino_server_defer_client_auth (VinoServer           *server,
-			       VinoServerClientInfo *client,
-			       const char           *response,
-			       int                   length)
+vino_server_defer_client_auth (VinoServer *server,
+			       VinoClient *client,
+			       const char *response,
+			       int         length)
 {
   client->auth_resp_len = length;
   client->auth_response = g_new (char, length);
@@ -491,10 +491,10 @@ vino_server_get_password_from_keyring (VinoServer *server)
 }
 
 static enum rfbNewClientAction
-vino_server_auth_client (VinoServer           *server,
-			 VinoServerClientInfo *client,
-			 const char           *response,
-			 int                   length)
+vino_server_auth_client (VinoServer *server,
+			 VinoClient *client,
+			 const char *response,
+			 int         length)
 {
   rfbClientPtr  rfb_client;
   char         *password;
@@ -551,8 +551,8 @@ vino_server_check_vnc_password (rfbClientPtr  rfb_client,
 				const char   *response,
 				int           length)
 {
-  VinoServer           *server = VINO_SERVER (rfb_client->screen->screenData);
-  VinoServerClientInfo *client = (VinoServerClientInfo *) rfb_client->clientData;
+  VinoServer *server = VINO_SERVER (rfb_client->screen->screenData);
+  VinoClient *client = (VinoClient *) rfb_client->clientData;
 
   g_return_val_if_fail (VINO_IS_SERVER (server), FALSE);
 
@@ -1219,7 +1219,7 @@ vino_server_set_on_hold (VinoServer *server,
 
       for (l = server->priv->clients; l; l = l->next)
 	{
-	  VinoServerClientInfo *client = l->data;
+	  VinoClient *client = l->data;
 
 	  /* If a client is on hold before we have initialized,
 	   * we want to leave it on hold until the deferred
