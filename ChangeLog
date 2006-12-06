@@ -1,5 +1,10 @@
 2006-12-06  Mark McLoughlin  <mark@skynet.ie>
 
+	* server/vino-prompt.c: use G_DEFINE_TYPE instead of
+	manually defining it.
+
+2006-12-06  Mark McLoughlin  <mark@skynet.ie>
+
 	Fix broken keyboard handling on Xsun by making use of
 	Xlib's strange "guess lowercase keysym from upper-case
 	keycode mapping" logic in XKeycodeToKeysym()

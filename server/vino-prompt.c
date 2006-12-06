@@ -56,8 +56,9 @@ enum
 static gboolean vino_prompt_display (VinoPrompt   *prompt,
 				     rfbClientPtr  rfb_client);
 
-static gpointer parent_class;
-static guint    prompt_signals [LAST_SIGNAL] = { 0 };
+static guint prompt_signals [LAST_SIGNAL] = { 0 };
+
+G_DEFINE_TYPE (VinoPrompt, vino_prompt, G_TYPE_OBJECT);
 
 static void
 vino_prompt_finalize (GObject *object)
@@ -76,8 +77,8 @@ vino_prompt_finalize (GObject *object)
   g_free (prompt->priv);
   prompt->priv = NULL;
 
-  if (G_OBJECT_CLASS (parent_class)->finalize)
-    G_OBJECT_CLASS (parent_class)->finalize (object);
+  if (G_OBJECT_CLASS (vino_prompt_parent_class)->finalize)
+    G_OBJECT_CLASS (vino_prompt_parent_class)->finalize (object);
 }
 
 static void
@@ -119,7 +120,7 @@ vino_prompt_get_property (GObject    *object,
 }
 
 static void
-vino_prompt_instance_init (VinoPrompt *prompt)
+vino_prompt_init (VinoPrompt *prompt)
 {
   prompt->priv = g_new0 (VinoPromptPrivate, 1);
 }
@@ -129,8 +130,6 @@ vino_prompt_class_init (VinoPromptClass *klass)
 {
   GObjectClass    *gobject_class = G_OBJECT_CLASS (klass);
   VinoPromptClass *prompt_class  = VINO_PROMPT_CLASS (klass);
-  
-  parent_class = g_type_class_peek_parent (klass);
   
   gobject_class->finalize     = vino_prompt_finalize;
   gobject_class->set_property = vino_prompt_set_property;
@@ -159,34 +158,6 @@ vino_prompt_class_init (VinoPromptClass *klass)
 		  VINO_TYPE_PROMPT_RESPONSE);
 
   vino_init_stock_items ();
-}
-
-GType
-vino_prompt_get_type (void)
-{
-  static GType object_type = 0;
-
-  if (!object_type)
-    {
-      static const GTypeInfo object_info =
-	{
-	  sizeof (VinoPromptClass),
-	  (GBaseInitFunc) NULL,
-	  (GBaseFinalizeFunc) NULL,
-	  (GClassInitFunc) vino_prompt_class_init,
-	  NULL,           /* class_finalize */
-	  NULL,           /* class_data */
-	  sizeof (VinoPrompt),
-	  0,              /* n_preallocs */
-	  (GInstanceInitFunc) vino_prompt_instance_init,
-	};
-      
-      object_type = g_type_register_static (G_TYPE_OBJECT,
-                                            "VinoPrompt",
-                                            &object_info, 0);
-    }
-
-  return object_type;
 }
 
 VinoPrompt *
