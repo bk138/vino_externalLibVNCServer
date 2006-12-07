@@ -1,3 +1,10 @@
+2006-12-07  Mark McLoughlin  <mark@skynet.ie>
+
+	Fixes bug #337214
+
+	* server/vino-prompt.c: (vino_prompt_setup_dialog):
+	Hide the help button rather than making it insensitive
+
 2006-12-06  Jonh Wendell <jwendell@cvs.gnome.org>
 
 	* server/vino-server.c: rename VinoServerClientInfo

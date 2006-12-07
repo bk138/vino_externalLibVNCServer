@@ -331,7 +331,7 @@ vino_prompt_setup_dialog (VinoPrompt *prompt)
 
   help_button = glade_xml_get_widget (xml, "help_button");
   g_assert (help_button != NULL);
-  gtk_widget_set_sensitive (help_button, FALSE);
+  gtk_widget_hide (help_button);
 
   g_object_unref (xml);
 
@@ -367,7 +367,7 @@ vino_prompt_display (VinoPrompt   *prompt,
 
   prompt->priv->current_client = rfb_client;
 
-  gtk_widget_show_all (prompt->priv->dialog);
+  gtk_widget_show (prompt->priv->dialog);
 
   dprintf (PROMPT, "Prompting for client %p\n", rfb_client);
 
