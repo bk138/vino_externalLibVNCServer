@@ -33,6 +33,7 @@
 #include "vino-input.h"
 #include "vino-cursor.h"
 #include "vino-prompt.h"
+#include "vino-status-icon.h"
 #include "vino-util.h"
 #include "vino-enums.h"
 #include <sys/poll.h>
@@ -54,6 +55,7 @@ struct _VinoServerPrivate
   VinoFB           *fb;
   VinoCursorData   *cursor_data;
   VinoPrompt       *prompt;
+  VinoStatusIcon   *icon;
 
   GIOChannel       *io_channel;
   guint             io_watch;
@@ -78,7 +80,7 @@ struct _VinoServerPrivate
   guint             use_alternative_port : 1;
 };
 
-typedef struct
+struct _VinoClient
 {
   rfbClientPtr  rfb_client;
   GIOChannel   *io_channel;
@@ -89,7 +91,7 @@ typedef struct
   guint         auth_timeout;
   char         *auth_response;
   int           auth_resp_len;
-} VinoClient;
+};
 
 enum
 {
@@ -117,6 +119,26 @@ static void vino_server_update_security_types (VinoServer *server);
 
 static gpointer parent_class;
 
+static void
+vino_server_client_accepted (VinoServer *server,
+                             VinoClient *client)
+{
+  if (!server->priv->icon)
+    server->priv->icon = vino_status_icon_new (server, server->priv->screen);
+
+  vino_status_icon_add_client (server->priv->icon, client);
+}
+
+static void
+vino_server_client_disconnected (VinoServer *server,
+                                 VinoClient *client)
+{
+  if (vino_status_icon_remove_client (server->priv->icon, client))
+    {
+      g_object_unref (server->priv->icon);
+      server->priv->icon = NULL;
+    }
+}
 static void
 vino_server_handle_client_gone (rfbClientPtr rfb_client)
 {
@@ -160,6 +182,9 @@ vino_server_handle_client_gone (rfbClientPtr rfb_client)
 
 	  g_free (l->data);
 	  server->priv->clients = g_slist_delete_link (server->priv->clients, l);
+
+          vino_server_client_disconnected (server, client);
+
 	  break;
 	}
     }
@@ -317,13 +342,16 @@ vino_server_handle_prompt_response (VinoServer         *server,
 				    rfbClientPtr        rfb_client,
 				    VinoPromptResponse  response)
 {
+  VinoClient *client = (VinoClient *) rfb_client->clientData;
+
   g_return_if_fail (VINO_IS_SERVER (server));
   g_return_if_fail (rfb_client != NULL);
 
   switch (response)
     {
     case VINO_RESPONSE_ACCEPT:
-      vino_server_set_client_on_hold (server, rfb_client->clientData, FALSE);
+      vino_server_set_client_on_hold (server, client, FALSE);
+      vino_server_client_accepted (server, client);
       break;
     case VINO_RESPONSE_REJECT:
       rfbCloseClient (rfb_client);
@@ -344,7 +372,10 @@ vino_server_handle_authenticated_client (rfbClientPtr rfb_client)
   g_return_val_if_fail (VINO_IS_SERVER (server), RFB_CLIENT_REFUSE);
 
   if (!server->priv->prompt_enabled)
-    return RFB_CLIENT_ACCEPT;
+    {
+      vino_server_client_accepted (server, client);
+      return RFB_CLIENT_ACCEPT;
+    }
 
   vino_prompt_add_client (server->priv->prompt, rfb_client);
 
@@ -1363,4 +1394,17 @@ vino_server_get_vnc_password (VinoServer *server)
   g_return_val_if_fail (VINO_IS_SERVER (server), NULL);
 
   return server->priv->vnc_password;
+}
+
+G_CONST_RETURN char *
+vino_client_get_hostname (VinoClient *client)
+{
+  return client->rfb_client->host;
+}
+
+void
+vino_server_disconnect_client (VinoClient *client)
+{
+  rfbCloseClient (client->rfb_client);
+  rfbClientConnectionGone (client->rfb_client);
 }

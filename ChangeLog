@@ -1,3 +1,19 @@
+2006-12-08  Jonh Wendell <jwendell@cvs.gnome.org>
+	Initial status icon support (Fixes bug #154467)
+
+	* server/vino-status-icon.[ch]: New files
+	
+	* server/Makefile.am: Added vino-status-icon.[ch]
+
+	* server/vino-server.[ch]:
+	(vino_client_get_hostname),
+	(vino_server_disconnect_client): new functions
+	(vino_server_handle_prompt_response),
+	(vino_server_handle_authenticated_client): Call the new 
+	vino_server_client_accepted()
+	(vino_server_handle_client_gone): Call the new 
+	vino_server_client_disconnected()
+
 2006-12-07  Mark McLoughlin  <mark@skynet.ie>
 
 	Fixes bug #337214

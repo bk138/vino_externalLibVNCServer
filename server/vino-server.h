@@ -43,6 +43,7 @@ G_BEGIN_DECLS
 typedef struct _VinoServer        VinoServer;
 typedef struct _VinoServerClass   VinoServerClass;
 typedef struct _VinoServerPrivate VinoServerPrivate;
+typedef struct _VinoClient        VinoClient;
 
 typedef enum
 {
@@ -95,6 +96,9 @@ VinoAuthMethod       vino_server_get_auth_methods         (VinoServer     *serve
 void                 vino_server_set_vnc_password         (VinoServer     *server,
 							   const char     *vnc_password);
 G_CONST_RETURN char *vino_server_get_vnc_password         (VinoServer     *server);
+
+G_CONST_RETURN char *vino_client_get_hostname             (VinoClient     *client);
+void                 vino_server_disconnect_client        (VinoClient     *client);
 
 G_END_DECLS
 
