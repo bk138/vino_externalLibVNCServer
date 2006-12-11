@@ -1,3 +1,7 @@
+2006-12-11  Jonh Wendell  <jwendell@cvs.gnome.org>
+
+	* POTFILES.in: added server/vino-status-icon.c
+
 2006-12-11  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* nb.po: Updated Norwegian bokmål translation.
