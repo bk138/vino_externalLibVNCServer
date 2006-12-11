@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-14 02:01+0200\n"
-"PO-Revision-Date: 2006-10-14 07:54+0100\n"
+"POT-Creation-Date: 2006-12-11 19:22+0100\n"
+"PO-Revision-Date: 2006-12-12 00:12+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -18,11 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:807
+#: ../capplet/vino-preferences.c:761
 msgid "Send this command by email"
 msgstr "Skicka detta kommando med e-post"
 
-#: ../capplet/vino-preferences.c:842
+#: ../capplet/vino-preferences.c:796
+#: ../server/vino-status-icon.c:187
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -40,92 +41,56 @@ msgid "Set your remote desktop access preferences"
 msgstr "Ställ in dina inställningar för åtkomst till fjärrskrivbord"
 
 #: ../capplet/vino-preferences.glade.h:1
-msgid "    "
-msgstr "    "
-
-#: ../capplet/vino-preferences.glade.h:2
-msgid "        "
-msgstr "        "
-
-#: ../capplet/vino-preferences.glade.h:3
-msgid "*"
-msgstr "*"
-
-#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Security</b>"
 msgstr "<b>Säkerhet</b>"
 
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:2
 msgid "<b>Sharing</b>"
 msgstr "<b>Delning</b>"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:3
 msgid "A_sk you for confirmation"
 msgstr "F_råga dig för bekräftelse"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:4
 msgid "Allow other users to _view your desktop"
 msgstr "Tillåt andra användare att _se ditt skrivbord"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:5
 msgid "Remote Desktop Preferences"
 msgstr "Inställningar för fjärrskrivbord"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:6
 msgid "Some of these preferences are locked down"
 msgstr "En del av dessa inställningar är låsta"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:7
 msgid "Users can view your desktop using this command:"
 msgstr "Användare kan se ditt skrivbord med hjälp av detta kommando:"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:8
 msgid "When a user tries to view or control your desktop:"
 msgstr "När en användare försöker se eller kontrollera ditt skrivbord:"
 
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.glade.h:9
 msgid "_Allow other users to control your desktop"
 msgstr "_Tillåt andra användare att styra ditt skrivbord"
 
-#: ../capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.glade.h:10
 msgid "_Password:"
 msgstr "_Lösenord:"
 
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:11
 msgid "_Require the user to enter this password:"
 msgstr "_Kräv att användaren anger detta lösenord:"
 
-#: ../capplet/vino-url.c:158
-msgid "Address"
-msgstr "Adress"
-
-#: ../capplet/vino-url.c:159
-msgid "The address pointed to by the widget"
-msgstr "Den adress som pekas på av widgeten"
-
-#: ../capplet/vino-url.c:166
-msgid "Tooltip"
-msgstr "Vertygstips"
-
-#: ../capplet/vino-url.c:167
-msgid "A tooltip for this URL"
-msgstr "Ett verktygstips för denna URL"
-
-#: ../capplet/vino-url.c:173
-msgid "URL color"
-msgstr "URL-färg"
-
-#: ../capplet/vino-url.c:174
-msgid "The color of the URL's label"
-msgstr "Färgen på URL:ens etikett"
-
-#: ../server/vino-fb.c:955
-#: ../server/vino-prompt.c:144
-#: ../server/vino-server.c:896
+#: ../server/vino-fb.c:984
+#: ../server/vino-prompt.c:143
+#: ../server/vino-server.c:987
 msgid "Screen"
 msgstr "Skärm"
 
-#: ../server/vino-fb.c:956
+#: ../server/vino-fb.c:985
 msgid "The screen to be monitored"
 msgstr "Skärmen som ska övervakas"
 
@@ -153,11 +118,11 @@ msgstr "1"
 msgid "%s's remote desktop"
 msgstr "%s fjärrskrivbord"
 
-#: ../server/vino-prompt.c:145
+#: ../server/vino-prompt.c:144
 msgid "The screen on which to display the prompt"
 msgstr "Skärmen på vilken frågan ska visas"
 
-#: ../server/vino-prompt.c:390
+#: ../server/vino-prompt.c:361
 #, c-format
 msgid "A user on the computer '%s' is trying to remotely view or control your desktop."
 msgstr "En användare på datorn \"%s\" försöker att se eller styra ditt skrivbord över nätverket."
@@ -179,90 +144,90 @@ msgid "Question"
 msgstr "Fråga"
 
 #: ../server/vino-prompt.glade.h:5
-#: ../server/vino-util.c:63
+#: ../server/vino-util.c:62
 msgid "_Allow"
 msgstr "_Tillåt"
 
 #: ../server/vino-prompt.glade.h:6
-#: ../server/vino-util.c:64
+#: ../server/vino-util.c:63
 msgid "_Refuse"
 msgstr "_Vägra"
 
-#: ../server/vino-server.c:897
+#: ../server/vino-server.c:988
 msgid "The screen for which to create a VNC server"
 msgstr "Skärmen för vilken en VNC-server ska skapas"
 
-#: ../server/vino-server.c:904
+#: ../server/vino-server.c:995
 msgid "On Hold"
 msgstr "Vänta"
 
-#: ../server/vino-server.c:905
+#: ../server/vino-server.c:996
 msgid "Place all clients on hold"
 msgstr "Placera alla klienter i vänteläge"
 
-#: ../server/vino-server.c:912
+#: ../server/vino-server.c:1003
 msgid "Prompt enabled"
 msgstr "Fråga aktiverad"
 
-#: ../server/vino-server.c:913
+#: ../server/vino-server.c:1004
 msgid "Prompt the user about connection attempts"
 msgstr "Fråga användaren om anslutningsförsök"
 
-#: ../server/vino-server.c:920
+#: ../server/vino-server.c:1011
 msgid "View Only"
 msgstr "Endast visning"
 
-#: ../server/vino-server.c:921
+#: ../server/vino-server.c:1012
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Tillåt inte inmatning från tangentbord/muspekare från klienter"
 
-#: ../server/vino-server.c:928
+#: ../server/vino-server.c:1019
 msgid "Local Only"
 msgstr "Endast lokala"
 
-#: ../server/vino-server.c:929
+#: ../server/vino-server.c:1020
 #: ../server/vino-server.schemas.in.h:13
 msgid "Only allow local connections"
 msgstr "Tillåt endast lokala anslutningar"
 
-#: ../server/vino-server.c:936
+#: ../server/vino-server.c:1027
 msgid "Require Encryption"
 msgstr "Kräv kryptering"
 
-#: ../server/vino-server.c:937
+#: ../server/vino-server.c:1028
 msgid "Require clients to use encryption"
 msgstr "Kräv att klienter använder kryptering"
 
-#: ../server/vino-server.c:944
+#: ../server/vino-server.c:1035
 msgid "Authentication methods"
 msgstr "Autentiseringsmetoder"
 
-#: ../server/vino-server.c:945
+#: ../server/vino-server.c:1036
 msgid "The authentication methods this server should allow"
 msgstr "De autentiseringsmetoder som denna server ska tillåta"
 
-#: ../server/vino-server.c:953
+#: ../server/vino-server.c:1044
 msgid "VNC Password"
 msgstr "VNC-lösenord"
 
-#: ../server/vino-server.c:954
+#: ../server/vino-server.c:1045
 msgid "The password (base64 encoded) used to authenticate types using the VncAuth method"
 msgstr "Lösenordet (base64-kodat) som används för att autentisera typer med VncAuth-metoden"
 
-#: ../server/vino-server.c:961
+#: ../server/vino-server.c:1052
 msgid "Use an alternative port"
 msgstr "Använd en alternativ port"
 
-#: ../server/vino-server.c:962
+#: ../server/vino-server.c:1053
 msgid "Listen on the port specified by the 'alternative-port' property"
 msgstr "Lyssna på porten som angivits av egenskapen \"alternative-port\""
 
-#: ../server/vino-server.c:969
+#: ../server/vino-server.c:1060
 #: ../server/vino-server.schemas.in.h:2
 msgid "Alternative port number"
 msgstr "Alternativt portnummer"
 
-#: ../server/vino-server.c:970
+#: ../server/vino-server.c:1061
 msgid "Listen on the specified port number if the 'use-alternative-port' property is TRUE"
 msgstr "Lyssna på det angivna portnumret om egenskapen \"use-alternative-port\" är SANT"
 
@@ -346,6 +311,139 @@ msgstr "Fjärrskrivbordsservern kör redan. Avslutar...\n"
 msgid "Problem registering the remote desktop server with bonobo-activation; exiting ...\n"
 msgstr "Problem vid registrering av fjärrskrivbordsservern i bonobo-activation. Avslutar...\n"
 
+#: ../server/vino-status-icon.c:153
+#, c-format
+msgid ""
+"There was an error displaying preferences:\n"
+"%s"
+msgstr ""
+"Det uppstod ett fel vid visning av inställningarna:\n"
+"%s"
+
+#: ../server/vino-status-icon.c:218
+msgid "Licensed under the GNU General Public License Version 2"
+msgstr "Licensierad under GNU General Public License version 2"
+
+#: ../server/vino-status-icon.c:219
+msgid ""
+"Power Manager is free software; you can redistribute it and/or\n"
+"modify it under the terms of the GNU General Public License\n"
+"as published by the Free Software Foundation; either version 2\n"
+"of the License, or (at your option) any later version."
+msgstr ""
+"Vino är fri programvara. Du kan distribuera det och/eller\n"
+"modifiera det under villkoren i GNU General Public License, publicerad\n"
+"av Free Software Foundation, antingen version 2 eller (om du så vill)\n"
+"någon senare version."
+
+#: ../server/vino-status-icon.c:223
+msgid ""
+"Vino is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+"GNU General Public License for more details."
+msgstr ""
+"Vino distribueras i hopp om att det ska vara användbart, men UTAN\n"
+"NÅGON SOM HELST GARANTI, även utan underförstådd garanti\n"
+"om SÄLJBARHET eller LÄMPLIGHET FÖR NÅGOT SPECIELLT ÄNDAMÅL.\n"
+"Se GNU General Public License för ytterligare information."
+
+#: ../server/vino-status-icon.c:227
+msgid ""
+"You should have received a copy of the GNU General Public License\n"
+"along with this program; if not, write to the Free Software\n"
+"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+"02110-1301, USA."
+msgstr ""
+"Du bör ha fått en kopia av GNU General Public License tillsammans\n"
+"med detta program. Om inte, skriv till Free Software\n"
+"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+"02110-1301, USA."
+
+#: ../server/vino-status-icon.c:232
+msgid "translator-credits"
+msgstr ""
+"Daniel Nylander\n"
+"Christian Rose\n"
+"\n"
+"Skicka synpunkter på översättningen till\n"
+"tp-sv@listor.tp-sv.se"
+
+#: ../server/vino-status-icon.c:245
+msgid "GNOME Remote Access"
+msgstr "GNOME-fjärråtkomst"
+
+#. "website", "www",
+#: ../server/vino-status-icon.c:250
+msgid "Shares your desktop with others"
+msgstr "Dela ditt skrivbord med andra"
+
+#: ../server/vino-status-icon.c:268
+msgid "Are you sure you want to disconnect the remote machine?"
+msgstr "Är du säker på att du vill koppla från fjärrmaskinen?"
+
+#: ../server/vino-status-icon.c:271
+msgid "GNOME Remote Access - Confirmation"
+msgstr "GNOME-fjärråtkomst - Bekräftelse"
+
+#: ../server/vino-status-icon.c:279
+msgid "Leave as it is"
+msgstr "Lämna det som det är"
+
+#: ../server/vino-status-icon.c:280
+msgid "Disconnect"
+msgstr "Koppla från"
+
+#: ../server/vino-status-icon.c:284
+#, c-format
+msgid "The remote user from the machine '%s' will be disconnected. Are you sure?"
+msgstr "Fjärranvändaren från maskinen \"%s\" kommer att kopplas från. Är du säker?"
+
+#. Preferences
+#: ../server/vino-status-icon.c:320
+msgid "_Preferences"
+msgstr "_Inställningar"
+
+#. Information about connected clients
+#: ../server/vino-status-icon.c:337
+msgid "Connected machines, click to disconnect"
+msgstr "Anslutna maskiner, klicka för att koppla från"
+
+#: ../server/vino-status-icon.c:355
+msgid " is watching your desktop"
+msgstr " ser ditt skrivbord"
+
+#: ../server/vino-status-icon.c:357
+msgid " is controlling your desktop"
+msgstr " styr ditt skrivbord"
+
+#. Help
+#: ../server/vino-status-icon.c:378
+msgid "_Help"
+msgstr "_Hjälp"
+
+#. About
+#: ../server/vino-status-icon.c:386
+msgid "_About"
+msgstr "_Om"
+
+#: ../server/vino-status-icon.c:418
+msgid "One person is connected"
+msgstr "En person är ansluten"
+
+#: ../server/vino-status-icon.c:420
+#, c-format
+msgid "%d people are connected"
+msgstr "%d personer är anslutna"
+
+#: ../server/vino-status-icon.c:469
+msgid "Server"
+msgstr "Server"
+
+#: ../server/vino-status-icon.c:470
+msgid "The server"
+msgstr "Servern"
+
 #: ../session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
 msgstr "Fjärrskrivbordsservern dog, startar om\n"
@@ -372,6 +470,24 @@ msgstr "Startar fjärrskrivbordsserver"
 msgid "Not starting remote desktop server"
 msgstr "Startar inte fjärrskrivbordsserver"
 
+#~ msgid "    "
+#~ msgstr "    "
+#~ msgid "        "
+#~ msgstr "        "
+#~ msgid "*"
+#~ msgstr "*"
+#~ msgid "Address"
+#~ msgstr "Adress"
+#~ msgid "The address pointed to by the widget"
+#~ msgstr "Den adress som pekas på av widgeten"
+#~ msgid "Tooltip"
+#~ msgstr "Vertygstips"
+#~ msgid "A tooltip for this URL"
+#~ msgstr "Ett verktygstips för denna URL"
+#~ msgid "URL color"
+#~ msgstr "URL-färg"
+#~ msgid "The color of the URL's label"
+#~ msgstr "Färgen på URL:ens etikett"
 #~ msgid ""
 #~ "If true, remote users accessing the desktop are required to be able "
 #~ "support encyrption. It is highly recommended that you use a client which "
@@ -380,8 +496,6 @@ msgstr "Startar inte fjärrskrivbordsserver"
 #~ "Om detta är sant krävs att fjärranvändare som vill komma åt skrivbordet "
 #~ "stöder kryptering. Det rekommenderas varmt att du använder en klient som "
 #~ "stöder kryptering såvida du inte litar på det mellanliggande nätverket."
-#~ msgid "Another user is trying to view your desktop."
-#~ msgstr "En annan användare försöker att se ditt skrivbord."
 #~ msgid "Remote Desktop server already running; exiting...\n"
 #~ msgstr "Fjärrskrivbordsservern kör redan. Avslutar...\n"
 #~ msgid ""
@@ -396,8 +510,4 @@ msgstr "Startar inte fjärrskrivbordsserver"
 #~ msgstr "Säkerhet"
 #~ msgid "Sharing"
 #~ msgstr "Delning"
-#~ msgid "_About..."
-#~ msgstr "_Om..."
-#~ msgid "_Help"
-#~ msgstr "_Hjälp"
 
