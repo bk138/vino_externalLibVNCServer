@@ -56,18 +56,14 @@ vino_status_icon_finalize (GObject *object)
     g_slist_free (icon->priv->clients);
   icon->priv->clients = NULL;
 
-  g_free (icon->priv);
-  icon->priv = NULL;
-
-  if (G_OBJECT_CLASS (vino_status_icon_parent_class)->finalize)
-    G_OBJECT_CLASS (vino_status_icon_parent_class)->finalize (object);
+  G_OBJECT_CLASS (vino_status_icon_parent_class)->finalize (object);
 }
 
 
 static void
 vino_status_icon_init (VinoStatusIcon *icon)
 {
-  icon->priv = g_new0 (VinoStatusIconPrivate, 1);
+  icon->priv = G_TYPE_INSTANCE_GET_PRIVATE (icon, VINO_TYPE_STATUS_ICON, VinoStatusIconPrivate);
 }
 
 static void
@@ -118,7 +114,9 @@ vino_status_icon_new (VinoServer *server,
   return g_object_new (VINO_TYPE_STATUS_ICON,
                        "icon-name", "gnome-remote-desktop",
                        "server", server,
-                       /*"screen", screen,*/ /*FIXME: available in gtk 2.12*/
+#if GTK_CHECK_VERSION (2, 11, 0)
+                       "screen", screen,
+#endif
                        NULL);
 }
 
@@ -301,10 +299,11 @@ label_expose (GtkWidget *widget)
 }
 
 static void
-vino_status_icon_popup_menu (VinoStatusIcon *icon,
-			    guint            button,
-			    guint            time)
+vino_status_icon_popup_menu (GtkStatusIcon *status_icon,
+			     guint          button,
+			     guint32        timestamp)
 {
+  VinoStatusIcon *icon = VINO_STATUS_ICON (status_icon);
   GtkWidget  *item;
   GtkWidget  *label;
   VinoClient *client = NULL;
@@ -392,37 +391,35 @@ vino_status_icon_popup_menu (VinoStatusIcon *icon,
 
   gtk_widget_show_all (GTK_WIDGET (icon->priv->menu));
   gtk_menu_popup (GTK_MENU (icon->priv->menu), NULL, NULL,
-		gtk_status_icon_position_menu, icon,
-		1, gtk_get_current_event_time());
-
+		  gtk_status_icon_position_menu, icon,
+		  button, timestamp);
+  if (button == 0)
+    gtk_menu_shell_select_first (GTK_MENU_SHELL (icon->priv->menu), FALSE);
 }
 
 static void
-vino_status_icon_activate (VinoStatusIcon *icon)
+vino_status_icon_activate (GtkStatusIcon *icon)
 {
-  vino_status_icon_popup_menu (icon, 1, 1);
+  vino_status_icon_popup_menu (icon, 1, gtk_get_current_event_time ());
 }
 
 static void
 vino_status_icon_update_tooltip (VinoStatusIcon *icon)
 {
-  GString *tooltip;
+  char *tooltip = NULL;
   int number_of_clients = g_slist_length (icon->priv->clients);
   
   if (number_of_clients > 0)
     {
       /* Set its tooltip, based on number of connected clients */
-      tooltip = g_string_new ("");
-
-      if (number_of_clients == 1)
-        g_string_printf (tooltip, _("One person is connected"));
-      else
-        g_string_printf (tooltip, _("%d people are connected"), number_of_clients);
-
-      gtk_status_icon_set_tooltip (GTK_STATUS_ICON(icon), tooltip->str);
-
-      g_string_free (tooltip, TRUE);
+      tooltip = g_strdup_printf (ngettext ("One person is connected",
+                                           "%d people are connected",
+                                           number_of_clients),
+                                 number_of_clients);
     }
+  
+  gtk_status_icon_set_tooltip (GTK_STATUS_ICON(icon), tooltip);
+  g_free (tooltip);
 }
 
 void
@@ -455,19 +452,26 @@ static void
 vino_status_icon_class_init (VinoStatusIconClass *klass)
 {
   GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
-  
+  GtkStatusIconClass *status_icon_class = GTK_STATUS_ICON_CLASS (klass);
+
   gobject_class->finalize     = vino_status_icon_finalize;
   gobject_class->set_property = vino_status_icon_set_property;
   gobject_class->get_property = vino_status_icon_get_property;
 
-  GTK_STATUS_ICON_CLASS(klass)->activate   = vino_status_icon_popup_menu;
-  GTK_STATUS_ICON_CLASS(klass)->popup_menu = vino_status_icon_activate;
+  status_icon_class->activate   = vino_status_icon_activate;
+  status_icon_class->popup_menu = vino_status_icon_popup_menu;
 
   g_object_class_install_property (gobject_class,
 				   PROP_SERVER,
 				   g_param_spec_object ("server",
-							_("Server"),
-							_("The server"),
+							"Server",
+							"The server",
 							VINO_TYPE_SERVER,
-							G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
+							G_PARAM_READWRITE |
+							G_PARAM_CONSTRUCT_ONLY |
+							G_PARAM_STATIC_NAME |
+							G_PARAM_STATIC_NICK |
+							G_PARAM_STATIC_BLURB));
+
+  g_type_class_add_private (gobject_class, sizeof (VinoStatusIconPrivate));
 }

@@ -1,3 +1,11 @@
+2006-12-12  Christian Persch  <chpe@cvs.gnome.org>
+
+	* server/vino-status-icon.c: (vino_status_icon_finalize),
+	(vino_status_icon_init), (vino_status_icon_new),
+	(vino_status_icon_popup_menu), (vino_status_icon_activate),
+	(vino_status_icon_update_tooltip), (vino_status_icon_class_init):
+	Fix some buglets and add some improvements. Bug #385058.
+
 2006-12-12  Andre Klapper  <a9016009@gmx.de>
 	
 	* server/vino-status-icon.c: correct license string.
