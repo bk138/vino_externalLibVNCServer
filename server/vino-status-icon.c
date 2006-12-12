@@ -216,7 +216,7 @@ vino_status_icon_about (GtkMenuItem    *item,
 	//	NULL};
   const char *license[] = {
 		N_("Licensed under the GNU General Public License Version 2"),
-		N_("Power Manager is free software; you can redistribute it and/or\n"
+		N_("Vino is free software; you can redistribute it and/or\n"
 		   "modify it under the terms of the GNU General Public License\n"
 		   "as published by the Free Software Foundation; either version 2\n"
 		   "of the License, or (at your option) any later version."),
