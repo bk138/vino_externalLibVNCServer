@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-11 19:22+0100\n"
-"PO-Revision-Date: 2006-12-12 00:12+0100\n"
+"POT-Creation-Date: 2006-12-13 11:38+0100\n"
+"PO-Revision-Date: 2006-12-13 18:23+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgid "Send this command by email"
 msgstr "Skicka detta kommando med e-post"
 
 #: ../capplet/vino-preferences.c:796
-#: ../server/vino-status-icon.c:187
+#: ../server/vino-status-icon.c:185
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -311,7 +311,7 @@ msgstr "Fjärrskrivbordsservern kör redan. Avslutar...\n"
 msgid "Problem registering the remote desktop server with bonobo-activation; exiting ...\n"
 msgstr "Problem vid registrering av fjärrskrivbordsservern i bonobo-activation. Avslutar...\n"
 
-#: ../server/vino-status-icon.c:153
+#: ../server/vino-status-icon.c:151
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
@@ -320,13 +320,13 @@ msgstr ""
 "Det uppstod ett fel vid visning av inställningarna:\n"
 "%s"
 
-#: ../server/vino-status-icon.c:218
+#: ../server/vino-status-icon.c:216
 msgid "Licensed under the GNU General Public License Version 2"
 msgstr "Licensierad under GNU General Public License version 2"
 
-#: ../server/vino-status-icon.c:219
+#: ../server/vino-status-icon.c:217
 msgid ""
-"Power Manager is free software; you can redistribute it and/or\n"
+"Vino is free software; you can redistribute it and/or\n"
 "modify it under the terms of the GNU General Public License\n"
 "as published by the Free Software Foundation; either version 2\n"
 "of the License, or (at your option) any later version."
@@ -336,7 +336,7 @@ msgstr ""
 "av Free Software Foundation, antingen version 2 eller (om du så vill)\n"
 "någon senare version."
 
-#: ../server/vino-status-icon.c:223
+#: ../server/vino-status-icon.c:221
 msgid ""
 "Vino is distributed in the hope that it will be useful,\n"
 "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
@@ -348,7 +348,7 @@ msgstr ""
 "om SÄLJBARHET eller LÄMPLIGHET FÖR NÅGOT SPECIELLT ÄNDAMÅL.\n"
 "Se GNU General Public License för ytterligare information."
 
-#: ../server/vino-status-icon.c:227
+#: ../server/vino-status-icon.c:225
 msgid ""
 "You should have received a copy of the GNU General Public License\n"
 "along with this program; if not, write to the Free Software\n"
@@ -360,7 +360,7 @@ msgstr ""
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
 "02110-1301, USA."
 
-#: ../server/vino-status-icon.c:232
+#: ../server/vino-status-icon.c:230
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander\n"
@@ -369,80 +369,71 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "tp-sv@listor.tp-sv.se"
 
-#: ../server/vino-status-icon.c:245
+#: ../server/vino-status-icon.c:243
 msgid "GNOME Remote Access"
 msgstr "GNOME-fjärråtkomst"
 
 #. "website", "www",
-#: ../server/vino-status-icon.c:250
+#: ../server/vino-status-icon.c:248
 msgid "Shares your desktop with others"
 msgstr "Dela ditt skrivbord med andra"
 
-#: ../server/vino-status-icon.c:268
+#: ../server/vino-status-icon.c:266
 msgid "Are you sure you want to disconnect the remote machine?"
 msgstr "Är du säker på att du vill koppla från fjärrmaskinen?"
 
-#: ../server/vino-status-icon.c:271
+#: ../server/vino-status-icon.c:269
 msgid "GNOME Remote Access - Confirmation"
 msgstr "GNOME-fjärråtkomst - Bekräftelse"
 
-#: ../server/vino-status-icon.c:279
+#: ../server/vino-status-icon.c:277
 msgid "Leave as it is"
 msgstr "Lämna det som det är"
 
-#: ../server/vino-status-icon.c:280
+#: ../server/vino-status-icon.c:278
 msgid "Disconnect"
 msgstr "Koppla från"
 
-#: ../server/vino-status-icon.c:284
+#: ../server/vino-status-icon.c:282
 #, c-format
 msgid "The remote user from the machine '%s' will be disconnected. Are you sure?"
 msgstr "Fjärranvändaren från maskinen \"%s\" kommer att kopplas från. Är du säker?"
 
 #. Preferences
-#: ../server/vino-status-icon.c:320
+#: ../server/vino-status-icon.c:319
 msgid "_Preferences"
 msgstr "_Inställningar"
 
 #. Information about connected clients
-#: ../server/vino-status-icon.c:337
+#: ../server/vino-status-icon.c:336
 msgid "Connected machines, click to disconnect"
 msgstr "Anslutna maskiner, klicka för att koppla från"
 
-#: ../server/vino-status-icon.c:355
+#: ../server/vino-status-icon.c:354
 msgid " is watching your desktop"
 msgstr " ser ditt skrivbord"
 
-#: ../server/vino-status-icon.c:357
+#: ../server/vino-status-icon.c:356
 msgid " is controlling your desktop"
 msgstr " styr ditt skrivbord"
 
 #. Help
-#: ../server/vino-status-icon.c:378
+#: ../server/vino-status-icon.c:377
 msgid "_Help"
 msgstr "_Hjälp"
 
 #. About
-#: ../server/vino-status-icon.c:386
+#: ../server/vino-status-icon.c:385
 msgid "_About"
 msgstr "_Om"
 
-#: ../server/vino-status-icon.c:418
-msgid "One person is connected"
-msgstr "En person är ansluten"
-
-#: ../server/vino-status-icon.c:420
+#. Set its tooltip, based on number of connected clients
+#: ../server/vino-status-icon.c:415
 #, c-format
-msgid "%d people are connected"
-msgstr "%d personer är anslutna"
-
-#: ../server/vino-status-icon.c:469
-msgid "Server"
-msgstr "Server"
-
-#: ../server/vino-status-icon.c:470
-msgid "The server"
-msgstr "Servern"
+msgid "One person is connected"
+msgid_plural "%d people are connected"
+msgstr[0] "En person är ansluten"
+msgstr[1] "%d personer är anslutna"
 
 #: ../session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
@@ -470,6 +461,12 @@ msgstr "Startar fjärrskrivbordsserver"
 msgid "Not starting remote desktop server"
 msgstr "Startar inte fjärrskrivbordsserver"
 
+#~ msgid "%d people are connected"
+#~ msgstr "%d personer är anslutna"
+#~ msgid "Server"
+#~ msgstr "Server"
+#~ msgid "The server"
+#~ msgstr "Servern"
 #~ msgid "    "
 #~ msgstr "    "
 #~ msgid "        "
