@@ -8,19 +8,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.11.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-29 17:20+0700\n"
-"PO-Revision-Date: 2006-01-29 17:37+0700\n"
+"POT-Creation-Date: 2006-12-15 17:35+0700\n"
+"PO-Revision-Date: 2006-12-15 18:06+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <l10n@opentle.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: capplet/vino-preferences.c:807
+#: capplet/vino-preferences.c:761
 msgid "Send this command by email"
 msgstr "ส่งคำสั่งนี้ทางอีเมล"
 
-#: capplet/vino-preferences.c:842
+#: capplet/vino-preferences.c:796 server/vino-status-icon.c:185
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -38,91 +39,55 @@ msgid "Set your remote desktop access preferences"
 msgstr "ปรับแต่งการเข้าถึงพื้นโต๊ะของคุณจากระยะไกล"
 
 #: capplet/vino-preferences.glade.h:1
-msgid "    "
-msgstr "    "
-
-#: capplet/vino-preferences.glade.h:2
-msgid "        "
-msgstr "        "
-
-#: capplet/vino-preferences.glade.h:3
-msgid "*"
-msgstr "*"
-
-#: capplet/vino-preferences.glade.h:4
 msgid "<b>Security</b>"
 msgstr "<b>ระบบรักษาความปลอดภัย</b>"
 
-#: capplet/vino-preferences.glade.h:5
+#: capplet/vino-preferences.glade.h:2
 msgid "<b>Sharing</b>"
 msgstr "<b>การแบ่งใช้</b>"
 
-#: capplet/vino-preferences.glade.h:6
+#: capplet/vino-preferences.glade.h:3
 msgid "A_sk you for confirmation"
 msgstr "_ถามการยืนยันจากคุณก่อน"
 
-#: capplet/vino-preferences.glade.h:7
+#: capplet/vino-preferences.glade.h:4
 msgid "Allow other users to _view your desktop"
 msgstr "อนุญาตให้ผู้ใช้อื่น_มองพื้นโต๊ะของคุณ"
 
-#: capplet/vino-preferences.glade.h:8
+#: capplet/vino-preferences.glade.h:5
 msgid "Remote Desktop Preferences"
 msgstr "ปรับแต่งพื้นโต๊ะระยะไกล"
 
-#: capplet/vino-preferences.glade.h:9
+#: capplet/vino-preferences.glade.h:6
 msgid "Some of these preferences are locked down"
 msgstr "การปรับแต่งบางส่วนถูกล็อคไว้ไม่ให้เปลี่ยน"
 
-#: capplet/vino-preferences.glade.h:10
+#: capplet/vino-preferences.glade.h:7
 msgid "Users can view your desktop using this command:"
 msgstr "ผู้ใช้ทั่วไปสามารถมองพื้นโต๊ะของคุณได้โดยใช้คำสั่ง:"
 
-#: capplet/vino-preferences.glade.h:11
+#: capplet/vino-preferences.glade.h:8
 msgid "When a user tries to view or control your desktop:"
 msgstr "เมื่อมีผู้ใช้พยายามมองหรือควบคุมพื้นโต๊ะของคุณ:"
 
-#: capplet/vino-preferences.glade.h:12
+#: capplet/vino-preferences.glade.h:9
 msgid "_Allow other users to control your desktop"
 msgstr "อนุญาตให้ผู้ใช้อื่น_ควบคุมพื้นโต๊ะของคุณ"
 
-#: capplet/vino-preferences.glade.h:13
+#: capplet/vino-preferences.glade.h:10
 msgid "_Password:"
 msgstr "_รหัสผ่าน:"
 
-#: capplet/vino-preferences.glade.h:14
+#: capplet/vino-preferences.glade.h:11
 msgid "_Require the user to enter this password:"
 msgstr "ให้ผู้ใช้นั้น_ป้อนรหัสผ่านนี้:"
 
-#: capplet/vino-url.c:158
-msgid "Address"
-msgstr "ที่อยู่"
-
-#: capplet/vino-url.c:159
-msgid "The address pointed to by the widget"
-msgstr "ที่อยู่ที่ชี้โดยวิดเจ็ตนี้"
-
-#: capplet/vino-url.c:166
-msgid "Tooltip"
-msgstr "คำแนะนำ"
-
-#: capplet/vino-url.c:167
-msgid "A tooltip for this URL"
-msgstr "คำแนะนำสำหรับ URL นี้"
-
-#: capplet/vino-url.c:173
-msgid "URL color"
-msgstr "สีของ URL"
-
-#: capplet/vino-url.c:174
-msgid "The color of the URL's label"
-msgstr "สีของป้าย URL"
-
-#: server/vino-fb.c:954 server/vino-prompt.c:144
-#: server/vino-server.c:853
+#: server/vino-fb.c:984 server/vino-prompt.c:143
+#: server/vino-server.c:987
 msgid "Screen"
 msgstr "สกรีน"
 
-#: server/vino-fb.c:955
+#: server/vino-fb.c:985
 msgid "The screen to be monitored"
 msgstr "สกรีนที่จะเฝ้ามอง"
 
@@ -145,18 +110,19 @@ msgstr "0"
 
 #.
 #. * Translators: this string is used ONLY if you
-#. * translated "vino-mdns:showusername" to "1"
+#. * translated "vino-mdns:showusername" to anything
+#. * other than "1"
 #.
-#: server/vino-mdns.c:70
+#: server/vino-mdns.c:71
 #, c-format
 msgid "%s's remote desktop"
 msgstr "พื้นโต๊ะระยะไกลของ %s"
 
-#: server/vino-prompt.c:145
+#: server/vino-prompt.c:144
 msgid "The screen on which to display the prompt"
 msgstr "สกรีนที่จะแสดงคำถาม"
 
-#: server/vino-prompt.c:390
+#: server/vino-prompt.c:361
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -181,81 +147,107 @@ msgstr "คุณจะอนุญาตหรือไม่?"
 msgid "Question"
 msgstr "คำถาม"
 
-#: server/vino-prompt.glade.h:5 server/vino-util.c:63
+#: server/vino-prompt.glade.h:5 server/vino-util.c:62
 msgid "_Allow"
 msgstr "_อนุญาต"
 
-#: server/vino-prompt.glade.h:6 server/vino-util.c:64
+#: server/vino-prompt.glade.h:6 server/vino-util.c:63
 msgid "_Refuse"
 msgstr "_ปฏิเสธ"
 
-#: server/vino-server.c:854
+#: server/vino-server.c:988
 msgid "The screen for which to create a VNC server"
 msgstr "สกรีนที่จะสร้างเซิร์ฟเวอร์ VNC"
 
-#: server/vino-server.c:861
+#: server/vino-server.c:995
 msgid "On Hold"
 msgstr "ยับยั้งไว้"
 
-#: server/vino-server.c:862
+#: server/vino-server.c:996
 msgid "Place all clients on hold"
 msgstr "ยับยั้งไคลเอนต์ทั้งหมดไว้"
 
-#: server/vino-server.c:869
+#: server/vino-server.c:1003
 msgid "Prompt enabled"
 msgstr "เปิดใช้การถาม"
 
-#: server/vino-server.c:870
+#: server/vino-server.c:1004
 msgid "Prompt the user about connection attempts"
 msgstr "ถามผู้ใช้เมื่อมีความพยายามเชื่อมต่อ"
 
-#: server/vino-server.c:877
+#: server/vino-server.c:1011
 msgid "View Only"
 msgstr "มองอย่างเดียว"
 
-#: server/vino-server.c:878
+#: server/vino-server.c:1012
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "ไม่รับข้อมูลแป้นพิมพ์/เมาส์จากไคลเอนต์"
 
-#: server/vino-server.c:885
+#: server/vino-server.c:1019
+msgid "Local Only"
+msgstr "ในเครื่องเท่านั้น"
+
+#: server/vino-server.c:1020 server/vino-server.schemas.in.h:13
+msgid "Only allow local connections"
+msgstr "รับการเชื่อมต่อจากในเครื่องเดียวกันเท่านั้น"
+
+#: server/vino-server.c:1027
 msgid "Require Encryption"
 msgstr "บังคับการเข้ารหัส"
 
-#: server/vino-server.c:886
+#: server/vino-server.c:1028
 msgid "Require clients to use encryption"
 msgstr "บังคับให้ไคลเอนต์ต้องเข้ารหัสข้อมูล"
 
-#: server/vino-server.c:893
+#: server/vino-server.c:1035
 msgid "Authentication methods"
 msgstr "วิธีตรวจสอบสิทธิ์"
 
-#: server/vino-server.c:894
+#: server/vino-server.c:1036
 msgid "The authentication methods this server should allow"
 msgstr "วิธีตรวจสอบสิทธิ์ทั้งหมดที่เซิร์ฟเวอร์นี้อนุญาต"
 
-#: server/vino-server.c:902
+#: server/vino-server.c:1044
 msgid "VNC Password"
 msgstr "รหัสผ่าน VNC"
 
-#: server/vino-server.c:903
+#: server/vino-server.c:1045
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
 msgstr "รหัสผ่าน (ลงรหัสแบบ base64) ที่จะใช้ตรวจสอบสิทธิ์ด้วยวิธี VncAuth"
 
+#: server/vino-server.c:1052
+msgid "Use an alternative port"
+msgstr "ใช้พอร์ตอื่น"
+
+#: server/vino-server.c:1053
+msgid "Listen on the port specified by the 'alternative-port' property"
+msgstr "รอรับการเชื่อมต่อที่พอร์ตที่ระบุในค่า 'alternative-port'"
+
+#: server/vino-server.c:1060 server/vino-server.schemas.in.h:2
+msgid "Alternative port number"
+msgstr "หมายเลขพอร์ตอื่นที่จะใช้"
+
+#: server/vino-server.c:1061
+msgid ""
+"Listen on the specified port number if the 'use-alternative-port' property "
+"is TRUE"
+msgstr "รอรับการเชื่อมต่อที่พอร์ตที่กำหนด ถ้าค่า 'use-alternative-port' เป็นจริง"
+
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
 msgstr "วิธีตรวจสอบสิทธิ์ที่อนุญาต"
 
-#: server/vino-server.schemas.in.h:2
+#: server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "ที่อยู่อีเมลที่จะส่ง URL ของพื้นโต๊ะระยะไกลไปให้"
 
-#: server/vino-server.schemas.in.h:3
+#: server/vino-server.schemas.in.h:4
 msgid "Enable remote desktop access"
 msgstr "เปิดใช้การเข้าถึงพื้นโต๊ะจากระยะไกล"
 
-#: server/vino-server.schemas.in.h:4
+#: server/vino-server.schemas.in.h:5
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
@@ -263,7 +255,7 @@ msgstr ""
 "ถ้าเป็นค่าจริง จะอนุญาตให้เข้าถึงพื้นโต๊ะจากระยะไกลผ่านโพรโทคอล RFB "
 "ผู้ใช้จากเครื่องอื่นจะสามารถเชื่อมต่อมายังพื้นโต๊ะได้ด้วย vncviewer"
 
-#: server/vino-server.schemas.in.h:5
+#: server/vino-server.schemas.in.h:6
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
@@ -272,7 +264,7 @@ msgstr ""
 "ถ้าเป็นค่าจริง จะไม่อนุญาตให้ผู้ใช้จากระยะไกลเข้าถึงพื้นโต๊ะ จนกว่าผู้ใช้บนเครื่องโฮสต์จะตอบรับ "
 "ขอแนะนำให้ใช้วิธีนี้ โดยเฉพาะเมื่อการเข้าถึงไม่มีการป้องกันไว้ด้วยรหัสผ่าน"
 
-#: server/vino-server.schemas.in.h:6
+#: server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote user's will not be able to use the mouse or keyboard."
@@ -280,7 +272,7 @@ msgstr ""
 "ถ้าเป็นค่าจริง ผู้ใช้จากระยะไกลที่เข้าถึงพื้นโต๊ะจะได้รับอนุญาตให้มองพื้นโต๊ะได้เท่านั้น "
 "โดยจะไม่สามารถใช้เมาส์หรือแป้นพิมพ์ได้"
 
-#: server/vino-server.schemas.in.h:7
+#: server/vino-server.schemas.in.h:8
 msgid ""
 "If true, remote users accessing the desktop are required to be able support "
 "encryption. It is highly recommended that you use a client which supports "
@@ -290,7 +282,29 @@ msgstr ""
 "ขอแนะนำอย่างมากให้ใช้ไคลเอนต์ที่สนับสนุนการเข้ารหัส "
 "ถ้าเครือข่ายระหว่างกลางไม่ใช่เครือข่ายที่วางใจได้"
 
-#: server/vino-server.schemas.in.h:8
+#: server/vino-server.schemas.in.h:9
+msgid ""
+"If true, the server will listen another port, instead of default (5900). The "
+"port must be specified in 'alternative_port' key."
+msgstr ""
+"ถ้าเป็นจริง เซิร์ฟเวอร์จะรอรับการเชื่อมต่อในพอร์ตอื่น แทนที่จะเป็นพอร์ตปกติ (5900) "
+"ต้องกำหนดพอร์ตในคีย์ 'alternative_port' ด้วย"
+
+#: server/vino-server.schemas.in.h:10
+msgid ""
+"If true, the server will only accept connections from localhost and network "
+"connections will be rejected. Set this option to true if you wish to "
+"exclusively use a tunneling mechanism to access the server, such as ssh."
+msgstr ""
+"ถ้าเป็นจริง เซิร์ฟเวอร์จะรับการเชื่อมต่อจาก localhost เท่านั้น "
+"และจะปฏิเสธการเชื่อมต่อจากเครือข่ายทั้งหมด คุณควรกำหนดค่านี้เป็นจริง "
+"ถ้าคุณต้องการใช้กลไกการติดต่อผ่านท่อ (tunnel) เช่น ssh ในการติดต่อกับเซิร์ฟเวอร์"
+
+#: server/vino-server.schemas.in.h:11
+msgid "Listen an alternative port"
+msgstr "รอรับการเชื่อมต่อที่พอร์ตอื่น"
+
+#: server/vino-server.schemas.in.h:12
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -302,23 +316,23 @@ msgstr ""
 "ค่าที่เป็นไปได้มีสองค่า; \"vnc\" จะถามรหัสผ่านกับผู้ใช้ระยะไกล (ตัวรหัสผ่านจะเก็บไว้ที่คีย์ "
 "vnc_password) ก่อนเชื่อมต่อ และ \"none\" จะอนุญาตให้ผู้ใช้ระยะไกลที่ไหนก็ได้เชื่อมต่อทั้งหมด"
 
-#: server/vino-server.schemas.in.h:9
+#: server/vino-server.schemas.in.h:14
 msgid "Only allow remote users to view the desktop"
 msgstr "อนุญาตให้ผู้ใช้ระยะไกลมองพื้นโต๊ะได้เท่านั้น"
 
-#: server/vino-server.schemas.in.h:10
+#: server/vino-server.schemas.in.h:15
 msgid "Password required for \"vnc\" authentication"
 msgstr "รหัสผ่านสำหรับการตรวจสอบสิทธิ์แบบ \"vnc\""
 
-#: server/vino-server.schemas.in.h:11
+#: server/vino-server.schemas.in.h:16
 msgid "Prompt the user before completing a connection"
 msgstr "ถามผู้ใช้ก่อนเชื่อมต่อ"
 
-#: server/vino-server.schemas.in.h:12
+#: server/vino-server.schemas.in.h:17
 msgid "Require encryption"
 msgstr "บังคับการเข้ารหัส"
 
-#: server/vino-server.schemas.in.h:13
+#: server/vino-server.schemas.in.h:18
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -327,7 +341,15 @@ msgstr ""
 "รหัสผ่านที่ผู้ใช้ระยะไกลจะถูกถามเมื่อใช้การตรวจสอบสิทธิ์แบบ \"vnc\" "
 "รหัสผ่านที่เก็บในคีย์นี้จะลงรหัสไว้แบบ base64"
 
-#: server/vino-server.schemas.in.h:14
+#: server/vino-server.schemas.in.h:19
+msgid ""
+"The port which the server will listen to if the 'use_alternative_port' key "
+"is set to true. Valid values are in the range from 5000 to 50000."
+msgstr ""
+"พอร์ตที่เซิร์ฟเวอร์จะรอรับการเชื่อมต่อ ถ้ามีการกำหนดคีย์ 'use_alternate_port' เป็นจริง "
+"ค่าที่ใช้การได้จะอยู่ในช่วงจาก 5000 ถึง 50000"
+
+#: server/vino-server.schemas.in.h:20
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
@@ -347,6 +369,123 @@ msgid ""
 msgstr ""
 "มีปัญหาในการลงทะเบียนเซิร์ฟเวอร์พื้นโต๊ะระยะไกลกับ bonobo-activation; "
 "จะออกจากโปรแกรม ...\n"
+
+#: server/vino-status-icon.c:151
+#, c-format
+msgid ""
+"There was an error displaying preferences:\n"
+"%s"
+msgstr ""
+"เกิดข้อผิดพลาดขณะแสดงค่าปรับแต่ง:\n"
+"%s"
+
+#: server/vino-status-icon.c:216
+msgid "Licensed under the GNU General Public License Version 2"
+msgstr "แจกจ่ายภายใต้สัญญาอนุญาต GNU General Public License รุ่นที่ 2"
+
+#: server/vino-status-icon.c:217
+msgid ""
+"Vino is free software; you can redistribute it and/or\n"
+"modify it under the terms of the GNU General Public License\n"
+"as published by the Free Software Foundation; either version 2\n"
+"of the License, or (at your option) any later version."
+msgstr ""
+"Vino เป็นซอฟต์แวร์เสรี คุณสามารถแจกจ่ายต่อ และ/หรือ แก้ไขโปรแกรมได้ ภายใต้เงื่อนไขของ\n"
+"GNU General Public License ที่เผยแพร่โดยมูลนิธิซอฟต์แวร์เสรี ไม่ว่าจะเป็นสัญญาอนุญาตรุ่นที่ 2\n"
+"หรือรุ่นถัดมา (ตามแต่คุณจะเลือก)"
+
+#: server/vino-status-icon.c:221
+msgid ""
+"Vino is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+"GNU General Public License for more details."
+msgstr ""
+"Vino เผยแพร่ด้วยความหวังว่าโปรแกรมจะมีประโยชน์ แต่ _ไม่มีการรับประกันใดๆ_\n"
+"ไม่มีแม้การรับประกัน _อรรถประโยชน์เชิงพาณิชย์_ หรือ\n"
+"_ความเหมาะสมสำหรับวัตถุประสงค์เฉพาะกิจใดๆ_ กรุณาอ่าน GNU General Public License\n"
+"เพื่อดูรายละเอียดเพิ่มเติม"
+
+#: server/vino-status-icon.c:225
+msgid ""
+"You should have received a copy of the GNU General Public License\n"
+"along with this program; if not, write to the Free Software\n"
+"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+"02110-1301, USA."
+msgstr ""
+"คุณควรจะได้รับสำเนาของ GNU General Public License มาพร้อมกับโปรแกรมนี้\n"
+"ถ้าคุณไม่ได้รับ กรุณาติดต่อไปที่ Free Software Foundation, Inc., 51 Franklin Street,\n"
+"Fifth Floor, Boston, MA  02110-1307  USA"
+
+#: server/vino-status-icon.c:230
+msgid "translator-credits"
+msgstr "เทพพิทักษ์ การุญบุญญานันท์ <thep@linux.thai.net>"
+
+#: server/vino-status-icon.c:243
+msgid "GNOME Remote Access"
+msgstr "พื้นโต๊ะระยะไกลของ GNOME"
+
+#. "website", "www",
+#: server/vino-status-icon.c:248
+msgid "Shares your desktop with others"
+msgstr "แบ่งพื้นโต๊ะของคุณให้ผู้อื่นใช้ร่วม"
+
+#: server/vino-status-icon.c:266
+msgid "Are you sure you want to disconnect the remote machine?"
+msgstr "ยืนยันที่จะตัดการเชื่อมต่อของเครื่องอื่นหรือไม่?"
+
+#: server/vino-status-icon.c:269
+msgid "GNOME Remote Access - Confirmation"
+msgstr "พื้นโต๊ะระยะไกลของ GNOME - ยืนยัน"
+
+#: server/vino-status-icon.c:277
+msgid "Leave as it is"
+msgstr "ปล่อยไว้เหมือนเดิม"
+
+#: server/vino-status-icon.c:278
+msgid "Disconnect"
+msgstr "ตัดการเชื่อมต่อ"
+
+#: server/vino-status-icon.c:282
+#, c-format
+msgid ""
+"The remote user from the machine '%s' will be disconnected. Are you sure?"
+msgstr "ผู้ใช้ระยะไกลจากเครื่อง '%s' จะถูกตัดการเชื่อมต่อ คุณแน่ใจหรือไม่?"
+
+#. Preferences
+#: server/vino-status-icon.c:319
+msgid "_Preferences"
+msgstr "_ปรับแต่ง"
+
+#. Information about connected clients
+#: server/vino-status-icon.c:336
+msgid "Connected machines, click to disconnect"
+msgstr "เครื่องที่เชื่อมต่ออยู่, คลิกเพื่อตัดการเชื่อมต่อ"
+
+#: server/vino-status-icon.c:354
+msgid " is watching your desktop"
+msgstr " กำลังมองพื้นโต๊ะของคุณ"
+
+#: server/vino-status-icon.c:356
+msgid " is controlling your desktop"
+msgstr " กำลังควบคุมพื้นโต๊ะของคุณ"
+
+#. Help
+#: server/vino-status-icon.c:377
+msgid "_Help"
+msgstr "_วิธีใช้"
+
+#. About
+#: server/vino-status-icon.c:385
+msgid "_About"
+msgstr "เ_กี่ยวกับ"
+
+#. Set its tooltip, based on number of connected clients
+#: server/vino-status-icon.c:415
+#, c-format
+msgid "One person is connected"
+msgid_plural "%d people are connected"
+msgstr[0] "เชื่อมต่ออยู่ %d คน"
 
 #: session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
@@ -373,3 +512,30 @@ msgstr "กำลังเริ่มใช้งานเซิร์ฟเว
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "จะไม่เรียกใช้เซิร์ฟเวอร์พื้นโต๊ะระยะไกล"
+
+#~ msgid "    "
+#~ msgstr "    "
+
+#~ msgid "        "
+#~ msgstr "        "
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid "Address"
+#~ msgstr "ที่อยู่"
+
+#~ msgid "The address pointed to by the widget"
+#~ msgstr "ที่อยู่ที่ชี้โดยวิดเจ็ตนี้"
+
+#~ msgid "Tooltip"
+#~ msgstr "คำแนะนำ"
+
+#~ msgid "A tooltip for this URL"
+#~ msgstr "คำแนะนำสำหรับ URL นี้"
+
+#~ msgid "URL color"
+#~ msgstr "สีของ URL"
+
+#~ msgid "The color of the URL's label"
+#~ msgstr "สีของป้าย URL"
