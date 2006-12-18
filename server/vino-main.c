@@ -69,6 +69,8 @@ main (int argc, char **argv)
 #endif
 #endif /* HAVE_GNUTLS */
 
+  gtk_window_set_default_icon_name ("gnome-remote-desktop");
+
   if (!vino_shell_register (&argc, argv))
     return 1;
 

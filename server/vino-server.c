@@ -143,7 +143,6 @@ static void
 vino_server_handle_client_gone (rfbClientPtr rfb_client)
 {
   VinoServer *server = VINO_SERVER (rfb_client->screen->screenData);
-  VinoClient *client = NULL;
   GSList     *l;
 
   g_return_if_fail (VINO_IS_SERVER (server));
@@ -154,7 +153,7 @@ vino_server_handle_client_gone (rfbClientPtr rfb_client)
 
   for (l = server->priv->clients; l; l = l->next)
     {
-      client = (VinoClient *) l->data;
+      VinoClient *client = (VinoClient *) l->data;
 
       if (rfb_client == client->rfb_client)
 	{
@@ -1403,7 +1402,7 @@ vino_client_get_hostname (VinoClient *client)
 }
 
 void
-vino_server_disconnect_client (VinoClient *client)
+vino_client_disconnect (VinoClient *client)
 {
   rfbCloseClient (client->rfb_client);
   rfbClientConnectionGone (client->rfb_client);

@@ -59,7 +59,6 @@ vino_status_icon_finalize (GObject *object)
   G_OBJECT_CLASS (vino_status_icon_parent_class)->finalize (object);
 }
 
-
 static void
 vino_status_icon_init (VinoStatusIcon *icon)
 {
@@ -113,9 +112,9 @@ vino_status_icon_new (VinoServer *server,
   
   return g_object_new (VINO_TYPE_STATUS_ICON,
                        "icon-name", "gnome-remote-desktop",
-                       "server", server,
+                       "server",    server,
 #if GTK_CHECK_VERSION (2, 11, 0)
-                       "screen", screen,
+                       "screen",    screen,
 #endif
                        NULL);
 }
@@ -128,19 +127,25 @@ vino_status_icon_get_server (VinoStatusIcon *icon)
   return icon->priv->server;
 }
 
-
 static void
-vino_status_icon_preferences (GtkMenuItem    *item,
-                              VinoStatusIcon *icon)
+vino_status_icon_spawn_command (VinoStatusIcon *icon,
+                                const char     *command,
+                                const char     *error_format)
 {
-  const char *command = "vino-preferences";
-  GError *error = NULL;
+  GdkScreen *screen;
+  GError    *error;
 
   g_return_if_fail (VINO_IS_STATUS_ICON (icon));
 
-  if (! gdk_spawn_command_line_on_screen (vino_server_get_screen (icon->priv->server), /*FIXME: In gtk 2.12 we have screen property */
-                                          command,
-                                          &error))
+#if GTK_CHECK_VERSION (2, 11, 0)
+  screen = gtk_status_icon_get_screen (GTK_STATUS_ICON (icon));
+#else
+  screen = vino_server_get_screen (icon->priv->server);
+#endif
+
+  error = NULL;
+
+  if (!gdk_spawn_command_line_on_screen (screen, command, &error))
     {
       GtkWidget *message_dialog;
 
@@ -148,7 +153,7 @@ vino_status_icon_preferences (GtkMenuItem    *item,
 					       GTK_DIALOG_DESTROY_WITH_PARENT,
 					       GTK_MESSAGE_ERROR,
 					       GTK_BUTTONS_CLOSE,
-					       _("There was an error displaying preferences:\n%s"),
+                                               error_format,
 					       error->message);
       gtk_window_set_resizable (GTK_WINDOW (message_dialog), FALSE);
 
@@ -163,139 +168,140 @@ vino_status_icon_preferences (GtkMenuItem    *item,
 }
 
 static void
-vino_status_icon_help (GtkMenuItem    *item,
-                       VinoStatusIcon *icon)
+vino_status_icon_preferences (VinoStatusIcon *icon)
 {
-  const char *command = "yelp ghelp:user-guide?goscustdesk-90";
-  GError *error = NULL;
-
-  g_return_if_fail (VINO_IS_STATUS_ICON (icon));
-
-  if (! gdk_spawn_command_line_on_screen (vino_server_get_screen (icon->priv->server), /*FIXME: In gtk 2.12 we have screen property */
-                                          command,
-                                          &error))
-
-    {
-      GtkWidget *message_dialog;
-
-      message_dialog = gtk_message_dialog_new (NULL,
-					       GTK_DIALOG_DESTROY_WITH_PARENT,
-					       GTK_MESSAGE_ERROR,
-					       GTK_BUTTONS_CLOSE,
-					       _("There was an error displaying help:\n%s"),
-					       error->message);
-      gtk_window_set_resizable (GTK_WINDOW (message_dialog), FALSE);
-
-      g_signal_connect (message_dialog, "response",
-			G_CALLBACK (gtk_widget_destroy),
-			NULL);
-
-      gtk_widget_show (message_dialog);
-
-      g_error_free (error);
-    }
+  vino_status_icon_spawn_command (icon,
+                                  "vino-preferences",
+                                  _("There was an error displaying preferences:\n %s"));
 }
 
 static void
-vino_status_icon_about (GtkMenuItem    *item,
-                        VinoStatusIcon *icon)
+vino_status_icon_help (VinoStatusIcon *icon)
+{
+  vino_status_icon_spawn_command (icon,
+                                  "yelp ghelp:user-guide?goscustdesk-90",
+                                  _("There was an error displaying jelp:\n %s"));
+}
+
+static void
+vino_status_icon_about (VinoStatusIcon *icon)
 {
 
   g_return_if_fail (VINO_IS_STATUS_ICON (icon));
 
   const char *authors[] = {
-	     "Mark McLoughlin  <mark@skynet.ie>",
-	     "Calum Benson <calum.benson@sun.com>",
-             "Jonh Wendell <wendell@bani.com.br>",
-	     NULL};
-	//const char *documenters[] = {
-	//	NULL};
-	//const char *artists[] = {
-	//	NULL};
-  const char *license[] = {
-		N_("Licensed under the GNU General Public License Version 2"),
-		N_("Vino is free software; you can redistribute it and/or\n"
-		   "modify it under the terms of the GNU General Public License\n"
-		   "as published by the Free Software Foundation; either version 2\n"
-		   "of the License, or (at your option) any later version."),
-		N_("Vino is distributed in the hope that it will be useful,\n"
-		   "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-		   "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-		   "GNU General Public License for more details."),
-		N_("You should have received a copy of the GNU General Public License\n"
-		   "along with this program; if not, write to the Free Software\n"
-		   "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-		   "02110-1301, USA.")
-	};
-  	const char  *translators = _("translator-credits");
-	char	    *license_trans;
+    "Mark McLoughlin <mark@skynet.ie>",
+    "Calum Benson <calum.benson@sun.com>",
+    "Federico Mena Quintero <federico@ximian.com>",
+    "Sebastien Estienne <sebastien.estienne@gmail.com>",
+    "Shaya Potter <spotter@cs.columbia.edu>",
+    "Steven Zhang <steven.zhang@sun.com>",
+    "Srirama Sharma <srirama.sharma@wipro.com>",
+    "Jonh Wendell <wendell@bani.com.br>",
+    NULL
+  };
+  char *license;
+  char *translators;
 
-	/* Translators comment: put your own name here to appear in the about dialog. */
-  	if (!strcmp (translators, "translator-credits")) {
-		translators = NULL;
-	}
+  license = _("Licensed under the GNU General Public License Version 2\n\n"
+              "Vino is free software; you can redistribute it and/or\n"
+              "modify it under the terms of the GNU General Public License\n"
+              "as published by the Free Software Foundation; either version 2\n"
+              "of the License, or (at your option) any later version.\n\n"
+              "Vino is distributed in the hope that it will be useful,\n"
+              "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+              "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n"
+              "GNU General Public License for more details.\n\n"
+              "You should have received a copy of the GNU General Public License\n"
+              "along with this program; if not, write to the Free Software\n"
+              "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+              "02110-1301, USA.\n");
 
-	license_trans = g_strconcat (_(license[0]), "\n\n", _(license[1]), "\n\n",
-				     _(license[2]), "\n\n", _(license[3]), "\n",  NULL);
+  /* Translators comment: put your own name here to appear in the about dialog. */
+  translators = _("translator-credits");
 
-	gtk_window_set_default_icon_name ("gnome-remote-desktop");
-	gtk_show_about_dialog (NULL,
-			       "name", _("GNOME Remote Access"),
-			       "version", VERSION,
-			       //"copyright", "Copyright \xc2\xa9 2005-2006 Richard Hughes",
-			       "license", license_trans,
-			       //"website", "www",
-			       "comments", _("Shares your desktop with others"),
-			       "authors", authors,
-			       //"documenters", documenters,
-			       //"artists", artists,
-			       "translator-credits", translators,
-			       "logo-icon-name", "gnome-remote-desktop",
-			       NULL);
-	g_free (license_trans);
-}
+  if (!strcmp (translators, "translator-credits"))
+    translators = NULL;
 
-static void
-vino_status_icon_disconnect_client (GtkMenuItem *item,
-                                    VinoClient  *client)
-{
-  GtkMessageDialog *dialog = GTK_MESSAGE_DIALOG(gtk_message_dialog_new (NULL,
-						GTK_DIALOG_DESTROY_WITH_PARENT,
-						GTK_MESSAGE_OTHER,
-						GTK_BUTTONS_NONE,
-						_("Are you sure you want to disconnect the remote machine?")));
-
-  gtk_window_set_icon_name (GTK_WINDOW(dialog), "gnome-remote-desktop");
-  gtk_window_set_title (GTK_WINDOW(dialog), _("GNOME Remote Access - Confirmation"));
-  gtk_window_set_skip_taskbar_hint (GTK_WINDOW(dialog), FALSE);
-
-  GtkWidget *image = gtk_image_new_from_icon_name ("gnome-remote-desktop", GTK_ICON_SIZE_DIALOG);
-  gtk_widget_show (image);
-  gtk_message_dialog_set_image (dialog, image);
-
-  gtk_dialog_add_buttons (GTK_DIALOG (dialog),
-                         _("Leave as it is"), GTK_RESPONSE_NO,
-                         _("Disconnect"), GTK_RESPONSE_YES,
+  gtk_show_about_dialog (NULL,
+                         "name",               _("GNOME Remote Desktop"),
+                         "comments",           _("Share your desktop with other users"),
+                         "version",            VERSION,
+                         "license",            license,
+                         "authors",            authors,
+                         "translator-credits", translators,
+                         "logo-icon-name",     "gnome-remote-desktop",
                          NULL);
-
-  gtk_message_dialog_format_secondary_text (dialog, 
-                        _("The remote user from the machine '%s' will be disconnected. Are you sure?"),
-                         vino_client_get_hostname(client));
-
-  if (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_YES)
-    vino_server_disconnect_client (client);
-
-  gtk_widget_destroy (GTK_WIDGET (image));
-  gtk_widget_destroy (GTK_WIDGET (dialog));
 }
 
 static gboolean
-label_expose (GtkWidget *widget)
+vino_status_icon_disconnect_confirm (VinoClient *client)
 {
-  /* Bad hack to make the label draw normally, instead of insensitive. */
-  widget->state = GTK_STATE_NORMAL;
+  GtkWidget *dialog;
+  char      *primary_msg;
+  char      *secondary_msg;
+  gboolean   retval;
 
-  return FALSE;
+  if (client != NULL)
+    {
+      primary_msg   = g_strdup_printf (_("Are you sure you want to disconnect '%s'?"),
+                                       vino_client_get_hostname (client));
+      secondary_msg = g_strdup_printf (_("The remote user from '%s' will be disconnected. Are you sure?"),
+                                       vino_client_get_hostname (client));
+    }
+  else
+    {
+      primary_msg   = g_strdup (_("Are you sure you want to disconnect all clients?"));
+      secondary_msg = g_strdup (_("All remote users will be disconnected. Are you sure?"));
+    }
+
+  dialog = gtk_message_dialog_new (NULL,
+                                   GTK_DIALOG_DESTROY_WITH_PARENT,
+                                   GTK_MESSAGE_QUESTION,
+                                   GTK_BUTTONS_CANCEL,
+                                   "%s",
+                                   primary_msg);
+
+  gtk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), FALSE);
+
+  gtk_dialog_add_button (GTK_DIALOG (dialog), _("Disconnect"), GTK_RESPONSE_OK);
+
+  gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s", secondary_msg);
+
+  retval = gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_OK;
+
+  gtk_widget_destroy (dialog);
+
+  g_free (primary_msg);
+  g_free (secondary_msg);
+
+  return retval;
+}
+
+static void
+vino_status_icon_disconnect_client (VinoClient *client)
+{
+  if (vino_status_icon_disconnect_confirm (client))
+    vino_client_disconnect (client);
+}
+
+static void
+vino_status_icon_disconnect_all_clients (VinoStatusIcon *icon)
+{
+  GSList *l;
+  GSList *next;
+
+  if (!vino_status_icon_disconnect_confirm (NULL))
+    return;
+
+  for (l = icon->priv->clients; l; l = next)
+    {
+      VinoClient *client = l->data;
+
+      next = l->next;
+
+      vino_client_disconnect (client);
+    }
 }
 
 static void
@@ -304,92 +310,69 @@ vino_status_icon_popup_menu (GtkStatusIcon *status_icon,
 			     guint32        timestamp)
 {
   VinoStatusIcon *icon = VINO_STATUS_ICON (status_icon);
-  GtkWidget  *item;
-  GtkWidget  *label;
-  VinoClient *client = NULL;
-  GtkWidget  *image;
-
-  GSList *l;
-  int number_of_clients = 0;
-  GString *client_info;
+  GtkWidget      *item;
+  GSList         *l;
 
   icon->priv->menu = (GtkMenu*) gtk_menu_new ();
 
-  /* Preferences */
   item = gtk_image_menu_item_new_with_mnemonic (_("_Preferences"));
-  image = gtk_image_new_from_icon_name (GTK_STOCK_PREFERENCES, GTK_ICON_SIZE_MENU);
-  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item), image);
-  g_signal_connect (G_OBJECT (item), "activate",
-		   G_CALLBACK (vino_status_icon_preferences), icon);
+  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item),
+                                 gtk_image_new_from_stock (GTK_STOCK_PREFERENCES, GTK_ICON_SIZE_MENU));
+  g_signal_connect_swapped (item, "activate",
+                            G_CALLBACK (vino_status_icon_preferences), icon);
+  gtk_widget_show (item);
   gtk_menu_shell_append (GTK_MENU_SHELL (icon->priv->menu), item);
 
-  /* Separator */
   item = gtk_separator_menu_item_new ();
+  gtk_widget_show (item);
   gtk_menu_shell_append (GTK_MENU_SHELL (icon->priv->menu), item);
 
-  /* Clients */
-  number_of_clients = g_slist_length(icon->priv->clients);
+  item  = gtk_image_menu_item_new_with_label (_("Disconnect all"));
+  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item),
+                                 gtk_image_new_from_stock (GTK_STOCK_NETWORK, GTK_ICON_SIZE_MENU));
+  g_signal_connect_swapped (item, "activate",
+                            G_CALLBACK (vino_status_icon_disconnect_all_clients), icon);
+  gtk_widget_show (item);
+  gtk_menu_shell_append (GTK_MENU_SHELL (icon->priv->menu), item);
 
-  if (number_of_clients > 0)
+  for (l = icon->priv->clients; l; l = l->next)
     {
-      /* Information about connected clients */
-      label = gtk_label_new (_("Connected machines, click to disconnect"));
-      g_signal_connect (G_OBJECT (label), "expose-event", G_CALLBACK (label_expose), NULL);
-      gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+      VinoClient *client = l->data;
+      char       *str;
 
-      item = gtk_menu_item_new ();
-      gtk_widget_set_sensitive (GTK_WIDGET (item), FALSE);
+      str = g_strdup_printf (_("Disconnect %s"), vino_client_get_hostname (client));
 
-      gtk_container_add (GTK_CONTAINER (item), label);
+      item  = gtk_image_menu_item_new_with_label (str);
+      gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item),
+                                     gtk_image_new_from_stock (GTK_STOCK_NETWORK, GTK_ICON_SIZE_MENU));
+      g_signal_connect_swapped (item, "activate",
+                                G_CALLBACK (vino_status_icon_disconnect_client), client);
+      gtk_widget_show (item);
       gtk_menu_shell_append (GTK_MENU_SHELL (icon->priv->menu), item);
-
-      /* List of clients */
-      for (l = icon->priv->clients; l; l = l->next)
-        {
-          client = (VinoClient *) l->data;
-
-          client_info = g_string_new("");
-          g_string_printf(client_info, "'%s'", vino_client_get_hostname(client));
-          if (vino_server_get_view_only(icon->priv->server))
-            g_string_append(client_info, _(" is watching your desktop"));
-          else
-            g_string_append(client_info, _(" is controlling your desktop"));
-
-          item  = gtk_image_menu_item_new_with_label (client_info->str);
-          image = gtk_image_new_from_icon_name (GTK_STOCK_NETWORK, GTK_ICON_SIZE_MENU);
-          gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item), image);
-
-          g_signal_connect (G_OBJECT (item), "activate",
-	      	            G_CALLBACK (vino_status_icon_disconnect_client), client);
-          gtk_menu_shell_append (GTK_MENU_SHELL (icon->priv->menu), item);
       
-          g_string_free(client_info, TRUE);
-        }
-
-      /* Separator */
-      item = gtk_separator_menu_item_new ();
-      gtk_menu_shell_append (GTK_MENU_SHELL (icon->priv->menu), item);
-    
+      g_free (str);
     }
 
+  item = gtk_separator_menu_item_new ();
+  gtk_widget_show (item);
+  gtk_menu_shell_append (GTK_MENU_SHELL (icon->priv->menu), item);
 
-  /* Help */
   item = gtk_image_menu_item_new_with_mnemonic (_("_Help"));
-  image = gtk_image_new_from_icon_name (GTK_STOCK_HELP, GTK_ICON_SIZE_MENU);
-  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item), image);
-  g_signal_connect (G_OBJECT (item), "activate",
-		  G_CALLBACK (vino_status_icon_help), icon);
+  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item),
+                                 gtk_image_new_from_stock (GTK_STOCK_HELP, GTK_ICON_SIZE_MENU));
+  g_signal_connect_swapped (item, "activate",
+                            G_CALLBACK (vino_status_icon_help), icon);
+  gtk_widget_show (item);
   gtk_menu_shell_append (GTK_MENU_SHELL (icon->priv->menu), item);
 
-  /* About */
   item = gtk_image_menu_item_new_with_mnemonic (_("_About"));
-  image = gtk_image_new_from_icon_name (GTK_STOCK_ABOUT, GTK_ICON_SIZE_MENU);
-  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item), image);
-  g_signal_connect (G_OBJECT (item), "activate",
-		  G_CALLBACK (vino_status_icon_about), icon);
+  gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item),
+                                 gtk_image_new_from_stock (GTK_STOCK_ABOUT, GTK_ICON_SIZE_MENU));
+  g_signal_connect_swapped (item, "activate",
+                            G_CALLBACK (vino_status_icon_about), icon);
+  gtk_widget_show (item);
   gtk_menu_shell_append (GTK_MENU_SHELL (icon->priv->menu), item);
 
-  gtk_widget_show_all (GTK_WIDGET (icon->priv->menu));
   gtk_menu_popup (GTK_MENU (icon->priv->menu), NULL, NULL,
 		  gtk_status_icon_position_menu, icon,
 		  button, timestamp);
@@ -400,25 +383,30 @@ vino_status_icon_popup_menu (GtkStatusIcon *status_icon,
 static void
 vino_status_icon_activate (GtkStatusIcon *icon)
 {
-  vino_status_icon_popup_menu (icon, 1, gtk_get_current_event_time ());
+  vino_status_icon_preferences (VINO_STATUS_ICON (icon));
 }
 
 static void
 vino_status_icon_update_tooltip (VinoStatusIcon *icon)
 {
-  char *tooltip = NULL;
-  int number_of_clients = g_slist_length (icon->priv->clients);
+  char *tooltip;
+
+  tooltip = NULL;
   
-  if (number_of_clients > 0)
+  if (icon->priv->clients != NULL)
     {
-      /* Set its tooltip, based on number of connected clients */
+      int n_clients;
+
+      n_clients = g_slist_length (icon->priv->clients);
+
       tooltip = g_strdup_printf (ngettext ("One person is connected",
                                            "%d people are connected",
-                                           number_of_clients),
-                                 number_of_clients);
+                                           n_clients),
+                                 n_clients);
     }
   
-  gtk_status_icon_set_tooltip (GTK_STATUS_ICON(icon), tooltip);
+  gtk_status_icon_set_tooltip (GTK_STATUS_ICON (icon), tooltip);
+
   g_free (tooltip);
 }
 
@@ -445,13 +433,13 @@ vino_status_icon_remove_client (VinoStatusIcon *icon,
 
   vino_status_icon_update_tooltip (icon);
 
-  return (g_slist_length(icon->priv->clients) <= 0);
+  return icon->priv->clients == NULL;
 }
 
 static void
 vino_status_icon_class_init (VinoStatusIconClass *klass)
 {
-  GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+  GObjectClass       *gobject_class     = G_OBJECT_CLASS (klass);
   GtkStatusIconClass *status_icon_class = GTK_STATUS_ICON_CLASS (klass);
 
   gobject_class->finalize     = vino_status_icon_finalize;

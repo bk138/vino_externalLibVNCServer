@@ -23,10 +23,9 @@
 #ifndef __VINO_STATUS_ICON_H__
 #define __VINO_STATUS_ICON_H__
 
-#include "vino-server.h"
-
-#include <glib-object.h>
 #include <gtk/gtkstatusicon.h>
+
+#include "vino-server.h"
 
 G_BEGIN_DECLS
 
@@ -58,8 +57,6 @@ GType           vino_status_icon_get_type      (void) G_GNUC_CONST;
 VinoStatusIcon *vino_status_icon_new           (VinoServer      *server,
                                                 GdkScreen       *screen);
 
-void            vino_status_icon_set_server    (VinoStatusIcon  *icon,
-				                VinoServer      *server);
 VinoServer     *vino_status_icon_get_server    (VinoStatusIcon  *icon);
 
 void            vino_status_icon_add_client    (VinoStatusIcon  *icon,
