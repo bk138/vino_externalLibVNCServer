@@ -1,3 +1,27 @@
+Vino 2.17.4
+===========
+
+  Features
+
+    + Add a status icon allowing you to disconnect users
+      (Jonh Wendell, Christian Persch, Mark, Calum, Andre Klapper)
+
+  Fixes
+
+    + Hide the help button in the prompt dialog (Mark)
+    + Fix broken keyboard under Xsun (Halton Huo, Mark)
+    + Fix the desktop name remoted to the client (Jonh Wendell)
+    + Fix the stringification of the client hostname (Jonh Wendell)
+
+  Translators
+
+    + Khaled Hosny (ar)
+    + Francisco Javier F. Serrador (es)
+    + Mohammad DAMT (id)
+    + Kjartan Maraas (nb)
+    + Daniel Nylander (sv)
+    + Theppitak Karoonboonyanan (th)
+ 
 Vino 2.17.2
 ===========
 
