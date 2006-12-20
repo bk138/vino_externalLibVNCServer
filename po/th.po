@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.11.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-15 17:35+0700\n"
-"PO-Revision-Date: 2006-12-15 18:06+0700\n"
+"POT-Creation-Date: 2006-12-20 20:43+0700\n"
+"PO-Revision-Date: 2006-12-20 20:58+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <l10n@opentle.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Send this command by email"
 msgstr "ส่งคำสั่งนี้ทางอีเมล"
 
-#: capplet/vino-preferences.c:796 server/vino-status-icon.c:185
+#: capplet/vino-preferences.c:796
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -83,7 +83,7 @@ msgid "_Require the user to enter this password:"
 msgstr "ให้ผู้ใช้นั้น_ป้อนรหัสผ่านนี้:"
 
 #: server/vino-fb.c:984 server/vino-prompt.c:143
-#: server/vino-server.c:987
+#: server/vino-server.c:986
 msgid "Screen"
 msgstr "สกรีน"
 
@@ -91,7 +91,7 @@ msgstr "สกรีน"
 msgid "The screen to be monitored"
 msgstr "สกรีนที่จะเฝ้ามอง"
 
-#: server/vino-main.c:80
+#: server/vino-main.c:82
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -155,81 +155,81 @@ msgstr "_อนุญาต"
 msgid "_Refuse"
 msgstr "_ปฏิเสธ"
 
-#: server/vino-server.c:988
+#: server/vino-server.c:987
 msgid "The screen for which to create a VNC server"
 msgstr "สกรีนที่จะสร้างเซิร์ฟเวอร์ VNC"
 
-#: server/vino-server.c:995
+#: server/vino-server.c:994
 msgid "On Hold"
 msgstr "ยับยั้งไว้"
 
-#: server/vino-server.c:996
+#: server/vino-server.c:995
 msgid "Place all clients on hold"
 msgstr "ยับยั้งไคลเอนต์ทั้งหมดไว้"
 
-#: server/vino-server.c:1003
+#: server/vino-server.c:1002
 msgid "Prompt enabled"
 msgstr "เปิดใช้การถาม"
 
-#: server/vino-server.c:1004
+#: server/vino-server.c:1003
 msgid "Prompt the user about connection attempts"
 msgstr "ถามผู้ใช้เมื่อมีความพยายามเชื่อมต่อ"
 
-#: server/vino-server.c:1011
+#: server/vino-server.c:1010
 msgid "View Only"
 msgstr "มองอย่างเดียว"
 
-#: server/vino-server.c:1012
+#: server/vino-server.c:1011
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "ไม่รับข้อมูลแป้นพิมพ์/เมาส์จากไคลเอนต์"
 
-#: server/vino-server.c:1019
+#: server/vino-server.c:1018
 msgid "Local Only"
 msgstr "ในเครื่องเท่านั้น"
 
-#: server/vino-server.c:1020 server/vino-server.schemas.in.h:13
+#: server/vino-server.c:1019 server/vino-server.schemas.in.h:13
 msgid "Only allow local connections"
 msgstr "รับการเชื่อมต่อจากในเครื่องเดียวกันเท่านั้น"
 
-#: server/vino-server.c:1027
+#: server/vino-server.c:1026
 msgid "Require Encryption"
 msgstr "บังคับการเข้ารหัส"
 
-#: server/vino-server.c:1028
+#: server/vino-server.c:1027
 msgid "Require clients to use encryption"
 msgstr "บังคับให้ไคลเอนต์ต้องเข้ารหัสข้อมูล"
 
-#: server/vino-server.c:1035
+#: server/vino-server.c:1034
 msgid "Authentication methods"
 msgstr "วิธีตรวจสอบสิทธิ์"
 
-#: server/vino-server.c:1036
+#: server/vino-server.c:1035
 msgid "The authentication methods this server should allow"
 msgstr "วิธีตรวจสอบสิทธิ์ทั้งหมดที่เซิร์ฟเวอร์นี้อนุญาต"
 
-#: server/vino-server.c:1044
+#: server/vino-server.c:1043
 msgid "VNC Password"
 msgstr "รหัสผ่าน VNC"
 
-#: server/vino-server.c:1045
+#: server/vino-server.c:1044
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
 msgstr "รหัสผ่าน (ลงรหัสแบบ base64) ที่จะใช้ตรวจสอบสิทธิ์ด้วยวิธี VncAuth"
 
-#: server/vino-server.c:1052
+#: server/vino-server.c:1051
 msgid "Use an alternative port"
 msgstr "ใช้พอร์ตอื่น"
 
-#: server/vino-server.c:1053
+#: server/vino-server.c:1052
 msgid "Listen on the port specified by the 'alternative-port' property"
 msgstr "รอรับการเชื่อมต่อที่พอร์ตที่ระบุในค่า 'alternative-port'"
 
-#: server/vino-server.c:1060 server/vino-server.schemas.in.h:2
+#: server/vino-server.c:1059 server/vino-server.schemas.in.h:2
 msgid "Alternative port number"
 msgstr "หมายเลขพอร์ตอื่นที่จะใช้"
 
-#: server/vino-server.c:1061
+#: server/vino-server.c:1060
 msgid ""
 "Listen on the specified port number if the 'use-alternative-port' property "
 "is TRUE"
@@ -370,118 +370,115 @@ msgstr ""
 "มีปัญหาในการลงทะเบียนเซิร์ฟเวอร์พื้นโต๊ะระยะไกลกับ bonobo-activation; "
 "จะออกจากโปรแกรม ...\n"
 
-#: server/vino-status-icon.c:151
+#: server/vino-status-icon.c:175
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
-"%s"
+" %s"
 msgstr ""
 "เกิดข้อผิดพลาดขณะแสดงค่าปรับแต่ง:\n"
-"%s"
+" %s"
 
-#: server/vino-status-icon.c:216
-msgid "Licensed under the GNU General Public License Version 2"
-msgstr "แจกจ่ายภายใต้สัญญาอนุญาต GNU General Public License รุ่นที่ 2"
-
-#: server/vino-status-icon.c:217
+#: server/vino-status-icon.c:183
+#, c-format
 msgid ""
+"There was an error displaying jelp:\n"
+" %s"
+msgstr ""
+"เกิดข้อผิดพลาดขณะแสดงวิธีใช้:\n"
+" %s"
+
+#: server/vino-status-icon.c:206
+msgid ""
+"Licensed under the GNU General Public License Version 2\n"
+"\n"
 "Vino is free software; you can redistribute it and/or\n"
 "modify it under the terms of the GNU General Public License\n"
 "as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version."
-msgstr ""
-"Vino เป็นซอฟต์แวร์เสรี คุณสามารถแจกจ่ายต่อ และ/หรือ แก้ไขโปรแกรมได้ ภายใต้เงื่อนไขของ\n"
-"GNU General Public License ที่เผยแพร่โดยมูลนิธิซอฟต์แวร์เสรี ไม่ว่าจะเป็นสัญญาอนุญาตรุ่นที่ 2\n"
-"หรือรุ่นถัดมา (ตามแต่คุณจะเลือก)"
-
-#: server/vino-status-icon.c:221
-msgid ""
+"of the License, or (at your option) any later version.\n"
+"\n"
 "Vino is distributed in the hope that it will be useful,\n"
 "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"GNU General Public License for more details."
-msgstr ""
-"Vino เผยแพร่ด้วยความหวังว่าโปรแกรมจะมีประโยชน์ แต่ _ไม่มีการรับประกันใดๆ_\n"
-"ไม่มีแม้การรับประกัน _อรรถประโยชน์เชิงพาณิชย์_ หรือ\n"
-"_ความเหมาะสมสำหรับวัตถุประสงค์เฉพาะกิจใดๆ_ กรุณาอ่าน GNU General Public License\n"
-"เพื่อดูรายละเอียดเพิ่มเติม"
-
-#: server/vino-status-icon.c:225
-msgid ""
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n"
+"GNU General Public License for more details.\n"
+"\n"
 "You should have received a copy of the GNU General Public License\n"
 "along with this program; if not, write to the Free Software\n"
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
+"02110-1301, USA.\n"
 msgstr ""
+"เผยแพร่ภายใต้เงื่อนไข GNU General Public License รุ่นที่ 2\n"
+"\n"
+"Vino เป็นซอฟต์แวร์เสรี คุณสามารถแจกจ่ายต่อ และ/หรือ แก้ไขโปรแกรมได้\n"
+"ภายใต้เงื่อนไขของ GNU General Public License ที่เผยแพร่โดยมูลนิธิซอฟต์แวร์เสรี\n"
+"ไม่ว่าจะเป็นสัญญาอนุญาตรุ่นที่ 2 หรือรุ่นถัดมา (ตามแต่คุณจะเลือก)\n"
+"\n"
+"Vino เผยแพร่ด้วยความหวังว่าโปรแกรมจะมีประโยชน์ แต่ _ไม่มีการรับประกันใดๆ_\n"
+"ไม่มีแม้การรับประกัน _อรรถประโยชน์เชิงพาณิชย์_ หรือ _ความเหมาะสม\n"
+"สำหรับวัตถุประสงค์เฉพาะกิจใดๆ_ กรุณาอ่าน GNU General Public License\n"
+"เพื่อดูรายละเอียดเพิ่มเติม\n"
+"\n"
 "คุณควรจะได้รับสำเนาของ GNU General Public License มาพร้อมกับโปรแกรมนี้\n"
-"ถ้าคุณไม่ได้รับ กรุณาติดต่อไปที่ Free Software Foundation, Inc., 51 Franklin Street,\n"
-"Fifth Floor, Boston, MA  02110-1307  USA"
+"ถ้าคุณไม่ได้รับ กรุณาติดต่อไปที่ Free Software Foundation, Inc.,\n"
+"51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n"
 
-#: server/vino-status-icon.c:230
+#. Translators comment: put your own name here to appear in the about dialog.
+#: server/vino-status-icon.c:221
 msgid "translator-credits"
 msgstr "เทพพิทักษ์ การุญบุญญานันท์ <thep@linux.thai.net>"
 
-#: server/vino-status-icon.c:243
-msgid "GNOME Remote Access"
+#: server/vino-status-icon.c:227
+msgid "GNOME Remote Desktop"
 msgstr "พื้นโต๊ะระยะไกลของ GNOME"
 
-#. "website", "www",
-#: server/vino-status-icon.c:248
-msgid "Shares your desktop with others"
+#: server/vino-status-icon.c:228
+msgid "Share your desktop with other users"
 msgstr "แบ่งพื้นโต๊ะของคุณให้ผู้อื่นใช้ร่วม"
 
-#: server/vino-status-icon.c:266
-msgid "Are you sure you want to disconnect the remote machine?"
-msgstr "ยืนยันที่จะตัดการเชื่อมต่อของเครื่องอื่นหรือไม่?"
+#: server/vino-status-icon.c:247
+#, c-format
+msgid "Are you sure you want to disconnect '%s'?"
+msgstr "ยืนยันที่จะตัดการเชื่อมต่อกับ '%s' หรือไม่?"
 
-#: server/vino-status-icon.c:269
-msgid "GNOME Remote Access - Confirmation"
-msgstr "พื้นโต๊ะระยะไกลของ GNOME - ยืนยัน"
+#: server/vino-status-icon.c:249
+#, c-format
+msgid "The remote user from '%s' will be disconnected. Are you sure?"
+msgstr "ผู้ใช้ระยะไกลจากเครื่อง '%s' จะถูกตัดการเชื่อมต่อ คุณแน่ใจหรือไม่?"
 
-#: server/vino-status-icon.c:277
-msgid "Leave as it is"
-msgstr "ปล่อยไว้เหมือนเดิม"
+#: server/vino-status-icon.c:254
+msgid "Are you sure you want to disconnect all clients?"
+msgstr "ยืนยันที่จะตัดการเชื่อมต่อกับทุกเครื่องหรือไม่?"
 
-#: server/vino-status-icon.c:278
+#: server/vino-status-icon.c:255
+msgid "All remote users will be disconnected. Are you sure?"
+msgstr "ผู้ใช้ระยะไกลทั้งหมดจะถูกตัดการเชื่อมต่อ คุณแน่ใจหรือไม่?"
+
+#: server/vino-status-icon.c:267
 msgid "Disconnect"
 msgstr "ตัดการเชื่อมต่อ"
 
-#: server/vino-status-icon.c:282
-#, c-format
-msgid ""
-"The remote user from the machine '%s' will be disconnected. Are you sure?"
-msgstr "ผู้ใช้ระยะไกลจากเครื่อง '%s' จะถูกตัดการเชื่อมต่อ คุณแน่ใจหรือไม่?"
-
-#. Preferences
-#: server/vino-status-icon.c:319
+#: server/vino-status-icon.c:318
 msgid "_Preferences"
 msgstr "_ปรับแต่ง"
 
-#. Information about connected clients
-#: server/vino-status-icon.c:336
-msgid "Connected machines, click to disconnect"
-msgstr "เครื่องที่เชื่อมต่ออยู่, คลิกเพื่อตัดการเชื่อมต่อ"
+#: server/vino-status-icon.c:330
+msgid "Disconnect all"
+msgstr "ตัดการเชื่อมต่อทั้งหมด"
 
-#: server/vino-status-icon.c:354
-msgid " is watching your desktop"
-msgstr " กำลังมองพื้นโต๊ะของคุณ"
+#: server/vino-status-icon.c:343
+#, c-format
+msgid "Disconnect %s"
+msgstr "ตัดการเชื่อมต่อกับ %s"
 
-#: server/vino-status-icon.c:356
-msgid " is controlling your desktop"
-msgstr " กำลังควบคุมพื้นโต๊ะของคุณ"
-
-#. Help
-#: server/vino-status-icon.c:377
+#: server/vino-status-icon.c:360
 msgid "_Help"
 msgstr "_วิธีใช้"
 
-#. About
-#: server/vino-status-icon.c:385
+#: server/vino-status-icon.c:368
 msgid "_About"
 msgstr "เ_กี่ยวกับ"
 
-#. Set its tooltip, based on number of connected clients
-#: server/vino-status-icon.c:415
+#: server/vino-status-icon.c:402
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
@@ -512,6 +509,60 @@ msgstr "กำลังเริ่มใช้งานเซิร์ฟเว
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "จะไม่เรียกใช้เซิร์ฟเวอร์พื้นโต๊ะระยะไกล"
+
+#~ msgid "Licensed under the GNU General Public License Version 2"
+#~ msgstr "แจกจ่ายภายใต้สัญญาอนุญาต GNU General Public License รุ่นที่ 2"
+
+#~ msgid ""
+#~ "Vino is free software; you can redistribute it and/or\n"
+#~ "modify it under the terms of the GNU General Public License\n"
+#~ "as published by the Free Software Foundation; either version 2\n"
+#~ "of the License, or (at your option) any later version."
+#~ msgstr ""
+#~ "Vino เป็นซอฟต์แวร์เสรี คุณสามารถแจกจ่ายต่อ และ/หรือ แก้ไขโปรแกรมได้ ภายใต้เงื่อนไขของ\n"
+#~ "GNU General Public License ที่เผยแพร่โดยมูลนิธิซอฟต์แวร์เสรี ไม่ว่าจะเป็นสัญญาอนุญาตรุ่นที่ "
+#~ "2\n"
+#~ "หรือรุ่นถัดมา (ตามแต่คุณจะเลือก)"
+
+#~ msgid ""
+#~ "Vino is distributed in the hope that it will be useful,\n"
+#~ "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "GNU General Public License for more details."
+#~ msgstr ""
+#~ "Vino เผยแพร่ด้วยความหวังว่าโปรแกรมจะมีประโยชน์ แต่ _ไม่มีการรับประกันใดๆ_\n"
+#~ "ไม่มีแม้การรับประกัน _อรรถประโยชน์เชิงพาณิชย์_ หรือ\n"
+#~ "_ความเหมาะสมสำหรับวัตถุประสงค์เฉพาะกิจใดๆ_ กรุณาอ่าน GNU General Public License\n"
+#~ "เพื่อดูรายละเอียดเพิ่มเติม"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License\n"
+#~ "along with this program; if not, write to the Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+#~ msgstr ""
+#~ "คุณควรจะได้รับสำเนาของ GNU General Public License มาพร้อมกับโปรแกรมนี้\n"
+#~ "ถ้าคุณไม่ได้รับ กรุณาติดต่อไปที่ Free Software Foundation, Inc., 51 Franklin "
+#~ "Street,\n"
+#~ "Fifth Floor, Boston, MA  02110-1307  USA"
+
+#~ msgid "GNOME Remote Access"
+#~ msgstr "พื้นโต๊ะระยะไกลของ GNOME"
+
+#~ msgid "GNOME Remote Access - Confirmation"
+#~ msgstr "พื้นโต๊ะระยะไกลของ GNOME - ยืนยัน"
+
+#~ msgid "Leave as it is"
+#~ msgstr "ปล่อยไว้เหมือนเดิม"
+
+#~ msgid "Connected machines, click to disconnect"
+#~ msgstr "เครื่องที่เชื่อมต่ออยู่, คลิกเพื่อตัดการเชื่อมต่อ"
+
+#~ msgid " is watching your desktop"
+#~ msgstr " กำลังมองพื้นโต๊ะของคุณ"
+
+#~ msgid " is controlling your desktop"
+#~ msgstr " กำลังควบคุมพื้นโต๊ะของคุณ"
 
 #~ msgid "    "
 #~ msgstr "    "
