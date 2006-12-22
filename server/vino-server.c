@@ -34,6 +34,7 @@
 #include "vino-cursor.h"
 #include "vino-prompt.h"
 #include "vino-status-icon.h"
+#include "vino-dbus-listener.h"
 #include "vino-util.h"
 #include "vino-enums.h"
 #include <sys/poll.h>
@@ -56,6 +57,7 @@ struct _VinoServerPrivate
   VinoCursorData   *cursor_data;
   VinoPrompt       *prompt;
   VinoStatusIcon   *icon;
+  VinoDBusListener *listener;
 
   GIOChannel       *io_channel;
   guint             io_watch;
@@ -105,7 +107,8 @@ enum
   PROP_ALTERNATIVE_PORT,
   PROP_REQUIRE_ENCRYPTION,
   PROP_AUTH_METHODS,
-  PROP_VNC_PASSWORD
+  PROP_VNC_PASSWORD,
+  PROP_PORT
 };
 
 static enum rfbNewClientAction vino_server_auth_client (VinoServer *server,
@@ -814,6 +817,8 @@ vino_server_init_from_screen (VinoServer *server,
 #endif
 
   vino_mdns_add_service ("_rfb._tcp", rfb_screen->rfbPort);
+
+  server->priv->listener = vino_dbus_listener_new (server);
 }
 
 static void
@@ -863,6 +868,10 @@ vino_server_finalize (GObject *object)
   if (server->priv->fb)
     g_object_unref (server->priv->fb);
   server->priv->fb = NULL;
+
+  if (server->priv->listener)
+    g_object_unref (server->priv->listener);
+  server->priv->listener = NULL;
   
   g_free (server->priv);
   server->priv = NULL;
@@ -956,6 +965,9 @@ vino_server_get_property (GObject    *object,
       break;
     case PROP_ALTERNATIVE_PORT:
       g_value_set_int (value, server->priv->alternative_port);
+      break;
+    case PROP_PORT:
+      g_value_set_int (value, server->priv->rfb_screen->rfbPort);
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -1062,6 +1074,16 @@ vino_server_class_init (VinoServerClass *klass)
 						     VINO_SERVER_MAX_PORT,
 						     VINO_SERVER_DEFAULT_PORT,
 						     G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+  g_object_class_install_property (gobject_class,
+				   PROP_PORT,
+				   g_param_spec_int ("port",
+						     _("Port server number"),
+						     _("The port used by this server"),
+						     VINO_SERVER_MIN_PORT,
+						     VINO_SERVER_MAX_PORT,
+						     VINO_SERVER_DEFAULT_PORT,
+						     G_PARAM_READABLE));
+
 }
 
 GType
@@ -1406,4 +1428,11 @@ vino_client_disconnect (VinoClient *client)
 {
   rfbCloseClient (client->rfb_client);
   rfbClientConnectionGone (client->rfb_client);
+}
+
+int
+vino_server_get_port (VinoServer *server)
+{
+  g_return_val_if_fail (VINO_IS_SERVER (server), 0);
+  return server->priv->rfb_screen->rfbPort;
 }

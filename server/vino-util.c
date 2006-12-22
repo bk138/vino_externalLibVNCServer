@@ -41,7 +41,8 @@ vino_setup_debug_flags (void)
       { "tls",     VINO_DEBUG_TLS },
       { "mdns",    VINO_DEBUG_MDNS },
       { "prompt",  VINO_DEBUG_PROMPT },
-      { "http",    VINO_DEBUG_HTTP}
+      { "http",    VINO_DEBUG_HTTP },
+      { "dbus",    VINO_DEBUG_DBUS }
     };
   
   env_str = g_getenv ("VINO_SERVER_DEBUG");

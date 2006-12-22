@@ -100,6 +100,7 @@ G_CONST_RETURN char *vino_server_get_vnc_password         (VinoServer     *serve
 
 G_CONST_RETURN char *vino_client_get_hostname (VinoClient *client);
 void                 vino_client_disconnect   (VinoClient *client);
+int                  vino_server_get_port     (VinoServer *server);
 
 G_END_DECLS
 

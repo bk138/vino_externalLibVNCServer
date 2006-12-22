@@ -31,6 +31,7 @@
 #include <gconf/gconf-client.h>
 #include <libgnome/libgnome.h>
 #include <libgnomeui/libgnomeui.h>
+#include <dbus/dbus-glib.h>
 
 #ifdef VINO_ENABLE_KEYRING
 #include <gnome-keyring.h>
@@ -45,6 +46,14 @@
 #define VINO_PREFS_MAILTO                 VINO_PREFS_DIR "/mailto"
 
 #define N_LISTENERS 6
+
+#define VINO_DBUS_BUS_NAME  "org.gnome.Vino"
+#define VINO_DBUS_INTERFACE "org.gnome.Vino"
+#define VINO_DBUS_OBJ_PATH  "/org/gnome/vino/screens/%d"
+
+#define VINO_DEFAULT_PORT   5900
+#define VINO_MIN_PORT       5000
+#define VINO_MAX_PORT       6000
 
 typedef struct {
   GladeXML    *xml;
@@ -592,6 +601,65 @@ vino_preferences_dialog_setup_icons (VinoPreferencesDialog *dialog)
                                 GTK_ICON_SIZE_DIALOG);
 }
 
+static int
+vino_preferences_get_server_port (VinoPreferencesDialog *dialog)
+{
+  DBusGConnection *connection;
+  GError          *error;
+  DBusGProxy      *proxy;
+  int              port;
+  GdkScreen       *screen;
+  int              screen_num;
+  
+  error = NULL;
+  connection = dbus_g_bus_get (DBUS_BUS_SESSION,
+                               &error);
+  if (connection == NULL)
+    {
+      g_printerr ("Failed to open connection to bus: %s\n",
+                  error->message);
+      g_error_free (error);
+      return 0;
+    }
+
+  screen     = gtk_window_get_screen (GTK_WINDOW (dialog->dialog));
+  screen_num = gdk_screen_get_number (screen);
+
+  proxy = dbus_g_proxy_new_for_name (connection,
+                                     VINO_DBUS_BUS_NAME,
+                                     g_strdup_printf (VINO_DBUS_OBJ_PATH, screen_num),
+                                     VINO_DBUS_INTERFACE);
+
+  if (!proxy)
+    {
+      g_printerr ("Failed to open connection to vino-server dbus: %s\n",
+                  error->message);
+      dbus_g_connection_unref(connection);
+      return 0;
+    }
+  
+  error = NULL;
+  if (!dbus_g_proxy_call (proxy, "GetServerPort", &error,
+                          G_TYPE_INVALID,
+                          G_TYPE_INT, &port,
+                          G_TYPE_INVALID))
+    {
+      g_printerr ("Failed to call remote GetServerPort function: %s\n",
+                  error->message);
+      g_error_free (error);
+      dbus_g_connection_unref(connection);
+      return 0;
+    }
+
+  g_object_unref (proxy);
+  dbus_g_connection_unref(connection);
+
+  if ( (port >= VINO_MIN_PORT) && (port <= VINO_MAX_PORT))
+    return port - VINO_DEFAULT_PORT;
+  else
+    return port;
+}
+
 static char *
 vino_preferences_get_local_hostname (void)
 {
@@ -623,15 +691,17 @@ vino_preferences_dialog_get_server_command (VinoPreferencesDialog *dialog)
 {
   char *local_host;
   char *server_url;
+  int   server_port;
 
-  local_host = vino_preferences_get_local_hostname ();
+  local_host  = vino_preferences_get_local_hostname ();
+  server_port = vino_preferences_get_server_port (dialog);
+
   if (!local_host)
     {
-      return g_strdup ("vncviewer localhost:0");
+      return g_strdup_printf ("vncviewer localhost:%d", server_port);
     }
 
-  /* FIXME: get the actual port number for the server on this screen */
-  server_url = g_strdup_printf ("vncviewer %s:0", local_host);
+  server_url = g_strdup_printf ("vncviewer %s:%d", local_host, server_port);
 
   g_free (local_host);
 
