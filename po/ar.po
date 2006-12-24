@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.gnome-2-16.ar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-18 01:27+0000\n"
+"POT-Creation-Date: 2006-12-24 21:01+0000\n"
 "PO-Revision-Date: 2006-12-02 21:31+0200\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <support@arabeyes.org>\n"
@@ -21,11 +21,11 @@ msgstr ""
 "n<=10 ? 2 : 3\n"
 "\n"
 
-#: ../capplet/vino-preferences.c:761
+#: ../capplet/vino-preferences.c:831
 msgid "Send this command by email"
 msgstr "أرسل هذا الأمر بالبريد الإلكتروني"
 
-#: ../capplet/vino-preferences.c:796 ../server/vino-status-icon.c:185
+#: ../capplet/vino-preferences.c:866
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -86,8 +86,24 @@ msgstr "_كلمة السر:"
 msgid "_Require the user to enter this password:"
 msgstr "إ_دخال كلمة السر هذه مطلوب من المستخدم:"
 
+#: ../server/vino-dbus-listener.c:88
+msgid "failed to register with the message bus"
+msgstr ""
+
+#: ../server/vino-dbus-listener.c:92
+msgid "not connected to the message bus"
+msgstr ""
+
+#: ../server/vino-dbus-listener.c:103
+msgid "out of memory registering object path"
+msgstr ""
+
+#: ../server/vino-dbus-listener.c:116
+msgid "Error in dbus"
+msgstr ""
+
 #: ../server/vino-fb.c:984 ../server/vino-prompt.c:143
-#: ../server/vino-server.c:987
+#: ../server/vino-server.c:998
 msgid "Screen"
 msgstr "الشّاشة"
 
@@ -95,7 +111,7 @@ msgstr "الشّاشة"
 msgid "The screen to be monitored"
 msgstr "الشّاشة المراقَبة"
 
-#: ../server/vino-main.c:80
+#: ../server/vino-main.c:82
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -149,71 +165,71 @@ msgstr "هل تريد السّماح لهم بفعل ذلك؟"
 msgid "Question"
 msgstr "السّؤال"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:62
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
 msgid "_Allow"
 msgstr "ا_سمح"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:63
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "ا_رفض"
 
-#: ../server/vino-server.c:988
+#: ../server/vino-server.c:999
 msgid "The screen for which to create a VNC server"
 msgstr "الشّاشة التي سيُنشأ من أجلها خادم VNC"
 
-#: ../server/vino-server.c:995
+#: ../server/vino-server.c:1006
 msgid "On Hold"
 msgstr "تحت الانتظار"
 
-#: ../server/vino-server.c:996
+#: ../server/vino-server.c:1007
 msgid "Place all clients on hold"
 msgstr "ضع كلّ العملاء تحت الانتظار"
 
-#: ../server/vino-server.c:1003
+#: ../server/vino-server.c:1014
 msgid "Prompt enabled"
 msgstr "المحثّ ممكّن"
 
-#: ../server/vino-server.c:1004
+#: ../server/vino-server.c:1015
 msgid "Prompt the user about connection attempts"
 msgstr "اخبر المستخدم حول محاولات الاتّصال"
 
-#: ../server/vino-server.c:1011
+#: ../server/vino-server.c:1022
 msgid "View Only"
 msgstr "اعرض فقط"
 
-#: ../server/vino-server.c:1012
+#: ../server/vino-server.c:1023
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "لا تسمح بدخل لوحة المفاتيح و المؤشّر من العملاء"
 
-#: ../server/vino-server.c:1019
+#: ../server/vino-server.c:1030
 msgid "Local Only"
 msgstr ""
 
-#: ../server/vino-server.c:1020 ../server/vino-server.schemas.in.h:13
+#: ../server/vino-server.c:1031 ../server/vino-server.schemas.in.h:13
 msgid "Only allow local connections"
 msgstr ""
 
-#: ../server/vino-server.c:1027
+#: ../server/vino-server.c:1038
 msgid "Require Encryption"
 msgstr "التّشفير مطلوب"
 
-#: ../server/vino-server.c:1028
+#: ../server/vino-server.c:1039
 msgid "Require clients to use encryption"
 msgstr "التّشفير مطلوب من العملاء"
 
-#: ../server/vino-server.c:1035
+#: ../server/vino-server.c:1046
 msgid "Authentication methods"
 msgstr "طرق التّوثّق"
 
-#: ../server/vino-server.c:1036
+#: ../server/vino-server.c:1047
 msgid "The authentication methods this server should allow"
 msgstr "طرق التّوثّق التي على هذا الخادم السّماح بها"
 
-#: ../server/vino-server.c:1044
+#: ../server/vino-server.c:1055
 msgid "VNC Password"
 msgstr "كلمة سر VNC"
 
-#: ../server/vino-server.c:1045
+#: ../server/vino-server.c:1056
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
@@ -221,22 +237,30 @@ msgstr ""
 "كلمة السر (بترميز قاعدة 64) المستخدمة للتّوثّق من الانواع باستخدام طريقة توثّق "
 "VNC."
 
-#: ../server/vino-server.c:1052
+#: ../server/vino-server.c:1063
 msgid "Use an alternative port"
 msgstr ""
 
-#: ../server/vino-server.c:1053
+#: ../server/vino-server.c:1064
 msgid "Listen on the port specified by the 'alternative-port' property"
 msgstr ""
 
-#: ../server/vino-server.c:1060 ../server/vino-server.schemas.in.h:2
+#: ../server/vino-server.c:1071 ../server/vino-server.schemas.in.h:2
 msgid "Alternative port number"
 msgstr ""
 
-#: ../server/vino-server.c:1061
+#: ../server/vino-server.c:1072
 msgid ""
 "Listen on the specified port number if the 'use-alternative-port' property "
 "is TRUE"
+msgstr ""
+
+#: ../server/vino-server.c:1080
+msgid "Port server number"
+msgstr ""
+
+#: ../server/vino-server.c:1081
+msgid "The port used by this server"
 msgstr ""
 
 #: ../server/vino-server.schemas.in.h:1
@@ -366,109 +390,102 @@ msgid ""
 "exiting ...\n"
 msgstr "مشكلة في تسجيل خادم سطح المكتب البعيد بتنشيط بونوبو، خروج ...\n"
 
-#: ../server/vino-status-icon.c:151
+#: ../server/vino-status-icon.c:175
 #, fuzzy, c-format
 msgid ""
 "There was an error displaying preferences:\n"
-"%s"
+" %s"
 msgstr ""
 "حدث خطأ عند عرض المساعدة:\n"
 "%s"
 
-#: ../server/vino-status-icon.c:216
-msgid "Licensed under the GNU General Public License Version 2"
-msgstr ""
-
-#: ../server/vino-status-icon.c:217
+#: ../server/vino-status-icon.c:183
+#, fuzzy, c-format
 msgid ""
+"There was an error displaying jelp:\n"
+" %s"
+msgstr ""
+"حدث خطأ عند عرض المساعدة:\n"
+"%s"
+
+#: ../server/vino-status-icon.c:206
+msgid ""
+"Licensed under the GNU General Public License Version 2\n"
+"\n"
 "Vino is free software; you can redistribute it and/or\n"
 "modify it under the terms of the GNU General Public License\n"
 "as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version."
-msgstr ""
-
-#: ../server/vino-status-icon.c:221
-msgid ""
+"of the License, or (at your option) any later version.\n"
+"\n"
 "Vino is distributed in the hope that it will be useful,\n"
 "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"GNU General Public License for more details."
-msgstr ""
-
-#: ../server/vino-status-icon.c:225
-msgid ""
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n"
+"GNU General Public License for more details.\n"
+"\n"
 "You should have received a copy of the GNU General Public License\n"
 "along with this program; if not, write to the Free Software\n"
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
+"02110-1301, USA.\n"
 msgstr ""
 
-#: ../server/vino-status-icon.c:230
+#. Translators comment: put your own name here to appear in the about dialog.
+#: ../server/vino-status-icon.c:221
 msgid "translator-credits"
 msgstr ""
 
-#: ../server/vino-status-icon.c:243
-msgid "GNOME Remote Access"
+#: ../server/vino-status-icon.c:227
+#, fuzzy
+msgid "GNOME Remote Desktop"
+msgstr "سطح مكتب بعيد"
+
+#: ../server/vino-status-icon.c:228
+msgid "Share your desktop with other users"
 msgstr ""
 
-#. "website", "www",
-#: ../server/vino-status-icon.c:248
-msgid "Shares your desktop with others"
+#: ../server/vino-status-icon.c:247
+#, c-format
+msgid "Are you sure you want to disconnect '%s'?"
 msgstr ""
 
-#: ../server/vino-status-icon.c:266
-msgid "Are you sure you want to disconnect the remote machine?"
+#: ../server/vino-status-icon.c:249
+#, c-format
+msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr ""
 
-#: ../server/vino-status-icon.c:269
-msgid "GNOME Remote Access - Confirmation"
+#: ../server/vino-status-icon.c:254
+msgid "Are you sure you want to disconnect all clients?"
 msgstr ""
 
-#: ../server/vino-status-icon.c:277
-msgid "Leave as it is"
+#: ../server/vino-status-icon.c:255
+msgid "All remote users will be disconnected. Are you sure?"
 msgstr ""
 
-#: ../server/vino-status-icon.c:278
+#: ../server/vino-status-icon.c:267
 msgid "Disconnect"
 msgstr ""
 
-#: ../server/vino-status-icon.c:282
-#, c-format
-msgid ""
-"The remote user from the machine '%s' will be disconnected. Are you sure?"
-msgstr ""
-
-#. Preferences
-#: ../server/vino-status-icon.c:319
+#: ../server/vino-status-icon.c:318
 msgid "_Preferences"
 msgstr ""
 
-#. Information about connected clients
-#: ../server/vino-status-icon.c:336
-msgid "Connected machines, click to disconnect"
+#: ../server/vino-status-icon.c:330
+msgid "Disconnect all"
 msgstr ""
 
-#: ../server/vino-status-icon.c:354
-msgid " is watching your desktop"
+#: ../server/vino-status-icon.c:343
+#, c-format
+msgid "Disconnect %s"
 msgstr ""
 
-#: ../server/vino-status-icon.c:356
-#, fuzzy
-msgid " is controlling your desktop"
-msgstr "ا_سمح للمستخدمين الآخرين بالتّحكّم بسطح مكتبك."
-
-#. Help
-#: ../server/vino-status-icon.c:377
+#: ../server/vino-status-icon.c:360
 msgid "_Help"
 msgstr ""
 
-#. About
-#: ../server/vino-status-icon.c:385
+#: ../server/vino-status-icon.c:368
 msgid "_About"
 msgstr ""
 
-#. Set its tooltip, based on number of connected clients
-#: ../server/vino-status-icon.c:415
+#: ../server/vino-status-icon.c:402
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
