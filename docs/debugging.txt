@@ -38,6 +38,7 @@ in order to get debug spew from various parts of the code:
   + "prefs"   - spews information about the state of GConf preferences
   + "prompt"  - information about the prompt dialog displayed when a
                 client connects
+  + "dbus"    - information about d-bus stuff
 
 
   When tracking down performance problems, I've found strace very
