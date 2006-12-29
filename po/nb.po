@@ -7,19 +7,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-13 14:39+0100\n"
-"PO-Revision-Date: 2006-12-13 14:48+0100\n"
+"POT-Creation-Date: 2006-12-29 12:34+0100\n"
+"PO-Revision-Date: 2006-12-29 12:37+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:761
+#: ../capplet/vino-preferences.c:831
 msgid "Send this command by email"
 msgstr "Send denne kommandoen via e-post"
 
-#: ../capplet/vino-preferences.c:796 ../server/vino-status-icon.c:185
+#: ../capplet/vino-preferences.c:866
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -80,8 +81,24 @@ msgstr "_Passord:"
 msgid "_Require the user to enter this password:"
 msgstr "K_rev at bruker oppgir dette passordet:"
 
+#: ../server/vino-dbus-listener.c:88
+msgid "failed to register with the message bus"
+msgstr "feil ved registrering på meldingsbussen"
+
+#: ../server/vino-dbus-listener.c:92
+msgid "not connected to the message bus"
+msgstr "ikke koblet til meldingsbussen"
+
+#: ../server/vino-dbus-listener.c:103
+msgid "out of memory registering object path"
+msgstr "slutt på minne ved registrering av objektsti"
+
+#: ../server/vino-dbus-listener.c:116
+msgid "Error in dbus"
+msgstr "Feil i D-Bus"
+
 #: ../server/vino-fb.c:984 ../server/vino-prompt.c:143
-#: ../server/vino-server.c:987
+#: ../server/vino-server.c:998
 msgid "Screen"
 msgstr "Skjerm"
 
@@ -89,7 +106,7 @@ msgstr "Skjerm"
 msgid "The screen to be monitored"
 msgstr "Skjerm som skal overvåkes"
 
-#: ../server/vino-main.c:80
+#: ../server/vino-main.c:82
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -148,71 +165,71 @@ msgstr "Vil du la dem gjøre dette?"
 msgid "Question"
 msgstr "Spørsmål"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:62
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
 msgid "_Allow"
 msgstr "Till_at"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:63
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "_Nekt"
 
-#: ../server/vino-server.c:988
+#: ../server/vino-server.c:999
 msgid "The screen for which to create a VNC server"
 msgstr "Skjerm det skal opprettes en VNC-tjener for"
 
-#: ../server/vino-server.c:995
+#: ../server/vino-server.c:1006
 msgid "On Hold"
 msgstr "På vent"
 
-#: ../server/vino-server.c:996
+#: ../server/vino-server.c:1007
 msgid "Place all clients on hold"
 msgstr "Sett alle klienter på vent"
 
-#: ../server/vino-server.c:1003
+#: ../server/vino-server.c:1014
 msgid "Prompt enabled"
 msgstr "Melding aktivert"
 
-#: ../server/vino-server.c:1004
+#: ../server/vino-server.c:1015
 msgid "Prompt the user about connection attempts"
 msgstr "Gi beskjed til bruker om forsøk på tilkobling"
 
-#: ../server/vino-server.c:1011
+#: ../server/vino-server.c:1022
 msgid "View Only"
 msgstr "Kun visning"
 
-#: ../server/vino-server.c:1012
+#: ../server/vino-server.c:1023
 msgid "Disallow keyboard/pointer input from clients"
 msgstr "Deaktiver tastatur/peker for klienter"
 
-#: ../server/vino-server.c:1019
+#: ../server/vino-server.c:1030
 msgid "Local Only"
 msgstr "Kun lokal"
 
-#: ../server/vino-server.c:1020 ../server/vino-server.schemas.in.h:13
+#: ../server/vino-server.c:1031 ../server/vino-server.schemas.in.h:13
 msgid "Only allow local connections"
 msgstr "Tillat kun lokale tilkoblinger"
 
-#: ../server/vino-server.c:1027
+#: ../server/vino-server.c:1038
 msgid "Require Encryption"
 msgstr "Krev kryptering"
 
-#: ../server/vino-server.c:1028
+#: ../server/vino-server.c:1039
 msgid "Require clients to use encryption"
 msgstr "Krev at klienter bruker kryptering"
 
-#: ../server/vino-server.c:1035
+#: ../server/vino-server.c:1046
 msgid "Authentication methods"
 msgstr "Autentiseringsmetoder"
 
-#: ../server/vino-server.c:1036
+#: ../server/vino-server.c:1047
 msgid "The authentication methods this server should allow"
 msgstr "Autentiseringsmetoder tjeneren skal tillate"
 
-#: ../server/vino-server.c:1044
+#: ../server/vino-server.c:1055
 msgid "VNC Password"
 msgstr "VNC-passord"
 
-#: ../server/vino-server.c:1045
+#: ../server/vino-server.c:1056
 msgid ""
 "The password (base64 encoded) used to authenticate types using the VncAuth "
 "method"
@@ -220,24 +237,32 @@ msgstr ""
 "Passord (base64-kodet) som brukes til å autentisere typer som bruker VncAuth-"
 "metoden"
 
-#: ../server/vino-server.c:1052
+#: ../server/vino-server.c:1063
 msgid "Use an alternative port"
 msgstr "Bruk en alternativ port"
 
-#: ../server/vino-server.c:1053
+#: ../server/vino-server.c:1064
 msgid "Listen on the port specified by the 'alternative-port' property"
 msgstr "Lytt på porten som oppgis i egenskapen «alternative-port»"
 
-#: ../server/vino-server.c:1060 ../server/vino-server.schemas.in.h:2
+#: ../server/vino-server.c:1071 ../server/vino-server.schemas.in.h:2
 msgid "Alternative port number"
 msgstr "Portnummer for alternativ port"
 
-#: ../server/vino-server.c:1061
+#: ../server/vino-server.c:1072
 msgid ""
 "Listen on the specified port number if the 'use-alternative-port' property "
 "is TRUE"
 msgstr ""
 "Lytt på oppgitt portnummer hvis egenskapen «use-alternative-port» er TRUE"
+
+#: ../server/vino-server.c:1080
+msgid "Port server number"
+msgstr "Portnummer for tjener"
+
+#: ../server/vino-server.c:1081
+msgid "The port used by this server"
+msgstr "Porten som brukes av denne tjeneren"
 
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -291,6 +316,8 @@ msgid ""
 "If true, the server will listen another port, instead of default (5900). The "
 "port must be specified in 'alternative_port' key."
 msgstr ""
+"Hvis «true» er satt vil serveren lytte på en annen port enn forvalgt port "
+"(5900). Porten må oppgis i nøkkelen «alternative_port»."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid ""
@@ -370,113 +397,106 @@ msgstr ""
 "Problem under registrering av det eksterne skrivebordet med bonobo-"
 "activation. Avslutter...\n"
 
-#: ../server/vino-status-icon.c:151
+#: ../server/vino-status-icon.c:175
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
-"%s"
+" %s"
 msgstr ""
 "Det oppsto en feil under visning av brukervalg:\n"
-"%s"
+" %s"
 
-#: ../server/vino-status-icon.c:216
-msgid "Licensed under the GNU General Public License Version 2"
-msgstr "Lisensiert under GNU General Public License Versjon 2"
-
-#: ../server/vino-status-icon.c:217
+#: ../server/vino-status-icon.c:183
+#, c-format
 msgid ""
+"There was an error displaying help:\n"
+" %s"
+msgstr ""
+"Det oppsto en feil under visning av hjelp:\n"
+" %s"
+
+#: ../server/vino-status-icon.c:206
+msgid ""
+"Licensed under the GNU General Public License Version 2\n"
+"\n"
 "Vino is free software; you can redistribute it and/or\n"
 "modify it under the terms of the GNU General Public License\n"
 "as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version."
-msgstr ""
-
-#: ../server/vino-status-icon.c:221
-msgid ""
+"of the License, or (at your option) any later version.\n"
+"\n"
 "Vino is distributed in the hope that it will be useful,\n"
 "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"GNU General Public License for more details."
-msgstr ""
-
-#: ../server/vino-status-icon.c:225
-msgid ""
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n"
+"GNU General Public License for more details.\n"
+"\n"
 "You should have received a copy of the GNU General Public License\n"
 "along with this program; if not, write to the Free Software\n"
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
+"02110-1301, USA.\n"
 msgstr ""
 
-#: ../server/vino-status-icon.c:230
+#. Translators comment: put your own name here to appear in the about dialog.
+#: ../server/vino-status-icon.c:221
 msgid "translator-credits"
 msgstr "Kjartan Maraas <kmaraas@gnome.org>"
 
-#: ../server/vino-status-icon.c:243
-msgid "GNOME Remote Access"
-msgstr "GNOME fjerntilgang"
+#: ../server/vino-status-icon.c:227
+msgid "GNOME Remote Desktop"
+msgstr "Eksternt skrivebord"
 
-#. "website", "www",
-#: ../server/vino-status-icon.c:248
-msgid "Shares your desktop with others"
-msgstr "Deler ditt skrivebord med andre"
+#: ../server/vino-status-icon.c:228
+msgid "Share your desktop with other users"
+msgstr "Del ditt skrivebord med andre brukere"
 
-#: ../server/vino-status-icon.c:266
-msgid "Are you sure you want to disconnect the remote machine?"
-msgstr "Er du sikker på at du ønsker å koble fra den eksterne maskinen?"
+#: ../server/vino-status-icon.c:247
+#, c-format
+msgid "Are you sure you want to disconnect '%s'?"
+msgstr "Er du sikker på at du ønsker å koble fra «%s»?"
 
-#: ../server/vino-status-icon.c:269
-msgid "GNOME Remote Access - Confirmation"
-msgstr "GNOME fjernaksess - Bekreftelse"
+#: ../server/vino-status-icon.c:249
+#, c-format
+msgid "The remote user from '%s' will be disconnected. Are you sure?"
+msgstr "Ekstern bruker fra «%s» vil bli frakoblet. Er du sikker?"
 
-#: ../server/vino-status-icon.c:277
-msgid "Leave as it is"
-msgstr "La den være"
+#: ../server/vino-status-icon.c:254
+msgid "Are you sure you want to disconnect all clients?"
+msgstr "Er du sikker på at du ønsker å koble fra alle klienter?"
 
-#: ../server/vino-status-icon.c:278
+#: ../server/vino-status-icon.c:255
+msgid "All remote users will be disconnected. Are you sure?"
+msgstr "Alle eksterne brukere vil bli frakoblet. Er du sikker?"
+
+#: ../server/vino-status-icon.c:267
 msgid "Disconnect"
 msgstr "Koble fra"
 
-#: ../server/vino-status-icon.c:282
-#, c-format
-msgid ""
-"The remote user from the machine '%s' will be disconnected. Are you sure?"
-msgstr "Ekstern bruker fra maskin «%s» vil bli frakoblet. Er du sikker?"
-
-#. Preferences
-#: ../server/vino-status-icon.c:319
+#: ../server/vino-status-icon.c:318
 msgid "_Preferences"
 msgstr "_Brukervalg"
 
-#. Information about connected clients
-#: ../server/vino-status-icon.c:336
-msgid "Connected machines, click to disconnect"
-msgstr "Tilkoblede maskiner. Klikk for å koble fra"
+#: ../server/vino-status-icon.c:330
+msgid "Disconnect all"
+msgstr "Koble fra alle"
 
-#: ../server/vino-status-icon.c:354
-msgid " is watching your desktop"
-msgstr " overvåker ditt skrivebord"
+#: ../server/vino-status-icon.c:343
+#, c-format
+msgid "Disconnect %s"
+msgstr "Koble fra %s"
 
-#: ../server/vino-status-icon.c:356
-msgid " is controlling your desktop"
-msgstr " kontrollerer ditt skrivebord"
-
-#. Help
-#: ../server/vino-status-icon.c:377
+#: ../server/vino-status-icon.c:360
 msgid "_Help"
 msgstr "_Hjelp"
 
-#. About
-#: ../server/vino-status-icon.c:385
+#: ../server/vino-status-icon.c:368
 msgid "_About"
 msgstr "_Om"
 
-#. Set its tooltip, based on number of connected clients
-#: ../server/vino-status-icon.c:415
+#: ../server/vino-status-icon.c:402
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "En person er koblet til"
+msgstr[1] "%d personer er koblet til"
 
 #: ../session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
