@@ -981,10 +981,14 @@ vino_fb_class_init (VinoFBClass *klass)
   g_object_class_install_property (gobject_class,
 				   PROP_SCREEN,
 				   g_param_spec_object ("screen",
-							_("Screen"),
-							_("The screen to be monitored"),
+							"Screen",
+							"The screen to be monitored",
 							GDK_TYPE_SCREEN,
-							G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
+							G_PARAM_READWRITE      |
+                                                        G_PARAM_CONSTRUCT_ONLY |
+                                                        G_PARAM_STATIC_NAME    |
+                                                        G_PARAM_STATIC_NICK    |
+                                                        G_PARAM_STATIC_BLURB));
 
   signals [DAMAGE_NOTIFY] =
     g_signal_new ("damage-notify",

@@ -1,5 +1,9 @@
 2007-01-07  Mark McLoughlin  <mark@skynet.ie>
 
+	* POTFILES.in: remove vino-fb.c and vino-server.c
+
+2007-01-07  Mark McLoughlin  <mark@skynet.ie>
+
 	reviewed by: <delete if not using a buddy>
 
 	* Makefile.in.in:

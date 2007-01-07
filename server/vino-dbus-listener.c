@@ -117,10 +117,10 @@ vino_dbus_listener_class_init (VinoDBusListenerClass *klass)
 							"Server",
 							"The server",
 							VINO_TYPE_SERVER,
-							G_PARAM_READWRITE |
+							G_PARAM_READWRITE      |
 							G_PARAM_CONSTRUCT_ONLY |
-							G_PARAM_STATIC_NAME |
-							G_PARAM_STATIC_NICK |
+							G_PARAM_STATIC_NAME    |
+							G_PARAM_STATIC_NICK    |
 							G_PARAM_STATIC_BLURB));
 
   g_type_class_add_private (klass, sizeof (VinoDBusListenerPrivate));

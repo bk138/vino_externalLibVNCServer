@@ -1,5 +1,13 @@
 2007-01-07  Mark McLoughlin  <mark@skynet.ie>
 
+	* server/vino-fb.c,
+	  server/vino-server.c,
+	  server/vino-dbus-listener.c: don't mark object
+	property descriptions for translation, but do mark
+	them as static with G_PARAM_STATIC_NAME etc.
+
+2007-01-07  Mark McLoughlin  <mark@skynet.ie>
+
 	Re-work a fair bit of the D-Bus support e.g.
 	  - Re-name the interface to org.gnome.VinoScreen
 	  - Share a connection between all listeners so that

@@ -995,95 +995,139 @@ vino_server_class_init (VinoServerClass *klass)
   g_object_class_install_property (gobject_class,
 				   PROP_SCREEN,
 				   g_param_spec_object ("screen",
-							_("Screen"),
-							_("The screen for which to create a VNC server"),
+							"Screen",
+							"The screen for which to create a VNC server",
 							GDK_TYPE_SCREEN,
-							G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
-  
+							G_PARAM_READWRITE      |
+                                                        G_PARAM_CONSTRUCT_ONLY |
+                                                        G_PARAM_STATIC_NAME    |
+                                                        G_PARAM_STATIC_NICK    |
+                                                        G_PARAM_STATIC_BLURB));
+
   g_object_class_install_property (gobject_class,
 				   PROP_ON_HOLD,
 				   g_param_spec_boolean ("on-hold",
-							 _("On Hold"),
-							 _("Place all clients on hold"),
+							 "On Hold",
+							 "Place all clients on hold",
 							 TRUE,
-							 G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+                                                         G_PARAM_READWRITE   |
+                                                         G_PARAM_CONSTRUCT   |
+                                                         G_PARAM_STATIC_NAME |
+                                                         G_PARAM_STATIC_NICK |
+                                                         G_PARAM_STATIC_BLURB));
 
   g_object_class_install_property (gobject_class,
 				   PROP_PROMPT_ENABLED,
 				   g_param_spec_boolean ("prompt-enabled",
-							 _("Prompt enabled"),
-							 _("Prompt the user about connection attempts"),
+							 "Prompt enabled",
+							 "Prompt the user about connection attempts",
 							 TRUE,
-							 G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+                                                         G_PARAM_READWRITE   |
+                                                         G_PARAM_CONSTRUCT   |
+                                                         G_PARAM_STATIC_NAME |
+                                                         G_PARAM_STATIC_NICK |
+                                                         G_PARAM_STATIC_BLURB));
 
   g_object_class_install_property (gobject_class,
 				   PROP_VIEW_ONLY,
 				   g_param_spec_boolean ("view-only",
-							 _("View Only"),
-							 _("Disallow keyboard/pointer input from clients"),
+							 "View Only",
+							 "Disallow keyboard/pointer input from clients",
 							 FALSE,
-							 G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+                                                         G_PARAM_READWRITE   |
+                                                         G_PARAM_CONSTRUCT   |
+                                                         G_PARAM_STATIC_NAME |
+                                                         G_PARAM_STATIC_NICK |
+                                                         G_PARAM_STATIC_BLURB));
 
   g_object_class_install_property (gobject_class,
 				   PROP_LOCAL_ONLY,
 				   g_param_spec_boolean ("local-only",
-							 _("Local Only"),
-							 _("Only allow local connections"),
+							 "Local Only",
+							 "Only allow local connections",
 							 FALSE,
-							 G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+                                                         G_PARAM_READWRITE   |
+                                                         G_PARAM_CONSTRUCT   |
+                                                         G_PARAM_STATIC_NAME |
+                                                         G_PARAM_STATIC_NICK |
+                                                         G_PARAM_STATIC_BLURB));
+
 
   g_object_class_install_property (gobject_class,
 				   PROP_REQUIRE_ENCRYPTION,
 				   g_param_spec_boolean ("require-encryption",
-							 _("Require Encryption"),
-							 _("Require clients to use encryption"),
+							 "Require Encryption",
+							 "Require clients to use encryption",
 							 TRUE,
-							 G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+                                                         G_PARAM_READWRITE   |
+                                                         G_PARAM_CONSTRUCT   |
+                                                         G_PARAM_STATIC_NAME |
+                                                         G_PARAM_STATIC_NICK |
+                                                         G_PARAM_STATIC_BLURB));
 
   g_object_class_install_property (gobject_class,
 				   PROP_AUTH_METHODS,
 				   g_param_spec_flags ("auth-methods",
-						       _("Authentication methods"),
-						       _("The authentication methods this server should allow"),
+						       "Authentication methods",
+						       "The authentication methods this server should allow",
 						       VINO_TYPE_AUTH_METHOD,
 						       VINO_AUTH_NONE,
-						       G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+                                                       G_PARAM_READWRITE   |
+                                                       G_PARAM_CONSTRUCT   |
+                                                       G_PARAM_STATIC_NAME |
+                                                       G_PARAM_STATIC_NICK |
+                                                       G_PARAM_STATIC_BLURB));
   
   g_object_class_install_property (gobject_class,
 				   PROP_VNC_PASSWORD,
 				   g_param_spec_string ("vnc-password",
-							_("VNC Password"),
-							_("The password (base64 encoded) used to authenticate types using the VncAuth method"),
+							"VNC Password",
+							"The password (base64 encoded) used to authenticate types using the VncAuth method",
 							NULL,
-							G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+                                                        G_PARAM_READWRITE   |
+                                                        G_PARAM_CONSTRUCT   |
+                                                        G_PARAM_STATIC_NAME |
+                                                        G_PARAM_STATIC_NICK |
+                                                        G_PARAM_STATIC_BLURB));
 
   g_object_class_install_property (gobject_class,
 				   PROP_USE_ALTERNATIVE_PORT,
 				   g_param_spec_boolean ("use-alternative-port",
-							 _("Use an alternative port"),
-							 _("Listen on the port specified by the 'alternative-port' property"),
+							 "Use an alternative port",
+							 "Listen on the port specified by the 'alternative-port' property",
 							 FALSE,
-							 G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+                                                         G_PARAM_READWRITE   |
+                                                         G_PARAM_CONSTRUCT   |
+                                                         G_PARAM_STATIC_NAME |
+                                                         G_PARAM_STATIC_NICK |
+                                                         G_PARAM_STATIC_BLURB));
 
   g_object_class_install_property (gobject_class,
 				   PROP_ALTERNATIVE_PORT,
 				   g_param_spec_int ("alternative-port",
-						     _("Alternative port number"),
-						     _("Listen on the specified port number if the 'use-alternative-port' property is TRUE"),
+						     "Alternative port number",
+						     "Listen on the specified port number if the 'use-alternative-port' property is TRUE",
 						     VINO_SERVER_MIN_PORT,
 						     VINO_SERVER_MAX_PORT,
 						     VINO_SERVER_DEFAULT_PORT,
-						     G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+                                                     G_PARAM_READWRITE   |
+                                                     G_PARAM_CONSTRUCT   |
+                                                     G_PARAM_STATIC_NAME |
+                                                     G_PARAM_STATIC_NICK |
+                                                     G_PARAM_STATIC_BLURB));
 
   g_object_class_install_property (gobject_class,
 				   PROP_PORT,
 				   g_param_spec_int ("port",
-						     _("Server port number"),
-						     _("The port used by this server"),
+						     "Server port number",
+						     "The port used by this server",
 						     VINO_SERVER_MIN_PORT,
 						     VINO_SERVER_MAX_PORT,
 						     VINO_SERVER_DEFAULT_PORT,
-						     G_PARAM_READABLE));
+						     G_PARAM_READABLE    |
+                                                     G_PARAM_STATIC_NAME |
+                                                     G_PARAM_STATIC_NICK |
+                                                     G_PARAM_STATIC_BLURB));
 }
 
 GType
