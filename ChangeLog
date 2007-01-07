@@ -1,4 +1,30 @@
+2007-01-07  Mark McLoughlin  <mark@skynet.ie>
+
+	Re-work a fair bit of the D-Bus support e.g.
+	  - Re-name the interface to org.gnome.VinoScreen
+	  - Share a connection between all listeners so that
+	    we don't e.g. request the name more than once
+	  - Remove strange AddMatch/Disconnected handling
+	  - Error handling fixes
+	  - Fix some leaks
+	  - Misc. fixes and code cleanups
+
+	* server/vino-dbus-listener.c: re-name interface, add 
+	shared connection stuff, kill AddMatch/Disconnceted
+	message handling, fix error handling, fix leaks and
+	lots of misc. fixing
+	
+	* server/vino-dbus-listener.h: add shared connection api
+	
+	* server/vino-main.c: (main): request the D-Bus name
+	here once all the listeners have been created.
+	
+	* capplet/vino-preferences.c: (vino_preferences_get_server_port):
+	Update for interface re-name, fix leak, don't handle impossible
+	NULL return from dbus_g_proxy_new_for_name(), misc. cleanups.
+	
 2006-12-21  Jonh Wendell <jwendell@cvs.gnome.org>
+	
 	Added initial d-bus support, fixing bug #319798
 
 	* configure.in: Require dbus-glib-1

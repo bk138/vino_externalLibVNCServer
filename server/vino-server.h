@@ -77,13 +77,14 @@ void                 vino_server_set_prompt_enabled       (VinoServer     *serve
 gboolean             vino_server_get_prompt_enabled       (VinoServer     *server);
 void                 vino_server_set_view_only            (VinoServer     *server,
 							   gboolean        view_only);
+gboolean             vino_server_get_view_only            (VinoServer     *server);
 gboolean             vino_server_get_use_alternative_port (VinoServer     *server);
 void                 vino_server_set_use_alternative_port (VinoServer     *server,
 							   gboolean        use_alternative_port);
 int                  vino_server_get_alternative_port     (VinoServer     *server);
 void                 vino_server_set_alternative_port     (VinoServer     *server,
 							   int             alternative_port);
-gboolean             vino_server_get_view_only            (VinoServer     *server);
+int                  vino_server_get_port                 (VinoServer     *server);
 void                 vino_server_set_local_only           (VinoServer     *server,
 							   gboolean        local_only);
 gboolean             vino_server_get_local_only           (VinoServer     *server);
@@ -100,7 +101,6 @@ G_CONST_RETURN char *vino_server_get_vnc_password         (VinoServer     *serve
 
 G_CONST_RETURN char *vino_client_get_hostname (VinoClient *client);
 void                 vino_client_disconnect   (VinoClient *client);
-int                  vino_server_get_port     (VinoServer *server);
 
 G_END_DECLS
 

@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2004-2006 William Jon McCann <mccann@jhu.edu>
  * Copyright (C) 2006 Jonh Wendell <wendell@bani.com.br>
+ * Copyright (C) 2007 Mark McLoughlin <markmc@skynet.ie>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -20,6 +21,7 @@
  * Authors:
  *      William Jon McCann <mccann@jhu.edu>
  *      Jonh Wendell <wendell@bani.com.br>
+ *      Mark McLoughlin <mark@skynet.ie>
  *
  * Code taken from gnome-screensaver/src/gs-listener-dbus.h
  */
@@ -54,18 +56,23 @@ struct _VinoDBusListenerClass
   GObjectClass  base_class;
 };
 
-typedef enum
-{
-  VINO_DBUS_LISTENER_ERROR_SERVICE_UNAVAILABLE,
-  VINO_DBUS_LISTENER_ERROR_ACQUISITION_FAILURE,
-  VINO_DBUS_LISTENER_ERROR_ACTIVATION_FAILURE
-} VinoDBusListenerError;
+GType              vino_dbus_listener_get_type   (void) G_GNUC_CONST;
+VinoDBusListener * vino_dbus_listener_new        (VinoServer       *server);
+VinoServer        *vino_dbus_listener_get_server (VinoDBusListener *listener);
 
-GType              vino_dbus_listener_get_type                (void) G_GNUC_CONST;
+G_END_DECLS
 
-VinoDBusListener  *vino_dbus_listener_new                     (VinoServer   *server);
+/* 
+ * FIXME: remove define when we can require dbus-1 >= 0.95
+ */
+#define DBUS_API_SUBJECT_TO_CHANGE
+#include <dbus/dbus.h>
 
-VinoServer        *vino_dbus_listener_get_server              (VinoDBusListener *listener);
+G_BEGIN_DECLS
+
+DBusConnection *vino_dbus_get_connection   (void);
+void            vino_dbus_unref_connection (void);
+void            vino_dbus_request_name     (void);
 
 G_END_DECLS
 

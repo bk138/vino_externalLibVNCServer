@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2003 Sun Microsystems, Inc.
+ * Copyright (C) 2006 Jonh Wendell <wendell@bani.com.br> 
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -18,6 +19,7 @@
  *
  * Authors:
  *      Mark McLoughlin <mark@skynet.ie>
+ *      Jonh Wendell <wendell@bani.com.br>
  */
 
 #include <config.h>
@@ -46,14 +48,6 @@
 #define VINO_PREFS_MAILTO                 VINO_PREFS_DIR "/mailto"
 
 #define N_LISTENERS 6
-
-#define VINO_DBUS_BUS_NAME  "org.gnome.Vino"
-#define VINO_DBUS_INTERFACE "org.gnome.Vino"
-#define VINO_DBUS_OBJ_PATH  "/org/gnome/vino/screens/%d"
-
-#define VINO_DEFAULT_PORT   5900
-#define VINO_MIN_PORT       5000
-#define VINO_MAX_PORT       6000
 
 typedef struct {
   GladeXML    *xml;
@@ -604,41 +598,42 @@ vino_preferences_dialog_setup_icons (VinoPreferencesDialog *dialog)
 static int
 vino_preferences_get_server_port (VinoPreferencesDialog *dialog)
 {
+#define VINO_DBUS_BUS_NAME  "org.gnome.Vino"
+#define VINO_DBUS_INTERFACE "org.gnome.VinoScreen"
+
+#define VINO_DEFAULT_PORT   5900
+#define VINO_MIN_PORT       5000
+#define VINO_MAX_PORT       6000
+
   DBusGConnection *connection;
   GError          *error;
   DBusGProxy      *proxy;
   int              port;
   GdkScreen       *screen;
-  int              screen_num;
+  char            *obj_path;
   
   error = NULL;
-  connection = dbus_g_bus_get (DBUS_BUS_SESSION,
-                               &error);
-  if (connection == NULL)
+  connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
+  if (!connection)
     {
-      g_printerr ("Failed to open connection to bus: %s\n",
+      g_printerr (_("Failed to open connection to bus: %s\n"),
                   error->message);
       g_error_free (error);
       return 0;
     }
 
-  screen     = gtk_window_get_screen (GTK_WINDOW (dialog->dialog));
-  screen_num = gdk_screen_get_number (screen);
+  screen = gtk_window_get_screen (GTK_WINDOW (dialog->dialog));
+
+  obj_path = g_strdup_printf ("/org/gnome/vino/screens/%d",
+                              gdk_screen_get_number (screen));
 
   proxy = dbus_g_proxy_new_for_name (connection,
                                      VINO_DBUS_BUS_NAME,
-                                     g_strdup_printf (VINO_DBUS_OBJ_PATH, screen_num),
+                                     obj_path,
                                      VINO_DBUS_INTERFACE);
 
-  if (!proxy)
-    {
-      g_printerr ("Failed to open connection to vino-server dbus: %s\n",
-                  error->message);
-      dbus_g_connection_unref(connection);
-      return 0;
-    }
-  
-  error = NULL;
+  g_free (obj_path);
+
   if (!dbus_g_proxy_call (proxy, "GetServerPort", &error,
                           G_TYPE_INVALID,
                           G_TYPE_INT, &port,
@@ -647,17 +642,23 @@ vino_preferences_get_server_port (VinoPreferencesDialog *dialog)
       g_printerr ("Failed to call remote GetServerPort function: %s\n",
                   error->message);
       g_error_free (error);
-      dbus_g_connection_unref(connection);
+      dbus_g_connection_unref (connection);
       return 0;
     }
 
   g_object_unref (proxy);
-  dbus_g_connection_unref(connection);
+  dbus_g_connection_unref (connection);
 
-  if ( (port >= VINO_MIN_PORT) && (port <= VINO_MAX_PORT))
+  if (port >= VINO_MIN_PORT && port <= VINO_MAX_PORT)
     return port - VINO_DEFAULT_PORT;
   else
     return port;
+
+#undef VINO_DBUS_BUS_NAME
+#undef VINO_DBUS_INTERFACE
+#undef VINO_DEFAULT_PORT
+#undef VINO_MIN_PORT
+#undef VINO_MAX_PORT
 }
 
 static char *

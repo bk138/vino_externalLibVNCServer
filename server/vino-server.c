@@ -1074,16 +1074,16 @@ vino_server_class_init (VinoServerClass *klass)
 						     VINO_SERVER_MAX_PORT,
 						     VINO_SERVER_DEFAULT_PORT,
 						     G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+
   g_object_class_install_property (gobject_class,
 				   PROP_PORT,
 				   g_param_spec_int ("port",
-						     _("Port server number"),
+						     _("Server port number"),
 						     _("The port used by this server"),
 						     VINO_SERVER_MIN_PORT,
 						     VINO_SERVER_MAX_PORT,
 						     VINO_SERVER_DEFAULT_PORT,
 						     G_PARAM_READABLE));
-
 }
 
 GType
@@ -1434,5 +1434,6 @@ int
 vino_server_get_port (VinoServer *server)
 {
   g_return_val_if_fail (VINO_IS_SERVER (server), 0);
+
   return server->priv->rfb_screen->rfbPort;
 }

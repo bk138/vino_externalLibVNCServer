@@ -30,6 +30,7 @@
 #include "vino-shell.h"
 #include "vino-prefs.h"
 #include "vino-util.h"
+#include "vino-dbus-listener.h"
 
 #ifdef HAVE_GNUTLS
 #include <gnutls/gnutls.h>
@@ -91,6 +92,8 @@ main (int argc, char **argv)
     vino_prefs_create_server (gdk_display_get_screen (display, i));
 
   vino_mdns_start ();
+
+  vino_dbus_request_name ();
 
   gtk_main ();
 
