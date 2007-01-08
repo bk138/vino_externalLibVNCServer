@@ -269,31 +269,14 @@ vino_prompt_setup_icons (VinoPrompt *prompt,
 {
 #define ICON_SIZE_STANDARD 48
 
-  GnomeIconTheme *icon_theme;
-  char           *icon_path;
-
   prompt->priv->sharing_icon = glade_xml_get_widget (xml, "sharing_icon");
   g_assert (prompt->priv->sharing_icon != NULL);
-  
-  icon_theme = gnome_icon_theme_new ();
-  gnome_icon_theme_set_allow_svg (icon_theme, TRUE);
 
-  icon_path = gnome_icon_theme_lookup_icon (icon_theme,
-					    "gnome-remote-desktop",
-					    ICON_SIZE_STANDARD,
-					    NULL, NULL);
-  if (icon_path)
-    {
-      gtk_window_set_icon_from_file (GTK_WINDOW (prompt->priv->dialog),
-				     icon_path,
-				     NULL);
-      gtk_image_set_from_file (GTK_IMAGE (prompt->priv->sharing_icon),
-			       icon_path);
-      g_free (icon_path);
-    }
+  gtk_window_set_icon_name (GTK_WINDOW (prompt->priv->dialog),
+			    "gnome-remote-desktop");
+  gtk_image_set_from_icon_name (GTK_IMAGE (prompt->priv->sharing_icon),
+				"gnome-remote-desktop", GTK_ICON_SIZE_DIALOG);
 
-  g_object_unref (icon_theme);
-  
 #undef ICON_SIZE_STANDARD
 }
 

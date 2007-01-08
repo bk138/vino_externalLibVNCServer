@@ -177,17 +177,21 @@ vino_http_lookup_client_logo (void)
 {
 #define ICON_SIZE_STANDARD 48
 
-  GnomeIconTheme *icon_theme;
-  char           *icon_path;
+  GtkIconTheme *icon_theme;
+  GtkIconInfo  *info;
+  char         *icon_path = NULL;
 
-  icon_theme = gnome_icon_theme_new ();
-  gnome_icon_theme_set_allow_svg (icon_theme, FALSE);
+  icon_theme = gtk_icon_theme_get_default ();
 
-  icon_path = gnome_icon_theme_lookup_icon (icon_theme,
-					    "gnome-remote-desktop",
-					    ICON_SIZE_STANDARD,
-					    NULL, NULL);
-  g_object_unref (icon_theme);
+  info = gtk_icon_theme_lookup_icon (icon_theme,
+				     "gnome-remote-desktop",
+				     ICON_SIZE_STANDARD,
+				     GTK_ICON_LOOKUP_NO_SVG);
+  if (info)
+    {
+      icon_path = g_strdup (gtk_icon_info_get_filename (info));
+      gtk_icon_info_free (info);
+    }
 
   return icon_path;
   

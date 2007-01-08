@@ -1,3 +1,10 @@
+2007-01-08  Christian Persch  <chpe@svn.gnome.org>
+
+	* server/vino-http.c: (vino_http_lookup_client_logo):
+	* server/vino-prompt.c: (vino_prompt_setup_icons):
+	Replace deprecated GnomeIconTheme usage with GtkIconTheme. Bug
+	#391850.
+
 2007-01-07  Mark McLoughlin  <mark@skynet.ie>
 
 	* server/vino-fb.c,
