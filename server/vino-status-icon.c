@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2006 Jonh Wendell
+ * Copyright (C) 2007 Mark McLoughlin
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -18,6 +19,7 @@
  *
  * Authors:
  *      Jonh Wendell <wendell@bani.com.br>
+ *      Mark McLoughlin <mark@skynet.ie>
  */
 
 #include <config.h>
@@ -28,11 +30,19 @@
 #include <gtk/gtk.h>
 #include <string.h>
 
+#ifdef VINO_ENABLE_LIBNOTIFY
+#include <libnotify/notify.h>
+#endif
+
 struct _VinoStatusIconPrivate
 {
   GtkMenu    *menu;
   VinoServer *server;
   GSList     *clients;
+
+#ifdef VINO_ENABLE_LIBNOTIFY
+  NotifyNotification *new_client_notification;
+#endif
 };
 
 G_DEFINE_TYPE (VinoStatusIcon, vino_status_icon, GTK_TYPE_STATUS_ICON);
@@ -43,10 +53,19 @@ enum
   PROP_SERVER
 };
 
+static void vino_status_icon_show_new_client_notification (VinoStatusIcon *icon,
+                                                           VinoClient     *client);
+
 static void
 vino_status_icon_finalize (GObject *object)
 {
   VinoStatusIcon *icon = VINO_STATUS_ICON (object);
+
+#ifdef VINO_ENABLE_LIBNOTIFY
+  if (icon->priv->new_client_notification)
+    g_object_unref (icon->priv->new_client_notification);
+  icon->priv->new_client_notification = NULL;
+#endif
 
   if (icon->priv->menu)
     gtk_widget_destroy (GTK_WIDGET(icon->priv->menu));
@@ -420,6 +439,8 @@ vino_status_icon_add_client (VinoStatusIcon *icon,
   icon->priv->clients = g_slist_append (icon->priv->clients, client);
 
   vino_status_icon_update_tooltip (icon);
+
+  vino_status_icon_show_new_client_notification (icon, client);
 }
 
 gboolean
@@ -462,4 +483,86 @@ vino_status_icon_class_init (VinoStatusIconClass *klass)
 							G_PARAM_STATIC_BLURB));
 
   g_type_class_add_private (gobject_class, sizeof (VinoStatusIconPrivate));
+}
+
+#ifdef VINO_ENABLE_LIBNOTIFY
+static void
+vino_status_handle_new_client_notification_closed (VinoStatusIcon *icon)
+{
+  /*
+   * FIXME: this looks like a leak, but libnotify crashes
+   *        if we unref here. File a libnotify bug.
+   *
+   * g_object_unref (icon->priv->new_client_notification);
+   */
+  icon->priv->new_client_notification = NULL;
+  g_print ("Got closed signal\n");
+}
+#endif /* VINO_ENABLE_LIBNOTIFY */
+
+static void
+vino_status_icon_show_new_client_notification (VinoStatusIcon *icon,
+                                               VinoClient     *client)
+{
+#ifdef VINO_ENABLE_LIBNOTIFY
+#define NOTIFICATION_TIMEOUT 5
+
+  GError     *error;
+  const char *summary;
+  char       *body;
+
+  if (vino_server_get_prompt_enabled (icon->priv->server))
+    return;
+
+  if (!notify_is_initted () &&  !notify_init (_("GNOME Remote Desktop")))
+    {
+      g_printerr (_("Error initializing libnotify\n"));
+      return;
+    }
+
+  if (icon->priv->new_client_notification)
+    {
+      notify_notification_close (icon->priv->new_client_notification, NULL);
+      g_object_unref (icon->priv->new_client_notification);
+      icon->priv->new_client_notification = NULL;
+    }
+
+  if (vino_server_get_view_only (icon->priv->server))
+    {
+      summary = _("Another user is viewing your desktop");
+      body = g_strdup_printf (_("A user on the computer '%s' is remotely viewing your desktop."),
+                              vino_client_get_hostname (client));
+    }
+  else
+    {
+      summary = _("Another user is controlling your desktop");
+      body = g_strdup_printf (_("A user on the computer '%s' is remotely controlling your desktop."),
+                              vino_client_get_hostname (client));
+    }
+
+  icon->priv->new_client_notification =
+    notify_notification_new_with_status_icon (summary,
+                                              body,
+                                              "gnome-remote-desktop",
+                                              GTK_STATUS_ICON (icon));
+
+  g_free (body);
+
+  g_signal_connect_swapped (icon->priv->new_client_notification, "closed",
+                            G_CALLBACK (vino_status_handle_new_client_notification_closed),
+                            icon);
+
+  notify_notification_set_timeout (icon->priv->new_client_notification,
+                                   NOTIFICATION_TIMEOUT * 1000);
+
+  error = NULL;
+  if (!notify_notification_show (icon->priv->new_client_notification, &error))
+    {
+      g_printerr (_("Error while displaying notification bubble: %s\n"),
+                  error->message);
+      g_error_free (error);
+    }
+
+#undef NOTIFICATION_TIMEOUT
+#endif /* VINO_ENABLE_LIBNOTIFY */
 }

@@ -1,3 +1,19 @@
+2007-01-08  Mark McLoughlin  <mark@skynet.ie>
+
+	Display a notification bubble when someone connects
+	if we haven't already asked the user whether to
+	allow them.
+
+	Based on a patch from Jonh Wendell in bug #387095
+
+	* configure.in: add --enable-libnotify
+	
+	* server/Makefile.am: link to libnotify
+	
+	* server/vino-status-icon.c: Display a notification
+	bubble when a client connects if the authorization
+	prompt is disabled.
+
 2007-01-08  Christian Persch  <chpe@svn.gnome.org>
 
 	* server/vino-http.c: (vino_http_lookup_client_logo):
