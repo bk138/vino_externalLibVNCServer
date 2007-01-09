@@ -1,3 +1,30 @@
+Vino 2.17.5
+===========
+
+  Features
+
+    + Add D-Bus support so that capplet can find out the port number
+      from the server (Jonh, Mark)
+    + Display a notification bubble when someone connects if we
+      haven't already prompted the user for authorization (Jonh, Mark)
+
+  Fixes
+
+    + Replace deprecated GnomeIconTheme usage with GtkIconTheme (Christian Persch)
+    + Don't mark GObject property descriptions for translation (Mark)
+
+  Translations
+
+    + Khaled Hosny (ar)
+    + Hendrik Richter (de)
+    + David Lodge (en_GB)
+    + Francisco Javier F. Serrador (es)
+    + Satrou SATOH (ja)
+    + Raivis Dejus (lv)
+    + Kjartan Maraas (nb)
+    + Daniel Nylander (sv)
+    + Theppitak Karoonboonyanan (th)
+
 Vino 2.17.4
 ===========
 
