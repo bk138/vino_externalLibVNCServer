@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-04 15:45+0100\n"
-"PO-Revision-Date: 2007-01-04 16:00+0100\n"
+"POT-Creation-Date: 2007-01-11 22:52+0100\n"
+"PO-Revision-Date: 2007-01-11 22:56+0100\n"
 "Last-Translator: Hendrik Richter <hendrikr@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,11 +21,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:831
+#: ../capplet/vino-preferences.c:619 ../server/vino-dbus-listener.c:324
+#, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "Verbindungsbus konnte nicht geöffnet werden: %s\n"
+
+#: ../capplet/vino-preferences.c:832
 msgid "Send this command by email"
 msgstr "Diesen Befehl per E-Mail verschicken"
 
-#: ../capplet/vino-preferences.c:866
+#: ../capplet/vino-preferences.c:867
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -86,32 +91,22 @@ msgstr "_Passwort:"
 msgid "_Require the user to enter this password:"
 msgstr "Passwort_eingabe durch Benutzer erforderlich machen:"
 
-#: ../server/vino-dbus-listener.c:88
-msgid "failed to register with the message bus"
-msgstr "Registrierung mit Nachrichtenbus ist gescheitert."
+#: ../server/vino-dbus-listener.c:180 ../server/vino-dbus-listener.c:210
+#, c-format
+msgid "Out of memory handling '%s' message"
+msgstr "Nicht genügend Speicher zum Verarbeiten der Nachricht »%s«"
 
-#: ../server/vino-dbus-listener.c:92
-msgid "not connected to the message bus"
-msgstr "Keine Verbindung zum Nachrichtenbus."
+#: ../server/vino-dbus-listener.c:284
+#, c-format
+msgid "Out of memory registering object path '%s'"
+msgstr "Nicht genügend Speicher zum Registrieren des Objektpfades »%s«"
 
-#: ../server/vino-dbus-listener.c:103
-msgid "out of memory registering object path"
-msgstr "Nicht genügend Speicher zum Registrieren des Objektpfades"
+#: ../server/vino-dbus-listener.c:357
+#, c-format
+msgid "Failed to acquire D-Bus name '%s'\n"
+msgstr "D-Bus-Name »%s« konnte nicht erlangt werden\n"
 
-#: ../server/vino-dbus-listener.c:116
-msgid "Error in dbus"
-msgstr "Fehler in dbus"
-
-#: ../server/vino-fb.c:984 ../server/vino-prompt.c:143
-#: ../server/vino-server.c:998
-msgid "Screen"
-msgstr "Bildschirm"
-
-#: ../server/vino-fb.c:985
-msgid "The screen to be monitored"
-msgstr "Der zu überwachende Bildschirm"
-
-#: ../server/vino-main.c:82
+#: ../server/vino-main.c:83
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -138,11 +133,15 @@ msgstr "0"
 msgid "%s's remote desktop"
 msgstr "Entfernter Desktop von %s"
 
+#: ../server/vino-prompt.c:143
+msgid "Screen"
+msgstr "Bildschirm"
+
 #: ../server/vino-prompt.c:144
 msgid "The screen on which to display the prompt"
 msgstr "Der Bildschirm, auf dem die Abfrage angezeigt werden soll"
 
-#: ../server/vino-prompt.c:361
+#: ../server/vino-prompt.c:344
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -181,102 +180,13 @@ msgstr "_Erlauben"
 msgid "_Refuse"
 msgstr "_Abweisen"
 
-#: ../server/vino-server.c:999
-msgid "The screen for which to create a VNC server"
-msgstr "Der Bildschirm, für den ein VNC-Server angelegt werden soll"
-
-#: ../server/vino-server.c:1006
-msgid "On Hold"
-msgstr "Auf warten"
-
-#: ../server/vino-server.c:1007
-msgid "Place all clients on hold"
-msgstr "Alle Clients in die Warteschleife schicken"
-
-#: ../server/vino-server.c:1014
-msgid "Prompt enabled"
-msgstr "Abfrage aktiviert"
-
-#: ../server/vino-server.c:1015
-msgid "Prompt the user about connection attempts"
-msgstr "Den Benutzer bei Verbindungsversuchen rückfragen"
-
-#: ../server/vino-server.c:1022
-msgid "View Only"
-msgstr "Nur anzeigen"
-
-#: ../server/vino-server.c:1023
-msgid "Disallow keyboard/pointer input from clients"
-msgstr "Tastatur-/Zeigereingaben durch Clients unterbinden"
-
-#: ../server/vino-server.c:1030
-msgid "Local Only"
-msgstr "Nur lokal"
-
-#: ../server/vino-server.c:1031 ../server/vino-server.schemas.in.h:13
-msgid "Only allow local connections"
-msgstr "Nur lokale Verbindungen zulassen"
-
-#: ../server/vino-server.c:1038
-msgid "Require Encryption"
-msgstr "Verschlüsselung erforderlich machen"
-
-#: ../server/vino-server.c:1039
-msgid "Require clients to use encryption"
-msgstr "Verwenden von Verschlüsselung durch Clients erforderlich machen"
-
-#: ../server/vino-server.c:1046
-msgid "Authentication methods"
-msgstr "Legitimationsmethoden"
-
-#: ../server/vino-server.c:1047
-msgid "The authentication methods this server should allow"
-msgstr "Die Legitimationsmethoden, die dieser Server zulassen soll"
-
-#: ../server/vino-server.c:1055
-msgid "VNC Password"
-msgstr "VNC-Passwort"
-
-# CHECK
-#: ../server/vino-server.c:1056
-msgid ""
-"The password (base64 encoded) used to authenticate types using the VncAuth "
-"method"
-msgstr ""
-"Das Passwort (base64-kodiert), das zur Legitimation von Typen mit Hilfe der "
-"VncAuth-Methode verwendet werden soll"
-
-#: ../server/vino-server.c:1063
-msgid "Use an alternative port"
-msgstr "Einen alternativen Port verwenden"
-
-#: ../server/vino-server.c:1064
-msgid "Listen on the port specified by the 'alternative-port' property"
-msgstr "Auf den von »alternative port« angegebenen Port hören"
-
-#: ../server/vino-server.c:1071 ../server/vino-server.schemas.in.h:2
-msgid "Alternative port number"
-msgstr "Alternative Port-Nummer"
-
-#: ../server/vino-server.c:1072
-msgid ""
-"Listen on the specified port number if the 'use-alternative-port' property "
-"is TRUE"
-msgstr ""
-"Auf den angegebenen Port hören, wenn der Schlüssel »use-alternative-port« "
-"auf TRUE (wahr) gesetzt ist."
-
-#: ../server/vino-server.c:1080
-msgid "Port server number"
-msgstr "Server-Port-Nummer"
-
-#: ../server/vino-server.c:1081
-msgid "The port used by this server"
-msgstr "Der vom Server verwendete Port"
-
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
 msgstr "Zulässige Legitimationsmethoden"
+
+#: ../server/vino-server.schemas.in.h:2
+msgid "Alternative port number"
+msgstr "Alternative Port-Nummer"
 
 #: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
@@ -365,6 +275,10 @@ msgstr ""
 "»vnc_passwort«-Schlüssel) sowie »none« (jeder entfernte Benutzer darf "
 "verbinden)."
 
+#: ../server/vino-server.schemas.in.h:13
+msgid "Only allow local connections"
+msgstr "Nur lokale Verbindungen zulassen"
+
 #: ../server/vino-server.schemas.in.h:14
 msgid "Only allow remote users to view the desktop"
 msgstr ""
@@ -421,7 +335,7 @@ msgstr ""
 "Problem beim Registrieren des entfernter Desktop-Servers bei bonobo-"
 "activation; Beenden...\n"
 
-#: ../server/vino-status-icon.c:175
+#: ../server/vino-status-icon.c:194
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
@@ -430,7 +344,7 @@ msgstr ""
 "Beim Anzeigen der Einstellungen ist ein Fehler aufgetreten:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:183
+#: ../server/vino-status-icon.c:202
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -439,7 +353,7 @@ msgstr ""
 "Beim Anzeigen der Hilfe ist ein Fehler aufgetreten:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:206
+#: ../server/vino-status-icon.c:225
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -477,70 +391,97 @@ msgstr ""
 "02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:221
+#: ../server/vino-status-icon.c:240
 msgid "translator-credits"
 msgstr ""
 "Christian Neumair <chris@gnome-de.org>Hendrik Richter <hendi@gnome-de."
 "org>Hendrik Brandt <heb@gnome-de.org>"
 
-#: ../server/vino-status-icon.c:227
+#: ../server/vino-status-icon.c:246 ../server/vino-status-icon.c:517
 msgid "GNOME Remote Desktop"
 msgstr "Entfernter GNOME-Desktop"
 
-#: ../server/vino-status-icon.c:228
+#: ../server/vino-status-icon.c:247
 msgid "Share your desktop with other users"
 msgstr "Ihren Desktop mit anderen Benutzern teilen"
 
-#: ../server/vino-status-icon.c:247
+#: ../server/vino-status-icon.c:266
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Sind·Sie·sicher,·dass·»%s«·getrennt·werden·soll?"
 
-#: ../server/vino-status-icon.c:249
+#: ../server/vino-status-icon.c:268
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr ""
 "Sind·Sie·sicher,·dass·der entfernte·Benutzer »%s«·getrennt·werden·soll?"
 
-#: ../server/vino-status-icon.c:254
+#: ../server/vino-status-icon.c:273
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Sind·Sie·sicher,·dass·alle·Clients·getrennt·werden·sollen?"
 
-#: ../server/vino-status-icon.c:255
+#: ../server/vino-status-icon.c:274
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Sind Sie sicher, dass alle entfernten Benutzer getrennt werden sollen?"
 
-#: ../server/vino-status-icon.c:267
+#: ../server/vino-status-icon.c:286
 msgid "Disconnect"
 msgstr "Trennen"
 
-#: ../server/vino-status-icon.c:318
+#: ../server/vino-status-icon.c:337
 msgid "_Preferences"
 msgstr "_Einstellungen"
 
-#: ../server/vino-status-icon.c:330
+#: ../server/vino-status-icon.c:349
 msgid "Disconnect all"
 msgstr "Alle trennen"
 
-#: ../server/vino-status-icon.c:343
+#: ../server/vino-status-icon.c:362
 #, c-format
 msgid "Disconnect %s"
 msgstr "%s trennen"
 
-#: ../server/vino-status-icon.c:360
+#: ../server/vino-status-icon.c:379
 msgid "_Help"
 msgstr "_Hilfe"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:387
 msgid "_About"
 msgstr "_Info"
 
-#: ../server/vino-status-icon.c:402
+#: ../server/vino-status-icon.c:421
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
 msgstr[0] "Eine Person ist verbunden"
 msgstr[1] "%d Personen sind verbunden"
+
+#: ../server/vino-status-icon.c:519
+msgid "Error initializing libnotify\n"
+msgstr "Fehler beim Initialisieren von libnotify\n"
+
+#: ../server/vino-status-icon.c:532
+msgid "Another user is viewing your desktop"
+msgstr "Ein anderer Benutzer betrachtet Ihren Desktop"
+
+#: ../server/vino-status-icon.c:533
+#, c-format
+msgid "A user on the computer '%s' is remotely viewing your desktop."
+msgstr "Ein Benutzer am Computer »%s« betracht Ihren Desktop aus der Ferne."
+
+#: ../server/vino-status-icon.c:538
+msgid "Another user is controlling your desktop"
+msgstr "Ein anderer Benutzer kontrolliert Ihren Desktop"
+
+#: ../server/vino-status-icon.c:539
+#, c-format
+msgid "A user on the computer '%s' is remotely controlling your desktop."
+msgstr "Ein Benutzer am Computer »%s« steuert Ihren Desktop aus der Ferne."
+
+#: ../server/vino-status-icon.c:561
+#, c-format
+msgid "Error while displaying notification bubble: %s\n"
+msgstr "Fehler beim Anzeigen der Benachrichtigung: %s\n"
 
 #: ../session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
@@ -568,6 +509,84 @@ msgstr "Entfernter Desktop-Server wird gestartet"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Entfernter Desktop-Server wird nicht gestartet"
+
+#~ msgid "failed to register with the message bus"
+#~ msgstr "Registrierung mit Nachrichtenbus ist gescheitert."
+
+#~ msgid "not connected to the message bus"
+#~ msgstr "Keine Verbindung zum Nachrichtenbus."
+
+#~ msgid "Error in dbus"
+#~ msgstr "Fehler in dbus"
+
+#~ msgid "The screen to be monitored"
+#~ msgstr "Der zu überwachende Bildschirm"
+
+#~ msgid "The screen for which to create a VNC server"
+#~ msgstr "Der Bildschirm, für den ein VNC-Server angelegt werden soll"
+
+#~ msgid "On Hold"
+#~ msgstr "Auf warten"
+
+#~ msgid "Place all clients on hold"
+#~ msgstr "Alle Clients in die Warteschleife schicken"
+
+#~ msgid "Prompt enabled"
+#~ msgstr "Abfrage aktiviert"
+
+#~ msgid "Prompt the user about connection attempts"
+#~ msgstr "Den Benutzer bei Verbindungsversuchen rückfragen"
+
+#~ msgid "View Only"
+#~ msgstr "Nur anzeigen"
+
+#~ msgid "Disallow keyboard/pointer input from clients"
+#~ msgstr "Tastatur-/Zeigereingaben durch Clients unterbinden"
+
+#~ msgid "Local Only"
+#~ msgstr "Nur lokal"
+
+#~ msgid "Require Encryption"
+#~ msgstr "Verschlüsselung erforderlich machen"
+
+#~ msgid "Require clients to use encryption"
+#~ msgstr "Verwenden von Verschlüsselung durch Clients erforderlich machen"
+
+#~ msgid "Authentication methods"
+#~ msgstr "Legitimationsmethoden"
+
+#~ msgid "The authentication methods this server should allow"
+#~ msgstr "Die Legitimationsmethoden, die dieser Server zulassen soll"
+
+#~ msgid "VNC Password"
+#~ msgstr "VNC-Passwort"
+
+# CHECK
+#~ msgid ""
+#~ "The password (base64 encoded) used to authenticate types using the "
+#~ "VncAuth method"
+#~ msgstr ""
+#~ "Das Passwort (base64-kodiert), das zur Legitimation von Typen mit Hilfe "
+#~ "der VncAuth-Methode verwendet werden soll"
+
+#~ msgid "Use an alternative port"
+#~ msgstr "Einen alternativen Port verwenden"
+
+#~ msgid "Listen on the port specified by the 'alternative-port' property"
+#~ msgstr "Auf den von »alternative port« angegebenen Port hören"
+
+#~ msgid ""
+#~ "Listen on the specified port number if the 'use-alternative-port' "
+#~ "property is TRUE"
+#~ msgstr ""
+#~ "Auf den angegebenen Port hören, wenn der Schlüssel »use-alternative-port« "
+#~ "auf TRUE (wahr) gesetzt ist."
+
+#~ msgid "Port server number"
+#~ msgstr "Server-Port-Nummer"
+
+#~ msgid "The port used by this server"
+#~ msgstr "Der vom Server verwendete Port"
 
 #~ msgid ""
 #~ "There was an error displaying jelp:\n"
