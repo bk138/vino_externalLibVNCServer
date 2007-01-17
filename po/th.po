@@ -1,15 +1,15 @@
 # Thai translation of vino.
-# Copyright (C) 2005 Free Software Foundation, Inc.
+# Copyright (C) 2005-2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the vino package.
-# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2005.
+# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2005-2007.
 # 
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.11.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-29 12:39+0700\n"
-"PO-Revision-Date: 2006-12-29 12:40+0700\n"
+"POT-Creation-Date: 2007-01-17 12:19+0700\n"
+"PO-Revision-Date: 2007-01-17 12:26+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <l10n@opentle.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,11 +17,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: capplet/vino-preferences.c:831
+#: capplet/vino-preferences.c:619 server/vino-dbus-listener.c:324
+#, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "ไม่สามารถเปิดการเชื่อมต่อไปยังบัส: %s\n"
+
+#: capplet/vino-preferences.c:832
 msgid "Send this command by email"
 msgstr "ส่งคำสั่งนี้ทางอีเมล"
 
-#: capplet/vino-preferences.c:866
+#: capplet/vino-preferences.c:867
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -82,32 +87,22 @@ msgstr "_รหัสผ่าน:"
 msgid "_Require the user to enter this password:"
 msgstr "ให้ผู้ใช้นั้น_ป้อนรหัสผ่านนี้:"
 
-#: server/vino-dbus-listener.c:88
-msgid "failed to register with the message bus"
-msgstr "ลงทะเบียนกับบัสข้อความไม่สำเร็จ"
+#: server/vino-dbus-listener.c:180 server/vino-dbus-listener.c:210
+#, c-format
+msgid "Out of memory handling '%s' message"
+msgstr "หน่วยความจำหมดขณะจัดการข้อความ '%s'"
 
-#: server/vino-dbus-listener.c:92
-msgid "not connected to the message bus"
-msgstr "ไม่ได้เชื่อมต่อกับบัสข้อความ"
+#: server/vino-dbus-listener.c:284
+#, c-format
+msgid "Out of memory registering object path '%s'"
+msgstr "หน่วยความจำหมดขณะลงทะเบียนพาธของออบเจ็กต์ '%s'"
 
-#: server/vino-dbus-listener.c:103
-msgid "out of memory registering object path"
-msgstr "หน่วยความจำหมดขณะลงทะเบียนพาธของออบเจ็กต์"
+#: server/vino-dbus-listener.c:357
+#, c-format
+msgid "Failed to acquire D-Bus name '%s'\n"
+msgstr "ไม่สามารถขอใช้ชื่อ D-Bus '%s' ได้\n"
 
-#: server/vino-dbus-listener.c:116
-msgid "Error in dbus"
-msgstr "เกิดข้อผิดพลาดใน dbus"
-
-#: server/vino-fb.c:984 server/vino-prompt.c:143
-#: server/vino-server.c:998
-msgid "Screen"
-msgstr "สกรีน"
-
-#: server/vino-fb.c:985
-msgid "The screen to be monitored"
-msgstr "สกรีนที่จะเฝ้ามอง"
-
-#: server/vino-main.c:82
+#: server/vino-main.c:83
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -134,11 +129,15 @@ msgstr "0"
 msgid "%s's remote desktop"
 msgstr "พื้นโต๊ะระยะไกลของ %s"
 
+#: server/vino-prompt.c:143
+msgid "Screen"
+msgstr "สกรีน"
+
 #: server/vino-prompt.c:144
 msgid "The screen on which to display the prompt"
 msgstr "สกรีนที่จะแสดงคำถาม"
 
-#: server/vino-prompt.c:361
+#: server/vino-prompt.c:344
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -171,97 +170,13 @@ msgstr "_อนุญาต"
 msgid "_Refuse"
 msgstr "_ปฏิเสธ"
 
-#: server/vino-server.c:999
-msgid "The screen for which to create a VNC server"
-msgstr "สกรีนที่จะสร้างเซิร์ฟเวอร์ VNC"
-
-#: server/vino-server.c:1006
-msgid "On Hold"
-msgstr "ยับยั้งไว้"
-
-#: server/vino-server.c:1007
-msgid "Place all clients on hold"
-msgstr "ยับยั้งไคลเอนต์ทั้งหมดไว้"
-
-#: server/vino-server.c:1014
-msgid "Prompt enabled"
-msgstr "เปิดใช้การถาม"
-
-#: server/vino-server.c:1015
-msgid "Prompt the user about connection attempts"
-msgstr "ถามผู้ใช้เมื่อมีความพยายามเชื่อมต่อ"
-
-#: server/vino-server.c:1022
-msgid "View Only"
-msgstr "มองอย่างเดียว"
-
-#: server/vino-server.c:1023
-msgid "Disallow keyboard/pointer input from clients"
-msgstr "ไม่รับข้อมูลแป้นพิมพ์/เมาส์จากไคลเอนต์"
-
-#: server/vino-server.c:1030
-msgid "Local Only"
-msgstr "ในเครื่องเท่านั้น"
-
-#: server/vino-server.c:1031 server/vino-server.schemas.in.h:13
-msgid "Only allow local connections"
-msgstr "รับการเชื่อมต่อจากในเครื่องเดียวกันเท่านั้น"
-
-#: server/vino-server.c:1038
-msgid "Require Encryption"
-msgstr "บังคับการเข้ารหัส"
-
-#: server/vino-server.c:1039
-msgid "Require clients to use encryption"
-msgstr "บังคับให้ไคลเอนต์ต้องเข้ารหัสข้อมูล"
-
-#: server/vino-server.c:1046
-msgid "Authentication methods"
-msgstr "วิธีตรวจสอบสิทธิ์"
-
-#: server/vino-server.c:1047
-msgid "The authentication methods this server should allow"
-msgstr "วิธีตรวจสอบสิทธิ์ทั้งหมดที่เซิร์ฟเวอร์นี้อนุญาต"
-
-#: server/vino-server.c:1055
-msgid "VNC Password"
-msgstr "รหัสผ่าน VNC"
-
-#: server/vino-server.c:1056
-msgid ""
-"The password (base64 encoded) used to authenticate types using the VncAuth "
-"method"
-msgstr "รหัสผ่าน (ลงรหัสแบบ base64) ที่จะใช้ตรวจสอบสิทธิ์ด้วยวิธี VncAuth"
-
-#: server/vino-server.c:1063
-msgid "Use an alternative port"
-msgstr "ใช้พอร์ตอื่น"
-
-#: server/vino-server.c:1064
-msgid "Listen on the port specified by the 'alternative-port' property"
-msgstr "รอรับการเชื่อมต่อที่พอร์ตที่ระบุในค่า 'alternative-port'"
-
-#: server/vino-server.c:1071 server/vino-server.schemas.in.h:2
-msgid "Alternative port number"
-msgstr "หมายเลขพอร์ตอื่นที่จะใช้"
-
-#: server/vino-server.c:1072
-msgid ""
-"Listen on the specified port number if the 'use-alternative-port' property "
-"is TRUE"
-msgstr "รอรับการเชื่อมต่อที่พอร์ตที่กำหนด ถ้าค่า 'use-alternative-port' เป็นจริง"
-
-#: server/vino-server.c:1080
-msgid "Port server number"
-msgstr "หมายเลขพอร์ตของเซิร์ฟเวอร์"
-
-#: server/vino-server.c:1081
-msgid "The port used by this server"
-msgstr "พอร์ตที่เซิร์ฟเวอร์นี้จะใช้"
-
 #: server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
 msgstr "วิธีตรวจสอบสิทธิ์ที่อนุญาต"
+
+#: server/vino-server.schemas.in.h:2
+msgid "Alternative port number"
+msgstr "หมายเลขพอร์ตอื่นที่จะใช้"
 
 #: server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
@@ -340,6 +255,10 @@ msgstr ""
 "ค่าที่เป็นไปได้มีสองค่า; \"vnc\" จะถามรหัสผ่านกับผู้ใช้ระยะไกล (ตัวรหัสผ่านจะเก็บไว้ที่คีย์ "
 "vnc_password) ก่อนเชื่อมต่อ และ \"none\" จะอนุญาตให้ผู้ใช้ระยะไกลที่ไหนก็ได้เชื่อมต่อทั้งหมด"
 
+#: server/vino-server.schemas.in.h:13
+msgid "Only allow local connections"
+msgstr "รับการเชื่อมต่อจากในเครื่องเดียวกันเท่านั้น"
+
 #: server/vino-server.schemas.in.h:14
 msgid "Only allow remote users to view the desktop"
 msgstr "อนุญาตให้ผู้ใช้ระยะไกลมองพื้นโต๊ะได้เท่านั้น"
@@ -394,7 +313,7 @@ msgstr ""
 "มีปัญหาในการลงทะเบียนเซิร์ฟเวอร์พื้นโต๊ะระยะไกลกับ bonobo-activation; "
 "จะออกจากโปรแกรม ...\n"
 
-#: server/vino-status-icon.c:175
+#: server/vino-status-icon.c:194
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
@@ -403,7 +322,7 @@ msgstr ""
 "เกิดข้อผิดพลาดขณะแสดงค่าปรับแต่ง:\n"
 " %s"
 
-#: server/vino-status-icon.c:183
+#: server/vino-status-icon.c:202
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -412,7 +331,7 @@ msgstr ""
 "เกิดข้อผิดพลาดขณะแสดงวิธีใช้:\n"
 " %s"
 
-#: server/vino-status-icon.c:206
+#: server/vino-status-icon.c:225
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -447,66 +366,93 @@ msgstr ""
 "51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: server/vino-status-icon.c:221
+#: server/vino-status-icon.c:240
 msgid "translator-credits"
 msgstr "เทพพิทักษ์ การุญบุญญานันท์ <thep@linux.thai.net>"
 
-#: server/vino-status-icon.c:227
+#: server/vino-status-icon.c:246 server/vino-status-icon.c:517
 msgid "GNOME Remote Desktop"
 msgstr "พื้นโต๊ะระยะไกลของ GNOME"
 
-#: server/vino-status-icon.c:228
+#: server/vino-status-icon.c:247
 msgid "Share your desktop with other users"
 msgstr "แบ่งพื้นโต๊ะของคุณให้ผู้อื่นใช้ร่วม"
 
-#: server/vino-status-icon.c:247
+#: server/vino-status-icon.c:266
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "ยืนยันที่จะตัดการเชื่อมต่อกับ '%s' หรือไม่?"
 
-#: server/vino-status-icon.c:249
+#: server/vino-status-icon.c:268
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "ผู้ใช้ระยะไกลจากเครื่อง '%s' จะถูกตัดการเชื่อมต่อ คุณแน่ใจหรือไม่?"
 
-#: server/vino-status-icon.c:254
+#: server/vino-status-icon.c:273
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "ยืนยันที่จะตัดการเชื่อมต่อกับทุกเครื่องหรือไม่?"
 
-#: server/vino-status-icon.c:255
+#: server/vino-status-icon.c:274
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "ผู้ใช้ระยะไกลทั้งหมดจะถูกตัดการเชื่อมต่อ คุณแน่ใจหรือไม่?"
 
-#: server/vino-status-icon.c:267
+#: server/vino-status-icon.c:286
 msgid "Disconnect"
 msgstr "ตัดการเชื่อมต่อ"
 
-#: server/vino-status-icon.c:318
+#: server/vino-status-icon.c:337
 msgid "_Preferences"
 msgstr "_ปรับแต่ง"
 
-#: server/vino-status-icon.c:330
+#: server/vino-status-icon.c:349
 msgid "Disconnect all"
 msgstr "ตัดการเชื่อมต่อทั้งหมด"
 
-#: server/vino-status-icon.c:343
+#: server/vino-status-icon.c:362
 #, c-format
 msgid "Disconnect %s"
 msgstr "ตัดการเชื่อมต่อกับ %s"
 
-#: server/vino-status-icon.c:360
+#: server/vino-status-icon.c:379
 msgid "_Help"
 msgstr "_วิธีใช้"
 
-#: server/vino-status-icon.c:368
+#: server/vino-status-icon.c:387
 msgid "_About"
 msgstr "เ_กี่ยวกับ"
 
-#: server/vino-status-icon.c:402
+#: server/vino-status-icon.c:421
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
 msgstr[0] "เชื่อมต่ออยู่ %d คน"
+
+#: server/vino-status-icon.c:519
+msgid "Error initializing libnotify\n"
+msgstr "เกิดข้อผิดพลาดขณะตั้งต้น libnotify\n"
+
+#: server/vino-status-icon.c:532
+msgid "Another user is viewing your desktop"
+msgstr "มีผู้ใช้อื่นกำลังมองพื้นโต๊ะของคุณ"
+
+#: server/vino-status-icon.c:533
+#, c-format
+msgid "A user on the computer '%s' is remotely viewing your desktop."
+msgstr "มีผู้ใช้จากเครื่อง '%s' กำลังมองพื้นโต๊ะของคุณจากระยะไกล"
+
+#: server/vino-status-icon.c:538
+msgid "Another user is controlling your desktop"
+msgstr "มีผู้ใช้อื่นกำลังควบคุมพื้นโต๊ะของคุณ"
+
+#: server/vino-status-icon.c:539
+#, c-format
+msgid "A user on the computer '%s' is remotely controlling your desktop."
+msgstr "มีผู้ใช้จากเครื่อง '%s' กำลังควบคุมพื้นโต๊ะของคุณจากระยะไกล"
+
+#: server/vino-status-icon.c:561
+#, c-format
+msgid "Error while displaying notification bubble: %s\n"
+msgstr "เกิดข้อผิดพลาดขณะแสดงกรอบคำพูดแจ้งเหตุ: %s\n"
 
 #: session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
@@ -533,6 +479,79 @@ msgstr "กำลังเริ่มใช้งานเซิร์ฟเว
 #: session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "จะไม่เรียกใช้เซิร์ฟเวอร์พื้นโต๊ะระยะไกล"
+
+#~ msgid "failed to register with the message bus"
+#~ msgstr "ลงทะเบียนกับบัสข้อความไม่สำเร็จ"
+
+#~ msgid "not connected to the message bus"
+#~ msgstr "ไม่ได้เชื่อมต่อกับบัสข้อความ"
+
+#~ msgid "Error in dbus"
+#~ msgstr "เกิดข้อผิดพลาดใน dbus"
+
+#~ msgid "The screen to be monitored"
+#~ msgstr "สกรีนที่จะเฝ้ามอง"
+
+#~ msgid "The screen for which to create a VNC server"
+#~ msgstr "สกรีนที่จะสร้างเซิร์ฟเวอร์ VNC"
+
+#~ msgid "On Hold"
+#~ msgstr "ยับยั้งไว้"
+
+#~ msgid "Place all clients on hold"
+#~ msgstr "ยับยั้งไคลเอนต์ทั้งหมดไว้"
+
+#~ msgid "Prompt enabled"
+#~ msgstr "เปิดใช้การถาม"
+
+#~ msgid "Prompt the user about connection attempts"
+#~ msgstr "ถามผู้ใช้เมื่อมีความพยายามเชื่อมต่อ"
+
+#~ msgid "View Only"
+#~ msgstr "มองอย่างเดียว"
+
+#~ msgid "Disallow keyboard/pointer input from clients"
+#~ msgstr "ไม่รับข้อมูลแป้นพิมพ์/เมาส์จากไคลเอนต์"
+
+#~ msgid "Local Only"
+#~ msgstr "ในเครื่องเท่านั้น"
+
+#~ msgid "Require Encryption"
+#~ msgstr "บังคับการเข้ารหัส"
+
+#~ msgid "Require clients to use encryption"
+#~ msgstr "บังคับให้ไคลเอนต์ต้องเข้ารหัสข้อมูล"
+
+#~ msgid "Authentication methods"
+#~ msgstr "วิธีตรวจสอบสิทธิ์"
+
+#~ msgid "The authentication methods this server should allow"
+#~ msgstr "วิธีตรวจสอบสิทธิ์ทั้งหมดที่เซิร์ฟเวอร์นี้อนุญาต"
+
+#~ msgid "VNC Password"
+#~ msgstr "รหัสผ่าน VNC"
+
+#~ msgid ""
+#~ "The password (base64 encoded) used to authenticate types using the "
+#~ "VncAuth method"
+#~ msgstr "รหัสผ่าน (ลงรหัสแบบ base64) ที่จะใช้ตรวจสอบสิทธิ์ด้วยวิธี VncAuth"
+
+#~ msgid "Use an alternative port"
+#~ msgstr "ใช้พอร์ตอื่น"
+
+#~ msgid "Listen on the port specified by the 'alternative-port' property"
+#~ msgstr "รอรับการเชื่อมต่อที่พอร์ตที่ระบุในค่า 'alternative-port'"
+
+#~ msgid ""
+#~ "Listen on the specified port number if the 'use-alternative-port' "
+#~ "property is TRUE"
+#~ msgstr "รอรับการเชื่อมต่อที่พอร์ตที่กำหนด ถ้าค่า 'use-alternative-port' เป็นจริง"
+
+#~ msgid "Port server number"
+#~ msgstr "หมายเลขพอร์ตของเซิร์ฟเวอร์"
+
+#~ msgid "The port used by this server"
+#~ msgstr "พอร์ตที่เซิร์ฟเวอร์นี้จะใช้"
 
 #~ msgid ""
 #~ "There was an error displaying jelp:\n"
@@ -591,9 +610,6 @@ msgstr "จะไม่เรียกใช้เซิร์ฟเวอร์
 
 #~ msgid " is watching your desktop"
 #~ msgstr " กำลังมองพื้นโต๊ะของคุณ"
-
-#~ msgid " is controlling your desktop"
-#~ msgstr " กำลังควบคุมพื้นโต๊ะของคุณ"
 
 #~ msgid "    "
 #~ msgstr "    "
