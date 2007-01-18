@@ -1,5 +1,11 @@
 2007-01-18  Jonh Wendell <jwendell@svn.gnome.org>
 
+	* capplet/vino-preferences.desktop.in.in:
+	Put Vino preferences into the control center's "Internet and Network"
+	category - Patch from Denis Washington (Closes #394523)
+
+2007-01-18  Jonh Wendell <jwendell@svn.gnome.org>
+
 	* server/vino-status-icon.c: (vino_status_icon_help):
 	Uses gnome-open instead of yelp (Closes #391848)
 
