@@ -1,3 +1,8 @@
+2007-01-18  Jonh Wendell <jwendell@svn.gnome.org>
+
+	* server/vino-status-icon.c: (vino_status_icon_help):
+	Uses gnome-open instead of yelp (Closes #391848)
+
 2007-01-08  Mark McLoughlin  <mark@skynet.ie>
 
 	* configure.in: post-release bump to 2.17.6

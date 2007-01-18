@@ -198,7 +198,7 @@ static void
 vino_status_icon_help (VinoStatusIcon *icon)
 {
   vino_status_icon_spawn_command (icon,
-                                  "yelp ghelp:user-guide?goscustdesk-90",
+                                  "gnome-open ghelp:user-guide?goscustdesk-90",
                                   _("There was an error displaying help:\n %s"));
 }
 
