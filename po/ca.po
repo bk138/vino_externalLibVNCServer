@@ -7,13 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-14 19:23+0100\n"
-"PO-Revision-Date: 2007-01-18 01:22+0100\n"
+"POT-Creation-Date: 2007-01-26 01:01+0100\n"
+"PO-Revision-Date: 2007-01-26 01:02+0100\n"
 "Last-Translator: Josep Puigdemont <josep.puigdemont@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../capplet/vino-preferences.c:619 ../server/vino-dbus-listener.c:324
 #, c-format
