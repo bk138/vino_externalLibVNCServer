@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Vino HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-01-09 03:21+0000\n"
-"PO-Revision-Date: 2006-10-14 23:44+0300\n"
+"PO-Revision-Date: 2007-01-27 20:18+0200\n"
 "Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr ""
 #: ../capplet/vino-preferences.c:619 ../server/vino-dbus-listener.c:324
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
-msgstr ""
+msgstr "Tõrge siiniga ühendumisel: %s\n"
 
 #: ../capplet/vino-preferences.c:832
 msgid "Send this command by email"
@@ -95,17 +95,17 @@ msgstr "Kasutajalt nõutakse pa_rooli sisestamist:"
 #: ../server/vino-dbus-listener.c:180 ../server/vino-dbus-listener.c:210
 #, c-format
 msgid "Out of memory handling '%s' message"
-msgstr ""
+msgstr "Sõnumi '%s' käsitlemisel lõppes mälu"
 
 #: ../server/vino-dbus-listener.c:284
 #, c-format
 msgid "Out of memory registering object path '%s'"
-msgstr ""
+msgstr "Objektiraja '%s' registreerimisel lõppes mälu"
 
 #: ../server/vino-dbus-listener.c:357
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
-msgstr ""
+msgstr "Tõrge D-Bus nime '%s' saamisel\n"
 
 #: ../server/vino-main.c:83
 msgid ""
@@ -393,7 +393,7 @@ msgstr "GNOME Kaugtöölaud"
 
 #: ../server/vino-status-icon.c:247
 msgid "Share your desktop with other users"
-msgstr ""
+msgstr "Oma töölaua jagamine teistega"
 
 #: ../server/vino-status-icon.c:266
 #, c-format
@@ -404,18 +404,20 @@ msgstr "Kas sa soovid '%s' ühenduse katkestada?"
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr ""
+"Masinast '%s' ühendatud kaugkasutajate ühendused katkestatakse. Oled sa "
+"kindel? "
 
 #: ../server/vino-status-icon.c:273
 msgid "Are you sure you want to disconnect all clients?"
-msgstr ""
+msgstr "Kas soovid kõikide klientide ühenduse katkestada?"
 
 #: ../server/vino-status-icon.c:274
 msgid "All remote users will be disconnected. Are you sure?"
-msgstr ""
+msgstr "Kõigi kaugkasutajate ühendused katkestatakse. Oled sa kindel?"
 
 #: ../server/vino-status-icon.c:286
 msgid "Disconnect"
-msgstr ""
+msgstr "Katkesta"
 
 #: ../server/vino-status-icon.c:337
 msgid "_Preferences"
@@ -423,12 +425,12 @@ msgstr "_Eelistused"
 
 #: ../server/vino-status-icon.c:349
 msgid "Disconnect all"
-msgstr ""
+msgstr "Katkesta kõik"
 
 #: ../server/vino-status-icon.c:362
 #, c-format
 msgid "Disconnect %s"
-msgstr ""
+msgstr "Katkesta %s"
 
 #: ../server/vino-status-icon.c:379
 msgid "_Help"
@@ -442,8 +444,8 @@ msgstr "_Programmist lähemalt"
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Üks isik on ühendatud"
+msgstr[1] "%d isikut on ühendatud"
 
 #: ../server/vino-status-icon.c:519
 msgid "Error initializing libnotify\n"
@@ -456,7 +458,7 @@ msgstr "Teine kasutaja vaatab sinu töölauda"
 #: ../server/vino-status-icon.c:533
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
-msgstr ""
+msgstr "Kasutaja arvutist '%s' vaatab üle võrgu sinu töölauda."
 
 #: ../server/vino-status-icon.c:538
 msgid "Another user is controlling your desktop"
@@ -465,7 +467,7 @@ msgstr "Teine kasutaja juhib sinu töölauda"
 #: ../server/vino-status-icon.c:539
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr ""
+msgstr "Kasutaja arvutist '%s' juhib üle võrgu sinu töölauda."
 
 #: ../server/vino-status-icon.c:561
 #, c-format
