@@ -26,7 +26,6 @@
 
 #include <gtk/gtk.h>
 #include <glade/glade.h>
-#include <libgnomeui/gnome-icon-theme.h>
 #include "vino-util.h"
 #include "vino-enums.h"
 #include "vino-marshal.h"

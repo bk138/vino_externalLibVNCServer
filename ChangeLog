@@ -1,3 +1,10 @@
+2007-01-30  Jonh Wendell <jwendell@svn.gnome.org>
+
+	* session/vino-session.c,
+	  server/vino-http.c,
+	  server/vino-prompt.c:	Fix minor issues about GnomeIconTheme usage,
+          yet bug #391850.
+
 2007-01-18  Jonh Wendell <jwendell@svn.gnome.org>
 
 	* capplet/vino-preferences.desktop.in.in:

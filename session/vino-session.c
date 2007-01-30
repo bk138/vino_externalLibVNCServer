@@ -29,7 +29,7 @@
 #include <gconf/gconf-client.h>
 #include <gdk/gdkdisplay.h>
 #include <gtk/gtkmain.h>
-#include <libgnome/gnome-i18n.h>
+#include <glib/gi18n.h>
 #include <libgnomeui/gnome-client.h>
 #include <libgnomeui/gnome-ui-init.h>
 
