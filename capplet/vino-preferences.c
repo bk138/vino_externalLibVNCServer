@@ -455,12 +455,19 @@ vino_preferences_vnc_password_notify (GConfClient           *client,
   if (!entry->value || entry->value->type != GCONF_VALUE_STRING)
     return;
 
+  password = NULL;
+
   password_b64 = gconf_value_get_string (entry->value);
 
-  blob_len = 0;
-  blob = g_base64_decode (password_b64, &blob_len);
+  if (password_b64)
+    {
+      blob_len = 0;
+      blob = g_base64_decode (password_b64, &blob_len);
+    
+      password = g_strndup ((char *) blob, blob_len);
 
-  password = g_strndup ((char *) blob, blob_len);
+      g_free (blob);
+    }
 
   if (!password || !password [0])
     {
@@ -479,7 +486,6 @@ vino_preferences_vnc_password_notify (GConfClient           *client,
     }
 
   g_free (password);
-  g_free (blob);
 }
 
 static void
@@ -531,13 +537,16 @@ vino_preferences_dialog_setup_password_entry (VinoPreferencesDialog *dialog)
 
       password_b64 = gconf_client_get_string (dialog->client, VINO_PREFS_VNC_PASSWORD, NULL);
 
-      blob_len = 0;
-      blob = g_base64_decode (password_b64, &blob_len);
+      if (password_b64)
+        {
+           blob_len = 0;
+           blob = g_base64_decode (password_b64, &blob_len);
 
-      password = g_strndup ((char *) blob, blob_len);
-
-      g_free (blob);
-      g_free (password_b64);
+           password = g_strndup ((char *) blob, blob_len);
+        
+           g_free (blob);
+           g_free (password_b64);
+        }
 
       password_in_keyring = FALSE;
     }

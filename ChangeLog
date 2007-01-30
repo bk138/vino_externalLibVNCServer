@@ -1,5 +1,12 @@
 2007-01-30  Jonh Wendell <jwendell@svn.gnome.org>
 
+	* capplet/vino-preferences.c:
+	  (vino_preferences_vnc_password_notify):
+	  (vino_preferences_dialog_setup_password_entry):
+	  Better handling of gconf values in password field (Bug #400260)
+
+2007-01-30  Jonh Wendell <jwendell@svn.gnome.org>
+
 	* session/vino-session.c,
 	  server/vino-http.c,
 	  server/vino-prompt.c:	Fix minor issues about GnomeIconTheme usage,
