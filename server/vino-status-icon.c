@@ -53,8 +53,13 @@ enum
   PROP_SERVER
 };
 
-static void vino_status_icon_show_new_client_notification (VinoStatusIcon *icon,
-                                                           VinoClient     *client);
+typedef struct
+{
+  VinoStatusIcon *icon;
+  VinoClient     *client;
+}VinoStatusIconNotify;
+
+static gboolean vino_status_icon_show_new_client_notification (gpointer user_data);
 
 static void
 vino_status_icon_finalize (GObject *object)
@@ -440,7 +445,13 @@ vino_status_icon_add_client (VinoStatusIcon *icon,
 
   vino_status_icon_update_tooltip (icon);
 
-  vino_status_icon_show_new_client_notification (icon, client);
+  VinoStatusIconNotify *a;
+  a = g_new (VinoStatusIconNotify, 1);
+  a->icon   = icon;
+  a->client = client;
+  g_timeout_add (1000, 
+                 vino_status_icon_show_new_client_notification,
+                 (gpointer) a);
 }
 
 gboolean
@@ -500,9 +511,8 @@ vino_status_handle_new_client_notification_closed (VinoStatusIcon *icon)
 }
 #endif /* VINO_ENABLE_LIBNOTIFY */
 
-static void
-vino_status_icon_show_new_client_notification (VinoStatusIcon *icon,
-                                               VinoClient     *client)
+static gboolean
+vino_status_icon_show_new_client_notification (gpointer user_data)
 {
 #ifdef VINO_ENABLE_LIBNOTIFY
 #define NOTIFICATION_TIMEOUT 5
@@ -511,13 +521,21 @@ vino_status_icon_show_new_client_notification (VinoStatusIcon *icon,
   const char *summary;
   char       *body;
 
+  VinoStatusIconNotify *a = (VinoStatusIconNotify *)user_data;
+  VinoStatusIcon *icon    = a->icon;
+  VinoClient     *client  = a->client;
+
   if (vino_server_get_prompt_enabled (icon->priv->server))
-    return;
+  {
+    g_free (user_data);
+    return FALSE;
+  }
 
   if (!notify_is_initted () &&  !notify_init (_("GNOME Remote Desktop")))
     {
       g_printerr (_("Error initializing libnotify\n"));
-      return;
+      g_free (user_data);
+      return FALSE;
     }
 
   if (icon->priv->new_client_notification)
@@ -563,6 +581,10 @@ vino_status_icon_show_new_client_notification (VinoStatusIcon *icon,
       g_error_free (error);
     }
 
+  g_free (user_data);
+
 #undef NOTIFICATION_TIMEOUT
 #endif /* VINO_ENABLE_LIBNOTIFY */
+
+  return FALSE;
 }
