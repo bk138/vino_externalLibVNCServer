@@ -699,7 +699,10 @@ vino_server_setup_framebuffer (VinoServer *server)
 			    G_CALLBACK (vino_server_handle_damage_notify),
 			    server);
 
-  server->priv->rfb_screen->frameBuffer = vino_fb_get_pixels (server->priv->fb);
+  rfbNewFramebuffer (server->priv->rfb_screen,
+                     vino_fb_get_pixels (server->priv->fb),
+                     gdk_screen_get_width (server->priv->screen),
+                     gdk_screen_get_height (server->priv->screen));
   
   vino_server_init_pixel_format (server, server->priv->rfb_screen);
 
