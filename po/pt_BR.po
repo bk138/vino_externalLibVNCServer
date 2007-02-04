@@ -20,7 +20,7 @@ msgstr ""
 #: ../capplet/vino-preferences.c:628 ../server/vino-dbus-listener.c:324
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
-msgstr "Falha em abrir coneção com o serviço: %s\n"
+msgstr "Falha ao abrir conexão com o serviço: %s\n"
 
 #: ../capplet/vino-preferences.c:841
 msgid "Send this command by email"
@@ -100,7 +100,7 @@ msgstr "Memória insuficiente para registrar caminho de objeto '%s'"
 #: ../server/vino-dbus-listener.c:357
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
-msgstr "Falha em adquirir nome D-BUS '%s'\n"
+msgstr "Falha ao adquirir nome D-BUS '%s'\n"
 
 #: ../server/vino-main.c:83
 msgid ""
@@ -372,8 +372,8 @@ msgstr ""
 "mais nova.\n"
 "\n"
 "O Vino é distribuído na expectativa de ser útil, mas SEM QUALQUER GARANTIA; "
-"sem mesmo a garantia implícita deCOMERCIALIZAÇÃO ou de ADEQUAÇÃO A QUALQUER "
-"PROPÓSITO EM PARTICULAR. Consulte a Licença Pública Geral GNU para obtermais "
+"sem mesmo a garantia implícita de COMERCIALIZAÇÃO ou de ADEQUAÇÃO A QUALQUER "
+"PROPÓSITO EM PARTICULAR. Consulte a Licença Pública Geral GNU para obter mais "
 "detalhes.\n"
 "\n"
 "Você deve ter recebido uma cópia da Licença Pública Geral GNUjunto com este "
@@ -387,6 +387,7 @@ msgstr ""
 "Raphael Higino <phhigino@gmail.com>\n"
 "Igor Pires Soares <igor@projetofedora.org>\n"
 "Leonardo Ferreira Fontenelle <leo.fontenelle@gmail.com>"
+"Jonh Wendell <wendell@bani.com.br>"
 
 #: ../server/vino-status-icon.c:251 ../server/vino-status-icon.c:534
 msgid "GNOME Remote Desktop"
@@ -404,7 +405,7 @@ msgstr "Você tem certeza de que deseja desconectar '%s'?"
 #: ../server/vino-status-icon.c:273
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
-msgstr "O usuário remoto de '%s' será desconectado. Você tem certeza?"
+msgstr "O usuário remoto em '%s' será desconectado. Você tem certeza?"
 
 #: ../server/vino-status-icon.c:278
 msgid "Are you sure you want to disconnect all clients?"
@@ -452,7 +453,7 @@ msgstr "Erro ao inicializar libnotify\n"
 
 #: ../server/vino-status-icon.c:550
 msgid "Another user is viewing your desktop"
-msgstr "Outros usuário está vendo sua área de trabalho"
+msgstr "Outro usuário está vendo sua área de trabalho"
 
 #: ../server/vino-status-icon.c:551
 #, c-format
@@ -462,7 +463,7 @@ msgstr ""
 
 #: ../server/vino-status-icon.c:556
 msgid "Another user is controlling your desktop"
-msgstr "Outros usuário está controlendo sua área de trabalho"
+msgstr "Outro usuário está controlendo sua área de trabalho"
 
 #: ../server/vino-status-icon.c:557
 #, c-format
