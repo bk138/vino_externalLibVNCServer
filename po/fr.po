@@ -1,27 +1,35 @@
 # French translation of vino.
-# Copyright (C) 2004-2006 The Free Software Foundation, Inc.
+# Copyright (C) 2004-2007 The Free Software Foundation, Inc.
 # This file is distributed under the same license as the vino package.
 #
 # Audrey Simons <asimons@redhat.com>, 2004.
-# Christophe Merlet (RedFox) <redfox@redfoxcenter.org>, 2005-2006.
+# Christophe Merlet <redfox@redfoxcenter.org>, 2005-2006.
+# Robert-André Mauchin <zebob.m@gmail.com>, 2006.
+# Jonathan Ernst <jonathan@ernstfamily.ch>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.17.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-22 10:56+0200\n"
-"PO-Revision-Date: 2006-10-22 10:56+0200\n"
-"Last-Translator: Christophe Merlet (RedFox) <redfox@redfoxcenter.org>\n"
+"POT-Creation-Date: 2007-02-06 23:34+0100\n"
+"PO-Revision-Date: 2007-02-06 23:37+0100\n"
+"Last-Translator: Jonathan Ernst <jonathan@ernstfamily.ch>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
 
-#: ../capplet/vino-preferences.c:907
+#: ../capplet/vino-preferences.c:628 ../server/vino-dbus-listener.c:324
+#, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "Impossible d'ouvrir la connexion au bus : %s\n"
+
+#: ../capplet/vino-preferences.c:841
 msgid "Send this command by email"
 msgstr "Envoyer cette commande par courrier électronique"
 
-#: ../capplet/vino-preferences.c:942
+#: ../capplet/vino-preferences.c:876
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -36,105 +44,75 @@ msgstr "Bureau à distance"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
-msgstr "Définir les préférences d'accès de votre bureau à distance"
+msgstr "Définit les préférences d'accès de votre bureau à distance"
 
 #: ../capplet/vino-preferences.glade.h:1
-msgid "    "
-msgstr "    "
-
-#: ../capplet/vino-preferences.glade.h:2
-msgid "        "
-msgstr "        "
-
-#: ../capplet/vino-preferences.glade.h:3
-msgid "*"
-msgstr "*"
-
-#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Security</b>"
 msgstr "<b>Sécurité</b>"
 
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:2
 msgid "<b>Sharing</b>"
 msgstr "<b>Partage</b>"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:3
 msgid "A_sk you for confirmation"
 msgstr "Vou_s demander confirmation"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:4
 msgid "Allow other users to _view your desktop"
 msgstr "Autoriser d'autres utilisateurs à _voir votre bureau"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:5
 msgid "Remote Desktop Preferences"
 msgstr "Préférences de bureau à distance"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:6
 msgid "Some of these preferences are locked down"
 msgstr "Certaines de ces préférences sont verrouillées"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:7
 msgid "Users can view your desktop using this command:"
 msgstr ""
 "Les utilisateurs peuvent voir votre bureau à l'aide de cette commande :"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:8
 msgid "When a user tries to view or control your desktop:"
 msgstr "Lorsqu'un utilisateur essaie de voir ou contrôler votre bureau :"
 
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.glade.h:9
 msgid "_Allow other users to control your desktop"
 msgstr "_Autoriser d'autres utilisateurs à contrôler votre bureau"
 
-#: ../capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.glade.h:10
 msgid "_Password:"
 msgstr "Mot de _passe :"
 
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:11
 msgid "_Require the user to enter this password:"
 msgstr "L'utilisateur doit saisi_r son mot de passe :"
 
-#: ../capplet/vino-url.c:158
-msgid "Address"
-msgstr "Adresse"
+#: ../server/vino-dbus-listener.c:180 ../server/vino-dbus-listener.c:210
+#, c-format
+msgid "Out of memory handling '%s' message"
+msgstr "Mémoire saturée lors du traitement du message « %s »"
 
-#: ../capplet/vino-url.c:159
-msgid "The address pointed to by the widget"
-msgstr "L'adresse sur laquelle pointe le widget"
+#: ../server/vino-dbus-listener.c:284
+#, c-format
+msgid "Out of memory registering object path '%s'"
+msgstr "Mémoire saturée lors de l'enregistrement du chemin de l'objet « %s »"
 
-#: ../capplet/vino-url.c:166
-msgid "Tooltip"
-msgstr "Info-bulle"
+#: ../server/vino-dbus-listener.c:357
+#, c-format
+msgid "Failed to acquire D-Bus name '%s'\n"
+msgstr "Impossible d'acquérir le nom D-Bus « %s »\n"
 
-#: ../capplet/vino-url.c:167
-msgid "A tooltip for this URL"
-msgstr "Une info-bulle pour cet URL"
-
-#: ../capplet/vino-url.c:173
-msgid "URL color"
-msgstr "Couleur de l'URL"
-
-#: ../capplet/vino-url.c:174
-msgid "The color of the URL's label"
-msgstr "La couleur de l'étiquette de l'URL"
-
-#: ../server/vino-fb.c:984 ../server/vino-prompt.c:144
-#: ../server/vino-server.c:942
-msgid "Screen"
-msgstr "Écran"
-
-#: ../server/vino-fb.c:985
-msgid "The screen to be monitored"
-msgstr "L'écran à contrôler"
-
-#: ../server/vino-main.c:80
+#: ../server/vino-main.c:83
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
-"Votre serveur XServer ne supporte pas l'extension XTest - l'accès au bureau "
-"à distance sera en vue-seule\n"
+"Votre serveur XServer ne prend pas en charge l'extension XTest - l'accès au "
+"bureau à distance sera en vue-seule\n"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -155,11 +133,15 @@ msgstr "42"
 msgid "%s's remote desktop"
 msgstr "Bureau à distance de %s"
 
-#: ../server/vino-prompt.c:145
+#: ../server/vino-prompt.c:142
+msgid "Screen"
+msgstr "Écran"
+
+#: ../server/vino-prompt.c:143
 msgid "The screen on which to display the prompt"
 msgstr "L'écran sur lequel afficher l'invite"
 
-#: ../server/vino-prompt.c:390
+#: ../server/vino-prompt.c:343
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -197,93 +179,13 @@ msgstr "_Autoriser"
 msgid "_Refuse"
 msgstr "_Refuser"
 
-#: ../server/vino-server.c:943
-msgid "The screen for which to create a VNC server"
-msgstr "L'écran pour lequel créer un serveur VNC"
-
-#: ../server/vino-server.c:950
-msgid "On Hold"
-msgstr "En attente"
-
-#: ../server/vino-server.c:951
-msgid "Place all clients on hold"
-msgstr "Mettre tous les clients en attente"
-
-#: ../server/vino-server.c:958
-msgid "Prompt enabled"
-msgstr "Invite activée"
-
-#: ../server/vino-server.c:959
-msgid "Prompt the user about connection attempts"
-msgstr "Afficher à l'utilisateur les essais de connexions"
-
-#: ../server/vino-server.c:966
-msgid "View Only"
-msgstr "Vue seule"
-
-#: ../server/vino-server.c:967
-msgid "Disallow keyboard/pointer input from clients"
-msgstr "Refuser l'entrée clavier/pointeur aux clients"
-
-#: ../server/vino-server.c:974
-msgid "Local Only"
-msgstr "Local seulement"
-
-#: ../server/vino-server.c:975 ../server/vino-server.schemas.in.h:13
-msgid "Only allow local connections"
-msgstr "N'autoriser que les connexions locales"
-
-#: ../server/vino-server.c:982
-msgid "Require Encryption"
-msgstr "Requiert le chiffrement"
-
-#: ../server/vino-server.c:983
-msgid "Require clients to use encryption"
-msgstr "Requiert les clients d'utiliser le chiffrement"
-
-#: ../server/vino-server.c:990
-msgid "Authentication methods"
-msgstr "Méthodes d'authentification"
-
-#: ../server/vino-server.c:991
-msgid "The authentication methods this server should allow"
-msgstr "Les méthodes d'authentification autorisées par ce serveur"
-
-#: ../server/vino-server.c:999
-msgid "VNC Password"
-msgstr "Mot de passe VNC"
-
-#: ../server/vino-server.c:1000
-msgid ""
-"The password (base64 encoded) used to authenticate types using the VncAuth "
-"method"
-msgstr ""
-"Le mot de passe (codé en base 64) utilisé pour authentifier les types "
-"utilisant la méthode VncAuth"
-
-#: ../server/vino-server.c:1007
-msgid "Use an alternative port"
-msgstr "Utiliser un autre port"
-
-#: ../server/vino-server.c:1008
-msgid "Listen on the port specified by the 'alternative-port' property"
-msgstr "Écoute sur le port spécifié par la propriété « alternative-port »"
-
-#: ../server/vino-server.c:1015 ../server/vino-server.schemas.in.h:2
-msgid "Alternative port number"
-msgstr "Numéro de port alternatif"
-
-#: ../server/vino-server.c:1016
-msgid ""
-"Listen on the specified port number if the 'use-alternative-port' property "
-"is TRUE"
-msgstr ""
-"Écoute sur le numéro de port spécifié si la propriété « use-alternative-port "
-"» est VRAI"
-
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
 msgstr "Méthodes d'authentification autorisées"
+
+#: ../server/vino-server.schemas.in.h:2
+msgid "Alternative port number"
+msgstr "Numéro de port alternatif"
 
 #: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
@@ -308,8 +210,8 @@ msgid ""
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
 msgstr ""
-"Si VRAI, les utilisateurs à distance accédant au bureau sont refusés tout "
-"accès jusqu'à ce que l'utilisateur sur l'ordinateur hôte approuve la "
+"Si VRAI, les utilisateurs à distance accédant au bureau se voient refuser "
+"tout accès jusqu'à ce que l'utilisateur sur l'ordinateur hôte approuve la "
 "connexion. Recommandé particulièrement lorsque l'accès n'est pas protégé par "
 "un mot de passe."
 
@@ -329,9 +231,9 @@ msgid ""
 "encryption unless the intervening network is trusted."
 msgstr ""
 "Si VRAI, les utilisateurs distants accédant au bureau doivent pouvoir "
-"supporter le chiffrement. Il est hautement recommandé que vous utilisiez un "
-"client qui supporte le chiffrement à moins que le réseau en question soit de "
-"confiance."
+"prendre en charge le chiffrement. Il est hautement recommandé que vous "
+"utilisiez un client qui prend en charge le chiffrement à moins que le réseau "
+"en question soit de confiance."
 
 #: ../server/vino-server.schemas.in.h:9
 msgid ""
@@ -339,7 +241,7 @@ msgid ""
 "port must be specified in 'alternative_port' key."
 msgstr ""
 "Si VRAI, le serveur écoutera sur un autre port, au lieu du port par défaut "
-"(5900). Le port doir être spécifié par la clé « alternative_port »."
+"(5900). Le port doit être indiqué par la clé « alternative_port »."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid ""
@@ -348,7 +250,7 @@ msgid ""
 "exclusively use a tunneling mechanism to access the server, such as ssh."
 msgstr ""
 "Si VRAI, le serveur n'acceptera que les connexions depuis localhost, tandis "
-"que les connexions provenant du réseau seront rejetés. Définissez cette "
+"que les connexions provenant du réseau seront rejetées. Définissez cette "
 "option à VRAI si vous désirez n'utiliser qu'un système de tunnel tel que SSH "
 "pour accéder au serveur."
 
@@ -367,9 +269,13 @@ msgstr ""
 "Liste les méthodes d'authentification à l'aide desquelles les utilisateurs à "
 "distance peuvent accéder au bureau. Il existe deux méthodes "
 "d'authentification possibles ; « vnc » fera en sorte qu'un mot de passe soit "
-"demandé à l'utilisateur (le mot de passe est spécifié par la clé "
+"demandé à l'utilisateur (le mot de passe est indiqué par la clé "
 "vnc_password) avant la connexion et « none » permet à tout utilisateur à "
 "distance de se connecter."
+
+#: ../server/vino-server.schemas.in.h:13
+msgid "Only allow local connections"
+msgstr "N'autoriser que les connexions locales"
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Only allow remote users to view the desktop"
@@ -394,8 +300,8 @@ msgid ""
 "encoded."
 msgstr ""
 "Le mot de passe qui sera demandé à l'utilisateur si la méthode "
-"d'authentification « vnc » est utilisée. Le mot de passe spécifié par la clé "
-"est codé en base 64."
+"d'authentification « vnc » est utilisée. Le mot de passe indiqué par la clé "
+"est codé en base64."
 
 #: ../server/vino-server.schemas.in.h:19
 msgid ""
@@ -403,7 +309,7 @@ msgid ""
 "is set to true. Valid values are in the range from 5000 to 50000."
 msgstr ""
 "Le port sur lequel le serveur écoutera si la clé « use_alternative_port » "
-"est défini à VRAI. Les valeurs valides sont dans la plage 5000 à 50000."
+"est définie à VRAI. Les valeurs valides sont dans la plage 5000 à 50000."
 
 #: ../server/vino-server.schemas.in.h:20
 msgid ""
@@ -411,8 +317,8 @@ msgid ""
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
-"Cette clé spécifie l'adresse électronique à laquelle envoyer l'URL du bureau "
-"à distance si l'utilisateur clique sur l'URL dans la boîte de dialogues de "
+"Cette clé indique l'adresse électronique à laquelle envoyer l'URL du bureau "
+"à distance si l'utilisateur clique sur l'URL dans la boîte de dialogue de "
 "préférences du bureau à distance."
 
 #: ../server/vino-shell.c:76
@@ -428,6 +334,155 @@ msgid ""
 msgstr ""
 "Problème lors de l'enregistrement du serveur du bureau à distance avec "
 "bonobo-activation ; fermeture de l'application...\n"
+
+#: ../server/vino-status-icon.c:199
+#, c-format
+msgid ""
+"There was an error displaying preferences:\n"
+" %s"
+msgstr ""
+"Une erreur est survenue lors de l'affichage des préférences :\n"
+"%s"
+
+#: ../server/vino-status-icon.c:207
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+" %s"
+msgstr ""
+"Impossible d'afficher l'aide :\n"
+"%s"
+
+#: ../server/vino-status-icon.c:230
+msgid ""
+"Licensed under the GNU General Public License Version 2\n"
+"\n"
+"Vino is free software; you can redistribute it and/or\n"
+"modify it under the terms of the GNU General Public License\n"
+"as published by the Free Software Foundation; either version 2\n"
+"of the License, or (at your option) any later version.\n"
+"\n"
+"Vino is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n"
+"GNU General Public License for more details.\n"
+"\n"
+"You should have received a copy of the GNU General Public License\n"
+"along with this program; if not, write to the Free Software\n"
+"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+"02110-1301, USA.\n"
+msgstr ""
+"Vino est un logiciel libre ; vous pouvez le redistribuer et/ou le\n"
+"modifier selon les termes de la Licence Publique Générale GNU, telle\n"
+"que publiée par la Free Software Foundation ; version 2 de la licence,\n"
+"ou (à votre discrétion) toute version ultérieure.\n"
+"\n"
+"Vino est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE "
+"GARANTIE ; sans même la garantie implicite de VALEUR MARCHANDE ou "
+"D'ADÉQUATION À UN BESOIN PARTICULIER. Pour plus de détails, voir la Licence "
+"Publique Générale GNU.\n"
+"\n"
+"Un exemplaire de la Licence Publique Générale GNU doit être fourni avec ce "
+"programme ; si ce n'est pas le cas, écrivez à la Free Software Foundation, "
+"Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA\n"
+
+#. Translators comment: put your own name here to appear in the about dialog.
+#: ../server/vino-status-icon.c:245
+msgid "translator-credits"
+msgstr ""
+"Audrey Simons <asimons@redhat.com>\n"
+"Christophe Merlet <redfox@redfoxcenter.org>\n"
+"Robert-André Mauchin <zebob.m@gmail.com>\n"
+"Jonathan Ernst <jonathan@ernstfamily.ch>"
+
+#: ../server/vino-status-icon.c:251 ../server/vino-status-icon.c:534
+msgid "GNOME Remote Desktop"
+msgstr "Bureau à distance GNOME"
+
+#: ../server/vino-status-icon.c:252
+msgid "Share your desktop with other users"
+msgstr "Partagez votre bureau avec d'autres utilisateurs"
+
+#: ../server/vino-status-icon.c:271
+#, c-format
+msgid "Are you sure you want to disconnect '%s'?"
+msgstr "Êtes-vous sûr de vouloir déconnecter « %s » ?"
+
+#: ../server/vino-status-icon.c:273
+#, c-format
+msgid "The remote user from '%s' will be disconnected. Are you sure?"
+msgstr "L'utilisateur distant de « %s » sera déconnecté. Êtes-vous sûr ?"
+
+#: ../server/vino-status-icon.c:278
+msgid "Are you sure you want to disconnect all clients?"
+msgstr "Êtes-vous sûr de vouloir déconnecter tous les clients ?"
+
+#: ../server/vino-status-icon.c:279
+msgid "All remote users will be disconnected. Are you sure?"
+msgstr "Tous les utilisateurs distants seront déconnectés. Êtes-vous sûr ?"
+
+#: ../server/vino-status-icon.c:291
+msgid "Disconnect"
+msgstr "Déconnecter"
+
+#: ../server/vino-status-icon.c:342
+msgid "_Preferences"
+msgstr "_Préférences"
+
+#: ../server/vino-status-icon.c:354
+msgid "Disconnect all"
+msgstr "Tout déconnecter"
+
+#: ../server/vino-status-icon.c:367
+#, c-format
+msgid "Disconnect %s"
+msgstr "Déconnecter %s"
+
+#: ../server/vino-status-icon.c:384
+msgid "_Help"
+msgstr "Aid_e"
+
+#: ../server/vino-status-icon.c:392
+msgid "_About"
+msgstr "À _propos"
+
+#: ../server/vino-status-icon.c:426
+#, c-format
+msgid "One person is connected"
+msgid_plural "%d people are connected"
+msgstr[0] "Une personne est connectée"
+msgstr[1] "%d personnes sont connectées"
+
+#: ../server/vino-status-icon.c:536
+msgid "Error initializing libnotify\n"
+msgstr "Erreur lors de l'initialisation de libnotify\n"
+
+#: ../server/vino-status-icon.c:550
+msgid "Another user is viewing your desktop"
+msgstr "Un autre utilisateur est en train de voir votre bureau"
+
+#: ../server/vino-status-icon.c:551
+#, c-format
+msgid "A user on the computer '%s' is remotely viewing your desktop."
+msgstr ""
+"Un utilisateur sur l'ordinateur « %s » est en train de voir votre bureau à "
+"distance."
+
+#: ../server/vino-status-icon.c:556
+msgid "Another user is controlling your desktop"
+msgstr "Un autre utilisateur est en train de contrôler votre bureau"
+
+#: ../server/vino-status-icon.c:557
+#, c-format
+msgid "A user on the computer '%s' is remotely controlling your desktop."
+msgstr ""
+"Un utilisateur sur l'ordinateur « %s » contrôle actuellement votre bureau à "
+"distance."
+
+#: ../server/vino-status-icon.c:579
+#, c-format
+msgid "Error while displaying notification bubble: %s\n"
+msgstr "Erreur lors de l'affichage de la bulle de notification : %s\n"
 
 #: ../session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
