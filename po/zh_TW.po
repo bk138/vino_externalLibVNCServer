@@ -1,25 +1,31 @@
 # Chinese (Taiwan) translation of vino.
 # Copyright (C) 2004-06 Free Software Foundation, Inc.
 # Chi-Wei Chen <michelin@seed.net.tw>, 2004.
-# 
-# 
+#
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: vino 2.14\n"
+"Project-Id-Version: vino 2.17.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-18 05:37+0200\n"
-"PO-Revision-Date: 2006-02-20 10:40+0800\n"
-"Last-Translator: Chi-Wei Chen <michelin@seed.net.tw>\n"
+"POT-Creation-Date: 2007-02-06 20:21+0800\n"
+"PO-Revision-Date: 2007-02-04 13:14+0800\n"
+"Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (Taiwan) <community@linuxhall.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:807
+#: ../capplet/vino-preferences.c:628 ../server/vino-dbus-listener.c:324
+#, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "開啟至 bus 的連線失敗：%s\n"
+
+#: ../capplet/vino-preferences.c:841
 msgid "Send this command by email"
 msgstr "以電子郵件寄送本指令"
 
-#: ../capplet/vino-preferences.c:842
+#: ../capplet/vino-preferences.c:876
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -37,95 +43,65 @@ msgid "Set your remote desktop access preferences"
 msgstr "設定您的遠端桌面存取偏好"
 
 #: ../capplet/vino-preferences.glade.h:1
-msgid "    "
-msgstr "    "
-
-#: ../capplet/vino-preferences.glade.h:2
-msgid "        "
-msgstr "        "
-
-#: ../capplet/vino-preferences.glade.h:3
-msgid "*"
-msgstr "*"
-
-#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Security</b>"
 msgstr "<b>安全性</b>"
 
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:2
 msgid "<b>Sharing</b>"
 msgstr "<b>共享</b>"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:3
 msgid "A_sk you for confirmation"
 msgstr "詢問您以確認(_S)"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:4
 msgid "Allow other users to _view your desktop"
 msgstr "允許其他使用者觀看您的桌面(_V)"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:5
 msgid "Remote Desktop Preferences"
 msgstr "遠端桌面偏好設定"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:6
 msgid "Some of these preferences are locked down"
 msgstr "一部份偏好設定已被鎖定"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:7
 msgid "Users can view your desktop using this command:"
 msgstr "使用者可以用這個指令來觀看您的桌面："
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:8
 msgid "When a user tries to view or control your desktop:"
 msgstr "當有使用者嘗試觀看或控制您的桌面時："
 
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.glade.h:9
 msgid "_Allow other users to control your desktop"
 msgstr "允許其他使用者控制您的桌面(_A)"
 
-#: ../capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.glade.h:10
 msgid "_Password:"
 msgstr "密碼(_P)："
 
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:11
 msgid "_Require the user to enter this password:"
 msgstr "使用者需要輸入密碼(_R)："
 
-#: ../capplet/vino-url.c:158
-msgid "Address"
-msgstr "位址"
+#: ../server/vino-dbus-listener.c:180 ../server/vino-dbus-listener.c:210
+#, c-format
+msgid "Out of memory handling '%s' message"
+msgstr "處理‘%s’訊息耗盡記憶體"
 
-#: ../capplet/vino-url.c:159
-msgid "The address pointed to by the widget"
-msgstr "被此元件指向的位址"
+#: ../server/vino-dbus-listener.c:284
+#, c-format
+msgid "Out of memory registering object path '%s'"
+msgstr "註冊物件路徑‘%s’耗盡記憶體"
 
-#: ../capplet/vino-url.c:166
-msgid "Tooltip"
-msgstr "工具提示"
+#: ../server/vino-dbus-listener.c:357
+#, c-format
+msgid "Failed to acquire D-Bus name '%s'\n"
+msgstr "取得 D-Bus 名稱‘%s’失敗\n"
 
-#: ../capplet/vino-url.c:167
-msgid "A tooltip for this URL"
-msgstr "網址的工具提示"
-
-#: ../capplet/vino-url.c:173
-msgid "URL color"
-msgstr "網址色彩"
-
-#: ../capplet/vino-url.c:174
-msgid "The color of the URL's label"
-msgstr "網址標籤的色彩"
-
-#: ../server/vino-fb.c:954 ../server/vino-prompt.c:144
-#: ../server/vino-server.c:853
-msgid "Screen"
-msgstr "螢幕"
-
-#: ../server/vino-fb.c:955
-msgid "The screen to be monitored"
-msgstr "要被監視的螢幕"
-
-#: ../server/vino-main.c:80
+#: ../server/vino-main.c:83
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -150,11 +126,15 @@ msgstr "vino-mdns:showusername"
 msgid "%s's remote desktop"
 msgstr "%s 的遠端桌面"
 
-#: ../server/vino-prompt.c:145
+#: ../server/vino-prompt.c:142
+msgid "Screen"
+msgstr "螢幕"
+
+#: ../server/vino-prompt.c:143
 msgid "The screen on which to display the prompt"
 msgstr "顯示提示的螢幕"
 
-#: ../server/vino-prompt.c:390
+#: ../server/vino-prompt.c:343
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -187,73 +167,23 @@ msgstr "允許(_A)"
 msgid "_Refuse"
 msgstr "拒絕(_R)"
 
-#: ../server/vino-server.c:854
-msgid "The screen for which to create a VNC server"
-msgstr "建立 VNC 伺服端畫面"
-
-#: ../server/vino-server.c:861
-msgid "On Hold"
-msgstr "暫停"
-
-#: ../server/vino-server.c:862
-msgid "Place all clients on hold"
-msgstr "讓所用的客戶端暫停"
-
-#: ../server/vino-server.c:869
-msgid "Prompt enabled"
-msgstr "能夠給予提示"
-
-#: ../server/vino-server.c:870
-msgid "Prompt the user about connection attempts"
-msgstr "嘗試連接時提示使用者"
-
-#: ../server/vino-server.c:877
-msgid "View Only"
-msgstr "只能觀看"
-
-#: ../server/vino-server.c:878
-msgid "Disallow keyboard/pointer input from clients"
-msgstr "不允許從客戶端使用鍵盤和滑鼠"
-
-#: ../server/vino-server.c:885
-msgid "Require Encryption"
-msgstr "需要加密"
-
-#: ../server/vino-server.c:886
-msgid "Require clients to use encryption"
-msgstr "客戶端必須使用加密"
-
-#: ../server/vino-server.c:893
-msgid "Authentication methods"
-msgstr "驗證方式"
-
-#: ../server/vino-server.c:894
-msgid "The authentication methods this server should allow"
-msgstr "此伺服端允許使用的驗證方式"
-
-#: ../server/vino-server.c:902
-msgid "VNC Password"
-msgstr "VNC 密碼"
-
-#: ../server/vino-server.c:903
-msgid ""
-"The password (base64 encoded) used to authenticate types using the VncAuth "
-"method"
-msgstr "使用 VncAuth 方式用來驗證的密碼（以 base64 編碼）"
-
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
 msgstr "允許的驗證方式"
 
 #: ../server/vino-server.schemas.in.h:2
+msgid "Alternative port number"
+msgstr "替代連接埠號"
+
+#: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "遠端桌面的 URL 應該寄送至這個電郵地址"
 
-#: ../server/vino-server.schemas.in.h:3
+#: ../server/vino-server.schemas.in.h:4
 msgid "Enable remote desktop access"
 msgstr "允許遠端桌面存取"
 
-#: ../server/vino-server.schemas.in.h:4
+#: ../server/vino-server.schemas.in.h:5
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
@@ -261,7 +191,7 @@ msgstr ""
 "如設定為 true，允許遠端電腦以 RFB 協定使用桌面；之後遠端電腦的使用者就可以用 "
 "vncviewer 連接到桌面。"
 
-#: ../server/vino-server.schemas.in.h:5
+#: ../server/vino-server.schemas.in.h:6
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
@@ -270,13 +200,13 @@ msgstr ""
 "如設定為 true，除非是在主機的用戶允許，否則遠端使用者不被允許使用桌面。建議使"
 "用，特別是沒有密碼保護的情形下。"
 
-#: ../server/vino-server.schemas.in.h:6
+#: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote user's will not be able to use the mouse or keyboard."
 msgstr "如設定為 true，遠端使用者僅被允許觀看桌面，無法使用滑鼠或鍵盤。"
 
-#: ../server/vino-server.schemas.in.h:7
+#: ../server/vino-server.schemas.in.h:8
 msgid ""
 "If true, remote users accessing the desktop are required to be able support "
 "encryption. It is highly recommended that you use a client which supports "
@@ -285,7 +215,28 @@ msgstr ""
 "如設定為 true，要存取桌面的遠端使用者必須支援加密。強烈建議使用支援加密的客戶"
 "端，除非兩者間的網路是可信賴的。"
 
-#: ../server/vino-server.schemas.in.h:8
+#: ../server/vino-server.schemas.in.h:9
+msgid ""
+"If true, the server will listen another port, instead of default (5900). The "
+"port must be specified in 'alternative_port' key."
+msgstr ""
+"如設定為 true，該伺服器會監聽其他連接埠，而非預設值 (5900)。此連接埠必須"
+"在‘alternative_port'’中指定。"
+
+#: ../server/vino-server.schemas.in.h:10
+msgid ""
+"If true, the server will only accept connections from localhost and network "
+"connections will be rejected. Set this option to true if you wish to "
+"exclusively use a tunneling mechanism to access the server, such as ssh."
+msgstr ""
+"如設定為 true，伺服器會只接受本機的連線並拒絕其他網路連線。如果您只想使用通道"
+"式機制(如 ssh)才將此項設為 true。"
+
+#: ../server/vino-server.schemas.in.h:11
+msgid "Listen an alternative port"
+msgstr "監聽替代的連接埠"
+
+#: ../server/vino-server.schemas.in.h:12
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -297,23 +248,27 @@ msgstr ""
 "提示遠端使用者輸入密碼（此密碼是由 vnc_password 設定鍵決定），或者是 “none”，"
 "即允許任何遠端使用者連接。"
 
-#: ../server/vino-server.schemas.in.h:9
+#: ../server/vino-server.schemas.in.h:13
+msgid "Only allow local connections"
+msgstr "只允許本地端連線"
+
+#: ../server/vino-server.schemas.in.h:14
 msgid "Only allow remote users to view the desktop"
 msgstr "只允許遠端使用者去觀看桌面"
 
-#: ../server/vino-server.schemas.in.h:10
+#: ../server/vino-server.schemas.in.h:15
 msgid "Password required for \"vnc\" authentication"
 msgstr "“vnc”驗證方式需要密碼"
 
-#: ../server/vino-server.schemas.in.h:11
+#: ../server/vino-server.schemas.in.h:16
 msgid "Prompt the user before completing a connection"
 msgstr "在完成連接前提示使用者"
 
-#: ../server/vino-server.schemas.in.h:12
+#: ../server/vino-server.schemas.in.h:17
 msgid "Require encryption"
 msgstr "需要加密"
 
-#: ../server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:18
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -322,7 +277,15 @@ msgstr ""
 "如果使用“vnc”驗證方法的話，遠端使用者需要輸入這個密碼。此密碼是用 base64 編碼"
 "的。"
 
-#: ../server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:19
+msgid ""
+"The port which the server will listen to if the 'use_alternative_port' key "
+"is set to true. Valid values are in the range from 5000 to 50000."
+msgstr ""
+"如‘use_alternative_port’鍵值設為 true 時，伺服器要監聽的連接埠。可用的數值範"
+"圍為 5000 到 50000。"
+
+#: ../server/vino-server.schemas.in.h:20
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
@@ -340,6 +303,155 @@ msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
 msgstr "向 bonobo-activation 註冊遠端桌面伺服端時發生問題；準備離開...\n"
+
+#: ../server/vino-status-icon.c:199
+#, c-format
+msgid ""
+"There was an error displaying preferences:\n"
+" %s"
+msgstr ""
+"顯示偏好設定時發生錯誤：\n"
+"%s"
+
+#: ../server/vino-status-icon.c:207
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+" %s"
+msgstr ""
+"顯示說明文件時發生錯誤：\n"
+"%s"
+
+#: ../server/vino-status-icon.c:230
+msgid ""
+"Licensed under the GNU General Public License Version 2\n"
+"\n"
+"Vino is free software; you can redistribute it and/or\n"
+"modify it under the terms of the GNU General Public License\n"
+"as published by the Free Software Foundation; either version 2\n"
+"of the License, or (at your option) any later version.\n"
+"\n"
+"Vino is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n"
+"GNU General Public License for more details.\n"
+"\n"
+"You should have received a copy of the GNU General Public License\n"
+"along with this program; if not, write to the Free Software\n"
+"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+"02110-1301, USA.\n"
+msgstr ""
+"以 GNU 通用公共授權條款第二版授權\n"
+"\n"
+"Vino 為自由軟體；您可依據自由軟體\n"
+"基金會所發表的 GNU 通用公共授權條款(\n"
+"可選用第二版或以後的任何版本)規定，\n"
+"將本程式再散佈或修改，或兩者同時進行。\n"
+"\n"
+"Vino 係基於使用目的而加以散布，然而\n"
+"不負任何擔保責任；亦無對適售性或\n"
+"特定目的適用性所為的默示性擔保。\n"
+"詳情請參照 GNU 通用公共授權。\n"
+"\n"
+"您應該已收到附於本程式的GNU 通用公共授權\n"
+"的副本；如果沒有，請寫信至：Free Software \n"
+"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+"02110-1301, USA.\n"
+
+#. Translators comment: put your own name here to appear in the about dialog.
+#: ../server/vino-status-icon.c:245
+msgid "translator-credits"
+msgstr ""
+"如對翻譯有任何意見，請送一封電子郵件給\n"
+"以下地址，GNOME 翻譯團隊會盡快回覆您：\n"
+"community@linuxhall.org\n"
+"\n"
+"Chi-Wei Chen <michelin@seed.net.tw>, 2004."
+
+#: ../server/vino-status-icon.c:251 ../server/vino-status-icon.c:534
+msgid "GNOME Remote Desktop"
+msgstr "GNOME 遠端桌面"
+
+#: ../server/vino-status-icon.c:252
+msgid "Share your desktop with other users"
+msgstr "與別的使用者分享您的桌面"
+
+#: ../server/vino-status-icon.c:271
+#, c-format
+msgid "Are you sure you want to disconnect '%s'?"
+msgstr "您確定要將‘%s’斷線？"
+
+#: ../server/vino-status-icon.c:273
+#, c-format
+msgid "The remote user from '%s' will be disconnected. Are you sure?"
+msgstr "來自‘%s’的遠端使用者會被斷線。您確定嗎？"
+
+#: ../server/vino-status-icon.c:278
+msgid "Are you sure you want to disconnect all clients?"
+msgstr "確定要將所有的客戶端斷線？"
+
+#: ../server/vino-status-icon.c:279
+msgid "All remote users will be disconnected. Are you sure?"
+msgstr "所有的遠端使用者會被斷線。您確定嗎？"
+
+#: ../server/vino-status-icon.c:291
+msgid "Disconnect"
+msgstr "斷線"
+
+#: ../server/vino-status-icon.c:342
+msgid "_Preferences"
+msgstr "偏好設定(_P)"
+
+#: ../server/vino-status-icon.c:354
+msgid "Disconnect all"
+msgstr "全部斷線"
+
+#: ../server/vino-status-icon.c:367
+#, c-format
+msgid "Disconnect %s"
+msgstr "斷線 %s"
+
+#: ../server/vino-status-icon.c:384
+msgid "_Help"
+msgstr "求助(_H)"
+
+#: ../server/vino-status-icon.c:392
+msgid "_About"
+msgstr "關於(_A)"
+
+#: ../server/vino-status-icon.c:426
+#, c-format
+msgid "One person is connected"
+msgid_plural "%d people are connected"
+msgstr[0] "1 個人已連線"
+msgstr[1] "%d 個人已連線"
+
+#: ../server/vino-status-icon.c:536
+msgid "Error initializing libnotify\n"
+msgstr "初始化 libnotify 時發生錯誤\n"
+
+#: ../server/vino-status-icon.c:550
+msgid "Another user is viewing your desktop"
+msgstr "其他使用者正在觀看您的桌面"
+
+#: ../server/vino-status-icon.c:551
+#, c-format
+msgid "A user on the computer '%s' is remotely viewing your desktop."
+msgstr "在電腦‘%s’上的使用者正遠端觀看您的桌面。"
+
+#: ../server/vino-status-icon.c:556
+msgid "Another user is controlling your desktop"
+msgstr "其他使用者正在控制您的桌面"
+
+#: ../server/vino-status-icon.c:557
+#, c-format
+msgid "A user on the computer '%s' is remotely controlling your desktop."
+msgstr "在電腦‘%s’上的使用者正遠端控制您的桌面。"
+
+#: ../server/vino-status-icon.c:579
+#, c-format
+msgid "Error while displaying notification bubble: %s\n"
+msgstr "顯示通知氣泡視窗時發生錯誤：%s\n"
 
 #: ../session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
@@ -366,3 +478,74 @@ msgstr "起始遠端桌面伺服端"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "沒有起始遠端桌面伺服端"
+
+#~ msgid "    "
+#~ msgstr "    "
+
+#~ msgid "        "
+#~ msgstr "        "
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid "Address"
+#~ msgstr "位址"
+
+#~ msgid "The address pointed to by the widget"
+#~ msgstr "被此元件指向的位址"
+
+#~ msgid "Tooltip"
+#~ msgstr "工具提示"
+
+#~ msgid "A tooltip for this URL"
+#~ msgstr "網址的工具提示"
+
+#~ msgid "URL color"
+#~ msgstr "網址色彩"
+
+#~ msgid "The color of the URL's label"
+#~ msgstr "網址標籤的色彩"
+
+#~ msgid "The screen to be monitored"
+#~ msgstr "要被監視的螢幕"
+
+#~ msgid "The screen for which to create a VNC server"
+#~ msgstr "建立 VNC 伺服端畫面"
+
+#~ msgid "On Hold"
+#~ msgstr "暫停"
+
+#~ msgid "Place all clients on hold"
+#~ msgstr "讓所用的客戶端暫停"
+
+#~ msgid "Prompt enabled"
+#~ msgstr "能夠給予提示"
+
+#~ msgid "Prompt the user about connection attempts"
+#~ msgstr "嘗試連接時提示使用者"
+
+#~ msgid "View Only"
+#~ msgstr "只能觀看"
+
+#~ msgid "Disallow keyboard/pointer input from clients"
+#~ msgstr "不允許從客戶端使用鍵盤和滑鼠"
+
+#~ msgid "Require Encryption"
+#~ msgstr "需要加密"
+
+#~ msgid "Require clients to use encryption"
+#~ msgstr "客戶端必須使用加密"
+
+#~ msgid "Authentication methods"
+#~ msgstr "驗證方式"
+
+#~ msgid "The authentication methods this server should allow"
+#~ msgstr "此伺服端允許使用的驗證方式"
+
+#~ msgid "VNC Password"
+#~ msgstr "VNC 密碼"
+
+#~ msgid ""
+#~ "The password (base64 encoded) used to authenticate types using the "
+#~ "VncAuth method"
+#~ msgstr "使用 VncAuth 方式用來驗證的密碼（以 base64 編碼）"
