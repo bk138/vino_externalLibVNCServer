@@ -49,6 +49,9 @@
 
 #define N_LISTENERS 6
 
+#define VINO_DBUS_BUS_NAME  "org.gnome.Vino"
+#define VINO_DBUS_INTERFACE "org.gnome.VinoScreen"
+
 typedef struct {
   GladeXML    *xml;
   GConfClient *client;
@@ -74,6 +77,9 @@ typedef struct {
 
   guint        use_password : 1;
 } VinoPreferencesDialog;
+
+static void
+vino_preferences_dialog_update_url_label (VinoPreferencesDialog *dialog);
 
 static char *
 vino_preferences_dialog_get_password_from_keyring (VinoPreferencesDialog *dialog)
@@ -604,12 +610,48 @@ vino_preferences_dialog_setup_icons (VinoPreferencesDialog *dialog)
                                 GTK_ICON_SIZE_DIALOG);
 }
 
+static void
+vino_preferences_server_updated (DBusGProxy *proxy,
+                                 const char *name,
+                                 const char *prev_owner,
+                                 const char *new_owner,
+                                 gpointer user_data)
+{
+  if ( (new_owner) && (!strcmp (name, VINO_DBUS_BUS_NAME)) )
+    vino_preferences_dialog_update_url_label ( (VinoPreferencesDialog *) user_data);
+}
+
+static void
+vino_preferences_start_listening (VinoPreferencesDialog *dialog)
+{
+  DBusGConnection *connection;
+  GError          *error;
+  DBusGProxy      *proxy;
+  
+  error = NULL;
+  connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
+  if (!connection)
+    {
+      g_printerr (_("Failed to open connection to bus: %s\n"),
+                  error->message);
+      g_error_free (error);
+      return;
+    }
+
+  proxy = dbus_g_proxy_new_for_name (connection,
+                                     DBUS_SERVICE_DBUS,
+                                     DBUS_PATH_DBUS,
+                                     DBUS_INTERFACE_DBUS);
+
+  dbus_g_proxy_add_signal (proxy, "NameOwnerChanged",
+                           G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_INVALID);
+  dbus_g_proxy_connect_signal (proxy, "NameOwnerChanged",
+                          G_CALLBACK (vino_preferences_server_updated), dialog, NULL);
+}
+
 static int
 vino_preferences_get_server_port (VinoPreferencesDialog *dialog)
 {
-#define VINO_DBUS_BUS_NAME  "org.gnome.Vino"
-#define VINO_DBUS_INTERFACE "org.gnome.VinoScreen"
-
 #define VINO_DEFAULT_PORT   5900
 #define VINO_MIN_PORT       5000
 #define VINO_MAX_PORT       6000
@@ -648,8 +690,7 @@ vino_preferences_get_server_port (VinoPreferencesDialog *dialog)
                           G_TYPE_INT, &port,
                           G_TYPE_INVALID))
     {
-      g_printerr ("Failed to call remote GetServerPort function: %s\n",
-                  error->message);
+      g_object_unref (proxy);
       g_error_free (error);
       dbus_g_connection_unref (connection);
       return 0;
@@ -663,8 +704,6 @@ vino_preferences_get_server_port (VinoPreferencesDialog *dialog)
   else
     return port;
 
-#undef VINO_DBUS_BUS_NAME
-#undef VINO_DBUS_INTERFACE
 #undef VINO_DEFAULT_PORT
 #undef VINO_MIN_PORT
 #undef VINO_MAX_PORT
@@ -1012,6 +1051,7 @@ main (int argc, char **argv)
       return 1;
     }
 
+  vino_preferences_start_listening (&dialog);
   gtk_main ();
 
   vino_preferences_dialog_finalize (&dialog);
