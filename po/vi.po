@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.16.0 GNOME HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-09 03:21+0000\n"
-"PO-Revision-Date: 2007-01-28 11:20+0700\n"
-"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
+"POT-Creation-Date: 2007-01-28 04:22+0000\n"
+"PO-Revision-Date: 2007-02-24 16:48+0700\n"
+"Last-Translator: Nguyễn Thái Ngọc Duy <pclouds@gmail.com>\n"
 "Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: LocFactoryEditor 1.6fc1\n"
+"X-Generator: Emacs 21.4.1, po-mode 2.02+0.4\n"
 
 #: ../capplet/vino-preferences.c:619 ../server/vino-dbus-listener.c:324
 #, c-format
@@ -363,6 +363,22 @@ msgid ""
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
 "02110-1301, USA.\n"
 msgstr ""
+"Được phát hành với điều kiện của Quyền Công Chung GNU (GPL) phiên bản 2\n"
+"\n"
+"Chương trình này là phần mềm tự do; bạn có thể phát hành lại nó và/hoặc sửa\n"
+"đổi nó với điều kiện của Giấy phép Công cộng GNU như được xuất bản bởi Tổ\n"
+"chức Phần mềm Tự do; hoặc phiên bản 2 của Giấy phép này, hoặc (tùy chọn) bất\n"
+"kỳ phiên bản sau nào.\n"
+"\n"
+"Chương trình này được phát hành vì mong muốn nó có ích, nhưng KHÔNG CÓ BẢO\n"
+"HÀNH GÌ CẢ, THẬM CHÍ KHÔNG CÓ BẢO ĐẢM ĐƯỢC NGỤ Ý KHẢ NĂNG BÁN HAY KHẢ NĂNG\n"
+"LÀM ĐƯỢC VIỆC DỨT KHOÁT. Xem Giấy phép Công cộng GNU để biết thêm chi tiết.\n"
+"\n"
+"Bạn đã nhận một bản sao của Giấy phép Công cộng GNU cùng với chương trình\n"
+"này; nếu không, hãy viết thư cho Tổ chức Phần mềm Tự do,\n"
+"Free Software Foundation, Inc.,\n"
+"51 Franklin Street, Fifth Floor,\n"
+"Boston, MA  02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
 #: ../server/vino-status-icon.c:240
@@ -437,9 +453,7 @@ msgstr "Cho phép người khác xem màn hình làm việc của bạn"
 #: ../server/vino-status-icon.c:533
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
-msgstr ""
-"Người dùng trên máy '%s' xem màn hình làm việc "
-"của bạn từ xa."
+msgstr "Người dùng trên máy '%s' xem màn hình làm việc của bạn từ xa."
 
 #: ../server/vino-status-icon.c:538
 msgid "Another user is controlling your desktop"
@@ -448,9 +462,7 @@ msgstr "Cho phép người dùng khác điều khiển màn hình làm việc c�
 #: ../server/vino-status-icon.c:539
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr ""
-"Người dùng trên máy '%s' điều khiển màn hình làm việc "
-"của bạn từ xa."
+msgstr "Người dùng trên máy '%s' điều khiển màn hình làm việc của bạn từ xa."
 
 #: ../server/vino-status-icon.c:561
 #, c-format
