@@ -1,3 +1,37 @@
+Vino 2.17.92
+===========
+
+  Fixes
+
+    + A few issues related to new Vino Status Icon (Jonh, Christian Persch)
+    + Adjust Categories in desktop file according with new Control Center (Denis Washington)
+    + Fix minor issues about GnomeIconTheme usage (Jani Monoses)
+    + Updates port number in preferences window when server starts (Jonh)
+
+  Translations
+
+    + Khaled Hosny (ar)
+    + Rostislav Raykov (bg)
+    + Josep Puigdemont (ca)
+    + Hendrik Richter (de)
+    + David Lodge (en_GB)
+    + Ivar Smolin (et)
+    + Ilkka Tuohela (fi)
+    + Jonathan Ernst (fr)
+    + Oldie (he)
+    + Gabor Kelemen (hu)
+    + Young-Ho Cha (ko)
+    + Jovan Naumovski (mk)
+    + Kjartan Maraas (nb)
+    + Reinout van Schouwen (nl)
+    + Leonardo Ferreira Fontenelle (pt_BR)
+    + Duarte Loreto (pt)
+    + Leonid Kanter (ru)
+    + Daniel Nylander (sv)
+    + Theppitak Karoonboonyanan (th)
+    + Nguyễn Thái Ngọc Duy (vi)
+    + Chao-Hsiung Liao (zh_HK, zh_TW)
+
 Vino 2.17.5
 ===========
 
