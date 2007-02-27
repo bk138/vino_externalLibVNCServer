@@ -31,6 +31,7 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <gtk/gtkicontheme.h>
 
 #include "vino-util.h"
 #include "vino-mdns.h"

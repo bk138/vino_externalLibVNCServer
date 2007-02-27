@@ -1,3 +1,8 @@
+2007-02-27  Halton Huo <halton.huo@sun.com>
+
+	* server/vino-http.c: 
+	  Add gtk/gtkicontheme.h in vino-http.c for bug #412559.
+
 2007-02-26  Jonh Wendell  <jwendell@gnome.org>
 
 	* configure.in: post-release bump to 2.18.0
