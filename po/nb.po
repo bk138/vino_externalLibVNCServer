@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-24 11:49+0100\n"
-"PO-Revision-Date: 2007-01-24 11:52+0100\n"
+"POT-Creation-Date: 2007-02-28 14:53+0100\n"
+"PO-Revision-Date: 2007-02-28 14:58+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -16,16 +16,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:619 ../server/vino-dbus-listener.c:324
+#: ../capplet/vino-preferences.c:635 ../capplet/vino-preferences.c:670
+#: ../server/vino-dbus-listener.c:324
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Kunne ikke åpne tilkobling til buss: %s\n"
 
-#: ../capplet/vino-preferences.c:832
+#: ../capplet/vino-preferences.c:880
 msgid "Send this command by email"
 msgstr "Send denne kommandoen via e-post"
 
-#: ../capplet/vino-preferences.c:867
+#: ../capplet/vino-preferences.c:915
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -128,15 +129,15 @@ msgstr "vino-mdns:showusername"
 msgid "%s's remote desktop"
 msgstr "Eksternt skrivebord for %s"
 
-#: ../server/vino-prompt.c:143
+#: ../server/vino-prompt.c:142
 msgid "Screen"
 msgstr "Skjerm"
 
-#: ../server/vino-prompt.c:144
+#: ../server/vino-prompt.c:143
 msgid "The screen on which to display the prompt"
 msgstr "Skjermen hvor spørsmålsdialogen skal vises"
 
-#: ../server/vino-prompt.c:344
+#: ../server/vino-prompt.c:343
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -236,7 +237,7 @@ msgid ""
 "If true, the server will only accept connections from localhost and network "
 "connections will be rejected. Set this option to true if you wish to "
 "exclusively use a tunneling mechanism to access the server, such as ssh."
-msgstr ""
+msgstr "Hvis denne verdien er «true» vil tjeneren kun godta tilkoblinger fra localhost, og tilkoblinger via nettverket vil nektes. Sett dette alternativet til «true» hvis du utelukkende ønsker å bruke en tunneleringsmekanisme, slik som ssh, til å aksessere tjeneren"
 
 #: ../server/vino-server.schemas.in.h:11
 msgid "Listen an alternative port"
@@ -290,7 +291,7 @@ msgstr ""
 msgid ""
 "The port which the server will listen to if the 'use_alternative_port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
-msgstr ""
+msgstr "Porten som tjeneren vil lytte på hvis «use_alternative_port»-nøkkelen er satt til «true». Gyldige verdier er i området fra 5000 til 50000."
 
 #: ../server/vino-server.schemas.in.h:20
 msgid ""
@@ -313,7 +314,7 @@ msgstr ""
 "Problem under registrering av det eksterne skrivebordet med bonobo-"
 "activation. Avslutter...\n"
 
-#: ../server/vino-status-icon.c:194
+#: ../server/vino-status-icon.c:199
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
@@ -322,7 +323,7 @@ msgstr ""
 "Det oppsto en feil under visning av brukervalg:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:202
+#: ../server/vino-status-icon.c:207
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -331,7 +332,7 @@ msgstr ""
 "Det oppsto en feil under visning av hjelp:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:225
+#: ../server/vino-status-icon.c:230
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -350,93 +351,107 @@ msgid ""
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
 "02110-1301, USA.\n"
 msgstr ""
+"Lisensiert under GNU General Public License versjon 2\n"
+"\n"
+"Vino er fri programvare. Du kan redistribuere og/eller\n"
+"endre programmet under betingelsene gitt i GNU General Public License\n"
+"som utgitt av Free Software Foundation; enten versjon 2\n"
+"av lisensen, eller (hvis du ønsker det) enhver senere versjon.\n"
+"\n"
+"Vino distribueres i håp om at programmet er nyttig, men uten NOEN\n"
+"GARANTI, ikke engang implisitt garanti om at det er SALGBART eller PASSER ET\n"
+"BESTEMT FORMÅL. Se GNU General Public License for detaljer.\n"
+"\n"
+"Du skal ha mottatt en kopi av GNU General Public License sammen med\n"
+"dette programmet. Hvis dette ikke er tilfelle, kan du skrive til Free Software\n"
+"Foundation, Inc. 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:240
+#: ../server/vino-status-icon.c:245
 msgid "translator-credits"
 msgstr "Kjartan Maraas <kmaraas@gnome.org>"
 
-#: ../server/vino-status-icon.c:246 ../server/vino-status-icon.c:517
+#: ../server/vino-status-icon.c:251 ../server/vino-status-icon.c:534
 msgid "GNOME Remote Desktop"
 msgstr "Eksternt skrivebord"
 
-#: ../server/vino-status-icon.c:247
+#: ../server/vino-status-icon.c:252
 msgid "Share your desktop with other users"
 msgstr "Del ditt skrivebord med andre brukere"
 
-#: ../server/vino-status-icon.c:266
+#: ../server/vino-status-icon.c:271
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Er du sikker på at du ønsker å koble fra «%s»?"
 
-#: ../server/vino-status-icon.c:268
+#: ../server/vino-status-icon.c:273
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Ekstern bruker fra «%s» vil bli frakoblet. Er du sikker?"
 
-#: ../server/vino-status-icon.c:273
+#: ../server/vino-status-icon.c:278
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Er du sikker på at du ønsker å koble fra alle klienter?"
 
-#: ../server/vino-status-icon.c:274
+#: ../server/vino-status-icon.c:279
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Alle eksterne brukere vil bli frakoblet. Er du sikker?"
 
-#: ../server/vino-status-icon.c:286
+#: ../server/vino-status-icon.c:291
 msgid "Disconnect"
 msgstr "Koble fra"
 
-#: ../server/vino-status-icon.c:337
+#: ../server/vino-status-icon.c:342
 msgid "_Preferences"
 msgstr "_Brukervalg"
 
-#: ../server/vino-status-icon.c:349
+#: ../server/vino-status-icon.c:354
 msgid "Disconnect all"
 msgstr "Koble fra alle"
 
-#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-icon.c:367
 #, c-format
 msgid "Disconnect %s"
 msgstr "Koble fra %s"
 
-#: ../server/vino-status-icon.c:379
+#: ../server/vino-status-icon.c:384
 msgid "_Help"
 msgstr "_Hjelp"
 
-#: ../server/vino-status-icon.c:387
+#: ../server/vino-status-icon.c:392
 msgid "_About"
 msgstr "_Om"
 
-#: ../server/vino-status-icon.c:421
+#: ../server/vino-status-icon.c:426
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
 msgstr[0] "En person er koblet til"
 msgstr[1] "%d personer er koblet til"
 
-#: ../server/vino-status-icon.c:519
+#: ../server/vino-status-icon.c:536
 msgid "Error initializing libnotify\n"
 msgstr "Feil ved initiering av libnotify\n"
 
-#: ../server/vino-status-icon.c:532
+#: ../server/vino-status-icon.c:550
 msgid "Another user is viewing your desktop"
 msgstr "En annen bruker ser på ditt skrivebord"
 
-#: ../server/vino-status-icon.c:533
+#: ../server/vino-status-icon.c:551
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "En bruker på datamaskin «%s» ser på ditt skrivebord."
 
-#: ../server/vino-status-icon.c:538
+#: ../server/vino-status-icon.c:556
 msgid "Another user is controlling your desktop"
 msgstr "En annen bruker kontrollerer ditt skrivebord"
 
-#: ../server/vino-status-icon.c:539
+#: ../server/vino-status-icon.c:557
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "En bruker på datamaskin «%s» kontrollerer ditt skrivebord."
 
-#: ../server/vino-status-icon.c:561
+#: ../server/vino-status-icon.c:579
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Feil under visning av meldingsboble: %s\n"
