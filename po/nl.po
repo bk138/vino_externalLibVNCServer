@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-21 13:46+0100\n"
+"POT-Creation-Date: 2007-01-09 03:21+0000\n"
 "PO-Revision-Date: 2007-02-18 02:53+0100\n"
 "Last-Translator: Reinout van Schouwen <reinouts@gnome.org>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
@@ -20,17 +20,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:635 ../capplet/vino-preferences.c:670
-#: ../server/vino-dbus-listener.c:324
+#: ../capplet/vino-preferences.c:619 ../server/vino-dbus-listener.c:324
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Het openen van de verbinding naar de bus is mislukt: %s\n"
 
-#: ../capplet/vino-preferences.c:880
+#: ../capplet/vino-preferences.c:832
 msgid "Send this command by email"
 msgstr "Deze opdracht versturen via e-mail"
 
-#: ../capplet/vino-preferences.c:915
+#: ../capplet/vino-preferences.c:867
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -133,15 +132,15 @@ msgstr "1"
 msgid "%s's remote desktop"
 msgstr "Bureaublad van %s op afstand"
 
-#: ../server/vino-prompt.c:142
+#: ../server/vino-prompt.c:143
 msgid "Screen"
 msgstr "Scherm"
 
-#: ../server/vino-prompt.c:143
+#: ../server/vino-prompt.c:144
 msgid "The screen on which to display the prompt"
 msgstr "Het scherm waarop de melding wordt weergegeven"
 
-#: ../server/vino-prompt.c:343
+#: ../server/vino-prompt.c:344
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -239,9 +238,8 @@ msgid ""
 "If true, the server will listen another port, instead of default (5900). The "
 "port must be specified in 'alternative_port' key."
 msgstr ""
-"Als waar, dan luistert de server naar een andere poort in plaats van de "
-"standaard (5900). De poort dient ingesteld te worden onder de sleutel "
-"'alternative_port'."
+"Als waar, dan luistert de server naar een andere poort in plaats van de standaard "
+"(5900). De poort dient ingesteld te worden onder de sleutel 'alternative_port'."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid ""
@@ -251,8 +249,8 @@ msgid ""
 msgstr ""
 "Als waar, dan accepteert de server uitsluitend verbindingen vanaf localhost "
 "en zullen netwerkverbindingen geweigerd worden. Stel deze optie in als u "
-"uitsluitend een tunneling-mechanisme zoals ssh wilt gebruiken om toegang tot "
-"de server te krijgen."
+"uitsluitend een tunneling-mechanisme zoals ssh wilt gebruiken om toegang "
+"tot de server te krijgen."
 
 #: ../server/vino-server.schemas.in.h:11
 msgid "Listen an alternative port"
@@ -333,7 +331,7 @@ msgstr ""
 "Probleem bij registeren van bureaublad-op-afstand server met bonobo-"
 "activering; afsluiten...\n"
 
-#: ../server/vino-status-icon.c:199
+#: ../server/vino-status-icon.c:194
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
@@ -342,7 +340,7 @@ msgstr ""
 "Er is een fout opgetreden tijdens het weergeven van de voorkeuren:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:207
+#: ../server/vino-status-icon.c:202
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -351,7 +349,7 @@ msgstr ""
 "Er is een fout opgetreden tijdens het weergeven van de hulptekst:\n"
 "%s"
 
-#: ../server/vino-status-icon.c:230
+#: ../server/vino-status-icon.c:225
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -370,25 +368,9 @@ msgid ""
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
 "02110-1301, USA.\n"
 msgstr ""
-"Licensed under the GNU General Public License Version 2\n"
-"\n"
-"Vino is free software; you can redistribute it and/or\n"
-"modify it under the terms of the GNU General Public License\n"
-"as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version.\n"
-"\n"
-"Vino is distributed in the hope that it will be useful,\n"
-"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n"
-"GNU General Public License for more details.\n"
-"\n"
-"You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:245
+#: ../server/vino-status-icon.c:240
 msgid "translator-credits"
 msgstr ""
 "Elros Cyriatan \n"
@@ -399,95 +381,96 @@ msgstr ""
 "\n"
 "Kijk voor meer informatie op http://nl.gnome.org/"
 
-#: ../server/vino-status-icon.c:251 ../server/vino-status-icon.c:534
+#: ../server/vino-status-icon.c:246 ../server/vino-status-icon.c:517
 msgid "GNOME Remote Desktop"
 msgstr "GNOME-bureaublad op afstand"
 
-#: ../server/vino-status-icon.c:252
+#: ../server/vino-status-icon.c:247
 msgid "Share your desktop with other users"
 msgstr "Uw bureaublad delen met andere gebruikers"
 
-#: ../server/vino-status-icon.c:271
+#: ../server/vino-status-icon.c:266
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Weet u zeker dat u de verbinding met ‘%s’ wilt verbreken?"
 
-#: ../server/vino-status-icon.c:273
+#: ../server/vino-status-icon.c:268
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr ""
-"De verbinding met de gebruiker op afstand vanaf ‘%s’ zal worden verbroken. "
-"Weet u het zeker?"
+"De verbinding met de gebruiker op afstand vanaf ‘%s’ zal worden "
+"verbroken. Weet u het zeker?"
 
-#: ../server/vino-status-icon.c:278
+#: ../server/vino-status-icon.c:273
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Weet u zeker dat u de verbinding met alle clients wilt verbreken?"
 
-#: ../server/vino-status-icon.c:279
+#: ../server/vino-status-icon.c:274
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr ""
-"De verbinding met alle gebruikers op afstand zal worden verbroken. Weet u "
-"het zeker?"
+"De verbinding met alle gebruikers op afstand zal worden verbroken. "
+"Weet u het zeker?"
 
-#: ../server/vino-status-icon.c:291
+#: ../server/vino-status-icon.c:286
 msgid "Disconnect"
 msgstr "Verbinding verbreken"
 
-#: ../server/vino-status-icon.c:342
+#: ../server/vino-status-icon.c:337
 msgid "_Preferences"
 msgstr "_Voorkeuren"
 
-#: ../server/vino-status-icon.c:354
+#: ../server/vino-status-icon.c:349
 msgid "Disconnect all"
 msgstr "Alle verbindingen verbreken"
 
-#: ../server/vino-status-icon.c:367
+#: ../server/vino-status-icon.c:362
 #, c-format
 msgid "Disconnect %s"
 msgstr "Verbinding met %s verbreken"
 
-#: ../server/vino-status-icon.c:384
+#: ../server/vino-status-icon.c:379
 msgid "_Help"
 msgstr "_Hulp"
 
-#: ../server/vino-status-icon.c:392
+#: ../server/vino-status-icon.c:387
 msgid "_About"
 msgstr "In_fo"
 
-#: ../server/vino-status-icon.c:426
+#: ../server/vino-status-icon.c:421
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
 msgstr[0] "Eén persoon is verbonden"
 msgstr[1] "%d personen zijn verbonden"
 
-#: ../server/vino-status-icon.c:536
+#: ../server/vino-status-icon.c:519
 msgid "Error initializing libnotify\n"
 msgstr "Initialiseren van libnotify mislukt\n"
 
-#: ../server/vino-status-icon.c:550
+#: ../server/vino-status-icon.c:532
 msgid "Another user is viewing your desktop"
 msgstr "Een andere gebruiker bekijkt uw bureaublad"
 
-#: ../server/vino-status-icon.c:551
+#: ../server/vino-status-icon.c:533
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
-msgstr "Een gebruiker van computer ‘%s’ bekijkt op afstand uw bureaublad."
+msgstr ""
+"Een gebruiker van computer ‘%s’ bekijkt op afstand uw bureaublad."
 
-#: ../server/vino-status-icon.c:556
+#: ../server/vino-status-icon.c:538
 msgid "Another user is controlling your desktop"
 msgstr "Een andere gebruiker bestuurt uw bureaublad"
 
-#: ../server/vino-status-icon.c:557
+#: ../server/vino-status-icon.c:539
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr "Een gebruiker van computer ‘%s’ bestuurt op afstand uw bureaublad."
+msgstr ""
+"Een gebruiker van computer ‘%s’ bestuurt op afstand uw bureaublad."
 
-#: ../server/vino-status-icon.c:579
+#: ../server/vino-status-icon.c:561
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
-msgstr ""
-"Er is een fout opgetreden bij het tonen van de mededelingentekstballon: %s\n"
+msgstr "Er is een fout opgetreden bij het tonen van de mededelingentekstballon: %s\n"
 
 #: ../session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
