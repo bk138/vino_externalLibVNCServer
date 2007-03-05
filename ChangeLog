@@ -1,3 +1,8 @@
+2007-03-05  Jonh Wendell <jwendell@gnome.org>
+	* server/vino-status-icon.c:
+	  Allows only one disconnect confirmation dialog running, and
+          don't use modal window on that dialog, closes #414905.
+
 2007-02-27  Halton Huo <halton.huo@sun.com>
 
 	* server/vino-http.c: 

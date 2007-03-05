@@ -39,6 +39,7 @@ struct _VinoStatusIconPrivate
   GtkMenu    *menu;
   VinoServer *server;
   GSList     *clients;
+  GtkWidget  *disconnect_dialog;
 
 #ifdef VINO_ENABLE_LIBNOTIFY
   NotifyNotification *new_client_notification;
@@ -79,6 +80,10 @@ vino_status_icon_finalize (GObject *object)
   if (icon->priv->clients)
     g_slist_free (icon->priv->clients);
   icon->priv->clients = NULL;
+
+  if (icon->priv->disconnect_dialog)
+    gtk_widget_destroy (icon->priv->disconnect_dialog);
+  icon->priv->disconnect_dialog = NULL;
 
   G_OBJECT_CLASS (vino_status_icon_parent_class)->finalize (object);
 }
@@ -258,13 +263,57 @@ vino_status_icon_about (VinoStatusIcon *icon)
                          NULL);
 }
 
-static gboolean
-vino_status_icon_disconnect_confirm (VinoClient *client)
+static void
+vino_status_icon_disconnect_client (VinoStatusIconNotify *a, gint response)
 {
-  GtkWidget *dialog;
+
+  GSList *l;
+  GSList *next;
+
+  VinoStatusIcon *icon    = a->icon;
+  VinoClient     *client  = a->client;
+
+  gtk_widget_destroy (icon->priv->disconnect_dialog);
+  icon->priv->disconnect_dialog = NULL;
+
+  if (response != GTK_RESPONSE_OK)
+  {
+    g_free (a);
+    return;
+  }
+
+  if (client)
+  {
+    if (g_slist_find (icon->priv->clients, client))
+      vino_client_disconnect (client);
+  }
+  else
+    for (l = icon->priv->clients; l; l = next)
+      {
+        VinoClient *client = l->data;
+
+        next = l->next;
+
+        vino_client_disconnect (client);
+      }
+
+  g_free (a);
+}
+
+static void
+vino_status_icon_disconnect_confirm (VinoStatusIconNotify *a)
+{
   char      *primary_msg;
   char      *secondary_msg;
-  gboolean   retval;
+
+  VinoStatusIcon *icon    = a->icon;
+  VinoClient     *client  = a->client;
+
+  if (icon->priv->disconnect_dialog)
+  {
+    gtk_window_present (GTK_WINDOW(icon->priv->disconnect_dialog));
+    return;
+  }
 
   if (client != NULL)
     {
@@ -279,53 +328,26 @@ vino_status_icon_disconnect_confirm (VinoClient *client)
       secondary_msg = g_strdup (_("All remote users will be disconnected. Are you sure?"));
     }
 
-  dialog = gtk_message_dialog_new (NULL,
-                                   GTK_DIALOG_DESTROY_WITH_PARENT,
-                                   GTK_MESSAGE_QUESTION,
-                                   GTK_BUTTONS_CANCEL,
-                                   "%s",
-                                   primary_msg);
+  icon->priv->disconnect_dialog = gtk_message_dialog_new (NULL,
+                                                          GTK_DIALOG_DESTROY_WITH_PARENT,
+                                                          GTK_MESSAGE_QUESTION,
+                                                          GTK_BUTTONS_CANCEL,
+                                                          "%s",
+                                                          primary_msg);
 
-  gtk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), FALSE);
+  gtk_window_set_skip_taskbar_hint (GTK_WINDOW (icon->priv->disconnect_dialog), FALSE);
 
-  gtk_dialog_add_button (GTK_DIALOG (dialog), _("Disconnect"), GTK_RESPONSE_OK);
+  gtk_dialog_add_button (GTK_DIALOG (icon->priv->disconnect_dialog), _("Disconnect"), GTK_RESPONSE_OK);
 
-  gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s", secondary_msg);
+  gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (icon->priv->disconnect_dialog),
+                                            "%s", secondary_msg);
 
-  retval = gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_OK;
-
-  gtk_widget_destroy (dialog);
+  g_signal_connect_swapped (icon->priv->disconnect_dialog, "response",
+                            G_CALLBACK (vino_status_icon_disconnect_client), (gpointer) a);  
+  gtk_widget_show_all (GTK_WIDGET(icon->priv->disconnect_dialog));
 
   g_free (primary_msg);
   g_free (secondary_msg);
-
-  return retval;
-}
-
-static void
-vino_status_icon_disconnect_client (VinoClient *client)
-{
-  if (vino_status_icon_disconnect_confirm (client))
-    vino_client_disconnect (client);
-}
-
-static void
-vino_status_icon_disconnect_all_clients (VinoStatusIcon *icon)
-{
-  GSList *l;
-  GSList *next;
-
-  if (!vino_status_icon_disconnect_confirm (NULL))
-    return;
-
-  for (l = icon->priv->clients; l; l = next)
-    {
-      VinoClient *client = l->data;
-
-      next = l->next;
-
-      vino_client_disconnect (client);
-    }
 }
 
 static void
@@ -336,6 +358,7 @@ vino_status_icon_popup_menu (GtkStatusIcon *status_icon,
   VinoStatusIcon *icon = VINO_STATUS_ICON (status_icon);
   GtkWidget      *item;
   GSList         *l;
+  VinoStatusIconNotify *a;
 
   icon->priv->menu = (GtkMenu*) gtk_menu_new ();
 
@@ -354,8 +377,13 @@ vino_status_icon_popup_menu (GtkStatusIcon *status_icon,
   item  = gtk_image_menu_item_new_with_label (_("Disconnect all"));
   gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item),
                                  gtk_image_new_from_stock (GTK_STOCK_NETWORK, GTK_ICON_SIZE_MENU));
+
+  a = g_new (VinoStatusIconNotify, 1);
+  a->icon   = icon;
+  a->client = NULL;
+
   g_signal_connect_swapped (item, "activate",
-                            G_CALLBACK (vino_status_icon_disconnect_all_clients), icon);
+                            G_CALLBACK (vino_status_icon_disconnect_confirm), (gpointer) a);
   gtk_widget_show (item);
   gtk_menu_shell_append (GTK_MENU_SHELL (icon->priv->menu), item);
 
@@ -363,6 +391,10 @@ vino_status_icon_popup_menu (GtkStatusIcon *status_icon,
     {
       VinoClient *client = l->data;
       char       *str;
+      
+      a = g_new (VinoStatusIconNotify, 1);
+      a->icon   = icon;
+      a->client = client;
 
       str = g_strdup_printf (_("Disconnect %s"), vino_client_get_hostname (client));
 
@@ -370,7 +402,7 @@ vino_status_icon_popup_menu (GtkStatusIcon *status_icon,
       gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item),
                                      gtk_image_new_from_stock (GTK_STOCK_NETWORK, GTK_ICON_SIZE_MENU));
       g_signal_connect_swapped (item, "activate",
-                                G_CALLBACK (vino_status_icon_disconnect_client), client);
+                                G_CALLBACK (vino_status_icon_disconnect_confirm), (gpointer) a);
       gtk_widget_show (item);
       gtk_menu_shell_append (GTK_MENU_SHELL (icon->priv->menu), item);
       
