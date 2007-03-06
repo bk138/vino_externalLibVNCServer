@@ -1,3 +1,7 @@
+2007-03-06  Jonh Wendell <jwendell@gnome.org>
+	* capplet/vino-preferences.desktop.in.in:
+	  Remove deprecated categories from the .desktop file
+
 2007-03-05  Jonh Wendell <jwendell@gnome.org>
 	* server/vino-status-icon.c:
 	  Allows only one disconnect confirmation dialog running, and
