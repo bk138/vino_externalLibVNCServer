@@ -1,3 +1,27 @@
+Vino 2.18.0
+===========
+
+  Fixes
+
+    + Fix build fail with --enable-http-server (Halton Huo)
+    + Fix crash when 'disconnect client' menu item is called twice (Jonh, Mark)
+    + Adjusts in .desktop file, making it valid according with freedesktop.org (Jonh)
+
+  Translations
+
+    + norbu (dz)
+    + Athanasios Lefteris (el)
+    + Ankit Patel (gu)
+    + Milo Casagrande (it)
+    + Takeshi AIHANA (ja)
+    + Žygimantas Beručka (lt)
+    + Kjartan Maraas (nb)
+    + Reinout van Schouwen (nl)
+    + Gnome PL Team (pl)
+    + Leonardo Ferreira Fontenelle (pt_BR)
+    + Данило Шеган (sr)
+    + Maxim Dziumanenko (uk)
+
 Vino 2.17.92
 ===========
 
