@@ -287,25 +287,21 @@ vino_fb_create_image (VinoFB           *vfb,
 
   if (!must_use_x_shm)
     {
-      int   rowstride = width * (depth / 8);
-      char *data;
-
-      data = malloc (rowstride * height);
-      if (!data)
-	return FALSE;
-
       *image = XCreateImage (vfb->priv->xdisplay,
 			     DefaultVisual (vfb->priv->xdisplay, 0),
 			     depth,
 			     ZPixmap,
 			     0,
-			     data,
+			     NULL,
 			     width,
 			     height,
-			     8,
-			     rowstride);
-      if (!*image)
-	free (data);
+			     32,
+			     0);
+      if (*image && !((*image)->data = malloc ((*image)->bytes_per_line * height)))
+        {
+          XDestroyImage(*image);
+          *image = NULL;
+        }
 
       return FALSE;
     }

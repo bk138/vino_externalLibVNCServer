@@ -1,3 +1,13 @@
+2007-03-29  Mark McLoughlin  <mark@skynet.ie>
+
+	Fix the non-XDAMAGE, non-XSHM support (bug #423887)
+
+	* server/vino-fb.c: (vino_fb_create_image): create the
+	XImage data only after allocating the XImage itself
+	where the actual rowstride is calculated, rather than
+	making a lame attempt at guessing what rowstride will
+	be used.
+
 2007-03-12  Jonh Wendell  <jwendell@gnome.org>
 
 	* configure.in: post-release bump to 2.18.1
