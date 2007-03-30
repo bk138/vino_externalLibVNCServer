@@ -1,27 +1,34 @@
-# translation of es.po to
 # traducción de Vino al Español
 # This file is distributed under the same license as the Vino package.
 # Copyright (C) 2006 The Free Software Foundation.
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004, 2006.
+# maria <maria.majadas@hispalinux.es>, 2007.
+# Claudio Saavedra <csaavedra@alumnos.utalca.cl>, (QA) 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: es\n"
+"Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-22 12:08+0100\n"
-"PO-Revision-Date: 2006-12-22 12:12+0100\n"
-"Last-Translator: \n"
-"Language-Team:  <en@li.org>\n"
+"POT-Creation-Date: 2007-03-30 14:03-0400\n"
+"PO-Revision-Date: 2007-03-30 14:03-0400\n"
+"Last-Translator: maria <maria.majadas@hispalinux.es>\n"
+"Language-Team: español <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:831
+#: ../capplet/vino-preferences.c:635 ../capplet/vino-preferences.c:670
+#: ../server/vino-dbus-listener.c:324
+#, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "Falló al abrir conexión con bus: %s\n"
+
+#: ../capplet/vino-preferences.c:880
 msgid "Send this command by email"
 msgstr "Enviar este comando por correo-e"
 
-#: ../capplet/vino-preferences.c:866
+#: ../capplet/vino-preferences.c:915
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -82,32 +89,22 @@ msgstr "_Contraseña:"
 msgid "_Require the user to enter this password:"
 msgstr "_Requerir que el usuario introduzca una contraseña:"
 
-#: ../server/vino-dbus-listener.c:88
-msgid "failed to register with the message bus"
-msgstr "falló al registrar con el bus del mensajes"
+#: ../server/vino-dbus-listener.c:180 ../server/vino-dbus-listener.c:210
+#, c-format
+msgid "Out of memory handling '%s' message"
+msgstr "Se agotó la memoria manejando el mensaje «%s»"
 
-#: ../server/vino-dbus-listener.c:92
-msgid "not connected to the message bus"
-msgstr "no conectado al bus de mensajes"
+#: ../server/vino-dbus-listener.c:284
+#, c-format
+msgid "Out of memory registering object path '%s'"
+msgstr "Se agotó la memoria registrando la ruta al objeto «%s»"
 
-#: ../server/vino-dbus-listener.c:103
-msgid "out of memory registering object path"
-msgstr "se agotó la memoria registrando la ruta al objeto"
+#: ../server/vino-dbus-listener.c:357
+#, c-format
+msgid "Failed to acquire D-Bus name '%s'\n"
+msgstr "Falló al adquirir el nombre D-Bus «%s»\n"
 
-#: ../server/vino-dbus-listener.c:116
-msgid "Error in dbus"
-msgstr "Error en Dbus"
-
-#: ../server/vino-fb.c:984 ../server/vino-prompt.c:143
-#: ../server/vino-server.c:998
-msgid "Screen"
-msgstr "Pantalla"
-
-#: ../server/vino-fb.c:985
-msgid "The screen to be monitored"
-msgstr "La pantalla a ser monitorizada"
-
-#: ../server/vino-main.c:82
+#: ../server/vino-main.c:83
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -134,17 +131,21 @@ msgstr "0"
 msgid "%s's remote desktop"
 msgstr "Escritorio remoto de %s"
 
-#: ../server/vino-prompt.c:144
+#: ../server/vino-prompt.c:142
+msgid "Screen"
+msgstr "Pantalla"
+
+#: ../server/vino-prompt.c:143
 msgid "The screen on which to display the prompt"
 msgstr "La pantalla en la que se mostrará el indicador de órdenes"
 
-#: ../server/vino-prompt.c:361
+#: ../server/vino-prompt.c:343
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"Un usuario en el equipo «%s» está intentando ver o controlar remotamente tu "
+"Un usuario en el equipo «%s» está intentando ver o controlar remotamente su "
 "escritorio."
 
 #: ../server/vino-prompt.glade.h:1
@@ -157,7 +158,7 @@ msgid ""
 "desktop."
 msgstr ""
 "Un usuario en otra computadora está intentando ver o controlar remotamente "
-"tu escritorio."
+"su escritorio."
 
 #: ../server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
@@ -175,101 +176,13 @@ msgstr "_Permitir"
 msgid "_Refuse"
 msgstr "_Rechazar"
 
-#: ../server/vino-server.c:999
-msgid "The screen for which to create a VNC server"
-msgstr "La pantalla para la que se creará el servidor VNC"
-
-#: ../server/vino-server.c:1006
-msgid "On Hold"
-msgstr "Poner en espera"
-
-#: ../server/vino-server.c:1007
-msgid "Place all clients on hold"
-msgstr "Colocar todos los clientes en espera"
-
-#: ../server/vino-server.c:1014
-msgid "Prompt enabled"
-msgstr "Pregunta activada"
-
-#: ../server/vino-server.c:1015
-msgid "Prompt the user about connection attempts"
-msgstr "Preguntar al usuario acerca de los intentos de conexión"
-
-#: ../server/vino-server.c:1022
-msgid "View Only"
-msgstr "Ver sólo"
-
-#: ../server/vino-server.c:1023
-msgid "Disallow keyboard/pointer input from clients"
-msgstr "No permitir entrada de teclado/puntero desde los clientes"
-
-#: ../server/vino-server.c:1030
-msgid "Local Only"
-msgstr "Sólo local"
-
-#: ../server/vino-server.c:1031 ../server/vino-server.schemas.in.h:13
-msgid "Only allow local connections"
-msgstr "Permitir sólo conexiones locales"
-
-#: ../server/vino-server.c:1038
-msgid "Require Encryption"
-msgstr "Requerir encriptación"
-
-#: ../server/vino-server.c:1039
-msgid "Require clients to use encryption"
-msgstr "Requerir que los clientes usen encriptación"
-
-#: ../server/vino-server.c:1046
-msgid "Authentication methods"
-msgstr "Métodos de autenticación"
-
-#: ../server/vino-server.c:1047
-msgid "The authentication methods this server should allow"
-msgstr "Los métodos de autenticación que este servidor debe permitir"
-
-#: ../server/vino-server.c:1055
-msgid "VNC Password"
-msgstr "Contraseña VNC"
-
-#: ../server/vino-server.c:1056
-msgid ""
-"The password (base64 encoded) used to authenticate types using the VncAuth "
-"method"
-msgstr ""
-"La contraseña (codificada en base64) usada para tipos de autenticación "
-"usando el método VncAuth"
-
-#: ../server/vino-server.c:1063
-msgid "Use an alternative port"
-msgstr "Usar un puerto alternativo"
-
-#: ../server/vino-server.c:1064
-msgid "Listen on the port specified by the 'alternative-port' property"
-msgstr "Escuchar en el puerto especificado por la propiedad «alternative-port»"
-
-#: ../server/vino-server.c:1071 ../server/vino-server.schemas.in.h:2
-msgid "Alternative port number"
-msgstr "Número de puerto alternativo"
-
-#: ../server/vino-server.c:1072
-msgid ""
-"Listen on the specified port number if the 'use-alternative-port' property "
-"is TRUE"
-msgstr ""
-"Escuchar en el número de puerto especificado si la propiedad «use-"
-"alternative-port» es TRUE"
-
-#: ../server/vino-server.c:1080
-msgid "Port server number"
-msgstr "Número de puerto del servidor"
-
-#: ../server/vino-server.c:1081
-msgid "The port used by this server"
-msgstr "El puerto que usa este servidor"
-
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
 msgstr "Métodos de autenticación permitidos"
+
+#: ../server/vino-server.schemas.in.h:2
+msgid "Alternative port number"
+msgstr "Número de puerto alternativo"
 
 #: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
@@ -357,6 +270,10 @@ msgstr ""
 "contraseña se especifica en la clave vnc_password) antes de conectarse y "
 "«none» permite conectarse a cualquier usuario remoto."
 
+#: ../server/vino-server.schemas.in.h:13
+msgid "Only allow local connections"
+msgstr "Permitir sólo conexiones locales"
+
 #: ../server/vino-server.schemas.in.h:14
 msgid "Only allow remote users to view the desktop"
 msgstr "Permitir sólo a los usuarios remotos ver el escritorio"
@@ -414,7 +331,7 @@ msgstr ""
 "Problema registrando el servidor de escritorio remoto con bonobo-activation; "
 "saliendo ...\n"
 
-#: ../server/vino-status-icon.c:175
+#: ../server/vino-status-icon.c:204
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
@@ -423,16 +340,16 @@ msgstr ""
 "Hubo un error al mostrar las preferencias:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:183
+#: ../server/vino-status-icon.c:212
 #, c-format
 msgid ""
-"There was an error displaying jelp:\n"
+"There was an error displaying help:\n"
 " %s"
 msgstr ""
-"Hubo un error al mostrar la ayuda:\n"
+"Ocurrió un error al mostrar la ayuda:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:206
+#: ../server/vino-status-icon.c:235
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -467,67 +384,95 @@ msgstr ""
 "02110-1301 EE.UU.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:221
+#: ../server/vino-status-icon.c:250
 msgid "translator-credits"
 msgstr "Francisco Javier F. Serrador <serrador@openshine.com>"
 
-#: ../server/vino-status-icon.c:227
+#: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:566
 msgid "GNOME Remote Desktop"
 msgstr "Escritorio remoto de GNOME"
 
-#: ../server/vino-status-icon.c:228
+#: ../server/vino-status-icon.c:257
 msgid "Share your desktop with other users"
 msgstr "Comparta su escritorio con otros usuarios"
 
-#: ../server/vino-status-icon.c:247
+#: ../server/vino-status-icon.c:320
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "¿Seguro que quiere desconectar a «%s»"
 
-#: ../server/vino-status-icon.c:249
+#: ../server/vino-status-icon.c:322
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "El usuario remoto de «%s» será desconectado. ¿Está seguro?"
 
-#: ../server/vino-status-icon.c:254
+#: ../server/vino-status-icon.c:327
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "¿Seguro que quiere desconectar todos los clientes?"
 
-#: ../server/vino-status-icon.c:255
+#: ../server/vino-status-icon.c:328
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Todos los usuarios remotos serán desconectados. ¿Está seguro?"
 
-#: ../server/vino-status-icon.c:267
+#: ../server/vino-status-icon.c:340
 msgid "Disconnect"
 msgstr "Desconectar"
 
-#: ../server/vino-status-icon.c:318
+#: ../server/vino-status-icon.c:365
 msgid "_Preferences"
 msgstr "Prefere_ncias"
 
-#: ../server/vino-status-icon.c:330
+#: ../server/vino-status-icon.c:377
 msgid "Disconnect all"
 msgstr "Desconectar todos"
 
-#: ../server/vino-status-icon.c:343
+#: ../server/vino-status-icon.c:399
 #, c-format
 msgid "Disconnect %s"
 msgstr "Desconectar %s"
 
-#: ../server/vino-status-icon.c:360
+#: ../server/vino-status-icon.c:416
 msgid "_Help"
 msgstr "Ay_uda"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:424
 msgid "_About"
 msgstr "_Acerca de"
 
-#: ../server/vino-status-icon.c:402
+#: ../server/vino-status-icon.c:458
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
 msgstr[0] "Una persona está conectada"
 msgstr[1] "%d personas están conectadas"
+
+#: ../server/vino-status-icon.c:568
+msgid "Error initializing libnotify\n"
+msgstr "Error al iniciar libnotify\n"
+
+#: ../server/vino-status-icon.c:582
+msgid "Another user is viewing your desktop"
+msgstr "Otro usuario está viendo su escritorio"
+
+#: ../server/vino-status-icon.c:583
+#, c-format
+msgid "A user on the computer '%s' is remotely viewing your desktop."
+msgstr "Un usuario en el equipo «%s» está viendo su escritorio remotamente."
+
+#: ../server/vino-status-icon.c:588
+msgid "Another user is controlling your desktop"
+msgstr "Otro usuario está controlando su escritorio."
+
+#: ../server/vino-status-icon.c:589
+#, c-format
+msgid "A user on the computer '%s' is remotely controlling your desktop."
+msgstr ""
+"Un usuario en el equipo «%s» está controlando su escritorio remotamente."
+
+#: ../server/vino-status-icon.c:611
+#, c-format
+msgid "Error while displaying notification bubble: %s\n"
+msgstr "Error al mostrar la burbuja de notificación: %s\n"
 
 #: ../session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
@@ -556,35 +501,3 @@ msgstr "Iniciando el servidor de escritorio remoto"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "No iniciando el servidor de escritorio remoto"
-
-#~ msgid "Licensed under the GNU General Public License Version 2"
-#~ msgstr "Licenciado bajo la Licencia Pública General Versión 2"
-
-#~ msgid ""
-#~ "Vino is free software; you can redistribute it and/or\n"
-#~ "modify it under the terms of the GNU General Public License\n"
-#~ "as published by the Free Software Foundation; either version 2\n"
-#~ "of the License, or (at your option) any later version."
-#~ msgstr ""
-#~ "Vino es softwarel libre, puede redistribuirlo y/o\n"
-#~ "modificarlo bajo los términos de la Licencia Pública General GNU\n"
-#~ "tal como la publica la Free Software Foundation; ya sea en la \n"
-#~ "versión 2 de la Licencia, o (a su elección) cualquier versión posterior."
-
-#~ msgid "GNOME Remote Access"
-#~ msgstr "Acceso remoto GNOME"
-
-#~ msgid "GNOME Remote Access - Confirmation"
-#~ msgstr "Acceso remoto de GNOME: Confirmación"
-
-#~ msgid "Leave as it is"
-#~ msgstr "Dejar tal como está"
-
-#~ msgid "Connected machines, click to disconnect"
-#~ msgstr "Máquinas conectadas, pulse para desconectar"
-
-#~ msgid " is watching your desktop"
-#~ msgstr " está viendo su escritorio"
-
-#~ msgid " is controlling your desktop"
-#~ msgstr " está controlando su escritorio"
