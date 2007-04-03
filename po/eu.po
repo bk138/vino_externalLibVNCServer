@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-31 19:23+0200\n"
-"PO-Revision-Date: 2007-03-31 19:31+0200\n"
+"POT-Creation-Date: 2007-04-03 18:38+0200\n"
+"PO-Revision-Date: 2007-04-03 18:52+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
@@ -238,6 +238,8 @@ msgid ""
 "If true, the server will listen another port, instead of default (5900). The "
 "port must be specified in 'alternative_port' key."
 msgstr ""
+"Egia bada, zerbitzariak beste ataka bat entzungo du, lehenetsiaren (5900) ordez. "
+"Ataka 'alternative_key' gakoan zehaztu behar da."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid ""
@@ -245,6 +247,9 @@ msgid ""
 "connections will be rejected. Set this option to true if you wish to "
 "exclusively use a tunneling mechanism to access the server, such as ssh."
 msgstr ""
+"Egia bada, zerbitzariak lokaleko konexioak soilik onartuko ditu, baina sareko "
+"konexioak ukatu egingo ditu. Ezarri aukera hau EGIA gisa igarobide mekanismoa "
+"(ssh bezalakoa) soilik erabiltzea nahi baduzu zerbitzari batera sarbidetzeko."
 
 #: ../server/vino-server.schemas.in.h:11
 msgid "Listen an alternative port"
@@ -299,6 +304,8 @@ msgid ""
 "The port which the server will listen to if the 'use_alternative_port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
 msgstr ""
+"Zerbitzariak entzungo duen ataka 'use_alternative_port' gakoa EGIA gisa "
+"ezartzen bada. Balio erabilgarriak 5000 eta 50000 artekoak dira."
 
 #: ../server/vino-server.schemas.in.h:20
 msgid ""
@@ -359,6 +366,24 @@ msgid ""
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
 "02110-1301, USA.\n"
 msgstr ""
+"GNU Lizentzia Publiko Orokorraren 2. bertsioaren lizentzia pean kaleratua.\n"
+"\n"
+"Vino programa software librea da; birbanatu eta/edo aldaketak egin\n"
+"ditzakezu bertan, Free Software Foundation-ek argitaratutako \n"
+"GNU Lizentzia Publiko Orokorraren 2. bertsioan, edo \n"
+"(nahiago baduzu) bertsio berriago batean jasotako \n"
+"baldintzen pean.\n"
+"\n"
+"Programa hau erabilgarria izango delakoan banatzen da, baina, \n"
+"INOLAKO BERMERIK GABE; era berean, ez da bermatzen beraren\n"
+"EGOKITASUNA MERKATURATZEKO edo HELBURU PARTIKULARRETARAKO\n"
+"ERABILTZEKO. Argibide gehiago nahi izanez gero, \n"
+"ikus GNU Lizentzia Publiko Orokorra.\n"
+"\n"
+"Programa honekin batera GNU Lizentzia Publiko Orokorraren \n"
+"kopia bat jasoko zenuen; hala ez bada, idatzi hona: \n"
+"Free SoftwareFoundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+"02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
 #: ../server/vino-status-icon.c:250
@@ -389,9 +414,7 @@ msgstr "Ziur zaude bezero guztiak deskonektatzea nahi dituzula?"
 
 #: ../server/vino-status-icon.c:328
 msgid "All remote users will be disconnected. Are you sure?"
-msgstr ""
-"Urruneko bezero guztiak deskonektatu egingo dira. "
-"Ziur zaude?"
+msgstr "Urruneko bezero guztiak deskonektatu egingo dira. Ziur zaude?"
 
 #: ../server/vino-status-icon.c:340
 msgid "Disconnect"
@@ -446,8 +469,8 @@ msgstr "Beste erabiltzaile batek zure mahaigaina kontrolatzen ari da"
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr ""
-"'%s' ordenagailuko erabiltzaile bat zure mahaigaina urrunetik "
-"kontrolatzen saiatzen ari da"
+"'%s' ordenagailuko erabiltzaile bat zure mahaigaina urrunetik kontrolatzen "
+"saiatzen ari da"
 
 #: ../server/vino-status-icon.c:611
 #, c-format
