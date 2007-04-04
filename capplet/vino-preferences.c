@@ -465,7 +465,7 @@ vino_preferences_vnc_password_notify (GConfClient           *client,
 
   password_b64 = gconf_value_get_string (entry->value);
 
-  if (password_b64)
+  if (password_b64 && *password_b64)
     {
       blob_len = 0;
       blob = g_base64_decode (password_b64, &blob_len);
@@ -543,7 +543,7 @@ vino_preferences_dialog_setup_password_entry (VinoPreferencesDialog *dialog)
 
       password_b64 = gconf_client_get_string (dialog->client, VINO_PREFS_VNC_PASSWORD, NULL);
 
-      if (password_b64)
+      if (password_b64 && *password_b64)
         {
            blob_len = 0;
            blob = g_base64_decode (password_b64, &blob_len);

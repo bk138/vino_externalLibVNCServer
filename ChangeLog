@@ -1,4 +1,11 @@
 2007-04-04  Jonh Wendell  <jwendell@gnome.org>
+	* capplet/vino-preferences.c:
+	(vino_preferences_dialog_setup_password_entry),
+	(vino_preferences_vnc_password_notify):
+	Fix crash on critical warning when calling g_base64_decode, bug #418836
+	Patch from Halton Huo <halton.huo@sun.com>
+
+2007-04-04  Jonh Wendell  <jwendell@gnome.org>
 
 	Fix crash on vino_input_init(), fixes bug #425863
 
