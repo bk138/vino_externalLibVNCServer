@@ -1,3 +1,10 @@
+2007-04-04  Jonh Wendell  <jwendell@gnome.org>
+
+	Fix crash on vino_input_init(), fixes bug #425863
+
+	* server/vino-input.c: Updated VINO_IS_LATIN1_KEYSYM define to check if
+	the value is less than 0x100.
+
 2007-03-29  Mark McLoughlin  <mark@skynet.ie>
 
 	Fix the non-XDAMAGE, non-XSHM support (bug #423887)
