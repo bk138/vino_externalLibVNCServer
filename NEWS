@@ -1,3 +1,20 @@
+Vino 2.18.1
+===========
+
+  Fixes
+
+    + Fix the non-XDAMAGE, non-XSHM support, bug #423887 (Mark)
+    + Fix crash on vino_input_init(), bug #425863 (Jonh, Mark)
+    + Fix crashes on critical warning in vino-preferences applet,
+      bug #418836 and bug #423027 (Halton Huo, Jonh)
+
+  Translations
+
+    + Peter Bach (da)
+    + Maria Majadas (es)
+    + Iñaki Larrañaga Murgoitio (eu)
+    + Ignacio Casal Quinteiro (gl)
+
 Vino 2.18.0
 ===========
 
