@@ -1,3 +1,6 @@
+2007-04-09  Jonh Wendell <jwendell@gnome.org>
+	* POTFILES.skip: Reverted Ignacio's change
+
 2007-04-03  Inaki Larranaga Murgoitio  <dooteo@euskalgnu.org>
 
 	* eu.po: Updated Basque translation.
