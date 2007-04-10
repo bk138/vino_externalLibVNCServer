@@ -44,7 +44,7 @@
          <short>Only allow remote users to view the desktop</short>
          <long>
            If true, remote users accessing the desktop are only
-           allowed to view the desktop. Remote user's will not
+           allowed to view the desktop. Remote users will not
            be able to use the mouse or keyboard.
          </long>
       </locale>

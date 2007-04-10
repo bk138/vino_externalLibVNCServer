@@ -1,3 +1,7 @@
+2007-04-10  Jonh Wendell  <jwendell@gnome.org>
+
+	* server/vino-server.schemas.in: Fix a typo in text, bug #409000
+
 2007-04-09  Jonh Wendell  <jwendell@gnome.org>
 
 	* configure.in: post-release bump to 2.19.1
