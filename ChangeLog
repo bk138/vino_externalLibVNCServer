@@ -1,3 +1,9 @@
+2007-04-13  Jonh Wendell  <jwendell@gnome.org>
+
+	* server/vino-status-icon.c:
+	(vino_status_handle_new_client_notification_closed):
+	Unref notification object, as libnotify bug was fixed.
+
 2007-04-10  Jonh Wendell  <jwendell@gnome.org>
 
 	* server/vino-server.schemas.in: Fix a typo in text, bug #409000

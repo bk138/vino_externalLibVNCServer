@@ -532,14 +532,8 @@ vino_status_icon_class_init (VinoStatusIconClass *klass)
 static void
 vino_status_handle_new_client_notification_closed (VinoStatusIcon *icon)
 {
-  /*
-   * FIXME: this looks like a leak, but libnotify crashes
-   *        if we unref here. File a libnotify bug.
-   *
-   * g_object_unref (icon->priv->new_client_notification);
-   */
+  g_object_unref (icon->priv->new_client_notification);
   icon->priv->new_client_notification = NULL;
-  g_print ("Got closed signal\n");
 }
 #endif /* VINO_ENABLE_LIBNOTIFY */
 
