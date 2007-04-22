@@ -1,17 +1,18 @@
 # traducción de Vino al Español
-# This file is distributed under the same license as the Vino package.
-# Copyright (C) 2006 The Free Software Foundation.
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004, 2006.
 # maria <maria.majadas@hispalinux.es>, 2007.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007.
+# This file is distributed under the same license as the Vino package.
+# Copyright (C) 2006 The Free Software Foundation.
 # Claudio Saavedra <csaavedra@alumnos.utalca.cl>, (QA) 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: vino.HEAD\n"
+"Project-Id-Version: vino.HEAD.es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-30 14:03-0400\n"
-"PO-Revision-Date: 2007-03-30 14:03-0400\n"
-"Last-Translator: maria <maria.majadas@hispalinux.es>\n"
-"Language-Team: español <traductores@es.gnome.org>\n"
+"POT-Creation-Date: 2007-04-11 03:34+0100\n"
+"PO-Revision-Date: 2007-04-22 20:51+0200\n"
+"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
+"Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -186,8 +187,7 @@ msgstr "Número de puerto alternativo"
 
 #: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr ""
-"Dirección de correo-e a la cual debería enviarse la URL del escritorio remoto"
+msgstr "Dirección de correo-e a la cual debería enviarse la URL del escritorio remoto"
 
 #: ../server/vino-server.schemas.in.h:4
 msgid "Enable remote desktop access"
@@ -216,11 +216,8 @@ msgstr ""
 #: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
-"desktop. Remote user's will not be able to use the mouse or keyboard."
-msgstr ""
-"Si es verdadero, los usuarios remotos que accedan al escritorio sólo se les "
-"permite ver el escritorio. Los usuarios remotos no podrán usar el ratón o el "
-"teclado."
+"desktop. Remote users will not be able to use the mouse or keyboard."
+msgstr "Si es verdadero, a los usuarios remotos que accedan al escritorio sólo se les permite ver el escritorio. Los usuarios remotos no podrán usar el ratón o el teclado."
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
@@ -466,8 +463,7 @@ msgstr "Otro usuario está controlando su escritorio."
 #: ../server/vino-status-icon.c:589
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr ""
-"Un usuario en el equipo «%s» está controlando su escritorio remotamente."
+msgstr "Un usuario en el equipo «%s» está controlando su escritorio remotamente."
 
 #: ../server/vino-status-icon.c:611
 #, c-format
@@ -501,3 +497,4 @@ msgstr "Iniciando el servidor de escritorio remoto"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "No iniciando el servidor de escritorio remoto"
+
