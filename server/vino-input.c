@@ -73,6 +73,8 @@ typedef struct
   KeyCode           right_shift_keycode;
   KeyCode           alt_gr_keycode;
 
+  guint             n_pointer_buttons;
+
   guint             initialized : 1;
   guint             xtest_supported : 1;
 } VinoInputData;
@@ -157,6 +159,7 @@ vino_input_init (GdkDisplay *display)
     }
 
   vino_input_initialize_keycodes (display);
+  global_input_data.n_pointer_buttons = XGetPointerMapping(xdisplay, NULL, 0);
 
   global_input_data.initialized = TRUE;
 
@@ -186,7 +189,7 @@ vino_input_handle_pointer_event (GdkScreen *screen,
   
   dprintf (INPUT, "Injected motion event: %d, %d\n", x, y);
 
-  for (i = 0; i < 5; i++)
+  for (i = 0; i < global_input_data.n_pointer_buttons; i++)
     {
       gboolean button_down      = (button_mask & (1 << i)) != FALSE;
       gboolean prev_button_down = (prev_mask   & (1 << i)) != FALSE;
