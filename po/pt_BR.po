@@ -464,7 +464,7 @@ msgstr "Um usuário no computador '%s' está vendo sua área de trabalho remotam
 
 #: ../server/vino-status-icon.c:556
 msgid "Another user is controlling your desktop"
-msgstr "Outro usuário está controlendo sua área de trabalho"
+msgstr "Outro usuário está controlando sua área de trabalho"
 
 #: ../server/vino-status-icon.c:557
 #, c-format
