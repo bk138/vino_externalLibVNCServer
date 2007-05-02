@@ -1,3 +1,8 @@
+2007-05-02  David Farning  <dfarning@gmail.com>
+
+	* icons/Makefile.am (update-icon-cache): fix gtk-update-icon-cache
+	for install and uninstall-hook.
+
 2007-04-23  Jonh Wendell  <jwendell@gnome.org>
 
 	* server/vino-input.c:
