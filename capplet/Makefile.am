@@ -2,7 +2,7 @@ NULL =
 
 INCLUDES = \
 	-DVINO_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"  \
-	-DVINO_GLADEDIR=\""$(datadir)/gnome/vino"\" \
+	-DVINO_GLADEDIR=\""$(datadir)/vino"\" \
 	-DVINO_ICONDIR=\""$(datadir)/pixmaps\"" \
 	$(VINO_CAPPLET_CFLAGS) \
 	$(VINO_KEYRING_CFLAGS) \
@@ -20,7 +20,7 @@ vino_preferences_LDADD = \
 	$(X_LIBS) \
 	$(NULL)
 
-gladedir   = $(datadir)/gnome/vino
+gladedir   = $(datadir)/vino
 glade_DATA = vino-preferences.glade
 
 desktopdir       = $(datadir)/applications

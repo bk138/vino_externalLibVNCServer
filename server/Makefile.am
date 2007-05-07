@@ -15,8 +15,8 @@ INCLUDES = \
 	$(WARN_CFLAGS) \
 	-DVINO_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
 	-DVINO_ICONDIR=\""$(datadir)/pixmaps\"" \
-	-DVINO_CLIENTDIR=\""$(datadir)/gnome/vino"\" \
-	-DVINO_GLADEDIR=\""$(datadir)/gnome/vino"\" \
+	-DVINO_CLIENTDIR=\""$(datadir)/vino"\" \
+	-DVINO_GLADEDIR=\""$(datadir)/vino"\" \
 	$(NULL)
 
 libexec_PROGRAMS = vino-server
@@ -144,7 +144,7 @@ else
 install-data-local:
 endif
 
-gladedir   = $(datadir)/gnome/vino
+gladedir   = $(datadir)/vino
 glade_DATA = vino-prompt.glade
 
 EXTRA_DIST = \

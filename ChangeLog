@@ -1,3 +1,10 @@
+2007-05-07  Jonh Wendell <jwendell@gnome.org>
+
+	* server/Makefile.am,
+	  capplet/Makefile.am:
+	  Use $prefix/share/vino for data in favor of $prefix/share/gnome/vino
+	  Patch from Matthias Clasen, closes #436460
+
 2007-05-02  David Farning  <dfarning@gmail.com>
 
 	* icons/Makefile.am (update-icon-cache): fix gtk-update-icon-cache
