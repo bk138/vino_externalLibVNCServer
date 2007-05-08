@@ -1,3 +1,8 @@
+2007-05-08  Jonh Wendell <jwendell@gnome.org>
+
+	* configure.in: Build against libnotify, if it's available (added
+	  --enable-libnotify=auto and make it the default), closes #394467
+
 2007-05-07  Jonh Wendell <jwendell@gnome.org>
 
 	* server/Makefile.am,
