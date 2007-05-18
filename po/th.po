@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.11.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-17 12:19+0700\n"
-"PO-Revision-Date: 2007-01-17 12:26+0700\n"
+"POT-Creation-Date: 2007-05-18 19:39+0700\n"
+"PO-Revision-Date: 2007-05-18 19:40+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <l10n@opentle.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,16 +17,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: capplet/vino-preferences.c:619 server/vino-dbus-listener.c:324
+#: capplet/vino-preferences.c:635 capplet/vino-preferences.c:670
+#: server/vino-dbus-listener.c:324
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "ไม่สามารถเปิดการเชื่อมต่อไปยังบัส: %s\n"
 
-#: capplet/vino-preferences.c:832
+#: capplet/vino-preferences.c:880
 msgid "Send this command by email"
 msgstr "ส่งคำสั่งนี้ทางอีเมล"
 
-#: capplet/vino-preferences.c:867
+#: capplet/vino-preferences.c:915
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -129,15 +130,15 @@ msgstr "0"
 msgid "%s's remote desktop"
 msgstr "พื้นโต๊ะระยะไกลของ %s"
 
-#: server/vino-prompt.c:143
+#: server/vino-prompt.c:142
 msgid "Screen"
 msgstr "สกรีน"
 
-#: server/vino-prompt.c:144
+#: server/vino-prompt.c:143
 msgid "The screen on which to display the prompt"
 msgstr "สกรีนที่จะแสดงคำถาม"
 
-#: server/vino-prompt.c:344
+#: server/vino-prompt.c:343
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -206,7 +207,7 @@ msgstr ""
 #: server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
-"desktop. Remote user's will not be able to use the mouse or keyboard."
+"desktop. Remote users will not be able to use the mouse or keyboard."
 msgstr ""
 "ถ้าเป็นค่าจริง ผู้ใช้จากระยะไกลที่เข้าถึงพื้นโต๊ะจะได้รับอนุญาตให้มองพื้นโต๊ะได้เท่านั้น "
 "โดยจะไม่สามารถใช้เมาส์หรือแป้นพิมพ์ได้"
@@ -313,7 +314,7 @@ msgstr ""
 "มีปัญหาในการลงทะเบียนเซิร์ฟเวอร์พื้นโต๊ะระยะไกลกับ bonobo-activation; "
 "จะออกจากโปรแกรม ...\n"
 
-#: server/vino-status-icon.c:194
+#: server/vino-status-icon.c:204
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
@@ -322,7 +323,7 @@ msgstr ""
 "เกิดข้อผิดพลาดขณะแสดงค่าปรับแต่ง:\n"
 " %s"
 
-#: server/vino-status-icon.c:202
+#: server/vino-status-icon.c:212
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -331,7 +332,7 @@ msgstr ""
 "เกิดข้อผิดพลาดขณะแสดงวิธีใช้:\n"
 " %s"
 
-#: server/vino-status-icon.c:225
+#: server/vino-status-icon.c:235
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -366,90 +367,90 @@ msgstr ""
 "51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: server/vino-status-icon.c:240
+#: server/vino-status-icon.c:250
 msgid "translator-credits"
 msgstr "เทพพิทักษ์ การุญบุญญานันท์ <thep@linux.thai.net>"
 
-#: server/vino-status-icon.c:246 server/vino-status-icon.c:517
+#: server/vino-status-icon.c:256 server/vino-status-icon.c:560
 msgid "GNOME Remote Desktop"
 msgstr "พื้นโต๊ะระยะไกลของ GNOME"
 
-#: server/vino-status-icon.c:247
+#: server/vino-status-icon.c:257
 msgid "Share your desktop with other users"
 msgstr "แบ่งพื้นโต๊ะของคุณให้ผู้อื่นใช้ร่วม"
 
-#: server/vino-status-icon.c:266
+#: server/vino-status-icon.c:320
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "ยืนยันที่จะตัดการเชื่อมต่อกับ '%s' หรือไม่?"
 
-#: server/vino-status-icon.c:268
+#: server/vino-status-icon.c:322
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "ผู้ใช้ระยะไกลจากเครื่อง '%s' จะถูกตัดการเชื่อมต่อ คุณแน่ใจหรือไม่?"
 
-#: server/vino-status-icon.c:273
+#: server/vino-status-icon.c:327
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "ยืนยันที่จะตัดการเชื่อมต่อกับทุกเครื่องหรือไม่?"
 
-#: server/vino-status-icon.c:274
+#: server/vino-status-icon.c:328
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "ผู้ใช้ระยะไกลทั้งหมดจะถูกตัดการเชื่อมต่อ คุณแน่ใจหรือไม่?"
 
-#: server/vino-status-icon.c:286
+#: server/vino-status-icon.c:340
 msgid "Disconnect"
 msgstr "ตัดการเชื่อมต่อ"
 
-#: server/vino-status-icon.c:337
+#: server/vino-status-icon.c:365
 msgid "_Preferences"
 msgstr "_ปรับแต่ง"
 
-#: server/vino-status-icon.c:349
+#: server/vino-status-icon.c:377
 msgid "Disconnect all"
 msgstr "ตัดการเชื่อมต่อทั้งหมด"
 
-#: server/vino-status-icon.c:362
+#: server/vino-status-icon.c:399
 #, c-format
 msgid "Disconnect %s"
 msgstr "ตัดการเชื่อมต่อกับ %s"
 
-#: server/vino-status-icon.c:379
+#: server/vino-status-icon.c:416
 msgid "_Help"
 msgstr "_วิธีใช้"
 
-#: server/vino-status-icon.c:387
+#: server/vino-status-icon.c:424
 msgid "_About"
 msgstr "เ_กี่ยวกับ"
 
-#: server/vino-status-icon.c:421
+#: server/vino-status-icon.c:458
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
 msgstr[0] "เชื่อมต่ออยู่ %d คน"
 
-#: server/vino-status-icon.c:519
+#: server/vino-status-icon.c:562
 msgid "Error initializing libnotify\n"
 msgstr "เกิดข้อผิดพลาดขณะตั้งต้น libnotify\n"
 
-#: server/vino-status-icon.c:532
+#: server/vino-status-icon.c:576
 msgid "Another user is viewing your desktop"
 msgstr "มีผู้ใช้อื่นกำลังมองพื้นโต๊ะของคุณ"
 
-#: server/vino-status-icon.c:533
+#: server/vino-status-icon.c:577
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "มีผู้ใช้จากเครื่อง '%s' กำลังมองพื้นโต๊ะของคุณจากระยะไกล"
 
-#: server/vino-status-icon.c:538
+#: server/vino-status-icon.c:582
 msgid "Another user is controlling your desktop"
 msgstr "มีผู้ใช้อื่นกำลังควบคุมพื้นโต๊ะของคุณ"
 
-#: server/vino-status-icon.c:539
+#: server/vino-status-icon.c:583
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "มีผู้ใช้จากเครื่อง '%s' กำลังควบคุมพื้นโต๊ะของคุณจากระยะไกล"
 
-#: server/vino-status-icon.c:561
+#: server/vino-status-icon.c:605
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "เกิดข้อผิดพลาดขณะแสดงกรอบคำพูดแจ้งเหตุ: %s\n"
