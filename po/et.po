@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vino HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-09 03:21+0000\n"
-"PO-Revision-Date: 2007-01-27 20:18+0200\n"
+"POT-Creation-Date: 2007-04-11 03:34+0100\n"
+"PO-Revision-Date: 2007-05-18 08:07+0200\n"
 "Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "MIME-Version: 1.0\n"
@@ -22,16 +22,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:619 ../server/vino-dbus-listener.c:324
+#: ../capplet/vino-preferences.c:635 ../capplet/vino-preferences.c:670
+#: ../server/vino-dbus-listener.c:324
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Tõrge siiniga ühendumisel: %s\n"
 
-#: ../capplet/vino-preferences.c:832
+#: ../capplet/vino-preferences.c:880
 msgid "Send this command by email"
 msgstr "Käsu saatmine e-postiga"
 
-#: ../capplet/vino-preferences.c:867
+#: ../capplet/vino-preferences.c:915
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -134,15 +135,15 @@ msgstr "0"
 msgid "%s's remote desktop"
 msgstr "Kasutaja %s kaugtöölaud"
 
-#: ../server/vino-prompt.c:143
+#: ../server/vino-prompt.c:142
 msgid "Screen"
 msgstr "Ekraan"
 
-#: ../server/vino-prompt.c:144
+#: ../server/vino-prompt.c:143
 msgid "The screen on which to display the prompt"
 msgstr "Viiba kuvamiseks kasutatav ekraan"
 
-#: ../server/vino-prompt.c:344
+#: ../server/vino-prompt.c:343
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -216,11 +217,10 @@ msgstr ""
 #: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
-"desktop. Remote user's will not be able to use the mouse or keyboard."
+"desktop. Remote users will not be able to use the mouse or keyboard."
 msgstr ""
-"Kui märgitud, siis kaugjuurdepääsu kasutajatel on luba töölauda ainult "
-"vaadata. Välistel kasutajatel pole võimalik kasutada ei hiirt ega "
-"klaviatuuri."
+"Kui märgitud, siis kaugjuurdepääsu kasutajatel lubatakse töölauda ainult "
+"vaadata, neil pole võimalik kasutada ei hiirt ega klaviatuuri."
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
@@ -275,7 +275,7 @@ msgstr "Ainult kohalike ühenduste lubamine"
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Only allow remote users to view the desktop"
-msgstr "Välistel kasutajatel lubatakse töölauda ainult vaadata"
+msgstr "Kaugkasutajatel lubatakse töölauda ainult vaadata"
 
 #: ../server/vino-server.schemas.in.h:15
 msgid "Password required for \"vnc\" authentication"
@@ -328,7 +328,7 @@ msgstr ""
 "Probleem kaugtöölaua serveri registreerimisel bonobo-aktiveerimisega; töö "
 "lõpetatakse...\n"
 
-#: ../server/vino-status-icon.c:194
+#: ../server/vino-status-icon.c:204
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
@@ -337,7 +337,7 @@ msgstr ""
 "Eelistuste kuvamisel tekkis viga:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:202
+#: ../server/vino-status-icon.c:212
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -346,7 +346,7 @@ msgstr ""
 "Abiteabe kuvamisel tekkis viga:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:225
+#: ../server/vino-status-icon.c:235
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -365,8 +365,7 @@ msgid ""
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
 "02110-1301, USA.\n"
 msgstr ""
-"Litsentseeritud GNU Üldise Avaliku Litsentsi versiooni 2 all"
-"\n"
+"Litsentseeritud GNU Üldise Avaliku Litsentsi versiooni 2 all\n"
 "Vino on vaba tarkvara. Te võite seda edasi levitada ja/või\n"
 "muutavastavalt GNU Üldise Avaliku Litsentsi tingimustele,\n"
 "nagu need on Vaba Tarkvara Fondi poolt avaldatud; kas Litsentsi\n"
@@ -383,93 +382,93 @@ msgstr ""
 "51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:240
+#: ../server/vino-status-icon.c:250
 msgid "translator-credits"
 msgstr "Ivar Smolin <okul@linux.ee>, 2006, 2007."
 
-#: ../server/vino-status-icon.c:246 ../server/vino-status-icon.c:517
+#: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:566
 msgid "GNOME Remote Desktop"
 msgstr "GNOME Kaugtöölaud"
 
-#: ../server/vino-status-icon.c:247
+#: ../server/vino-status-icon.c:257
 msgid "Share your desktop with other users"
 msgstr "Oma töölaua jagamine teistega"
 
-#: ../server/vino-status-icon.c:266
+#: ../server/vino-status-icon.c:320
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Kas sa soovid '%s' ühenduse katkestada?"
 
-#: ../server/vino-status-icon.c:268
+#: ../server/vino-status-icon.c:322
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr ""
 "Masinast '%s' ühendatud kaugkasutajate ühendused katkestatakse. Oled sa "
 "kindel? "
 
-#: ../server/vino-status-icon.c:273
+#: ../server/vino-status-icon.c:327
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Kas soovid kõikide klientide ühenduse katkestada?"
 
-#: ../server/vino-status-icon.c:274
+#: ../server/vino-status-icon.c:328
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Kõigi kaugkasutajate ühendused katkestatakse. Oled sa kindel?"
 
-#: ../server/vino-status-icon.c:286
+#: ../server/vino-status-icon.c:340
 msgid "Disconnect"
 msgstr "Katkesta"
 
-#: ../server/vino-status-icon.c:337
+#: ../server/vino-status-icon.c:365
 msgid "_Preferences"
 msgstr "_Eelistused"
 
-#: ../server/vino-status-icon.c:349
+#: ../server/vino-status-icon.c:377
 msgid "Disconnect all"
 msgstr "Katkesta kõik"
 
-#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-icon.c:399
 #, c-format
 msgid "Disconnect %s"
 msgstr "Katkesta %s"
 
-#: ../server/vino-status-icon.c:379
+#: ../server/vino-status-icon.c:416
 msgid "_Help"
 msgstr "_Abi"
 
-#: ../server/vino-status-icon.c:387
+#: ../server/vino-status-icon.c:424
 msgid "_About"
 msgstr "_Programmist lähemalt"
 
-#: ../server/vino-status-icon.c:421
+#: ../server/vino-status-icon.c:458
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
 msgstr[0] "Üks isik on ühendatud"
 msgstr[1] "%d isikut on ühendatud"
 
-#: ../server/vino-status-icon.c:519
+#: ../server/vino-status-icon.c:568
 msgid "Error initializing libnotify\n"
 msgstr "Viga libnotify lähtestamisel\n"
 
-#: ../server/vino-status-icon.c:532
+#: ../server/vino-status-icon.c:582
 msgid "Another user is viewing your desktop"
 msgstr "Teine kasutaja vaatab sinu töölauda"
 
-#: ../server/vino-status-icon.c:533
+#: ../server/vino-status-icon.c:583
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Kasutaja arvutist '%s' vaatab üle võrgu sinu töölauda."
 
-#: ../server/vino-status-icon.c:538
+#: ../server/vino-status-icon.c:588
 msgid "Another user is controlling your desktop"
 msgstr "Teine kasutaja juhib sinu töölauda"
 
-#: ../server/vino-status-icon.c:539
+#: ../server/vino-status-icon.c:589
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "Kasutaja arvutist '%s' juhib üle võrgu sinu töölauda."
 
-#: ../server/vino-status-icon.c:561
+#: ../server/vino-status-icon.c:611
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Viga teavitusmulli kuvamisel: %s\n"
@@ -499,73 +498,3 @@ msgstr "Kaugtöölauaserveri käivitamine"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Kaugtöölauaserverit ei käivitata"
-
-#~ msgid "The address pointed to by the widget"
-#~ msgstr "Vidina poolt viidatud aadress"
-
-#~ msgid "Tooltip"
-#~ msgstr "Kohtspikker"
-
-#~ msgid "A tooltip for this URL"
-#~ msgstr "Kohtspikker selle URL-i jaoks"
-
-#~ msgid "URL color"
-#~ msgstr "URL-i värv"
-
-#~ msgid "The color of the URL's label"
-#~ msgstr "URL-i sildi värv"
-
-#~ msgid "The screen to be monitored"
-#~ msgstr "Jälgitav ekraan"
-
-#~ msgid "The screen for which to create a VNC server"
-#~ msgstr "Ekraan, mille jaoks luua VNC serverit"
-
-#~ msgid "On Hold"
-#~ msgstr "Ootel"
-
-#~ msgid "Place all clients on hold"
-#~ msgstr "Jäta kõik kliendid ootele"
-
-#~ msgid "Prompt enabled"
-#~ msgstr "Viip lubatud"
-
-#~ msgid "Prompt the user about connection attempts"
-#~ msgstr "Kasutaja teavitamine sisenevatest ühendustest"
-
-#~ msgid "View Only"
-#~ msgstr "Ainult vaatamiseks"
-
-#~ msgid "Disallow keyboard/pointer input from clients"
-#~ msgstr "Kliendipoolne klaviatuuri- ja hiiresisend on keelatud"
-
-#~ msgid "Local Only"
-#~ msgstr "Ainult kohalik"
-
-#~ msgid "Require Encryption"
-#~ msgstr "Nõua krüptimist"
-
-#~ msgid "Require clients to use encryption"
-#~ msgstr "Klientidelt krüptimise kasutamise nõudmine"
-
-#~ msgid "The authentication methods this server should allow"
-#~ msgstr "Selle serveri poolt lubatavad autentimismeetodid"
-
-#~ msgid ""
-#~ "The password (base64 encoded) used to authenticate types using the "
-#~ "VncAuth method"
-#~ msgstr ""
-#~ "Parooli (base64 kodeeritult) kasutatakse VncAuth meetodi abil "
-#~ "autentimiseks"
-
-#~ msgid "Use an alternative port"
-#~ msgstr "Alternatiivse pordi kasutamine"
-
-#~ msgid "Listen on the port specified by the 'alternative-port' property"
-#~ msgstr "Omadusega \"alternative-port\" määratud pordi kuulamine"
-
-#~ msgid ""
-#~ "Listen on the specified port number if the 'use-alternative-port' "
-#~ "property is TRUE"
-#~ msgstr ""
-#~ "Määratud pordi kuulamine kui omadus \"use-alternative-port\" on märgitud"
