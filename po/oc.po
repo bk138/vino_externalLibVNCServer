@@ -32,7 +32,7 @@ msgid ""
 "There was an error displaying help:\n"
 "%s"
 msgstr ""
-"I a agut una error al moment de mostrar l'ajuda :\n"
+"I a agut una error al moment de visualizar l'ajuda :\n"
 "%s"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
