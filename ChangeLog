@@ -1,3 +1,7 @@
+2007-05-23  Jonh Wendell <jwendell@gnome.org>
+
+	* server/vino-input.c: Fix keyboard mapping problem, closes #440429
+
 2007-05-08  Jonh Wendell <jwendell@gnome.org>
 
 	* configure.in: Build against libnotify, if it's available (added

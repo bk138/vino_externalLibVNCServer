@@ -123,9 +123,6 @@ vino_input_initialize_keycodes (GdkDisplay *display)
 
 	  if (VINO_IS_LATIN1_KEYSYM (keysym))
 	    {
-	      if (global_input_data.keycodes [keysym] != 0)
-		continue;
-
 	      global_input_data.keycodes  [keysym] = keycode;
 	      global_input_data.modifiers [keysym] = modifier;
 
