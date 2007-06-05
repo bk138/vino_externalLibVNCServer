@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-23 12:10+0200\n"
-"PO-Revision-Date: 2007-04-23 12:10+0200\n"
+"POT-Creation-Date: 2007-06-05 14:47+0200\n"
+"PO-Revision-Date: 2007-06-05 14:47+0200\n"
 "Last-Translator: Jakub Friedl <jfriedl@suse.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -186,7 +186,7 @@ msgstr "Povolené metody autentizace"
 
 #: ../server/vino-server.schemas.in.h:2
 msgid "Alternative port number"
-msgstr ""
+msgstr "Alternativní číslo portu"
 
 #: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
@@ -252,7 +252,7 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:11
 msgid "Listen an alternative port"
-msgstr ""
+msgstr "Naslouchat na alternativním portu"
 
 #: ../server/vino-server.schemas.in.h:12
 msgid ""
@@ -269,7 +269,7 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:13
 msgid "Only allow local connections"
-msgstr ""
+msgstr "Povolit pouze lokální spojení"
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Only allow remote users to view the desktop"
@@ -325,22 +325,22 @@ msgstr ""
 "activation; končím ...\n"
 
 #: ../server/vino-status-icon.c:204
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "There was an error displaying preferences:\n"
 " %s"
 msgstr ""
-"Při zobrazování nápovědy došlo k chybě:\n"
-"%s"
+"Při zobrazování předvoleb došlo k chybě:\n"
+" %s"
 
 #: ../server/vino-status-icon.c:212
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "There was an error displaying help:\n"
 " %s"
 msgstr ""
 "Při zobrazování nápovědy došlo k chybě:\n"
-"%s"
+" %s"
 
 #: ../server/vino-status-icon.c:235
 msgid ""
@@ -365,7 +365,7 @@ msgstr ""
 #. Translators comment: put your own name here to appear in the about dialog.
 #: ../server/vino-status-icon.c:250
 msgid "translator-credits"
-msgstr ""
+msgstr "Jakub Friedl <jfriedl@suse.cz>"
 
 #: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:560
 msgid "GNOME Remote Desktop"
@@ -373,7 +373,7 @@ msgstr "Vzdálená plocha GNOME"
 
 #: ../server/vino-status-icon.c:257
 msgid "Share your desktop with other users"
-msgstr ""
+msgstr "Sdílejte svou plochu s dalšími uživateli"
 
 #: ../server/vino-status-icon.c:320
 #, c-format
@@ -383,7 +383,7 @@ msgstr "Opravdu chcete odpojit '%s'?"
 #: ../server/vino-status-icon.c:322
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
-msgstr ""
+msgstr "Vzdálený uživatel z '%s' bude odpojen. Opravdu?"
 
 #: ../server/vino-status-icon.c:327
 msgid "Are you sure you want to disconnect all clients?"
