@@ -1,3 +1,9 @@
+2007-06-09  Jonh Wendell <jwendell@gnome.org>
+
+	* server/vino-dbus-listener.c: Changed introspect_xml variable type
+	  from array to pointer, fixing a crash when dbus Introspect() method
+	  is called. Closes #445525.
+
 2007-05-23  Jonh Wendell <jwendell@gnome.org>
 
 	* server/vino-input.c: Fix keyboard mapping problem, closes #440429
