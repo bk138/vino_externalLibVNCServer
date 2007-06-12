@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-09 03:21+0000\n"
+"POT-Creation-Date: 2007-04-11 03:34+0100\n"
 "PO-Revision-Date: 2005-07-18 19:18+0300\n"
 "Last-Translator: Oldie <yonatanhak@yahoo.com>\n"
 "Language-Team: Hebrew\n"
@@ -18,16 +18,17 @@ msgstr ""
 "X-Generator: KBabel 1.10.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:619 ../server/vino-dbus-listener.c:324
+#: ../capplet/vino-preferences.c:635 ../capplet/vino-preferences.c:670
+#: ../server/vino-dbus-listener.c:324
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Failed to open connection to bus: %s\n"
 
-#: ../capplet/vino-preferences.c:832
+#: ../capplet/vino-preferences.c:880
 msgid "Send this command by email"
 msgstr "שלח פקודה זו בדואר אלקטרוני"
 
-#: ../capplet/vino-preferences.c:867
+#: ../capplet/vino-preferences.c:915
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -130,15 +131,15 @@ msgstr "1"
 msgid "%s's remote desktop"
 msgstr "%s's remote desktop"
 
-#: ../server/vino-prompt.c:143
+#: ../server/vino-prompt.c:142
 msgid "Screen"
 msgstr "מסך"
 
-#: ../server/vino-prompt.c:144
+#: ../server/vino-prompt.c:143
 msgid "The screen on which to display the prompt"
 msgstr "המסך שעליו יש להציג את הסמן-מנחה"
 
-#: ../server/vino-prompt.c:344
+#: ../server/vino-prompt.c:343
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -208,10 +209,10 @@ msgstr ""
 #: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
-"desktop. Remote user's will not be able to use the mouse or keyboard."
+"desktop. Remote users will not be able to use the mouse or keyboard."
 msgstr ""
 "If true, remote users accessing the desktop are only allowed to view the "
-"desktop. Remote user's will not be able to use the mouse or keyboard."
+"desktop. Remote users will not be able to use the mouse or keyboard."
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
@@ -319,7 +320,7 @@ msgstr ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
 
-#: ../server/vino-status-icon.c:194
+#: ../server/vino-status-icon.c:204
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
@@ -328,7 +329,7 @@ msgstr ""
 "קרתה שגיאה בהצגת ההעדפות::\n"
 "%s"
 
-#: ../server/vino-status-icon.c:202
+#: ../server/vino-status-icon.c:212
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -337,7 +338,7 @@ msgstr ""
 "קרתה שגיאה בהצגת העזרה:\n"
 "%s"
 
-#: ../server/vino-status-icon.c:225
+#: ../server/vino-status-icon.c:235
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -374,94 +375,95 @@ msgstr ""
 "02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:240
+#: ../server/vino-status-icon.c:250
 msgid "translator-credits"
-msgstr "יאיר הרשקוביץ <yairhr@gmail.com>"
+msgstr ""
+"יאיר הרשקוביץ <yairhr@gmail.com>\n"
+"\n"
+"פרוייקט תרגום GNOME לעברית:\n"
+"‏http://gnome-il.berlios.de"
 
-#: ../server/vino-status-icon.c:246 ../server/vino-status-icon.c:517
+#: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:566
 msgid "GNOME Remote Desktop"
 msgstr "שולחן עבודה מרוחק"
 
-#: ../server/vino-status-icon.c:247
+#: ../server/vino-status-icon.c:257
 msgid "Share your desktop with other users"
 msgstr "שתף את שולחן העבודה שלך עם משתמשים אחרים"
 
-#: ../server/vino-status-icon.c:266
+#: ../server/vino-status-icon.c:320
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "אתה בטוח שברצונך לנתק את '%s'?"
 
-#: ../server/vino-status-icon.c:268
+#: ../server/vino-status-icon.c:322
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
-msgstr ""
-"המשתמש המרוחק מ-'%s' ינותק. אתה בטוח?"
+msgstr "המשתמש המרוחק מ-'%s' ינותק. אתה בטוח?"
 
-#: ../server/vino-status-icon.c:273
+#: ../server/vino-status-icon.c:327
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "אתה בטוח שברצונך לנתק את כל הלקוחות?"
 
-#: ../server/vino-status-icon.c:274
+#: ../server/vino-status-icon.c:328
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "כל המשתמשים המרוחקים ינותקו. אתה בטוח?"
 
-#: ../server/vino-status-icon.c:286
+#: ../server/vino-status-icon.c:340
 msgid "Disconnect"
 msgstr "נתק"
 
-#: ../server/vino-status-icon.c:337
+#: ../server/vino-status-icon.c:365
 msgid "_Preferences"
 msgstr "הע_דפות"
 
-#: ../server/vino-status-icon.c:349
+#: ../server/vino-status-icon.c:377
 msgid "Disconnect all"
 msgstr "נתק את כולם"
 
-#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-icon.c:399
 #, c-format
 msgid "Disconnect %s"
 msgstr "נתק את %s"
 
-#: ../server/vino-status-icon.c:379
+#: ../server/vino-status-icon.c:416
 msgid "_Help"
 msgstr "_עזרה"
 
-#: ../server/vino-status-icon.c:387
+#: ../server/vino-status-icon.c:424
 msgid "_About"
 msgstr "_אודות"
 
-#: ../server/vino-status-icon.c:421
+#: ../server/vino-status-icon.c:458
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
 msgstr[0] "משתמש אחד מחובר"
 msgstr[1] "%d משתמשים מחוברים"
 
-#: ../server/vino-status-icon.c:519
+#: ../server/vino-status-icon.c:568
 msgid "Error initializing libnotify\n"
 msgstr "Error initializing libnotify\n"
 
-#: ../server/vino-status-icon.c:532
+#: ../server/vino-status-icon.c:582
 msgid "Another user is viewing your desktop"
 msgstr "משתמש אחר צופה בשולחן העבודה שלך "
 
-#: ../server/vino-status-icon.c:533
+#: ../server/vino-status-icon.c:583
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
-msgstr ""
-"משתמש במחשב '%s' צופה מרחוק בשולחן העבודה שלך."
+msgstr "משתמש במחשב '%s' צופה מרחוק בשולחן העבודה שלך."
 
-#: ../server/vino-status-icon.c:538
+#: ../server/vino-status-icon.c:588
 msgid "Another user is controlling your desktop"
 msgstr "משתמש אחר שולט בשולחן העבודה שלך"
 
-#: ../server/vino-status-icon.c:539
+#: ../server/vino-status-icon.c:589
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr ""
-"משתמש במחשב '%s' שולט מרחוק בשולחן העבודה שלך."
+msgstr "משתמש במחשב '%s' שולט מרחוק בשולחן העבודה שלך."
 
-#: ../server/vino-status-icon.c:561
+#: ../server/vino-status-icon.c:611
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Error while displaying notification bubble: %s\n"
