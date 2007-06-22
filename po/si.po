@@ -1,0 +1,470 @@
+# translation of vino.si.po to Sinhala
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Danishka Navin <snavin@redhat.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: vino.si\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-05-07 03:19+0100\n"
+"PO-Revision-Date: 2007-05-31 10:23+0530\n"
+"Last-Translator: Danishka Navin <snavin@redhat.com>\n"
+"Language-Team: Sinhala <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../capplet/vino-preferences.c:635 ../capplet/vino-preferences.c:670
+#: ../server/vino-dbus-listener.c:324
+#, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "සම්බන්දතා බසය විවෘත කිරීම අසමත් විය: %s\n"
+
+#: ../capplet/vino-preferences.c:880
+msgid "Send this command by email"
+msgstr "මෙම විධානය ඊ-මේල් මගින් යවන්න"
+
+#: ../capplet/vino-preferences.c:915
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"උදව් දර්ශණය කිරීමේදි  දෝෂයක් තිබුණි:\n"
+"%s"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:1
+msgid "Remote Desktop"
+msgstr "දුරස්ථ මුලීක තිරය"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "ඔබගේ දුරස්ථ මුලීක තිර පිවිසුම් අභිප්‍රේත සකසන්න"
+
+#: ../capplet/vino-preferences.glade.h:1
+msgid "<b>Security</b>"
+msgstr "<b>ආරක්‍ෂාව</b>"
+
+#: ../capplet/vino-preferences.glade.h:2
+msgid "<b>Sharing</b>"
+msgstr "<b>හවුල්</b>"
+
+#: ../capplet/vino-preferences.glade.h:3
+msgid "A_sk you for confirmation"
+msgstr "ස්තිර කිරිම සඳහා ඔබගෙන් විමසයි (_s)"
+
+#: ../capplet/vino-preferences.glade.h:4
+msgid "Allow other users to _view your desktop"
+msgstr "වෙනත් පරිශිලකයන්ට ඔබගේ මුලීක තිර නැරබීමට ඉඩ දෙන්න් (_v)"
+
+#: ../capplet/vino-preferences.glade.h:5
+msgid "Remote Desktop Preferences"
+msgstr "දුරස්ථ මුලීක තිර අභිප්‍රේත"
+
+#: ../capplet/vino-preferences.glade.h:6
+msgid "Some of these preferences are locked down"
+msgstr "මෙම අභිප්‍රේතයනෙගෙන් සමහරක් අගුලුලා ඇත"
+
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Users can view your desktop using this command:"
+msgstr "පරිශිලකයන්ට ඔබගේ මුලික තිරය මෙම විධානය මගින් බැලිය හැක:"
+
+#: ../capplet/vino-preferences.glade.h:8
+msgid "When a user tries to view or control your desktop:"
+msgstr "පරිශිලකයකු ඔබගේ මුලික තිරය බැලිමට හෝ පාලනයට සැරසෙන විටදී:"
+
+#: ../capplet/vino-preferences.glade.h:9
+msgid "_Allow other users to control your desktop"
+msgstr "වෙනත් පරිශීලකයන්ට ඔබගේ පාලනයට ඉඩ දෙන්න (_A)"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid "_Password:"
+msgstr "රහස් පදය (_P):"
+
+#: ../capplet/vino-preferences.glade.h:11
+msgid "_Require the user to enter this password:"
+msgstr "පරිශිලකයා විසින් මෙම රහස් පදය ඇතුලත් කිරිම අවශ්‍යවේ (_R):"
+
+#: ../server/vino-dbus-listener.c:180 ../server/vino-dbus-listener.c:210
+#, c-format
+msgid "Out of memory handling '%s' message"
+msgstr ""
+
+#: ../server/vino-dbus-listener.c:284
+#, c-format
+msgid "Out of memory registering object path '%s'"
+msgstr ""
+
+#: ../server/vino-dbus-listener.c:357
+#, c-format
+msgid "Failed to acquire D-Bus name '%s'\n"
+msgstr "'%s' D-Bus නම ලබා ගැනීම අසමත්විය\n"
+
+#: ../server/vino-main.c:83
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"ඔබගේ XServer , XTest දිගුව සඳහා සහාය නොදක්වයි - දුරස්ථ මුලික තිර පිවිසුම නැරබීම "
+"සඳහා පමණක් සීමා වනු ඇත\n"
+
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#: ../server/vino-mdns.c:59
+msgid "vino-mdns:showusername"
+msgstr "vino-mdns:showusername"
+
+#.
+#. * Translators: this string is used ONLY if you
+#. * translated "vino-mdns:showusername" to anything
+#. * other than "1"
+#.
+#: ../server/vino-mdns.c:71
+#, c-format
+msgid "%s's remote desktop"
+msgstr "%s'ගේ දුරස්ථ මුලික තිරය"
+
+#: ../server/vino-prompt.c:142
+msgid "Screen"
+msgstr "තිරය"
+
+#: ../server/vino-prompt.c:143
+msgid "The screen on which to display the prompt"
+msgstr ""
+
+#: ../server/vino-prompt.c:343
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"'%s' පරිගණකයේ සිටින පරිශීලකයෙකු ඔබගේ මුලික තිරය බැලීමට හෝ පාලනයට "
+"සැරසේ."
+
+#: ../server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "<big><b>වෙනත් පරිශීලකයෙකු ඔබගේ මුලික තිරය බැලීමට සැරසේ.</b></big>"
+
+#: ../server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"වෙනත් පරිගණකයක සිටින පරිශීලකයෙකු ඔබගේ මුලික තිරය බැලීමට හෝ පාලනයට "
+"සැරසේ."
+
+#: ../server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr "එසේ කිරිමට ඒවාට ඉඩදීමට ඔබට අවශ්‍යද?"
+
+#: ../server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "ප්‍රශ්ණය"
+
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
+msgid "_Allow"
+msgstr "ඉඩදෙන්න (_A)"
+
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
+msgid "_Refuse"
+msgstr "ප්‍රතික්‍ෂෙප කරන්න (_R)"
+
+#: ../server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "තහවුරු කර ගැනීමේ ආකාර ඉඩදි ඇත"
+
+#: ../server/vino-server.schemas.in.h:2
+msgid "Alternative port number"
+msgstr "විකල්ප දොරටු අංකයක්"
+
+#: ../server/vino-server.schemas.in.h:3
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:4
+msgid "Enable remote desktop access"
+msgstr "දුරස්ථ මුලික තිර පීවිසුම සක්‍රිය කරන්න"
+
+#: ../server/vino-server.schemas.in.h:5
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote users will not be able to use the mouse or keyboard."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:8
+msgid ""
+"If true, remote users accessing the desktop are required to be able support "
+"encryption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:9
+msgid ""
+"If true, the server will listen another port, instead of default (5900). The "
+"port must be specified in 'alternative_port' key."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:10
+msgid ""
+"If true, the server will only accept connections from localhost and network "
+"connections will be rejected. Set this option to true if you wish to "
+"exclusively use a tunneling mechanism to access the server, such as ssh."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:11
+msgid "Listen an alternative port"
+msgstr "විකල්ප දොරටුෘවකටසවන් දෙයි "
+
+#: ../server/vino-server.schemas.in.h:12
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:13
+msgid "Only allow local connections"
+msgstr "ස්ථානීය සම්බන්දතා පමණක් අනුමත කරන්න"
+
+#: ../server/vino-server.schemas.in.h:14
+msgid "Only allow remote users to view the desktop"
+msgstr "අනුමත දුරස්ථ පරිශිලකයන්ට පමණක් මුලික තිරය නැරබිමට සලසන්න"
+
+#: ../server/vino-server.schemas.in.h:15
+msgid "Password required for \"vnc\" authentication"
+msgstr "\"vnc\"තහවුරු කර ගැනීම සඳහා රහස් පදය අවශ්‍යවේ"
+
+#: ../server/vino-server.schemas.in.h:16
+msgid "Prompt the user before completing a connection"
+msgstr "සම්බන්දතාවය සම්පුර්ණ කිරීමට ප්‍රථම පරිශිලකට සිහිපත් කරන්න"
+
+#: ../server/vino-server.schemas.in.h:17
+msgid "Require encryption"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:18
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:19
+#, fuzzy
+msgid ""
+"The port which the server will listen to if the 'use_alternative_port' key "
+"is set to true. Valid values are in the range from 5000 to 50000."
+msgstr ""
+"'use_alternative_port' යතුර සත්‍ය අගයට සැකසූවහොත් සේවාදායකය සවන්දෙනු "
+"ඇත. 5000 සිට 50000 දක්වා පරාසය තුළ නිරවද්‍ය අගයන් පිහිටයි."
+
+#: ../server/vino-server.schemas.in.h:20
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+
+#: ../server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "මුලික තිරය සේවා දායකය දැනටමත් ක්‍රියාත්මකයි; ඉවත් වෙමින් ...\n"
+
+#: ../server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr ""
+"bonobo-සක්‍රිය කිරීම සමඟ දුරස්ථ මුලික තිරය සේවා දායකය ලියාපදිංචිකිරිම ගැටලු සහිතයි; "
+"ඉවත් වෙමින් ...\n"
+
+#: ../server/vino-status-icon.c:204
+#, c-format
+msgid ""
+"There was an error displaying preferences:\n"
+" %s"
+msgstr ""
+"අභිප්‍රේත දර්ශණය කිරිමේදි දෝෂයක් තිබුණි:\n"
+" %s"
+
+#: ../server/vino-status-icon.c:212
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+" %s"
+msgstr ""
+"සහාය දර්ශණය කිරිමේදි දෝෂයක් තිබුණි:\n"
+" %s"
+
+#: ../server/vino-status-icon.c:235
+msgid ""
+"Licensed under the GNU General Public License Version 2\n"
+"\n"
+"Vino is free software; you can redistribute it and/or\n"
+"modify it under the terms of the GNU General Public License\n"
+"as published by the Free Software Foundation; either version 2\n"
+"of the License, or (at your option) any later version.\n"
+"\n"
+"Vino is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n"
+"GNU General Public License for more details.\n"
+"\n"
+"You should have received a copy of the GNU General Public License\n"
+"along with this program; if not, write to the Free Software\n"
+"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+"02110-1301, USA.\n"
+msgstr ""
+"Licensed under the GNU General Public License Version 2\n"
+"\n"
+"Vino is free software; you can redistribute it and/or\n"
+"modify it under the terms of the GNU General Public License\n"
+"as published by the Free Software Foundation; either version 2\n"
+"of the License, or (at your option) any later version.\n"
+"\n"
+"Vino is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n"
+"GNU General Public License for more details.\n"
+"\n"
+"You should have received a copy of the GNU General Public License\n"
+"along with this program; if not, write to the Free Software\n"
+"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+"02110-1301, USA.\n"
+
+#. Translators comment: put your own name here to appear in the about dialog.
+#: ../server/vino-status-icon.c:250
+msgid "translator-credits"
+msgstr "පරිවර්තන ස්තුතිය"
+
+#: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:560
+msgid "GNOME Remote Desktop"
+msgstr "GNOME දුරස්ථ මුලික තිරය"
+
+#: ../server/vino-status-icon.c:257
+msgid "Share your desktop with other users"
+msgstr "ඔබගේ මුලික තිරය වෙනත් පරිශිලකයන් සමඟ බෙදා බන්න"
+
+#: ../server/vino-status-icon.c:320
+#, c-format
+msgid "Are you sure you want to disconnect '%s'?"
+msgstr "'%s' විසංදි කිරීමට ඔබට අවශ්‍යද?. ඔබට විශ්වාසද?"
+
+#: ../server/vino-status-icon.c:322
+#, c-format
+msgid "The remote user from '%s' will be disconnected. Are you sure?"
+msgstr "'%s' වෙතින් සම්බන්දවු දුරස්ථ පරිශිලකයා විසංදි වනු ඇත. ඔබට විශ්වාසද?"
+
+#: ../server/vino-status-icon.c:327
+msgid "Are you sure you want to disconnect all clients?"
+msgstr "ඔබට විශ්වාසද? සියලුම පරිශීලකයන් විසංදි කිරීමට ඔබට අවශ්‍යද?"
+
+#: ../server/vino-status-icon.c:328
+msgid "All remote users will be disconnected. Are you sure?"
+msgstr "සියලුම දුරස්ථ පරිශිලකයන් විසංදි වනු ඇත. ඔබට විශ්වාසද?"
+
+#: ../server/vino-status-icon.c:340
+msgid "Disconnect"
+msgstr "විසංදි කරන්න"
+
+#: ../server/vino-status-icon.c:365
+msgid "_Preferences"
+msgstr "අභිප්‍රේත (_P)"
+
+#: ../server/vino-status-icon.c:377
+msgid "Disconnect all"
+msgstr "සියල්ල විසංදි කරන්න"
+
+#: ../server/vino-status-icon.c:399
+#, c-format
+msgid "Disconnect %s"
+msgstr "%s විසංදි විය"
+
+#: ../server/vino-status-icon.c:416
+msgid "_Help"
+msgstr "උදව් (_H)"
+
+#: ../server/vino-status-icon.c:424
+msgid "_About"
+msgstr "පිළිබද (_A)"
+
+#: ../server/vino-status-icon.c:458
+#, c-format
+msgid "One person is connected"
+msgid_plural "%d people are connected"
+msgstr[0] "එක් පුද්ගලයකු සම්බන්ද විය"
+msgstr[1] "පුද්ගලයින් %d දෙනෙකු සම්බන්ද විය"
+
+#: ../server/vino-status-icon.c:562
+msgid "Error initializing libnotify\n"
+msgstr "libnotify ආරම්භ කිරිම දෝෂ සහිතයි\n"
+
+#: ../server/vino-status-icon.c:576
+msgid "Another user is viewing your desktop"
+msgstr "වෙනත් පරිශීලකයකු ඔබගේ මූලික තිරය බලයි"
+
+#: ../server/vino-status-icon.c:577
+#, c-format
+msgid "A user on the computer '%s' is remotely viewing your desktop."
+msgstr "'%s' පරිගණකයේ සිටින පරිශීලකයා දුරස්ථව ඔබගේ මූලික තිරය බලයි."
+
+#: ../server/vino-status-icon.c:582
+msgid "Another user is controlling your desktop"
+msgstr "වෙනත් පරිශීලකයෙක් ඔබගේ මූලික තිරය පාලනය කරනු ලබයි"
+
+#: ../server/vino-status-icon.c:583
+#, c-format
+msgid "A user on the computer '%s' is remotely controlling your desktop."
+msgstr "'%s' පරිබණකයේ සිටින පරිශිලකයා ඔබගේ මුලික තිරය දුරස්ථව හසුරුවයි."
+
+#: ../server/vino-status-icon.c:605
+#, c-format
+msgid "Error while displaying notification bubble: %s\n"
+msgstr ""
+
+#: ../session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr "දුරස්ථ මූලික තිර සේවා දායකය නැසුනී, නැවත ආරම්භවෙයි\n"
+
+#: ../session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "%s සක්‍රිය කරවීම අසමත්විය: %s\n"
+
+#: ../session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "%s සක්‍රිය කරවීම අසමත්විය: නොදන්නා දෝසඟයක්\n"
+
+#: ../session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr "දුරස්ථ මුලික තිර සේවාදායකය සක්‍රිය කිරිම අසමත්විය: බොහො වාරයක් උත්සාහ කරන ලදී\n"
+
+#: ../session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr "දුරස්ථ මූලික තිර සේවා දායකය ආරම්භවෙයි"
+
+#: ../session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr "දුරස්ථ මූලික තිර සේවා දායකය ආරම්භවන්නේ නැත"
+
