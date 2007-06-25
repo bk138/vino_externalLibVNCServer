@@ -1,28 +1,35 @@
-# translation of ta.po to Tamil
+# translation of vino.HEAD.po to TAMIL
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Jayaradha N <jaya@pune.redhat.com>, 2004.
 #
+# Jayaradha N <jaya@pune.redhat.com>, 2004.
+# Dr.T.Vasudevan <agnihot3@gmail.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: ta\n"
+"Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-30 07:11+0000\n"
-"PO-Revision-Date: 2004-09-04 17:14+0530\n"
-"Last-Translator: Jayaradha N <jaya@pune.redhat.com>\n"
-"Language-Team: Tamil <zhakanini@yahoogroups.com>\n"
+"POT-Creation-Date: 2007-04-11 03:34+0100\n"
+"PO-Revision-Date: 2007-06-23 17:50+0530\n"
+"Last-Translator: Dr.T.Vasudevan <agnihot3@gmail.com>\n"
+"Language-Team: TAMIL <ubuntu-l10n-tam@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.3.1\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
 
-#: capplet/vino-preferences.c:807
+#: ../capplet/vino-preferences.c:635 ../capplet/vino-preferences.c:670
+#: ../server/vino-dbus-listener.c:324
+#, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "பஸ்ஸுக்கு இணைப்பை திறத்தல் தோல்வியுற்றது: %s\n"
+
+#: ../capplet/vino-preferences.c:880
 msgid "Send this command by email"
 msgstr "இந்த கட்டளையை மின்னஞ்சல் வழியாக அனுப்பவும்"
 
-#: capplet/vino-preferences.c:842
+#: ../capplet/vino-preferences.c:915
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -31,103 +38,74 @@ msgstr ""
 "உதவிக்காட்சியில் பிழை நேர்ந்துள்ளது:\n"
 "%s"
 
-#: capplet/vino-preferences.desktop.in.in.h:1
+#: ../capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
 msgstr "தொலை மேல்மேசை"
 
-#: capplet/vino-preferences.desktop.in.in.h:2
+#: ../capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
 msgstr "உங்கள் தொலை மேல்மேசை விருப்பங்களை அமைக்கவும்"
 
-#: capplet/vino-preferences.glade.h:1
-msgid "    "
-msgstr "    "
-
-#: capplet/vino-preferences.glade.h:2
-msgid "        "
-msgstr "        "
-
-#: capplet/vino-preferences.glade.h:3
-msgid "*"
-msgstr "*"
-
-#: capplet/vino-preferences.glade.h:4
+#: ../capplet/vino-preferences.glade.h:1
 msgid "<b>Security</b>"
 msgstr "<b>பாதுகாப்பு</b>"
 
-#: capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:2
 msgid "<b>Sharing</b>"
 msgstr "<b>பகிர்வு</b>"
 
-#: capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:3
 msgid "A_sk you for confirmation"
 msgstr "(_s)உறுதிப்படுத்த கேள்"
 
-#: capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:4
 msgid "Allow other users to _view your desktop"
 msgstr "(_v)மற்ற பயனீட்டாளர் உங்கள் மேல் மேசையை பார்க்க அனுமதி"
 
-#: capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:5
 msgid "Remote Desktop Preferences"
 msgstr "தொலை மேல்மேசை விருப்பங்கள்"
 
-#: capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:6
 msgid "Some of these preferences are locked down"
 msgstr "சில விருப்பங்கள் பூட்டப்பட்டுள்ளது"
 
-#: capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:7
 msgid "Users can view your desktop using this command:"
 msgstr "இந்த கட்டளையை பயன்படுத்தி பயனீட்டாளர் உங்கள் மேல் மேசையை பார்க்க முடியும்"
 
-#: capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:8
 msgid "When a user tries to view or control your desktop:"
 msgstr "பயனர் உங்கள் மேல் மேசையை பார்க்க மட்டும் கட்டுப்படுத்த"
 
-#: capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.glade.h:9
 msgid "_Allow other users to control your desktop"
 msgstr "(_A)பயனர் உங்கள் மேல் மேசையை கட்டுப்படுத்துவதை அனுமதிக்கவும்"
 
-#: capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.glade.h:10
 msgid "_Password:"
 msgstr "(_P)கடவுச்சொல்:"
 
-#: capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:11
 msgid "_Require the user to enter this password:"
 msgstr "(_R)பயனர் கடவுச்சொல்லை உள்ளிட வேண்டும்:"
 
-#: capplet/vino-url.c:158
-msgid "Address"
-msgstr "முகவரி"
+#: ../server/vino-dbus-listener.c:180 ../server/vino-dbus-listener.c:210
+#, c-format
+msgid "Out of memory handling '%s' message"
+msgstr "'%s'  செய்தியை கையாளுவதில் நினைவகம் இல்லாமல் போயிற்று."
 
-#: capplet/vino-url.c:159
-msgid "The address pointed to by the widget"
-msgstr "சிறு சாளரத்தை குறிக்கும் முகவரி"
+#: ../server/vino-dbus-listener.c:284
+#, c-format
+msgid "Out of memory registering object path '%s'"
+msgstr "'%s' பொருள் பாதையை பதிவு செய்வதில் நினைவகம் இல்லாது போயிற்று."
 
-#: capplet/vino-url.c:166
-msgid "Tooltip"
-msgstr "கருவிக்குறிப்பு"
+#: ../server/vino-dbus-listener.c:357
+#, c-format
+msgid "Failed to acquire D-Bus name '%s'\n"
+msgstr "டி பஸ் (D-Bus) பெயரை பெறுதல் தோல்வியுற்றது. '%s'\n"
 
-#: capplet/vino-url.c:167
-msgid "A tooltip for this URL"
-msgstr "இந்த URL க்கான கருவிக்குறிப்பு"
-
-#: capplet/vino-url.c:173
-msgid "URL color"
-msgstr "URL நிறம்"
-
-#: capplet/vino-url.c:174
-msgid "The color of the URL's label"
-msgstr " URL's விளக்கசீட்டின் நிறம்"
-
-#: server/vino-fb.c:947 server/vino-prompt.c:144 server/vino-server.c:851
-msgid "Screen"
-msgstr "திரை"
-
-#: server/vino-fb.c:948
-msgid "The screen to be monitored"
-msgstr "கண்காணிக்க வேண்டிய திரை"
-
-#: server/vino-main.c:78
+#: ../server/vino-main.c:83
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -135,110 +113,83 @@ msgstr ""
 "உங்கள் Xசேவகன் XTest விரிவாக்கத்தை ஆதரிககது - தொலை மேல்மேசை அணுகலால் மட்டுமே பார்க்க "
 "முடியும்\n"
 
-#: server/vino-prompt.c:145
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#: ../server/vino-mdns.c:59
+msgid "vino-mdns:showusername"
+msgstr "vino-mdns:showusername"
+
+#.
+#. * Translators: this string is used ONLY if you
+#. * translated "vino-mdns:showusername" to anything
+#. * other than "1"
+#.
+#: ../server/vino-mdns.c:71
+#, c-format
+msgid "%s's remote desktop"
+msgstr "%s' இன் தொலை மேல்மேசை"
+
+#: ../server/vino-prompt.c:142
+msgid "Screen"
+msgstr "திரை"
+
+#: ../server/vino-prompt.c:143
 msgid "The screen on which to display the prompt"
 msgstr "ப்ராம்டை காட்டவேண்டிய திரை"
 
-#: server/vino-prompt.c:385
+#: ../server/vino-prompt.c:343
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr "கணிப்பொறி '%s' இன் பயனர் உங்கள் மேல்மேசையை தொலைவிலிருந்து பார்க்க முயல்கிறார்"
 
-#: server/vino-prompt.glade.h:1
+#: ../server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
 msgstr "<big><b>மற்ற பயனர் உங்கள் மேல் மேசையை பார்க்க முயல்கிறார்.</b></big>"
 
-#: server/vino-prompt.glade.h:2
+#: ../server/vino-prompt.glade.h:2
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
 msgstr "மற்ற பயனர் உங்கள் மேல் மேசையை பார்க்க முயல்கிறார்."
 
-#: server/vino-prompt.glade.h:3
+#: ../server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
 msgstr "அவரை அனுமதிக்க விரும்புகிறீர்களா?"
 
-#: server/vino-prompt.glade.h:4
+#: ../server/vino-prompt.glade.h:4
 msgid "Question"
 msgstr "கேள்வி"
 
-#: server/vino-prompt.glade.h:5 server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
 msgid "_Allow"
 msgstr "(_A)அனுமதி"
 
-#: server/vino-prompt.glade.h:6 server/vino-util.c:65
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "(_R)மறுக்கவும்"
 
-#: server/vino-server.c:852
-msgid "The screen for which to create a VNC server"
-msgstr "VNC சேவகனை உருவாக்க வேண்டிய திரை"
-
-#: server/vino-server.c:859
-msgid "On Hold"
-msgstr "காத்திரு"
-
-#: server/vino-server.c:860
-msgid "Place all clients on hold"
-msgstr "எல்லா புரவலன்களையும் காத்திருக்க செய்"
-
-#: server/vino-server.c:867
-msgid "Prompt enabled"
-msgstr "ப்ராம்ச் செயல்படுத்தப்பட்ட"
-
-#: server/vino-server.c:868
-msgid "Prompt the user about connection attempts"
-msgstr "முற்சிகளை பயனருக்கு தெரியப்படுத்து"
-
-#: server/vino-server.c:875
-msgid "View Only"
-msgstr "பார்க்க மட்டும்"
-
-#: server/vino-server.c:876
-msgid "Disallow keyboard/pointer input from clients"
-msgstr "விசைப்பலகை/குறி உள்ளிடு சாதனங்களை மறுக்கவும்"
-
-#: server/vino-server.c:883
-msgid "Require Encryption"
-msgstr "குறிமுறையாக்கம் தேவை"
-
-#: server/vino-server.c:884
-msgid "Require clients to use encryption"
-msgstr "புரவலன் குறிமுறையாக்கத்தை பயன்படுத்த வேண்டும்"
-
-#: server/vino-server.c:891
-msgid "Authentication methods"
-msgstr "அனுமதி முறைமை"
-
-#: server/vino-server.c:892
-msgid "The authentication methods this server should allow"
-msgstr "இந்த சேவகன் அனுமதிக்க வேண்டிய அனுமதி முறைமை"
-
-#: server/vino-server.c:900
-msgid "VNC Password"
-msgstr "VNC கடவுச்சொல்"
-
-#: server/vino-server.c:901
-msgid ""
-"The password (base64 encoded) used to authenticate types using the VncAuth "
-"method"
-msgstr "(64 பிட் குறிமுறை)  VncAuth முறை பயன்படுத்தும் அனுமதி முறைமை"
-
-#: server/vino-server.schemas.in.h:1
+#: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
 msgstr "அனுமதி முறைமையை அனுமதி"
 
-#: server/vino-server.schemas.in.h:2
+#: ../server/vino-server.schemas.in.h:2
+msgid "Alternative port number"
+msgstr "மாற்று துறை எண்"
+
+#: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "தொலை கணினி URL அனுப்பவ் வேண்டிய மின்னஞ்சல் முகவரி "
 
-#: server/vino-server.schemas.in.h:3
+#: ../server/vino-server.schemas.in.h:4
 msgid "Enable remote desktop access"
 msgstr "தொலை மேல்மேசை சேவகன் அனுகலை செயல்படுத்து"
 
-#: server/vino-server.schemas.in.h:4
+#: ../server/vino-server.schemas.in.h:5
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
@@ -246,7 +197,7 @@ msgstr ""
 "உண்மையெனில், RFB விதிமுறைபடி மேல்மேசையை அனுக முடியும். vncviewer வழியாக "
 "மேல்மேசையை இணைக்க முடியும்"
 
-#: server/vino-server.schemas.in.h:5
+#: ../server/vino-server.schemas.in.h:6
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
@@ -255,24 +206,37 @@ msgstr ""
 "உண்மையெனில், தொலை பயனர் மேல் மேசையை பார்க்க அனுமதி இல்லை. பயனர் அனுமதிக்கும் வரை "
 "காத்திருக்க வேண்டும்."
 
-#: server/vino-server.schemas.in.h:6
+#: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
-"desktop. Remote user's will not be able to use the mouse or keyboard."
-msgstr ""
-"உண்மையெனில், மேல்மேசையை பார்க்க மட்டும் அனுமதி உண்டு. சுட்டி விசைப்பலகையை பயன்படுத்த "
-"அனுமதி இல்லை"
+"desktop. Remote users will not be able to use the mouse or keyboard."
+msgstr "உண்மையானால் மேல்மேசையை அணுகும்  தொலை பயனர்கள் மேல்மேசையை பார்க்க மட்டுமே அனுமதிக்கப் படுவார்கள். அவர்கள் சொடுக்கியையோ விசைப் பலகையையோ பயன்படுத்த இயலாது."
 
-#: server/vino-server.schemas.in.h:7
+#: ../server/vino-server.schemas.in.h:8
 msgid ""
 "If true, remote users accessing the desktop are required to be able support "
-"encyrption. It is highly recommended that you use a client which supports "
+"encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
-msgstr ""
-"உண்மையெனில், குறிமுறையாக்க ஆதரவோடு தொலை கணினியை அணுகலாம். புரவலன் குறிமுறையாக்க "
-"ஆதரவை பெற்றிருக்க வேண்டும்."
+msgstr "உண்மையானால் மேல்மேசையை அணுகும்  தொலை பயனர்கள் குறியாக்கத்தை ஆதரிக்க வேண்டுமென கட்டாயப்படுத்தப்படுவார்கள். இடைமறிக்கும் பிணையத்தை முழுதும் நம்பினால் ஒழிய குறியாக்கத்தை ஆதரிக்கும் சார்ந்தோனை பயன்படுத்த வேண்டும் என பலமாக பரிந்துரைக்கப் படுகிறது."
 
-#: server/vino-server.schemas.in.h:8
+#: ../server/vino-server.schemas.in.h:9
+msgid ""
+"If true, the server will listen another port, instead of default (5900). The "
+"port must be specified in 'alternative_port' key."
+msgstr "உண்மையானால் சேவையகம் (5900) முன்னிருப்பை விட்டு வேறு ஒரு துறையில் செவி சாய்க்கும். அந்த துறையை 'alternative_port'  விசையில் குறிப்பிட வேண்டும்."
+
+#: ../server/vino-server.schemas.in.h:10
+msgid ""
+"If true, the server will only accept connections from localhost and network "
+"connections will be rejected. Set this option to true if you wish to "
+"exclusively use a tunneling mechanism to access the server, such as ssh."
+msgstr "உண்மை என அமைத்தால் உள் புரவலனின் இணப்புகள் மட்டும் அனுமதிக்கப்படும். வலை இணைப்புகள் மறுக்கப்படும். எஸ் எஸ் ஹெச் போன்ற சேவையக டன்னல் அமைப்புக்கு மட்டும் பயன்படுத்துவதாக இருந்தால் இந்த தேர்வை உண்மை என அமைக்கவும்."
+
+#: ../server/vino-server.schemas.in.h:11
+msgid "Listen an alternative port"
+msgstr "மாற்று துறையில் செவி சாய்க்கவும்"
+
+#: ../server/vino-server.schemas.in.h:12
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -284,23 +248,27 @@ msgstr ""
 "(vnc_password விசையால் கடவுச்சொல் குறிக்கப்படும்) \"none\" அனைவரையும் சுலபமாக "
 "அனுமதிக்கும்"
 
-#: server/vino-server.schemas.in.h:9
+#: ../server/vino-server.schemas.in.h:13
+msgid "Only allow local connections"
+msgstr "உள்ளமை இணப்புகளை மட்டும் அனுமதிக்கவும்"
+
+#: ../server/vino-server.schemas.in.h:14
 msgid "Only allow remote users to view the desktop"
 msgstr "பயனர் மேல்மேசையை மட்டும் பார்க்க அனுமதி"
 
-#: server/vino-server.schemas.in.h:10
+#: ../server/vino-server.schemas.in.h:15
 msgid "Password required for \"vnc\" authentication"
 msgstr "\"vnc\" அனுமதிக்கான கடவுச்சொல் தேவை"
 
-#: server/vino-server.schemas.in.h:11
+#: ../server/vino-server.schemas.in.h:16
 msgid "Prompt the user before completing a connection"
 msgstr "இணைப்பை முடிக்க பயனருக்கு நினைவூட்டு"
 
-#: server/vino-server.schemas.in.h:12
+#: ../server/vino-server.schemas.in.h:17
 msgid "Require encryption"
 msgstr "குறிமுறையாக்கம் தேவை"
 
-#: server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:18
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -309,7 +277,13 @@ msgstr ""
 "\"vnc\" அனுமதி முறை கடவுச்சொல்லை கேட்க பயன்பட்டிருக்கிறது. கடவுச்சொல் base64 "
 "குறிமுறையாக்கப்பட்டுள்ளது."
 
-#: server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:19
+msgid ""
+"The port which the server will listen to if the 'use_alternative_port' key "
+"is set to true. Valid values are in the range from 5000 to 50000."
+msgstr "'use_alternative_port' விசை உண்மை என அமைத்த போது சேவையகம் செவி சாய்க்கும் துறை. செல்லுபடியாகும் மதிப்புகள் 5000 முதல் 50000."
+
+#: ../server/vino-server.schemas.in.h:20
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
@@ -318,39 +292,183 @@ msgstr ""
 "பயனர் URL ஐ தொலை மேல்மேசையிலிருந்து க்ளிக் செய்யும் போது அது அனுப்பப்பட வேண்டிய "
 "மின்னஞ்சல் முகவரியை குறிக்க இது பயன்படும்."
 
-#: server/vino-shell.c:76
+#: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "தொலை மேல்மேசை சேவகன் ஏற்கெனவே இயங்குகிறது; வெளியேறுகிறது ...\n"
 
-#: server/vino-shell.c:79
+#: ../server/vino-shell.c:79
 msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
 msgstr "போனபோ செயல்பாடோடு மேல்மேசை சேவகனை இணைப்பதில் பிழை ...\n"
 
-#: session/vino-session.c:133
+#: ../server/vino-status-icon.c:204
+#, c-format
+msgid ""
+"There was an error displaying preferences:\n"
+" %s"
+msgstr ""
+"விருப்பங்களை காட்டுவதில் பிழை இருந்தது:\n"
+" %s"
+
+#: ../server/vino-status-icon.c:212
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+" %s"
+msgstr ""
+"உதவியை காட்டுவதில் பிழை இருந்தது:\n"
+" %s"
+
+#: ../server/vino-status-icon.c:235
+msgid ""
+"Licensed under the GNU General Public License Version 2\n"
+"\n"
+"Vino is free software; you can redistribute it and/or\n"
+"modify it under the terms of the GNU General Public License\n"
+"as published by the Free Software Foundation; either version 2\n"
+"of the License, or (at your option) any later version.\n"
+"\n"
+"Vino is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n"
+"GNU General Public License for more details.\n"
+"\n"
+"You should have received a copy of the GNU General Public License\n"
+"along with this program; if not, write to the Free Software\n"
+"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+"02110-1301, USA.\n"
+msgstr ""
+"GNU பொது ஜன அனுமதி பதிப்பு  2 கீழ் அனுமதி தரப்பட்டது.\n"
+"வினோ இலவச மென் பொருளாகும். நீங்கள் இலவச மென் பொருள் \n"
+"அமைப்பினால்  வெளியிடப்பட்ட ஜிஎன்யு பொது அனுமதிக்கான\n"
+" இந்த 2ம் பதிப்பு அல்லது அடுத்த பதிப்புகள் விதிகளின் படி நீங்கள்\n"
+" (விருப்பப்படி) மாற்றலாம். அல்லது மீண்டும் பறிமாறலாம்\n"
+"\n"
+"வினோ உபயோகப்படும் என்ற எதிர்பார்ப்புடன் வெளியிடப்படுகிறது.\n"
+" ஆனால் விற்க தகுதி குறிப்பிட்ட செயலுக்கான தகுதி உள்பட\n"
+" எந்த உத்திரவாதமும் அளிக்கப்படவில்லை. மேற் கொண்டு \n"
+"விவரங்களுக்கு ஜிஎன்யு பொது அனுமதிக்கான விதிகளை பார்க்கவும்\n"
+"\n"
+"இந்த நிரலுடன் ஜிஎன்யு பொது அனுமதிக்கான விதிகளின் பிரதி \n"
+"உங்களுக்கு கிடைத்திருக்க வேண்டும். இல்லையானால்\n"
+" கீழ் கண்ட முகவரிக்கு கடிதம் எழுதவும். \n"
+"Free Software Foundation, Inc., 51 Franklin Street,\n"
+" Fifth Floor, Boston, MA 02110-1301, USA \n"
+
+#. Translators comment: put your own name here to appear in the about dialog.
+#: ../server/vino-status-icon.c:250
+msgid "translator-credits"
+msgstr "மொழிபெயர்ப்பாளர்-நன்றி அறிதல்"
+
+#: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:566
+msgid "GNOME Remote Desktop"
+msgstr "க்நோம் தொலை மேசைச்சூழல்"
+
+#: ../server/vino-status-icon.c:257
+msgid "Share your desktop with other users"
+msgstr "மற்ற பயனர்களுடன் உங்கள் மேல் மேசையை பகிர்ந்து கொள்ளுங்கள்."
+
+#: ../server/vino-status-icon.c:320
+#, c-format
+msgid "Are you sure you want to disconnect '%s'?"
+msgstr "'%s'  ஐ துண்டிக்க நீங்கள் உறுதியாக இருக்கிறீர்களா?"
+
+#: ../server/vino-status-icon.c:322
+#, c-format
+msgid "The remote user from '%s' will be disconnected. Are you sure?"
+msgstr "'%s'  இலிருந்து தொலை பயனர் துண்டிக்கப்படுவார். நீங்கள் உறுதியாக இருக்கிறீகளா?"
+
+#: ../server/vino-status-icon.c:327
+msgid "Are you sure you want to disconnect all clients?"
+msgstr "எல்லா பயனர்களையும் துண்டிக்க நீங்கள் உறுதியாக இருக்கிறீர்களா?"
+
+#: ../server/vino-status-icon.c:328
+msgid "All remote users will be disconnected. Are you sure?"
+msgstr "எல்லா தொலை பயனர்களும் துண்டிக்கப்படுவார்கள். நீங்கள் உறுதியாக இருக்கிறீர்களா?"
+
+#: ../server/vino-status-icon.c:340
+msgid "Disconnect"
+msgstr "துண்டிப்பு"
+
+#: ../server/vino-status-icon.c:365
+msgid "_Preferences"
+msgstr "_ம முன்னுரிமைகள்"
+
+#: ../server/vino-status-icon.c:377
+msgid "Disconnect all"
+msgstr "அனைத்தையும் துண்டிக்கவும்"
+
+#: ../server/vino-status-icon.c:399
+#, c-format
+msgid "Disconnect %s"
+msgstr "%s ஐ துண்டிக்கவும்"
+
+#: ../server/vino-status-icon.c:416
+msgid "_Help"
+msgstr "_உதவி"
+
+#: ../server/vino-status-icon.c:424
+msgid "_About"
+msgstr "_பற்றி"
+
+#: ../server/vino-status-icon.c:458
+#, c-format
+msgid "One person is connected"
+msgid_plural "%d people are connected"
+msgstr[0] "ஒரு நபர் இணைக்கப்பட்டுள்ளார்"
+msgstr[1] "%d நபர்கள் இணைக்கப்பட்டுள்ளனர்"
+
+#: ../server/vino-status-icon.c:568
+msgid "Error initializing libnotify\n"
+msgstr "libnotify ஐ ஆரம்பிப்ப்பதில் பிழை \n"
+
+#: ../server/vino-status-icon.c:582
+msgid "Another user is viewing your desktop"
+msgstr "மற்ற பயனர் உங்கள் மேல் மேசையை பார்க்கிறார்."
+
+#: ../server/vino-status-icon.c:583
+#, c-format
+msgid "A user on the computer '%s' is remotely viewing your desktop."
+msgstr "'%s'  கணினியில் உள்ள மற்றொரு பயனர் உங்கள் மேல் மேசையை பார்க்கிறார்."
+
+#: ../server/vino-status-icon.c:588
+msgid "Another user is controlling your desktop"
+msgstr "பயனர் உங்கள் மேல் மேசையை கட்டுப்படுத்துகிறார்"
+
+#: ../server/vino-status-icon.c:589
+#, c-format
+msgid "A user on the computer '%s' is remotely controlling your desktop."
+msgstr "'%s'  கணினியில் உள்ள மற்றொரு பயனர் உங்கள் மேல் மேசையை கட்டுப்படுத்துகிறார்"
+
+#: ../server/vino-status-icon.c:611
+#, c-format
+msgid "Error while displaying notification bubble: %s\n"
+msgstr "அறிக்கை குமிழை காட்டுவதில் பிழை : %s\n"
+
+#: ../session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
 msgstr "தொலை மேல் மேசை சேவகன் இல்லை. மீண்டும் துவங்குகிறது\n"
 
-#: session/vino-session.c:154
+#: ../session/vino-session.c:154
 #, c-format
 msgid "Activation of %s failed: %s\n"
 msgstr "%s செயல்படுத்துவதில் தோல்வி: %s\n"
 
-#: session/vino-session.c:160
+#: ../session/vino-session.c:160
 #, c-format
 msgid "Activation of %s failed: Unknown Error\n"
 msgstr "செயல்படுத்துவதில் %s தோல்வி: தெரியாத பிழை\n"
 
-#: session/vino-session.c:231
+#: ../session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr ""
-"தொலை மேல் மேசை சேவகனை செயல்படுத்துவதில் தோல்வி. அதிக முறை முயற்சி செய்யப்பட்டது\n"
+msgstr "தொலை மேல் மேசை சேவகனை செயல்படுத்துவதில் தோல்வி. அதிக முறை முயற்சி செய்யப்பட்டது\n"
 
-#: session/vino-session.c:295
+#: ../session/vino-session.c:295
 msgid "Starting remote desktop server"
 msgstr "தொலை மேல் மேசை சேவகன் துவங்குகிறது"
 
-#: session/vino-session.c:300
+#: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "தொலை மேல் மேசை சேவகன் துவங்க வில்லை"
+
