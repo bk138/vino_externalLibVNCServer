@@ -102,10 +102,9 @@ vino_preferences_dialog_get_password_from_keyring (VinoPreferencesDialog *dialog
 		5900,           /* port     */
 		&matches);
 
-  if (result != GNOME_KEYRING_RESULT_OK)
+  if (result != GNOME_KEYRING_RESULT_OK || matches == NULL || matches->data == NULL)
     return NULL;
 
-  g_assert (matches != NULL && matches->data != NULL);
 
   found_item = (GnomeKeyringNetworkPasswordData *) matches->data;
 

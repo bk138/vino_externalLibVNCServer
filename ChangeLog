@@ -1,3 +1,9 @@
+2007-06-27  Stef Walter  <stef@memberwebs.com>
+
+	* capplet/vino-preferences.c: 
+	* server/vino-server.c: Don't assert on a NULL find result from 
+	  gnome-keyring. Closes bug #450074
+
 2007-06-09  Jonh Wendell <jwendell@gnome.org>
 
 	* server/vino-dbus-listener.c: Changed introspect_xml variable type

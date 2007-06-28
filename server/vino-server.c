@@ -506,10 +506,9 @@ vino_server_get_password_from_keyring (VinoServer *server)
 		5900,           /* port     */
 		&matches);
 
-  if (result != GNOME_KEYRING_RESULT_OK)
+  if (result != GNOME_KEYRING_RESULT_OK || matches == NULL || matches->data == NULL)
     return NULL;
 
-  g_assert (matches != NULL && matches->data != NULL);
 
   found_item = (GnomeKeyringNetworkPasswordData *) matches->data;
 
