@@ -1,3 +1,11 @@
+2007-06-29  Jonh Wendell <jwendell@gnome.org>
+
+	* server/vino-server.schemas.in,
+	  server/vino-server.[hc],
+	  server/vino-prefs.c: Added a new configuration option (gconf key)
+	  'lock_screen_on_disconnect', which locks the screen when last
+	  user disconnects. Closes #355586.
+
 2007-06-27  Stef Walter  <stef@memberwebs.com>
 
 	* capplet/vino-preferences.c: 

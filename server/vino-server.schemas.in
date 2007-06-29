@@ -169,5 +169,20 @@
       </locale>
     </schema>
 
+    <schema>
+      <key>/schemas/desktop/gnome/remote_access/lock_screen_on_disconnect</key>
+      <applyto>/desktop/gnome/remote_access/lock_screen_on_disconnect</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+         <short>Lock the screen when last user disconnect</short>
+         <long>
+           If true, screen will be locked after the last remote client
+           disconnect.
+         </long>
+      </locale>
+    </schema>
+
   </schemalist>  
 </gconfschemafile>

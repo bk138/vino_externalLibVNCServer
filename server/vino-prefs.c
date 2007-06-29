@@ -38,8 +38,9 @@
 #define VINO_PREFS_REQUIRE_ENCRYPTION     VINO_PREFS_DIR "/require_encryption"
 #define VINO_PREFS_AUTHENTICATION_METHODS VINO_PREFS_DIR "/authentication_methods"
 #define VINO_PREFS_VNC_PASSWORD           VINO_PREFS_DIR "/vnc_password"
+#define VINO_PREFS_LOCK_SCREEN            VINO_PREFS_DIR "/lock_screen_on_disconnect"
 
-#define VINO_N_LISTENERS 9
+#define VINO_N_LISTENERS 10
 
 static GConfClient *vino_client  = NULL;
 static GSList      *vino_servers = NULL;
@@ -54,6 +55,7 @@ static VinoAuthMethod  vino_auth_methods         = VINO_AUTH_VNC;
 static char           *vino_vnc_password         = NULL;
 static gboolean        vino_use_alternative_port = FALSE;
 static int             vino_alternative_port     = VINO_SERVER_DEFAULT_PORT;
+static gboolean        vino_lock_screen          = FALSE;
 
 
 static void
@@ -312,6 +314,30 @@ vino_prefs_alternative_port_changed (GConfClient *client,
     vino_server_set_alternative_port (l->data, vino_alternative_port);
 }
 
+static void
+vino_prefs_lock_screen_changed (GConfClient *client,
+			        guint	    cnxn_id,
+			        GConfEntry  *entry)
+{
+  gboolean  lock_screen;
+  GSList   *l;
+
+  if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
+    return;
+
+  lock_screen = gconf_value_get_bool (entry->value) != FALSE;
+
+  if (vino_lock_screen == lock_screen)
+    return;
+
+  vino_lock_screen = lock_screen;
+
+  dprintf (PREFS, "Lock Screen changed: %s\n", vino_lock_screen ? "(true)" : "(false)");
+
+  for (l = vino_servers; l; l = l->next)
+    vino_server_set_lock_screen (l->data, lock_screen);
+}
+
 void
 vino_prefs_create_server (GdkScreen *screen)
 {
@@ -328,6 +354,7 @@ vino_prefs_create_server (GdkScreen *screen)
 			 "vnc-password",         vino_vnc_password,
 			 "on-hold",              !vino_enabled,
 			 "screen",               screen,
+                         "lock-screen",          vino_lock_screen,
 			 NULL);
 
   vino_servers = g_slist_prepend (vino_servers, server);
@@ -407,6 +434,12 @@ vino_prefs_init (gboolean view_only)
 					       NULL);
   dprintf (PREFS, "Encoded password: %s\n", vino_vnc_password ? vino_vnc_password : "(null)");
 
+  vino_lock_screen = gconf_client_get_bool (vino_client,
+                                            VINO_PREFS_LOCK_SCREEN,
+                                            NULL);
+  dprintf (PREFS, "Lock screen on disconnect: %s\n",
+           vino_lock_screen ? "(true)" : "(false)");
+
   vino_listeners [i] =
     gconf_client_notify_add (vino_client,
 			     VINO_PREFS_ENABLED,
@@ -472,6 +505,14 @@ vino_prefs_init (gboolean view_only)
 			     VINO_PREFS_VNC_PASSWORD,
 			     (GConfClientNotifyFunc) vino_prefs_vnc_password_changed,
 			     NULL, NULL, NULL);
+  i++;
+
+  vino_listeners [i] =
+    gconf_client_notify_add (vino_client,
+			     VINO_PREFS_LOCK_SCREEN,
+			     (GConfClientNotifyFunc) vino_prefs_lock_screen_changed,
+			     NULL, NULL, NULL);
+
   i++;
 
   g_assert (i == VINO_N_LISTENERS);

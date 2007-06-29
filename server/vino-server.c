@@ -38,6 +38,7 @@
 #include "vino-util.h"
 #include "vino-enums.h"
 #include <sys/poll.h>
+#include <dbus/dbus-glib.h>
 
 #ifdef VINO_ENABLE_KEYRING
 #include <gnome-keyring.h>
@@ -80,6 +81,7 @@ struct _VinoServerPrivate
   guint             require_encryption : 1;
   guint             last_auth_failed : 1;
   guint             use_alternative_port : 1;
+  guint             lock_screen : 1;
 };
 
 struct _VinoClient
@@ -108,7 +110,8 @@ enum
   PROP_REQUIRE_ENCRYPTION,
   PROP_AUTH_METHODS,
   PROP_VNC_PASSWORD,
-  PROP_PORT
+  PROP_PORT,
+  PROP_LOCK_SCREEN
 };
 
 static enum rfbNewClientAction vino_server_auth_client (VinoServer *server,
@@ -121,6 +124,48 @@ static void vino_server_release_framebuffer   (VinoServer *server);
 static void vino_server_update_security_types (VinoServer *server);
 
 static gpointer parent_class;
+
+static void
+vino_server_lock_screen (VinoServer *server)
+{
+#define GNOME_SCREENSAVER_BUS_NAME  "org.gnome.ScreenSaver"
+#define GNOME_SCREENSAVER_INTERFACE "org.gnome.ScreenSaver"
+#define GNOME_SCREENSAVER_PATH      "/org/gnome/ScreenSaver"
+
+  DBusGConnection *connection;
+  GError          *error;
+  DBusGProxy      *proxy;
+
+  if (!server->priv->lock_screen)
+    return;
+  
+  dprintf(DBUS, "Locking screen via gnome-screensaver\n");
+
+  error = NULL;
+  connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
+  if (!connection)
+    {
+      g_printerr (_("Failed to open connection to bus: %s\n"),
+                  error->message);
+      g_error_free (error);
+      return;
+    }
+
+  proxy = dbus_g_proxy_new_for_name (connection,
+                                     GNOME_SCREENSAVER_BUS_NAME,
+                                     GNOME_SCREENSAVER_PATH,
+                                     GNOME_SCREENSAVER_INTERFACE);
+
+  dbus_g_proxy_call_no_reply (proxy, "Lock", G_TYPE_INVALID);
+
+  g_object_unref (proxy);
+  dbus_g_connection_unref (connection);
+
+#undef GNOME_SCREENSAVER_BUS_NAME
+#undef GNOME_SCREENSAVER_INTERFACE
+#undef GNOME_SCREENSAVER_PATH
+}
+
 
 static void
 vino_server_client_accepted (VinoServer *server,
@@ -140,6 +185,8 @@ vino_server_client_disconnected (VinoServer *server,
     {
       g_object_unref (server->priv->icon);
       server->priv->icon = NULL;
+
+      vino_server_lock_screen(server);
     }
 }
 static void
@@ -922,6 +969,9 @@ vino_server_set_property (GObject      *object,
     case PROP_ALTERNATIVE_PORT:
       vino_server_set_alternative_port (server, g_value_get_int (value));
       break;
+    case PROP_LOCK_SCREEN:
+      vino_server_set_lock_screen (server, g_value_get_boolean (value));
+      break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -970,6 +1020,9 @@ vino_server_get_property (GObject    *object,
       break;
     case PROP_PORT:
       g_value_set_int (value, server->priv->rfb_screen->rfbPort);
+      break;
+    case PROP_LOCK_SCREEN:
+      g_value_set_boolean (value, server->priv->lock_screen);
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -1130,6 +1183,19 @@ vino_server_class_init (VinoServerClass *klass)
                                                      G_PARAM_STATIC_NAME |
                                                      G_PARAM_STATIC_NICK |
                                                      G_PARAM_STATIC_BLURB));
+
+  g_object_class_install_property (gobject_class,
+				   PROP_LOCK_SCREEN,
+				   g_param_spec_boolean ("lock-screen",
+							 "Locks screen on disconnect",
+							 "After last user disconnects, screen will be locked",
+							 FALSE,
+                                                         G_PARAM_READWRITE   |
+                                                         G_PARAM_CONSTRUCT   |
+                                                         G_PARAM_STATIC_NAME |
+                                                         G_PARAM_STATIC_NICK |
+                                                         G_PARAM_STATIC_BLURB));
+
 }
 
 GType
@@ -1482,4 +1548,28 @@ vino_server_get_port (VinoServer *server)
   g_return_val_if_fail (VINO_IS_SERVER (server), 0);
 
   return server->priv->rfb_screen->rfbPort;
+}
+
+gboolean
+vino_server_get_lock_screen (VinoServer *server)
+{
+  g_return_val_if_fail (VINO_IS_SERVER (server), FALSE);
+
+  return server->priv->lock_screen;
+}
+
+void
+vino_server_set_lock_screen (VinoServer *server,
+			    gboolean    lock_screen)
+{
+  g_return_if_fail (VINO_IS_SERVER (server));
+
+  lock_screen = lock_screen != FALSE;
+
+  if (server->priv->lock_screen != lock_screen)
+    {
+      server->priv->lock_screen = lock_screen;
+
+      g_object_notify (G_OBJECT (server), "lock-screen");
+    }
 }

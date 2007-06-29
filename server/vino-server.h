@@ -97,6 +97,9 @@ VinoAuthMethod       vino_server_get_auth_methods         (VinoServer     *serve
 void                 vino_server_set_vnc_password         (VinoServer     *server,
 							   const char     *vnc_password);
 G_CONST_RETURN char *vino_server_get_vnc_password         (VinoServer     *server);
+void                 vino_server_set_lock_screen          (VinoServer     *server,
+							   gboolean        lock_screen);
+gboolean             vino_server_get_lock_screen          (VinoServer     *server);
 
 
 G_CONST_RETURN char *vino_client_get_hostname (VinoClient *client);
