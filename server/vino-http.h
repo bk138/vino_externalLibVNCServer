@@ -58,6 +58,7 @@ void      vino_http_add_rfb_port    (VinoHTTP *http,
 				     int       rfb_port);
 void      vino_http_remove_rfb_port (VinoHTTP *http,
 				     int       rfb_port);
+int       vino_get_http_server_port ();
 
 G_END_DECLS
 

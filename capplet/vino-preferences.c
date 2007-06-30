@@ -708,6 +708,59 @@ vino_preferences_get_server_port (VinoPreferencesDialog *dialog)
 #undef VINO_MAX_PORT
 }
 
+#ifdef VINO_ENABLE_HTTP_SERVER
+static int
+vino_preferences_get_http_server_port (VinoPreferencesDialog *dialog)
+{
+#define VINO_HTTP_DEFAULT_PORT   5800
+  DBusGConnection *connection;
+  GError          *error;
+  DBusGProxy      *proxy;
+  int              port;
+  GdkScreen       *screen;
+  char            *obj_path;
+  
+  error = NULL;
+  connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
+  if (!connection)
+    {
+      g_printerr (_("Failed to open connection to bus: %s\n"),
+                  error->message);
+      g_error_free (error);
+      return 0;
+    }
+
+  screen = gtk_window_get_screen (GTK_WINDOW (dialog->dialog));
+
+  obj_path = g_strdup_printf ("/org/gnome/vino/screens/%d",
+                              gdk_screen_get_number (screen));
+
+  proxy = dbus_g_proxy_new_for_name (connection,
+                                     VINO_DBUS_BUS_NAME,
+                                     obj_path,
+                                     VINO_DBUS_INTERFACE);
+
+  g_free (obj_path);
+
+  if (!dbus_g_proxy_call (proxy, "GetHttpServerPort", &error,
+                          G_TYPE_INVALID,
+                          G_TYPE_INT, &port,
+                          G_TYPE_INVALID))
+    {
+      g_object_unref (proxy);
+      g_error_free (error);
+      dbus_g_connection_unref (connection);
+      return VINO_HTTP_DEFAULT_PORT;
+    }
+
+  g_object_unref (proxy);
+  dbus_g_connection_unref (connection);
+
+  return port;
+#undef VINO_HTTP_DEFAULT_PORT
+}
+#endif /* VINO_ENABLE_HTTP_SERVER */
+
 static char *
 vino_preferences_get_local_hostname (void)
 {
@@ -742,14 +795,18 @@ vino_preferences_dialog_get_server_command (VinoPreferencesDialog *dialog)
   int   server_port;
 
   local_host  = vino_preferences_get_local_hostname ();
-  server_port = vino_preferences_get_server_port (dialog);
-
   if (!local_host)
     {
-      return g_strdup_printf ("vncviewer localhost:%d", server_port);
+      local_host = g_strdup_printf ("localhost");
     }
 
+#ifdef VINO_ENABLE_HTTP_SERVER
+  server_port = vino_preferences_get_http_server_port (dialog);
+  server_url = g_strdup_printf ("http://%s:%d", local_host, server_port);
+#else
+  server_port = vino_preferences_get_server_port (dialog);
   server_url = g_strdup_printf ("vncviewer %s:%d", local_host, server_port);
+#endif
 
   g_free (local_host);
 

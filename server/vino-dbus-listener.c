@@ -38,6 +38,9 @@
 #include <dbus/dbus-glib-lowlevel.h>
 
 #include "vino-util.h"
+#ifdef VINO_ENABLE_HTTP_SERVER
+#include "vino-http.h"
+#endif
 
 #define VINO_DBUS_LISTENER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o),                     \
                                                                         VINO_TYPE_DBUS_LISTENER, \
@@ -149,6 +152,11 @@ static const char * introspect_xml =
   "    <method name=\"GetServerPort\">\n"
   "      <arg name=\"port\" direction=\"out\" type=\"u\"/>\n"
   "    </method>\n"
+#ifdef VINO_ENABLE_HTTP_SERVER
+  "    <method name=\"GetHttpServerPort\">\n"
+  "      <arg name=\"port\" direction=\"out\" type=\"u\"/>\n"
+  "    </method>\n"
+#endif
   "  </interface>\n"
   "</node>\n";
 
@@ -211,6 +219,38 @@ vino_dbus_listener_handle_get_server_port (VinoDBusListener *listener,
   return DBUS_HANDLER_RESULT_NEED_MEMORY;
 }
 
+#ifdef VINO_ENABLE_HTTP_SERVER
+static DBusHandlerResult
+vino_dbus_listener_handle_get_http_server_port (VinoDBusListener *listener,
+                                                DBusConnection   *connection,
+                                                DBusMessage      *message)
+{
+  DBusMessage  *reply;
+  dbus_int32_t  port;
+
+  if (!(reply = dbus_message_new_method_return (message)))
+    goto oom;
+
+  port = vino_get_http_server_port();
+
+  if (!dbus_message_append_args (reply, DBUS_TYPE_INT32, &port, DBUS_TYPE_INVALID))
+    goto oom;
+
+  if (!dbus_connection_send (connection, reply, NULL))
+    goto oom;
+    
+  dbus_message_unref (reply);
+
+  dprintf (DBUS, "Successfully handled '%s' message: port = %d\n", dbus_message_get_member (message), port);
+
+  return DBUS_HANDLER_RESULT_HANDLED;
+
+ oom:
+  g_error (_("Out of memory handling '%s' message"), dbus_message_get_member (message));
+  return DBUS_HANDLER_RESULT_NEED_MEMORY;
+}
+#endif /* VINO_ENABLE_HTTP_SERVER */
+
 static DBusHandlerResult
 vino_dbus_listener_message_handler (DBusConnection *connection,
                                     DBusMessage    *message,
@@ -234,6 +274,16 @@ vino_dbus_listener_message_handler (DBusConnection *connection,
                                                         connection,
                                                         message);
     }
+#ifdef VINO_ENABLE_HTTP_SERVER
+  else if (dbus_message_is_method_call (message,
+                                   VINO_DBUS_INTERFACE,
+                                   "GetHttpServerPort"))
+    {
+      return vino_dbus_listener_handle_get_http_server_port (listener,
+                                                             connection,
+                                                             message);
+    }
+#endif
   else if (dbus_message_is_method_call (message,
                                         "org.freedesktop.DBus.Introspectable",
                                         "Introspect"))

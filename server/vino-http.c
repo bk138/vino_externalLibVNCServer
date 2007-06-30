@@ -585,7 +585,7 @@ static inline int
 start_probing_at (int rfb_port)
 {
   if (rfb_port >= VINO_RFB_MIN_PORT && rfb_port <= VINO_RFB_MAX_PORT)
-    return VINO_HTTP_MIN_PORT + (VINO_RFB_MIN_PORT - rfb_port);
+    return VINO_HTTP_MIN_PORT + (rfb_port - VINO_RFB_MIN_PORT);
 
   return VINO_HTTP_MIN_PORT;
 }
@@ -841,4 +841,10 @@ vino_http_remove_rfb_port (VinoHTTP *http,
       g_ptr_array_free (http->priv->rfb_ports, TRUE);
       http->priv->rfb_ports = NULL;
     }
+}
+
+int
+vino_get_http_server_port ()
+{
+  return singleton_http->priv->http_port;
 }

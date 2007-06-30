@@ -1,5 +1,14 @@
 2007-06-30  Jonh Wendell <jwendell@gnome.org>
 
+	* capplet/Makefile.am,
+	  capplet/vino-preferences.c,
+	  server/vino-http.[hc],
+	  server/vino-dbus-listener.c: Show http server address in vino-preferences
+	  if vino is compiled with http support.
+	  Patch from Halton Huo, closes #431635.
+
+2007-06-30  Jonh Wendell <jwendell@gnome.org>
+
 	* server/vino-main.c,
 	  server/vino-mdns.[hc],
 	  server/vino-prefs.c: Only publish VNC service under Avahi when server

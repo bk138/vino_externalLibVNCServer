@@ -6,6 +6,7 @@ INCLUDES = \
 	-DVINO_ICONDIR=\""$(datadir)/pixmaps\"" \
 	$(VINO_CAPPLET_CFLAGS) \
 	$(VINO_KEYRING_CFLAGS) \
+	$(VINO_HTTP_CFLAGS) \
 	$(WARN_CFLAGS) \
 	$(NULL)
 
