@@ -91,13 +91,11 @@ main (int argc, char **argv)
   for (i = 0; i < n_screens; i++)
     vino_prefs_create_server (gdk_display_get_screen (display, i));
 
-  vino_mdns_start ();
-
   vino_dbus_request_name ();
 
   gtk_main ();
 
-  vino_mdns_stop ();
+  vino_mdns_shutdown ();
 
   vino_prefs_shutdown ();
 

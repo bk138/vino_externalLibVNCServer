@@ -27,6 +27,7 @@
 #include <string.h>
 #include <gconf/gconf-client.h>
 #include "vino-util.h"
+#include "vino-mdns.h"
 
 #define VINO_PREFS_DIR                    "/desktop/gnome/remote_access"
 #define VINO_PREFS_ENABLED                VINO_PREFS_DIR "/enabled"
@@ -77,6 +78,11 @@ vino_prefs_enabled_changed (GConfClient *client,
   vino_enabled = enabled;
   
   dprintf (PREFS, "Access enabled changed: %s\n", vino_enabled ? "(true)" : "(false)");
+
+  if (vino_enabled)
+    vino_mdns_start ();
+  else
+    vino_mdns_stop ();
 
   for (l = vino_servers; l; l = l->next)
     vino_server_set_on_hold (l->data, !enabled);
@@ -358,6 +364,8 @@ vino_prefs_create_server (GdkScreen *screen)
 			 NULL);
 
   vino_servers = g_slist_prepend (vino_servers, server);
+  if (vino_enabled)
+    vino_mdns_start ();
 }
 
 void

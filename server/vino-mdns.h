@@ -33,6 +33,7 @@ void vino_mdns_add_service (const char *type,
 
 void vino_mdns_start (void);
 void vino_mdns_stop  (void);
+void vino_mdns_shutdown (void);
 
 G_END_DECLS
 

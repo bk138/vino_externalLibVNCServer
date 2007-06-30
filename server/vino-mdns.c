@@ -254,7 +254,7 @@ vino_mdns_start ()
                                   NULL);
   if (mdns_client == NULL)
     {
-      dprintf (MDNS, "Failed to create AvahiClient.\n");
+      dprintf (MDNS, "Failed to create Avahi Client.\n");
       vino_mdns_stop ();
       return;
     }
@@ -279,8 +279,16 @@ vino_mdns_stop (void)
     avahi_glib_poll_free (mdns_glib_poll);
   mdns_glib_poll = NULL;
 
+}
+
+void
+vino_mdns_shutdown (void)
+{
+  vino_mdns_stop ();
+
   if (mdns_services != NULL)
     g_hash_table_destroy (mdns_services);
+
   mdns_services = NULL;
 }
 
@@ -299,6 +307,11 @@ vino_mdns_start (void)
 
 void
 vino_mdns_stop (void)
+{
+}
+
+void
+vino_mdns_shutdown (void)
 {
 }
 
