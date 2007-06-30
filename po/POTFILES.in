@@ -8,6 +8,7 @@ server/vino-main.c
 server/vino-mdns.c
 server/vino-prompt.c
 server/vino-prompt.glade
+server/vino-server.c
 server/vino-server.schemas.in
 server/vino-shell.c
 server/vino-status-icon.c
