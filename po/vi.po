@@ -1,6 +1,6 @@
 # Vietnamese translation for Vino
 # Copyright © 2007 Gnome i18n Project for Vietnamese.
-# Nguyễn Thái Ngọc Duy <pclouds@vnlinux.org>, 2004, 2007.
+# Nguyễn Thái Ngọc Duy <pclouds@gmail.com>, 2004, 2007.
 # Clytie Siddall <clytie@riverland.net.au>, 2005-2007.
 # 
 msgid ""
@@ -298,7 +298,7 @@ msgid ""
 "The port which the server will listen to if the 'use_alternative_port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
 msgstr "Cổng trên đó trình phục vụ sẽ lắng nghe nếu khoá « use_alternative_port "
-"» (dùng cổng xen kẽ) là đúng (true). Giá trị hợp lệ nằm trong phạm vị 5 000 "
+"» (dùng cổng xen kẽ) là đúng (true). Giá trị hợp lệ nằm trong phạm vi 5 000 "
 "đến 50 000."
 
 #: ../server/vino-server.schemas.in.h:22
@@ -568,10 +568,10 @@ msgstr "Không đang khởi chạy trình phục vụ màn hình làm việc t�
 #~ msgstr "Dùng cổng xen kẽ"
 
 #~ msgid "Listen on the port specified by the 'alternative-port' property"
-#~ msgstr "Lắng nghe trên cổng được xác định bởi tài sản « alternative-port »"
+#~ msgstr "Lắng nghe trên cổng được xác định bởi thuộc tính « alternative-port »"
 
 #~ msgid ""
 #~ "Listen on the specified port number if the 'use-alternative-port' "
 #~ "property is TRUE"
-#~ msgstr "Lắng nghe trên số hiệu cổng đã xác định nếu tài sản « alternative-port » "
+#~ msgstr "Lắng nghe trên số hiệu cổng đã xác định nếu thuộc tính « alternative-port » "
 #~ "là TRUE (đúng)"
