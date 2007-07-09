@@ -1,3 +1,7 @@
+2007-07-09  Jonh Wendell  <jwendell@gnome.org>
+
+	* configure.in: bump version to to 2.19.5
+
 2007-06-30  Jonh Wendell <jwendell@gnome.org>
 
 	* capplet/Makefile.am,

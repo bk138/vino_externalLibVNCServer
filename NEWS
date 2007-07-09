@@ -1,3 +1,49 @@
+Vino 2.19.5
+===========
+
+  Features
+
+    + Show http server address in vino-preferences if vino is compiled
+      with http support (Halton Huo)
+    + Added a new configuration option (gconf key)
+	  'lock_screen_on_disconnect', which locks the screen when last
+	  user disconnects (Jonh)
+    + Build against libnotify, if it's available (added
+	  --enable-libnotify=auto and make it the default)
+
+  Fixes
+
+    + Only publish VNC service under Avahi when server is enabled,
+      bug #330690 (Jonh)
+    + Don't assert on a NULL find result from gnome-keyring,
+      bug #450074 (Stef Walter)
+    + Fix a crash when dbus Introspect() method is called,
+      bug #445525 (Jonh)
+    + Fix keyboard mapping problem, bug #440429 (Jonh)
+    + Use $prefix/share/vino for data in favor of $prefix/share/gnome/vino,
+      bug #436460 (Matthias Clasen)
+    + Fix gtk-update-icon-cache	for install and uninstall-hook (David Farning)
+    + Fix crash in mouse wheel movement on non-Xorg system,
+      bug #431627 (Halton Huo)
+
+  Translations
+
+    + Khaled Hosny (ar)
+    + Jakub Friedl (cs)
+    + Tshewang Norbu (dz)
+    + David Lodge (en_GB)
+    + Jorge González (es)
+    + Ivar Smolin (et)
+    + Ignacio Casal Quinteiro (gl)
+    + Oldie (he)
+    + Espen Stefansen (nb)
+    + Danishka Navin (si)
+    + Daniel Nylander (sv)
+    + Dr.T.Vasudevan (ta)
+    + Theppitak Karoonboonyanan (th)
+    + Clytie Siddall (vi)
+    + Yang Zhang (zh_CN)
+
 Vino 2.18.1
 ===========
 
