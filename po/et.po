@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Vino HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-04-11 03:34+0100\n"
-"PO-Revision-Date: 2007-05-18 08:07+0200\n"
+"PO-Revision-Date: 2007-06-18 20:18+0300\n"
 "Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "MIME-Version: 1.0\n"
@@ -63,7 +63,7 @@ msgstr "_Küsitakse kinnitust"
 
 #: ../capplet/vino-preferences.glade.h:4
 msgid "Allow other users to _view your desktop"
-msgstr "Teistel kasutajatel on lubatud _vaadata sinu töölauda"
+msgstr "Teistel kasutajatel on lubatud _vaadata Sinu töölauda"
 
 #: ../capplet/vino-preferences.glade.h:5
 msgid "Remote Desktop Preferences"
@@ -79,11 +79,11 @@ msgstr "Teised kasutajad saavad su töölauda vaadata selle käsuga:"
 
 #: ../capplet/vino-preferences.glade.h:8
 msgid "When a user tries to view or control your desktop:"
-msgstr "Kui kasutaja proovib sinu töölauda vaadata:"
+msgstr "Kui kasutaja proovib Sinu töölauda vaadata, siis:"
 
 #: ../capplet/vino-preferences.glade.h:9
 msgid "_Allow other users to control your desktop"
-msgstr "_Teistel kasutajatel lubatakse juhtida sinu töölauda"
+msgstr "_Teistel kasutajatel lubatakse juhtida Sinu töölauda"
 
 #: ../capplet/vino-preferences.glade.h:10
 msgid "_Password:"
@@ -91,7 +91,7 @@ msgstr "_Parool:"
 
 #: ../capplet/vino-preferences.glade.h:11
 msgid "_Require the user to enter this password:"
-msgstr "Kasutajalt nõutakse pa_rooli sisestamist:"
+msgstr "Nõutakse kasutajalt pa_rooli sisestamist:"
 
 #: ../server/vino-dbus-listener.c:180 ../server/vino-dbus-listener.c:210
 #, c-format
@@ -149,18 +149,18 @@ msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"Kasutaja arvutist '%s' proovib üle võrgu vaadata või kasutada sinu töölauda."
+"Kasutaja arvutist '%s' proovib üle võrgu vaadata või kasutada Sinu töölauda."
 
 #: ../server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>Veel üks kasutaja proovib vaadata sinu töölauda.</b></big>"
+msgstr "<big><b>Veel üks kasutaja proovib vaadata Sinu töölauda.</b></big>"
 
 #: ../server/vino-prompt.glade.h:2
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"Kasutaja teisest arvutist proovib üle võrgu vaadata või kasutada sinu "
+"Kasutaja teisest arvutist proovib üle võrgu vaadata või kasutada Sinu "
 "töölauda."
 
 #: ../server/vino-prompt.glade.h:3
@@ -452,21 +452,21 @@ msgstr "Viga libnotify lähtestamisel\n"
 
 #: ../server/vino-status-icon.c:582
 msgid "Another user is viewing your desktop"
-msgstr "Teine kasutaja vaatab sinu töölauda"
+msgstr "Teine kasutaja vaatab Sinu töölauda"
 
 #: ../server/vino-status-icon.c:583
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
-msgstr "Kasutaja arvutist '%s' vaatab üle võrgu sinu töölauda."
+msgstr "Kasutaja arvutist '%s' vaatab üle võrgu Sinu töölauda."
 
 #: ../server/vino-status-icon.c:588
 msgid "Another user is controlling your desktop"
-msgstr "Teine kasutaja juhib sinu töölauda"
+msgstr "Teine kasutaja juhib Sinu töölauda"
 
 #: ../server/vino-status-icon.c:589
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr "Kasutaja arvutist '%s' juhib üle võrgu sinu töölauda."
+msgstr "Kasutaja arvutist '%s' juhib üle võrgu Sinu töölauda."
 
 #: ../server/vino-status-icon.c:611
 #, c-format
