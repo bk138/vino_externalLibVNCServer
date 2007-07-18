@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-18 18:56+0200\n"
-"PO-Revision-Date: 2007-02-18 02:53+0100\n"
+"POT-Creation-Date: 2007-07-18 17:58+0100\n"
+"PO-Revision-Date: 2007-07-18 19:10+0000\n"
 "Last-Translator: Reinout van Schouwen <reinouts@gnome.org>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -195,7 +195,7 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:4
 msgid "Enable remote desktop access"
-msgstr "Bureablad-op-afstand inschakelen"
+msgstr "Bureaublad-op-afstand inschakelen"
 
 #: ../server/vino-server.schemas.in.h:5
 msgid ""
@@ -274,9 +274,9 @@ msgid ""
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
 msgstr ""
-"Somt de authentificatiemethoden op waarmee gebruikers op afstand toegang "
+"Somt de methoden voor aanmeldingscontrole op waarmee gebruikers op afstand toegang "
 "mogen krijgen tot het bureaublad. Er zijn twee mogelijke "
-"authentificatiemethoden; \"vnc\" zorgt dat de gebruiker op afstand om een "
+"controlemethoden; \"vnc\" zorgt dat de gebruiker op afstand om een "
 "wachtwoord wordt gevraagd (het wachtwoord aangegeven door de vnc_password "
 "sleutel) alvorens te verbinden en \"none\" (geen) dat elke gebruiker op "
 "afstand toestaat om te verbinden."
@@ -295,7 +295,7 @@ msgstr "Gebruikers op afstand alleen toestaan het bureaublad te bekijken"
 
 #: ../server/vino-server.schemas.in.h:17
 msgid "Password required for \"vnc\" authentication"
-msgstr "Wachtwoord vereist voor \"vnc\" authentificatie"
+msgstr "Wachtwoord vereist voor \"vnc\"-aanmeldingscontrole"
 
 #: ../server/vino-server.schemas.in.h:18
 msgid "Prompt the user before completing a connection"
@@ -312,7 +312,7 @@ msgid ""
 "encoded."
 msgstr ""
 "Het wachtwoord waar de gebruiker op afstand naar wordt gevraagd als de \"vnc"
-"\" authentificatiemethode wordt gebruikt. Het wachtwoord aangegeven door de "
+"\"-aanmeldingscontrolemethode wordt gebruikt. Het wachtwoord aangegeven door de "
 "sleutel wordt base64 gecodeerd."
 
 #: ../server/vino-server.schemas.in.h:21
