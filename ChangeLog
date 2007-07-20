@@ -1,3 +1,7 @@
+2007-07-20  Jonh Wendell  <jwendell@gnome.org>
+	* server/vino-server.schemas.in: Fix some grammar issues,
+	  closes #457138. Thanks to Og Maciel.
+
 2007-07-09  Jonh Wendell  <jwendell@gnome.org>
 
 	* configure.in: post-release bump to 2.19.6

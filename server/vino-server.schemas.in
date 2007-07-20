@@ -77,8 +77,8 @@
       <locale name="C">
          <short>Listen an alternative port</short>
          <long>
-           If true, the server will listen another port, instead of
-           default (5900). The port must be specified in 'alternative_port'
+           If true, the server will listen to another port, instead of the
+           default (5900). The port must be specified in the 'alternative_port'
            key.
          </long>
       </locale>
@@ -110,8 +110,8 @@
          <short>Require encryption</short>
          <long>
            If true, remote users accessing the desktop are required
-           to be able support encryption. It is highly recommended
-           that you use a client which supports encryption unless the
+           to support encryption. It is highly recommended that you
+           use a client which supports encryption unless the
            intervening network is trusted.
          </long>
       </locale>
