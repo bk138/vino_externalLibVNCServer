@@ -4,15 +4,14 @@
 #
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004, 2006.
 # maria <maria.majadas@hispalinux.es>, 2007.
-# Claudio Saavedra <csaavedra@alumnos.utalca.cl>, (QA) 2007.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007.
-
+# Claudio Saavedra <csaavedra@alumnos.utalca.cl>, (QA) 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD.es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-30 03:21+0100\n"
-"PO-Revision-Date: 2007-06-30 15:47+0200\n"
+"POT-Creation-Date: 2007-07-20 18:49+0100\n"
+"PO-Revision-Date: 2007-07-21 16:37+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,16 +21,17 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ../capplet/vino-preferences.c:634 ../capplet/vino-preferences.c:669
-#: ../server/vino-dbus-listener.c:324
+#: ../capplet/vino-preferences.c:727 ../server/vino-dbus-listener.c:374
+#: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Falló al abrir conexión con bus: %s\n"
 
-#: ../capplet/vino-preferences.c:879
+#: ../capplet/vino-preferences.c:936
 msgid "Send this command by email"
 msgstr "Enviar este comando por correo-e"
 
-#: ../capplet/vino-preferences.c:914
+#: ../capplet/vino-preferences.c:971
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -92,17 +92,18 @@ msgstr "_Contraseña:"
 msgid "_Require the user to enter this password:"
 msgstr "_Requerir que el usuario introduzca una contraseña:"
 
-#: ../server/vino-dbus-listener.c:180 ../server/vino-dbus-listener.c:210
+#: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
+#: ../server/vino-dbus-listener.c:249
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "Se agotó la memoria manejando el mensaje «%s»"
 
-#: ../server/vino-dbus-listener.c:284
+#: ../server/vino-dbus-listener.c:334
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "Se agotó la memoria registrando la ruta al objeto «%s»"
 
-#: ../server/vino-dbus-listener.c:357
+#: ../server/vino-dbus-listener.c:407
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Falló al adquirir el nombre D-Bus «%s»\n"
@@ -189,8 +190,7 @@ msgstr "Número de puerto alternativo"
 
 #: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr ""
-"Dirección de correo-e a la cual debería enviarse la URL del escritorio remoto"
+msgstr "Dirección de correo-e a la cual debería enviarse la URL del escritorio remoto"
 
 #: ../server/vino-server.schemas.in.h:4
 msgid "Enable remote desktop access"
@@ -227,29 +227,27 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
-"If true, remote users accessing the desktop are required to be able support "
+"If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
-"Si es verdadero, se requerirá que los usuarios remotos que accedan al "
-"escritorio soporten encriptación. Se recomienda encarecidamente usar un "
-"cliente que soporte encriptación a no ser que la red interviniente sea de "
-"confianza."
+"Si está activado, se requerirá que los usuarios remotos que accedan al escritorio soporten "
+"cifrado. Se recomienda encarecidamente usar un cliente que soporte "
+"cifrado a no ser que la red interviniente sea de confianza."
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
 msgstr ""
-"Si está activado, la pantalla se bloqueará después de que el último "
-"cliente remoto se desconecte."
+"Si está activado, la pantalla se bloqueará después de que el último cliente "
+"remoto se desconecte."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid ""
-"If true, the server will listen another port, instead of default (5900). The "
-"port must be specified in 'alternative_port' key."
+"If true, the server will listen to another port, instead of the default "
+"(5900). The port must be specified in the 'alternative_port' key."
 msgstr ""
-"Si es «true», el servidor escuchará en otro puerto, en lugar del "
-"predeterminado (5900). El puerto debe especificarse en la clave "
-"«alternative_port»."
+"Si está activado, el servidor escuchará en otro puerto, en lugar del predeterminado "
+"(5900). El puerto debe especificarse en la clave «alternative_port»."
 
 #: ../server/vino-server.schemas.in.h:11
 msgid ""
@@ -301,7 +299,7 @@ msgstr "Preguntar al usuario antes de completar una conexión"
 
 #: ../server/vino-server.schemas.in.h:19
 msgid "Require encryption"
-msgstr "Requerir encriptación"
+msgstr "Requerir cifrado"
 
 #: ../server/vino-server.schemas.in.h:20
 msgid ""
@@ -479,8 +477,7 @@ msgstr "Otro usuario está controlando su escritorio."
 #: ../server/vino-status-icon.c:583
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr ""
-"Un usuario en el equipo «%s» está controlando su escritorio remotamente."
+msgstr "Un usuario en el equipo «%s» está controlando su escritorio remotamente."
 
 #: ../server/vino-status-icon.c:605
 #, c-format
@@ -514,3 +511,4 @@ msgstr "Iniciando el servidor de escritorio remoto"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "No iniciando el servidor de escritorio remoto"
+
