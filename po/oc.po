@@ -324,8 +324,7 @@ msgstr ""
 #: ../server/vino-status-icon.c:245
 msgid "translator-credits"
 msgstr ""
-"La còla occitana de revirada d'Ubuntu, 2006 - ubuntu-l10n-"
-"oci@lists.ubuntu.com"
+"La còla occitana de revirada d'Ubuntu, 2007 - ubuntu-l10n-oci@lists.ubuntu.com"
 
 #: ../server/vino-status-icon.c:251 ../server/vino-status-icon.c:534
 msgid "GNOME Remote Desktop"
