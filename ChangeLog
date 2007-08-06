@@ -1,4 +1,8 @@
 2007-08-06  Jonh Wendell  <jwendell@gnome.org>
+	* server/vino-mdns.c: Include hostname in Avahi service name,
+	  closes #461773.
+
+2007-08-06  Jonh Wendell  <jwendell@gnome.org>
 	* configure.in: Show the configure summary
 
 2007-07-20  Jonh Wendell  <jwendell@gnome.org>

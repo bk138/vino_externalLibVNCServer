@@ -68,8 +68,9 @@ vino_mdns_get_service_name (void)
            * translated "vino-mdns:showusername" to anything
            * other than "1"
            */
-          mdns_service_name = g_strdup_printf (_("%s's remote desktop"),
-                                               g_get_user_name ());  
+          mdns_service_name = g_strdup_printf (_("%s's remote desktop on %s"),
+                                               g_get_user_name (),
+                                               g_get_host_name ());  
         }
     }
 
