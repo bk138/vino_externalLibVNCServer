@@ -1,4 +1,9 @@
 2007-08-06  Jonh Wendell  <jwendell@gnome.org>
+	* server/vino-server.c: (vino_server_auth_client):
+	  Don't call vncEncryptBytes() if the password is NULL, avoiding a
+	  crash (See: Ubuntu #128746)
+
+2007-08-06  Jonh Wendell  <jwendell@gnome.org>
 	* server/vino-mdns.c: Include hostname in Avahi service name,
 	  closes #461773.
 

@@ -599,6 +599,9 @@ vino_server_auth_client (VinoServer *server,
 
   rfb_client = client->rfb_client;
 
+  if (!password)
+    goto auth_failed;
+
   vncEncryptBytes (client->rfb_client->authChallenge, password);
 
   memset (password, 0, strlen (password));
