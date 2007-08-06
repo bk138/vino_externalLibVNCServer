@@ -335,3 +335,18 @@ po/Makefile.in
 AC_OUTPUT([
 capplet/vino-preferences.desktop.in
 ])
+
+echo "
+Configure summary:
+
+	Compiler ...................:  ${CC} 
+	Compiler Flags .............:  ${CFLAGS}
+	Prefix......................:  ${prefix}
+
+	Avahi support ..............:  ${VINO_ENABLE_MDNS}
+	Notify support .............:  ${have_libnotify}
+	GNOME Keyring support.......:  ${enable_gnome_keyring}
+	Session support.............:  ${enable_session_support}
+	HTTP server.................:  ${enable_http_server}
+	DEBUG messages..............:  ${enable_debug}
+"
