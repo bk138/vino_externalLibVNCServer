@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD.es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-20 18:49+0100\n"
-"PO-Revision-Date: 2007-07-21 16:37+0200\n"
+"POT-Creation-Date: 2007-08-07 03:23+0100\n"
+"PO-Revision-Date: 2007-08-07 12:22+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -132,8 +132,8 @@ msgstr "0"
 #.
 #: ../server/vino-mdns.c:71
 #, c-format
-msgid "%s's remote desktop"
-msgstr "Escritorio remoto de %s"
+msgid "%s's remote desktop on %s"
+msgstr "Escritorio remoto de %s en %s"
 
 #: ../server/vino-prompt.c:142
 msgid "Screen"
@@ -231,9 +231,9 @@ msgid ""
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
-"Si está activado, se requerirá que los usuarios remotos que accedan al escritorio soporten "
-"cifrado. Se recomienda encarecidamente usar un cliente que soporte "
-"cifrado a no ser que la red interviniente sea de confianza."
+"Si está activado, se requerirá que los usuarios remotos que accedan al "
+"escritorio soporten cifrado. Se recomienda encarecidamente usar un cliente "
+"que soporte cifrado a no ser que la red interviniente sea de confianza."
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
@@ -246,8 +246,9 @@ msgid ""
 "If true, the server will listen to another port, instead of the default "
 "(5900). The port must be specified in the 'alternative_port' key."
 msgstr ""
-"Si está activado, el servidor escuchará en otro puerto, en lugar del predeterminado "
-"(5900). El puerto debe especificarse en la clave «alternative_port»."
+"Si está activado, el servidor escuchará en otro puerto, en lugar del "
+"predeterminado (5900). El puerto debe especificarse en la clave "
+"«alternative_port»."
 
 #: ../server/vino-server.schemas.in.h:11
 msgid ""
@@ -397,7 +398,9 @@ msgstr ""
 #. Translators comment: put your own name here to appear in the about dialog.
 #: ../server/vino-status-icon.c:250
 msgid "translator-credits"
-msgstr "Francisco Javier F. Serrador <serrador@openshine.com>"
+msgstr ""
+"Jorge González <jorgegonz@svn.gnome.org>, 2007"
+"Francisco Javier F. Serrador <serrador@openshine.com>, 2004, 2006"
 
 #: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:560
 msgid "GNOME Remote Desktop"
