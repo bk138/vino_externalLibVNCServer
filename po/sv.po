@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-01 20:40+0200\n"
-"PO-Revision-Date: 2007-08-01 20:41+0100\n"
+"POT-Creation-Date: 2007-08-09 01:14+0200\n"
+"PO-Revision-Date: 2007-08-09 01:15+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -128,8 +128,8 @@ msgstr "1"
 #.
 #: ../server/vino-mdns.c:71
 #, c-format
-msgid "%s's remote desktop"
-msgstr "%s fjärrskrivbord"
+msgid "%s's remote desktop on %s"
+msgstr "Fjärrskrivbord för %s på %s"
 
 #: ../server/vino-prompt.c:142
 msgid "Screen"
@@ -389,6 +389,7 @@ msgstr[0] "En person är ansluten"
 msgstr[1] "%d personer är anslutna"
 
 #: ../server/vino-status-icon.c:562
+#, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Fel vid initiering av libnotify\n"
 
