@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-02 16:27+0200\n"
-"PO-Revision-Date: 2007-08-02 16:28+0200\n"
-"Last-Translator: Espen Stefansen <espenas@gmail.com>\n"
+"POT-Creation-Date: 2007-08-09 11:19+0200\n"
+"PO-Revision-Date: 2007-08-09 11:19+0200\n"
+"Last-Translator: Kjartan Maraas <espenas@gmail.com>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -128,8 +128,8 @@ msgstr "vino-mdns:showusername"
 #.
 #: ../server/vino-mdns.c:71
 #, c-format
-msgid "%s's remote desktop"
-msgstr "Eksternt skrivebord for %s"
+msgid "%s's remote desktop on %s"
+msgstr "Eksternt skrivebord for %s på %s"
 
 #: ../server/vino-prompt.c:142
 msgid "Screen"
@@ -223,11 +223,16 @@ msgid ""
 "If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
-msgstr "Hvis denne settes til «true» kreves det at eksterne brukere må støtte kryptering. Det er anbefalt å bruke en klient som støtter kryptering med mindre det mellomliggende nettverket er sikkert."
+msgstr ""
+"Hvis denne settes til «true» kreves det at eksterne brukere må støtte "
+"kryptering. Det er anbefalt å bruke en klient som støtter kryptering med "
+"mindre det mellomliggende nettverket er sikkert."
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr "Hvis denne settes til true vil skjermen låses etter at siste eksterne klient kobler fra."
+msgstr ""
+"Hvis denne settes til true vil skjermen låses etter at siste eksterne klient "
+"kobler fra."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid ""
@@ -447,6 +452,7 @@ msgstr[0] "En person er koblet til"
 msgstr[1] "%d personer er koblet til"
 
 #: ../server/vino-status-icon.c:562
+#, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Feil ved initiering av libnotify\n"
 
