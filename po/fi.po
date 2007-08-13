@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-15 20:46+0100\n"
+"POT-Creation-Date: 2007-08-13 08:14+0300\n"
 "PO-Revision-Date: 2007-02-20 07:47+0300\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -130,8 +130,8 @@ msgstr "1"
 #.
 #: ../server/vino-mdns.c:71
 #, c-format
-msgid "%s's remote desktop"
-msgstr "Käyttäjän \"%s\" etätyöpöytä"
+msgid "%s's remote desktop on %s"
+msgstr "Käyttäjän \"%s\" etätyöpöytä koneella %s"
 
 #: ../server/vino-prompt.c:142
 msgid "Screen"
@@ -221,24 +221,25 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
-"If true, remote users accessing the desktop are required to be able support "
+"If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
-"Jos tosi, työpöydälle etäyhteyttä haluavien käyttäjien pitää tukea salausta. "
-"On erittäin suositeltavaa, että käytetään salausta tukevia asiakkaita, ellei "
-"käytetty verkko ole luotettava."
+"Jos tosi, työpöydälle etäyhteyttä haluavien käyttäjien täytyy käyttää "
+". On erittäin suositeltavaa, että käytetään salausta tukevia ohjelmia, "
+"ellei välissä oleva verkko ole luotettava."
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr "Jos tosi, näyttö lukitaan kun viimeinen etäkäyttäjä katkaisee yhteyden."
+msgstr ""
+"Jos tosi, näyttö lukitaan kun viimeinen etäkäyttäjä katkaisee yhteyden."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid ""
-"If true, the server will listen another port, instead of default (5900). The "
-"port must be specified in 'alternative_port' key."
+"If true, the server will listen to another port, instead of the default "
+"(5900). The port must be specified in the 'alternative_port' key."
 msgstr ""
-"Jos tosi, palvelin kuuntelee muussa kuin oletusportissa (5900). Portti "
+"Jos tosi, palvelin kuuntelee muuta kuin oletusporttia (5900). Portti "
 "täytyy antaa avaimessa \"alternative_port\"."
 
 #: ../server/vino-server.schemas.in.h:11
@@ -452,6 +453,7 @@ msgstr[0] "Yksi henkilö on yhteydessä"
 msgstr[1] "%d henkilöä on yhteydessä"
 
 #: ../server/vino-status-icon.c:562
+#, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Virhe alustettaessa libnotify-kirjastoa\n"
 
