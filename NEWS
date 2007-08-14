@@ -1,3 +1,42 @@
+Vino 2.19.90
+============
+
+  Features
+
+    + Included hostname in Avahi service name
+    + Show the configure summary
+
+  Fixes
+
+    + Minor fixes
+
+  Translations
+
+    + Runa Bhattacharjee (bn_IN)
+    + Denis Radovanović (bs)
+    + Hendrik Richter (de)
+    + Athanasios Lefteris (el)
+    + David Lodge (en_GB)
+    + Jorge González (es)
+    + Ivar Smolin (et)
+    + Iñaki Larrañaga Murgoitio (eu)
+    + Ilkka Tuohela (fi)
+    + Ankit Patel (gu)
+    + Rajesh Ranjan (hi)
+    + Takeshi AIHANA (ja)
+    + Vladimer Sichinava (ka)
+    + Raivis Dejus (lv)
+    + Hasbullah Bin Pit (ms)
+    + Kjartan Maraas (nb)
+    + Wouter Bolsterlee (nl)
+    + Gora Mohanty (or)
+    + Og Maciel (pt_BR)
+    + Leonid Kanter (ru)
+    + Daniel Nylander (sv)
+    + Theppitak Karoonboonyanan (th)
+    + Baris Cicek (tr)
+    + Maxim Dziumanenko (uk)
+
 Vino 2.19.5
 ===========
 
