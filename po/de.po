@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-25 19:38+0200\n"
-"PO-Revision-Date: 2007-07-25 19:38+0200\n"
+"POT-Creation-Date: 2007-08-15 12:29+0200\n"
+"PO-Revision-Date: 2007-08-15 12:30+0200\n"
 "Last-Translator: Hendrik Richter <hendrikr@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -133,8 +133,8 @@ msgstr "0"
 #.
 #: ../server/vino-mdns.c:71
 #, c-format
-msgid "%s's remote desktop"
-msgstr "Entfernter Desktop von %s"
+msgid "%s's remote desktop on %s"
+msgstr "Entfernter Desktop von %s auf %s"
 
 #: ../server/vino-prompt.c:142
 msgid "Screen"
