@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-21 15:51-0300\n"
-"PO-Revision-Date: 2007-07-21 16:08-0300\n"
+"POT-Creation-Date: 2007-08-07 03:23+0100\n"
+"PO-Revision-Date: 2007-08-15 12:42-0500\n"
 "Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
@@ -20,8 +20,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../capplet/vino-preferences.c:634 ../capplet/vino-preferences.c:669
-#: ../capplet/vino-preferences.c:727 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:634
+#: ../capplet/vino-preferences.c:669
+#: ../capplet/vino-preferences.c:727
+#: ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
@@ -92,7 +94,8 @@ msgstr "_Senha:"
 msgid "_Require the user to enter this password:"
 msgstr "_Exigir que o usuário digite esta senha:"
 
-#: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
+#: ../server/vino-dbus-listener.c:188
+#: ../server/vino-dbus-listener.c:218
 #: ../server/vino-dbus-listener.c:249
 #, c-format
 msgid "Out of memory handling '%s' message"
@@ -109,12 +112,8 @@ msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Falha ao adquirir nome D-BUS \"%s\"\n"
 
 #: ../server/vino-main.c:83
-msgid ""
-"Your XServer does not support the XTest extension - remote desktop access "
-"will be view-only\n"
-msgstr ""
-"Seu servidor X não suporta a extensão XTest - o acesso à área de trabalho "
-"remota será apenas para visualização\n"
+msgid "Your XServer does not support the XTest extension - remote desktop access will be view-only\n"
+msgstr "Seu servidor X não suporta a extensão XTest - o acesso à área de trabalho remota será apenas para visualização\n"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -132,8 +131,8 @@ msgstr "vino-mdns:showusername"
 #.
 #: ../server/vino-mdns.c:71
 #, c-format
-msgid "%s's remote desktop"
-msgstr "Área de trabalho remota de %s"
+msgid "%s's remote desktop on %s"
+msgstr "Área de trabalho remota de %s em %s"
 
 #: ../server/vino-prompt.c:142
 msgid "Screen"
@@ -145,25 +144,16 @@ msgstr "A tela na qual exibir a notificação"
 
 #: ../server/vino-prompt.c:343
 #, c-format
-msgid ""
-"A user on the computer '%s' is trying to remotely view or control your "
-"desktop."
-msgstr ""
-"Um usuário no computador \"%s\" está tentando ver ou controlar sua área de "
-"trabalho remotamente."
+msgid "A user on the computer '%s' is trying to remotely view or control your desktop."
+msgstr "Um usuário no computador \"%s\" está tentando ver ou controlar sua área de trabalho remotamente."
 
 #: ../server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr ""
-"<big><b>Um outro usuário está tentando ver sua área de trabalho.</b></big>"
+msgstr "<big><b>Um outro usuário está tentando ver sua área de trabalho.</b></big>"
 
 #: ../server/vino-prompt.glade.h:2
-msgid ""
-"A user on another computer is trying to remotely view or control your "
-"desktop."
-msgstr ""
-"Um usuário em um outro computador está tentando ver ou controlar sua área de "
-"trabalho remotamente."
+msgid "A user on another computer is trying to remotely view or control your desktop."
+msgstr "Um usuário em um outro computador está tentando ver ou controlar sua área de trabalho remotamente."
 
 #: ../server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
@@ -173,11 +163,13 @@ msgstr "Você deseja permitir que eles façam isso?"
 msgid "Question"
 msgstr "Pergunta"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
+#: ../server/vino-prompt.glade.h:5
+#: ../server/vino-util.c:63
 msgid "_Allow"
 msgstr "_Permitir"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:6
+#: ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "_Recusar"
 
@@ -191,92 +183,47 @@ msgstr "Número da porta alternativa"
 
 #: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr ""
-"Endereço de e-mail para o qual o URL da área de trabalho remota deve ser "
-"enviada"
+msgstr "Endereço de e-mail para o qual o URL da área de trabalho remota deve ser enviada"
 
 #: ../server/vino-server.schemas.in.h:4
 msgid "Enable remote desktop access"
 msgstr "Habilitar o acesso à área de trabalho remota"
 
 #: ../server/vino-server.schemas.in.h:5
-msgid ""
-"If true, allows remote access to the desktop via the RFB protocol. Users on "
-"remote machines may then connect to the desktop using a vncviewer."
-msgstr ""
-"Se verdadeiro, permite o acesso remoto à área de trabalho via o protocolo "
-"RFB. Usuários em máquinas remotas poderão então se conectar à área de "
-"trabalho usando um visualizador VNC."
+msgid "If true, allows remote access to the desktop via the RFB protocol. Users on remote machines may then connect to the desktop using a vncviewer."
+msgstr "Se verdadeiro, permite o acesso remoto à área de trabalho via o protocolo RFB. Usuários em máquinas remotas poderão então se conectar à área de trabalho usando um visualizador VNC."
 
 #: ../server/vino-server.schemas.in.h:6
-msgid ""
-"If true, remote users accessing the desktop are not allowed access until the "
-"user on the host machine approves the connection. Recommended especially "
-"when access is not password protected."
-msgstr ""
-"Se verdadeiro, usuários remotos acessando a área de trabalho não poderão "
-"acessar até que o usuário na máquina acessada aprove a conexão. Recomendado "
-"especialmente quando o acesso não é protegido por senha."
+msgid "If true, remote users accessing the desktop are not allowed access until the user on the host machine approves the connection. Recommended especially when access is not password protected."
+msgstr "Se verdadeiro, usuários remotos acessando a área de trabalho não poderão acessar até que o usuário na máquina acessada aprove a conexão. Recomendado especialmente quando o acesso não é protegido por senha."
 
 #: ../server/vino-server.schemas.in.h:7
-msgid ""
-"If true, remote users accessing the desktop are only allowed to view the "
-"desktop. Remote users will not be able to use the mouse or keyboard."
-msgstr ""
-"Se verdadeiro, a área de trabalho será a única coisa que usuários remotos "
-"poderão ver. Usuários remotos não poderão usar o mouse ou o teclado."
+msgid "If true, remote users accessing the desktop are only allowed to view the desktop. Remote users will not be able to use the mouse or keyboard."
+msgstr "Se verdadeiro, a área de trabalho será a única coisa que usuários remotos poderão ver. Usuários remotos não poderão usar o mouse ou o teclado."
 
 #: ../server/vino-server.schemas.in.h:8
-msgid ""
-"If true, remote users accessing the desktop are required to support "
-"encryption. It is highly recommended that you use a client which supports "
-"encryption unless the intervening network is trusted."
-msgstr ""
-"Se verdadeiro, usuários remotos acessando a área de trabalho precisarão ter "
-"suporte a criptografia. É altamente recomendado que você use um cliente com "
-"suporte a criptografia, a não ser que a rede envolvida seja segura."
+msgid "If true, remote users accessing the desktop are required to support encryption. It is highly recommended that you use a client which supports encryption unless the intervening network is trusted."
+msgstr "Se verdadeiro, usuários remotos acessando a área de trabalho precisarão ter suporte a criptografia. É altamente recomendado que você use um cliente com suporte a criptografia, a não ser que a rede envolvida seja segura."
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr ""
-"Se verdadeiro, a tela será trancada após a saída do último cliente remoto."
+msgstr "Se verdadeiro, a tela será trancada após a saída do último cliente remoto."
 
 #: ../server/vino-server.schemas.in.h:10
-msgid ""
-"If true, the server will listen to another port, instead of the default "
-"(5900). The port must be specified in the 'alternative_port' key."
-msgstr ""
-"Se verdadeiro, o servidor escutará outra porta, em vez da padrão (5900). A "
-"porta deve ser especificada na chave \"alternative_port\"."
+msgid "If true, the server will listen to another port, instead of the default (5900). The port must be specified in the 'alternative_port' key."
+msgstr "Se verdadeiro, o servidor escutará outra porta, em vez da padrão (5900). A porta deve ser especificada na chave \"alternative_port\"."
 
 #: ../server/vino-server.schemas.in.h:11
-msgid ""
-"If true, the server will only accept connections from localhost and network "
-"connections will be rejected. Set this option to true if you wish to "
-"exclusively use a tunneling mechanism to access the server, such as ssh."
-msgstr ""
-"Se verdadeiro, o servidor aceitará somente conexões do localhost e as "
-"conexões de rede serão rejeitadas. Defina esta opção como verdadeira se você "
-"deseja usar exclusivamente um mecanismo de encapsulamento, para acessar o "
-"servidor, como o ssh."
+msgid "If true, the server will only accept connections from localhost and network connections will be rejected. Set this option to true if you wish to exclusively use a tunneling mechanism to access the server, such as ssh."
+msgstr "Se verdadeiro, o servidor aceitará somente conexões do localhost e as conexões de rede serão rejeitadas. Defina esta opção como verdadeira se você deseja usar exclusivamente um mecanismo de encapsulamento, para acessar o servidor, como o ssh."
 
 #: ../server/vino-server.schemas.in.h:12
 msgid "Listen an alternative port"
 msgstr "Escutar uma porta alternativa"
 
 #: ../server/vino-server.schemas.in.h:13
-msgid ""
-"Lists the authentication methods with which remote users may access the "
-"desktop. There are two possible authentication methods; \"vnc\" causes the "
-"remote user to be prompted for a password (the password is specified by the "
-"vnc_password key) before connecting and \"none\" which allows any remote "
-"user to connect."
-msgstr ""
-"Lista os métodos de autenticação com os quais usuários remotos podem acessar "
-"a área de trabalho. Existem dois métodos de autenticação possíveis: \"vnc\" "
-"faz com que seja pedida uma senha ao usuário remoto (a senha é especificada "
-"pela chave vnc_password) antes de conectar e \"nenhum\" que permite a "
-"qualquer usuário remoto conectar."
+msgid "Lists the authentication methods with which remote users may access the desktop. There are two possible authentication methods; \"vnc\" causes the remote user to be prompted for a password (the password is specified by the vnc_password key) before connecting and \"none\" which allows any remote user to connect."
+msgstr "Lista os métodos de autenticação com os quais usuários remotos podem acessar a área de trabalho. Existem dois métodos de autenticação possíveis: \"vnc\" faz com que seja pedida uma senha ao usuário remoto (a senha é especificada pela chave vnc_password) antes de conectar e \"nenhum\" que permite a qualquer usuário remoto conectar."
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Lock the screen when last user disconnect"
@@ -303,44 +250,24 @@ msgid "Require encryption"
 msgstr "Exigir criptografia"
 
 #: ../server/vino-server.schemas.in.h:20
-msgid ""
-"The password which the remote user will be prompted for if the \"vnc\" "
-"authentication method is used. The password specified by the key is base64 "
-"encoded."
-msgstr ""
-"A senha que será pedida ao usuário remoto se o método de autenticação \"vnc"
-"\" for usado. A senha especificada pela chave é codificada em base64."
+msgid "The password which the remote user will be prompted for if the \"vnc\" authentication method is used. The password specified by the key is base64 encoded."
+msgstr "A senha que será pedida ao usuário remoto se o método de autenticação \"vnc\" for usado. A senha especificada pela chave é codificada em base64."
 
 #: ../server/vino-server.schemas.in.h:21
-msgid ""
-"The port which the server will listen to if the 'use_alternative_port' key "
-"is set to true. Valid values are in the range from 5000 to 50000."
-msgstr ""
-"A porta que o servidor escutará se a chave \"use_alternative_port\" "
-"estiver definida como verdadeira. Os valores válidos vão de 5000 a 50000."
+msgid "The port which the server will listen to if the 'use_alternative_port' key is set to true. Valid values are in the range from 5000 to 50000."
+msgstr "A porta que o servidor escutará se a chave \"use_alternative_port\" estiver definida como verdadeira. Os valores válidos vão de 5000 a 50000."
 
 #: ../server/vino-server.schemas.in.h:22
-msgid ""
-"This key specifies the e-mail address to which the remote desktop URL should "
-"be sent if the user clicks on the URL in the Remote Desktop preferences "
-"dialog."
-msgstr ""
-"Esta chave especifica o endereço de e-mail para o qual a URL da área de "
-"trabalho remota deve ser enviada se o usuário clicar nela no diálogo de "
-"preferências da Área de Trabalho Remota."
+msgid "This key specifies the e-mail address to which the remote desktop URL should be sent if the user clicks on the URL in the Remote Desktop preferences dialog."
+msgstr "Esta chave especifica o endereço de e-mail para o qual a URL da área de trabalho remota deve ser enviada se o usuário clicar nela no diálogo de preferências da Área de Trabalho Remota."
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr ""
-"O servidor da Área de Trabalho Remota já está sendo executado; saindo...\n"
+msgstr "O servidor da Área de Trabalho Remota já está sendo executado; saindo...\n"
 
 #: ../server/vino-shell.c:79
-msgid ""
-"Problem registering the remote desktop server with bonobo-activation; "
-"exiting ...\n"
-msgstr ""
-"Problemas ao registrar o servidor da área de trabalho remota com bonobo-"
-"activation; saindo...\n"
+msgid "Problem registering the remote desktop server with bonobo-activation; exiting ...\n"
+msgstr "Problemas ao registrar o servidor da área de trabalho remota com bonobo-activation; saindo...\n"
 
 #: ../server/vino-status-icon.c:204
 #, c-format
@@ -383,21 +310,16 @@ msgstr ""
 "\n"
 "O Vino é software livre; você pode redistribuí-lo e/ou modificá-lo sob os \n"
 "termos da Licença Pública Geral GNU, conforme publicada pela Free Software \n"
-"Foundation; tanto a versão 2 da Licença como (a seu critério) qualquer "
-"versão\n"
+"Foundation; tanto a versão 2 da Licença como (a seu critério) qualquer versão\n"
 "mais nova.\n"
 "\n"
 "O Vino é distribuído na expectativa de ser útil, mas SEM QUALQUER GARANTIA;\n"
-"sem mesmo a garantia implícita de COMERCIALIZAÇÃO ou de ADEQUAÇÃO A "
-"QUALQUER\n"
-"PROPÓSITO EM PARTICULAR. Consulte a Licença Pública Geral GNU para obter "
-"mais\n"
+"sem mesmo a garantia implícita de COMERCIALIZAÇÃO ou de ADEQUAÇÃO A QUALQUER\n"
+"PROPÓSITO EM PARTICULAR. Consulte a Licença Pública Geral GNU para obter mais\n"
 "detalhes.\n"
 "\n"
-"Você deve ter recebido uma cópia da Licença Pública Geral GNU junto com "
-"este\n"
-"programa; caso contrario, escreva para a Free SoftwareFoundation, Inc., 51 "
-"Franklin\n"
+"Você deve ter recebido uma cópia da Licença Pública Geral GNU junto com este\n"
+"programa; caso contrario, escreva para a Free SoftwareFoundation, Inc., 51 Franklin\n"
 "St, Fifth Floor, Boston, MA02110-1301 USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
@@ -410,7 +332,8 @@ msgstr ""
 "Jonh Wendell <wendell@bani.com.br>\n"
 "Og Maciel <ogmaciel@gnome.org>"
 
-#: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:560
+#: ../server/vino-status-icon.c:256
+#: ../server/vino-status-icon.c:560
 msgid "GNOME Remote Desktop"
 msgstr "Área de Trabalho Remota do GNOME"
 
@@ -479,8 +402,7 @@ msgstr "Outro usuário está vendo sua área de trabalho"
 #: ../server/vino-status-icon.c:577
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
-msgstr ""
-"Um usuário no computador \"%s\" está vendo sua área de trabalho remotamente."
+msgstr "Um usuário no computador \"%s\" está vendo sua área de trabalho remotamente."
 
 #: ../server/vino-status-icon.c:582
 msgid "Another user is controlling your desktop"
@@ -489,9 +411,7 @@ msgstr "Um outro usuário está controlando sua área de trabalho"
 #: ../server/vino-status-icon.c:583
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr ""
-"Um usuário no computador \"%s\" está controlando sua área de trabalho "
-"remotamente."
+msgstr "Um usuário no computador \"%s\" está controlando sua área de trabalho remotamente."
 
 #: ../server/vino-status-icon.c:605
 #, c-format
@@ -514,8 +434,7 @@ msgstr "A ativação de %s falhou: Erro Desconhecido\n"
 
 #: ../session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr ""
-"Falha ao ativar o servidor da área de trabalho remota: muitas tentativas\n"
+msgstr "Falha ao ativar o servidor da área de trabalho remota: muitas tentativas\n"
 
 #: ../session/vino-session.c:295
 msgid "Starting remote desktop server"
@@ -527,107 +446,76 @@ msgstr "Não iniciando o servidor da área de trabalho remota"
 
 #~ msgid "failed to register with the message bus"
 #~ msgstr "falha ao registrar junto ao serviço de mensagens"
-
 #~ msgid "not connected to the message bus"
 #~ msgstr "não conectado ao serviço de mensagens"
-
 #~ msgid "Error in dbus"
 #~ msgstr "Erro no dbus"
-
 #~ msgid "The screen to be monitored"
 #~ msgstr "A tela a ser monitorada"
-
 #~ msgid "The screen for which to create a VNC server"
 #~ msgstr "A tela para a qual criar um servidor VNC"
-
 #~ msgid "On Hold"
 #~ msgstr "Em Espera"
-
 #~ msgid "Place all clients on hold"
 #~ msgstr "Colocar todos os clientes em espera"
-
 #~ msgid "Prompt enabled"
 #~ msgstr "Notificação habilitada"
-
 #~ msgid "Prompt the user about connection attempts"
 #~ msgstr "Notificar o usuário sobre tentativas de conexão"
-
 #~ msgid "View Only"
 #~ msgstr "Apenas para visualização"
-
 #~ msgid "Disallow keyboard/pointer input from clients"
 #~ msgstr "Não permitir entrada de teclado/mouse dos clientes"
-
 #~ msgid "Local Only"
 #~ msgstr "Somente Local"
-
 #~ msgid "Require Encryption"
 #~ msgstr "Exigir criptografia"
-
 #~ msgid "Require clients to use encryption"
 #~ msgstr "Exige que os clientes usem criptografia"
-
 #~ msgid "Authentication methods"
 #~ msgstr "Métodos de autenticação"
-
 #~ msgid "The authentication methods this server should allow"
 #~ msgstr "Os métodos de autenticação que esse servidor deve permitir"
-
 #~ msgid "VNC Password"
 #~ msgstr "Senha do VNC"
-
 #~ msgid ""
 #~ "The password (base64 encoded) used to authenticate types using the "
 #~ "VncAuth method"
 #~ msgstr ""
 #~ "A senha (codificada em base64) usada para autenticar tipos usando o "
 #~ "método VncAuth"
-
 #~ msgid "Use an alternative port"
 #~ msgstr "Usar uma porta alternativa"
-
 #~ msgid "Listen on the port specified by the 'alternative-port' property"
 #~ msgstr "Escutar na porta especificada pela propriedade 'alternative-port'"
-
 #~ msgid ""
 #~ "Listen on the specified port number if the 'use-alternative-port' "
 #~ "property is TRUE"
 #~ msgstr ""
 #~ "Escutar no número da porta especificada se a propriedade 'use-alternative-"
 #~ "port' for VERDADEIRA"
-
 #~ msgid "Port server number"
 #~ msgstr "Número da porta do servidor"
-
 #~ msgid "The port used by this server"
 #~ msgstr "A porta utilizada por este servidor"
-
 #~ msgid "    "
 #~ msgstr "    "
-
 #~ msgid "        "
 #~ msgstr "        "
-
 #~ msgid "*"
 #~ msgstr "*"
-
 #~ msgid "Address"
 #~ msgstr "Endereço"
-
 #~ msgid "The address pointed to by the widget"
 #~ msgstr "O endereço apontado pelo componente"
-
 #~ msgid "Tooltip"
 #~ msgstr "Dica de ferramenta"
-
 #~ msgid "A tooltip for this URL"
 #~ msgstr "Uma dica de ferramenta para essa URL"
-
 #~ msgid "URL color"
 #~ msgstr "Cor da URL"
-
 #~ msgid "The color of the URL's label"
 #~ msgstr "A cor do rótulo da URL"
-
 #~ msgid "_Ensure the user is using encryption"
 #~ msgstr "_Garantir que o usuário esteja usando criptografia"
+
