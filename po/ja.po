@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-21 09:49+0900\n"
-"PO-Revision-Date: 2007-07-21 09:48+0900\n"
+"POT-Creation-Date: 2007-08-19 23:02+0900\n"
+"PO-Revision-Date: 2007-08-19 23:02+0900\n"
 "Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
 "Language-Team: Japanese <translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -129,8 +129,8 @@ msgstr "42"
 #.
 #: ../server/vino-mdns.c:71
 #, c-format
-msgid "%s's remote desktop"
-msgstr "%s さんのリモート・デスクトップ"
+msgid "%s's remote desktop on %s"
+msgstr "%s@%s さんのリモート・デスクトップ"
 
 #: ../server/vino-prompt.c:142
 msgid "Screen"
@@ -454,6 +454,7 @@ msgstr[0] " 1人のユーザが接続しています"
 msgstr[1] " %d人のユーザが接続しています"
 
 #: ../server/vino-status-icon.c:562
+#, c-format
 msgid "Error initializing libnotify\n"
 msgstr "libnotify を初期化する際にエラー\n"
 
