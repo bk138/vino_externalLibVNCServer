@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-26 01:01+0100\n"
-"PO-Revision-Date: 2007-01-26 01:02+0100\n"
+"POT-Creation-Date: 2007-08-21 00:01+0200\n"
+"PO-Revision-Date: 2007-08-21 00:19+0200\n"
 "Last-Translator: Josep Puigdemont <josep.puigdemont@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,16 +16,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../capplet/vino-preferences.c:619 ../server/vino-dbus-listener.c:324
+#: ../capplet/vino-preferences.c:634 ../capplet/vino-preferences.c:669
+#: ../capplet/vino-preferences.c:727 ../server/vino-dbus-listener.c:374
+#: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Ha fallat obrir la connexió al bus: %s\n"
 
-#: ../capplet/vino-preferences.c:832
+#: ../capplet/vino-preferences.c:936
 msgid "Send this command by email"
 msgstr "Envia aquesta ordre per correu"
 
-#: ../capplet/vino-preferences.c:867
+#: ../capplet/vino-preferences.c:971
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -84,19 +86,20 @@ msgstr "_Contrasenya:"
 
 #: ../capplet/vino-preferences.glade.h:11
 msgid "_Require the user to enter this password:"
-msgstr "Demana la següent cont_rasenya:"
+msgstr "Demana aquesta cont_rasenya:"
 
-#: ../server/vino-dbus-listener.c:180 ../server/vino-dbus-listener.c:210
+#: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
+#: ../server/vino-dbus-listener.c:249
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "No hi ha hagut prou memòria per a gestionar el missatge «%s»"
 
-#: ../server/vino-dbus-listener.c:284
+#: ../server/vino-dbus-listener.c:334
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "No hi ha hagut prou memòria per a registrar el camí de l'objecte «%s»"
 
-#: ../server/vino-dbus-listener.c:357
+#: ../server/vino-dbus-listener.c:407
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "No s'ha pogut obtenir el nom D-Bus «%s»\n"
@@ -125,18 +128,18 @@ msgstr "vino-mdns:showusername"
 #.
 #: ../server/vino-mdns.c:71
 #, c-format
-msgid "%s's remote desktop"
-msgstr "Escriptori remot de %s"
+msgid "%s's remote desktop on %s"
+msgstr "Escriptori remot de %s a %s"
 
-#: ../server/vino-prompt.c:143
+#: ../server/vino-prompt.c:142
 msgid "Screen"
 msgstr "Pantalla"
 
-#: ../server/vino-prompt.c:144
+#: ../server/vino-prompt.c:143
 msgid "The screen on which to display the prompt"
 msgstr "La pantalla on mostrar l'indicador"
 
-#: ../server/vino-prompt.c:344
+#: ../server/vino-prompt.c:343
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -186,7 +189,7 @@ msgstr "Número de port alternatiu"
 #: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr ""
-"Adreces de correu a les quals s'hauria d'enviar l'URL de l'escriptori remot"
+"Adreça de correu a la qual s'hauria d'enviar l'URL de l'escriptori remot"
 
 #: ../server/vino-server.schemas.in.h:4
 msgid "Enable remote desktop access"
@@ -198,8 +201,8 @@ msgid ""
 "remote machines may then connect to the desktop using a vncviewer."
 msgstr ""
 "Si s'habilita, permet l'accés remot a l'escriptori a través del protocol "
-"RFB. Els usuaris en màquines remotes es poden connectar a l'escriptori fent "
-"servir vncviewer."
+"RFB. Els usuaris en màquines remotes es poden connectar a l'escriptori si "
+"utilitzen el vncviewer."
 
 #: ../server/vino-server.schemas.in.h:6
 msgid ""
@@ -214,7 +217,7 @@ msgstr ""
 #: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
-"desktop. Remote user's will not be able to use the mouse or keyboard."
+"desktop. Remote users will not be able to use the mouse or keyboard."
 msgstr ""
 "Si s'habilita, els usuaris remots que accedeixin a l'escriptori només se'ls "
 "permetrà visualitzar-lo. Els usuaris remots no podran fer servir el ratolí "
@@ -222,38 +225,44 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
-"If true, remote users accessing the desktop are required to be able support "
+"If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
 "Si s'habilita, els usuaris remots que accedeixin a l'escriptori se'ls "
 "requerirà que puguin xifrar la connexió. Es molt recomanable que feu servir "
-"clients que permetin el xifratge a no ser que la xarxa on es faci servir "
+"clients que permetin el xifratge si no és que la xarxa on es faci servir "
 "sigui fiable."
 
 #: ../server/vino-server.schemas.in.h:9
-msgid ""
-"If true, the server will listen another port, instead of default (5900). The "
-"port must be specified in 'alternative_port' key."
+msgid "If true, screen will be locked after the last remote client disconnect."
 msgstr ""
-"Si s'habilita, el servidor escoltarà el port especificat en la clau "
-"«alternative_port», en lloc del predeterminat (5900)."
+"Si s'habilita, la pantalla es blocarà quan es desconnecti el darrer client "
+"remot."
 
 #: ../server/vino-server.schemas.in.h:10
+msgid ""
+"If true, the server will listen to another port, instead of the default "
+"(5900). The port must be specified in the 'alternative_port' key."
+msgstr ""
+"Si s'habilita, el servidor escoltarà en un port diferent del predeterminat "
+"(5900). S'ha d'especificar el port nou en la clau «alternative_port»."
+
+#: ../server/vino-server.schemas.in.h:11
 msgid ""
 "If true, the server will only accept connections from localhost and network "
 "connections will be rejected. Set this option to true if you wish to "
 "exclusively use a tunneling mechanism to access the server, such as ssh."
 msgstr ""
-"Si s'habilita, el servidor només acceptarà connexions de l'ordinador local, "
-"i se'n refusaran les externes. Habiliteu aquesta opció si voleu que només es "
+"Si s'habilita, el servidor només acceptarà connexions de l'ordinador local i "
+"se'n refusaran les externes. Habiliteu aquesta opció si voleu que només es "
 "pugui accedir al servidor a través d'un túnel, com ara ssh."
 
-#: ../server/vino-server.schemas.in.h:11
+#: ../server/vino-server.schemas.in.h:12
 msgid "Listen an alternative port"
 msgstr "Escolta un port alternatiu"
 
-#: ../server/vino-server.schemas.in.h:12
+#: ../server/vino-server.schemas.in.h:13
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -267,27 +276,31 @@ msgstr ""
 "contrasenya s'especifica amb la clau vnc_password), i «none» permetrà que "
 "qualsevol usuari remot es pugui connectar."
 
-#: ../server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:14
+msgid "Lock the screen when last user disconnect"
+msgstr "Bloca la pantalla quan es desconnecti el darrer usuari"
+
+#: ../server/vino-server.schemas.in.h:15
 msgid "Only allow local connections"
 msgstr "Permet només connexions locals"
 
-#: ../server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:16
 msgid "Only allow remote users to view the desktop"
-msgstr "Només permet que els usuaris remots visualitzin l'escriptori"
+msgstr "Permet només que els usuaris remots visualitzin l'escriptori"
 
-#: ../server/vino-server.schemas.in.h:15
+#: ../server/vino-server.schemas.in.h:17
 msgid "Password required for \"vnc\" authentication"
 msgstr "Es requereix una contrasenya per a l'autenticació «vnc»"
 
-#: ../server/vino-server.schemas.in.h:16
+#: ../server/vino-server.schemas.in.h:18
 msgid "Prompt the user before completing a connection"
 msgstr "Pregunta a l'usuari abans de completar la connexió"
 
-#: ../server/vino-server.schemas.in.h:17
+#: ../server/vino-server.schemas.in.h:19
 msgid "Require encryption"
 msgstr "Requereix xifratge"
 
-#: ../server/vino-server.schemas.in.h:18
+#: ../server/vino-server.schemas.in.h:20
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -297,7 +310,7 @@ msgstr ""
 "d'autenticació «vnc». La contrasenya especificada en aquesta clau es "
 "codifica en base64."
 
-#: ../server/vino-server.schemas.in.h:19
+#: ../server/vino-server.schemas.in.h:21
 msgid ""
 "The port which the server will listen to if the 'use_alternative_port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
@@ -306,13 +319,13 @@ msgstr ""
 "«use_alternative_port». Els valors vàlids són dins el rang que va de 5000 a "
 "50000."
 
-#: ../server/vino-server.schemas.in.h:20
+#: ../server/vino-server.schemas.in.h:22
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
-"Aquesta clau especifica les adreces de correu a les que s'hauria d'enviar la "
+"Aquesta clau especifica l'adreça de correu a la qual s'hauria d'enviar la "
 "URL de l'escriptori remot, si l'usuari fa clic a la URL en el quadre de "
 "diàleg de preferències de l'escriptori remot"
 
@@ -329,7 +342,7 @@ msgstr ""
 "Hi ha hagut un problema en registrar el servidor d'escriptori remot amb "
 "bonobo-activation; s'està sortint...\n"
 
-#: ../server/vino-status-icon.c:194
+#: ../server/vino-status-icon.c:204
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
@@ -338,7 +351,7 @@ msgstr ""
 "S'ha produït un error en mostrar les preferències:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:202
+#: ../server/vino-status-icon.c:212
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -347,7 +360,7 @@ msgstr ""
 "S'ha produït un error en mostrar l'ajuda:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:225
+#: ../server/vino-status-icon.c:235
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -384,97 +397,97 @@ msgstr ""
 "02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:240
+#: ../server/vino-status-icon.c:250
 msgid "translator-credits"
 msgstr "Josep Puigdemont i Casamajó <josep.puigdemont@gmail.com>"
 
-#: ../server/vino-status-icon.c:246 ../server/vino-status-icon.c:517
+#: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:560
 msgid "GNOME Remote Desktop"
 msgstr "Escriptori remot del GNOME"
 
-#: ../server/vino-status-icon.c:247
+#: ../server/vino-status-icon.c:257
 msgid "Share your desktop with other users"
 msgstr "Compartiu el vostre escriptori amb altres usuaris"
 
-#: ../server/vino-status-icon.c:266
+#: ../server/vino-status-icon.c:320
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Esteu segur que voleu desconnectar «%s»?"
 
-#: ../server/vino-status-icon.c:268
+#: ../server/vino-status-icon.c:322
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Es desconnectarà l'usuari remot de «%s». N'esteu segur?"
 
-#: ../server/vino-status-icon.c:273
+#: ../server/vino-status-icon.c:327
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Esteu segur que voleu desconnectar tots els clients?"
 
-#: ../server/vino-status-icon.c:274
+#: ../server/vino-status-icon.c:328
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Es desconnectaran tots els usuaris remots. N'esteu segur?"
 
-#: ../server/vino-status-icon.c:286
+#: ../server/vino-status-icon.c:340
 msgid "Disconnect"
 msgstr "Desconnecta"
 
-#: ../server/vino-status-icon.c:337
+#: ../server/vino-status-icon.c:365
 msgid "_Preferences"
 msgstr "_Preferències"
 
-#: ../server/vino-status-icon.c:349
+#: ../server/vino-status-icon.c:377
 msgid "Disconnect all"
 msgstr "Desconnecta'ls tots"
 
-#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-icon.c:399
 #, c-format
 msgid "Disconnect %s"
 msgstr "Desconnecta %s"
 
-#: ../server/vino-status-icon.c:379
+#: ../server/vino-status-icon.c:416
 msgid "_Help"
 msgstr "A_juda"
 
-#: ../server/vino-status-icon.c:387
+#: ../server/vino-status-icon.c:424
 msgid "_About"
 msgstr "_Quant a"
 
-#: ../server/vino-status-icon.c:421
+#: ../server/vino-status-icon.c:458
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
 msgstr[0] "Hi ha una persona connectada"
 msgstr[1] "Hi ha %d persones connectades"
 
-#: ../server/vino-status-icon.c:519
+#: ../server/vino-status-icon.c:562
 msgid "Error initializing libnotify\n"
 msgstr "S'ha produït un error en inicialitzar el libnotify\n"
 
-#: ../server/vino-status-icon.c:532
+#: ../server/vino-status-icon.c:576
 msgid "Another user is viewing your desktop"
 msgstr "Un altre usuari està veient el vostre escriptori"
 
-#: ../server/vino-status-icon.c:533
+#: ../server/vino-status-icon.c:577
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr ""
 "Un usuari de l'ordinador «%s» està veient el vostre escriptori remotament."
 
-#: ../server/vino-status-icon.c:538
+#: ../server/vino-status-icon.c:582
 msgid "Another user is controlling your desktop"
 msgstr "Un altre usuari està controlant el vostre escriptori"
 
-#: ../server/vino-status-icon.c:539
+#: ../server/vino-status-icon.c:583
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr ""
 "Un usuari de l'ordinador «%s» està controlant el vostre escriptori "
 "remotament."
 
-#: ../server/vino-status-icon.c:561
+#: ../server/vino-status-icon.c:605
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
-msgstr "S'ha produït un error en mostrar el núvol de notificació: %s\n"
+msgstr "S'ha produït un error en mostrar la notificació: %s\n"
 
 #: ../session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
@@ -483,12 +496,12 @@ msgstr "El servidor remot ha fallat, s'està reiniciant\n"
 #: ../session/vino-session.c:154
 #, c-format
 msgid "Activation of %s failed: %s\n"
-msgstr "L'activació de %s ha fallat: %s\n"
+msgstr "Ha fallat l'activació de %s: %s\n"
 
 #: ../session/vino-session.c:160
 #, c-format
 msgid "Activation of %s failed: Unknown Error\n"
-msgstr "L'activació de %s ha fallat: error desconegut\n"
+msgstr "Ha fallat l'activació de %s: error desconegut\n"
 
 #: ../session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
@@ -503,18 +516,6 @@ msgstr "S'està iniciant el servidor d'escriptori remot"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "No s'està iniciant el servidor d'escriptori remot"
-
-# Projecte_Fedora [redhat-config-users.ca.po]
-#~ msgid "    "
-#~ msgstr "    "
-
-# Gnome_2.6_Extras [gossip.HEAD.ca.po]
-#~ msgid "        "
-#~ msgstr "        "
-
-# Mozilla 1.3->allFilter
-#~ msgid "*"
-#~ msgstr "*"
 
 #~ msgid "Address"
 #~ msgstr "Adreça"
