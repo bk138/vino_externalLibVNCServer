@@ -4,33 +4,34 @@
 # This file is distributed under the same license as the vino package.
 #
 #
-# Žygimantas Beručka <zygis@gnome.org>, 2004-2006.
+# Žygimantas Beručka <zygis@gnome.org>, 2004-2007.
 # Gintautas Miliauskas <gintas@akl.lt>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-10 14:09+0200\n"
-"PO-Revision-Date: 2007-03-10 14:20+0200\n"
+"POT-Creation-Date: 2007-08-28 14:36+0300\n"
+"PO-Revision-Date: 2007-08-28 14:48+0300\n"
 "Last-Translator: Žygimantas Beručka <zygis@gnome.org>\n"
 "Language-Team: Lithuanian <gnome-lt@lists.akl.lt>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%"
+"100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../capplet/vino-preferences.c:635 ../capplet/vino-preferences.c:670
-#: ../server/vino-dbus-listener.c:324
+#: ../capplet/vino-preferences.c:634 ../capplet/vino-preferences.c:669
+#: ../capplet/vino-preferences.c:727 ../server/vino-dbus-listener.c:374
+#: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Nepavyko atverti prisijungimo prie magistralės: %s\n"
 
-#: ../capplet/vino-preferences.c:880
+#: ../capplet/vino-preferences.c:936
 msgid "Send this command by email"
 msgstr "Siųsti šią komandą el.paštu"
 
-#: ../capplet/vino-preferences.c:915
+#: ../capplet/vino-preferences.c:971
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -53,15 +54,15 @@ msgstr "<b>Saugumas</b>"
 
 #: ../capplet/vino-preferences.glade.h:2
 msgid "<b>Sharing</b>"
-msgstr "<b>Bendrinimas</b>"
+msgstr "<b>Viešinimas</b>"
 
 #: ../capplet/vino-preferences.glade.h:3
 msgid "A_sk you for confirmation"
-msgstr "Paklaus_ti Jūsų patvirtinimo"
+msgstr "Paklaus_ti jūsų patvirtinimo"
 
 #: ../capplet/vino-preferences.glade.h:4
 msgid "Allow other users to _view your desktop"
-msgstr "Leisti kitiems naudotojams _matyti Jūsų darbastalį"
+msgstr "Leisti kitiems naudotojams _matyti jūsų darbastalį"
 
 #: ../capplet/vino-preferences.glade.h:5
 msgid "Remote Desktop Preferences"
@@ -73,15 +74,15 @@ msgstr "Kai kurie iš šių nustatymų yra užrakinti"
 
 #: ../capplet/vino-preferences.glade.h:7
 msgid "Users can view your desktop using this command:"
-msgstr "Naudotojai gali matyti Jūsų darbastalį naudodami šią komandą:"
+msgstr "Naudotojai gali matyti jūsų darbastalį naudodami šią komandą:"
 
 #: ../capplet/vino-preferences.glade.h:8
 msgid "When a user tries to view or control your desktop:"
-msgstr "Kai naudotojas bando pamatyti ar valdyti Jūsų darbastalį:"
+msgstr "Kai naudotojas bando pamatyti ar valdyti jūsų darbastalį:"
 
 #: ../capplet/vino-preferences.glade.h:9
 msgid "_Allow other users to control your desktop"
-msgstr "_Leisti kitiems naudotojams valdyti Jūsų darbastalį"
+msgstr "_Leisti kitiems naudotojams valdyti jūsų darbastalį"
 
 #: ../capplet/vino-preferences.glade.h:10
 msgid "_Password:"
@@ -91,17 +92,18 @@ msgstr "_Slaptažodis:"
 msgid "_Require the user to enter this password:"
 msgstr "_Naudotojas turi įvesti šį slaptažodį:"
 
-#: ../server/vino-dbus-listener.c:180 ../server/vino-dbus-listener.c:210
+#: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
+#: ../server/vino-dbus-listener.c:249
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "Baigėsi atmintis apdorojant „%s“ pranešimą"
 
-#: ../server/vino-dbus-listener.c:284
+#: ../server/vino-dbus-listener.c:334
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "Baigėsi atmintis registruojant objekto kelią „%s“"
 
-#: ../server/vino-dbus-listener.c:357
+#: ../server/vino-dbus-listener.c:407
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Nepavyko rezervuoti D-Bus vardo „%s“\n"
@@ -111,8 +113,8 @@ msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
-"Jūsų XServeris nepalaiko XTest plėtinio - nuotolinio darbastalio priėjimas "
-"bus tik skaitymui\n"
+"Jūsų XServeris nepalaiko XTest plėtinio – nutolusio dabastalio prieiga bus "
+"tik skaitymui\n"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -130,8 +132,8 @@ msgstr "1"
 #.
 #: ../server/vino-mdns.c:71
 #, c-format
-msgid "%s's remote desktop"
-msgstr "Nutolęs %s darbastalis"
+msgid "%s's remote desktop on %s"
+msgstr "Nutolęs %s darbastalis kompiuteryje %s"
 
 #: ../server/vino-prompt.c:142
 msgid "Screen"
@@ -147,19 +149,19 @@ msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"Naudotojas iš nutolusio kompiuterio „%s“ bando pamatyti arba valdyti Jūsų "
+"Naudotojas iš nutolusio kompiuterio „%s“ bando pamatyti arba valdyti jūsų "
 "darbastalį."
 
 #: ../server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>Kitas naudotojas bando pamatyti Jūsų darbastalį.</b></big>"
+msgstr "<big><b>Kitas naudotojas bando pamatyti jūsų darbastalį.</b></big>"
 
 #: ../server/vino-prompt.glade.h:2
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"Naudotojas iš nutolusio kompiuterio bando pamatyti arba valdyti Jūsų "
+"Naudotojas iš nutolusio kompiuterio bando pamatyti arba valdyti jūsų "
 "darbastalį."
 
 #: ../server/vino-prompt.glade.h:3
@@ -188,7 +190,8 @@ msgstr "Alternatyvus prievado numeris"
 
 #: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr "El.pašto adresas į kurį turi būti siunčiamas nuotolinio darbastalio URL"
+msgstr ""
+"El.pašto adresas į kurį turi būti siunčiamas nuotolinio darbastalio URL"
 
 #: ../server/vino-server.schemas.in.h:4
 msgid "Enable remote desktop access"
@@ -217,43 +220,52 @@ msgstr ""
 #: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
-"desktop. Remote user's will not be able to use the mouse or keyboard."
+"desktop. Remote users will not be able to use the mouse or keyboard."
 msgstr ""
-"Jei reikšmė teigiama, nutolę naudotojai bandantys prieiti prie darbastalio "
-"yra leidžiami tik matyti darbastalį. Nutolę naudotojai negalės naudotis pele "
-"ar klaviatūra."
+"Jei reikšmė teigiama, nutolusiems naudotojams, bandantiems gauti prieigą prie "
+"darbastalio, leidžiama tik matyti darbastalį. Nutolę naudotojai negalės "
+"naudotis pele ar klaviatūra."
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
-"If true, remote users accessing the desktop are required to be able support "
+"If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
-"Jei reikšmė teigiama, nutolusiems naudotojams, bandantiems prieiti prie "
-"darbastalio, yra reikalingas šifravimo palaikymas. Labai rekomenduojama, kad "
-"Jūs naudotomėte klientą, kuris palaiko šifravimą, nebent įsiterpiantis "
-"tinklas yra patikimas."
+"Jei reikšmė teigiama, nutolusieji naudotojai, bandantys gauti prieigą prie "
+"darbastalio, turi palaikyti šifravimą. Labai rekomenduojama, kad naudotomėte "
+"klientą, palaikantį šifravimą, nebent tarpinis tinklas yra patikimas."
 
 #: ../server/vino-server.schemas.in.h:9
-msgid ""
-"If true, the server will listen another port, instead of default (5900). The "
-"port must be specified in 'alternative_port' key."
+msgid "If true, screen will be locked after the last remote client disconnect."
 msgstr ""
-"Jei reikšmė teigiama, serveris lauks prisijungimų prie kito prievado, o "
-"ne standartinio (5900). Prievado numeris turi būti nurodytas alternative_port raktu."
+"Jeigu reikšmė teigiama, atsijungus paskutiniam nutolusiam klientui, ekranas "
+"bus užrakintas."
 
 #: ../server/vino-server.schemas.in.h:10
+msgid ""
+"If true, the server will listen to another port, instead of the default "
+"(5900). The port must be specified in the 'alternative_port' key."
+msgstr ""
+"Jei reikšmė teigiama, serveris lauks prisijungimų prie kito prievado, o ne "
+"numatytojo (5900). Prievado numeris turi būti nurodytas rakte "
+"„alternative_port“."
+
+#: ../server/vino-server.schemas.in.h:11
 msgid ""
 "If true, the server will only accept connections from localhost and network "
 "connections will be rejected. Set this option to true if you wish to "
 "exclusively use a tunneling mechanism to access the server, such as ssh."
-msgstr "Jei reikšmė teigiama, serveris priims prisijungimus tik iš vietinio kompiuterio. Prisijungimai iš tinklo bus atmesti. Nustatykite šią parinktį, jei norite naudotis išimtinai tunelių mechanizmais (pvz., ssh)."
+msgstr ""
+"Jei reikšmė teigiama, serveris priims prisijungimus tik iš vietinio "
+"kompiuterio. Prisijungimai iš tinklo bus atmesti. Nustatykite šią parinktį "
+"į teigiamą, jei norite naudotis išskirtinai tunelių mechanizmais (pvz., ssh)."
 
-#: ../server/vino-server.schemas.in.h:11
+#: ../server/vino-server.schemas.in.h:12
 msgid "Listen an alternative port"
 msgstr "Laukti prisijungimų alternatyviu prievadu"
 
-#: ../server/vino-server.schemas.in.h:12
+#: ../server/vino-server.schemas.in.h:13
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -262,32 +274,36 @@ msgid ""
 "user to connect."
 msgstr ""
 "Parodo autentikacijos metodus, su kuriais nutolę naudotojai gali prieiti "
-"prie darbastalio. Yra du galimi autentikacijos metodai; „vnc“ - nutolusio "
+"prie darbastalio. Yra du galimi autentikacijos metodai; „vnc“ – nutolusio "
 "naudotojo prieš prisijungiant paprašoma įvesti slaptažodį (slaptažodis "
-"nurodomas vnc_password rakte) ir „none“ - leidžia prisijungti visiems "
+"nurodomas vnc_password rakte) ir „none“ – leidžia prisijungti visiems "
 "nutolusiems naudotojams."
 
-#: ../server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:14
+msgid "Lock the screen when last user disconnect"
+msgstr "Užrakinti ekraną, kai atsijungia paskutinis naudotojas"
+
+#: ../server/vino-server.schemas.in.h:15
 msgid "Only allow local connections"
 msgstr "Leisti tik vietinius prisijungimus"
 
-#: ../server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:16
 msgid "Only allow remote users to view the desktop"
 msgstr "Nutolusiems naudotojams leisti tik matyti darbastalį"
 
-#: ../server/vino-server.schemas.in.h:15
+#: ../server/vino-server.schemas.in.h:17
 msgid "Password required for \"vnc\" authentication"
 msgstr "Slaptažodis, reikalingas „vnc“ autentikacijai"
 
-#: ../server/vino-server.schemas.in.h:16
+#: ../server/vino-server.schemas.in.h:18
 msgid "Prompt the user before completing a connection"
 msgstr "Perspėti naudotoją prieš užbaigiant prisijungimą"
 
-#: ../server/vino-server.schemas.in.h:17
+#: ../server/vino-server.schemas.in.h:19
 msgid "Require encryption"
 msgstr "Reikalingas šifravimas"
 
-#: ../server/vino-server.schemas.in.h:18
+#: ../server/vino-server.schemas.in.h:20
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -297,7 +313,7 @@ msgstr ""
 "jei naudojamas „vnc“ autentikacijos metodas. Rakto nurodytas slaptažodis yra "
 "užšifruotas base64."
 
-#: ../server/vino-server.schemas.in.h:19
+#: ../server/vino-server.schemas.in.h:21
 msgid ""
 "The port which the server will listen to if the 'use_alternative_port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
@@ -305,7 +321,7 @@ msgstr ""
 "Prievadas, kurio bus klausomasi, jei „use_alternative_port“ reikšmė "
 "teigiama. Leistinos reikšmės nuo 5000 iki 50000."
 
-#: ../server/vino-server.schemas.in.h:20
+#: ../server/vino-server.schemas.in.h:22
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
@@ -366,16 +382,17 @@ msgid ""
 msgstr ""
 "Platinama pagal GNU GPL v2\n"
 "\n"
-"Vino yra laisva programinė įranga; galite ją platinti ir/ar modifikuoti GNU "
-"bendrosios viešosios licencijos sąlygomis, kurios paskelbtos Laisvosios "
-"programinės įrangos fondo; 2-osios arba (Jūsų pasirinkimu) bet kurios "
+"Vino yra laisvoji programinė įranga; galite ją platinti ir / arba modifikuoti "
+"GNU Bendrosios Viešosios Licencijos sąlygomis, paskelbtomis Laisvosios "
+"Programinės Įrangos Fondo; 2-osios arba (jūsų pasirinkimu) bet kurios "
 "vėlesnės licencijos versijos sąlygomis.\n"
 "\n"
-"Vino yra platinama tikintis, kad ji bus naudinga, bet BE JOKIŲ GARANTIJŲ; "
-"netgi be numanomų PARDAVIMO arba TINKAMUMO TAM TIKRAM TIKSLUI garantijų. Dėl "
-"išsamesnės informacijos žiūrėkite GNU bendrąją viešąją licenciją.\n"
+"Vino yra platinama tikintis, kad ji bus naudinga, tačiau nesuteikiant JOKIŲ "
+"GARANTIJŲ; netgi numanomų PARDAVIMO arba TINKAMUMO TAM TIKRAM TIKSLUI "
+"garantijų. Išsamesnę informaciją rasite GNU Bendrojoje Viešojoje "
+"licencijoje.\n"
 "\n"
-"Jūs turėjote gauti GNU bendrosios viešosios licencijos kopiją kartu su Vino; "
+"Turėjote gauti GNU Bendrosios Viešosios licencijos kopiją kartu su Vino; "
 "jeigu negavote, rašykite Free Software Foundation, 59 Temple Place - Suite "
 "330, Boston, MA 02111-1307, USA.\n"
 
@@ -384,7 +401,7 @@ msgstr ""
 msgid "translator-credits"
 msgstr "Žygimantas Beručka"
 
-#: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:566
+#: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:560
 msgid "GNOME Remote Desktop"
 msgstr "GNOME nutolęs darbastalis"
 
@@ -443,29 +460,30 @@ msgstr[0] "Prisijungęs %d naudotojas"
 msgstr[1] "Prisijungę %d naudotojai"
 msgstr[2] "Prisijungę %d naudotojų"
 
-#: ../server/vino-status-icon.c:568
+#: ../server/vino-status-icon.c:562
+#, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Klaida inicializuojant libnotify\n"
 
-#: ../server/vino-status-icon.c:582
+#: ../server/vino-status-icon.c:576
 msgid "Another user is viewing your desktop"
-msgstr "Kitas naudotojas stebi Jūsų darbastalį"
+msgstr "Kitas naudotojas stebi jūsų darbastalį"
+
+#: ../server/vino-status-icon.c:577
+#, c-format
+msgid "A user on the computer '%s' is remotely viewing your desktop."
+msgstr "Naudotojas iš nutolusio kompiuterio „%s“ stebi jūsų darbastalį."
+
+#: ../server/vino-status-icon.c:582
+msgid "Another user is controlling your desktop"
+msgstr "Kitas naudotojas valdo jūsų darbastalį"
 
 #: ../server/vino-status-icon.c:583
 #, c-format
-msgid "A user on the computer '%s' is remotely viewing your desktop."
-msgstr "Naudotojas iš nutolusio kompiuterio „%s“ stebi Jūsų darbastalį."
-
-#: ../server/vino-status-icon.c:588
-msgid "Another user is controlling your desktop"
-msgstr "Kitas naudotojas valdo Jūsų darbastalį"
-
-#: ../server/vino-status-icon.c:589
-#, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr "Naudotojas iš nutolusio kompiuterio „%s“ valdo Jūsų darbastalį."
+msgstr "Naudotojas iš nutolusio kompiuterio „%s“ valdo jūsų darbastalį."
 
-#: ../server/vino-status-icon.c:611
+#: ../server/vino-status-icon.c:605
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Klaida rodant pranešimą: %s\n"
@@ -486,7 +504,8 @@ msgstr "%s aktyvacija nepavyko: nežinoma klaida\n"
 
 #: ../session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "Nepavyko aktyvuoti nutolusio darbastalio serverio: bandyta per daug kartų\n"
+msgstr ""
+"Nepavyko aktyvuoti nutolusio darbastalio serverio: bandyta per daug kartų\n"
 
 #: ../session/vino-session.c:295
 msgid "Starting remote desktop server"
@@ -495,4 +514,3 @@ msgstr "Paleidžiamas nutolusio darbastalio serveris"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Nutolusio darbastalio serveris nepaleidžiamas"
-
