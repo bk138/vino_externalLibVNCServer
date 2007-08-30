@@ -181,13 +181,14 @@ static void
 vino_server_client_disconnected (VinoServer *server,
                                  VinoClient *client)
 {
-  if (vino_status_icon_remove_client (server->priv->icon, client))
-    {
-      g_object_unref (server->priv->icon);
-      server->priv->icon = NULL;
+  if (server->priv->icon)
+    if (vino_status_icon_remove_client (server->priv->icon, client))
+      {
+        g_object_unref (server->priv->icon);
+        server->priv->icon = NULL;
 
-      vino_server_lock_screen(server);
-    }
+        vino_server_lock_screen (server);
+      }
 }
 static void
 vino_server_handle_client_gone (rfbClientPtr rfb_client)
