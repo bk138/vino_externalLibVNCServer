@@ -1,3 +1,8 @@
+2007-08-31  Jonh Wendell  <jwendell@gnome.org>
+
+	* MAINTAINERS:
+	  Updated to the new format.
+
 2007-08-30  Jonh Wendell  <jwendell@gnome.org>
 
 	* server/vino-server.c (vino_server_client_disconnected):
