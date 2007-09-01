@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.17.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-18 03:27+0100\n"
-"PO-Revision-Date: 2007-08-21 12:04+0200\n"
+"POT-Creation-Date: 2007-08-21 12:20+0100\n"
+"PO-Revision-Date: 2007-09-01 12:40+0200\n"
 "Last-Translator: Yannig MARCHEGAY (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr ""
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
 msgid "Remote Desktop"
-msgstr ""
+msgstr "Burèu distant"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: ../capplet/vino-preferences.glade.h:1
 msgid "<b>Security</b>"
-msgstr ""
+msgstr "<b>Seguretat</b>"
 
 #: ../capplet/vino-preferences.glade.h:2
 msgid "<b>Sharing</b>"
@@ -63,7 +63,7 @@ msgstr ""
 
 #: ../capplet/vino-preferences.glade.h:5
 msgid "Remote Desktop Preferences"
-msgstr ""
+msgstr "Preferéncias del burèu distant"
 
 #: ../capplet/vino-preferences.glade.h:6
 msgid "Some of these preferences are locked down"
@@ -310,6 +310,8 @@ msgid ""
 "There was an error displaying help:\n"
 " %s"
 msgstr ""
+"I a agut una error al moment de visualizar l'ajuda :\n"
+" %s"
 
 #: ../server/vino-status-icon.c:235
 msgid ""
@@ -334,11 +336,13 @@ msgstr ""
 #. Translators comment: put your own name here to appear in the about dialog.
 #: ../server/vino-status-icon.c:250
 msgid "translator-credits"
-msgstr "La còla occitana de revirada d'Ubuntu, 2007 - ubuntu-l10n-oci@lists.ubuntu.com"
+msgstr ""
+"La còla occitana de revirada d'Ubuntu, 2007 - ubuntu-l10n-oci@lists.ubuntu."
+"com"
 
 #: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:560
 msgid "GNOME Remote Desktop"
-msgstr ""
+msgstr "Burèu distant de GNOME"
 
 #: ../server/vino-status-icon.c:257
 msgid "Share your desktop with other users"
@@ -372,12 +376,12 @@ msgstr "_Preferéncias"
 
 #: ../server/vino-status-icon.c:377
 msgid "Disconnect all"
-msgstr ""
+msgstr "Tot desconnectar"
 
 #: ../server/vino-status-icon.c:399
 #, c-format
 msgid "Disconnect %s"
-msgstr ""
+msgstr "Desconnectar %s"
 
 #: ../server/vino-status-icon.c:416
 msgid "_Help"
@@ -426,12 +430,12 @@ msgstr ""
 #: ../session/vino-session.c:154
 #, c-format
 msgid "Activation of %s failed: %s\n"
-msgstr ""
+msgstr "L'activacion de %s a pas capitat : %s\n"
 
 #: ../session/vino-session.c:160
 #, c-format
 msgid "Activation of %s failed: Unknown Error\n"
-msgstr ""
+msgstr "L'activacion de %s a pas capitat. Error desconeguda\n"
 
 #: ../session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
