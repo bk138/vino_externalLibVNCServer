@@ -1,3 +1,12 @@
+2007-09-01  Dan Winship  <danw@novell.com>
+
+	* configure.in: check for XKB
+
+	* server/vino-input.c: If the server supports XKB, use that rather
+	than core X calls to get the keyboard mapping. Add support for
+	multiple keyboard groups, and watch xkb events to notice when the
+	keyboard layout changes.
+
 2007-08-31  Jonh Wendell  <jwendell@gnome.org>
 
 	* MAINTAINERS:

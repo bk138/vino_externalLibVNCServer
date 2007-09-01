@@ -210,6 +210,15 @@ AC_CHECK_HEADER(X11/extensions/XTest.h, [
 AC_SUBST(XTEST_LIBS)
 
 #
+# Check for XKB extension
+#
+AC_CHECK_HEADER(X11/XKBlib.h, [
+    AC_CHECK_LIB(X11, XkbQueryExtension,
+      [AC_DEFINE(HAVE_XKB, 1, [Defined if the XKB X extension is present])]
+      ,, $X_LIBS)
+  ])
+
+#
 # Check for Avahi
 #
 AC_ARG_ENABLE(avahi,
