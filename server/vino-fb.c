@@ -697,6 +697,14 @@ vino_fb_init_xdamage (VinoFB *vfb)
   int       major, minor;
   XGCValues values;
 
+  /* FIXME: Remove this as soon as XDamage works with 3D Desktop */
+  if (gdk_screen_is_composited (vfb->priv->screen))
+    {
+      /* not using dprintf() because i want everybody sees that message */
+      printf ("\nComposite detected, disabling XDamage extension.\nThis is a workaround while XDamage extension does not work correctly with 3d desktops.\nHopefully it will work at next vino release.\n\n");
+      return;
+    }
+
   if (!XDamageQueryExtension (vfb->priv->xdisplay, &event_base, &error_base))
     return;
 
