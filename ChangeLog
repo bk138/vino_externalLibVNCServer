@@ -1,9 +1,13 @@
 2007-09-02  Jonh Wendell  <jwendell@gnome.org>
 
+	* configure.in: pre-release bump version to 2.19.92
+
+2007-09-02  Jonh Wendell  <jwendell@gnome.org>
+
 	* server/vino-fb.c (vino_fb_init_xdamage):
 	  Check if we are running at a composited screen and disable XDamage
 	  extension. We should remove this check when XDamage work perfectly
-	  with 3d desktop. Thanks to Pretto for the testing.
+	  with 3d desktop. Thanks to Pretto for the testing. Closes #383147.
 
 2007-09-01  Dan Winship  <danw@novell.com>
 
