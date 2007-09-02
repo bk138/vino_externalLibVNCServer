@@ -1,3 +1,25 @@
+Vino 2.19.92
+============
+
+  Fixes
+
+    + Bug #353304 - using Alt-Gr from a Windows VNC client to vino
+    + Bug #383147 - beryl windows manager does not support vino only metacity
+
+  Translations
+
+    + Josep Puigdemont (ca)
+    + Ask Hjorth Larsen (da)
+    + Hendrik Richter (de)
+    + Ivar Smolin (et)
+    + Stéphane Raimbault (fr)
+    + Takeshi AIHANA (ja)
+    + Young-Ho Cha (ko)
+    + Žygimantas Beručka (lt)
+    + Arangel Angov (mk)
+    + Tomasz Dominikowski (pl)
+    + Og Maciel (pt_BR)
+
 Vino 2.19.90
 ============
 
