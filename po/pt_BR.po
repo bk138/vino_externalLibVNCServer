@@ -223,7 +223,7 @@ msgstr "Escutar uma porta alternativa"
 
 #: ../server/vino-server.schemas.in.h:13
 msgid "Lists the authentication methods with which remote users may access the desktop. There are two possible authentication methods; \"vnc\" causes the remote user to be prompted for a password (the password is specified by the vnc_password key) before connecting and \"none\" which allows any remote user to connect."
-msgstr "Lista os métodos de autenticação com os quais usuários remotos podem acessar a área de trabalho. Existem dois métodos de autenticação possíveis: \"vnc\" faz com que seja pedida uma senha ao usuário remoto (a senha é especificada pela chave vnc_password) antes de conectar e \"nenhum\" que permite a qualquer usuário remoto conectar."
+msgstr "Lista os métodos de autenticação com os quais usuários remotos podem acessar a área de trabalho. Existem dois métodos de autenticação possíveis: \"vnc\" faz com que seja pedida uma senha ao usuário remoto (a senha é especificada pela chave vnc_password) antes de conectar e \"none\" que permite a qualquer usuário remoto conectar."
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Lock the screen when last user disconnect"
