@@ -1,8 +1,12 @@
+2007-09-06  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* nl.po: Translation updated by Wouter Bolsterlee.
+
 2007-09-04 Gabor Kelemen  <kelemeng@gnome.hu>
 
 	* hu.po: Translation updated.
 
-2007-09-03   Clytie Siddall <clytie@riverland.net.au>
+2007-09-03  Clytie Siddall <clytie@riverland.net.au>
 
 	* vi.po: Updated Vietnamese translation.
 
@@ -13,12 +17,12 @@
 ==================== 2.19.92 ====================
 
 2007-09-02  Jonh Wendell  <jwendell@gnome.org>
- 
- 	 * pt_BR.po: Fixed a typo in pt-br translation.
+
+	* pt_BR.po: Fixed a typo in pt-br translation.
 
 2007-09-01  Jovan Naumovski  <jovan@lugola.net>
- 
- 	 * mk.po: Updated Macedonian translation.
+
+	* mk.po: Updated Macedonian translation.
 
 2007-08-28  Žygimantas Beručka  <zygis@gnome.org>
 
@@ -87,7 +91,7 @@
 
 	* gu.po: Updated Gujarati Translation.
 
-2007-08-07  Jorge Gonzalez <jorgegonz@svn.gnome.org>   
+2007-08-07  Jorge Gonzalez <jorgegonz@svn.gnome.org>
 
 	* es.po: Updated Spanish translation
 
