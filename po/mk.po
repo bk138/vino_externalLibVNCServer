@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-07 03:23+0100\n"
-"PO-Revision-Date: 2007-09-01 11:44+0200\n"
+"POT-Creation-Date: 2007-09-01 12:04+0100\n"
+"PO-Revision-Date: 2007-09-07 17:08+0200\n"
 "Last-Translator: Arangel Angov <arangel@linux.net.mk>\n"
 "Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
 "MIME-Version: 1.0\n"
@@ -78,7 +78,7 @@ msgstr "Некои од овие параметри се заклучени"
 
 #: ../capplet/vino-preferences.glade.h:7
 msgid "Users can view your desktop using this command:"
-msgstr "Корисниците можат да ј гледаат Вашата работна околина со следнава команда:"
+msgstr "Корисниците можат да јa гледаат Вашата работна околина со следнава команда:"
 
 #: ../capplet/vino-preferences.glade.h:8
 msgid "When a user tries to view or control your desktop:"
@@ -244,7 +244,9 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr "Ако е штиклирано, екранот ќе биде заклучен откако ќе се одврзе последниот далечен клиент."
+msgstr ""
+"Ако е штиклирано, екранот ќе биде заклучен откако ќе се одврзе последниот "
+"далечен клиент."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid ""
