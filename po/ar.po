@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD.ar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-14 19:43+0100\n"
+"POT-Creation-Date: 2007-08-26 14:21-0700\n"
 "PO-Revision-Date: 2007-05-01 03:22+0300\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -17,19 +17,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : 3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : "
+"3\n"
 
-#: ../capplet/vino-preferences.c:635 ../capplet/vino-preferences.c:670
-#: ../server/vino-dbus-listener.c:324
+#: ../capplet/vino-preferences.c:634 ../capplet/vino-preferences.c:669
+#: ../capplet/vino-preferences.c:727 ../server/vino-dbus-listener.c:374
+#: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "فشل فتح إتصال مع الناقل: %s\n"
 
-#: ../capplet/vino-preferences.c:880
+#: ../capplet/vino-preferences.c:936
 msgid "Send this command by email"
 msgstr "أرسِل هذا الأمر بالبريد الإلكتروني"
 
-#: ../capplet/vino-preferences.c:915
+#: ../capplet/vino-preferences.c:971
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -90,17 +92,18 @@ msgstr "_كلمة السر:"
 msgid "_Require the user to enter this password:"
 msgstr "ا_طلب من المستخدم ادخال كلمة السر هذه:"
 
-#: ../server/vino-dbus-listener.c:180 ../server/vino-dbus-listener.c:210
+#: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
+#: ../server/vino-dbus-listener.c:249
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "نفذت الذّاكرة أثناء التعامل مع الرسالة '%s' "
 
-#: ../server/vino-dbus-listener.c:284
+#: ../server/vino-dbus-listener.c:334
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "نفذت الذّاكرة أثناء تسجيل مسار الكائن '%s'"
 
-#: ../server/vino-dbus-listener.c:357
+#: ../server/vino-dbus-listener.c:407
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "فشل الحصول على اسم D-Bus '%s'\n"
@@ -126,8 +129,8 @@ msgstr "0"
 #. * other than "1"
 #.
 #: ../server/vino-mdns.c:71
-#, c-format
-msgid "%s's remote desktop"
+#, fuzzy, c-format
+msgid "%s's remote desktop on %s"
 msgstr "سطح مكتب %s البعيد"
 
 #: ../server/vino-prompt.c:142
@@ -210,12 +213,13 @@ msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
 msgstr ""
-"إذا ضبط لصحيح، لن يسمح للمستخدمين البعيدين النافذين إلى سطح المكتب بعرض سطح المكتب. لن يتمكّن "
-"المستخدمون البعيدون من استخدام الفأرة أو لوحة المفاتيح."
+"إذا ضبط لصحيح، لن يسمح للمستخدمين البعيدين النافذين إلى سطح المكتب بعرض سطح "
+"المكتب. لن يتمكّن المستخدمون البعيدون من استخدام الفأرة أو لوحة المفاتيح."
 
 #: ../server/vino-server.schemas.in.h:8
+#, fuzzy
 msgid ""
-"If true, remote users accessing the desktop are required to be able support "
+"If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
@@ -223,14 +227,19 @@ msgstr ""
 "كبير أن تستخدم عميلاً يدعم التّشفير ما لم تكن الشبكة موثوقة."
 
 #: ../server/vino-server.schemas.in.h:9
+msgid "If true, screen will be locked after the last remote client disconnect."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:10
+#, fuzzy
 msgid ""
-"If true, the server will listen another port, instead of default (5900). The "
-"port must be specified in 'alternative_port' key."
+"If true, the server will listen to another port, instead of the default "
+"(5900). The port must be specified in the 'alternative_port' key."
 msgstr ""
 "لو صحيح، سيستمع الخادم لمنفذ آخر، بدلا من الإفتراضي (5900). يجب أن يحدد "
 "المنفذ قي مفتاح 'alternative_port'."
 
-#: ../server/vino-server.schemas.in.h:10
+#: ../server/vino-server.schemas.in.h:11
 msgid ""
 "If true, the server will only accept connections from localhost and network "
 "connections will be rejected. Set this option to true if you wish to "
@@ -239,11 +248,11 @@ msgstr ""
 "لو صحيح، سيقبل الخادم الإتصالات المحلّية فقط وسيرفض اتصلات الشبكة. اضبط هذا "
 "كصحيح، إذا أردت حصريا استعمال آليات أنفاق للنفاذ للخادم، مثل ssh."
 
-#: ../server/vino-server.schemas.in.h:11
+#: ../server/vino-server.schemas.in.h:12
 msgid "Listen an alternative port"
 msgstr "استمع لمنفذ بديل"
 
-#: ../server/vino-server.schemas.in.h:12
+#: ../server/vino-server.schemas.in.h:13
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -256,27 +265,31 @@ msgstr ""
 "كلمة سر (تحدّد كلمة السر بمفتاح vnc_password( قبل الاتّصال، و \"none\" التي "
 "تسمح لأي مستخدم بعيد بالاتّصال."
 
-#: ../server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:14
+msgid "Lock the screen when last user disconnect"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:15
 msgid "Only allow local connections"
 msgstr "اسمح بالإتصالات المحلّية فقط"
 
-#: ../server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:16
 msgid "Only allow remote users to view the desktop"
 msgstr "اسمح للمستخدمين البعيدين بعرض سطح المكتب فقط"
 
-#: ../server/vino-server.schemas.in.h:15
+#: ../server/vino-server.schemas.in.h:17
 msgid "Password required for \"vnc\" authentication"
 msgstr "كلمة السر مطلوبة لتوثّق \"vnc\""
 
-#: ../server/vino-server.schemas.in.h:16
+#: ../server/vino-server.schemas.in.h:18
 msgid "Prompt the user before completing a connection"
 msgstr "اسأل المستخدم قبل إكمال اتصال"
 
-#: ../server/vino-server.schemas.in.h:17
+#: ../server/vino-server.schemas.in.h:19
 msgid "Require encryption"
 msgstr "التّشفير مطلوب"
 
-#: ../server/vino-server.schemas.in.h:18
+#: ../server/vino-server.schemas.in.h:20
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -285,7 +298,7 @@ msgstr ""
 "كلمة السر التي سيُساءل المستخدم عنها إذا استخدمت طريقة توثّق \"vnc\". كلمة "
 "السر المحدّدة بالمفتاح مرمّزة بترميز قاعدة 64."
 
-#: ../server/vino-server.schemas.in.h:19
+#: ../server/vino-server.schemas.in.h:21
 msgid ""
 "The port which the server will listen to if the 'use_alternative_port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
@@ -293,7 +306,7 @@ msgstr ""
 "المنفذ الذي سيستمع إليه الخادم إذا ضبط مفتاح 'use_alternative_port' كصحيح. "
 "القيم المقبولة في المدى 5000 إلى 50000."
 
-#: ../server/vino-server.schemas.in.h:20
+#: ../server/vino-server.schemas.in.h:22
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
@@ -487,4 +500,3 @@ msgstr "بدء خادم سطح المكتب البعيد"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "لا تبدء خادم سطح المكتب البعيد"
-
