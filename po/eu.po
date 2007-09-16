@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-05 22:28+0200\n"
-"PO-Revision-Date: 2007-08-05 22:30+0200\n"
+"POT-Creation-Date: 2007-09-16 16:32+0200\n"
+"PO-Revision-Date: 2007-09-16 16:33+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
-"Language-Team: Basque <eu@li.org>\n"
+"Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -130,8 +130,8 @@ msgstr "1"
 #.
 #: ../server/vino-mdns.c:71
 #, c-format
-msgid "%s's remote desktop"
-msgstr "%s(r)en urruneko mahaigaina"
+msgid "%s's remote desktop on %s"
+msgstr "%s(r)en urruneko mahaigaina %s(e)n"
 
 #: ../server/vino-prompt.c:142
 msgid "Screen"
@@ -238,7 +238,9 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr "Egia bada, pantaila blokeatu egingo da azken urruneko bezeroa deskonektatzean."
+msgstr ""
+"Egia bada, pantaila blokeatu egingo da azken urruneko bezeroa "
+"deskonektatzean."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid ""
