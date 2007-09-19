@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-30 03:21+0100\n"
+"POT-Creation-Date: 2007-08-07 03:23+0100\n"
 "PO-Revision-Date: 2007-07-04 12:32+0530\n"
 "Last-Translator: Dr.T.Vasudevan <agnihot3@gmail.com>\n"
 "Language-Team: TAMIL <ubuntu-l10n-tam@lists.ubuntu.com>\n"
@@ -20,16 +20,17 @@ msgstr ""
 "\n"
 
 #: ../capplet/vino-preferences.c:634 ../capplet/vino-preferences.c:669
-#: ../server/vino-dbus-listener.c:324
+#: ../capplet/vino-preferences.c:727 ../server/vino-dbus-listener.c:374
+#: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "பஸ்ஸுக்கு இணைப்பை திறத்தல் தோல்வியுற்றது: %s\n"
 
-#: ../capplet/vino-preferences.c:879
+#: ../capplet/vino-preferences.c:936
 msgid "Send this command by email"
 msgstr "இந்த கட்டளையை மின்னஞ்சல் வழியாக அனுப்பவும்"
 
-#: ../capplet/vino-preferences.c:914
+#: ../capplet/vino-preferences.c:971
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -90,17 +91,18 @@ msgstr "(_P)கடவுச்சொல்:"
 msgid "_Require the user to enter this password:"
 msgstr "(_R)பயனர் கடவுச்சொல்லை உள்ளிட வேண்டும்:"
 
-#: ../server/vino-dbus-listener.c:180 ../server/vino-dbus-listener.c:210
+#: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
+#: ../server/vino-dbus-listener.c:249
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "'%s'  செய்தியை கையாளுவதில் நினைவகம் இல்லாமல் போயிற்று."
 
-#: ../server/vino-dbus-listener.c:284
+#: ../server/vino-dbus-listener.c:334
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "'%s' பொருள் பாதையை பதிவு செய்வதில் நினைவகம் இல்லாது போயிற்று."
 
-#: ../server/vino-dbus-listener.c:357
+#: ../server/vino-dbus-listener.c:407
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "டி பஸ் (D-Bus) பெயரை பெறுதல் தோல்வியுற்றது. '%s'\n"
@@ -128,8 +130,8 @@ msgstr "vino-mdns:showusername"
 #. * other than "1"
 #.
 #: ../server/vino-mdns.c:71
-#, c-format
-msgid "%s's remote desktop"
+#, fuzzy, c-format
+msgid "%s's remote desktop on %s"
 msgstr "%s' இன் தொலை மேல்மேசை"
 
 #: ../server/vino-prompt.c:142
@@ -215,8 +217,9 @@ msgstr ""
 "படுவார்கள். அவர்கள் சொடுக்கியையோ விசைப் பலகையையோ பயன்படுத்த இயலாது."
 
 #: ../server/vino-server.schemas.in.h:8
+#, fuzzy
 msgid ""
-"If true, remote users accessing the desktop are required to be able support "
+"If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
@@ -229,9 +232,10 @@ msgid "If true, screen will be locked after the last remote client disconnect."
 msgstr "உண்மையானால் கடைசி தொலை சார்ந்தோன் இணைப்பை துண்டித்ததும் திரை பூட்டப்படும்."
 
 #: ../server/vino-server.schemas.in.h:10
+#, fuzzy
 msgid ""
-"If true, the server will listen another port, instead of default (5900). The "
-"port must be specified in 'alternative_port' key."
+"If true, the server will listen to another port, instead of the default "
+"(5900). The port must be specified in the 'alternative_port' key."
 msgstr ""
 "உண்மையானால் சேவையகம் (5900) முன்னிருப்பை விட்டு வேறு ஒரு துறையில் செவி சாய்க்கும். அந்த "
 "துறையை 'alternative_port'  விசையில் குறிப்பிட வேண்டும்."
@@ -482,7 +486,8 @@ msgstr "செயல்படுத்துவதில் %s தோல்வ�
 
 #: ../session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "தொலை மேல் மேசை சேவகனை செயல்படுத்துவதில் தோல்வி. அதிக முறை முயற்சி செய்யப்பட்டது\n"
+msgstr ""
+"தொலை மேல் மேசை சேவகனை செயல்படுத்துவதில் தோல்வி. அதிக முறை முயற்சி செய்யப்பட்டது\n"
 
 #: ../session/vino-session.c:295
 msgid "Starting remote desktop server"
@@ -491,4 +496,3 @@ msgstr "தொலை மேல் மேசை சேவகன் துவங�
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "தொலை மேல் மேசை சேவகன் துவங்க வில்லை"
-
