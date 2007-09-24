@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-18 13:51+0900\n"
-"PO-Revision-Date: 2007-08-18 13:54+0900\n"
+"POT-Creation-Date: 2007-09-24 21:37+0900\n"
+"PO-Revision-Date: 2007-09-24 21:39+0900\n"
 "Last-Translator: Young-Ho Cha <ganadist@gmail.com>\n"
 "Language-Team: GNOME Korea <gnome-kr-hackers@lists.kldp.net>\n"
 "MIME-Version: 1.0\n"
@@ -82,11 +82,11 @@ msgstr "다른 사용자가 데스크탑을 제어할 수 있도록 합니다(_A
 
 #: ../capplet/vino-preferences.glade.h:10
 msgid "_Password:"
-msgstr "열쇠글(_P):"
+msgstr "암호(_P):"
 
 #: ../capplet/vino-preferences.glade.h:11
 msgid "_Require the user to enter this password:"
-msgstr "사용자가 이 열쇠글을 입력하여야 합니다(_R):"
+msgstr "사용자가 이 암호를 입력하여야 합니다(_R):"
 
 #: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
 #: ../server/vino-dbus-listener.c:249
@@ -201,9 +201,7 @@ msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
-msgstr ""
-"참이면 로컬 사용자가 연결을 허용할 때 까지 원격사용자가 데스크탑에 접근할 수 "
-"없습니다. 열쇠글로 접근을 막아두지 않았을 때 쓰는 것이 좋습니다."
+msgstr "참이면 로컬 사용자가 연결을 허용할 때 까지 원격사용자가 데스크탑에 접근할 수 없습니다. 암호로 접근을 막아두지 않았을 때 쓰는 것이 좋습니다."
 
 #: ../server/vino-server.schemas.in.h:7
 msgid ""
@@ -224,8 +222,7 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr ""
-"참이면 원격 클라이언트의 연결이 끊긴 후 화면이 잠겨집니다."
+msgstr "참이면 원격 클라이언트의 연결이 끊긴 후 화면이 잠겨집니다."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid ""
@@ -256,10 +253,7 @@ msgid ""
 "remote user to be prompted for a password (the password is specified by the "
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
-msgstr ""
-"원격 사용자가 데스크탑에 접근할 때 쓰일 인증 방법의 목록입니다. 쓸 수 있는 인"
-"증방법은 두가지가 있습니다; \"vnc\"는 원격 사용자가 연결하기 전에 열쇠글 인증"
-"을 합니다. \"none\"은 아무 원격 사용자에게 연결을 허용합니다."
+msgstr "원격 사용자가 데스크탑에 접근할 때 쓰일 인증 방법의 목록입니다. 쓸 수 있는 인증방법은 두가지가 있습니다; \"vnc\"는 원격 사용자가 연결하기 전에 암호 인증을 합니다. \"none\"은 아무 원격 사용자에게 연결을 허용합니다."
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Lock the screen when last user disconnect"
@@ -275,7 +269,7 @@ msgstr "원격 사용자에게 데스크탑을 보기 전용으로만 허용"
 
 #: ../server/vino-server.schemas.in.h:17
 msgid "Password required for \"vnc\" authentication"
-msgstr "\"vnc\"인증에 필요한 열쇠글"
+msgstr "\"vnc\" 인증에 필요한 암호"
 
 #: ../server/vino-server.schemas.in.h:18
 msgid "Prompt the user before completing a connection"
@@ -290,9 +284,7 @@ msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
-msgstr ""
-"\"vnc\"인증방법이 쓰였을 때 원격 사용자에게 물어볼 열쇠글입니다. 이 열쇠글은 "
-"base64 인코딩된 키이여야 합니다."
+msgstr "\"vnc\" 인증방법을 사용하는 경우 원격 사용자에게 물어볼 암호입니다. 이 암호는 base64 인코딩된 키이여야 합니다."
 
 #: ../server/vino-server.schemas.in.h:21
 msgid ""
@@ -451,16 +443,16 @@ msgstr "다른 사용자가 바탕 환경을 보고 있습니다"
 #: ../server/vino-status-icon.c:577
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
-msgstr "컴퓨터 '%s'의 사용자가 원격에서 바탕화면을 보고 있습니다."
+msgstr "컴퓨터 '%s'의 사용자가 원격에서 데스크탑을 보고 있습니다."
 
 #: ../server/vino-status-icon.c:582
 msgid "Another user is controlling your desktop"
-msgstr "다른 사용자가 바탕화면을 제어하고 있습니다"
+msgstr "다른 사용자가 데스크탑을 제어하고 있습니다"
 
 #: ../server/vino-status-icon.c:583
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr "컴퓨터 '%s'의 사용자가 원격에서 바탕화면을 제어하고 있습니다."
+msgstr "컴퓨터 '%s'의 사용자가 원격에서 데스크탑을 제어하고 있습니다."
 
 #: ../server/vino-status-icon.c:605
 #, c-format
