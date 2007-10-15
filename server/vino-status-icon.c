@@ -140,7 +140,7 @@ vino_status_icon_new (VinoServer *server,
   g_return_val_if_fail (GDK_IS_SCREEN  (screen), NULL);
   
   return g_object_new (VINO_TYPE_STATUS_ICON,
-                       "icon-name", "gnome-remote-desktop",
+                       "icon-name", "preferences-desktop-remote-desktop",
                        "server",    server,
 #if GTK_CHECK_VERSION (2, 11, 0)
                        "screen",    screen,
@@ -259,7 +259,7 @@ vino_status_icon_about (VinoStatusIcon *icon)
                          "license",            license,
                          "authors",            authors,
                          "translator-credits", translators,
-                         "logo-icon-name",     "gnome-remote-desktop",
+                         "logo-icon-name",     "preferences-desktop-remote-desktop",
                          NULL);
 }
 
@@ -587,7 +587,7 @@ vino_status_icon_show_new_client_notification (gpointer user_data)
   icon->priv->new_client_notification =
     notify_notification_new_with_status_icon (summary,
                                               body,
-                                              "gnome-remote-desktop",
+                                              "preferences-desktop-remote-desktop",
                                               GTK_STATUS_ICON (icon));
 
   g_free (body);

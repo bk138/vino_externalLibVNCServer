@@ -336,7 +336,6 @@ server/libvncserver/Makefile
 server/libvncserver/rfb/Makefile
 capplet/Makefile
 session/Makefile
-icons/Makefile
 docs/Makefile
 po/Makefile.in
 ])

@@ -592,20 +592,20 @@ vino_preferences_dialog_setup_password_entry (VinoPreferencesDialog *dialog)
 static void
 vino_preferences_dialog_setup_icons (VinoPreferencesDialog *dialog)
 {
-  gtk_window_set_icon_name (GTK_WINDOW (dialog->dialog), "gnome-remote-desktop");
+  gtk_window_set_icon_name (GTK_WINDOW (dialog->dialog), "preferences-desktop-remote-desktop");
 
   dialog->sharing_icon = glade_xml_get_widget (dialog->xml, "sharing_icon");
   g_assert (dialog->sharing_icon != NULL);
   
   gtk_image_set_from_icon_name (GTK_IMAGE (dialog->sharing_icon),
-                                "gnome-remote-desktop",
+                                "preferences-desktop-remote-desktop",
                                 GTK_ICON_SIZE_DIALOG);
 
   dialog->security_icon = glade_xml_get_widget (dialog->xml, "security_icon");
   g_assert (dialog->security_icon != NULL);
 
   gtk_image_set_from_icon_name (GTK_IMAGE (dialog->security_icon),
-                                "gnome-lockscreen",
+                                "system-lock-screen",
                                 GTK_ICON_SIZE_DIALOG);
 }
 

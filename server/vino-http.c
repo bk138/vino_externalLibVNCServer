@@ -184,7 +184,7 @@ vino_http_lookup_client_logo (void)
   icon_theme = gtk_icon_theme_get_default ();
 
   info = gtk_icon_theme_lookup_icon (icon_theme,
-				     "gnome-remote-desktop",
+				     "preferences-desktop-remote-desktop",
 				     ICON_SIZE_STANDARD,
 				     GTK_ICON_LOOKUP_NO_SVG);
   if (info)
