@@ -183,6 +183,24 @@ vino_mdns_add_services (AvahiClient *client)
     }
 }
 
+void
+vino_mdns_restart (void)
+{
+  if (mdns_service_name != NULL)
+    g_free (mdns_service_name);
+  mdns_service_name = NULL;
+
+  if (mdns_entry_group != NULL)
+    avahi_entry_group_free (mdns_entry_group);
+  mdns_entry_group = NULL;
+
+  if (mdns_client != NULL)
+    avahi_client_free (mdns_client);
+  mdns_client = NULL;
+
+  vino_mdns_start ();
+}
+
 static void
 vino_mdns_client_state_changed (AvahiClient      *client,
                                 AvahiClientState  state,
@@ -200,14 +218,26 @@ vino_mdns_client_state_changed (AvahiClient      *client,
       break;
 
     case AVAHI_CLIENT_FAILURE:
-      /* 
-       * FIXME: handle disconnection better
-       */
-      dprintf (MDNS, "Connection with Avahi daemon terminated.\n");
+      if (avahi_client_errno(client) == AVAHI_ERR_DISCONNECTED)
+	{
+	  dprintf (MDNS, "Connection with Avahi daemon terminated, trying to reconnect.\n");
+	  vino_mdns_restart ();
+	}
+      else
+	{
+	  dprintf (MDNS, "Client failure, exiting: %s\n",
+	                  avahi_strerror (
+	                      avahi_client_errno (client)));
+	  vino_mdns_stop ();
+	}
       break;
 
     case AVAHI_CLIENT_CONNECTING:
+      dprintf (MDNS, "Client waiting for the Avahi daemon\n");
+      break;
+
     case AVAHI_CLIENT_S_REGISTERING:
+      dprintf (MDNS, "Client registering\n");
       break;
 
     default:
@@ -244,10 +274,13 @@ vino_mdns_start ()
   if (mdns_services == NULL)
     return; /* no services */
 
-  avahi_set_allocator (avahi_glib_allocator ());
+  if (mdns_glib_poll == NULL)
+    {
+      avahi_set_allocator (avahi_glib_allocator ());
+      
+      mdns_glib_poll = avahi_glib_poll_new (NULL, G_PRIORITY_DEFAULT);
+    }
 
-  mdns_glib_poll = avahi_glib_poll_new (NULL, G_PRIORITY_DEFAULT);
-  
   mdns_client = avahi_client_new (avahi_glib_poll_get (mdns_glib_poll),
                                   AVAHI_CLIENT_NO_FAIL,
                                   vino_mdns_client_state_changed,

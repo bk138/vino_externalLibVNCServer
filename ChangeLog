@@ -1,5 +1,10 @@
 2007-10-15  Jonh Wendell  <jwendell@gnome.org>
 
+	* server/vino-mdns.c: Better handles disconnection from
+	  avahi-daemon. Thanks to Sebastien Estienne. Closes #415321.
+
+2007-10-15  Jonh Wendell  <jwendell@gnome.org>
+
 	* capplet/vino-preferences.c,
 	* capplet/vino-preferences.desktop.in.in,
 	* server/vino-main.c,
