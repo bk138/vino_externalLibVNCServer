@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-11 03:34+0100\n"
+"POT-Creation-Date: 2007-08-07 03:23+0100\n"
 "PO-Revision-Date: 2005-07-18 19:18+0300\n"
 "Last-Translator: Oldie <yonatanhak@yahoo.com>\n"
 "Language-Team: Hebrew\n"
@@ -18,17 +18,18 @@ msgstr ""
 "X-Generator: KBabel 1.10.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:635 ../capplet/vino-preferences.c:670
-#: ../server/vino-dbus-listener.c:324
+#: ../capplet/vino-preferences.c:634 ../capplet/vino-preferences.c:669
+#: ../capplet/vino-preferences.c:727 ../server/vino-dbus-listener.c:374
+#: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Failed to open connection to bus: %s\n"
 
-#: ../capplet/vino-preferences.c:880
+#: ../capplet/vino-preferences.c:936
 msgid "Send this command by email"
 msgstr "שלח פקודה זו בדואר אלקטרוני"
 
-#: ../capplet/vino-preferences.c:915
+#: ../capplet/vino-preferences.c:971
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -89,17 +90,18 @@ msgstr "_סיסמה:"
 msgid "_Require the user to enter this password:"
 msgstr "_דרוש מהמשתמש להקליד את הסיסמה:"
 
-#: ../server/vino-dbus-listener.c:180 ../server/vino-dbus-listener.c:210
+#: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
+#: ../server/vino-dbus-listener.c:249
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "Out of memory handling '%s' message"
 
-#: ../server/vino-dbus-listener.c:284
+#: ../server/vino-dbus-listener.c:334
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "Out of memory registering object path '%s'"
 
-#: ../server/vino-dbus-listener.c:357
+#: ../server/vino-dbus-listener.c:407
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Failed to acquire D-Bus name '%s'\n"
@@ -128,8 +130,8 @@ msgstr "1"
 #.
 #: ../server/vino-mdns.c:71
 #, c-format
-msgid "%s's remote desktop"
-msgstr "%s's remote desktop"
+msgid "%s's remote desktop on %s"
+msgstr "%s's remote desktop on %s"
 
 #: ../server/vino-prompt.c:142
 msgid "Screen"
@@ -216,24 +218,28 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
-"If true, remote users accessing the desktop are required to be able support "
+"If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
-"If true, remote users accessing the desktop are required to be able support "
+"If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 
 #: ../server/vino-server.schemas.in.h:9
-msgid ""
-"If true, the server will listen another port, instead of default (5900). The "
-"port must be specified in 'alternative_port' key."
-msgstr ""
-"If true, the server will listen another port, instead of default (5900). The "
-"port must be specified in 'alternative_port' key."
+msgid "If true, screen will be locked after the last remote client disconnect."
+msgstr "If true, screen will be locked after the last remote client disconnect."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid ""
+"If true, the server will listen to another port, instead of the default "
+"(5900). The port must be specified in the 'alternative_port' key."
+msgstr ""
+"If true, the server will listen to another port, instead of the default "
+"(5900). The port must be specified in the 'alternative_port' key."
+
+#: ../server/vino-server.schemas.in.h:11
+msgid ""
 "If true, the server will only accept connections from localhost and network "
 "connections will be rejected. Set this option to true if you wish to "
 "exclusively use a tunneling mechanism to access the server, such as ssh."
@@ -242,11 +248,11 @@ msgstr ""
 "connections will be rejected. Set this option to true if you wish to "
 "exclusively use a tunneling mechanism to access the server, such as ssh."
 
-#: ../server/vino-server.schemas.in.h:11
+#: ../server/vino-server.schemas.in.h:12
 msgid "Listen an alternative port"
 msgstr "Listen an alternative port"
 
-#: ../server/vino-server.schemas.in.h:12
+#: ../server/vino-server.schemas.in.h:13
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -260,45 +266,49 @@ msgstr ""
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
 
-#: ../server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:14
+msgid "Lock the screen when last user disconnect"
+msgstr "Lock the screen when last user disconnect"
+
+#: ../server/vino-server.schemas.in.h:15
 msgid "Only allow local connections"
 msgstr "Only allow local connections"
 
-#: ../server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:16
 msgid "Only allow remote users to view the desktop"
 msgstr "Only allow remote users to view the desktop"
 
-#: ../server/vino-server.schemas.in.h:15
+#: ../server/vino-server.schemas.in.h:17
 msgid "Password required for \"vnc\" authentication"
 msgstr "Password required for \"vnc\" authentication"
 
-#: ../server/vino-server.schemas.in.h:16
+#: ../server/vino-server.schemas.in.h:18
 msgid "Prompt the user before completing a connection"
 msgstr "Prompt the user before completing a connection"
 
-#: ../server/vino-server.schemas.in.h:17
+#: ../server/vino-server.schemas.in.h:19
 msgid "Require encryption"
 msgstr "Require encryption"
 
-#: ../server/vino-server.schemas.in.h:18
-msgid ""
-"The password which the remote user will be prompted for if the \"vnc\" "
-"authentication method is used. The password specified by the key is base64 "
-"encoded."
-msgstr ""
-"The password which the remote user will be prompted for if the \"vnc\" "
-"authentication method is used. The password specified by the key is base64 "
-"encoded."
-
-#: ../server/vino-server.schemas.in.h:19
-msgid ""
-"The port which the server will listen to if the 'use_alternative_port' key "
-"is set to true. Valid values are in the range from 5000 to 50000."
-msgstr ""
-"The port which the server will listen to if the 'use_alternative_port' key "
-"is set to true. Valid values are in the range from 5000 to 50000."
-
 #: ../server/vino-server.schemas.in.h:20
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+
+#: ../server/vino-server.schemas.in.h:21
+msgid ""
+"The port which the server will listen to if the 'use_alternative_port' key "
+"is set to true. Valid values are in the range from 5000 to 50000."
+msgstr ""
+"The port which the server will listen to if the 'use_alternative_port' key "
+"is set to true. Valid values are in the range from 5000 to 50000."
+
+#: ../server/vino-server.schemas.in.h:22
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
@@ -383,7 +393,7 @@ msgstr ""
 "פרוייקט תרגום GNOME לעברית:\n"
 "‏http://gnome-il.berlios.de"
 
-#: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:566
+#: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:560
 msgid "GNOME Remote Desktop"
 msgstr "שולחן עבודה מרוחק"
 
@@ -441,29 +451,29 @@ msgid_plural "%d people are connected"
 msgstr[0] "משתמש אחד מחובר"
 msgstr[1] "%d משתמשים מחוברים"
 
-#: ../server/vino-status-icon.c:568
+#: ../server/vino-status-icon.c:562
 msgid "Error initializing libnotify\n"
 msgstr "Error initializing libnotify\n"
 
-#: ../server/vino-status-icon.c:582
+#: ../server/vino-status-icon.c:576
 msgid "Another user is viewing your desktop"
 msgstr "משתמש אחר צופה בשולחן העבודה שלך "
 
-#: ../server/vino-status-icon.c:583
+#: ../server/vino-status-icon.c:577
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "משתמש במחשב '%s' צופה מרחוק בשולחן העבודה שלך."
 
-#: ../server/vino-status-icon.c:588
+#: ../server/vino-status-icon.c:582
 msgid "Another user is controlling your desktop"
 msgstr "משתמש אחר שולט בשולחן העבודה שלך"
 
-#: ../server/vino-status-icon.c:589
+#: ../server/vino-status-icon.c:583
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "משתמש במחשב '%s' שולט מרחוק בשולחן העבודה שלך."
 
-#: ../server/vino-status-icon.c:611
+#: ../server/vino-status-icon.c:605
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Error while displaying notification bubble: %s\n"
