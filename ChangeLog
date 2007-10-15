@@ -1,5 +1,10 @@
 2007-10-15  Jonh Wendell  <jwendell@gnome.org>
 
+	* server/vino-server.c,
+	* server/vino-input.c: Handles clipboard text (Closes #306252)
+
+2007-10-15  Jonh Wendell  <jwendell@gnome.org>
+
 	* configure.in: post-release bump version to 2.21.3
 
 ==================== 2.20.1 =====================

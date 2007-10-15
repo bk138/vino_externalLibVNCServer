@@ -137,6 +137,7 @@
 
 #include <string.h>
 #include <gdk/gdkx.h>
+#include <gtk/gtk.h>
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
 #ifdef HAVE_XTEST
@@ -1115,4 +1116,19 @@ vino_input_handle_clipboard_event (GdkScreen *screen,
 				   char      *text,
 				   int        len)
 {
+  GtkClipboard *cb;
+  gchar *out;
+  gsize a, b;
+
+  if (!text)
+    return;
+
+  out = g_convert (text, len, "utf-8", "iso8859-1", &a, &b, NULL);
+  if (out)
+    {
+      cb = gtk_clipboard_get_for_display (gdk_screen_get_display (screen),
+                                          GDK_SELECTION_CLIPBOARD);
+      gtk_clipboard_set_text (cb, out, -1);
+      g_free (out);
+    }
 }

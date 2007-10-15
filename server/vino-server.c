@@ -39,6 +39,7 @@
 #include "vino-enums.h"
 #include <sys/poll.h>
 #include <dbus/dbus-glib.h>
+#include <gtk/gtk.h>
 
 #ifdef VINO_ENABLE_KEYRING
 #include <gnome-keyring.h>
@@ -776,11 +777,40 @@ vino_server_release_framebuffer (VinoServer *server)
 }
 
 static void
+vino_server_clipboard_cb (GtkClipboard *cb,
+                          GdkEvent     *event,
+                          VinoServer   *server)
+{
+  gchar *text, *out;
+  size_t a, b;
+
+  if (server->priv->on_hold)
+    return;
+
+  text = gtk_clipboard_wait_for_text (cb);
+  if (!text)
+    return;
+
+  out = g_convert (text, -1, "iso8859-1", "utf-8", &a, &b, NULL);
+  if (out)
+    {
+      rfbSendServerCutText (server->priv->rfb_screen,
+                            out,
+                            strlen (out));
+      g_free (out);
+    }
+
+  g_free (text);
+
+}
+
+static void
 vino_server_init_from_screen (VinoServer *server,
 			      GdkScreen  *screen)
 {
   rfbScreenInfoPtr  rfb_screen;
   char             *name;
+  GtkClipboard     *cb;
 
   g_return_if_fail (server->priv->screen == NULL);
   g_return_if_fail (screen != NULL);
@@ -872,6 +902,13 @@ vino_server_init_from_screen (VinoServer *server,
   vino_mdns_add_service ("_rfb._tcp", rfb_screen->rfbPort);
 
   server->priv->listener = vino_dbus_listener_new (server);
+
+  cb = gtk_clipboard_get_for_display (gdk_screen_get_display (screen),
+                                      GDK_SELECTION_CLIPBOARD);
+  g_signal_connect (cb,
+                    "owner-change",
+                    G_CALLBACK (vino_server_clipboard_cb),
+                    server);
 }
 
 static void
