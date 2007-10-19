@@ -488,7 +488,9 @@ vino_input_initialize_keycodes_core (Display *xdisplay)
 	      altgrsym = (keysyms_per_keycode <= VINO_LEVEL_ALTGR) ? NoSymbol :
 		XKeycodeToKeysym (xdisplay, keycode, VINO_LEVEL_ALTGR);
 
-	      unmodifiable = (shiftsym == NoSymbol) && (altgrsym == NoSymbol);
+	      unmodifiable =
+		(shiftsym == NoSymbol || shiftsym == sym) &&
+		(altgrsym == NoSymbol);
 	    }
 
 	  if (unmodifiable)
@@ -760,12 +762,13 @@ vino_input_init (GdkDisplay *display)
       global_input_data.xtest_supported = TRUE;
     }
 
+  global_input_data.n_pointer_buttons = XGetPointerMapping (xdisplay, NULL, 0);
+
 #ifdef HAVE_XKB
   if (XkbQueryExtension (xdisplay, NULL, &global_input_data.xkb_event_type,
 			 NULL, NULL, NULL))
     {
       XkbStateRec state;
-  global_input_data.n_pointer_buttons = XGetPointerMapping(xdisplay, NULL, 0);
 
       dprintf (INPUT, "Using XKB\n");
 

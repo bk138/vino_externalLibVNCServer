@@ -1,3 +1,11 @@
+2007-10-18  Dan Winship  <danw@gnome.org>
+
+	* server/vino-input.c (vino_input_initialize_keycodes_core):
+	Handle another oddity of core keymaps.
+	(vino_input_init): fix up a bug in the XKB merge; the pointer
+	mapping was only being initialized in the XKB case, causing clicks
+	to not work in the core case. #480544
+
 2007-10-15  Jonh Wendell  <jwendell@gnome.org>
 
 	* server/vino-mdns.c: Better handles disconnection from
