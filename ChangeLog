@@ -1,3 +1,8 @@
+2007-10-19  Dan Winship  <danw@gnome.org>
+
+	* server/vino-input.c (vino_input_initialize_keycodes_core):
+	Finish up the previous fix to completely fix #480544.
+
 2007-10-19  Jonh Wendell  <jwendell@gnome.org>
 
 	* server/vino-status-icon.c (vino_status_icon_popup_menu):

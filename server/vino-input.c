@@ -490,7 +490,7 @@ vino_input_initialize_keycodes_core (Display *xdisplay)
 
 	      unmodifiable =
 		(shiftsym == NoSymbol || shiftsym == sym) &&
-		(altgrsym == NoSymbol);
+		(altgrsym == NoSymbol || altgrsym == sym);
 	    }
 
 	  if (unmodifiable)
