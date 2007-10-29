@@ -1,3 +1,24 @@
+Vino 2.21.1
+============
+
+  Features
+
+    + Handles clipboard copy and paste (Jonh)
+    + Don't ship icons/ directory anymore (Jaap A. Haitsma)
+
+  Fixes
+
+    + Fixes some key presses issues (Dan Winship)
+    + Only show 'disconnect all' popup item in status icon if we have
+	  more than one client connected (Jonh)
+	+ Better handles disconnection from avahi-daemon (Sebastien Estienne)
+
+  Translations
+
+    + Djihed Afifi (ar)
+    + Oldie (he)
+    + Matej Urbančič (sl)
+
 Vino 2.20.1
 ===========
 
