@@ -71,6 +71,7 @@ main (int argc, char **argv)
 #endif /* HAVE_GNUTLS */
 
   gtk_window_set_default_icon_name ("preferences-desktop-remote-desktop");
+  g_set_application_name (_("GNOME Remote Desktop"));
 
   if (!vino_shell_register (&argc, argv))
     return 1;

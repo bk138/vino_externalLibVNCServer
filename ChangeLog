@@ -1,5 +1,10 @@
 2007-11-09  Jonh Wendell  <jwendell@gnome.org>
 
+	* server/vino-main.c,
+	* server/vino-status-icon.c: Make use of g_[gs]et_application_name()
+
+2007-11-09  Jonh Wendell  <jwendell@gnome.org>
+
 	Added a gconf key to control the behavior of the status icon.
 	Closes #442696.
 	

@@ -294,7 +294,6 @@ vino_status_icon_about (VinoStatusIcon *icon)
     translators = NULL;
 
   gtk_show_about_dialog (NULL,
-                         "name",               _("GNOME Remote Desktop"),
                          "comments",           _("Share your desktop with other users"),
                          "version",            VERSION,
                          "license",            license,
@@ -594,7 +593,7 @@ vino_status_icon_show_new_client_notification (gpointer user_data)
     return FALSE;
   }
 
-  if (!notify_is_initted () &&  !notify_init (_("GNOME Remote Desktop")))
+  if (!notify_is_initted () &&  !notify_init (g_get_application_name ()))
     {
       g_printerr (_("Error initializing libnotify\n"));
       g_free (user_data);
