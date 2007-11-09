@@ -1,3 +1,20 @@
+2007-11-09  Jonh Wendell  <jwendell@gnome.org>
+
+	Added a gconf key to control the behavior of the status icon.
+	Closes #442696.
+	
+	* server/vino-server.[ch]:
+	  (vino_server_get_status_icon): New function
+	  (vino_server_client_accepted),
+	  (vino_server_client_disconnected): Don't create or destroy the icon
+	  object, its life time is the server's life time.
+	* server/vino-status-icon.[ch]: New property: visibility
+	  (vino_status_icon_update_state): New function, combines tooltip and 
+	  visibility properties.
+	* server/vino-prefs.c,
+	  server/vino-server.schemas.in: Added a new gconf key (icon_visibility)
+	* server/Makefile.am: Added vino-status-icon.h to vino_enum_headers macro
+
 ==================== 2.21.1 =====================
 
 2007-10-19  Dan Winship  <danw@gnome.org>

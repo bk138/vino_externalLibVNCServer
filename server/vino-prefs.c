@@ -28,6 +28,7 @@
 #include <gconf/gconf-client.h>
 #include "vino-util.h"
 #include "vino-mdns.h"
+#include "vino-status-icon.h"
 
 #define VINO_PREFS_DIR                    "/desktop/gnome/remote_access"
 #define VINO_PREFS_ENABLED                VINO_PREFS_DIR "/enabled"
@@ -40,8 +41,9 @@
 #define VINO_PREFS_AUTHENTICATION_METHODS VINO_PREFS_DIR "/authentication_methods"
 #define VINO_PREFS_VNC_PASSWORD           VINO_PREFS_DIR "/vnc_password"
 #define VINO_PREFS_LOCK_SCREEN            VINO_PREFS_DIR "/lock_screen_on_disconnect"
+#define VINO_PREFS_ICON_VISIBILITY        VINO_PREFS_DIR "/icon_visibility"
 
-#define VINO_N_LISTENERS 10
+#define VINO_N_LISTENERS 11
 
 static GConfClient *vino_client  = NULL;
 static GSList      *vino_servers = NULL;
@@ -57,7 +59,7 @@ static char           *vino_vnc_password         = NULL;
 static gboolean        vino_use_alternative_port = FALSE;
 static int             vino_alternative_port     = VINO_SERVER_DEFAULT_PORT;
 static gboolean        vino_lock_screen          = FALSE;
-
+static VinoStatusIconVisibility vino_icon_visibility = VINO_STATUS_ICON_VISIBILITY_CLIENT;
 
 static void
 vino_prefs_enabled_changed (GConfClient *client,
@@ -344,10 +346,58 @@ vino_prefs_lock_screen_changed (GConfClient *client,
     vino_server_set_lock_screen (l->data, lock_screen);
 }
 
+static VinoStatusIconVisibility
+vino_prefs_icon_visibility_from_string (const char *value)
+{
+  VinoStatusIconVisibility ret_value = VINO_STATUS_ICON_VISIBILITY_INVALID;
+
+  if (!g_ascii_strcasecmp (value, "always"))
+    ret_value = VINO_STATUS_ICON_VISIBILITY_ALWAYS;
+  else if (!g_ascii_strcasecmp (value, "client"))
+    ret_value = VINO_STATUS_ICON_VISIBILITY_CLIENT;
+  else if (!g_ascii_strcasecmp (value, "never"))
+    ret_value = VINO_STATUS_ICON_VISIBILITY_NEVER;
+
+  return ret_value;
+}
+
+static void
+vino_prefs_icon_visibility_changed (GConfClient *client,
+				    guint	 cnxn_id,
+				    GConfEntry  *entry)
+{
+  const gchar  *entry_str;
+  GSList *l;
+  VinoStatusIconVisibility visibility;
+
+  if (!entry->value || entry->value->type != GCONF_VALUE_STRING)
+    return;
+
+  entry_str = gconf_value_get_string (entry->value);
+  visibility = vino_prefs_icon_visibility_from_string (entry_str);
+
+  if (visibility == vino_icon_visibility)
+    return;
+
+  vino_icon_visibility = visibility;
+
+  dprintf (PREFS, "Icon visibility changed: %s\n", entry_str);
+
+  for (l = vino_servers; l; l = l->next)
+    {
+      VinoStatusIcon *icon;
+
+      icon = vino_server_get_status_icon (l->data);
+      vino_status_icon_set_visibility (icon, visibility);
+    }
+}
+
 void
 vino_prefs_create_server (GdkScreen *screen)
 {
-  VinoServer *server;
+  VinoServer     *server;
+  VinoStatusIcon *icon;
+
 
   server = g_object_new (VINO_TYPE_SERVER,
 			 "prompt-enabled",       vino_prompt_enabled,
@@ -366,6 +416,9 @@ vino_prefs_create_server (GdkScreen *screen)
   vino_servers = g_slist_prepend (vino_servers, server);
   if (vino_enabled)
     vino_mdns_start ();
+
+  icon = vino_server_get_status_icon (server);
+  vino_status_icon_set_visibility (icon, vino_icon_visibility);
 }
 
 void
@@ -373,6 +426,7 @@ vino_prefs_init (gboolean view_only)
 {
   GSList *auth_methods_list, *l;
   int i = 0;
+  char *key_str;
 
   vino_client = gconf_client_get_default ();
 
@@ -448,6 +502,13 @@ vino_prefs_init (gboolean view_only)
   dprintf (PREFS, "Lock screen on disconnect: %s\n",
            vino_lock_screen ? "(true)" : "(false)");
 
+  key_str = gconf_client_get_string (vino_client,
+                                     VINO_PREFS_ICON_VISIBILITY,
+                                     NULL);
+  vino_icon_visibility = vino_prefs_icon_visibility_from_string (key_str);
+  dprintf (PREFS, "Icon policy: %s\n", key_str);
+  g_free (key_str);
+
   vino_listeners [i] =
     gconf_client_notify_add (vino_client,
 			     VINO_PREFS_ENABLED,
@@ -519,6 +580,14 @@ vino_prefs_init (gboolean view_only)
     gconf_client_notify_add (vino_client,
 			     VINO_PREFS_LOCK_SCREEN,
 			     (GConfClientNotifyFunc) vino_prefs_lock_screen_changed,
+			     NULL, NULL, NULL);
+
+  i++;
+
+  vino_listeners [i] =
+    gconf_client_notify_add (vino_client,
+			     VINO_PREFS_ICON_VISIBILITY,
+			     (GConfClientNotifyFunc) vino_prefs_icon_visibility_changed,
 			     NULL, NULL, NULL);
 
   i++;

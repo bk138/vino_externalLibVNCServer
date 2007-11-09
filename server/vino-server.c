@@ -33,7 +33,6 @@
 #include "vino-input.h"
 #include "vino-cursor.h"
 #include "vino-prompt.h"
-#include "vino-status-icon.h"
 #include "vino-dbus-listener.h"
 #include "vino-util.h"
 #include "vino-enums.h"
@@ -172,9 +171,6 @@ static void
 vino_server_client_accepted (VinoServer *server,
                              VinoClient *client)
 {
-  if (!server->priv->icon)
-    server->priv->icon = vino_status_icon_new (server, server->priv->screen);
-
   vino_status_icon_add_client (server->priv->icon, client);
 }
 
@@ -182,15 +178,10 @@ static void
 vino_server_client_disconnected (VinoServer *server,
                                  VinoClient *client)
 {
-  if (server->priv->icon)
-    if (vino_status_icon_remove_client (server->priv->icon, client))
-      {
-        g_object_unref (server->priv->icon);
-        server->priv->icon = NULL;
-
-        vino_server_lock_screen (server);
-      }
+  vino_status_icon_remove_client (server->priv->icon, client);
+  vino_server_lock_screen (server);
 }
+
 static void
 vino_server_handle_client_gone (rfbClientPtr rfb_client)
 {
@@ -909,6 +900,8 @@ vino_server_init_from_screen (VinoServer *server,
                     "owner-change",
                     G_CALLBACK (vino_server_clipboard_cb),
                     server);
+
+  server->priv->icon = vino_status_icon_new (server, server->priv->screen);
 }
 
 static void
@@ -962,6 +955,10 @@ vino_server_finalize (GObject *object)
   if (server->priv->listener)
     g_object_unref (server->priv->listener);
   server->priv->listener = NULL;
+
+  if (server->priv->icon)
+    g_object_unref (server->priv->icon);
+  server->priv->icon = NULL;
   
   g_free (server->priv);
   server->priv = NULL;
@@ -1439,6 +1436,9 @@ vino_server_set_on_hold (VinoServer *server,
 	}
 
       g_object_notify (G_OBJECT (server), "on-hold");
+      
+      if (server->priv->icon)
+        vino_status_icon_update_state (server->priv->icon);
     }
 }
 
@@ -1613,4 +1613,12 @@ vino_server_set_lock_screen (VinoServer *server,
 
       g_object_notify (G_OBJECT (server), "lock-screen");
     }
+}
+
+VinoStatusIcon *
+vino_server_get_status_icon (VinoServer *server)
+{
+  g_return_val_if_fail (VINO_IS_SERVER (server), NULL);
+
+  return server->priv->icon;
 }

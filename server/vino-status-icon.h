@@ -25,9 +25,15 @@
 
 #include <gtk/gtkstatusicon.h>
 
-#include "vino-server.h"
-
 G_BEGIN_DECLS
+
+typedef enum
+{
+  VINO_STATUS_ICON_VISIBILITY_INVALID = 0,
+  VINO_STATUS_ICON_VISIBILITY_ALWAYS,
+  VINO_STATUS_ICON_VISIBILITY_CLIENT,
+  VINO_STATUS_ICON_VISIBILITY_NEVER
+} VinoStatusIconVisibility;
 
 #define VINO_TYPE_STATUS_ICON         (vino_status_icon_get_type ())
 #define VINO_STATUS_ICON(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), VINO_TYPE_STATUS_ICON, VinoStatusIcon))
@@ -52,6 +58,8 @@ struct _VinoStatusIconClass
   GtkStatusIconClass base_class;
 };
 
+#include "vino-server.h"
+
 GType           vino_status_icon_get_type      (void) G_GNUC_CONST;
 
 VinoStatusIcon *vino_status_icon_new           (VinoServer      *server,
@@ -63,6 +71,11 @@ void            vino_status_icon_add_client    (VinoStatusIcon  *icon,
                                                 VinoClient      *client);
 gboolean        vino_status_icon_remove_client (VinoStatusIcon  *icon,
                                                 VinoClient      *client);
+
+void		vino_status_icon_update_state	(VinoStatusIcon *icon);
+void		vino_status_icon_set_visibility	(VinoStatusIcon           *icon,
+						 VinoStatusIconVisibility visibility);
+VinoStatusIconVisibility vino_status_icon_get_visibility (VinoStatusIcon *icon);
 
 G_END_DECLS
 

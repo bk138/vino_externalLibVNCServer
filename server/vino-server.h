@@ -101,6 +101,8 @@ void                 vino_server_set_lock_screen          (VinoServer     *serve
 							   gboolean        lock_screen);
 gboolean             vino_server_get_lock_screen          (VinoServer     *server);
 
+#include "vino-status-icon.h"
+VinoStatusIcon      *vino_server_get_status_icon          (VinoServer     *server);
 
 G_CONST_RETURN char *vino_client_get_hostname (VinoClient *client);
 void                 vino_client_disconnect   (VinoClient *client);

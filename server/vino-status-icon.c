@@ -23,16 +23,15 @@
  */
 
 #include <config.h>
-
-#include "vino-status-icon.h"
-#include "vino-util.h"
-
 #include <gtk/gtk.h>
 #include <string.h>
-
 #ifdef VINO_ENABLE_LIBNOTIFY
 #include <libnotify/notify.h>
 #endif
+
+#include "vino-status-icon.h"
+#include "vino-enums.h"
+#include "vino-util.h"
 
 struct _VinoStatusIconPrivate
 {
@@ -40,6 +39,7 @@ struct _VinoStatusIconPrivate
   VinoServer *server;
   GSList     *clients;
   GtkWidget  *disconnect_dialog;
+  VinoStatusIconVisibility visibility;
 
 #ifdef VINO_ENABLE_LIBNOTIFY
   NotifyNotification *new_client_notification;
@@ -51,7 +51,8 @@ G_DEFINE_TYPE (VinoStatusIcon, vino_status_icon, GTK_TYPE_STATUS_ICON);
 enum
 {
   PROP_0,
-  PROP_SERVER
+  PROP_SERVER,
+  PROP_VISIBILITY
 };
 
 typedef struct
@@ -88,6 +89,40 @@ vino_status_icon_finalize (GObject *object)
   G_OBJECT_CLASS (vino_status_icon_parent_class)->finalize (object);
 }
 
+void
+vino_status_icon_update_state (VinoStatusIcon *icon)
+{
+  char     *tooltip;
+  gboolean visible;
+
+  g_return_if_fail (VINO_IS_STATUS_ICON (icon));
+
+  visible = !vino_server_get_on_hold (icon->priv->server);
+
+  tooltip = g_strdup (_("Desktop sharing is enabled"));
+  
+  if (icon->priv->clients != NULL)
+    {
+      int n_clients;
+
+      n_clients = g_slist_length (icon->priv->clients);
+
+      tooltip = g_strdup_printf (ngettext ("One person is connected",
+                                           "%d people are connected",
+                                           n_clients),
+                                 n_clients);
+      visible = (visible) && ( (icon->priv->visibility == VINO_STATUS_ICON_VISIBILITY_CLIENT) ||
+			     (icon->priv->visibility == VINO_STATUS_ICON_VISIBILITY_ALWAYS) );
+    }
+  else
+    visible = visible && (icon->priv->visibility == VINO_STATUS_ICON_VISIBILITY_ALWAYS);
+
+  gtk_status_icon_set_tooltip (GTK_STATUS_ICON (icon), tooltip);
+  gtk_status_icon_set_visible (GTK_STATUS_ICON (icon), visible);
+
+  g_free (tooltip);
+}
+
 static void
 vino_status_icon_init (VinoStatusIcon *icon)
 {
@@ -107,6 +142,9 @@ vino_status_icon_set_property (GObject      *object,
     case PROP_SERVER:
       icon->priv->server = g_value_get_object (value);
       break;
+    case PROP_VISIBILITY:
+      vino_status_icon_set_visibility (icon, g_value_get_enum (value));
+      break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -125,6 +163,9 @@ vino_status_icon_get_property (GObject    *object,
     {
     case PROP_SERVER:
       g_value_set_object (value, icon->priv->server);
+      break;
+    case PROP_VISIBILITY:
+      g_value_set_enum (value, icon->priv->visibility);
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -414,9 +455,12 @@ vino_status_icon_popup_menu (GtkStatusIcon *status_icon,
       g_free (str);
     }
 
-  item = gtk_separator_menu_item_new ();
-  gtk_widget_show (item);
-  gtk_menu_shell_append (GTK_MENU_SHELL (icon->priv->menu), item);
+  if (n_clients)
+    {
+      item = gtk_separator_menu_item_new ();
+      gtk_widget_show (item);
+      gtk_menu_shell_append (GTK_MENU_SHELL (icon->priv->menu), item);
+    }
 
   item = gtk_image_menu_item_new_with_mnemonic (_("_Help"));
   gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item),
@@ -447,30 +491,6 @@ vino_status_icon_activate (GtkStatusIcon *icon)
   vino_status_icon_preferences (VINO_STATUS_ICON (icon));
 }
 
-static void
-vino_status_icon_update_tooltip (VinoStatusIcon *icon)
-{
-  char *tooltip;
-
-  tooltip = NULL;
-  
-  if (icon->priv->clients != NULL)
-    {
-      int n_clients;
-
-      n_clients = g_slist_length (icon->priv->clients);
-
-      tooltip = g_strdup_printf (ngettext ("One person is connected",
-                                           "%d people are connected",
-                                           n_clients),
-                                 n_clients);
-    }
-  
-  gtk_status_icon_set_tooltip (GTK_STATUS_ICON (icon), tooltip);
-
-  g_free (tooltip);
-}
-
 void
 vino_status_icon_add_client (VinoStatusIcon *icon,
                              VinoClient     *client)
@@ -480,7 +500,7 @@ vino_status_icon_add_client (VinoStatusIcon *icon,
 
   icon->priv->clients = g_slist_append (icon->priv->clients, client);
 
-  vino_status_icon_update_tooltip (icon);
+  vino_status_icon_update_state (icon);
 
   VinoStatusIconNotify *a;
   a = g_new (VinoStatusIconNotify, 1);
@@ -500,7 +520,7 @@ vino_status_icon_remove_client (VinoStatusIcon *icon,
 
   icon->priv->clients = g_slist_remove (icon->priv->clients, client);
 
-  vino_status_icon_update_tooltip (icon);
+  vino_status_icon_update_state (icon);
 
   return icon->priv->clients == NULL;
 }
@@ -529,6 +549,18 @@ vino_status_icon_class_init (VinoStatusIconClass *klass)
 							G_PARAM_STATIC_NAME |
 							G_PARAM_STATIC_NICK |
 							G_PARAM_STATIC_BLURB));
+  g_object_class_install_property (gobject_class,
+				   PROP_VISIBILITY,
+				   g_param_spec_enum ("visibility",
+						      "Icon visibility",
+						      "When the icon must be shown",
+						      VINO_TYPE_STATUS_ICON_VISIBILITY,
+						      VINO_STATUS_ICON_VISIBILITY_CLIENT,
+						      G_PARAM_READWRITE |
+						      G_PARAM_CONSTRUCT |
+						      G_PARAM_STATIC_NAME |
+						      G_PARAM_STATIC_NICK |
+						      G_PARAM_STATIC_BLURB));
 
   g_type_class_add_private (gobject_class, sizeof (VinoStatusIconPrivate));
 }
@@ -618,4 +650,26 @@ vino_status_icon_show_new_client_notification (gpointer user_data)
 #endif /* VINO_ENABLE_LIBNOTIFY */
 
   return FALSE;
+}
+
+void
+vino_status_icon_set_visibility (VinoStatusIcon *icon,
+				 VinoStatusIconVisibility  visibility)
+{
+  g_return_if_fail (VINO_IS_STATUS_ICON (icon));
+  g_return_if_fail (visibility != VINO_STATUS_ICON_VISIBILITY_INVALID);
+
+  if (visibility != icon->priv->visibility)
+    {
+      icon->priv->visibility = visibility;
+      vino_status_icon_update_state (icon);
+    }
+}
+
+VinoStatusIconVisibility
+vino_status_icon_get_visibility (VinoStatusIcon *icon)
+{
+  g_return_val_if_fail (VINO_IS_STATUS_ICON (icon), VINO_STATUS_ICON_VISIBILITY_INVALID);
+
+  return icon->priv->visibility;
 }

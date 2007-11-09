@@ -81,6 +81,7 @@ vino-marshal.c: vino-marshal.list $(GLIB_GENMARSHAL)
 vino_enum_headers = \
 	$(top_srcdir)/server/vino-server.h \
 	$(top_srcdir)/server/vino-prompt.h \
+	$(top_srcdir)/server/vino-status-icon.h \
 	$(NULL)
 
 vino-enums.c: @REBUILD@ $(vino_enum_headers)

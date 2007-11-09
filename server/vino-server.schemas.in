@@ -184,5 +184,22 @@
       </locale>
     </schema>
 
+    <schema>
+      <key>/schemas/desktop/gnome/remote_access/icon_visibility</key>
+      <applyto>/desktop/gnome/remote_access/icon_visibility</applyto>
+      <owner>gnome</owner>
+      <type>string</type>
+      <default>client</default>
+      <locale name="C">
+         <short>When the status icon should be shown</short>
+         <long>
+           This key controls the behavior of the status icon. There are
+           three options: "always" - The icon will be always there; "client" -
+           You will see the icon only when there is someone connected, this is
+           the default behavior; "never" - Never shows the icon.
+         </long>
+      </locale>
+    </schema>
+
   </schemalist>  
 </gconfschemafile>
