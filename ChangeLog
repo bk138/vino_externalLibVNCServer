@@ -1,3 +1,9 @@
+2007-11-10  Jonh Wendell  <jwendell@gnome.org>
+
+	* capplet/vino-preferences.c,
+	* capplet/vino-preferences.glade:
+	Added extra stuff, advanced configuration based on tabs (#361891)
+
 2007-11-09  Jonh Wendell  <jwendell@gnome.org>
 
 	* server/vino-main.c,

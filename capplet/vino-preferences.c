@@ -46,8 +46,14 @@
 #define VINO_PREFS_AUTHENTICATION_METHODS VINO_PREFS_DIR "/authentication_methods"
 #define VINO_PREFS_VNC_PASSWORD           VINO_PREFS_DIR "/vnc_password"
 #define VINO_PREFS_MAILTO                 VINO_PREFS_DIR "/mailto"
+#define VINO_PREFS_ICON_VISIBILITY        VINO_PREFS_DIR "/icon_visibility"
+#define VINO_PREFS_LOCAL_ONLY             VINO_PREFS_DIR "/local_only"
+#define VINO_PREFS_ENCRYPTION             VINO_PREFS_DIR "/require_encryption"
+#define VINO_PREFS_USE_ALTERNATIVE_PORT   VINO_PREFS_DIR "/use_alternative_port"
+#define VINO_PREFS_ALTERNATIVE_PORT       VINO_PREFS_DIR "/alternative_port"
+#define VINO_PREFS_LOCK_SCREEN            VINO_PREFS_DIR "/lock_screen_on_disconnect"
 
-#define N_LISTENERS 6
+#define N_LISTENERS 12
 
 #define VINO_DBUS_BUS_NAME  "org.gnome.Vino"
 #define VINO_DBUS_INTERFACE "org.gnome.VinoScreen"
@@ -61,6 +67,8 @@ typedef struct {
   GtkWidget   *writability_warning;
   GtkWidget   *sharing_icon;
   GtkWidget   *security_icon;
+  GtkWidget   *notification_icon;
+  GtkWidget   *advanced_icon;
   GtkWidget   *url_labels_box;
   GtkWidget   *url_label;
   GtkWidget   *allowed_toggle;
@@ -69,6 +77,14 @@ typedef struct {
   GtkWidget   *password_toggle;
   GtkWidget   *password_box;
   GtkWidget   *password_entry;
+  GtkWidget   *icon_always_radio;
+  GtkWidget   *icon_client_radio;
+  GtkWidget   *icon_never_radio;
+  GtkWidget   *local_only_toggle;
+  GtkWidget   *encryption_toggle;
+  GtkWidget   *use_alternative_port_toggle;
+  GtkWidget   *alternative_port_entry;
+  GtkWidget   *lock_screen_toggle;
   GtkTooltips *tips;
 
   guint        listeners [N_LISTENERS];
@@ -153,6 +169,324 @@ vino_preferences_dialog_update_for_allowed (VinoPreferencesDialog *dialog,
   gtk_widget_set_sensitive (dialog->url_labels_box,        allowed);
   gtk_widget_set_sensitive (dialog->password_toggle,       allowed);
   gtk_widget_set_sensitive (dialog->password_box,          allowed ? dialog->use_password : FALSE);
+  gtk_widget_set_sensitive (dialog->icon_always_radio,     allowed);
+  gtk_widget_set_sensitive (dialog->icon_client_radio,     allowed);
+  gtk_widget_set_sensitive (dialog->icon_never_radio,      allowed);
+  gtk_widget_set_sensitive (dialog->local_only_toggle,     allowed);
+  gtk_widget_set_sensitive (dialog->encryption_toggle,     allowed);
+  gtk_widget_set_sensitive (dialog->use_alternative_port_toggle, allowed);
+  gtk_widget_set_sensitive (dialog->alternative_port_entry,      allowed &&
+			    gconf_client_get_bool (dialog->client, VINO_PREFS_USE_ALTERNATIVE_PORT, NULL));
+  gtk_widget_set_sensitive (dialog->lock_screen_toggle,          allowed);
+}
+
+static void
+vino_preferences_dialog_local_only_toggled (GtkToggleButton       *toggle,
+					    VinoPreferencesDialog *dialog)
+{
+  gboolean local_only;
+
+  local_only = gtk_toggle_button_get_active (toggle);
+
+  gconf_client_set_bool (dialog->client, VINO_PREFS_LOCAL_ONLY, local_only, NULL);
+}
+
+static void
+vino_preferences_dialog_local_only_notify (GConfClient           *client,
+					   guint                  cnx_id,
+					   GConfEntry            *entry,
+					   VinoPreferencesDialog *dialog)
+{
+  gboolean local_only;
+
+  if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
+    return;
+
+  local_only = gconf_value_get_bool (entry->value) != FALSE;
+
+  if (local_only != gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->local_only_toggle)))
+    {
+      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->local_only_toggle), local_only);
+    }
+}
+
+static gboolean
+vino_preferences_dialog_setup_local_only_toggle (VinoPreferencesDialog *dialog)
+{
+  gboolean local_only;
+
+  dialog->local_only_toggle = glade_xml_get_widget (dialog->xml, "local_only_toggle");
+  g_assert (dialog->local_only_toggle != NULL);
+
+  local_only = gconf_client_get_bool (dialog->client, VINO_PREFS_LOCAL_ONLY, NULL);
+
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->local_only_toggle), local_only);
+
+  g_signal_connect (dialog->local_only_toggle, "toggled",
+		    G_CALLBACK (vino_preferences_dialog_local_only_toggled), dialog);
+
+  if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_LOCAL_ONLY, NULL))
+    {
+      gtk_widget_set_sensitive (dialog->local_only_toggle, FALSE);
+      gtk_widget_show (dialog->writability_warning);
+    }
+
+  dialog->listeners [dialog->n_listeners] = 
+    gconf_client_notify_add (dialog->client,
+			     VINO_PREFS_LOCAL_ONLY,
+			     (GConfClientNotifyFunc) vino_preferences_dialog_local_only_notify,
+			     dialog, NULL, NULL);
+  dialog->n_listeners++;
+
+  return local_only;
+}
+
+static void
+vino_preferences_dialog_encryption_toggled (GtkToggleButton       *toggle,
+					    VinoPreferencesDialog *dialog)
+{
+  gboolean encryption;
+
+  encryption = gtk_toggle_button_get_active (toggle);
+
+  gconf_client_set_bool (dialog->client, VINO_PREFS_ENCRYPTION, encryption, NULL);
+}
+
+static void
+vino_preferences_dialog_encryption_notify (GConfClient           *client,
+					   guint                  cnx_id,
+					   GConfEntry            *entry,
+					   VinoPreferencesDialog *dialog)
+{
+  gboolean encryption;
+
+  if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
+    return;
+
+  encryption = gconf_value_get_bool (entry->value) != FALSE;
+
+  if (encryption != gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->encryption_toggle)))
+    {
+      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->encryption_toggle), encryption);
+    }
+}
+
+static gboolean
+vino_preferences_dialog_setup_encryption_toggle (VinoPreferencesDialog *dialog)
+{
+  gboolean encryption;
+
+  dialog->encryption_toggle = glade_xml_get_widget (dialog->xml, "encryption_toggle");
+  g_assert (dialog->encryption_toggle != NULL);
+
+  encryption = gconf_client_get_bool (dialog->client, VINO_PREFS_ENCRYPTION, NULL);
+
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->encryption_toggle), encryption);
+
+  g_signal_connect (dialog->encryption_toggle, "toggled",
+		    G_CALLBACK (vino_preferences_dialog_encryption_toggled), dialog);
+
+  if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_ENCRYPTION, NULL))
+    {
+      gtk_widget_set_sensitive (dialog->encryption_toggle, FALSE);
+      gtk_widget_show (dialog->writability_warning);
+    }
+
+  dialog->listeners [dialog->n_listeners] = 
+    gconf_client_notify_add (dialog->client,
+			     VINO_PREFS_ENCRYPTION,
+			     (GConfClientNotifyFunc) vino_preferences_dialog_encryption_notify,
+			     dialog, NULL, NULL);
+  dialog->n_listeners++;
+
+  return encryption;
+}
+
+static void
+vino_preferences_dialog_use_alternative_port_toggled (GtkToggleButton       *toggle,
+						      VinoPreferencesDialog *dialog)
+{
+  gboolean use_alternative_port;
+
+  use_alternative_port = gtk_toggle_button_get_active (toggle);
+  gtk_widget_set_sensitive (dialog->alternative_port_entry, use_alternative_port);
+
+  gconf_client_set_bool (dialog->client, VINO_PREFS_USE_ALTERNATIVE_PORT, use_alternative_port, NULL);
+}
+
+static void
+vino_preferences_dialog_use_alternative_port_notify (GConfClient           *client,
+						     guint                  cnx_id,
+						     GConfEntry            *entry,
+						     VinoPreferencesDialog *dialog)
+{
+  gboolean use_alternative_port;
+
+  if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
+    return;
+
+  use_alternative_port = gconf_value_get_bool (entry->value) != FALSE;
+
+  if (use_alternative_port != gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->use_alternative_port_toggle)))
+    {
+      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->use_alternative_port_toggle), use_alternative_port);
+    }
+}
+
+static gboolean
+vino_preferences_dialog_setup_use_alternative_port_toggle (VinoPreferencesDialog *dialog)
+{
+  gboolean use_alternative_port;
+
+  dialog->use_alternative_port_toggle = glade_xml_get_widget (dialog->xml, "use_alternative_port_toggle");
+  g_assert (dialog->use_alternative_port_toggle != NULL);
+
+  use_alternative_port = gconf_client_get_bool (dialog->client, VINO_PREFS_USE_ALTERNATIVE_PORT, NULL);
+
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->use_alternative_port_toggle), use_alternative_port);
+  gtk_widget_set_sensitive (dialog->alternative_port_entry, use_alternative_port);
+
+  g_signal_connect (dialog->use_alternative_port_toggle, "toggled",
+		    G_CALLBACK (vino_preferences_dialog_use_alternative_port_toggled), dialog);
+
+  if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_USE_ALTERNATIVE_PORT, NULL))
+    {
+      gtk_widget_set_sensitive (dialog->use_alternative_port_toggle, FALSE);
+      gtk_widget_set_sensitive (dialog->alternative_port_entry, FALSE);
+      gtk_widget_show (dialog->writability_warning);
+    }
+
+  dialog->listeners [dialog->n_listeners] = 
+    gconf_client_notify_add (dialog->client,
+			     VINO_PREFS_USE_ALTERNATIVE_PORT,
+			     (GConfClientNotifyFunc) vino_preferences_dialog_use_alternative_port_notify,
+			     dialog, NULL, NULL);
+  dialog->n_listeners++;
+
+  return use_alternative_port;
+}
+
+static void
+vino_preferences_dialog_alternative_port_changed (GtkSpinButton         *button,
+						  VinoPreferencesDialog *dialog)
+{
+  gint alternative_port;
+
+  alternative_port = gtk_spin_button_get_value_as_int (button);
+
+  gconf_client_set_int (dialog->client, VINO_PREFS_ALTERNATIVE_PORT, alternative_port, NULL);
+}
+
+static void
+vino_preferences_dialog_alternative_port_notify (GConfClient           *client,
+						 guint                  cnx_id,
+						 GConfEntry            *entry,
+						 VinoPreferencesDialog *dialog)
+{
+  gint alternative_port;
+
+  if (!entry->value || entry->value->type != GCONF_VALUE_INT)
+    return;
+
+  alternative_port = gconf_value_get_int (entry->value);
+
+  if (alternative_port != gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (dialog->alternative_port_entry)))
+    {
+      gtk_spin_button_set_value (GTK_SPIN_BUTTON (dialog->alternative_port_entry), alternative_port);
+    }
+}
+
+static gint
+vino_preferences_dialog_setup_alternative_port_entry (VinoPreferencesDialog *dialog)
+{
+  gint alternative_port;
+
+  dialog->alternative_port_entry = glade_xml_get_widget (dialog->xml, "alternative_port_entry");
+  g_assert (dialog->alternative_port_entry != NULL);
+
+  alternative_port = gconf_client_get_int (dialog->client, VINO_PREFS_ALTERNATIVE_PORT, NULL);
+
+  gtk_spin_button_set_value (GTK_SPIN_BUTTON (dialog->alternative_port_entry), alternative_port);
+
+  g_signal_connect (dialog->alternative_port_entry, "value-changed",
+		    G_CALLBACK (vino_preferences_dialog_alternative_port_changed), dialog);
+
+  if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_ALTERNATIVE_PORT, NULL))
+    {
+      gtk_widget_set_sensitive (dialog->use_alternative_port_toggle, FALSE);
+      gtk_widget_set_sensitive (dialog->alternative_port_entry, FALSE);
+      gtk_widget_show (dialog->writability_warning);
+    }
+
+  dialog->listeners [dialog->n_listeners] = 
+    gconf_client_notify_add (dialog->client,
+			     VINO_PREFS_ALTERNATIVE_PORT,
+			     (GConfClientNotifyFunc) vino_preferences_dialog_alternative_port_notify,
+			     dialog, NULL, NULL);
+  dialog->n_listeners++;
+
+  return alternative_port;
+}
+
+static void
+vino_preferences_dialog_lock_screen_toggled (GtkToggleButton       *toggle,
+					     VinoPreferencesDialog *dialog)
+{
+  gboolean lock_screen;
+
+  lock_screen = gtk_toggle_button_get_active (toggle);
+
+  gconf_client_set_bool (dialog->client, VINO_PREFS_LOCK_SCREEN, lock_screen, NULL);
+}
+
+static void
+vino_preferences_dialog_lock_screen_notify (GConfClient           *client,
+					    guint                  cnx_id,
+					    GConfEntry            *entry,
+					    VinoPreferencesDialog *dialog)
+{
+  gboolean lock_screen;
+
+  if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
+    return;
+
+  lock_screen = gconf_value_get_bool (entry->value) != FALSE;
+
+  if (lock_screen != gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->lock_screen_toggle)))
+    {
+      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->lock_screen_toggle), lock_screen);
+    }
+}
+
+static gboolean
+vino_preferences_dialog_setup_lock_screen_toggle (VinoPreferencesDialog *dialog)
+{
+  gboolean lock_screen;
+
+  dialog->lock_screen_toggle = glade_xml_get_widget (dialog->xml, "lock_screen_toggle");
+  g_assert (dialog->lock_screen_toggle != NULL);
+
+  lock_screen = gconf_client_get_bool (dialog->client, VINO_PREFS_LOCK_SCREEN, NULL);
+
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->lock_screen_toggle), lock_screen);
+
+  g_signal_connect (dialog->lock_screen_toggle, "toggled",
+		    G_CALLBACK (vino_preferences_dialog_lock_screen_toggled), dialog);
+
+  if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_LOCK_SCREEN, NULL))
+    {
+      gtk_widget_set_sensitive (dialog->lock_screen_toggle, FALSE);
+      gtk_widget_show (dialog->writability_warning);
+    }
+
+  dialog->listeners [dialog->n_listeners] = 
+    gconf_client_notify_add (dialog->client,
+			     VINO_PREFS_LOCK_SCREEN,
+			     (GConfClientNotifyFunc) vino_preferences_dialog_lock_screen_notify,
+			     dialog, NULL, NULL);
+  dialog->n_listeners++;
+
+  return lock_screen;
 }
 
 static void
@@ -332,6 +666,87 @@ vino_preferences_dialog_setup_view_only_toggle (VinoPreferencesDialog *dialog)
     gconf_client_notify_add (dialog->client,
 			     VINO_PREFS_VIEW_ONLY,
 			     (GConfClientNotifyFunc) vino_preferences_dialog_view_only_notify,
+			     dialog, NULL, NULL);
+  dialog->n_listeners++;
+}
+
+static void
+vino_preferences_dialog_icon_visibility_toggled (GtkToggleButton       *toggle,
+						 VinoPreferencesDialog *dialog)
+{
+  gchar *value = "client";
+
+  if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->icon_always_radio)))
+    value = "always";
+  else if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->icon_never_radio)))
+    value = "never";
+  
+  gconf_client_set_string (dialog->client,
+			   VINO_PREFS_ICON_VISIBILITY,
+			   value,
+			   NULL);
+}
+
+static void
+vino_preferences_dialog_icon_visibility_notify (GConfClient           *client,
+						guint                  cnx_id,
+						GConfEntry            *entry,
+						VinoPreferencesDialog *dialog)
+{
+  const gchar *value;
+
+  if (!entry->value || entry->value->type != GCONF_VALUE_STRING)
+    return;
+
+  value = gconf_value_get_string (entry->value);
+  if (!g_ascii_strcasecmp (value, "always"))
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->icon_always_radio), TRUE);
+  else if (!g_ascii_strcasecmp (value, "client"))
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->icon_client_radio), TRUE);
+  else if (!g_ascii_strcasecmp (value, "never"))
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->icon_never_radio), TRUE);
+}
+
+
+static void
+vino_preferences_dialog_setup_icon_visibility (VinoPreferencesDialog *dialog)
+{
+  gchar *value;
+
+  dialog->icon_always_radio = glade_xml_get_widget (dialog->xml, "icon_always_radio");
+  g_assert (dialog->icon_always_radio != NULL);
+  dialog->icon_client_radio = glade_xml_get_widget (dialog->xml, "icon_client_radio");
+  g_assert (dialog->icon_client_radio != NULL);
+  dialog->icon_never_radio = glade_xml_get_widget (dialog->xml, "icon_never_radio");
+  g_assert (dialog->icon_never_radio != NULL);
+
+  value = gconf_client_get_string (dialog->client, VINO_PREFS_ICON_VISIBILITY, NULL);
+  if (!g_ascii_strcasecmp (value, "always"))
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->icon_always_radio), TRUE);
+  else if (!g_ascii_strcasecmp (value, "client"))
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->icon_client_radio), TRUE);
+  else if (!g_ascii_strcasecmp (value, "never"))
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->icon_never_radio), TRUE);
+
+  g_signal_connect (dialog->icon_always_radio, "toggled",
+		    G_CALLBACK (vino_preferences_dialog_icon_visibility_toggled), dialog);
+  g_signal_connect (dialog->icon_client_radio, "toggled",
+		    G_CALLBACK (vino_preferences_dialog_icon_visibility_toggled), dialog);
+  g_signal_connect (dialog->icon_never_radio, "toggled",
+		    G_CALLBACK (vino_preferences_dialog_icon_visibility_toggled), dialog);
+
+  if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_ICON_VISIBILITY, NULL))
+    {
+      gtk_widget_set_sensitive (dialog->icon_always_radio, FALSE);
+      gtk_widget_set_sensitive (dialog->icon_client_radio, FALSE);
+      gtk_widget_set_sensitive (dialog->icon_never_radio, FALSE);
+      gtk_widget_show (dialog->writability_warning);
+    }
+
+  dialog->listeners [dialog->n_listeners] = 
+    gconf_client_notify_add (dialog->client,
+			     VINO_PREFS_ICON_VISIBILITY,
+			     (GConfClientNotifyFunc) vino_preferences_dialog_icon_visibility_notify,
 			     dialog, NULL, NULL);
   dialog->n_listeners++;
 }
@@ -607,6 +1022,21 @@ vino_preferences_dialog_setup_icons (VinoPreferencesDialog *dialog)
   gtk_image_set_from_icon_name (GTK_IMAGE (dialog->security_icon),
                                 "system-lock-screen",
                                 GTK_ICON_SIZE_DIALOG);
+
+  dialog->notification_icon = glade_xml_get_widget (dialog->xml, "notification_icon");
+  g_assert (dialog->notification_icon != NULL);
+
+  gtk_image_set_from_icon_name (GTK_IMAGE (dialog->notification_icon),
+                                "gnome-panel-notification-area",
+                                GTK_ICON_SIZE_DIALOG);
+
+  dialog->advanced_icon = glade_xml_get_widget (dialog->xml, "advanced_icon");
+  g_assert (dialog->advanced_icon != NULL);
+
+  gtk_image_set_from_icon_name (GTK_IMAGE (dialog->advanced_icon),
+                                "gtk-preferences",
+                                GTK_ICON_SIZE_DIALOG);
+
 }
 
 static void
@@ -1039,6 +1469,12 @@ vino_preferences_dialog_init (VinoPreferencesDialog *dialog)
   vino_preferences_dialog_setup_view_only_toggle      (dialog);
   vino_preferences_dialog_setup_password_toggle       (dialog);
   vino_preferences_dialog_setup_password_entry        (dialog);
+  vino_preferences_dialog_setup_icon_visibility       (dialog);
+  vino_preferences_dialog_setup_local_only_toggle     (dialog);
+  vino_preferences_dialog_setup_encryption_toggle     (dialog);
+  vino_preferences_dialog_setup_alternative_port_entry      (dialog);
+  vino_preferences_dialog_setup_use_alternative_port_toggle (dialog);
+  vino_preferences_dialog_setup_lock_screen_toggle          (dialog);
 
   g_assert (dialog->n_listeners == dialog->expected_listeners);
 
