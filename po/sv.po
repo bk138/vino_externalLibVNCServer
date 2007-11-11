@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-09 01:14+0200\n"
-"PO-Revision-Date: 2007-08-09 01:15+0100\n"
+"POT-Creation-Date: 2007-11-11 12:11+0100\n"
+"PO-Revision-Date: 2007-11-11 12:15+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -16,20 +16,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:634
-#: ../capplet/vino-preferences.c:669
-#: ../capplet/vino-preferences.c:727
+#: ../capplet/vino-preferences.c:1064
+#: ../capplet/vino-preferences.c:1099
+#: ../capplet/vino-preferences.c:1157
 #: ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Misslyckades med att öppna anslutning mot bussen: %s\n"
 
-#: ../capplet/vino-preferences.c:936
+#: ../capplet/vino-preferences.c:1366
 msgid "Send this command by email"
 msgstr "Skicka detta kommando med e-post"
 
-#: ../capplet/vino-preferences.c:971
+#: ../capplet/vino-preferences.c:1401
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -47,48 +47,108 @@ msgid "Set your remote desktop access preferences"
 msgstr "Ställ in dina inställningar för åtkomst till fjärrskrivbord"
 
 #: ../capplet/vino-preferences.glade.h:1
+msgid "<b>Advanced Settings</b>"
+msgstr "<b>Avancerade inställningar</b>"
+
+#: ../capplet/vino-preferences.glade.h:2
+msgid "<b>Notification Area</b>"
+msgstr "<b>Notifieringsyta</b>"
+
+#: ../capplet/vino-preferences.glade.h:3
 msgid "<b>Security</b>"
 msgstr "<b>Säkerhet</b>"
 
-#: ../capplet/vino-preferences.glade.h:2
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Sharing</b>"
 msgstr "<b>Delning</b>"
 
-#: ../capplet/vino-preferences.glade.h:3
+#: ../capplet/vino-preferences.glade.h:5
 msgid "A_sk you for confirmation"
 msgstr "F_råga dig för bekräftelse"
 
-#: ../capplet/vino-preferences.glade.h:4
+#: ../capplet/vino-preferences.glade.h:6
+msgid "Advanced"
+msgstr "Avancerat"
+
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Al_ways display an icon"
+msgstr "Visa all_tid en ikon"
+
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Allow other users to _view your desktop"
 msgstr "Tillåt andra användare att _se ditt skrivbord"
 
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:9
+msgid "General"
+msgstr "Allmänt"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid "If checked, remote users accessing the desktop are required to support encryption"
+msgstr "Om kryssad kommer fjärranvändare som ansluter till skrivbordet att behöva använda kryptering"
+
+#: ../capplet/vino-preferences.glade.h:11
+msgid "If checked, screen will be locked after the last remote client disconnect"
+msgstr "Om kryssad kommer skärmen att låsas efter att den sista fjärrklienten kopplar från"
+
+#: ../capplet/vino-preferences.glade.h:12
+msgid "If checked, the server will only accept connections from localhost"
+msgstr "Om kryssad kommer servern endast att acceptera anslutningar från localhost"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid "If checked, the server will use another port, instead of the default (5900)"
+msgstr "Om kryssad kommer servern att använda en annan port istället för standardporten (5900)"
+
+#: ../capplet/vino-preferences.glade.h:14
 msgid "Remote Desktop Preferences"
 msgstr "Inställningar för fjärrskrivbord"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:15
 msgid "Some of these preferences are locked down"
 msgstr "En del av dessa inställningar är låsta"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:16
 msgid "Users can view your desktop using this command:"
 msgstr "Användare kan se ditt skrivbord med hjälp av detta kommando:"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:17
 msgid "When a user tries to view or control your desktop:"
 msgstr "När en användare försöker se eller kontrollera ditt skrivbord:"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:18
 msgid "_Allow other users to control your desktop"
 msgstr "_Tillåt andra användare att styra ditt skrivbord"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:19
+msgid "_Lock screen on disconnect"
+msgstr "_Lås skärmen vid frånkoppling"
+
+#: ../capplet/vino-preferences.glade.h:20
+msgid "_Never display an icon"
+msgstr "Visa _aldrig en ikon"
+
+#: ../capplet/vino-preferences.glade.h:21
+msgid "_Only allow local connections"
+msgstr "Tillåt _endast lokala anslutningar"
+
+#: ../capplet/vino-preferences.glade.h:22
+msgid "_Only display an icon when there is someone connected"
+msgstr "_Visa endast en ikon när någon är ansluten"
+
+#: ../capplet/vino-preferences.glade.h:23
 msgid "_Password:"
 msgstr "_Lösenord:"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:24
+msgid "_Require encryption"
+msgstr "_Kräv kryptering"
+
+#: ../capplet/vino-preferences.glade.h:25
 msgid "_Require the user to enter this password:"
 msgstr "_Kräv att användaren anger detta lösenord:"
+
+#: ../capplet/vino-preferences.glade.h:26
+msgid "_Use an alternative port:"
+msgstr "A_nvänd en alternativ port:"
 
 #: ../server/vino-dbus-listener.c:188
 #: ../server/vino-dbus-listener.c:218
@@ -107,7 +167,11 @@ msgstr "Slut på minne vid registrering av objektsökvägen \"%s\""
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Misslyckades med att få tag på D-Bus-namnet \"%s\"\n"
 
-#: ../server/vino-main.c:83
+#: ../server/vino-main.c:74
+msgid "GNOME Remote Desktop"
+msgstr "GNOME-fjärrskrivbord"
+
+#: ../server/vino-main.c:84
 msgid "Your XServer does not support the XTest extension - remote desktop access will be view-only\n"
 msgstr "Din X-server stöder inte XTest-tillägget -- åtkomst till fjärrskrivbord kommer att vara endast med visning\n"
 
@@ -255,8 +319,16 @@ msgid "The port which the server will listen to if the 'use_alternative_port' ke
 msgstr "Porten som servern kommer att lyssna på om nyckeln \"use_alternative_port\" är inställd till sant. Giltiga värden är i intervallet 5000 upp till 50000."
 
 #: ../server/vino-server.schemas.in.h:22
+msgid "This key controls the behavior of the status icon. There are three options: \"always\" - The icon will be always there; \"client\" - You will see the icon only when there is someone connected, this is the default behavior; \"never\" - Never shows the icon."
+msgstr "Denna nyckel bestämmer beteendet för statusikonen. Det finns tre alternativ: \"always\" - Ikonen kommer alltid att visas; \"client\" - Du kommer endast att se ikonen när någon är ansluten, detta är standardbeteendet; \"never\" - Visar aldrig ikonen."
+
+#: ../server/vino-server.schemas.in.h:23
 msgid "This key specifies the e-mail address to which the remote desktop URL should be sent if the user clicks on the URL in the Remote Desktop preferences dialog."
 msgstr "Denna nyckel anger e-postadressen till vilken URL:en till fjärrskrivbordet ska skickas om användaren klickar på URL:en i fönstret för fjärrskrivbordsinställningar."
+
+#: ../server/vino-server.schemas.in.h:24
+msgid "When the status icon should be shown"
+msgstr "När statusikonen ska visas"
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -266,7 +338,18 @@ msgstr "Fjärrskrivbordsservern kör redan. Avslutar...\n"
 msgid "Problem registering the remote desktop server with bonobo-activation; exiting ...\n"
 msgstr "Problem vid registrering av fjärrskrivbordsservern i bonobo-activation. Avslutar...\n"
 
-#: ../server/vino-status-icon.c:204
+#: ../server/vino-status-icon.c:102
+msgid "Desktop sharing is enabled"
+msgstr "Skrivbordsdelning är aktiverat"
+
+#: ../server/vino-status-icon.c:110
+#, c-format
+msgid "One person is connected"
+msgid_plural "%d people are connected"
+msgstr[0] "En person är ansluten"
+msgstr[1] "%d personer är anslutna"
+
+#: ../server/vino-status-icon.c:245
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
@@ -275,7 +358,7 @@ msgstr ""
 "Det uppstod ett fel vid visning av inställningarna:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:212
+#: ../server/vino-status-icon.c:253
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -284,7 +367,7 @@ msgstr ""
 "Det uppstod ett fel vid visning av hjälp:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:235
+#: ../server/vino-status-icon.c:276
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -320,7 +403,7 @@ msgstr ""
 "Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:250
+#: ../server/vino-status-icon.c:291
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander\n"
@@ -329,89 +412,77 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "tp-sv@listor.tp-sv.se"
 
-#: ../server/vino-status-icon.c:256
-#: ../server/vino-status-icon.c:560
-msgid "GNOME Remote Desktop"
-msgstr "GNOME-fjärrskrivbord"
-
-#: ../server/vino-status-icon.c:257
+#: ../server/vino-status-icon.c:297
 msgid "Share your desktop with other users"
 msgstr "Dela ditt skrivbord med andra användare"
 
-#: ../server/vino-status-icon.c:320
+#: ../server/vino-status-icon.c:360
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Är du säker på att du vill koppla från \"%s\"?"
 
-#: ../server/vino-status-icon.c:322
+#: ../server/vino-status-icon.c:362
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Fjärranvändaren från \"%s\" kommer att kopplas från. Är du säker?"
 
-#: ../server/vino-status-icon.c:327
+#: ../server/vino-status-icon.c:367
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Är du säker på att du vill koppla från alla klienter?"
 
-#: ../server/vino-status-icon.c:328
+#: ../server/vino-status-icon.c:368
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Alla fjärranvändare kommer att kopplas från. Är du säker?"
 
-#: ../server/vino-status-icon.c:340
+#: ../server/vino-status-icon.c:380
 msgid "Disconnect"
 msgstr "Koppla från"
 
-#: ../server/vino-status-icon.c:365
+#: ../server/vino-status-icon.c:406
 msgid "_Preferences"
 msgstr "_Inställningar"
 
-#: ../server/vino-status-icon.c:377
+#: ../server/vino-status-icon.c:421
 msgid "Disconnect all"
 msgstr "Koppla från alla"
 
-#: ../server/vino-status-icon.c:399
+#: ../server/vino-status-icon.c:444
 #, c-format
 msgid "Disconnect %s"
 msgstr "Koppla från %s"
 
-#: ../server/vino-status-icon.c:416
+#: ../server/vino-status-icon.c:464
 msgid "_Help"
 msgstr "_Hjälp"
 
-#: ../server/vino-status-icon.c:424
+#: ../server/vino-status-icon.c:472
 msgid "_About"
 msgstr "_Om"
 
-#: ../server/vino-status-icon.c:458
-#, c-format
-msgid "One person is connected"
-msgid_plural "%d people are connected"
-msgstr[0] "En person är ansluten"
-msgstr[1] "%d personer är anslutna"
-
-#: ../server/vino-status-icon.c:562
+#: ../server/vino-status-icon.c:598
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Fel vid initiering av libnotify\n"
 
-#: ../server/vino-status-icon.c:576
+#: ../server/vino-status-icon.c:612
 msgid "Another user is viewing your desktop"
 msgstr "En annan användare ser på ditt skrivbord"
 
-#: ../server/vino-status-icon.c:577
+#: ../server/vino-status-icon.c:613
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "En fjärranvändare på datorn \"%s\" ser på ditt skrivbord."
 
-#: ../server/vino-status-icon.c:582
+#: ../server/vino-status-icon.c:618
 msgid "Another user is controlling your desktop"
 msgstr "En annan användare styr ditt skrivbord"
 
-#: ../server/vino-status-icon.c:583
+#: ../server/vino-status-icon.c:619
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "En fjärranvändare på datorn \"%s\" styr ditt skrivbord."
 
-#: ../server/vino-status-icon.c:605
+#: ../server/vino-status-icon.c:641
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Fel vid visning av notifieringsbubbla: %s\n"
@@ -482,8 +553,6 @@ msgstr "Startar inte fjärrskrivbordsserver"
 #~ msgstr ""
 #~ "Lösenordet (base64-kodat) som används för att autentisera typer med "
 #~ "VncAuth-metoden"
-#~ msgid "Use an alternative port"
-#~ msgstr "Använd en alternativ port"
 #~ msgid "Listen on the port specified by the 'alternative-port' property"
 #~ msgstr "Lyssna på porten som angivits av egenskapen \"alternative-port\""
 #~ msgid ""
