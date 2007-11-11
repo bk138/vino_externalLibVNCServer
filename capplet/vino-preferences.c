@@ -65,10 +65,6 @@ typedef struct {
 
   GtkWidget   *dialog;
   GtkWidget   *writability_warning;
-  GtkWidget   *sharing_icon;
-  GtkWidget   *security_icon;
-  GtkWidget   *notification_icon;
-  GtkWidget   *advanced_icon;
   GtkWidget   *url_labels_box;
   GtkWidget   *url_label;
   GtkWidget   *allowed_toggle;
@@ -1005,39 +1001,6 @@ vino_preferences_dialog_setup_password_entry (VinoPreferencesDialog *dialog)
 }
 
 static void
-vino_preferences_dialog_setup_icons (VinoPreferencesDialog *dialog)
-{
-  dialog->sharing_icon = glade_xml_get_widget (dialog->xml, "sharing_icon");
-  g_assert (dialog->sharing_icon != NULL);
-  
-  gtk_image_set_from_icon_name (GTK_IMAGE (dialog->sharing_icon),
-                                "preferences-desktop-remote-desktop",
-                                GTK_ICON_SIZE_DIALOG);
-
-  dialog->security_icon = glade_xml_get_widget (dialog->xml, "security_icon");
-  g_assert (dialog->security_icon != NULL);
-
-  gtk_image_set_from_icon_name (GTK_IMAGE (dialog->security_icon),
-                                "system-lock-screen",
-                                GTK_ICON_SIZE_DIALOG);
-
-  dialog->notification_icon = glade_xml_get_widget (dialog->xml, "notification_icon");
-  g_assert (dialog->notification_icon != NULL);
-
-  gtk_image_set_from_icon_name (GTK_IMAGE (dialog->notification_icon),
-                                "gnome-panel-notification-area",
-                                GTK_ICON_SIZE_DIALOG);
-
-  dialog->advanced_icon = glade_xml_get_widget (dialog->xml, "advanced_icon");
-  g_assert (dialog->advanced_icon != NULL);
-
-  gtk_image_set_from_icon_name (GTK_IMAGE (dialog->advanced_icon),
-                                "gtk-preferences",
-                                GTK_ICON_SIZE_DIALOG);
-
-}
-
-static void
 vino_preferences_server_updated (DBusGProxy *proxy,
                                  const char *name,
                                  const char *prev_owner,
@@ -1443,8 +1406,6 @@ vino_preferences_dialog_init (VinoPreferencesDialog *dialog)
 
   dialog->dialog = glade_xml_get_widget (dialog->xml, "vino_dialog");
   g_assert (dialog->dialog != NULL);
-
-  vino_preferences_dialog_setup_icons (dialog);
 
   g_signal_connect (dialog->dialog, "response",
 		    G_CALLBACK (vino_preferences_dialog_response), dialog);
