@@ -1007,8 +1007,6 @@ vino_preferences_dialog_setup_password_entry (VinoPreferencesDialog *dialog)
 static void
 vino_preferences_dialog_setup_icons (VinoPreferencesDialog *dialog)
 {
-  gtk_window_set_icon_name (GTK_WINDOW (dialog->dialog), "preferences-desktop-remote-desktop");
-
   dialog->sharing_icon = glade_xml_get_widget (dialog->xml, "sharing_icon");
   g_assert (dialog->sharing_icon != NULL);
   
