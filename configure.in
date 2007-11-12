@@ -1,4 +1,4 @@
-AC_INIT([vino], [2.21.1],
+AC_INIT([vino], [2.21.2],
         [http://bugzilla.gnome.org/enter_bug.cgi?product=vino])
 AC_CONFIG_SRCDIR(server/vino-fb.c)
 

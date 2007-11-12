@@ -1,3 +1,17 @@
+Vino 2.21.2
+============
+
+  Features
+
+    + New gconf key to control the status icon behaviour
+    + Added more options in the configuration applet
+
+  Translations
+
+	+ Jorge González (es)
+	+ Matej Urbančič (sl)
+	+ Daniel Nylander (sv)
+
 Vino 2.21.1
 ============
 
