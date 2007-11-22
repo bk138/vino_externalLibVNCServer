@@ -1,0 +1,549 @@
+# Telugu translation of gnome-vino.
+# Copyright (C) 2007 Swecha Telugu Localisation Team <localisation@swecha.org>
+# This file is distributed under the same license as the gnome-vino package.
+# Matapathi Pramod <pramod@swecha.net>, 2007
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Swecha  VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-11-22 11:31+0530\n"
+"PO-Revision-Date: 2007-11-21 17:00+0530\n"
+"Last-Translator: Matapathi Pramod <pramod@swecha.net>\n"
+"Language-Team: Swecha Telugu Localisation Team <localisation@swecha.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: ../capplet/vino-preferences.c:1025 ../capplet/vino-preferences.c:1060
+#: ../capplet/vino-preferences.c:1118 ../server/vino-dbus-listener.c:374
+#: ../server/vino-server.c:148
+#, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "వాహకము కు బంధం తెరుచుటకు విఫలమైంది: %s\n"
+
+#: ../capplet/vino-preferences.c:1327
+msgid "Send this command by email"
+msgstr "ఈ తపాలా ద్వారా ఈ ఆదేశం పంపుము"
+
+#: ../capplet/vino-preferences.c:1362
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"సహాయము ప్రదర్శించుటలో ఒక దోషము ఏర్పడింది: \n"
+"%s"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:1
+msgid "Remote Desktop"
+msgstr "సుదూర రంగస్థలం"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "మీ సుదూర రంగస్థల సాంగత్యం అభీష్టాలను అమర్చుము"
+
+#: ../capplet/vino-preferences.glade.h:1
+msgid "<b>Network</b>"
+msgstr "<b>అల్లిక</b>"
+
+#: ../capplet/vino-preferences.glade.h:2
+msgid "<b>Notification Area</b>"
+msgstr "<b>తాఖీదుఇచ్చు స్థలం</b>"
+
+#: ../capplet/vino-preferences.glade.h:3
+msgid "<b>Security</b>"
+msgstr "<b>రక్షణ</b>"
+
+#: ../capplet/vino-preferences.glade.h:4
+msgid "<b>Sharing</b>"
+msgstr "<b>పంచుకొనుట</b>"
+
+#: ../capplet/vino-preferences.glade.h:5
+msgid "A_sk you for confirmation"
+msgstr "_ధృవీకరణ కొరకు మీకు అడగబడెను"
+
+#: ../capplet/vino-preferences.glade.h:6
+msgid "Advanced"
+msgstr "ఉన్నతస్థితి"
+
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Al_ways display an icon"
+msgstr "_ఏల్లప్పుడు ఒక ప్రతిమ ప్రదర్శించుము"
+
+#: ../capplet/vino-preferences.glade.h:8
+msgid "Allow other users to _view your desktop"
+msgstr "మీ రంగస్థలం ను దర్శించుటకు ఇతర వినియోగదారులను అనుమతించు"
+
+#: ../capplet/vino-preferences.glade.h:9
+msgid "General"
+msgstr "సర్వసాధారణమైన"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid ""
+"If checked, remote users accessing the desktop are required to support "
+"encryption"
+msgstr ""
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:12
+msgid "If checked, remote users are able to control your mouse and keyboard"
+msgstr "ఒకవేళ తనిఖీచేస్తే, సుదూర వినియోగదారులు మీ చుంచు మరియు మీటపలకం నియంత్రించగలరు"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid ""
+"If checked, screen will be locked after the last remote client disconnect"
+msgstr "ఒకవేళ తనిఖీచేస్తే, చివరి సుదూర బంట్రౌతు తెంచబడిన తరువాత తెరకి తాళం వేయబడుతుంది"
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "If checked, the server will only accept connections from localhost"
+msgstr "ఒకవేళ తనిఖీచేస్తే, సేవిక స్థానిక ఆతిథ్యం నుండి మాత్రమే బంధాలను అనుమతిస్తుంది"
+
+#: ../capplet/vino-preferences.glade.h:15
+msgid ""
+"If checked, the server will use another port, instead of the default (5900)"
+msgstr "ఒకవేళ తనిఖీచేస్తే, సేవిక అప్రమేయము (5900) కు బదులుగా, మరియొక రేవును వాడుతుంది"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:17
+msgid "If checked, your desktop will be shared"
+msgstr "ఒకవేళ తనిఖీచేయబడిన, మీ రంగస్థలం పంచుకొనబడుతుంది"
+
+#: ../capplet/vino-preferences.glade.h:18
+msgid "Remote Desktop Preferences"
+msgstr "సుదూర రంగస్థల అభీష్టాలు"
+
+#: ../capplet/vino-preferences.glade.h:19
+msgid "Some of these preferences are locked down"
+msgstr "ఈ అభీష్టాలు కొన్ని తాళం వేయబడినవి"
+
+#: ../capplet/vino-preferences.glade.h:20
+msgid "Users can view your desktop using this command:"
+msgstr "ఈ ఆదేశం వాడుట ద్వారా వినియోగదారులు మీ రంగస్థలం దర్శించగలరు:"
+
+#: ../capplet/vino-preferences.glade.h:21
+msgid "When a user tries to view or control your desktop:"
+msgstr "వినియోగదారు మీ రంగస్థలం ను దర్శించుటకు లేదా నియంత్రించుటకు ప్రయత్నించునపుడు"
+
+#: ../capplet/vino-preferences.glade.h:22
+msgid "_Allow other users to control your desktop"
+msgstr "_ఇతర వినియోగదారులకు మీ రంగస్థలం నియంత్రించుటకు అనుమతించు"
+
+#: ../capplet/vino-preferences.glade.h:23
+msgid "_Lock screen on disconnect"
+msgstr "_బంధం తెంచునపుడు తెరకి తాళంవేయు"
+
+#: ../capplet/vino-preferences.glade.h:24
+msgid "_Never display an icon"
+msgstr "_ప్రతిమ ఎల్లప్పుడు ప్రదర్శించకు"
+
+#: ../capplet/vino-preferences.glade.h:25
+msgid "_Only allow local connections"
+msgstr "_స్థానిక బంధాలను మాత్రమే అనుమతించు"
+
+#: ../capplet/vino-preferences.glade.h:26
+msgid "_Only display an icon when there is someone connected"
+msgstr "_ఎవరోఒకరు బంధం ఏర్పరచినపుడు ప్రతిమ మాత్రమే ప్రదర్శించు"
+
+#: ../capplet/vino-preferences.glade.h:27
+msgid "_Password:"
+msgstr "_రహస్యపదము:"
+
+#: ../capplet/vino-preferences.glade.h:28
+msgid "_Require encryption"
+msgstr "_రహస్యపరచుట అవసరము"
+
+#: ../capplet/vino-preferences.glade.h:29
+msgid "_Require the user to enter this password:"
+msgstr "_వినియోగదారు ఈ రహస్యపదమును చేర్చుట అవసరము:"
+
+#: ../capplet/vino-preferences.glade.h:30
+msgid "_Use an alternative port:"
+msgstr "_గత్యంతరము రేవును వాడుము:"
+
+#: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
+#: ../server/vino-dbus-listener.c:249
+#, c-format
+msgid "Out of memory handling '%s' message"
+msgstr "'%s' సందేశం అదుపుచేయుటకు జ్ఞాపకశక్తి లేదు"
+
+#: ../server/vino-dbus-listener.c:334
+#, c-format
+msgid "Out of memory registering object path '%s'"
+msgstr "'%s' తాత్పర్య త్రోవ పుస్తకములో వ్రాసిపెట్టుటకు జ్ఞాపకశక్తి కలిగిలేదు"
+
+#: ../server/vino-dbus-listener.c:407
+#, c-format
+msgid "Failed to acquire D-Bus name '%s'\n"
+msgstr "'%s' డి-వాహకము నామము పొందుటకు విఫలమైంది \n"
+
+#: ../server/vino-main.c:74
+msgid "GNOME Remote Desktop"
+msgstr "గ్నోం సుదూర రంగస్థలం"
+
+#: ../server/vino-main.c:84
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"మీ Xసేవిక Xపరిక్ష పొడగింపుకు సహకరించదు - సుదూర రంగస్థల సాంగత్యం దర్శించుటకు-మాత్రమే కలదు \n"
+
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#: ../server/vino-mdns.c:59
+msgid "vino-mdns:showusername"
+msgstr "వినో-ఎం డి ఎన్ ఎస్:వినియోగదారు నామము చూపుము"
+
+#.
+#. * Translators: this string is used ONLY if you
+#. * translated "vino-mdns:showusername" to anything
+#. * other than "1"
+#.
+#: ../server/vino-mdns.c:71
+#, c-format
+msgid "%s's remote desktop on %s"
+msgstr "%s పై సుదూర రంగస్థలం %s's"
+
+#: ../server/vino-prompt.c:142
+msgid "Screen"
+msgstr "తెర"
+
+#: ../server/vino-prompt.c:143
+msgid "The screen on which to display the prompt"
+msgstr ""
+
+#: ../server/vino-prompt.c:343
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"'%s'కంప్యూటర్ పై ఉన్న ఒక వినియోగదారు మీ రంగస్థలంను సుదూరంగా దర్శించుటకు లేదా నియంత్రించుటకు "
+"ప్రయత్నించుచున్నాడు."
+
+#: ../server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "<పెద్ద><b>వేరొక వినియోగదారు మీ రంగస్థలం ను దర్శించుటకు ప్రయత్నించుచున్నాడు.</b></పెద్ద>"
+
+#: ../server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"వేరొక కంప్యూటర్ పై నున్న ఒక వినియోగదారు సుదూరంగా మీ రంగస్థలం ను దర్శించుటకు లేదా ప్రయత్నించుటకు "
+"ప్రయత్నించుచున్నాడు."
+
+#: ../server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr ""
+
+#: ../server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "ప్రశ్న"
+
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
+msgid "_Allow"
+msgstr "_అనుమతించు"
+
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
+msgid "_Refuse"
+msgstr "_తిరస్కరించు"
+
+#: ../server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "అనుమతించు ప్రామాణీకరణ పద్దతులు"
+
+#: ../server/vino-server.schemas.in.h:2
+msgid "Alternative port number"
+msgstr "మార్పుకలుగజేసెడు రేవు సంఖ్య"
+
+#: ../server/vino-server.schemas.in.h:3
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "సుదూర రంగస్థల యుఆర్ యల్ పంపబడు ఈ-తపాలా చిరునామా "
+
+#: ../server/vino-server.schemas.in.h:4
+msgid "Enable remote desktop access"
+msgstr "సుదూర రంగస్థల సాంగత్యం ఉపయోగించు"
+
+#: ../server/vino-server.schemas.in.h:5
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote users will not be able to use the mouse or keyboard."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:8
+msgid ""
+"If true, remote users accessing the desktop are required to support "
+"encryption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:9
+msgid "If true, screen will be locked after the last remote client disconnect."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:10
+msgid ""
+"If true, the server will listen to another port, instead of the default "
+"(5900). The port must be specified in the 'alternative_port' key."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:11
+msgid ""
+"If true, the server will only accept connections from localhost and network "
+"connections will be rejected. Set this option to true if you wish to "
+"exclusively use a tunneling mechanism to access the server, such as ssh."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:12
+msgid "Listen an alternative port"
+msgstr "ఒక మార్పుకలుగజేసెడు రేవు వినుము"
+
+#: ../server/vino-server.schemas.in.h:13
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:14
+msgid "Lock the screen when last user disconnect"
+msgstr "చివరి వినియోగదారు తెంచునపుడు తెరకి తాళం వేయు"
+
+#: ../server/vino-server.schemas.in.h:15
+msgid "Only allow local connections"
+msgstr "స్థానిక బంధాలు మాత్రమే అనుమతించు"
+
+#: ../server/vino-server.schemas.in.h:16
+msgid "Only allow remote users to view the desktop"
+msgstr "రంగస్థలం దర్శించుటకు సుదూర వినియోగదారులకు మాత్రమే అనుమతించు"
+
+#: ../server/vino-server.schemas.in.h:17
+msgid "Password required for \"vnc\" authentication"
+msgstr "\"విఎన్ సి\" ప్రామాణీకరణ కొరకు రహస్యపదము అవసరము"
+
+#: ../server/vino-server.schemas.in.h:18
+msgid "Prompt the user before completing a connection"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:19
+msgid "Require encryption"
+msgstr "రహస్యపరచుట అవసరము"
+
+#: ../server/vino-server.schemas.in.h:20
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:21
+msgid ""
+"The port which the server will listen to if the 'use_alternative_port' key "
+"is set to true. Valid values are in the range from 5000 to 50000."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:22
+msgid ""
+"This key controls the behavior of the status icon. There are three options: "
+"\"always\" - The icon will be always there; \"client\" - You will see the "
+"icon only when there is someone connected, this is the default behavior; "
+"\"never\" - Never shows the icon."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:23
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:24
+msgid "When the status icon should be shown"
+msgstr "సుస్థితి ప్రతిమ ఎప్పుడు చూపబడుతుంది"
+
+#: ../server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "సుదూర రంగస్థల సేవిక ఇదివరకే నడుచుచున్నది; కలిగివున్నది...\n"
+
+#: ../server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr ""
+
+#: ../server/vino-status-icon.c:102
+msgid "Desktop sharing is enabled"
+msgstr "రంగస్థలం పంచుకొనుట ఉపయోగించబడినది"
+
+#: ../server/vino-status-icon.c:110
+#, c-format
+msgid "One person is connected"
+msgid_plural "%d people are connected"
+msgstr[0] "ఒక వ్యక్తి అనుసంధించబడినాడు"
+msgstr[1] "%d వ్యక్తులు అనుసంధించబడినారు"
+
+#: ../server/vino-status-icon.c:245
+#, c-format
+msgid ""
+"There was an error displaying preferences:\n"
+" %s"
+msgstr ""
+"అభీష్టాలు ప్రదర్శించుటలో ఒక దోషము కలిగివున్నది:\n"
+" %s"
+
+#: ../server/vino-status-icon.c:253
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+" %s"
+msgstr ""
+"సహాయము ప్రదర్శించుటలో ఒక దోషము కలిగివున్నది:\n"
+" %s"
+
+#: ../server/vino-status-icon.c:276
+msgid ""
+"Licensed under the GNU General Public License Version 2\n"
+"\n"
+"Vino is free software; you can redistribute it and/or\n"
+"modify it under the terms of the GNU General Public License\n"
+"as published by the Free Software Foundation; either version 2\n"
+"of the License, or (at your option) any later version.\n"
+"\n"
+"Vino is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n"
+"GNU General Public License for more details.\n"
+"\n"
+"You should have received a copy of the GNU General Public License\n"
+"along with this program; if not, write to the Free Software\n"
+"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+"02110-1301, USA.\n"
+msgstr ""
+
+#. Translators comment: put your own name here to appear in the about dialog.
+#: ../server/vino-status-icon.c:291
+msgid "translator-credits"
+msgstr "Pramod <pramod@swecha.net>"
+
+#: ../server/vino-status-icon.c:297
+msgid "Share your desktop with other users"
+msgstr "వేరే వినియోగదారులతో మీ రంగస్థలంను పంచుకొనుము"
+
+#: ../server/vino-status-icon.c:360
+#, c-format
+msgid "Are you sure you want to disconnect '%s'?"
+msgstr "'%s'ను నీవు ఖశ్చితంగా తెంచుటకు ఇష్టపడుతున్నావా?"
+
+#: ../server/vino-status-icon.c:362
+#, c-format
+msgid "The remote user from '%s' will be disconnected. Are you sure?"
+msgstr "సుదూర వినియోగదారు '%s' నుండి తెంచబడతాడు. నీవు సిద్దమేనా?"
+
+#: ../server/vino-status-icon.c:367
+msgid "Are you sure you want to disconnect all clients?"
+msgstr "అన్ని బంట్రౌతులను తెంచుటను నీవు ఇష్టపడుతున్నావా?"
+
+#: ../server/vino-status-icon.c:368
+msgid "All remote users will be disconnected. Are you sure?"
+msgstr "అందరు సుదూర వినియోగదారులు తెంచబడుతారు. నీవు ఖశ్చితమా?"
+
+#: ../server/vino-status-icon.c:380
+msgid "Disconnect"
+msgstr "తెంచు"
+
+#: ../server/vino-status-icon.c:406
+msgid "_Preferences"
+msgstr "_అభీష్టాలు"
+
+#: ../server/vino-status-icon.c:421
+msgid "Disconnect all"
+msgstr "అన్ని తెంచు"
+
+#: ../server/vino-status-icon.c:444
+#, c-format
+msgid "Disconnect %s"
+msgstr "%s తెంచు"
+
+#: ../server/vino-status-icon.c:464
+msgid "_Help"
+msgstr "‌_సహాయము"
+
+#: ../server/vino-status-icon.c:472
+msgid "_About"
+msgstr "_‌గురించి"
+
+#: ../server/vino-status-icon.c:598
+#, c-format
+msgid "Error initializing libnotify\n"
+msgstr "లిబ్ తాఖీదుఇచ్చుటను సంసిద్థపరచుటలో దోషము \n"
+
+#: ../server/vino-status-icon.c:612
+msgid "Another user is viewing your desktop"
+msgstr "మీ రంగస్థలంను వేరొక వినియోగదారు దర్శించుచున్నాడు"
+
+#: ../server/vino-status-icon.c:613
+#, c-format
+msgid "A user on the computer '%s' is remotely viewing your desktop."
+msgstr "'%s' కంప్యూటర్ పై ఉన్న వినియోగదారు సుదూరంగా మీ రంగస్థలంను దర్శించుచున్నాడు."
+
+#: ../server/vino-status-icon.c:618
+msgid "Another user is controlling your desktop"
+msgstr "మీ రంగస్థలంను వేరొక వినియోగదారు నియంత్రించుచున్నాడు"
+
+#: ../server/vino-status-icon.c:619
+#, c-format
+msgid "A user on the computer '%s' is remotely controlling your desktop."
+msgstr "'%s' కంప్యూటర్ పై ఉన్న వినియోగదారు సుదూరంగా మీ రంగస్థలంను నియంత్రించుచున్నాడు."
+
+#: ../server/vino-status-icon.c:641
+#, c-format
+msgid "Error while displaying notification bubble: %s\n"
+msgstr "తాఖీదుఇచ్చు బుడగ ప్రదర్శించుచున్నపుడు దోషము: %s\n"
+
+#: ../session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr "సుదూర రంగస్థల సేవిక ఆగిపోయినది, మరలామొదలుపెట్టుచున్నది\n"
+
+#: ../session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "%s క్రియాశీలీకరించుటకు విఫలమైంది: %s\n"
+
+#: ../session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "%s క్రియాశీలీకరించుటకు విఫలమైంది: తెలియని దోషము \n"
+
+#: ../session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr ""
+
+#: ../session/vino-session.c:295
+#, fuzzy
+msgid "Starting remote desktop server"
+msgstr "మీ సుదూర రంగస్థల సాంగత్యం అభీష్టాలను అమర్చుము"
+
+#: ../session/vino-session.c:300
+#, fuzzy
+msgid "Not starting remote desktop server"
+msgstr "%s పై సుదూర రంగస్థలం %s's"
