@@ -178,8 +178,8 @@ static void
 vino_server_client_disconnected (VinoServer *server,
                                  VinoClient *client)
 {
-  vino_status_icon_remove_client (server->priv->icon, client);
-  vino_server_lock_screen (server);
+  if (vino_status_icon_remove_client (server->priv->icon, client))
+    vino_server_lock_screen (server);
 }
 
 static void

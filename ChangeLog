@@ -1,3 +1,8 @@
+2007-11-27  Jonh Wendell  <jwendell@gnome.org>
+
+	* server/vino-server.c (vino_server_client_disconnected):
+	Fix a regression, only locks the screen when the *last* client disconnect.
+
 ==================== 2.21.2 =====================
 
 2007-11-11  Jonh Wendell  <jwendell@gnome.org>
