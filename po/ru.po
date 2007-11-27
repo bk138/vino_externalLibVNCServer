@@ -7,29 +7,29 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-03 11:32+0400\n"
-"PO-Revision-Date: 2007-11-25 21:49+0300\n"
-"Last-Translator: Vasiliy Faronov <qvvx@yandex.ru>\n"
+"POT-Creation-Date: 2007-11-27 08:39+0300\n"
+"PO-Revision-Date: 2007-11-26 22:36+0200\n"
+"Last-Translator: Zhovner Pavel <zhovner@ukr.net>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../capplet/vino-preferences.c:634 ../capplet/vino-preferences.c:669
-#: ../capplet/vino-preferences.c:727 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1025 ../capplet/vino-preferences.c:1060
+#: ../capplet/vino-preferences.c:1118 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Не удаётся открыть соединение с шиной: %s\n"
 
-#: ../capplet/vino-preferences.c:936
+#: ../capplet/vino-preferences.c:1327
 msgid "Send this command by email"
 msgstr "Отправить эту команду по эл. почте"
 
-#: ../capplet/vino-preferences.c:971
+#: ../capplet/vino-preferences.c:1362
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -47,49 +47,127 @@ msgid "Set your remote desktop access preferences"
 msgstr "Параметры удалённого рабочего стола"
 
 #: ../capplet/vino-preferences.glade.h:1
+msgid "<b>Network</b>"
+msgstr "<b>Сеть</b>"
+
+#: ../capplet/vino-preferences.glade.h:2
+msgid "<b>Notification Area</b>"
+msgstr "<b>Уведомления</b>"
+
+#: ../capplet/vino-preferences.glade.h:3
 msgid "<b>Security</b>"
 msgstr "<b>Безопасность</b>"
 
-#: ../capplet/vino-preferences.glade.h:2
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Sharing</b>"
 msgstr "<b>Доступ</b>"
 
-#: ../capplet/vino-preferences.glade.h:3
+#: ../capplet/vino-preferences.glade.h:5
 msgid "A_sk you for confirmation"
 msgstr "_Запрашивать подтверждение"
 
-#: ../capplet/vino-preferences.glade.h:4
+#: ../capplet/vino-preferences.glade.h:6
+msgid "Advanced"
+msgstr "Дополнительно"
+
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Al_ways display an icon"
+msgstr "Вс_егда показывать значок"
+
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Allow other users to _view your desktop"
 msgstr "Позволять другим пользователям _видеть ваш рабочий стол"
 
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:9
+msgid "General"
+msgstr "Общие"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid ""
+"If checked, remote users accessing the desktop are required to support "
+"encryption"
+msgstr "Требовать от удалённых пользователей шифрование данных"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:12
+msgid "If checked, remote users are able to control your mouse and keyboard"
+msgstr "Разрешить удалённым пользователям управлять клавиатурой и мышью"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid ""
+"If checked, screen will be locked after the last remote client disconnect"
+msgstr ""
+"Если этот ключ установлен, экран будет заблокирован после отсоединения "
+"последнего пользователя."
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "If checked, the server will only accept connections from localhost"
+msgstr "Разрешить только локальные подключения к серверу "
+
+#: ../capplet/vino-preferences.glade.h:15
+msgid ""
+"If checked, the server will use another port, instead of the default (5900)"
+msgstr ""
+"Если этот ключ установлен, сервер будет слушать другой порт вместо порта по "
+"умолчанию (5900). "
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:17
+msgid "If checked, your desktop will be shared"
+msgstr "Доступ других пользователей к вашему рабочему столу"
+
+#: ../capplet/vino-preferences.glade.h:18
 msgid "Remote Desktop Preferences"
 msgstr "Параметры удалённого рабочего стола"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:19
 msgid "Some of these preferences are locked down"
 msgstr "Некоторые из этих параметров заблокированы"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
 msgstr "Команда для доступа к вашему рабочему столу:"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:21
 msgid "When a user tries to view or control your desktop:"
 msgstr ""
 "Когда пользователь пытается просматривать или управлять вашим рабочим столом:"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:22
 msgid "_Allow other users to control your desktop"
 msgstr "П_озволять другим пользователям управлять вашим рабочим столом"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:23
+msgid "_Lock screen on disconnect"
+msgstr "_Блокировать экран после отсоединения"
+
+#: ../capplet/vino-preferences.glade.h:24
+msgid "_Never display an icon"
+msgstr "_Никогда не показывать значок"
+
+#: ../capplet/vino-preferences.glade.h:25
+msgid "_Only allow local connections"
+msgstr "_Разрешать только локальные подключения"
+
+#: ../capplet/vino-preferences.glade.h:26
+msgid "_Only display an icon when there is someone connected"
+msgstr "_Показывать значок если имеются подключения"
+
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Password:"
 msgstr "_Пароль:"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:28
+msgid "_Require encryption"
+msgstr "_Требовать шифрование"
+
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Require the user to enter this password:"
 msgstr "_Требовать от пользователя ввести следующий пароль:"
+
+#: ../capplet/vino-preferences.glade.h:30
+msgid "_Use an alternative port:"
+msgstr "_Использовать альтернативный порт:"
 
 #: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
 #: ../server/vino-dbus-listener.c:249
@@ -107,12 +185,16 @@ msgstr "Недостаточно памяти при регистрации пу
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Сбой запроса имени шины D-Bus «%s»\n"
 
-#: ../server/vino-main.c:83
+#: ../server/vino-main.c:74
+msgid "GNOME Remote Desktop"
+msgstr "Удалённый рабочий стол GNOME"
+
+#: ../server/vino-main.c:84
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
-"Ваш X-сервер не поддерживает расширение XTest - удаленный доступ будет "
+"Ваш X-сервер не поддерживает расширение XTest - удалённый доступ будет "
 "только для просмотра\n"
 
 #.
@@ -162,7 +244,7 @@ msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"Пользователь с другого компьютера пытается удаленно просматривать или "
+"Пользователь с другого компьютера пытается удалённо просматривать или "
 "управлять вашим рабочим столом."
 
 #: ../server/vino-prompt.glade.h:3
@@ -192,19 +274,19 @@ msgstr "Альтернативный номер порта"
 #: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr ""
-"Адрес эл. почты, по которому должен быть отправлен URL удаленного рабочего "
+"Адрес эл. почты, по которому должен быть отправлен URL удалённого рабочего "
 "стола"
 
 #: ../server/vino-server.schemas.in.h:4
 msgid "Enable remote desktop access"
-msgstr "Включить удаленный доступ к рабочему столу"
+msgstr "Включить удалённый доступ к рабочему столу"
 
 #: ../server/vino-server.schemas.in.h:5
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
 msgstr ""
-"Если установлен, разрешает удаленный доступ к рабочему столу по протоколу "
+"Если установлен, разрешает удалённый доступ к рабочему столу по протоколу "
 "RFB. Пользователи других компьютеров смогут подключиться к рабочему столу, "
 "используя vncviewer."
 
@@ -223,7 +305,7 @@ msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
 msgstr ""
-"Если ключ установлен, рабочий стол доступен удаленным пользователям только "
+"Если ключ установлен, рабочий стол доступен удалённым пользователям только "
 "для просмотра. Они не смогут пользоваться мышью или клавиатурой."
 
 #: ../server/vino-server.schemas.in.h:8
@@ -232,7 +314,7 @@ msgid ""
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
-"Если если этот ключ установлен, от удаленных пользователей требуется "
+"Если если этот ключ установлен, от удалённых пользователей требуется "
 "поддержка шифрования. Настоятельно рекомендуется использовать шифрование, "
 "если сеть между узлами не надёжна."
 
@@ -274,11 +356,11 @@ msgid ""
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
 msgstr ""
-"Перечиcляет методы аутентификации, пр помощи которых удаленные пользователи "
+"Перечиcляет методы аутентификации, пр помощи которых удалённые пользователи "
 "могут получить доступ к рабочему столу. Существует два возможных метода - "
-"\"vnc\" (заставляет удаленного пользователя вводить пароль, указанный в "
+"\"vnc\" (заставляет удалённого пользователя вводить пароль, указанный в "
 "ключе vnc_password) и \"none\", который позволяет подключиться любому "
-"удаленному пользователю."
+"удалённому пользователю."
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Lock the screen when last user disconnect"
@@ -321,17 +403,33 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:22
 msgid ""
+"This key controls the behavior of the status icon. There are three options: "
+"\"always\" - The icon will be always there; \"client\" - You will see the "
+"icon only when there is someone connected, this is the default behavior; "
+"\"never\" - Never shows the icon."
+msgstr ""
+"Этот ключ отвечает за отображение значка статуса. Доступно три состояния: "
+"\"всегда\" - показывать значок постоянно; \"клиент\" - показывать значок "
+"если имеются активные подключения (по умолчанию) ; \"никогда\" - никогда не "
+"показывать."
+
+#: ../server/vino-server.schemas.in.h:23
+msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
 "Этот ключ указывает адрес эл. почты, по которому должна быть отправлена "
-"ссылка, если пользователь нажимает на URL в диалоге \"Свойства удаленного "
+"ссылка, если пользователь нажимает на URL в диалоге \"Свойства удалённого "
 "рабочего стола\"."
+
+#: ../server/vino-server.schemas.in.h:24
+msgid "When the status icon should be shown"
+msgstr "Когда показывать значок статуса"
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "Сервер удаленного рабочего стола уже работает, выходим...\n"
+msgstr "Сервер удалённого рабочего стола уже работает, выходим...\n"
 
 #: ../server/vino-shell.c:79
 msgid ""
@@ -341,7 +439,19 @@ msgstr ""
 "Проблема регистрации сервера рабочего стола при помощи bonobo-activation; "
 "выходим...\n"
 
-#: ../server/vino-status-icon.c:204
+#: ../server/vino-status-icon.c:102
+msgid "Desktop sharing is enabled"
+msgstr "Включён общий доступ к рабочему столу"
+
+#: ../server/vino-status-icon.c:110
+#, c-format
+msgid "One person is connected"
+msgid_plural "%d people are connected"
+msgstr[0] "Подключен %d клиент"
+msgstr[1] "Подключены %d клиента"
+msgstr[2] "Подключено %d клиентов"
+
+#: ../server/vino-status-icon.c:245
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
@@ -350,7 +460,7 @@ msgstr ""
 "При отображении параметров произошла ошибка:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:212
+#: ../server/vino-status-icon.c:253
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -359,7 +469,7 @@ msgstr ""
 "При отображении справки произошла ошибка:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:235
+#: ../server/vino-status-icon.c:276
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -400,92 +510,80 @@ msgstr ""
 "02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:250
+#: ../server/vino-status-icon.c:291
 msgid "translator-credits"
 msgstr "Леонид Кантер <leon@asplinux.ru>"
 
-#: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:560
-msgid "GNOME Remote Desktop"
-msgstr "Удалённый рабочий стол GNOME"
-
-#: ../server/vino-status-icon.c:257
+#: ../server/vino-status-icon.c:297
 msgid "Share your desktop with other users"
 msgstr "Доступ других пользователей к вашему рабочему столу"
 
-#: ../server/vino-status-icon.c:320
+#: ../server/vino-status-icon.c:360
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Вы действительно хотите отключить «%s»?"
 
-#: ../server/vino-status-icon.c:322
+#: ../server/vino-status-icon.c:362
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Удалённый пользователь «%s» будет отключён. Вы уверены?"
 
-#: ../server/vino-status-icon.c:327
+#: ../server/vino-status-icon.c:367
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Вы действительно хотите отключить всех клиентов?"
 
-#: ../server/vino-status-icon.c:328
+#: ../server/vino-status-icon.c:368
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Все удалённые пользователи будут отключены. Вы уверены?"
 
-#: ../server/vino-status-icon.c:340
+#: ../server/vino-status-icon.c:380
 msgid "Disconnect"
 msgstr "Отключить"
 
-#: ../server/vino-status-icon.c:365
+#: ../server/vino-status-icon.c:406
 msgid "_Preferences"
 msgstr "_Параметры"
 
-#: ../server/vino-status-icon.c:377
+#: ../server/vino-status-icon.c:421
 msgid "Disconnect all"
 msgstr "Отключить всех"
 
-#: ../server/vino-status-icon.c:399
+#: ../server/vino-status-icon.c:444
 #, c-format
 msgid "Disconnect %s"
 msgstr "Отключить %s"
 
-#: ../server/vino-status-icon.c:416
+#: ../server/vino-status-icon.c:464
 msgid "_Help"
 msgstr "_Справка"
 
-#: ../server/vino-status-icon.c:424
+#: ../server/vino-status-icon.c:472
 msgid "_About"
 msgstr "_О программе"
 
-#: ../server/vino-status-icon.c:458
-#, c-format
-msgid "One person is connected"
-msgid_plural "%d people are connected"
-msgstr[0] "Подключен %d клиент"
-msgstr[1] "Подключены %d клиента"
-msgstr[2] "Подключено %d клиентов"
-
-#: ../server/vino-status-icon.c:562
+#: ../server/vino-status-icon.c:598
 msgid "Error initializing libnotify\n"
 msgstr "Ошибка инициализации libnotify\n"
 
-#: ../server/vino-status-icon.c:576
+#: ../server/vino-status-icon.c:612
 msgid "Another user is viewing your desktop"
 msgstr "Другой пользователь просматривает ваш рабочий стол"
 
-#: ../server/vino-status-icon.c:577
+#: ../server/vino-status-icon.c:613
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Пользователь компьютера «%s» удалённо просматривает ваш рабочий стол."
 
-#: ../server/vino-status-icon.c:582
+#: ../server/vino-status-icon.c:618
 msgid "Another user is controlling your desktop"
 msgstr "Другой пользователь управляет вашим рабочим столом"
 
-#: ../server/vino-status-icon.c:583
+#: ../server/vino-status-icon.c:619
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "Пользователь компьютера '%s' удалённо управляет вашим рабочим столом."
 
-#: ../server/vino-status-icon.c:605
+#: ../server/vino-status-icon.c:641
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Ошибка при отображении всплывающего уведомления: %s\n"
@@ -493,7 +591,7 @@ msgstr "Ошибка при отображении всплывающего ув
 #: ../session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
 msgstr ""
-"Работа сервера удаленного рабочего стола неожиданно завершилась, "
+"Работа сервера удалённого рабочего стола неожиданно завершилась, "
 "перезапускается\n"
 
 #: ../session/vino-session.c:154
@@ -509,13 +607,13 @@ msgstr "Не удалось активировать %s: Неизвестная 
 #: ../session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
 msgstr ""
-"Не удалось активировать сервер удаленного рабочего стола: слишком много "
+"Не удалось активировать сервер удалённого рабочего стола: слишком много "
 "попыток\n"
 
 #: ../session/vino-session.c:295
 msgid "Starting remote desktop server"
-msgstr "Запускается сервер удаленного рабочего стола"
+msgstr "Запускается сервер удалённого рабочего стола"
 
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
-msgstr "Не запускается сервер удаленного рабочего стола"
+msgstr "Не запускается сервер удалённого рабочего стола"
