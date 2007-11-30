@@ -1,3 +1,8 @@
+2007-11-30  Ross Burton  <ross@openedhand.com>
+
+	* configure.in:
+	The server doesn't need libgnome, just libbonobo (#500632).
+
 2007-11-27  Jonh Wendell  <jwendell@gnome.org>
 
 	* server/vino-server.c (vino_server_client_disconnected):
