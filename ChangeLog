@@ -1,3 +1,9 @@
+==================== 2.21.3 =====================
+
+2007-12-03  Jonh Wendell  <jwendell@gnome.org>
+
+	* configure.in, README: pre-release bump version to 2.21.3
+
 2007-11-30  Ross Burton  <ross@openedhand.com>
 
 	* configure.in:
