@@ -1,14 +1,14 @@
 # Norwegian (bokmål) translation of vino.
 # Copyright (C) 2004, Red Hat, Inc.
 # This file is distributed under the same license as the vino package.
-# Kjartan Maraas <kmaraas@gnome.org>, 2004-2006.
+# Kjartan Maraas <kmaraas@gnome.org>, 2004-2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-04 00:08+0100\n"
-"PO-Revision-Date: 2007-12-04 00:09+0100\n"
+"POT-Creation-Date: 2007-12-07 08:56+0100\n"
+"PO-Revision-Date: 2007-12-07 09:02+0100\n"
 "Last-Translator: Kjartan Maraas <espenas@gmail.com>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -84,38 +84,31 @@ msgstr "Generelt"
 msgid ""
 "If checked, remote users accessing the desktop are required to support "
 "encryption"
-msgstr ""
+msgstr "Kryss av her for å kreve at eksterne brukere støtter kryptering"
 
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:12
 msgid "If checked, remote users are able to control your mouse and keyboard"
-msgstr ""
+msgstr "Kryss av her for å la eksterne brukere kontrollere mus og tastatur"
 
 #: ../capplet/vino-preferences.glade.h:13
-#, fuzzy
 msgid ""
 "If checked, screen will be locked after the last remote client disconnect"
-msgstr ""
-"Hvis denne settes til true vil skjermen låses etter at siste eksterne klient "
-"kobler fra."
+msgstr "Hvis denne aktiveres vil skjermen låses etter at siste eksterne klient kobler fra"
 
 #: ../capplet/vino-preferences.glade.h:14
 msgid "If checked, the server will only accept connections from localhost"
-msgstr ""
+msgstr "Kryss av her for kun å tillate tilkoblinger fra denne datamaskinen"
 
 #: ../capplet/vino-preferences.glade.h:15
-#, fuzzy
 msgid ""
 "If checked, the server will use another port, instead of the default (5900)"
-msgstr ""
-"Hvis «true» er satt vil serveren lytte på en annen port enn forvalgt port "
-"(5900). Porten må oppgis i nøkkelen «alternative_port»."
+msgstr "Kryss av her for å la tjeneren lytte på en annen port enn forvalgt port (5900)"
 
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:17
-#, fuzzy
 msgid "If checked, your desktop will be shared"
-msgstr "Del ditt skrivebord med andre brukere"
+msgstr "Kryss av her for å dele skrivebordet med andre"
 
 #: ../capplet/vino-preferences.glade.h:18
 msgid "Remote Desktop Preferences"
@@ -138,22 +131,20 @@ msgid "_Allow other users to control your desktop"
 msgstr "L_a andre brukere kontrollere ditt skrivebord"
 
 #: ../capplet/vino-preferences.glade.h:23
-#, fuzzy
 msgid "_Lock screen on disconnect"
-msgstr "Lås skjermen når siste bruker kobler fra"
+msgstr "_Lås skjermen når siste bruker kobler fra"
 
 #: ../capplet/vino-preferences.glade.h:24
 msgid "_Never display an icon"
 msgstr "A_ldri vis et ikon"
 
 #: ../capplet/vino-preferences.glade.h:25
-#, fuzzy
 msgid "_Only allow local connections"
-msgstr "Tillat kun lokale tilkoblinger"
+msgstr "Tillat kun l_okale tilkoblinger"
 
 #: ../capplet/vino-preferences.glade.h:26
 msgid "_Only display an icon when there is someone connected"
-msgstr ""
+msgstr "Kun vis ik_on når noen er tilkoblet"
 
 #: ../capplet/vino-preferences.glade.h:27
 msgid "_Password:"
@@ -406,7 +397,7 @@ msgid ""
 "\"always\" - The icon will be always there; \"client\" - You will see the "
 "icon only when there is someone connected, this is the default behavior; "
 "\"never\" - Never shows the icon."
-msgstr ""
+msgstr "Denne nøkkelen kontrollerer oppførsel for statusikonet. Det finnes tre alternativer: «always» - Ikonet vises hele tiden; «client» - Ikonet vises kun når noen er tilkoblet; dette er forvalgt oppførsel; «never» - Ikonet vises aldri."
 
 #: ../server/vino-server.schemas.in.h:23
 msgid ""
@@ -419,7 +410,7 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:24
 msgid "When the status icon should be shown"
-msgstr ""
+msgstr "Kontrollerer når statusikonet skal vises"
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
