@@ -1,14 +1,14 @@
 # Vietnamese translation for Vino
-# Copyright © 2007 Gnome i18n Project for Vietnamese.
+# Copyright © 2008 Gnome i18n Project for Vietnamese.
 # Nguyễn Thái Ngọc Duy <pclouds@gmail.com>, 2004, 2007.
-# Clytie Siddall <clytie@riverland.net.au>, 2005-2007.
+# Clytie Siddall <clytie@riverland.net.au>, 2005-2008.
 # 
 msgid ""
-msgstr ""
-"Project-Id-Version: vino 2.18.1\n"
+""
+msgstr "Project-Id-Version: vino 2.21.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-07 03:23+0100\n"
-"PO-Revision-Date: 2007-09-03 22:13+0930\n"
+"POT-Creation-Date: 2007-11-11 19:06+0000\n"
+"PO-Revision-Date: 2008-01-05 23:52+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -17,26 +17,25 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: LocFactoryEditor 1.7b1\n"
 
-#: ../capplet/vino-preferences.c:634
-#: ../capplet/vino-preferences.c:669
-#: ../capplet/vino-preferences.c:727
+#: ../capplet/vino-preferences.c:1025
+#: ../capplet/vino-preferences.c:1060
+#: ../capplet/vino-preferences.c:1118
 #: ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Lỗi mở kết nối đến bus: %s\n"
 
-#: ../capplet/vino-preferences.c:936
+#: ../capplet/vino-preferences.c:1327
 msgid "Send this command by email"
 msgstr "Gửi lệnh này bằng thư điện tử"
 
-#: ../capplet/vino-preferences.c:971
+#: ../capplet/vino-preferences.c:1362
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
 "%s"
-msgstr ""
-"Gặp lỗi khi hiển thị trợ giúp:\n"
+msgstr "Gặp lỗi khi hiển thị trợ giúp:\n"
 "%s"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
@@ -48,48 +47,122 @@ msgid "Set your remote desktop access preferences"
 msgstr "Hãy đặt tùy thích truy cập màn hình làm việc từ xa"
 
 #: ../capplet/vino-preferences.glade.h:1
+msgid "<b>Network</b>"
+msgstr "<b>Mạng</b>"
+
+#: ../capplet/vino-preferences.glade.h:2
+msgid "<b>Notification Area</b>"
+msgstr "<b>Vùng thông báo</b>"
+
+#: ../capplet/vino-preferences.glade.h:3
 msgid "<b>Security</b>"
 msgstr "<b>Bảo mật</b>"
 
-#: ../capplet/vino-preferences.glade.h:2
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Sharing</b>"
 msgstr "<b>Chia sẻ</b>"
 
-#: ../capplet/vino-preferences.glade.h:3
+#: ../capplet/vino-preferences.glade.h:5
 msgid "A_sk you for confirmation"
 msgstr "Nhắc bạn _xác nhận"
 
-#: ../capplet/vino-preferences.glade.h:4
+#: ../capplet/vino-preferences.glade.h:6
+msgid "Advanced"
+msgstr "Cấp cao"
+
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Al_ways display an icon"
+msgstr "_Lúc nào cũng hiển thị biểu tượng"
+
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Allow other users to _view your desktop"
 msgstr "Cho phép người khác _xem màn hình làm việc của bạn"
 
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:9
+msgid "General"
+msgstr "Chung"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid ""
+"If checked, remote users accessing the desktop are required to support "
+"encryption"
+msgstr "Bật thì người dùng từ xa truy cập đến màn hình nền phải hỗ trợ mật mã"
+
+#.tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:12
+msgid "If checked, remote users are able to control your mouse and keyboard"
+msgstr "Bật thì người dùng từ xa có khả năng điều khiển con chuột và bàn phím của bạn"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid ""
+"If checked, screen will be locked after the last remote client disconnect"
+msgstr "Bật thì màn hình bị khoá một khi ứng dụng khách cuối cùng đã ngắt kết nối"
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "If checked, the server will only accept connections from localhost"
+msgstr "Bật thì máy phục vụ sẽ chỉ chấp nhận kết nối từ localhost"
+
+#: ../capplet/vino-preferences.glade.h:15
+msgid ""
+"If checked, the server will use another port, instead of the default (5900)"
+msgstr "Bật thì máy phục vụ sẽ dùng cổng khác với cổng mặc định (5900)"
+
+#.tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:17
+msgid "If checked, your desktop will be shared"
+msgstr "Bật thì chia sẻ màn hình nền của bạn"
+
+#: ../capplet/vino-preferences.glade.h:18
 msgid "Remote Desktop Preferences"
 msgstr "Tùy thích màn hình làm việc từ xa"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:19
 msgid "Some of these preferences are locked down"
 msgstr "Vài tùy chọn bị khóa"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
 msgstr "Người dùng có thể xem màn hình làm việc của bạn bằng lệnh này:"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:21
 msgid "When a user tries to view or control your desktop:"
 msgstr "Khi người dùng thử xem hoặc điều khiển màn hình làm việc của bạn:"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:22
 msgid "_Allow other users to control your desktop"
 msgstr "Cho _phép người dùng khác điều khiển màn hình làm việc của bạn"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:23
+msgid "_Lock screen on disconnect"
+msgstr "_Khoá màn hình khi ngắt kết nối"
+
+#: ../capplet/vino-preferences.glade.h:24
+msgid "_Never display an icon"
+msgstr "Khô_ng bao giờ hiển thị biểu tượng"
+
+#: ../capplet/vino-preferences.glade.h:25
+msgid "_Only allow local connections"
+msgstr "Ch_o phép chỉ kết nối cục bộ"
+
+#: ../capplet/vino-preferences.glade.h:26
+msgid "_Only display an icon when there is someone connected"
+msgstr "_Chỉ hiển thị biểu tượng khi có người dùng đã kết nối"
+
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Password:"
 msgstr "_Mật khẩu :"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:28
+msgid "_Require encryption"
+msgstr "_Yêu cầu mật mã"
+
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Require the user to enter this password:"
 msgstr "Đòi _hỏi người dùng nhập mật khẩu này:"
+
+#: ../capplet/vino-preferences.glade.h:30
+msgid "_Use an alternative port:"
+msgstr "_Dùng cổng xen kẽ:"
 
 #: ../server/vino-dbus-listener.c:188
 #: ../server/vino-dbus-listener.c:218
@@ -108,30 +181,33 @@ msgstr "Không đủ bộ nhớ đăng ký object path '%s'"
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Lỗi lấy tên D-Bus '%s'\n"
 
-#: ../server/vino-main.c:83
+#: ../server/vino-main.c:74
+msgid "GNOME Remote Desktop"
+msgstr "Màn hình làm việc từ xa"
+
+#: ../server/vino-main.c:84
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
-msgstr ""
-"XServer (trình hỗ trợ hệ thống cửa sổ X) của bạn không hỗ trợ phần mở rộng "
+msgstr "XServer (trình hỗ trợ hệ thống cửa sổ X) của bạn không hỗ trợ phần mở rộng "
 "XTest nên truy cập vào màn hình làm việc từ xa chỉ có khả năng xem\n"
 
+#.
+#.* Translators: translate "vino-mdns:showusername" to
+#.* "1" if "%s's remote desktop" doesn't make sense in
+#.* your language.
+#.
 #: ../server/vino-mdns.c:59
-#.
-#. * Translators: translate "vino-mdns:showusername" to
-#. * "1" if "%s's remote desktop" doesn't make sense in
-#. * your language.
-#.
 msgid "vino-mdns:showusername"
 msgstr "vino-mdns:showusername"
 
+#.
+#.* Translators: this string is used ONLY if you
+#.* translated "vino-mdns:showusername" to anything
+#.* other than "1"
+#.
 #: ../server/vino-mdns.c:71
 #, c-format
-#.
-#. * Translators: this string is used ONLY if you
-#. * translated "vino-mdns:showusername" to anything
-#. * other than "1"
-#.
 msgid "%s's remote desktop on %s"
 msgstr "Màn hình nền từ xa của %s trên %s"
 
@@ -148,21 +224,18 @@ msgstr "Màn hình cần hiển thị bộ nhắc"
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
-msgstr ""
-"Người dùng trên máy « %s » đang thử xem hoặc điều khiển màn hình làm việc "
+msgstr "Người dùng trên máy « %s » đang thử xem hoặc điều khiển màn hình làm việc "
 "của bạn từ xa."
 
 #: ../server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr ""
-"<big><b>Người dùng khác đang thử xem màn hình làm việc của bạn.</b></big>"
+msgstr "<big><b>Người dùng khác đang thử xem màn hình làm việc của bạn.</b></big>"
 
 #: ../server/vino-prompt.glade.h:2
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
-msgstr ""
-"Người dùng trên máy khác đang thử xem hoặc điều khiển màn hình làm việc của "
+msgstr "Người dùng trên máy khác đang thử xem hoặc điều khiển màn hình làm việc của "
 "bạn từ xa."
 
 #: ../server/vino-prompt.glade.h:3
@@ -193,8 +266,7 @@ msgstr "Số hiệu cổng xen kẽ"
 
 #: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr ""
-"Địa chỉ thư điện tử cho đó cần gửi địa chỉ URL của màn hình làm việc từ xa"
+msgstr "Địa chỉ thư điện tử cho đó cần gửi địa chỉ URL của màn hình làm việc từ xa"
 
 #: ../server/vino-server.schemas.in.h:4
 msgid "Enable remote desktop access"
@@ -204,8 +276,7 @@ msgstr "Cho phép truy cập màn hình làm việc từ xa"
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
-msgstr ""
-"Nếu đúng thì cho phép truy cập màn hình làm việc từ xa thông qua giao thức "
+msgstr "Nếu đúng thì cho phép truy cập màn hình làm việc từ xa thông qua giao thức "
 "RFB. Người dùng máy từ xa thì có thể kết nối đến màn hình làm việc dùng một "
 "trình xem VNC."
 
@@ -214,8 +285,7 @@ msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
-msgstr ""
-"Nếu đúng thì không cho phép người dùng từ xa truy cập cho đến khi người dùng "
+msgstr "Nếu đúng thì không cho phép người dùng từ xa truy cập cho đến khi người dùng "
 "trên máy chính chấp nhận kết nối. Khuyến khích đặc biệt khi truy cập không "
 "được bảo mật bằng mật khẩu."
 
@@ -223,8 +293,7 @@ msgstr ""
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
-msgstr ""
-"Đúng thì người dùng từ xa truy cập màn hình nền chỉ có khả năng xem. Người "
+msgstr "Đúng thì người dùng từ xa truy cập màn hình nền chỉ có khả năng xem. Người "
 "dùng từ xa sẽ không thể sử dụng con chuột hoặc bàn phím."
 
 #: ../server/vino-server.schemas.in.h:8
@@ -232,23 +301,20 @@ msgid ""
 "If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
-msgstr ""
-"Đúng thì người dùng từ xa phải hỗ trợ khả năng mật mã. Rất khuyên bạn sử dụng một "
-"ứng dụng khách hỗ trợ mật mã, trừ khi bạn tin cậy hoàn toàn mạng trung gian."
+msgstr "Đúng thì người dùng từ xa phải hỗ trợ khả năng mật mã. Rất khuyên bạn sử "
+"dụng một ứng dụng khách hỗ trợ mật mã, trừ khi bạn tin cậy hoàn toàn mạng "
+"trung gian."
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr ""
-"Đúng thì màn hình bị khoá sau khi ứng dụng khách từ xa cuối cùng ngắt kết "
-"nối."
+msgstr "Đúng thì màn hình bị khoá sau khi ứng dụng khách từ xa cuối cùng ngắt kết nối."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid ""
 "If true, the server will listen to another port, instead of the default "
 "(5900). The port must be specified in the 'alternative_port' key."
-msgstr ""
-"Đúng (true) thì trình phục vụ sẽ lắng nghe trên cổng khác, thay cho cổng "
-"mặc định (5900). Cổng khác này cần phải được xác định trong khoá « "
+msgstr "Đúng (true) thì trình phục vụ sẽ lắng nghe trên cổng khác, thay cho cổng mặc "
+"định (5900). Cổng khác này cần phải được xác định trong khoá « "
 "alternative_port » (cổng xen kẽ)."
 
 #: ../server/vino-server.schemas.in.h:11
@@ -256,8 +322,7 @@ msgid ""
 "If true, the server will only accept connections from localhost and network "
 "connections will be rejected. Set this option to true if you wish to "
 "exclusively use a tunneling mechanism to access the server, such as ssh."
-msgstr ""
-"Nếu đúng (true), trình phục vụ sẽ chấp nhận kết nối chỉ từ máy localhost "
+msgstr "Nếu đúng (true), trình phục vụ sẽ chấp nhận kết nối chỉ từ máy localhost "
 "(máy cục bộ) và các kết nối mạng sẽ bị từ chối. Hãy đặt tùy chọn này là true "
 "(đúng) nếu bạn muốn sử dụng riêng biệt một cơ chế đường hầm để truy cập "
 "trình phục vụ, như SSH."
@@ -273,8 +338,7 @@ msgid ""
 "remote user to be prompted for a password (the password is specified by the "
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
-msgstr ""
-"Liệt kê các phương pháp xác thực với chúng người dùng từ xa có thể truy cập "
+msgstr "Liệt kê các phương pháp xác thực với chúng người dùng từ xa có thể truy cập "
 "màn hình làm việc. Có hai phương pháp truy cập có thể: « vnc » gây ra người "
 "dùng từ xa được nhắc nhập mật khẩu (được ghi rõ trong khóa « vnc_password ») "
 "trước khi kết nối, còn « none » (không có) cho phép mọi người dùng từ xa có "
@@ -309,28 +373,40 @@ msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
-msgstr ""
-"Mật khẩu người dùng từ xa được nhắc nhập nếu phương pháp xác thực « vnc » "
+msgstr "Mật khẩu người dùng từ xa được nhắc nhập nếu phương pháp xác thực « vnc » "
 "được dùng. Mật khẩu được ghi rõ bằng khoá này được mật mã base64."
 
 #: ../server/vino-server.schemas.in.h:21
 msgid ""
 "The port which the server will listen to if the 'use_alternative_port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
-msgstr ""
-"Cổng trên đó trình phục vụ sẽ lắng nghe nếu khoá « use_alternative_port "
+msgstr "Cổng trên đó trình phục vụ sẽ lắng nghe nếu khoá « use_alternative_port "
 "» (dùng cổng xen kẽ) là đúng (true). Giá trị hợp lệ nằm trong phạm vi 5 000 "
 "đến 50 000."
 
 #: ../server/vino-server.schemas.in.h:22
 msgid ""
+"This key controls the behavior of the status icon. There are three options: "
+"\"always\" - The icon will be always there; \"client\" - You will see the "
+"icon only when there is someone connected, this is the default behavior; "
+"\"never\" - Never shows the icon."
+msgstr "Khoá này điều khiển ứng xử của biểu tượng trạng thái. Có ba tùy chọn:\n"
+" • always		biểu tượng luôn luôn ở đó\n"
+" • client		bạn thấy biểu tượng chỉ khi người dùng có kết nối (mặc định)\n"
+" • never		không bao giờ hiển thị biểu tượng."
+
+#: ../server/vino-server.schemas.in.h:23
+msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
-msgstr ""
-"Khóa này ghi rõ địa chỉ thư điện tử cho đó địa chỉ URL của màn hình từ xa "
+msgstr "Khóa này ghi rõ địa chỉ thư điện tử cho đó địa chỉ URL của màn hình từ xa "
 "nên được gửi, nếu người dùng nhấn vào URL trong hộp thoại Tùy thích của Màn "
 "Hình Làm Việc Từ Xa."
+
+#: ../server/vino-server.schemas.in.h:24
+msgid "When the status icon should be shown"
+msgstr "Có nên hiển thị biểu tượng trạng thái khi nào"
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -340,29 +416,36 @@ msgstr "Trình phục vụ màn hình làm việc từ xa đang chạy nên tho�
 msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
-msgstr ""
-"Gặp lỗi khi đăng ký trình phục vụ màn hình làm việc từ xa bằng bonobo-"
+msgstr "Gặp lỗi khi đăng ký trình phục vụ màn hình làm việc từ xa bằng bonobo-"
 "activation nên thoát ...\n"
 
-#: ../server/vino-status-icon.c:204
+#: ../server/vino-status-icon.c:102
+msgid "Desktop sharing is enabled"
+msgstr "Chia sẻ màn hình nền đã được bật"
+
+#: ../server/vino-status-icon.c:110
+#, c-format
+msgid "One person is connected"
+msgid_plural "%d people are connected"
+msgstr[0] "%d người đang kết nối"
+
+#: ../server/vino-status-icon.c:245
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
 " %s"
-msgstr ""
-"Gặp lỗi khi hiển thị tuỳ thích:\n"
+msgstr "Gặp lỗi khi hiển thị tuỳ thích:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:212
+#: ../server/vino-status-icon.c:253
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
 " %s"
-msgstr ""
-"Gặp lỗi khi hiển thị trợ giúp:\n"
+msgstr "Gặp lỗi khi hiển thị trợ giúp:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:235
+#: ../server/vino-status-icon.c:276
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -380,8 +463,7 @@ msgid ""
 "along with this program; if not, write to the Free Software\n"
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
 "02110-1301, USA.\n"
-msgstr ""
-"Được phát hành với điều kiện của Quyền Công Chung GNU (GPL) phiên bản 2\n"
+msgstr "Được phát hành với điều kiện của Quyền Công Chung GNU (GPL) phiên bản 2\n"
 "\n"
 "Chương trình này là phần mềm tự do; bạn có thể phát hành lại nó và/hoặc sửa\n"
 "đổi nó với điều kiện của Giấy phép Công cộng GNU như được xuất bản bởi Tổ\n"
@@ -399,92 +481,81 @@ msgstr ""
 "51 Franklin Street, Fifth Floor,\n"
 "Boston, MA  02110-1301, USA.\n"
 
-#: ../server/vino-status-icon.c:250
-#. Translators comment: put your own name here to appear in the about dialog.
+#.Translators comment: put your own name here to appear in the about dialog.
+#: ../server/vino-status-icon.c:291
 msgid "translator-credits"
 msgstr "Nhóm Việt hoá GNOME (http://gnomevi.sourceforge.net)"
 
-#: ../server/vino-status-icon.c:256
-#: ../server/vino-status-icon.c:560
-msgid "GNOME Remote Desktop"
-msgstr "Màn hình làm việc từ xa"
-
-#: ../server/vino-status-icon.c:257
+#: ../server/vino-status-icon.c:297
 msgid "Share your desktop with other users"
 msgstr "Chia sẻ màn hình của bạn với người khác"
 
-#: ../server/vino-status-icon.c:320
+#: ../server/vino-status-icon.c:360
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Bạn có chắc muốn ngắt kết nối '%s' chứ?"
 
-#: ../server/vino-status-icon.c:322
+#: ../server/vino-status-icon.c:362
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Người dùng từ '%s' sẽ bị ngắt kết nối. Bạn chắc chứ?"
 
-#: ../server/vino-status-icon.c:327
+#: ../server/vino-status-icon.c:367
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Bạn có chắc muốn ngắt kết nối mọi người không?"
 
-#: ../server/vino-status-icon.c:328
+#: ../server/vino-status-icon.c:368
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Mọi người sẽ bị ngắt kết nối. Bạn chắc chứ?"
 
-#: ../server/vino-status-icon.c:340
+#: ../server/vino-status-icon.c:380
 msgid "Disconnect"
 msgstr "Ngắt kết nối"
 
-#: ../server/vino-status-icon.c:365
+#: ../server/vino-status-icon.c:406
 msgid "_Preferences"
 msgstr "_Tuỳ thích"
 
-#: ../server/vino-status-icon.c:377
+#: ../server/vino-status-icon.c:421
 msgid "Disconnect all"
 msgstr "Ngắt tất cả kết nối"
 
-#: ../server/vino-status-icon.c:399
+#: ../server/vino-status-icon.c:444
 #, c-format
 msgid "Disconnect %s"
 msgstr "Ngắt kết nối %s"
 
-#: ../server/vino-status-icon.c:416
+#: ../server/vino-status-icon.c:464
 msgid "_Help"
 msgstr "Trợ _giúp"
 
-#: ../server/vino-status-icon.c:424
+#: ../server/vino-status-icon.c:472
 msgid "_About"
 msgstr "_Giới thiệu"
 
-#: ../server/vino-status-icon.c:458
-#, c-format
-msgid "One person is connected"
-msgid_plural "%d people are connected"
-msgstr[0] "%d người đang kết nối"
-
-#: ../server/vino-status-icon.c:562
+#: ../server/vino-status-icon.c:598
 msgid "Error initializing libnotify\n"
 msgstr "Lỗi khởi động libnotify\n"
 
-#: ../server/vino-status-icon.c:576
+#: ../server/vino-status-icon.c:612
 msgid "Another user is viewing your desktop"
 msgstr "Cho phép người khác xem màn hình làm việc của bạn"
 
-#: ../server/vino-status-icon.c:577
+#: ../server/vino-status-icon.c:613
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Người dùng trên máy '%s' xem màn hình làm việc của bạn từ xa."
 
-#: ../server/vino-status-icon.c:582
+#: ../server/vino-status-icon.c:618
 msgid "Another user is controlling your desktop"
 msgstr "Cho phép người dùng khác điều khiển màn hình làm việc của bạn"
 
-#: ../server/vino-status-icon.c:583
+#: ../server/vino-status-icon.c:619
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "Người dùng trên máy '%s' điều khiển màn hình làm việc của bạn từ xa."
 
-#: ../server/vino-status-icon.c:605
+#: ../server/vino-status-icon.c:641
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Lỗi hiển thị bong bóng thông báo: %s\n"
@@ -505,8 +576,7 @@ msgstr "Lỗi kích hoạt « %s »: lỗi không rõ\n"
 
 #: ../session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr ""
-"Lỗi kích hoạt trình phục vụ màn hình làm việc từ xa: đã thử quá nhiều lần\n"
+msgstr "Lỗi kích hoạt trình phục vụ màn hình làm việc từ xa: đã thử quá nhiều lần\n"
 
 #: ../session/vino-session.c:295
 msgid "Starting remote desktop server"
@@ -588,20 +658,14 @@ msgstr "Không đang khởi chạy trình phục vụ màn hình làm việc t�
 #~ msgid ""
 #~ "The password (base64 encoded) used to authenticate types using the "
 #~ "VncAuth method"
-#~ msgstr ""
-#~ "Mật khẩu (mật mã hoá base64) được dùng để xác thực kiểu dùng phương pháp "
+#~ msgstr "Mật khẩu (mật mã hoá base64) được dùng để xác thực kiểu dùng phương pháp "
 #~ "VncAuth."
 
-#~ msgid "Use an alternative port"
-#~ msgstr "Dùng cổng xen kẽ"
-
 #~ msgid "Listen on the port specified by the 'alternative-port' property"
-#~ msgstr ""
-#~ "Lắng nghe trên cổng được xác định bởi thuộc tính « alternative-port »"
+#~ msgstr "Lắng nghe trên cổng được xác định bởi thuộc tính « alternative-port »"
 
 #~ msgid ""
 #~ "Listen on the specified port number if the 'use-alternative-port' "
 #~ "property is TRUE"
-#~ msgstr ""
-#~ "Lắng nghe trên số hiệu cổng đã xác định nếu thuộc tính « alternative-port "
+#~ msgstr "Lắng nghe trên số hiệu cổng đã xác định nếu thuộc tính « alternative-port "
 #~ "» là TRUE (đúng)"
