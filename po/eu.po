@@ -1,16 +1,16 @@
-# translation of eu.po to Basque
+# translation of vino.HEAD.po to Basque
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
-# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2004, 2006, 2007.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2004, 2006, 2007, 2008.
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: eu\n"
+"Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-16 16:32+0200\n"
-"PO-Revision-Date: 2007-09-16 16:33+0200\n"
-"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
+"POT-Creation-Date: 2008-01-14 17:12+0100\n"
+"PO-Revision-Date: 2008-01-13 00:42+0100\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,24 +18,24 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:634 ../capplet/vino-preferences.c:669
-#: ../capplet/vino-preferences.c:727 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1025 ../capplet/vino-preferences.c:1060
+#: ../capplet/vino-preferences.c:1118 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Huts egin du bus-arekin konektatzean: %s\n"
 
-#: ../capplet/vino-preferences.c:936
+#: ../capplet/vino-preferences.c:1327
 msgid "Send this command by email"
 msgstr "Bidali komando hau posta elektronikoz"
 
-#: ../capplet/vino-preferences.c:971
+#: ../capplet/vino-preferences.c:1362
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
 "%s"
 msgstr ""
-"Errore bat gertatzu da laguntza bistaratzean:\n"
+"Errorea gertatzu da laguntza bistaratzean:\n"
 "%s"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
@@ -47,48 +47,132 @@ msgid "Set your remote desktop access preferences"
 msgstr "Ezarri urruneko mahaigaineko hobespenak"
 
 #: ../capplet/vino-preferences.glade.h:1
+msgid "<b>Network</b>"
+msgstr "<b>Sarea</b>"
+
+#: ../capplet/vino-preferences.glade.h:2
+msgid "<b>Notification Area</b>"
+msgstr "<b>Jakinarazpen-area</b>"
+
+#: ../capplet/vino-preferences.glade.h:3
 msgid "<b>Security</b>"
 msgstr "<b>Segurtasuna</b>"
 
-#: ../capplet/vino-preferences.glade.h:2
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Sharing</b>"
 msgstr "<b>Partekatzea</b>"
 
-#: ../capplet/vino-preferences.glade.h:3
+#: ../capplet/vino-preferences.glade.h:5
 msgid "A_sk you for confirmation"
 msgstr "_Eskatu baieztapena"
 
-#: ../capplet/vino-preferences.glade.h:4
-msgid "Allow other users to _view your desktop"
-msgstr "Baimendu beste erabiltzaileak zure mahaigaina _ikusteko"
+#: ../capplet/vino-preferences.glade.h:6
+msgid "Advanced"
+msgstr "Aurreratua"
 
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Al_ways display an icon"
+msgstr "_Beti erakutsi ikonoa"
+
+#: ../capplet/vino-preferences.glade.h:8
+msgid "Allow other users to _view your desktop"
+msgstr "Baimendu beste erabiltzaileek zure mahaigaina _ikustea"
+
+#: ../capplet/vino-preferences.glade.h:9
+msgid "General"
+msgstr "Orokorra"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid ""
+"If checked, remote users accessing the desktop are required to support "
+"encryption"
+msgstr ""
+"Gaituta dagoenean urruneko erabiltzaileak enkriptazioa erabili beharko dute "
+"mahagainera sarbidetzeko"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:12
+msgid "If checked, remote users are able to control your mouse and keyboard"
+msgstr ""
+"Gaituta dagoenean urruneko erabiltzaileek zure teklatua eta sagua kontrolatu "
+"dezakete"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid ""
+"If checked, screen will be locked after the last remote client disconnect"
+msgstr ""
+"Gaituta dagoenean pantaila blokeatu egingo da urruneko azken bezeroa "
+"deskonektatzean"
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "If checked, the server will only accept connections from localhost"
+msgstr ""
+"Gaituta dagoenean zerbitzariak ostalari lokaleko konexioak soilik onartuko "
+"ditu"
+
+#: ../capplet/vino-preferences.glade.h:15
+msgid ""
+"If checked, the server will use another port, instead of the default (5900)"
+msgstr ""
+"Gaituta dagoenean zerbitzariak beste ataka bat entzungo du, lehenetsiaren "
+"(5900) ordez"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:17
+msgid "If checked, your desktop will be shared"
+msgstr "Gaituta dagoenean zure mahaigaina partekatu egingo da"
+
+#: ../capplet/vino-preferences.glade.h:18
 msgid "Remote Desktop Preferences"
 msgstr "Urruneko mahaigainaren hobespenak"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:19
 msgid "Some of these preferences are locked down"
 msgstr "Hobespen hauetariko batzuk blokeatuta daude"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
 msgstr "Erabiltzaileek zure mahaigaina ikus dezakete komando hau erabiliz:"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:21
 msgid "When a user tries to view or control your desktop:"
 msgstr "Erabiltzaile batek zure mahaigaina ikusten edo kontrolatzen saiatzean:"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:22
 msgid "_Allow other users to control your desktop"
-msgstr "_Baimendu beste erabiltzaileak zure mahaigaina kontrolatzea"
+msgstr "_Baimendu beste erabiltzaileek zure mahaigaina kontrolatzea"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:23
+msgid "_Lock screen on disconnect"
+msgstr "_Blokeatu pantaila deskonektatzean"
+
+#: ../capplet/vino-preferences.glade.h:24
+msgid "_Never display an icon"
+msgstr " _Inoiz ez bistaratu ikonoa"
+
+#: ../capplet/vino-preferences.glade.h:25
+msgid "_Only allow local connections"
+msgstr "_Baimendu konexio lokalak soilik"
+
+#: ../capplet/vino-preferences.glade.h:26
+msgid "_Only display an icon when there is someone connected"
+msgstr "Bistaratu ikonoa norbait konektatzean _soilik"
+
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Password:"
 msgstr "_Pasahitza:"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:28
+msgid "_Require encryption"
+msgstr "_Behartu enkriptazioa"
+
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Require the user to enter this password:"
 msgstr "_Behartu erabiltzaileak pasahitza sartzera:"
+
+#: ../capplet/vino-preferences.glade.h:30
+msgid "_Use an alternative port:"
+msgstr "_Erabili bestelako ataka:"
 
 #: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
 #: ../server/vino-dbus-listener.c:249
@@ -99,19 +183,23 @@ msgstr "Memoriarik ez '%s' mezua kudeatzean"
 #: ../server/vino-dbus-listener.c:334
 #, c-format
 msgid "Out of memory registering object path '%s'"
-msgstr "Memoriarik ez '%s' bide-izen objektua erregistratzean"
+msgstr "Memoriarik ez '%s' objektuaren bide-izena erregistratzean"
 
 #: ../server/vino-dbus-listener.c:407
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Huts egin du D-Bus '%s' izena eskuratzean\n"
 
-#: ../server/vino-main.c:83
+#: ../server/vino-main.c:74
+msgid "GNOME Remote Desktop"
+msgstr "GNOMEren urruneko mahaigaina"
+
+#: ../server/vino-main.c:84
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
-"Zure XServer-ek ez du XTest luzapena onartzen - urruneko mahaigaineko "
+"Zure XServer-ek ez du XTest hedapena onartzen - urruneko mahaigaineko "
 "sarbidetza ikusteko soilik izango da\n"
 
 #.
@@ -121,7 +209,7 @@ msgstr ""
 #.
 #: ../server/vino-mdns.c:59
 msgid "vino-mdns:showusername"
-msgstr "1"
+msgstr "0"
 
 #.
 #. * Translators: this string is used ONLY if you
@@ -148,7 +236,7 @@ msgid ""
 "desktop."
 msgstr ""
 "'%s' ordenagailuko erabiltzaile bat zure mahaigaina urrunetik ikusten edo "
-"kontrolatzen saiatzen ari da"
+"kontrolatzen saiatzen ari da."
 
 #: ../server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
@@ -162,7 +250,7 @@ msgid ""
 "desktop."
 msgstr ""
 "Beste ordenagailuko erabiltzaile bat zure mahaigaina ikusten edo "
-"kontrolatzen saiatzen ari da"
+"kontrolatzen saiatzen ari da."
 
 #: ../server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
@@ -211,17 +299,17 @@ msgid ""
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
 msgstr ""
-"Egia bada, mahaigainera sarbidetzen saiatzen diren urruneko erabiltzaileei "
-"ostalaria den ordenagailuko erabiltzaileak baimendu bitartean ezin izango "
-"dute konektatu. Sarbidea pasahitzik gabe babestua ez dagoen kasuetan "
-"aholkatzen da bereziki."
+"Egia bada, mahaigainera sarbidetzen saiatzen diren urruneko "
+"erabiltzaileakezin izango dira konektatu ostalaria den ordenagailuko "
+"erabiltzaileak konexioa baimendu bitartean. Sarbidea pasahitzik gabe "
+"babestua ez dagoen kasuetan aholkatzen da bereziki."
 
 #: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
 msgstr ""
-"Egia bada, mahaigainera sarbidetzen diren urruneko erabiltzaileak ikusteko "
+"Egia bada, mahaigainera sarbidetzen diren urruneko erabiltzaileek ikusteko "
 "baimena soilik edukiko dute. Urruneko erabiltzaileek ezin izango dute "
 "teklatua edo sagurik erabili."
 
@@ -231,7 +319,7 @@ msgid ""
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
-"Egia bada, mahaigainera sarbidetzen diren urruneko erabiltzaileak "
+"Egia bada, mahaigainera sarbidetzen diren urruneko erabiltzaileek "
 "enkriptazio euskarria eduki beharko dute. Oso aholkagarria da enkriptazio "
 "euskarria duen bezeroa erabiltzea, sareko segurtasun maila konfidantzakoa "
 "izandakoan ezik."
@@ -239,7 +327,7 @@ msgstr ""
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
 msgstr ""
-"Egia bada, pantaila blokeatu egingo da azken urruneko bezeroa "
+"Egia bada, pantaila blokeatu egingo da urruneko azken bezeroa "
 "deskonektatzean."
 
 #: ../server/vino-server.schemas.in.h:10
@@ -273,15 +361,16 @@ msgid ""
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
 msgstr ""
-"Autentifikazio-metodoen zerrenda, honekin urruneko erabiltzaileak "
+"Autentifikazio-metodoen zerrenda, honekin urruneko erabiltzaileek "
 "mahaigainera sarbidetzeko aukera izango dute. Bi autentifikazio-metodo "
 "daude: \"vnc\" bidez urruneko erabiltzaileari pasahitza eskatzen zaio "
-"konektatu aurretik (pasahitza vnc_password gakoan zehazten da); \"none\"-ek "
-"berriz urruneko edozein erabiltzaileri konexioa lantzea baimentzen dio."
+"konektatu aurretik (pasahitza vnc_password gakoan zehazten da); \"none"
+"\" (bat ere ez) ezarpenak urruneko edozein erabiltzaileri konektatzea "
+"baimentzen dio."
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Lock the screen when last user disconnect"
-msgstr "Blokeatu pantaila azke erabiltzailea deskonektatzean"
+msgstr "Blokeatu pantaila azken erabiltzailea deskonektatzean"
 
 #: ../server/vino-server.schemas.in.h:15
 msgid "Only allow local connections"
@@ -289,7 +378,7 @@ msgstr "Baimendu konexio lokalak soilik"
 
 #: ../server/vino-server.schemas.in.h:16
 msgid "Only allow remote users to view the desktop"
-msgstr "Urruneko erabiltzaileak bakarrik baimendu mahaigaina ikusteko"
+msgstr "Urruneko erabiltzaileak mahaigaina ikusteko bakarrik baimendu"
 
 #: ../server/vino-server.schemas.in.h:17
 msgid "Password required for \"vnc\" authentication"
@@ -323,6 +412,18 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:22
 msgid ""
+"This key controls the behavior of the status icon. There are three options: "
+"\"always\" - The icon will be always there; \"client\" - You will see the "
+"icon only when there is someone connected, this is the default behavior; "
+"\"never\" - Never shows the icon."
+msgstr ""
+"Gako honek egoeraren ikonoaren portaera kontrolatzen du. Hiru aukera "
+"erabilgarri daude: \"always\" (beti), ikonoa beti agertuko da; \"client"
+"\" (bezeroa), norbait konektatzen denean soilik agertuko da ikonoa, eta "
+"portaera lehenetsia da ; \"never\" (inoiz) ikonoa ez da inoiz erakusten."
+
+#: ../server/vino-server.schemas.in.h:23
+msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
@@ -331,9 +432,14 @@ msgstr ""
 "zehazten du, baldin eta erabiltzaileak \"Urruneko mahaigainaren hobespenak\" "
 "elkarrizketa-koadroan URL gainean klik egiten badu."
 
+#: ../server/vino-server.schemas.in.h:24
+msgid "When the status icon should be shown"
+msgstr "Egoeraren ikonoa noiz erakutsi behar den"
+
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "Urruneko mahaigaineko zerbitzaria jadanik exekutatzen ari da: irtetzen ...\n"
+msgstr ""
+"Urruneko mahaigaineko zerbitzaria jadanik exekutatzen ari da: irtetzen ...\n"
 
 #: ../server/vino-shell.c:79
 msgid ""
@@ -343,7 +449,18 @@ msgstr ""
 "Arazoak daude urruneko mahaigaineko zerbitzaria 'bonobo-activation'-ekin "
 "erregistratzean: irtetzen ...\n"
 
-#: ../server/vino-status-icon.c:204
+#: ../server/vino-status-icon.c:102
+msgid "Desktop sharing is enabled"
+msgstr "Mahaigaina partekatzea gaituta dago"
+
+#: ../server/vino-status-icon.c:110
+#, c-format
+msgid "One person is connected"
+msgid_plural "%d people are connected"
+msgstr[0] "Pertsona bat konektatu da"
+msgstr[1] "%d pertsona konektatu dira"
+
+#: ../server/vino-status-icon.c:245
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
@@ -352,7 +469,7 @@ msgstr ""
 "Errorea gertatzu da hobespenak bistaratzean:\n"
 "%s"
 
-#: ../server/vino-status-icon.c:212
+#: ../server/vino-status-icon.c:253
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -361,7 +478,7 @@ msgstr ""
 "Errorea gertatzu da laguntza bistaratzean:\n"
 "%s"
 
-#: ../server/vino-status-icon.c:235
+#: ../server/vino-status-icon.c:276
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -400,93 +517,83 @@ msgstr ""
 "02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:250
+#: ../server/vino-status-icon.c:291
 msgid "translator-credits"
 msgstr "Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>"
 
-#: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:560
-msgid "GNOME Remote Desktop"
-msgstr "GNOMEren urruneko mahaigaina"
-
-#: ../server/vino-status-icon.c:257
+#: ../server/vino-status-icon.c:297
 msgid "Share your desktop with other users"
 msgstr "Partekatu zure mahaigaina beste erabiltzaileekin"
 
-#: ../server/vino-status-icon.c:320
+#: ../server/vino-status-icon.c:360
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Ziur zaude '%s' deskonektatzea nahi duzula?"
 
-#: ../server/vino-status-icon.c:322
+#: ../server/vino-status-icon.c:362
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "'%s'(e)ko erabiltzailea deskonektatu egingo da. Ziur zaude?"
 
-#: ../server/vino-status-icon.c:327
+#: ../server/vino-status-icon.c:367
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Ziur zaude bezero guztiak deskonektatzea nahi dituzula?"
 
-#: ../server/vino-status-icon.c:328
+#: ../server/vino-status-icon.c:368
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Urruneko bezero guztiak deskonektatu egingo dira. Ziur zaude?"
 
-#: ../server/vino-status-icon.c:340
+#: ../server/vino-status-icon.c:380
 msgid "Disconnect"
 msgstr "Deskonektatu"
 
-#: ../server/vino-status-icon.c:365
+#: ../server/vino-status-icon.c:406
 msgid "_Preferences"
 msgstr "_Hobespenak"
 
-#: ../server/vino-status-icon.c:377
+#: ../server/vino-status-icon.c:421
 msgid "Disconnect all"
 msgstr "Deskonektatu denak"
 
-#: ../server/vino-status-icon.c:399
+#: ../server/vino-status-icon.c:444
 #, c-format
 msgid "Disconnect %s"
 msgstr "Deskonektatu %s"
 
-#: ../server/vino-status-icon.c:416
+#: ../server/vino-status-icon.c:464
 msgid "_Help"
 msgstr "_Laguntza"
 
-#: ../server/vino-status-icon.c:424
+#: ../server/vino-status-icon.c:472
 msgid "_About"
 msgstr "Honi _buruz"
 
-#: ../server/vino-status-icon.c:458
-#, c-format
-msgid "One person is connected"
-msgid_plural "%d people are connected"
-msgstr[0] "Pertsona bat konektatu da"
-msgstr[1] "%d pertsona konektatu dira"
-
-#: ../server/vino-status-icon.c:562
+#: ../server/vino-status-icon.c:598
 msgid "Error initializing libnotify\n"
 msgstr "Errorea libnotify hasieratzean\n"
 
-#: ../server/vino-status-icon.c:576
+#: ../server/vino-status-icon.c:612
 msgid "Another user is viewing your desktop"
 msgstr "Beste erabiltzaile bat zure mahaigaina ikusten ari da"
 
-#: ../server/vino-status-icon.c:577
+#: ../server/vino-status-icon.c:613
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
-msgstr "'%s' ordenagailuko erabiltzaile bat zure mahaigaina urrunetik ikusten ari da."
+msgstr ""
+"'%s' ordenagailuko erabiltzaile bat zure mahaigaina urrunetik ikusten ari da."
 
-#: ../server/vino-status-icon.c:582
+#: ../server/vino-status-icon.c:618
 msgid "Another user is controlling your desktop"
 msgstr "Beste erabiltzaile batek zure mahaigaina kontrolatzen ari da"
 
-#: ../server/vino-status-icon.c:583
+#: ../server/vino-status-icon.c:619
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr ""
 "'%s' ordenagailuko erabiltzaile bat zure mahaigaina urrunetik kontrolatzen "
-"saiatzen ari da"
+"ari da"
 
-#: ../server/vino-status-icon.c:605
+#: ../server/vino-status-icon.c:641
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Errorea jakinarazpeneko burbuila bistaratzean: %s\n"
@@ -517,5 +624,4 @@ msgstr "Urruneko mahaigaineko zerbitzaria abiarazten"
 
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
-msgstr "Ez abiaratzen urruneko mahaigaineko zerbitzaria"
-
+msgstr "Ez da urruneko mahaigaineko zerbitzaria abiaratzen ari"
