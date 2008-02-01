@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-31 09:06-0300\n"
+"POT-Creation-Date: 2008-01-31 12:24+0000\n"
 "PO-Revision-Date: 2008-01-30 20:21-0300\n"
 "Last-Translator: Vladimir Melo <vladimirmelo@foresightlinux.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
@@ -105,7 +105,8 @@ msgstr ""
 msgid ""
 "If checked, screen will be locked after the last remote client disconnect"
 msgstr ""
-"Se selecionado, a tela será bloqueada quando último cliente remoto desconectar"
+"Se selecionado, a tela será bloqueada quando último cliente remoto "
+"desconectar"
 
 #: ../capplet/vino-preferences.glade.h:14
 msgid "If checked, the server will only accept connections from localhost"
@@ -127,7 +128,7 @@ msgstr "Preferências de Área de Trabalho Remota"
 
 #: ../capplet/vino-preferences.glade.h:19
 msgid "Some of these preferences are locked down"
-msgstr "Algumas destas preferências estão travadas"
+msgstr "Algumas destas preferências estão bloqueadas"
 
 #: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
@@ -143,7 +144,7 @@ msgstr "Permitir que outros usuários _controlem sua área de trabalho"
 
 #: ../capplet/vino-preferences.glade.h:23
 msgid "_Lock screen on disconnect"
-msgstr "_Travar a tela ao desconectar"
+msgstr "B_loquear a tela ao desconectar"
 
 #: ../capplet/vino-preferences.glade.h:24
 msgid "_Never display an icon"
@@ -324,7 +325,7 @@ msgstr ""
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
 msgstr ""
-"Se verdadeiro, a tela será trancada após a saída do último cliente remoto."
+"Se verdadeiro, a tela será bloqueada quando o último cliente remoto desconectar."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid ""
@@ -365,7 +366,7 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Lock the screen when last user disconnect"
-msgstr "Travar a tela quando o último usuário se desconectar"
+msgstr "Bloquear a tela quando o último usuário se desconectar"
 
 #: ../server/vino-server.schemas.in.h:15
 msgid "Only allow local connections"
@@ -571,7 +572,6 @@ msgid "_About"
 msgstr "_Sobre"
 
 #: ../server/vino-status-icon.c:598
-#, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Erro ao inicializar libnotify\n"
 
@@ -627,4 +627,3 @@ msgstr "Iniciando o servidor da área de trabalho remota"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Não iniciando o servidor da área de trabalho remota"
-
