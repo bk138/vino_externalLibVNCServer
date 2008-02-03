@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-23 02:15+0100\n"
-"PO-Revision-Date: 2008-01-23 02:16+0100\n"
+"POT-Creation-Date: 2008-02-03 13:39+0100\n"
+"PO-Revision-Date: 2008-02-03 13:41+0100\n"
 "Last-Translator: Andre Klapper <ak-47@gmx.net>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -457,7 +457,7 @@ msgstr ""
 
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
-msgstr "Desktop-Teilen ist aktiviert"
+msgstr "Gemeinsamer Desktop-Zugriff ist aktiviert"
 
 #: ../server/vino-status-icon.c:110
 #, c-format
