@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-27 13:28+0100\n"
+"POT-Creation-Date: 2008-02-02 21:55+0100\n"
 "PO-Revision-Date: 2007-12-28 12:59+0100\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../capplet/vino-preferences.c:1025 ../capplet/vino-preferences.c:1060
 #: ../capplet/vino-preferences.c:1118 ../server/vino-dbus-listener.c:374
@@ -221,20 +221,23 @@ msgstr ""
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
-msgstr "Un utilizaire sul ordenador '%s' es a ensajar de visualizar o mestrejar a "
+msgstr ""
+"Un utilizaire sul ordenador '%s' es a ensajar de visualizar o mestrejar a "
 "distáncia vòstre ordenador."
 
 #: ../server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>Un autre utilizaire es a ensajar de visualizar vòstre burèu.</b></big>"
+msgstr ""
+"<big><b>Un autre utilizaire es a ensajar de visualizar vòstre burèu.</b></"
+"big>"
 
 #: ../server/vino-prompt.glade.h:2
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"Un utilizaire sus un autre ordenador es a ensajar de visualizar o "
-"mestrejar vòstre ordenador a distáncia."
+"Un utilizaire sus un autre ordenador es a ensajar de visualizar o mestrejar "
+"vòstre ordenador a distáncia."
 
 #: ../server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
@@ -397,7 +400,9 @@ msgstr ""
 #: ../server/vino-status-icon.c:110
 #, c-format
 msgid "One person is connected"
-msgstr ""
+msgid_plural "%d people are connected"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../server/vino-status-icon.c:245
 #, c-format
@@ -499,7 +504,9 @@ msgstr "Un autre utilizaire es a visualizar vòstre burèu"
 #: ../server/vino-status-icon.c:613
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
-msgstr "Un utilizaire sul ordenador '%s' es a visualizar a distáncia vòstre ordenador."
+msgstr ""
+"Un utilizaire sul ordenador '%s' es a visualizar a distáncia vòstre "
+"ordenador."
 
 #: ../server/vino-status-icon.c:618
 msgid "Another user is controlling your desktop"
@@ -508,7 +515,8 @@ msgstr "Un autre utilizaire es a mestrejar vòstre burèu"
 #: ../server/vino-status-icon.c:619
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr "Un utilizaire sul ordenador '%s' es a mestrejar a distáncia vòstre ordenador."
+msgstr ""
+"Un utilizaire sul ordenador '%s' es a mestrejar a distáncia vòstre ordenador."
 
 #: ../server/vino-status-icon.c:641
 #, c-format
@@ -540,4 +548,3 @@ msgstr ""
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr ""
-
