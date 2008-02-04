@@ -1,3 +1,7 @@
+2008-02-04  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* nl.po: Dutch translation updated by Wouter Bolsterlee.
+
 2008-01-23  Andre Klapper  <a9016009@gmx.de>
 
 	* de.po: Updated German translation.
@@ -32,7 +36,7 @@
 
 	* bn_IN.po: Minor correction in the Bengali Indiaa Translation.
 
-2008-01-05   Clytie Siddall <clytie@riverland.net.au>
+2008-01-05  Clytie Siddall <clytie@riverland.net.au>
 
 	* vi.po: Updated Vietnamese translation.
 
@@ -74,8 +78,8 @@
 
 2007-11-25  Nickolay V. Shmyrev  <nshmyrev@yandex.ru>
 
-        * ru.po: Updated Russian translation
-        by Vasiliy Faronov <qvvx@yandex.ru>
+	* ru.po: Updated Russian translation
+	by Vasiliy Faronov <qvvx@yandex.ru>
 
 2007-11-22  Sunil Mohan Adapa  <sunil@atc.tcs.com>
 
@@ -164,8 +168,8 @@
 	* pt.po: Updated Portuguese translation.
 
 2007-09-07  Jovan Naumovski  <jovan@lugola.net>
- 
- 	 * mk.po: Updated Macedonian translation.
+
+	 * mk.po: Updated Macedonian translation.
 
 2007-09-06  Wouter Bolsterlee  <wbolster@svn.gnome.org>
 
