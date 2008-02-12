@@ -24,6 +24,8 @@
  *  USA.
  */
 
+#define _GNU_SOURCE 1
+
 #include <string.h>
 #include <rfb/rfb.h>
 #include <rfb/rfbregion.h>

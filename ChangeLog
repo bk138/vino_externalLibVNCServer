@@ -1,3 +1,9 @@
+2008-02-12  Matthias Clasen <mclasen@redhat.com> 
+
+	* server/libvncserver/rfbserver.c:
+	* capplet/vino-preferences.c: Fix the build with recent
+	glibc by declaring where we use GNU extensions. (#515941)
+
 2008-02-11  Jonh Wendell  <jwendell@gnome.org>
 
 	* configure.in: post-release bump version to 2.21.92
