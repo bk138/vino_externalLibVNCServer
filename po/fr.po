@@ -4,7 +4,7 @@
 #
 # Audrey Simons <asimons@redhat.com>, 2004.
 # Christophe Merlet <redfox@redfoxcenter.org>, 2005-2006.
-# Robert-André Mauchin <zebob.m@gmail.com>, 2006.
+# Robert-André Mauchin <zebob.m@pengzone.org>, 2006-2008.
 # Jonathan Ernst <jonathan@ernstfamily.ch>, 2007.
 # Stéphane Raimbault <stephane.raimbault@gmail.com>, 2007.
 #
@@ -12,33 +12,33 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-24 21:53+0200\n"
-"PO-Revision-Date: 2007-08-24 21:47+0200\n"
-"Last-Translator: Stéphane Raimbault <stephane.raimbault@gmail.com>\n"
+"POT-Creation-Date: 2008-02-14 20:17+0100\n"
+"PO-Revision-Date: 2008-02-14 15:44+0100\n"
+"Last-Translator: Robert-André Mauchin <zebob.m@pengzone.org>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 
-#: ../capplet/vino-preferences.c:634 ../capplet/vino-preferences.c:669
-#: ../capplet/vino-preferences.c:727 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
+#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
-msgstr "Impossible d'ouvrir la connexion au bus : %s\n"
+msgstr "L'ouverture de la connexion au bus a échoué : %s\n"
 
-#: ../capplet/vino-preferences.c:936
+#: ../capplet/vino-preferences.c:1329
 msgid "Send this command by email"
 msgstr "Envoyer cette commande par courrier électronique"
 
-#: ../capplet/vino-preferences.c:971
+#: ../capplet/vino-preferences.c:1364
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
 "%s"
 msgstr ""
-"Impossible d'afficher l'aide :\n"
+"Une erreur est survenue lors de l'affichage de l'aide :\n"
 "%s"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
@@ -50,49 +50,132 @@ msgid "Set your remote desktop access preferences"
 msgstr "Définit les préférences d'accès de votre bureau à distance"
 
 #: ../capplet/vino-preferences.glade.h:1
+msgid "<b>Network</b>"
+msgstr "<b>Réseau</b>"
+
+#: ../capplet/vino-preferences.glade.h:2
+msgid "<b>Notification Area</b>"
+msgstr "<b>Zone de notification</b>"
+
+#: ../capplet/vino-preferences.glade.h:3
 msgid "<b>Security</b>"
 msgstr "<b>Sécurité</b>"
 
-#: ../capplet/vino-preferences.glade.h:2
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Sharing</b>"
 msgstr "<b>Partage</b>"
 
-#: ../capplet/vino-preferences.glade.h:3
+#: ../capplet/vino-preferences.glade.h:5
 msgid "A_sk you for confirmation"
 msgstr "Vou_s demander confirmation"
 
-#: ../capplet/vino-preferences.glade.h:4
+#: ../capplet/vino-preferences.glade.h:6
+msgid "Advanced"
+msgstr "Avancé"
+
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Al_ways display an icon"
+msgstr "_Toujours afficher une icône"
+
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Allow other users to _view your desktop"
 msgstr "Autoriser d'autres utilisateurs à _voir votre bureau"
 
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:9
+msgid "General"
+msgstr "Général"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid ""
+"If checked, remote users accessing the desktop are required to support "
+"encryption"
+msgstr ""
+"Si activé, les utilisateurs distants accédant au bureau doivent prendre en "
+"charge le chiffrement"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:12
+msgid "If checked, remote users are able to control your mouse and keyboard"
+msgstr ""
+"Si activé, les utilisateurs distants peuvent contrôler votre souris et votre "
+"clavier"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid ""
+"If checked, screen will be locked after the last remote client disconnect"
+msgstr ""
+"Si activé, l'écran est verrouillé après la déconnexion du dernier "
+"utilisateur distant"
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "If checked, the server will only accept connections from localhost"
+msgstr ""
+"Si activé, le serveur accepte uniquement les connexions locales (localhost)"
+
+#: ../capplet/vino-preferences.glade.h:15
+msgid ""
+"If checked, the server will use another port, instead of the default (5900)"
+msgstr ""
+"Si activé, le serveur utilise un autre port, au lieu du port par défaut "
+"(5900)."
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:17
+msgid "If checked, your desktop will be shared"
+msgstr "Si activé, votre bureau sera partagé"
+
+#: ../capplet/vino-preferences.glade.h:18
 msgid "Remote Desktop Preferences"
 msgstr "Préférences de bureau à distance"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:19
 msgid "Some of these preferences are locked down"
 msgstr "Certaines de ces préférences sont verrouillées"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
 msgstr ""
 "Les utilisateurs peuvent voir votre bureau à l'aide de cette commande :"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:21
 msgid "When a user tries to view or control your desktop:"
 msgstr "Lorsqu'un utilisateur essaie de voir ou contrôler votre bureau :"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:22
 msgid "_Allow other users to control your desktop"
 msgstr "_Autoriser d'autres utilisateurs à contrôler votre bureau"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:23
+msgid "_Lock screen on disconnect"
+msgstr "_Verrouiller l'écran lors de la déconnexion"
+
+#: ../capplet/vino-preferences.glade.h:24
+msgid "_Never display an icon"
+msgstr "Ne _jamais afficher une icône"
+
+#: ../capplet/vino-preferences.glade.h:25
+msgid "_Only allow local connections"
+msgstr "N'autoriser _que les connexions locales"
+
+#: ../capplet/vino-preferences.glade.h:26
+msgid "_Only display an icon when there is someone connected"
+msgstr "N'afficher une icône que _lorsque quelqu'un est connecté"
+
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Password:"
 msgstr "Mot de _passe :"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:28
+msgid "_Require encryption"
+msgstr "_Requiert le chiffrement"
+
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Require the user to enter this password:"
 msgstr "L'utilisateur doit saisi_r son mot de passe :"
+
+#: ../capplet/vino-preferences.glade.h:30
+msgid "_Use an alternative port:"
+msgstr "_Utiliser un autre port :"
 
 #: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
 #: ../server/vino-dbus-listener.c:249
@@ -110,7 +193,11 @@ msgstr "Mémoire saturée lors de l'enregistrement du chemin de l'objet « %s 
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Impossible d'acquérir le nom D-Bus « %s »\n"
 
-#: ../server/vino-main.c:83
+#: ../server/vino-main.c:74
+msgid "GNOME Remote Desktop"
+msgstr "Bureau à distance GNOME"
+
+#: ../server/vino-main.c:84
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -326,6 +413,18 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:22
 msgid ""
+"This key controls the behavior of the status icon. There are three options: "
+"\"always\" - The icon will be always there; \"client\" - You will see the "
+"icon only when there is someone connected, this is the default behavior; "
+"\"never\" - Never shows the icon."
+msgstr ""
+"Cette clé contrôle le comportement de l'icône d'état. Trois options sont "
+"disponibles : « always » - l'icône est toujours affichée ; « client » - "
+"l'icône est affichée uniquement quand quelqu'un est connecté, il s'agit du "
+"comportement par défaut ; « never »  - l'icône n'est jamais affichée."
+
+#: ../server/vino-server.schemas.in.h:23
+msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
@@ -333,6 +432,10 @@ msgstr ""
 "Cette clé indique l'adresse électronique à laquelle envoyer l'URL du bureau "
 "à distance si l'utilisateur clique sur l'URL dans la boîte de dialogue de "
 "préférences du bureau à distance."
+
+#: ../server/vino-server.schemas.in.h:24
+msgid "When the status icon should be shown"
+msgstr "Indique quand l'icône d'état doit être affichée"
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -348,25 +451,36 @@ msgstr ""
 "Problème lors de l'enregistrement du serveur du bureau à distance avec "
 "bonobo-activation ; fermeture de l'application...\n"
 
-#: ../server/vino-status-icon.c:204
+#: ../server/vino-status-icon.c:102
+msgid "Desktop sharing is enabled"
+msgstr "Le partage du bureau est activé"
+
+#: ../server/vino-status-icon.c:110
+#, c-format
+msgid "One person is connected"
+msgid_plural "%d people are connected"
+msgstr[0] "Une personne est connectée"
+msgstr[1] "%d personnes sont connectées"
+
+#: ../server/vino-status-icon.c:245
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
 " %s"
 msgstr ""
 "Une erreur est survenue lors de l'affichage des préférences :\n"
-"%s"
+" %s"
 
-#: ../server/vino-status-icon.c:212
+#: ../server/vino-status-icon.c:253
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
 " %s"
 msgstr ""
 "Impossible d'afficher l'aide :\n"
-"%s"
+" %s"
 
-#: ../server/vino-status-icon.c:235
+#: ../server/vino-status-icon.c:276
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -400,99 +514,89 @@ msgstr ""
 "Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:250
+#: ../server/vino-status-icon.c:291
 msgid "translator-credits"
 msgstr ""
 "Audrey Simons <asimons@redhat.com>\n"
 "Christophe Merlet <redfox@redfoxcenter.org>\n"
-"Robert-André Mauchin <zebob.m@gmail.com>\n"
+"Robert-André Mauchin <zebob.m@pengzone.org>\n"
 "Jonathan Ernst <jonathan@ernstfamily.ch>"
 
-#: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:560
-msgid "GNOME Remote Desktop"
-msgstr "Bureau à distance GNOME"
-
-#: ../server/vino-status-icon.c:257
+#: ../server/vino-status-icon.c:297
 msgid "Share your desktop with other users"
 msgstr "Partagez votre bureau avec d'autres utilisateurs"
 
-#: ../server/vino-status-icon.c:320
+#: ../server/vino-status-icon.c:360
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Êtes-vous sûr de vouloir déconnecter « %s » ?"
 
-#: ../server/vino-status-icon.c:322
+#: ../server/vino-status-icon.c:362
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "L'utilisateur distant de « %s » sera déconnecté. Êtes-vous sûr ?"
 
-#: ../server/vino-status-icon.c:327
+#: ../server/vino-status-icon.c:367
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Êtes-vous sûr de vouloir déconnecter tous les clients ?"
 
-#: ../server/vino-status-icon.c:328
+#: ../server/vino-status-icon.c:368
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Tous les utilisateurs distants seront déconnectés. Êtes-vous sûr ?"
 
-#: ../server/vino-status-icon.c:340
+#: ../server/vino-status-icon.c:380
 msgid "Disconnect"
 msgstr "Déconnecter"
 
-#: ../server/vino-status-icon.c:365
+#: ../server/vino-status-icon.c:406
 msgid "_Preferences"
 msgstr "_Préférences"
 
-#: ../server/vino-status-icon.c:377
+#: ../server/vino-status-icon.c:421
 msgid "Disconnect all"
 msgstr "Tout déconnecter"
 
-#: ../server/vino-status-icon.c:399
+#: ../server/vino-status-icon.c:444
 #, c-format
 msgid "Disconnect %s"
 msgstr "Déconnecter %s"
 
-#: ../server/vino-status-icon.c:416
+#: ../server/vino-status-icon.c:464
 msgid "_Help"
 msgstr "Aid_e"
 
-#: ../server/vino-status-icon.c:424
+#: ../server/vino-status-icon.c:472
 msgid "_About"
 msgstr "À _propos"
 
-#: ../server/vino-status-icon.c:458
+#: ../server/vino-status-icon.c:598
 #, c-format
-msgid "One person is connected"
-msgid_plural "%d people are connected"
-msgstr[0] "Une personne est connectée"
-msgstr[1] "%d personnes sont connectées"
-
-#: ../server/vino-status-icon.c:562
 msgid "Error initializing libnotify\n"
 msgstr "Erreur lors de l'initialisation de libnotify\n"
 
-#: ../server/vino-status-icon.c:576
+#: ../server/vino-status-icon.c:612
 msgid "Another user is viewing your desktop"
 msgstr "Un autre utilisateur est en train de voir votre bureau"
 
-#: ../server/vino-status-icon.c:577
+#: ../server/vino-status-icon.c:613
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr ""
 "Un utilisateur sur l'ordinateur « %s » est en train de voir votre bureau à "
 "distance."
 
-#: ../server/vino-status-icon.c:582
+#: ../server/vino-status-icon.c:618
 msgid "Another user is controlling your desktop"
 msgstr "Un autre utilisateur est en train de contrôler votre bureau"
 
-#: ../server/vino-status-icon.c:583
+#: ../server/vino-status-icon.c:619
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr ""
 "Un utilisateur sur l'ordinateur « %s » contrôle actuellement votre bureau à "
 "distance."
 
-#: ../server/vino-status-icon.c:605
+#: ../server/vino-status-icon.c:641
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Erreur lors de l'affichage de la bulle de notification : %s\n"
