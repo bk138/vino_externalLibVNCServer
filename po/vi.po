@@ -68,11 +68,11 @@ msgstr "Nhắc bạn _xác nhận"
 
 #: ../capplet/vino-preferences.glade.h:6
 msgid "Advanced"
-msgstr "Cấp cao"
+msgstr "Nâng cao"
 
 #: ../capplet/vino-preferences.glade.h:7
 msgid "Al_ways display an icon"
-msgstr "_Lúc nào cũng hiển thị biểu tượng"
+msgstr "_Luôn hiển thị biểu tượng"
 
 #: ../capplet/vino-preferences.glade.h:8
 msgid "Allow other users to _view your desktop"
@@ -421,7 +421,7 @@ msgstr "Gặp lỗi khi đăng ký trình phục vụ màn hình làm việc t�
 
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
-msgstr "Chia sẻ màn hình nền đã được bật"
+msgstr "Đã bật chia sẻ màn hình nền"
 
 #: ../server/vino-status-icon.c:110
 #, c-format
