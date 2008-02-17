@@ -600,6 +600,12 @@ vino_status_icon_show_new_client_notification (gpointer user_data)
       return FALSE;
     }
 
+  if (g_slist_index (icon->priv->clients, client) == -1)
+    {
+      g_free (user_data);
+      return FALSE;
+    }
+
   if (icon->priv->new_client_notification)
     {
       notify_notification_close (icon->priv->new_client_notification, NULL);

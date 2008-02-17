@@ -222,10 +222,10 @@ vino_server_handle_client_gone (rfbClientPtr rfb_client)
 	  g_io_channel_unref (client->io_channel);
 	  client->io_channel = NULL;
 
-	  g_free (l->data);
 	  server->priv->clients = g_slist_delete_link (server->priv->clients, l);
 
           vino_server_client_disconnected (server, client);
+	  g_free (client);
 
 	  break;
 	}

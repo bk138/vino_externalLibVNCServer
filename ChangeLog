@@ -1,3 +1,9 @@
+2008-02-17  Jonh Wendell  <jwendell@gnome.org>
+
+	* server/vino-server.c:
+	* server/vino-status-icon.c: Fix a crash when client disconnect just
+	after connecting.
+
 2008-02-12  Matthias Clasen <mclasen@redhat.com> 
 
 	* server/libvncserver/rfbserver.c:
