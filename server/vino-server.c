@@ -362,7 +362,7 @@ vino_server_handle_new_client (rfbClientPtr rfb_client)
   if (!server->priv->fb)
     {
       vino_server_setup_framebuffer (server);
-      rfb_client->format = server->rfb_screen->rfbServerFormat;
+      rfb_client->format = server->priv->rfb_screen->rfbServerFormat;
     }
 
   client = g_new0 (VinoClient, 1);
