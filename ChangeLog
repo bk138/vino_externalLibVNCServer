@@ -1,3 +1,14 @@
+2008-02-18  Mark McLoughlin  <markmc@redhat.com>
+
+	Fix an issue with vinagre/gtk-vnc where the first
+	attempted connection fails because gtk-vnc doesn't
+	send a SetPixelFormat message.
+
+	Narrowed down and tested by Jonh Wendell.
+
+	* server/vino-server.c: (vino_server_handle_new_client): set
+	the client's pixel format after we've initialized it.
+
 2008-02-17  Jonh Wendell  <jwendell@gnome.org>
 
 	* server/vino-server.c:

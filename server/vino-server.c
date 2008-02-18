@@ -360,7 +360,10 @@ vino_server_handle_new_client (rfbClientPtr rfb_client)
   dprintf (RFB, "New client on fd %d\n", rfb_client->sock);
 
   if (!server->priv->fb)
-    vino_server_setup_framebuffer (server);
+    {
+      vino_server_setup_framebuffer (server);
+      rfb_client->format = server->rfb_screen->rfbServerFormat;
+    }
 
   client = g_new0 (VinoClient, 1);
 
