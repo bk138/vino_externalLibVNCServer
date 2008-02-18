@@ -1,0 +1,612 @@
+# translation of vino.HEAD.po to Kannada
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Shankar Prasad <svenkate@redhat.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: vino.HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-02-18 03:35+0000\n"
+"PO-Revision-Date: 2008-02-12 10:28+0530\n"
+"Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
+"Language-Team: Kannada <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
+#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
+#: ../server/vino-server.c:148
+#, fuzzy, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "ವಿಫಲಗೊಂಡ ತೆರೆ n"
+
+#: ../capplet/vino-preferences.c:1329
+#, fuzzy
+msgid "Send this command by email"
+msgstr "ಕಳುಹಿಸು"
+
+#: ../capplet/vino-preferences.c:1364
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"ಸಹಾಯವನ್ನು ತೋರಿಸುವಾಗ ಒಂದು ದೋಷವು ಎದುರಾಗಿದೆ:\n"
+"%s"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:1
+msgid "Remote Desktop"
+msgstr "ದೂರಸ್ಥ ಗಣಕತೆರೆ"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:2
+#, fuzzy
+msgid "Set your remote desktop access preferences"
+msgstr "ಆದ್ಯತೆಗಳು"
+
+#: ../capplet/vino-preferences.glade.h:1
+msgid "<b>Network</b>"
+msgstr "<b>ಜಾಲಬಂಧ</b>"
+
+#: ../capplet/vino-preferences.glade.h:2
+msgid "<b>Notification Area</b>"
+msgstr "<b>ಸೂಚನೆಯ ಜಾಗ</b>"
+
+#: ../capplet/vino-preferences.glade.h:3
+msgid "<b>Security</b>"
+msgstr "<b>ಸುರಕ್ಷತೆ</b>"
+
+#: ../capplet/vino-preferences.glade.h:4
+msgid "<b>Sharing</b>"
+msgstr "<b>ಹಂಚಿಕೆ</b>"
+
+#: ../capplet/vino-preferences.glade.h:5
+#, fuzzy
+msgid "A_sk you for confirmation"
+msgstr "A ಗೆ"
+
+#: ../capplet/vino-preferences.glade.h:6
+#, fuzzy
+msgid "Advanced"
+msgstr "ಸುಧಾರಿತ"
+
+#: ../capplet/vino-preferences.glade.h:7
+#, fuzzy
+msgid "Al_ways display an icon"
+msgstr "ಚಿಹ್ನೆ"
+
+#: ../capplet/vino-preferences.glade.h:8
+#, fuzzy
+msgid "Allow other users to _view your desktop"
+msgstr "ಅನುಮತಿಸು"
+
+#: ../capplet/vino-preferences.glade.h:9
+#, fuzzy
+msgid "General"
+msgstr "ಸಾಮಾನ್ಯ"
+
+#: ../capplet/vino-preferences.glade.h:10
+#, fuzzy
+msgid ""
+"If checked, remote users accessing the desktop are required to support "
+"encryption"
+msgstr "ಪರೀಕ್ಷಿಸಲಾದ"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:12
+#, fuzzy
+msgid "If checked, remote users are able to control your mouse and keyboard"
+msgstr "ಪರೀಕ್ಷಿಸಲಾದ ಕಂಟ್ರೋಲ್ ಕೀಲಿಮಣೆ"
+
+#: ../capplet/vino-preferences.glade.h:13
+#, fuzzy
+msgid ""
+"If checked, screen will be locked after the last remote client disconnect"
+msgstr "ಪರೀಕ್ಷಿಸಲಾದ ನಂತರ ಕೊನೆಯ"
+
+#: ../capplet/vino-preferences.glade.h:14
+#, fuzzy
+msgid "If checked, the server will only accept connections from localhost"
+msgstr "ಪರೀಕ್ಷಿಸಲಾದ"
+
+#: ../capplet/vino-preferences.glade.h:15
+#, fuzzy
+msgid ""
+"If checked, the server will use another port, instead of the default (5900)"
+msgstr "ಪರೀಕ್ಷಿಸಲಾದ ಪೂರ್ವನಿಯೋಜಿತ"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:17
+#, fuzzy
+msgid "If checked, your desktop will be shared"
+msgstr "ಪರೀಕ್ಷಿಸಲಾದ"
+
+#: ../capplet/vino-preferences.glade.h:18
+#, fuzzy
+msgid "Remote Desktop Preferences"
+msgstr "ದೂರಸ್ಥ ಗಣಕತೆರೆ ಆದ್ಯತೆಗಳು"
+
+#: ../capplet/vino-preferences.glade.h:19
+#, fuzzy
+msgid "Some of these preferences are locked down"
+msgstr "ಆದ್ಯತೆಗಳು ಡೌನ್"
+
+#: ../capplet/vino-preferences.glade.h:20
+#, fuzzy
+msgid "Users can view your desktop using this command:"
+msgstr "ಬಳಕೆದಾರರು:"
+
+#: ../capplet/vino-preferences.glade.h:21
+#, fuzzy
+msgid "When a user tries to view or control your desktop:"
+msgstr "ಕಂಟ್ರೋಲ್:"
+
+#: ../capplet/vino-preferences.glade.h:22
+#, fuzzy
+msgid "_Allow other users to control your desktop"
+msgstr "ಅನುಮತಿಸು ಕಂಟ್ರೋಲ್"
+
+#: ../capplet/vino-preferences.glade.h:23
+#, fuzzy
+msgid "_Lock screen on disconnect"
+msgstr "ಲಾಕ್ ನಲ್ಲಿ"
+
+#: ../capplet/vino-preferences.glade.h:24
+#, fuzzy
+msgid "_Never display an icon"
+msgstr "ಎಂದೂ ಅಲ್ಲ ಚಿಹ್ನೆ"
+
+#: ../capplet/vino-preferences.glade.h:25
+#, fuzzy
+msgid "_Only allow local connections"
+msgstr "ಕೇವಲ"
+
+#: ../capplet/vino-preferences.glade.h:26
+#, fuzzy
+msgid "_Only display an icon when there is someone connected"
+msgstr "ಕೇವಲ ಚಿಹ್ನೆ  "
+
+#: ../capplet/vino-preferences.glade.h:27
+#, fuzzy
+msgid "_Password:"
+msgstr "ಗುಪ್ತಪದ(_P):"
+
+#: ../capplet/vino-preferences.glade.h:28
+msgid "_Require encryption"
+msgstr ""
+
+#: ../capplet/vino-preferences.glade.h:29
+#, fuzzy
+msgid "_Require the user to enter this password:"
+msgstr "ನಮೂದಿಸು ಗುಪ್ತಪದ:"
+
+#: ../capplet/vino-preferences.glade.h:30
+msgid "_Use an alternative port:"
+msgstr ""
+
+#: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
+#: ../server/vino-dbus-listener.c:249
+#, fuzzy, c-format
+msgid "Out of memory handling '%s' message"
+msgstr "ಸಂದೇಶ"
+
+#: ../server/vino-dbus-listener.c:334
+#, c-format
+msgid "Out of memory registering object path '%s'"
+msgstr ""
+
+#: ../server/vino-dbus-listener.c:407
+#, fuzzy, c-format
+msgid "Failed to acquire D-Bus name '%s'\n"
+msgstr "ವಿಫಲಗೊಂಡ D ಬಸ್ ಹೆಸರು n"
+
+#: ../server/vino-main.c:74
+#, fuzzy
+msgid "GNOME Remote Desktop"
+msgstr "ದೂರಸ್ಥ ಗಣಕತೆರೆ"
+
+#: ../server/vino-main.c:84
+#, fuzzy
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr "Xಪರಿಚಾರಕ ಇಲ್ಲ n"
+
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#: ../server/vino-mdns.c:59
+msgid "vino-mdns:showusername"
+msgstr ""
+
+#.
+#. * Translators: this string is used ONLY if you
+#. * translated "vino-mdns:showusername" to anything
+#. * other than "1"
+#.
+#: ../server/vino-mdns.c:71
+#, fuzzy, c-format
+msgid "%s's remote desktop on %s"
+msgstr "ನಲ್ಲಿ"
+
+#: ../server/vino-prompt.c:142
+msgid "Screen"
+msgstr ""
+
+#: ../server/vino-prompt.c:143
+#, fuzzy
+msgid "The screen on which to display the prompt"
+msgstr "ನಲ್ಲಿ"
+
+#: ../server/vino-prompt.c:343
+#, fuzzy, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr "A ನಲ್ಲಿ   ಕಂಟ್ರೋಲ್."
+
+#: ../server/vino-prompt.glade.h:1
+#, fuzzy
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "<big><b>  </b></big>"
+
+#: ../server/vino-prompt.glade.h:2
+#, fuzzy
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr "A ನಲ್ಲಿ   ಕಂಟ್ರೋಲ್."
+
+#: ../server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr ""
+
+#: ../server/vino-prompt.glade.h:4
+#, fuzzy
+msgid "Question"
+msgstr "ಸಂದೇಹ"
+
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
+#, fuzzy
+msgid "_Allow"
+msgstr "ಅನುಮತಿಸು(_A)"
+
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
+msgid "_Refuse"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:1
+#, fuzzy
+msgid "Allowed authentication methods"
+msgstr "ದೃಢೀಕರಣ"
+
+#: ../server/vino-server.schemas.in.h:2
+#, fuzzy
+msgid "Alternative port number"
+msgstr "ಸಂಖ್ಯೆ"
+
+#: ../server/vino-server.schemas.in.h:3
+#, fuzzy
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "E ಮೈಲ್ URL"
+
+#: ../server/vino-server.schemas.in.h:4
+#, fuzzy
+msgid "Enable remote desktop access"
+msgstr "ಶಕ್ತಗೊಳಿಸು"
+
+#: ../server/vino-server.schemas.in.h:5
+#, fuzzy
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr "ಬಳಕೆದಾರರು ನಲ್ಲಿ."
+
+#: ../server/vino-server.schemas.in.h:6
+#, fuzzy
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr "ಇಲ್ಲ ವರೆಗೆ ನಲ್ಲಿ ಅತಿಥೇಯ   ಇಲ್ಲ ಗುಪ್ತಪದ."
+
+#: ../server/vino-server.schemas.in.h:7
+#, fuzzy
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote users will not be able to use the mouse or keyboard."
+msgstr "ದೂರಸ್ಥ ಇಲ್ಲ ಕೀಲಿಮಣೆ."
+
+#: ../server/vino-server.schemas.in.h:8
+#, fuzzy
+msgid ""
+"If true, remote users accessing the desktop are required to support "
+"encryption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr "  ಜಾಲಬಂಧ  ."
+
+#: ../server/vino-server.schemas.in.h:9
+#, fuzzy
+msgid "If true, screen will be locked after the last remote client disconnect."
+msgstr "ನಂತರ ಕೊನೆಯ."
+
+#: ../server/vino-server.schemas.in.h:10
+#, fuzzy
+msgid ""
+"If true, the server will listen to another port, instead of the default "
+"(5900). The port must be specified in the 'alternative_port' key."
+msgstr "ಪೂರ್ವನಿಯೋಜಿತ."
+
+#: ../server/vino-server.schemas.in.h:11
+#, fuzzy
+msgid ""
+"If true, the server will only accept connections from localhost and network "
+"connections will be rejected. Set this option to true if you wish to "
+"exclusively use a tunneling mechanism to access the server, such as ssh."
+msgstr "ಜಾಲಬಂಧ ಆಯ್ಕೆ."
+
+#: ../server/vino-server.schemas.in.h:12
+msgid "Listen an alternative port"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:13
+#, fuzzy
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+"ದೃಢೀಕರಣ ನೊಂದಿಗೆ ಎರಡು ದೃಢೀಕರಣ ಗೆ ಗುಪ್ತಪದ ಗುಪ್ತಪದ   ಗುಪ್ತಪದ ಮೊದಲು ಯಾವುದೂ ಇಲ್ಲ."
+
+#: ../server/vino-server.schemas.in.h:14
+#, fuzzy
+msgid "Lock the screen when last user disconnect"
+msgstr "ಲಾಕ್ ಕೊನೆಯ"
+
+#: ../server/vino-server.schemas.in.h:15
+#, fuzzy
+msgid "Only allow local connections"
+msgstr "ಕೇವಲ"
+
+#: ../server/vino-server.schemas.in.h:16
+#, fuzzy
+msgid "Only allow remote users to view the desktop"
+msgstr "ಕೇವಲ"
+
+#: ../server/vino-server.schemas.in.h:17
+#, fuzzy
+msgid "Password required for \"vnc\" authentication"
+msgstr "ಗುಪ್ತಪದ ಗೆ ದೃಢೀಕರಣ"
+
+#: ../server/vino-server.schemas.in.h:18
+#, fuzzy
+msgid "Prompt the user before completing a connection"
+msgstr "ಮೊದಲು"
+
+#: ../server/vino-server.schemas.in.h:19
+msgid "Require encryption"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:20
+#, fuzzy
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr "ಗುಪ್ತಪದ ಗೆ ದೃಢೀಕರಣ   ಗುಪ್ತಪದ  ."
+
+#: ../server/vino-server.schemas.in.h:21
+#, fuzzy
+msgid ""
+"The port which the server will listen to if the 'use_alternative_port' key "
+"is set to true. Valid values are in the range from 5000 to 50000."
+msgstr " ."
+
+#: ../server/vino-server.schemas.in.h:22
+#, fuzzy
+msgid ""
+"This key controls the behavior of the status icon. There are three options: "
+"\"always\" - The icon will be always there; \"client\" - You will see the "
+"icon only when there is someone connected, this is the default behavior; "
+"\"never\" - Never shows the icon."
+msgstr "ಚಿಹ್ನೆ ಮೂರು ಆಯ್ಕೆಗಳು ಚಿಹ್ನೆ ಚಿಹ್ನೆ     ಪೂರ್ವನಿಯೋಜಿತ ಎಂದೂ ಅಲ್ಲ ಚಿಹ್ನೆ."
+
+#: ../server/vino-server.schemas.in.h:23
+#, fuzzy
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr "e ಮೈಲ್ URL ನಲ್ಲಿ URL ದೂರಸ್ಥ ಗಣಕತೆರೆ ಆದ್ಯತೆಗಳು."
+
+#: ../server/vino-server.schemas.in.h:24
+#, fuzzy
+msgid "When the status icon should be shown"
+msgstr "ಚಿಹ್ನೆ"
+
+#: ../server/vino-shell.c:76
+#, fuzzy
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "ದೂರಸ್ಥ ಗಣಕತೆರೆ n"
+
+#: ../server/vino-shell.c:79
+#, fuzzy
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr "ನೊಂದಿಗೆ n"
+
+#: ../server/vino-status-icon.c:102
+#, fuzzy
+msgid "Desktop sharing is enabled"
+msgstr "ಗಣಕತೆರೆ   ಶಕ್ತಗೊಂಡ"
+
+#: ../server/vino-status-icon.c:110
+#, fuzzy, c-format
+msgid "One person is connected"
+msgid_plural "%d people are connected"
+msgstr[0] "ಒಂದು  "
+msgstr[1] "ಒಂದು  "
+
+#: ../server/vino-status-icon.c:245
+#, fuzzy, c-format
+msgid ""
+"There was an error displaying preferences:\n"
+" %s"
+msgstr "ಆದ್ಯತೆಗಳು\n"
+
+#: ../server/vino-status-icon.c:253
+#, fuzzy, c-format
+msgid ""
+"There was an error displaying help:\n"
+" %s"
+msgstr "ಸಹಾಯ\n"
+
+#: ../server/vino-status-icon.c:276
+#, fuzzy
+msgid ""
+"Licensed under the GNU General Public License Version 2\n"
+"\n"
+"Vino is free software; you can redistribute it and/or\n"
+"modify it under the terms of the GNU General Public License\n"
+"as published by the Free Software Foundation; either version 2\n"
+"of the License, or (at your option) any later version.\n"
+"\n"
+"Vino is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n"
+"GNU General Public License for more details.\n"
+"\n"
+"You should have received a copy of the GNU General Public License\n"
+"along with this program; if not, write to the Free Software\n"
+"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+"02110-1301, USA.\n"
+msgstr ""
+"ಸಾಮಾನ್ಯ ಸಾರ್ವಜನಿಕ ಲೈಸನ್ಸ್‍ ಆವೃತ್ತಿ n   ಸಾಮಾನ್ಯ ಸಾರ್ವಜನಿಕ ಲೈಸನ್ಸ್‍ ಬಿಡುವು ತಂತ್ರಾಂಶ ಲೈಸನ್ಸ್‍ "
+"ಆಯ್ಕೆ n   A ಸಾಮಾನ್ಯ ಸಾರ್ವಜನಿಕ ಲೈಸನ್ಸ್‍ ಗೆ n ನಕಲಿಸು ಸಾಮಾನ್ಯ ಸಾರ್ವಜನಿಕ ಲೈಸನ್ಸ್‍ ನೊಂದಿಗೆ "
+"ಇಲ್ಲ ಬಿಡುವು ತಂತ್ರಾಂಶ ಫ್ರಾಂಕ್ಲಿನ್ ಬೋಸ್ಟನ್ USA n"
+
+#. Translators comment: put your own name here to appear in the about dialog.
+#: ../server/vino-status-icon.c:291
+#, fuzzy
+msgid "translator-credits"
+msgstr "ಶಂಕರ್ ಪ್ರಸಾದ್ ಎಂ. ವಿ."
+
+#: ../server/vino-status-icon.c:297
+#, fuzzy
+msgid "Share your desktop with other users"
+msgstr "ನೊಂದಿಗೆ"
+
+#: ../server/vino-status-icon.c:360
+#, c-format
+msgid "Are you sure you want to disconnect '%s'?"
+msgstr ""
+
+#: ../server/vino-status-icon.c:362
+#, c-format
+msgid "The remote user from '%s' will be disconnected. Are you sure?"
+msgstr ""
+
+#: ../server/vino-status-icon.c:367
+msgid "Are you sure you want to disconnect all clients?"
+msgstr ""
+
+#: ../server/vino-status-icon.c:368
+#, fuzzy
+msgid "All remote users will be disconnected. Are you sure?"
+msgstr "ಎಲ್ಲಾ?"
+
+#: ../server/vino-status-icon.c:380
+#, fuzzy
+msgid "Disconnect"
+msgstr "ಸಂಪರ್ಕ ಕಡಿದು ಹಾಕು"
+
+#: ../server/vino-status-icon.c:406
+#, fuzzy
+msgid "_Preferences"
+msgstr "ಆದ್ಯತೆಗಳು(_P)"
+
+#: ../server/vino-status-icon.c:421
+#, fuzzy
+msgid "Disconnect all"
+msgstr "ಸಂಪರ್ಕ ಕಡಿದು ಹಾಕು"
+
+#: ../server/vino-status-icon.c:444
+#, fuzzy, c-format
+msgid "Disconnect %s"
+msgstr "ಸಂಪರ್ಕ ಕಡಿದು ಹಾಕು"
+
+#: ../server/vino-status-icon.c:464
+#, fuzzy
+msgid "_Help"
+msgstr "ಸಹಾಯ(_H)"
+
+#: ../server/vino-status-icon.c:472
+#, fuzzy
+msgid "_About"
+msgstr "ಇದರ ಬಗ್ಗೆ(_A)"
+
+#: ../server/vino-status-icon.c:598
+#, fuzzy
+msgid "Error initializing libnotify\n"
+msgstr "ದೋಷ n"
+
+#: ../server/vino-status-icon.c:618
+#, fuzzy
+msgid "Another user is viewing your desktop"
+msgstr " "
+
+#: ../server/vino-status-icon.c:619
+#, fuzzy, c-format
+msgid "A user on the computer '%s' is remotely viewing your desktop."
+msgstr "A ನಲ್ಲಿ  ."
+
+#: ../server/vino-status-icon.c:624
+#, fuzzy
+msgid "Another user is controlling your desktop"
+msgstr " "
+
+#: ../server/vino-status-icon.c:625
+#, fuzzy, c-format
+msgid "A user on the computer '%s' is remotely controlling your desktop."
+msgstr "A ನಲ್ಲಿ  ."
+
+#: ../server/vino-status-icon.c:647
+#, fuzzy, c-format
+msgid "Error while displaying notification bubble: %s\n"
+msgstr "ದೋಷ n"
+
+#: ../session/vino-session.c:133
+#, fuzzy
+msgid "Remote desktop server died, restarting\n"
+msgstr "ದೂರಸ್ಥ n"
+
+#: ../session/vino-session.c:154
+#, fuzzy, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "n"
+
+#: ../session/vino-session.c:160
+#, fuzzy, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "ಗೊತ್ತಿರದ ದೋಷ n"
+
+#: ../session/vino-session.c:231
+#, fuzzy
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr "ವಿಫಲಗೊಂಡ ಸಕ್ರಿಯಗೊಳಿಸು n"
+
+#: ../session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr ""
+
+#: ../session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr ""
