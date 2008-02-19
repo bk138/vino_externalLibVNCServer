@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-02 21:55+0100\n"
+"POT-Creation-Date: 2008-02-19 20:27+0100\n"
 "PO-Revision-Date: 2007-12-28 12:59+0100\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -17,18 +17,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../capplet/vino-preferences.c:1025 ../capplet/vino-preferences.c:1060
-#: ../capplet/vino-preferences.c:1118 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
+#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr ""
 
-#: ../capplet/vino-preferences.c:1327
+#: ../capplet/vino-preferences.c:1329
 msgid "Send this command by email"
 msgstr ""
 
-#: ../capplet/vino-preferences.c:1362
+#: ../capplet/vino-preferences.c:1364
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -497,28 +497,28 @@ msgstr "_A prepaus"
 msgid "Error initializing libnotify\n"
 msgstr ""
 
-#: ../server/vino-status-icon.c:612
+#: ../server/vino-status-icon.c:618
 msgid "Another user is viewing your desktop"
 msgstr "Un autre utilizaire es a visualizar vòstre burèu"
 
-#: ../server/vino-status-icon.c:613
+#: ../server/vino-status-icon.c:619
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr ""
 "Un utilizaire sul ordenador '%s' es a visualizar a distáncia vòstre "
 "ordenador."
 
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:624
 msgid "Another user is controlling your desktop"
 msgstr "Un autre utilizaire es a mestrejar vòstre burèu"
 
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:625
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr ""
 "Un utilizaire sul ordenador '%s' es a mestrejar a distáncia vòstre ordenador."
 
-#: ../server/vino-status-icon.c:641
+#: ../server/vino-status-icon.c:647
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr ""
