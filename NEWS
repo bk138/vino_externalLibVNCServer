@@ -1,3 +1,27 @@
+Vino 2.21.92
+============
+
+  Fixes
+
+	+ Fix a crash with the vinagre client. (Mark McLoughlin)
+	+ Fix a crash when client disconnects just after connecting. (Jonh Wendell)
+	+ Fix the build with recent	glibc. (Matthias Clasen)
+
+  Translations
+
+	+ Josep Puigdemont (ca)
+	+ Pavel Šefránek (cs)
+	+ Ilkka Tuohela (fi)
+	+ Robert-André Mauchin (fr)
+	+ Nyitrai István (hu)
+	+ Shankar Prasad (kn)
+	+ Young-Ho Cha (ko)
+	+ Arangel Angov (mk)
+	+ Badral (mn)
+	+ Shyam Krishna Bal (ne)
+	+ Duarte Loreto (pt)
+	+ Clytie Siddall (vi)
+
 Vino 2.21.91
 ============
 
