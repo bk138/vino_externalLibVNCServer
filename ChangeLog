@@ -1,3 +1,9 @@
+2008-02-25  Jonh Wendell  <jwendell@gnome.org>
+
+	* configure.in: post-release bump version to 2.22.0
+
+==================== 2.21.92 =====================
+
 2008-02-18  Mark McLoughlin  <markmc@redhat.com>
 
 	Fix an issue with vinagre/gtk-vnc where the first
