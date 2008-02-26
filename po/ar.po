@@ -9,29 +9,30 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD.ar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-28 02:34+0000\n"
-"PO-Revision-Date: 2007-09-15 17:55+0100\n"
+"POT-Creation-Date: 2008-02-21 09:02+0000\n"
+"PO-Revision-Date: 2008-02-26 16:06+0100\n"
 "Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : "
-"3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : 3\n"
 
-#: ../capplet/vino-preferences.c:1025 ../capplet/vino-preferences.c:1060
-#: ../capplet/vino-preferences.c:1118 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1027
+#: ../capplet/vino-preferences.c:1062
+#: ../capplet/vino-preferences.c:1120
+#: ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "فشل فتح إتصال مع الناقل: %s\n"
 
-#: ../capplet/vino-preferences.c:1327
+#: ../capplet/vino-preferences.c:1329
 msgid "Send this command by email"
 msgstr "أرسِل هذا الأمر بالبريد الإلكتروني"
 
-#: ../capplet/vino-preferences.c:1362
+#: ../capplet/vino-preferences.c:1364
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -49,13 +50,12 @@ msgid "Set your remote desktop access preferences"
 msgstr "اضبط تفضيلات النفاذ لسطح المكتب البعيد"
 
 #: ../capplet/vino-preferences.glade.h:1
-#, fuzzy
 msgid "<b>Network</b>"
-msgstr "<b>الأمن</b>"
+msgstr "<b>شبكة</b>"
 
 #: ../capplet/vino-preferences.glade.h:2
 msgid "<b>Notification Area</b>"
-msgstr ""
+msgstr "<b>مساحة التبليغ</b>"
 
 #: ../capplet/vino-preferences.glade.h:3
 msgid "<b>Security</b>"
@@ -71,11 +71,11 @@ msgstr "ا_سأل للتأكيد"
 
 #: ../capplet/vino-preferences.glade.h:6
 msgid "Advanced"
-msgstr ""
+msgstr "متقدم"
 
 #: ../capplet/vino-preferences.glade.h:7
 msgid "Al_ways display an icon"
-msgstr ""
+msgstr "دائما ا_عرض أيقونة"
 
 #: ../capplet/vino-preferences.glade.h:8
 msgid "Allow other users to _view your desktop"
@@ -83,12 +83,10 @@ msgstr "اسمح للمستخدمين الآخرين ب_عرض سطح مكتبك
 
 #: ../capplet/vino-preferences.glade.h:9
 msgid "General"
-msgstr ""
+msgstr "عامّ"
 
 #: ../capplet/vino-preferences.glade.h:10
-msgid ""
-"If checked, remote users accessing the desktop are required to support "
-"encryption"
+msgid "If checked, remote users accessing the desktop are required to support encryption"
 msgstr ""
 
 #. tooltip in preferences applet
@@ -98,8 +96,7 @@ msgstr ""
 
 #: ../capplet/vino-preferences.glade.h:13
 #, fuzzy
-msgid ""
-"If checked, screen will be locked after the last remote client disconnect"
+msgid "If checked, screen will be locked after the last remote client disconnect"
 msgstr "اذا كان صحيحا، سيتم غلق الشاشة عند اغلاق آخر مستخدم للإتصال."
 
 #: ../capplet/vino-preferences.glade.h:14
@@ -108,11 +105,8 @@ msgstr ""
 
 #: ../capplet/vino-preferences.glade.h:15
 #, fuzzy
-msgid ""
-"If checked, the server will use another port, instead of the default (5900)"
-msgstr ""
-"لو صحيح، سيستمع الخادم لمنفذ آخر، بدلا من الإفتراضي (5900). يجب أن يحدد "
-"المنفذ قي مفتاح 'alternative_port'."
+msgid "If checked, the server will use another port, instead of the default (5900)"
+msgstr "لو صحيح، سيستمع الخادم لمنفذ آخر، بدلا من الإفتراضي (5900). يجب أن يحدد المنفذ قي مفتاح 'alternative_port'."
 
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:17
@@ -143,11 +137,12 @@ msgstr "ا_سمح للمستخدمين الآخرين بالتّحكّم بسط�
 #: ../capplet/vino-preferences.glade.h:23
 #, fuzzy
 msgid "_Lock screen on disconnect"
-msgstr "اغلق الشاشة عند اغلاق آخر مستخدم للإتصال"
+msgstr "قفل الشاشة في حالة السبات"
 
 #: ../capplet/vino-preferences.glade.h:24
+#, fuzzy
 msgid "_Never display an icon"
-msgstr ""
+msgstr "_لاتعرض الأيقونة أبداً"
 
 #: ../capplet/vino-preferences.glade.h:25
 #, fuzzy
@@ -174,9 +169,10 @@ msgstr "ا_طلب من المستخدم ادخال كلمة السر هذه:"
 #: ../capplet/vino-preferences.glade.h:30
 #, fuzzy
 msgid "_Use an alternative port:"
-msgstr "استمع لمنفذ بديل"
+msgstr "رقم المنفذ البديل"
 
-#: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
+#: ../server/vino-dbus-listener.c:188
+#: ../server/vino-dbus-listener.c:218
 #: ../server/vino-dbus-listener.c:249
 #, c-format
 msgid "Out of memory handling '%s' message"
@@ -197,9 +193,7 @@ msgid "GNOME Remote Desktop"
 msgstr "سطح مكتب جنوم عن بعيد"
 
 #: ../server/vino-main.c:84
-msgid ""
-"Your XServer does not support the XTest extension - remote desktop access "
-"will be view-only\n"
+msgid "Your XServer does not support the XTest extension - remote desktop access will be view-only\n"
 msgstr "لايدعم خادم X الامتداد XTest - سيكون سطح المكتب البعيد للعرض فقط\n"
 
 #.
@@ -231,9 +225,7 @@ msgstr "الشّاشة التي سيعرض عليها المحثّ"
 
 #: ../server/vino-prompt.c:343
 #, c-format
-msgid ""
-"A user on the computer '%s' is trying to remotely view or control your "
-"desktop."
+msgid "A user on the computer '%s' is trying to remotely view or control your desktop."
 msgstr "يحاول مستخدم على الحاسوب '%s' عرض أو التّحكم بسطح مكتبك عن بعد."
 
 #: ../server/vino-prompt.glade.h:1
@@ -241,9 +233,7 @@ msgid "<big><b>Another user is trying to view your desktop.</b></big>"
 msgstr "<big><b>يحاول مستخدم آخر عرض سطح مكتبك.</b></big>"
 
 #: ../server/vino-prompt.glade.h:2
-msgid ""
-"A user on another computer is trying to remotely view or control your "
-"desktop."
+msgid "A user on another computer is trying to remotely view or control your desktop."
 msgstr "يحاول مستخدم على حاسوب آخر عرض أو التّحكم بسطح مكتبك عن بعد."
 
 #: ../server/vino-prompt.glade.h:3
@@ -254,11 +244,13 @@ msgstr "أتريد السّماح لهم بفعل ذلك؟"
 msgid "Question"
 msgstr "السّؤال"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
+#: ../server/vino-prompt.glade.h:5
+#: ../server/vino-util.c:63
 msgid "_Allow"
 msgstr "ا_سمح"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:6
+#: ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "ا_رفض"
 
@@ -279,77 +271,40 @@ msgid "Enable remote desktop access"
 msgstr "مكّن النفاذ لسطح المكتب عن بعد"
 
 #: ../server/vino-server.schemas.in.h:5
-msgid ""
-"If true, allows remote access to the desktop via the RFB protocol. Users on "
-"remote machines may then connect to the desktop using a vncviewer."
-msgstr ""
-"إذا ضبط لـtrue، سيسمح بالوصول البعيد لسطح المكتب من خلال بروتوكول RFB.يمكن "
-"أن يتّصل المستخدمون على أجهزة بعيدة إلى سطح المكتب من خلال عارض VNC."
+msgid "If true, allows remote access to the desktop via the RFB protocol. Users on remote machines may then connect to the desktop using a vncviewer."
+msgstr "إذا ضبط لـtrue، سيسمح بالوصول البعيد لسطح المكتب من خلال بروتوكول RFB.يمكن أن يتّصل المستخدمون على أجهزة بعيدة إلى سطح المكتب من خلال عارض VNC."
 
 #: ../server/vino-server.schemas.in.h:6
-msgid ""
-"If true, remote users accessing the desktop are not allowed access until the "
-"user on the host machine approves the connection. Recommended especially "
-"when access is not password protected."
-msgstr ""
-"إذا ضبط لـtrue، لن يسمح للمستخدمين البعيدين بالوصول إلى سطح المكتب حتى يوافق "
-"المستخدم على الجهاز المضيف على الاتّصال. ينصح به خاصة عندما لا يكون الوصول "
-"محمياً بكلمة سر."
+msgid "If true, remote users accessing the desktop are not allowed access until the user on the host machine approves the connection. Recommended especially when access is not password protected."
+msgstr "إذا ضبط لـtrue، لن يسمح للمستخدمين البعيدين بالوصول إلى سطح المكتب حتى يوافق المستخدم على الجهاز المضيف على الاتّصال. ينصح به خاصة عندما لا يكون الوصول محمياً بكلمة سر."
 
 #: ../server/vino-server.schemas.in.h:7
-msgid ""
-"If true, remote users accessing the desktop are only allowed to view the "
-"desktop. Remote users will not be able to use the mouse or keyboard."
-msgstr ""
-"إذا ضبط لصحيح، لن يسمح للمستخدمين البعيدين النافذين إلى سطح المكتب بعرض سطح "
-"المكتب. لن يتمكّن المستخدمون البعيدون من استخدام الفأرة أو لوحة المفاتيح."
+msgid "If true, remote users accessing the desktop are only allowed to view the desktop. Remote users will not be able to use the mouse or keyboard."
+msgstr "إذا ضبط لصحيح، لن يسمح للمستخدمين البعيدين النافذين إلى سطح المكتب بعرض سطح المكتب. لن يتمكّن المستخدمون البعيدون من استخدام الفأرة أو لوحة المفاتيح."
 
 #: ../server/vino-server.schemas.in.h:8
-msgid ""
-"If true, remote users accessing the desktop are required to support "
-"encryption. It is highly recommended that you use a client which supports "
-"encryption unless the intervening network is trusted."
-msgstr ""
-"إذا ضبط لـtrue، يطلب من المستخدمين البعيدين أن يدعموا التّشفير. ينصح بشكل "
-"كبير أن تستخدم عميلاً يدعم التّشفير ما لم تكن الشبكة موثوقة."
+msgid "If true, remote users accessing the desktop are required to support encryption. It is highly recommended that you use a client which supports encryption unless the intervening network is trusted."
+msgstr "إذا ضبط لـtrue، يطلب من المستخدمين البعيدين أن يدعموا التّشفير. ينصح بشكل كبير أن تستخدم عميلاً يدعم التّشفير ما لم تكن الشبكة موثوقة."
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
 msgstr "اذا كان صحيحا، سيتم غلق الشاشة عند اغلاق آخر مستخدم للإتصال."
 
 #: ../server/vino-server.schemas.in.h:10
-msgid ""
-"If true, the server will listen to another port, instead of the default "
-"(5900). The port must be specified in the 'alternative_port' key."
-msgstr ""
-"لو صحيح، سيستمع الخادم لمنفذ آخر، بدلا من الإفتراضي (5900). يجب أن يحدد "
-"المنفذ قي مفتاح 'alternative_port'."
+msgid "If true, the server will listen to another port, instead of the default (5900). The port must be specified in the 'alternative_port' key."
+msgstr "لو صحيح، سيستمع الخادم لمنفذ آخر، بدلا من الإفتراضي (5900). يجب أن يحدد المنفذ قي مفتاح 'alternative_port'."
 
 #: ../server/vino-server.schemas.in.h:11
-msgid ""
-"If true, the server will only accept connections from localhost and network "
-"connections will be rejected. Set this option to true if you wish to "
-"exclusively use a tunneling mechanism to access the server, such as ssh."
-msgstr ""
-"لو صحيح، سيقبل الخادم الإتصالات المحلّية فقط وسيرفض اتصلات الشبكة. اضبط هذا "
-"كصحيح، إذا أردت حصريا استعمال آليات أنفاق للنفاذ للخادم، مثل ssh."
+msgid "If true, the server will only accept connections from localhost and network connections will be rejected. Set this option to true if you wish to exclusively use a tunneling mechanism to access the server, such as ssh."
+msgstr "لو صحيح، سيقبل الخادم الإتصالات المحلّية فقط وسيرفض اتصلات الشبكة. اضبط هذا كصحيح، إذا أردت حصريا استعمال آليات أنفاق للنفاذ للخادم، مثل ssh."
 
 #: ../server/vino-server.schemas.in.h:12
 msgid "Listen an alternative port"
 msgstr "استمع لمنفذ بديل"
 
 #: ../server/vino-server.schemas.in.h:13
-msgid ""
-"Lists the authentication methods with which remote users may access the "
-"desktop. There are two possible authentication methods; \"vnc\" causes the "
-"remote user to be prompted for a password (the password is specified by the "
-"vnc_password key) before connecting and \"none\" which allows any remote "
-"user to connect."
-msgstr ""
-"يعرض قائمة بطرق التّوثّق الممكن للمستخدمين البعيدين استخدامها للوصول لسطح "
-"المكتب. هناك طريقتان ممكنتان للتّوثّق، \"vnc\" التي تسائل المستخدم البعيد عن "
-"كلمة سر (تحدّد كلمة السر بمفتاح vnc_password( قبل الاتّصال، و \"none\" التي "
-"تسمح لأي مستخدم بعيد بالاتّصال."
+msgid "Lists the authentication methods with which remote users may access the desktop. There are two possible authentication methods; \"vnc\" causes the remote user to be prompted for a password (the password is specified by the vnc_password key) before connecting and \"none\" which allows any remote user to connect."
+msgstr "يعرض قائمة بطرق التّوثّق الممكن للمستخدمين البعيدين استخدامها للوصول لسطح المكتب. هناك طريقتان ممكنتان للتّوثّق، \"vnc\" التي تسائل المستخدم البعيد عن كلمة سر (تحدّد كلمة السر بمفتاح vnc_password( قبل الاتّصال، و \"none\" التي تسمح لأي مستخدم بعيد بالاتّصال."
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Lock the screen when last user disconnect"
@@ -376,38 +331,20 @@ msgid "Require encryption"
 msgstr "التّشفير مطلوب"
 
 #: ../server/vino-server.schemas.in.h:20
-msgid ""
-"The password which the remote user will be prompted for if the \"vnc\" "
-"authentication method is used. The password specified by the key is base64 "
-"encoded."
-msgstr ""
-"كلمة السر التي سيُساءل المستخدم عنها إذا استخدمت طريقة توثّق \"vnc\". كلمة "
-"السر المحدّدة بالمفتاح مرمّزة بترميز قاعدة 64."
+msgid "The password which the remote user will be prompted for if the \"vnc\" authentication method is used. The password specified by the key is base64 encoded."
+msgstr "كلمة السر التي سيُساءل المستخدم عنها إذا استخدمت طريقة توثّق \"vnc\". كلمة السر المحدّدة بالمفتاح مرمّزة بترميز قاعدة 64."
 
 #: ../server/vino-server.schemas.in.h:21
-msgid ""
-"The port which the server will listen to if the 'use_alternative_port' key "
-"is set to true. Valid values are in the range from 5000 to 50000."
-msgstr ""
-"المنفذ الذي سيستمع إليه الخادم إذا ضبط مفتاح 'use_alternative_port' كصحيح. "
-"القيم المقبولة في المدى 5000 إلى 50000."
+msgid "The port which the server will listen to if the 'use_alternative_port' key is set to true. Valid values are in the range from 5000 to 50000."
+msgstr "المنفذ الذي سيستمع إليه الخادم إذا ضبط مفتاح 'use_alternative_port' كصحيح. القيم المقبولة في المدى 5000 إلى 50000."
 
 #: ../server/vino-server.schemas.in.h:22
-msgid ""
-"This key controls the behavior of the status icon. There are three options: "
-"\"always\" - The icon will be always there; \"client\" - You will see the "
-"icon only when there is someone connected, this is the default behavior; "
-"\"never\" - Never shows the icon."
+msgid "This key controls the behavior of the status icon. There are three options: \"always\" - The icon will be always there; \"client\" - You will see the icon only when there is someone connected, this is the default behavior; \"never\" - Never shows the icon."
 msgstr ""
 
 #: ../server/vino-server.schemas.in.h:23
-msgid ""
-"This key specifies the e-mail address to which the remote desktop URL should "
-"be sent if the user clicks on the URL in the Remote Desktop preferences "
-"dialog."
-msgstr ""
-"يحدّد هذا المفتاح عنوان البريد الإلكتروني الذي سيتمّ إرسال عنوان سطح المكتب "
-"البعيد إليه إذا نقر المستخدم على العنوان في حوار تفضيلات سطح المكتب البعيد."
+msgid "This key specifies the e-mail address to which the remote desktop URL should be sent if the user clicks on the URL in the Remote Desktop preferences dialog."
+msgstr "يحدّد هذا المفتاح عنوان البريد الإلكتروني الذي سيتمّ إرسال عنوان سطح المكتب البعيد إليه إذا نقر المستخدم على العنوان في حوار تفضيلات سطح المكتب البعيد."
 
 #: ../server/vino-server.schemas.in.h:24
 msgid "When the status icon should be shown"
@@ -418,14 +355,13 @@ msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "خادم سطح المكتب البعيد يعمل حالياً، خروج...\n"
 
 #: ../server/vino-shell.c:79
-msgid ""
-"Problem registering the remote desktop server with bonobo-activation; "
-"exiting ...\n"
+msgid "Problem registering the remote desktop server with bonobo-activation; exiting ...\n"
 msgstr "مشكلة في تسجيل خادم سطح المكتب البعيد بتنشيط بونوبو، خروج ...\n"
 
 #: ../server/vino-status-icon.c:102
+#, fuzzy
 msgid "Desktop sharing is enabled"
-msgstr ""
+msgstr "XDMCP غير مفعّل"
 
 #: ../server/vino-status-icon.c:110
 #, c-format
@@ -551,25 +487,25 @@ msgstr "_حوْل"
 msgid "Error initializing libnotify\n"
 msgstr "خطأ أثناء بدأ libnotify\n"
 
-#: ../server/vino-status-icon.c:612
+#: ../server/vino-status-icon.c:618
 msgid "Another user is viewing your desktop"
 msgstr "يشاهد مستخدم آخر سطح مكتبك"
 
-#: ../server/vino-status-icon.c:613
+#: ../server/vino-status-icon.c:619
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "يُشاهد مستخدم على الحاسوب '%s' سطح مكتبك عن بعد."
 
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:624
 msgid "Another user is controlling your desktop"
 msgstr "يتحكّم مستخدم آخر بسطح مكتبك"
 
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:625
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "تحكّم مستخدم على الحاسوب '%s' بسطح مكتبك عن بعد."
 
-#: ../server/vino-status-icon.c:641
+#: ../server/vino-status-icon.c:647
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "خطأ أثناء عرض فقّاعة التبليغ: %s\n"
@@ -599,3 +535,4 @@ msgstr "بدء خادم سطح المكتب البعيد"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "لا تبدء خادم سطح المكتب البعيد"
+
