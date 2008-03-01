@@ -1,19 +1,20 @@
+# translation of vino.HEAD.po to Español
 # traducción de Vino al Español
 # This file is distributed under the same license as the Vino package.
 # Copyright (C) 2006 The Free Software Foundation.
 #
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004, 2006.
 # maria <maria.majadas@hispalinux.es>, 2007.
-# Jorge González <jorgegonz@svn.gnome.org>, 2007.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008.
 # Claudio Saavedra <csaavedra@alumnos.utalca.cl>, (QA) 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: vino.HEAD.es\n"
+"Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-11 19:06+0000\n"
-"PO-Revision-Date: 2007-11-12 15:06+0100\n"
+"POT-Creation-Date: 2007-11-12 17:46+0000\n"
+"PO-Revision-Date: 2008-03-01 19:27+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
-"Language-Team: Spanish <traductores@es.gnome.org>\n"
+"Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -89,8 +90,8 @@ msgid ""
 "If checked, remote users accessing the desktop are required to support "
 "encryption"
 msgstr ""
-"Si está activado, los usuarios remotos que accedan al escritorio deben soportar "
-"cifrado"
+"Si está activado, los usuarios remotos que accedan al escritorio deben "
+"soportar cifrado"
 
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:12
@@ -99,7 +100,9 @@ msgstr "Si está activado, los usuarios remotos pueden controlar el teclado y el
 
 #: ../capplet/vino-preferences.glade.h:13
 msgid "If checked, screen will be locked after the last remote client disconnect"
-msgstr "Si está activado, la pantalla se bloqueará después de que el último cliente remoto se desconecte"
+msgstr ""
+"Si está activado, la pantalla se bloqueará después de que el último cliente "
+"remoto se desconecte"
 
 #: ../capplet/vino-preferences.glade.h:14
 msgid "If checked, the server will only accept connections from localhost"
@@ -107,7 +110,9 @@ msgstr "Si está activado, el servidor sólo aceptará conexiones desde el equip
 
 #: ../capplet/vino-preferences.glade.h:15
 msgid "If checked, the server will use another port, instead of the default (5900)"
-msgstr "Si está activado, el servidor escuchará en otro puerto, en lugar del predeterminado (5900)"
+msgstr ""
+"Si está activado, el servidor escuchará en otro puerto, en lugar del "
+"predeterminado (5900)"
 
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:17
@@ -406,10 +411,10 @@ msgid ""
 "icon only when there is someone connected, this is the default behavior; "
 "\"never\" - Never shows the icon."
 msgstr ""
-"Esta clave controla el comportamiento del icono de estado. Existen tres opciones: "
-"«siempre»; el icono siempre se mostrará; «cliente»; sólo verá el icono "
-"cuando haya alguien conectado, este es el comportamiento predeterminado; "
-"«nunca»; nunca se mostrará el icono."
+"Esta clave controla el comportamiento del icono de estado. Existen tres "
+"opciones: «siempre»; el icono siempre se mostrará; «cliente»; sólo verá el "
+"icono cuando haya alguien conectado, este es el comportamiento "
+"predeterminado; «nunca»; nunca se mostrará el icono."
 
 #: ../server/vino-server.schemas.in.h:23
 msgid ""
@@ -504,8 +509,8 @@ msgstr ""
 #: ../server/vino-status-icon.c:291
 msgid "translator-credits"
 msgstr ""
-"Jorge González <jorgegonz@svn.gnome.org>, 2007Francisco Javier F. Serrador "
-"<serrador@openshine.com>, 2004, 2006"
+"Jorge González <jorgegonz@svn.gnome.org>, 2007-2008\n"
+"Francisco Javier F. Serrador <serrador@openshine.com>, 2004, 2006"
 
 #: ../server/vino-status-icon.c:297
 msgid "Share your desktop with other users"
@@ -514,7 +519,7 @@ msgstr "Comparta su escritorio con otros usuarios"
 #: ../server/vino-status-icon.c:360
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
-msgstr "¿Seguro que quiere desconectar a «%s»"
+msgstr "¿Seguro que quiere desconectar a «%s»?"
 
 #: ../server/vino-status-icon.c:362
 #, c-format
@@ -569,7 +574,7 @@ msgstr "Un usuario en el equipo «%s» está viendo su escritorio remotamente."
 
 #: ../server/vino-status-icon.c:618
 msgid "Another user is controlling your desktop"
-msgstr "Otro usuario está controlando su escritorio."
+msgstr "Otro usuario está controlando su escritorio"
 
 #: ../server/vino-status-icon.c:619
 #, c-format
