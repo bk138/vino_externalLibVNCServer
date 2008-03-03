@@ -1,0 +1,548 @@
+# Biełaruski pierakład vino
+# Copyright (C) 2008 GNOME Project
+# This file is distributed under the same license as the vino package.
+# Ihar Hrachyshka <booxter@lacinka.org>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vino.HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-03-03 20:04+0200\n"
+"PO-Revision-Date: 2008-03-03 20:29+0200\n"
+"Last-Translator: Ihar Hrachyshka <booxter@lacinka.org>\n"
+"Language-Team: Belarusian Latin <i18n@mova.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
+#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
+#: ../server/vino-server.c:148
+#, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "Nie ŭdałosia naviazać spałučeńnie z šynaj: %s\n"
+
+#: ../capplet/vino-preferences.c:1329
+msgid "Send this command by email"
+msgstr "Vyšli hety zahad praz email"
+
+#: ../capplet/vino-preferences.c:1364
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"Padčas demanstracyi dapamohi ŭźnikła pamyłka:\n"
+"%s"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:1
+msgid "Remote Desktop"
+msgstr "Addaleny stoł"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:2
+msgid "Set your remote desktop access preferences"
+msgstr "Naładžvaj dostup da svajho addalenaha stała"
+
+#: ../capplet/vino-preferences.glade.h:1
+msgid "<b>Network</b>"
+msgstr "<b>Sietka</b>"
+
+#: ../capplet/vino-preferences.glade.h:2
+msgid "<b>Notification Area</b>"
+msgstr "<b>Abšar nahadvańnia</b>"
+
+#: ../capplet/vino-preferences.glade.h:3
+msgid "<b>Security</b>"
+msgstr "<b>Biaśpieka</b>"
+
+#: ../capplet/vino-preferences.glade.h:4
+msgid "<b>Sharing</b>"
+msgstr "<b>Supolny dostup</b>"
+
+#: ../capplet/vino-preferences.glade.h:5
+msgid "A_sk you for confirmation"
+msgstr "_Pytajsia paćvierdžańnia"
+
+#: ../capplet/vino-preferences.glade.h:6
+msgid "Advanced"
+msgstr "Admysłovaje"
+
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Al_ways display an icon"
+msgstr "_Zaŭždy pakazvaj ikonu"
+
+#: ../capplet/vino-preferences.glade.h:8
+msgid "Allow other users to _view your desktop"
+msgstr "Dazvol inšym karystalnikam _bačyć tvoj stoł"
+
+#: ../capplet/vino-preferences.glade.h:9
+msgid "General"
+msgstr "Ahulnaje"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid ""
+"If checked, remote users accessing the desktop are required to support "
+"encryption"
+msgstr ""
+"Kali ŭklučana, addalenyja karystalniki musiać padtrymlivać šyfravańnie"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:12
+msgid "If checked, remote users are able to control your mouse and keyboard"
+msgstr "Kali ŭklučana, addalenyja karystalniki mohuć kiravać tvajoj myšaj i klavijaturaj"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid ""
+"If checked, screen will be locked after the last remote client disconnect"
+msgstr ""
+"Kali ŭklučana, ekran budzie zablakavany paśla adłučeńnia apošniaha addalenaha klijenta"
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "If checked, the server will only accept connections from localhost"
+msgstr "Kali ŭklučana, server budzie pryjmać spałučeńni tolki ad hetaha kamputara"
+
+#: ../capplet/vino-preferences.glade.h:15
+msgid ""
+"If checked, the server will use another port, instead of the default (5900)"
+msgstr ""
+"Kali ŭklučana, server budzie pracavać praź inšy port, zamiesta zmoŭčanaha (5900)"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:17
+msgid "If checked, your desktop will be shared"
+msgstr "Kali ŭklučana, da tvajho stała budzie supolny dostup"
+
+#: ../capplet/vino-preferences.glade.h:18
+msgid "Remote Desktop Preferences"
+msgstr "Nałady addalenaha stała"
+
+#: ../capplet/vino-preferences.glade.h:19
+msgid "Some of these preferences are locked down"
+msgstr "Niekatoryja nałady zablakavanyja"
+
+#: ../capplet/vino-preferences.glade.h:20
+msgid "Users can view your desktop using this command:"
+msgstr "Karystalniki mohuć ubačyć tvoj stoł, vykanaŭšy hety zahad:"
+
+#: ../capplet/vino-preferences.glade.h:21
+msgid "When a user tries to view or control your desktop:"
+msgstr "Kali karystalnik sprabuje ŭbačyć ci pakiravać tvaim stałom:"
+
+#: ../capplet/vino-preferences.glade.h:22
+msgid "_Allow other users to control your desktop"
+msgstr "_Dazvol inšym karystalnikam kiravać maim stałom"
+
+#: ../capplet/vino-preferences.glade.h:23
+msgid "_Lock screen on disconnect"
+msgstr "_Zablakuj ekran paśla adłučeńnia"
+
+#: ../capplet/vino-preferences.glade.h:24
+msgid "_Never display an icon"
+msgstr "_Nikoli nie pakazvaj ikony"
+
+#: ../capplet/vino-preferences.glade.h:25
+msgid "_Only allow local connections"
+msgstr "Dazvol _tolki lakalnyja spałučeńni"
+
+#: ../capplet/vino-preferences.glade.h:26
+msgid "_Only display an icon when there is someone connected"
+msgstr "Pakazvaj _ikonu, tolki kali chtości spałučyŭsia"
+
+#: ../capplet/vino-preferences.glade.h:27
+msgid "_Password:"
+msgstr "_Parol:"
+
+#: ../capplet/vino-preferences.glade.h:28
+msgid "_Require encryption"
+msgstr "_Vymahaj šyfravańnia"
+
+#: ../capplet/vino-preferences.glade.h:29
+msgid "_Require the user to enter this password:"
+msgstr "_Vymahaj ad karystalnika ŭvodu parolu:"
+
+#: ../capplet/vino-preferences.glade.h:30
+msgid "_Use an alternative port:"
+msgstr "_Pracuj ź inšym partom:"
+
+#: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
+#: ../server/vino-dbus-listener.c:249
+#, c-format
+msgid "Out of memory handling '%s' message"
+msgstr "Padčas pierapracoŭvańnia paviedamleńnia \"%s\" skončyłasia pamiać"
+
+#: ../server/vino-dbus-listener.c:334
+#, c-format
+msgid "Out of memory registering object path '%s'"
+msgstr "Padčas rehistracyi ściežki abjekta \"%s\" skončyłasia pamiać"
+
+#: ../server/vino-dbus-listener.c:407
+#, c-format
+msgid "Failed to acquire D-Bus name '%s'\n"
+msgstr "Nie ŭdałosia zarezervavać nazvu D-Bus \"%s\"\n"
+
+#: ../server/vino-main.c:74
+msgid "GNOME Remote Desktop"
+msgstr "Addaleny stoł GNOME"
+
+#: ../server/vino-main.c:84
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"Tvoj server X nie padtrymlivaje pašyreńnia XTest - addalenyja stały možna budzie tolki bačyć\n"
+
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#: ../server/vino-mdns.c:59
+msgid "vino-mdns:showusername"
+msgstr "0"
+
+#.
+#. * Translators: this string is used ONLY if you
+#. * translated "vino-mdns:showusername" to anything
+#. * other than "1"
+#.
+#: ../server/vino-mdns.c:71
+#, c-format
+msgid "%s's remote desktop on %s"
+msgstr "Addaleny stoł %s na %s"
+
+#: ../server/vino-prompt.c:142
+msgid "Screen"
+msgstr "Ekran"
+
+#: ../server/vino-prompt.c:143
+msgid "The screen on which to display the prompt"
+msgstr "Ekran, na jakim pakazvać zapytańnie"
+
+#: ../server/vino-prompt.c:343
+#, c-format
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Karystalnik kamputara \"%s\" sprabuje ŭbačyć ci pakiravać tvaim stałom."
+
+#: ../server/vino-prompt.glade.h:1
+msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgstr "<big><b>Inšy karystalnik choča ŭbačyć tvoj stoł.</b></big>"
+
+#: ../server/vino-prompt.glade.h:2
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Karystalnik inšaha kamputara sprabuje ŭbačyć ci pakiravać tvaim stałom."
+
+#: ../server/vino-prompt.glade.h:3
+msgid "Do you want to allow them to do so?"
+msgstr "Ci dazvolić im heta?"
+
+#: ../server/vino-prompt.glade.h:4
+msgid "Question"
+msgstr "Pytańnie"
+
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
+msgid "_Allow"
+msgstr "_Dazvol"
+
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
+msgid "_Refuse"
+msgstr "_Admoŭ"
+
+#: ../server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "Dazvolenyja metady aŭtaryzacyi"
+
+#: ../server/vino-server.schemas.in.h:2
+msgid "Alternative port number"
+msgstr "Alternatyŭny numar portu"
+
+#: ../server/vino-server.schemas.in.h:3
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "Adras email, jakomu treba vysłać adras URL addalenaha stała"
+
+#: ../server/vino-server.schemas.in.h:4
+msgid "Enable remote desktop access"
+msgstr "Uklučy addaleny dostup da stała"
+
+#: ../server/vino-server.schemas.in.h:5
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:6
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote users will not be able to use the mouse or keyboard."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:8
+msgid ""
+"If true, remote users accessing the desktop are required to support "
+"encryption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:9
+msgid "If true, screen will be locked after the last remote client disconnect."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:10
+msgid ""
+"If true, the server will listen to another port, instead of the default "
+"(5900). The port must be specified in the 'alternative_port' key."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:11
+msgid ""
+"If true, the server will only accept connections from localhost and network "
+"connections will be rejected. Set this option to true if you wish to "
+"exclusively use a tunneling mechanism to access the server, such as ssh."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:12
+msgid "Listen an alternative port"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:13
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:14
+msgid "Lock the screen when last user disconnect"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:15
+msgid "Only allow local connections"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:16
+msgid "Only allow remote users to view the desktop"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:17
+msgid "Password required for \"vnc\" authentication"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:18
+msgid "Prompt the user before completing a connection"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:19
+msgid "Require encryption"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:20
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:21
+msgid ""
+"The port which the server will listen to if the 'use_alternative_port' key "
+"is set to true. Valid values are in the range from 5000 to 50000."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:22
+msgid ""
+"This key controls the behavior of the status icon. There are three options: "
+"\"always\" - The icon will be always there; \"client\" - You will see the "
+"icon only when there is someone connected, this is the default behavior; "
+"\"never\" - Never shows the icon."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:23
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:24
+msgid "When the status icon should be shown"
+msgstr ""
+
+#: ../server/vino-shell.c:76
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "Server addalenych stałoŭ užo ŭklučany. Vychad...\n"
+
+#: ../server/vino-shell.c:79
+msgid ""
+"Problem registering the remote desktop server with bonobo-activation; "
+"exiting ...\n"
+msgstr ""
+"Prablema rehistracyi servera addalenych stałoŭ z dapamohaj \"bonobo-activation\". "
+"Vychad...\n"
+
+#: ../server/vino-status-icon.c:102
+msgid "Desktop sharing is enabled"
+msgstr "Supolny dostup da stała ŭklučany"
+
+#: ../server/vino-status-icon.c:110
+#, c-format
+msgid "One person is connected"
+msgid_plural "%d people are connected"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../server/vino-status-icon.c:245
+#, c-format
+msgid ""
+"There was an error displaying preferences:\n"
+" %s"
+msgstr ""
+"Padčas demanstracyi naładaŭ uźnikła pamyłka:\n"
+" %s"
+
+#: ../server/vino-status-icon.c:253
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+" %s"
+msgstr ""
+"Padčas demanstracyi dapamohi ŭźnikła pamyłka:\n"
+" %s"
+
+#: ../server/vino-status-icon.c:276
+msgid ""
+"Licensed under the GNU General Public License Version 2\n"
+"\n"
+"Vino is free software; you can redistribute it and/or\n"
+"modify it under the terms of the GNU General Public License\n"
+"as published by the Free Software Foundation; either version 2\n"
+"of the License, or (at your option) any later version.\n"
+"\n"
+"Vino is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n"
+"GNU General Public License for more details.\n"
+"\n"
+"You should have received a copy of the GNU General Public License\n"
+"along with this program; if not, write to the Free Software\n"
+"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+"02110-1301, USA.\n"
+msgstr ""
+
+#. Translators comment: put your own name here to appear in the about dialog.
+#: ../server/vino-status-icon.c:291
+msgid "translator-credits"
+msgstr "Ihar Hračyška <booxter@lacinka.org>"
+
+#: ../server/vino-status-icon.c:297
+msgid "Share your desktop with other users"
+msgstr "Zrabi svoj stoł supolna dastupnym dla inšych karystalnikaŭ"
+
+#: ../server/vino-status-icon.c:360
+#, c-format
+msgid "Are you sure you want to disconnect '%s'?"
+msgstr "Ty sapraŭdy chočaš adłučyć \"%s\"?"
+
+#: ../server/vino-status-icon.c:362
+#, c-format
+msgid "The remote user from '%s' will be disconnected. Are you sure?"
+msgstr "Addaleny karystalnik z \"%s\" budzie adłučany. Ty ŭpeŭnieny?"
+
+#: ../server/vino-status-icon.c:367
+msgid "Are you sure you want to disconnect all clients?"
+msgstr "Ty sapraŭdy chočaš adłučyć usich klijentaŭ?"
+
+#: ../server/vino-status-icon.c:368
+msgid "All remote users will be disconnected. Are you sure?"
+msgstr "Usie addalenyja karystalniki buduć adłučanyja. Ty ŭpeŭnieny?"
+
+#: ../server/vino-status-icon.c:380
+msgid "Disconnect"
+msgstr "Adłučy"
+
+#: ../server/vino-status-icon.c:406
+msgid "_Preferences"
+msgstr "_Nałady"
+
+#: ../server/vino-status-icon.c:421
+msgid "Disconnect all"
+msgstr "Adłučy ŭsich"
+
+#: ../server/vino-status-icon.c:444
+#, c-format
+msgid "Disconnect %s"
+msgstr "Adłučy %s"
+
+#: ../server/vino-status-icon.c:464
+msgid "_Help"
+msgstr "_Dapamoha"
+
+#: ../server/vino-status-icon.c:472
+msgid "_About"
+msgstr "_Ab prahramie"
+
+#: ../server/vino-status-icon.c:598
+msgid "Error initializing libnotify\n"
+msgstr "Pamyłka inicyjalizacyi libnotify\n"
+
+#: ../server/vino-status-icon.c:618
+msgid "Another user is viewing your desktop"
+msgstr "Inšy karystalnik bačyć tvoj stoł"
+
+#: ../server/vino-status-icon.c:619
+#, c-format
+msgid "A user on the computer '%s' is remotely viewing your desktop."
+msgstr "Karystalnik kamputara \"%s\" addalena naziraje za tvaim stałom."
+
+#: ../server/vino-status-icon.c:624
+msgid "Another user is controlling your desktop"
+msgstr "Inšy karystalnik kiruje tvaim stałom"
+
+#: ../server/vino-status-icon.c:625
+#, c-format
+msgid "A user on the computer '%s' is remotely controlling your desktop."
+msgstr "Karystalnik kamputara \"%s\" addalena kiruje tvaim stałom."
+
+#: ../server/vino-status-icon.c:647
+#, c-format
+msgid "Error while displaying notification bubble: %s\n"
+msgstr "Pamyłka demanstracyi nahadvańnia: %s\n"
+
+#: ../session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr "Server addalenych stałoŭ pamior. Uklučajecca znoŭ\n"
+
+#: ../session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "Niaŭdałaja aktyvizacyja %s: %s\n"
+
+#: ../session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "Niaŭdałaja aktyvizacyja %s: nieviadomaja pamyłka\n"
+
+#: ../session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
+msgstr "Nie ŭdałosia aktyvizavać server addalenych stałoŭ: nadta šmat sprobaŭ\n"
+
+#: ../session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr "Uklučeńnie servera addalenych stałoŭ"
+
+#: ../session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr "Server addalenych stałoŭ nie ŭklučajecca"
