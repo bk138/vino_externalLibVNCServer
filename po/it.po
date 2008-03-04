@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-03-04 09:48+0100\n"
-"PO-Revision-Date: 2008-03-04 09:44+0100\n"
+"PO-Revision-Date: 2008-03-04 21:09+0100\n"
 "Last-Translator: Milo Casagrande <milo_casagrande@yahoo.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
@@ -29,13 +29,15 @@ msgstr "Apertura connessione al bus fallita: %s\n"
 msgid "Send this command by email"
 msgstr "Invia questo comando per email"
 
+# GNOME-2-22
+# è mancante
 #: ../capplet/vino-preferences.c:1364
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
 "%s"
 msgstr ""
-"Si verificato un errore nel visualizzare l'aiuto:\n"
+"Si è verificato un errore nel visualizzare l'aiuto:\n"
 "%s"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
@@ -489,22 +491,29 @@ msgid_plural "%d people are connected"
 msgstr[0] "Una persona è collegata"
 msgstr[1] "%d persone sono collegate"
 
+# GNOME-2-22
+# è mancante
 #: ../server/vino-status-icon.c:245
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
 " %s"
 msgstr ""
-"Si verificato un errore nel visualizzare le preferenze:\n"
+"Si è verificato un errore nel visualizzare le preferenze:\n"
 " %s"
 
+# GNOME-2-22
+# è mancante
+#
+# FIXME: sarebbe da segnalare che il messaggio è lo stesso di prima
+# togliendo uno spazio si salva tempo ai traduttori...
 #: ../server/vino-status-icon.c:253
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
 " %s"
 msgstr ""
-"Si verificato un errore nel visualizzare l'aiuto:\n"
+"Si è verificato un errore nel visualizzare l'aiuto:\n"
 " %s"
 
 #: ../server/vino-status-icon.c:276
