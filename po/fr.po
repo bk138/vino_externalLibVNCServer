@@ -6,15 +6,15 @@
 # Christophe Merlet <redfox@redfoxcenter.org>, 2005-2006.
 # Robert-André Mauchin <zebob.m@pengzone.org>, 2006-2008.
 # Jonathan Ernst <jonathan@ernstfamily.ch>, 2007.
-# Stéphane Raimbault <stephane.raimbault@gmail.com>, 2007.
+# Stéphane Raimbault <stephane.raimbault@gmail.com>, 2007-2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-14 20:17+0100\n"
-"PO-Revision-Date: 2008-02-14 15:44+0100\n"
-"Last-Translator: Robert-André Mauchin <zebob.m@pengzone.org>\n"
+"POT-Creation-Date: 2008-03-06 00:40+0100\n"
+"PO-Revision-Date: 2008-03-06 00:42+0100\n"
+"Last-Translator: Stéphane Raimbault <stephane.raimbault@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,7 +30,7 @@ msgstr "L'ouverture de la connexion au bus a échoué : %s\n"
 
 #: ../capplet/vino-preferences.c:1329
 msgid "Send this command by email"
-msgstr "Envoyer cette commande par courrier électronique"
+msgstr "Envoyer cette commande par courriel"
 
 #: ../capplet/vino-preferences.c:1364
 #, c-format
@@ -45,9 +45,10 @@ msgstr ""
 msgid "Remote Desktop"
 msgstr "Bureau à distance"
 
+# Utilisation de l'infinitif dans les infobulles du Bureau
 #: ../capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
-msgstr "Définit les préférences d'accès de votre bureau à distance"
+msgstr "Paramétrer l'accès à distance à votre bureau"
 
 #: ../capplet/vino-preferences.glade.h:1
 msgid "<b>Network</b>"
@@ -520,7 +521,8 @@ msgstr ""
 "Audrey Simons <asimons@redhat.com>\n"
 "Christophe Merlet <redfox@redfoxcenter.org>\n"
 "Robert-André Mauchin <zebob.m@pengzone.org>\n"
-"Jonathan Ernst <jonathan@ernstfamily.ch>"
+"Jonathan Ernst <jonathan@ernstfamily.ch>\n"
+"Stéphane Raimbault <stephane.raimbault@gmail.com>"
 
 #: ../server/vino-status-icon.c:297
 msgid "Share your desktop with other users"
@@ -574,29 +576,29 @@ msgstr "À _propos"
 msgid "Error initializing libnotify\n"
 msgstr "Erreur lors de l'initialisation de libnotify\n"
 
-#: ../server/vino-status-icon.c:612
+#: ../server/vino-status-icon.c:618
 msgid "Another user is viewing your desktop"
 msgstr "Un autre utilisateur est en train de voir votre bureau"
 
-#: ../server/vino-status-icon.c:613
+#: ../server/vino-status-icon.c:619
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr ""
 "Un utilisateur sur l'ordinateur « %s » est en train de voir votre bureau à "
 "distance."
 
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:624
 msgid "Another user is controlling your desktop"
 msgstr "Un autre utilisateur est en train de contrôler votre bureau"
 
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:625
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr ""
 "Un utilisateur sur l'ordinateur « %s » contrôle actuellement votre bureau à "
 "distance."
 
-#: ../server/vino-status-icon.c:641
+#: ../server/vino-status-icon.c:647
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Erreur lors de l'affichage de la bulle de notification : %s\n"
