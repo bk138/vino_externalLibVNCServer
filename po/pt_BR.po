@@ -517,7 +517,7 @@ msgstr ""
 #: ../server/vino-status-icon.c:291
 msgid "translator-credits"
 msgstr ""
-"Raphael Higino <phhigino@gmail.com>\n"
+"Raphael Higino <In memoriam>\n"
 "Igor Pires Soares <igor@projetofedora.org>\n"
 "Leonardo Ferreira Fontenelle <leo.fontenelle@gmail.com>\n"
 "Jonh Wendell <wendell@bani.com.br>\n"
