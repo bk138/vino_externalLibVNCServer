@@ -4,20 +4,19 @@
 #
 # Runa Bhattacharjee <runa@bengalinux.org>, 2004.
 # Runa Bhattacharjee <runabh@gmail.com>, 2007.
-# Runa Bhattacharjee <runab@redhat.com>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: bn_IN\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-27 12:00+0000\n"
-"PO-Revision-Date: 2008-02-27 20:02+0530\n"
-"Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
+"POT-Creation-Date: 2008-03-08 03:36+0000\n"
+"PO-Revision-Date: 2008-03-08 20:02+0530\n"
+"Last-Translator: Runa Bhattacharjee <runab@fedoraproject.org>\n"
 "Language-Team: Bengali INDIA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
 #: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
@@ -87,24 +86,33 @@ msgstr "সাধারণ"
 msgid ""
 "If checked, remote users accessing the desktop are required to support "
 "encryption"
-msgstr "নির্বাচিত হলে, ডেস্কটপ ব্যবহারকারী দূরবর্তী ব্যবহারকারীদের সিস্টেম দ্বারা এনক্রিপশন সমর্থন ব্যবস্থা উপস্থিত থাকা আবশ্যক"
+msgstr ""
+"নির্বাচিত হলে, ডেস্কটপ ব্যবহারকারী দূরবর্তী ব্যবহারকারীদের সিস্টেম দ্বারা এনক্রিপশন "
+"সমর্থন ব্যবস্থা উপস্থিত থাকা আবশ্যক"
 
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:12
 msgid "If checked, remote users are able to control your mouse and keyboard"
-msgstr "নির্বাচিত হলে, দূরবর্তী ব্যবহারকারীরা, আপনার সিস্টেমের মাউজ ও কি-বোর্ড নিয়ন্ত্রণ করতে পারবেন"
+msgstr ""
+"নির্বাচিত হলে, দূরবর্তী ব্যবহারকারীরা, আপনার সিস্টেমের মাউজ ও কি-বোর্ড নিয়ন্ত্রণ "
+"করতে পারবেন"
 
 #: ../capplet/vino-preferences.glade.h:13
-msgid "If checked, screen will be locked after the last remote client disconnect"
+msgid ""
+"If checked, screen will be locked after the last remote client disconnect"
 msgstr "নির্বাচিত হলে, সর্বশেষ দূরবর্তী ক্লায়েন্ট বিচ্ছিন্ন হওয়ার পরে পর্দা লক করা হবে।"
 
 #: ../capplet/vino-preferences.glade.h:14
 msgid "If checked, the server will only accept connections from localhost"
-msgstr "নির্বাচিত হলে, সার্ভার দ্বারা শুধুমাত্র localhost থেকে প্রাপ্ত সংযোগের অনুরোধ গ্রহণ করা হবে"
+msgstr ""
+"নির্বাচিত হলে, সার্ভার দ্বারা শুধুমাত্র localhost থেকে প্রাপ্ত সংযোগের অনুরোধ গ্রহণ "
+"করা হবে"
 
 #: ../capplet/vino-preferences.glade.h:15
-msgid "If checked, the server will use another port, instead of the default (5900)"
-msgstr "নির্বাচিত হলে, ডিফল্ট পোর্টের (5900) পরিবর্তে সার্ভার একটি ভিন্ন পোর্টে অপেক্ষা করবে।"
+msgid ""
+"If checked, the server will use another port, instead of the default (5900)"
+msgstr ""
+"নির্বাচিত হলে, ডিফল্ট পোর্টের (5900) পরিবর্তে সার্ভার একটি ভিন্ন পোর্টে অপেক্ষা করবে।"
 
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:17
@@ -128,7 +136,8 @@ msgstr "ব্যবহারকারীরা এই কমান্ড ব্
 
 #: ../capplet/vino-preferences.glade.h:21
 msgid "When a user tries to view or control your desktop:"
-msgstr "কোনো ব্যবহারকারীর দ্বারা আপনার ডেস্কটপ প্রদর্শন অথবা নিয়ন্ত্রণের প্রচেষ্টা করা হলে:"
+msgstr ""
+"কোনো ব্যবহারকারীর দ্বারা আপনার ডেস্কটপ প্রদর্শন অথবা নিয়ন্ত্রণের প্রচেষ্টা করা হলে:"
 
 #: ../capplet/vino-preferences.glade.h:22
 msgid "_Allow other users to control your desktop"
@@ -233,7 +242,8 @@ msgstr ""
 
 #: ../server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>অন্য এক ব্যবহারকারী অাপনার ডেস্কটপ প্রত্যক্ষ করার চেষ্টা করছেন।</b></big>"
+msgstr ""
+"<big><b>অন্য এক ব্যবহারকারী অাপনার ডেস্কটপ প্রত্যক্ষ করার চেষ্টা করছেন।</b></big>"
 
 #: ../server/vino-prompt.glade.h:2
 msgid ""
@@ -314,7 +324,8 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr "মান সত্য (true) হলে, সর্বশেষ দূরবর্তী ক্লায়েন্ট বিচ্ছিন্ন হওয়ার পরে পর্দা লক করা হবে।"
+msgstr ""
+"মান সত্য (true) হলে, সর্বশেষ দূরবর্তী ক্লায়েন্ট বিচ্ছিন্ন হওয়ার পরে পর্দা লক করা হবে।"
 
 #: ../server/vino-server.schemas.in.h:10
 msgid ""
@@ -401,9 +412,10 @@ msgid ""
 "icon only when there is someone connected, this is the default behavior; "
 "\"never\" - Never shows the icon."
 msgstr ""
-"অবস্থাসূচক আইকনের আচরণ এই কি দ্বারা নিয়ন্ত্রণ করা হয়। এই ক্ষেত্রে তিনটি বিকল্প উপস্থিত রয়েছে: "
-"\"always (সর্বদা)\" - আইকন সর্বদা প্রদর্শিত হবে; \"client (ক্লায়েন্ট)\" - কোনো সংযুক্ত ব্যবহারকারী উপস্থিত থাকলে আইকন প্রদর্শন করা হবে এবং ডিফল্টরূপে এই বিকল্প প্রয়োগ করা হয়; "
-"\"never (কখনো নয়)\" - এই আইকন কখনো প্রদর্শন করা হবে না।"
+"অবস্থাসূচক আইকনের আচরণ এই কি দ্বারা নিয়ন্ত্রণ করা হয়। এই ক্ষেত্রে তিনটি বিকল্প "
+"উপস্থিত রয়েছে: \"always (সর্বদা)\" - আইকন সর্বদা প্রদর্শিত হবে; \"client (ক্লায়েন্ট)"
+"\" - কোনো সংযুক্ত ব্যবহারকারী উপস্থিত থাকলে আইকন প্রদর্শন করা হবে এবং ডিফল্টরূপে এই "
+"বিকল্প প্রয়োগ করা হয়; \"never (কখনো নয়)\" - এই আইকন কখনো প্রদর্শন করা হবে না।"
 
 #: ../server/vino-server.schemas.in.h:23
 msgid ""
@@ -438,8 +450,7 @@ msgstr "ডেস্কটপে শেয়ার ব্যবস্থা সক
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
-msgstr[0] "একজন সংযুক্ত রয়েছেন"
-msgstr[1] ""
+msgstr[0] "%d-জন ব্যক্তি সংযুক্ত রয়েছেন"
 
 #: ../server/vino-status-icon.c:245
 #, c-format
@@ -555,7 +566,8 @@ msgstr "অন্য একজন ব্যবহারকারী বর্ত
 #: ../server/vino-status-icon.c:619
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
-msgstr "'%s' কম্পিউটারের এক ব্যবহারকারী দূরবর্তী অবস্থান থেকে অাপনার ডেস্কটপ প্রত্যক্ষ দেখছেন।"
+msgstr ""
+"'%s' কম্পিউটারের এক ব্যবহারকারী দূরবর্তী অবস্থান থেকে অাপনার ডেস্কটপ প্রত্যক্ষ দেখছেন।"
 
 #: ../server/vino-status-icon.c:624
 msgid "Another user is controlling your desktop"
@@ -564,7 +576,8 @@ msgstr "অন্য একজন ব্যবহারকারী আপনা
 #: ../server/vino-status-icon.c:625
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr "'%s' কম্পিউটারের এক ব্যবহারকারী দূরবর্তী অবস্থান থেকে অাপনার ডেস্কটপ নিয়ন্ত্রণ করছেন।"
+msgstr ""
+"'%s' কম্পিউটারের এক ব্যবহারকারী দূরবর্তী অবস্থান থেকে অাপনার ডেস্কটপ নিয়ন্ত্রণ করছেন।"
 
 #: ../server/vino-status-icon.c:647
 #, c-format
@@ -596,4 +609,3 @@ msgstr "দূরবর্তী ডেস্কটপ সার্ভার আ
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "দূরবর্তী ডেস্কটপ সার্ভার আরম্ভ করা হচ্ছে না"
-
