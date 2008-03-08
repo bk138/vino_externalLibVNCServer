@@ -7,34 +7,35 @@
 # Amanpreet Singh Alam <amanpreetalam@yahoo.com>, 2005.
 # A S Alam <apbrar@gmail.com>, 2006.
 # A S Alam <aalam@users.sf.net>, 2007.
-# ASB <aalam@users.sf.net>, 2007.
+# ASB <aalam@users.sf.net>, 2007, 2008.
+# Amanpreet Singh Alam <aalam@users.sf.net>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-07 03:23+0100\n"
-"PO-Revision-Date: 2007-09-12 06:22+0530\n"
-"Last-Translator: ASB <aalam@users.sf.net>\n"
-"Language-Team: Punjabi <punjabi-l10n@lists.sf.net>\n"
+"POT-Creation-Date: 2007-11-11 19:06+0000\n"
+"PO-Revision-Date: 2008-03-08 06:40+0530\n"
+"Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
+"Language-Team: American English <punjabi-users@lists.sf.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: LoKalize 0.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 
-#: ../capplet/vino-preferences.c:634 ../capplet/vino-preferences.c:669
-#: ../capplet/vino-preferences.c:727 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1025 ../capplet/vino-preferences.c:1060
+#: ../capplet/vino-preferences.c:1118 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "ਬੱਸ ਨਾਲ ਕੁਨੈਕਸ਼ਨ ਖੋਲ੍ਹਣ ਲਈ ਫੇਲ੍ਹ: %s\n"
 
-#: ../capplet/vino-preferences.c:936
+#: ../capplet/vino-preferences.c:1327
 msgid "Send this command by email"
 msgstr "ਇਹ ਕਮਾਂਡ ਈ-ਮੇਲ ਰਾਹੀ ਭੇਜੋ"
 
-#: ../capplet/vino-preferences.c:971
+#: ../capplet/vino-preferences.c:1362
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -52,48 +53,120 @@ msgid "Set your remote desktop access preferences"
 msgstr "ਆਪਣੀ ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਵਰਤੋਂ ਪਸੰਦ ਦਿਓ"
 
 #: ../capplet/vino-preferences.glade.h:1
+msgid "<b>Network</b>"
+msgstr "<b>ਨੈੱਟਵਰਕ</b>"
+
+#: ../capplet/vino-preferences.glade.h:2
+msgid "<b>Notification Area</b>"
+msgstr "<b>ਨੋਟੀਫਿਕੇਸ਼ਨ ਏਰੀਆ</b>"
+
+#: ../capplet/vino-preferences.glade.h:3
 msgid "<b>Security</b>"
 msgstr "<b>ਸੁਰੱਖਿਆ</b>"
 
-#: ../capplet/vino-preferences.glade.h:2
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Sharing</b>"
 msgstr "<b>ਸਾਂਝ</b>"
 
-#: ../capplet/vino-preferences.glade.h:3
+#: ../capplet/vino-preferences.glade.h:5
 msgid "A_sk you for confirmation"
 msgstr "ਤੁਹਾਡੇ ਵਲੋਂ ਪੁਸ਼ਟੀ ਲਈ ਪੁੱਛੋ(_s)"
 
-#: ../capplet/vino-preferences.glade.h:4
+#: ../capplet/vino-preferences.glade.h:6
+msgid "Advanced"
+msgstr "ਤਕਨੀਕੀ"
+
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Al_ways display an icon"
+msgstr "ਆਈਕਾਨ ਹਮੇਸ਼ਾਂ ਵੇਖੋ(_w)"
+
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Allow other users to _view your desktop"
 msgstr "ਹੋਰ ਯੂਜ਼ਰਾਂ ਨੂੰ ਆਪਣਾ ਡੈਸਕਟਾਪ ਵੇਖਣ ਦੀ ਇਜ਼ਾਜਤ ਦਿਓ(_v)"
 
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:9
+msgid "General"
+msgstr "ਆਮ"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid ""
+"If checked, remote users accessing the desktop are required to support "
+"encryption"
+msgstr "ਜੇ ਸਹੀਂ ਹੈ ਤਾਂ ਰਿਮੋਟ ਯੂਜ਼ਰ ਨੂੰ ਡੈਸਕਟਾਪ ਵਰਤਣ ਵਾਸਤੇ ਇੰਕ੍ਰਿਪਸ਼ਨ ਸਹਿਯੋਗ ਦੀ ਲੋੜ ਪਵੇਗੀ।"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:12
+msgid "If checked, remote users are able to control your mouse and keyboard"
+msgstr "ਜੇ ਸਹੀਂ ਹੈ ਤਾਂ ਰਿਮੋਟ ਯੂਜ਼ਰ ਤੁਹਾਡੇ ਮਾਊਂਸ ਅਤੇ ਕੀਬੋਰਡ ਨੂੰ ਕੰਟਰੋਲ ਕਰ ਸਕਦੇ ਹਨ"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid "If checked, screen will be locked after the last remote client disconnect"
+msgstr "ਜੇ ਸਹੀਂ ਹੈ ਤਾਂ ਆਖਰੀ ਰਿਮੋਟ ਕਲਾਇਟ ਡਿਸ-ਕੁਨੈਕਟ ਕਰਨ ਦੇ ਬਾਅਦ ਸਕਰੀਨ ਨੂੰ ਲਾਕ ਕਰ ਦਿੱਤਾ ਜਾਵੇਗਾ।"
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "If checked, the server will only accept connections from localhost"
+msgstr "ਜੇ ਸਹੀਂ ਕੀਤਾ ਤਾਂ ਸਰਵਰ ਕੇਵਲ ਲੋਕਲ-ਹੋਸਟ (localhost) ਤੋਂ ਹੀ ਕੁਨੈਕਸ਼ਨ ਮਨਜ਼ੂਰ ਕਰੇਗਾ"
+
+#: ../capplet/vino-preferences.glade.h:15
+msgid "If checked, the server will use another port, instead of the default (5900)"
+msgstr "ਜੇ ਚੁਣਿਆ ਗਿਆ ਤਾਂ ਸਰਵਰ ਡਿਫਾਲਟ ਪੋਰਟ (5900) ਦੀ ਬਜਾਏ ਹੋਰ ਪੋਰਟ ਤੋਂ ਸੁਣੇਗਾ।"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:17
+msgid "If checked, your desktop will be shared"
+msgstr "ਜੇ ਸਹੀਂ ਹੈ ਤਾਂ ਤੁਹਾਡਾ ਡੈਸਕਟਾਪ ਸ਼ੇਅਰ ਕੀਤਾ ਜਾਵੇਗਾ"
+
+#: ../capplet/vino-preferences.glade.h:18
 msgid "Remote Desktop Preferences"
 msgstr "ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਪਸੰਦ"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:19
 msgid "Some of these preferences are locked down"
 msgstr "ਇਹਨਾਂ 'ਚੋਂ ਕੁਝ ਪਸੰਦ ਲਾਕ ਕੀਤੀਆਂ ਜਾ ਚੁੱਕੀਆਂ ਹਨ"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
 msgstr "ਯੂਜ਼ਰ ਤੁਹਾਡਾ ਡੈਸਕਟਾਪ ਇਸ ਕਮਾਂਡ ਨਾਲ ਵੇਖ ਸਕਦਾ ਹੈ:"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:21
 msgid "When a user tries to view or control your desktop:"
 msgstr "ਜਦੋਂ ਇੱਕ ਯੂਜ਼ਰ ਤੁਹਾਡਾ ਡੈਸਕਟਾਪ ਵੇਖਣ ਜਾਂ ਕੰਟਰੋਲ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ ਕਰੇ:"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:22
 msgid "_Allow other users to control your desktop"
 msgstr "ਹੋਰ ਯੂਜ਼ਰਾਂ ਨੂੰ ਆਪਣਾ ਡੈਸਕਟਾਪ ਕੰਟਰੋਲ ਕਰਨ ਦੀ ਇਜ਼ਾਜਤ ਦਿਓ(_A)"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:23
+msgid "_Lock screen on disconnect"
+msgstr "ਡਿਸਕੁਨੈਕਟ ਕਰਨ ਉੱਤੇ ਸਕਰੀਨ ਲਾਕ ਕਰੋ(_L)"
+
+#: ../capplet/vino-preferences.glade.h:24
+msgid "_Never display an icon"
+msgstr "ਆਈਕਾਨ ਕਦੇ ਨਾ ਵੇਖਾਓ(_N)"
+
+#: ../capplet/vino-preferences.glade.h:25
+msgid "_Only allow local connections"
+msgstr "ਕੇਵਲ ਲੋਕਲ ਕੁਨੈਕਸ਼ਨ ਹੀ ਮਨਜ਼ੂਰ(_O)"
+
+#: ../capplet/vino-preferences.glade.h:26
+msgid "_Only display an icon when there is someone connected"
+msgstr "ਜਦੋਂ ਕੋਈ ਕੁਨੈਕਟ ਹੋਵੇ ਤਾਂ ਹੀ ਆਈਕਾਨ ਵੇਖਾਓ(_O)"
+
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Password:"
 msgstr "ਪਾਸਵਰਡ(_P):"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:28
+msgid "_Require encryption"
+msgstr "ਇੰਕ੍ਰਿਪਸ਼ਨ ਦੀ ਲੋੜ(_R)"
+
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Require the user to enter this password:"
 msgstr "ਲੋੜੀਦਾ ਯੂਜ਼ਰ ਪਾਸਵਰਡ ਵੀ ਇੱਥੇ ਦਿਓ(_R):"
+
+#: ../capplet/vino-preferences.glade.h:30
+msgid "_Use an alternative port:"
+msgstr "ਇੱਕ ਬਦਲਵੀਂ ਪੋਰਟ ਵਰਤੋਂ(_U):"
 
 #: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
 #: ../server/vino-dbus-listener.c:249
@@ -111,13 +184,17 @@ msgstr "ਮੈਮੋਰੀ ਤੋਂ ਬਾਹਰ ਰਜਿਸਟਰਿੰਗ �
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "D-Bus ਨਾਂ '%s' ਲੈਣ ਲਈ ਫੇਲ੍ਹ\n"
 
-#: ../server/vino-main.c:83
+#: ../server/vino-main.c:74
+msgid "GNOME Remote Desktop"
+msgstr "ਗਨੋਮ ਰਿਮੋਟ ਡੈਸਕਟਾਪ"
+
+#: ../server/vino-main.c:84
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
-"ਤੁਹਾਡਾ XServer XTest ਐਕਸਟੇਸ਼ਨ ਲਈ ਸਹਾਇਕ ਨਹੀਂ ਹੈ - ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਅਸੈੱਸ "
-"ਸਿਰਫ਼ ਵੇਖਣ ਲਈ ਹੋਵੇਗੀ।\n"
+"ਤੁਹਾਡਾ XServer XTest ਐਕਸਟੇਸ਼ਨ ਲਈ ਸਹਾਇਕ ਨਹੀਂ ਹੈ - ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਅਸੈੱਸ ਸਿਰਫ਼ ਵੇਖਣ ਲਈ "
+"ਹੋਵੇਗੀ।\n"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -209,17 +286,16 @@ msgid ""
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
 msgstr ""
-"ਜੇਕਰ ਸੱਚ ਹੈ ਤਾਂ ਯੂਜ਼ਰ ਨੂੰ ਤਦ ਤੱਕ ਪਹੁੰਚ ਨਹੀਂ ਮਿਲੇਗੀ, ਜਦ ਤੱਕ ਕਿ ਹੋਸਟ ਮਸ਼ੀਨ ਉੱਤੇ "
-"ਕੁਨੈਕਸ਼ਨ ਸਵੀਕਾਰ ਨਹੀਂ ਕਰਦਾ ਹੈ। ਇਹ ਖਾਸ ਤੌਰ ਤੇ ਤਾਂ ਸਵੀਕਾਰ ਹੈ, ਜੇਕਰ ਅਸੈੱਸ "
-"ਪਾਸਵਰਡ ਨਾਲ ਸੁਰੱਖਿਅਤ ਨਹੀਂ ਹੈ।"
+"ਜੇਕਰ ਸੱਚ ਹੈ ਤਾਂ ਯੂਜ਼ਰ ਨੂੰ ਤਦ ਤੱਕ ਪਹੁੰਚ ਨਹੀਂ ਮਿਲੇਗੀ, ਜਦ ਤੱਕ ਕਿ ਹੋਸਟ ਮਸ਼ੀਨ ਉੱਤੇ ਕੁਨੈਕਸ਼ਨ ਸਵੀਕਾਰ ਨਹੀਂ "
+"ਕਰਦਾ ਹੈ। ਇਹ ਖਾਸ ਤੌਰ ਤੇ ਤਾਂ ਸਵੀਕਾਰ ਹੈ, ਜੇਕਰ ਅਸੈੱਸ ਪਾਸਵਰਡ ਨਾਲ ਸੁਰੱਖਿਅਤ ਨਹੀਂ ਹੈ।"
 
 #: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
 msgstr ""
-"ਜੇਕਰ ਸਹੀ ਕੀਤਾ ਗਿਆ ਤਾਂ ਡੈਸਕਟਾਪ ਵਰਤ ਰਹੇ ਰਿਮੋਟ ਯੂਜ਼ਰ ਕੇਵਲ ਡੈਸਕਟਾਪ ਵੇਖ ਸਕਦੇ ਹਨ। "
-"ਉਹਨਾਂ ਨੂੰ ਕੀਬੋਰਡ ਜਾਂ ਮਾਊਸ ਵਰਤਣ ਦੀ ਇਜ਼ਾਜਤ ਨਹੀਂ ਹੋਵੇਗੀ।"
+"ਜੇਕਰ ਸਹੀ ਕੀਤਾ ਗਿਆ ਤਾਂ ਡੈਸਕਟਾਪ ਵਰਤ ਰਹੇ ਰਿਮੋਟ ਯੂਜ਼ਰ ਕੇਵਲ ਡੈਸਕਟਾਪ ਵੇਖ ਸਕਦੇ ਹਨ। ਉਹਨਾਂ ਨੂੰ "
+"ਕੀਬੋਰਡ ਜਾਂ ਮਾਊਸ ਵਰਤਣ ਦੀ ਇਜ਼ਾਜਤ ਨਹੀਂ ਹੋਵੇਗੀ।"
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
@@ -227,9 +303,9 @@ msgid ""
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
-"ਜੇਕਰ ਸੱਚ ਹੈ ਤਾਂ, ਡੈਸਕਟਾਪ ਵਰਤ ਰਹੇ ਰਿਮੋਟ ਯੂਜ਼ਰ ਲਈ ਇੰਕ੍ਰਿਪਸ਼ਨ ਮੱਦਦ ਚਾਲੂ ਹੋ ਜਾਵੇਗੀ। "
-"ਇਸ ਦੀ ਸਲਾਹ ਦਿੱਤੀ ਜਾਦੀ ਹੈ, ਤੁਹਾਨੂੰ ਇੱਕ ਕਲਾਈਟ ਵਰਤਣਾ ਚਾਹੀਦਾ ਹੈ, ਜੋ ਕਿ ਇੰਕ੍ਰਿਪਸ਼ਨ "
-"ਲਈ ਸਹਾਇਕ ਹੋਵੇ, ਜਦੋਂ ਤੱਕ ਕਿ ਆਪਸੀ ਨੈੱਟਵਰਕ ਟਰੱਸਟਡ ਨਾ ਹੋਵੇ।"
+"ਜੇਕਰ ਸੱਚ ਹੈ ਤਾਂ, ਡੈਸਕਟਾਪ ਵਰਤ ਰਹੇ ਰਿਮੋਟ ਯੂਜ਼ਰ ਲਈ ਇੰਕ੍ਰਿਪਸ਼ਨ ਮੱਦਦ ਚਾਲੂ ਹੋ ਜਾਵੇਗੀ। ਇਸ ਦੀ ਸਲਾਹ "
+"ਦਿੱਤੀ ਜਾਦੀ ਹੈ, ਤੁਹਾਨੂੰ ਇੱਕ ਕਲਾਈਟ ਵਰਤਣਾ ਚਾਹੀਦਾ ਹੈ, ਜੋ ਕਿ ਇੰਕ੍ਰਿਪਸ਼ਨ ਲਈ ਸਹਾਇਕ ਹੋਵੇ, ਜਦੋਂ ਤੱਕ "
+"ਕਿ ਆਪਸੀ ਨੈੱਟਵਰਕ ਟਰੱਸਟਡ ਨਾ ਹੋਵੇ।"
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
@@ -240,8 +316,8 @@ msgid ""
 "If true, the server will listen to another port, instead of the default "
 "(5900). The port must be specified in the 'alternative_port' key."
 msgstr ""
-"ਜੇ ਚੁਣਿਆ ਗਿਆ ਤਾਂ ਸਰਵਰ ਡਿਫਾਲਟ ਪੋਰਟ (5900) ਦੀ ਬਜਾਏ ਹੋਰ ਪੋਰਟ ਤੋਂ ਸੁਣੇਗਾ। "
-"ਪੋਰਟ 'alternative_port' ਕੁੰਜੀ ਦੇਣੀ ਪਵੇਗੀ।"
+"ਜੇ ਚੁਣਿਆ ਗਿਆ ਤਾਂ ਸਰਵਰ ਡਿਫਾਲਟ ਪੋਰਟ (5900) ਦੀ ਬਜਾਏ ਹੋਰ ਪੋਰਟ ਤੋਂ ਸੁਣੇਗਾ। ਪੋਰਟ "
+"'alternative_port' ਕੁੰਜੀ ਦੇਣੀ ਪਵੇਗੀ।"
 
 #: ../server/vino-server.schemas.in.h:11
 msgid ""
@@ -249,9 +325,8 @@ msgid ""
 "connections will be rejected. Set this option to true if you wish to "
 "exclusively use a tunneling mechanism to access the server, such as ssh."
 msgstr ""
-"ਜੇ ਚੋਣ ਕੀਤੀ ਤਾਂ ਸਰਵਰ ਸਿਰਫ਼ ਲੋਕਲ-ਹੋਸਟ ਤੋਂ ਹੀ ਕੁਨੈਕਸ਼ਨ ਮਨਜ਼ੂਰ ਕਰੇਗਾ ਅਤੇ ਨੈੱਟਵਰਕ ਤੋਂ "
-"ਕੁਨੈਕਸ਼ਨਾਂ ਨੂੰ ਰੱਦ ਕਰ ਦਿੱਤਾ ਜਾਵੇਗਾ। ਇਹ ਚੋਣ ਕਰੋ, ਜੇ ਤੁਸੀਂ ਸਰਵਰ ਨੂੰ ਟਨਲਿੰਗ ਢੰਗ "
-"ਨਾਲ ਵਰਤਣਾ ਚਾਹੁੰਦੇ ਹੋ, ਜਿਵੇਂ ਕਿ ssh"
+"ਜੇ ਚੋਣ ਕੀਤੀ ਤਾਂ ਸਰਵਰ ਸਿਰਫ਼ ਲੋਕਲ-ਹੋਸਟ ਤੋਂ ਹੀ ਕੁਨੈਕਸ਼ਨ ਮਨਜ਼ੂਰ ਕਰੇਗਾ ਅਤੇ ਨੈੱਟਵਰਕ ਤੋਂ ਕੁਨੈਕਸ਼ਨਾਂ ਨੂੰ ਰੱਦ "
+"ਕਰ ਦਿੱਤਾ ਜਾਵੇਗਾ। ਇਹ ਚੋਣ ਕਰੋ, ਜੇ ਤੁਸੀਂ ਸਰਵਰ ਨੂੰ ਟਨਲਿੰਗ ਢੰਗ ਨਾਲ ਵਰਤਣਾ ਚਾਹੁੰਦੇ ਹੋ, ਜਿਵੇਂ ਕਿ ssh"
 
 #: ../server/vino-server.schemas.in.h:12
 msgid "Listen an alternative port"
@@ -265,9 +340,10 @@ msgid ""
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
 msgstr ""
-"ਪ੍ਰਮਾਣਿਤ ਢੰਗ, ਜਿਨ੍ਹਾਂ ਨਾਲ ਰਿਮੋਟ ਯੂਜ਼ਰ ਡੈਸਕਟਾਪ ਖੋਲ੍ਹ ਸਕਦੇ ਹਨ। ਇਥੇ ਪ੍ਰਮਾਣਕਿਤਾ ਦੇ ਦੋ ਢੰਗ ਹਨ, \"vnc"
-"\" ਯੂਜ਼ਰ ਤੋਂ ਕੁਨੈਕਟ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਪਾਸਵਰਡ ਕੋਲ ਦੀ ਪੁਸ਼ਟੀ ਕਰਾਏਗਾ (ਪਾਸਵਰਡ vnc_password ਕੁੰਜੀ "
-"ਨਾਲ ਸੈੱਟ ਹੁੰਦਾ ਹੈ) ਅਤੇ \"ਕੋਈ ਨਹੀਂ (none)\" ਨਾਲ ਕਿਸੇ ਵੀ ਰਿਮੋਟ ਯੂਜ਼ਰ ਨੂੰ ਕੁਨੈਕਟ ਨਹੀਂ ਹੋਣ ਦੇਵੇਗਾ।"
+"ਪ੍ਰਮਾਣਿਤ ਢੰਗ, ਜਿਨ੍ਹਾਂ ਨਾਲ ਰਿਮੋਟ ਯੂਜ਼ਰ ਡੈਸਕਟਾਪ ਖੋਲ੍ਹ ਸਕਦੇ ਹਨ। ਇਥੇ ਪ੍ਰਮਾਣਕਿਤਾ ਦੇ ਦੋ ਢੰਗ ਹਨ, "
+"\"vnc\" ਯੂਜ਼ਰ ਤੋਂ ਕੁਨੈਕਟ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਪਾਸਵਰਡ ਕੋਲ ਦੀ ਪੁਸ਼ਟੀ ਕਰਾਏਗਾ (ਪਾਸਵਰਡ vnc_password "
+"ਕੁੰਜੀ ਨਾਲ ਸੈੱਟ ਹੁੰਦਾ ਹੈ) ਅਤੇ \"ਕੋਈ ਨਹੀਂ (none)\" ਨਾਲ ਕਿਸੇ ਵੀ ਰਿਮੋਟ ਯੂਜ਼ਰ ਨੂੰ ਕੁਨੈਕਟ ਨਹੀਂ ਹੋਣ "
+"ਦੇਵੇਗਾ।"
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Lock the screen when last user disconnect"
@@ -312,12 +388,24 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:22
 msgid ""
+"This key controls the behavior of the status icon. There are three options: "
+"\"always\" - The icon will be always there; \"client\" - You will see the "
+"icon only when there is someone connected, this is the default behavior; "
+"\"never\" - Never shows the icon."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:23
+msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
-"ਜੇਕਰ ਯੂਜ਼ਰ ਨੇ ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਪਸੰਦ ਡਾਈਲਾਗ ਉੱਤੇ URL ਨੂੰ ਦਬਾਇਆ ਤਾਂ ਕਿਸ ਈ-ਮੇਲ "
-"ਐਡਰੈੱਸ ਉੱਤੇ ਰਿਮੋਟ ਡੈਸਕਟਾਪ URL ਭੇਜਿਆ ਜਾਵੇ, ਉਹ ਇਹ ਕੁੰਜੀ ਦੱਸਦੀ ਹੈ।"
+"ਜੇਕਰ ਯੂਜ਼ਰ ਨੇ ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਪਸੰਦ ਡਾਈਲਾਗ ਉੱਤੇ URL ਨੂੰ ਦਬਾਇਆ ਤਾਂ ਕਿਸ ਈ-ਮੇਲ ਐਡਰੈੱਸ ਉੱਤੇ ਰਿਮੋਟ "
+"ਡੈਸਕਟਾਪ URL ਭੇਜਿਆ ਜਾਵੇ, ਉਹ ਇਹ ਕੁੰਜੀ ਦੱਸਦੀ ਹੈ।"
+
+#: ../server/vino-server.schemas.in.h:24
+msgid "When the status icon should be shown"
+msgstr "ਜਦੋਂ ਹਾਲਤ ਆਈਕਾਨ ਵੇਖਾਇਆ ਜਾਵੇ"
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -328,10 +416,21 @@ msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
 msgstr ""
-"bonobo-activation ਨਾਲ ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਸਰਵਰ ਨੂੰ ਰਜਿਸਟਰ ਕਰਵਾਉਣ ਵਿੱਚ ਗਲਤੀ ਹੈ; ਬੰਦ ਕੀਤਾ ਜਾ "
-"ਰਿਹਾ ਹੈ ...\n"
+"bonobo-activation ਨਾਲ ਰਿਮੋਟ ਡੈਸਕਟਾਪ ਸਰਵਰ ਨੂੰ ਰਜਿਸਟਰ ਕਰਵਾਉਣ ਵਿੱਚ ਗਲਤੀ ਹੈ; ਬੰਦ ਕੀਤਾ "
+"ਜਾ ਰਿਹਾ ਹੈ ...\n"
 
-#: ../server/vino-status-icon.c:204
+#: ../server/vino-status-icon.c:102
+msgid "Desktop sharing is enabled"
+msgstr "ਡੈਸਕਟਾਪ ਸ਼ੇਅਰਿੰਗ ਯੋਗ ਹੈ"
+
+#: ../server/vino-status-icon.c:110
+#, c-format
+msgid "One person is connected"
+msgid_plural "%d people are connected"
+msgstr[0] "ਇੱਕ ਵਿਅਕਤੀ ਕੁਨੈਕਟ ਹੈ"
+msgstr[1] "%d ਵਿਅਕਤੀ ਕੁਨੈਕਟ ਹਨ"
+
+#: ../server/vino-status-icon.c:245
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
@@ -340,7 +439,7 @@ msgstr ""
 "ਪਸੰਦ ਵੇਖਾਉਣ ਦੌਰਾਨ ਗਲਤੀ:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:212
+#: ../server/vino-status-icon.c:253
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -349,7 +448,7 @@ msgstr ""
 "ਮੱਦਦ ਵੇਖਾਉਣ ਦੌਰਾਨ ਗਲਤੀ:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:235
+#: ../server/vino-status-icon.c:276
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -385,94 +484,83 @@ msgstr ""
 "ਸਟਰੀਟ, ਪੰਜਵੀਂ ਮੰਜ਼ਲ,ਬੋਸਟਨ, ਐਮ ਏ 02110-1301, ਅਮਰੀਕਾ ਨੂੰ ਲਿਖੋ।\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:250
+#: ../server/vino-status-icon.c:291
 msgid "translator-credits"
 msgstr ""
 "AP S Alam\n"
 "Punjabi OpenSource Team\n"
 "http://www.satluj.org"
 
-#: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:560
-msgid "GNOME Remote Desktop"
-msgstr "ਗਨੋਮ ਰਿਮੋਟ ਡੈਸਕਟਾਪ"
-
-#: ../server/vino-status-icon.c:257
+#: ../server/vino-status-icon.c:297
 msgid "Share your desktop with other users"
 msgstr "ਆਪਣਾ ਡੈਸਕਟਾਪ ਹੋਰ ਯੂਜ਼ਰਾਂ ਨਾਲ ਸਾਂਝਾ ਕਰੋ"
 
-#: ../server/vino-status-icon.c:320
+#: ../server/vino-status-icon.c:360
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "ਕੀ ਤੁਸੀਂ '%s' ਨਾਲੋਂ ਡਿਸ-ਕੁਨੈਕਟ ਹੋਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: ../server/vino-status-icon.c:322
+#: ../server/vino-status-icon.c:362
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "'%s' ਤੋਂ ਰਿਮੋਟ ਯੂਜ਼ਰ ਨੂੰ ਡਿਸ-ਕੁਨੈਕਟ ਕਰ ਦਿੱਤਾ ਜਾਵੇਗਾ। ਕੀ ਤੁਸੀਂ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: ../server/vino-status-icon.c:327
+#: ../server/vino-status-icon.c:367
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "ਕੀ ਤੁਸੀਂ ਸਭ ਕਲਾਈਟਾਂ ਨੂੰ ਡਿਸ-ਕੁਨੈਕਟ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: ../server/vino-status-icon.c:328
+#: ../server/vino-status-icon.c:368
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "ਸਭ ਰਿਮੋਟ ਯੂਜ਼ਰ ਡਿਸ-ਕੁਨੈਕਟ ਕੀਤੇ ਜਾਣਗੇ। ਕੀ ਤੁਸੀਂ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: ../server/vino-status-icon.c:340
+#: ../server/vino-status-icon.c:380
 msgid "Disconnect"
 msgstr "ਡਿਸ-ਕੁਨੈਕਟ ਕਰੋ"
 
-#: ../server/vino-status-icon.c:365
+#: ../server/vino-status-icon.c:406
 msgid "_Preferences"
 msgstr "ਮੇਰੀ ਪਸੰਦ(_P)"
 
-#: ../server/vino-status-icon.c:377
+#: ../server/vino-status-icon.c:421
 msgid "Disconnect all"
 msgstr "ਸਭ ਡਿਸ-ਕੁਨੈਕਟ ਕਰੋ"
 
-#: ../server/vino-status-icon.c:399
+#: ../server/vino-status-icon.c:444
 #, c-format
 msgid "Disconnect %s"
 msgstr "%s ਡਿਸ-ਕੁਨੈਕਟ ਕਰੋ"
 
-#: ../server/vino-status-icon.c:416
+#: ../server/vino-status-icon.c:464
 msgid "_Help"
 msgstr "ਮੱਦਦ(_H)"
 
-#: ../server/vino-status-icon.c:424
+#: ../server/vino-status-icon.c:472
 msgid "_About"
 msgstr "ਇਸ ਬਾਰੇ(_A)"
 
-#: ../server/vino-status-icon.c:458
-#, c-format
-msgid "One person is connected"
-msgid_plural "%d people are connected"
-msgstr[0] "ਇੱਕ ਵਿਅਕਤੀ ਕੁਨੈਕਟ ਹੈ"
-msgstr[1] "%d ਵਿਅਕਤੀ ਕੁਨੈਕਟ ਹਨ"
-
-#: ../server/vino-status-icon.c:562
+#: ../server/vino-status-icon.c:598
 msgid "Error initializing libnotify\n"
 msgstr "libnotify ਸ਼ੁਰੂ ਕਰਨ ਦੌਰਾਨ ਗਲਤੀ\n"
 
-#: ../server/vino-status-icon.c:576
+#: ../server/vino-status-icon.c:612
 msgid "Another user is viewing your desktop"
 msgstr "ਇੱਕ ਹੋਰ ਯੂਜ਼ਰ ਤੁਹਾਡਾ ਵੇਖ ਰਿਹਾ ਹੈ"
 
-#: ../server/vino-status-icon.c:577
+#: ../server/vino-status-icon.c:613
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "ਇੱਕ ਹੋਰ ਯੂਜ਼ਰ '%s' ਕੰਪਿਊਟਰ ਰਾਹੀਂ ਰਿਮੋਟ ਤੋਂ ਤੁਹਾਡਾ ਡੈਸਕਟਾਪ ਵੇਖ ਰਿਹਾ ਹੈ।"
 
-#: ../server/vino-status-icon.c:582
+#: ../server/vino-status-icon.c:618
 msgid "Another user is controlling your desktop"
 msgstr "ਹੋਰ ਯੂਜ਼ਰ ਤੁਹਾਡਾ ਡੈਸਕਟਾਪ ਕੰਟਰੋਲ ਕਰ ਰਿਹਾ ਹੈ"
 
-#: ../server/vino-status-icon.c:583
+#: ../server/vino-status-icon.c:619
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "ਇੱਕ ਯੂਜ਼ਰ ਕੰਪਿਊਟਰ '%s' ਰਾਹੀਂ ਰਿਮੋਟ ਤੋਂ ਤੁਹਾਡੇ ਡੈਸਕਟਾਪ ਰਾਹੀਂ ਕੰਟਰੋਲ ਕਰ ਰਿਹਾ ਹੈ।"
 
-#: ../server/vino-status-icon.c:605
+#: ../server/vino-status-icon.c:641
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "ਨੋਟੀਫਿਕੇਸ਼ਨ ਬੁਲਬੁਲਾ ਵੇਖਾਉਣ ਦੌਰਾਨ ਗਲਤੀ ਹੈ: %s\n"
