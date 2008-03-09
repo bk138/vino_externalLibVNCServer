@@ -1,10 +1,11 @@
 # Danish translation of vino.
-# Copyright (C) 2004-2006
+# Copyright (C) 2004-2008
 # Ole Laursen <olau@hardworking.dk>, 2004.
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2005.
 # Lasse Bang Mikkelsen <lbm@fatalerror.dk>, 2006.
 # Peter Bach <bach.peter@gmail.com>, 2007.
 # Ask Hjorth Larsen <asklarsen@gmail.com>, 2007.
+# Kenneth Nielsen <k.nielsen81@gmail.com>, 2008.
 #
 # Konventioner:
 # remote -> fjern, udefrakommende
@@ -14,27 +15,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-23 18:33+0200\n"
-"PO-Revision-Date: 2007-08-23 17:17+0200\n"
-"Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
+"POT-Creation-Date: 2008-03-09 23:37+0100\n"
+"PO-Revision-Date: 2008-03-09 22:27+0100\n"
+"Last-Translator: Kenneth Nielsen <k.nielsen81@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:634 ../capplet/vino-preferences.c:669
-#: ../capplet/vino-preferences.c:727 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
+#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Kunne ikke oprette forbindelse til bus: %s\n"
 
-#: ../capplet/vino-preferences.c:936
+#: ../capplet/vino-preferences.c:1329
 msgid "Send this command by email"
 msgstr "Send denne kommando med e-post"
 
-#: ../capplet/vino-preferences.c:971
+#: ../capplet/vino-preferences.c:1364
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -52,48 +53,131 @@ msgid "Set your remote desktop access preferences"
 msgstr "Angiv indstillinger for fjernadgang til skrivebordet"
 
 #: ../capplet/vino-preferences.glade.h:1
+msgid "<b>Network</b>"
+msgstr "<b>Netværk</b>"
+
+#: ../capplet/vino-preferences.glade.h:2
+msgid "<b>Notification Area</b>"
+msgstr "<b>Statusfelt</b>"
+
+#: ../capplet/vino-preferences.glade.h:3
 msgid "<b>Security</b>"
 msgstr "<b>Sikkerhed</b>"
 
-#: ../capplet/vino-preferences.glade.h:2
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Sharing</b>"
 msgstr "<b>Deling</b>"
 
-#: ../capplet/vino-preferences.glade.h:3
+#: ../capplet/vino-preferences.glade.h:5
 msgid "A_sk you for confirmation"
 msgstr "S_pørg dig om bekræftelse"
 
-#: ../capplet/vino-preferences.glade.h:4
+#: ../capplet/vino-preferences.glade.h:6
+msgid "Advanced"
+msgstr "Avanceret"
+
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Al_ways display an icon"
+msgstr "_Vis altid et ikon"
+
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Allow other users to _view your desktop"
 msgstr "Tillad andre brugere at _se dit skrivebord"
 
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:9
+msgid "General"
+msgstr "Generelt"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid ""
+"If checked, remote users accessing the desktop are required to support "
+"encryption"
+msgstr ""
+"Hvis valgt vil der kræves understøttelse af kryptering af fjerne brugere som "
+"ønsker adgang"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:12
+msgid "If checked, remote users are able to control your mouse and keyboard"
+msgstr ""
+"Hvis valgt kan fjerne brugere blive i stand til at kontrollere din mus og "
+"tastatur"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid ""
+"If checked, screen will be locked after the last remote client disconnect"
+msgstr ""
+"Hvis valgt vil skærmen blive låst efter den sidste fjernklients afkobling."
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "If checked, the server will only accept connections from localhost"
+msgstr ""
+"Hvis valgt vil serveren kun acceptere forbindelser fra den lokale vært "
+"(localhost)"
+
+#: ../capplet/vino-preferences.glade.h:15
+msgid ""
+"If checked, the server will use another port, instead of the default (5900)"
+msgstr ""
+"Hvis valgt vil serveren bruge en anden port i stedet for standardporten "
+"(5900)"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:17
+msgid "If checked, your desktop will be shared"
+msgstr "Hvis valgt vil din computer bliver delt"
+
+#: ../capplet/vino-preferences.glade.h:18
 msgid "Remote Desktop Preferences"
 msgstr "Indstillinger for fjernskrivebord"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:19
 msgid "Some of these preferences are locked down"
 msgstr "Nogle af disse indstillinger er låst"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
 msgstr "Brugere kan se dit skrivebord vha. denne kommando:"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:21
 msgid "When a user tries to view or control your desktop:"
 msgstr "Når en bruger forsøger at se eller kontrollere dit skrivebord:"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:22
 msgid "_Allow other users to control your desktop"
 msgstr "_Tillad andre brugere at kontrollere dit skrivebord"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:23
+msgid "_Lock screen on disconnect"
+msgstr "_Lås skærmen ved afkobling"
+
+#: ../capplet/vino-preferences.glade.h:24
+msgid "_Never display an icon"
+msgstr "Vis _aldrig et ikon"
+
+#: ../capplet/vino-preferences.glade.h:25
+msgid "_Only allow local connections"
+msgstr "Tillad _kun lokale forbindelser"
+
+#: ../capplet/vino-preferences.glade.h:26
+msgid "_Only display an icon when there is someone connected"
+msgstr "Vis _kun et ikon når nogen er forbundet"
+
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Password:"
 msgstr "_Adgangskode:"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:28
+msgid "_Require encryption"
+msgstr "_Kræv kryptering"
+
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Require the user to enter this password:"
 msgstr "_Påkræv at brugeren indtaster denne adgangskode:"
+
+#: ../capplet/vino-preferences.glade.h:30
+msgid "_Use an alternative port:"
+msgstr "_Brug en alternativ port:"
 
 #: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
 #: ../server/vino-dbus-listener.c:249
@@ -111,7 +195,11 @@ msgstr "Ikke mere fri hukommelse ved registrering af objektsti \"%s\""
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Kunne ikke hente D-Bus navn \"%s\"\n"
 
-#: ../server/vino-main.c:83
+#: ../server/vino-main.c:74
+msgid "GNOME Remote Desktop"
+msgstr "GNOME Fjernskrivebord"
+
+#: ../server/vino-main.c:84
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -318,6 +406,18 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:22
 msgid ""
+"This key controls the behavior of the status icon. There are three options: "
+"\"always\" - The icon will be always there; \"client\" - You will see the "
+"icon only when there is someone connected, this is the default behavior; "
+"\"never\" - Never shows the icon."
+msgstr ""
+"Denne nøgle styrer opførslen af statusikonet. Der er tre valgmuligheder: "
+"\"always\" - Ikonet vil altid være der, \"client\" - Ikonet vil være der "
+"hvis nogen er forbundet, dette er standardopførsel, \"never\" - Ikonet vil "
+"aldrig vises."
+
+#: ../server/vino-server.schemas.in.h:23
+msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
@@ -325,6 +425,10 @@ msgstr ""
 "Denne nøgle angiver den e-post-adresse som fjernskrivebordsadressen skal "
 "sendes til hvis brugeren klikker på adressen under indstillingerne for "
 "fjernskrivebord."
+
+#: ../server/vino-server.schemas.in.h:24
+msgid "When the status icon should be shown"
+msgstr "Hvornår statusikonet skal vises"
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -338,7 +442,18 @@ msgstr ""
 "Problem ved registrering af den udefrakommende skrivebordsserver med bonobo-"
 "activation; afslutter...\n"
 
-#: ../server/vino-status-icon.c:204
+#: ../server/vino-status-icon.c:102
+msgid "Desktop sharing is enabled"
+msgstr "Skrivebordsdeling er slået til"
+
+#: ../server/vino-status-icon.c:110
+#, c-format
+msgid "One person is connected"
+msgid_plural "%d people are connected"
+msgstr[0] "En person er forbundet"
+msgstr[1] "%d personer er forbundet"
+
+#: ../server/vino-status-icon.c:245
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
@@ -347,7 +462,7 @@ msgstr ""
 "Der opstod en fejl ved visning af indstillinger:\n"
 "%s"
 
-#: ../server/vino-status-icon.c:212
+#: ../server/vino-status-icon.c:253
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -356,7 +471,7 @@ msgstr ""
 "Der opstod en fejl ved visning af hjælp:\n"
 "%s"
 
-#: ../server/vino-status-icon.c:235
+#: ../server/vino-status-icon.c:276
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -394,7 +509,7 @@ msgstr ""
 "MA  02111-1307  USA\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:250
+#: ../server/vino-status-icon.c:291
 msgid "translator-credits"
 msgstr ""
 "Peter Bach\n"
@@ -402,87 +517,77 @@ msgstr ""
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
-#: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:560
-msgid "GNOME Remote Desktop"
-msgstr "GNOME Fjernskrivebord"
-
-#: ../server/vino-status-icon.c:257
+#: ../server/vino-status-icon.c:297
 msgid "Share your desktop with other users"
 msgstr "Del dit skrivebord med andre brugere"
 
-#: ../server/vino-status-icon.c:320
+#: ../server/vino-status-icon.c:360
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Er du sikker på at du vil afbryde \"%s\"?"
 
-#: ../server/vino-status-icon.c:322
+#: ../server/vino-status-icon.c:362
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Fjernbrugeren fra \"%s\" vil blive afbrudt. Er du sikker?"
 
-#: ../server/vino-status-icon.c:327
+#: ../server/vino-status-icon.c:367
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Er du sikker på at du vil afbryde alle klienter?"
 
-#: ../server/vino-status-icon.c:328
+#: ../server/vino-status-icon.c:368
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Alle fjerne brugere vil blive afbrudt. Er du sikker?"
 
-#: ../server/vino-status-icon.c:340
+#: ../server/vino-status-icon.c:380
 msgid "Disconnect"
 msgstr "Afbryd"
 
-#: ../server/vino-status-icon.c:365
+#: ../server/vino-status-icon.c:406
 msgid "_Preferences"
 msgstr "_Indstillinger"
 
-#: ../server/vino-status-icon.c:377
+#: ../server/vino-status-icon.c:421
 msgid "Disconnect all"
 msgstr "Afbryd alle"
 
-#: ../server/vino-status-icon.c:399
+#: ../server/vino-status-icon.c:444
 #, c-format
 msgid "Disconnect %s"
 msgstr "Afbryd %s"
 
-#: ../server/vino-status-icon.c:416
+#: ../server/vino-status-icon.c:464
 msgid "_Help"
 msgstr "_Hjælp"
 
-#: ../server/vino-status-icon.c:424
+#: ../server/vino-status-icon.c:472
 msgid "_About"
 msgstr "_Om"
 
-#: ../server/vino-status-icon.c:458
+#: ../server/vino-status-icon.c:598
 #, c-format
-msgid "One person is connected"
-msgid_plural "%d people are connected"
-msgstr[0] "En person er forbundet"
-msgstr[1] "%d personer er forbundet"
-
-#: ../server/vino-status-icon.c:562
 msgid "Error initializing libnotify\n"
 msgstr "Fejl ved klargøring af libnotify\n"
 
-#: ../server/vino-status-icon.c:576
+#: ../server/vino-status-icon.c:618
 msgid "Another user is viewing your desktop"
 msgstr "En anden bruger ser dit skrivebord"
 
-#: ../server/vino-status-icon.c:577
+#: ../server/vino-status-icon.c:619
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "En bruger på maskinen \"%s\" fjernser dit skrivebord."
 
-#: ../server/vino-status-icon.c:582
+#: ../server/vino-status-icon.c:624
 msgid "Another user is controlling your desktop"
 msgstr "En anden bruger kontrollerer dit skrivebord"
 
-#: ../server/vino-status-icon.c:583
+#: ../server/vino-status-icon.c:625
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "En bruger på maskinen \"%s\" fjernkontrollerer dit skrivebord."
 
-#: ../server/vino-status-icon.c:605
+#: ../server/vino-status-icon.c:647
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Fejl ved visning af påmindelsesboblen: %s\n"
