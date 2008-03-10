@@ -2,34 +2,34 @@
 # Copyright (C) 2004, 2005, 2007, 2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the vino package.
 #
-# Gabor Kelemen <kelemeng@gnome.hu>, 2004, 2005, 2007.
+# Gabor Kelemen <kelemeng@gnome.hu>, 2004, 2005, 2007, 2008.
 # Nyitrai István <sianis@gmail.com>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD.hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-11 19:06+0000\n"
-"PO-Revision-Date: 2008-02-10 14:45+0100\n"
-"Last-Translator: Nyitrai István <sianis@gmail.com>\n"
-"Language-Team: Hungarian <ubuntu-l10n-hu@lists.ubuntu.com>\n"
+"POT-Creation-Date: 2008-02-12 22:52+0000\n"
+"PO-Revision-Date: 2008-03-10 02:30+0100\n"
+"Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
+"Language-Team: Hungarian <gnome@fsf.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1025 ../capplet/vino-preferences.c:1060
-#: ../capplet/vino-preferences.c:1118 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
+#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "A kapcsolat megnyitása meghiúsult a buszhoz: %s\n"
 
-#: ../capplet/vino-preferences.c:1327
+#: ../capplet/vino-preferences.c:1329
 msgid "Send this command by email"
 msgstr "Ezen parancs küldése e-mailben"
 
-#: ../capplet/vino-preferences.c:1362
+#: ../capplet/vino-preferences.c:1364
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -95,9 +95,7 @@ msgstr "A távoli felhasználók képesek irányítani az egeret és a billenty�
 
 #: ../capplet/vino-preferences.glade.h:13
 msgid "If checked, screen will be locked after the last remote client disconnect"
-msgstr ""
-"A képernyő zárolásra kerül az utolsó távoli "
-"kliens kilépése után"
+msgstr "A képernyő zárolásra kerül az utolsó távoli kliens kilépése után"
 
 #: ../capplet/vino-preferences.glade.h:14
 msgid "If checked, the server will only accept connections from localhost"
@@ -105,8 +103,7 @@ msgstr "A kiszolgáló csak a locahost felől fogad kapcsolatokat"
 
 #: ../capplet/vino-preferences.glade.h:15
 msgid "If checked, the server will use another port, instead of the default (5900)"
-msgstr ""
-"A kiszolgáló másik portot fog figyelni az alapértelmezett (5900) helyett"
+msgstr "A kiszolgáló másik portot fog figyelni az alapértelmezett (5900) helyett"
 
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:17
@@ -169,17 +166,17 @@ msgstr "Alternatív _port figyelése:"
 #: ../server/vino-dbus-listener.c:249
 #, c-format
 msgid "Out of memory handling '%s' message"
-msgstr "Elfogyott a memória a(z) \"%s\" üzenet kezelése során"
+msgstr "Elfogyott a memória a(z) „%s” üzenet kezelése során"
 
 #: ../server/vino-dbus-listener.c:334
 #, c-format
 msgid "Out of memory registering object path '%s'"
-msgstr "Elfogyott a memória a(z) \"%s\" objektumútvonal regisztrációja során"
+msgstr "Elfogyott a memória a(z) „%s” objektumútvonal regisztrációja során"
 
 #: ../server/vino-dbus-listener.c:407
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
-msgstr "A(z) \"%s\" D-Bus név beszerzése meghiúsult\n"
+msgstr "A(z) „%s” D-Bus név beszerzése meghiúsult\n"
 
 #: ../server/vino-main.c:74
 msgid "GNOME Remote Desktop"
@@ -355,9 +352,8 @@ msgid ""
 msgstr ""
 "Felsorolja azokat a hitelesítési eljárásokat, amelyekkel a távoli "
 "felhasználók kapcsolódhatnak a munkaasztalhoz. Két lehetséges hitelesítési "
-"eljárás létezik, a \"vnc\" hatására a távoli felhasználónak kapcsolódás "
-"előtt meg kell adnia a vnc_password kulcsban lévő jelszót, illetve a \"none"
-"\", (nincs) mely bárki számára lehetővé teszi a kapcsolódást."
+"eljárás létezik, a „vnc” hatására a távoli felhasználónak kapcsolódás "
+"előtt meg kell adnia a vnc_password kulcsban lévő jelszót, illetve a „none”, (nincs) mely bárki számára lehetővé teszi a kapcsolódást."
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Lock the screen when last user disconnect"
@@ -373,7 +369,7 @@ msgstr "A távoli felhasználók csak megnézhetik a munkaasztalt"
 
 #: ../server/vino-server.schemas.in.h:17
 msgid "Password required for \"vnc\" authentication"
-msgstr "A \"vnc\" hitelesítéshez szükséges jelszó"
+msgstr "A „vnc” hitelesítéshez szükséges jelszó"
 
 #: ../server/vino-server.schemas.in.h:18
 msgid "Prompt the user before completing a connection"
@@ -389,7 +385,7 @@ msgid ""
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
 msgstr ""
-"A távoli felhasználótól kért jelszó a \"vnc\" hitelesítési eljárás "
+"A távoli felhasználótól kért jelszó a „vnc” hitelesítési eljárás "
 "használatakor. A kulcs által tartalmazott jelszó base64 kódolású."
 
 #: ../server/vino-server.schemas.in.h:21
@@ -407,8 +403,10 @@ msgid ""
 "icon only when there is someone connected, this is the default behavior; "
 "\"never\" - Never shows the icon."
 msgstr ""
-"Ez a kulcs vezérli az állapotikon viselkedését. Három beállítási lehetőség van: "
-"\"always\" (mindig) - az ikon mindig látható; \"client\" (kliens) - az ikon csak akkor látható, ha valaki kapcsolódott, ez az alapértelmezett viselkedés; \"never\" (soha) - az ikon soha nem látható."
+"Ez a kulcs vezérli az állapotikon viselkedését. Három beállítási lehetőség "
+"van: „always” (mindig) - az ikon mindig látható; „client” (kliens) - az "
+"ikon csak akkor látható, ha valaki kapcsolódott, ez az alapértelmezett "
+"viselkedés; „never” (soha) - az ikon soha nem látható."
 
 #: ../server/vino-server.schemas.in.h:23
 msgid ""
@@ -496,14 +494,14 @@ msgstr ""
 "részletekért tanulmányozza a GNU GPL licencet.\n"
 "\n"
 "A Vino programhoz a GNU General Public License egy példánya is jár, ha nem\n"
-"kapta meg, írjon a Free Software Foundation Inc.-nek. Levélcímük: 51 "
-"Franklin\n"
+"kapta meg, írjon a Free Software Foundation Inc.-nek. Levélcímük: 51 Franklin\n"
 "St, Fifth Floor, Boston, MA 02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
 #: ../server/vino-status-icon.c:291
 msgid "translator-credits"
-msgstr "Kelemen Gábor <kelemeng@gnome.hu>\n"
+msgstr ""
+"Kelemen Gábor <kelemeng@gnome.hu>\n"
 "Nyitrai István <sianis@gmail.com>"
 
 #: ../server/vino-status-icon.c:297
@@ -513,12 +511,12 @@ msgstr "Az asztal megosztása más felhasználókkal"
 #: ../server/vino-status-icon.c:360
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
-msgstr "Valóban bontani akarja a kapcsolatot a következővel: \"%s\"?"
+msgstr "Valóban bontani akarja a kapcsolatot a következővel: „%s”?"
 
 #: ../server/vino-status-icon.c:362
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
-msgstr "\"%s\" távoli felhasználója le lesz választva. Biztosan ezt akarja?"
+msgstr "„%s” távoli felhasználója le lesz választva. Biztosan ezt akarja?"
 
 #: ../server/vino-status-icon.c:367
 msgid "Are you sure you want to disconnect all clients?"
@@ -565,7 +563,7 @@ msgstr "Egy másik felhasználó nézi a munkaasztalát"
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr ""
-"A(z) \"%s\" távoli számítógép egy felhasználója távolról nézi az Ön "
+"A(z) „%s” távoli számítógép egy felhasználója távolról nézi az Ön "
 "munkaasztalát."
 
 #: ../server/vino-status-icon.c:618
@@ -576,7 +574,7 @@ msgstr "Egy másik felhasználó irányítja a munkaasztalát"
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr ""
-"A(z) \"%s\" távoli számítógép egy felhasználója távolról irányítja az Ön "
+"A(z) „%s” távoli számítógép egy felhasználója távolról irányítja az Ön "
 "munkaasztalát."
 
 #: ../server/vino-status-icon.c:641
@@ -611,3 +609,4 @@ msgstr "Távoli munkaasztal-kiszolgáló indítása"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Nem indítom el a távoli munkaasztal-kiszolgálót"
+
