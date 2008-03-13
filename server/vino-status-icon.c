@@ -517,6 +517,9 @@ vino_status_icon_remove_client (VinoStatusIcon *icon,
   g_return_val_if_fail (VINO_IS_STATUS_ICON (icon), TRUE);
   g_return_val_if_fail (client != NULL, TRUE);
 
+  if (!icon->priv->clients)
+    return FALSE;
+
   icon->priv->clients = g_slist_remove (icon->priv->clients, client);
 
   vino_status_icon_update_state (icon);

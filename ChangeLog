@@ -1,5 +1,12 @@
 2008-03-13  Jonh Wendell  <jwendell@gnome.org>
 
+	* server/vino-status-icon.c (vino_status_icon_remove_client):
+	Ignore if the client being disconnected is not in our list of
+	connected clients, thus avoiding the screen to be locked when
+	that option is enabled. Closes #522058.
+
+2008-03-13  Jonh Wendell  <jwendell@gnome.org>
+
 	* configure.in: post-release bump version to 2.22.1
 
 ==================== 2.22.0 ======================
