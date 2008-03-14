@@ -1,34 +1,33 @@
 # Slovak translations for vino package.
-# Copyright (C) 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
+# Copyright (C) 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the vino package.
-# Marcel Telka <marcel@telka.sk>, 2004, 2005, 2006, 2007.
-#
-# $Id: sk.po,v 1.5 2006/10/15 22:07:21 marcel Exp $
+# Marcel Telka <marcel@telka.sk>, 2004, 2005, 2006, 2007, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-16 14:28+0100\n"
-"PO-Revision-Date: 2007-12-16 14:27+0100\n"
+"POT-Creation-Date: 2008-03-15 00:14+0100\n"
+"PO-Revision-Date: 2008-03-15 00:14+0100\n"
 "Last-Translator: Marcel Telka <marcel@telka.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural= (n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
 
-#: ../capplet/vino-preferences.c:1025 ../capplet/vino-preferences.c:1060
-#: ../capplet/vino-preferences.c:1118 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
+#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
-msgstr ""
+msgstr "Otvorenie spojenia so zbernicou zlyhalo: %s\n"
 
-#: ../capplet/vino-preferences.c:1327
+#: ../capplet/vino-preferences.c:1329
 msgid "Send this command by email"
 msgstr "Odoslať tento príkaz elektronickou poštou"
 
-#: ../capplet/vino-preferences.c:1362
+#: ../capplet/vino-preferences.c:1364
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -174,12 +173,12 @@ msgstr "Po_užiť alternatívny port"
 #: ../server/vino-dbus-listener.c:249
 #, c-format
 msgid "Out of memory handling '%s' message"
-msgstr ""
+msgstr "Došla pamäť pri obsluhe správy '%s'"
 
 #: ../server/vino-dbus-listener.c:334
 #, c-format
 msgid "Out of memory registering object path '%s'"
-msgstr ""
+msgstr "Došla pamäť pri registrácií cesty objektu '%s'"
 
 #: ../server/vino-dbus-listener.c:407
 #, c-format
@@ -364,7 +363,7 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Lock the screen when last user disconnect"
-msgstr ""
+msgstr "Uzamknúť obrazovku po odpojení posledného používateľa"
 
 #: ../server/vino-server.schemas.in.h:15
 msgid "Only allow local connections"
@@ -440,23 +439,24 @@ msgstr ""
 
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
-msgstr ""
+msgstr "Zdieľanie pracovného prostredia je povolené"
 
 #: ../server/vino-status-icon.c:110
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d osôb je pripojených"
+msgstr[1] "Jedna osoba je pripojená"
+msgstr[2] "%d osoby sú pripojené"
 
 #: ../server/vino-status-icon.c:245
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "There was an error displaying preferences:\n"
 " %s"
 msgstr ""
-"Vyskytla sa chyba pri zobrazovaní pomocníka:\n"
-"%s"
+"Vyskytla sa chyba pri zobrazovaní predvolieb:\n"
+" %s"
 
 #: ../server/vino-status-icon.c:253
 #, c-format
@@ -497,14 +497,14 @@ msgid "Share your desktop with other users"
 msgstr "Zdieľať vašu pracovnú plochu s ostatnými používateľmi"
 
 #: ../server/vino-status-icon.c:360
-#, fuzzy, c-format
+#, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Ste si istý, že chcete odpojiť '%s'?"
 
 #: ../server/vino-status-icon.c:362
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
-msgstr ""
+msgstr "Vzdialený používateľ z '%s' bude odpojený. Ste si istý?"
 
 #: ../server/vino-status-icon.c:367
 msgid "Are you sure you want to disconnect all clients?"
@@ -520,7 +520,7 @@ msgstr "Odpojiť"
 
 #: ../server/vino-status-icon.c:406
 msgid "_Preferences"
-msgstr ""
+msgstr "_Predvoľby"
 
 #: ../server/vino-status-icon.c:421
 msgid "Disconnect all"
@@ -529,7 +529,7 @@ msgstr "Odpojiť všetkých"
 #: ../server/vino-status-icon.c:444
 #, c-format
 msgid "Disconnect %s"
-msgstr ""
+msgstr "Odpojiť %s"
 
 #: ../server/vino-status-icon.c:464
 msgid "_Help"
@@ -539,32 +539,33 @@ msgstr "_Pomocník"
 msgid "_About"
 msgstr "_O programe"
 
-#: ../server/vino-status-icon.c:598
+#: ../server/vino-status-icon.c:601
+#, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Chyba pri inicializácii libnotify\n"
 
-#: ../server/vino-status-icon.c:612
+#: ../server/vino-status-icon.c:621
 msgid "Another user is viewing your desktop"
 msgstr "Iný používateľ vidí vašu pracovnú plochu"
 
-#: ../server/vino-status-icon.c:613
+#: ../server/vino-status-icon.c:622
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Používateľ na počítači '%s' vidí vzdialene vašu pracovnú plochu."
 
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:627
 msgid "Another user is controlling your desktop"
 msgstr "Iný používateľ ovláda vašu pracovnú plochu"
 
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:628
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "Používateľ na počítači '%s' vzdialene ovláda vašu pracovnú plochu."
 
-#: ../server/vino-status-icon.c:641
+#: ../server/vino-status-icon.c:650
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
-msgstr ""
+msgstr "Chyba pri zobrazovaní bubliny s upozornením: %s\n"
 
 #: ../session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
