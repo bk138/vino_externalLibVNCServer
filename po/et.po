@@ -2,19 +2,19 @@
 # Estonian translation of Vino.
 #
 # Copyright (C) 2005, 2006 Free Software Foundation, Inc.
-# Copyright (C) 2007, The GNOME Project.
+# Copyright (C) 2007, 2008 The GNOME Project.
 # This file is distributed under the same license as the Vino package.
 #
 # Priit Laes <amd store20 com>, 2005-2006.
 # Ain Vagula <avagula gmail com>, 2005.
-# Ivar Smolin <okul linux ee>, 2006, 2007.
+# Ivar Smolin <okul linux ee>, 2006-2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Vino HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-11 19:06+0000\n"
-"PO-Revision-Date: 2007-11-17 11:40+0200\n"
+"PO-Revision-Date: 2008-03-21 11:31+0200\n"
 "Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "MIME-Version: 1.0\n"
@@ -155,7 +155,7 @@ msgstr "Ikooni _ei kuvata kunagi"
 
 #: ../capplet/vino-preferences.glade.h:25
 msgid "_Only allow local connections"
-msgstr "Lubatakse ainult _kohalikud ühendused"
+msgstr "Ainult _kohalikud ühendused on lubatud"
 
 #: ../capplet/vino-preferences.glade.h:26
 msgid "_Only display an icon when there is someone connected"
@@ -167,7 +167,7 @@ msgstr "_Parool:"
 
 #: ../capplet/vino-preferences.glade.h:28
 msgid "_Require encryption"
-msgstr "Nõua k_rüptimist"
+msgstr "K_rüptimine on nõutav"
 
 #: ../capplet/vino-preferences.glade.h:29
 msgid "_Require the user to enter this password:"
@@ -509,7 +509,7 @@ msgstr ""
 #. Translators comment: put your own name here to appear in the about dialog.
 #: ../server/vino-status-icon.c:291
 msgid "translator-credits"
-msgstr "Ivar Smolin <okul@linux.ee>, 2006, 2007."
+msgstr "Ivar Smolin <okul@linux.ee>, 2006-2008."
 
 #: ../server/vino-status-icon.c:297
 msgid "Share your desktop with other users"
