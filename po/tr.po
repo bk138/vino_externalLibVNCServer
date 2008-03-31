@@ -1,33 +1,35 @@
+# translation of vino.HEAD.tr.po to Turkish
 # translation of vino to Turkish
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) 2004.
 #
-# Baris Cicek <baris@teamforce.name.tr>, 2004, 2007.
+# Baris Cicek <baris@teamforce.name.tr>, 2004, 2007, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: vino\n"
+"Project-Id-Version: vino.HEAD.tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-08 22:23+0300\n"
-"PO-Revision-Date: 2007-08-08 22:22+0300\n"
+"POT-Creation-Date: 2008-03-31 14:05+0300\n"
+"PO-Revision-Date: 2008-03-31 14:04+0300\n"
 "Last-Translator: Baris Cicek <baris@teamforce.name.tr>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
-#: ../capplet/vino-preferences.c:634 ../capplet/vino-preferences.c:669
-#: ../capplet/vino-preferences.c:727 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
+#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Veri yoluna bağlantı açılamadı: %s\n"
 
-#: ../capplet/vino-preferences.c:936
+#: ../capplet/vino-preferences.c:1329
 msgid "Send this command by email"
 msgstr "Bu komutu e-posta ile gönder"
 
-#: ../capplet/vino-preferences.c:971
+#: ../capplet/vino-preferences.c:1364
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -45,48 +47,130 @@ msgid "Set your remote desktop access preferences"
 msgstr "Uzaktaki masaüstüne erişim tercihlerinizi belirleyin"
 
 #: ../capplet/vino-preferences.glade.h:1
+msgid "<b>Network</b>"
+msgstr "<b>Ağ</b>"
+
+#: ../capplet/vino-preferences.glade.h:2
+msgid "<b>Notification Area</b>"
+msgstr "<b>Uyarı Alanı</b>"
+
+#: ../capplet/vino-preferences.glade.h:3
 msgid "<b>Security</b>"
 msgstr "<b>Güvenlik</b>"
 
-#: ../capplet/vino-preferences.glade.h:2
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Sharing</b>"
 msgstr "<b>Paylaşım</b>"
 
-#: ../capplet/vino-preferences.glade.h:3
+#: ../capplet/vino-preferences.glade.h:5
 msgid "A_sk you for confirmation"
 msgstr "_Onay için sor"
 
-#: ../capplet/vino-preferences.glade.h:4
+#: ../capplet/vino-preferences.glade.h:6
+msgid "Advanced"
+msgstr "Gelişmiş"
+
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Al_ways display an icon"
+msgstr "_Her zaman bir simge göster"
+
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Allow other users to _view your desktop"
 msgstr "Masaüstünüzü diğer _kullanıcıların görüntülemesine izin ver"
 
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:9
+msgid "General"
+msgstr "Genel"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid ""
+"If checked, remote users accessing the desktop are required to support "
+"encryption"
+msgstr ""
+"Eğer seçiliyse, masaüstünüze erişen uzaktaki kullanıcılar şifreleme "
+"desteğine ihtiyaç duyacaklar"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:12
+msgid "If checked, remote users are able to control your mouse and keyboard"
+msgstr ""
+"Eğer seçiliyse, uzaktaki kullanıcılar farenizi ve klavyenizi kontrol "
+"edebilecekler"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid ""
+"If checked, screen will be locked after the last remote client disconnect"
+msgstr ""
+"Eğer seçiliyse, ekran uzaktaki son istemci bağlantıyı kestiğinde kilitlenecek"
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "If checked, the server will only accept connections from localhost"
+msgstr ""
+"Eğer seçiliyse, sunucu sadece localhost konumundan olan bağlantıları kabul "
+"edecek"
+
+#: ../capplet/vino-preferences.glade.h:15
+msgid ""
+"If checked, the server will use another port, instead of the default (5900)"
+msgstr ""
+"Eğer seçiliyse, sunucu öntanımlı port yerine (5900) başka bir port kullanacak"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:17
+msgid "If checked, your desktop will be shared"
+msgstr "Eğer seçiliyse, masaüstünüzü paylaşılacak"
+
+#: ../capplet/vino-preferences.glade.h:18
 msgid "Remote Desktop Preferences"
 msgstr "Uzaktaki Masaüstü Tercihleri"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:19
 msgid "Some of these preferences are locked down"
 msgstr "Bu tercihlerden bir kısmı değiştirilemez"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
 msgstr "Kullanıcılar masaüstünüzü bu komutu kullanarak görüntüleyebilir:"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:21
 msgid "When a user tries to view or control your desktop:"
 msgstr "Kullanıcı masaüstünüzü görüntülemek ya da kontrol etmek istediğinde:"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:22
 msgid "_Allow other users to control your desktop"
 msgstr "Masaüstünüzü diğer kullanıcıların k_ontrol etmesine izin ver"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:23
+msgid "_Lock screen on disconnect"
+msgstr "_Bağlantı kesildiğinde ekranı kilitle"
+
+#: ../capplet/vino-preferences.glade.h:24
+msgid "_Never display an icon"
+msgstr "_Asla bir simge gösterme"
+
+#: ../capplet/vino-preferences.glade.h:25
+msgid "_Only allow local connections"
+msgstr "_Sadece yerel bağlantılara izin ver"
+
+#: ../capplet/vino-preferences.glade.h:26
+msgid "_Only display an icon when there is someone connected"
+msgstr "Sadece birisi _bağlandığında simge göster"
+
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Password:"
 msgstr "_Parola:"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:28
+msgid "_Require encryption"
+msgstr "Şifreleme _gerektir"
+
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Require the user to enter this password:"
 msgstr "_Kullanıcının parola girmesini zorunlu kıl:"
+
+#: ../capplet/vino-preferences.glade.h:30
+msgid "_Use an alternative port:"
+msgstr "_Başka bir port kullan:"
 
 #: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
 #: ../server/vino-dbus-listener.c:249
@@ -104,7 +188,11 @@ msgstr "Nesne yolu '%s' kaydedilirken yetersiz bellek"
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "D-Bus ismi '%s' alınırken başarısız olundu\n"
 
-#: ../server/vino-main.c:83
+#: ../server/vino-main.c:74
+msgid "GNOME Remote Desktop"
+msgstr "GNOME Uzaktaki Masaüstü"
+
+#: ../server/vino-main.c:84
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -315,12 +403,28 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:22
 msgid ""
+"This key controls the behavior of the status icon. There are three options: "
+"\"always\" - The icon will be always there; \"client\" - You will see the "
+"icon only when there is someone connected, this is the default behavior; "
+"\"never\" - Never shows the icon."
+msgstr ""
+"Bu anahtar durum simgesinin işleyişini kontrol eder. Üç seçenek vardır "
+"\"always\" - Simge her zaman orada; \"client\" - Simgeyi sadece birisi "
+"bağlandığında görebilirsiniz, bu öntanımlı işleyiştir; \"never\" - Asla "
+"simge gösterilmez."
+
+#: ../server/vino-server.schemas.in.h:23
+msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
 "Bu anahtar eğer kullanıcı Uzaktaki Masaüstü tercihleri penceresindeki URL'ye "
 "tıklarsa uzaktaki masaüstü URL'sinin gönderileceği e-posta adresini belirtir."
+
+#: ../server/vino-server.schemas.in.h:24
+msgid "When the status icon should be shown"
+msgstr "Durum simgesinin ne zaman gösterileceği"
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -334,7 +438,17 @@ msgstr ""
 "Uzaktaki masaüstü sunucusunu bonob-activation ile kaydederken sorun; "
 "çıkılıyor ...\n"
 
-#: ../server/vino-status-icon.c:204
+#: ../server/vino-status-icon.c:102
+msgid "Desktop sharing is enabled"
+msgstr "Masaüstü paylaşımı etkin"
+
+#: ../server/vino-status-icon.c:110
+#, c-format
+msgid "One person is connected"
+msgid_plural "%d people are connected"
+msgstr[0] "%d kişi bağlı"
+
+#: ../server/vino-status-icon.c:245
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
@@ -343,7 +457,7 @@ msgstr ""
 "Tercihler görüntülenirken bir hata oluştu:\n"
 "%s"
 
-#: ../server/vino-status-icon.c:212
+#: ../server/vino-status-icon.c:253
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -352,7 +466,7 @@ msgstr ""
 "Yardım görüntülenirken bir hata oluştu:\n"
 "%s"
 
-#: ../server/vino-status-icon.c:235
+#: ../server/vino-status-icon.c:276
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -387,92 +501,83 @@ msgstr ""
 "Place, Suite 330, Boston, MA  02111-1307  USA adresine yazın\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:250
+#: ../server/vino-status-icon.c:291
 msgid "translator-credits"
 msgstr "Barış Çiçek <baris@teamforce.name.tr>"
 
-#: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:560
-msgid "GNOME Remote Desktop"
-msgstr "GNOME Uzaktaki Masaüstü"
-
-#: ../server/vino-status-icon.c:257
+#: ../server/vino-status-icon.c:297
 msgid "Share your desktop with other users"
 msgstr "Masaüstünüzü diğer kullanıcılar ile paylaşın"
 
-#: ../server/vino-status-icon.c:320
+#: ../server/vino-status-icon.c:360
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "'%s' bağlantısını kesmek istediğinizden emin misiniz?"
 
-#: ../server/vino-status-icon.c:322
+#: ../server/vino-status-icon.c:362
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr ""
 "'%s' konumundaki uzaktaki kullanıcının bağlantısı kesilecek. Emin misiniz?"
 
-#: ../server/vino-status-icon.c:327
+#: ../server/vino-status-icon.c:367
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Tüm istemcilerin bağlantılarını kesmek istediğinizden emin misiniz?"
 
-#: ../server/vino-status-icon.c:328
+#: ../server/vino-status-icon.c:368
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Tüm uzaktaki kullanıcıların bağlantıları kesilecek. Emin misiniz?"
 
-#: ../server/vino-status-icon.c:340
+#: ../server/vino-status-icon.c:380
 msgid "Disconnect"
 msgstr "Bağlantıyı kes"
 
-#: ../server/vino-status-icon.c:365
+#: ../server/vino-status-icon.c:406
 msgid "_Preferences"
 msgstr "_Tercihler"
 
-#: ../server/vino-status-icon.c:377
+#: ../server/vino-status-icon.c:421
 msgid "Disconnect all"
 msgstr "Tüm bağlantıları kes"
 
-#: ../server/vino-status-icon.c:399
+#: ../server/vino-status-icon.c:444
 #, c-format
 msgid "Disconnect %s"
 msgstr "%s bağlantısını kes"
 
-#: ../server/vino-status-icon.c:416
+#: ../server/vino-status-icon.c:464
 msgid "_Help"
 msgstr "_Yardım"
 
-#: ../server/vino-status-icon.c:424
+#: ../server/vino-status-icon.c:472
 msgid "_About"
 msgstr "_Hakkında"
 
-#: ../server/vino-status-icon.c:458
+#: ../server/vino-status-icon.c:601
 #, c-format
-msgid "One person is connected"
-msgid_plural "%d people are connected"
-msgstr[0] "Bir kişi bağlı"
-
-#: ../server/vino-status-icon.c:562
 msgid "Error initializing libnotify\n"
 msgstr "libnotify başlatılırken hata\n"
 
-#: ../server/vino-status-icon.c:576
+#: ../server/vino-status-icon.c:621
 msgid "Another user is viewing your desktop"
 msgstr "Masaüstünüzü başka bir kullanıcı görüntülüyor"
 
-#: ../server/vino-status-icon.c:577
+#: ../server/vino-status-icon.c:622
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "'%s' bilgisayarındaki bir kullanıcı masaüstünüzü uzaktan görüntülüyor."
 
-#: ../server/vino-status-icon.c:582
+#: ../server/vino-status-icon.c:627
 msgid "Another user is controlling your desktop"
 msgstr "Masaüstünüzü başka bir kullanıcı kontrol ediyor"
 
-#: ../server/vino-status-icon.c:583
+#: ../server/vino-status-icon.c:628
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr ""
 "'%s' bilgisayarındaki bir kullanıcı masaüstünüzü uzaktan kontrol ediyor."
 
-#: ../server/vino-status-icon.c:605
+#: ../server/vino-status-icon.c:650
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Uyarı balonunu gösteriken hata: %s\n"
