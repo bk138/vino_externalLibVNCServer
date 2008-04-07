@@ -1,3 +1,5 @@
+==================== 2.22.1 ======================
+
 2008-03-13  Jonh Wendell  <jwendell@gnome.org>
 
 	* server/vino-status-icon.c (vino_status_icon_remove_client):
