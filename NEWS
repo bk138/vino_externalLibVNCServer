@@ -1,3 +1,18 @@
+Vino 2.22.1
+============
+
+  Fixes
+
+	+ Don't lock the screen in fake connections (Jonh Wendell)
+
+  Translations
+
+	+ Kostas Papadimas (el)
+	+ Ivar Smolin (et)
+	+ Eskild Hustvedt (nn)
+	+ Marcel Telka (sk)
+	+ Baris Cicek (tr)
+
 Vino 2.22.0
 ===========
 
