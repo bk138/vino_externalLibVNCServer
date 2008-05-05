@@ -357,6 +357,7 @@ vino_status_icon_disconnect_confirm (VinoStatusIconNotify *a)
 
   if (client != NULL)
     {
+      /* Translators: %s is a hostname */
       primary_msg   = g_strdup_printf (_("Are you sure you want to disconnect '%s'?"),
                                        vino_client_get_hostname (client));
       secondary_msg = g_strdup_printf (_("The remote user from '%s' will be disconnected. Are you sure?"),
@@ -441,6 +442,7 @@ vino_status_icon_popup_menu (GtkStatusIcon *status_icon,
       a->icon   = icon;
       a->client = client;
 
+      /* Translators: %s is a hostname */
       str = g_strdup_printf (_("Disconnect %s"), vino_client_get_hostname (client));
 
       item  = gtk_image_menu_item_new_with_label (str);
