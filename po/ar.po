@@ -25,7 +25,7 @@ msgstr ""
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
-msgstr "فشل فتح إتصال مع الناقل: %s\n"
+msgstr "فشل فتح اتصال مع الناقل: %s\n"
 
 #: ../capplet/vino-preferences.c:1329
 msgid "Send this command by email"
@@ -99,16 +99,16 @@ msgstr ""
 #: ../capplet/vino-preferences.glade.h:13
 msgid ""
 "If checked, screen will be locked after the last remote client disconnect"
-msgstr "إذا كان مفعلا، سيتم غلق الشاشة عند اغلاق آخر مستخدم للإتصال"
+msgstr "إذا كان مفعلا، سيتم غلق الشاشة عند اغلاق آخر مستخدم للاتصال"
 
 #: ../capplet/vino-preferences.glade.h:14
 msgid "If checked, the server will only accept connections from localhost"
-msgstr "إذا كان مفعلا، سيقبل الخادم الإتصالات المحلية فقط"
+msgstr "إذا كان مفعلا، سيقبل الخادوم الاتصالات المحلية فقط"
 
 #: ../capplet/vino-preferences.glade.h:15
 msgid ""
 "If checked, the server will use another port, instead of the default (5900)"
-msgstr "إذا كان مفعلا، سيستمع الخادم لمنفذ آخر، بدلا من الإفتراضي (5900)"
+msgstr "إذا كان مفعلا، سيستمع الخادوم لمنفذ آخر، بدلا من الإفتراضي (5900)"
 
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:17
@@ -137,7 +137,7 @@ msgstr "ا_سمح للمستخدمين الآخرين بالتّحكّم بسط�
 
 #: ../capplet/vino-preferences.glade.h:23
 msgid "_Lock screen on disconnect"
-msgstr "ا_قفل الشاشة في حالة الغاء الإتصال"
+msgstr "ا_قفل الشاشة في حالة الغاء الاتصال"
 
 #: ../capplet/vino-preferences.glade.h:24
 msgid "_Never display an icon"
@@ -145,7 +145,7 @@ msgstr "_لاتعرض الأيقونة أبداً"
 
 #: ../capplet/vino-preferences.glade.h:25
 msgid "_Only allow local connections"
-msgstr "اس_مح بالإتصالات المحلّية فقط"
+msgstr "اس_مح بالاتصالات المحلّية فقط"
 
 #: ../capplet/vino-preferences.glade.h:26
 msgid "_Only display an icon when there is someone connected"
@@ -191,7 +191,7 @@ msgstr "سطح مكتب جنوم عن بعيد"
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
-msgstr "لايدعم خادم X الامتداد XTest - سيكون سطح المكتب البعيد للعرض فقط\n"
+msgstr "لايدعم خادوم X الامتداد XTest - سيكون سطح المكتب البعيد للعرض فقط\n"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -306,14 +306,14 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr "اذا كان صحيحا، سيتم غلق الشاشة عند اغلاق آخر مستخدم للإتصال."
+msgstr "اذا كان صحيحا، سيتم غلق الشاشة عند اغلاق آخر مستخدم للاتصال."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid ""
 "If true, the server will listen to another port, instead of the default "
 "(5900). The port must be specified in the 'alternative_port' key."
 msgstr ""
-"لو صحيح، سيستمع الخادم لمنفذ آخر، بدلا من الإفتراضي (5900). يجب أن يحدد "
+"لو صحيح، سيستمع الخادوم لمنفذ آخر، بدلا من الإفتراضي (5900). يجب أن يحدد "
 "المنفذ قي مفتاح 'alternative_port'."
 
 #: ../server/vino-server.schemas.in.h:11
@@ -322,8 +322,8 @@ msgid ""
 "connections will be rejected. Set this option to true if you wish to "
 "exclusively use a tunneling mechanism to access the server, such as ssh."
 msgstr ""
-"لو صحيح، سيقبل الخادم الإتصالات المحلّية فقط وسيرفض اتصلات الشبكة. اضبط هذا "
-"كصحيح، إذا أردت حصريا استعمال آليات أنفاق للنفاذ للخادم، مثل ssh."
+"لو صحيح، سيقبل الخادوم الاتصالات المحلّية فقط وسيرفض اتصلات الشبكة. اضبط هذا "
+"كصحيح، إذا أردت حصريا استعمال آليات أنفاق للنفاذ للخادوم، مثل ssh."
 
 #: ../server/vino-server.schemas.in.h:12
 msgid "Listen an alternative port"
@@ -344,11 +344,11 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Lock the screen when last user disconnect"
-msgstr "اغلق الشاشة عند اغلاق آخر مستخدم للإتصال"
+msgstr "اغلق الشاشة عند اغلاق آخر مستخدم للاتصال"
 
 #: ../server/vino-server.schemas.in.h:15
 msgid "Only allow local connections"
-msgstr "اسمح بالإتصالات المحلّية فقط"
+msgstr "اسمح بالاتصالات المحلّية فقط"
 
 #: ../server/vino-server.schemas.in.h:16
 msgid "Only allow remote users to view the desktop"
@@ -380,7 +380,7 @@ msgid ""
 "The port which the server will listen to if the 'use_alternative_port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
 msgstr ""
-"المنفذ الذي سيستمع إليه الخادم إذا ضبط مفتاح 'use_alternative_port' كصحيح. "
+"المنفذ الذي سيستمع إليه الخادوم إذا ضبط مفتاح 'use_alternative_port' كصحيح. "
 "القيم المقبولة في المدى 5000 إلى 50000."
 
 #: ../server/vino-server.schemas.in.h:22
@@ -409,13 +409,13 @@ msgstr "متى يجب إظهار أيقونة التنبيه"
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "خادم سطح المكتب البعيد يعمل حالياً، خروج...\n"
+msgstr "خادوم سطح المكتب البعيد يعمل حالياً، خروج...\n"
 
 #: ../server/vino-shell.c:79
 msgid ""
 "Problem registering the remote desktop server with bonobo-activation; "
 "exiting ...\n"
-msgstr "مشكلة في تسجيل خادم سطح المكتب البعيد بتنشيط بونوبو، خروج ...\n"
+msgstr "مشكلة في تسجيل خادوم سطح المكتب البعيد بتنشيط بونوبو، خروج ...\n"
 
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
@@ -517,7 +517,7 @@ msgstr "سيقطع اتصال كل المستخدمين عن بعد. أمتأك�
 
 #: ../server/vino-status-icon.c:380
 msgid "Disconnect"
-msgstr "اقطع الإتصال"
+msgstr "اقطع الاتصال"
 
 #: ../server/vino-status-icon.c:406
 msgid "_Preferences"
@@ -570,7 +570,7 @@ msgstr "خطأ أثناء عرض فقّاعة التبليغ: %s\n"
 
 #: ../session/vino-session.c:133
 msgid "Remote desktop server died, restarting\n"
-msgstr "توقّف خادم سطح المكتب، إعادة التّشغيل\n"
+msgstr "توقّف خادوم سطح المكتب، إعادة التّشغيل\n"
 
 #: ../session/vino-session.c:154
 #, c-format
@@ -584,12 +584,12 @@ msgstr "فشل تنشيط %s: خطأ مجهول\n"
 
 #: ../session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "فشل تنشيط خادم سطح المكتب البعيد، حاولت عدداً كبيراً من المرّات\n"
+msgstr "فشل تنشيط خادوم سطح المكتب البعيد، حاولت عدداً كبيراً من المرّات\n"
 
 #: ../session/vino-session.c:295
 msgid "Starting remote desktop server"
-msgstr "بدء خادم سطح المكتب البعيد"
+msgstr "بدء خادوم سطح المكتب البعيد"
 
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
-msgstr "لا تبدء خادم سطح المكتب البعيد"
+msgstr "لا تبدء خادوم سطح المكتب البعيد"
