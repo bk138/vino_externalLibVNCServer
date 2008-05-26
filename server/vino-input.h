@@ -18,12 +18,14 @@
  *
  * Authors:
  *      Mark McLoughlin <mark@skynet.ie>
+ *      Jonh Wendell <wendell@bani.com.br>
  */
 
 #ifndef __VINO_INPUT_H__
 #define __VINO_INPUT_H__
 
 #include <gdk/gdk.h>
+#include "vino-server.h"
 
 G_BEGIN_DECLS
 
@@ -37,7 +39,8 @@ void     vino_input_handle_key_event       (GdkScreen  *screen,
 					    gboolean    key_press);
 void     vino_input_handle_clipboard_event (GdkScreen  *screen,
 					    char       *text,
-					    int         len);
+					    int         len,
+					    VinoServer *server);
 
 G_END_DECLS
 

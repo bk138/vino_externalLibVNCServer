@@ -1,3 +1,8 @@
+2008-05-24  Jonh Wendell  <jwendell@gnome.org>
+
+	* server/vino-server.c,
+	* server/vino-input.[ch]: Fix bug #534262 – cyclic clipboard propagation.
+
 2008-05-05  Jonh Wendell  <jwendell@gnome.org>
 
 	* configure.in: pre-release bump version to 2.23.2

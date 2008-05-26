@@ -18,6 +18,7 @@
  *
  * Authors:
  *      Mark McLoughlin <mark@skynet.ie>
+ *      Jonh Wendell <wendell@bani.com.br>
  *
  *
  *   The keyboard and pointer handling code is borrowed from
@@ -434,6 +435,8 @@ static struct {
   { XK_Greek_upsilonaccentdieresis, { XK_dead_acute, XK_dead_diaeresis, XK_Greek_upsilon } }
 };
 static const int num_decompositions = G_N_ELEMENTS (decompositions);
+
+static gchar *cb_str = NULL;
 
 static void vino_input_initialize_keycodes (Display *xdisplay);
 
@@ -1114,24 +1117,45 @@ vino_input_handle_key_event (GdkScreen *screen,
 #endif /* HAVE_XTEST */
 }
 
+/* text was actually requested */
+static void
+copy_cb (GtkClipboard     *clipboard,
+         GtkSelectionData *data,
+	 guint             info,
+	 VinoServer       *server)
+{
+  gtk_selection_data_set_text (data, cb_str, -1);
+}
+
 void
-vino_input_handle_clipboard_event (GdkScreen *screen,
-				   char      *text,
-				   int        len)
+vino_input_handle_clipboard_event (GdkScreen  *screen,
+				   char       *text,
+				   int         len,
+				   VinoServer *server)
 {
   GtkClipboard *cb;
-  gchar *out;
   gsize a, b;
+  GtkTargetEntry targets[] = {
+				{"UTF8_STRING", 0, 0},
+				{"COMPOUND_TEXT", 0, 0},
+				{"TEXT", 0, 0},
+				{"STRING", 0, 0},
+			     };
 
   if (!text)
     return;
 
-  out = g_convert (text, len, "utf-8", "iso8859-1", &a, &b, NULL);
-  if (out)
+  g_free (cb_str);
+  cb_str = g_convert (text, len, "utf-8", "iso8859-1", &a, &b, NULL);
+  if (cb_str)
     {
       cb = gtk_clipboard_get_for_display (gdk_screen_get_display (screen),
                                           GDK_SELECTION_CLIPBOARD);
-      gtk_clipboard_set_text (cb, out, -1);
-      g_free (out);
+      gtk_clipboard_set_with_owner (cb,
+				    targets,
+				    G_N_ELEMENTS(targets),
+				    (GtkClipboardGetFunc) copy_cb,
+				    NULL,
+				    G_OBJECT (server));
     }
 }

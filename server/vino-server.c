@@ -484,7 +484,7 @@ vino_server_handle_clipboard_event (char         *str,
   if (server->priv->view_only)
     return;
 
-  vino_input_handle_clipboard_event (server->priv->screen, str, len);
+  vino_input_handle_clipboard_event (server->priv->screen, str, len, server);
 }
 
 static gboolean
@@ -779,6 +779,9 @@ vino_server_clipboard_cb (GtkClipboard *cb,
   size_t a, b;
 
   if (server->priv->on_hold)
+    return;
+
+  if (gtk_clipboard_get_owner (cb) == G_OBJECT (server))
     return;
 
   text = gtk_clipboard_wait_for_text (cb);
