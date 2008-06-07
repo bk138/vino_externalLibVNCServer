@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-11 19:06+0000\n"
+"POT-Creation-Date: 2008-04-26 12:38+0000\n"
 "PO-Revision-Date: 2005-07-18 19:18+0300\n"
 "Last-Translator: Oldie <yonatanhak@yahoo.com>\n"
 "Language-Team: Hebrew\n"
@@ -18,18 +18,18 @@ msgstr ""
 "X-Generator: KBabel 1.10.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1025 ../capplet/vino-preferences.c:1060
-#: ../capplet/vino-preferences.c:1118 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
+#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Failed to open connection to bus: %s\n"
 
-#: ../capplet/vino-preferences.c:1327
+#: ../capplet/vino-preferences.c:1329
 msgid "Send this command by email"
 msgstr "שלח פקודה זו בדואר אלקטרוני"
 
-#: ../capplet/vino-preferences.c:1362
+#: ../capplet/vino-preferences.c:1364
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -87,36 +87,36 @@ msgid ""
 "If checked, remote users accessing the desktop are required to support "
 "encryption"
 msgstr ""
+"אם מסומן, משתמשים מרוחקים שניגשים לשולחן העבודה נדרשים לתמוך בהצפנה"
 
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:12
 msgid "If checked, remote users are able to control your mouse and keyboard"
 msgstr ""
+"אם מסומן, משתמשים מרוחקים יוכלו לשלוט בעכבר ובמקלדת שלך"
 
 #: ../capplet/vino-preferences.glade.h:13
-#, fuzzy
 msgid ""
 "If checked, screen will be locked after the last remote client disconnect"
 msgstr ""
-"If true, screen will be locked after the last remote client disconnect."
+"אם מסומן, המסך ינעל לאחר שהמשתמש המרוחק האחרון יתנתק"
 
 #: ../capplet/vino-preferences.glade.h:14
 msgid "If checked, the server will only accept connections from localhost"
 msgstr ""
+"אם מסומן, השרת יקבל חיבורים מקומיים בלבד"
 
 #: ../capplet/vino-preferences.glade.h:15
-#, fuzzy
 msgid ""
 "If checked, the server will use another port, instead of the default (5900)"
 msgstr ""
-"If true, the server will listen to another port, instead of the default "
-"(5900). The port must be specified in the 'alternative_port' key."
+"אם מסומן, השרת ישתמש בשער שונה, במקום שער ברירת המחדל (5900)"
 
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:17
-#, fuzzy
 msgid "If checked, your desktop will be shared"
-msgstr "שתף את שולחן העבודה שלך עם משתמשים אחרים"
+msgstr ""
+"אם מסומן, שולחן העבודה שלך ישותף"
 
 #: ../capplet/vino-preferences.glade.h:18
 msgid "Remote Desktop Preferences"
@@ -139,40 +139,36 @@ msgid "_Allow other users to control your desktop"
 msgstr "_הרשה למשתמשים אחרים לשלוט בשולחן העבודה שלך"
 
 #: ../capplet/vino-preferences.glade.h:23
-#, fuzzy
 msgid "_Lock screen on disconnect"
-msgstr "Lock the screen when last user disconnect"
+msgstr "_נעל את המסך בהתנתקות"
 
 #: ../capplet/vino-preferences.glade.h:24
 msgid "_Never display an icon"
 msgstr "_אל תציג איקון לעולם"
 
 #: ../capplet/vino-preferences.glade.h:25
-#, fuzzy
 msgid "_Only allow local connections"
-msgstr "Only allow local connections"
+msgstr "הרשה חיבורים _מקומיים בלבד"
 
 #: ../capplet/vino-preferences.glade.h:26
 msgid "_Only display an icon when there is someone connected"
-msgstr ""
+msgstr "הצג אי_קון רק כאשר מישהו מחובר"
 
 #: ../capplet/vino-preferences.glade.h:27
 msgid "_Password:"
 msgstr "_סיסמה:"
 
 #: ../capplet/vino-preferences.glade.h:28
-#, fuzzy
 msgid "_Require encryption"
-msgstr "Require encryption"
+msgstr "_דרוש הצפנה"
 
 #: ../capplet/vino-preferences.glade.h:29
 msgid "_Require the user to enter this password:"
 msgstr "_דרוש מהמשתמש להקליד את הסיסמה:"
 
 #: ../capplet/vino-preferences.glade.h:30
-#, fuzzy
 msgid "_Use an alternative port:"
-msgstr "Listen an alternative port"
+msgstr "ה_שתמש בשער שונה"
 
 #: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
 #: ../server/vino-dbus-listener.c:249
@@ -403,7 +399,7 @@ msgid ""
 "\"always\" - The icon will be always there; \"client\" - You will see the "
 "icon only when there is someone connected, this is the default behavior; "
 "\"never\" - Never shows the icon."
-msgstr  ""
+msgstr ""
 "This key controls the behavior of the status icon. There are three options: "
 "\"always\" - The icon will be always there; \"client\" - You will see the "
 "icon only when there is someone connected, this is the default behavior; "
@@ -556,29 +552,30 @@ msgstr "_עזרה"
 msgid "_About"
 msgstr "_אודות"
 
-#: ../server/vino-status-icon.c:598
+#: ../server/vino-status-icon.c:601
+#, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Error initializing libnotify\n"
 
-#: ../server/vino-status-icon.c:612
+#: ../server/vino-status-icon.c:621
 msgid "Another user is viewing your desktop"
 msgstr "משתמש אחר צופה בשולחן העבודה שלך "
 
-#: ../server/vino-status-icon.c:613
+#: ../server/vino-status-icon.c:622
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "משתמש במחשב '%s' צופה מרחוק בשולחן העבודה שלך."
 
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:627
 msgid "Another user is controlling your desktop"
 msgstr "משתמש אחר שולט בשולחן העבודה שלך"
 
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:628
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "משתמש במחשב '%s' שולט מרחוק בשולחן העבודה שלך."
 
-#: ../server/vino-status-icon.c:641
+#: ../server/vino-status-icon.c:650
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Error while displaying notification bubble: %s\n"
