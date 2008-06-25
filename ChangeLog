@@ -1,5 +1,10 @@
 2008-06-25  Jonh Wendell  <jwendell@gnome.org>
 
+	* capplet/vino-preferences.glade: Fix silly strings in the UI.
+	Closes #516139.
+
+2008-06-25  Jonh Wendell  <jwendell@gnome.org>
+
 	* capplet/vino-preferences.c: Tell people to use vinagre instead of
 	vncviewer. Closes #521971.
 

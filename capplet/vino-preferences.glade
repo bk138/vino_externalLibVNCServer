@@ -91,7 +91,7 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="has_tooltip">True</property>
-                                <property name="tooltip" translatable="yes" comments="tooltip in preferences applet">If checked, your desktop will be shared</property>
+                                <property name="tooltip" translatable="yes" comments="tooltip in preferences applet">Your desktop will be shared</property>
                                 <property name="label" translatable="yes">Allow other users to _view your desktop</property>
                                 <property name="use_underline">True</property>
                                 <property name="response_id">0</property>
@@ -121,7 +121,7 @@
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="has_tooltip">True</property>
-                                    <property name="tooltip" translatable="yes" comments="tooltip in preferences applet">If checked, remote users are able to control your mouse and keyboard</property>
+                                    <property name="tooltip" translatable="yes" comments="tooltip in preferences applet">Remote users are able to control your mouse and keyboard</property>
                                     <property name="label" translatable="yes">_Allow other users to control your desktop</property>
                                     <property name="use_underline">True</property>
                                     <property name="response_id">0</property>
@@ -411,7 +411,7 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="has_tooltip">True</property>
-                                <property name="tooltip" translatable="yes">If checked, the server will only accept connections from localhost</property>
+                                <property name="tooltip" translatable="yes">The server will only accept connections from localhost</property>
                                 <property name="label" translatable="yes">_Only allow local connections</property>
                                 <property name="use_underline">True</property>
                                 <property name="response_id">0</property>
@@ -433,7 +433,7 @@
                                     <property name="can_focus">True</property>
                                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                                     <property name="has_tooltip">True</property>
-                                    <property name="tooltip" translatable="yes">If checked, the server will use another port, instead of the default (5900)</property>
+                                    <property name="tooltip" translatable="yes">The server will use another port, instead of the default (5900)</property>
                                     <property name="label" translatable="yes">_Use an alternative port:</property>
                                     <property name="use_underline">True</property>
                                     <property name="response_id">0</property>
@@ -520,7 +520,7 @@
                                 <property name="can_focus">True</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                                 <property name="has_tooltip">True</property>
-                                <property name="tooltip" translatable="yes">If checked, remote users accessing the desktop are required to support encryption</property>
+                                <property name="tooltip" translatable="yes">Remote users' VNC clients accessing the desktop are required to support encryption</property>
                                 <property name="label" translatable="yes">_Require encryption</property>
                                 <property name="use_underline">True</property>
                                 <property name="response_id">0</property>
@@ -536,7 +536,7 @@
                                     <property name="can_focus">True</property>
                                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                                     <property name="has_tooltip">True</property>
-                                    <property name="tooltip" translatable="yes">If checked, screen will be locked after the last remote client disconnect</property>
+                                    <property name="tooltip" translatable="yes">Screen will be locked after the last remote client disconnect</property>
                                     <property name="label" translatable="yes">_Lock screen on disconnect</property>
                                     <property name="use_underline">True</property>
                                     <property name="response_id">0</property>
