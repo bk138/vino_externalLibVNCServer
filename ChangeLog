@@ -1,3 +1,8 @@
+2008-06-25  Jonh Wendell  <jwendell@gnome.org>
+
+	* capplet/vino-preferences.c: Tell people to use vinagre instead of
+	vncviewer. Closes #521971.
+
 2008-05-24  Jonh Wendell  <jwendell@gnome.org>
 
 	* server/vino-server.c,

@@ -1198,7 +1198,7 @@ vino_preferences_dialog_get_server_command (VinoPreferencesDialog *dialog)
   server_url = g_strdup_printf ("http://%s:%d", local_host, server_port);
 #else
   server_port = vino_preferences_get_server_port (dialog);
-  server_url = g_strdup_printf ("vncviewer %s:%d", local_host, server_port);
+  server_url = g_strdup_printf ("vinagre %s:%d", local_host, server_port);
 #endif
 
   g_free (local_host);
