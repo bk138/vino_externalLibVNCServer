@@ -1,3 +1,8 @@
+2008-07-01  Jonh Wendell  <jwendell@gnome.org>
+
+	* capplet/vino-preferences.c: Reverted the fix in bug #423027.
+	The fix was wrong. It's not a vino bug.
+
 2008-06-25  Jonh Wendell  <jwendell@gnome.org>
 
 	* capplet/vino-preferences.glade: Fix silly strings in the UI.

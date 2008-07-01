@@ -921,7 +921,7 @@ vino_preferences_dialog_password_changed (GtkEntry              *entry,
     {
       gconf_client_unset (dialog->client, VINO_PREFS_VNC_PASSWORD, NULL);
     }
-  else if (strlen (password) > 1)
+  else
     {
       char *password_b64;
 
