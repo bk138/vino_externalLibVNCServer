@@ -1,3 +1,8 @@
+2008-07-02  Jonh Wendell  <jwendell@gnome.org>
+
+	* capplet/vino-preferences.glade: Use default invisible character in
+	password entry. Closes #541248.
+
 2008-07-01  Jonh Wendell  <jwendell@gnome.org>
 
 	* capplet/vino-preferences.c: Reverted the fix in bug #423027.

@@ -322,7 +322,6 @@
                                     <property name="can_focus">True</property>
                                     <property name="max_length">8</property>
                                     <property name="visibility">False</property>
-                                    <property name="invisible_char">*</property>
                                   </widget>
                                   <packing>
                                     <property name="position">2</property>
