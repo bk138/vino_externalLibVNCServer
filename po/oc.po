@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: oc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-09 15:22+0200\n"
+"POT-Creation-Date: 2008-07-02 09:01+0200\n"
 "PO-Revision-Date: 2007-12-28 12:59+0100\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -82,49 +82,47 @@ msgid "General"
 msgstr "General"
 
 #: ../capplet/vino-preferences.glade.h:10
-msgid ""
-"If checked, remote users accessing the desktop are required to support "
-"encryption"
-msgstr ""
+msgid "Remote Desktop Preferences"
+msgstr "Preferéncias del burèu distant"
 
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:12
-msgid "If checked, remote users are able to control your mouse and keyboard"
+msgid "Remote users are able to control your mouse and keyboard"
 msgstr ""
 
 #: ../capplet/vino-preferences.glade.h:13
 msgid ""
-"If checked, screen will be locked after the last remote client disconnect"
+"Remote users' VNC clients accessing the desktop are required to support "
+"encryption"
 msgstr ""
 
 #: ../capplet/vino-preferences.glade.h:14
-msgid "If checked, the server will only accept connections from localhost"
+msgid "Screen will be locked after the last remote client disconnect"
 msgstr ""
 
 #: ../capplet/vino-preferences.glade.h:15
-msgid ""
-"If checked, the server will use another port, instead of the default (5900)"
-msgstr ""
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:17
-msgid "If checked, your desktop will be shared"
-msgstr ""
-
-#: ../capplet/vino-preferences.glade.h:18
-msgid "Remote Desktop Preferences"
-msgstr "Preferéncias del burèu distant"
-
-#: ../capplet/vino-preferences.glade.h:19
 msgid "Some of these preferences are locked down"
 msgstr ""
 
-#: ../capplet/vino-preferences.glade.h:20
+#: ../capplet/vino-preferences.glade.h:16
+msgid "The server will only accept connections from localhost"
+msgstr ""
+
+#: ../capplet/vino-preferences.glade.h:17
+msgid "The server will use another port, instead of the default (5900)"
+msgstr ""
+
+#: ../capplet/vino-preferences.glade.h:18
 msgid "Users can view your desktop using this command:"
 msgstr ""
 
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:19
 msgid "When a user tries to view or control your desktop:"
+msgstr ""
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:21
+msgid "Your desktop will be shared"
 msgstr ""
 
 #: ../capplet/vino-preferences.glade.h:22
