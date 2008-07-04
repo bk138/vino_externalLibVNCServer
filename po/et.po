@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vino HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-11 19:06+0000\n"
-"PO-Revision-Date: 2008-03-21 11:31+0200\n"
+"POT-Creation-Date: 2008-06-25 19:56+0000\n"
+"PO-Revision-Date: 2008-06-26 08:53+0300\n"
 "Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "MIME-Version: 1.0\n"
@@ -22,18 +22,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1025 ../capplet/vino-preferences.c:1060
-#: ../capplet/vino-preferences.c:1118 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
+#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Tõrge siiniga ühendumisel: %s\n"
 
-#: ../capplet/vino-preferences.c:1327
+#: ../capplet/vino-preferences.c:1329
 msgid "Send this command by email"
 msgstr "Selle käsu saatmine e-postiga"
 
-#: ../capplet/vino-preferences.c:1362
+#: ../capplet/vino-preferences.c:1364
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -87,59 +87,48 @@ msgid "General"
 msgstr "Üldine"
 
 #: ../capplet/vino-preferences.glade.h:10
-msgid ""
-"If checked, remote users accessing the desktop are required to support "
-"encryption"
-msgstr ""
-"Kui märgitud, siis nõutakse kaugkasutajatelt töölauale ligipääsuks "
-"krüptimise tuge"
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:12
-msgid "If checked, remote users are able to control your mouse and keyboard"
-msgstr ""
-"Kui märgitud, siis on kaugkasutajatel õigus juhtida sinu hiirt ja klaviatuuri"
-
-#: ../capplet/vino-preferences.glade.h:13
-msgid ""
-"If checked, screen will be locked after the last remote client disconnect"
-msgstr ""
-"Kui märgitud, siis pärast viimase kaugkliendi lahtiühendamist ekraan "
-"lukustatakse."
-
-#: ../capplet/vino-preferences.glade.h:14
-msgid "If checked, the server will only accept connections from localhost"
-msgstr ""
-"Kui märgitud, siis nõustub server ainult kohalikust masinast loodud "
-"ühendustega"
-
-#: ../capplet/vino-preferences.glade.h:15
-msgid ""
-"If checked, the server will use another port, instead of the default (5900)"
-msgstr ""
-"Kui märgitud, siis kuulab server vaikimisi pordi (5900) asemel "
-"alternatiivset porti."
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:17
-msgid "If checked, your desktop will be shared"
-msgstr "Kui märgitud, siis Sinu töölaud jagatakse ühiskasutuseks välja"
-
-#: ../capplet/vino-preferences.glade.h:18
 msgid "Remote Desktop Preferences"
 msgstr "Kaugtöölaua eelistused"
 
-#: ../capplet/vino-preferences.glade.h:19
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:12
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr "Kaugkasutajatel on lubatud sinu hiirt ja klaviatuuri juhtida"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid ""
+"Remote users' VNC clients accessing the desktop are required to support "
+"encryption"
+msgstr "Kaugkasutajatelt nõutakse töölauale ligipääsuks krüptimise tuge"
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "Screen will be locked after the last remote client disconnect"
+msgstr "Pärast viimase kaugkliendi lahtiühendamist ekraan lukustatakse"
+
+#: ../capplet/vino-preferences.glade.h:15
 msgid "Some of these preferences are locked down"
 msgstr "Mõned nendest eelistustest on lukustatud"
 
-#: ../capplet/vino-preferences.glade.h:20
+#: ../capplet/vino-preferences.glade.h:16
+msgid "The server will only accept connections from localhost"
+msgstr "Server nõustub ainult kohalikust masinast loodud ühendustega"
+
+#: ../capplet/vino-preferences.glade.h:17
+msgid "The server will use another port, instead of the default (5900)"
+msgstr "Server kuulab vaikimisi pordi (5900) asemel alternatiivset porti"
+
+#: ../capplet/vino-preferences.glade.h:18
 msgid "Users can view your desktop using this command:"
 msgstr "Teised kasutajad saavad su töölauda vaadata selle käsuga:"
 
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:19
 msgid "When a user tries to view or control your desktop:"
 msgstr "Kui kasutaja proovib Sinu töölauda vaadata, siis:"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:21
+msgid "Your desktop will be shared"
+msgstr "Sinu töölaud jagatakse ühiskasutuseks välja"
 
 #: ../capplet/vino-preferences.glade.h:22
 msgid "_Allow other users to control your desktop"
@@ -358,10 +347,10 @@ msgid ""
 "user to connect."
 msgstr ""
 "Nimekiri autentimismeetoditest, mille abil kaugtöölaua kasutajad saavad "
-"juurdepääsu töölauale. On kaks võimalikku autentimismeetodit; \"vnc\" "
-"küsub kaugtöölaua kasutajalt enne ühenduse loomist parooli (parooli saab "
-"määrata võtmega \"vnc_password\") ja \"none\", mis lubab igal kaugtöölaua "
-"kasutajal ühenduse luua."
+"juurdepääsu töölauale. On kaks võimalikku autentimismeetodit; \"vnc\" küsub "
+"kaugtöölaua kasutajalt enne ühenduse loomist parooli (parooli saab määrata "
+"võtmega \"vnc_password\") ja \"none\", mis lubab igal kaugtöölaua kasutajal "
+"ühenduse luua."
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Lock the screen when last user disconnect"
@@ -393,8 +382,8 @@ msgid ""
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
 msgstr ""
-"\"vnc\" autentimismeetodi korral kaugtöölaua kasutajailt küsitav "
-"salasõna. Võtme poolt määratud salasõna on kodeeritud base64 algoritmiga."
+"\"vnc\" autentimismeetodi korral kaugtöölaua kasutajailt küsitav salasõna. "
+"Võtme poolt määratud salasõna on kodeeritud base64 algoritmiga."
 
 #: ../server/vino-server.schemas.in.h:21
 msgid ""
@@ -515,74 +504,77 @@ msgstr "Ivar Smolin <okul@linux.ee>, 2006-2008."
 msgid "Share your desktop with other users"
 msgstr "Oma töölaua jagamine teistega"
 
-#: ../server/vino-status-icon.c:360
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:361
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Kas sa soovid '%s' ühenduse katkestada?"
 
-#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-icon.c:363
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr ""
 "Masinast '%s' ühendatud kaugkasutajate ühendused katkestatakse. Oled sa "
 "kindel? "
 
-#: ../server/vino-status-icon.c:367
+#: ../server/vino-status-icon.c:368
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Kas soovid kõikide klientide ühenduse katkestada?"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:369
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Kõigi kaugkasutajate ühendused katkestatakse. Oled sa kindel?"
 
-#: ../server/vino-status-icon.c:380
+#: ../server/vino-status-icon.c:381
 msgid "Disconnect"
 msgstr "Katkesta"
 
-#: ../server/vino-status-icon.c:406
+#: ../server/vino-status-icon.c:407
 msgid "_Preferences"
 msgstr "_Eelistused"
 
-#: ../server/vino-status-icon.c:421
+#: ../server/vino-status-icon.c:422
 msgid "Disconnect all"
 msgstr "Katkesta kõik"
 
-#: ../server/vino-status-icon.c:444
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:446
 #, c-format
 msgid "Disconnect %s"
 msgstr "Katkesta %s"
 
-#: ../server/vino-status-icon.c:464
+#: ../server/vino-status-icon.c:466
 msgid "_Help"
 msgstr "A_bi"
 
-#: ../server/vino-status-icon.c:472
+#: ../server/vino-status-icon.c:474
 msgid "_About"
 msgstr "_Programmist lähemalt"
 
-#: ../server/vino-status-icon.c:598
+#: ../server/vino-status-icon.c:603
+#, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Viga libnotify lähtestamisel\n"
 
-#: ../server/vino-status-icon.c:612
+#: ../server/vino-status-icon.c:623
 msgid "Another user is viewing your desktop"
 msgstr "Teine kasutaja vaatab Sinu töölauda"
 
-#: ../server/vino-status-icon.c:613
+#: ../server/vino-status-icon.c:624
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Kasutaja arvutist '%s' vaatab üle võrgu Sinu töölauda."
 
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:629
 msgid "Another user is controlling your desktop"
 msgstr "Teine kasutaja juhib Sinu töölauda"
 
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:630
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "Kasutaja arvutist '%s' juhib üle võrgu Sinu töölauda."
 
-#: ../server/vino-status-icon.c:641
+#: ../server/vino-status-icon.c:652
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Viga teavitusmulli kuvamisel: %s\n"
@@ -612,3 +604,9 @@ msgstr "Kaugtöölauaserveri käivitamine"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Kaugtöölauaserverit ei käivitata"
+
+#~ msgid ""
+#~ "If checked, screen will be locked after the last remote client disconnect"
+#~ msgstr ""
+#~ "Kui märgitud, siis pärast viimase kaugkliendi lahtiühendamist ekraan "
+#~ "lukustatakse."
