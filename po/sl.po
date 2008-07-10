@@ -1,17 +1,14 @@
 # This file is distributed under the same license as the program package.
 #
-# Slovenian maintainer: Matej Urbančič <matej.urban@gmail.com>.
-#
-# Translators:
 # Matic Žgur <mr.zgur@gmail.com>, 2006.
-# Matej Urbančič <matej.urban@gmail.com>, 2005 - 2007.
+# Matej Urbančič <matej.urban@svn.gnome.org>, 2005 - 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-15 19:17+0100\n"
-"PO-Revision-Date: 2007-11-12 14:44+0100\n"
+"POT-Creation-Date: 2008-07-10 08:30+0000\n"
+"PO-Revision-Date: 2008-07-10 13:48+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -22,20 +19,20 @@ msgstr ""
 "X-Poedit-Country: SLOVENIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../capplet/vino-preferences.c:1025
-#: ../capplet/vino-preferences.c:1060
-#: ../capplet/vino-preferences.c:1118
+#: ../capplet/vino-preferences.c:1027
+#: ../capplet/vino-preferences.c:1062
+#: ../capplet/vino-preferences.c:1120
 #: ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Napaka med odpiranjem vodila: %s\n"
 
-#: ../capplet/vino-preferences.c:1327
+#: ../capplet/vino-preferences.c:1329
 msgid "Send this command by email"
 msgstr "Pošljite ukaz po e-pošti."
 
-#: ../capplet/vino-preferences.c:1362
+#: ../capplet/vino-preferences.c:1364
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -89,46 +86,46 @@ msgid "General"
 msgstr "Splošno"
 
 #: ../capplet/vino-preferences.glade.h:10
-msgid "If checked, remote users accessing the desktop are required to support encryption"
-msgstr "Uporabnik, ki imajo dostop do namizja, morajo uporabljati šifriranje."
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:12
-msgid "If checked, remote users are able to control your mouse and keyboard"
-msgstr "Oddaljeni uporabniki lahko nadzirajo tipkovnico in miško"
-
-#: ../capplet/vino-preferences.glade.h:13
-msgid "If checked, screen will be locked after the last remote client disconnect"
-msgstr "Zaslon se zaklene po tem, ko se prekine povezava z zadnjim oddaljenim uporabnikom."
-
-#: ../capplet/vino-preferences.glade.h:14
-msgid "If checked, the server will only accept connections from localhost"
-msgstr "Strežnik sprejme le povezavo lokalnega računalnika"
-
-#: ../capplet/vino-preferences.glade.h:15
-msgid "If checked, the server will use another port, instead of the default (5900)"
-msgstr "Strežnik naj posluša druga vrata namesto privzetih vrat (5900)."
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:17
-msgid "If checked, your desktop will be shared"
-msgstr "Souporaba namizja z drugimi uporabniki"
-
-#: ../capplet/vino-preferences.glade.h:18
 msgid "Remote Desktop Preferences"
 msgstr "Lastnosti oddaljenega namizja"
 
-#: ../capplet/vino-preferences.glade.h:19
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:12
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr "Oddaljeni uporabniki lahko nadzirajo tipkovnico in miško"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid "Remote users' VNC clients accessing the desktop are required to support encryption"
+msgstr "Oddaljeni uporabnik, ki imajo dostop do namizja, morajo uporabljati šifriranje."
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "Screen will be locked after the last remote client disconnect"
+msgstr "Zaslon se bo zaklenil po tem, ko se prekine povezava za zadnjim oddaljenim uporabnikom."
+
+#: ../capplet/vino-preferences.glade.h:15
 msgid "Some of these preferences are locked down"
 msgstr "Nekatere lastnosti so zaklenjene"
 
-#: ../capplet/vino-preferences.glade.h:20
+#: ../capplet/vino-preferences.glade.h:16
+msgid "The server will only accept connections from localhost"
+msgstr "Strežnik bo sprejel le povezave lokalnega računalnika"
+
+#: ../capplet/vino-preferences.glade.h:17
+msgid "The server will use another port, instead of the default (5900)"
+msgstr "Strežnik bo uporabil druga vrata, namesto privzetih vrat (5900)."
+
+#: ../capplet/vino-preferences.glade.h:18
 msgid "Users can view your desktop using this command:"
 msgstr "Uporabniki si lahko ogledajo vaše namizje s tem ukazom:"
 
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:19
 msgid "When a user tries to view or control your desktop:"
 msgstr "Kadar želi uporabnik pogledati ali nadzirati vaše namizje:"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:21
+msgid "Your desktop will be shared"
+msgstr "Namizje bo v souporabi"
 
 #: ../capplet/vino-preferences.glade.h:22
 msgid "_Allow other users to control your desktop"
@@ -259,7 +256,7 @@ msgstr "Pomožna številka vrat"
 
 #: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr "E-naslov na katerega se pošlje URL oddaljenega namizja"
+msgstr "E-naslov na katerega se pošlje naslov URL oddaljenega namizja"
 
 #: ../server/vino-server.schemas.in.h:4
 msgid "Enable remote desktop access"
@@ -426,72 +423,75 @@ msgstr "Matej Urbančič"
 msgid "Share your desktop with other users"
 msgstr "Souporaba namizja z drugimi uporabniki"
 
-#: ../server/vino-status-icon.c:360
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:361
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Ali želite prekiniti povezavo z '%s'?"
 
-#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-icon.c:363
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Povezava z oddaljenim uporabnikom iz '%s' bo  prekinjena. Ali želite nadaljevati?"
 
-#: ../server/vino-status-icon.c:367
+#: ../server/vino-status-icon.c:368
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Ali želite prekiniti povezave vseh oddaljenih uporabnikov?"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:369
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Povezave vseh oddaljenih uporabnikov bodo prekinjene. Ali želite nadaljevati?"
 
-#: ../server/vino-status-icon.c:380
+#: ../server/vino-status-icon.c:381
 msgid "Disconnect"
 msgstr "Odstrani povezavo"
 
-#: ../server/vino-status-icon.c:406
+#: ../server/vino-status-icon.c:407
 msgid "_Preferences"
 msgstr "_Lastnosti"
 
-#: ../server/vino-status-icon.c:421
+#: ../server/vino-status-icon.c:422
 msgid "Disconnect all"
 msgstr "Odstrani vse povezave"
 
-#: ../server/vino-status-icon.c:444
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:446
 #, c-format
 msgid "Disconnect %s"
 msgstr "Prekini povezavo %s"
 
-#: ../server/vino-status-icon.c:464
+#: ../server/vino-status-icon.c:466
 msgid "_Help"
 msgstr "_Pomoč"
 
-#: ../server/vino-status-icon.c:472
+#: ../server/vino-status-icon.c:474
 msgid "_About"
 msgstr "_O Programu"
 
-#: ../server/vino-status-icon.c:598
+#: ../server/vino-status-icon.c:603
+#, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Napaka med zagonom libnotify\n"
 
-#: ../server/vino-status-icon.c:612
+#: ../server/vino-status-icon.c:623
 msgid "Another user is viewing your desktop"
 msgstr "Drug uporabnik pregleduje namizje"
 
-#: ../server/vino-status-icon.c:613
+#: ../server/vino-status-icon.c:624
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Uporabnik za računalnikom '%s' poskuša oddaljeno pregledovati namizje."
 
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:629
 msgid "Another user is controlling your desktop"
 msgstr "Drug uporabnik nadzira namizje"
 
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:630
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "Uporabnik za računalnikom '%s' nadzira oddaljeno namizje."
 
-#: ../server/vino-status-icon.c:641
+#: ../server/vino-status-icon.c:652
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Napaka med prikazovanjem opozorilnega okna: %s\n"
@@ -521,4 +521,10 @@ msgstr "Zagon strežnika oddaljenega namizja"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Strežnik oddaljenega namizja ni zagnan"
+
+#~ msgid ""
+#~ "If checked, screen will be locked after the last remote client disconnect"
+#~ msgstr ""
+#~ "Zaslon se zaklene po tem, ko se prekine povezava z zadnjim oddaljenim "
+#~ "uporabnikom."
 
