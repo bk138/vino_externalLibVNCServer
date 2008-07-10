@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.11.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-01 17:30+0700\n"
-"PO-Revision-Date: 2008-02-01 17:46+0700\n"
+"POT-Creation-Date: 2008-07-10 15:06+0700\n"
+"PO-Revision-Date: 2008-07-10 15:11+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -17,18 +17,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../capplet/vino-preferences.c:1025 ../capplet/vino-preferences.c:1060
-#: ../capplet/vino-preferences.c:1118 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
+#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "ไม่สามารถเปิดการเชื่อมต่อไปยังบัส: %s\n"
 
-#: ../capplet/vino-preferences.c:1327
+#: ../capplet/vino-preferences.c:1329
 msgid "Send this command by email"
 msgstr "ส่งคำสั่งนี้ทางอีเมล"
 
-#: ../capplet/vino-preferences.c:1362
+#: ../capplet/vino-preferences.c:1364
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -82,50 +82,48 @@ msgid "General"
 msgstr "ทั่วไป"
 
 #: ../capplet/vino-preferences.glade.h:10
-msgid ""
-"If checked, remote users accessing the desktop are required to support "
-"encryption"
-msgstr "ถ้าเลือก ผู้ใช้จากเครื่องอื่นที่ต้องการเข้าถึงพื้นโต๊ะจะต้องรองรับการเข้ารหัสลับด้วย"
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:12
-msgid "If checked, remote users are able to control your mouse and keyboard"
-msgstr "ถ้าเลือก ผู้ใช้จากเครื่องอื่นจะสามารถควบคุมเมาส์และแป้นพิมพ์ของคุณได้"
-
-#: ../capplet/vino-preferences.glade.h:13
-msgid ""
-"If checked, screen will be locked after the last remote client disconnect"
-msgstr "ถ้าเลือก หน้าจอจะถูกล็อคหลังจากผู้ใช้จากเครื่องอื่นคนสุดท้ายตัดการเชื่อมต่อ"
-
-#: ../capplet/vino-preferences.glade.h:14
-msgid "If checked, the server will only accept connections from localhost"
-msgstr "ถ้าเลือก เซิร์ฟเวอร์จะรับการเชื่อมต่อจาก localhost เท่านั้น"
-
-#: ../capplet/vino-preferences.glade.h:15
-msgid ""
-"If checked, the server will use another port, instead of the default (5900)"
-msgstr "ถ้าเลือก เซิร์ฟเวอร์จะใช้พอร์ตอื่นแทนพอร์ตปริยาย (5900)"
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:17
-msgid "If checked, your desktop will be shared"
-msgstr "ถ้าเลือก พื้นโต๊ะของคุณจะถูกเปิดให้ผู้อื่นใช้ร่วมด้วย"
-
-#: ../capplet/vino-preferences.glade.h:18
 msgid "Remote Desktop Preferences"
 msgstr "ปรับแต่งพื้นโต๊ะระยะไกล"
 
-#: ../capplet/vino-preferences.glade.h:19
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:12
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr "ผู้ใช้จากเครื่องอื่นสามารถควบคุมเมาส์และแป้นพิมพ์ของคุณได้"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid ""
+"Remote users' VNC clients accessing the desktop are required to support "
+"encryption"
+msgstr "โปรแกรมลูกข่าย VNC ของผู้ใช้จากเครื่องอื่นที่จะเข้าถึงพื้นโต๊ะจะต้องรองรับการเข้ารหัสลับด้วย"
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "Screen will be locked after the last remote client disconnect"
+msgstr "หน้าจอจะถูกล็อคหลังจากผู้ใช้ระยะไกลคนสุดท้ายตัดการเชื่อมต่อ"
+
+#: ../capplet/vino-preferences.glade.h:15
 msgid "Some of these preferences are locked down"
 msgstr "การปรับแต่งบางส่วนถูกล็อคไว้ไม่ให้เปลี่ยน"
 
-#: ../capplet/vino-preferences.glade.h:20
+#: ../capplet/vino-preferences.glade.h:16
+msgid "The server will only accept connections from localhost"
+msgstr "เซิร์ฟเวอร์จะรับการเชื่อมต่อจาก localhost เท่านั้น"
+
+#: ../capplet/vino-preferences.glade.h:17
+msgid "The server will use another port, instead of the default (5900)"
+msgstr "เซิร์ฟเวอร์จะใช้พอร์ตอื่นแทนพอร์ตปริยาย (5900)"
+
+#: ../capplet/vino-preferences.glade.h:18
 msgid "Users can view your desktop using this command:"
 msgstr "ผู้ใช้ทั่วไปสามารถมองพื้นโต๊ะของคุณได้โดยใช้คำสั่ง:"
 
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:19
 msgid "When a user tries to view or control your desktop:"
 msgstr "เมื่อมีผู้ใช้พยายามมองหรือควบคุมพื้นโต๊ะของคุณ:"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:21
+msgid "Your desktop will be shared"
+msgstr "พื้นโต๊ะของคุณจะถูกเปิดให้ผู้อื่นใช้ร่วมด้วย"
 
 #: ../capplet/vino-preferences.glade.h:22
 msgid "_Allow other users to control your desktop"
@@ -212,11 +210,11 @@ msgstr "พื้นโต๊ะระยะไกลของ %s ที่เ�
 
 #: ../server/vino-prompt.c:142
 msgid "Screen"
-msgstr "สกรีน"
+msgstr "หน้าจอ"
 
 #: ../server/vino-prompt.c:143
 msgid "The screen on which to display the prompt"
-msgstr "สกรีนที่จะแสดงคำถาม"
+msgstr "หน้าจอที่จะแสดงคำถาม"
 
 #: ../server/vino-prompt.c:343
 #, c-format
@@ -303,7 +301,7 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr "ถ้าเป็นจริง สกรีนจะถูกล็อคหลังจากผู้ใช้ระยะไกลคนสุดท้ายตัดการเชื่อมต่อ"
+msgstr "ถ้าเป็นจริง หน้าจอจะถูกล็อคหลังจากผู้ใช้ระยะไกลคนสุดท้ายตัดการเชื่อมต่อ"
 
 #: ../server/vino-server.schemas.in.h:10
 msgid ""
@@ -341,7 +339,7 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Lock the screen when last user disconnect"
-msgstr "ล็อคสกรีนเมื่อผู้ใช้คนสุดท้ายตัดการติดต่อ"
+msgstr "ล็อคหน้าจอเมื่อผู้ใช้คนสุดท้ายตัดการติดต่อ"
 
 #: ../server/vino-server.schemas.in.h:15
 msgid "Only allow local connections"
@@ -487,73 +485,75 @@ msgstr "เทพพิทักษ์ การุญบุญญานัน�
 msgid "Share your desktop with other users"
 msgstr "แบ่งพื้นโต๊ะของคุณให้ผู้อื่นใช้ร่วม"
 
-#: ../server/vino-status-icon.c:360
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:361
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "ยืนยันที่จะตัดการเชื่อมต่อกับ '%s' หรือไม่?"
 
-#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-icon.c:363
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "ผู้ใช้ระยะไกลจากเครื่อง '%s' จะถูกตัดการเชื่อมต่อ คุณแน่ใจหรือไม่?"
 
-#: ../server/vino-status-icon.c:367
+#: ../server/vino-status-icon.c:368
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "ยืนยันที่จะตัดการเชื่อมต่อกับทุกเครื่องหรือไม่?"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:369
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "ผู้ใช้ระยะไกลทั้งหมดจะถูกตัดการเชื่อมต่อ คุณแน่ใจหรือไม่?"
 
-#: ../server/vino-status-icon.c:380
+#: ../server/vino-status-icon.c:381
 msgid "Disconnect"
 msgstr "ตัดการเชื่อมต่อ"
 
-#: ../server/vino-status-icon.c:406
+#: ../server/vino-status-icon.c:407
 msgid "_Preferences"
 msgstr "_ปรับแต่ง"
 
-#: ../server/vino-status-icon.c:421
+#: ../server/vino-status-icon.c:422
 msgid "Disconnect all"
 msgstr "ตัดการเชื่อมต่อทั้งหมด"
 
-#: ../server/vino-status-icon.c:444
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:446
 #, c-format
 msgid "Disconnect %s"
 msgstr "ตัดการเชื่อมต่อกับ %s"
 
-#: ../server/vino-status-icon.c:464
+#: ../server/vino-status-icon.c:466
 msgid "_Help"
 msgstr "_วิธีใช้"
 
-#: ../server/vino-status-icon.c:472
+#: ../server/vino-status-icon.c:474
 msgid "_About"
 msgstr "เ_กี่ยวกับ"
 
-#: ../server/vino-status-icon.c:598
+#: ../server/vino-status-icon.c:603
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "เกิดข้อผิดพลาดขณะตั้งต้น libnotify\n"
 
-#: ../server/vino-status-icon.c:612
+#: ../server/vino-status-icon.c:623
 msgid "Another user is viewing your desktop"
 msgstr "มีผู้ใช้อื่นกำลังมองพื้นโต๊ะของคุณ"
 
-#: ../server/vino-status-icon.c:613
+#: ../server/vino-status-icon.c:624
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "มีผู้ใช้จากเครื่อง '%s' กำลังมองพื้นโต๊ะของคุณจากระยะไกล"
 
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:629
 msgid "Another user is controlling your desktop"
 msgstr "มีผู้ใช้อื่นกำลังควบคุมพื้นโต๊ะของคุณ"
 
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:630
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "มีผู้ใช้จากเครื่อง '%s' กำลังควบคุมพื้นโต๊ะของคุณจากระยะไกล"
 
-#: ../server/vino-status-icon.c:641
+#: ../server/vino-status-icon.c:652
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "เกิดข้อผิดพลาดขณะแสดงกรอบคำพูดแจ้งเหตุ: %s\n"
@@ -584,6 +584,10 @@ msgstr "กำลังเริ่มใช้งานเซิร์ฟเว
 msgid "Not starting remote desktop server"
 msgstr "จะไม่เรียกใช้เซิร์ฟเวอร์พื้นโต๊ะระยะไกล"
 
+#~ msgid ""
+#~ "If checked, screen will be locked after the last remote client disconnect"
+#~ msgstr "ถ้าเลือก หน้าจอจะถูกล็อคหลังจากผู้ใช้จากเครื่องอื่นคนสุดท้ายตัดการเชื่อมต่อ"
+
 #~ msgid "failed to register with the message bus"
 #~ msgstr "ลงทะเบียนกับบัสข้อความไม่สำเร็จ"
 
@@ -594,10 +598,10 @@ msgstr "จะไม่เรียกใช้เซิร์ฟเวอร์
 #~ msgstr "เกิดข้อผิดพลาดใน dbus"
 
 #~ msgid "The screen to be monitored"
-#~ msgstr "สกรีนที่จะเฝ้ามอง"
+#~ msgstr "หน้าจอที่จะเฝ้ามอง"
 
 #~ msgid "The screen for which to create a VNC server"
-#~ msgstr "สกรีนที่จะสร้างเซิร์ฟเวอร์ VNC"
+#~ msgstr "หน้าจอที่จะสร้างเซิร์ฟเวอร์ VNC"
 
 #~ msgid "On Hold"
 #~ msgstr "ยับยั้งไว้"
