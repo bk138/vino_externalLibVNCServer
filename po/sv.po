@@ -1,14 +1,14 @@
 # Swedish messages for vino.
-# Copyright (C) 2004, 2006, 2007 Free Software Foundation, Inc.
-# Daniel Nylander <po@danielnylander.se>, 2006, 2007.
+# Copyright (C) 2004, 2006, 2007, 2008 Free Software Foundation, Inc.
+# Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008.
 # Christian Rose <menthos@menthos.com>, 2004.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-17 16:33+0100\n"
-"PO-Revision-Date: 2007-12-17 16:34+0100\n"
+"POT-Creation-Date: 2008-07-14 23:41+0200\n"
+"PO-Revision-Date: 2008-07-14 23:43+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -16,20 +16,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1025
-#: ../capplet/vino-preferences.c:1060
-#: ../capplet/vino-preferences.c:1118
+#: ../capplet/vino-preferences.c:1027
+#: ../capplet/vino-preferences.c:1062
+#: ../capplet/vino-preferences.c:1120
 #: ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Misslyckades med att öppna anslutning mot bussen: %s\n"
 
-#: ../capplet/vino-preferences.c:1327
+#: ../capplet/vino-preferences.c:1329
 msgid "Send this command by email"
 msgstr "Skicka detta kommando med e-post"
 
-#: ../capplet/vino-preferences.c:1362
+#: ../capplet/vino-preferences.c:1364
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -83,46 +83,46 @@ msgid "General"
 msgstr "Allmänt"
 
 #: ../capplet/vino-preferences.glade.h:10
-msgid "If checked, remote users accessing the desktop are required to support encryption"
-msgstr "Om kryssad kommer fjärranvändare som ansluter till skrivbordet att behöva använda kryptering"
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:12
-msgid "If checked, remote users are able to control your mouse and keyboard"
-msgstr "Om kryssad kommer fjärranvändare att kunna styra din mus och tangentbord"
-
-#: ../capplet/vino-preferences.glade.h:13
-msgid "If checked, screen will be locked after the last remote client disconnect"
-msgstr "Om kryssad kommer skärmen att låsas efter att den sista fjärrklienten kopplar från"
-
-#: ../capplet/vino-preferences.glade.h:14
-msgid "If checked, the server will only accept connections from localhost"
-msgstr "Om kryssad kommer servern endast att acceptera anslutningar från localhost"
-
-#: ../capplet/vino-preferences.glade.h:15
-msgid "If checked, the server will use another port, instead of the default (5900)"
-msgstr "Om kryssad kommer servern att använda en annan port istället för standardporten (5900)"
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:17
-msgid "If checked, your desktop will be shared"
-msgstr "Om kryssad kommer ditt skrivbord att delas ut"
-
-#: ../capplet/vino-preferences.glade.h:18
 msgid "Remote Desktop Preferences"
 msgstr "Inställningar för fjärrskrivbord"
 
-#: ../capplet/vino-preferences.glade.h:19
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:12
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr "Fjärranvändare kan styra din mus och tangentbord"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid "Remote users' VNC clients accessing the desktop are required to support encryption"
+msgstr "Fjärranvändarnas VNC-klienter som ansluter till skrivbordet måste ha stöd för kryptering"
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "Screen will be locked after the last remote client disconnect"
+msgstr "Skärmen kommer att låsas efter att den sista fjärrklienten kopplar från"
+
+#: ../capplet/vino-preferences.glade.h:15
 msgid "Some of these preferences are locked down"
 msgstr "En del av dessa inställningar är låsta"
 
-#: ../capplet/vino-preferences.glade.h:20
+#: ../capplet/vino-preferences.glade.h:16
+msgid "The server will only accept connections from localhost"
+msgstr "Servern kommer endast att acceptera anslutningar från localhost"
+
+#: ../capplet/vino-preferences.glade.h:17
+msgid "The server will use another port, instead of the default (5900)"
+msgstr "Servern kommer att använda en annan port istället för standardporten (5900)"
+
+#: ../capplet/vino-preferences.glade.h:18
 msgid "Users can view your desktop using this command:"
 msgstr "Användare kan se ditt skrivbord med hjälp av detta kommando:"
 
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:19
 msgid "When a user tries to view or control your desktop:"
 msgstr "När en användare försöker se eller kontrollera ditt skrivbord:"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:21
+msgid "Your desktop will be shared"
+msgstr "Ditt skrivbord kommer att delas ut"
 
 #: ../capplet/vino-preferences.glade.h:22
 msgid "_Allow other users to control your desktop"
@@ -426,73 +426,75 @@ msgstr ""
 msgid "Share your desktop with other users"
 msgstr "Dela ditt skrivbord med andra användare"
 
-#: ../server/vino-status-icon.c:360
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:361
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Är du säker på att du vill koppla från \"%s\"?"
 
-#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-icon.c:363
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Fjärranvändaren från \"%s\" kommer att kopplas från. Är du säker?"
 
-#: ../server/vino-status-icon.c:367
+#: ../server/vino-status-icon.c:368
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Är du säker på att du vill koppla från alla klienter?"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:369
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Alla fjärranvändare kommer att kopplas från. Är du säker?"
 
-#: ../server/vino-status-icon.c:380
+#: ../server/vino-status-icon.c:381
 msgid "Disconnect"
 msgstr "Koppla från"
 
-#: ../server/vino-status-icon.c:406
+#: ../server/vino-status-icon.c:407
 msgid "_Preferences"
 msgstr "_Inställningar"
 
-#: ../server/vino-status-icon.c:421
+#: ../server/vino-status-icon.c:422
 msgid "Disconnect all"
 msgstr "Koppla från alla"
 
-#: ../server/vino-status-icon.c:444
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:446
 #, c-format
 msgid "Disconnect %s"
 msgstr "Koppla från %s"
 
-#: ../server/vino-status-icon.c:464
+#: ../server/vino-status-icon.c:466
 msgid "_Help"
 msgstr "_Hjälp"
 
-#: ../server/vino-status-icon.c:472
+#: ../server/vino-status-icon.c:474
 msgid "_About"
 msgstr "_Om"
 
-#: ../server/vino-status-icon.c:598
+#: ../server/vino-status-icon.c:603
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Fel vid initiering av libnotify\n"
 
-#: ../server/vino-status-icon.c:612
+#: ../server/vino-status-icon.c:623
 msgid "Another user is viewing your desktop"
 msgstr "En annan användare ser på ditt skrivbord"
 
-#: ../server/vino-status-icon.c:613
+#: ../server/vino-status-icon.c:624
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "En fjärranvändare på datorn \"%s\" ser på ditt skrivbord."
 
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:629
 msgid "Another user is controlling your desktop"
 msgstr "En annan användare styr ditt skrivbord"
 
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:630
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "En fjärranvändare på datorn \"%s\" styr ditt skrivbord."
 
-#: ../server/vino-status-icon.c:641
+#: ../server/vino-status-icon.c:652
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Fel vid visning av notifieringsbubbla: %s\n"
@@ -523,6 +525,11 @@ msgstr "Startar fjärrskrivbordsserver"
 msgid "Not starting remote desktop server"
 msgstr "Startar inte fjärrskrivbordsserver"
 
+#~ msgid ""
+#~ "If checked, screen will be locked after the last remote client disconnect"
+#~ msgstr ""
+#~ "Om kryssad kommer skärmen att låsas efter att den sista fjärrklienten "
+#~ "kopplar från"
 #~ msgid "<b>Advanced Settings</b>"
 #~ msgstr "<b>Avancerade inställningar</b>"
 #~ msgid "failed to register with the message bus"
