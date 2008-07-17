@@ -1,4 +1,4 @@
-SUBDIRS = server capplet session docs po
+SUBDIRS = server capplet session tools docs po
 
 EXTRA_DIST =                \
 	MAINTAINERS         \

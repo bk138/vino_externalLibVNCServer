@@ -1,3 +1,14 @@
+2008-07-06  Jorge Pereira  <jorge@jorgepereira.com.br>
+
+	* Makefile.am:
+	* configure.in:
+	* tools/Makefile.am:
+	* tools/vino-passwd.c:
+	* po/POTFILES.in:
+	* configure.in:
+	Added a tool to change Vino password, similar to Unix passwd command.
+	Closes #540853.
+
 2008-07-02  Jonh Wendell  <jwendell@gnome.org>
 
 	* capplet/vino-preferences.glade: Use default invisible character in

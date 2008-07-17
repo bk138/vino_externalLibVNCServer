@@ -47,6 +47,8 @@ PKG_CHECK_MODULES(VINO_SERVER, glib-2.0 >= 2.12.0 gtk+-x11-2.0 gconf-2.0 libglad
 	
 PKG_CHECK_MODULES(VINO_CAPPLET, glib-2.0 >= 2.12.0 gtk+-2.0 >= 2.10.0 gconf-2.0 libglade-2.0 libgnomeui-2.0 dbus-glib-1)
 
+PKG_CHECK_MODULES(VINO_TOOLS, glib-2.0 >= 2.12.0 gconf-2.0)
+
 dnl --enable-libnotify=(yes|no|auto)
 LIBNOTIFY_VERSION=0.4.4
 
@@ -270,7 +272,7 @@ fi
 AC_SUBST(LIBZ)
 AC_SUBST(LIBJPEG)
 
-AC_CHECK_HEADERS([netinet/in.h sys/time.h fcntl.h unistd.h sys/socket.h])
+AC_CHECK_HEADERS([netinet/in.h sys/time.h fcntl.h unistd.h sys/socket.h signal.h])
 AC_CHECK_FUNCS([gettimeofday])
 
 dnl
@@ -336,6 +338,7 @@ server/libvncserver/Makefile
 server/libvncserver/rfb/Makefile
 capplet/Makefile
 session/Makefile
+tools/Makefile
 docs/Makefile
 po/Makefile.in
 ])
