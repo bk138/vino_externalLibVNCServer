@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-13 09:47+0200\n"
-"PO-Revision-Date: 2008-07-13 09:49+0200\n"
+"POT-Creation-Date: 2008-07-17 21:42+0200\n"
+"PO-Revision-Date: 2008-07-17 21:46+0200\n"
 "Last-Translator: Ignacio Casal Quinteiro <icq@svn.gnome.org>\n"
 "Language-Team: Galego <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -611,6 +611,69 @@ msgstr "Iniciando o servidor de escritorio remoto"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Non está a iniciar o servidor de escritorio remoto"
+
+#: ../tools/vino-passwd.c:115
+#, c-format
+msgid ""
+"ERROR: Maximum length of password is %d characters. Please, re-enter the "
+"password.\n"
+msgstr ""
+"ERRO: A lonxitude máxima de contrasinal é de %d caracteres. Introduza de "
+"novo o contrasinal.\n"
+
+#: ../tools/vino-passwd.c:145
+#, c-format
+msgid "Changing Vino password.\n"
+msgstr "Cambiando o contrasinal de Vino.\n"
+
+#: ../tools/vino-passwd.c:147
+msgid "Enter new Vino password: "
+msgstr "Introducir novo contrasinal de Vino: "
+
+#: ../tools/vino-passwd.c:150
+msgid "Retype new Vino password: "
+msgstr "Volver escribir o novo contrasinal de Vino: "
+
+#: ../tools/vino-passwd.c:156
+#, c-format
+msgid "vino-passwd: password updated successfully.\n"
+msgstr "vino-passwd: actualizado o contrasinal satisfactoriamente.\n"
+
+#: ../tools/vino-passwd.c:160
+#, c-format
+msgid "Sorry, passwords do not match.\n"
+msgstr "Os contrasinais non coinciden.\n"
+
+#: ../tools/vino-passwd.c:161
+#, c-format
+msgid "vino-passwd: password unchanged.\n"
+msgstr "vino-passwd: contrasinal sen cambiar.\n"
+
+#: ../tools/vino-passwd.c:176
+msgid "Show Vino version"
+msgstr "Mostrar versión de Vino"
+
+#: ../tools/vino-passwd.c:185
+msgid "- Updates Vino password"
+msgstr "- Actualiza o contrasinal de Vino"
+
+#: ../tools/vino-passwd.c:195
+msgid ""
+"Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr ""
+"Execute 'vino-passwd --help' para ver a lista completa de opcións "
+"dispoñibles da liña de comandos"
+
+#: ../tools/vino-passwd.c:202
+#, c-format
+msgid "VINO Version %s\n"
+msgstr "Versión de VINO %s\n"
+
+#: ../tools/vino-passwd.c:211
+#, c-format
+msgid "ERROR: You do not have enough permissions to change Vino password.\n"
+msgstr ""
+"ERRO: Non ten suficientes permisos para cambiar o contrasinal de Vino.\n"
 
 #~ msgid ""
 #~ "If checked, screen will be locked after the last remote client disconnect"
