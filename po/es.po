@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-25 19:56+0000\n"
-"PO-Revision-Date: 2008-06-27 23:27+0200\n"
+"POT-Creation-Date: 2008-07-17 18:33+0000\n"
+"PO-Revision-Date: 2008-07-20 15:44+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -98,11 +98,15 @@ msgstr "Los usuarios remotos pueden controlar el teclado y el ratón"
 msgid ""
 "Remote users' VNC clients accessing the desktop are required to support "
 "encryption"
-msgstr "Los clientes VNC de los usuarios accediendo al escritorio deberán soportar cifrado"
+msgstr ""
+"Los clientes VNC de los usuarios accediendo al escritorio deberán soportar "
+"cifrado"
 
 #: ../capplet/vino-preferences.glade.h:14
 msgid "Screen will be locked after the last remote client disconnect"
-msgstr "La pantalla se bloqueará después de que el último cliente remoto se desconecte"
+msgstr ""
+"La pantalla se bloqueará después de que el último cliente remoto se "
+"desconecte"
 
 #: ../capplet/vino-preferences.glade.h:15
 msgid "Some of these preferences are locked down"
@@ -609,4 +613,63 @@ msgstr "Iniciando el servidor de escritorio remoto"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "No iniciando el servidor de escritorio remoto"
+
+#: ../tools/vino-passwd.c:115
+#, c-format
+msgid ""
+"ERROR: Maximum length of password is %d characters. Please, re-enter the "
+"password.\n"
+msgstr ""
+"ERROR: La longitud máxima de la contraseña es de %d caracteres. Vuelva a introducir la "
+"contraseña.\n"
+
+#: ../tools/vino-passwd.c:145
+#, c-format
+msgid "Changing Vino password.\n"
+msgstr "Cambiando la contraseña de Vino.\n"
+
+#: ../tools/vino-passwd.c:147
+msgid "Enter new Vino password: "
+msgstr "Introduzca la nueva contraseña de Vino: "
+
+#: ../tools/vino-passwd.c:150
+msgid "Retype new Vino password: "
+msgstr "Reescriba la nueva contraseña de Vino: "
+
+#: ../tools/vino-passwd.c:156
+#, c-format
+msgid "vino-passwd: password updated successfully.\n"
+msgstr "vino-passwd: la contraseña se actualizó satisfactoriamente.\n"
+
+#: ../tools/vino-passwd.c:160
+#, c-format
+msgid "Sorry, passwords do not match.\n"
+msgstr "Las contraseñas no coinciden.\n"
+
+#: ../tools/vino-passwd.c:161
+#, c-format
+msgid "vino-passwd: password unchanged.\n"
+msgstr "vino-passwd: no se cambió la contraseña.\n"
+
+#: ../tools/vino-passwd.c:176
+msgid "Show Vino version"
+msgstr "Mostrar la versión de Vino"
+
+#: ../tools/vino-passwd.c:185
+msgid "- Updates Vino password"
+msgstr "- Actualiza la contraseña de Vino"
+
+#: ../tools/vino-passwd.c:195
+msgid "Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr "Ejecute «vino-passwd --help» para ver una lista completa de las opciones de la línea de comandos disponibles"
+
+#: ../tools/vino-passwd.c:202
+#, c-format
+msgid "VINO Version %s\n"
+msgstr "Versión %s de Vino\n"
+
+#: ../tools/vino-passwd.c:211
+#, c-format
+msgid "ERROR: You do not have enough permissions to change Vino password.\n"
+msgstr "ERROR: No tiene suficientes permisos para cambiar la contraseña de Vino.\n"
 
