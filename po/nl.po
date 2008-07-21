@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-04 13:16+0100\n"
-"PO-Revision-Date: 2008-02-04 13:26+0100\n"
+"POT-Creation-Date: 2008-07-21 20:32+0200\n"
+"PO-Revision-Date: 2008-07-21 20:32+0200\n"
 "Last-Translator: Wouter Bolsterlee <wbolster@gnome.org>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,18 +22,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1025 ../capplet/vino-preferences.c:1060
-#: ../capplet/vino-preferences.c:1118 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
+#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:148
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Het openen van de verbinding naar de bus is mislukt: %s\n"
 
-#: ../capplet/vino-preferences.c:1327
+#: ../capplet/vino-preferences.c:1329
 msgid "Send this command by email"
 msgstr "Deze opdracht versturen via e-mail"
 
-#: ../capplet/vino-preferences.c:1362
+#: ../capplet/vino-preferences.c:1364
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -87,57 +87,52 @@ msgid "General"
 msgstr "Algemeen"
 
 #: ../capplet/vino-preferences.glade.h:10
-msgid ""
-"If checked, remote users accessing the desktop are required to support "
-"encryption"
-msgstr ""
-"Indien ingeschakeld dienen gebruikers op afstand verplicht gegevenscodering te ondersteunen"
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:12
-msgid "If checked, remote users are able to control your mouse and keyboard"
-msgstr ""
-"Indien ingeschakeld kunnen gebruikers op afstand het toetsenbord en de muis bedienen"
-
-# Typo in msgid: moet "disconnects" of "disconnected" zijn -- Wouter Bolsterlee
-#: ../capplet/vino-preferences.glade.h:13
-msgid ""
-"If checked, screen will be locked after the last remote client disconnect"
-msgstr ""
-"Indien ingeschakeld wordt het scherm vergrendeld nadat de laatste gebruiker op afstand de "
-"verbinding heeft verbroken"
-
-#: ../capplet/vino-preferences.glade.h:14
-msgid "If checked, the server will only accept connections from localhost"
-msgstr "Indien ingeschakeld accepteert de server alleen verbindingen vanaf ‘localhost’"
-
-#: ../capplet/vino-preferences.glade.h:15
-msgid ""
-"If checked, the server will use another port, instead of the default (5900)"
-msgstr ""
-"Indien ingeschakeld gebruikt de server een andere poort in plaats van "
-"de standaardpoort (5900)."
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:17
-msgid "If checked, your desktop will be shared"
-msgstr "Indien ingeschakeld wordt uw bureaublad gedeeld"
-
-#: ../capplet/vino-preferences.glade.h:18
 msgid "Remote Desktop Preferences"
 msgstr "Bureaublad-op-afstand voorkeuren"
 
-#: ../capplet/vino-preferences.glade.h:19
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:12
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr "Gebruikers op afstand kunnen het toetsenbord en de muis bedienen"
+
+#: ../capplet/vino-preferences.glade.h:13
+msgid ""
+"Remote users' VNC clients accessing the desktop are required to support "
+"encryption"
+msgstr ""
+"Gebruikers op afstand dienen verplicht gegevenscodering te ondersteunen"
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "Screen will be locked after the last remote client disconnect"
+msgstr ""
+"Het scherm wordt vergrendeld nadat de laatste client de verbinding heeft "
+"verbroken."
+
+#: ../capplet/vino-preferences.glade.h:15
 msgid "Some of these preferences are locked down"
 msgstr "Sommige van deze voorkeuren zijn vergrendeld"
 
-#: ../capplet/vino-preferences.glade.h:20
+#: ../capplet/vino-preferences.glade.h:16
+msgid "The server will only accept connections from localhost"
+msgstr "De server accepteert alleen verbindingen vanaf ‘localhost’"
+
+#: ../capplet/vino-preferences.glade.h:17
+msgid "The server will use another port, instead of the default (5900)"
+msgstr ""
+"De server gebruikt een andere poort in plaats van de standaardpoort (5900)."
+
+#: ../capplet/vino-preferences.glade.h:18
 msgid "Users can view your desktop using this command:"
 msgstr "Gebruikers kunnen uw bureaublad zien met deze opdracht:"
 
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:19
 msgid "When a user tries to view or control your desktop:"
 msgstr "Als een gebruiker uw bureaublad wil bekijken of besturen:"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:21
+msgid "Your desktop will be shared"
+msgstr "Uw bureaublad wordt gedeeld"
 
 #: ../capplet/vino-preferences.glade.h:22
 msgid "_Allow other users to control your desktop"
@@ -417,7 +412,10 @@ msgid ""
 "icon only when there is someone connected, this is the default behavior; "
 "\"never\" - Never shows the icon."
 msgstr ""
-"Deze sleutel bepaalt het bedrag van het pictogram in het mededelingengebied. Er zijn die opties: ‘always’ zorgt ervoor dat het pictogram altijd getoond wordt; ‘client’ toont het pictogram alleen als iemand verbinding heeft (standaard); ‘never’ zorgt ervoor dat het pictogram nooit getoond wordt."
+"Deze sleutel bepaalt het bedrag van het pictogram in het mededelingengebied. "
+"Er zijn die opties: ‘always’ zorgt ervoor dat het pictogram altijd getoond "
+"wordt; ‘client’ toont het pictogram alleen als iemand verbinding heeft "
+"(standaard); ‘never’ zorgt ervoor dat het pictogram nooit getoond wordt."
 
 #: ../server/vino-server.schemas.in.h:23
 msgid ""
@@ -431,7 +429,8 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:24
 msgid "When the status icon should be shown"
-msgstr "Geeft aan of het pictogram in het mededelingengebied getoond moet worden"
+msgstr ""
+"Geeft aan of het pictogram in het mededelingengebied getoond moet worden"
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -526,77 +525,79 @@ msgstr ""
 msgid "Share your desktop with other users"
 msgstr "Uw bureaublad delen met andere gebruikers"
 
-#: ../server/vino-status-icon.c:360
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:361
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Weet u zeker dat u de verbinding met ‘%s’ wilt verbreken?"
 
-#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-icon.c:363
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr ""
 "De verbinding met de gebruiker op afstand vanaf ‘%s’ zal worden verbroken. "
 "Weet u het zeker?"
 
-#: ../server/vino-status-icon.c:367
+#: ../server/vino-status-icon.c:368
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Weet u zeker dat u de verbinding met alle clients wilt verbreken?"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:369
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr ""
 "De verbinding met alle gebruikers op afstand zal worden verbroken. Weet u "
 "het zeker?"
 
-#: ../server/vino-status-icon.c:380
+#: ../server/vino-status-icon.c:381
 msgid "Disconnect"
 msgstr "Verbinding verbreken"
 
-#: ../server/vino-status-icon.c:406
+#: ../server/vino-status-icon.c:407
 msgid "_Preferences"
 msgstr "_Voorkeuren"
 
-#: ../server/vino-status-icon.c:421
+#: ../server/vino-status-icon.c:422
 msgid "Disconnect all"
 msgstr "Alle verbindingen verbreken"
 
-#: ../server/vino-status-icon.c:444
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:446
 #, c-format
 msgid "Disconnect %s"
 msgstr "Verbinding met %s verbreken"
 
-#: ../server/vino-status-icon.c:464
+#: ../server/vino-status-icon.c:466
 msgid "_Help"
 msgstr "_Hulp"
 
-#: ../server/vino-status-icon.c:472
+#: ../server/vino-status-icon.c:474
 msgid "_About"
 msgstr "In_fo"
 
-#: ../server/vino-status-icon.c:598
+#: ../server/vino-status-icon.c:603
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Initialiseren van libnotify mislukt\n"
 
-#: ../server/vino-status-icon.c:612
+#: ../server/vino-status-icon.c:623
 msgid "Another user is viewing your desktop"
 msgstr "Een andere gebruiker bekijkt uw bureaublad"
 
-#: ../server/vino-status-icon.c:613
+#: ../server/vino-status-icon.c:624
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Een gebruiker van computer ‘%s’ bekijkt op afstand uw bureaublad."
 
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:629
 msgid "Another user is controlling your desktop"
 msgstr "Een andere gebruiker bestuurt uw bureaublad"
 
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:630
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "Een gebruiker van computer ‘%s’ bestuurt op afstand uw bureaublad."
 
-#: ../server/vino-status-icon.c:641
+#: ../server/vino-status-icon.c:652
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr ""
@@ -629,6 +630,76 @@ msgstr "Opstarten van bureaublad-op-afstand server"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "De bureaublad-op-afstand server wordt niet gestart"
+
+#: ../tools/vino-passwd.c:115
+#, c-format
+msgid ""
+"ERROR: Maximum length of password is %d characters. Please, re-enter the "
+"password.\n"
+msgstr ""
+"FOUT: De maximale lengte van een wachtwoord is %d tekens. Geef een ander "
+"wachtwoord op.\n"
+
+#: ../tools/vino-passwd.c:145
+#, c-format
+msgid "Changing Vino password.\n"
+msgstr "Vino-wachtwoord wijzigen.\n"
+
+#: ../tools/vino-passwd.c:147
+msgid "Enter new Vino password: "
+msgstr "Geef een nieuw Vino-wachtwoord: "
+
+#: ../tools/vino-passwd.c:150
+msgid "Retype new Vino password: "
+msgstr "Nieuw Vino-wachtwoord (nogmaals): "
+
+#: ../tools/vino-passwd.c:156
+#, c-format
+msgid "vino-passwd: password updated successfully.\n"
+msgstr "vino-passwd: wachtwoord succesvol veranderd.\n"
+
+#: ../tools/vino-passwd.c:160
+#, c-format
+msgid "Sorry, passwords do not match.\n"
+msgstr "Wachtwoorden komen niet overeen.\n"
+
+#: ../tools/vino-passwd.c:161
+#, c-format
+msgid "vino-passwd: password unchanged.\n"
+msgstr "vino-passwd: wachtwoord is niet gewijzigd.\n"
+
+#: ../tools/vino-passwd.c:176
+msgid "Show Vino version"
+msgstr "Vino-versie tonen"
+
+#: ../tools/vino-passwd.c:185
+msgid "- Updates Vino password"
+msgstr "— Wijzigt het Vino-wachtwoord"
+
+#: ../tools/vino-passwd.c:195
+msgid ""
+"Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr ""
+"Voer ‘vino-passwd --help’ uit voor een volledig overzicht van "
+"opdrachtregelparameters."
+
+#: ../tools/vino-passwd.c:202
+#, c-format
+msgid "VINO Version %s\n"
+msgstr "Vino versie %s\n"
+
+#: ../tools/vino-passwd.c:211
+#, c-format
+msgid "ERROR: You do not have enough permissions to change Vino password.\n"
+msgstr ""
+"FOUT: U heeft geen toegangsrechten om het Vino-wachtwoord te wijzigen.\n"
+
+# Typo in msgid: moet "disconnects" of "disconnected" zijn -- Wouter Bolsterlee
+#~ msgid ""
+#~ "If checked, screen will be locked after the last remote client disconnect"
+#~ msgstr ""
+#~ "Indien ingeschakeld wordt het scherm vergrendeld nadat de laatste "
+#~ "gebruiker op afstand de verbinding heeft verbroken"
 
 #~ msgid "    "
 #~ msgstr "    "
