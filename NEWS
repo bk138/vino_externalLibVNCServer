@@ -1,3 +1,32 @@
+Vino 2.23.5
+============
+
+  Features
+
+	+ New command-line tool, vino-passwd, which allows you to change
+	vino password. Similar to Unix passwd command. (Jorge Pereira)
+
+  Fixes
+
+	+ Bug #534262 - cyclic clipboard propagation (Jonh Wendell)
+	+ Minor bug fixes
+
+  Translations
+
+	+ Djihed Afifi (ar)
+	+ Rostislav "zbrox" Raykov (bg)
+	+ Jorge González (es)
+	+ Ivar Smolin (et)
+	+ Ignacio Casal Quinteiro (gl)
+	+ Oldie (he)
+	+ Kjartan Maraas (nb)
+	+ Wouter Bolsterlee (nl)
+	+ Yannig Marchegay (Kokoyaya) (oc)
+	+ Matej Urbančič (sl)
+	+ Laurent Dhima (sq)
+	+ Daniel Nylander (sv)
+	+ Theppitak Karoonboonyanan (th)
+
 Vino 2.22.1
 ============
 
