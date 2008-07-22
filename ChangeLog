@@ -1,5 +1,11 @@
 2008-07-22  Jonh Wendell  <jwendell@gnome.org>
 
+	* configure.in: post-release bump version to 2.23.6
+
+==================== 2.23.5 ======================
+
+2008-07-22  Jonh Wendell  <jwendell@gnome.org>
+
 	* configure.in: pre-release bump version to 2.23.5
 
 2008-07-22  Jonh Wendell  <jwendell@gnome.org>
