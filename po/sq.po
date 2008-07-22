@@ -1,14 +1,15 @@
 # Përkthimi i vino në shqip.
 # This file is distributed under the same license as the vino package.
 # Copyright (C) 2004, 2007, 2008 Free Software Foundation, Inc.
-# Elian Myftiu	<elian@alblinux.net>,		2004.
-# Laurent Dhima	<laurenti@alblinux.net>,	2007, 2008.
+#
+# Elian Myftiu  <elian@alblinux.net>,           2004.
+# Laurent Dhima <laurenti@alblinux.net>,        2007, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: vino gnome-2-22\n"
+"Project-Id-Version: vino HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-15 18:16+0200\n"
-"PO-Revision-Date: 2008-07-15 18:16+0200\n"
+"POT-Creation-Date: 2008-07-17 18:33+0000\n"
+"PO-Revision-Date: 2008-07-22 12:44+0200\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -74,69 +75,67 @@ msgstr "Shfaq gji_thmonë një ikonë"
 
 #: ../capplet/vino-preferences.glade.h:8
 msgid "Allow other users to _view your desktop"
-msgstr "Lejo të tjerë të _shikojnë hapësirën tënde të punës"
+msgstr "Lejo përdoruesit e tjerë të _shohin hapësirën tuaj të punës"
 
 #: ../capplet/vino-preferences.glade.h:9
 msgid "General"
 msgstr "Të përgjithshme"
 
 #: ../capplet/vino-preferences.glade.h:10
-msgid ""
-"If checked, remote users accessing the desktop are required to support "
-"encryption"
-msgstr ""
-"Nëse zgjedhur, përdoruesve që futen në distancë në hapësirën e punës u "
-"kërkohet të suportojnë kriptimin"
+msgid "Remote Desktop Preferences"
+msgstr "Preferimet e ambientit në distancë të punës"
 
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:12
-msgid "If checked, remote users are able to control your mouse and keyboard"
+msgid "Remote users are able to control your mouse and keyboard"
 msgstr ""
-"Nëse zgjedhur, përdoruesit në distancë janë në gjendje të kontrollojnë mouse "
+"Përdoruesit në distancë janë në gjendje të kontrollojnë mouse "
 "dhe tastierën tuaj"
 
 #: ../capplet/vino-preferences.glade.h:13
-msgid "If checked, screen will be locked after the last remote client disconnect"
+msgid ""
+"Remote users' VNC clients accessing the desktop are required to support "
+"encryption"
 msgstr ""
-"Nëse zgjedhur, ekrani do të bllokohet mbasi klienti i fundit në distancë të "
-"jetë shkëputur"
+"Klientët VNC të përdoruesve në distancë që kanë hyrje në ambientin e punës "
+"duhet të suportojnë kriptimin"
 
 #: ../capplet/vino-preferences.glade.h:14
-msgid "If checked, the server will only accept connections from localhost"
-msgstr "Nëse zgjedhur, serveri do të pranojë vetëm lidhjet nga localhost"
+msgid "Screen will be locked after the last remote client disconnect"
+msgstr "Ekrani do të bllokohet mbasi klienti i fundit remot të jetë shkëputur"
 
-# (pofilter) accelerators: accelerator _ does not occur in original and should not be in translation
-# (pofilter) isreview: Check if the unit has been marked review.
 #: ../capplet/vino-preferences.glade.h:15
-msgid "If checked, the server will use another port, instead of the default (5900)"
-msgstr ""
-"Nëse zgjedhur, serveri do të përdorë një portë tjetër, në vend të portës së "
-"zakonshme (5900)"
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:17
-msgid "If checked, your desktop will be shared"
-msgstr "Nëse zgjedhur, hapësirën juaj e punës do të jetë e përbashkët"
-
-#: ../capplet/vino-preferences.glade.h:18
-msgid "Remote Desktop Preferences"
-msgstr "Pëlqimet e Hapësirës së Punës në Distancë"
-
-#: ../capplet/vino-preferences.glade.h:19
 msgid "Some of these preferences are locked down"
 msgstr "Disa nga këto pëlqime janë bllokuar"
 
-#: ../capplet/vino-preferences.glade.h:20
+#: ../capplet/vino-preferences.glade.h:16
+msgid "The server will only accept connections from localhost"
+msgstr "Serveri do të pranojë vetëm lidhjet nga localhost"
+
+# (pofilter) accelerators: accelerator _ does not occur in original and should not be in translation
+# (pofilter) isreview: Check if the unit has been marked review.
+#: ../capplet/vino-preferences.glade.h:17
+msgid "The server will use another port, instead of the default (5900)"
+msgstr ""
+"Serveri do të përdorë një portë tjetër, në vend të portës së "
+"zakonshme (5900)"
+
+#: ../capplet/vino-preferences.glade.h:18
 msgid "Users can view your desktop using this command:"
 msgstr ""
 "Përdoruesit mund të shikojnë hapësirën tënde të punës me anë të kësaj "
 "komande:"
 
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:19
 msgid "When a user tries to view or control your desktop:"
 msgstr ""
 "Kur një përdorues përpiqet të shikojë apo kontrollojë hapësirën tënde të "
 "punës:"
+
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:21
+msgid "Your desktop will be shared"
+msgstr "Hapësira juaj e punës do të bashkëndahet"
 
 #: ../capplet/vino-preferences.glade.h:22
 msgid "_Allow other users to control your desktop"
@@ -551,77 +550,79 @@ msgstr ""
 msgid "Share your desktop with other users"
 msgstr "Bashkëndaj hapësirën tënde të punës me përdorues të tjerë"
 
-#: ../server/vino-status-icon.c:360
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:361
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Je i sigurt që dëshiron të shkëputësh '%s'?"
 
-#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-icon.c:363
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Përdoruesi remot nga '%s' do të shkëputet. Je i sigurt?"
 
-#: ../server/vino-status-icon.c:367
+#: ../server/vino-status-icon.c:368
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Je i sigurt që dëshiron të shkëputësh të gjithë klientët?"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:369
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Të gjithë përdoruesit remotë do të shkëputen. Je i sigurt?"
 
-#: ../server/vino-status-icon.c:380
+#: ../server/vino-status-icon.c:381
 msgid "Disconnect"
 msgstr "Shkëput"
 
-#: ../server/vino-status-icon.c:406
+#: ../server/vino-status-icon.c:407
 msgid "_Preferences"
 msgstr "_Preferimet"
 
-#: ../server/vino-status-icon.c:421
+#: ../server/vino-status-icon.c:422
 msgid "Disconnect all"
 msgstr "Shkëputi të gjithë"
 
-#: ../server/vino-status-icon.c:444
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:446
 #, c-format
 msgid "Disconnect %s"
 msgstr "Shkëput %s"
 
-#: ../server/vino-status-icon.c:464
+#: ../server/vino-status-icon.c:466
 msgid "_Help"
 msgstr "_Ndihmë"
 
-#: ../server/vino-status-icon.c:472
+#: ../server/vino-status-icon.c:474
 msgid "_About"
 msgstr "_Informacione"
 
-#: ../server/vino-status-icon.c:601
+#: ../server/vino-status-icon.c:603
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Gabim gjatë nisjes së libnotify\n"
 
-#: ../server/vino-status-icon.c:621
+#: ../server/vino-status-icon.c:623
 msgid "Another user is viewing your desktop"
 msgstr "Një përdorues tjetër është duke shikuar hapësirën tënde të punës"
 
-#: ../server/vino-status-icon.c:622
+#: ../server/vino-status-icon.c:624
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr ""
 "Një përdorues në kompjuterin '%s' po shikon në distancë hapësirën tënde të "
 "punës."
 
-#: ../server/vino-status-icon.c:627
+#: ../server/vino-status-icon.c:629
 msgid "Another user is controlling your desktop"
 msgstr "Një tjetër përdorues po kontrollon hapësirën tënde të punës"
 
-#: ../server/vino-status-icon.c:628
+#: ../server/vino-status-icon.c:630
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr ""
 "Një përdorues në kompjuterin '%s' po kontrollon në distancë hapësirën tënde "
 "të punës."
 
-#: ../server/vino-status-icon.c:650
+#: ../server/vino-status-icon.c:652
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Gabim gjatë shfaqjes së flluskës njoftuse: %s\n"
@@ -655,4 +656,65 @@ msgstr "Duke filluar shërbyesin e hapësirës së punës në distancë"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Nuk po e filloj shërbyesin e hapësirës së punës në distancë"
+
+#: ../tools/vino-passwd.c:115
+#, c-format
+msgid ""
+"ERROR: Maximum length of password is %d characters. Please, re-enter the "
+"password.\n"
+msgstr ""
+"GABIM: Gjatësia maksimum e fjalëkalimit është %d simbole. Të lutem, rishkruaj "
+"fjalëkalimin.\n"
+
+#: ../tools/vino-passwd.c:145
+#, c-format
+msgid "Changing Vino password.\n"
+msgstr "Ndryshimi i fjalëkalimit të Vino.\n"
+
+#: ../tools/vino-passwd.c:147
+msgid "Enter new Vino password: "
+msgstr "Shkruaj fjalëkalimin e ri të Vino: "
+
+#: ../tools/vino-passwd.c:150
+msgid "Retype new Vino password: "
+msgstr "Rishkruaj fjalëkalimin e ri të Vino: "
+
+#: ../tools/vino-passwd.c:156
+#, c-format
+msgid "vino-passwd: password updated successfully.\n"
+msgstr "vino-passwd: fjalëkalimi u përditësua me sukses.\n"
+
+#: ../tools/vino-passwd.c:160
+#, c-format
+msgid "Sorry, passwords do not match.\n"
+msgstr "Më vjen keq, fjalëkalimet nuk përputhen.\n"
+
+#: ../tools/vino-passwd.c:161
+#, c-format
+msgid "vino-passwd: password unchanged.\n"
+msgstr "vino-passwd: fjalëkalimi nuk u ndryshua.\n"
+
+#: ../tools/vino-passwd.c:176
+msgid "Show Vino version"
+msgstr "Shfaq versionin e Vino"
+
+#: ../tools/vino-passwd.c:185
+msgid "- Updates Vino password"
+msgstr "- Përditëson fjalëkalimin e Vino"
+
+#: ../tools/vino-passwd.c:195
+msgid "Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr ""
+"Ekzekuto 'vino-passwd --help' për të shikuar listën e plotë me opsionet në "
+"dispozicion të rreshtit të komandës"
+
+#: ../tools/vino-passwd.c:202
+#, c-format
+msgid "VINO Version %s\n"
+msgstr "VINO, Versioni %s\n"
+
+#: ../tools/vino-passwd.c:211
+#, c-format
+msgid "ERROR: You do not have enough permissions to change Vino password.\n"
+msgstr "GABIM: Nuk keni të drejta të mjaftueshme për të ndryshuar fjalëkalimin e Vino.\n"
 
