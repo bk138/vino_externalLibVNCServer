@@ -1,5 +1,9 @@
 2008-07-22  Jonh Wendell  <jwendell@gnome.org>
 
+	* configure.in: pre-release bump version to 2.23.5
+
+2008-07-22  Jonh Wendell  <jwendell@gnome.org>
+
 	* server/vino-input.c: Fix variable declaration. Closes #544038.
 	Patch by Alban Crequy.
 
