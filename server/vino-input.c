@@ -228,6 +228,8 @@ typedef struct
  */
 static VinoInputData global_input_data = { 0, };
 
+static gchar *cb_str = NULL;
+
 #ifdef HAVE_XTEST
 
 static struct {
@@ -435,8 +437,6 @@ static struct {
   { XK_Greek_upsilonaccentdieresis, { XK_dead_acute, XK_dead_diaeresis, XK_Greek_upsilon } }
 };
 static const int num_decompositions = G_N_ELEMENTS (decompositions);
-
-static gchar *cb_str = NULL;
 
 static void vino_input_initialize_keycodes (Display *xdisplay);
 
