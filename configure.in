@@ -47,7 +47,7 @@ PKG_CHECK_MODULES(VINO_SERVER, glib-2.0 >= 2.12.0 gtk+-x11-2.0 gconf-2.0 libglad
 	
 PKG_CHECK_MODULES(VINO_CAPPLET, glib-2.0 >= 2.12.0 gtk+-2.0 >= 2.10.0 gconf-2.0 libglade-2.0 libgnomeui-2.0 dbus-glib-1)
 
-PKG_CHECK_MODULES(VINO_TOOLS, glib-2.0 >= 2.12.0 gconf-2.0)
+PKG_CHECK_MODULES(VINO_TOOLS, glib-2.0 >= 2.12.0 gconf-2.0 gobject-2.0 >= 2.12.0 gnome-keyring-1)
 
 dnl --enable-libnotify=(yes|no|auto)
 LIBNOTIFY_VERSION=0.4.4
