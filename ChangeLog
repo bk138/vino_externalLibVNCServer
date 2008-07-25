@@ -1,3 +1,8 @@
+2008-07-25  Matthias Clasen  <mclasen@redhat.com>
+
+	* capplet/vino-preferences.glade: Use a standard icon name.
+	Closes #544639.
+
 2008-07-24  Halton Huo <halton.huo@sun.com>
 
 	* configure.in: Fix build error in folder tools. Closes #544277.
