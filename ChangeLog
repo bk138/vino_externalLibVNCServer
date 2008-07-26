@@ -1,3 +1,14 @@
+2008-07-26  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	Bug 544735 – Use single GTK+ includes
+
+	* server/vino-http.c:
+	* server/vino-shell.c:
+	* server/vino-status-icon.h:
+	* session/vino-session.c:
+
+	Use single <gtk/gtk.h> includes.
+
 2008-07-25  Jorge Pereira  <jorge@jorgepereira.com.br>
 
 	* capplet/vino-preferences.c:

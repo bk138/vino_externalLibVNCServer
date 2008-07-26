@@ -26,10 +26,10 @@
 #include <string.h>
 #include <time.h>
 #include <libbonobo.h>
+#include <glib/gi18n.h>
 #include <gconf/gconf-client.h>
 #include <gdk/gdkdisplay.h>
-#include <gtk/gtkmain.h>
-#include <glib/gi18n.h>
+#include <gtk/gtk.h>
 #include <libgnomeui/gnome-client.h>
 #include <libgnomeui/gnome-ui-init.h>
 

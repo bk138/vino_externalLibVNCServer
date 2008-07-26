@@ -23,7 +23,7 @@
 #ifndef __VINO_STATUS_ICON_H__
 #define __VINO_STATUS_ICON_H__
 
-#include <gtk/gtkstatusicon.h>
+#include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 

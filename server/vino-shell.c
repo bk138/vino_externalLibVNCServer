@@ -26,7 +26,7 @@
 
 #include <string.h>
 #include <gdk/gdkdisplay.h>
-#include <gtk/gtkmain.h>
+#include <gtk/gtk.h>
 #include <bonobo/bonobo-main.h>
 #include <bonobo/bonobo-object.h>
 #include "GNOME_RemoteDesktop.h"
