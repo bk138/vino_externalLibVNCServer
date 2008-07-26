@@ -201,5 +201,19 @@
       </locale>
     </schema>
 
+    <schema>
+      <key>/schemas/desktop/gnome/remote_access/disable_background</key>
+      <applyto>/desktop/gnome/remote_access/disable_background</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+         <short>When true, disable the background on receive valid session</short>
+         <long>
+           When true, disable the background on receive valid session
+         </long>
+      </locale>
+    </schema>
+
   </schemalist>  
 </gconfschemafile>

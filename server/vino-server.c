@@ -36,6 +36,7 @@
 #include "vino-dbus-listener.h"
 #include "vino-util.h"
 #include "vino-enums.h"
+#include "vino-background.h"
 #include <sys/poll.h>
 #include <dbus/dbus-glib.h>
 #include <gtk/gtk.h>
@@ -82,6 +83,7 @@ struct _VinoServerPrivate
   guint             last_auth_failed : 1;
   guint             use_alternative_port : 1;
   guint             lock_screen : 1;
+  guint             disable_background : 1;
 };
 
 struct _VinoClient
@@ -111,7 +113,8 @@ enum
   PROP_AUTH_METHODS,
   PROP_VNC_PASSWORD,
   PROP_PORT,
-  PROP_LOCK_SCREEN
+  PROP_LOCK_SCREEN,
+  PROP_DISABLE_BACKGROUND
 };
 
 static enum rfbNewClientAction vino_server_auth_client (VinoServer *server,
@@ -166,13 +169,40 @@ vino_server_lock_screen (VinoServer *server)
 #undef GNOME_SCREENSAVER_PATH
 }
 
+void
+vino_server_set_disable_background (VinoServer *server,
+                                    gboolean disable_background)
+{
+  g_return_if_fail (VINO_IS_SERVER (server));
+
+  disable_background = disable_background != FALSE;
+
+  if (server->priv->disable_background != disable_background)
+    {
+      server->priv->disable_background = disable_background;
+
+      g_object_notify (G_OBJECT (server), "disable-background");
+    }
+}
+
+gboolean
+vino_server_get_disable_background (VinoServer *server)
+{
+  g_return_val_if_fail (VINO_IS_SERVER (server), FALSE);
+
+  return server->priv->disable_background;
+}
 
 static void
 vino_server_client_accepted (VinoServer *server,
                              VinoClient *client)
 {
   vino_status_icon_add_client (server->priv->icon, client);
+
+  if (vino_server_get_disable_background (server))
+     vino_background_draw (FALSE);
 }
+
 
 static void
 vino_server_client_disconnected (VinoServer *server,
@@ -180,6 +210,9 @@ vino_server_client_disconnected (VinoServer *server,
 {
   if (vino_status_icon_remove_client (server->priv->icon, client))
     vino_server_lock_screen (server);
+
+  if (vino_server_get_disable_background (server))
+    vino_background_draw (TRUE);
 }
 
 static void
@@ -1016,6 +1049,9 @@ vino_server_set_property (GObject      *object,
     case PROP_LOCK_SCREEN:
       vino_server_set_lock_screen (server, g_value_get_boolean (value));
       break;
+    case PROP_DISABLE_BACKGROUND:
+      vino_server_set_disable_background (server, g_value_get_boolean (value));
+      break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -1067,6 +1103,9 @@ vino_server_get_property (GObject    *object,
       break;
     case PROP_LOCK_SCREEN:
       g_value_set_boolean (value, server->priv->lock_screen);
+      break;
+    case PROP_DISABLE_BACKGROUND:
+      g_value_set_boolean (value, server->priv->disable_background);
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -1233,6 +1272,18 @@ vino_server_class_init (VinoServerClass *klass)
 				   g_param_spec_boolean ("lock-screen",
 							 "Locks screen on disconnect",
 							 "After last user disconnects, screen will be locked",
+							 FALSE,
+                                                         G_PARAM_READWRITE   |
+                                                         G_PARAM_CONSTRUCT   |
+                                                         G_PARAM_STATIC_NAME |
+                                                         G_PARAM_STATIC_NICK |
+                                                         G_PARAM_STATIC_BLURB));
+
+  g_object_class_install_property (gobject_class,
+				   PROP_DISABLE_BACKGROUND,
+				   g_param_spec_boolean ("disable-background",
+							 "Background on server",
+							 "Disable the background image on server",
 							 FALSE,
                                                          G_PARAM_READWRITE   |
                                                          G_PARAM_CONSTRUCT   |
@@ -1621,6 +1672,7 @@ vino_server_set_lock_screen (VinoServer *server,
     }
 }
 
+
 VinoStatusIcon *
 vino_server_get_status_icon (VinoServer *server)
 {
@@ -1628,3 +1680,4 @@ vino_server_get_status_icon (VinoServer *server)
 
   return server->priv->icon;
 }
+

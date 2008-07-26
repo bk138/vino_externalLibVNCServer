@@ -1,3 +1,28 @@
+2008-07-25  Jorge Pereira  <jorge@jorgepereira.com.br>
+
+	* capplet/vino-preferences.c:
+	(vino_preferences_dialog_update_for_allowed),
+	(vino_preferences_dialog_disable_background_toggled),
+	(vino_preferences_dialog_disable_background_notify),
+	(vino_preferences_dialog_setup_disable_background_toggle),
+	(vino_preferences_dialog_init):
+	* capplet/vino-preferences.glade:
+	* server/Makefile.am:
+	* server/vino-background.c: (vino_background_handler),
+	(vino_background_draw):
+	* server/vino-background.h:
+	* server/vino-prefs.c: (vino_prefs_disable_background_changed),
+	(vino_prefs_create_server), (vino_prefs_init):
+	* server/vino-server.c: (vino_server_set_disable_background),
+	(vino_server_get_disable_background),
+	(vino_server_client_accepted), (vino_server_client_disconnected),
+	(vino_server_set_property), (vino_server_get_property),
+	(vino_server_class_init):
+	* server/vino-server.h:
+	* server/vino-server.schemas.in:
+	New feature to disable wallpaper when connected to vino.
+	Close #515072.
+
 2008-07-25  Matthias Clasen  <mclasen@redhat.com>
 
 	* capplet/vino-preferences.glade: Use a standard icon name.

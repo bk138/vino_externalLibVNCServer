@@ -26,9 +26,11 @@
 
 #include <string.h>
 #include <gconf/gconf-client.h>
+#include <signal.h>
 #include "vino-util.h"
 #include "vino-mdns.h"
 #include "vino-status-icon.h"
+#include "vino-background.h"
 
 #define VINO_PREFS_DIR                    "/desktop/gnome/remote_access"
 #define VINO_PREFS_ENABLED                VINO_PREFS_DIR "/enabled"
@@ -42,8 +44,9 @@
 #define VINO_PREFS_VNC_PASSWORD           VINO_PREFS_DIR "/vnc_password"
 #define VINO_PREFS_LOCK_SCREEN            VINO_PREFS_DIR "/lock_screen_on_disconnect"
 #define VINO_PREFS_ICON_VISIBILITY        VINO_PREFS_DIR "/icon_visibility"
+#define VINO_PREFS_DISABLE_BACKGROUND     VINO_PREFS_DIR "/disable_background"
 
-#define VINO_N_LISTENERS 11
+#define VINO_N_LISTENERS 12
 
 static GConfClient *vino_client  = NULL;
 static GSList      *vino_servers = NULL;
@@ -59,6 +62,7 @@ static char           *vino_vnc_password         = NULL;
 static gboolean        vino_use_alternative_port = FALSE;
 static int             vino_alternative_port     = VINO_SERVER_DEFAULT_PORT;
 static gboolean        vino_lock_screen          = FALSE;
+static gboolean        vino_disable_background   = FALSE;
 static VinoStatusIconVisibility vino_icon_visibility = VINO_STATUS_ICON_VISIBILITY_CLIENT;
 
 static void
@@ -392,6 +396,30 @@ vino_prefs_icon_visibility_changed (GConfClient *client,
     }
 }
 
+static void
+vino_prefs_disable_background_changed (GConfClient *client,
+                                       guint       cnxn_id,
+                                       GConfEntry  *entry)
+{
+  gboolean  disable_background;
+  GSList   *l;
+
+  if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
+    return;
+
+  disable_background = gconf_value_get_bool (entry->value) != FALSE;
+
+  if (vino_disable_background == disable_background)
+    return;
+
+  vino_disable_background = disable_background;
+
+  dprintf (PREFS, "Disable background changed: %s\n", vino_disable_background ? "(true)" : "(false)");
+
+  for (l = vino_servers; l; l = l->next)
+    vino_server_set_disable_background (l->data, disable_background);
+}
+
 void
 vino_prefs_create_server (GdkScreen *screen)
 {
@@ -410,7 +438,8 @@ vino_prefs_create_server (GdkScreen *screen)
 			 "vnc-password",         vino_vnc_password,
 			 "on-hold",              !vino_enabled,
 			 "screen",               screen,
-                         "lock-screen",          vino_lock_screen,
+             "lock-screen",          vino_lock_screen,
+             "disable-background",   vino_disable_background,
 			 NULL);
 
   vino_servers = g_slist_prepend (vino_servers, server);
@@ -427,6 +456,10 @@ vino_prefs_init (gboolean view_only)
   GSList *auth_methods_list, *l;
   int i = 0;
   char *key_str;
+  
+  signal (SIGQUIT, vino_background_handler); /* Ctrl+C */
+  signal (SIGTERM, vino_background_handler); /* kill -15 */
+  signal (SIGSEGV, vino_background_handler); /* Segmentation fault */
 
   vino_client = gconf_client_get_default ();
 
@@ -501,6 +534,11 @@ vino_prefs_init (gboolean view_only)
                                             NULL);
   dprintf (PREFS, "Lock screen on disconnect: %s\n",
            vino_lock_screen ? "(true)" : "(false)");
+
+  vino_disable_background = gconf_client_get_bool (vino_client,
+                                                   VINO_PREFS_DISABLE_BACKGROUND,
+                                                   NULL);
+  dprintf (PREFS, "Disable background: %s\n", vino_disable_background ? "(true)" : "(false)");
 
   key_str = gconf_client_get_string (vino_client,
                                      VINO_PREFS_ICON_VISIBILITY,
@@ -592,6 +630,14 @@ vino_prefs_init (gboolean view_only)
 
   i++;
 
+  vino_listeners [i] =
+    gconf_client_notify_add (vino_client,
+			     VINO_PREFS_DISABLE_BACKGROUND,
+			     (GConfClientNotifyFunc) vino_prefs_disable_background_changed,
+			     NULL, NULL, NULL);
+
+  i++;
+
   g_assert (i == VINO_N_LISTENERS);
 }
 
@@ -619,3 +665,4 @@ vino_prefs_shutdown (void)
   g_object_unref (vino_client);
   vino_client = NULL;
 }
+

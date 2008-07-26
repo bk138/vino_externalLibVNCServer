@@ -67,6 +67,8 @@ vino_server_SOURCES = \
 	vino-status-icon.h \
 	vino-dbus-listener.c \
 	vino-dbus-listener.h \
+	vino-background.c \
+	vino-background.h \
 	$(VINO_HTTP_SRC) \
 	$(CORBA_SRCLIST) \
 	$(NULL)

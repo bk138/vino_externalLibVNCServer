@@ -392,7 +392,6 @@
                           <widget class="GtkImage" id="network_icon">
                             <property name="visible">True</property>
                             <property name="yalign">0</property>
-                            <property name="stock">gtk-missing-image</property>
                             <property name="icon_size">6</property>
                             <property name="icon_name">network-workgroup</property>
                           </widget>
@@ -460,6 +459,20 @@
                                 <property name="position">1</property>
                               </packing>
                             </child>
+                            <child>
+                              <widget class="GtkCheckButton" id="disable_background_toggle">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="tooltip" translatable="yes">Disable the wallpaper when successfull connection</property>
+                                <property name="label" translatable="yes">Disable the _wallpaper when connected</property>
+                                <property name="use_underline">True</property>
+                                <property name="response_id">0</property>
+                                <property name="draw_indicator">True</property>
+                              </widget>
+                              <packing>
+                                <property name="position">2</property>
+                              </packing>
+                            </child>
                           </widget>
                           <packing>
                             <property name="expand">False</property>
@@ -500,7 +513,6 @@
                           <widget class="GtkImage" id="network_icon2">
                             <property name="visible">True</property>
                             <property name="yalign">0</property>
-                            <property name="stock">gtk-missing-image</property>
                             <property name="icon_size">6</property>
                             <property name="icon_name">system-lock-screen</property>
                           </widget>
@@ -570,7 +582,7 @@
                     <property name="visible">True</property>
                     <property name="spacing">6</property>
                     <child>
-                      <widget class="GtkLabel" id="label1">
+                      <widget class="GtkLabel" id="label2">
                         <property name="visible">True</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="xalign">0</property>
@@ -587,7 +599,6 @@
                           <widget class="GtkImage" id="notification_icon">
                             <property name="visible">True</property>
                             <property name="yalign">0</property>
-                            <property name="stock">gtk-missing-image</property>
                             <property name="icon_size">6</property>
                             <property name="icon_name">gnome-panel-notification-area</property>
                           </widget>
@@ -667,7 +678,7 @@
               </packing>
             </child>
             <child>
-              <widget class="GtkLabel" id="label2">
+              <widget class="GtkLabel" id="label3">
                 <property name="visible">True</property>
                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                 <property name="label" translatable="yes">Advanced</property>

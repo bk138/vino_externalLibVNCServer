@@ -101,6 +101,10 @@ void                 vino_server_set_lock_screen          (VinoServer     *serve
 							   gboolean        lock_screen);
 gboolean             vino_server_get_lock_screen          (VinoServer     *server);
 
+void                 vino_server_set_disable_background   (VinoServer     *server,
+                                                           gboolean        disable_background);
+gboolean             vino_server_get_disable_background   (VinoServer     *server);
+
 #include "vino-status-icon.h"
 VinoStatusIcon      *vino_server_get_status_icon          (VinoServer     *server);
 

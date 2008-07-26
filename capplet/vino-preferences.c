@@ -54,8 +54,9 @@
 #define VINO_PREFS_USE_ALTERNATIVE_PORT   VINO_PREFS_DIR "/use_alternative_port"
 #define VINO_PREFS_ALTERNATIVE_PORT       VINO_PREFS_DIR "/alternative_port"
 #define VINO_PREFS_LOCK_SCREEN            VINO_PREFS_DIR "/lock_screen_on_disconnect"
+#define VINO_PREFS_DISABLE_BACKGROUND     VINO_PREFS_DIR "/disable_background"
 
-#define N_LISTENERS 12
+#define N_LISTENERS 13
 
 #define VINO_DBUS_BUS_NAME  "org.gnome.Vino"
 #define VINO_DBUS_INTERFACE "org.gnome.VinoScreen"
@@ -83,6 +84,7 @@ typedef struct {
   GtkWidget   *use_alternative_port_toggle;
   GtkWidget   *alternative_port_entry;
   GtkWidget   *lock_screen_toggle;
+  GtkWidget   *disable_background_toggle;
   GtkTooltips *tips;
 
   guint        listeners [N_LISTENERS];
@@ -176,6 +178,7 @@ vino_preferences_dialog_update_for_allowed (VinoPreferencesDialog *dialog,
   gtk_widget_set_sensitive (dialog->alternative_port_entry,      allowed &&
 			    gconf_client_get_bool (dialog->client, VINO_PREFS_USE_ALTERNATIVE_PORT, NULL));
   gtk_widget_set_sensitive (dialog->lock_screen_toggle,          allowed);
+  gtk_widget_set_sensitive (dialog->disable_background_toggle,   allowed);
 }
 
 static void
@@ -1003,6 +1006,67 @@ vino_preferences_dialog_setup_password_entry (VinoPreferencesDialog *dialog)
 }
 
 static void
+vino_preferences_dialog_disable_background_toggled (GtkToggleButton       *toggle,
+                                                    VinoPreferencesDialog *dialog)
+{
+  gboolean disable_background;
+
+  disable_background = gtk_toggle_button_get_active (toggle);
+
+  gconf_client_set_bool (dialog->client, VINO_PREFS_DISABLE_BACKGROUND, disable_background, NULL);
+}
+
+static void
+vino_preferences_dialog_disable_background_notify (GConfClient           *client,
+                                                   guint                  cnx_id,
+                                                   GConfEntry            *entry,
+                                                   VinoPreferencesDialog *dialog)
+{
+  gboolean disable_background;
+
+  if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
+    return;
+
+  disable_background = gconf_value_get_bool (entry->value) != FALSE;
+
+  if (disable_background != gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->disable_background_toggle)))
+    {
+      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->disable_background_toggle), disable_background);
+    }
+}
+
+static gboolean
+vino_preferences_dialog_setup_disable_background_toggle (VinoPreferencesDialog *dialog)
+{
+  gboolean disable_background;
+
+  dialog->disable_background_toggle = glade_xml_get_widget (dialog->xml, "disable_background_toggle");
+  g_assert (dialog->disable_background_toggle != NULL);
+
+  disable_background = gconf_client_get_bool (dialog->client, VINO_PREFS_DISABLE_BACKGROUND, NULL);
+
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->disable_background_toggle), disable_background);
+
+  g_signal_connect (dialog->disable_background_toggle, "toggled",
+		    G_CALLBACK (vino_preferences_dialog_disable_background_toggled), dialog);
+
+  if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_DISABLE_BACKGROUND, NULL))
+    {
+      gtk_widget_set_sensitive (dialog->disable_background_toggle, FALSE);
+      gtk_widget_show (dialog->writability_warning);
+    }
+
+  dialog->listeners [dialog->n_listeners] = 
+    gconf_client_notify_add (dialog->client,
+			     VINO_PREFS_DISABLE_BACKGROUND,
+			     (GConfClientNotifyFunc) vino_preferences_dialog_disable_background_notify,
+			     dialog, NULL, NULL);
+  dialog->n_listeners++;
+
+  return disable_background;
+}
+
+static void
 vino_preferences_server_updated (DBusGProxy *proxy,
                                  const char *name,
                                  const char *prev_owner,
@@ -1436,6 +1500,7 @@ vino_preferences_dialog_init (VinoPreferencesDialog *dialog)
   vino_preferences_dialog_setup_alternative_port_entry      (dialog);
   vino_preferences_dialog_setup_use_alternative_port_toggle (dialog);
   vino_preferences_dialog_setup_lock_screen_toggle          (dialog);
+  vino_preferences_dialog_setup_disable_background_toggle   (dialog);
 
   g_assert (dialog->n_listeners == dialog->expected_listeners);
 
