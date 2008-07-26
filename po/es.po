@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-17 18:33+0000\n"
-"PO-Revision-Date: 2008-07-20 15:44+0200\n"
+"POT-Creation-Date: 2008-07-26 02:11+0000\n"
+"PO-Revision-Date: 2008-07-26 10:44+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,18 +21,18 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
-#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
-#: ../server/vino-server.c:148
+#: ../capplet/vino-preferences.c:1091 ../capplet/vino-preferences.c:1126
+#: ../capplet/vino-preferences.c:1184 ../server/vino-dbus-listener.c:374
+#: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Falló al abrir conexión con bus: %s\n"
 
-#: ../capplet/vino-preferences.c:1329
+#: ../capplet/vino-preferences.c:1393
 msgid "Send this command by email"
 msgstr "Enviar este comando por correo-e"
 
-#: ../capplet/vino-preferences.c:1364
+#: ../capplet/vino-preferences.c:1428
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -82,19 +82,27 @@ msgid "Allow other users to _view your desktop"
 msgstr "Permitir a otros usuarios _ver mi escritorio"
 
 #: ../capplet/vino-preferences.glade.h:9
+msgid "Disable the _wallpaper when connected"
+msgstr "Desactivar el _fondo de pantalla al conectarse"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid "Disable the wallpaper when successfull connection"
+msgstr "Desactivar el fondo de pantalla en conexiones satisfactorias"
+
+#: ../capplet/vino-preferences.glade.h:11
 msgid "General"
 msgstr "General"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:12
 msgid "Remote Desktop Preferences"
 msgstr "Preferencias del escritorio remoto"
 
 #. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.glade.h:14
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "Los usuarios remotos pueden controlar el teclado y el ratón"
 
-#: ../capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.glade.h:15
 msgid ""
 "Remote users' VNC clients accessing the desktop are required to support "
 "encryption"
@@ -102,70 +110,70 @@ msgstr ""
 "Los clientes VNC de los usuarios accediendo al escritorio deberán soportar "
 "cifrado"
 
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:16
 msgid "Screen will be locked after the last remote client disconnect"
 msgstr ""
 "La pantalla se bloqueará después de que el último cliente remoto se "
 "desconecte"
 
-#: ../capplet/vino-preferences.glade.h:15
+#: ../capplet/vino-preferences.glade.h:17
 msgid "Some of these preferences are locked down"
 msgstr "Algunas de estas preferencias están bloqueadas"
 
-#: ../capplet/vino-preferences.glade.h:16
+#: ../capplet/vino-preferences.glade.h:18
 msgid "The server will only accept connections from localhost"
 msgstr "El servidor sólo aceptará conexiones desde el equipo local"
 
-#: ../capplet/vino-preferences.glade.h:17
+#: ../capplet/vino-preferences.glade.h:19
 msgid "The server will use another port, instead of the default (5900)"
 msgstr "El servidor usará otro puerto, en lugar del predeterminado (5900)"
 
-#: ../capplet/vino-preferences.glade.h:18
+#: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
 msgstr "Los usuarios pueden ver tu escritorio usando este comando:"
 
-#: ../capplet/vino-preferences.glade.h:19
+#: ../capplet/vino-preferences.glade.h:21
 msgid "When a user tries to view or control your desktop:"
 msgstr "Cuando un usuario intenta ver o controlar tu escritorio:"
 
 #. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:23
 msgid "Your desktop will be shared"
 msgstr "Se compartirá su escritorio"
 
-#: ../capplet/vino-preferences.glade.h:22
+#: ../capplet/vino-preferences.glade.h:24
 msgid "_Allow other users to control your desktop"
 msgstr "_Permitir a otros usuarios controlar tu escritorio"
 
-#: ../capplet/vino-preferences.glade.h:23
+#: ../capplet/vino-preferences.glade.h:25
 msgid "_Lock screen on disconnect"
 msgstr "B_loquear la pantalla al desconectar"
 
-#: ../capplet/vino-preferences.glade.h:24
+#: ../capplet/vino-preferences.glade.h:26
 msgid "_Never display an icon"
 msgstr "No mostrar un icono _nunca"
 
-#: ../capplet/vino-preferences.glade.h:25
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Only allow local connections"
 msgstr "Permitir sólo conexiones _locales"
 
-#: ../capplet/vino-preferences.glade.h:26
+#: ../capplet/vino-preferences.glade.h:28
 msgid "_Only display an icon when there is someone connected"
 msgstr "Mostrar s_olo un icono cuando hay alguien conectado"
 
-#: ../capplet/vino-preferences.glade.h:27
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Password:"
 msgstr "_Contraseña:"
 
-#: ../capplet/vino-preferences.glade.h:28
+#: ../capplet/vino-preferences.glade.h:30
 msgid "_Require encryption"
 msgstr "_Requerir cifrado"
 
-#: ../capplet/vino-preferences.glade.h:29
+#: ../capplet/vino-preferences.glade.h:31
 msgid "_Require the user to enter this password:"
 msgstr "_Requerir que el usuario introduzca una contraseña:"
 
-#: ../capplet/vino-preferences.glade.h:30
+#: ../capplet/vino-preferences.glade.h:32
 msgid "_Use an alternative port:"
 msgstr "_Usar un puerto alternativo:"
 
@@ -427,6 +435,10 @@ msgstr ""
 msgid "When the status icon should be shown"
 msgstr "Cuándo se debe mostrar el icono de estado"
 
+#: ../server/vino-server.schemas.in.h:25
+msgid "When true, disable the background on receive valid session"
+msgstr "Cuando está activado desactiva el fondo de pantalla al recibir una sesión válida"
+
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "El servidor de Escritorio Remoto ya está en ejecución; saliendo ...\n"
@@ -620,8 +632,8 @@ msgid ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
 "password.\n"
 msgstr ""
-"ERROR: La longitud máxima de la contraseña es de %d caracteres. Vuelva a introducir la "
-"contraseña.\n"
+"ERROR: La longitud máxima de la contraseña es de %d caracteres. Vuelva a "
+"introducir la contraseña.\n"
 
 #: ../tools/vino-passwd.c:145
 #, c-format
@@ -661,7 +673,9 @@ msgstr "- Actualiza la contraseña de Vino"
 
 #: ../tools/vino-passwd.c:195
 msgid "Run 'vino-passwd --help' to see a full list of available command line options"
-msgstr "Ejecute «vino-passwd --help» para ver una lista completa de las opciones de la línea de comandos disponibles"
+msgstr ""
+"Ejecute «vino-passwd --help» para ver una lista completa de las opciones de "
+"la línea de comandos disponibles"
 
 #: ../tools/vino-passwd.c:202
 #, c-format
