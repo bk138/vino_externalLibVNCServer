@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-21 20:32+0200\n"
-"PO-Revision-Date: 2008-07-21 20:32+0200\n"
+"POT-Creation-Date: 2008-07-29 01:28+0200\n"
+"PO-Revision-Date: 2008-07-29 01:28+0200\n"
 "Last-Translator: Wouter Bolsterlee <wbolster@gnome.org>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,18 +22,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
-#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
-#: ../server/vino-server.c:148
+#: ../capplet/vino-preferences.c:1091 ../capplet/vino-preferences.c:1126
+#: ../capplet/vino-preferences.c:1184 ../server/vino-dbus-listener.c:374
+#: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Het openen van de verbinding naar de bus is mislukt: %s\n"
 
-#: ../capplet/vino-preferences.c:1329
+#: ../capplet/vino-preferences.c:1393
 msgid "Send this command by email"
 msgstr "Deze opdracht versturen via e-mail"
 
-#: ../capplet/vino-preferences.c:1364
+#: ../capplet/vino-preferences.c:1428
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -83,90 +83,98 @@ msgid "Allow other users to _view your desktop"
 msgstr "_Andere gebruikers toestaan uw bureaublad te bekijken"
 
 #: ../capplet/vino-preferences.glade.h:9
+msgid "Disable the _wallpaper when connected"
+msgstr "_Achtergrondafbeelding uitschakelen bij verbinding"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid "Disable the wallpaper when successfull connection"
+msgstr "Achtergrondafbeelding uitschakelen na het maken van een verbinding"
+
+#: ../capplet/vino-preferences.glade.h:11
 msgid "General"
 msgstr "Algemeen"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:12
 msgid "Remote Desktop Preferences"
 msgstr "Bureaublad-op-afstand voorkeuren"
 
 #. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.glade.h:14
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "Gebruikers op afstand kunnen het toetsenbord en de muis bedienen"
 
-#: ../capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.glade.h:15
 msgid ""
 "Remote users' VNC clients accessing the desktop are required to support "
 "encryption"
 msgstr ""
 "Gebruikers op afstand dienen verplicht gegevenscodering te ondersteunen"
 
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:16
 msgid "Screen will be locked after the last remote client disconnect"
 msgstr ""
 "Het scherm wordt vergrendeld nadat de laatste client de verbinding heeft "
 "verbroken."
 
-#: ../capplet/vino-preferences.glade.h:15
+#: ../capplet/vino-preferences.glade.h:17
 msgid "Some of these preferences are locked down"
 msgstr "Sommige van deze voorkeuren zijn vergrendeld"
 
-#: ../capplet/vino-preferences.glade.h:16
+#: ../capplet/vino-preferences.glade.h:18
 msgid "The server will only accept connections from localhost"
 msgstr "De server accepteert alleen verbindingen vanaf ‘localhost’"
 
-#: ../capplet/vino-preferences.glade.h:17
+#: ../capplet/vino-preferences.glade.h:19
 msgid "The server will use another port, instead of the default (5900)"
 msgstr ""
 "De server gebruikt een andere poort in plaats van de standaardpoort (5900)."
 
-#: ../capplet/vino-preferences.glade.h:18
+#: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
 msgstr "Gebruikers kunnen uw bureaublad zien met deze opdracht:"
 
-#: ../capplet/vino-preferences.glade.h:19
+#: ../capplet/vino-preferences.glade.h:21
 msgid "When a user tries to view or control your desktop:"
 msgstr "Als een gebruiker uw bureaublad wil bekijken of besturen:"
 
 #. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:23
 msgid "Your desktop will be shared"
 msgstr "Uw bureaublad wordt gedeeld"
 
-#: ../capplet/vino-preferences.glade.h:22
+#: ../capplet/vino-preferences.glade.h:24
 msgid "_Allow other users to control your desktop"
 msgstr "Andere gebruikers toestaan uw bureaublad te _besturen"
 
-#: ../capplet/vino-preferences.glade.h:23
+#: ../capplet/vino-preferences.glade.h:25
 msgid "_Lock screen on disconnect"
 msgstr "_Scherm vergrendelen na verbreken verbinding"
 
-#: ../capplet/vino-preferences.glade.h:24
+#: ../capplet/vino-preferences.glade.h:26
 msgid "_Never display an icon"
 msgstr "Pictogram _nooit tonen"
 
-#: ../capplet/vino-preferences.glade.h:25
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Only allow local connections"
 msgstr "Alleen l_okale verbindingen toestaan"
 
-#: ../capplet/vino-preferences.glade.h:26
+#: ../capplet/vino-preferences.glade.h:28
 msgid "_Only display an icon when there is someone connected"
 msgstr "Pictogram alleen tonen als iemand _verbinding heeft gemaakt"
 
-#: ../capplet/vino-preferences.glade.h:27
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Password:"
 msgstr "_Wachtwoord:"
 
-#: ../capplet/vino-preferences.glade.h:28
+#: ../capplet/vino-preferences.glade.h:30
 msgid "_Require encryption"
 msgstr "_Gegevenscodering vereisen"
 
-#: ../capplet/vino-preferences.glade.h:29
+#: ../capplet/vino-preferences.glade.h:31
 msgid "_Require the user to enter this password:"
 msgstr "De _gebruiker vragen om een wachtwoord in te voeren"
 
-#: ../capplet/vino-preferences.glade.h:30
+#: ../capplet/vino-preferences.glade.h:32
 msgid "_Use an alternative port:"
 msgstr "_Alternatieve poort gebruiken:"
 
@@ -432,9 +440,14 @@ msgid "When the status icon should be shown"
 msgstr ""
 "Geeft aan of het pictogram in het mededelingengebied getoond moet worden"
 
+#: ../server/vino-server.schemas.in.h:25
+msgid "When true, disable the background on receive valid session"
+msgstr ""
+"Indien ingeschakeld wordt de achtergrondafbeelding uitgeschakeld na verbinden"
+
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "Bureaublad-op-afstand server draait al; afsluiten...\n"
+msgstr "Bureaublad-op-afstand server draait al; afsluiten…\n"
 
 #: ../server/vino-shell.c:79
 msgid ""
@@ -442,7 +455,7 @@ msgid ""
 "exiting ...\n"
 msgstr ""
 "Probleem bij registeren van bureaublad-op-afstand server met bonobo-"
-"activering; afsluiten...\n"
+"activering; afsluiten…\n"
 
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
