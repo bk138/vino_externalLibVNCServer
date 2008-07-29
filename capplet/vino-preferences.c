@@ -41,6 +41,10 @@
 #include <gnome-keyring.h>
 #endif
 
+#ifdef VINO_ENABLE_LIBUNIQUE
+#include <unique/unique.h>
+#endif
+
 #define VINO_PREFS_DIR                    "/desktop/gnome/remote_access"
 #define VINO_PREFS_ENABLED                VINO_PREFS_DIR "/enabled"
 #define VINO_PREFS_PROMPT_ENABLED         VINO_PREFS_DIR "/prompt_enabled"
@@ -86,6 +90,9 @@ typedef struct {
   GtkWidget   *lock_screen_toggle;
   GtkWidget   *disable_background_toggle;
   GtkTooltips *tips;
+#ifdef VINO_ENABLE_LIBUNIQUE
+  UniqueApp   *app;
+#endif
 
   guint        listeners [N_LISTENERS];
   int          n_listeners;
@@ -1508,6 +1515,10 @@ vino_preferences_dialog_init (VinoPreferencesDialog *dialog)
 
   gtk_widget_show (dialog->dialog);
 
+#ifdef VINO_ENABLE_LIBUNIQUE
+  unique_app_watch_window (dialog->app, GTK_WINDOW (dialog->dialog));
+#endif
+
   return TRUE;
 
 #undef VINO_GLADE_FILE  
@@ -1549,6 +1560,36 @@ vino_preferences_dialog_finalize (VinoPreferencesDialog *dialog)
   if (dialog->xml)
     g_object_unref (dialog->xml);
   dialog->xml = NULL;
+
+#ifdef VINO_ENABLE_LIBUNIQUE
+  if (dialog->app)
+    g_object_unref (dialog->app);
+  dialog->app = NULL;
+#endif
+}
+
+static gboolean
+vino_preferences_is_running (VinoPreferencesDialog *dialog)
+{
+#ifdef VINO_ENABLE_LIBUNIQUE
+  dialog->app = unique_app_new ("org.gnome.Vino.Preferences", NULL);
+
+  if (unique_app_is_running (dialog->app))
+    {
+      UniqueResponse response;
+
+      response = unique_app_send_message (dialog->app, UNIQUE_ACTIVATE, NULL);
+        
+      g_object_unref (dialog->app);
+      dialog->app = NULL;
+       
+      return response == UNIQUE_RESPONSE_OK;
+    }
+  else
+    return FALSE;
+#else
+  return FALSE;
+#endif
 }
 
 int
@@ -1563,6 +1604,9 @@ main (int argc, char **argv)
   gnome_program_init (PACKAGE, VERSION, LIBGNOMEUI_MODULE,
 		      argc, argv, NULL);
 
+  if (vino_preferences_is_running (&dialog))
+    return 0;
+  
   if (!vino_preferences_dialog_init (&dialog))
     {
       vino_preferences_dialog_finalize (&dialog);

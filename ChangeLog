@@ -1,3 +1,12 @@
+2008-07-29  Jonh Wendell <jwendell@gnome.org>
+
+	* capplet/Makefile.am:
+	* capplet/vino-preferences.c:
+	* configure.in: Added a compile-time option (--enable-libunique)
+	to use the LibUnique library, which allows only one instance of
+	capplet running.
+	Based on a patch provided by Jorge Pereira <jorge@jorgepereira.com.br>.
+	
 2008-07-26  Wouter Bolsterlee  <wbolster@svn.gnome.org>
 
 	Bug 544735 – Use single GTK+ includes

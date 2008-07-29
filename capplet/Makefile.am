@@ -7,6 +7,7 @@ INCLUDES = \
 	$(VINO_CAPPLET_CFLAGS) \
 	$(VINO_KEYRING_CFLAGS) \
 	$(VINO_HTTP_CFLAGS) \
+	$(VINO_LIBUNIQUE_CFLAGS) \
 	$(WARN_CFLAGS) \
 	$(NULL)
 
@@ -18,6 +19,7 @@ vino_preferences_SOURCES = \
 vino_preferences_LDADD = \
 	$(VINO_CAPPLET_LIBS) \
 	$(VINO_KEYRING_LIBS) \
+	$(VINO_LIBUNIQUE_LIBS) \
 	$(X_LIBS) \
 	$(NULL)
 
