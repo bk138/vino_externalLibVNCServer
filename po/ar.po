@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD.ar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-27 12:00+0000\n"
+"POT-Creation-Date: 2008-07-29 02:22+0100\n"
 "PO-Revision-Date: 2008-02-27 11:09+0100\n"
 "Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -20,18 +20,18 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : "
 "3\n"
 
-#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
-#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
-#: ../server/vino-server.c:148
+#: ../capplet/vino-preferences.c:1091 ../capplet/vino-preferences.c:1126
+#: ../capplet/vino-preferences.c:1184 ../server/vino-dbus-listener.c:374
+#: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "فشل فتح اتصال مع الناقل: %s\n"
 
-#: ../capplet/vino-preferences.c:1329
+#: ../capplet/vino-preferences.c:1393
 msgid "Send this command by email"
 msgstr "أرسِل هذا الأمر بالبريد الإلكتروني"
 
-#: ../capplet/vino-preferences.c:1364
+#: ../capplet/vino-preferences.c:1428
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -81,47 +81,53 @@ msgid "Allow other users to _view your desktop"
 msgstr "اسمح للمستخدمين الآخرين ب_عرض سطح مكتبك"
 
 #: ../capplet/vino-preferences.glade.h:9
+msgid "Disable the _wallpaper when connected"
+msgstr ""
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid "Disable the wallpaper when successfull connection"
+msgstr ""
+
+#: ../capplet/vino-preferences.glade.h:11
 msgid "General"
 msgstr "عامّ"
 
-#: ../capplet/vino-preferences.glade.h:10
-msgid ""
-"If checked, remote users accessing the desktop are required to support "
-"encryption"
-msgstr "إذا كان مفعلا، يجب أن يدعم المستخدون البعيدون التشفير"
-
-#. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:12
-msgid "If checked, remote users are able to control your mouse and keyboard"
-msgstr ""
-"إذا كان مفعلا، سيتمكن المستخدمون البعيدون من التحكم بالفأرة ولوحة الفاتيح"
-
-#: ../capplet/vino-preferences.glade.h:13
-msgid ""
-"If checked, screen will be locked after the last remote client disconnect"
-msgstr "إذا كان مفعلا، سيتم غلق الشاشة عند اغلاق آخر مستخدم للاتصال"
-
-#: ../capplet/vino-preferences.glade.h:14
-msgid "If checked, the server will only accept connections from localhost"
-msgstr "إذا كان مفعلا، سيقبل الخادوم الاتصالات المحلية فقط"
-
-#: ../capplet/vino-preferences.glade.h:15
-msgid ""
-"If checked, the server will use another port, instead of the default (5900)"
-msgstr "إذا كان مفعلا، سيستمع الخادوم لمنفذ آخر، بدلا من الإفتراضي (5900)"
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:17
-msgid "If checked, your desktop will be shared"
-msgstr "إذا كان مفعلا، ستتم مشاركة سطح مكتبك"
-
-#: ../capplet/vino-preferences.glade.h:18
 msgid "Remote Desktop Preferences"
 msgstr "تفضيلات سطح المكتب البعيد"
 
-#: ../capplet/vino-preferences.glade.h:19
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:14
+#, fuzzy
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr ""
+"إذا كان مفعلا، سيتمكن المستخدمون البعيدون من التحكم بالفأرة ولوحة الفاتيح"
+
+#: ../capplet/vino-preferences.glade.h:15
+#, fuzzy
+msgid ""
+"Remote users' VNC clients accessing the desktop are required to support "
+"encryption"
+msgstr "إذا كان مفعلا، يجب أن يدعم المستخدون البعيدون التشفير"
+
+#: ../capplet/vino-preferences.glade.h:16
+#, fuzzy
+msgid "Screen will be locked after the last remote client disconnect"
+msgstr "اذا كان صحيحا، سيتم غلق الشاشة عند اغلاق آخر مستخدم للاتصال."
+
+#: ../capplet/vino-preferences.glade.h:17
 msgid "Some of these preferences are locked down"
 msgstr "بعض هذه التّفضيلات مقفل"
+
+#: ../capplet/vino-preferences.glade.h:18
+#, fuzzy
+msgid "The server will only accept connections from localhost"
+msgstr "إذا كان مفعلا، سيقبل الخادوم الاتصالات المحلية فقط"
+
+#: ../capplet/vino-preferences.glade.h:19
+#, fuzzy
+msgid "The server will use another port, instead of the default (5900)"
+msgstr "إذا كان مفعلا، سيستمع الخادوم لمنفذ آخر، بدلا من الإفتراضي (5900)"
 
 #: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
@@ -131,39 +137,45 @@ msgstr "يمكن للمستخدمين عرض سطح مكتبك باستخدام 
 msgid "When a user tries to view or control your desktop:"
 msgstr "عندما يحاول مستخدم عرض أو التّحكم بسطح مكتبك:"
 
-#: ../capplet/vino-preferences.glade.h:22
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:23
+#, fuzzy
+msgid "Your desktop will be shared"
+msgstr "إذا كان مفعلا، ستتم مشاركة سطح مكتبك"
+
+#: ../capplet/vino-preferences.glade.h:24
 msgid "_Allow other users to control your desktop"
 msgstr "ا_سمح للمستخدمين الآخرين بالتّحكّم بسطح مكتبك."
 
-#: ../capplet/vino-preferences.glade.h:23
+#: ../capplet/vino-preferences.glade.h:25
 msgid "_Lock screen on disconnect"
 msgstr "ا_قفل الشاشة في حالة الغاء الاتصال"
 
-#: ../capplet/vino-preferences.glade.h:24
+#: ../capplet/vino-preferences.glade.h:26
 msgid "_Never display an icon"
-msgstr "_لاتعرض الأيقونة أبداً"
+msgstr "_لاتعرض الأيقونة أبدًا"
 
-#: ../capplet/vino-preferences.glade.h:25
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Only allow local connections"
 msgstr "اس_مح بالاتصالات المحلّية فقط"
 
-#: ../capplet/vino-preferences.glade.h:26
+#: ../capplet/vino-preferences.glade.h:28
 msgid "_Only display an icon when there is someone connected"
 msgstr "ا_عرض ايقونة فقط عندا يكون أحدهم متصلا"
 
-#: ../capplet/vino-preferences.glade.h:27
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Password:"
 msgstr "_كلمة السر:"
 
-#: ../capplet/vino-preferences.glade.h:28
+#: ../capplet/vino-preferences.glade.h:30
 msgid "_Require encryption"
 msgstr "التّ_شفير مطلوب:"
 
-#: ../capplet/vino-preferences.glade.h:29
+#: ../capplet/vino-preferences.glade.h:31
 msgid "_Require the user to enter this password:"
 msgstr "ا_طلب من المستخدم ادخال كلمة السر هذه:"
 
-#: ../capplet/vino-preferences.glade.h:30
+#: ../capplet/vino-preferences.glade.h:32
 msgid "_Use an alternative port:"
 msgstr "ا_ستعمل رقم منفذ بديل:"
 
@@ -285,7 +297,7 @@ msgid ""
 msgstr ""
 "إذا ضبط لـtrue، لن يسمح للمستخدمين البعيدين بالوصول إلى سطح المكتب حتى يوافق "
 "المستخدم على الجهاز المضيف على الاتّصال. ينصح به خاصة عندما لا يكون الوصول "
-"محمياً بكلمة سر."
+"محميًا بكلمة سر."
 
 #: ../server/vino-server.schemas.in.h:7
 msgid ""
@@ -302,7 +314,7 @@ msgid ""
 "encryption unless the intervening network is trusted."
 msgstr ""
 "إذا ضبط لـtrue، يطلب من المستخدمين البعيدين أن يدعموا التّشفير. ينصح بشكل "
-"كبير أن تستخدم عميلاً يدعم التّشفير ما لم تكن الشبكة موثوقة."
+"كبير أن تستخدم عميلًا يدعم التّشفير ما لم تكن الشبكة موثوقة."
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
@@ -407,9 +419,13 @@ msgstr ""
 msgid "When the status icon should be shown"
 msgstr "متى يجب إظهار أيقونة التنبيه"
 
+#: ../server/vino-server.schemas.in.h:25
+msgid "When true, disable the background on receive valid session"
+msgstr ""
+
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "خادوم سطح المكتب البعيد يعمل حالياً، خروج...\n"
+msgstr "خادوم سطح المكتب البعيد يعمل حاليًا، خروج...\n"
 
 #: ../server/vino-shell.c:79
 msgid ""
@@ -497,73 +513,75 @@ msgstr ""
 msgid "Share your desktop with other users"
 msgstr "شارِك سطح مكتبك مع المستخدمين الآخرين"
 
-#: ../server/vino-status-icon.c:360
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:361
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "أمتأكّدٌ أنّك تريد قطع اتصال '%s'؟"
 
-#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-icon.c:363
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "سيقطع اتصال المستخدم عن بعد من '%s'. أمتأكّد؟"
 
-#: ../server/vino-status-icon.c:367
+#: ../server/vino-status-icon.c:368
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "أمتأكد من أنك تريد قطع اتصّال كل العملاء؟"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:369
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "سيقطع اتصال كل المستخدمين عن بعد. أمتأكّد؟"
 
-#: ../server/vino-status-icon.c:380
+#: ../server/vino-status-icon.c:381
 msgid "Disconnect"
 msgstr "اقطع الاتصال"
 
-#: ../server/vino-status-icon.c:406
+#: ../server/vino-status-icon.c:407
 msgid "_Preferences"
 msgstr "_تفضيلات"
 
-#: ../server/vino-status-icon.c:421
+#: ../server/vino-status-icon.c:422
 msgid "Disconnect all"
 msgstr "اقطع الكلّ"
 
-#: ../server/vino-status-icon.c:444
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:446
 #, c-format
 msgid "Disconnect %s"
 msgstr "ا_قطع اتصال %s"
 
-#: ../server/vino-status-icon.c:464
+#: ../server/vino-status-icon.c:466
 msgid "_Help"
 msgstr "م_ساعدة"
 
-#: ../server/vino-status-icon.c:472
+#: ../server/vino-status-icon.c:474
 msgid "_About"
 msgstr "_حوْل"
 
-#: ../server/vino-status-icon.c:598
+#: ../server/vino-status-icon.c:603
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "خطأ أثناء بدأ libnotify\n"
 
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:623
 msgid "Another user is viewing your desktop"
 msgstr "يشاهد مستخدم آخر سطح مكتبك"
 
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:624
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "يُشاهد مستخدم على الحاسوب '%s' سطح مكتبك عن بعد."
 
-#: ../server/vino-status-icon.c:624
+#: ../server/vino-status-icon.c:629
 msgid "Another user is controlling your desktop"
 msgstr "يتحكّم مستخدم آخر بسطح مكتبك"
 
-#: ../server/vino-status-icon.c:625
+#: ../server/vino-status-icon.c:630
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "تحكّم مستخدم على الحاسوب '%s' بسطح مكتبك عن بعد."
 
-#: ../server/vino-status-icon.c:647
+#: ../server/vino-status-icon.c:652
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "خطأ أثناء عرض فقّاعة التبليغ: %s\n"
@@ -584,7 +602,7 @@ msgstr "فشل تنشيط %s: خطأ مجهول\n"
 
 #: ../session/vino-session.c:231
 msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "فشل تنشيط خادوم سطح المكتب البعيد، حاولت عدداً كبيراً من المرّات\n"
+msgstr "فشل تنشيط خادوم سطح المكتب البعيد، حاولت عددًا كبيرًا من المرّات\n"
 
 #: ../session/vino-session.c:295
 msgid "Starting remote desktop server"
@@ -593,3 +611,65 @@ msgstr "بدء خادوم سطح المكتب البعيد"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "لا تبدء خادوم سطح المكتب البعيد"
+
+#: ../tools/vino-passwd.c:115
+#, c-format
+msgid ""
+"ERROR: Maximum length of password is %d characters. Please, re-enter the "
+"password.\n"
+msgstr ""
+
+#: ../tools/vino-passwd.c:145
+#, c-format
+msgid "Changing Vino password.\n"
+msgstr ""
+
+#: ../tools/vino-passwd.c:147
+msgid "Enter new Vino password: "
+msgstr ""
+
+#: ../tools/vino-passwd.c:150
+msgid "Retype new Vino password: "
+msgstr ""
+
+#: ../tools/vino-passwd.c:156
+#, c-format
+msgid "vino-passwd: password updated successfully.\n"
+msgstr ""
+
+#: ../tools/vino-passwd.c:160
+#, c-format
+msgid "Sorry, passwords do not match.\n"
+msgstr ""
+
+#: ../tools/vino-passwd.c:161
+#, c-format
+msgid "vino-passwd: password unchanged.\n"
+msgstr ""
+
+#: ../tools/vino-passwd.c:176
+msgid "Show Vino version"
+msgstr ""
+
+#: ../tools/vino-passwd.c:185
+msgid "- Updates Vino password"
+msgstr ""
+
+#: ../tools/vino-passwd.c:195
+msgid ""
+"Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr ""
+
+#: ../tools/vino-passwd.c:202
+#, c-format
+msgid "VINO Version %s\n"
+msgstr ""
+
+#: ../tools/vino-passwd.c:211
+#, c-format
+msgid "ERROR: You do not have enough permissions to change Vino password.\n"
+msgstr ""
+
+#~ msgid ""
+#~ "If checked, screen will be locked after the last remote client disconnect"
+#~ msgstr "إذا كان مفعلا، سيتم غلق الشاشة عند اغلاق آخر مستخدم للاتصال"
