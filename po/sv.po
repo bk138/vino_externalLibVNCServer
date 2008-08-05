@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-14 23:41+0200\n"
-"PO-Revision-Date: 2008-07-14 23:43+0100\n"
+"POT-Creation-Date: 2008-08-05 10:44+0200\n"
+"PO-Revision-Date: 2008-08-05 10:47+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -16,20 +16,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1027
-#: ../capplet/vino-preferences.c:1062
-#: ../capplet/vino-preferences.c:1120
+#: ../capplet/vino-preferences.c:1098
+#: ../capplet/vino-preferences.c:1133
+#: ../capplet/vino-preferences.c:1191
 #: ../server/vino-dbus-listener.c:374
-#: ../server/vino-server.c:148
+#: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Misslyckades med att öppna anslutning mot bussen: %s\n"
 
-#: ../capplet/vino-preferences.c:1329
+#: ../capplet/vino-preferences.c:1400
 msgid "Send this command by email"
 msgstr "Skicka detta kommando med e-post"
 
-#: ../capplet/vino-preferences.c:1364
+#: ../capplet/vino-preferences.c:1435
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -79,84 +79,92 @@ msgid "Allow other users to _view your desktop"
 msgstr "Tillåt andra användare att _se ditt skrivbord"
 
 #: ../capplet/vino-preferences.glade.h:9
+msgid "Disable the _wallpaper when connected"
+msgstr "Inaktivera skr_ivbordsbakgrund när ansluten"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid "Disable the wallpaper when successfull connection"
+msgstr "Inaktivera skrivbordsbakgrunden vid lyckad anslutning"
+
+#: ../capplet/vino-preferences.glade.h:11
 msgid "General"
 msgstr "Allmänt"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:12
 msgid "Remote Desktop Preferences"
 msgstr "Inställningar för fjärrskrivbord"
 
 #. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.glade.h:14
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "Fjärranvändare kan styra din mus och tangentbord"
 
-#: ../capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.glade.h:15
 msgid "Remote users' VNC clients accessing the desktop are required to support encryption"
 msgstr "Fjärranvändarnas VNC-klienter som ansluter till skrivbordet måste ha stöd för kryptering"
 
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:16
 msgid "Screen will be locked after the last remote client disconnect"
 msgstr "Skärmen kommer att låsas efter att den sista fjärrklienten kopplar från"
 
-#: ../capplet/vino-preferences.glade.h:15
+#: ../capplet/vino-preferences.glade.h:17
 msgid "Some of these preferences are locked down"
 msgstr "En del av dessa inställningar är låsta"
 
-#: ../capplet/vino-preferences.glade.h:16
+#: ../capplet/vino-preferences.glade.h:18
 msgid "The server will only accept connections from localhost"
 msgstr "Servern kommer endast att acceptera anslutningar från localhost"
 
-#: ../capplet/vino-preferences.glade.h:17
+#: ../capplet/vino-preferences.glade.h:19
 msgid "The server will use another port, instead of the default (5900)"
 msgstr "Servern kommer att använda en annan port istället för standardporten (5900)"
 
-#: ../capplet/vino-preferences.glade.h:18
+#: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
 msgstr "Användare kan se ditt skrivbord med hjälp av detta kommando:"
 
-#: ../capplet/vino-preferences.glade.h:19
+#: ../capplet/vino-preferences.glade.h:21
 msgid "When a user tries to view or control your desktop:"
 msgstr "När en användare försöker se eller kontrollera ditt skrivbord:"
 
 #. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:23
 msgid "Your desktop will be shared"
 msgstr "Ditt skrivbord kommer att delas ut"
 
-#: ../capplet/vino-preferences.glade.h:22
+#: ../capplet/vino-preferences.glade.h:24
 msgid "_Allow other users to control your desktop"
 msgstr "_Tillåt andra användare att styra ditt skrivbord"
 
-#: ../capplet/vino-preferences.glade.h:23
+#: ../capplet/vino-preferences.glade.h:25
 msgid "_Lock screen on disconnect"
 msgstr "_Lås skärmen vid frånkoppling"
 
-#: ../capplet/vino-preferences.glade.h:24
+#: ../capplet/vino-preferences.glade.h:26
 msgid "_Never display an icon"
 msgstr "Visa _aldrig en ikon"
 
-#: ../capplet/vino-preferences.glade.h:25
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Only allow local connections"
 msgstr "Tillåt _endast lokala anslutningar"
 
-#: ../capplet/vino-preferences.glade.h:26
+#: ../capplet/vino-preferences.glade.h:28
 msgid "_Only display an icon when there is someone connected"
 msgstr "_Visa endast en ikon när någon är ansluten"
 
-#: ../capplet/vino-preferences.glade.h:27
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Password:"
 msgstr "_Lösenord:"
 
-#: ../capplet/vino-preferences.glade.h:28
+#: ../capplet/vino-preferences.glade.h:30
 msgid "_Require encryption"
 msgstr "_Kräv kryptering"
 
-#: ../capplet/vino-preferences.glade.h:29
+#: ../capplet/vino-preferences.glade.h:31
 msgid "_Require the user to enter this password:"
 msgstr "_Kräv att användaren anger detta lösenord:"
 
-#: ../capplet/vino-preferences.glade.h:30
+#: ../capplet/vino-preferences.glade.h:32
 msgid "_Use an alternative port:"
 msgstr "A_nvänd en alternativ port:"
 
@@ -339,6 +347,10 @@ msgstr "Denna nyckel anger e-postadressen till vilken URL:en till fjärrskrivbor
 #: ../server/vino-server.schemas.in.h:24
 msgid "When the status icon should be shown"
 msgstr "När statusikonen ska visas"
+
+#: ../server/vino-server.schemas.in.h:25
+msgid "When true, disable the background on receive valid session"
+msgstr "När sant, inaktivera bakgrunden vid mottagning av giltig session"
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -524,6 +536,61 @@ msgstr "Startar fjärrskrivbordsserver"
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "Startar inte fjärrskrivbordsserver"
+
+#: ../tools/vino-passwd.c:115
+#, c-format
+msgid "ERROR: Maximum length of password is %d characters. Please, re-enter the password.\n"
+msgstr "FEL: Maximal längd för lösenord är %d tecken. Ange lösenordet igen.\n"
+
+#: ../tools/vino-passwd.c:145
+#, c-format
+msgid "Changing Vino password.\n"
+msgstr "Ändrar Vino-lösenord.\n"
+
+#: ../tools/vino-passwd.c:147
+msgid "Enter new Vino password: "
+msgstr "Ange nytt Vino-lösenord: "
+
+#: ../tools/vino-passwd.c:150
+msgid "Retype new Vino password: "
+msgstr "Ange nytt Vino-lösenord igen: "
+
+#: ../tools/vino-passwd.c:156
+#, c-format
+msgid "vino-passwd: password updated successfully.\n"
+msgstr "vino-passwd: lösenordet uppdaterades.\n"
+
+#: ../tools/vino-passwd.c:160
+#, c-format
+msgid "Sorry, passwords do not match.\n"
+msgstr "Tyvärr, lösenorden stämmer inte överens.\n"
+
+#: ../tools/vino-passwd.c:161
+#, c-format
+msgid "vino-passwd: password unchanged.\n"
+msgstr "vino-passwd: lösenordet oförändrat.\n"
+
+#: ../tools/vino-passwd.c:176
+msgid "Show Vino version"
+msgstr "Visa version av Vino"
+
+#: ../tools/vino-passwd.c:185
+msgid "- Updates Vino password"
+msgstr "- Uppdaterar Vino-lösenordet"
+
+#: ../tools/vino-passwd.c:195
+msgid "Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr "Kör \"vino-passwd --help\" för att se en komplett lista över tillgängliga kommandoradsflaggor"
+
+#: ../tools/vino-passwd.c:202
+#, c-format
+msgid "VINO Version %s\n"
+msgstr "VINO version %s\n"
+
+#: ../tools/vino-passwd.c:211
+#, c-format
+msgid "ERROR: You do not have enough permissions to change Vino password.\n"
+msgstr "FEL: Du har inte behörighet att ändra Vino-lösenordet.\n"
 
 #~ msgid ""
 #~ "If checked, screen will be locked after the last remote client disconnect"
