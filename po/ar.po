@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD.ar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-29 02:22+0100\n"
+"POT-Creation-Date: 2008-08-06 09:24+0100\n"
 "PO-Revision-Date: 2008-02-27 11:09+0100\n"
 "Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -20,18 +20,18 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : "
 "3\n"
 
-#: ../capplet/vino-preferences.c:1091 ../capplet/vino-preferences.c:1126
-#: ../capplet/vino-preferences.c:1184 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1098 ../capplet/vino-preferences.c:1133
+#: ../capplet/vino-preferences.c:1191 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "فشل فتح اتصال مع الناقل: %s\n"
 
-#: ../capplet/vino-preferences.c:1393
+#: ../capplet/vino-preferences.c:1400
 msgid "Send this command by email"
 msgstr "أرسِل هذا الأمر بالبريد الإلكتروني"
 
-#: ../capplet/vino-preferences.c:1428
+#: ../capplet/vino-preferences.c:1435
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
