@@ -20,6 +20,7 @@
  *      Jorge Pereira <jorge@jorgepereira.com.br>
  */
 
+#include <stdlib.h>
 #include <gconf/gconf-client.h>
 #include "vino-background.h"
 
@@ -36,6 +37,7 @@ vino_background_handler (int sig)
     gconf_client_set_bool (client, GNOME_BACKGROUND_DRAW, TRUE, NULL);
 
   g_object_unref (client);
+  exit (0);
 }
 
 void 
