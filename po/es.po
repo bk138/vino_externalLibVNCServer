@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-26 02:11+0000\n"
-"PO-Revision-Date: 2008-07-26 10:44+0200\n"
+"POT-Creation-Date: 2008-07-26 08:45+0000\n"
+"PO-Revision-Date: 2008-08-10 20:44+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr "Escritorio remoto"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:2
 msgid "Set your remote desktop access preferences"
-msgstr "Establecer preferencias de escritorio remoto"
+msgstr "Establezca las preferencias de su escritorio remoto"
 
 #: ../capplet/vino-preferences.glade.h:1
 msgid "<b>Network</b>"
@@ -437,7 +437,9 @@ msgstr "Cuándo se debe mostrar el icono de estado"
 
 #: ../server/vino-server.schemas.in.h:25
 msgid "When true, disable the background on receive valid session"
-msgstr "Cuando está activado desactiva el fondo de pantalla al recibir una sesión válida"
+msgstr ""
+"Cuando está activado desactiva el fondo de pantalla al recibir una sesión "
+"válida"
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
