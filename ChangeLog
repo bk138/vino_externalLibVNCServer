@@ -1,3 +1,10 @@
+2008-08-11  Halton Huo <halton.huo@sun.com>
+
+	Add vino-server.desktop under /usr/share/gnome/autostart. This is new
+	autostart mechanism in gnome-session. Closes #546747
+	* server/Makefile.am:
+	* server/vino-server.desktop.in.in: (added)
+
 2008-07-29  Jonh Wendell <jwendell@gnome.org>
 
 	* capplet/Makefile.am:

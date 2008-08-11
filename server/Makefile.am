@@ -136,6 +136,15 @@ server_DATA     = $(server_in_files:.server.in=.server)
 
 @INTLTOOL_SERVER_RULE@
 
+vino-server.desktop.in: vino-server.desktop.in.in
+	sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@
+
+desktopdir      = $(datadir)/gnome/autostart
+desktop_in_files = vino-server.desktop.in
+desktop_DATA    = $(desktop_in_files:.desktop.in=.desktop)
+
+@INTLTOOL_DESKTOP_RULE@
+
 if GCONF_SCHEMAS_INSTALL
 install-data-local:
 	if test -z "$(DESTDIR)" ; then \
@@ -156,6 +165,7 @@ EXTRA_DIST = \
 	vino-marshal.list \
 	GNOME_RemoteDesktop.server.in.in \
 	GNOME_RemoteDesktop.idl \
+	vino-server.desktop.in.in \
 	$(NULL)
 
 BUILT_SOURCES = \
@@ -165,6 +175,10 @@ BUILT_SOURCES = \
 	vino-marshal.c \
 	vino-marshal.h \
 	$(NULL)
+
+CLEANFILES = \
+	vino-server.desktop     \
+	vino-server.desktop.in
 
 DISTCLEANFILES = \
 	GNOME_RemoteDesktop.server.in \

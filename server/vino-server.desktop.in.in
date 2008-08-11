@@ -1,0 +1,10 @@
+[Desktop Entry]
+_Name=Remote Desktop
+_Comment=Gnome Remote Desktop Server
+Exec=@LIBEXECDIR@/vino-server
+OnlyShowIn=GNOME;
+Terminal=false
+Type=Application
+AutostartCondition=GNOME /desktop/gnome/remote_access/enabled
+X-GNOME-Autostart-Phase=Applications
+X-GNOME-AutoRestart=true
