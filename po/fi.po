@@ -2,15 +2,15 @@
 # Copyright (C) 2004 Free Software Foundation, Inc.
 # This file is distributed under the same license as the vino package.
 # Sami Pesonen <sampeson@iki.fi>, 2004.
-# Ilkka Tuohela <hile@iki.fi>, 2005.
+# Ilkka Tuohela <hile@iki.fi>, 2005-2008.
 #
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-13 13:30+0300\n"
-"PO-Revision-Date: 2007-02-20 07:47+0300\n"
+"POT-Creation-Date: 2008-08-12 13:43+0300\n"
+"PO-Revision-Date: 2008-08-12 13:40+0300\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -18,18 +18,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
-#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
-#: ../server/vino-server.c:148
+#: ../capplet/vino-preferences.c:1098 ../capplet/vino-preferences.c:1133
+#: ../capplet/vino-preferences.c:1191 ../server/vino-dbus-listener.c:374
+#: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Väylään ei saatu avattua yhteyttä: %s\n"
 
-#: ../capplet/vino-preferences.c:1329
+#: ../capplet/vino-preferences.c:1400
 msgid "Send this command by email"
 msgstr "Lähetä tämä komento sähköpostilla"
 
-#: ../capplet/vino-preferences.c:1364
+#: ../capplet/vino-preferences.c:1435
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -79,47 +79,47 @@ msgid "Allow other users to _view your desktop"
 msgstr "Salli muiden käyttäjien _katsella työpöytääsi"
 
 #: ../capplet/vino-preferences.glade.h:9
+msgid "Disable the _wallpaper when connected"
+msgstr "Poista _taustakuva yhteyden ajaksi"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid "Disable the wallpaper when successfull connection"
+msgstr "Poista taustakuva, kun yhteys on avattu onnistuneesti"
+
+#: ../capplet/vino-preferences.glade.h:11
 msgid "General"
 msgstr "Yleisasetukset"
 
-#: ../capplet/vino-preferences.glade.h:10
-msgid ""
-"If checked, remote users accessing the desktop are required to support "
-"encryption"
-msgstr ""
-"Jos tosi, vaaditaan yhteyttä ottavilta käyttäjiltä salattu yhteys"
-
-#. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:12
-msgid "If checked, remote users are able to control your mouse and keyboard"
-msgstr "Jos tosi, etäkäyttäjät voivat ohjata hiirtä ja näppäimistöä"
-
-#: ../capplet/vino-preferences.glade.h:13
-msgid ""
-"If checked, screen will be locked after the last remote client disconnect"
-msgstr "Jos tosi, näyttö lukitaan kun viimeinen etäkäyttäjä katkaisee yhteyden"
-
-#: ../capplet/vino-preferences.glade.h:14
-msgid "If checked, the server will only accept connections from localhost"
-msgstr "Jos tosi, palvelin hyväksyy yhteyksiä vain tästä tietokoneesta"
-
-#: ../capplet/vino-preferences.glade.h:15
-msgid ""
-"If checked, the server will use another port, instead of the default (5900)"
-msgstr "Jos tosi, palvelin kuuntelee muuta kuin oletusporttia (5900)."
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:17
-msgid "If checked, your desktop will be shared"
-msgstr "Jos asetettu, työpöytä jaetaan muiden käyttäjien kanssa"
-
-#: ../capplet/vino-preferences.glade.h:18
 msgid "Remote Desktop Preferences"
 msgstr "Etätyöpöydän asetukset"
 
-#: ../capplet/vino-preferences.glade.h:19
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:14
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr "Etäkäyttäjät voivat ohjata hiirtä ja näppäimistöä"
+
+#: ../capplet/vino-preferences.glade.h:15
+msgid ""
+"Remote users' VNC clients accessing the desktop are required to support "
+"encryption"
+msgstr "Etäkäyttäjien VNC-asiakkaan täytyy tukea salattua yhteyttä"
+
+#: ../capplet/vino-preferences.glade.h:16
+msgid "Screen will be locked after the last remote client disconnect"
+msgstr "Näyttö lukitaan, kun viimeinen etäkäyttäjä katkaisee yhteyden."
+
+#: ../capplet/vino-preferences.glade.h:17
 msgid "Some of these preferences are locked down"
 msgstr "Osa näistä asetuksista on lukittu"
+
+#: ../capplet/vino-preferences.glade.h:18
+msgid "The server will only accept connections from localhost"
+msgstr "Palvelin hyväksyy yhteyksiä vain täst tietokoneesta"
+
+#: ../capplet/vino-preferences.glade.h:19
+msgid "The server will use another port, instead of the default (5900)"
+msgstr "Palvelin käyttää muuta porttia kuin oletusportti (5900)"
 
 #: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
@@ -129,39 +129,44 @@ msgstr "Käyttäjät voivat katsella työpöytääsi käyttämällä tätä kome
 msgid "When a user tries to view or control your desktop:"
 msgstr "Kun käyttäjä yrittää katsella tai hallita työpöytääsi:"
 
-#: ../capplet/vino-preferences.glade.h:22
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:23
+msgid "Your desktop will be shared"
+msgstr "Työpöytäsi jaetaan"
+
+#: ../capplet/vino-preferences.glade.h:24
 msgid "_Allow other users to control your desktop"
 msgstr "_Salli toisten käyttäjien hallita työpöytääsi"
 
-#: ../capplet/vino-preferences.glade.h:23
+#: ../capplet/vino-preferences.glade.h:25
 msgid "_Lock screen on disconnect"
 msgstr "Lukitse näyttö _katkaistaessa yhteys"
 
-#: ../capplet/vino-preferences.glade.h:24
+#: ../capplet/vino-preferences.glade.h:26
 msgid "_Never display an icon"
 msgstr "Älä _koskaan näytä kuvaketta"
 
-#: ../capplet/vino-preferences.glade.h:25
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Only allow local connections"
 msgstr "_Salli vain paikalliset yhteydet"
 
-#: ../capplet/vino-preferences.glade.h:26
+#: ../capplet/vino-preferences.glade.h:28
 msgid "_Only display an icon when there is someone connected"
 msgstr "_Näytä kuvake vain silloin kun joku on yhteydessä"
 
-#: ../capplet/vino-preferences.glade.h:27
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Password:"
 msgstr "_Salasana:"
 
-#: ../capplet/vino-preferences.glade.h:28
+#: ../capplet/vino-preferences.glade.h:30
 msgid "_Require encryption"
 msgstr "_Vaadi salattu yhteys"
 
-#: ../capplet/vino-preferences.glade.h:29
+#: ../capplet/vino-preferences.glade.h:31
 msgid "_Require the user to enter this password:"
 msgstr "_Vaadi käyttäjältä tämä salasana:"
 
-#: ../capplet/vino-preferences.glade.h:30
+#: ../capplet/vino-preferences.glade.h:32
 msgid "_Use an alternative port:"
 msgstr "Käytä _muuta porttia:"
 
@@ -397,9 +402,9 @@ msgid ""
 "icon only when there is someone connected, this is the default behavior; "
 "\"never\" - Never shows the icon."
 msgstr ""
-"Tämä avain ohjaa tilakuvakkeen käyttäytymistä. Sillä voi olla kolme eri arvoa: "
-"\"always\" - näytä kuvake aina, \"client\" - näet kuvakkeen vain, kun jollain "
-"on yhteys auki, \"never\" - kuvaketta ei näytetä koskaan."
+"Tämä avain ohjaa tilakuvakkeen käyttäytymistä. Sillä voi olla kolme eri "
+"arvoa: \"always\" - näytä kuvake aina, \"client\" - näet kuvakkeen vain, kun "
+"jollain on yhteys auki, \"never\" - kuvaketta ei näytetä koskaan."
 
 #: ../server/vino-server.schemas.in.h:23
 msgid ""
@@ -413,6 +418,10 @@ msgstr ""
 #: ../server/vino-server.schemas.in.h:24
 msgid "When the status icon should be shown"
 msgstr "Milloin tilakuvake tulisi näyttää"
+
+#: ../server/vino-server.schemas.in.h:25
+msgid "When true, disable the background on receive valid session"
+msgstr "Jos tosi, poistetaan taustakuva käytöstä vastaanotettaessa kelvollinen isunto"
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -503,73 +512,75 @@ msgstr ""
 msgid "Share your desktop with other users"
 msgstr "Jaa työpöytä muiden käyttäjien kanssa"
 
-#: ../server/vino-status-icon.c:360
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:361
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Haluatko varmasti katkaista yhteyden \"%s\"?"
 
-#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-icon.c:363
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Etäkäyttäjän \"%s\" yhteys katkaistaan. Oletko varma?"
 
-#: ../server/vino-status-icon.c:367
+#: ../server/vino-status-icon.c:368
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Haluatko varmasti katkaista yhteyden kaikkiin asiakkaisiin?"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:369
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Kaikki etäkäyttäjien yhteydet katkaistaan. Oletko varma?"
 
-#: ../server/vino-status-icon.c:380
+#: ../server/vino-status-icon.c:381
 msgid "Disconnect"
 msgstr "Katkaise"
 
-#: ../server/vino-status-icon.c:406
+#: ../server/vino-status-icon.c:407
 msgid "_Preferences"
 msgstr "_Asetukset"
 
-#: ../server/vino-status-icon.c:421
+#: ../server/vino-status-icon.c:422
 msgid "Disconnect all"
 msgstr "Katkaiset kaikki"
 
-#: ../server/vino-status-icon.c:444
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:446
 #, c-format
 msgid "Disconnect %s"
 msgstr "Katkaise %s"
 
-#: ../server/vino-status-icon.c:464
+#: ../server/vino-status-icon.c:466
 msgid "_Help"
 msgstr "O_hje"
 
-#: ../server/vino-status-icon.c:472
+#: ../server/vino-status-icon.c:474
 msgid "_About"
 msgstr "_Tietoja"
 
-#: ../server/vino-status-icon.c:598
+#: ../server/vino-status-icon.c:603
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Virhe alustettaessa libnotify-kirjastoa\n"
 
-#: ../server/vino-status-icon.c:612
+#: ../server/vino-status-icon.c:623
 msgid "Another user is viewing your desktop"
 msgstr "Toinen käyttäjä katselee työpöytääsi"
 
-#: ../server/vino-status-icon.c:613
+#: ../server/vino-status-icon.c:624
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Käyttäjä tietokoneella \"%s\" katselee työpöytääsi."
 
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:629
 msgid "Another user is controlling your desktop"
 msgstr "Toinen käyttäjä ohjaa työpöytääsi"
 
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:630
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "Käyttäjä tietokoneella \"%s\" ohjaa työpöytääsi."
 
-#: ../server/vino-status-icon.c:641
+#: ../server/vino-status-icon.c:652
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Virhe näytettäessä huomautusikkunaa: %s\n"
@@ -600,87 +611,63 @@ msgstr "Käynnistetään etätyöpöydän palvelinta"
 msgid "Not starting remote desktop server"
 msgstr "Etätyöpöydän palvelinta ei käynnistetä"
 
-#~ msgid "    "
-#~ msgstr "    "
+#: ../tools/vino-passwd.c:115
+#, c-format
+msgid ""
+"ERROR: Maximum length of password is %d characters. Please, re-enter the "
+"password.\n"
+msgstr ""
+"VIRHE: salasana voi olla enintään %d merkkiä pitkä. Syötä uusi salasana.\n"
 
-#~ msgid "        "
-#~ msgstr "        "
+#: ../tools/vino-passwd.c:145
+#, c-format
+msgid "Changing Vino password.\n"
+msgstr "Vaihdetaan vinon salasana.\n"
 
-#~ msgid "*"
-#~ msgstr "*"
+#: ../tools/vino-passwd.c:147
+msgid "Enter new Vino password: "
+msgstr "Syötä uusi vinon salasana:"
 
-#~ msgid "Address"
-#~ msgstr "Osoite"
+#: ../tools/vino-passwd.c:150
+msgid "Retype new Vino password: "
+msgstr "Toista uusi vinon salasana:"
 
-#~ msgid "The address pointed to by the widget"
-#~ msgstr "Säätimen osoittama osoite"
+#: ../tools/vino-passwd.c:156
+#, c-format
+msgid "vino-passwd: password updated successfully.\n"
+msgstr "vino-passwd: salasanan vaihto onnistui.\n"
 
-#~ msgid "Tooltip"
-#~ msgstr "Vinkki"
+#: ../tools/vino-passwd.c:160
+#, c-format
+msgid "Sorry, passwords do not match.\n"
+msgstr "Annetut salasanat eivät täsmää.\n"
 
-#~ msgid "A tooltip for this URL"
-#~ msgstr "Tämän URL:in vinkki"
+#: ../tools/vino-passwd.c:161
+#, c-format
+msgid "vino-passwd: password unchanged.\n"
+msgstr "vino-passwd: salasanaa ei vaihdettu.\n"
 
-#~ msgid "URL color"
-#~ msgstr "URL:in väri"
+#: ../tools/vino-passwd.c:176
+msgid "Show Vino version"
+msgstr "Näytä vinon versio"
 
-#~ msgid "The color of the URL's label"
-#~ msgstr "URL:in nimiön väri"
+#: ../tools/vino-passwd.c:185
+msgid "- Updates Vino password"
+msgstr "- Päivittää vinon salasanan"
 
-#~ msgid "The screen to be monitored"
-#~ msgstr "Tarkkailtava näyttö"
+#: ../tools/vino-passwd.c:195
+msgid ""
+"Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr ""
+"Suorita 'vino-passwd --help' jos haluat nähdä kaikki mahdolliset valitsimet"
 
-#~ msgid "The screen for which to create a VNC server"
-#~ msgstr "Näyttö, johon VNC-palvelin luodaan"
+#: ../tools/vino-passwd.c:202
+#, c-format
+msgid "VINO Version %s\n"
+msgstr "VINO version %s\n"
 
-#~ msgid "On Hold"
-#~ msgstr "Odotustila"
+#: ../tools/vino-passwd.c:211
+#, c-format
+msgid "ERROR: You do not have enough permissions to change Vino password.\n"
+msgstr "VIRHE: oikeutesi eivät riitä vinon salasanan vaihtamiseen.\n"
 
-#~ msgid "Place all clients on hold"
-#~ msgstr "Aseta kaikki asiakkaat odotustilaan"
-
-#~ msgid "Prompt enabled"
-#~ msgstr "Kehote päällä"
-
-#~ msgid "Prompt the user about connection attempts"
-#~ msgstr "Ilmoita käyttäjälle yhteysyrityksistä"
-
-#~ msgid "View Only"
-#~ msgstr "Vain katselu"
-
-#~ msgid "Disallow keyboard/pointer input from clients"
-#~ msgstr "Estä näppäimistön/hiiren käyttö asiakkailta"
-
-#~ msgid "Local Only"
-#~ msgstr "Vain paikallinen"
-
-#~ msgid "Require Encryption"
-#~ msgstr "Vaadi salausta"
-
-#~ msgid "Require clients to use encryption"
-#~ msgstr "Vaadi salausta asiakkailta"
-
-#~ msgid "Authentication methods"
-#~ msgstr "Todentamismenetelmät"
-
-#~ msgid "The authentication methods this server should allow"
-#~ msgstr "Tämän palvelimen hyväksymät todentamismenetelmät"
-
-#~ msgid "VNC Password"
-#~ msgstr "VNC-salasana"
-
-#~ msgid ""
-#~ "The password (base64 encoded) used to authenticate types using the "
-#~ "VncAuth method"
-#~ msgstr ""
-#~ "Salasana (base64-koodattu) jolla todennetaan käyttäen VncAuth-menetelmää"
-
-#~ msgid "Listen on the port specified by the 'alternative-port' property"
-#~ msgstr "Kuuntele ominaisuudessa \"alternative-port\" annetussa portissa"
-
-#~ msgid ""
-#~ "Listen on the specified port number if the 'use-alternative-port' "
-#~ "property is TRUE"
-#~ msgstr ""
-#~ "Kuuntele annetussa portissa, jos ominaisuus \"use-alternative-port\" on "
-#~ "tosi"
