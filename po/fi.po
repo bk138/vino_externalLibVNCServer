@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-12 13:43+0300\n"
-"PO-Revision-Date: 2008-08-12 13:40+0300\n"
+"POT-Creation-Date: 2008-08-14 10:25+0300\n"
+"PO-Revision-Date: 2008-08-14 10:20+0300\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -39,6 +39,7 @@ msgstr ""
 "%s"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+#: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "Etätyöpöytä"
 
@@ -261,6 +262,10 @@ msgstr "_Salli"
 msgid "_Refuse"
 msgstr "_Kieltäydy"
 
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "Gnome Remote Desktop Server"
+msgstr "Gnomen etätyöpöytäpalvelin"
+
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
 msgstr "Sallitut todentamismenetelmät"
@@ -421,7 +426,8 @@ msgstr "Milloin tilakuvake tulisi näyttää"
 
 #: ../server/vino-server.schemas.in.h:25
 msgid "When true, disable the background on receive valid session"
-msgstr "Jos tosi, poistetaan taustakuva käytöstä vastaanotettaessa kelvollinen isunto"
+msgstr ""
+"Jos tosi, poistetaan taustakuva käytöstä vastaanotettaessa kelvollinen isunto"
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -670,4 +676,3 @@ msgstr "VINO version %s\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "VIRHE: oikeutesi eivät riitä vinon salasanan vaihtamiseen.\n"
-
