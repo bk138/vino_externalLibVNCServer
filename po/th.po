@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.11.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-10 15:06+0700\n"
-"PO-Revision-Date: 2008-07-10 15:11+0700\n"
+"POT-Creation-Date: 2008-08-16 16:41+0700\n"
+"PO-Revision-Date: 2008-08-16 16:58+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -17,18 +17,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
-#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
-#: ../server/vino-server.c:148
+#: ../capplet/vino-preferences.c:1098 ../capplet/vino-preferences.c:1133
+#: ../capplet/vino-preferences.c:1191 ../server/vino-dbus-listener.c:374
+#: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "ไม่สามารถเปิดการเชื่อมต่อไปยังบัส: %s\n"
 
-#: ../capplet/vino-preferences.c:1329
+#: ../capplet/vino-preferences.c:1400
 msgid "Send this command by email"
 msgstr "ส่งคำสั่งนี้ทางอีเมล"
 
-#: ../capplet/vino-preferences.c:1364
+#: ../capplet/vino-preferences.c:1435
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -38,6 +38,7 @@ msgstr ""
 "%s"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+#: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "พื้นโต๊ะระยะไกล"
 
@@ -78,86 +79,94 @@ msgid "Allow other users to _view your desktop"
 msgstr "อนุญาตให้ผู้ใช้อื่น_มองพื้นโต๊ะของคุณ"
 
 #: ../capplet/vino-preferences.glade.h:9
+msgid "Disable the _wallpaper when connected"
+msgstr "ไม่ใช้ภาพ_พื้นหลังเมื่อเชื่อมต่อ"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid "Disable the wallpaper when successfull connection"
+msgstr "ปิดการใช้ภาพพื้นหลังเมื่อเชื่อมต่อสำเร็จ"
+
+#: ../capplet/vino-preferences.glade.h:11
 msgid "General"
 msgstr "ทั่วไป"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:12
 msgid "Remote Desktop Preferences"
 msgstr "ปรับแต่งพื้นโต๊ะระยะไกล"
 
 #. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.glade.h:14
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "ผู้ใช้จากเครื่องอื่นสามารถควบคุมเมาส์และแป้นพิมพ์ของคุณได้"
 
-#: ../capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.glade.h:15
 msgid ""
 "Remote users' VNC clients accessing the desktop are required to support "
 "encryption"
 msgstr "โปรแกรมลูกข่าย VNC ของผู้ใช้จากเครื่องอื่นที่จะเข้าถึงพื้นโต๊ะจะต้องรองรับการเข้ารหัสลับด้วย"
 
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:16
 msgid "Screen will be locked after the last remote client disconnect"
 msgstr "หน้าจอจะถูกล็อคหลังจากผู้ใช้ระยะไกลคนสุดท้ายตัดการเชื่อมต่อ"
 
-#: ../capplet/vino-preferences.glade.h:15
+#: ../capplet/vino-preferences.glade.h:17
 msgid "Some of these preferences are locked down"
 msgstr "การปรับแต่งบางส่วนถูกล็อคไว้ไม่ให้เปลี่ยน"
 
-#: ../capplet/vino-preferences.glade.h:16
+#: ../capplet/vino-preferences.glade.h:18
 msgid "The server will only accept connections from localhost"
 msgstr "เซิร์ฟเวอร์จะรับการเชื่อมต่อจาก localhost เท่านั้น"
 
-#: ../capplet/vino-preferences.glade.h:17
+#: ../capplet/vino-preferences.glade.h:19
 msgid "The server will use another port, instead of the default (5900)"
 msgstr "เซิร์ฟเวอร์จะใช้พอร์ตอื่นแทนพอร์ตปริยาย (5900)"
 
-#: ../capplet/vino-preferences.glade.h:18
+#: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
 msgstr "ผู้ใช้ทั่วไปสามารถมองพื้นโต๊ะของคุณได้โดยใช้คำสั่ง:"
 
-#: ../capplet/vino-preferences.glade.h:19
+#: ../capplet/vino-preferences.glade.h:21
 msgid "When a user tries to view or control your desktop:"
 msgstr "เมื่อมีผู้ใช้พยายามมองหรือควบคุมพื้นโต๊ะของคุณ:"
 
 #. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:23
 msgid "Your desktop will be shared"
 msgstr "พื้นโต๊ะของคุณจะถูกเปิดให้ผู้อื่นใช้ร่วมด้วย"
 
-#: ../capplet/vino-preferences.glade.h:22
+#: ../capplet/vino-preferences.glade.h:24
 msgid "_Allow other users to control your desktop"
 msgstr "อนุญาตให้ผู้ใช้อื่น_ควบคุมพื้นโต๊ะของคุณ"
 
-#: ../capplet/vino-preferences.glade.h:23
+#: ../capplet/vino-preferences.glade.h:25
 msgid "_Lock screen on disconnect"
 msgstr "_ล็อคหน้าจอเมื่อตัดการเชื่อมต่อ"
 
-#: ../capplet/vino-preferences.glade.h:24
+#: ../capplet/vino-preferences.glade.h:26
 msgid "_Never display an icon"
 msgstr "ไ_ม่แสดงไอคอน"
 
-#: ../capplet/vino-preferences.glade.h:25
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Only allow local connections"
 msgstr "รับการเชื่อมต่อจากใ_นเครื่องเดียวกันเท่านั้น"
 
-#: ../capplet/vino-preferences.glade.h:26
+#: ../capplet/vino-preferences.glade.h:28
 msgid "_Only display an icon when there is someone connected"
 msgstr "แสดงไอคอนเมื่อมีผู้เ_ชื่อมต่อเท่านั้น"
 
-#: ../capplet/vino-preferences.glade.h:27
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Password:"
 msgstr "_รหัสผ่าน:"
 
-#: ../capplet/vino-preferences.glade.h:28
+#: ../capplet/vino-preferences.glade.h:30
 msgid "_Require encryption"
 msgstr "_บังคับการเข้ารหัสลับ"
 
-#: ../capplet/vino-preferences.glade.h:29
+#: ../capplet/vino-preferences.glade.h:31
 msgid "_Require the user to enter this password:"
 msgstr "ให้ผู้ใช้นั้น_ป้อนรหัสผ่านนี้:"
 
-#: ../capplet/vino-preferences.glade.h:30
+#: ../capplet/vino-preferences.glade.h:32
 msgid "_Use an alternative port:"
 msgstr "ใช้พอร์ต_อื่น:"
 
@@ -248,6 +257,10 @@ msgstr "_อนุญาต"
 #: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "_ปฏิเสธ"
+
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "Gnome Remote Desktop Server"
+msgstr "เซิร์ฟเวอร์พื้นโต๊ะระยะไกลของ GNOME"
 
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -401,6 +414,10 @@ msgstr ""
 #: ../server/vino-server.schemas.in.h:24
 msgid "When the status icon should be shown"
 msgstr "จะแสดงไอคอนสถานะเมื่อใด"
+
+#: ../server/vino-server.schemas.in.h:25
+msgid "When true, disable the background on receive valid session"
+msgstr "ถ้าเป็นค่าจริง จะปิดการใช้ภาพพื้นหลังเมื่อรับการเชื่อมต่อวาระเรียบร้อย"
 
 #: ../server/vino-shell.c:76
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -583,6 +600,64 @@ msgstr "กำลังเริ่มใช้งานเซิร์ฟเว
 #: ../session/vino-session.c:300
 msgid "Not starting remote desktop server"
 msgstr "จะไม่เรียกใช้เซิร์ฟเวอร์พื้นโต๊ะระยะไกล"
+
+#: ../tools/vino-passwd.c:115
+#, c-format
+msgid ""
+"ERROR: Maximum length of password is %d characters. Please, re-enter the "
+"password.\n"
+msgstr "ข้อผิดพลาด: ความยาวสูงสุดของรหัสผ่านคือ %d อักขระ กรุณาป้อนรหัสผ่านใหม่\n"
+
+#: ../tools/vino-passwd.c:145
+#, c-format
+msgid "Changing Vino password.\n"
+msgstr "กำลังเปลี่ยนรหัสผ่าน Vino\n"
+
+#: ../tools/vino-passwd.c:147
+msgid "Enter new Vino password: "
+msgstr "ตั้งรหัสผ่านใหม่สำหรับ Vino: "
+
+#: ../tools/vino-passwd.c:150
+msgid "Retype new Vino password: "
+msgstr "พิมพ์รหัสผ่านใหม่สำหรับ Vino ซ้ำอีกครั้ง: "
+
+#: ../tools/vino-passwd.c:156
+#, c-format
+msgid "vino-passwd: password updated successfully.\n"
+msgstr "vino-passwd: ปรับข้อมูลรหัสผ่านเรียบร้อยแล้ว\n"
+
+#: ../tools/vino-passwd.c:160
+#, c-format
+msgid "Sorry, passwords do not match.\n"
+msgstr "ขออภัย รหัสผ่านไม่ตรงกัน\n"
+
+#: ../tools/vino-passwd.c:161
+#, c-format
+msgid "vino-passwd: password unchanged.\n"
+msgstr "vino-passwd: รหัสผ่านไม่มีการเปลี่ยนแปลง\n"
+
+#: ../tools/vino-passwd.c:176
+msgid "Show Vino version"
+msgstr "แสดงรุ่นของ Vino"
+
+#: ../tools/vino-passwd.c:185
+msgid "- Updates Vino password"
+msgstr "- เปลี่ยนรหัสผ่าน Vino"
+
+#: ../tools/vino-passwd.c:195
+msgid ""
+"Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr "เรียก 'vino-passwd --help' เพื่อดูตัวเลือกบรรทัดคำสั่งที่ใช้ได้ทั้งหมด"
+
+#: ../tools/vino-passwd.c:202
+#, c-format
+msgid "VINO Version %s\n"
+msgstr "VINO รุ่น %s\n"
+
+#: ../tools/vino-passwd.c:211
+#, c-format
+msgid "ERROR: You do not have enough permissions to change Vino password.\n"
+msgstr "ข้อผิดพลาด: คุณไม่มีสิทธิ์เปลี่ยนรหัสผ่าน Vino\n"
 
 #~ msgid ""
 #~ "If checked, screen will be locked after the last remote client disconnect"
