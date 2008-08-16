@@ -8,14 +8,15 @@
 # Og Maciel <ogmaciel@gnome.org>, 2007.
 # Vladimir Melo <vladimirmelo.psi@gmail.com>, 2008.
 # Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008.
+# Enrico Nicoletto <liverig@gmail.com>, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-06 09:13-0300\n"
-"PO-Revision-Date: 2008-08-06 01:04-0300\n"
-"Last-Translator: Fábio Nogueira <deb-user-ba@ubuntu.com>\n"
+"POT-Creation-Date: 2008-08-13 13:03+0000\n"
+"PO-Revision-Date: 2008-08-15 19:13-0300\n"
+"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,6 +46,7 @@ msgstr ""
 "%s"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+#: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "Área de trabalho remota"
 
@@ -270,6 +272,10 @@ msgstr "_Permitir"
 #: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "_Recusar"
+
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "Gnome Remote Desktop Server"
+msgstr "Servidor da Área de Trabalho Remota Gnome"
 
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -533,7 +539,8 @@ msgstr ""
 "Jonh Wendell <wendell@bani.com.br>\n"
 "Og Maciel <ogmaciel@gnome.org>\n"
 "Vladimir Melo <vladimirmelo.psi@gmail.com>\n"
-"Fábio Nogueira <deb-user-ba@ubuntu.com>"
+"Fábio Nogueira <deb-user-ba@ubuntu.com>\n"
+"Enrico Nicoletto <liverig@gmail.com>"
 
 #: ../server/vino-status-icon.c:297
 msgid "Share your desktop with other users"
