@@ -1,6 +1,6 @@
 [Desktop Entry]
 _Name=Remote Desktop
-_Comment=Gnome Remote Desktop Server
+_Comment=GNOME Remote Desktop Server
 Exec=@LIBEXECDIR@/vino-server
 OnlyShowIn=GNOME;
 Terminal=false
