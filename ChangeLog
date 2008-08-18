@@ -1,3 +1,9 @@
+2008-08-18  Jonh Wendell  <jwendell@gnome.org>
+
+	* configure.in: post-release bump version to 2.23.91
+
+==================== 2.23.90 ======================
+
 2008-08-18  Jonh Wendell <jwendell@gnome.org>
 
 	* capplet/vino-preferences.c:
