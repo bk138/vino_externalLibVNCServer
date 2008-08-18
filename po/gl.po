@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-13 15:07+0200\n"
-"PO-Revision-Date: 2008-08-13 15:07+0200\n"
+"POT-Creation-Date: 2008-08-18 16:44+0200\n"
+"PO-Revision-Date: 2008-08-18 16:44+0200\n"
 "Last-Translator: Ignacio Casal Quinteiro <icq@svn.gnome.org>\n"
 "Language-Team: Galego <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -19,18 +19,18 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1098 ../capplet/vino-preferences.c:1133
-#: ../capplet/vino-preferences.c:1191 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1097 ../capplet/vino-preferences.c:1132
+#: ../capplet/vino-preferences.c:1190 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Fallou ao abrir a conexión ao bus: %s\n"
 
-#: ../capplet/vino-preferences.c:1400
+#: ../capplet/vino-preferences.c:1399
 msgid "Send this command by email"
 msgstr "Enviar este comando por correo"
 
-#: ../capplet/vino-preferences.c:1435
+#: ../capplet/vino-preferences.c:1437
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -268,7 +268,7 @@ msgid "_Refuse"
 msgstr "_Rexeitar"
 
 #: ../server/vino-server.desktop.in.in.h:1
-msgid "Gnome Remote Desktop Server"
+msgid "GNOME Remote Desktop Server"
 msgstr "Servidor de escritorio remoto de Gnome"
 
 #: ../server/vino-server.schemas.in.h:1
