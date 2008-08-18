@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-28 18:21+0200\n"
-"PO-Revision-Date: 2008-07-28 18:42+0200\n"
+"POT-Creation-Date: 2008-08-18 23:06+0200\n"
+"PO-Revision-Date: 2008-08-18 23:07+0200\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,18 +21,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 
-#: ../capplet/vino-preferences.c:1091 ../capplet/vino-preferences.c:1126
-#: ../capplet/vino-preferences.c:1184 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1097 ../capplet/vino-preferences.c:1132
+#: ../capplet/vino-preferences.c:1190 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "L'ouverture de la connexion au bus a échoué : %s\n"
 
-#: ../capplet/vino-preferences.c:1393
+#: ../capplet/vino-preferences.c:1399
 msgid "Send this command by email"
 msgstr "Envoyer cette commande par courriel"
 
-#: ../capplet/vino-preferences.c:1428
+#: ../capplet/vino-preferences.c:1437
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -42,6 +42,7 @@ msgstr ""
 "%s"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+#: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "Bureau à distance"
 
@@ -102,16 +103,15 @@ msgstr "Préférences de bureau à distance"
 #: ../capplet/vino-preferences.glade.h:14
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr ""
-"Les utilisateurs distants peuvent contrôler votre souris et votre "
-"clavier"
+"Les utilisateurs distants peuvent contrôler votre souris et votre clavier"
 
 #: ../capplet/vino-preferences.glade.h:15
 msgid ""
 "Remote users' VNC clients accessing the desktop are required to support "
 "encryption"
 msgstr ""
-"Les clients VNC des utilisateurs distants accédant au bureau doivent prendre en "
-"charge le chiffrement"
+"Les clients VNC des utilisateurs distants accédant au bureau doivent prendre "
+"en charge le chiffrement"
 
 #: ../capplet/vino-preferences.glade.h:16
 msgid "Screen will be locked after the last remote client disconnect"
@@ -124,14 +124,11 @@ msgstr "Certaines de ces préférences sont verrouillées"
 
 #: ../capplet/vino-preferences.glade.h:18
 msgid "The server will only accept connections from localhost"
-msgstr ""
-"Le serveur accepte uniquement les connexions locales (localhost)"
+msgstr "Le serveur accepte uniquement les connexions locales (localhost)"
 
 #: ../capplet/vino-preferences.glade.h:19
 msgid "The server will use another port, instead of the default (5900)"
-msgstr ""
-"Le serveur utilise un autre port, au lieu du port par défaut "
-"(5900)"
+msgstr "Le serveur utilise un autre port, au lieu du port par défaut (5900)"
 
 #: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
@@ -275,6 +272,10 @@ msgstr "_Autoriser"
 #: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "_Refuser"
+
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "GNOME Remote Desktop Server"
+msgstr "Serveur de bureau à distance GNOME"
 
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -648,8 +649,8 @@ msgid ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
 "password.\n"
 msgstr ""
-"ERREUR : la taille maximale des mots de passe est de %d caractères. Veuillez ressaisir "
-"le mot de passe.\n"
+"ERREUR : la taille maximale des mots de passe est de %d caractères. Veuillez "
+"ressaisir le mot de passe.\n"
 
 #: ../tools/vino-passwd.c:145
 #, c-format
