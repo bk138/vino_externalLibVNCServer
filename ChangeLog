@@ -1,3 +1,9 @@
+2008-08-18  Jonh Wendell <jwendell@gnome.org>
+
+	* capplet/vino-preferences.c:
+	* configure.in: Get rid of libgnomeui. Requires gtk+ >= 2.13.1 and
+	glib >= 2.17.0.
+
 2008-08-11  Halton Huo <halton.huo@sun.com>
 
 	Add vino-server.desktop under /usr/share/gnome/autostart. This is new

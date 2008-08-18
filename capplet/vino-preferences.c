@@ -33,9 +33,8 @@
 #include <gtk/gtk.h>
 #include <glade/glade.h>
 #include <gconf/gconf-client.h>
-#include <libgnome/libgnome.h>
-#include <libgnomeui/libgnomeui.h>
 #include <dbus/dbus-glib.h>
+#include <glib/gi18n.h>
 
 #ifdef VINO_ENABLE_KEYRING
 #include <gnome-keyring.h>
@@ -1347,7 +1346,7 @@ vino_preferences_dialog_uri_hook (GtkLinkButton *button,
   screen = gtk_widget_get_screen (GTK_WIDGET (button));
 
   error = NULL;
-  if (!gnome_url_show_on_screen (link, screen, &error))
+  if (!gtk_show_uri (screen, link, GDK_CURRENT_TIME, &error))
     {
       /* FIXME better error handling!
        *       What best to do? For the specific case
@@ -1414,7 +1413,8 @@ vino_preferences_dialog_response (GtkWidget             *widget,
 				  int                    response,
 				  VinoPreferencesDialog *dialog)
 {
-  GError *error;
+  GError    *error;
+  GdkScreen *screen;
 
   if (response != GTK_RESPONSE_HELP)
     {
@@ -1422,8 +1422,10 @@ vino_preferences_dialog_response (GtkWidget             *widget,
       return;
     }
 
+  screen = gtk_widget_get_screen (widget);
   error = NULL;
-  gnome_help_display_desktop (NULL, "user-guide", "user-guide.xml", "goscustdesk-90", &error);
+
+  gtk_show_uri (screen, "ghelp:user-guide?goscustdesk-90", GDK_CURRENT_TIME, &error);
   if (error)
     {
       GtkWidget *message_dialog;
@@ -1601,8 +1603,7 @@ main (int argc, char **argv)
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
 
-  gnome_program_init (PACKAGE, VERSION, LIBGNOMEUI_MODULE,
-		      argc, argv, NULL);
+  gtk_init (&argc, &argv);
 
   if (vino_preferences_is_running (&dialog))
     return 0;

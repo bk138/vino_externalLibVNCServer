@@ -43,11 +43,14 @@ if test "x$enable_deprecations" = "xyes"; then
    AC_SUBST(DISABLE_DEPRECATED_CFLAGS)
 fi
 
-PKG_CHECK_MODULES(VINO_SERVER, glib-2.0 >= 2.12.0 gtk+-x11-2.0 gconf-2.0 libglade-2.0 libbonobo-2.0 dbus-glib-1)
-	
-PKG_CHECK_MODULES(VINO_CAPPLET, glib-2.0 >= 2.12.0 gtk+-2.0 >= 2.10.0 gconf-2.0 libglade-2.0 libgnomeui-2.0 dbus-glib-1)
+GTK_VERSION=2.13.1
+GLIB_VERSION=2.17.0
 
-PKG_CHECK_MODULES(VINO_TOOLS, glib-2.0 >= 2.12.0 gconf-2.0 gobject-2.0 >= 2.12.0 gnome-keyring-1)
+PKG_CHECK_MODULES(VINO_SERVER, glib-2.0 >= $GLIB_VERSION gtk+-x11-2.0 >= $GTK_VERSION gconf-2.0 libglade-2.0 libbonobo-2.0 dbus-glib-1)
+
+PKG_CHECK_MODULES(VINO_CAPPLET, glib-2.0 >= $GLIB_VERSION gtk+-2.0 >= $GTK_VERSION gconf-2.0 libglade-2.0 dbus-glib-1)
+
+PKG_CHECK_MODULES(VINO_TOOLS, glib-2.0 >= $GLIB_VERSION gconf-2.0 gobject-2.0 >= $GLIB_VERSION gnome-keyring-1)
 
 dnl --enable-libnotify=(yes|no|auto)
 LIBNOTIFY_VERSION=0.4.4
