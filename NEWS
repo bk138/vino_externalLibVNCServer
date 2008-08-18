@@ -1,3 +1,35 @@
+Vino 2.23.90
+============
+
+  Features
+
+	+ Added the ability to hide the background on connections. (Jorge Pereira)
+	+ New compile-time option (--enable-libunique), allows only one
+	instance of capplet running. (Jorge, Jonh Wendell)
+	+ Added vino-server.desktop file required by new gnome-session. (Halton Huo)
+	+ Get rif of libgnome[ui] in the capplet. (Jonh)
+
+  Fixes
+
+	+ Minor bug fixes
+
+  Translations
+
+	+ Djihed Afifi (ar)
+	+ Jorge González (es)
+	+ Ivar Smolin (et)
+	+ Ilkka Tuohela (fi)
+	+ Claude Paroz (fr)
+	+ Ignacio Casal Quinteiro (gl)
+	+ Oldie (he)
+	+ Arangel Angov (mk)
+	+ Kjartan Maraas (nb)
+	+ Wouter Bolsterlee (nl)
+	+ Enrico Nicoletto (pt_BR)
+	+ Duarte Loreto (pt)
+	+ Daniel Nylander (sv)
+	+ Theppitak Karoonboonyanan (th)
+
 Vino 2.23.5
 ============
 
