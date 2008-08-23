@@ -5,7 +5,7 @@
 # Igor Pires Soares <igor@projetofedora.org>, 2007.
 # Leonardo Ferreira Fontenelle <leo.fontenelle@gmail.com>, 2007.
 # Jonh Wendell <wendell@bani.com.br>, 2007.
-# Og Maciel <ogmaciel@gnome.org>, 2007.
+# Og Maciel <ogmaciel@gnome.org>, 2007-2008.
 # Vladimir Melo <vladimirmelo.psi@gmail.com>, 2008.
 # Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008.
 # Enrico Nicoletto <liverig@gmail.com>, 2008.
@@ -14,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-13 13:03+0000\n"
-"PO-Revision-Date: 2008-08-15 19:13-0300\n"
-"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
+"POT-Creation-Date: 2008-08-23 10:14-0400\n"
+"PO-Revision-Date: 2008-08-23 10:15-0400\n"
+"Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,18 +25,18 @@ msgstr ""
 "X-Poedit-Language: Portuguese\n"
 "X-Poedit-Country: BRAZIL\n"
 
-#: ../capplet/vino-preferences.c:1098 ../capplet/vino-preferences.c:1133
-#: ../capplet/vino-preferences.c:1191 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1097 ../capplet/vino-preferences.c:1132
+#: ../capplet/vino-preferences.c:1190 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Falha ao abrir conexão com o serviço: %s\n"
 
-#: ../capplet/vino-preferences.c:1400
+#: ../capplet/vino-preferences.c:1399
 msgid "Send this command by email"
 msgstr "Envia este comando por e-mail"
 
-#: ../capplet/vino-preferences.c:1435
+#: ../capplet/vino-preferences.c:1437
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -274,8 +274,8 @@ msgid "_Refuse"
 msgstr "_Recusar"
 
 #: ../server/vino-server.desktop.in.in.h:1
-msgid "Gnome Remote Desktop Server"
-msgstr "Servidor da Área de Trabalho Remota Gnome"
+msgid "GNOME Remote Desktop Server"
+msgstr "Servidor de área de trabalho remota do GNOME"
 
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
