@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.11.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-16 16:41+0700\n"
-"PO-Revision-Date: 2008-08-16 16:58+0700\n"
+"POT-Creation-Date: 2008-08-24 13:03+0700\n"
+"PO-Revision-Date: 2008-08-24 13:04+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -17,18 +17,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../capplet/vino-preferences.c:1098 ../capplet/vino-preferences.c:1133
-#: ../capplet/vino-preferences.c:1191 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1097 ../capplet/vino-preferences.c:1132
+#: ../capplet/vino-preferences.c:1190 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "ไม่สามารถเปิดการเชื่อมต่อไปยังบัส: %s\n"
 
-#: ../capplet/vino-preferences.c:1400
+#: ../capplet/vino-preferences.c:1399
 msgid "Send this command by email"
 msgstr "ส่งคำสั่งนี้ทางอีเมล"
 
-#: ../capplet/vino-preferences.c:1435
+#: ../capplet/vino-preferences.c:1437
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -259,7 +259,7 @@ msgid "_Refuse"
 msgstr "_ปฏิเสธ"
 
 #: ../server/vino-server.desktop.in.in.h:1
-msgid "Gnome Remote Desktop Server"
+msgid "GNOME Remote Desktop Server"
 msgstr "เซิร์ฟเวอร์พื้นโต๊ะระยะไกลของ GNOME"
 
 #: ../server/vino-server.schemas.in.h:1
