@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-26 02:11+0000\n"
+"POT-Creation-Date: 2008-08-18 14:25+0000\n"
 "PO-Revision-Date: 2008-08-10 20:26+0200\n"
 "Last-Translator: Arangel Angov <ufo@linux.net.mk>\n"
 "Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
@@ -24,18 +24,18 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=3; plural= n==1 || n%10==1 ? 0 : 1\n"
 
-#: ../capplet/vino-preferences.c:1091 ../capplet/vino-preferences.c:1126
-#: ../capplet/vino-preferences.c:1184 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1097 ../capplet/vino-preferences.c:1132
+#: ../capplet/vino-preferences.c:1190 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Не можам да ја отворам врската до магистралата: %s\n"
 
-#: ../capplet/vino-preferences.c:1393
+#: ../capplet/vino-preferences.c:1399
 msgid "Send this command by email"
 msgstr "Прати ја оваа команда преку е-пошта"
 
-#: ../capplet/vino-preferences.c:1428
+#: ../capplet/vino-preferences.c:1437
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -45,6 +45,7 @@ msgstr ""
 "%s"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+#: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "Далечна работна површина"
 
@@ -110,14 +111,13 @@ msgid ""
 "Remote users' VNC clients accessing the desktop are required to support "
 "encryption"
 msgstr ""
-"Далечните корисници кои што пристапуваат на работната "
-"површина мора да користат енкрипција"
+"Далечните корисници кои што пристапуваат на работната површина мора да "
+"користат енкрипција"
 
 #: ../capplet/vino-preferences.glade.h:16
 msgid "Screen will be locked after the last remote client disconnect"
 msgstr ""
-"Екранот ќе биде заклучен откако ќе се одврзе последниот "
-"далечен клиент."
+"Екранот ќе биде заклучен откако ќе се одврзе последниот далечен клиент."
 
 #: ../capplet/vino-preferences.glade.h:17
 msgid "Some of these preferences are locked down"
@@ -129,13 +129,12 @@ msgstr "Серверот ќе прифаќа врски само од localhost"
 
 #: ../capplet/vino-preferences.glade.h:19
 msgid "The server will use another port, instead of the default (5900)"
-msgstr ""
-"Серверот ќе слуша на друга порта, наместо на стандардната "
-"(5900)"
+msgstr "Серверот ќе слуша на друга порта, наместо на стандардната (5900)"
 
 #: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
-msgstr "Корисниците можат да јa гледаат Вашата работна околина со следнава команда:"
+msgstr ""
+"Корисниците можат да јa гледаат Вашата работна околина со следнава команда:"
 
 #: ../capplet/vino-preferences.glade.h:21
 msgid "When a user tries to view or control your desktop:"
@@ -256,7 +255,8 @@ msgstr ""
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
-msgstr "Корисник на друг компјутер се обидува да ја гледа Вашата работна површина"
+msgstr ""
+"Корисник на друг компјутер се обидува да ја гледа Вашата работна површина"
 
 #: ../server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
@@ -273,6 +273,10 @@ msgstr "_Дозволи"
 #: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "_Одбиј"
+
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "GNOME Remote Desktop Server"
+msgstr "Сервер за оддалечена работна површина за GNOME"
 
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -682,8 +686,11 @@ msgid "- Updates Vino password"
 msgstr "- Ажурирај ја лозинката за Vino"
 
 #: ../tools/vino-passwd.c:195
-msgid "Run 'vino-passwd --help' to see a full list of available command line options"
-msgstr "Извршете 'vino-passwd --help' за да видите целосна листа на сите достапни команди"
+msgid ""
+"Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr ""
+"Извршете 'vino-passwd --help' за да видите целосна листа на сите достапни "
+"команди"
 
 #: ../tools/vino-passwd.c:202
 #, c-format
@@ -694,4 +701,3 @@ msgstr "Верзија на VINO %s\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "ГРЕШКА: Немате доволно пермисии за менување на лозинката за Vino.\n"
-
