@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-26 02:11+0000\n"
+"POT-Creation-Date: 2008-08-18 14:25+0000\n"
 "PO-Revision-Date: 2005-07-18 19:18+0300\n"
 "Last-Translator: Oldie <yonatanhak@yahoo.com>\n"
 "Language-Team: Hebrew\n"
@@ -18,18 +18,18 @@ msgstr ""
 "X-Generator: KBabel 1.10.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1091 ../capplet/vino-preferences.c:1126
-#: ../capplet/vino-preferences.c:1184 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1097 ../capplet/vino-preferences.c:1132
+#: ../capplet/vino-preferences.c:1190 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Failed to open connection to bus: %s\n"
 
-#: ../capplet/vino-preferences.c:1393
+#: ../capplet/vino-preferences.c:1399
 msgid "Send this command by email"
 msgstr "שלח פקודה זו בדואר אלקטרוני"
 
-#: ../capplet/vino-preferences.c:1428
+#: ../capplet/vino-preferences.c:1437
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -39,6 +39,7 @@ msgstr ""
 "%s"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+#: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "שולחן עבודה מרוחק"
 
@@ -119,8 +120,7 @@ msgstr "השרת יקבל חיבורים מקומיים בלבד"
 
 #: ../capplet/vino-preferences.glade.h:19
 msgid "The server will use another port, instead of the default (5900)"
-msgstr ""
-"השרת ישתמש בשער שונה, במקום שער ברירת המחדל (5900)"
+msgstr "השרת ישתמש בשער שונה, במקום שער ברירת המחדל (5900)"
 
 #: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
@@ -258,6 +258,10 @@ msgstr "_הרשה"
 #: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "_סרב"
+
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "GNOME Remote Desktop Server"
+msgstr "שרת שולחן עבודה מרוחק של GNOME"
 
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -673,27 +677,3 @@ msgstr "VINO Version %s\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "ERROR: You do not have enough permissions to change Vino password.\n"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
