@@ -11,12 +11,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 14:25+0000\n"
-"PO-Revision-Date: 2008-08-18 18:50+0200\n"
+"POT-Creation-Date: 2008-08-18 16:54+0000\n"
+"PO-Revision-Date: 2008-08-29 10:22+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type:  text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
@@ -284,7 +284,8 @@ msgstr "Número de puerto alternativo"
 
 #: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr "Dirección de correo-e a la cual debería enviarse la URL del escritorio remoto"
+msgstr ""
+"Dirección de correo-e a la cual debería enviarse la URL del escritorio remoto"
 
 #: ../server/vino-server.schemas.in.h:4
 msgid "Enable remote desktop access"
@@ -575,7 +576,7 @@ msgstr "Ay_uda"
 
 #: ../server/vino-status-icon.c:474
 msgid "_About"
-msgstr "_Acerca de"
+msgstr "Acerca _de"
 
 #: ../server/vino-status-icon.c:603
 #, c-format
@@ -598,7 +599,8 @@ msgstr "Otro usuario está controlando su escritorio"
 #: ../server/vino-status-icon.c:630
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr "Un usuario en el equipo «%s» está controlando su escritorio remotamente."
+msgstr ""
+"Un usuario en el equipo «%s» está controlando su escritorio remotamente."
 
 #: ../server/vino-status-icon.c:652
 #, c-format
@@ -679,7 +681,8 @@ msgid "- Updates Vino password"
 msgstr "- Actualiza la contraseña de Vino"
 
 #: ../tools/vino-passwd.c:195
-msgid "Run 'vino-passwd --help' to see a full list of available command line options"
+msgid ""
+"Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr ""
 "Ejecute «vino-passwd --help» para ver una lista completa de las opciones de "
 "la línea de comandos disponibles"
@@ -692,5 +695,5 @@ msgstr "Versión %s de Vino\n"
 #: ../tools/vino-passwd.c:211
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
-msgstr "ERROR: No tiene suficientes permisos para cambiar la contraseña de Vino.\n"
-
+msgstr ""
+"ERROR: No tiene suficientes permisos para cambiar la contraseña de Vino.\n"
