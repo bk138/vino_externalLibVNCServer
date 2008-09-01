@@ -18,6 +18,7 @@
  *
  * Authors:
  *      Mark McLoughlin <mark@skynet.ie>
+ *      Jonh Wendell <wendell@bani.com.br>
  */
 
 #include <config.h>
@@ -27,10 +28,11 @@
 #include "vino-input.h"
 #include "vino-mdns.h"
 #include "vino-server.h"
-#include "vino-shell.h"
 #include "vino-prefs.h"
 #include "vino-util.h"
 #include "vino-dbus-listener.h"
+#include <libgnome/libgnome.h>
+#include <libgnomeui/libgnomeui.h>
 
 #ifdef HAVE_GNUTLS
 #include <gnutls/gnutls.h>
@@ -51,12 +53,25 @@ main (int argc, char **argv)
   GdkDisplay *display;
   gboolean    view_only;
   int         i, n_screens;
+  GnomeClient *session;
+  char        *restart_argv [] = { *argv, 0 };
 
   bindtextdomain (GETTEXT_PACKAGE, VINO_LOCALEDIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
 
-  gtk_init (&argc, &argv);
+  gnome_program_init ("vino", VERSION,
+                      LIBGNOMEUI_MODULE,
+                      argc, argv,
+                      NULL);
+
+  session = gnome_master_client ();
+
+  gnome_client_set_restart_command (session, 2, restart_argv);
+  gnome_client_set_restart_style   (session, GNOME_RESTART_IMMEDIATELY);
+  gnome_client_set_priority        (session, 5);
+  g_signal_connect (session, "die",
+                    G_CALLBACK (gtk_main_quit), NULL);
 
   vino_setup_debug_flags ();
 
@@ -73,7 +88,7 @@ main (int argc, char **argv)
   gtk_window_set_default_icon_name ("preferences-desktop-remote-desktop");
   g_set_application_name (_("GNOME Remote Desktop"));
 
-  if (!vino_shell_register (&argc, argv))
+  if (!vino_dbus_request_name ())
     return 1;
 
   display = gdk_display_get_default ();
@@ -91,8 +106,6 @@ main (int argc, char **argv)
   n_screens = gdk_display_get_n_screens (display);
   for (i = 0; i < n_screens; i++)
     vino_prefs_create_server (gdk_display_get_screen (display, i));
-
-  vino_dbus_request_name ();
 
   gtk_main ();
 

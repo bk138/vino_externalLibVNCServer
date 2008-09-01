@@ -45,10 +45,11 @@ fi
 
 GTK_VERSION=2.13.1
 GLIB_VERSION=2.17.0
+DBUS_VERSION=1.2.3
 
-PKG_CHECK_MODULES(VINO_SERVER, glib-2.0 >= $GLIB_VERSION gtk+-x11-2.0 >= $GTK_VERSION gconf-2.0 libglade-2.0 libbonobo-2.0 dbus-glib-1)
+PKG_CHECK_MODULES(VINO_SERVER, glib-2.0 >= $GLIB_VERSION gtk+-x11-2.0 >= $GTK_VERSION gconf-2.0 libglade-2.0 dbus-1 >= $DBUS_VERSION dbus-glib-1 libgnomeui-2.0)
 
-PKG_CHECK_MODULES(VINO_CAPPLET, glib-2.0 >= $GLIB_VERSION gtk+-2.0 >= $GTK_VERSION gconf-2.0 libglade-2.0 dbus-glib-1)
+PKG_CHECK_MODULES(VINO_CAPPLET, glib-2.0 >= $GLIB_VERSION gtk+-2.0 >= $GTK_VERSION gconf-2.0 libglade-2.0 dbus-1 >= $DBUS_VERSION dbus-glib-1)
 
 PKG_CHECK_MODULES(VINO_TOOLS, glib-2.0 >= $GLIB_VERSION gconf-2.0 gobject-2.0 >= $GLIB_VERSION gnome-keyring-1)
 
@@ -87,15 +88,6 @@ if test "x$enable_gnome_keyring" = "xyes"; then
                       gnome-keyring-1,
                       AC_DEFINE(VINO_ENABLE_KEYRING, [], [Set if we should use gnome-keyring]))
 fi
-
-dnl --enable-session-support=(yes|no)
-AC_ARG_ENABLE(session_support,
-	      [  --enable-session-support=[no/yes] build session management utility program [default=no]],,
-	      enable_session_support=no)
-if test "$enable_session_support" = "yes"; then
-  PKG_CHECK_MODULES(VINO_SESSION, gconf-2.0 libgnomeui-2.0)
-fi
-AM_CONDITIONAL(SESSION_SUPPORT, [test "$enable_session_support" = "yes"])
 
 dnl --enable-http-server=(yes|no)
 AC_ARG_ENABLE(http_server,
@@ -138,16 +130,6 @@ if test $pango_omitted_x_deps = yes ; then
 fi
 
 AC_SUBST(X_LIBS)
-
-#
-# Bonobo foo
-#
-
-ORBIT_IDL="`$PKG_CONFIG --variable=orbit_idl ORBit-2.0`"
-AC_SUBST(ORBIT_IDL)
-
-BONOBO_IDLDIR="`$PKG_CONFIG --variable=idldir bonobo-activation-2.0`"
-AC_SUBST(BONOBO_IDLDIR)
 
 #
 # Check for gnutls
@@ -363,7 +345,6 @@ server/Makefile
 server/libvncserver/Makefile
 server/libvncserver/rfb/Makefile
 capplet/Makefile
-session/Makefile
 tools/Makefile
 docs/Makefile
 po/Makefile.in
@@ -383,7 +364,6 @@ Configure summary:
 	Avahi support ..............:  ${VINO_ENABLE_MDNS}
 	Notify support .............:  ${have_libnotify}
 	GNOME Keyring support.......:  ${enable_gnome_keyring}
-	Session support.............:  ${enable_session_support}
 	HTTP server.................:  ${enable_http_server}
 	Libunique support...........:  ${have_libunique}
 	DEBUG messages..............:  ${enable_debug}

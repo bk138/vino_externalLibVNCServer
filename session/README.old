@@ -1,0 +1,40 @@
+Vino Session Management
+=======================
+
+  The Remote Desktop server provides a background service for the
+desktop. How to implement activating such services isn't a very
+clearly defined area in GNOME. There are two common approaches:
+
+    + Make the service session managed and put it in the default
+      session.
+
+    + Make it possible to activate the service with bonobo-activation
+      and make gnome-session control the lifecyle of the service.
+
+  The second option is more attractive for Vino, because we would
+really not prefer to have the service running if it is disabled. In
+this directory you have both options:
+
+    + vino-session is a small program which you can add to your
+      session and it will control the lifecycle of the service.
+
+      [ i.e. add something like the following to 
+        $(datadir)/gnome/default.session:
+
+          4,id=default4
+          4,Priority=20
+          4,RestartCommand=vino-session --sm-client-id default4
+
+        and increase "num_clients" by one. ]
+
+    + gsm-remote-desktop.diff is a patch for gnome-session to control
+      the lifecycle directly from the session manager.
+
+  The code for both is more or less the same. If Vino ever becomes
+part of the desktop this will be resolved for good by choosing one of
+the options above, coming up with a better way to manage the lifecyle
+of generic services or by making it feasible to run vino-server while
+it is disabled.
+
+
+Mark McLoughlin, 2003-11-10.

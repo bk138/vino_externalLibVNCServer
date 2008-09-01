@@ -1,3 +1,24 @@
+2008-09-01  Jonh Wendell  <jwendell@gnome.org>
+
+	Make vino work correctly with new gnome-session:
+	- Dropped bonobo activation. Vino is controlled by gnome-session.
+	- Made vino-server a gnome-session client, still using libgnomeui.
+	- The directory session/ is now obsolete.
+
+	* configure.in:
+	- drop "--enable-session-support";
+	- bump d-bus dependency to 1.2.3
+	- drop bonobo stuff
+	* server/GNOME_RemoteDesktop.idl,
+	* server/GNOME_RemoteDesktop.server.in.in,
+	* server/vino-shell.[ch]: Deleted
+	* server/vino-dbus-listener.[ch] (vino_dbus_request_name):
+	Returns gboolean instead of void. Returns FALSE if there is another
+	instance running.
+	* server/vino-main.c (main): Don't use bonobo shell function. Instead,
+	use vino_dbus_request_name() to exit if there is already an instance
+	running.
+
 2008-08-18  Jonh Wendell  <jwendell@gnome.org>
 
 	* configure.in: post-release bump version to 2.23.91

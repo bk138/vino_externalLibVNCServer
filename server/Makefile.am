@@ -59,8 +59,6 @@ vino_server_SOURCES = \
 	vino-prompt.h \
 	vino-server.c \
 	vino-server.h \
-	vino-shell.c \
-	vino-shell.h \
 	vino-util.c \
 	vino-util.h \
 	vino-status-icon.c \
@@ -112,29 +110,11 @@ vino-enums.h: @REBUILD@ $(vino_enum_headers)
 			--eprod "GType @enum_name@_get_type (void);\n" \
 		$(vino_enum_headers) >  $@
 
-CORBA_SRCLIST = \
-	GNOME_RemoteDesktop-skels.c \
-	GNOME_RemoteDesktop-common.c \
-	GNOME_RemoteDesktop.h \
-	$(NULL)
-
-$(CORBA_SRCLIST): $(top_srcdir)/server/GNOME_RemoteDesktop.idl $(ORBIT_IDL)
-	$(ORBIT_IDL) --nostubs -I $(BONOBO_IDLDIR) $(top_srcdir)/server/GNOME_RemoteDesktop.idl
-
 schemasdir       = $(GCONF_SCHEMA_FILE_DIR)
 schemas_in_files = vino-server.schemas.in
 schemas_DATA     = $(schemas_in_files:.schemas.in=.schemas)
 
 @INTLTOOL_SCHEMAS_RULE@
-
-%.server.in: %.server.in.in
-	sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@
-
-serverdir       = $(libdir)/bonobo/servers
-server_in_files = GNOME_RemoteDesktop.server.in
-server_DATA     = $(server_in_files:.server.in=.server)
-
-@INTLTOOL_SERVER_RULE@
 
 vino-server.desktop.in: vino-server.desktop.in.in
 	sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@
@@ -163,13 +143,10 @@ EXTRA_DIST = \
 	vino-prompt.glade \
 	vino-server.schemas.in \
 	vino-marshal.list \
-	GNOME_RemoteDesktop.server.in.in \
-	GNOME_RemoteDesktop.idl \
 	vino-server.desktop.in.in \
 	$(NULL)
 
 BUILT_SOURCES = \
-	$(CORBA_SRCLIST) \
 	vino-enums.c \
 	vino-enums.h \
 	vino-marshal.c \
@@ -181,8 +158,6 @@ CLEANFILES = \
 	vino-server.desktop.in
 
 DISTCLEANFILES = \
-	GNOME_RemoteDesktop.server.in \
-	GNOME_RemoteDesktop.server \
 	$(schemas_DATA) \
 	$(BUILT_SOURCES) \
 	$(NULL)

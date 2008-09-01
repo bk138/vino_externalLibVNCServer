@@ -388,29 +388,40 @@ vino_dbus_unref_connection (void)
   vino_dbus_connection = NULL;
 }
 
-void
+gboolean
 vino_dbus_request_name (void)
 {
 #define VINO_DBUS_BUS_NAME "org.gnome.Vino"
 
   DBusConnection *connection;
   DBusError       error;
+  int             result;
 
   if (!(connection = vino_dbus_get_connection ()))
-    return;
+    return FALSE;
 
   dbus_error_init (&error);
 
-  dbus_bus_request_name (connection, VINO_DBUS_BUS_NAME, 0, &error);
+  result = dbus_bus_request_name (connection,
+				  VINO_DBUS_BUS_NAME,
+				  DBUS_NAME_FLAG_DO_NOT_QUEUE,
+				  &error);
   if (dbus_error_is_set (&error))
     {
       g_printerr (_("Failed to acquire D-Bus name '%s'\n"),
                   error.message);
       dbus_error_free (&error);
-      return;
+      return FALSE;
+    }
+
+  if (result == DBUS_REQUEST_NAME_REPLY_EXISTS)
+    {
+      g_warning (_("Remote Desktop server already running; exiting ...\n"));
+      return FALSE;
     }
 
   dprintf (DBUS, "Successfully acquired D-Bus name '%s'\n", VINO_DBUS_BUS_NAME);
+  return TRUE;
 
 #undef VINO_DBUS_BUS_NAME
 }
