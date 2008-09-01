@@ -1,5 +1,11 @@
 2008-09-01  Jonh Wendell  <jwendell@gnome.org>
 
+	* configure.in: post-release bump version to 2.23.92
+
+==================== 2.23.91 ======================
+
+2008-09-01  Jonh Wendell  <jwendell@gnome.org>
+
 	Make vino work correctly with new gnome-session:
 	- Dropped bonobo activation. Vino is controlled by gnome-session.
 	- Made vino-server a gnome-session client, still using libgnomeui.
