@@ -1,3 +1,26 @@
+Vino 2.23.91
+============
+
+  Fixes
+
+	+ Make vino work correctly with new gnome-session. (Jonh Wendell)
+
+  Translations
+
+	+ Jorge González (es)
+	+ Ivar Smolin (et)
+	+ Iñaki Larrañaga Murgoitio (eu)
+	+ Ilkka Tuohela (fi)
+	+ Claude Paroz (fr)
+	+ Oldie (he)
+	+ Arangel Angov (mk)
+	+ Sandeep Shedmake (mr)
+	+ Kjartan Maraas (nb)
+	+ Og Maciel (pt_BR)
+	+ Daniel Nylander (sv)
+	+ Tirumurthi Vasudevan (ta)
+	+ Theppitak Karoonboonyanan (th)
+
 Vino 2.23.90
 ============
 
