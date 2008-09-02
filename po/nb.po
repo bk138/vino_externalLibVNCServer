@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-27 14:31+0200\n"
+"POT-Creation-Date: 2008-09-02 08:15+0200\n"
 "PO-Revision-Date: 2008-08-27 14:31+0200\n"
 "Last-Translator: Kjartan Maraas <espenas@gmail.com>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
@@ -180,16 +180,20 @@ msgstr "Slutt på minne under håndtering av «%s»-melding"
 msgid "Out of memory registering object path '%s'"
 msgstr "slutt på minne ved registrering av objektsti «%s»"
 
-#: ../server/vino-dbus-listener.c:407
+#: ../server/vino-dbus-listener.c:411
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Klarte ikke å hente D-Bus-navn «%s»\n"
 
-#: ../server/vino-main.c:74
+#: ../server/vino-dbus-listener.c:419
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "Eksternt skrivebord kjører allerede; avslutter...\n"
+
+#: ../server/vino-main.c:89
 msgid "GNOME Remote Desktop"
 msgstr "Eksternt skrivebord"
 
-#: ../server/vino-main.c:84
+#: ../server/vino-main.c:99
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -432,17 +436,32 @@ msgid "When true, disable the background on receive valid session"
 msgstr ""
 "Deaktiver bakgrunn ved mottak av gyldig sesjon hvis denne er satt til «true»"
 
-#: ../server/vino-shell.c:76
-msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "Eksternt skrivebord kjører allerede; avslutter...\n"
+#: ../session/vino-session.c:133
+msgid "Remote desktop server died, restarting\n"
+msgstr "Tjener for eksternt skrivebord terminerte. Starter på nytt\n"
 
-#: ../server/vino-shell.c:79
-msgid ""
-"Problem registering the remote desktop server with bonobo-activation; "
-"exiting ...\n"
+#: ../session/vino-session.c:154
+#, c-format
+msgid "Activation of %s failed: %s\n"
+msgstr "Aktivering av %s feilet: %s\n"
+
+#: ../session/vino-session.c:160
+#, c-format
+msgid "Activation of %s failed: Unknown Error\n"
+msgstr "Aktivering av %s feilet. Ukjent feil\n"
+
+#: ../session/vino-session.c:231
+msgid "Failed to activate remote desktop server: tried too many times\n"
 msgstr ""
-"Problem under registrering av det eksterne skrivebordet med bonobo-"
-"activation. Avslutter...\n"
+"Kunne ikke aktivere tjener for eksternt skrivebord: prøvde for mange ganger\n"
+
+#: ../session/vino-session.c:295
+msgid "Starting remote desktop server"
+msgstr "Starter tjener for eksternt skrivebord"
+
+#: ../session/vino-session.c:300
+msgid "Not starting remote desktop server"
+msgstr "Starter ikke tjener for eksternt skrivebord"
 
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
@@ -591,33 +610,6 @@ msgstr "En bruker på datamaskin «%s» kontrollerer ditt skrivebord."
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Feil under visning av meldingsboble: %s\n"
 
-#: ../session/vino-session.c:133
-msgid "Remote desktop server died, restarting\n"
-msgstr "Tjener for eksternt skrivebord terminerte. Starter på nytt\n"
-
-#: ../session/vino-session.c:154
-#, c-format
-msgid "Activation of %s failed: %s\n"
-msgstr "Aktivering av %s feilet: %s\n"
-
-#: ../session/vino-session.c:160
-#, c-format
-msgid "Activation of %s failed: Unknown Error\n"
-msgstr "Aktivering av %s feilet. Ukjent feil\n"
-
-#: ../session/vino-session.c:231
-msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr ""
-"Kunne ikke aktivere tjener for eksternt skrivebord: prøvde for mange ganger\n"
-
-#: ../session/vino-session.c:295
-msgid "Starting remote desktop server"
-msgstr "Starter tjener for eksternt skrivebord"
-
-#: ../session/vino-session.c:300
-msgid "Not starting remote desktop server"
-msgstr "Starter ikke tjener for eksternt skrivebord"
-
 #: ../tools/vino-passwd.c:115
 #, c-format
 msgid ""
@@ -680,3 +672,10 @@ msgstr "VINO Versjon %s\n"
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
 "FEIL: Du har ikke tilstrekkelige rettigheter til å bytte passord for Vino.\n"
+
+#~ msgid ""
+#~ "Problem registering the remote desktop server with bonobo-activation; "
+#~ "exiting ...\n"
+#~ msgstr ""
+#~ "Problem under registrering av det eksterne skrivebordet med bonobo-"
+#~ "activation. Avslutter...\n"
