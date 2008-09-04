@@ -2,6 +2,7 @@
 _Name=Remote Desktop
 _Comment=GNOME Remote Desktop Server
 Exec=@LIBEXECDIR@/vino-server
+Icon=preferences-desktop-remote-desktop
 OnlyShowIn=GNOME;
 Terminal=false
 Type=Application
