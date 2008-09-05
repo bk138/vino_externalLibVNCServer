@@ -11,7 +11,6 @@ server/vino-prompt.glade
 server/vino-server.c
 server/vino-server.desktop.in.in
 server/vino-server.schemas.in
-session/vino-session.c
 server/vino-status-icon.c
 server/vino-util.c
 tools/vino-passwd.c
