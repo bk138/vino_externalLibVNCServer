@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.24\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-15 00:07+0100\n"
-"PO-Revision-Date: 2008-08-15 00:15+0000\n"
+"POT-Creation-Date: 2008-09-08 00:03+0100\n"
+"PO-Revision-Date: 2008-09-08 00:05+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -16,18 +16,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1098 ../capplet/vino-preferences.c:1133
-#: ../capplet/vino-preferences.c:1191 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1097 ../capplet/vino-preferences.c:1132
+#: ../capplet/vino-preferences.c:1190 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Falha ao abrir uma ligação ao bus: %s\n"
 
-#: ../capplet/vino-preferences.c:1400
+#: ../capplet/vino-preferences.c:1399
 msgid "Send this command by email"
 msgstr "Enviar este comando por email"
 
-#: ../capplet/vino-preferences.c:1435
+#: ../capplet/vino-preferences.c:1437
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -184,16 +184,22 @@ msgstr "Sem memória livre ao manipular a mensagem '%s'"
 msgid "Out of memory registering object path '%s'"
 msgstr "Sem memória livre ao registar o caminho de objecto '%s'"
 
-#: ../server/vino-dbus-listener.c:407
+#: ../server/vino-dbus-listener.c:411
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Falha ao adquirir o nome D-Bus '%s'\n"
 
-#: ../server/vino-main.c:74
+#: ../server/vino-dbus-listener.c:419
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr ""
+"Servidor de Área de Trabalho Remota já se encontra em execução; a "
+"terminar ...\n"
+
+#: ../server/vino-main.c:89
 msgid "GNOME Remote Desktop"
 msgstr "Área de Trabalho Remota GNOME"
 
-#: ../server/vino-main.c:84
+#: ../server/vino-main.c:99
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -268,7 +274,7 @@ msgid "_Refuse"
 msgstr "_Recusar"
 
 #: ../server/vino-server.desktop.in.in.h:1
-msgid "Gnome Remote Desktop Server"
+msgid "GNOME Remote Desktop Server"
 msgstr "Servidor de Área de Trabalho Remota do GNOME"
 
 #: ../server/vino-server.schemas.in.h:1
@@ -442,20 +448,6 @@ msgstr "Quando deverá o ícone de estado ser visível"
 msgid "When true, disable the background on receive valid session"
 msgstr "Quando verdadeiro, desactivar o fundo ao receber uma sessão válida"
 
-#: ../server/vino-shell.c:76
-msgid "Remote Desktop server already running; exiting ...\n"
-msgstr ""
-"Servidor de Área de Trabalho Remota já se encontra em execução; a "
-"terminar ...\n"
-
-#: ../server/vino-shell.c:79
-msgid ""
-"Problem registering the remote desktop server with bonobo-activation; "
-"exiting ...\n"
-msgstr ""
-"Problemas ao registar o servidor de área de trabalho remota junto do bonobo-"
-"activation; a terminar ...\n"
-
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
 msgstr "A partilha da área de trabalho está activa"
@@ -608,35 +600,6 @@ msgstr ""
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Erro ao apresentar a bolha de notificação: %s\n"
 
-#: ../session/vino-session.c:133
-msgid "Remote desktop server died, restarting\n"
-msgstr ""
-"O servidor de área de trabalho remota terminou inesperadamente, a reiniciar\n"
-
-#: ../session/vino-session.c:154
-#, c-format
-msgid "Activation of %s failed: %s\n"
-msgstr "Falha ao activar %s: %s\n"
-
-#: ../session/vino-session.c:160
-#, c-format
-msgid "Activation of %s failed: Unknown Error\n"
-msgstr "Falha ao activar %s: Erro Desconhecido\n"
-
-#: ../session/vino-session.c:231
-msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr ""
-"Falha ao activar o servidor de área de trabalho remota: tentado demasiadas "
-"vezes\n"
-
-#: ../session/vino-session.c:295
-msgid "Starting remote desktop server"
-msgstr "A iniciar o servidor de área de trabalho remota"
-
-#: ../session/vino-session.c:300
-msgid "Not starting remote desktop server"
-msgstr "A não iniciar o servidor de área de trabalho remota"
-
 #: ../tools/vino-passwd.c:115
 #, c-format
 msgid ""
@@ -685,7 +648,8 @@ msgstr "- Actualiza a senha do Vino"
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr ""
-"Execute 'vino-passwd --help' para consultar uma lista completa de todas as opções de comando"
+"Execute 'vino-passwd --help' para consultar uma lista completa de todas as "
+"opções de comando"
 
 #: ../tools/vino-passwd.c:202
 #, c-format
@@ -695,7 +659,37 @@ msgstr "Versão do VINO %s\n"
 #: ../tools/vino-passwd.c:211
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
-msgstr "ERRO: Não possui permissões suficientes para alterar a senha do Vino.\n"
+msgstr ""
+"ERRO: Não possui permissões suficientes para alterar a senha do Vino.\n"
+
+#~ msgid ""
+#~ "Problem registering the remote desktop server with bonobo-activation; "
+#~ "exiting ...\n"
+#~ msgstr ""
+#~ "Problemas ao registar o servidor de área de trabalho remota junto do "
+#~ "bonobo-activation; a terminar ...\n"
+
+#~ msgid "Remote desktop server died, restarting\n"
+#~ msgstr ""
+#~ "O servidor de área de trabalho remota terminou inesperadamente, a "
+#~ "reiniciar\n"
+
+#~ msgid "Activation of %s failed: %s\n"
+#~ msgstr "Falha ao activar %s: %s\n"
+
+#~ msgid "Activation of %s failed: Unknown Error\n"
+#~ msgstr "Falha ao activar %s: Erro Desconhecido\n"
+
+#~ msgid "Failed to activate remote desktop server: tried too many times\n"
+#~ msgstr ""
+#~ "Falha ao activar o servidor de área de trabalho remota: tentado "
+#~ "demasiadas vezes\n"
+
+#~ msgid "Starting remote desktop server"
+#~ msgstr "A iniciar o servidor de área de trabalho remota"
+
+#~ msgid "Not starting remote desktop server"
+#~ msgstr "A não iniciar o servidor de área de trabalho remota"
 
 #~ msgid ""
 #~ "If checked, screen will be locked after the last remote client disconnect"
