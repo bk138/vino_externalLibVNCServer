@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-29 01:28+0200\n"
-"PO-Revision-Date: 2008-07-29 01:28+0200\n"
+"POT-Creation-Date: 2008-09-07 18:14+0200\n"
+"PO-Revision-Date: 2008-09-07 18:15+0200\n"
 "Last-Translator: Wouter Bolsterlee <wbolster@gnome.org>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,18 +22,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1091 ../capplet/vino-preferences.c:1126
-#: ../capplet/vino-preferences.c:1184 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1097 ../capplet/vino-preferences.c:1132
+#: ../capplet/vino-preferences.c:1190 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Het openen van de verbinding naar de bus is mislukt: %s\n"
 
-#: ../capplet/vino-preferences.c:1393
+#: ../capplet/vino-preferences.c:1399
 msgid "Send this command by email"
 msgstr "Deze opdracht versturen via e-mail"
 
-#: ../capplet/vino-preferences.c:1428
+#: ../capplet/vino-preferences.c:1437
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -43,6 +43,7 @@ msgstr ""
 "%s"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+#: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "Bureaublad op afstand"
 
@@ -189,16 +190,20 @@ msgstr "Geheugen vol bij het afhandelen van het bericht ‘%s’"
 msgid "Out of memory registering object path '%s'"
 msgstr "Geheugen vol bij het registreren van objectpad ‘%s’"
 
-#: ../server/vino-dbus-listener.c:407
+#: ../server/vino-dbus-listener.c:411
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Verkrijgen van D-Busnaam ‘%s’ is mislukt \n"
 
-#: ../server/vino-main.c:74
-msgid "GNOME Remote Desktop"
-msgstr "GNOME-bureaublad op afstand"
+#: ../server/vino-dbus-listener.c:419
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "Bureaublad-op-afstand server draait al; afsluiten…\n"
 
-#: ../server/vino-main.c:84
+#: ../server/vino-main.c:89
+msgid "GNOME Remote Desktop"
+msgstr "Gnome-bureaublad op afstand"
+
+#: ../server/vino-main.c:99
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -269,6 +274,10 @@ msgstr "_Toestaan"
 #: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "_Weigeren"
+
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "GNOME Remote Desktop Server"
+msgstr "Server voor Gnome-bureaublad op afstand"
 
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -445,18 +454,6 @@ msgid "When true, disable the background on receive valid session"
 msgstr ""
 "Indien ingeschakeld wordt de achtergrondafbeelding uitgeschakeld na verbinden"
 
-#: ../server/vino-shell.c:76
-msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "Bureaublad-op-afstand server draait al; afsluiten…\n"
-
-#: ../server/vino-shell.c:79
-msgid ""
-"Problem registering the remote desktop server with bonobo-activation; "
-"exiting ...\n"
-msgstr ""
-"Probleem bij registeren van bureaublad-op-afstand server met bonobo-"
-"activering; afsluiten…\n"
-
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
 msgstr "Bureaublad-op-afstand ingeschakeld"
@@ -616,34 +613,6 @@ msgid "Error while displaying notification bubble: %s\n"
 msgstr ""
 "Er is een fout opgetreden bij het tonen van de mededelingentekstballon: %s\n"
 
-#: ../session/vino-session.c:133
-msgid "Remote desktop server died, restarting\n"
-msgstr "Bureaublad-op-afstand server gedood, opnieuw opstarten\n"
-
-#: ../session/vino-session.c:154
-#, c-format
-msgid "Activation of %s failed: %s\n"
-msgstr "Activeren van %s mislukt: %s\n"
-
-#: ../session/vino-session.c:160
-#, c-format
-msgid "Activation of %s failed: Unknown Error\n"
-msgstr "Activeren van %s mislukt: Onbekende fout\n"
-
-#: ../session/vino-session.c:231
-msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr ""
-"Het activeren van de bureaublad-op-afstand server is mislukt: te vaak "
-"geprobeerd\n"
-
-#: ../session/vino-session.c:295
-msgid "Starting remote desktop server"
-msgstr "Opstarten van bureaublad-op-afstand server"
-
-#: ../session/vino-session.c:300
-msgid "Not starting remote desktop server"
-msgstr "De bureaublad-op-afstand server wordt niet gestart"
-
 #: ../tools/vino-passwd.c:115
 #, c-format
 msgid ""
@@ -706,6 +675,33 @@ msgstr "Vino versie %s\n"
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
 "FOUT: U heeft geen toegangsrechten om het Vino-wachtwoord te wijzigen.\n"
+
+#~ msgid ""
+#~ "Problem registering the remote desktop server with bonobo-activation; "
+#~ "exiting ...\n"
+#~ msgstr ""
+#~ "Probleem bij registeren van bureaublad-op-afstand server met bonobo-"
+#~ "activering; afsluiten…\n"
+
+#~ msgid "Remote desktop server died, restarting\n"
+#~ msgstr "Bureaublad-op-afstand server gedood, opnieuw opstarten\n"
+
+#~ msgid "Activation of %s failed: %s\n"
+#~ msgstr "Activeren van %s mislukt: %s\n"
+
+#~ msgid "Activation of %s failed: Unknown Error\n"
+#~ msgstr "Activeren van %s mislukt: Onbekende fout\n"
+
+#~ msgid "Failed to activate remote desktop server: tried too many times\n"
+#~ msgstr ""
+#~ "Het activeren van de bureaublad-op-afstand server is mislukt: te vaak "
+#~ "geprobeerd\n"
+
+#~ msgid "Starting remote desktop server"
+#~ msgstr "Opstarten van bureaublad-op-afstand server"
+
+#~ msgid "Not starting remote desktop server"
+#~ msgstr "De bureaublad-op-afstand server wordt niet gestart"
 
 # Typo in msgid: moet "disconnects" of "disconnected" zijn -- Wouter Bolsterlee
 #~ msgid ""
