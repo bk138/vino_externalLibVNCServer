@@ -1,3 +1,9 @@
+2008-09-08  Jonh Wendell  <jwendell@gnome.org>
+
+	* configure.in: post-release bump version to 2.24.0
+
+==================== 2.23.92 ======================
+
 2008-09-04  Jonh Wendell  <jwendell@gnome.org>
 
 	* server/vino-server.desktop.in.in: Added an icon, closes #550743.
