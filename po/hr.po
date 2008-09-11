@@ -444,7 +444,7 @@ msgstr ""
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
-msgstr[0] "Jedna je osoba povezana"
+msgstr[0] "%d je osoba povezana"
 msgstr[1] "%d osobe su povezane"
 msgstr[2] "%d osoba je povezano"
 
