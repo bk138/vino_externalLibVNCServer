@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD.ar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-06 09:24+0100\n"
+"POT-Creation-Date: 2008-09-14 11:10+0100\n"
 "PO-Revision-Date: 2008-02-27 11:09+0100\n"
 "Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -20,18 +20,18 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : "
 "3\n"
 
-#: ../capplet/vino-preferences.c:1098 ../capplet/vino-preferences.c:1133
-#: ../capplet/vino-preferences.c:1191 ../server/vino-dbus-listener.c:374
+#: ../capplet/vino-preferences.c:1097 ../capplet/vino-preferences.c:1132
+#: ../capplet/vino-preferences.c:1190 ../server/vino-dbus-listener.c:374
 #: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "فشل فتح اتصال مع الناقل: %s\n"
 
-#: ../capplet/vino-preferences.c:1400
+#: ../capplet/vino-preferences.c:1399
 msgid "Send this command by email"
 msgstr "أرسِل هذا الأمر بالبريد الإلكتروني"
 
-#: ../capplet/vino-preferences.c:1435
+#: ../capplet/vino-preferences.c:1437
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -41,6 +41,7 @@ msgstr ""
 "%s"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+#: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "سطح مكتب بعيد"
 
@@ -190,16 +191,20 @@ msgstr "نفذت الذّاكرة أثناء التعامل مع الرسالة 
 msgid "Out of memory registering object path '%s'"
 msgstr "نفذت الذّاكرة أثناء تسجيل مسار الكائن '%s'"
 
-#: ../server/vino-dbus-listener.c:407
+#: ../server/vino-dbus-listener.c:411
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "فشل الحصول على اسم D-Bus '%s'\n"
 
-#: ../server/vino-main.c:74
+#: ../server/vino-dbus-listener.c:419
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "خادوم سطح المكتب البعيد يعمل حاليًا، خروج...\n"
+
+#: ../server/vino-main.c:89
 msgid "GNOME Remote Desktop"
 msgstr "سطح مكتب جنوم عن بعيد"
 
-#: ../server/vino-main.c:84
+#: ../server/vino-main.c:99
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -264,6 +269,11 @@ msgstr "ا_سمح"
 #: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "ا_رفض"
+
+#: ../server/vino-server.desktop.in.in.h:1
+#, fuzzy
+msgid "GNOME Remote Desktop Server"
+msgstr "بدء خادوم سطح المكتب البعيد"
 
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -423,16 +433,6 @@ msgstr "متى يجب إظهار أيقونة التنبيه"
 msgid "When true, disable the background on receive valid session"
 msgstr ""
 
-#: ../server/vino-shell.c:76
-msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "خادوم سطح المكتب البعيد يعمل حاليًا، خروج...\n"
-
-#: ../server/vino-shell.c:79
-msgid ""
-"Problem registering the remote desktop server with bonobo-activation; "
-"exiting ...\n"
-msgstr "مشكلة في تسجيل خادوم سطح المكتب البعيد بتنشيط بونوبو، خروج ...\n"
-
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
 msgstr "مشاركة سطح المكتب مفعّلة"
@@ -586,32 +586,6 @@ msgstr "تحكّم مستخدم على الحاسوب '%s' بسطح مكتبك �
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "خطأ أثناء عرض فقّاعة التبليغ: %s\n"
 
-#: ../session/vino-session.c:133
-msgid "Remote desktop server died, restarting\n"
-msgstr "توقّف خادوم سطح المكتب، إعادة التّشغيل\n"
-
-#: ../session/vino-session.c:154
-#, c-format
-msgid "Activation of %s failed: %s\n"
-msgstr "فشل تنشيط %s: %s\n"
-
-#: ../session/vino-session.c:160
-#, c-format
-msgid "Activation of %s failed: Unknown Error\n"
-msgstr "فشل تنشيط %s: خطأ مجهول\n"
-
-#: ../session/vino-session.c:231
-msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "فشل تنشيط خادوم سطح المكتب البعيد، حاولت عددًا كبيرًا من المرّات\n"
-
-#: ../session/vino-session.c:295
-msgid "Starting remote desktop server"
-msgstr "بدء خادوم سطح المكتب البعيد"
-
-#: ../session/vino-session.c:300
-msgid "Not starting remote desktop server"
-msgstr "لا تبدء خادوم سطح المكتب البعيد"
-
 #: ../tools/vino-passwd.c:115
 #, c-format
 msgid ""
@@ -669,6 +643,29 @@ msgstr ""
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
+
+#~ msgid ""
+#~ "Problem registering the remote desktop server with bonobo-activation; "
+#~ "exiting ...\n"
+#~ msgstr "مشكلة في تسجيل خادوم سطح المكتب البعيد بتنشيط بونوبو، خروج ...\n"
+
+#~ msgid "Remote desktop server died, restarting\n"
+#~ msgstr "توقّف خادوم سطح المكتب، إعادة التّشغيل\n"
+
+#~ msgid "Activation of %s failed: %s\n"
+#~ msgstr "فشل تنشيط %s: %s\n"
+
+#~ msgid "Activation of %s failed: Unknown Error\n"
+#~ msgstr "فشل تنشيط %s: خطأ مجهول\n"
+
+#~ msgid "Failed to activate remote desktop server: tried too many times\n"
+#~ msgstr "فشل تنشيط خادوم سطح المكتب البعيد، حاولت عددًا كبيرًا من المرّات\n"
+
+#~ msgid "Starting remote desktop server"
+#~ msgstr "بدء خادوم سطح المكتب البعيد"
+
+#~ msgid "Not starting remote desktop server"
+#~ msgstr "لا تبدء خادوم سطح المكتب البعيد"
 
 #~ msgid ""
 #~ "If checked, screen will be locked after the last remote client disconnect"
