@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-10 21:52+0200\n"
+"POT-Creation-Date: 2008-09-14 17:44+0200\n"
 "PO-Revision-Date: 2007-09-10 21:55+0200\n"
 "Last-Translator: Данило Шеган <danilo@gnome.org>\n"
 "Language-Team: Serbian (sr) <gnom@prevod.org>\n"
@@ -20,18 +20,18 @@ msgstr ""
 "Plural-Forms: nplurals=3;    plural=n%10==1 && n%100!=11 ? 0 :    n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: ../capplet/vino-preferences.c:634 ../capplet/vino-preferences.c:669
-#: ../capplet/vino-preferences.c:727 ../server/vino-dbus-listener.c:374
-#: ../server/vino-server.c:148
+#: ../capplet/vino-preferences.c:1097 ../capplet/vino-preferences.c:1132
+#: ../capplet/vino-preferences.c:1190 ../server/vino-dbus-listener.c:374
+#: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Не могу да отворим везу са сабирницом: %s\n"
 
-#: ../capplet/vino-preferences.c:936
+#: ../capplet/vino-preferences.c:1399
 msgid "Send this command by email"
 msgstr "Пошаљи ову наредбу е-поштом"
 
-#: ../capplet/vino-preferences.c:971
+#: ../capplet/vino-preferences.c:1437
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -41,6 +41,7 @@ msgstr ""
 "%s"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+#: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "Удаљена радна површ"
 
@@ -49,48 +50,130 @@ msgid "Set your remote desktop access preferences"
 msgstr "Поставке за приступ вашој удаљеној радној површи"
 
 #: ../capplet/vino-preferences.glade.h:1
+msgid "<b>Network</b>"
+msgstr "<b>Мрежа</b>"
+
+#: ../capplet/vino-preferences.glade.h:2
+msgid "<b>Notification Area</b>"
+msgstr "<b>Обавештајна зона</b>"
+
+#: ../capplet/vino-preferences.glade.h:3
 msgid "<b>Security</b>"
 msgstr "<b>Безбедност</b>"
 
-#: ../capplet/vino-preferences.glade.h:2
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Sharing</b>"
 msgstr "<b>Дељење</b>"
 
-#: ../capplet/vino-preferences.glade.h:3
+#: ../capplet/vino-preferences.glade.h:5
 msgid "A_sk you for confirmation"
 msgstr "_Тражи одобрење"
 
-#: ../capplet/vino-preferences.glade.h:4
+#: ../capplet/vino-preferences.glade.h:6
+msgid "Advanced"
+msgstr "Напредно"
+
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Al_ways display an icon"
+msgstr "У_век приказуј иконицу"
+
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Allow other users to _view your desktop"
 msgstr "Допусти осталим _корисницима да гледају вашу радну површ"
 
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:9
+msgid "Disable the _wallpaper when connected"
+msgstr "Онемогући _слику у позадини док траје веза"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid "Disable the wallpaper when successfull connection"
+msgstr "Онемогући слику у позадини по успешном повезивању"
+
+#: ../capplet/vino-preferences.glade.h:11
+msgid "General"
+msgstr "Опште"
+
+#: ../capplet/vino-preferences.glade.h:12
 msgid "Remote Desktop Preferences"
 msgstr "Поставке удаљене радне површи"
 
-#: ../capplet/vino-preferences.glade.h:6
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:14
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr "Удаљени корисници могу да контролишу миша и тастатуру"
+
+#: ../capplet/vino-preferences.glade.h:15
+msgid ""
+"Remote users' VNC clients accessing the desktop are required to support "
+"encryption"
+msgstr ""
+"ВНЦ клијент удаљеног корисника који приступа радној површи мора да подржава "
+"шифровање"
+
+#: ../capplet/vino-preferences.glade.h:16
+msgid "Screen will be locked after the last remote client disconnect"
+msgstr "Екран ће бити закључан пошто се последњи удаљени корисник одјави."
+
+#: ../capplet/vino-preferences.glade.h:17
 msgid "Some of these preferences are locked down"
 msgstr "Неке од ових поставки су закључане"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:18
+msgid "The server will only accept connections from localhost"
+msgstr "Сервер ће прихватити једино везу са локалног рачунара"
+
+#: ../capplet/vino-preferences.glade.h:19
+msgid "The server will use another port, instead of the default (5900)"
+msgstr "Сервер ће слушати на другом порту уместо подразумеваног (5900)"
+
+#: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
 msgstr "Корисници могу да гледају вашу радну површ помоћу ове наредбе:"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:21
 msgid "When a user tries to view or control your desktop:"
 msgstr "Када корисник покуша да гледа или управља вашом радном површи:"
 
-#: ../capplet/vino-preferences.glade.h:9
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:23
+msgid "Your desktop will be shared"
+msgstr "Приступ радној површи ће бити дељен"
+
+#: ../capplet/vino-preferences.glade.h:24
 msgid "_Allow other users to control your desktop"
 msgstr "_Допусти осталим корисницима да управљају вашом радном површи"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:25
+msgid "_Lock screen on disconnect"
+msgstr "_Закључај екран по одјави"
+
+#: ../capplet/vino-preferences.glade.h:26
+msgid "_Never display an icon"
+msgstr "_Не прикацуј иконицу"
+
+#: ../capplet/vino-preferences.glade.h:27
+msgid "_Only allow local connections"
+msgstr "Допусти _само локалне везе"
+
+#: ../capplet/vino-preferences.glade.h:28
+msgid "_Only display an icon when there is someone connected"
+msgstr "Прикажи иконицу _само када је неко повезан"
+
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Password:"
 msgstr "_Лозинка:"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:30
+msgid "_Require encryption"
+msgstr "_Обавезно шифровање"
+
+#: ../capplet/vino-preferences.glade.h:31
 msgid "_Require the user to enter this password:"
 msgstr "_Захтевај да корисник унесе ову лозинку:"
+
+#: ../capplet/vino-preferences.glade.h:32
+msgid "_Use an alternative port:"
+msgstr "_Слушај на другом порту:"
 
 #: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
 #: ../server/vino-dbus-listener.c:249
@@ -103,12 +186,20 @@ msgstr "Понестало меморије при обради поруке „
 msgid "Out of memory registering object path '%s'"
 msgstr "Понестало меморије при регистрацији путање објекта „%s“"
 
-#: ../server/vino-dbus-listener.c:407
+#: ../server/vino-dbus-listener.c:411
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Неуспешно прибављање D-Bus назива „%s“\n"
 
-#: ../server/vino-main.c:83
+#: ../server/vino-dbus-listener.c:419
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "Сервер удаљене радне површи је већ покренут; завршавам...\n"
+
+#: ../server/vino-main.c:89
+msgid "GNOME Remote Desktop"
+msgstr "Гномова удаљена радна површ"
+
+#: ../server/vino-main.c:99
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -181,6 +272,10 @@ msgstr "_Допусти"
 msgid "_Refuse"
 msgstr "_Одбиј"
 
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "GNOME Remote Desktop Server"
+msgstr "Сервер Гномове удаљена радне површи"
+
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
 msgstr "Допуштени начини идентификације"
@@ -220,7 +315,9 @@ msgstr ""
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
-msgstr "Ако је постављено, удаљеним корисницима се дозвољава једино преглед радне површи. Удаљени корисници неће моћи да користе миша или тастатуру."
+msgstr ""
+"Ако је постављено, удаљеним корисницима се дозвољава једино преглед радне "
+"површи. Удаљени корисници неће моћи да користе миша или тастатуру."
 
 # bug: s/encyrption/encryption/
 #: ../server/vino-server.schemas.in.h:8
@@ -235,7 +332,9 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr "Ако је постављено, екран ће бити закључан пошто се последњи удаљени корисник одјави."
+msgstr ""
+"Ако је постављено, екран ће бити закључан пошто се последњи удаљени корисник "
+"одјави."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid ""
@@ -316,6 +415,18 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:22
 msgid ""
+"This key controls the behavior of the status icon. There are three options: "
+"\"always\" - The icon will be always there; \"client\" - You will see the "
+"icon only when there is someone connected, this is the default behavior; "
+"\"never\" - Never shows the icon."
+msgstr ""
+"Овај кључ одређује понашање иконице стања. Могуће су три вредности: "
+"„always“ („увек“) - Иконица је увек приказана; „client“ („клијент“) - "
+"Иконица је приказана само док је неко повезан и ово је подразумевано "
+"понашање; „never“ („никада“) - Иконица се не приказује."
+
+#: ../server/vino-server.schemas.in.h:23
+msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
@@ -324,20 +435,28 @@ msgstr ""
 "површи када корисник кликне на адресу у прозорчету за поставке удаљене радне "
 "површи."
 
-#: ../server/vino-shell.c:76
-msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "Сервер удаљене радне површи је већ покренут; завршавам...\n"
+#: ../server/vino-server.schemas.in.h:24
+msgid "When the status icon should be shown"
+msgstr "Када треба приказати иконицу стања"
 
-#: ../server/vino-shell.c:79
-msgid ""
-"Problem registering the remote desktop server with bonobo-activation; "
-"exiting ...\n"
-msgstr ""
-"Неприлика при пријави сервера удаљене радне површи у Бонобо активацију; "
-"завршавам ...\n"
+#: ../server/vino-server.schemas.in.h:25
+msgid "When true, disable the background on receive valid session"
+msgstr "Ако је постављено, искључује позадину по пријему исправне сесије"
+
+#: ../server/vino-status-icon.c:102
+msgid "Desktop sharing is enabled"
+msgstr "Дељени приступ радној површи је омогућен"
+
+#: ../server/vino-status-icon.c:110
+#, c-format
+msgid "One person is connected"
+msgid_plural "%d people are connected"
+msgstr[0] "%d особа је повезана"
+msgstr[1] "%d особе су повезане"
+msgstr[2] "%d особа је повезано"
 
 # bug: don't use spaces for alignment
-#: ../server/vino-status-icon.c:204
+#: ../server/vino-status-icon.c:245
 #, c-format
 msgid ""
 "There was an error displaying preferences:\n"
@@ -347,7 +466,7 @@ msgstr ""
 " %s"
 
 # bug: don't use spaces for alignment
-#: ../server/vino-status-icon.c:212
+#: ../server/vino-status-icon.c:253
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -356,7 +475,7 @@ msgstr ""
 "Дошло је до грешке при приказивању помоћи:\n"
 " %s"
 
-#: ../server/vino-status-icon.c:235
+#: ../server/vino-status-icon.c:276
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -389,7 +508,7 @@ msgstr ""
 "Inc.), 51 Franklin Street, Fifth Floor, Boston, MA, 02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:250
+#: ../server/vino-status-icon.c:291
 msgid "translator-credits"
 msgstr ""
 "Данило Шеган\n"
@@ -397,119 +516,167 @@ msgstr ""
 "\n"
 "Превод.орг — превод на српски језик."
 
-#: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:560
-msgid "GNOME Remote Desktop"
-msgstr "Гномова удаљена радна површ"
-
-#: ../server/vino-status-icon.c:257
+#: ../server/vino-status-icon.c:297
 msgid "Share your desktop with other users"
 msgstr "Делите вашу радну површ са другима"
 
-#: ../server/vino-status-icon.c:320
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:361
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Да ли сигурно желите да искључите „%s“?"
 
-#: ../server/vino-status-icon.c:322
+#: ../server/vino-status-icon.c:363
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Удаљени корисник са „%s“ ће бити искључен. Јесте ли сигурни?"
 
-#: ../server/vino-status-icon.c:327
+#: ../server/vino-status-icon.c:368
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Сигурно желите да искључите све клијенте?"
 
-#: ../server/vino-status-icon.c:328
+#: ../server/vino-status-icon.c:369
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Сви удаљени корисници ће бити искључени. Јесте ли сигурни?"
 
-#: ../server/vino-status-icon.c:340
+#: ../server/vino-status-icon.c:381
 msgid "Disconnect"
 msgstr "Искључи"
 
-#: ../server/vino-status-icon.c:365
+#: ../server/vino-status-icon.c:407
 msgid "_Preferences"
 msgstr "_Поставке"
 
-#: ../server/vino-status-icon.c:377
+#: ../server/vino-status-icon.c:422
 msgid "Disconnect all"
 msgstr "Искључи све"
 
-#: ../server/vino-status-icon.c:399
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:446
 #, c-format
 msgid "Disconnect %s"
 msgstr "Искључи %s"
 
-#: ../server/vino-status-icon.c:416
+#: ../server/vino-status-icon.c:466
 msgid "_Help"
 msgstr "_Помоћ"
 
-#: ../server/vino-status-icon.c:424
+#: ../server/vino-status-icon.c:474
 msgid "_About"
 msgstr "_О програму"
 
-#: ../server/vino-status-icon.c:458
-#, c-format
-msgid "One person is connected"
-msgid_plural "%d people are connected"
-msgstr[0] "%d особа је повезана"
-msgstr[1] "%d особе су повезане"
-msgstr[2] "%d особа је повезано"
-
-#: ../server/vino-status-icon.c:562
+#: ../server/vino-status-icon.c:603
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Грешка при успостављању libnotify-а\n"
 
-#: ../server/vino-status-icon.c:576
+#: ../server/vino-status-icon.c:623
 msgid "Another user is viewing your desktop"
 msgstr "Неки корисник прегледа већ вашу радну површ"
 
-#: ../server/vino-status-icon.c:577
+#: ../server/vino-status-icon.c:624
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Корисник рачунара „%s“ издалека прегледа вашу радну површ."
 
-#: ../server/vino-status-icon.c:582
+#: ../server/vino-status-icon.c:629
 msgid "Another user is controlling your desktop"
 msgstr "Неки корисник већ управља вашом радном површи"
 
-#: ../server/vino-status-icon.c:583
+#: ../server/vino-status-icon.c:630
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "Корисник рачунара „%s“ издалека управља вашом радном површи."
 
-#: ../server/vino-status-icon.c:605
+#: ../server/vino-status-icon.c:652
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Грешка при приказивању обавештајног облачића: %s\n"
 
-#: ../session/vino-session.c:133
-msgid "Remote desktop server died, restarting\n"
-msgstr "Сервер удаљене радне површи је затворен, поново покрећем\n"
-
-#: ../session/vino-session.c:154
+#: ../tools/vino-passwd.c:115
 #, c-format
-msgid "Activation of %s failed: %s\n"
-msgstr "Неуспешна активација %s: %s\n"
-
-#: ../session/vino-session.c:160
-#, c-format
-msgid "Activation of %s failed: Unknown Error\n"
-msgstr "Неуспешна активација %s: непозната грешка\n"
-
-#: ../session/vino-session.c:231
-msgid "Failed to activate remote desktop server: tried too many times\n"
+msgid ""
+"ERROR: Maximum length of password is %d characters. Please, re-enter the "
+"password.\n"
 msgstr ""
-"Неуспешно покретање сервера удаљене радне површи: покушано превише пута\n"
+"ГРЕШКА: Максимална дужина лозинке је %d знакова. Унесите лозинку поново.\n"
 
-#: ../session/vino-session.c:295
-msgid "Starting remote desktop server"
-msgstr "Покрећем сервер удаљене радне површи"
+#: ../tools/vino-passwd.c:145
+#, c-format
+msgid "Changing Vino password.\n"
+msgstr "Промена лозинке програма Вино.\n"
 
-#: ../session/vino-session.c:300
-msgid "Not starting remote desktop server"
-msgstr "Не покрећем сервер удаљене радне површи"
+#: ../tools/vino-passwd.c:147
+msgid "Enter new Vino password: "
+msgstr "Унеси нову лозинку: "
+
+#: ../tools/vino-passwd.c:150
+msgid "Retype new Vino password: "
+msgstr "Унеси лозинку поново: "
+
+#: ../tools/vino-passwd.c:156
+#, c-format
+msgid "vino-passwd: password updated successfully.\n"
+msgstr "vino-passwd: лозинка је успешно ажурирана.\n"
+
+#: ../tools/vino-passwd.c:160
+#, c-format
+msgid "Sorry, passwords do not match.\n"
+msgstr "Лозинке се не поклапају.\n"
+
+#: ../tools/vino-passwd.c:161
+#, c-format
+msgid "vino-passwd: password unchanged.\n"
+msgstr "vino-passwd: лозинка није промењена.\n"
+
+#: ../tools/vino-passwd.c:176
+msgid "Show Vino version"
+msgstr "Прикажи издање програма Вино"
+
+#: ../tools/vino-passwd.c:185
+msgid "- Updates Vino password"
+msgstr "- Ажурира лозинку програма Вино"
+
+#: ../tools/vino-passwd.c:195
+msgid ""
+"Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr "Покрените 'vino-passwd --help' да приказ пуне листе доступних опција"
+
+#: ../tools/vino-passwd.c:202
+#, c-format
+msgid "VINO Version %s\n"
+msgstr "ВИНО издање %s\n"
+
+#: ../tools/vino-passwd.c:211
+#, c-format
+msgid "ERROR: You do not have enough permissions to change Vino password.\n"
+msgstr "ГРЕШКА: Немате дозволу да промените лозинку програма Вино.\n"
+
+#~ msgid ""
+#~ "Problem registering the remote desktop server with bonobo-activation; "
+#~ "exiting ...\n"
+#~ msgstr ""
+#~ "Неприлика при пријави сервера удаљене радне површи у Бонобо активацију; "
+#~ "завршавам ...\n"
+
+#~ msgid "Remote desktop server died, restarting\n"
+#~ msgstr "Сервер удаљене радне површи је затворен, поново покрећем\n"
+
+#~ msgid "Activation of %s failed: %s\n"
+#~ msgstr "Неуспешна активација %s: %s\n"
+
+#~ msgid "Activation of %s failed: Unknown Error\n"
+#~ msgstr "Неуспешна активација %s: непозната грешка\n"
+
+#~ msgid "Failed to activate remote desktop server: tried too many times\n"
+#~ msgstr ""
+#~ "Неуспешно покретање сервера удаљене радне површи: покушано превише пута\n"
+
+#~ msgid "Starting remote desktop server"
+#~ msgstr "Покрећем сервер удаљене радне површи"
+
+#~ msgid "Not starting remote desktop server"
+#~ msgstr "Не покрећем сервер удаљене радне површи"
 
 #~ msgid "    "
 #~ msgstr "    "
