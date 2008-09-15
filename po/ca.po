@@ -1,33 +1,34 @@
-# Translation of vino to Catalan.
-# Copyright © 2004-2007 Free Software Foundation, Inc.
+# Traducció del mòdul vino de Softcatalà
+# Copyright © 2004-2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the vino package.
 # Josep Puigdemont i Casamajó <josep.puigdemont@gmail.com>, 2004-2007.
+# Joan Duran <jodufi@gmail.com>, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-19 11:35+0100\n"
-"PO-Revision-Date: 2008-02-19 11:37+0100\n"
-"Last-Translator: Josep Puigdemont <josep.puigdemont@gmail.com>\n"
+"POT-Creation-Date: 2008-09-15 23:21+0200\n"
+"PO-Revision-Date: 2008-09-10 20:02+0100\n"
+"Last-Translator: Joan Duran <jodufi@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
-#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
-#: ../server/vino-server.c:148
+#: ../capplet/vino-preferences.c:1097 ../capplet/vino-preferences.c:1132
+#: ../capplet/vino-preferences.c:1190 ../server/vino-dbus-listener.c:374
+#: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Ha fallat obrir la connexió al bus: %s\n"
 
-#: ../capplet/vino-preferences.c:1329
+#: ../capplet/vino-preferences.c:1399
 msgid "Send this command by email"
 msgstr "Envia aquesta ordre per correu"
 
-#: ../capplet/vino-preferences.c:1364
+#: ../capplet/vino-preferences.c:1437
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -37,6 +38,7 @@ msgstr ""
 "%s"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+#: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "Escriptori remot"
 
@@ -77,55 +79,49 @@ msgid "Allow other users to _view your desktop"
 msgstr "Permet que altres usuaris _visualitzin el meu escriptori"
 
 #: ../capplet/vino-preferences.glade.h:9
+msgid "Disable the _wallpaper when connected"
+msgstr "Inhabilita el _fons d'escriptori quan es connecti"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid "Disable the wallpaper when successfull connection"
+msgstr "Inhabilita el fons d'escriptori quan es connecti correctament"
+
+#: ../capplet/vino-preferences.glade.h:11
 msgid "General"
 msgstr "General"
 
-#: ../capplet/vino-preferences.glade.h:10
-msgid ""
-"If checked, remote users accessing the desktop are required to support "
-"encryption"
-msgstr ""
-"Si està marcat, els usuaris remots que accedeixin a l'escriptori se'ls "
-"demanarà que admetin xifratge"
-
-#. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:12
-msgid "If checked, remote users are able to control your mouse and keyboard"
-msgstr ""
-"Si està marcat, els usuaris remots podran controlar el ratolí i el teclat"
-
-#: ../capplet/vino-preferences.glade.h:13
-msgid ""
-"If checked, screen will be locked after the last remote client disconnect"
-msgstr ""
-"Si està marcat, es blocarà la pantalla després que es desconnecti l'últim "
-"client"
-
-#: ../capplet/vino-preferences.glade.h:14
-msgid "If checked, the server will only accept connections from localhost"
-msgstr ""
-"Si està marcat, el servidor només acceptarà connexions des del propi "
-"ordinador"
-
-#: ../capplet/vino-preferences.glade.h:15
-msgid ""
-"If checked, the server will use another port, instead of the default (5900)"
-msgstr ""
-"Si està marcat, el servidor utilitzarà un port diferent del predeterminat "
-"(5900)"
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:17
-msgid "If checked, your desktop will be shared"
-msgstr "Si està marcat, es compartirà l'escriptori"
-
-#: ../capplet/vino-preferences.glade.h:18
 msgid "Remote Desktop Preferences"
 msgstr "Preferències de l'escriptori remot"
 
-#: ../capplet/vino-preferences.glade.h:19
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:14
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr "Els usuaris remots poden controlar el ratolí i el teclat"
+
+#: ../capplet/vino-preferences.glade.h:15
+msgid ""
+"Remote users' VNC clients accessing the desktop are required to support "
+"encryption"
+msgstr ""
+"Els clients VNC dels usuaris remots que accedeixin a l'escriptori se'ls "
+"demanarà que admetin xifratge"
+
+#: ../capplet/vino-preferences.glade.h:16
+msgid "Screen will be locked after the last remote client disconnect"
+msgstr "La pantalla es blocarà quan es desconnecti el darrer client remot."
+
+#: ../capplet/vino-preferences.glade.h:17
 msgid "Some of these preferences are locked down"
 msgstr "Algunes d'aquestes preferències estan bloquejades"
+
+#: ../capplet/vino-preferences.glade.h:18
+msgid "The server will only accept connections from localhost"
+msgstr "El servidor només acceptarà connexions des del propi ordinador"
+
+#: ../capplet/vino-preferences.glade.h:19
+msgid "The server will use another port, instead of the default (5900)"
+msgstr "El servidor utilitzarà un port diferent del predeterminat (5900)"
 
 #: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
@@ -135,39 +131,44 @@ msgstr "Els usuaris poden visualitzar el vostre escriptori amb aquesta ordre:"
 msgid "When a user tries to view or control your desktop:"
 msgstr "Quan un usuari intenta visualitzar o controlar el vostre escriptori:"
 
-#: ../capplet/vino-preferences.glade.h:22
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:23
+msgid "Your desktop will be shared"
+msgstr "Es compartirà el vostre escriptori"
+
+#: ../capplet/vino-preferences.glade.h:24
 msgid "_Allow other users to control your desktop"
 msgstr "_Permet que altres usuaris controlin l'escriptori"
 
-#: ../capplet/vino-preferences.glade.h:23
+#: ../capplet/vino-preferences.glade.h:25
 msgid "_Lock screen on disconnect"
 msgstr "_Bloca la pantalla en desconnectar"
 
-#: ../capplet/vino-preferences.glade.h:24
+#: ../capplet/vino-preferences.glade.h:26
 msgid "_Never display an icon"
 msgstr "_No mostris mai una icona"
 
-#: ../capplet/vino-preferences.glade.h:25
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Only allow local connections"
 msgstr "Permet n_omés connexions locals"
 
-#: ../capplet/vino-preferences.glade.h:26
+#: ../capplet/vino-preferences.glade.h:28
 msgid "_Only display an icon when there is someone connected"
 msgstr "Mostra n_omés una icona quan hi hagi algú connectat"
 
-#: ../capplet/vino-preferences.glade.h:27
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Password:"
 msgstr "_Contrasenya:"
 
-#: ../capplet/vino-preferences.glade.h:28
+#: ../capplet/vino-preferences.glade.h:30
 msgid "_Require encryption"
 msgstr "_Requereix xifratge"
 
-#: ../capplet/vino-preferences.glade.h:29
+#: ../capplet/vino-preferences.glade.h:31
 msgid "_Require the user to enter this password:"
 msgstr "Demana aquesta cont_rasenya:"
 
-#: ../capplet/vino-preferences.glade.h:30
+#: ../capplet/vino-preferences.glade.h:32
 msgid "_Use an alternative port:"
 msgstr "_Escolta un port alternatiu:"
 
@@ -182,16 +183,21 @@ msgstr "No hi ha hagut prou memòria per a gestionar el missatge «%s»"
 msgid "Out of memory registering object path '%s'"
 msgstr "No hi ha hagut prou memòria per a registrar el camí de l'objecte «%s»"
 
-#: ../server/vino-dbus-listener.c:407
+#: ../server/vino-dbus-listener.c:411
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "No s'ha pogut obtenir el nom D-Bus «%s»\n"
 
-#: ../server/vino-main.c:74
+#: ../server/vino-dbus-listener.c:419
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr ""
+"El servidor de l'escriptori remot ja s'està executant; s'està sortint...\n"
+
+#: ../server/vino-main.c:89
 msgid "GNOME Remote Desktop"
 msgstr "Escriptori remot del GNOME"
 
-#: ../server/vino-main.c:84
+#: ../server/vino-main.c:99
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -264,6 +270,10 @@ msgstr "_Permet"
 #: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "_Refusa"
+
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "GNOME Remote Desktop Server"
+msgstr "Servidor d'escriptoris remots del GNOME"
 
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -394,8 +404,8 @@ msgid ""
 "encoded."
 msgstr ""
 "La contrasenya que es demanarà a l'usuari remot si es fa servir el mètode "
-"d'autenticació «vnc». La contrasenya especificada en aquesta clau es "
-"codifica en base64."
+"d'autenticació «vnc». La contrasenya especificada en aquesta clau es codifica "
+"en base64."
 
 #: ../server/vino-server.schemas.in.h:21
 msgid ""
@@ -414,8 +424,7 @@ msgid ""
 "\"never\" - Never shows the icon."
 msgstr ""
 "Aquesta clau controla el comportament de la icona d'estat. Hi ha tres "
-"opcions: «always» - Sempre es veurà la icona. «client» només - veureu la "
-"icona "
+"opcions: «always» - Sempre es veurà la icona. «client» només - veureu la icona "
 "quan hi hagi algú connectat, és el comportament predeterminat. «mai» - no "
 "mostris mai la icona."
 
@@ -433,18 +442,10 @@ msgstr ""
 msgid "When the status icon should be shown"
 msgstr "Quan s'hauria de mostrar la icona d'estat"
 
-#: ../server/vino-shell.c:76
-msgid "Remote Desktop server already running; exiting ...\n"
+#: ../server/vino-server.schemas.in.h:25
+msgid "When true, disable the background on receive valid session"
 msgstr ""
-"El servidor de l'escriptori remot ja s'està executant; s'està sortint...\n"
-
-#: ../server/vino-shell.c:79
-msgid ""
-"Problem registering the remote desktop server with bonobo-activation; "
-"exiting ...\n"
-msgstr ""
-"Hi ha hagut un problema en registrar el servidor d'escriptori remot amb "
-"bonobo-activation; s'està sortint...\n"
+"Si s'habilita, s'inhabilitarà el fons d'escriptori en rebre una sessió vàlida"
 
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
@@ -520,107 +521,176 @@ msgstr "Josep Puigdemont i Casamajó <josep.puigdemont@gmail.com>"
 msgid "Share your desktop with other users"
 msgstr "Compartiu el vostre escriptori amb altres usuaris"
 
-#: ../server/vino-status-icon.c:360
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:361
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Esteu segur que voleu desconnectar «%s»?"
 
-#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-icon.c:363
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Es desconnectarà l'usuari remot de «%s». N'esteu segur?"
 
-#: ../server/vino-status-icon.c:367
+#: ../server/vino-status-icon.c:368
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Esteu segur que voleu desconnectar tots els clients?"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:369
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Es desconnectaran tots els usuaris remots. N'esteu segur?"
 
-#: ../server/vino-status-icon.c:380
+#: ../server/vino-status-icon.c:381
 msgid "Disconnect"
 msgstr "Desconnecta"
 
-#: ../server/vino-status-icon.c:406
+#: ../server/vino-status-icon.c:407
 msgid "_Preferences"
 msgstr "_Preferències"
 
-#: ../server/vino-status-icon.c:421
+#: ../server/vino-status-icon.c:422
 msgid "Disconnect all"
 msgstr "Desconnecta'ls tots"
 
-#: ../server/vino-status-icon.c:444
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:446
 #, c-format
 msgid "Disconnect %s"
 msgstr "Desconnecta %s"
 
-#: ../server/vino-status-icon.c:464
+#: ../server/vino-status-icon.c:466
 msgid "_Help"
 msgstr "A_juda"
 
-#: ../server/vino-status-icon.c:472
+#: ../server/vino-status-icon.c:474
 msgid "_About"
 msgstr "_Quant a"
 
-#: ../server/vino-status-icon.c:598
+#: ../server/vino-status-icon.c:603
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "S'ha produït un error en inicialitzar el libnotify\n"
 
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:623
 msgid "Another user is viewing your desktop"
 msgstr "Un altre usuari està veient el vostre escriptori"
 
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:624
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr ""
 "Un usuari de l'ordinador «%s» està veient el vostre escriptori remotament."
 
-#: ../server/vino-status-icon.c:624
+#: ../server/vino-status-icon.c:629
 msgid "Another user is controlling your desktop"
 msgstr "Un altre usuari està controlant el vostre escriptori"
 
-#: ../server/vino-status-icon.c:625
+#: ../server/vino-status-icon.c:630
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr ""
-"Un usuari de l'ordinador «%s» està controlant el vostre escriptori "
-"remotament."
+"Un usuari de l'ordinador «%s» està controlant el vostre escriptori remotament."
 
-#: ../server/vino-status-icon.c:647
+#: ../server/vino-status-icon.c:652
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "S'ha produït un error en mostrar la notificació: %s\n"
 
-#: ../session/vino-session.c:133
-msgid "Remote desktop server died, restarting\n"
-msgstr "El servidor remot ha fallat, s'està reiniciant\n"
-
-#: ../session/vino-session.c:154
+#: ../tools/vino-passwd.c:115
 #, c-format
-msgid "Activation of %s failed: %s\n"
-msgstr "Ha fallat l'activació de %s: %s\n"
-
-#: ../session/vino-session.c:160
-#, c-format
-msgid "Activation of %s failed: Unknown Error\n"
-msgstr "Ha fallat l'activació de %s: error desconegut\n"
-
-#: ../session/vino-session.c:231
-msgid "Failed to activate remote desktop server: tried too many times\n"
+msgid ""
+"ERROR: Maximum length of password is %d characters. Please, re-enter the "
+"password.\n"
 msgstr ""
-"No s'ha pogut activar el servidor d'escriptori remot: s'ha intentat massa "
-"vegades\n"
+"ERROR: La longitud màxima de la contrasenya és de %d caràcters. Torneu a "
+"introduir la contrasenya.\n"
 
-#: ../session/vino-session.c:295
-msgid "Starting remote desktop server"
-msgstr "S'està iniciant el servidor d'escriptori remot"
+#: ../tools/vino-passwd.c:145
+#, c-format
+msgid "Changing Vino password.\n"
+msgstr "Canvia la contrasenya del Vino.\n"
 
-#: ../session/vino-session.c:300
-msgid "Not starting remote desktop server"
-msgstr "No s'està iniciant el servidor d'escriptori remot"
+#: ../tools/vino-passwd.c:147
+msgid "Enter new Vino password: "
+msgstr "Introduïu la contrasenya nova del Vino: "
+
+#: ../tools/vino-passwd.c:150
+msgid "Retype new Vino password: "
+msgstr "Torneu a escriure la contrasenya nova del Vino: "
+
+#: ../tools/vino-passwd.c:156
+#, c-format
+msgid "vino-passwd: password updated successfully.\n"
+msgstr "vino-passwd: la contrasenya s'ha actualitzat correctament.\n"
+
+#: ../tools/vino-passwd.c:160
+#, c-format
+msgid "Sorry, passwords do not match.\n"
+msgstr "Les contrasenyes no coincideixen.\n"
+
+#: ../tools/vino-passwd.c:161
+#, c-format
+msgid "vino-passwd: password unchanged.\n"
+msgstr "vino-passwd: no s'ha canviat la contrasenya.\n"
+
+#: ../tools/vino-passwd.c:176
+msgid "Show Vino version"
+msgstr "Mostra la versió del Vino"
+
+#: ../tools/vino-passwd.c:185
+msgid "- Updates Vino password"
+msgstr "- Actualitza la contrasenya del Vino"
+
+#: ../tools/vino-passwd.c:195
+msgid ""
+"Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr ""
+"Executeu «vino-passwd --help» per a veure una llista completa de les opcions "
+"disponibles de la línia d'ordres"
+
+#: ../tools/vino-passwd.c:202
+#, c-format
+msgid "VINO Version %s\n"
+msgstr "Versió %s del Vino\n"
+
+#: ../tools/vino-passwd.c:211
+#, c-format
+msgid "ERROR: You do not have enough permissions to change Vino password.\n"
+msgstr ""
+"ERROR: No teniu suficients permisos per a canviar la contrasenya del Vino.\n"
+
+#~ msgid ""
+#~ "If checked, screen will be locked after the last remote client disconnect"
+#~ msgstr ""
+#~ "Si està marcat, es blocarà la pantalla després que es desconnecti l'últim "
+#~ "client"
+
+#~ msgid ""
+#~ "Problem registering the remote desktop server with bonobo-activation; "
+#~ "exiting ...\n"
+#~ msgstr ""
+#~ "Hi ha hagut un problema en registrar el servidor d'escriptori remot amb "
+#~ "bonobo-activation; s'està sortint...\n"
+
+#~ msgid "Remote desktop server died, restarting\n"
+#~ msgstr "El servidor remot ha fallat, s'està reiniciant\n"
+
+#~ msgid "Activation of %s failed: %s\n"
+#~ msgstr "Ha fallat l'activació de %s: %s\n"
+
+#~ msgid "Activation of %s failed: Unknown Error\n"
+#~ msgstr "Ha fallat l'activació de %s: error desconegut\n"
+
+#~ msgid "Failed to activate remote desktop server: tried too many times\n"
+#~ msgstr ""
+#~ "No s'ha pogut activar el servidor d'escriptori remot: s'ha intentat massa "
+#~ "vegades\n"
+
+#~ msgid "Starting remote desktop server"
+#~ msgstr "S'està iniciant el servidor d'escriptori remot"
+
+#~ msgid "Not starting remote desktop server"
+#~ msgstr "No s'està iniciant el servidor d'escriptori remot"
 
 #~ msgid "Address"
 #~ msgstr "Adreça"
