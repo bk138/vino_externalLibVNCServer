@@ -13,14 +13,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-14 18:59+0200\n"
-"PO-Revision-Date: 2008-09-12 18:35+0100\n"
-"Last-Translator: Kamil Páral <ripper42@gmail.com>\n"
+"POT-Creation-Date: 2008-09-15 16:52+0200\n"
+"PO-Revision-Date: 2008-09-07 14:19+0100\n"
+"Last-Translator: Pavel Šefránek <ps@pjoul.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
 
 #: ../capplet/vino-preferences.c:1097 ../capplet/vino-preferences.c:1132
 #: ../capplet/vino-preferences.c:1190 ../server/vino-dbus-listener.c:374
@@ -85,11 +87,11 @@ msgstr "Umožnit jiným uživatelům _zobrazit vaši pracovní plochu"
 
 #: ../capplet/vino-preferences.glade.h:9
 msgid "Disable the _wallpaper when connected"
-msgstr "Při připojení vypnout _tapetu plochy"
+msgstr "Nezobrazovat vzdálenému uživateli _pozadí plochy"
 
 #: ../capplet/vino-preferences.glade.h:10
 msgid "Disable the wallpaper when successfull connection"
-msgstr "Při úspěšném připojení vypnout tapetu plochy"
+msgstr "Nezobrazovat připojenému vzdálenému uživateli pozadí plochy"
 
 #: ../capplet/vino-preferences.glade.h:11
 msgid "General"
@@ -102,19 +104,21 @@ msgstr "Nastavení vzdálené pracovní plochy"
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:14
 msgid "Remote users are able to control your mouse and keyboard"
-msgstr "Vzdálení uživatelé mohou ovládat vaši myš a klávesnici"
+msgstr ""
+"Vzdálení uživatelé, kteří přistupují k tomuto počítači, budou moci ovládat "
+"vaši myš a klávesnici"
 
 #: ../capplet/vino-preferences.glade.h:15
 msgid ""
 "Remote users' VNC clients accessing the desktop are required to support "
 "encryption"
 msgstr ""
-"VNC klienti vzdálených uživatelů přistupujících k pracovní ploše musí "
-"podporovat šifrování"
+"Vzdálení uživatelé, kteří přistupují k tomuto počítači prostřednictvím VNC, "
+"musejí podporovat šifrování"
 
 #: ../capplet/vino-preferences.glade.h:16
 msgid "Screen will be locked after the last remote client disconnect"
-msgstr "Obrazovka bude zamknuta po odpojení posledního vzdáleného klienta"
+msgstr "Obrazovka bude zamknuta poté, co se odpojí poslední klient"
 
 #: ../capplet/vino-preferences.glade.h:17
 msgid "Some of these preferences are locked down"
@@ -181,17 +185,17 @@ msgstr "Naslo_uchat na jiném portu:"
 #: ../server/vino-dbus-listener.c:249
 #, c-format
 msgid "Out of memory handling '%s' message"
-msgstr "Paměť byla vyčerpána při zpracovávání zprávy \"%s\""
+msgstr "Paměť byla vyčerpána při zpracovávání zprávy „%s“"
 
 #: ../server/vino-dbus-listener.c:334
 #, c-format
 msgid "Out of memory registering object path '%s'"
-msgstr "Paměť byla vyčerpána při registrování objektu \"%s\""
+msgstr "Paměť byla vyčerpána při registrování objektu „%s“"
 
 #: ../server/vino-dbus-listener.c:411
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
-msgstr "Nemohu získat název D-Bus \"%s\"\n"
+msgstr "Nemohu získat název D-Bus „%s“\n"
 
 #: ../server/vino-dbus-listener.c:419
 msgid "Remote Desktop server already running; exiting ...\n"
@@ -244,7 +248,7 @@ msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"Uživatel na počítači \"%s\" se pokouší vzdáleně zobrazit nebo ovládat vaši "
+"Uživatel na počítači „%s“ se pokouší vzdáleně zobrazit nebo ovládat vaši "
 "pracovní plochu."
 
 #: ../server/vino-prompt.glade.h:1
@@ -302,7 +306,7 @@ msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
 msgstr ""
-"Je-li \"true\", umožňuje vzdálený přístup k pracovní ploše pomocí protokolu "
+"Je-li „true“, umožňuje vzdálený přístup k pracovní ploše pomocí protokolu "
 "RFB. Uživatelé na vzdálených počítačích se pak mohou připojit k pracovní "
 "ploše pomocí vncviewer."
 
@@ -312,7 +316,7 @@ msgid ""
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
 msgstr ""
-"Je-li \"true\", vzdáleným uživatelům přistupujícím k pracovní ploše není "
+"Je-li „true“, vzdáleným uživatelům přistupujícím k pracovní ploše není "
 "povolen přístup, dokud uživatel na tomto počítači nepovolí připojení. "
 "Doporučeno obzvláště pokud přístup není chráněn heslem."
 
@@ -321,7 +325,7 @@ msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
 msgstr ""
-"Je-li \"true\", vzdáleným uživatelům přistupujícím k pracovní ploše je "
+"Je-li „true“, vzdáleným uživatelům přistupujícím k pracovní ploše je "
 "povoleno jen prohlížet pracovní plochu. Nebudou moci používat myš nebo "
 "klávesnici."
 
@@ -331,22 +335,22 @@ msgid ""
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
-"Je-li \"true\", vzdálení uživatelé přistupující k pracovní ploše musí "
+"Je-li „true“, vzdálení uživatelé přistupující k pracovní ploše musí "
 "podporovat šifrování. Důrazně se doporučuje používat klienta, který "
 "podporuje šifrování, pokud tedy není síť propojující počítače důvěryhodná."
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
 msgstr ""
-"Je-li \"true\", obrazovka bude zamknuta poté, co se odpojí poslední klient."
+"Je-li „true“, obrazovka bude zamknuta poté, co se odpojí poslední klient."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid ""
 "If true, the server will listen to another port, instead of the default "
 "(5900). The port must be specified in the 'alternative_port' key."
 msgstr ""
-"Je-li \"true\", server bude naslouchat na jiném než výchozím (5900) portu. "
-"Jiný port musí být uveden v klíči \"alternative_port\"."
+"Je-li „true“, server bude naslouchat na jiném než výchozím (5900) portu. "
+"Jiný port musí být uveden v klíči „alternative_port“."
 
 #: ../server/vino-server.schemas.in.h:11
 msgid ""
@@ -354,9 +358,9 @@ msgid ""
 "connections will be rejected. Set this option to true if you wish to "
 "exclusively use a tunneling mechanism to access the server, such as ssh."
 msgstr ""
-"Je-li \"true\", server bude přijímat spojení pouze z tohoto počítače a "
-"ostatní spojení budou zakázána. Nastavte prosím \"true\", pokud si přejete "
-"používat tunelování pro přístup k serveru, např. pomocí ssh."
+"Je-li „true“, server bude přijímat spojení pouze z tohoto počítače a ostatní "
+"spojení budou zakázána. Nastavte prosím „true“, pokud si přejete používat "
+"tunelování pro přístup k serveru, např. pomocí ssh."
 
 #: ../server/vino-server.schemas.in.h:12
 msgid "Listen an alternative port"
@@ -371,9 +375,9 @@ msgid ""
 "user to connect."
 msgstr ""
 "Obsahuje metody autentizace, se kterými mohou vzdálení uživatelé přistupovat "
-"k pracovní ploše. Jsou dvě možné metody autentizace; \"vnc\" způsobí, že "
-"vzdálený uživatel bude před připojením dotázán na heslo (určené klíčem "
-"vnc_password) a \"none\" povoluje připojení kterémukoli vzdálenému uživateli."
+"k pracovní ploše. Jsou dvě možné metody autentizace; „vnc“ způsobí, že "
+"vzdálený uživatel bude před připojením dotázán na heslo (nastavené v klíči "
+"vnc_password) a „none“ povoluje připojení kterémukoli vzdálenému uživateli."
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Lock the screen when last user disconnect"
@@ -381,7 +385,7 @@ msgstr "Uzamknout obrazovku, když se odpojí poslední uživatel"
 
 #: ../server/vino-server.schemas.in.h:15
 msgid "Only allow local connections"
-msgstr "Povolit pouze lokální spojení"
+msgstr "Povolit pouze místní spojení"
 
 #: ../server/vino-server.schemas.in.h:16
 msgid "Only allow remote users to view the desktop"
@@ -389,7 +393,7 @@ msgstr "Povolit vzdáleným uživatelům jen prohlížet pracovní plochu"
 
 #: ../server/vino-server.schemas.in.h:17
 msgid "Password required for \"vnc\" authentication"
-msgstr "Heslo vyžadované pro autentizaci \"vnc\""
+msgstr "Heslo vyžadované pro autentizaci „vnc“"
 
 #: ../server/vino-server.schemas.in.h:18
 msgid "Prompt the user before completing a connection"
@@ -406,7 +410,7 @@ msgid ""
 "encoded."
 msgstr ""
 "Heslo, na které bude vzdálený uživatel dotázán, pokud se používá metoda "
-"autentizace \"vnc\". Heslo určené tímto klíčem je kódování s base64."
+"autentizace „vnc“. Heslo určené tímto klíčem je kódování s base64."
 
 #: ../server/vino-server.schemas.in.h:21
 msgid ""
@@ -414,8 +418,8 @@ msgid ""
 "is set to true. Valid values are in the range from 5000 to 50000."
 msgstr ""
 "Číslo portu, na kterém bude server naslouchat, pokud je klíč "
-"\"use_alternative_port\" nastaven na \"true\". Přípustné hodnoty jsou v "
-"rozmezí od 5000 do 50000."
+"„use_alternative_port“ nastaven na „true“. Přípustné hodnoty jsou v rozmezí "
+"od 5000 do 50000."
 
 #: ../server/vino-server.schemas.in.h:22
 msgid ""
@@ -425,9 +429,9 @@ msgid ""
 "\"never\" - Never shows the icon."
 msgstr ""
 "Tento klíč upravuje chování ikony v oznamovací oblasti. Možné jsou tři "
-"možnosti: \"always\" - zobrazovat pořád; \"client\" - zobrazovat pouze, když "
-"je připojen vzdálený klient - toto je výchozí chování; \"never\" - "
-"nezobrazovat nikdy."
+"možnosti: „always“ - zobrazovat pořád; „client“ - zobrazovat pouze, když je "
+"připojen vzdálený klient - toto je výchozí chování; „never“ - nezobrazovat "
+"nikdy."
 
 #: ../server/vino-server.schemas.in.h:23
 msgid ""
@@ -446,7 +450,8 @@ msgstr "Kdy zobrazovat ikonu v oznamovací oblasti"
 #: ../server/vino-server.schemas.in.h:25
 msgid "When true, disable the background on receive valid session"
 msgstr ""
-"Když je povoleno, tak při přijetí platného sezení je vypnuta tapeta plochy"
+"Je-li „true“, nebude se vzdáleným uživatelům, kteří se připojí k tomuto "
+"počítači, zobrazovat pozadí vaší plochy"
 
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
@@ -530,12 +535,12 @@ msgstr "Sdílejte svou plochu s dalšími uživateli"
 #: ../server/vino-status-icon.c:361
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
-msgstr "Opravdu chcete odpojit \"%s\"?"
+msgstr "Opravdu chcete odpojit „%s“?"
 
 #: ../server/vino-status-icon.c:363
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
-msgstr "Vzdálený uživatel z \"%s\" bude odpojen. Opravdu?"
+msgstr "Vzdálený uživatel z „%s“ bude odpojen. Opravdu?"
 
 #: ../server/vino-status-icon.c:368
 msgid "Are you sure you want to disconnect all clients?"
@@ -583,7 +588,7 @@ msgstr "Jiný uživatel vzdáleně sleduje vaši pracovní plochu"
 #: ../server/vino-status-icon.c:624
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
-msgstr "Uživatel na počítači \"%s\" vzdáleně sleduje vaši pracovní plochu."
+msgstr "Uživatel na počítači „%s“ vzdáleně sleduje vaši pracovní plochu."
 
 #: ../server/vino-status-icon.c:629
 msgid "Another user is controlling your desktop"
@@ -592,7 +597,7 @@ msgstr "Jiný uživatel vzdáleně ovládá vaši pracovní plochu"
 #: ../server/vino-status-icon.c:630
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr "Uživatel na počítači \"%s\" vzdáleně ovládá vaši pracovní plochu."
+msgstr "Uživatel na počítači „%s“ vzdáleně ovládá vaši pracovní plochu."
 
 # jak překládat notiffication bubble?
 #: ../server/vino-status-icon.c:652
@@ -605,58 +610,57 @@ msgstr "Nastal problém při pokusu zobrazit oznámení: %s\n"
 msgid ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
 "password.\n"
-msgstr ""
-"CHYBA: Maximální délka hesla je %d znaků. Prosím zadejte heslo znovu.\n"
+msgstr "CHYBA: Délka hesla je omezena na %d znaků. Zadejte kratší heslo.\n"
 
 #: ../tools/vino-passwd.c:145
 #, c-format
 msgid "Changing Vino password.\n"
-msgstr "Změna hesla pro Vino.\n"
+msgstr "Vyžádali jste si změnu hesla k aplikaci Vino.\n"
 
 #: ../tools/vino-passwd.c:147
 msgid "Enter new Vino password: "
-msgstr "Zadejte nové heslo pro Vino: "
+msgstr "Zadejte nové heslo: "
 
 #: ../tools/vino-passwd.c:150
 msgid "Retype new Vino password: "
-msgstr "Zopakujte nové heslo pro Vino: "
+msgstr "Zopakujte nové heslo: "
 
 #: ../tools/vino-passwd.c:156
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
-msgstr "vino-passwd: heslo úspěšně aktualizováno.\n"
+msgstr "vino-passwd: heslo bylo úspěšně změněno.\n"
 
 #: ../tools/vino-passwd.c:160
 #, c-format
 msgid "Sorry, passwords do not match.\n"
-msgstr "Je mi líto, hesla nesouhlasí.\n"
+msgstr "Hesla nesouhlasí.\n"
 
 #: ../tools/vino-passwd.c:161
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
-msgstr "vino-passwd: heslo nezměněno.\n"
+msgstr "vino-passwd: heslo nebylo změněno.\n"
 
 #: ../tools/vino-passwd.c:176
 msgid "Show Vino version"
-msgstr "Zobrazit verzi Vino"
+msgstr "Zobrazit verzi aplikace Vino"
 
 #: ../tools/vino-passwd.c:185
 msgid "- Updates Vino password"
-msgstr "- aktualizuje heslo pro Vino"
+msgstr "- změna hesla k aplikaci Vino"
 
 #: ../tools/vino-passwd.c:195
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
-msgstr ""
-"Spusťte 'vino-passwd --help' k zobrazení plného seznamu dostupných voleb "
-"příkazové řádky"
+msgstr "Více informací získáte příkazem „vino-passwd --help“"
 
 #: ../tools/vino-passwd.c:202
 #, c-format
 msgid "VINO Version %s\n"
-msgstr "Vino verze %s\n"
+msgstr "Vino %s\n"
 
 #: ../tools/vino-passwd.c:211
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
-msgstr "CHYBA: Nemáte dostatečná oprávnění pro změnu hesla pro Vino.\n"
+msgstr ""
+"CHYBA: nemáte dostatečná oprávnění, abyste mohli změnit heslo k aplikaci "
+"Vino.\n"
