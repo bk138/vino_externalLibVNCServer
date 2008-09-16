@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-15 23:21+0200\n"
-"PO-Revision-Date: 2008-09-10 20:02+0100\n"
+"POT-Creation-Date: 2008-09-17 00:10+0200\n"
+"PO-Revision-Date: 2008-09-16 23:48+0100\n"
 "Last-Translator: Joan Duran <jodufi@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
@@ -273,7 +273,7 @@ msgstr "_Refusa"
 
 #: ../server/vino-server.desktop.in.in.h:1
 msgid "GNOME Remote Desktop Server"
-msgstr "Servidor d'escriptoris remots del GNOME"
+msgstr "Servidor d'escriptori remot del GNOME"
 
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -515,7 +515,9 @@ msgstr ""
 #. Translators comment: put your own name here to appear in the about dialog.
 #: ../server/vino-status-icon.c:291
 msgid "translator-credits"
-msgstr "Josep Puigdemont i Casamajó <josep.puigdemont@gmail.com>"
+msgstr ""
+"Josep Puigdemont i Casamajó <josep.puigdemont@gmail.com>\n"
+"Joan Duran <jodufi@gmail.com>"
 
 #: ../server/vino-status-icon.c:297
 msgid "Share your desktop with other users"
@@ -651,7 +653,7 @@ msgstr ""
 #: ../tools/vino-passwd.c:202
 #, c-format
 msgid "VINO Version %s\n"
-msgstr "Versió %s del Vino\n"
+msgstr "Vino versió %s\n"
 
 #: ../tools/vino-passwd.c:211
 #, c-format
