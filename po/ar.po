@@ -1,24 +1,24 @@
-# translation of vino.HEAD.ar.po to Arabic
+# translation of vino.HEAD.po to Arabic
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
 # Ayman Hourieh <aymanh@gmail.com>, 2004.
 # Djihed Afifi <djihed@gmail.com>, 2006.
 # Khaled Hosny <khaledhosny@eglug.org>, 2006, 2007.
+# Usama Akkad <uak@aya.sy>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: vino.HEAD.ar\n"
+"Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-09-14 11:10+0100\n"
-"PO-Revision-Date: 2008-02-27 11:09+0100\n"
-"Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
+"PO-Revision-Date: 2008-09-19 00:33+0300\n"
+"Last-Translator: Usama Akkad <uak@aya.sy>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : "
-"3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : 3\n"
 
 #: ../capplet/vino-preferences.c:1097 ../capplet/vino-preferences.c:1132
 #: ../capplet/vino-preferences.c:1190 ../server/vino-dbus-listener.c:374
@@ -83,11 +83,11 @@ msgstr "اسمح للمستخدمين الآخرين ب_عرض سطح مكتبك
 
 #: ../capplet/vino-preferences.glade.h:9
 msgid "Disable the _wallpaper when connected"
-msgstr ""
+msgstr "عطّل _خلفية الشاشة عند الاتصال"
 
 #: ../capplet/vino-preferences.glade.h:10
 msgid "Disable the wallpaper when successfull connection"
-msgstr ""
+msgstr "عطل خلفية الشاشة عند الاتصال الناجح"
 
 #: ../capplet/vino-preferences.glade.h:11
 msgid "General"
@@ -99,36 +99,30 @@ msgstr "تفضيلات سطح المكتب البعيد"
 
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:14
-#, fuzzy
 msgid "Remote users are able to control your mouse and keyboard"
-msgstr ""
-"إذا كان مفعلا، سيتمكن المستخدمون البعيدون من التحكم بالفأرة ولوحة الفاتيح"
+msgstr "المستخدمون البعيدون يمكنهم التحكم بفأرتك و لوحة مفاتيحك"
 
 #: ../capplet/vino-preferences.glade.h:15
-#, fuzzy
 msgid ""
 "Remote users' VNC clients accessing the desktop are required to support "
 "encryption"
-msgstr "إذا كان مفعلا، يجب أن يدعم المستخدون البعيدون التشفير"
+msgstr "مطلوب من عملاء VNC للمستخدمين البعيدين الذين ينفذون لسطح المكتب ان يدعموا التشفير"
 
 #: ../capplet/vino-preferences.glade.h:16
-#, fuzzy
 msgid "Screen will be locked after the last remote client disconnect"
-msgstr "اذا كان صحيحا، سيتم غلق الشاشة عند اغلاق آخر مستخدم للاتصال."
+msgstr "ستقفل الشاشة بعد آخر قطع اتصال من العميل البعيد"
 
 #: ../capplet/vino-preferences.glade.h:17
 msgid "Some of these preferences are locked down"
 msgstr "بعض هذه التّفضيلات مقفل"
 
 #: ../capplet/vino-preferences.glade.h:18
-#, fuzzy
 msgid "The server will only accept connections from localhost"
-msgstr "إذا كان مفعلا، سيقبل الخادوم الاتصالات المحلية فقط"
+msgstr "سيقبل الخادوم الاتصالات المحلية فقط"
 
 #: ../capplet/vino-preferences.glade.h:19
-#, fuzzy
 msgid "The server will use another port, instead of the default (5900)"
-msgstr "إذا كان مفعلا، سيستمع الخادوم لمنفذ آخر، بدلا من الإفتراضي (5900)"
+msgstr "سيستخدم الخادوم منفذا آخر، بدلا من الإفتراضي (5900)"
 
 #: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
@@ -140,9 +134,8 @@ msgstr "عندما يحاول مستخدم عرض أو التّحكم بسطح �
 
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:23
-#, fuzzy
 msgid "Your desktop will be shared"
-msgstr "إذا كان مفعلا، ستتم مشاركة سطح مكتبك"
+msgstr "سيتشارك سطح مكتبك"
 
 #: ../capplet/vino-preferences.glade.h:24
 msgid "_Allow other users to control your desktop"
@@ -271,9 +264,8 @@ msgid "_Refuse"
 msgstr "ا_رفض"
 
 #: ../server/vino-server.desktop.in.in.h:1
-#, fuzzy
 msgid "GNOME Remote Desktop Server"
-msgstr "بدء خادوم سطح المكتب البعيد"
+msgstr "خادوم سطح المكتب البعيد لـ غنوم"
 
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -431,7 +423,7 @@ msgstr "متى يجب إظهار أيقونة التنبيه"
 
 #: ../server/vino-server.schemas.in.h:25
 msgid "When true, disable the background on receive valid session"
-msgstr ""
+msgstr "إذا صحيح, عطل خلفية الشاشة عند تلقي جلسة صالحة"
 
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
@@ -591,82 +583,55 @@ msgstr "خطأ أثناء عرض فقّاعة التبليغ: %s\n"
 msgid ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
 "password.\n"
-msgstr ""
+msgstr "خطأ: أقصى طول لكلمة السر هو %d محارف. أعد إدخال كلمة السر.\n"
 
 #: ../tools/vino-passwd.c:145
 #, c-format
 msgid "Changing Vino password.\n"
-msgstr ""
+msgstr "تغيير كلمة سر فينو.\n"
 
 #: ../tools/vino-passwd.c:147
 msgid "Enter new Vino password: "
-msgstr ""
+msgstr "أدخل كلمة سر جديدة لـ فينو:"
 
 #: ../tools/vino-passwd.c:150
 msgid "Retype new Vino password: "
-msgstr ""
+msgstr "أعد كتابة كلمة سر فينو الجديدة:"
 
 #: ../tools/vino-passwd.c:156
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
-msgstr ""
+msgstr "passwd-فينو: حُدثت كلمة السر بنجاح.\n"
 
 #: ../tools/vino-passwd.c:160
 #, c-format
 msgid "Sorry, passwords do not match.\n"
-msgstr ""
+msgstr "آسف, كلمتا السر غير متطابقتين.\n"
 
 #: ../tools/vino-passwd.c:161
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
-msgstr ""
+msgstr "passwd-فينو: كلمة السر لم تتغير.\n"
 
 #: ../tools/vino-passwd.c:176
 msgid "Show Vino version"
-msgstr ""
+msgstr "اعرض إصدار فينو"
 
 #: ../tools/vino-passwd.c:185
 msgid "- Updates Vino password"
-msgstr ""
+msgstr "- يحدث كلمة سر فينو"
 
 #: ../tools/vino-passwd.c:195
-msgid ""
-"Run 'vino-passwd --help' to see a full list of available command line options"
-msgstr ""
+msgid "Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr "اأمر بـ'vino-passwd --help' لرؤية قائمة كاملة بخيارات سطر الأوامر"
 
 #: ../tools/vino-passwd.c:202
 #, c-format
 msgid "VINO Version %s\n"
-msgstr ""
+msgstr "إصدارة فينو %s\n"
 
 #: ../tools/vino-passwd.c:211
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
-msgstr ""
+msgstr "خطأ: ليس لديك أذون كافية لتغيير كلمة سر فينو. \n"
 
-#~ msgid ""
-#~ "Problem registering the remote desktop server with bonobo-activation; "
-#~ "exiting ...\n"
-#~ msgstr "مشكلة في تسجيل خادوم سطح المكتب البعيد بتنشيط بونوبو، خروج ...\n"
-
-#~ msgid "Remote desktop server died, restarting\n"
-#~ msgstr "توقّف خادوم سطح المكتب، إعادة التّشغيل\n"
-
-#~ msgid "Activation of %s failed: %s\n"
-#~ msgstr "فشل تنشيط %s: %s\n"
-
-#~ msgid "Activation of %s failed: Unknown Error\n"
-#~ msgstr "فشل تنشيط %s: خطأ مجهول\n"
-
-#~ msgid "Failed to activate remote desktop server: tried too many times\n"
-#~ msgstr "فشل تنشيط خادوم سطح المكتب البعيد، حاولت عددًا كبيرًا من المرّات\n"
-
-#~ msgid "Starting remote desktop server"
-#~ msgstr "بدء خادوم سطح المكتب البعيد"
-
-#~ msgid "Not starting remote desktop server"
-#~ msgstr "لا تبدء خادوم سطح المكتب البعيد"
-
-#~ msgid ""
-#~ "If checked, screen will be locked after the last remote client disconnect"
-#~ msgstr "إذا كان مفعلا، سيتم غلق الشاشة عند اغلاق آخر مستخدم للاتصال"
