@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-09-16 23:20+0200\n"
-"PO-Revision-Date: 2008-09-16 23:20+0200\n"
+"PO-Revision-Date: 2008-09-19 00:02+0200\n"
 "Last-Translator: Milo Casagrande <milo@ubuntu.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
@@ -131,9 +131,7 @@ msgstr ""
 # GNOME 2.24
 #: ../capplet/vino-preferences.glade.h:16
 msgid "Screen will be locked after the last remote client disconnect"
-msgstr ""
-"Se selezionata, lo schermo verrà bloccato dopo la disconnessione dell'ultimo "
-"client remoto"
+msgstr "Se selezionata, lo schermo viene bloccato dopo la disconnessione dell'ultimo client remoto"
 
 #: ../capplet/vino-preferences.glade.h:17
 msgid "Some of these preferences are locked down"
@@ -338,64 +336,45 @@ msgstr "Abilita accesso desktop remoto"
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
-msgstr ""
-"Se impostato a vero permette l'accesso remoto al desktop attraverso il "
-"protocollo RFB. Gli utenti su macchine remote possono connettersi tramite un "
-"vncviewer."
+msgstr "Se impostato a VERO, permette l'accesso remoto al desktop attraverso il protocollo RFB. Gli utenti su macchine remote possono connettersi tramite un vncviewer."
 
 #: ../server/vino-server.schemas.in.h:6
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
-msgstr ""
-"Se impostato a vero gli utenti che tentano di accedere al desktop non "
-"possono farlo finché l'utente sull'host non approva la connessione. "
-"Raccomandato in special modo quando l'accesso non è protetto da password."
+msgstr "Se impostato a VERO, gli utenti che tentano di accedere al desktop non possono farlo finché l'utente sull'host non approva la connessione. Raccomandato in special modo quando l'accesso non è protetto da password."
 
 #: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
-msgstr ""
-"Se impostato a vero agli utenti remoti che accedono al desktop sarà "
-"consentita solo la vista del desktop. Non potranno usare mouse o tastiera."
+msgstr "Se impostato a VERO, agli utenti remoti che accedono al desktop sarà consentita solo la vista del desktop. Non potranno usare mouse o tastiera."
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
 "If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
-msgstr ""
-"Se impostato a vero gli utenti remoti che accedono al desktop devono "
-"supportare la cifratura. È caldamente consigliato usare un client che "
-"supporta la cifratura, a meno che non ci si trovi su una rete fidata."
+msgstr "Se impostato a VERO, gli utenti remoti che accedono al desktop devono supportare la cifratura. È caldamente consigliato usare un client che supporta la cifratura, a meno che non ci si trovi su una rete fidata."
 
 # GNOME-2-22
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr ""
-"Se impostato a vero lo schermo verrà bloccato dopo la disconnessione "
-"dell'ultimo client remoto."
+msgstr "Se impostato a VERO, lo schermo verrà bloccato dopo la disconnessione dell'ultimo client remoto."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid ""
 "If true, the server will listen to another port, instead of the default "
 "(5900). The port must be specified in the 'alternative_port' key."
-msgstr ""
-"Se impostato a vero il server sarà in ascolto su una porta diversa da quella "
-"predefinita (5900). La porta deve essere specificata nella chiave "
-"\"alternative_port\"."
+msgstr "Se impostato a VERO, il server sarà in ascolto su una porta diversa da quella predefinita (5900). La porta deve essere specificata nella chiave \"alternative_port\"."
 
 #: ../server/vino-server.schemas.in.h:11
 msgid ""
 "If true, the server will only accept connections from localhost and network "
 "connections will be rejected. Set this option to true if you wish to "
 "exclusively use a tunneling mechanism to access the server, such as ssh."
-msgstr ""
-"Se impostato a vero il server accetterà connessioni dall'host locale e le "
-"connessioni dalla rete saranno rifiutate. Impostare questa opzione a vero "
-"per utilizzare un meccanismo di tunneling come ssh per accedere al server."
+msgstr "Se impostato a VERO, il server accetterà connessioni dall'host locale e le connessioni dalla rete saranno rifiutate. Impostare questa opzione a VERO per utilizzare un meccanismo di tunneling come ssh per accedere al server."
 
 #: ../server/vino-server.schemas.in.h:12
 msgid "Listen an alternative port"
@@ -454,10 +433,7 @@ msgstr ""
 msgid ""
 "The port which the server will listen to if the 'use_alternative_port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
-msgstr ""
-"La porta su cui il server starà in ascolto se la chiave "
-"\"use_alternative_port\" è impostata a vero. Valori ammessi vanno da 5000 a "
-"50000."
+msgstr "La porta su cui il server starà in ascolto se la chiave \"use_alternative_port\" è impostata a VERO. I valori ammessi vanno da 5000 a 50000."
 
 # GNOME-2-22
 #: ../server/vino-server.schemas.in.h:22
