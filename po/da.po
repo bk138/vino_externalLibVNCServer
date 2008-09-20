@@ -4,8 +4,8 @@
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2005.
 # Lasse Bang Mikkelsen <lbm@fatalerror.dk>, 2006.
 # Peter Bach <bach.peter@gmail.com>, 2007.
-# Ask Hjorth Larsen <asklarsen@gmail.com>, 2007.
 # Kenneth Nielsen <k.nielsen81@gmail.com>, 2008.
+# Ask Hjorth Larsen <asklarsen@gmail.com>, 2007, 08.
 #
 # Konventioner:
 # remote -> fjern, udefrakommende
@@ -15,27 +15,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-09 23:37+0100\n"
-"PO-Revision-Date: 2008-03-09 22:27+0100\n"
-"Last-Translator: Kenneth Nielsen <k.nielsen81@gmail.com>\n"
+"POT-Creation-Date: 2008-09-20 22:54+0200\n"
+"PO-Revision-Date: 2008-09-14 19:08+0200\n"
+"Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
-#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
-#: ../server/vino-server.c:148
+#: ../capplet/vino-preferences.c:1097 ../capplet/vino-preferences.c:1132
+#: ../capplet/vino-preferences.c:1190 ../server/vino-dbus-listener.c:374
+#: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Kunne ikke oprette forbindelse til bus: %s\n"
 
-#: ../capplet/vino-preferences.c:1329
+#: ../capplet/vino-preferences.c:1399
 msgid "Send this command by email"
 msgstr "Send denne kommando med e-post"
 
-#: ../capplet/vino-preferences.c:1364
+#: ../capplet/vino-preferences.c:1437
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -45,6 +45,7 @@ msgstr ""
 "%s"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+#: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "Fjernskrivebord"
 
@@ -85,55 +86,50 @@ msgid "Allow other users to _view your desktop"
 msgstr "Tillad andre brugere at _se dit skrivebord"
 
 #: ../capplet/vino-preferences.glade.h:9
+msgid "Disable the _wallpaper when connected"
+msgstr "Deaktivér _baggrundsbillede ved tilslutning"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid "Disable the wallpaper when successfull connection"
+msgstr "Deaktivér skrivebordets baggrundsbillede når der tilsluttes"
+
+#: ../capplet/vino-preferences.glade.h:11
 msgid "General"
 msgstr "Generelt"
 
-#: ../capplet/vino-preferences.glade.h:10
-msgid ""
-"If checked, remote users accessing the desktop are required to support "
-"encryption"
-msgstr ""
-"Hvis valgt vil der kræves understøttelse af kryptering af fjerne brugere som "
-"ønsker adgang"
-
-#. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:12
-msgid "If checked, remote users are able to control your mouse and keyboard"
-msgstr ""
-"Hvis valgt kan fjerne brugere blive i stand til at kontrollere din mus og "
-"tastatur"
-
-#: ../capplet/vino-preferences.glade.h:13
-msgid ""
-"If checked, screen will be locked after the last remote client disconnect"
-msgstr ""
-"Hvis valgt vil skærmen blive låst efter den sidste fjernklients afkobling."
-
-#: ../capplet/vino-preferences.glade.h:14
-msgid "If checked, the server will only accept connections from localhost"
-msgstr ""
-"Hvis valgt vil serveren kun acceptere forbindelser fra den lokale vært "
-"(localhost)"
-
-#: ../capplet/vino-preferences.glade.h:15
-msgid ""
-"If checked, the server will use another port, instead of the default (5900)"
-msgstr ""
-"Hvis valgt vil serveren bruge en anden port i stedet for standardporten "
-"(5900)"
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:17
-msgid "If checked, your desktop will be shared"
-msgstr "Hvis valgt vil din computer bliver delt"
-
-#: ../capplet/vino-preferences.glade.h:18
 msgid "Remote Desktop Preferences"
 msgstr "Indstillinger for fjernskrivebord"
 
-#: ../capplet/vino-preferences.glade.h:19
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:14
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr "Fjernbrugere kan styre din mus og dit tastatur"
+
+#: ../capplet/vino-preferences.glade.h:15
+msgid ""
+"Remote users' VNC clients accessing the desktop are required to support "
+"encryption"
+msgstr ""
+"Fjernbrugeres VNC-klienter, der tilgår skrivebordet, skal understøtte "
+"kryptering"
+
+#: ../capplet/vino-preferences.glade.h:16
+msgid "Screen will be locked after the last remote client disconnect"
+msgstr "Skærmen vil blive låst efter den sidste fjernklients afkobling"
+
+#: ../capplet/vino-preferences.glade.h:17
 msgid "Some of these preferences are locked down"
 msgstr "Nogle af disse indstillinger er låst"
+
+#: ../capplet/vino-preferences.glade.h:18
+msgid "The server will only accept connections from localhost"
+msgstr ""
+"Serveren vil kun acceptere forbindelser fra den lokale vært (localhost)"
+
+#: ../capplet/vino-preferences.glade.h:19
+msgid "The server will use another port, instead of the default (5900)"
+msgstr "Serveren vil bruge en anden port i stedet for standardporten (5900)"
 
 #: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
@@ -143,39 +139,44 @@ msgstr "Brugere kan se dit skrivebord vha. denne kommando:"
 msgid "When a user tries to view or control your desktop:"
 msgstr "Når en bruger forsøger at se eller kontrollere dit skrivebord:"
 
-#: ../capplet/vino-preferences.glade.h:22
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:23
+msgid "Your desktop will be shared"
+msgstr "Dit skrivebord vil blive delt"
+
+#: ../capplet/vino-preferences.glade.h:24
 msgid "_Allow other users to control your desktop"
 msgstr "_Tillad andre brugere at kontrollere dit skrivebord"
 
-#: ../capplet/vino-preferences.glade.h:23
+#: ../capplet/vino-preferences.glade.h:25
 msgid "_Lock screen on disconnect"
 msgstr "_Lås skærmen ved afkobling"
 
-#: ../capplet/vino-preferences.glade.h:24
+#: ../capplet/vino-preferences.glade.h:26
 msgid "_Never display an icon"
 msgstr "Vis _aldrig et ikon"
 
-#: ../capplet/vino-preferences.glade.h:25
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Only allow local connections"
 msgstr "Tillad _kun lokale forbindelser"
 
-#: ../capplet/vino-preferences.glade.h:26
+#: ../capplet/vino-preferences.glade.h:28
 msgid "_Only display an icon when there is someone connected"
 msgstr "Vis _kun et ikon når nogen er forbundet"
 
-#: ../capplet/vino-preferences.glade.h:27
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Password:"
 msgstr "_Adgangskode:"
 
-#: ../capplet/vino-preferences.glade.h:28
+#: ../capplet/vino-preferences.glade.h:30
 msgid "_Require encryption"
 msgstr "_Kræv kryptering"
 
-#: ../capplet/vino-preferences.glade.h:29
+#: ../capplet/vino-preferences.glade.h:31
 msgid "_Require the user to enter this password:"
 msgstr "_Påkræv at brugeren indtaster denne adgangskode:"
 
-#: ../capplet/vino-preferences.glade.h:30
+#: ../capplet/vino-preferences.glade.h:32
 msgid "_Use an alternative port:"
 msgstr "_Brug en alternativ port:"
 
@@ -190,16 +191,20 @@ msgstr "Ikke mere fri hukommelse ved behandling af \"%s\"-signal"
 msgid "Out of memory registering object path '%s'"
 msgstr "Ikke mere fri hukommelse ved registrering af objektsti \"%s\""
 
-#: ../server/vino-dbus-listener.c:407
+#: ../server/vino-dbus-listener.c:411
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Kunne ikke hente D-Bus navn \"%s\"\n"
 
-#: ../server/vino-main.c:74
+#: ../server/vino-dbus-listener.c:419
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "Fjernskrivebordsserveren kører allerede; afslutter...\n"
+
+#: ../server/vino-main.c:89
 msgid "GNOME Remote Desktop"
 msgstr "GNOME Fjernskrivebord"
 
-#: ../server/vino-main.c:84
+#: ../server/vino-main.c:99
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -270,6 +275,10 @@ msgstr "_Tillad"
 #: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
 msgid "_Refuse"
 msgstr "_Afvis"
+
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "GNOME Remote Desktop Server"
+msgstr "GNOME-Fjernskrivebordsserver"
 
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -430,17 +439,10 @@ msgstr ""
 msgid "When the status icon should be shown"
 msgstr "Hvornår statusikonet skal vises"
 
-#: ../server/vino-shell.c:76
-msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "Fjernskrivebordsserveren kører allerede; afslutter...\n"
-
-#: ../server/vino-shell.c:79
-msgid ""
-"Problem registering the remote desktop server with bonobo-activation; "
-"exiting ...\n"
+#: ../server/vino-server.schemas.in.h:25
+msgid "When true, disable the background on receive valid session"
 msgstr ""
-"Problem ved registrering af den udefrakommende skrivebordsserver med bonobo-"
-"activation; afslutter...\n"
+"Når \"true\", vil baggrunden deaktiveres ved modtagelse af gyldig session"
 
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
@@ -521,104 +523,172 @@ msgstr ""
 msgid "Share your desktop with other users"
 msgstr "Del dit skrivebord med andre brugere"
 
-#: ../server/vino-status-icon.c:360
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:361
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Er du sikker på at du vil afbryde \"%s\"?"
 
-#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-icon.c:363
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Fjernbrugeren fra \"%s\" vil blive afbrudt. Er du sikker?"
 
-#: ../server/vino-status-icon.c:367
+#: ../server/vino-status-icon.c:368
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Er du sikker på at du vil afbryde alle klienter?"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:369
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Alle fjerne brugere vil blive afbrudt. Er du sikker?"
 
-#: ../server/vino-status-icon.c:380
+#: ../server/vino-status-icon.c:381
 msgid "Disconnect"
 msgstr "Afbryd"
 
-#: ../server/vino-status-icon.c:406
+#: ../server/vino-status-icon.c:407
 msgid "_Preferences"
 msgstr "_Indstillinger"
 
-#: ../server/vino-status-icon.c:421
+#: ../server/vino-status-icon.c:422
 msgid "Disconnect all"
 msgstr "Afbryd alle"
 
-#: ../server/vino-status-icon.c:444
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:446
 #, c-format
 msgid "Disconnect %s"
 msgstr "Afbryd %s"
 
-#: ../server/vino-status-icon.c:464
+#: ../server/vino-status-icon.c:466
 msgid "_Help"
 msgstr "_Hjælp"
 
-#: ../server/vino-status-icon.c:472
+#: ../server/vino-status-icon.c:474
 msgid "_About"
 msgstr "_Om"
 
-#: ../server/vino-status-icon.c:598
+#: ../server/vino-status-icon.c:603
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Fejl ved klargøring af libnotify\n"
 
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:623
 msgid "Another user is viewing your desktop"
 msgstr "En anden bruger ser dit skrivebord"
 
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:624
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "En bruger på maskinen \"%s\" fjernser dit skrivebord."
 
-#: ../server/vino-status-icon.c:624
+#: ../server/vino-status-icon.c:629
 msgid "Another user is controlling your desktop"
 msgstr "En anden bruger kontrollerer dit skrivebord"
 
-#: ../server/vino-status-icon.c:625
+#: ../server/vino-status-icon.c:630
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "En bruger på maskinen \"%s\" fjernkontrollerer dit skrivebord."
 
-#: ../server/vino-status-icon.c:647
+#: ../server/vino-status-icon.c:652
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Fejl ved visning af påmindelsesboblen: %s\n"
 
-#: ../session/vino-session.c:133
-msgid "Remote desktop server died, restarting\n"
-msgstr "Fjernskrivebordsserver døde, genstarter\n"
-
-#: ../session/vino-session.c:154
+#: ../tools/vino-passwd.c:115
 #, c-format
-msgid "Activation of %s failed: %s\n"
-msgstr "Aktivering af %s mislykkedes: %s\n"
-
-#: ../session/vino-session.c:160
-#, c-format
-msgid "Activation of %s failed: Unknown Error\n"
-msgstr "Aktivering af %s mislykkedes: ukendt fejl\n"
-
-#: ../session/vino-session.c:231
-msgid "Failed to activate remote desktop server: tried too many times\n"
+msgid ""
+"ERROR: Maximum length of password is %d characters. Please, re-enter the "
+"password.\n"
 msgstr ""
-"Det mislykkedes at aktivere fjernskrivebordsserveren: forsøgte for mange "
-"gange\n"
+"FEJL: Den maksimale længde af et kodeord er %d tegn. Genindtast venligst "
+"kodeordet.\n"
 
-#: ../session/vino-session.c:295
-msgid "Starting remote desktop server"
-msgstr "Starter fjernskrivebordsserveren"
+#: ../tools/vino-passwd.c:145
+#, c-format
+msgid "Changing Vino password.\n"
+msgstr "Ændrer Vino-kodeord.\n"
 
-#: ../session/vino-session.c:300
-msgid "Not starting remote desktop server"
-msgstr "Starter ikke fjernskrivebordsserveren"
+#: ../tools/vino-passwd.c:147
+msgid "Enter new Vino password: "
+msgstr "Indtast nyt Vino-kodeord: "
+
+#: ../tools/vino-passwd.c:150
+msgid "Retype new Vino password: "
+msgstr "Genindtast nyt Vino-kodeord: "
+
+#: ../tools/vino-passwd.c:156
+#, c-format
+msgid "vino-passwd: password updated successfully.\n"
+msgstr "vino-passwd: kodeordet blev opdateret.\n"
+
+#: ../tools/vino-passwd.c:160
+#, c-format
+msgid "Sorry, passwords do not match.\n"
+msgstr "Beklager, kodeordene er ikke ens.\n"
+
+#: ../tools/vino-passwd.c:161
+#, c-format
+msgid "vino-passwd: password unchanged.\n"
+msgstr "vino-passwd: kodeordet ikke ændret.\n"
+
+#: ../tools/vino-passwd.c:176
+msgid "Show Vino version"
+msgstr "Vis Vino-version"
+
+#: ../tools/vino-passwd.c:185
+msgid "- Updates Vino password"
+msgstr "- Opdaterer Vino-kodeord"
+
+#: ../tools/vino-passwd.c:195
+msgid ""
+"Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr ""
+"Kør \"vino-passwd --help\" for at se en fuld liste over tilgængelige "
+"kommandolinjetilvalg"
+
+#: ../tools/vino-passwd.c:202
+#, c-format
+msgid "VINO Version %s\n"
+msgstr "VINO, version %s\n"
+
+#: ../tools/vino-passwd.c:211
+#, c-format
+msgid "ERROR: You do not have enough permissions to change Vino password.\n"
+msgstr "FEJL: Du har ikke rettigheder til at ændre Vino-kodeord.\n"
+
+#~ msgid ""
+#~ "If checked, screen will be locked after the last remote client disconnect"
+#~ msgstr ""
+#~ "Hvis valgt vil skærmen blive låst efter den sidste fjernklients afkobling."
+
+#~ msgid ""
+#~ "Problem registering the remote desktop server with bonobo-activation; "
+#~ "exiting ...\n"
+#~ msgstr ""
+#~ "Problem ved registrering af den udefrakommende skrivebordsserver med "
+#~ "bonobo-activation; afslutter...\n"
+
+#~ msgid "Remote desktop server died, restarting\n"
+#~ msgstr "Fjernskrivebordsserver døde, genstarter\n"
+
+#~ msgid "Activation of %s failed: %s\n"
+#~ msgstr "Aktivering af %s mislykkedes: %s\n"
+
+#~ msgid "Activation of %s failed: Unknown Error\n"
+#~ msgstr "Aktivering af %s mislykkedes: ukendt fejl\n"
+
+#~ msgid "Failed to activate remote desktop server: tried too many times\n"
+#~ msgstr ""
+#~ "Det mislykkedes at aktivere fjernskrivebordsserveren: forsøgte for mange "
+#~ "gange\n"
+
+#~ msgid "Starting remote desktop server"
+#~ msgstr "Starter fjernskrivebordsserveren"
+
+#~ msgid "Not starting remote desktop server"
+#~ msgstr "Starter ikke fjernskrivebordsserveren"
 
 #~ msgid "    "
 #~ msgstr "    "
