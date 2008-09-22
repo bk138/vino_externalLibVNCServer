@@ -1,3 +1,9 @@
+2008-09-22  Jonh Wendell  <jwendell@gnome.org>
+
+	* configure.in: post-release bump version to 2.24.1
+
+==================== 2.24.0 =======================
+
 2008-09-08  Jonh Wendell  <jwendell@gnome.org>
 
 	* configure.in: post-release bump version to 2.24.0
