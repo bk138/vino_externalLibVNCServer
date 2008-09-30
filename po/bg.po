@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-04 23:03+0300\n"
+"POT-Creation-Date: 2008-09-30 22:38+0300\n"
 "PO-Revision-Date: 2008-09-04 13:53+0300\n"
 "Last-Translator: Alexander Shopov <ash@contact.bg>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -372,7 +372,7 @@ msgstr ""
 "Изброява методите за идентификация, с които отдалечените потребители могат "
 "да получат достъп до работното място. Има два възможни метода за "
 "идентификация: „vnc“ — изисква парола от отдалечения потребител (паролата е "
-"определена от ключа „vnc_password“) преди да позволи връзката, и „none“ - "
+"определена от ключа „vnc_password“) преди да позволи връзката, и „none“ — "
 "позволява на всеки потребител да се свърже."
 
 #: ../server/vino-server.schemas.in.h:14
@@ -447,34 +447,6 @@ msgstr "Кога да се показва иконата за състояние
 #: ../server/vino-server.schemas.in.h:25
 msgid "When true, disable the background on receive valid session"
 msgstr "Когато е истина, при получаване на успешна сесия фонът се изключва"
-
-#: ../session/vino-session.c:133
-msgid "Remote desktop server died, restarting\n"
-msgstr "Сървърът за отдалеченото работно място умря. В момента се рестартира\n"
-
-#: ../session/vino-session.c:154
-#, c-format
-msgid "Activation of %s failed: %s\n"
-msgstr "Задействането на %s е неуспешно: %s\n"
-
-#: ../session/vino-session.c:160
-#, c-format
-msgid "Activation of %s failed: Unknown Error\n"
-msgstr "Задействането на %s е неуспешно: непозната грешка\n"
-
-#: ../session/vino-session.c:231
-msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr ""
-"Грешка при задействането на сървъра за отдалечено работно място: прекалено "
-"много опити\n"
-
-#: ../session/vino-session.c:295
-msgid "Starting remote desktop server"
-msgstr "Стартиране на сървър за отдалечено работно място"
-
-#: ../session/vino-session.c:300
-msgid "Not starting remote desktop server"
-msgstr "Сървърът за отдалечено работно място не се стартира"
 
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
@@ -688,3 +660,24 @@ msgstr "VINO, версия %s\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "ГРЕШКА: Нямате правата да смените паролата на Vino.\n"
+
+#~ msgid "Remote desktop server died, restarting\n"
+#~ msgstr ""
+#~ "Сървърът за отдалеченото работно място умря. В момента се рестартира\n"
+
+#~ msgid "Activation of %s failed: %s\n"
+#~ msgstr "Задействането на %s е неуспешно: %s\n"
+
+#~ msgid "Activation of %s failed: Unknown Error\n"
+#~ msgstr "Задействането на %s е неуспешно: непозната грешка\n"
+
+#~ msgid "Failed to activate remote desktop server: tried too many times\n"
+#~ msgstr ""
+#~ "Грешка при задействането на сървъра за отдалечено работно място: "
+#~ "прекалено много опити\n"
+
+#~ msgid "Starting remote desktop server"
+#~ msgstr "Стартиране на сървър за отдалечено работно място"
+
+#~ msgid "Not starting remote desktop server"
+#~ msgstr "Сървърът за отдалечено работно място не се стартира"
