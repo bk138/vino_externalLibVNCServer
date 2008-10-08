@@ -1,3 +1,8 @@
+2008-10-08  Jonh Wendell  <jwendell@gnome.org>
+
+	* server/vino-prefs.c: Propagates port changes via avahi.
+	Closes #555105.
+
 2008-09-22  Jonh Wendell  <jwendell@gnome.org>
 
 	* configure.in: post-release bump version to 2.24.1

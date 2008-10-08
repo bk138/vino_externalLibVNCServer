@@ -278,6 +278,14 @@ vino_prefs_vnc_password_changed (GConfClient *client,
 }
 
 static void
+vino_prefs_restart_mdns (VinoServer *server, gpointer data)
+{
+  vino_mdns_stop ();
+  vino_mdns_add_service ("_rfb._tcp", vino_server_get_port (server));
+  vino_mdns_start ();
+}
+
+static void
 vino_prefs_use_alternative_port_changed (GConfClient *client,
                                          guint        cnxn_id,
                                          GConfEntry  *entry)
@@ -445,6 +453,9 @@ vino_prefs_create_server (GdkScreen *screen)
   vino_servers = g_slist_prepend (vino_servers, server);
   if (vino_enabled)
     vino_mdns_start ();
+
+  g_signal_connect (server, "notify::alternative-port", vino_prefs_restart_mdns, NULL);
+  g_signal_connect (server, "notify::use-alternative-port", vino_prefs_restart_mdns, NULL);
 
   icon = vino_server_get_status_icon (server);
   vino_status_icon_set_visibility (icon, vino_icon_visibility);

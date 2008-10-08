@@ -148,6 +148,11 @@ vino_mdns_add_service_foreach (char            *type,
       dprintf (MDNS, "Avahi: Failed to add %s on port %d : %s\n",
                type, port, avahi_strerror (ret));
     }
+  else
+    {
+      dprintf (MDNS, "Avahi: Successfuly added %s on port %d\n",
+               type, port);
+    }
 }
 
 static void
@@ -183,7 +188,7 @@ vino_mdns_add_services (AvahiClient *client)
     }
 }
 
-void
+static void
 vino_mdns_restart (void)
 {
   if (mdns_service_name != NULL)
@@ -297,6 +302,8 @@ vino_mdns_start ()
 void
 vino_mdns_stop (void)
 {
+  dprintf (MDNS, "Stopping MDNS support.\n");
+
   if (mdns_service_name != NULL)
     g_free (mdns_service_name);
   mdns_service_name = NULL;
