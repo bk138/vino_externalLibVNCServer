@@ -1,5 +1,13 @@
 2008-10-08  Jonh Wendell  <jwendell@gnome.org>
 
+	Update label in vino-preferences when the port changes.
+
+	* server/vino-dbus-listener.c: Send a dbus signal when port changes.
+	* capplet/vino-preferences.c: Listen to this signal and updates
+	the label.
+
+2008-10-08  Jonh Wendell  <jwendell@gnome.org>
+
 	* server/vino-prefs.c: Propagates port changes via avahi.
 	Closes #555105.
 

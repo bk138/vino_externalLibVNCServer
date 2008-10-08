@@ -62,10 +62,6 @@ VinoServer        *vino_dbus_listener_get_server (VinoDBusListener *listener);
 
 G_END_DECLS
 
-/* 
- * FIXME: remove define when we can require dbus-1 >= 0.95
- */
-#define DBUS_API_SUBJECT_TO_CHANGE
 #include <dbus/dbus.h>
 
 G_BEGIN_DECLS

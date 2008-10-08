@@ -152,6 +152,8 @@ static const char * introspect_xml =
   "    <method name=\"GetServerPort\">\n"
   "      <arg name=\"port\" direction=\"out\" type=\"u\"/>\n"
   "    </method>\n"
+  "    <signal name=\"ServerPortChanged\">\n"
+  "    </signal>\n"
 #ifdef VINO_ENABLE_HTTP_SERVER
   "    <method name=\"GetHttpServerPort\">\n"
   "      <arg name=\"port\" direction=\"out\" type=\"u\"/>\n"
@@ -300,6 +302,34 @@ vino_dbus_listener_message_handler (DBusConnection *connection,
 #undef VINO_DBUS_INTERFACE
 }
 
+static void
+vino_dbus_listener_port_changed (VinoServer *server, VinoDBusListener *listener)
+{
+  DBusMessage *message;
+  gchar *obj_path;
+
+  dprintf (DBUS, "Emitting ServerPortChanged signal\n");
+
+  obj_path = g_strdup_printf ("/org/gnome/vino/screens/%d",
+                              gdk_screen_get_number (vino_server_get_screen (server)));
+
+  message = dbus_message_new_signal (obj_path,
+                                     "org.gnome.VinoScreen",
+                                     "ServerPortChanged");
+  g_free (obj_path);
+
+  if (!message)
+    {
+      g_warning ("Error creating signal\n");
+      return;
+    }
+
+  if (!dbus_connection_send (vino_dbus_get_connection (), message, NULL))
+    g_warning ("Error sending signal\n");
+
+  dbus_message_unref (message);
+}
+
 static DBusObjectPathVTable vino_dbus_listener_vtable =
 {
   NULL,                                  /* unregister_function */
@@ -337,6 +367,13 @@ vino_dbus_listener_set_server (VinoDBusListener *listener,
     }
 
   dprintf (DBUS, "Object registered at path '%s'\n", obj_path);
+
+  g_signal_connect (server, "notify::alternative-port",
+		    G_CALLBACK (vino_dbus_listener_port_changed),
+		    listener);
+  g_signal_connect (server, "notify::use-alternative-port",
+		    G_CALLBACK (vino_dbus_listener_port_changed),
+		    listener);
 
   g_free (obj_path);
 }

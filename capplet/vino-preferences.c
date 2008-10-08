@@ -93,11 +93,15 @@ typedef struct {
   UniqueApp   *app;
 #endif
 
+  DBusGConnection *connection;
+  DBusGProxy      *proxy_name, *proxy_port;
+
   guint        listeners [N_LISTENERS];
   int          n_listeners;
   int          expected_listeners;
 
   guint        use_password : 1;
+
 } VinoPreferencesDialog;
 
 static void
@@ -1084,31 +1088,37 @@ vino_preferences_server_updated (DBusGProxy *proxy,
 }
 
 static void
+vino_preferences_server_port_changed (DBusGProxy *proxy, gpointer user_data)
+{
+  vino_preferences_dialog_update_url_label ( (VinoPreferencesDialog *) user_data);
+}
+
+static void
 vino_preferences_start_listening (VinoPreferencesDialog *dialog)
 {
-  DBusGConnection *connection;
-  GError          *error;
-  DBusGProxy      *proxy;
-  
-  error = NULL;
-  connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-  if (!connection)
-    {
-      g_printerr (_("Failed to open connection to bus: %s\n"),
-                  error->message);
-      g_error_free (error);
-      return;
-    }
+  gchar       *obj_path;
+  GdkScreen   *screen;
 
-  proxy = dbus_g_proxy_new_for_name (connection,
-                                     DBUS_SERVICE_DBUS,
-                                     DBUS_PATH_DBUS,
-                                     DBUS_INTERFACE_DBUS);
-
-  dbus_g_proxy_add_signal (proxy, "NameOwnerChanged",
+  dialog->proxy_name = dbus_g_proxy_new_for_name (dialog->connection,
+						  DBUS_SERVICE_DBUS,
+						  DBUS_PATH_DBUS,
+						  DBUS_INTERFACE_DBUS);
+  dbus_g_proxy_add_signal (dialog->proxy_name, "NameOwnerChanged",
                            G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_INVALID);
-  dbus_g_proxy_connect_signal (proxy, "NameOwnerChanged",
+  dbus_g_proxy_connect_signal (dialog->proxy_name, "NameOwnerChanged",
                           G_CALLBACK (vino_preferences_server_updated), dialog, NULL);
+
+  screen = gtk_window_get_screen (GTK_WINDOW (dialog->dialog));
+  obj_path = g_strdup_printf ("/org/gnome/vino/screens/%d",
+                              gdk_screen_get_number (screen));
+  dialog->proxy_port = dbus_g_proxy_new_for_name (dialog->connection,
+						  VINO_DBUS_BUS_NAME,
+						  obj_path,
+						  VINO_DBUS_INTERFACE);
+  g_free (obj_path);
+  dbus_g_proxy_add_signal (dialog->proxy_port, "ServerPortChanged", G_TYPE_INVALID);
+  dbus_g_proxy_connect_signal (dialog->proxy_port, "ServerPortChanged",
+                          G_CALLBACK (vino_preferences_server_port_changed), dialog, NULL);
 }
 
 static int
@@ -1118,48 +1128,31 @@ vino_preferences_get_server_port (VinoPreferencesDialog *dialog)
 #define VINO_MIN_PORT       5000
 #define VINO_MAX_PORT       6000
 
-  DBusGConnection *connection;
-  GError          *error;
-  DBusGProxy      *proxy;
-  int              port;
-  GdkScreen       *screen;
-  char            *obj_path;
+  DBusGProxy  *proxy;
+  int          port;
+  GdkScreen   *screen;
+  char        *obj_path;
   
-  error = NULL;
-  connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-  if (!connection)
-    {
-      g_printerr (_("Failed to open connection to bus: %s\n"),
-                  error->message);
-      g_error_free (error);
-      return 0;
-    }
-
   screen = gtk_window_get_screen (GTK_WINDOW (dialog->dialog));
-
   obj_path = g_strdup_printf ("/org/gnome/vino/screens/%d",
                               gdk_screen_get_number (screen));
 
-  proxy = dbus_g_proxy_new_for_name (connection,
+  proxy = dbus_g_proxy_new_for_name (dialog->connection,
                                      VINO_DBUS_BUS_NAME,
                                      obj_path,
                                      VINO_DBUS_INTERFACE);
-
   g_free (obj_path);
 
-  if (!dbus_g_proxy_call (proxy, "GetServerPort", &error,
+  if (!dbus_g_proxy_call (proxy, "GetServerPort", NULL,
                           G_TYPE_INVALID,
                           G_TYPE_INT, &port,
                           G_TYPE_INVALID))
     {
       g_object_unref (proxy);
-      g_error_free (error);
-      dbus_g_connection_unref (connection);
       return 0;
     }
 
   g_object_unref (proxy);
-  dbus_g_connection_unref (connection);
 
   if (port >= VINO_MIN_PORT && port <= VINO_MAX_PORT)
     return port - VINO_DEFAULT_PORT;
@@ -1176,48 +1169,31 @@ static int
 vino_preferences_get_http_server_port (VinoPreferencesDialog *dialog)
 {
 #define VINO_HTTP_DEFAULT_PORT   5800
-  DBusGConnection *connection;
-  GError          *error;
-  DBusGProxy      *proxy;
-  int              port;
-  GdkScreen       *screen;
-  char            *obj_path;
+  DBusGProxy  *proxy;
+  int          port;
+  GdkScreen   *screen;
+  char        *obj_path;
   
-  error = NULL;
-  connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-  if (!connection)
-    {
-      g_printerr (_("Failed to open connection to bus: %s\n"),
-                  error->message);
-      g_error_free (error);
-      return 0;
-    }
-
   screen = gtk_window_get_screen (GTK_WINDOW (dialog->dialog));
-
   obj_path = g_strdup_printf ("/org/gnome/vino/screens/%d",
                               gdk_screen_get_number (screen));
 
-  proxy = dbus_g_proxy_new_for_name (connection,
+  proxy = dbus_g_proxy_new_for_name (dialog->connection,
                                      VINO_DBUS_BUS_NAME,
                                      obj_path,
                                      VINO_DBUS_INTERFACE);
-
   g_free (obj_path);
 
-  if (!dbus_g_proxy_call (proxy, "GetHttpServerPort", &error,
+  if (!dbus_g_proxy_call (proxy, "GetHttpServerPort", NULL,
                           G_TYPE_INVALID,
                           G_TYPE_INT, &port,
                           G_TYPE_INVALID))
     {
       g_object_unref (proxy);
-      g_error_free (error);
-      dbus_g_connection_unref (connection);
       return VINO_HTTP_DEFAULT_PORT;
     }
 
   g_object_unref (proxy);
-  dbus_g_connection_unref (connection);
 
   return port;
 #undef VINO_HTTP_DEFAULT_PORT
@@ -1464,6 +1440,7 @@ vino_preferences_dialog_init (VinoPreferencesDialog *dialog)
 
   const char *glade_file;
   gboolean    allowed;
+  GError     *error = NULL;
 
   dialog->expected_listeners = N_LISTENERS;
 
@@ -1490,6 +1467,15 @@ vino_preferences_dialog_init (VinoPreferencesDialog *dialog)
 
   dialog->client = gconf_client_get_default ();
   gconf_client_add_dir (dialog->client, VINO_PREFS_DIR, GCONF_CLIENT_PRELOAD_ONELEVEL, NULL);
+
+  dialog->connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
+  if (!dialog->connection)
+    {
+      g_printerr (_("Failed to open connection to bus: %s\n"),
+                  error->message);
+      g_error_free (error);
+      return FALSE;
+    }
 
   vino_preferences_dialog_setup_url_labels (dialog);
 
@@ -1568,6 +1554,18 @@ vino_preferences_dialog_finalize (VinoPreferencesDialog *dialog)
     g_object_unref (dialog->app);
   dialog->app = NULL;
 #endif
+
+  if (dialog->proxy_name)
+    g_object_unref (dialog->proxy_name);
+  dialog->proxy_name = NULL;
+
+  if (dialog->proxy_port)
+    g_object_unref (dialog->proxy_port);
+  dialog->proxy_port = NULL;
+
+  if (dialog->connection)
+    dbus_g_connection_unref (dialog->connection);
+  dialog->connection = NULL;
 }
 
 static gboolean
