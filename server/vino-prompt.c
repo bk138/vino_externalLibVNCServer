@@ -349,7 +349,7 @@ vino_prompt_display (VinoPrompt   *prompt,
 
   prompt->priv->current_client = rfb_client;
 
-  gtk_widget_show (prompt->priv->dialog);
+  gtk_widget_show_all (prompt->priv->dialog);
 
   dprintf (PROMPT, "Prompting for client %p\n", rfb_client);
 

@@ -1,3 +1,8 @@
+2008-10-10  Jonh Wendell  <jwendell@gnome.org>
+
+	* server/vino-prompt.[c,glade]: Hopefully fix an window empty bug.
+	Closes #161180.
+
 2008-10-08  Jonh Wendell  <jwendell@gnome.org>
 
 	Update label in vino-preferences when the port changes.
