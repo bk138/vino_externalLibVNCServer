@@ -1,3 +1,8 @@
+2008-10-20  Jonh Wendell  <jwendell@gnome.org>
+
+	* server/vino-server.c: Only restore the wallpaper when the last
+	client disconnects. Closes LP: #266932.
+
 2008-10-10  Jonh Wendell  <jwendell@gnome.org>
 
 	* server/vino-prompt.[c,glade]: Hopefully fix an window empty bug.

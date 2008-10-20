@@ -209,10 +209,12 @@ vino_server_client_disconnected (VinoServer *server,
                                  VinoClient *client)
 {
   if (vino_status_icon_remove_client (server->priv->icon, client))
-    vino_server_lock_screen (server);
+    {
+      vino_server_lock_screen (server);
 
-  if (vino_server_get_disable_background (server))
-    vino_background_draw (TRUE);
+      if (vino_server_get_disable_background (server))
+	vino_background_draw (TRUE);
+    }
 }
 
 static void
