@@ -11,28 +11,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-10 18:59+0200\n"
-"PO-Revision-Date: 2008-03-10 18:59+0200\n"
-"Last-Translator: Kostas Papadimas <pkst@gnome.org>\n"
+"POT-Creation-Date: 2008-10-20 15:45+0100\n"
+"PO-Revision-Date: 2008-10-18 21:01+0200\n"
+"Last-Translator: Nick Agianniotis <nickagian@gmail.com>\n"
 "Language-Team: Greek <team@gnome.gr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
+"X-Poedit-Language: Greek\n"
+"X-Poedit-Country: GREECE\n"
 
-#: ../capplet/vino-preferences.c:1027 ../capplet/vino-preferences.c:1062
-#: ../capplet/vino-preferences.c:1120 ../server/vino-dbus-listener.c:374
-#: ../server/vino-server.c:148
-#, c-format
-msgid "Failed to open connection to bus: %s\n"
-msgstr "Αποτυχία έναρξης επικοινωνίας με D-BUS: %s\n"
-
-#: ../capplet/vino-preferences.c:1329
+#: ../capplet/vino-preferences.c:1375
 msgid "Send this command by email"
 msgstr "Αποστολή αυτής της εντολής μέσω email"
 
-#: ../capplet/vino-preferences.c:1364
+#: ../capplet/vino-preferences.c:1413
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -41,7 +36,14 @@ msgstr ""
 "Υπήρξε σφάλμα κατά την εμφάνιση της βοήθειας:\n"
 "%s"
 
+#: ../capplet/vino-preferences.c:1474 ../server/vino-dbus-listener.c:411
+#: ../server/vino-server.c:151
+#, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "Αποτυχία έναρξης επικοινωνίας με D-BUS: %s\n"
+
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+#: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "Απομακρυσμένη επιφάνεια εργασίας"
 
@@ -84,56 +86,56 @@ msgstr ""
 "Να επιτρέπεται σε άλλους χρήστες να _βλέπουν την επιφάνεια εργασίας σας"
 
 #: ../capplet/vino-preferences.glade.h:9
+msgid "Disable the _wallpaper when connected"
+msgstr "Απενεργοποίηση του _φόντου της επιφάνειας εργασίας όταν συνδεθεί"
+
+#: ../capplet/vino-preferences.glade.h:10
+msgid "Disable the wallpaper when successfull connection"
+msgstr ""
+"Απενεργοποίηση του φόντου της επιφάνειας εργασίας όταν συνδεθεί επιτυχημένα"
+
+#: ../capplet/vino-preferences.glade.h:11
 msgid "General"
 msgstr "Γενικά"
 
-#: ../capplet/vino-preferences.glade.h:10
-msgid ""
-"If checked, remote users accessing the desktop are required to support "
-"encryption"
-msgstr ""
-"Αν true, τότε θα απαιτείται από τους απομακρυσμένους χρήστες κρυπτογράφηση, "
-"για να έχουν πρόσβαση στην επιφάνεια εργασίας σας."
-
-#. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:12
-msgid "If checked, remote users are able to control your mouse and keyboard"
-msgstr ""
-"Αν true, τότε οι απομακρυσμένοι χρήστες  θα μπορούν να ελέγχουν το ποντίκι "
-"και το πληκτρολόγιο σας"
-
-#: ../capplet/vino-preferences.glade.h:13
-msgid ""
-"If checked, screen will be locked after the last remote client disconnect"
-msgstr ""
-"Αν επιλεχθεί, η οθόνη θα κλειδώνει μετά την αποσύνδεση του τελευταίου "
-"απομακρυσμένου πελάτη."
-
-#: ../capplet/vino-preferences.glade.h:14
-msgid "If checked, the server will only accept connections from localhost"
-msgstr ""
-"Αν επιλεχθεί, τότε ο εξυπηρετητής θα δέχεται συνδέσεις μόνο από το localhost"
-
-#: ../capplet/vino-preferences.glade.h:15
-msgid ""
-"If checked, the server will use another port, instead of the default (5900)"
-msgstr ""
-"Αν επιλεχθεί, ο εξυπηρετητής θα χρησιμοποιεί άλλη θύρα, αντί του τυπικού "
-"(5900)."
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:17
-msgid "If checked, your desktop will be shared"
-msgstr ""
-"Αν επιλεχθεί, θα γίνει κοινή χρήση της επιφάνειας εργασίας με άλλους χρήστες"
-
-#: ../capplet/vino-preferences.glade.h:18
 msgid "Remote Desktop Preferences"
 msgstr "Προτιμήσεις απομακρυσμένης επιφάνειας εργασίας"
 
-#: ../capplet/vino-preferences.glade.h:19
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:14
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr ""
+"Οι απομακρυσμένοι χρήστες μπορούν να ελέγχουν το ποντίκι και το πληκτρολόγιο "
+"σας"
+
+#: ../capplet/vino-preferences.glade.h:15
+msgid ""
+"Remote users' VNC clients accessing the desktop are required to support "
+"encryption"
+msgstr ""
+"Οι VNC πελάτες των απομακρυσμένων χρηστών είναι απαραίτητο να υποστηρίζουν "
+"κρυπτογράφηση για να έχουν πρόσβαση στην επιφάνεια εργασίας"
+
+#: ../capplet/vino-preferences.glade.h:16
+msgid "Screen will be locked after the last remote client disconnect"
+msgstr ""
+"Η οθόνη θα κλειδώνει μετά την αποσύνδεση του τελευταίου απομακρυσμένου πελάτη"
+
+#: ../capplet/vino-preferences.glade.h:17
 msgid "Some of these preferences are locked down"
 msgstr "Μερικές από τις προτιμήσεις είναι κλειδωμένες"
+
+#: ../capplet/vino-preferences.glade.h:18
+msgid "The server will only accept connections from localhost"
+msgstr ""
+"Ο εξυπηρετητής θα δέχεται συνδέσεις μόνο από τον τοπικό εξυπηρετητή "
+"(localhost)"
+
+#: ../capplet/vino-preferences.glade.h:19
+msgid "The server will use another port, instead of the default (5900)"
+msgstr ""
+"Ο εξυπηρετητής θα χρησιμοποιεί άλλη θύρα, αντί της προκαθορισμένης (5900)"
 
 #: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
@@ -146,65 +148,76 @@ msgid "When a user tries to view or control your desktop:"
 msgstr ""
 "Όταν ένας χρήστης προσπαθεί να δει ή να ελέγξει την επιφάνεια εργασίας σας:"
 
-#: ../capplet/vino-preferences.glade.h:22
+#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:23
+msgid "Your desktop will be shared"
+msgstr "Θα υπάρχει κοινή χρήση της επιφάνειας εργασίας"
+
+#: ../capplet/vino-preferences.glade.h:24
 msgid "_Allow other users to control your desktop"
 msgstr ""
 "Να επι_τρέπεται σε άλλους χρήστες να ελέγχουν την επιφάνεια εργασίας σας"
 
-#: ../capplet/vino-preferences.glade.h:23
+#: ../capplet/vino-preferences.glade.h:25
 msgid "_Lock screen on disconnect"
 msgstr "Κ_λείδωμα οθόνης στην αποσύνδεση"
 
-#: ../capplet/vino-preferences.glade.h:24
+#: ../capplet/vino-preferences.glade.h:26
 msgid "_Never display an icon"
 msgstr "Να μην εμφανί_ζεται ποτέ εικονίδιο"
 
-#: ../capplet/vino-preferences.glade.h:25
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Only allow local connections"
 msgstr "Να επιτρέπονται _μόνο τοπικές συνδέσεις"
 
-#: ../capplet/vino-preferences.glade.h:26
+#: ../capplet/vino-preferences.glade.h:28
 msgid "_Only display an icon when there is someone connected"
 msgstr "_Να εμφανίζεται εικονίδιο μόνο όταν υπάρχει κάποιος συνδεδεμένος"
 
-#: ../capplet/vino-preferences.glade.h:27
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Password:"
-msgstr "_Κωδικός:"
+msgstr "Κωδικός _πρόσβασης:"
 
-#: ../capplet/vino-preferences.glade.h:28
+#: ../capplet/vino-preferences.glade.h:30
 msgid "_Require encryption"
 msgstr "Α_παιτείται κρυπτογράφηση"
 
-#: ../capplet/vino-preferences.glade.h:29
+#: ../capplet/vino-preferences.glade.h:31
 msgid "_Require the user to enter this password:"
-msgstr "Να _απαιτείται η εισαγωγή αυτού του κωδικού από το χρήστη:"
+msgstr "Να _απαιτείται η εισαγωγή αυτού του κωδικού πρόσβασης από το χρήστη:"
 
-#: ../capplet/vino-preferences.glade.h:30
+#: ../capplet/vino-preferences.glade.h:32
 msgid "_Use an alternative port:"
 msgstr "_Χρήση μιας εναλλακτικής θύρα"
 
-#: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
-#: ../server/vino-dbus-listener.c:249
+#: ../server/vino-dbus-listener.c:190 ../server/vino-dbus-listener.c:220
+#: ../server/vino-dbus-listener.c:251
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "Η μνήμη εξαντλήθηκε κατά το χειρισμό του μηνύματος '%s'"
 
-#: ../server/vino-dbus-listener.c:334
+#: ../server/vino-dbus-listener.c:364
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr ""
 "Η μνήμη εξαντλήθηκε κατά τη καταχώρηση του μονοπατιού αντικειμένου '%s'"
 
-#: ../server/vino-dbus-listener.c:407
+#: ../server/vino-dbus-listener.c:448
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Αποτυχία στην προσπάθεια απόκτησης ονόματος D-Bus '%s'\n"
 
-#: ../server/vino-main.c:74
+#: ../server/vino-dbus-listener.c:456
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr ""
+"Ο εξυπηρετητής απομακρυσμένης επιφάνειας εργασίας εκτελείται ήδη, γίνεται "
+"έξοδος....\n"
+
+#: ../server/vino-main.c:89
 msgid "GNOME Remote Desktop"
 msgstr "Απομακρυσμένη επιφάνεια εργασίας GNOME"
 
-#: ../server/vino-main.c:84
+#: ../server/vino-main.c:99
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -278,6 +291,10 @@ msgstr "Να επ_ιτρέπεται"
 msgid "_Refuse"
 msgstr "Ά_ρνηση"
 
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "GNOME Remote Desktop Server"
+msgstr "Εξυπηρετητής απομακρυσμένης επιφάνειας εργασίας GNOME"
+
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
 msgstr "Να επιτρέπονται μέθοδοι πιστοποίησης"
@@ -301,9 +318,9 @@ msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
 msgstr ""
-"Αν true, επιτρέπει απομακρυσμένη πρόσβαση στην επιφάνεια εργασίας μέσω του "
-"πρωτοκόλλου RFB. Οι χρήστες σε απομακρυσμένα τερματικά μπορούν να συνδεθούν "
-"στην επιφάνεια εργασίας σας μέσω vncviewer."
+"Αν είναι αληθές, επιτρέπει απομακρυσμένη πρόσβαση στην επιφάνεια εργασίας "
+"μέσω του πρωτοκόλλου RFB. Οι χρήστες σε απομακρυσμένα τερματικά μπορούν να "
+"συνδεθούν στην επιφάνεια εργασίας σας μέσω vncviewer."
 
 #: ../server/vino-server.schemas.in.h:6
 msgid ""
@@ -311,8 +328,8 @@ msgid ""
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
 msgstr ""
-"Αν true, δεν επιτρέπεται στους απομακρυσμένους χρήστες πρόσβαση μέχρι η "
-"κεντρική μονάδα να επιτρέψει τη σύνδεση. Συνιστάται ιδιαίτερα όταν η "
+"Αν είναι αληθές, δεν επιτρέπεται στους απομακρυσμένους χρήστες η πρόσβαση "
+"μέχρι η κεντρική μονάδα να επιτρέψει τη σύνδεση. Συνιστάται ιδιαίτερα όταν η "
 "πρόσβαση δεν προστατεύεται με κωδικό."
 
 #: ../server/vino-server.schemas.in.h:7
@@ -320,9 +337,9 @@ msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
 msgstr ""
-"Αν true, επιτρέπει μόνο την προβολή στην πρόσβαση στην επιφάνεια εργασίας. "
-"Οι απομακρυσμένοι χρήστες δεν θα μπορούν να χρησιμοποιήσουν το πληκτρολόγιο "
-"ή το ποντίκι."
+"Αν είναι αληθές, επιτρέπει μόνο την προβολή στην πρόσβαση στην επιφάνεια "
+"εργασίας. Οι απομακρυσμένοι χρήστες δεν θα μπορούν να χρησιμοποιήσουν το "
+"πληκτρολόγιο ή το ποντίκι."
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
@@ -330,15 +347,15 @@ msgid ""
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
-"Αν true, οι απομακρυσμένοι χρήστες που θα έχουν πρόσβαση στην επιφάνεια "
-"εργασίας  θα πρέπει να υποστηρίζουν κρυπτογράφηση. Συνιστάται να "
+"Αν είναι αληθές, οι απομακρυσμένοι χρήστες που θα έχουν πρόσβαση στην "
+"επιφάνεια εργασίας  θα πρέπει να υποστηρίζουν κρυπτογράφηση. Συνιστάται να "
 "χρησιμοποιήσετε ένα πελάτη που θα υποστηρίζει κρυπτογράφηση, εκτός και αν το "
 "ενδιάμεσο δίκτυο είναι έμπιστο."
 
 #: ../server/vino-server.schemas.in.h:9
 msgid "If true, screen will be locked after the last remote client disconnect."
 msgstr ""
-"Αν true, η οθόνη θα κλειδώνει μετά την αποσύνδεση του τελευταίου "
+"Αν είναι αληθές, η οθόνη θα κλειδώνει μετά την αποσύνδεση του τελευταίου "
 "απομακρυσμένου πελάτη."
 
 #: ../server/vino-server.schemas.in.h:10
@@ -346,8 +363,9 @@ msgid ""
 "If true, the server will listen to another port, instead of the default "
 "(5900). The port must be specified in the 'alternative_port' key."
 msgstr ""
-"Αν true, ο εξυπηρετητής θα αναμένει συνδέσεις σε εναλλακτική θύρα, αντί του "
-"τυπικού (5900). Η θύρα πρέπει να καθοριστεί με το κλειδί 'alternative_port'."
+"Αν είναι αληθές, ο εξυπηρετητής θα αναμένει συνδέσεις σε εναλλακτική θύρα, "
+"αντί του τυπικού (5900). Η θύρα πρέπει να καθοριστεί με το κλειδί "
+"'alternative_port'."
 
 #: ../server/vino-server.schemas.in.h:11
 msgid ""
@@ -355,8 +373,8 @@ msgid ""
 "connections will be rejected. Set this option to true if you wish to "
 "exclusively use a tunneling mechanism to access the server, such as ssh."
 msgstr ""
-"Αν true, ο εξυπηρετητής θα δέχεται συνδέσεις μόνο από localhost ενώ άλλες "
-"δικτυακές συνδέσεις θα απορρίπτονται. Επιλέξτε την επιλογή αυτή αν "
+"Αν είναι αληθές, ο εξυπηρετητής θα δέχεται συνδέσεις μόνο από localhost ενώ "
+"άλλες δικτυακές συνδέσεις θα απορρίπτονται. Επιλέξτε την επιλογή αυτή αν "
 "επιθυμείτε να χρησιμοποιήσετε αποκλειστικά μηχανισμό τούνελ για να "
 "συνδεθείτε στον εξυπηρετητή σας, όπως μέσω ssh."
 
@@ -374,9 +392,9 @@ msgid ""
 msgstr ""
 "Παρουσιάζει τις μεθόδους πιστοποίησης των απομακρυσμένων χρηστών για την "
 "πρόσβαση στην επιφάνεια εργασίας. Υπάρχουν δύο πιθανές μέθοδοι πιστοποίησης, "
-"το \"vnc\" όπου και θα ζητείται από το χρήστη κωδικός (ο κωδικός καθορίζεται "
-"από το κλειδί vnc_password), και \"none\" όπου και επιτρέπεται η ελεύθερη "
-"σύνδεση του χρήστη."
+"το \"vnc\" όπου και θα ζητείται από το χρήστη κωδικός πρόσβασης (ο κωδικός "
+"καθορίζεται από το κλειδί vnc_password), και \"none\" όπου και επιτρέπεται η "
+"ελεύθερη σύνδεση του χρήστη."
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Lock the screen when last user disconnect"
@@ -394,7 +412,7 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:17
 msgid "Password required for \"vnc\" authentication"
-msgstr "Απαιτείται κωδικός για την πιστοποίηση  \"vnc\""
+msgstr "Απαιτείται κωδικός πρόσβασης για την πιστοποίηση  \"vnc\""
 
 #: ../server/vino-server.schemas.in.h:18
 msgid "Prompt the user before completing a connection"
@@ -410,8 +428,9 @@ msgid ""
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
 msgstr ""
-"Ο κωδικός για το χρήστη αν χρησιμοποιείται η μέθοδος πιστοποίησης \"vnc\". Ο "
-"κωδικός που καθορίζεται από το κλειδί είναι base64 encoded."
+"Ο κωδικός πρόσβασης για το χρήστη αν χρησιμοποιείται η μέθοδος πιστοποίησης "
+"\"vnc\". Ο κωδικός που καθορίζεται από το κλειδί είναι κωδικοποιημένος με "
+"βάση το 64."
 
 #: ../server/vino-server.schemas.in.h:21
 msgid ""
@@ -419,8 +438,8 @@ msgid ""
 "is set to true. Valid values are in the range from 5000 to 50000."
 msgstr ""
 "Η θύρα που θα παρακολουθεί ο εξυπηρετητής εάν το κλειδί "
-"'use_alternative_port' είναι καθορισμένο σε true. Έγκυρες τιμές κυμαίνονται "
-"από 5000 μέχρι 50000."
+"'use_alternative_port' είναι καθορισμένο σε αληθές. Έγκυρες τιμές "
+"κυμαίνονται από 5000 μέχρι 50000."
 
 #: ../server/vino-server.schemas.in.h:22
 msgid ""
@@ -449,19 +468,10 @@ msgstr ""
 msgid "When the status icon should be shown"
 msgstr "Πότε θα εμφανίζεται το εικονίδιο κατάστασης"
 
-#: ../server/vino-shell.c:76
-msgid "Remote Desktop server already running; exiting ...\n"
+#: ../server/vino-server.schemas.in.h:25
+msgid "When true, disable the background on receive valid session"
 msgstr ""
-"Ο εξυπηρετητής απομακρυσμένης επιφάνειας εργασίας εκτελείται ήδη, γίνεται "
-"έξοδος....\n"
-
-#: ../server/vino-shell.c:79
-msgid ""
-"Problem registering the remote desktop server with bonobo-activation; "
-"exiting ...\n"
-msgstr ""
-"Πρόβλημα εγγραφής του εξυπηρετητή της απομακρυσμένης επιφάνειας με το  "
-"bonobo-activation; γίνεται έξοδος ...\n"
+"Εάν είναι αληθές, απενεργοποιείται το υπόβαθρο κατά τη λήψη έγκυρης συνόδου."
 
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
@@ -534,114 +544,190 @@ msgstr ""
 #: ../server/vino-status-icon.c:291
 msgid "translator-credits"
 msgstr ""
-"Kostas Papadimas <pkst@gnome.org>\n"
-"Nikos Charonitakis <charosn@her.forthnet.gr>\n"
-"Athanasios Lefteris <alefteris@gmail.com>"
+"Ελληνική μεταφραστική ομάδα GNOME\n"
+" Κώστας Παπαδήμας <pkst@gnome.org>\n"
+" Νίκος Χαρωνιτάκης <charosn@her.forthnet.gr>\n"
+" Αθανάσιος Λευτέρης <alefteris@gmail.com>\n"
+" Νίκος Αγιαννιώτης <nickagian@gmail.com>\n"
+"\n"
+"Για περισσότερα δείτε http://www.gnome.gr/"
 
 #: ../server/vino-status-icon.c:297
 msgid "Share your desktop with other users"
 msgstr "Κοινή χρήση της επιφάνειας εργασίας με άλλους χρήστες"
 
-#: ../server/vino-status-icon.c:360
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:361
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Είστε βέβαιος πως θέλετε να αποσυνδέσετε τον '%s';"
 
-#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-icon.c:363
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Ο απομακρυσμένος χρήστης από το '%s' θα αποσυνδεθεί. Είστε βέβαιος;"
 
-#: ../server/vino-status-icon.c:367
+#: ../server/vino-status-icon.c:368
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Είστε βέβαιος πως θέλετε να αποσυνδέσετε όλους τους πελάτες;"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:369
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Όλοι οι απομακρυσμένοι χρήστες θα αποσυνδεθούν. Είστε βέβαιος;"
 
-#: ../server/vino-status-icon.c:380
+#: ../server/vino-status-icon.c:381
 msgid "Disconnect"
 msgstr "Αποσύνδεση"
 
-#: ../server/vino-status-icon.c:406
+#: ../server/vino-status-icon.c:407
 msgid "_Preferences"
 msgstr "_Προτιμίσεις"
 
-#: ../server/vino-status-icon.c:421
+#: ../server/vino-status-icon.c:422
 msgid "Disconnect all"
 msgstr "Αποσύνδεση όλων"
 
-#: ../server/vino-status-icon.c:444
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:446
 #, c-format
 msgid "Disconnect %s"
 msgstr "Αποσύνδεση %s"
 
-#: ../server/vino-status-icon.c:464
+#: ../server/vino-status-icon.c:466
 msgid "_Help"
 msgstr "_Βοήθεια"
 
-#: ../server/vino-status-icon.c:472
+#: ../server/vino-status-icon.c:474
 msgid "_About"
 msgstr "_Περί"
 
-#: ../server/vino-status-icon.c:598
+#: ../server/vino-status-icon.c:603
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Σφάλμα αρχικοποίησης του libnotify\n"
 
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:623
 msgid "Another user is viewing your desktop"
 msgstr "Ένας δεύτερος χρήστης βλέπει την επιφάνεια εργασίας σας"
 
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:624
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr ""
 "Ένας χρήστης από τον υπολογιστή '%s' βλέπει απομακρυσμένα την επιφάνεια "
 "εργασίας σας."
 
-#: ../server/vino-status-icon.c:624
+#: ../server/vino-status-icon.c:629
 msgid "Another user is controlling your desktop"
 msgstr "Ένας δεύτερος χρήστης ελέγχει την επιφάνεια εργασίας σας"
 
-#: ../server/vino-status-icon.c:625
+#: ../server/vino-status-icon.c:630
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr ""
 "Ένας χρήστης από τον υπολογιστή '%s' ελέγxει απομακρυσμένα την επιφάνεια "
 "εργασίας σας."
 
-#: ../server/vino-status-icon.c:647
+#: ../server/vino-status-icon.c:652
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Σφάλμα κατά την απεικόνιση της φυσαλίδας ειδοποίησης: %s\n"
 
-#: ../session/vino-session.c:133
-msgid "Remote desktop server died, restarting\n"
-msgstr ""
-"Ο εξυπηρετητής της απομακρυσμένης επιφάνειας πέθανε, γίνεται επανεκκίνηση\n"
-
-#: ../session/vino-session.c:154
+#: ../tools/vino-passwd.c:115
 #, c-format
-msgid "Activation of %s failed: %s\n"
-msgstr "Η ενεργοποίηση του %s απέτυχε: %s\n"
-
-#: ../session/vino-session.c:160
-#, c-format
-msgid "Activation of %s failed: Unknown Error\n"
-msgstr "Αποτυχία ενεργοποίησης του %s: Άγνωστο σφάλμα\n"
-
-#: ../session/vino-session.c:231
-msgid "Failed to activate remote desktop server: tried too many times\n"
+msgid ""
+"ERROR: Maximum length of password is %d characters. Please, re-enter the "
+"password.\n"
 msgstr ""
-"Αποτυχία εκκίνησης απομακρυσμένου εξυπηρετητή επιφάνειας εργασίας: έγινε "
-"προσπάθεια πάρα πολλές φορές\n"
+"ΣΦΑΛΜΑ: Το μέγιστο μήκος του κωδικού πρόσβασης είναι %d χαρακτήρες. "
+"Παρακαλώ, επαναπληκτρολογείστε τον κωδικό πρόσβασης.\n"
 
-#: ../session/vino-session.c:295
-msgid "Starting remote desktop server"
-msgstr "Εκκίνηση απομακρυσμένου εξυπηρετητή επιφάνειας εργασίας"
+#: ../tools/vino-passwd.c:145
+#, c-format
+msgid "Changing Vino password.\n"
+msgstr "Αλλαγή του κωδικού πρόσβασης της εφαρμογής.\n"
 
-#: ../session/vino-session.c:300
-msgid "Not starting remote desktop server"
-msgstr "Δεν έγινε εκκίνηση απομακρυσμένου εξυπηρετητή επιφάνειας εργασίας"
+#: ../tools/vino-passwd.c:147
+msgid "Enter new Vino password: "
+msgstr "Εισαγωγή νέου κωδικού πρόσβασης της εφαρμογής:"
+
+#: ../tools/vino-passwd.c:150
+msgid "Retype new Vino password: "
+msgstr "Επαναπληκτρολόγηση νέου κωδικού πρόσβασης της εφαρμογής:"
+
+#: ../tools/vino-passwd.c:156
+#, c-format
+msgid "vino-passwd: password updated successfully.\n"
+msgstr "vino-passwd:ο κωδικός πρόσβασης ενημερώθηκε επιτυχώς.\n"
+
+#: ../tools/vino-passwd.c:160
+#, c-format
+msgid "Sorry, passwords do not match.\n"
+msgstr "Συγγνώμη, οι κωδικοί δεν ταιριάζουν.\n"
+
+#: ../tools/vino-passwd.c:161
+#, c-format
+msgid "vino-passwd: password unchanged.\n"
+msgstr "vino-passwd: ο κωδικός πρόσβασης δεν άλλαξε.\n"
+
+#: ../tools/vino-passwd.c:176
+msgid "Show Vino version"
+msgstr "Προβολή της έκδοσης της εφαρμογής"
+
+#: ../tools/vino-passwd.c:185
+msgid "- Updates Vino password"
+msgstr "- Ενημερώνει τον κωδικό πρόσβασης"
+
+#: ../tools/vino-passwd.c:195
+msgid ""
+"Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr ""
+"Εκτέλεση 'vino-passwd --help' για να εμφανιστεί η πλήρης λίστα των "
+"διαθέσιμων επιλογών της γραμμής εντολών"
+
+#: ../tools/vino-passwd.c:202
+#, c-format
+msgid "VINO Version %s\n"
+msgstr "Έκδοση εφαρμογής %s\n"
+
+#: ../tools/vino-passwd.c:211
+#, c-format
+msgid "ERROR: You do not have enough permissions to change Vino password.\n"
+msgstr ""
+"ΣΦΑΛΜΑ: Δεν έχετε ικανή άδεια για να αλλάξετε τον κωδικό πρόσβασης του "
+"Vino.\n"
+
+#~ msgid ""
+#~ "If checked, screen will be locked after the last remote client disconnect"
+#~ msgstr ""
+#~ "Αν επιλεχθεί, η οθόνη θα κλειδώνει μετά την αποσύνδεση του τελευταίου "
+#~ "απομακρυσμένου πελάτη."
+
+#~ msgid ""
+#~ "Problem registering the remote desktop server with bonobo-activation; "
+#~ "exiting ...\n"
+#~ msgstr ""
+#~ "Πρόβλημα εγγραφής του εξυπηρετητή της απομακρυσμένης επιφάνειας με το  "
+#~ "bonobo-activation; γίνεται έξοδος ...\n"
+
+#~ msgid "Remote desktop server died, restarting\n"
+#~ msgstr ""
+#~ "Ο εξυπηρετητής της απομακρυσμένης επιφάνειας πέθανε, γίνεται "
+#~ "επανεκκίνηση\n"
+
+#~ msgid "Activation of %s failed: %s\n"
+#~ msgstr "Η ενεργοποίηση του %s απέτυχε: %s\n"
+
+#~ msgid "Activation of %s failed: Unknown Error\n"
+#~ msgstr "Αποτυχία ενεργοποίησης του %s: Άγνωστο σφάλμα\n"
+
+#~ msgid "Failed to activate remote desktop server: tried too many times\n"
+#~ msgstr ""
+#~ "Αποτυχία εκκίνησης απομακρυσμένου εξυπηρετητή επιφάνειας εργασίας: έγινε "
+#~ "προσπάθεια πάρα πολλές φορές\n"
+
+#~ msgid "Starting remote desktop server"
+#~ msgstr "Εκκίνηση απομακρυσμένου εξυπηρετητή επιφάνειας εργασίας"
+
+#~ msgid "Not starting remote desktop server"
+#~ msgstr "Δεν έγινε εκκίνηση απομακρυσμένου εξυπηρετητή επιφάνειας εργασίας"
