@@ -1,3 +1,20 @@
+Vino 2.24.1
+===========
+
+  Fixes
+	+ Bug #555105: Propagates port changes via avahi.
+	+ Update label in vino-preferences when the port changes.
+	+ Bug #161180: Hopefully fix an window empty bug.
+	+ LP: #266932: Only restore the wallpaper when the last
+	client disconnects.
+
+  Translations
+
+	+ Usama Akkad (ar)
+	+ Ihar Hrachyshka (be@latin)
+	+ Alexander Shopov (bg)
+	+ Milo Casagrande (it)
+
 Vino 2.24.0
 ===========
 
