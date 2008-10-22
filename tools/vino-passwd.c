@@ -108,7 +108,13 @@ vino_passwd_read (char *buff,
       read (STDIN_FILENO, &key, 1);
 
       if (key == 0x03) /* Ctrl + C */
-          kill (0, SIGQUIT);
+        {
+          tcsetattr (STDIN_FILENO, TCSAFLUSH, &told); 
+          g_printerr ("\n");
+          g_printerr (_("Cancelled"));
+          g_printerr ("\n");
+          exit (1);
+        }
       else if (again && key == '\n')
         {
           g_printerr ("\n");

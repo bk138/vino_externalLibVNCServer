@@ -1,3 +1,8 @@
+2008-10-22  Jorge Pereira  <jorge@jorgepereira.com.br>
+	* tools/vino-passwd.c: (vino_passwd_read):
+	Do not show "Core Dumped" when receive "Ctrl+C". 
+	Closes #557454.
+
 2008-10-22  Jonh Wendell  <jwendell@gnome.org>
 
 	* configure.in: bump version to 2.25.1
