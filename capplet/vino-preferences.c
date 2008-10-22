@@ -71,7 +71,7 @@ typedef struct {
 
   GtkWidget   *dialog;
   GtkWidget   *writability_warning;
-  GtkWidget   *url_labels_box;
+  GtkWidget   *send_email_button;
   GtkWidget   *url_label;
   GtkWidget   *allowed_toggle;
   GtkWidget   *prompt_enabled_toggle;
@@ -88,7 +88,6 @@ typedef struct {
   GtkWidget   *alternative_port_entry;
   GtkWidget   *lock_screen_toggle;
   GtkWidget   *disable_background_toggle;
-  GtkTooltips *tips;
 #ifdef VINO_ENABLE_LIBUNIQUE
   UniqueApp   *app;
 #endif
@@ -101,7 +100,6 @@ typedef struct {
   int          expected_listeners;
 
   guint        use_password : 1;
-
 } VinoPreferencesDialog;
 
 static void
@@ -176,7 +174,7 @@ vino_preferences_dialog_update_for_allowed (VinoPreferencesDialog *dialog,
 {
   gtk_widget_set_sensitive (dialog->prompt_enabled_toggle, allowed);
   gtk_widget_set_sensitive (dialog->view_only_toggle,      allowed);
-  gtk_widget_set_sensitive (dialog->url_labels_box,        allowed);
+  gtk_widget_set_sensitive (dialog->send_email_button,     allowed);
   gtk_widget_set_sensitive (dialog->password_toggle,       allowed);
   gtk_widget_set_sensitive (dialog->password_box,          allowed ? dialog->use_password : FALSE);
   gtk_widget_set_sensitive (dialog->icon_always_radio,     allowed);
@@ -1124,55 +1122,15 @@ vino_preferences_start_listening (VinoPreferencesDialog *dialog)
 static int
 vino_preferences_get_server_port (VinoPreferencesDialog *dialog)
 {
-#define VINO_DEFAULT_PORT   5900
-#define VINO_MIN_PORT       5000
-#define VINO_MAX_PORT       6000
-
   DBusGProxy  *proxy;
   int          port;
   GdkScreen   *screen;
   char        *obj_path;
-  
-  screen = gtk_window_get_screen (GTK_WINDOW (dialog->dialog));
-  obj_path = g_strdup_printf ("/org/gnome/vino/screens/%d",
-                              gdk_screen_get_number (screen));
-
-  proxy = dbus_g_proxy_new_for_name (dialog->connection,
-                                     VINO_DBUS_BUS_NAME,
-                                     obj_path,
-                                     VINO_DBUS_INTERFACE);
-  g_free (obj_path);
-
-  if (!dbus_g_proxy_call (proxy, "GetServerPort", NULL,
-                          G_TYPE_INVALID,
-                          G_TYPE_INT, &port,
-                          G_TYPE_INVALID))
-    {
-      g_object_unref (proxy);
-      return 0;
-    }
-
-  g_object_unref (proxy);
-
-  if (port >= VINO_MIN_PORT && port <= VINO_MAX_PORT)
-    return port - VINO_DEFAULT_PORT;
-  else
-    return port;
-
-#undef VINO_DEFAULT_PORT
-#undef VINO_MIN_PORT
-#undef VINO_MAX_PORT
-}
-
 #ifdef VINO_ENABLE_HTTP_SERVER
-static int
-vino_preferences_get_http_server_port (VinoPreferencesDialog *dialog)
-{
-#define VINO_HTTP_DEFAULT_PORT   5800
-  DBusGProxy  *proxy;
-  int          port;
-  GdkScreen   *screen;
-  char        *obj_path;
+  const char  *method = "GetHttpServerPort";
+#else
+  const char  *method = "GetServerPort";
+#endif
   
   screen = gtk_window_get_screen (GTK_WINDOW (dialog->dialog));
   obj_path = g_strdup_printf ("/org/gnome/vino/screens/%d",
@@ -1184,21 +1142,17 @@ vino_preferences_get_http_server_port (VinoPreferencesDialog *dialog)
                                      VINO_DBUS_INTERFACE);
   g_free (obj_path);
 
-  if (!dbus_g_proxy_call (proxy, "GetHttpServerPort", NULL,
+  if (!dbus_g_proxy_call (proxy, method, NULL,
                           G_TYPE_INVALID,
                           G_TYPE_INT, &port,
                           G_TYPE_INVALID))
     {
-      g_object_unref (proxy);
-      return VINO_HTTP_DEFAULT_PORT;
+      port = 0;
     }
 
   g_object_unref (proxy);
-
   return port;
-#undef VINO_HTTP_DEFAULT_PORT
 }
-#endif /* VINO_ENABLE_HTTP_SERVER */
 
 static char *
 vino_preferences_get_local_hostname (void)
@@ -1233,18 +1187,21 @@ vino_preferences_dialog_get_server_command (VinoPreferencesDialog *dialog)
   char *server_url;
   int   server_port;
 
-  local_host  = vino_preferences_get_local_hostname ();
+  server_port = vino_preferences_get_server_port (dialog);
+
+  gtk_widget_set_sensitive (dialog->send_email_button, server_port);
+
+  if (server_port == 0)
+    return g_strdup (_("The service is not running"));
+
+  local_host = vino_preferences_get_local_hostname ();
   if (!local_host)
-    {
-      local_host = g_strdup_printf ("localhost");
-    }
+    local_host = g_strdup_printf ("localhost");
 
 #ifdef VINO_ENABLE_HTTP_SERVER
-  server_port = vino_preferences_get_http_server_port (dialog);
   server_url = g_strdup_printf ("http://%s:%d", local_host, server_port);
 #else
-  server_port = vino_preferences_get_server_port (dialog);
-  server_url = g_strdup_printf ("vinagre %s:%d", local_host, server_port);
+  server_url = g_strdup_printf ("vinagre %s::%d", local_host, server_port);
 #endif
 
   g_free (local_host);
@@ -1253,35 +1210,36 @@ vino_preferences_dialog_get_server_command (VinoPreferencesDialog *dialog)
 }
 
 static char *
-vino_preferences_dialog_construct_mailto (VinoPreferencesDialog *dialog,
-					  const char            *url)
+vino_preferences_dialog_construct_mailto (VinoPreferencesDialog *dialog)
 {
   GString *mailto;
+  char *command;
+
+  command = vino_preferences_dialog_get_server_command (dialog);
 
   mailto = g_string_new ("mailto:");
   if (dialog->mailto)
     mailto = g_string_append (mailto, dialog->mailto);
 
   mailto = g_string_append_c (mailto, '?');
-  g_string_append_printf (mailto, "Body=%s", url);
+  g_string_append_printf (mailto, "Body=%s", command);
 
+  g_free (command);
   return g_string_free (mailto, FALSE);
 }
 
 static void
 vino_preferences_dialog_update_url_label (VinoPreferencesDialog *dialog)
 {
-  char *command;
-  char *mailto;
+  char *command, *label;
 
   command = vino_preferences_dialog_get_server_command (dialog);
-  mailto = vino_preferences_dialog_construct_mailto (dialog, command);
-
-  gtk_button_set_label (GTK_BUTTON (dialog->url_label), command);
-  gtk_link_button_set_uri (GTK_LINK_BUTTON (dialog->url_label), mailto);
+  label = g_strdup_printf ("<i>%s</i>", command);
+  
+  gtk_label_set_label (GTK_LABEL (dialog->url_label), label);
   
   g_free (command);
-  g_free (mailto);
+  g_free (label);
 }
 
 static void
@@ -1307,47 +1265,59 @@ vino_preferences_dialog_mailto_notify (GConfClient           *client,
     {
       g_free (dialog->mailto);
       dialog->mailto = g_strdup (mailto);
-      vino_preferences_dialog_update_url_label (dialog);
     }
 }
 
 static void
-vino_preferences_dialog_uri_hook (GtkLinkButton *button,
-                                  const gchar *link,
-                                  gpointer user_data)
+vino_preferences_email_button_clicked (GtkButton *button,
+				       VinoPreferencesDialog *dialog)
 {
   GError *error;
   GdkScreen *screen;
+  char *mailto, *command;
 
-  screen = gtk_widget_get_screen (GTK_WIDGET (button));
+  error   = NULL;
+  screen  = gtk_widget_get_screen (GTK_WIDGET (button));
+  mailto  = vino_preferences_dialog_construct_mailto (dialog);
+  command = vino_preferences_dialog_get_server_command (dialog);
 
-  error = NULL;
-  if (!gtk_show_uri (screen, link, GDK_CURRENT_TIME, &error))
+  if (!gtk_show_uri (screen, mailto, GDK_CURRENT_TIME, &error))
     {
-      /* FIXME better error handling!
-       *       What best to do? For the specific case
-       *       in this preferences dialog we want to be
-       *       able to pop up a dialog with the error
-       *       but also the vino URL as a selectable
-       *       label.
-       *
-       *       Maybe chain this up to the caller?
-       */
+      GtkWidget *message_dialog;
 
-      g_warning ("Failed to show URL '%s': %s\n",
-		 link, error->message);
+      message_dialog = gtk_message_dialog_new (GTK_WINDOW (dialog->dialog),
+					       GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+					       GTK_MESSAGE_ERROR,
+					       GTK_BUTTONS_CLOSE,
+					       _("There was an error showing the URL \"%s\""),
+					       command);
+      gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (message_dialog),
+						"%s",
+						error->message);
+
+      gtk_window_set_resizable (GTK_WINDOW (message_dialog), FALSE);
+
+      g_signal_connect (message_dialog, "response",
+			G_CALLBACK (gtk_widget_destroy),
+			NULL);
+
+      gtk_widget_show (message_dialog);
       g_error_free (error);
     }
+
+  g_free (mailto);
+  g_free (command);
 }
 
 static void
 vino_preferences_dialog_setup_url_labels (VinoPreferencesDialog *dialog)
 {
-  char *command;
-  char *mailto;
+  char *command, *label;
+  GtkWidget *image;
 
-  dialog->url_labels_box = glade_xml_get_widget (dialog->xml, "url_labels_box");
-  g_assert (dialog->url_labels_box);
+  dialog->url_label = glade_xml_get_widget (dialog->xml, "url_label");
+  dialog->send_email_button = glade_xml_get_widget (dialog->xml, "send_email_button");
+  g_assert (dialog->url_label);
 
   dialog->listeners [dialog->n_listeners] = 
     gconf_client_notify_add (dialog->client,
@@ -1364,24 +1334,19 @@ vino_preferences_dialog_setup_url_labels (VinoPreferencesDialog *dialog)
     }
 
   command = vino_preferences_dialog_get_server_command (dialog);
-  mailto = vino_preferences_dialog_construct_mailto (dialog, command);
+  label = g_strdup_printf ("<i>%s</i>", command);
   
-  gtk_link_button_set_uri_hook (vino_preferences_dialog_uri_hook, NULL, NULL);
+  gtk_label_set_label (GTK_LABEL (dialog->url_label), label);
 
-  dialog->url_label = gtk_link_button_new_with_label (mailto, command);
-
-  dialog->tips = gtk_tooltips_new ();
-  gtk_tooltips_set_tip (dialog->tips, dialog->url_label,
-                        _("Send this command by email"), NULL);
-  g_object_ref_sink (dialog->tips);
+  image = gtk_image_new_from_icon_name ("gnome-stock-mail-fwd", GTK_ICON_SIZE_BUTTON);
+  gtk_button_set_image (GTK_BUTTON (dialog->send_email_button), image);
+  g_signal_connect (dialog->send_email_button,
+		    "clicked",
+		    G_CALLBACK (vino_preferences_email_button_clicked),
+		    dialog);
 
   g_free (command);
-  g_free (mailto);
-
-  gtk_box_pack_start (GTK_BOX (dialog->url_labels_box),
-		      dialog->url_label,
-		      FALSE, FALSE, 0);
-  gtk_widget_show (dialog->url_label);
+  g_free (label);
 }
 
 static void
@@ -1522,10 +1487,6 @@ vino_preferences_dialog_finalize (VinoPreferencesDialog *dialog)
   if (dialog->mailto)
     g_free (dialog->mailto);
   dialog->mailto = NULL;
-
-  if (dialog->tips)
-    g_object_unref (dialog->tips);
-  dialog->tips = NULL;
 
   if (dialog->client)
     {

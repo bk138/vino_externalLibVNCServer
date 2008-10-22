@@ -1,3 +1,13 @@
+2008-10-22  Jonh Wendell  <jwendell@gnome.org>
+
+	* configure.in: bump version to 2.25.1
+	* capplet/vino-preferences.[c,glade]:
+	Replaced the LinkButton with a Label and a Button, this allows the
+	user to copy the text and gives more space to add more buttons in
+	the future.
+	Also, we show a message when the server is not running, instead of
+	always show the URL. This closes #513705.
+
 2008-10-20  Jonh Wendell  <jwendell@gnome.org>
 
 	* configure.in: post-release bump version to 2.24.2
