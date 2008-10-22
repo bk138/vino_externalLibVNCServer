@@ -99,7 +99,7 @@ vino_passwd_read (char *buff,
   tnew.c_iflag &= ~(IXON | IXOFF);
   tcsetattr (STDIN_FILENO, TCSAFLUSH, &tnew);
 
-  g_print (prompt_msg);
+  g_print ("%s", prompt_msg);
 
   do
     {
@@ -113,7 +113,7 @@ vino_passwd_read (char *buff,
         {
           g_printerr ("\n");
           g_printerr (_("ERROR: Maximum length of password is %d characters. Please, re-enter the password.\n"), VINO_PASSWORD_MAXLEN);
-          g_print (prompt_msg);
+          g_print ("%s", prompt_msg);
 
           pos   = 0;
           again = FALSE;
