@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: vino.HEAD.hu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-09-05 12:25+0000\n"
-"PO-Revision-Date: 2008-09-19 04:10+0200\n"
+"PO-Revision-Date: 2008-10-29 15:30+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <gnome@fsf.hu>\n"
 "MIME-Version: 1.0\n"
@@ -85,7 +85,7 @@ msgstr "_Háttérkép kikapcsolása ha kapcsolódott"
 
 #: ../capplet/vino-preferences.glade.h:10
 msgid "Disable the wallpaper when successfull connection"
-msgstr "Háttérkép kikapcsolása sikerek kapcsolódáskor"
+msgstr "Háttérkép kikapcsolása sikeres kapcsolódáskor"
 
 #: ../capplet/vino-preferences.glade.h:11
 msgid "General"
