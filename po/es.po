@@ -11,28 +11,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 16:54+0000\n"
-"PO-Revision-Date: 2008-08-29 10:22+0200\n"
+"POT-Creation-Date: 2008-11-07 15:53+0100\n"
+"PO-Revision-Date: 2008-11-08 13:56+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type:  text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1097 ../capplet/vino-preferences.c:1132
-#: ../capplet/vino-preferences.c:1190 ../server/vino-dbus-listener.c:374
-#: ../server/vino-server.c:151
+#: ../capplet/vino-preferences.c:1195
+msgid "The service is not running"
+msgstr "El servicio no se está ejecutando"
+
+#: ../capplet/vino-preferences.c:1292
 #, c-format
-msgid "Failed to open connection to bus: %s\n"
-msgstr "Falló al abrir conexión con bus: %s\n"
+msgid "There was an error showing the URL \"%s\""
+msgstr "Hubo un error al mostrar el URL «%s»"
 
-#: ../capplet/vino-preferences.c:1399
-msgid "Send this command by email"
-msgstr "Enviar este comando por correo-e"
-
-#: ../capplet/vino-preferences.c:1437
+#: ../capplet/vino-preferences.c:1378
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -40,6 +38,12 @@ msgid ""
 msgstr ""
 "Hubo un error al mostrar la ayuda:\n"
 "%s"
+
+#: ../capplet/vino-preferences.c:1439 ../server/vino-dbus-listener.c:411
+#: ../server/vino-server.c:151
+#, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "Falló al abrir conexión con bus: %s\n"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
 #: ../server/vino-server.desktop.in.in.h:2
@@ -118,87 +122,95 @@ msgstr ""
 "desconecte"
 
 #: ../capplet/vino-preferences.glade.h:17
+msgid "Send this command by email"
+msgstr "Enviar este comando por correo-e"
+
+#: ../capplet/vino-preferences.glade.h:18
 msgid "Some of these preferences are locked down"
 msgstr "Algunas de estas preferencias están bloqueadas"
 
-#: ../capplet/vino-preferences.glade.h:18
+#: ../capplet/vino-preferences.glade.h:19
 msgid "The server will only accept connections from localhost"
 msgstr "El servidor sólo aceptará conexiones desde el equipo local"
 
-#: ../capplet/vino-preferences.glade.h:19
+#: ../capplet/vino-preferences.glade.h:20
 msgid "The server will use another port, instead of the default (5900)"
 msgstr "El servidor usará otro puerto, en lugar del predeterminado (5900)"
 
-#: ../capplet/vino-preferences.glade.h:20
+#: ../capplet/vino-preferences.glade.h:21
 msgid "Users can view your desktop using this command:"
 msgstr "Los usuarios pueden ver tu escritorio usando este comando:"
 
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:22
 msgid "When a user tries to view or control your desktop:"
 msgstr "Cuando un usuario intenta ver o controlar tu escritorio:"
 
 #. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:23
+#: ../capplet/vino-preferences.glade.h:24
 msgid "Your desktop will be shared"
 msgstr "Se compartirá su escritorio"
 
-#: ../capplet/vino-preferences.glade.h:24
+#: ../capplet/vino-preferences.glade.h:25
 msgid "_Allow other users to control your desktop"
 msgstr "_Permitir a otros usuarios controlar tu escritorio"
 
-#: ../capplet/vino-preferences.glade.h:25
+#: ../capplet/vino-preferences.glade.h:26
 msgid "_Lock screen on disconnect"
 msgstr "B_loquear la pantalla al desconectar"
 
-#: ../capplet/vino-preferences.glade.h:26
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Never display an icon"
 msgstr "No mostrar un icono _nunca"
 
-#: ../capplet/vino-preferences.glade.h:27
+#: ../capplet/vino-preferences.glade.h:28
 msgid "_Only allow local connections"
 msgstr "Permitir sólo conexiones _locales"
 
-#: ../capplet/vino-preferences.glade.h:28
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Only display an icon when there is someone connected"
 msgstr "Mostrar s_olo un icono cuando hay alguien conectado"
 
-#: ../capplet/vino-preferences.glade.h:29
+#: ../capplet/vino-preferences.glade.h:30
 msgid "_Password:"
 msgstr "_Contraseña:"
 
-#: ../capplet/vino-preferences.glade.h:30
+#: ../capplet/vino-preferences.glade.h:31
 msgid "_Require encryption"
 msgstr "_Requerir cifrado"
 
-#: ../capplet/vino-preferences.glade.h:31
+#: ../capplet/vino-preferences.glade.h:32
 msgid "_Require the user to enter this password:"
 msgstr "_Requerir que el usuario introduzca una contraseña:"
 
-#: ../capplet/vino-preferences.glade.h:32
+#: ../capplet/vino-preferences.glade.h:33
 msgid "_Use an alternative port:"
 msgstr "_Usar un puerto alternativo:"
 
-#: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
-#: ../server/vino-dbus-listener.c:249
+#: ../server/vino-dbus-listener.c:190 ../server/vino-dbus-listener.c:220
+#: ../server/vino-dbus-listener.c:251
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "Se agotó la memoria manejando el mensaje «%s»"
 
-#: ../server/vino-dbus-listener.c:334
+#: ../server/vino-dbus-listener.c:364
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "Se agotó la memoria registrando la ruta al objeto «%s»"
 
-#: ../server/vino-dbus-listener.c:407
+#: ../server/vino-dbus-listener.c:448
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Falló al adquirir el nombre D-Bus «%s»\n"
 
-#: ../server/vino-main.c:74
+#: ../server/vino-dbus-listener.c:456
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "El servidor de Escritorio Remoto ya está en ejecución; saliendo ...\n"
+
+#: ../server/vino-main.c:89
 msgid "GNOME Remote Desktop"
 msgstr "Escritorio remoto de GNOME"
 
-#: ../server/vino-main.c:84
+#: ../server/vino-main.c:99
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -447,18 +459,6 @@ msgstr ""
 "Cuando está activado desactiva el fondo de pantalla al recibir una sesión "
 "válida"
 
-#: ../server/vino-shell.c:76
-msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "El servidor de Escritorio Remoto ya está en ejecución; saliendo ...\n"
-
-#: ../server/vino-shell.c:79
-msgid ""
-"Problem registering the remote desktop server with bonobo-activation; "
-"exiting ...\n"
-msgstr ""
-"Problema registrando el servidor de escritorio remoto con bonobo-activation; "
-"saliendo ...\n"
-
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
 msgstr "La compartición del escritorio está activada"
@@ -607,35 +607,12 @@ msgstr ""
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Error al mostrar la burbuja de notificación: %s\n"
 
-#: ../session/vino-session.c:133
-msgid "Remote desktop server died, restarting\n"
-msgstr "El servidor de escritorio remoto ha muerto, reiniciando\n"
-
-#: ../session/vino-session.c:154
+#: ../tools/vino-passwd.c:114
 #, c-format
-msgid "Activation of %s failed: %s\n"
-msgstr "La activación de %s falló: %s\n"
+msgid "Cancelled"
+msgstr "Cancelado"
 
-#: ../session/vino-session.c:160
-#, c-format
-msgid "Activation of %s failed: Unknown Error\n"
-msgstr "La activación de %s falló: Error desconocido\n"
-
-#: ../session/vino-session.c:231
-msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr ""
-"Falló al activar el servidor de escritorio remoto: se intentó demasiadas "
-"veces\n"
-
-#: ../session/vino-session.c:295
-msgid "Starting remote desktop server"
-msgstr "Iniciando el servidor de escritorio remoto"
-
-#: ../session/vino-session.c:300
-msgid "Not starting remote desktop server"
-msgstr "No iniciando el servidor de escritorio remoto"
-
-#: ../tools/vino-passwd.c:115
+#: ../tools/vino-passwd.c:121
 #, c-format
 msgid ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
@@ -644,56 +621,83 @@ msgstr ""
 "ERROR: La longitud máxima de la contraseña es de %d caracteres. Vuelva a "
 "introducir la contraseña.\n"
 
-#: ../tools/vino-passwd.c:145
+#: ../tools/vino-passwd.c:151
 #, c-format
 msgid "Changing Vino password.\n"
 msgstr "Cambiando la contraseña de Vino.\n"
 
-#: ../tools/vino-passwd.c:147
+#: ../tools/vino-passwd.c:153
 msgid "Enter new Vino password: "
 msgstr "Introduzca la nueva contraseña de Vino: "
 
-#: ../tools/vino-passwd.c:150
+#: ../tools/vino-passwd.c:156
 msgid "Retype new Vino password: "
 msgstr "Reescriba la nueva contraseña de Vino: "
 
-#: ../tools/vino-passwd.c:156
+#: ../tools/vino-passwd.c:162
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: la contraseña se actualizó satisfactoriamente.\n"
 
-#: ../tools/vino-passwd.c:160
+#: ../tools/vino-passwd.c:166
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "Las contraseñas no coinciden.\n"
 
-#: ../tools/vino-passwd.c:161
+#: ../tools/vino-passwd.c:167
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: no se cambió la contraseña.\n"
 
-#: ../tools/vino-passwd.c:176
+#: ../tools/vino-passwd.c:182
 msgid "Show Vino version"
 msgstr "Mostrar la versión de Vino"
 
-#: ../tools/vino-passwd.c:185
+#: ../tools/vino-passwd.c:191
 msgid "- Updates Vino password"
 msgstr "- Actualiza la contraseña de Vino"
 
-#: ../tools/vino-passwd.c:195
+#: ../tools/vino-passwd.c:201
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr ""
 "Ejecute «vino-passwd --help» para ver una lista completa de las opciones de "
 "la línea de comandos disponibles"
 
-#: ../tools/vino-passwd.c:202
+#: ../tools/vino-passwd.c:208
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "Versión %s de Vino\n"
 
-#: ../tools/vino-passwd.c:211
+#: ../tools/vino-passwd.c:217
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
 "ERROR: No tiene suficientes permisos para cambiar la contraseña de Vino.\n"
+
+#~ msgid ""
+#~ "Problem registering the remote desktop server with bonobo-activation; "
+#~ "exiting ...\n"
+#~ msgstr ""
+#~ "Problema registrando el servidor de escritorio remoto con bonobo-"
+#~ "activation; saliendo ...\n"
+
+#~ msgid "Remote desktop server died, restarting\n"
+#~ msgstr "El servidor de escritorio remoto ha muerto, reiniciando\n"
+
+#~ msgid "Activation of %s failed: %s\n"
+#~ msgstr "La activación de %s falló: %s\n"
+
+#~ msgid "Activation of %s failed: Unknown Error\n"
+#~ msgstr "La activación de %s falló: Error desconocido\n"
+
+#~ msgid "Failed to activate remote desktop server: tried too many times\n"
+#~ msgstr ""
+#~ "Falló al activar el servidor de escritorio remoto: se intentó demasiadas "
+#~ "veces\n"
+
+#~ msgid "Starting remote desktop server"
+#~ msgstr "Iniciando el servidor de escritorio remoto"
+
+#~ msgid "Not starting remote desktop server"
+#~ msgstr "No iniciando el servidor de escritorio remoto"
