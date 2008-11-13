@@ -105,7 +105,8 @@ vino_passwd_read (char *buff,
     {
       char key;
 
-      read (STDIN_FILENO, &key, 1);
+      if ( read (STDIN_FILENO, &key, 1) < 0 )
+	break;
 
       if (key == 0x03) /* Ctrl + C */
         {

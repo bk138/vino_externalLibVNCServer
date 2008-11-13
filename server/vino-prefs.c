@@ -454,8 +454,8 @@ vino_prefs_create_server (GdkScreen *screen)
   if (vino_enabled)
     vino_mdns_start ();
 
-  g_signal_connect (server, "notify::alternative-port", vino_prefs_restart_mdns, NULL);
-  g_signal_connect (server, "notify::use-alternative-port", vino_prefs_restart_mdns, NULL);
+  g_signal_connect (server, "notify::alternative-port", G_CALLBACK (vino_prefs_restart_mdns), NULL);
+  g_signal_connect (server, "notify::use-alternative-port", G_CALLBACK(vino_prefs_restart_mdns), NULL);
 
   icon = vino_server_get_status_icon (server);
   vino_status_icon_set_visibility (icon, vino_icon_visibility);

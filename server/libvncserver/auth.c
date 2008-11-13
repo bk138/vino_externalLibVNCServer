@@ -75,7 +75,7 @@ rfbAuthTLSHandshake(rfbClientPtr cl)
     gnutls_credentials_set(cl->tlsSession,
 			   GNUTLS_CRD_ANON,
 			   cl->screen->anonCredentials);
-    gnutls_transport_set_ptr(cl->tlsSession, (gnutls_transport_ptr) cl->sock);
+    gnutls_transport_set_ptr(cl->tlsSession, (gnutls_transport_ptr_t) cl->sock);
 
     err = gnutls_handshake(cl->tlsSession);
     if (err != GNUTLS_E_SUCCESS && !gnutls_error_is_fatal(err)) {

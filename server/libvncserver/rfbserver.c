@@ -74,7 +74,7 @@ rfbClientListInit(rfbScreenInfoPtr rfbScreen)
 {
     if(sizeof(rfbBool)!=1) {
         /* a sanity check */
-        fprintf(stderr,"rfbBool's size is not 1 (%d)!\n",sizeof(rfbBool));
+        fprintf(stderr,"rfbBool's size is not 1 (%lu)!\n",(unsigned long)sizeof(rfbBool));
 	/* we cannot continue, because rfbBool is supposed to be char everywhere */
 	exit(1);
     }
@@ -148,7 +148,7 @@ rfbNewClient(rfbScreenInfoPtr rfbScreen,
     rfbClientIteratorPtr iterator;
     rfbClientPtr cl,cl_;
     struct sockaddr_storage addr;
-    size_t addrlen = sizeof(addr);
+    socklen_t addrlen = sizeof(addr);
     int i;
     char host[NI_MAXHOST];
 

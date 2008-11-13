@@ -26,11 +26,9 @@
 #include <config.h>
 #include <libintl.h>
 #include <glib/gmacros.h>
+#include <glib/gi18n.h>
 
 G_BEGIN_DECLS
-
-#define  _(x) dgettext (GETTEXT_PACKAGE, x)
-#define N_(x) (x)
 
 #define VINO_STOCK_ALLOW  "vino-allow"
 #define VINO_STOCK_REFUSE "vino-refuse"

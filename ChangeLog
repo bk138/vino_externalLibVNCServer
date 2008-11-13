@@ -1,3 +1,13 @@
+2008-11-13  Jorge Pereira  <jorge@jorgepereira.com.br>
+	* server/libvncserver/auth.c:
+	* server/libvncserver/main.c:
+	* server/libvncserver/rfbserver.c:
+	* server/vino-prefs.c:
+	* server/vino-util.h:
+	* tools/vino-passwd.c:
+	Drop some warning messages.
+	Closes #558135.
+
 2008-10-22  Jorge Pereira  <jorge@jorgepereira.com.br>
 	* tools/vino-passwd.c: (vino_passwd_read):
 	Do not show "Core Dumped" when receive "Ctrl+C". 
