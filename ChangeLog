@@ -1,3 +1,8 @@
+2008-11-13  Jonh Wendell  <jwendell@gnome.org>
+
+	* tools/vino-passwd.c (vino_passwd_change): Remove a deprecated
+	GLib symbol. Closes #560450.
+
 2008-11-13  Jorge Pereira  <jorge@jorgepereira.com.br>
 	* server/libvncserver/auth.c:
 	* server/libvncserver/main.c:

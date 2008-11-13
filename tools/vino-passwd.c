@@ -157,7 +157,7 @@ vino_passwd_change (GConfClient *conf)
   vino_passwd_read (password2, sizeof(password2), _("Retype new Vino password: "));
   g_print ("\n");
 
-  if (!g_strcasecmp (password1, password2))
+  if (g_str_equal (password1, password2))
     {
       vino_passwd_set_password (conf, password1);
       g_print (_("vino-passwd: password updated successfully.\n"));
