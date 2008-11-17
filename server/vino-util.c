@@ -101,3 +101,35 @@ vino_init_stock_items (void)
 
   initialized = TRUE;
 }
+
+void
+vino_util_show_error (const gchar *title, const gchar *message, GtkWindow *parent)
+{
+  GtkWidget *d;
+  gchar     *t;
+
+  if (title)
+    t = g_strdup (title);
+  else
+    t = g_strdup (_("An error has occurred:"));
+
+  d = gtk_message_dialog_new (parent,
+			      GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+			      GTK_MESSAGE_ERROR,
+			      GTK_BUTTONS_CLOSE,
+			      "%s",
+			      t);
+  g_free (t);
+
+  if (message)
+    gtk_message_dialog_format_secondary_markup (GTK_MESSAGE_DIALOG (d),
+					      "%s",
+					      message);
+
+  g_signal_connect_swapped (d,
+			    "response", 
+			    G_CALLBACK (gtk_widget_destroy),
+			    d);
+  gtk_widget_show_all (GTK_WIDGET(d));
+}
+

@@ -1,3 +1,12 @@
+2008-11-17  Jonh Wendell  <jwendell@gnome.org>
+
+	* server/vino-utils.[ch]: Added a new utility function:
+	vino_util_show_error().
+	* server/vino-status-icon.c: Don't use gnome-open anymore. Use
+	gtk_show_uri instead, and, in case of error, use the new helper
+	function to show an error dialog. Based on a patch from  Emilio
+	Pozuelo Monfort. Closes #561034.
+
 2008-11-13  Jonh Wendell  <jwendell@gnome.org>
 
 	* tools/vino-passwd.c (vino_passwd_change): Remove a deprecated

@@ -183,9 +183,7 @@ vino_status_icon_new (VinoServer *server,
   return g_object_new (VINO_TYPE_STATUS_ICON,
                        "icon-name", "preferences-desktop-remote-desktop",
                        "server",    server,
-#if GTK_CHECK_VERSION (2, 11, 0)
                        "screen",    screen,
-#endif
                        NULL);
 }
 
@@ -198,59 +196,38 @@ vino_status_icon_get_server (VinoStatusIcon *icon)
 }
 
 static void
-vino_status_icon_spawn_command (VinoStatusIcon *icon,
-                                const char     *command,
-                                const char     *error_format)
+vino_status_icon_preferences (VinoStatusIcon *icon)
 {
   GdkScreen *screen;
-  GError    *error;
+  GError *error = NULL;
 
-  g_return_if_fail (VINO_IS_STATUS_ICON (icon));
-
-#if GTK_CHECK_VERSION (2, 11, 0)
   screen = gtk_status_icon_get_screen (GTK_STATUS_ICON (icon));
-#else
-  screen = vino_server_get_screen (icon->priv->server);
-#endif
-
-  error = NULL;
-
-  if (!gdk_spawn_command_line_on_screen (screen, command, &error))
+  if (!gdk_spawn_command_line_on_screen (screen, "vino-preferences", &error))
     {
-      GtkWidget *message_dialog;
-
-      message_dialog = gtk_message_dialog_new (NULL,
-					       GTK_DIALOG_DESTROY_WITH_PARENT,
-					       GTK_MESSAGE_ERROR,
-					       GTK_BUTTONS_CLOSE,
-                                               error_format,
-					       error->message);
-      gtk_window_set_resizable (GTK_WINDOW (message_dialog), FALSE);
-
-      g_signal_connect (message_dialog, "response",
-			G_CALLBACK (gtk_widget_destroy),
-			NULL);
-
-      gtk_widget_show (message_dialog);
-
+      vino_util_show_error (_("Error displaying preferences"),
+			    error->message,
+			    NULL);
       g_error_free (error);
     }
 }
 
 static void
-vino_status_icon_preferences (VinoStatusIcon *icon)
-{
-  vino_status_icon_spawn_command (icon,
-                                  "vino-preferences",
-                                  _("There was an error displaying preferences:\n %s"));
-}
-
-static void
 vino_status_icon_help (VinoStatusIcon *icon)
 {
-  vino_status_icon_spawn_command (icon,
-                                  "gnome-open ghelp:user-guide?goscustdesk-90",
-                                  _("There was an error displaying help:\n %s"));
+  GdkScreen *screen;
+  GError    *error = NULL;
+
+  screen = gtk_status_icon_get_screen (GTK_STATUS_ICON (icon));
+  if (!gtk_show_uri (screen,
+		     "ghelp:user-guide?goscustdesk-90",
+		     GDK_CURRENT_TIME,
+		     &error))
+    {
+      vino_util_show_error (_("Error displaying help"),
+			    error->message,
+			    NULL);
+      g_error_free (error);
+    }
 }
 
 static void

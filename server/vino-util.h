@@ -27,6 +27,7 @@
 #include <libintl.h>
 #include <glib/gmacros.h>
 #include <glib/gi18n.h>
+#include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 
@@ -79,7 +80,12 @@ void vino_setup_debug_flags (void);
 
 #endif /* G_ENABLE_DEBUG */
 
-void  vino_init_stock_items (void);
+void  vino_init_stock_items	(void);
+
+void  vino_util_show_error	(const gchar *title,
+				 const gchar *message,
+				 GtkWindow *parent);
+
 
 G_END_DECLS
 
