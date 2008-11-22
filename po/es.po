@@ -10,9 +10,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-07 15:53+0100\n"
-"PO-Revision-Date: 2008-11-08 13:56+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=vino&amp;component=general\n"
+"POT-Creation-Date: 2008-11-17 13:08+0000\n"
+"PO-Revision-Date: 2008-11-22 18:12+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -470,25 +471,15 @@ msgid_plural "%d people are connected"
 msgstr[0] "Una persona está conectada"
 msgstr[1] "%d personas están conectadas"
 
-#: ../server/vino-status-icon.c:245
-#, c-format
-msgid ""
-"There was an error displaying preferences:\n"
-" %s"
-msgstr ""
-"Hubo un error al mostrar las preferencias:\n"
-" %s"
+#: ../server/vino-status-icon.c:207
+msgid "Error displaying preferences"
+msgstr "Error al mostrar las preferencias"
+
+#: ../server/vino-status-icon.c:226
+msgid "Error displaying help"
+msgstr "Error al mostrar la ayuda"
 
 #: ../server/vino-status-icon.c:253
-#, c-format
-msgid ""
-"There was an error displaying help:\n"
-" %s"
-msgstr ""
-"Ocurrió un error al mostrar la ayuda:\n"
-" %s"
-
-#: ../server/vino-status-icon.c:276
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -523,96 +514,100 @@ msgstr ""
 "02110-1301 EE.UU.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:291
+#: ../server/vino-status-icon.c:268
 msgid "translator-credits"
 msgstr ""
 "Jorge González <jorgegonz@svn.gnome.org>, 2007-2008\n"
 "Francisco Javier F. Serrador <serrador@openshine.com>, 2004, 2006"
 
-#: ../server/vino-status-icon.c:297
+#: ../server/vino-status-icon.c:274
 msgid "Share your desktop with other users"
 msgstr "Comparta su escritorio con otros usuarios"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:361
+#: ../server/vino-status-icon.c:338
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "¿Seguro que quiere desconectar a «%s»?"
 
-#: ../server/vino-status-icon.c:363
+#: ../server/vino-status-icon.c:340
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "El usuario remoto de «%s» será desconectado. ¿Está seguro?"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:345
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "¿Seguro que quiere desconectar todos los clientes?"
 
-#: ../server/vino-status-icon.c:369
+#: ../server/vino-status-icon.c:346
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Todos los usuarios remotos serán desconectados. ¿Está seguro?"
 
-#: ../server/vino-status-icon.c:381
+#: ../server/vino-status-icon.c:358
 msgid "Disconnect"
 msgstr "Desconectar"
 
-#: ../server/vino-status-icon.c:407
+#: ../server/vino-status-icon.c:384
 msgid "_Preferences"
 msgstr "Prefere_ncias"
 
-#: ../server/vino-status-icon.c:422
+#: ../server/vino-status-icon.c:399
 msgid "Disconnect all"
 msgstr "Desconectar todos"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:446
+#: ../server/vino-status-icon.c:423
 #, c-format
 msgid "Disconnect %s"
 msgstr "Desconectar %s"
 
-#: ../server/vino-status-icon.c:466
+#: ../server/vino-status-icon.c:443
 msgid "_Help"
 msgstr "Ay_uda"
 
-#: ../server/vino-status-icon.c:474
+#: ../server/vino-status-icon.c:451
 msgid "_About"
 msgstr "Acerca _de"
 
-#: ../server/vino-status-icon.c:603
+#: ../server/vino-status-icon.c:580
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Error al iniciar libnotify\n"
 
-#: ../server/vino-status-icon.c:623
+#: ../server/vino-status-icon.c:600
 msgid "Another user is viewing your desktop"
 msgstr "Otro usuario está viendo su escritorio"
 
-#: ../server/vino-status-icon.c:624
+#: ../server/vino-status-icon.c:601
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Un usuario en el equipo «%s» está viendo su escritorio remotamente."
 
-#: ../server/vino-status-icon.c:629
+#: ../server/vino-status-icon.c:606
 msgid "Another user is controlling your desktop"
 msgstr "Otro usuario está controlando su escritorio"
 
-#: ../server/vino-status-icon.c:630
+#: ../server/vino-status-icon.c:607
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr ""
 "Un usuario en el equipo «%s» está controlando su escritorio remotamente."
 
-#: ../server/vino-status-icon.c:652
+#: ../server/vino-status-icon.c:629
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Error al mostrar la burbuja de notificación: %s\n"
 
-#: ../tools/vino-passwd.c:114
+#: ../server/vino-util.c:114
+msgid "An error has occurred:"
+msgstr "Ocurrió un error:"
+
+#: ../tools/vino-passwd.c:115
 #, c-format
 msgid "Cancelled"
 msgstr "Cancelado"
 
-#: ../tools/vino-passwd.c:121
+#: ../tools/vino-passwd.c:122
 #, c-format
 msgid ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
@@ -621,59 +616,66 @@ msgstr ""
 "ERROR: La longitud máxima de la contraseña es de %d caracteres. Vuelva a "
 "introducir la contraseña.\n"
 
-#: ../tools/vino-passwd.c:151
+#: ../tools/vino-passwd.c:152
 #, c-format
 msgid "Changing Vino password.\n"
 msgstr "Cambiando la contraseña de Vino.\n"
 
-#: ../tools/vino-passwd.c:153
+#: ../tools/vino-passwd.c:154
 msgid "Enter new Vino password: "
 msgstr "Introduzca la nueva contraseña de Vino: "
 
-#: ../tools/vino-passwd.c:156
+#: ../tools/vino-passwd.c:157
 msgid "Retype new Vino password: "
 msgstr "Reescriba la nueva contraseña de Vino: "
 
-#: ../tools/vino-passwd.c:162
+#: ../tools/vino-passwd.c:163
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: la contraseña se actualizó satisfactoriamente.\n"
 
-#: ../tools/vino-passwd.c:166
+#: ../tools/vino-passwd.c:167
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "Las contraseñas no coinciden.\n"
 
-#: ../tools/vino-passwd.c:167
+#: ../tools/vino-passwd.c:168
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: no se cambió la contraseña.\n"
 
-#: ../tools/vino-passwd.c:182
+#: ../tools/vino-passwd.c:183
 msgid "Show Vino version"
 msgstr "Mostrar la versión de Vino"
 
-#: ../tools/vino-passwd.c:191
+#: ../tools/vino-passwd.c:192
 msgid "- Updates Vino password"
 msgstr "- Actualiza la contraseña de Vino"
 
-#: ../tools/vino-passwd.c:201
+#: ../tools/vino-passwd.c:202
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr ""
 "Ejecute «vino-passwd --help» para ver una lista completa de las opciones de "
 "la línea de comandos disponibles"
 
-#: ../tools/vino-passwd.c:208
+#: ../tools/vino-passwd.c:209
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "Versión %s de Vino\n"
 
-#: ../tools/vino-passwd.c:217
+#: ../tools/vino-passwd.c:218
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
 "ERROR: No tiene suficientes permisos para cambiar la contraseña de Vino.\n"
+
+#~ msgid ""
+#~ "There was an error displaying help:\n"
+#~ " %s"
+#~ msgstr ""
+#~ "Ocurrió un error al mostrar la ayuda:\n"
+#~ " %s"
 
 #~ msgid ""
 #~ "Problem registering the remote desktop server with bonobo-activation; "
