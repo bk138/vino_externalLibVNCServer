@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-23 17:25+0200\n"
-"PO-Revision-Date: 2008-08-23 17:31+0200\n"
+"POT-Creation-Date: 2008-11-29 13:40+0100\n"
+"PO-Revision-Date: 2008-11-29 13:42+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,18 +18,16 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: ../capplet/vino-preferences.c:1097 ../capplet/vino-preferences.c:1132
-#: ../capplet/vino-preferences.c:1190 ../server/vino-dbus-listener.c:374
-#: ../server/vino-server.c:151
+#: ../capplet/vino-preferences.c:1195
+msgid "The service is not running"
+msgstr "Zerbitzua ez da exekutatzen ari"
+
+#: ../capplet/vino-preferences.c:1292
 #, c-format
-msgid "Failed to open connection to bus: %s\n"
-msgstr "Huts egin du bus-arekin konektatzean: %s\n"
+msgid "There was an error showing the URL \"%s\""
+msgstr "Errorea gertatzu da URL hau erakustean: \"%s\""
 
-#: ../capplet/vino-preferences.c:1399
-msgid "Send this command by email"
-msgstr "Bidali komando hau posta elektronikoz"
-
-#: ../capplet/vino-preferences.c:1437
+#: ../capplet/vino-preferences.c:1378
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -37,6 +35,12 @@ msgid ""
 msgstr ""
 "Errorea gertatzu da laguntza bistaratzean:\n"
 "%s"
+
+#: ../capplet/vino-preferences.c:1439 ../server/vino-dbus-listener.c:411
+#: ../server/vino-server.c:151
+#, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "Huts egin du bus-arekin konektatzean: %s\n"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
 #: ../server/vino-server.desktop.in.in.h:2
@@ -98,9 +102,7 @@ msgstr "Urruneko mahaigainaren hobespenak"
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:14
 msgid "Remote users are able to control your mouse and keyboard"
-msgstr ""
-"Urruneko erabiltzaileek zure teklatua eta sagua kontrolatu "
-"dezakete"
+msgstr "Urruneko erabiltzaileek zure teklatua eta sagua kontrolatu dezakete"
 
 #: ../capplet/vino-preferences.glade.h:15
 msgid ""
@@ -112,94 +114,98 @@ msgstr ""
 
 #: ../capplet/vino-preferences.glade.h:16
 msgid "Screen will be locked after the last remote client disconnect"
-msgstr ""
-"Pantaila blokeatu egingo da urruneko azken bezeroa "
-"deskonektatzean."
+msgstr "Pantaila blokeatu egingo da urruneko azken bezeroa deskonektatzean."
 
 #: ../capplet/vino-preferences.glade.h:17
+msgid "Send this command by email"
+msgstr "Bidali komando hau posta elektronikoz"
+
+#: ../capplet/vino-preferences.glade.h:18
 msgid "Some of these preferences are locked down"
 msgstr "Hobespen hauetariko batzuk blokeatuta daude"
 
-#: ../capplet/vino-preferences.glade.h:18
+#: ../capplet/vino-preferences.glade.h:19
 msgid "The server will only accept connections from localhost"
 msgstr "Zerbitzariak ostalari lokaleko konexioak soilik onartuko ditu"
 
-#: ../capplet/vino-preferences.glade.h:19
-msgid "The server will use another port, instead of the default (5900)"
-msgstr ""
-"Zerbitzariak beste ataka bat entzungo du, lehenetsiaren "
-"(5900) ordez"
-
 #: ../capplet/vino-preferences.glade.h:20
+msgid "The server will use another port, instead of the default (5900)"
+msgstr "Zerbitzariak beste ataka bat entzungo du, lehenetsiaren (5900) ordez"
+
+#: ../capplet/vino-preferences.glade.h:21
 msgid "Users can view your desktop using this command:"
 msgstr "Erabiltzaileek zure mahaigaina ikus dezakete komando hau erabiliz:"
 
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:22
 msgid "When a user tries to view or control your desktop:"
 msgstr "Erabiltzaile batek zure mahaigaina ikusten edo kontrolatzen saiatzean:"
 
 #. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:23
+#: ../capplet/vino-preferences.glade.h:24
 msgid "Your desktop will be shared"
 msgstr "Zure mahaigaina partekatu egingo da"
 
-#: ../capplet/vino-preferences.glade.h:24
+#: ../capplet/vino-preferences.glade.h:25
 msgid "_Allow other users to control your desktop"
 msgstr "_Baimendu beste erabiltzaileek zure mahaigaina kontrolatzea"
 
-#: ../capplet/vino-preferences.glade.h:25
+#: ../capplet/vino-preferences.glade.h:26
 msgid "_Lock screen on disconnect"
 msgstr "_Blokeatu pantaila deskonektatzean"
 
-#: ../capplet/vino-preferences.glade.h:26
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Never display an icon"
 msgstr " _Inoiz ez bistaratu ikonoa"
 
-#: ../capplet/vino-preferences.glade.h:27
+#: ../capplet/vino-preferences.glade.h:28
 msgid "_Only allow local connections"
 msgstr "_Baimendu konexio lokalak soilik"
 
-#: ../capplet/vino-preferences.glade.h:28
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Only display an icon when there is someone connected"
 msgstr "Bistaratu ikonoa norbait konektatzean _soilik"
 
-#: ../capplet/vino-preferences.glade.h:29
+#: ../capplet/vino-preferences.glade.h:30
 msgid "_Password:"
 msgstr "_Pasahitza:"
 
-#: ../capplet/vino-preferences.glade.h:30
+#: ../capplet/vino-preferences.glade.h:31
 msgid "_Require encryption"
 msgstr "_Behartu enkriptazioa"
 
-#: ../capplet/vino-preferences.glade.h:31
+#: ../capplet/vino-preferences.glade.h:32
 msgid "_Require the user to enter this password:"
 msgstr "_Behartu erabiltzaileak pasahitza sartzera:"
 
-#: ../capplet/vino-preferences.glade.h:32
+#: ../capplet/vino-preferences.glade.h:33
 msgid "_Use an alternative port:"
 msgstr "_Erabili bestelako ataka:"
 
-#: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
-#: ../server/vino-dbus-listener.c:249
+#: ../server/vino-dbus-listener.c:190 ../server/vino-dbus-listener.c:220
+#: ../server/vino-dbus-listener.c:251
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "Memoriarik ez '%s' mezua kudeatzean"
 
-#: ../server/vino-dbus-listener.c:334
+#: ../server/vino-dbus-listener.c:364
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "Memoriarik ez '%s' objektuaren bide-izena erregistratzean"
 
-#: ../server/vino-dbus-listener.c:407
+#: ../server/vino-dbus-listener.c:448
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Huts egin du D-Bus '%s' izena eskuratzean\n"
 
-#: ../server/vino-main.c:74
+#: ../server/vino-dbus-listener.c:456
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "Urruneko mahaigaineko zerbitzaria jadanik exekutatzen ari da: irtetzen ...\n"
+
+#: ../server/vino-main.c:89
 msgid "GNOME Remote Desktop"
 msgstr "GNOMEren urruneko mahaigaina"
 
-#: ../server/vino-main.c:84
+#: ../server/vino-main.c:99
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -448,20 +454,8 @@ msgstr "Egoeraren ikonoa noiz erakutsi behar den"
 #: ../server/vino-server.schemas.in.h:25
 msgid "When true, disable the background on receive valid session"
 msgstr ""
-"TRUE (egia) gisa ezartzean, atzeko planoa desgaitu egiten da "
-"baliozko saioa jasotzean"
-
-#: ../server/vino-shell.c:76
-msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "Urruneko mahaigaineko zerbitzaria jadanik exekutatzen ari da: irtetzen ...\n"
-
-#: ../server/vino-shell.c:79
-msgid ""
-"Problem registering the remote desktop server with bonobo-activation; "
-"exiting ...\n"
-msgstr ""
-"Arazoak daude urruneko mahaigaineko zerbitzaria 'bonobo-activation'-ekin "
-"erregistratzean: irtetzen ...\n"
+"TRUE (egia) gisa ezartzean, atzeko planoa desgaitu egiten da baliozko saioa "
+"jasotzean"
 
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
@@ -474,25 +468,15 @@ msgid_plural "%d people are connected"
 msgstr[0] "Pertsona bat konektatu da"
 msgstr[1] "%d pertsona konektatu dira"
 
-#: ../server/vino-status-icon.c:245
-#, c-format
-msgid ""
-"There was an error displaying preferences:\n"
-" %s"
-msgstr ""
-"Errorea gertatzu da hobespenak bistaratzean:\n"
-"%s"
+#: ../server/vino-status-icon.c:207
+msgid "Error displaying preferences"
+msgstr "Errorea gertatzu da hobespenak bistaratzean"
+
+#: ../server/vino-status-icon.c:226
+msgid "Error displaying help"
+msgstr "Errorea gertatzu da laguntza bistaratzean"
 
 #: ../server/vino-status-icon.c:253
-#, c-format
-msgid ""
-"There was an error displaying help:\n"
-" %s"
-msgstr ""
-"Errorea gertatzu da laguntza bistaratzean:\n"
-"%s"
-
-#: ../server/vino-status-icon.c:276
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -531,172 +515,153 @@ msgstr ""
 "02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:291
+#: ../server/vino-status-icon.c:268
 msgid "translator-credits"
 msgstr "Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>"
 
-#: ../server/vino-status-icon.c:297
+#: ../server/vino-status-icon.c:274
 msgid "Share your desktop with other users"
 msgstr "Partekatu zure mahaigaina beste erabiltzaileekin"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:361
+#: ../server/vino-status-icon.c:338
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Ziur zaude '%s' deskonektatzea nahi duzula?"
 
-#: ../server/vino-status-icon.c:363
+#: ../server/vino-status-icon.c:340
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "'%s'(e)ko erabiltzailea deskonektatu egingo da. Ziur zaude?"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:345
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Ziur zaude bezero guztiak deskonektatzea nahi dituzula?"
 
-#: ../server/vino-status-icon.c:369
+#: ../server/vino-status-icon.c:346
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Urruneko bezero guztiak deskonektatu egingo dira. Ziur zaude?"
 
-#: ../server/vino-status-icon.c:381
+#: ../server/vino-status-icon.c:358
 msgid "Disconnect"
 msgstr "Deskonektatu"
 
-#: ../server/vino-status-icon.c:407
+#: ../server/vino-status-icon.c:384
 msgid "_Preferences"
 msgstr "_Hobespenak"
 
-#: ../server/vino-status-icon.c:422
+#: ../server/vino-status-icon.c:399
 msgid "Disconnect all"
 msgstr "Deskonektatu denak"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:446
+#: ../server/vino-status-icon.c:423
 #, c-format
 msgid "Disconnect %s"
 msgstr "Deskonektatu %s"
 
-#: ../server/vino-status-icon.c:466
+#: ../server/vino-status-icon.c:443
 msgid "_Help"
 msgstr "_Laguntza"
 
-#: ../server/vino-status-icon.c:474
+#: ../server/vino-status-icon.c:451
 msgid "_About"
 msgstr "Honi _buruz"
 
-#: ../server/vino-status-icon.c:603
+#: ../server/vino-status-icon.c:580
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Errorea libnotify hasieratzean\n"
 
-#: ../server/vino-status-icon.c:623
+#: ../server/vino-status-icon.c:600
 msgid "Another user is viewing your desktop"
 msgstr "Beste erabiltzaile bat zure mahaigaina ikusten ari da"
 
-#: ../server/vino-status-icon.c:624
+#: ../server/vino-status-icon.c:601
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "'%s' ordenagailuko erabiltzaile bat zure mahaigaina urrunetik ikusten ari da."
 
-#: ../server/vino-status-icon.c:629
+#: ../server/vino-status-icon.c:606
 msgid "Another user is controlling your desktop"
 msgstr "Beste erabiltzaile batek zure mahaigaina kontrolatzen ari da"
 
-#: ../server/vino-status-icon.c:630
+#: ../server/vino-status-icon.c:607
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr ""
 "'%s' ordenagailuko erabiltzaile bat zure mahaigaina urrunetik kontrolatzen "
 "ari da"
 
-#: ../server/vino-status-icon.c:652
+#: ../server/vino-status-icon.c:629
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Errorea jakinarazpeneko burbuila bistaratzean: %s\n"
 
-#: ../session/vino-session.c:133
-msgid "Remote desktop server died, restarting\n"
-msgstr "Urruneko mahaigaineko zerbitzaria hil egin da, berrabiarazten\n"
-
-#: ../session/vino-session.c:154
-#, c-format
-msgid "Activation of %s failed: %s\n"
-msgstr "%s-(r)en aktibazioak huts egin du: %s\n"
-
-#: ../session/vino-session.c:160
-#, c-format
-msgid "Activation of %s failed: Unknown Error\n"
-msgstr "%s-(r)en aktibazioak huts egin du: errore ezezaguna\n"
-
-#: ../session/vino-session.c:231
-msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr ""
-"Huts egin du urruneko mahaigaineko zerbitzaria aktibatzean: gehiegi saiatu "
-"da\n"
-
-#: ../session/vino-session.c:295
-msgid "Starting remote desktop server"
-msgstr "Urruneko mahaigaineko zerbitzaria abiarazten"
-
-#: ../session/vino-session.c:300
-msgid "Not starting remote desktop server"
-msgstr "Ez da urruneko mahaigaineko zerbitzaria abiaratzen ari"
+#: ../server/vino-util.c:114
+msgid "An error has occurred:"
+msgstr "Errore bat gertatu da:"
 
 #: ../tools/vino-passwd.c:115
+#, c-format
+msgid "Cancelled"
+msgstr "Bertan behera utzita"
+
+#: ../tools/vino-passwd.c:122
 #, c-format
 msgid ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
 "password.\n"
 msgstr ""
-"Errorea: pasahitzaren gehienezko luzera %d karaktere dira. Idatzi "
-"pasahitza berriro.\n"
+"Errorea: pasahitzaren gehienezko luzera %d karaktere dira. Idatzi pasahitza "
+"berriro.\n"
 
-#: ../tools/vino-passwd.c:145
+#: ../tools/vino-passwd.c:152
 #, c-format
 msgid "Changing Vino password.\n"
 msgstr "Vino-ren pasahitza aldatzen.\n"
 
-#: ../tools/vino-passwd.c:147
+#: ../tools/vino-passwd.c:154
 msgid "Enter new Vino password: "
 msgstr "Idatzi Vino-ren pasahitz berria: "
 
-#: ../tools/vino-passwd.c:150
+#: ../tools/vino-passwd.c:157
 msgid "Retype new Vino password: "
 msgstr "Idatzi berriro Vino-ren pasahitz berria:"
 
-#: ../tools/vino-passwd.c:156
+#: ../tools/vino-passwd.c:163
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: pasahitza ongi eguneratua.\n"
 
-#: ../tools/vino-passwd.c:160
+#: ../tools/vino-passwd.c:167
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "Pasahitzak ez datoz bat.\n"
 
-#: ../tools/vino-passwd.c:161
+#: ../tools/vino-passwd.c:168
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: pasahitza aldatu gabe.\n"
 
-#: ../tools/vino-passwd.c:176
+#: ../tools/vino-passwd.c:183
 msgid "Show Vino version"
 msgstr "Erakutsi Vino-ren bertsioa"
 
-#: ../tools/vino-passwd.c:185
+#: ../tools/vino-passwd.c:192
 msgid "- Updates Vino password"
 msgstr "- Vino-ren pasahitza eguneratzen du"
 
-#: ../tools/vino-passwd.c:195
+#: ../tools/vino-passwd.c:202
 msgid "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr "Exekutatu 'vino-passwd --help' aukeren zerrenda osoa ikusteko"
 
-#: ../tools/vino-passwd.c:202
+#: ../tools/vino-passwd.c:209
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "VINO %s bertsioa\n"
 
-#: ../tools/vino-passwd.c:211
+#: ../tools/vino-passwd.c:218
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "Errorea: ez dituzu nahikoa baimen Vino-ren pasahitza aldatzeko.\n"
