@@ -7,8 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-18 14:25+0000\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=vino&amp;component=general\n"
+"POT-Creation-Date: 2008-11-17 13:08+0000\n"
 "PO-Revision-Date: 2005-07-18 19:18+0300\n"
 "Last-Translator: Oldie <yonatanhak@yahoo.com>\n"
 "Language-Team: Hebrew\n"
@@ -18,18 +19,18 @@ msgstr ""
 "X-Generator: KBabel 1.10.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1097 ../capplet/vino-preferences.c:1132
-#: ../capplet/vino-preferences.c:1190 ../server/vino-dbus-listener.c:374
-#: ../server/vino-server.c:151
+#: ../capplet/vino-preferences.c:1195
+msgid "The service is not running"
+msgstr "השירות אינו רץ"
+
+#: ../capplet/vino-preferences.c:1292
 #, c-format
-msgid "Failed to open connection to bus: %s\n"
-msgstr "Failed to open connection to bus: %s\n"
+msgid "There was an error showing the URL \"%s\""
+msgstr ""
+"קרתה שגיאה בהצגת הכתובת \"%s\""
+"%s"
 
-#: ../capplet/vino-preferences.c:1399
-msgid "Send this command by email"
-msgstr "שלח פקודה זו בדואר אלקטרוני"
-
-#: ../capplet/vino-preferences.c:1437
+#: ../capplet/vino-preferences.c:1378
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -37,6 +38,12 @@ msgid ""
 msgstr ""
 "קרתה שגיאה, מציג עזרה:\n"
 "%s"
+
+#: ../capplet/vino-preferences.c:1439 ../server/vino-dbus-listener.c:411
+#: ../server/vino-server.c:151
+#, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "Failed to open connection to bus: %s\n"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
 #: ../server/vino-server.desktop.in.in.h:2
@@ -111,87 +118,95 @@ msgid "Screen will be locked after the last remote client disconnect"
 msgstr "הנסך ינעל לאחר התנתקות המשתמש המרוחק האחרון"
 
 #: ../capplet/vino-preferences.glade.h:17
+msgid "Send this command by email"
+msgstr "שלח פקודה זו בדואר אלקטרוני"
+
+#: ../capplet/vino-preferences.glade.h:18
 msgid "Some of these preferences are locked down"
 msgstr "חלק מהאפשרויות חסומות לשינוי"
 
-#: ../capplet/vino-preferences.glade.h:18
+#: ../capplet/vino-preferences.glade.h:19
 msgid "The server will only accept connections from localhost"
 msgstr "השרת יקבל חיבורים מקומיים בלבד"
 
-#: ../capplet/vino-preferences.glade.h:19
+#: ../capplet/vino-preferences.glade.h:20
 msgid "The server will use another port, instead of the default (5900)"
 msgstr "השרת ישתמש בשער שונה, במקום שער ברירת המחדל (5900)"
 
-#: ../capplet/vino-preferences.glade.h:20
+#: ../capplet/vino-preferences.glade.h:21
 msgid "Users can view your desktop using this command:"
 msgstr "משתמשים יכולים לצפות בשולחן העבודה שלך על ידי שימוש בפקודה:"
 
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:22
 msgid "When a user tries to view or control your desktop:"
 msgstr "כאשר משתמש מנסה לצפות או לשלוט בשולחן העבודה שלך:"
 
 #. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:23
+#: ../capplet/vino-preferences.glade.h:24
 msgid "Your desktop will be shared"
 msgstr "שולחן העבודה שלך ישותף"
 
-#: ../capplet/vino-preferences.glade.h:24
+#: ../capplet/vino-preferences.glade.h:25
 msgid "_Allow other users to control your desktop"
 msgstr "_הרשה למשתמשים אחרים לשלוט בשולחן העבודה שלך"
 
-#: ../capplet/vino-preferences.glade.h:25
+#: ../capplet/vino-preferences.glade.h:26
 msgid "_Lock screen on disconnect"
 msgstr "_נעל את המסך בהתנתקות"
 
-#: ../capplet/vino-preferences.glade.h:26
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Never display an icon"
 msgstr "_אל תציג איקון לעולם"
 
-#: ../capplet/vino-preferences.glade.h:27
+#: ../capplet/vino-preferences.glade.h:28
 msgid "_Only allow local connections"
 msgstr "הרשה חיבורים _מקומיים בלבד"
 
-#: ../capplet/vino-preferences.glade.h:28
+#: ../capplet/vino-preferences.glade.h:29
 msgid "_Only display an icon when there is someone connected"
 msgstr "הצג אי_קון רק כאשר מישהו מחובר"
 
-#: ../capplet/vino-preferences.glade.h:29
+#: ../capplet/vino-preferences.glade.h:30
 msgid "_Password:"
 msgstr "_סיסמה:"
 
-#: ../capplet/vino-preferences.glade.h:30
+#: ../capplet/vino-preferences.glade.h:31
 msgid "_Require encryption"
 msgstr "_דרוש הצפנה"
 
-#: ../capplet/vino-preferences.glade.h:31
+#: ../capplet/vino-preferences.glade.h:32
 msgid "_Require the user to enter this password:"
 msgstr "_דרוש מהמשתמש להקליד את הסיסמה:"
 
-#: ../capplet/vino-preferences.glade.h:32
+#: ../capplet/vino-preferences.glade.h:33
 msgid "_Use an alternative port:"
 msgstr "ה_שתמש בשער שונה"
 
-#: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
-#: ../server/vino-dbus-listener.c:249
+#: ../server/vino-dbus-listener.c:190 ../server/vino-dbus-listener.c:220
+#: ../server/vino-dbus-listener.c:251
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "Out of memory handling '%s' message"
 
-#: ../server/vino-dbus-listener.c:334
+#: ../server/vino-dbus-listener.c:364
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "Out of memory registering object path '%s'"
 
-#: ../server/vino-dbus-listener.c:407
+#: ../server/vino-dbus-listener.c:448
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Failed to acquire D-Bus name '%s'\n"
 
-#: ../server/vino-main.c:74
+#: ../server/vino-dbus-listener.c:456
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "Remote Desktop server already running; exiting ...\n"
+
+#: ../server/vino-main.c:89
 msgid "GNOME Remote Desktop"
 msgstr "שולחן עבודה מרוחק"
 
-#: ../server/vino-main.c:84
+#: ../server/vino-main.c:99
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -428,18 +443,6 @@ msgstr "When the status icon should be shown"
 msgid "When true, disable the background on receive valid session"
 msgstr "When true, disable the background on receive valid session"
 
-#: ../server/vino-shell.c:76
-msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "Remote Desktop server already running; exiting ...\n"
-
-#: ../server/vino-shell.c:79
-msgid ""
-"Problem registering the remote desktop server with bonobo-activation; "
-"exiting ...\n"
-msgstr ""
-"Problem registering the remote desktop server with bonobo-activation; "
-"exiting ...\n"
-
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
 msgstr "שיתוף שולחן העבודה מופעל"
@@ -451,25 +454,17 @@ msgid_plural "%d people are connected"
 msgstr[0] "משתמש אחד מחובר"
 msgstr[1] "%d משתמשים מחוברים"
 
-#: ../server/vino-status-icon.c:245
-#, c-format
-msgid ""
-"There was an error displaying preferences:\n"
-" %s"
+#: ../server/vino-status-icon.c:207
+msgid "Error displaying preferences"
 msgstr ""
-"קרתה שגיאה בהצגת ההעדפות::\n"
-"%s"
+"שגיאה בהצגת ההעדפות"
+
+#: ../server/vino-status-icon.c:226
+msgid "Error displaying help"
+msgstr ""
+"שגיאה בהצגת העזרה"
 
 #: ../server/vino-status-icon.c:253
-#, c-format
-msgid ""
-"There was an error displaying help:\n"
-" %s"
-msgstr ""
-"קרתה שגיאה בהצגת העזרה:\n"
-"%s"
-
-#: ../server/vino-status-icon.c:276
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -506,7 +501,7 @@ msgstr ""
 "02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:291
+#: ../server/vino-status-icon.c:268
 msgid "translator-credits"
 msgstr ""
 "יאיר הרשקוביץ <yairhr@gmail.com>\n"
@@ -514,110 +509,93 @@ msgstr ""
 "פרוייקט תרגום GNOME לעברית:\n"
 "‏http://gnome-il.berlios.de"
 
-#: ../server/vino-status-icon.c:297
+#: ../server/vino-status-icon.c:274
 msgid "Share your desktop with other users"
 msgstr "שתף את שולחן העבודה שלך עם משתמשים אחרים"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:361
+#: ../server/vino-status-icon.c:338
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "אתה בטוח שברצונך לנתק את '%s'?"
 
-#: ../server/vino-status-icon.c:363
+#: ../server/vino-status-icon.c:340
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "המשתמש המרוחק מ-'%s' ינותק. אתה בטוח?"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:345
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "אתה בטוח שברצונך לנתק את כל הלקוחות?"
 
-#: ../server/vino-status-icon.c:369
+#: ../server/vino-status-icon.c:346
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "כל המשתמשים המרוחקים ינותקו. אתה בטוח?"
 
-#: ../server/vino-status-icon.c:381
+#: ../server/vino-status-icon.c:358
 msgid "Disconnect"
 msgstr "נתק"
 
-#: ../server/vino-status-icon.c:407
+#: ../server/vino-status-icon.c:384
 msgid "_Preferences"
 msgstr "הע_דפות"
 
-#: ../server/vino-status-icon.c:422
+#: ../server/vino-status-icon.c:399
 msgid "Disconnect all"
 msgstr "נתק את כולם"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:446
+#: ../server/vino-status-icon.c:423
 #, c-format
 msgid "Disconnect %s"
 msgstr "נתק את %s"
 
-#: ../server/vino-status-icon.c:466
+#: ../server/vino-status-icon.c:443
 msgid "_Help"
 msgstr "_עזרה"
 
-#: ../server/vino-status-icon.c:474
+#: ../server/vino-status-icon.c:451
 msgid "_About"
 msgstr "_אודות"
 
-#: ../server/vino-status-icon.c:603
+#: ../server/vino-status-icon.c:580
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Error initializing libnotify\n"
 
-#: ../server/vino-status-icon.c:623
+#: ../server/vino-status-icon.c:600
 msgid "Another user is viewing your desktop"
 msgstr "משתמש אחר צופה בשולחן העבודה שלך"
 
-#: ../server/vino-status-icon.c:624
+#: ../server/vino-status-icon.c:601
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "משתמש במחשב '%s' צופה מרחוק בשולחן העבודה שלך."
 
-#: ../server/vino-status-icon.c:629
+#: ../server/vino-status-icon.c:606
 msgid "Another user is controlling your desktop"
 msgstr "משתמש אחר שולט בשולחן העבודה שלך"
 
-#: ../server/vino-status-icon.c:630
+#: ../server/vino-status-icon.c:607
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "משתמש במחשב '%s' שולט מרחוק בשולחן העבודה שלך."
 
-#: ../server/vino-status-icon.c:652
+#: ../server/vino-status-icon.c:629
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Error while displaying notification bubble: %s\n"
 
-#: ../session/vino-session.c:133
-msgid "Remote desktop server died, restarting\n"
-msgstr "Remote desktop server died, restarting\n"
-
-#: ../session/vino-session.c:154
-#, c-format
-msgid "Activation of %s failed: %s\n"
-msgstr "Activation of %s failed: %s\n"
-
-#: ../session/vino-session.c:160
-#, c-format
-msgid "Activation of %s failed: Unknown Error\n"
-msgstr "Activation of %s failed: Unknown Error\n"
-
-#: ../session/vino-session.c:231
-msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "Failed to activate remote desktop server: tried too many times\n"
-
-#: ../session/vino-session.c:295
-msgid "Starting remote desktop server"
-msgstr "Starting remote desktop server"
-
-#: ../session/vino-session.c:300
-msgid "Not starting remote desktop server"
-msgstr "Not starting remote desktop server"
+#: ../server/vino-util.c:114
+msgid "An error has occurred:"
+msgstr "קרתה שגיאה:"
 
 #: ../tools/vino-passwd.c:115
+#, c-format
+msgid "Cancelled"
+msgstr "בוטל"
+
+#: ../tools/vino-passwd.c:122
 #, c-format
 msgid ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
@@ -626,54 +604,79 @@ msgstr ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
 "password.\n"
 
-#: ../tools/vino-passwd.c:145
+#: ../tools/vino-passwd.c:152
 #, c-format
 msgid "Changing Vino password.\n"
 msgstr "Changing Vino password.\n"
 
-#: ../tools/vino-passwd.c:147
+#: ../tools/vino-passwd.c:154
 msgid "Enter new Vino password: "
 msgstr "Enter new Vino password: "
 
-#: ../tools/vino-passwd.c:150
+#: ../tools/vino-passwd.c:157
 msgid "Retype new Vino password: "
 msgstr "Retype new Vino password: "
 
-#: ../tools/vino-passwd.c:156
+#: ../tools/vino-passwd.c:163
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: password updated successfully.\n"
 
-#: ../tools/vino-passwd.c:160
+#: ../tools/vino-passwd.c:167
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "Sorry, passwords do not match.\n"
 
-#: ../tools/vino-passwd.c:161
+#: ../tools/vino-passwd.c:168
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: password unchanged.\n"
 
-#: ../tools/vino-passwd.c:176
+#: ../tools/vino-passwd.c:183
 msgid "Show Vino version"
 msgstr "Show Vino version"
 
-#: ../tools/vino-passwd.c:185
+#: ../tools/vino-passwd.c:192
 msgid "- Updates Vino password"
 msgstr "- Updates Vino password"
 
-#: ../tools/vino-passwd.c:195
+#: ../tools/vino-passwd.c:202
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 
-#: ../tools/vino-passwd.c:202
+#: ../tools/vino-passwd.c:209
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "VINO Version %s\n"
 
-#: ../tools/vino-passwd.c:211
+#: ../tools/vino-passwd.c:218
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "ERROR: You do not have enough permissions to change Vino password.\n"
+
+#~ msgid ""
+#~ "Problem registering the remote desktop server with bonobo-activation; "
+#~ "exiting ...\n"
+#~ msgstr ""
+#~ "Problem registering the remote desktop server with bonobo-activation; "
+#~ "exiting ...\n"
+
+#~ msgid "Remote desktop server died, restarting\n"
+#~ msgstr "Remote desktop server died, restarting\n"
+
+#~ msgid "Activation of %s failed: %s\n"
+#~ msgstr "Activation of %s failed: %s\n"
+
+#~ msgid "Activation of %s failed: Unknown Error\n"
+#~ msgstr "Activation of %s failed: Unknown Error\n"
+
+#~ msgid "Failed to activate remote desktop server: tried too many times\n"
+#~ msgstr "Failed to activate remote desktop server: tried too many times\n"
+
+#~ msgid "Starting remote desktop server"
+#~ msgstr "Starting remote desktop server"
+
+#~ msgid "Not starting remote desktop server"
+#~ msgstr "Not starting remote desktop server"
