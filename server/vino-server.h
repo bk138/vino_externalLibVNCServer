@@ -85,9 +85,10 @@ int                  vino_server_get_alternative_port     (VinoServer     *serve
 void                 vino_server_set_alternative_port     (VinoServer     *server,
 							   int             alternative_port);
 int                  vino_server_get_port                 (VinoServer     *server);
-void                 vino_server_set_local_only           (VinoServer     *server,
-							   gboolean        local_only);
-gboolean             vino_server_get_local_only           (VinoServer     *server);
+
+void                 vino_server_set_network_interface    (VinoServer     *server,
+                                                           const char     *network_interface);
+G_CONST_RETURN char *vino_server_get_network_interface    (VinoServer     *server);
 void                 vino_server_set_require_encryption   (VinoServer     *server,
 							   gboolean        require_encryption);
 gboolean             vino_server_get_require_encryption   (VinoServer     *server);

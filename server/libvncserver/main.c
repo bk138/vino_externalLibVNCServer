@@ -320,7 +320,10 @@ rfbScreenInfoPtr rfbGetScreen(int* argc,char** argv,
    rfbScreen->inetdSock=-1;
 
    rfbScreen->maxFd=0;
-   rfbScreen->rfbListenSock=-1;
+
+   rfbScreen->rfbListenSock[0] = -1;
+   rfbScreen->rfbListenSockTotal = 0;
+   rfbScreen->netIface = NULL;
 
    rfbScreen->desktopName = strdup("LibVNCServer");
    rfbScreen->rfbAlwaysShared = FALSE;

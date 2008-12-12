@@ -70,6 +70,9 @@
 #endif
 #endif
 
+#include <net/if.h>  // IFF_UP
+#include <ifaddrs.h> // getifaddrs()
+
 #if defined(__linux__) && defined(NEED_TIMEVAL)
 struct timeval 
 {
@@ -135,38 +138,53 @@ rfbInitSockets(rfbScreenInfoPtr rfbScreen)
 static void
 rfbInitListenSock(rfbScreenInfoPtr rfbScreen)
 {
-    if(rfbScreen->autoPort) {
-        int i;
-        rfbLog("Autoprobing TCP port \n");
+    char *netIface = (char*)rfbScreen->netIface;
+    int i;
 
-        for (i = 5900; i < 6000; i++) {
-            if ((rfbScreen->rfbListenSock = ListenOnTCPPort(i, rfbScreen->localOnly)) >= 0) {
-		rfbScreen->rfbPort = i;
-		break;
-	    }
-        }
-
-        if (i >= 6000) {
-	    rfbLogPerror("Failure autoprobing");
-	    return;
-        }
-
-        rfbLog("Autoprobing selected port %d\n", rfbScreen->rfbPort);
-        FD_ZERO(&(rfbScreen->allFds));
-        FD_SET(rfbScreen->rfbListenSock, &(rfbScreen->allFds));
-        rfbScreen->maxFd = rfbScreen->rfbListenSock;
+    if(netIface == NULL || if_nametoindex(netIface) == 0) {
+      if(netIface != NULL)
+        rfbLog("WARNING: This (%s) a invalid network interface, set to all\n", netIface);
+      netIface = NULL;
     }
-    else if(rfbScreen->rfbPort>0) {
-      rfbLog("Listening for VNC connections on TCP port %d\n", rfbScreen->rfbPort);
 
-      if ((rfbScreen->rfbListenSock = ListenOnTCPPort(rfbScreen->rfbPort, rfbScreen->localOnly)) < 0) {
-	rfbLogPerror("ListenOnTCPPort");
-	return;
+    if(rfbScreen->autoPort) {
+      rfbLog("Autoprobing TCP port in (%s) network interface\n",
+            netIface != NULL ? netIface : "all");
+
+      for (i = 5900; i < 6000; i++) {
+        if (ListenOnTCPPort(rfbScreen, i, netIface)) {
+          rfbScreen->rfbPort = i;
+          break;
+        }
       }
 
-      FD_ZERO(&(rfbScreen->allFds));
-      FD_SET(rfbScreen->rfbListenSock, &(rfbScreen->allFds));
-      rfbScreen->maxFd = rfbScreen->rfbListenSock;
+      if (i >= 6000) {
+        rfbLogPerror("Failure autoprobing");
+        return;
+      }
+
+      rfbLog("Autoprobing selected port %d\n", rfbScreen->rfbPort);
+
+      FD_ZERO(&rfbScreen->allFds);
+      for(i=0; i < rfbScreen->rfbListenSockTotal; i++) {
+        FD_SET(rfbScreen->rfbListenSock[i], &rfbScreen->allFds);
+        rfbScreen->maxFd = rfbScreen->rfbListenSock[i];
+      }
+    }
+    else if(rfbScreen->rfbPort > 0) {
+      rfbLog("Listening for VNC connections on TCP port %d in (%s) network interface\n", 
+            rfbScreen->rfbPort, netIface != NULL ? netIface : "all");
+
+      if (!ListenOnTCPPort(rfbScreen, rfbScreen->rfbPort, netIface)) {
+        rfbLogPerror("ListenOnTCPPort");
+        return;
+      }
+
+      FD_ZERO(&rfbScreen->allFds);
+      for(i=0; i < rfbScreen->rfbListenSockTotal; i++) {
+        FD_SET(rfbScreen->rfbListenSock[i], &rfbScreen->allFds);
+        rfbScreen->maxFd = rfbScreen->rfbListenSock[i];
+      }
     }
 }
 
@@ -181,10 +199,15 @@ rfbSetAutoPort(rfbScreenInfoPtr rfbScreen, rfbBool autoPort)
     if (!rfbScreen->socketInitDone)
 	return;
 
-    if (rfbScreen->rfbListenSock > 0) {
-        FD_CLR(rfbScreen->rfbListenSock, &(rfbScreen->allFds));
-        close(rfbScreen->rfbListenSock);
-        rfbScreen->rfbListenSock = -1;
+    if (rfbScreen->rfbListenSockTotal > 0) {
+        int i;
+
+        for(i=0; i < rfbScreen->rfbListenSockTotal; i++) {
+           FD_CLR(rfbScreen->rfbListenSock[i], &rfbScreen->allFds);
+           close(rfbScreen->rfbListenSock[i]);
+           rfbScreen->rfbListenSock[i] = -1;
+        }
+        rfbScreen->rfbListenSockTotal = 0;
     }
 
     rfbInitListenSock(rfbScreen);
@@ -201,53 +224,35 @@ rfbSetPort(rfbScreenInfoPtr rfbScreen, int port)
     if (!rfbScreen->socketInitDone || rfbScreen->autoPort)
 	return;
 
-    if (rfbScreen->rfbListenSock > 0) {
-        FD_CLR(rfbScreen->rfbListenSock, &(rfbScreen->allFds));
-        close(rfbScreen->rfbListenSock);
-        rfbScreen->rfbListenSock = -1;
+    if (rfbScreen->rfbListenSockTotal > 0) {
+        int i;
+
+        for(i=0; i < rfbScreen->rfbListenSockTotal; i++) {
+           FD_CLR(rfbScreen->rfbListenSock[i], &rfbScreen->allFds);
+           close(rfbScreen->rfbListenSock[i]);
+           rfbScreen->rfbListenSock[i] = -1;
+        }
+        rfbScreen->rfbListenSockTotal = 0;
     }
 
     rfbInitListenSock(rfbScreen);
 }
 
 void
-rfbSetLocalOnly(rfbScreenInfoPtr rfbScreen, rfbBool localOnly)
-{
-    if (rfbScreen->localOnly == localOnly)
-        return;
-
-    rfbScreen->localOnly = localOnly;
-
-    if (!rfbScreen->socketInitDone)
-	return;
-
-    if (rfbScreen->rfbListenSock > 0) {
-        FD_CLR(rfbScreen->rfbListenSock, &(rfbScreen->allFds));
-        close(rfbScreen->rfbListenSock);
-        rfbScreen->rfbListenSock = -1;
-    }
-
-    rfbLog("Re-binding socket to listen for %s VNC connections on TCP port %d\n",
-           rfbScreen->localOnly ? "local" : "all", rfbScreen->rfbPort);
-
-    if ((rfbScreen->rfbListenSock = ListenOnTCPPort(rfbScreen->rfbPort, rfbScreen->localOnly)) < 0) {
-	rfbLogPerror("ListenOnTCPPort");
-	return;
-    }
-
-    FD_SET(rfbScreen->rfbListenSock, &(rfbScreen->allFds));
-    rfbScreen->maxFd = max(rfbScreen->rfbListenSock, rfbScreen->maxFd);
-}
-
-void
-rfbProcessNewConnection(rfbScreenInfoPtr rfbScreen)
+rfbProcessNewConnection(rfbScreenInfoPtr rfbScreen, int insock)
 {
     const int one = 1;
-    int sock;
+    int sock = -1;
+    int i;
+    
+    if((sock = accept(insock, NULL, NULL)) < 0) {
+      rfbLogPerror("rfbCheckFds: accept");
+      return;
+    }
 
-    if ((sock = accept(rfbScreen->rfbListenSock, NULL, NULL)) < 0) {
-	rfbLogPerror("rfbCheckFds: accept");
-	return;
+    if(sock < 0) {
+      rfbLogPerror("rfbCheckFds: accept");
+      return;
     }
 
 #ifndef WIN32
@@ -258,8 +263,7 @@ rfbProcessNewConnection(rfbScreenInfoPtr rfbScreen)
     }
 #endif
 
-    if (setsockopt(sock, IPPROTO_TCP, TCP_NODELAY,
-		   (char *)&one, sizeof(one)) < 0) {
+    if (setsockopt(sock, IPPROTO_TCP, TCP_NODELAY, (char *)&one, sizeof(one)) < 0) {
 	rfbLogPerror("rfbCheckFds: setsockopt");
 	close(sock);
 	return;
@@ -279,6 +283,7 @@ void
 rfbCheckFds(rfbScreenInfoPtr rfbScreen,long usec)
 {
     int nfds;
+    int n;
     fd_set fds;
     struct timeval tv;
     rfbClientIteratorPtr i;
@@ -289,7 +294,7 @@ rfbCheckFds(rfbScreenInfoPtr rfbScreen,long usec)
 	rfbScreen->inetdInitDone = TRUE;
     }
 
-    memcpy((char *)&fds, (char *)&(rfbScreen->allFds), sizeof(fd_set));
+    memcpy(&fds, &rfbScreen->allFds, sizeof(fd_set));
     tv.tv_sec = 0;
     tv.tv_usec = usec;
     nfds = select(rfbScreen->maxFd + 1, &fds, NULL, NULL /* &fds */, &tv);
@@ -304,12 +309,14 @@ rfbCheckFds(rfbScreenInfoPtr rfbScreen,long usec)
 		rfbLogPerror("rfbCheckFds: select");
 	return;
     }
-
-    if (rfbScreen->rfbListenSock != -1 && FD_ISSET(rfbScreen->rfbListenSock, &fds)) {
-	rfbProcessNewConnection(rfbScreen);
-	FD_CLR(rfbScreen->rfbListenSock, &fds);
-	if (--nfds == 0)
-	    return;
+    printf("DUMP: nfds = %d\n", nfds);
+    for(n=0; n < rfbScreen->rfbListenSockTotal; n++) {
+        if (rfbScreen->rfbListenSock[n] != -1 && FD_ISSET(rfbScreen->rfbListenSock[n], &fds)) {
+          rfbProcessNewConnection(rfbScreen, rfbScreen->rfbListenSock[n]);
+          FD_CLR(rfbScreen->rfbListenSock[n], &fds);
+          if (--nfds == 0)
+            return;
+        }
     }
 
     i = rfbGetClientIterator(rfbScreen);
@@ -547,57 +554,175 @@ WriteExact(rfbClientPtr cl, const char* buf, int len)
     return 1;
 }
 
+rfbBool
+ListenOnTCPPort(rfbScreenInfoPtr rfbScreen, int port, const char *netIface)
+{
+  int sock   = -1;
+  int *psock = NULL;
+  int *ptot  = NULL;
+  struct ifaddrs *myaddrs = NULL; 
+  struct ifaddrs *ifa     = NULL;
+
+  if(rfbScreen == NULL)
+    return FALSE;
+  
+  psock = rfbScreen->rfbListenSock;
+  ptot  = &rfbScreen->rfbListenSockTotal;
+  *ptot = 0;
+
+  if(netIface == NULL || strlen(netIface) == 0)
+  {
+#ifdef ENABLE_IPV6
+    struct sockaddr_in6 s6;
+
+    memset(&s6, 0, sizeof(s6));
+    s6.sin6_family = AF_INET6;
+    s6.sin6_port   = htons(port);
+    s6.sin6_addr   = in6addr_any;
+
+    sock = NewSocketListenTCP ((struct sockaddr*)&s6, sizeof(s6));
+    rfbLog("Listening IPv{4,6}://*:%d\n", port);
+#endif
+    if(sock < 0) {
+      struct sockaddr_in s4;
+
+      memset(&s4, 0, sizeof(s4));
+      s4.sin_family      = AF_INET;
+      s4.sin_port        = htons(port);
+      s4.sin_addr.s_addr = htonl(INADDR_ANY);
+
+      sock = NewSocketListenTCP ((struct sockaddr*)&s4, sizeof(s4));
+      rfbLog("Listening IPv4://0.0.0.0:%d\n", port);
+    }
+
+    if(sock > 0) {
+      psock[0] = sock;
+     *ptot     = 1;
+      return TRUE;
+    }
+
+    rfbLog("Problems in NewSocketListenTCP(), sock=%d\n", sock);
+    return FALSE;
+  }
+
+  if(getifaddrs(&myaddrs) != 0) {
+    rfbLogPerror("getifaddrs\n");
+    return FALSE;
+  }
+
+  for (ifa = myaddrs; ifa != NULL && *ptot < RFB_MAX_SOCKETLISTEN; ifa = ifa->ifa_next) {
+    char buf[64] = { 0, };
+
+    if (ifa->ifa_addr == NULL || (ifa->ifa_flags & IFF_UP) == 0) 
+      continue;
+
+    if (ifa->ifa_addr->sa_family == AF_INET) {
+      struct sockaddr_in *s4 = (struct sockaddr_in*)ifa->ifa_addr;
+      s4->sin_port           = htons(port);
+
+      if (inet_ntop(s4->sin_family, (struct sockaddr*)&s4->sin_addr, buf, sizeof(buf)) == NULL) {
+        rfbLog("%s: inet_ntop failed!\n", ifa->ifa_name);
+        continue;
+      }
+      else if(!strcmp(ifa->ifa_name, netIface)) {
+        rfbLog("Listening IPv4://%s:%d\n", buf, port);
+        sock = NewSocketListenTCP((struct sockaddr*)s4, INET_ADDRSTRLEN);
+      }
+    }
+#ifdef ENABLE_IPV6            
+    if (ifa->ifa_addr->sa_family == AF_INET6) {
+      struct sockaddr_in6 *s6 = (struct sockaddr_in6*)ifa->ifa_addr;
+      s6->sin6_port           = htons(port);
+
+      if (inet_ntop(ifa->ifa_addr->sa_family, (struct sockaddr*)&s6->sin6_addr, buf, sizeof(buf)) == NULL) {
+        rfbLog("%s: inet_ntop failed!\n", ifa->ifa_name);
+        continue; 
+      }
+      else if(!strcmp(ifa->ifa_name, netIface)) {
+        rfbLog("Listening IPv6://%s:%d\n", buf, port);
+        sock = NewSocketListenTCP((struct sockaddr*)s6, INET6_ADDRSTRLEN);
+      }
+    }
+#endif       
+
+    if(sock > 0) {
+       psock[*ptot] = sock;
+      *ptot        += 1;
+       sock         = -1;
+    }
+  }
+
+  freeifaddrs(myaddrs);
+
+  return TRUE;
+}
+
 int
-ListenOnTCPPort(port, localOnly)
-    int port;
-    rfbBool localOnly;
+NewSocketListenTCP(struct sockaddr *addr, socklen_t len)
 {
     int sock = -1;
-    int one = 1;
-    struct sockaddr_in addr_in;
-    struct sockaddr *addr;
-    socklen_t addrlen;
+    int one  = 1;
 
-#ifdef ENABLE_IPV6
-    struct sockaddr_in6 addr_in6;
+    if ((sock = socket(addr->sa_family, SOCK_STREAM, 0)) < 0)
+      return -1;
 
-    memset(&addr_in6, 0, sizeof(addr_in6));
-    addr_in6.sin6_family = AF_INET6;
-    addr_in6.sin6_port = htons(port);
-    addr_in6.sin6_addr = localOnly ? in6addr_loopback : in6addr_any;
-
-    addr = (struct sockaddr *)&addr_in6;
-    addrlen = sizeof(addr_in6);
-
-    sock = socket(AF_INET6, SOCK_STREAM, 0);
-#endif
-
-    if (sock < 0) {
-        if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
-            return -1;
-
-        memset(&addr_in, 0, sizeof(addr_in));
-        addr_in.sin_family = AF_INET;
-        addr_in.sin_port = htons(port);
-        addr_in.sin_addr.s_addr = localOnly ? htonl(INADDR_LOOPBACK) : htonl(INADDR_ANY);
-
-        addr = (struct sockaddr *)&addr_in;
-        addrlen = sizeof(addr_in);
+    if (setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, (char *)&one, sizeof(one)) < 0) {
+      close(sock);
+      return -1;
     }
 
-    if (setsockopt(sock, SOL_SOCKET, SO_REUSEADDR,
-		   (char *)&one, sizeof(one)) < 0) {
-	close(sock);
-	return -1;
+    if (bind(sock, addr, len) < 0) {
+      close(sock);
+      return -1;
     }
-    if (bind(sock, addr, addrlen) < 0) {
-	close(sock);
-	return -1;
-    }
+
     if (listen(sock, 5) < 0) {
-	close(sock);
-	return -1;
+      close(sock);
+      return -1;
     }
 
     return sock;
 }
+
+rfbBool
+rfbSetNetworkInterface(rfbScreenInfoPtr rfbScreen, const char *netIface)
+{
+  int i;
+
+  if (!rfbScreen->socketInitDone || !rfbScreen->socketInitDone)
+    return FALSE;
+
+  if(rfbScreen->rfbListenSockTotal > 0) {
+    for(i=0; i < rfbScreen->rfbListenSockTotal; i++) {
+       FD_CLR(rfbScreen->rfbListenSock[i], &(rfbScreen->allFds));
+       close(rfbScreen->rfbListenSock[i]);
+       rfbScreen->rfbListenSock[i] = -1;
+    }
+    rfbScreen->rfbListenSockTotal = 0;
+  }
+
+  if(netIface != NULL && strlen(netIface) > 0 && if_nametoindex(netIface) > 0) {
+     rfbScreen->netIface = netIface;
+  }
+  else {
+     rfbScreen->netIface = NULL;
+     if(netIface != NULL)
+        rfbLog("WARNING: This (%s) a invalid network interface, set to all\n", netIface);
+  }
+
+  rfbLog("Re-binding socket to listen for VNC connections on TCP port %d in (%s) interface\n",
+         rfbScreen->rfbPort, rfbScreen->netIface != NULL ? rfbScreen->netIface : "all");
+ 
+  if (!ListenOnTCPPort(rfbScreen, rfbScreen->rfbPort, rfbScreen->netIface)) {
+    rfbLogPerror("ListenOnTCPPort");
+    return FALSE;
+  }
+
+  for(i=0; i < rfbScreen->rfbListenSockTotal; i++) {
+    FD_SET(rfbScreen->rfbListenSock[i], &(rfbScreen->allFds));
+    rfbScreen->maxFd = max(rfbScreen->rfbListenSock[i], rfbScreen->maxFd);
+  }
+ 
+  return TRUE;
+}
+

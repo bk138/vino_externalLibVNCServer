@@ -30,6 +30,8 @@
 #include <libintl.h>
 #include <unistd.h>
 #include <netdb.h>
+#include <net/if.h>
+#include <ifaddrs.h>
 #include <gtk/gtk.h>
 #include <glade/glade.h>
 #include <gconf/gconf-client.h>
@@ -52,14 +54,14 @@
 #define VINO_PREFS_VNC_PASSWORD           VINO_PREFS_DIR "/vnc_password"
 #define VINO_PREFS_MAILTO                 VINO_PREFS_DIR "/mailto"
 #define VINO_PREFS_ICON_VISIBILITY        VINO_PREFS_DIR "/icon_visibility"
-#define VINO_PREFS_LOCAL_ONLY             VINO_PREFS_DIR "/local_only"
+#define VINO_PREFS_NETWORK_INTERFACE      VINO_PREFS_DIR "/network_interface"
 #define VINO_PREFS_ENCRYPTION             VINO_PREFS_DIR "/require_encryption"
 #define VINO_PREFS_USE_ALTERNATIVE_PORT   VINO_PREFS_DIR "/use_alternative_port"
 #define VINO_PREFS_ALTERNATIVE_PORT       VINO_PREFS_DIR "/alternative_port"
 #define VINO_PREFS_LOCK_SCREEN            VINO_PREFS_DIR "/lock_screen_on_disconnect"
 #define VINO_PREFS_DISABLE_BACKGROUND     VINO_PREFS_DIR "/disable_background"
 
-#define N_LISTENERS 13
+#define N_LISTENERS                       13
 
 #define VINO_DBUS_BUS_NAME  "org.gnome.Vino"
 #define VINO_DBUS_INTERFACE "org.gnome.VinoScreen"
@@ -82,7 +84,8 @@ typedef struct {
   GtkWidget   *icon_always_radio;
   GtkWidget   *icon_client_radio;
   GtkWidget   *icon_never_radio;
-  GtkWidget   *local_only_toggle;
+  GtkWidget   *network_interface_combox;
+  GtkWidget   *network_interface_label;
   GtkWidget   *encryption_toggle;
   GtkWidget   *use_alternative_port_toggle;
   GtkWidget   *alternative_port_entry;
@@ -180,7 +183,8 @@ vino_preferences_dialog_update_for_allowed (VinoPreferencesDialog *dialog,
   gtk_widget_set_sensitive (dialog->icon_always_radio,     allowed);
   gtk_widget_set_sensitive (dialog->icon_client_radio,     allowed);
   gtk_widget_set_sensitive (dialog->icon_never_radio,      allowed);
-  gtk_widget_set_sensitive (dialog->local_only_toggle,     allowed);
+  gtk_widget_set_sensitive (dialog->network_interface_combox, allowed);
+  gtk_widget_set_sensitive (dialog->network_interface_label,  allowed);
   gtk_widget_set_sensitive (dialog->encryption_toggle,     allowed);
   gtk_widget_set_sensitive (dialog->use_alternative_port_toggle, allowed);
   gtk_widget_set_sensitive (dialog->alternative_port_entry,      allowed &&
@@ -189,65 +193,133 @@ vino_preferences_dialog_update_for_allowed (VinoPreferencesDialog *dialog,
   gtk_widget_set_sensitive (dialog->disable_background_toggle,   allowed);
 }
 
-static void
-vino_preferences_dialog_local_only_toggled (GtkToggleButton       *toggle,
-					    VinoPreferencesDialog *dialog)
+static GSList *
+vino_preferences_load_network_interfaces (void)
 {
-  gboolean local_only;
+  struct ifaddrs *myaddrs, *ifa;
+  GSList *list = NULL;
 
-  local_only = gtk_toggle_button_get_active (toggle);
+  /* Translators: 'All' means 'All network interfaces' */
+  list = g_slist_append (list, g_strdup (_("All")));
 
-  gconf_client_set_bool (dialog->client, VINO_PREFS_LOCAL_ONLY, local_only, NULL);
+  getifaddrs (&myaddrs);
+  for (ifa = myaddrs; ifa != NULL; ifa = ifa->ifa_next)
+    {
+      if (ifa->ifa_addr == NULL || ifa->ifa_name == NULL || (ifa->ifa_flags & IFF_UP) == 0) 
+        continue;
+
+      if (ifa->ifa_addr->sa_family == AF_INET || ifa->ifa_addr->sa_family == AF_INET6)
+        {
+          if (g_slist_find_custom (list, ifa->ifa_name, (GCompareFunc)g_strcasecmp) == NULL)
+            {
+              list  = g_slist_append (list, g_strdup (ifa->ifa_name));
+            }
+        }
+    }
+
+  freeifaddrs (myaddrs);
+  return list;
 }
 
 static void
-vino_preferences_dialog_local_only_notify (GConfClient           *client,
-					   guint                  cnx_id,
-					   GConfEntry            *entry,
-					   VinoPreferencesDialog *dialog)
+vino_preferences_dialog_network_interface_update_combox (VinoPreferencesDialog *dialog,
+                                                         const gchar *selected_iface,
+                                                         gboolean first_time)
 {
-  gboolean local_only;
+  GSList *list;
+  gint    i, sel;
+  gchar  *iface_check;
 
-  if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
+  list = vino_preferences_load_network_interfaces ();
+
+  if (selected_iface)
+    iface_check = g_strdup (selected_iface);
+  else
+    iface_check = gconf_client_get_string (dialog->client, VINO_PREFS_NETWORK_INTERFACE, NULL);
+
+  sel = 0;
+  for(i = 0; list; list = list->next, i++)
+    {
+      gchar *iface = list->data;
+
+      if (!iface)
+        continue;
+
+      if (first_time)
+	gtk_combo_box_append_text (GTK_COMBO_BOX (dialog->network_interface_combox), iface);
+            
+      if (iface_check && !g_strcasecmp (iface, iface_check))
+	  sel = i;
+
+      g_free (iface);
+    }
+
+  gtk_combo_box_set_active (GTK_COMBO_BOX (dialog->network_interface_combox), sel);
+  g_slist_free (list);
+  g_free (iface_check);
+}
+
+static void
+vino_preferences_dialog_network_interface_notify (GConfClient           *client,
+                                                  guint                  cnx_id,
+                                                  GConfEntry            *entry,
+                                                  VinoPreferencesDialog *dialog)
+{
+  gchar       *old_iface;
+  const gchar *new_iface;
+
+  if (!entry->value || entry->value->type != GCONF_VALUE_STRING)
     return;
 
-  local_only = gconf_value_get_bool (entry->value) != FALSE;
+  new_iface = gconf_value_get_string (entry->value);
+  old_iface = gtk_combo_box_get_active_text (GTK_COMBO_BOX (dialog->network_interface_combox));
 
-  if (local_only != gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->local_only_toggle)))
-    {
-      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->local_only_toggle), local_only);
-    }
+  if (old_iface && new_iface && g_strcasecmp (old_iface, new_iface) != 0)
+    vino_preferences_dialog_network_interface_update_combox (dialog, new_iface, FALSE);
+
+  g_free (old_iface);
 }
 
-static gboolean
-vino_preferences_dialog_setup_local_only_toggle (VinoPreferencesDialog *dialog)
+static void
+vino_preferences_dialog_network_interface_changed (gpointer              unused,
+                                                   VinoPreferencesDialog *dialog)
 {
-  gboolean local_only;
+  gchar *iface;
 
-  dialog->local_only_toggle = glade_xml_get_widget (dialog->xml, "local_only_toggle");
-  g_assert (dialog->local_only_toggle != NULL);
+  iface = gtk_combo_box_get_active_text (GTK_COMBO_BOX (dialog->network_interface_combox));
 
-  local_only = gconf_client_get_bool (dialog->client, VINO_PREFS_LOCAL_ONLY, NULL);
+  if (g_strcasecmp (iface, _("All")))
+    gconf_client_set_string (dialog->client, VINO_PREFS_NETWORK_INTERFACE, iface, NULL);
+  else
+    gconf_client_set_string (dialog->client, VINO_PREFS_NETWORK_INTERFACE, "", NULL);
 
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->local_only_toggle), local_only);
+  g_free (iface);
+}
 
-  g_signal_connect (dialog->local_only_toggle, "toggled",
-		    G_CALLBACK (vino_preferences_dialog_local_only_toggled), dialog);
+static void
+vino_preferences_dialog_setup_network_interface_combox (VinoPreferencesDialog *dialog)
+{
+  dialog->network_interface_combox = glade_xml_get_widget (dialog->xml, "network_interface_combox");
+  dialog->network_interface_label = glade_xml_get_widget (dialog->xml, "network_interface_label");
+  g_assert (dialog->network_interface_combox != NULL);
+  vino_preferences_dialog_network_interface_update_combox (dialog, NULL, TRUE);
 
-  if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_LOCAL_ONLY, NULL))
+  g_signal_connect (dialog->network_interface_combox, "changed",
+                    G_CALLBACK (vino_preferences_dialog_network_interface_changed), dialog);
+
+  if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_NETWORK_INTERFACE, NULL))
     {
-      gtk_widget_set_sensitive (dialog->local_only_toggle, FALSE);
+      gtk_widget_set_sensitive (dialog->network_interface_combox, FALSE);
+      gtk_widget_set_sensitive (dialog->network_interface_label, FALSE);
       gtk_widget_show (dialog->writability_warning);
     }
 
-  dialog->listeners [dialog->n_listeners] = 
-    gconf_client_notify_add (dialog->client,
-			     VINO_PREFS_LOCAL_ONLY,
-			     (GConfClientNotifyFunc) vino_preferences_dialog_local_only_notify,
-			     dialog, NULL, NULL);
+  dialog->listeners [dialog->n_listeners] =
+    gconf_client_notify_add (dialog->client, 
+                VINO_PREFS_NETWORK_INTERFACE,
+                (GConfClientNotifyFunc)vino_preferences_dialog_network_interface_notify,
+                dialog, NULL, NULL);
   dialog->n_listeners++;
-
-  return local_only;
 }
 
 static void
@@ -1450,13 +1522,13 @@ vino_preferences_dialog_init (VinoPreferencesDialog *dialog)
 
   allowed = vino_preferences_dialog_setup_allowed_toggle (dialog);
 
-  vino_preferences_dialog_setup_prompt_enabled_toggle (dialog);
-  vino_preferences_dialog_setup_view_only_toggle      (dialog);
-  vino_preferences_dialog_setup_password_toggle       (dialog);
-  vino_preferences_dialog_setup_password_entry        (dialog);
-  vino_preferences_dialog_setup_icon_visibility       (dialog);
-  vino_preferences_dialog_setup_local_only_toggle     (dialog);
-  vino_preferences_dialog_setup_encryption_toggle     (dialog);
+  vino_preferences_dialog_setup_prompt_enabled_toggle       (dialog);
+  vino_preferences_dialog_setup_view_only_toggle            (dialog);
+  vino_preferences_dialog_setup_password_toggle             (dialog);
+  vino_preferences_dialog_setup_password_entry              (dialog);
+  vino_preferences_dialog_setup_icon_visibility             (dialog);
+  vino_preferences_dialog_setup_network_interface_combox    (dialog);
+  vino_preferences_dialog_setup_encryption_toggle           (dialog);
   vino_preferences_dialog_setup_alternative_port_entry      (dialog);
   vino_preferences_dialog_setup_use_alternative_port_toggle (dialog);
   vino_preferences_dialog_setup_lock_screen_toggle          (dialog);

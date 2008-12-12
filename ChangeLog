@@ -1,3 +1,35 @@
+2008-11-25  Jorge Pereira  <jorge@jorgepereira.com.br>
+
+	* capplet/vino-preferences.c:
+	(vino_preferences_dialog_update_for_allowed),
+	(vino_preferences_load_network_interfaces),
+	(vino_preferences_dialog_network_interface_update_combox),
+	(vino_preferences_dialog_network_interface_notify),
+	(vino_preferences_dialog_network_interface_changed),
+	(vino_preferences_dialog_setup_network_interface_combox),
+	(vino_preferences_dialog_init):
+	* capplet/vino-preferences.glade:
+	* configure.in:
+	* server/libvncserver/main.c: (rfbGetScreen):
+	* server/libvncserver/rfb/rfb.h:
+	* server/libvncserver/rfbserver.c: (rfbNewClient):
+	* server/libvncserver/sockets.c: (rfbInitListenSock),
+	(rfbSetAutoPort), (rfbSetPort), (rfbProcessNewConnection),
+	(rfbCheckFds), (ListenOnTCPPort), (NewSocketListenTCP),
+	(rfbSetNetworkInterface):
+	* server/vino-prefs.c: (vino_prefs_network_interface_changed),
+	(vino_prefs_create_server), (vino_prefs_init):
+	* server/vino-server.c: (vino_server_new_connection_pending),
+	(vino_server_init_from_screen), (vino_server_finalize),
+	(vino_server_set_property), (vino_server_get_property),
+	(vino_server_class_init), (vino_server_get_network_interface),
+	(vino_server_set_network_interface):
+	* server/vino-server.h:
+	* server/vino-server.schemas.in:
+	Removed the feature localOnly, added correct support for IPv4 mapped 
+	IPv6, and added a new feature to able to set network interface for 
+	accept connection. Closes #403183,#403192,#488354.
+
 2008-11-17  Jonh Wendell  <jwendell@gnome.org>
 
 	* server/vino-utils.[ch]: Added a new utility function:

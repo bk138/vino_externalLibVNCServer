@@ -37,6 +37,7 @@
 #define VINO_PREFS_PROMPT_ENABLED         VINO_PREFS_DIR "/prompt_enabled"
 #define VINO_PREFS_VIEW_ONLY              VINO_PREFS_DIR "/view_only"
 #define VINO_PREFS_LOCAL_ONLY             VINO_PREFS_DIR "/local_only"
+#define VINO_PREFS_NETWORK_INTERFACE      VINO_PREFS_DIR "/network_interface"
 #define VINO_PREFS_USE_ALTERNATIVE_PORT   VINO_PREFS_DIR "/use_alternative_port"
 #define VINO_PREFS_ALTERNATIVE_PORT       VINO_PREFS_DIR "/alternative_port"
 #define VINO_PREFS_REQUIRE_ENCRYPTION     VINO_PREFS_DIR "/require_encryption"
@@ -46,7 +47,7 @@
 #define VINO_PREFS_ICON_VISIBILITY        VINO_PREFS_DIR "/icon_visibility"
 #define VINO_PREFS_DISABLE_BACKGROUND     VINO_PREFS_DIR "/disable_background"
 
-#define VINO_N_LISTENERS 12
+#define VINO_N_LISTENERS                  12
 
 static GConfClient *vino_client  = NULL;
 static GSList      *vino_servers = NULL;
@@ -55,7 +56,7 @@ static guint        vino_listeners [VINO_N_LISTENERS] = { 0, };
 static gboolean        vino_enabled              = FALSE;
 static gboolean        vino_prompt_enabled       = FALSE;
 static gboolean        vino_view_only            = FALSE;
-static gboolean        vino_local_only           = FALSE;
+static char           *vino_network_interface    = NULL;
 static gboolean        vino_require_encryption   = FALSE;
 static VinoAuthMethod  vino_auth_methods         = VINO_AUTH_VNC;
 static char           *vino_vnc_password         = NULL;
@@ -143,27 +144,35 @@ vino_prefs_view_only_changed (GConfClient *client,
 }
 
 static void
-vino_prefs_local_only_changed (GConfClient *client,
-			       guint	    cnxn_id,
-			       GConfEntry  *entry)
+vino_prefs_network_interface_changed (GConfClient *client,
+                                      guint        cnxn_id,
+                                      GConfEntry  *entry)
 {
-  gboolean  local_only;
-  GSList   *l;
+  const char *network_interface;
+  GSList     *l;
 
-  if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
+  if (!entry->value || entry->value->type != GCONF_VALUE_STRING)
     return;
 
-  local_only = gconf_value_get_bool (entry->value) != FALSE;
+  network_interface = gconf_value_get_string (entry->value);
 
-  if (vino_local_only == local_only)
+  if (!network_interface && !vino_network_interface)
     return;
 
-  vino_local_only = local_only;
+  if (network_interface && vino_network_interface &&
+      !g_strcasecmp (network_interface, vino_network_interface))
+    return;
 
-  dprintf (PREFS, "Local only changed: %s\n", vino_local_only ? "(true)" : "(false)");
+  if (vino_network_interface)
+    g_free (vino_network_interface);
+
+  vino_network_interface = g_strdup (network_interface);
+
+  dprintf (PREFS, "Network Interface for bind() changed: %s\n",
+       vino_network_interface ? vino_network_interface : "(null)");
 
   for (l = vino_servers; l; l = l->next)
-    vino_server_set_local_only (l->data, local_only);
+    vino_server_set_network_interface (l->data, network_interface);
 }
 
 static void
@@ -438,7 +447,7 @@ vino_prefs_create_server (GdkScreen *screen)
   server = g_object_new (VINO_TYPE_SERVER,
 			 "prompt-enabled",       vino_prompt_enabled,
 			 "view-only",            vino_view_only,
-			 "local-only",           vino_local_only,
+			 "network-interface",    vino_network_interface,
 			 "use-alternative-port", vino_use_alternative_port,
 			 "alternative-port",     vino_alternative_port,
 			 "auth-methods",         vino_auth_methods,
@@ -446,8 +455,8 @@ vino_prefs_create_server (GdkScreen *screen)
 			 "vnc-password",         vino_vnc_password,
 			 "on-hold",              !vino_enabled,
 			 "screen",               screen,
-             "lock-screen",          vino_lock_screen,
-             "disable-background",   vino_disable_background,
+			 "lock-screen",          vino_lock_screen,
+			 "disable-background",   vino_disable_background,
 			 NULL);
 
   vino_servers = g_slist_prepend (vino_servers, server);
@@ -498,15 +507,23 @@ vino_prefs_init (gboolean view_only)
 					      NULL);
     }
   dprintf (PREFS, "View only: %s\n", vino_view_only ? "(true)" : "(false)");
-      
-  vino_local_only = gconf_client_get_bool (vino_client,
-					   VINO_PREFS_LOCAL_ONLY,
-					   NULL);
-  dprintf (PREFS, "Local only: %s\n", vino_local_only ? "(true)" : "(false)");
+ 
+  vino_network_interface = gconf_client_get_string (vino_client,
+						    VINO_PREFS_NETWORK_INTERFACE,
+						    NULL);
+  /* Check for old key, local_only, vino <= 2.24 */
+  if (!vino_network_interface && gconf_client_get_bool (vino_client, VINO_PREFS_LOCAL_ONLY, NULL))
+    {
+      gconf_client_set_string (vino_client, VINO_PREFS_NETWORK_INTERFACE, "lo", NULL);
+      vino_network_interface = g_strdup ("lo");
+    }
+  dprintf (PREFS, "Network interface: %s\n", 
+                vino_network_interface ? vino_network_interface : "all");
 
   vino_use_alternative_port = gconf_client_get_bool (vino_client,
                                                      VINO_PREFS_USE_ALTERNATIVE_PORT,
                                                      NULL);
+    
   dprintf (PREFS, "Use alternative port: %s\n",
            vino_use_alternative_port ? "(true)" : "(false)");
 
@@ -584,8 +601,8 @@ vino_prefs_init (gboolean view_only)
 
   vino_listeners [i] =
     gconf_client_notify_add (vino_client,
-			     VINO_PREFS_LOCAL_ONLY,
-			     (GConfClientNotifyFunc) vino_prefs_local_only_changed,
+			     VINO_PREFS_NETWORK_INTERFACE,
+			     (GConfClientNotifyFunc) vino_prefs_network_interface_changed,
 			     NULL, NULL, NULL);
   i++;
 
@@ -666,7 +683,11 @@ vino_prefs_shutdown (void)
   if (vino_vnc_password)
     g_free (vino_vnc_password);
   vino_vnc_password = NULL;
-      
+
+  if (vino_network_interface)
+    g_free (vino_network_interface);
+  vino_network_interface = NULL;
+
   for (i = 0; i < VINO_N_LISTENERS; i++) {
     if (vino_listeners [i])
       gconf_client_notify_remove (vino_client, vino_listeners [i]);

@@ -61,8 +61,8 @@ struct _VinoServerPrivate
   VinoStatusIcon   *icon;
   VinoDBusListener *listener;
 
-  GIOChannel       *io_channel;
-  guint             io_watch;
+  GIOChannel       *io_channel[RFB_MAX_SOCKETLISTEN];
+  guint             io_watch[RFB_MAX_SOCKETLISTEN];
 
   GSList           *clients;
 
@@ -76,7 +76,7 @@ struct _VinoServerPrivate
   int               alternative_port;
 
   guint             on_hold : 1;
-  guint             local_only : 1;
+  char             *network_interface;
   guint             prompt_enabled : 1;
   guint             view_only : 1;
   guint             require_encryption : 1;
@@ -106,7 +106,7 @@ enum
   PROP_ON_HOLD,
   PROP_PROMPT_ENABLED,
   PROP_VIEW_ONLY,
-  PROP_LOCAL_ONLY,
+  PROP_NETWORK_INTERFACE,
   PROP_USE_ALTERNATIVE_PORT,
   PROP_ALTERNATIVE_PORT,
   PROP_REQUIRE_ENCRYPTION,
@@ -250,8 +250,8 @@ vino_server_handle_client_gone (rfbClientPtr rfb_client)
 	    g_source_remove (client->update_timeout);
 	  client->update_timeout = 0;
 
-          if (client->io_watch)
-            g_source_remove (client->io_watch);
+    if (client->io_watch)
+      g_source_remove (client->io_watch);
 	  client->io_watch = 0;
 
 	  g_io_channel_unref (client->io_channel);
@@ -471,7 +471,7 @@ vino_server_new_connection_pending (GIOChannel   *source,
 {
   g_return_val_if_fail (VINO_IS_SERVER (server), FALSE);
 
-  rfbProcessNewConnection (server->priv->rfb_screen);
+  rfbProcessNewConnection (server->priv->rfb_screen, g_io_channel_unix_get_fd(source));
 
   return TRUE;
 }
@@ -843,6 +843,7 @@ vino_server_init_from_screen (VinoServer *server,
   rfbScreenInfoPtr  rfb_screen;
   char             *name;
   GtkClipboard     *cb;
+  int               i;
 
   g_return_if_fail (server->priv->screen == NULL);
   g_return_if_fail (screen != NULL);
@@ -884,7 +885,7 @@ vino_server_init_from_screen (VinoServer *server,
    *   5900-6000
    */
   rfb_screen->rfbDeferUpdateTime = 0;
-  rfb_screen->localOnly          = server->priv->local_only;
+  rfb_screen->netIface           = server->priv->network_interface;
   rfb_screen->autoPort           = TRUE;
   rfb_screen->rfbPort            = VINO_SERVER_DEFAULT_PORT;
   rfb_screen->rfbAlwaysShared    = TRUE;
@@ -917,15 +918,18 @@ vino_server_init_from_screen (VinoServer *server,
 
   vino_server_update_security_types (server);
 
-  dprintf (RFB, "Creating watch for listening socket %d - port %d\n",
-	   rfb_screen->rfbListenSock, rfb_screen->rfbPort);
+  dprintf (RFB, "Creating watch for listening socket [ ");
+  for (i=0; i < rfb_screen->rfbListenSockTotal; i++)
+    {
+      dprintf (RFB, "%d ", rfb_screen->rfbListenSock[i]);
 
-  server->priv->io_channel = g_io_channel_unix_new (rfb_screen->rfbListenSock);
-  server->priv->io_watch =
-    g_io_add_watch (server->priv->io_channel,
-		    G_IO_IN|G_IO_PRI,
-		    (GIOFunc) vino_server_new_connection_pending,
-		    server);
+      server->priv->io_channel[i] = g_io_channel_unix_new (rfb_screen->rfbListenSock[i]);
+      server->priv->io_watch[i]   = g_io_add_watch (server->priv->io_channel[i],
+                                                    G_IO_IN|G_IO_PRI,
+                                                   (GIOFunc) vino_server_new_connection_pending,
+                                                    server);
+   }
+   dprintf(RFB,"]- port %d\n", rfb_screen->rfbPort);
 
 #ifdef VINO_ENABLE_HTTP_SERVER
   server->priv->http = vino_http_get (rfb_screen->rfbPort);
@@ -949,7 +953,8 @@ static void
 vino_server_finalize (GObject *object)
 {
   VinoServer *server = VINO_SERVER (object);
-
+  int i;
+  
 #ifdef VINO_ENABLE_HTTP_SERVER
   if (server->priv->http)
     {
@@ -960,13 +965,16 @@ vino_server_finalize (GObject *object)
   server->priv->http = NULL;
 #endif /* VINO_ENABLE_HTTP_SERVER */
 
-  if (server->priv->io_watch)
-    g_source_remove (server->priv->io_watch);
-  server->priv->io_watch = 0;
+  for(i=0; i < server->priv->rfb_screen->rfbListenSockTotal; i++)
+    {
+      if (server->priv->io_watch[i])
+        g_source_remove (server->priv->io_watch[i]);
+      server->priv->io_watch[i] = 0;
 
-  if (server->priv->io_channel)
-    g_io_channel_unref (server->priv->io_channel);
-  server->priv->io_channel = NULL;
+      if (server->priv->io_channel[i])
+        g_io_channel_unref (server->priv->io_channel[i]);
+      server->priv->io_channel[i] = NULL;
+    }
   
   if (server->priv->rfb_screen)
     rfbScreenCleanup (server->priv->rfb_screen);
@@ -980,6 +988,10 @@ vino_server_finalize (GObject *object)
   if (server->priv->vnc_password)
     g_free (server->priv->vnc_password);
   server->priv->vnc_password = NULL;
+
+  if(server->priv->network_interface)
+    g_free (server->priv->network_interface);
+  server->priv->network_interface = NULL;
 
   if (server->priv->prompt)
     g_object_unref (server->priv->prompt);
@@ -1030,8 +1042,8 @@ vino_server_set_property (GObject      *object,
     case PROP_VIEW_ONLY:
       vino_server_set_view_only (server, g_value_get_boolean (value));
       break;
-    case PROP_LOCAL_ONLY:
-      vino_server_set_local_only (server, g_value_get_boolean (value));
+    case PROP_NETWORK_INTERFACE:
+      vino_server_set_network_interface (server, g_value_get_string (value));
       break;
     case PROP_REQUIRE_ENCRYPTION:
       vino_server_set_require_encryption (server, g_value_get_boolean (value));
@@ -1082,8 +1094,8 @@ vino_server_get_property (GObject    *object,
     case PROP_VIEW_ONLY:
       g_value_set_boolean (value, server->priv->view_only);
       break;
-    case PROP_LOCAL_ONLY:
-      g_value_set_boolean (value, server->priv->local_only);
+    case PROP_NETWORK_INTERFACE:
+      g_value_set_string (value, server->priv->network_interface);
       break;
     case PROP_REQUIRE_ENCRYPTION:
       g_value_set_boolean (value, server->priv->require_encryption);
@@ -1181,11 +1193,11 @@ vino_server_class_init (VinoServerClass *klass)
                                                          G_PARAM_STATIC_BLURB));
 
   g_object_class_install_property (gobject_class,
-				   PROP_LOCAL_ONLY,
-				   g_param_spec_boolean ("local-only",
-							 "Local Only",
-							 "Only allow local connections",
-							 FALSE,
+				   PROP_NETWORK_INTERFACE,
+				   g_param_spec_string ("network-interface",
+							 "Network Interface",
+							 "Network interface for accept connections",
+							 NULL,
                                                          G_PARAM_READWRITE   |
                                                          G_PARAM_CONSTRUCT   |
                                                          G_PARAM_STATIC_NAME |
@@ -1368,32 +1380,32 @@ vino_server_set_view_only (VinoServer *server,
     }
 }
 
-gboolean
-vino_server_get_local_only (VinoServer *server)
+G_CONST_RETURN char *
+vino_server_get_network_interface (VinoServer *server)
 {
-  g_return_val_if_fail (VINO_IS_SERVER (server), FALSE);
-
-  return server->priv->local_only;
+  g_return_val_if_fail (VINO_IS_SERVER (server), NULL);
+  
+  return server->priv->network_interface;
 }
 
 void
-vino_server_set_local_only (VinoServer *server,
-                            gboolean    local_only)
+vino_server_set_network_interface (VinoServer *server,
+                                   const char *network_interface)
 {
   g_return_if_fail (VINO_IS_SERVER (server));
 
-  local_only = local_only != FALSE;
+  if (server->priv->network_interface)
+    g_free (server->priv->network_interface);
 
-  if (server->priv->local_only != local_only)
-    {
-      server->priv->local_only = local_only;
+  if(network_interface != NULL && strlen (network_interface) > 0)
+    server->priv->network_interface = g_strdup (network_interface);
+  else
+    server->priv->network_interface = NULL;
 
-      if (server->priv->rfb_screen != NULL)
-        rfbSetLocalOnly (server->priv->rfb_screen,
-                         server->priv->local_only);
+  if (server->priv->rfb_screen != NULL)
+    rfbSetNetworkInterface (server->priv->rfb_screen, server->priv->network_interface);
 
-      g_object_notify (G_OBJECT (server), "local-only");
-    }
+  g_object_notify (G_OBJECT (server), "network-interface");
 }
 
 gboolean

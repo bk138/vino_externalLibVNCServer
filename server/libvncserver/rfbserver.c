@@ -151,6 +151,7 @@ rfbNewClient(rfbScreenInfoPtr rfbScreen,
     socklen_t addrlen = sizeof(addr);
     int i;
     char host[NI_MAXHOST];
+    const char *prt = "unknown";
 
     cl = (rfbClientPtr)calloc(sizeof(rfbClientRec),1);
 
@@ -173,7 +174,12 @@ rfbNewClient(rfbScreenInfoPtr rfbScreen,
 
       cl->host = strdup(host);
 
-      rfbLog("Got connection from client %s\n", cl->host);
+      if (addr.ss_family == AF_INET)
+        prt = "IPv4";
+      else if (addr.ss_family == AF_INET6)
+        prt = "IPv6";
+
+      rfbLog("[%s] Got connection from client %s\n", prt, cl->host);
 
       rfbLog("  other clients:\n");
       iterator = rfbGetClientIterator(rfbScreen);

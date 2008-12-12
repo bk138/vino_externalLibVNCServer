@@ -54,6 +54,8 @@ extern "C"
 
 /* end of stuff for autoconf */
 
+#define RFB_MAX_SOCKETLISTEN 8 /* is the max listen by network interface */
+
 struct _rfbClientRec;
 struct _rfbScreenInfo;
 struct rfbCursor;
@@ -114,7 +116,9 @@ typedef struct _rfbScreenInfo
     rfbBool autoPort;
     rfbBool localOnly;
     int rfbPort;
-    SOCKET rfbListenSock;
+    SOCKET rfbListenSock[RFB_MAX_SOCKETLISTEN];
+    int rfbListenSockTotal;
+    const char *netIface;
     int maxSock;
     int maxFd;
     fd_set allFds;
@@ -394,9 +398,11 @@ extern void rfbCloseClient(rfbClientPtr cl);
 extern int ReadExact(rfbClientPtr cl, char *buf, int len);
 extern int ReadExactTimeout(rfbClientPtr cl, char *buf, int len,int timeout);
 extern int WriteExact(rfbClientPtr cl, const char *buf, int len);
-extern void rfbProcessNewConnection(rfbScreenInfoPtr rfbScreen);
+extern void rfbProcessNewConnection(rfbScreenInfoPtr rfbScreen, int insock);
 extern void rfbCheckFds(rfbScreenInfoPtr rfbScreen,long usec);
-extern int ListenOnTCPPort(int port, rfbBool localOnly);
+extern rfbBool ListenOnTCPPort(rfbScreenInfoPtr rfbScreen, int port, const char *netIface);
+extern rfbBool rfbSetNetworkInterface(rfbScreenInfoPtr rfbScreen, const char *netIface);
+extern int NewSocketListenTCP(struct sockaddr *addr, socklen_t len);
 
 /* rfbserver.c */
 

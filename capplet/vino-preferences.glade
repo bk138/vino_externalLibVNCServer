@@ -444,15 +444,39 @@
                             <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_STRUCTURE_MASK</property>
                             <property name="spacing">6</property>
                             <child>
-                              <widget class="GtkCheckButton" id="local_only_toggle">
+                              <widget class="GtkHBox" id="hbox3">
                                 <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="has_tooltip">True</property>
-                                <property name="tooltip" translatable="yes">The server will only accept connections from localhost</property>
-                                <property name="label" translatable="yes">_Only allow local connections</property>
-                                <property name="use_underline">True</property>
-                                <property name="response_id">0</property>
-                                <property name="draw_indicator">True</property>
+                                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_STRUCTURE_MASK</property>
+                                <property name="spacing">6</property>
+                                <child>
+                                  <widget class="GtkLabel" id="network_interface_label">
+                                    <property name="visible">True</property>
+                                    <property name="tooltip" translatable="yes">Which network interface we should listen to.</property>
+                                    <property name="xalign">0</property>
+                                    <property name="label" translatable="yes">_Listen this interface:</property>
+                                    <property name="use_underline">True</property>
+                                    <property name="mnemonic_widget">network_interface_combox</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="GtkComboBox" id="network_interface_combox">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="tearoff_title">Click here to change the network interface!</property>
+                                    <property name="button_sensitivity">GTK_SENSITIVITY_ON</property>
+                                    <property name="items" translatable="yes"></property>
+                                  </widget>
+                                  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="padding">1</property>
+                                    <property name="position">1</property>
+                                  </packing>
+                                </child>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
@@ -490,6 +514,7 @@
                                   </widget>
                                   <packing>
                                     <property name="expand">False</property>
+                                    <property name="padding">1</property>
                                     <property name="position">1</property>
                                   </packing>
                                 </child>

@@ -51,19 +51,18 @@
     </schema>
 
     <schema>
-      <key>/schemas/desktop/gnome/remote_access/local_only</key>
-      <applyto>/desktop/gnome/remote_access/local_only</applyto>
+      <key>/schemas/desktop/gnome/remote_access/network_interface</key>
+      <applyto>/desktop/gnome/remote_access/network_interface</applyto>
       <owner>gnome</owner>
-      <type>bool</type>
-      <default>false</default>
+      <type>string</type>
+      <default></default>
       <locale name="C">
-         <short>Only allow local connections</short>
+         <short>Settings of network interface using for accept connections</short>
          <long>
-           If true, the server will only accept connections from
-           localhost and network connections will be rejected.
+           If set all, the server will listener in all network interfaces.
 
-           Set this option to true if you wish to exclusively use
-           a tunneling mechanism to access the server, such as ssh.
+           Set this if you want that accept connections only from specific
+           network interface. eg: eth0, wifi0, lo, ...
          </long>
       </locale>
     </schema>

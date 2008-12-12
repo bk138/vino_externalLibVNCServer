@@ -257,7 +257,7 @@ fi
 AC_SUBST(LIBZ)
 AC_SUBST(LIBJPEG)
 
-AC_CHECK_HEADERS([netinet/in.h sys/time.h fcntl.h unistd.h sys/socket.h signal.h])
+AC_CHECK_HEADERS([netinet/in.h sys/time.h fcntl.h unistd.h sys/socket.h signal.h ifaddrs.h net/if.h])
 AC_CHECK_FUNCS([gettimeofday])
 
 dnl
