@@ -29,6 +29,7 @@ G_BEGIN_DECLS
 
 void vino_background_handler (int sig);
 void vino_background_draw (gboolean option);
+gboolean vino_background_get_status (void);
 
 G_END_DECLS
 

@@ -21,12 +21,13 @@
  */
 
 #include <config.h>
-
-#include "vino-prefs.h"
-
 #include <string.h>
 #include <gconf/gconf-client.h>
+#include <glib/gstdio.h>
 #include <signal.h>
+#include <fcntl.h>
+
+#include "vino-prefs.h"
 #include "vino-util.h"
 #include "vino-mdns.h"
 #include "vino-status-icon.h"
@@ -48,6 +49,8 @@
 #define VINO_PREFS_DISABLE_BACKGROUND     VINO_PREFS_DIR "/disable_background"
 
 #define VINO_N_LISTENERS                  12
+
+#define VINO_PREFS_LOCKFILE               "vino-server.lock"
 
 static GConfClient *vino_client  = NULL;
 static GSList      *vino_servers = NULL;
@@ -470,6 +473,78 @@ vino_prefs_create_server (GdkScreen *screen)
   vino_status_icon_set_visibility (icon, vino_icon_visibility);
 }
 
+static void
+vino_prefs_restore (void)
+{
+  if (vino_background_get_status ())
+    vino_background_draw (TRUE);
+}
+
+static gchar *
+vino_prefs_lock_filename (void)
+{
+  gchar *dir;
+
+  dir = g_build_filename (g_get_user_data_dir (),
+			 "vino",
+			  NULL);
+  if (!g_file_test (dir, G_FILE_TEST_EXISTS))
+    g_mkdir_with_parents (dir, 0755);
+
+  g_free (dir);
+
+  return g_build_filename (g_get_user_data_dir (),
+			   "vino",
+			    VINO_PREFS_LOCKFILE,
+			    NULL);
+}
+
+static gboolean
+vino_prefs_lock (void)
+{
+  gchar    *lockfile;
+  gboolean  res;
+
+  res = FALSE;
+  lockfile = vino_prefs_lock_filename ();
+
+  if (g_file_test (lockfile, G_FILE_TEST_EXISTS))
+    {
+      dprintf (PREFS, "WARNING: The lock file (%s) already exists\n", lockfile);
+    }
+  else
+    {
+      g_creat (lockfile, 0644);
+      res = TRUE;
+    }
+
+  g_free (lockfile);
+  return res;
+}
+
+static gboolean
+vino_prefs_unlock (void)
+{
+  gchar    *lockfile;
+  gboolean  res;
+
+  res = FALSE;
+  lockfile = vino_prefs_lock_filename ();
+
+  if (!g_file_test (lockfile, G_FILE_TEST_EXISTS))
+    {
+      dprintf (PREFS, "WARNING: Lock file (%s) not found!\n", lockfile);
+    }
+  else
+    {
+      g_unlink (lockfile);
+      res = TRUE;
+    }
+
+  g_free (lockfile);
+  return res;
+}
+
 void
 vino_prefs_init (gboolean view_only)
 {
@@ -487,6 +562,9 @@ vino_prefs_init (gboolean view_only)
 			VINO_PREFS_DIR,
 			GCONF_CLIENT_PRELOAD_ONELEVEL,
 			NULL);
+
+  if(!vino_prefs_lock ())
+    vino_prefs_restore ();
 
   vino_enabled = gconf_client_get_bool (vino_client, VINO_PREFS_ENABLED, NULL);
   dprintf (PREFS, "Access enabled: %s\n", vino_enabled ? "(true)" : "(false)");
@@ -696,5 +774,6 @@ vino_prefs_shutdown (void)
 
   g_object_unref (vino_client);
   vino_client = NULL;
-}
 
+  vino_prefs_unlock ();
+}

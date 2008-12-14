@@ -1,5 +1,14 @@
 2008-11-25  Jorge Pereira  <jorge@jorgepereira.com.br>
 
+	* server/vino-background.c: (vino_background_get_status):
+	* server/vino-background.h:
+	* server/vino-prefs.c: (vino_prefs_init), (vino_prefs_shutdown),
+	(vino_prefs_restore), (vino_prefs_lock), (vino_prefs_unlock):
+	Disable wallpaper on connection + restart = wallpaper gone 
+	forever. Closes #562281.
+
+2008-11-25  Jorge Pereira  <jorge@jorgepereira.com.br>
+
 	* capplet/vino-preferences.c:
 	(vino_preferences_dialog_update_for_allowed),
 	(vino_preferences_load_network_interfaces),

@@ -53,3 +53,12 @@ vino_background_draw (gboolean option)
   g_object_unref (client);
 }
 
+gboolean
+vino_background_get_status (void)
+{
+  GConfClient *client = gconf_client_get_default ();
+  gboolean option = gconf_client_get_bool (client, VINO_PREFS_DISABLE_BACKGROUND, NULL);
+  g_object_unref (client);
+  return option;
+}
+
