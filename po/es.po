@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&amp;component=general\n"
-"POT-Creation-Date: 2008-11-17 13:08+0000\n"
-"PO-Revision-Date: 2008-11-22 18:12+0100\n"
+"POT-Creation-Date: 2008-12-12 19:58+0000\n"
+"PO-Revision-Date: 2008-12-15 21:56+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,16 +22,21 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1195
+#. Translators: 'All' means 'All network interfaces'
+#: ../capplet/vino-preferences.c:203 ../capplet/vino-preferences.c:291
+msgid "All"
+msgstr "Todas"
+
+#: ../capplet/vino-preferences.c:1267
 msgid "The service is not running"
 msgstr "El servicio no se está ejecutando"
 
-#: ../capplet/vino-preferences.c:1292
+#: ../capplet/vino-preferences.c:1364
 #, c-format
 msgid "There was an error showing the URL \"%s\""
 msgstr "Hubo un error al mostrar el URL «%s»"
 
-#: ../capplet/vino-preferences.c:1378
+#: ../capplet/vino-preferences.c:1450
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -40,7 +45,7 @@ msgstr ""
 "Hubo un error al mostrar la ayuda:\n"
 "%s"
 
-#: ../capplet/vino-preferences.c:1439 ../server/vino-dbus-listener.c:411
+#: ../capplet/vino-preferences.c:1511 ../server/vino-dbus-listener.c:411
 #: ../server/vino-server.c:151
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
@@ -131,20 +136,20 @@ msgid "Some of these preferences are locked down"
 msgstr "Algunas de estas preferencias están bloqueadas"
 
 #: ../capplet/vino-preferences.glade.h:19
-msgid "The server will only accept connections from localhost"
-msgstr "El servidor sólo aceptará conexiones desde el equipo local"
-
-#: ../capplet/vino-preferences.glade.h:20
 msgid "The server will use another port, instead of the default (5900)"
 msgstr "El servidor usará otro puerto, en lugar del predeterminado (5900)"
 
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
 msgstr "Los usuarios pueden ver tu escritorio usando este comando:"
 
-#: ../capplet/vino-preferences.glade.h:22
+#: ../capplet/vino-preferences.glade.h:21
 msgid "When a user tries to view or control your desktop:"
 msgstr "Cuando un usuario intenta ver o controlar tu escritorio:"
+
+#: ../capplet/vino-preferences.glade.h:22
+msgid "Which network interface we should listen to."
+msgstr "En qué interfaz de red se debe escuchar."
 
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:24
@@ -156,16 +161,16 @@ msgid "_Allow other users to control your desktop"
 msgstr "_Permitir a otros usuarios controlar tu escritorio"
 
 #: ../capplet/vino-preferences.glade.h:26
+msgid "_Listen this interface:"
+msgstr "_Escuchar en esta interfaz:"
+
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Lock screen on disconnect"
 msgstr "B_loquear la pantalla al desconectar"
 
-#: ../capplet/vino-preferences.glade.h:27
+#: ../capplet/vino-preferences.glade.h:28
 msgid "_Never display an icon"
 msgstr "No mostrar un icono _nunca"
-
-#: ../capplet/vino-preferences.glade.h:28
-msgid "_Only allow local connections"
-msgstr "Permitir sólo conexiones _locales"
 
 #: ../capplet/vino-preferences.glade.h:29
 msgid "_Only display an icon when there is someone connected"
@@ -306,6 +311,16 @@ msgstr "Activar acceso remoto al escritorio"
 
 #: ../server/vino-server.schemas.in.h:5
 msgid ""
+"If set all, the server will listener in all network interfaces. Set this if "
+"you want that accept connections only from specific network interface. eg: "
+"eth0, wifi0, lo, ..."
+msgstr ""
+"Si está activado a todos, el servidor escuchará en todas las interfaces de "
+"red. Establezca esto si quiere aceptar conexiones sólo desde una interfaz de "
+"red específica. Ej: eth0, wifi0, lo, ..."
+
+#: ../server/vino-server.schemas.in.h:6
+msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
 msgstr ""
@@ -313,7 +328,7 @@ msgstr ""
 "RFB. Los usuarios en las máquinas remotas entonces podrán conectarse al "
 "escritorio usando un visor vnc."
 
-#: ../server/vino-server.schemas.in.h:6
+#: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
@@ -324,7 +339,7 @@ msgstr ""
 "conexión. Recomendado especialmente cuando el acceso no está protegido por "
 "contraseña."
 
-#: ../server/vino-server.schemas.in.h:7
+#: ../server/vino-server.schemas.in.h:8
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
@@ -333,7 +348,7 @@ msgstr ""
 "les permite ver el escritorio. Los usuarios remotos no podrán usar el ratón "
 "o el teclado."
 
-#: ../server/vino-server.schemas.in.h:8
+#: ../server/vino-server.schemas.in.h:9
 msgid ""
 "If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
@@ -343,13 +358,13 @@ msgstr ""
 "escritorio soporten cifrado. Se recomienda encarecidamente usar un cliente "
 "que soporte cifrado a no ser que la red interviniente sea de confianza."
 
-#: ../server/vino-server.schemas.in.h:9
+#: ../server/vino-server.schemas.in.h:10
 msgid "If true, screen will be locked after the last remote client disconnect."
 msgstr ""
 "Si está activado, la pantalla se bloqueará después de que el último cliente "
 "remoto se desconecte."
 
-#: ../server/vino-server.schemas.in.h:10
+#: ../server/vino-server.schemas.in.h:11
 msgid ""
 "If true, the server will listen to another port, instead of the default "
 "(5900). The port must be specified in the 'alternative_port' key."
@@ -357,16 +372,6 @@ msgstr ""
 "Si está activado, el servidor escuchará en otro puerto, en lugar del "
 "predeterminado (5900). El puerto debe especificarse en la clave "
 "«alternative_port»."
-
-#: ../server/vino-server.schemas.in.h:11
-msgid ""
-"If true, the server will only accept connections from localhost and network "
-"connections will be rejected. Set this option to true if you wish to "
-"exclusively use a tunneling mechanism to access the server, such as ssh."
-msgstr ""
-"Si es «true» el servidor sólo aceptará conexiones desde localhost y las "
-"conexiones de red se rechazarán. Establezca esta opción a «true» si quiere "
-"usar exclusivamente un mecanismo de túnel para acceder al servidor, como ssh."
 
 #: ../server/vino-server.schemas.in.h:12
 msgid "Listen an alternative port"
@@ -391,24 +396,24 @@ msgid "Lock the screen when last user disconnect"
 msgstr "Bloquear la pantalla cuando se desconecte el último usuario"
 
 #: ../server/vino-server.schemas.in.h:15
-msgid "Only allow local connections"
-msgstr "Permitir sólo conexiones locales"
-
-#: ../server/vino-server.schemas.in.h:16
 msgid "Only allow remote users to view the desktop"
 msgstr "Permitir sólo a los usuarios remotos ver el escritorio"
 
-#: ../server/vino-server.schemas.in.h:17
+#: ../server/vino-server.schemas.in.h:16
 msgid "Password required for \"vnc\" authentication"
 msgstr "Se requiere una contraseña para la autenticación «vnc»"
 
-#: ../server/vino-server.schemas.in.h:18
+#: ../server/vino-server.schemas.in.h:17
 msgid "Prompt the user before completing a connection"
 msgstr "Preguntar al usuario antes de completar una conexión"
 
-#: ../server/vino-server.schemas.in.h:19
+#: ../server/vino-server.schemas.in.h:18
 msgid "Require encryption"
 msgstr "Requerir cifrado"
+
+#: ../server/vino-server.schemas.in.h:19
+msgid "Settings of network interface using for accept connections"
+msgstr "Ajustes de la interfaz de red usada para aceptar conexiones"
 
 #: ../server/vino-server.schemas.in.h:20
 msgid ""
@@ -669,6 +674,26 @@ msgstr "Versión %s de Vino\n"
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
 "ERROR: No tiene suficientes permisos para cambiar la contraseña de Vino.\n"
+
+#~ msgid "The server will only accept connections from localhost"
+#~ msgstr "El servidor sólo aceptará conexiones desde el equipo local"
+
+#~ msgid "_Only allow local connections"
+#~ msgstr "Permitir sólo conexiones _locales"
+
+#~ msgid ""
+#~ "If true, the server will only accept connections from localhost and "
+#~ "network connections will be rejected. Set this option to true if you wish "
+#~ "to exclusively use a tunneling mechanism to access the server, such as "
+#~ "ssh."
+#~ msgstr ""
+#~ "Si es «true» el servidor sólo aceptará conexiones desde localhost y las "
+#~ "conexiones de red se rechazarán. Establezca esta opción a «true» si quiere "
+#~ "usar exclusivamente un mecanismo de túnel para acceder al servidor, como "
+#~ "ssh."
+
+#~ msgid "Only allow local connections"
+#~ msgstr "Permitir sólo conexiones locales"
 
 #~ msgid ""
 #~ "There was an error displaying help:\n"
