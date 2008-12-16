@@ -57,11 +57,11 @@
       <type>string</type>
       <default></default>
       <locale name="C">
-         <short>Settings of network interface using for accept connections</short>
+         <short>Network interface for listening</short>
          <long>
-           If set all, the server will listener in all network interfaces.
+           If not set, the server will listen on all network interfaces.
 
-           Set this if you want that accept connections only from specific
+           Set this if you want that accept connections only from some specific
            network interface. eg: eth0, wifi0, lo, ...
          </long>
       </locale>
