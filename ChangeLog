@@ -1,5 +1,11 @@
 2008-12-16  Jonh Wendell  <jwendell@gnome.org>
 
+	* server/vino-server.c: Simulate a user activity through gnome-screensaver
+	when a client connects, thus not showing the screensaver animation
+	to the client. Closes #562548.
+
+2008-12-16  Jonh Wendell  <jwendell@gnome.org>
+
 	* configure.in: post-release bump version to 2.25.4
 
 ==================== 2.25.3 =======================

@@ -128,12 +128,13 @@ static void vino_server_update_security_types (VinoServer *server);
 
 static gpointer parent_class;
 
-static void
-vino_server_lock_screen (VinoServer *server)
-{
 #define GNOME_SCREENSAVER_BUS_NAME  "org.gnome.ScreenSaver"
 #define GNOME_SCREENSAVER_INTERFACE "org.gnome.ScreenSaver"
 #define GNOME_SCREENSAVER_PATH      "/org/gnome/ScreenSaver"
+
+static void
+vino_server_lock_screen (VinoServer *server)
+{
 
   DBusGConnection *connection;
   GError          *error;
@@ -164,10 +165,43 @@ vino_server_lock_screen (VinoServer *server)
   g_object_unref (proxy);
   dbus_g_connection_unref (connection);
 
+}
+
+static void
+vino_server_unlock_screen (void)
+{
+
+  DBusGConnection *connection;
+  GError          *error;
+  DBusGProxy      *proxy;
+
+  dprintf(DBUS, "Unlocking screen via gnome-screensaver\n");
+
+  error = NULL;
+  connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
+  if (!connection)
+    {
+      g_printerr (_("Failed to open connection to bus: %s\n"),
+                  error->message);
+      g_error_free (error);
+      return;
+    }
+
+  proxy = dbus_g_proxy_new_for_name (connection,
+                                     GNOME_SCREENSAVER_BUS_NAME,
+                                     GNOME_SCREENSAVER_PATH,
+                                     GNOME_SCREENSAVER_INTERFACE);
+
+  dbus_g_proxy_call_no_reply (proxy, "SimulateUserActivity", G_TYPE_INVALID);
+
+  g_object_unref (proxy);
+  dbus_g_connection_unref (connection);
+
+}
+
 #undef GNOME_SCREENSAVER_BUS_NAME
 #undef GNOME_SCREENSAVER_INTERFACE
 #undef GNOME_SCREENSAVER_PATH
-}
 
 void
 vino_server_set_disable_background (VinoServer *server,
@@ -198,6 +232,8 @@ vino_server_client_accepted (VinoServer *server,
                              VinoClient *client)
 {
   vino_status_icon_add_client (server->priv->icon, client);
+
+  vino_server_unlock_screen ();
 
   if (vino_server_get_disable_background (server))
      vino_background_draw (FALSE);
