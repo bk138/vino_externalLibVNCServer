@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&amp;component=general\n"
-"POT-Creation-Date: 2008-12-08 19:48+0000\n"
-"PO-Revision-Date: 2008-12-11 17:47+0100\n"
+"POT-Creation-Date: 2008-12-16 20:50+0000\n"
+"PO-Revision-Date: 2008-12-17 16:36+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -19,16 +19,22 @@ msgstr ""
 "X-Poedit-Country: SLOVENIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../capplet/vino-preferences.c:1195
+#. Translators: 'All' means 'All network interfaces'
+#: ../capplet/vino-preferences.c:203
+#: ../capplet/vino-preferences.c:291
+msgid "All"
+msgstr "Vse"
+
+#: ../capplet/vino-preferences.c:1267
 msgid "The service is not running"
 msgstr "Storitev ni zagnana"
 
-#: ../capplet/vino-preferences.c:1292
+#: ../capplet/vino-preferences.c:1364
 #, c-format
 msgid "There was an error showing the URL \"%s\""
 msgstr "Prišlo je do napake pri prikazovanju povezave \"%s\""
 
-#: ../capplet/vino-preferences.c:1378
+#: ../capplet/vino-preferences.c:1450
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -37,9 +43,10 @@ msgstr ""
 "Prišlo je do napake med prikazovanjem pomoči:\n"
 "%s"
 
-#: ../capplet/vino-preferences.c:1439
+#: ../capplet/vino-preferences.c:1511
 #: ../server/vino-dbus-listener.c:411
-#: ../server/vino-server.c:151
+#: ../server/vino-server.c:152
+#: ../server/vino-server.c:184
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Napaka med odpiranjem vodila: %s\n"
@@ -123,20 +130,20 @@ msgid "Some of these preferences are locked down"
 msgstr "Nekatere lastnosti so zaklenjene"
 
 #: ../capplet/vino-preferences.glade.h:19
-msgid "The server will only accept connections from localhost"
-msgstr "Strežnik bo sprejel le povezave lokalnega računalnika"
-
-#: ../capplet/vino-preferences.glade.h:20
 msgid "The server will use another port, instead of the default (5900)"
 msgstr "Strežnik bo uporabil druga vrata, namesto privzetih vrat (5900)."
 
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
 msgstr "Uporabniki si lahko ogledajo vaše namizje s tem ukazom:"
 
-#: ../capplet/vino-preferences.glade.h:22
+#: ../capplet/vino-preferences.glade.h:21
 msgid "When a user tries to view or control your desktop:"
 msgstr "Kadar želi uporabnik pogledati ali nadzirati vaše namizje:"
+
+#: ../capplet/vino-preferences.glade.h:22
+msgid "Which network interface we should listen to."
+msgstr "Kateri omrežni vmesnik naj se posluša?"
 
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:24
@@ -148,16 +155,16 @@ msgid "_Allow other users to control your desktop"
 msgstr "_Dovolite drugim uporabnikom, da nadzirajo vaše namizje"
 
 #: ../capplet/vino-preferences.glade.h:26
+msgid "_Listen this interface:"
+msgstr "_Poslušaj vmesnik:"
+
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Lock screen on disconnect"
 msgstr "_Zakleni zaslon ob prekinitvi povezave"
 
-#: ../capplet/vino-preferences.glade.h:27
+#: ../capplet/vino-preferences.glade.h:28
 msgid "_Never display an icon"
 msgstr "_Nikoli ne prikaži ikone"
-
-#: ../capplet/vino-preferences.glade.h:28
-msgid "_Only allow local connections"
-msgstr "_Dovoli le lokalne povezave"
 
 #: ../capplet/vino-preferences.glade.h:29
 msgid "_Only display an icon when there is someone connected"
@@ -287,32 +294,32 @@ msgid "Enable remote desktop access"
 msgstr "Omogoči dostop do oddaljenega namizja"
 
 #: ../server/vino-server.schemas.in.h:5
+msgid "If not set, the server will listen on all network interfaces. Set this if you want that accept connections only from some specific network interface. eg: eth0, wifi0, lo, ..."
+msgstr "V primeru, da možnost ni izbrana, bo strežnik poslušal vse omrežne vmesnike. Nastavite možnost, če želite sprejeti povezave le preko določenega vmesnika; eth0, wifi0, lo ..."
+
+#: ../server/vino-server.schemas.in.h:6
 msgid "If true, allows remote access to the desktop via the RFB protocol. Users on remote machines may then connect to the desktop using a vncviewer."
 msgstr "Oddaljeni uporabniki bodo imeli dostop do namizja preko RFB protokola. Uporabniki na oddaljenih namizjih se bodo lahko povezali preko vncviewer-ja."
 
-#: ../server/vino-server.schemas.in.h:6
+#: ../server/vino-server.schemas.in.h:7
 msgid "If true, remote users accessing the desktop are not allowed access until the user on the host machine approves the connection. Recommended especially when access is not password protected."
 msgstr "Oddaljeni uporabniki ne bodo imeli dostopa dokler uporabnik na gostiteljskem računalniku tega ne odobri. Priporočljiva možnost kadar dostop ni zaščiten z geslom."
 
-#: ../server/vino-server.schemas.in.h:7
+#: ../server/vino-server.schemas.in.h:8
 msgid "If true, remote users accessing the desktop are only allowed to view the desktop. Remote users will not be able to use the mouse or keyboard."
 msgstr "Oddaljeni uporabniki bodo lahko samo pregledovali namizje. Uporabniki ne bodo imeli dovoljenja za uporabo tipkovnice in miške."
 
-#: ../server/vino-server.schemas.in.h:8
+#: ../server/vino-server.schemas.in.h:9
 msgid "If true, remote users accessing the desktop are required to support encryption. It is highly recommended that you use a client which supports encryption unless the intervening network is trusted."
 msgstr "Od oddaljenih uporabnikov je zahtevano, da podpirajo šifriranje. Priporočljiva je uporaba odjemalca, ki podpira šifriranje razen, če zaupamo posredovanju na omrežju."
 
-#: ../server/vino-server.schemas.in.h:9
+#: ../server/vino-server.schemas.in.h:10
 msgid "If true, screen will be locked after the last remote client disconnect."
 msgstr "Zaslon se zaklene po tem, ko se prekine povezava za zadnjim oddaljenim uporabnikom."
 
-#: ../server/vino-server.schemas.in.h:10
+#: ../server/vino-server.schemas.in.h:11
 msgid "If true, the server will listen to another port, instead of the default (5900). The port must be specified in the 'alternative_port' key."
 msgstr "Strežnik naj posluša druga vrata namesto privzetih vrat (5900). Vrata morajo biti določena v polju 'nadomestna vrata'."
-
-#: ../server/vino-server.schemas.in.h:11
-msgid "If true, the server will only accept connections from localhost and network connections will be rejected. Set this option to true if you wish to exclusively use a tunneling mechanism to access the server, such as ssh."
-msgstr "Strežnik bo sprejel le povezave lokalnega omrežja, vse ostale povezave pa bodo zavrnjene. Možnost nastavite, če želite uporabljati zgolj tunelni mehanizem za dostop do strežnika kot na primer ssh."
 
 #: ../server/vino-server.schemas.in.h:12
 msgid "Listen an alternative port"
@@ -327,8 +334,8 @@ msgid "Lock the screen when last user disconnect"
 msgstr "Zakleni zaslon, ko se prekine povezava z zadnjim uporabnikom"
 
 #: ../server/vino-server.schemas.in.h:15
-msgid "Only allow local connections"
-msgstr "Dovoli le lokalne povezave"
+msgid "Network interface for listening"
+msgstr "Omrežni vmesnik za poslušanje"
 
 #: ../server/vino-server.schemas.in.h:16
 msgid "Only allow remote users to view the desktop"
@@ -570,6 +577,21 @@ msgstr "Različica paketa VINO %s\n"
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "NAPAKA: Nimate ustreznih dovoljenj za spreminjanje gesla v programu Vino.\n"
 
+#~ msgid "The server will only accept connections from localhost"
+#~ msgstr "Strežnik bo sprejel le povezave lokalnega računalnika"
+#~ msgid "_Only allow local connections"
+#~ msgstr "_Dovoli le lokalne povezave"
+#~ msgid ""
+#~ "If true, the server will only accept connections from localhost and "
+#~ "network connections will be rejected. Set this option to true if you wish "
+#~ "to exclusively use a tunneling mechanism to access the server, such as "
+#~ "ssh."
+#~ msgstr ""
+#~ "Strežnik bo sprejel le povezave lokalnega omrežja, vse ostale povezave pa "
+#~ "bodo zavrnjene. Možnost nastavite, če želite uporabljati zgolj tunelni "
+#~ "mehanizem za dostop do strežnika kot na primer ssh."
+#~ msgid "Only allow local connections"
+#~ msgstr "Dovoli le lokalne povezave"
 #~ msgid "Remote desktop server died, restarting\n"
 #~ msgstr "Strežnik oddaljenega namizja je izključen; ponovni zagon\n"
 #~ msgid "Activation of %s failed: %s\n"
