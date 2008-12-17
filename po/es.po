@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&amp;component=general\n"
-"POT-Creation-Date: 2008-12-12 19:58+0000\n"
-"PO-Revision-Date: 2008-12-15 21:56+0100\n"
+"POT-Creation-Date: 2008-12-16 20:50+0000\n"
+"PO-Revision-Date: 2008-12-17 13:20+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgstr ""
 "%s"
 
 #: ../capplet/vino-preferences.c:1511 ../server/vino-dbus-listener.c:411
-#: ../server/vino-server.c:151
+#: ../server/vino-server.c:152 ../server/vino-server.c:184
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Falló al abrir conexión con bus: %s\n"
@@ -311,13 +311,13 @@ msgstr "Activar acceso remoto al escritorio"
 
 #: ../server/vino-server.schemas.in.h:5
 msgid ""
-"If set all, the server will listener in all network interfaces. Set this if "
-"you want that accept connections only from specific network interface. eg: "
-"eth0, wifi0, lo, ..."
+"If not set, the server will listen on all network interfaces. Set this if "
+"you want that accept connections only from some specific network interface. "
+"eg: eth0, wifi0, lo, ..."
 msgstr ""
-"Si está activado a todos, el servidor escuchará en todas las interfaces de "
-"red. Establezca esto si quiere aceptar conexiones sólo desde una interfaz de "
-"red específica. Ej: eth0, wifi0, lo, ..."
+"Si no está activado, el servidor escuchará en todas las interfaces de red. "
+"Establezca esto si quiere aceptar conexiones sólo desde una interfaz de red "
+"específica. Ej: eth0, wifi0, lo, ..."
 
 #: ../server/vino-server.schemas.in.h:6
 msgid ""
@@ -396,24 +396,24 @@ msgid "Lock the screen when last user disconnect"
 msgstr "Bloquear la pantalla cuando se desconecte el último usuario"
 
 #: ../server/vino-server.schemas.in.h:15
+msgid "Network interface for listening"
+msgstr "Interfaz de red en la que escuchar"
+
+#: ../server/vino-server.schemas.in.h:16
 msgid "Only allow remote users to view the desktop"
 msgstr "Permitir sólo a los usuarios remotos ver el escritorio"
 
-#: ../server/vino-server.schemas.in.h:16
+#: ../server/vino-server.schemas.in.h:17
 msgid "Password required for \"vnc\" authentication"
 msgstr "Se requiere una contraseña para la autenticación «vnc»"
 
-#: ../server/vino-server.schemas.in.h:17
+#: ../server/vino-server.schemas.in.h:18
 msgid "Prompt the user before completing a connection"
 msgstr "Preguntar al usuario antes de completar una conexión"
 
-#: ../server/vino-server.schemas.in.h:18
+#: ../server/vino-server.schemas.in.h:19
 msgid "Require encryption"
 msgstr "Requerir cifrado"
-
-#: ../server/vino-server.schemas.in.h:19
-msgid "Settings of network interface using for accept connections"
-msgstr "Ajustes de la interfaz de red usada para aceptar conexiones"
 
 #: ../server/vino-server.schemas.in.h:20
 msgid ""
@@ -674,6 +674,9 @@ msgstr "Versión %s de Vino\n"
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
 "ERROR: No tiene suficientes permisos para cambiar la contraseña de Vino.\n"
+
+#~ msgid "Settings of network interface using for accept connections"
+#~ msgstr "Ajustes de la interfaz de red usada para aceptar conexiones"
 
 #~ msgid "The server will only accept connections from localhost"
 #~ msgstr "El servidor sólo aceptará conexiones desde el equipo local"
