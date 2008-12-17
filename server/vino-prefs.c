@@ -26,6 +26,7 @@
 #include <glib/gstdio.h>
 #include <signal.h>
 #include <fcntl.h>
+#include <stdlib.h>
 
 #include "vino-prefs.h"
 #include "vino-util.h"
@@ -47,8 +48,9 @@
 #define VINO_PREFS_LOCK_SCREEN            VINO_PREFS_DIR "/lock_screen_on_disconnect"
 #define VINO_PREFS_ICON_VISIBILITY        VINO_PREFS_DIR "/icon_visibility"
 #define VINO_PREFS_DISABLE_BACKGROUND     VINO_PREFS_DIR "/disable_background"
+#define VINO_PREFS_USE_UPNP               VINO_PREFS_DIR "/use_upnp"
 
-#define VINO_N_LISTENERS                  12
+#define VINO_N_LISTENERS                  13
 
 #define VINO_PREFS_LOCKFILE               "vino-server.lock"
 
@@ -67,6 +69,7 @@ static gboolean        vino_use_alternative_port = FALSE;
 static int             vino_alternative_port     = VINO_SERVER_DEFAULT_PORT;
 static gboolean        vino_lock_screen          = FALSE;
 static gboolean        vino_disable_background   = FALSE;
+static gboolean        vino_use_upnp             = TRUE;
 static VinoStatusIconVisibility vino_icon_visibility = VINO_STATUS_ICON_VISIBILITY_CLIENT;
 
 static void
@@ -440,6 +443,30 @@ vino_prefs_disable_background_changed (GConfClient *client,
     vino_server_set_disable_background (l->data, disable_background);
 }
 
+static void
+vino_prefs_use_upnp_changed (GConfClient *client,
+                             guint       cnxn_id,
+                             GConfEntry  *entry)
+{
+  gboolean  use_upnp;
+  GSList   *l;
+
+  if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
+    return;
+
+  use_upnp = gconf_value_get_bool (entry->value) != FALSE;
+
+  if (vino_use_upnp == use_upnp)
+    return;
+
+  vino_use_upnp = use_upnp;
+
+  dprintf (PREFS, "Use UPNP changed: %s\n", vino_use_upnp ? "(true)" : "(false)");
+
+  for (l = vino_servers; l; l = l->next)
+    vino_server_set_use_upnp (l->data, use_upnp);
+}
+
 void
 vino_prefs_create_server (GdkScreen *screen)
 {
@@ -460,6 +487,7 @@ vino_prefs_create_server (GdkScreen *screen)
 			 "screen",               screen,
 			 "lock-screen",          vino_lock_screen,
 			 "disable-background",   vino_disable_background,
+			 "use-upnp",             vino_use_upnp,
 			 NULL);
 
   vino_servers = g_slist_prepend (vino_servers, server);
@@ -474,7 +502,7 @@ vino_prefs_create_server (GdkScreen *screen)
 }
 
 static void
-vino_prefs_restore (void)
+vino_prefs_restore_background (void)
 {
   if (vino_background_get_status ())
     vino_background_draw (TRUE);
@@ -545,6 +573,16 @@ vino_prefs_unlock (void)
   return res;
 }
 
+static void
+vino_prefs_sighandler (int sig)
+{
+  g_message (_("Received signal %d, exiting...\n"), sig);
+  vino_prefs_restore_background ();
+  vino_mdns_shutdown ();
+  vino_prefs_shutdown ();
+  exit (0);
+}
+
 void
 vino_prefs_init (gboolean view_only)
 {
@@ -552,9 +590,9 @@ vino_prefs_init (gboolean view_only)
   int i = 0;
   char *key_str;
   
-  signal (SIGQUIT, vino_background_handler); /* Ctrl+C */
-  signal (SIGTERM, vino_background_handler); /* kill -15 */
-  signal (SIGSEGV, vino_background_handler); /* Segmentation fault */
+  signal (SIGQUIT, vino_prefs_sighandler); /* Ctrl+C */
+  signal (SIGTERM, vino_prefs_sighandler); /* kill -15 */
+  signal (SIGSEGV, vino_prefs_sighandler); /* Segmentation fault */
 
   vino_client = gconf_client_get_default ();
 
@@ -564,7 +602,7 @@ vino_prefs_init (gboolean view_only)
 			NULL);
 
   if(!vino_prefs_lock ())
-    vino_prefs_restore ();
+    vino_prefs_restore_background ();
 
   vino_enabled = gconf_client_get_bool (vino_client, VINO_PREFS_ENABLED, NULL);
   dprintf (PREFS, "Access enabled: %s\n", vino_enabled ? "(true)" : "(false)");
@@ -645,6 +683,11 @@ vino_prefs_init (gboolean view_only)
                                                    VINO_PREFS_DISABLE_BACKGROUND,
                                                    NULL);
   dprintf (PREFS, "Disable background: %s\n", vino_disable_background ? "(true)" : "(false)");
+
+  vino_use_upnp = gconf_client_get_bool (vino_client,
+                                         VINO_PREFS_USE_UPNP,
+                                         NULL);
+  dprintf (PREFS, "Use UPNP: %s\n", vino_use_upnp ? "(true)" : "(false)");
 
   key_str = gconf_client_get_string (vino_client,
                                      VINO_PREFS_ICON_VISIBILITY,
@@ -740,6 +783,14 @@ vino_prefs_init (gboolean view_only)
     gconf_client_notify_add (vino_client,
 			     VINO_PREFS_DISABLE_BACKGROUND,
 			     (GConfClientNotifyFunc) vino_prefs_disable_background_changed,
+			     NULL, NULL, NULL);
+
+  i++;
+
+  vino_listeners [i] =
+    gconf_client_notify_add (vino_client,
+			     VINO_PREFS_USE_UPNP,
+			     (GConfClientNotifyFunc) vino_prefs_use_upnp_changed,
 			     NULL, NULL, NULL);
 
   i++;

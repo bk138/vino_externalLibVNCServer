@@ -214,5 +214,20 @@
       </locale>
     </schema>
 
+    <schema>
+      <key>/schemas/desktop/gnome/remote_access/use_upnp</key>
+      <applyto>/desktop/gnome/remote_access/use_upnp</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+         <short>Whether we should use UPNP to forward the port in routers</short>
+         <long>
+           If true, we will use UPNP protocol to automatically forward the port
+           used by vino in the router.
+         </long>
+      </locale>
+    </schema>
+
   </schemalist>  
 </gconfschemafile>

@@ -1,9 +1,10 @@
 NULL =
 
-SUBDIRS = libvncserver
+SUBDIRS = libvncserver miniupnp
 
 INCLUDES = \
 	-I$(top_srcdir)/server/libvncserver \
+	-I$(top_srcdir)/server/miniupnp \
 	$(VINO_SERVER_CFLAGS) \
 	$(VINO_DEBUG_CFLAGS) \
 	$(VINO_LIBNOTIFY_CFLAGS) \
@@ -30,6 +31,7 @@ vino_server_LDADD = \
 	$(LIBGCRYPT_LIBS) \
 	$(X_LIBS) $(XTEST_LIBS) $(XSHM_LIBS) $(XDAMAGE_LIBS) \
 	$(top_builddir)/server/libvncserver/libvncserver.la \
+	$(top_builddir)/server/miniupnp/libminiupnp.la \
 	$(NULL)
 
 if HTTP_SERVER
@@ -67,6 +69,8 @@ vino_server_SOURCES = \
 	vino-dbus-listener.h \
 	vino-background.c \
 	vino-background.h \
+	vino-upnp.h \
+	vino-upnp.c \
 	$(VINO_HTTP_SRC) \
 	$(CORBA_SRCLIST) \
 	$(NULL)

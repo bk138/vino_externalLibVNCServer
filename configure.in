@@ -344,6 +344,7 @@ Makefile
 server/Makefile
 server/libvncserver/Makefile
 server/libvncserver/rfb/Makefile
+server/miniupnp/Makefile
 capplet/Makefile
 tools/Makefile
 docs/Makefile

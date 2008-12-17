@@ -37,6 +37,7 @@
 #include "vino-util.h"
 #include "vino-enums.h"
 #include "vino-background.h"
+#include "vino-upnp.h"
 #include <sys/poll.h>
 #include <dbus/dbus-glib.h>
 #include <gtk/gtk.h>
@@ -60,6 +61,7 @@ struct _VinoServerPrivate
   VinoPrompt       *prompt;
   VinoStatusIcon   *icon;
   VinoDBusListener *listener;
+  VinoUpnp         *upnp;
 
   GIOChannel       *io_channel[RFB_MAX_SOCKETLISTEN];
   guint             io_watch[RFB_MAX_SOCKETLISTEN];
@@ -84,6 +86,7 @@ struct _VinoServerPrivate
   guint             use_alternative_port : 1;
   guint             lock_screen : 1;
   guint             disable_background : 1;
+  guint             use_upnp : 1;
 };
 
 struct _VinoClient
@@ -114,7 +117,8 @@ enum
   PROP_VNC_PASSWORD,
   PROP_PORT,
   PROP_LOCK_SCREEN,
-  PROP_DISABLE_BACKGROUND
+  PROP_DISABLE_BACKGROUND,
+  PROP_USE_UPNP
 };
 
 static enum rfbNewClientAction vino_server_auth_client (VinoServer *server,
@@ -164,7 +168,6 @@ vino_server_lock_screen (VinoServer *server)
 
   g_object_unref (proxy);
   dbus_g_connection_unref (connection);
-
 }
 
 static void
@@ -196,7 +199,6 @@ vino_server_unlock_screen (void)
 
   g_object_unref (proxy);
   dbus_g_connection_unref (connection);
-
 }
 
 #undef GNOME_SCREENSAVER_BUS_NAME
@@ -225,6 +227,47 @@ vino_server_get_disable_background (VinoServer *server)
   g_return_val_if_fail (VINO_IS_SERVER (server), FALSE);
 
   return server->priv->disable_background;
+}
+
+static void
+vino_server_control_upnp (VinoServer *server)
+{
+  if (server->priv->use_upnp && !server->priv->on_hold)
+    {
+      if (!server->priv->upnp)
+	server->priv->upnp = vino_upnp_new ();
+      vino_upnp_add_port (server->priv->upnp, server->priv->rfb_screen->rfbPort);
+    }
+  else
+    if (server->priv->upnp)
+      {
+	g_object_unref (server->priv->upnp);
+	server->priv->upnp = NULL;
+      }
+}
+
+void
+vino_server_set_use_upnp (VinoServer *server,
+                          gboolean use_upnp)
+{
+  g_return_if_fail (VINO_IS_SERVER (server));
+
+  use_upnp = use_upnp != FALSE;
+
+  if (server->priv->use_upnp != use_upnp)
+    {
+      server->priv->use_upnp = use_upnp;
+      vino_server_control_upnp (server);
+      g_object_notify (G_OBJECT (server), "use-upnp");
+    }
+}
+
+gboolean
+vino_server_get_use_upnp (VinoServer *server)
+{
+  g_return_val_if_fail (VINO_IS_SERVER (server), FALSE);
+
+  return server->priv->use_upnp;
 }
 
 static void
@@ -983,6 +1026,7 @@ vino_server_init_from_screen (VinoServer *server,
                     server);
 
   server->priv->icon = vino_status_icon_new (server, server->priv->screen);
+  server->priv->upnp = NULL;
 }
 
 static void
@@ -1048,6 +1092,10 @@ vino_server_finalize (GObject *object)
   if (server->priv->icon)
     g_object_unref (server->priv->icon);
   server->priv->icon = NULL;
+
+  if (server->priv->upnp)
+    g_object_unref (server->priv->upnp);
+  server->priv->upnp = NULL;
   
   g_free (server->priv);
   server->priv = NULL;
@@ -1101,6 +1149,9 @@ vino_server_set_property (GObject      *object,
       break;
     case PROP_DISABLE_BACKGROUND:
       vino_server_set_disable_background (server, g_value_get_boolean (value));
+      break;
+    case PROP_USE_UPNP:
+      vino_server_set_use_upnp (server, g_value_get_boolean (value));
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -1156,6 +1207,9 @@ vino_server_get_property (GObject    *object,
       break;
     case PROP_DISABLE_BACKGROUND:
       g_value_set_boolean (value, server->priv->disable_background);
+      break;
+    case PROP_USE_UPNP:
+      g_value_set_boolean (value, server->priv->use_upnp);
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -1341,6 +1395,18 @@ vino_server_class_init (VinoServerClass *klass)
                                                          G_PARAM_STATIC_NICK |
                                                          G_PARAM_STATIC_BLURB));
 
+  g_object_class_install_property (gobject_class,
+				   PROP_USE_UPNP,
+				   g_param_spec_boolean ("use-upnp",
+							 "Use UPNP",
+							 "Whether to use UPNP",
+							 FALSE,
+                                                         G_PARAM_READWRITE   |
+                                                         G_PARAM_CONSTRUCT   |
+                                                         G_PARAM_STATIC_NAME |
+                                                         G_PARAM_STATIC_NICK |
+                                                         G_PARAM_STATIC_BLURB));
+
 }
 
 GType
@@ -1472,6 +1538,8 @@ vino_server_set_use_alternative_port (VinoServer *server,
 
           rfbSetAutoPort (server->priv->rfb_screen,
                           !server->priv->use_alternative_port);
+
+	  vino_server_control_upnp (server);
         }
 
       g_object_notify (G_OBJECT (server), "use-alternative-port");
@@ -1498,7 +1566,10 @@ vino_server_set_alternative_port (VinoServer *server,
 
       if (server->priv->rfb_screen &&
           server->priv->use_alternative_port)
-        rfbSetPort (server->priv->rfb_screen, server->priv->alternative_port);
+	{
+	  rfbSetPort (server->priv->rfb_screen, server->priv->alternative_port);
+	  vino_server_control_upnp (server);
+	}
 
       g_object_notify (G_OBJECT (server), "alternative-port");
     }
@@ -1543,9 +1614,11 @@ vino_server_set_on_hold (VinoServer *server,
 	}
 
       g_object_notify (G_OBJECT (server), "on-hold");
-      
+
       if (server->priv->icon)
         vino_status_icon_update_state (server->priv->icon);
+
+      vino_server_control_upnp (server);
     }
 }
 

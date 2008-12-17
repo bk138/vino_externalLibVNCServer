@@ -1,3 +1,15 @@
+2008-12-17  Jonh Wendell  <jwendell@gnome.org>
+
+	Added UPnP support. Created a new boolean gconf key called use_upnp.
+	For now, no GUI changes. Closes #564853.
+
+	* server/miniupnp/*: miniUPnP files
+	* server/vino-upnp.[ch]: New class
+	* server/vino-server.[ch]: Use new VinoUpnp class
+	* server/vino-prefs.c: New gconf key: use_upnp
+	* server/vino-utils.[ch],
+	* docs/debugging.txt: Added UPnP debug stuff
+
 2008-12-16  Jonh Wendell  <jwendell@gnome.org>
 
 	* server/vino-server.c: Simulate a user activity through gnome-screensaver
