@@ -998,6 +998,8 @@ rfbSendFramebufferUpdate(rfbClientPtr cl,
 	    rfbDrawCursor(cl->screen, &cursorBounds);
 	    cursorIsDrawn = TRUE;
 
+	    cl->cursorWasMoved = FALSE;
+	    cl->cursorWasChanged = FALSE;
 	    cl->lastDrawnCursorBounds = cursorBounds;
 
 	    sraRgnOr(cl->modifiedRegion, cursorRegion);

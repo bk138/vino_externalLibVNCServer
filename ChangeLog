@@ -1,3 +1,10 @@
+2008-12-22  Jonh Wendell  <jwendell@gnome.org>
+
+	* server/libvncserver/rfbserver.c (rfbSendFramebufferUpdate):
+	Resets cursorWasMoved and cursorWasChanged flags, thus eliminating
+	mouse update changes, when there's no mouse change. Closes #494059.
+	Thanks to Oliver Gerlich for the patch.
+
 2008-12-17  Jonh Wendell  <jwendell@gnome.org>
 
 	Added UPnP support. Created a new boolean gconf key called use_upnp.
