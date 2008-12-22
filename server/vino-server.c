@@ -892,6 +892,9 @@ vino_server_clipboard_cb (GtkClipboard *cb,
   gchar *text, *out;
   size_t a, b;
 
+  if (!server->priv->clients)
+    return;
+
   if (server->priv->on_hold)
     return;
 
@@ -912,7 +915,6 @@ vino_server_clipboard_cb (GtkClipboard *cb,
     }
 
   g_free (text);
-
 }
 
 static void
