@@ -1,3 +1,9 @@
+2008-12-23  Jonh Wendell  <jwendell@gnome.org>
+
+	* server/vino-fb.c (vino_fb_init_xdamage):
+	  Don't check if we are running at a composited screen and disable
+	  XDamage extension. This should work fine nowadays.
+
 2008-12-22  Jonh Wendell  <jwendell@gnome.org>
 
 	* server/libvncserver/rfbserver.c (rfbSendFramebufferUpdate):
