@@ -590,7 +590,8 @@ vino_prefs_init (gboolean view_only)
   int i = 0;
   char *key_str;
   
-  signal (SIGQUIT, vino_prefs_sighandler); /* Ctrl+C */
+  signal (SIGINT,  vino_prefs_sighandler); /* Ctrl+C */
+  signal (SIGQUIT, vino_prefs_sighandler);
   signal (SIGTERM, vino_prefs_sighandler); /* kill -15 */
   signal (SIGSEGV, vino_prefs_sighandler); /* Segmentation fault */
 
