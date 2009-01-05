@@ -1,3 +1,18 @@
+Vino 2.25.4
+===========
+
+  Features
+
+	+ Added UPnP support. Created a new boolean gconf key called use_upnp.
+	For now, no GUI changes
+
+  Translations
+
+	+ Jorge González (es)
+	+ Mattias Põldaru (et)
+	+ Kjartan Maraas (nb)
+
+
 Vino 2.25.3
 ===========
 
