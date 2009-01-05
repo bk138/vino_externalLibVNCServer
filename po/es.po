@@ -5,15 +5,15 @@
 #
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004, 2006.
 # maria <maria.majadas@hispalinux.es>, 2007.
-# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008.
 # Claudio Saavedra <csaavedra@alumnos.utalca.cl>, (QA) 2007.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 200, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=vino&amp;component=general\n"
-"POT-Creation-Date: 2008-12-17 17:24+0000\n"
-"PO-Revision-Date: 2008-12-18 19:56+0100\n"
+"product=vino&component=general\n"
+"POT-Creation-Date: 2009-01-05 20:07+0000\n"
+"PO-Revision-Date: 2009-01-05 21:50+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -210,7 +210,7 @@ msgstr "Falló al adquirir el nombre D-Bus «%s»\n"
 
 #: ../server/vino-dbus-listener.c:456
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "El servidor de Escritorio Remoto ya está en ejecución; saliendo ...\n"
+msgstr "El servidor de Escritorio Remoto ya está en ejecución; saliendo …\n"
 
 #: ../server/vino-main.c:89
 msgid "GNOME Remote Desktop"
@@ -242,6 +242,11 @@ msgstr "0"
 #, c-format
 msgid "%s's remote desktop on %s"
 msgstr "Escritorio remoto de %s en %s"
+
+#: ../server/vino-prefs.c:579
+#, c-format
+msgid "Received signal %d, exiting...\n"
+msgstr "Se recibió la señal %d, saliendo…\n"
 
 #: ../server/vino-prompt.c:142
 msgid "Screen"
@@ -317,7 +322,7 @@ msgid ""
 msgstr ""
 "Si no está activado, el servidor escuchará en todas las interfaces de red. "
 "Establezca esto si quiere aceptar conexiones sólo desde una interfaz de red "
-"específica. Ej: eth0, wifi0, lo, ..."
+"específica. Ej: eth0, wifi0, lo, …"
 
 #: ../server/vino-server.schemas.in.h:6
 msgid ""
@@ -534,7 +539,7 @@ msgstr ""
 #: ../server/vino-status-icon.c:268
 msgid "translator-credits"
 msgstr ""
-"Jorge González <jorgegonz@svn.gnome.org>, 2007-2008\n"
+"Jorge González <jorgegonz@svn.gnome.org>, 2007-2009\n"
 "Francisco Javier F. Serrador <serrador@openshine.com>, 2004, 2006"
 
 #: ../server/vino-status-icon.c:274
