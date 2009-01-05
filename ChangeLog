@@ -1,3 +1,9 @@
+2009-01-05  Jonh Wendell  <jwendell@gnome.org>
+
+	* configure.in: post-release bump version to 2.25.5
+
+==================== 2.25.4 =======================
+
 2008-12-23  Jonh Wendell  <jwendell@gnome.org>
 
 	* server/vino-fb.c (vino_fb_init_xdamage):
