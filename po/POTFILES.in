@@ -6,6 +6,7 @@ capplet/vino-preferences.glade
 server/vino-dbus-listener.c
 server/vino-main.c
 server/vino-mdns.c
+server/vino-prefs.c
 server/vino-prompt.c
 server/vino-prompt.glade
 server/vino-server.c
