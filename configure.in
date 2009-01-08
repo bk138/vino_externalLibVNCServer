@@ -259,6 +259,16 @@ AC_SUBST(LIBJPEG)
 
 AC_CHECK_HEADERS([netinet/in.h sys/time.h fcntl.h unistd.h sys/socket.h signal.h ifaddrs.h net/if.h])
 AC_CHECK_FUNCS([gettimeofday])
+AC_CHECK_LIB(resolv, herror)
+
+dnl Check for getifaddrs
+AC_TRY_COMPILE([
+      #include <ifaddrs.h>
+    ],[
+      struct ifaddrs *myaddrs;
+      getifaddrs (&myaddrs);
+    ], have_getifaddrs=yes, have_getifaddrs=no)
+AM_CONDITIONAL(HAVE_GETIFADDRS, [test $"$have_getifaddrs" = "yes"])
 
 dnl
 dnl End of libvncserver stuff

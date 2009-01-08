@@ -37,6 +37,14 @@ libvncserver_la_LIBADD =	\
 	$(LIBGCRYPT_LIBS)	\
 	$(NULL)
 
+if !HAVE_GETIFADDRS
+noinst_LTLIBRARIES += libifaddrs.la
+libifaddrs_la_SOURCES = 	\
+	getifaddrs.c 		\
+	ifaddrs.h
+libvncserver_la_LIBADD += ./libifaddrs.la
+endif
+
 EXTRA_DIST =			\
 	tableinit24.c		\
 	tableinittctemplate.c	\

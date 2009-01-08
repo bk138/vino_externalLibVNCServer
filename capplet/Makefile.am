@@ -23,6 +23,11 @@ vino_preferences_LDADD = \
 	$(X_LIBS) \
 	$(NULL)
 
+if !HAVE_GETIFADDRS
+INCLUDES += -I../server/libvncserver
+vino_preferences_LDADD += ../server/libvncserver/libifaddrs.la
+endif
+
 gladedir   = $(datadir)/vino
 glade_DATA = vino-preferences.glade
 

@@ -1,3 +1,14 @@
+2009-01-08  Halton Huo <halton.huo@sun.com>
+
+	Use self-implmented getifaddrs() and freeifaddrs() when system like
+	Solaris does not have them. Closes #565422
+	* capplet/Makefile.am:
+	* configure.in:
+	* server/libvncserver/Makefile.am:
+	* server/libvncserver/getifaddrs.c: (get_lifreq), (nbytes),
+	(addrcpy), (populate), (getifaddrs), (freeifaddrs):
+	* server/libvncserver/ifaddrs.h:
+
 2009-01-05  Jonh Wendell  <jwendell@gnome.org>
 
 	* configure.in: post-release bump version to 2.25.5
