@@ -1,14 +1,14 @@
 # This file is distributed under the same license as the program package.
 #
 # Matic Žgur <mr.zgur@gmail.com>, 2006.
-# Matej Urbančič <matej.urban@svn.gnome.org>, 2005 - 2008.
+# Matej Urbančič <matej.urban@svn.gnome.org>, 2005 - 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&amp;component=general\n"
-"POT-Creation-Date: 2008-12-17 17:01+0000\n"
-"PO-Revision-Date: 2008-12-17 18:22+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&component=general\n"
+"POT-Creation-Date: 2009-01-12 14:45+0000\n"
+"PO-Revision-Date: 2009-01-15 15:49+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -233,6 +233,11 @@ msgstr "vino-mdns:showusername"
 #, c-format
 msgid "%s's remote desktop on %s"
 msgstr "%s : oddaljeno namizje na %s"
+
+#: ../server/vino-prefs.c:579
+#, c-format
+msgid "Received signal %d, exiting...\n"
+msgstr "Prejet signal %d, zaustavljanje ...\n"
 
 #: ../server/vino-prompt.c:142
 msgid "Screen"
