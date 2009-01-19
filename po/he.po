@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=vino&amp;component=general\n"
-"POT-Creation-Date: 2008-11-17 13:08+0000\n"
+"product=vino&component=general\n"
+"POT-Creation-Date: 2009-01-05 20:07+0000\n"
 "PO-Revision-Date: 2005-07-18 19:18+0300\n"
 "Last-Translator: Oldie <yonatanhak@yahoo.com>\n"
 "Language-Team: Hebrew\n"
@@ -19,18 +19,21 @@ msgstr ""
 "X-Generator: KBabel 1.10.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1195
+#. Translators: 'All' means 'All network interfaces'
+#: ../capplet/vino-preferences.c:203 ../capplet/vino-preferences.c:291
+msgid "All"
+msgstr "כולם"
+
+#: ../capplet/vino-preferences.c:1267
 msgid "The service is not running"
 msgstr "השירות אינו רץ"
 
-#: ../capplet/vino-preferences.c:1292
+#: ../capplet/vino-preferences.c:1364
 #, c-format
 msgid "There was an error showing the URL \"%s\""
-msgstr ""
-"קרתה שגיאה בהצגת הכתובת \"%s\""
-"%s"
+msgstr "קרתה שגיאה בהצגת הכתובת \"%s\""
 
-#: ../capplet/vino-preferences.c:1378
+#: ../capplet/vino-preferences.c:1450
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -39,8 +42,8 @@ msgstr ""
 "קרתה שגיאה, מציג עזרה:\n"
 "%s"
 
-#: ../capplet/vino-preferences.c:1439 ../server/vino-dbus-listener.c:411
-#: ../server/vino-server.c:151
+#: ../capplet/vino-preferences.c:1511 ../server/vino-dbus-listener.c:411
+#: ../server/vino-server.c:156 ../server/vino-server.c:187
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Failed to open connection to bus: %s\n"
@@ -126,20 +129,20 @@ msgid "Some of these preferences are locked down"
 msgstr "חלק מהאפשרויות חסומות לשינוי"
 
 #: ../capplet/vino-preferences.glade.h:19
-msgid "The server will only accept connections from localhost"
-msgstr "השרת יקבל חיבורים מקומיים בלבד"
-
-#: ../capplet/vino-preferences.glade.h:20
 msgid "The server will use another port, instead of the default (5900)"
 msgstr "השרת ישתמש בשער שונה, במקום שער ברירת המחדל (5900)"
 
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:20
 msgid "Users can view your desktop using this command:"
 msgstr "משתמשים יכולים לצפות בשולחן העבודה שלך על ידי שימוש בפקודה:"
 
-#: ../capplet/vino-preferences.glade.h:22
+#: ../capplet/vino-preferences.glade.h:21
 msgid "When a user tries to view or control your desktop:"
 msgstr "כאשר משתמש מנסה לצפות או לשלוט בשולחן העבודה שלך:"
+
+#: ../capplet/vino-preferences.glade.h:22
+msgid "Which network interface we should listen to."
+msgstr "לאילו מנשקי רשת יש להאזין."
 
 #. tooltip in preferences applet
 #: ../capplet/vino-preferences.glade.h:24
@@ -151,16 +154,16 @@ msgid "_Allow other users to control your desktop"
 msgstr "_הרשה למשתמשים אחרים לשלוט בשולחן העבודה שלך"
 
 #: ../capplet/vino-preferences.glade.h:26
+msgid "_Listen this interface:"
+msgstr "ה_אזן למנשק זה:"
+
+#: ../capplet/vino-preferences.glade.h:27
 msgid "_Lock screen on disconnect"
 msgstr "_נעל את המסך בהתנתקות"
 
-#: ../capplet/vino-preferences.glade.h:27
+#: ../capplet/vino-preferences.glade.h:28
 msgid "_Never display an icon"
 msgstr "_אל תציג איקון לעולם"
-
-#: ../capplet/vino-preferences.glade.h:28
-msgid "_Only allow local connections"
-msgstr "הרשה חיבורים _מקומיים בלבד"
 
 #: ../capplet/vino-preferences.glade.h:29
 msgid "_Only display an icon when there is someone connected"
@@ -233,6 +236,11 @@ msgstr "1"
 msgid "%s's remote desktop on %s"
 msgstr "%s's remote desktop on %s"
 
+#: ../server/vino-prefs.c:579
+#, c-format
+msgid "Received signal %d, exiting...\n"
+msgstr "Received signal %d, exiting...\n"
+
 #: ../server/vino-prompt.c:142
 msgid "Screen"
 msgstr "מסך"
@@ -266,11 +274,11 @@ msgstr "האם ברצונך לאפשר להם לעשות זאת?"
 msgid "Question"
 msgstr "שאלה"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
 msgid "_Allow"
 msgstr "_הרשה"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
 msgid "_Refuse"
 msgstr "_סרב"
 
@@ -296,31 +304,41 @@ msgstr "Enable remote desktop access"
 
 #: ../server/vino-server.schemas.in.h:5
 msgid ""
-"If true, allows remote access to the desktop via the RFB protocol. Users on "
-"remote machines may then connect to the desktop using a vncviewer."
+"If not set, the server will listen on all network interfaces. Set this if "
+"you want that accept connections only from some specific network interface. "
+"eg: eth0, wifi0, lo, ..."
 msgstr ""
-"If true, allows remote access to the desktop via the RFB protocol. Users on "
-"remote machines may then connect to the desktop using a vncviewer."
+"If not set, the server will listen on all network interfaces. Set this if "
+"you want that accept connections only from some specific network interface. "
+"eg: eth0, wifi0, lo, ..."
 
 #: ../server/vino-server.schemas.in.h:6
 msgid ""
-"If true, remote users accessing the desktop are not allowed access until the "
-"user on the host machine approves the connection. Recommended especially "
-"when access is not password protected."
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
 msgstr ""
-"If true, remote users accessing the desktop are not allowed access until the "
-"user on the host machine approves the connection. Recommended especially "
-"when access is not password protected."
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
 
 #: ../server/vino-server.schemas.in.h:7
 msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+
+#: ../server/vino-server.schemas.in.h:8
+msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
 msgstr ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
 
-#: ../server/vino-server.schemas.in.h:8
+#: ../server/vino-server.schemas.in.h:9
 msgid ""
 "If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
@@ -330,34 +348,32 @@ msgstr ""
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 
-#: ../server/vino-server.schemas.in.h:9
+#: ../server/vino-server.schemas.in.h:10
 msgid "If true, screen will be locked after the last remote client disconnect."
 msgstr ""
 "If true, screen will be locked after the last remote client disconnect."
 
-#: ../server/vino-server.schemas.in.h:10
-msgid ""
-"If true, the server will listen to another port, instead of the default "
-"(5900). The port must be specified in the 'alternative_port' key."
-msgstr ""
-"If true, the server will listen to another port, instead of the default "
-"(5900). The port must be specified in the 'alternative_port' key."
-
 #: ../server/vino-server.schemas.in.h:11
 msgid ""
-"If true, the server will only accept connections from localhost and network "
-"connections will be rejected. Set this option to true if you wish to "
-"exclusively use a tunneling mechanism to access the server, such as ssh."
+"If true, the server will listen to another port, instead of the default "
+"(5900). The port must be specified in the 'alternative_port' key."
 msgstr ""
-"If true, the server will only accept connections from localhost and network "
-"connections will be rejected. Set this option to true if you wish to "
-"exclusively use a tunneling mechanism to access the server, such as ssh."
+"If true, the server will listen to another port, instead of the default "
+"(5900). The port must be specified in the 'alternative_port' key."
 
 #: ../server/vino-server.schemas.in.h:12
+msgid ""
+"If true, we will use UPNP protocol to automatically forward the port used by "
+"vino in the router."
+msgstr ""
+"If true, we will use UPNP protocol to automatically forward the port used by "
+"vino in the router."
+
+#: ../server/vino-server.schemas.in.h:13
 msgid "Listen an alternative port"
 msgstr "Listen an alternative port"
 
-#: ../server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:14
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -371,50 +387,50 @@ msgstr ""
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
 
-#: ../server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:15
 msgid "Lock the screen when last user disconnect"
 msgstr "Lock the screen when last user disconnect"
 
-#: ../server/vino-server.schemas.in.h:15
-msgid "Only allow local connections"
-msgstr "Only allow local connections"
-
 #: ../server/vino-server.schemas.in.h:16
+msgid "Network interface for listening"
+msgstr "Network interface for listening"
+
+#: ../server/vino-server.schemas.in.h:17
 msgid "Only allow remote users to view the desktop"
 msgstr "Only allow remote users to view the desktop"
 
-#: ../server/vino-server.schemas.in.h:17
+#: ../server/vino-server.schemas.in.h:18
 msgid "Password required for \"vnc\" authentication"
 msgstr "Password required for \"vnc\" authentication"
 
-#: ../server/vino-server.schemas.in.h:18
+#: ../server/vino-server.schemas.in.h:19
 msgid "Prompt the user before completing a connection"
 msgstr "Prompt the user before completing a connection"
 
-#: ../server/vino-server.schemas.in.h:19
+#: ../server/vino-server.schemas.in.h:20
 msgid "Require encryption"
 msgstr "Require encryption"
 
-#: ../server/vino-server.schemas.in.h:20
-msgid ""
-"The password which the remote user will be prompted for if the \"vnc\" "
-"authentication method is used. The password specified by the key is base64 "
-"encoded."
-msgstr ""
-"The password which the remote user will be prompted for if the \"vnc\" "
-"authentication method is used. The password specified by the key is base64 "
-"encoded."
-
 #: ../server/vino-server.schemas.in.h:21
 msgid ""
-"The port which the server will listen to if the 'use_alternative_port' key "
-"is set to true. Valid values are in the range from 5000 to 50000."
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
 msgstr ""
-"The port which the server will listen to if the 'use_alternative_port' key "
-"is set to true. Valid values are in the range from 5000 to 50000."
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
 
 #: ../server/vino-server.schemas.in.h:22
 msgid ""
+"The port which the server will listen to if the 'use_alternative_port' key "
+"is set to true. Valid values are in the range from 5000 to 50000."
+msgstr ""
+"The port which the server will listen to if the 'use_alternative_port' key "
+"is set to true. Valid values are in the range from 5000 to 50000."
+
+#: ../server/vino-server.schemas.in.h:23
+msgid ""
 "This key controls the behavior of the status icon. There are three options: "
 "\"always\" - The icon will be always there; \"client\" - You will see the "
 "icon only when there is someone connected, this is the default behavior; "
@@ -425,7 +441,7 @@ msgstr ""
 "icon only when there is someone connected, this is the default behavior; "
 "\"never\" - Never shows the icon."
 
-#: ../server/vino-server.schemas.in.h:23
+#: ../server/vino-server.schemas.in.h:24
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
@@ -435,13 +451,17 @@ msgstr ""
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 
-#: ../server/vino-server.schemas.in.h:24
+#: ../server/vino-server.schemas.in.h:25
 msgid "When the status icon should be shown"
 msgstr "When the status icon should be shown"
 
-#: ../server/vino-server.schemas.in.h:25
+#: ../server/vino-server.schemas.in.h:26
 msgid "When true, disable the background on receive valid session"
 msgstr "When true, disable the background on receive valid session"
+
+#: ../server/vino-server.schemas.in.h:27
+msgid "Whether we should use UPNP to forward the port in routers"
+msgstr "Whether we should use UPNP to forward the port in routers"
 
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
@@ -456,13 +476,11 @@ msgstr[1] "%d משתמשים מחוברים"
 
 #: ../server/vino-status-icon.c:207
 msgid "Error displaying preferences"
-msgstr ""
-"שגיאה בהצגת ההעדפות"
+msgstr "שגיאה בהצגת ההעדפות"
 
 #: ../server/vino-status-icon.c:226
 msgid "Error displaying help"
-msgstr ""
-"שגיאה בהצגת העזרה"
+msgstr "שגיאה בהצגת העזרה"
 
 #: ../server/vino-status-icon.c:253
 msgid ""
@@ -586,7 +604,7 @@ msgstr "משתמש במחשב '%s' שולט מרחוק בשולחן העבודה
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Error while displaying notification bubble: %s\n"
 
-#: ../server/vino-util.c:114
+#: ../server/vino-util.c:115
 msgid "An error has occurred:"
 msgstr "קרתה שגיאה:"
 
@@ -655,6 +673,26 @@ msgstr "VINO Version %s\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "ERROR: You do not have enough permissions to change Vino password.\n"
+
+#~ msgid "The server will only accept connections from localhost"
+#~ msgstr "השרת יקבל חיבורים מקומיים בלבד"
+
+#~ msgid "_Only allow local connections"
+#~ msgstr "הרשה חיבורים _מקומיים בלבד"
+
+#~ msgid ""
+#~ "If true, the server will only accept connections from localhost and "
+#~ "network connections will be rejected. Set this option to true if you wish "
+#~ "to exclusively use a tunneling mechanism to access the server, such as "
+#~ "ssh."
+#~ msgstr ""
+#~ "If true, the server will only accept connections from localhost and "
+#~ "network connections will be rejected. Set this option to true if you wish "
+#~ "to exclusively use a tunneling mechanism to access the server, such as "
+#~ "ssh."
+
+#~ msgid "Only allow local connections"
+#~ msgstr "Only allow local connections"
 
 #~ msgid ""
 #~ "Problem registering the remote desktop server with bonobo-activation; "
