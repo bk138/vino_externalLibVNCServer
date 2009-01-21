@@ -1,5 +1,11 @@
 2009-01-21  Jonh Wendell  <jwendell@gnome.org>
 
+	* configure.in: post-release bump version to 2.25.90
+
+==================== 2.25.5 =======================
+
+2009-01-21  Jonh Wendell  <jwendell@gnome.org>
+
 	* lots of files: Rewrite of capplet, hiding some advanced features.
 	Also, we check now if the machine can be accessed through the Internet.
 
