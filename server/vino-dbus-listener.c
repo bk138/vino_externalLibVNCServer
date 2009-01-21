@@ -33,6 +33,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <ifaddrs.h>
 
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
@@ -42,9 +46,8 @@
 #include "vino-http.h"
 #endif
 
-#define VINO_DBUS_LISTENER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o),                     \
-                                                                        VINO_TYPE_DBUS_LISTENER, \
-                                                                        VinoDBusListenerPrivate))
+#define VINO_DBUS_INTERFACE "org.gnome.VinoScreen"
+#define VINO_DBUS_BUS_NAME  "org.gnome.Vino"
 
 G_DEFINE_TYPE (VinoDBusListener, vino_dbus_listener, G_TYPE_OBJECT)
 
@@ -61,6 +64,33 @@ enum
 
 static void vino_dbus_listener_set_server (VinoDBusListener *listener,
                                            VinoServer       *server);
+
+static char *
+get_local_hostname (void)
+{
+  static char      local_host [NI_MAXHOST] = { 0, };
+  struct addrinfo  hints;
+  struct addrinfo *results;
+  char            *retval;
+
+  if (gethostname (local_host, NI_MAXHOST) == -1)
+    return NULL;
+
+  memset (&hints, 0, sizeof (hints));
+  hints.ai_flags = AI_CANONNAME;
+
+  results = NULL;
+  if (getaddrinfo (local_host,  NULL, &hints, &results) != 0)
+    return NULL;
+
+  retval = g_strdup (results ? results->ai_canonname : local_host);
+
+  if (results)
+    freeaddrinfo (results);
+
+  return retval;
+}
+
 
 static void
 vino_dbus_listener_set_property (GObject       *object,
@@ -103,7 +133,7 @@ vino_dbus_listener_get_property (GObject    *object,
 static void
 vino_dbus_listener_init (VinoDBusListener *listener)
 {
-  listener->priv = VINO_DBUS_LISTENER_GET_PRIVATE (listener);
+  listener->priv = G_TYPE_INSTANCE_GET_PRIVATE (listener, VINO_TYPE_DBUS_LISTENER, VinoDBusListenerPrivate);
 }
 
 static void
@@ -149,16 +179,15 @@ static const char * introspect_xml =
   "    </method>\n"
   "  </interface>\n"
   "  <interface name=\"org.gnome.VinoScreen\">\n"
-  "    <method name=\"GetServerPort\">\n"
-  "      <arg name=\"port\" direction=\"out\" type=\"u\"/>\n"
+  "    <method name=\"GetInternalData\">\n"
+  "      <arg name=\"hostname\" direction=\"out\" type=\"s\"/>\n"
+  "      <arg name=\"port\" direction=\"out\" type=\"d\"/>\n"
   "    </method>\n"
-  "    <signal name=\"ServerPortChanged\">\n"
+  "    <method name=\"GetExternalPort\">\n"
+  "      <arg name=\"port\" direction=\"out\" type=\"d\"/>\n"
+  "    </method>\n"
+  "    <signal name=\"ServerInfoChanged\">\n"
   "    </signal>\n"
-#ifdef VINO_ENABLE_HTTP_SERVER
-  "    <method name=\"GetHttpServerPort\">\n"
-  "      <arg name=\"port\" direction=\"out\" type=\"u\"/>\n"
-  "    </method>\n"
-#endif
   "  </interface>\n"
   "</node>\n";
 
@@ -196,13 +225,13 @@ vino_dbus_listener_handle_get_server_port (VinoDBusListener *listener,
                                            DBusConnection   *connection,
                                            DBusMessage      *message)
 {
-  DBusMessage  *reply;
-  dbus_int32_t  port;
+  DBusMessage *reply;
+  gint        port;
 
   if (!(reply = dbus_message_new_method_return (message)))
     goto oom;
 
-  port = vino_server_get_port (listener->priv->server);
+  port = vino_server_get_external_port (listener->priv->server);
 
   if (!dbus_message_append_args (reply, DBUS_TYPE_INT32, &port, DBUS_TYPE_INVALID))
     goto oom;
@@ -221,21 +250,29 @@ vino_dbus_listener_handle_get_server_port (VinoDBusListener *listener,
   return DBUS_HANDLER_RESULT_NEED_MEMORY;
 }
 
-#ifdef VINO_ENABLE_HTTP_SERVER
 static DBusHandlerResult
-vino_dbus_listener_handle_get_http_server_port (VinoDBusListener *listener,
-                                                DBusConnection   *connection,
-                                                DBusMessage      *message)
+vino_dbus_listener_handle_get_internal_data (VinoDBusListener *listener,
+                                             DBusConnection   *connection,
+                                             DBusMessage      *message)
 {
-  DBusMessage  *reply;
-  dbus_int32_t  port;
+  DBusMessage *reply;
+  gint        port;
+  char        *host = NULL;
 
   if (!(reply = dbus_message_new_method_return (message)))
     goto oom;
 
-  port = vino_get_http_server_port();
+#ifdef VINO_ENABLE_HTTP_SERVER
+  port = vino_get_http_server_port (listener->priv->server));
+#else
+  port = vino_server_get_port (listener->priv->server);
+#endif
 
-  if (!dbus_message_append_args (reply, DBUS_TYPE_INT32, &port, DBUS_TYPE_INVALID))
+  host = get_local_hostname ();
+  if (!dbus_message_append_args (reply,
+                                 DBUS_TYPE_STRING, &host,
+                                 DBUS_TYPE_INT32, &port,
+                                 DBUS_TYPE_INVALID))
     goto oom;
 
   if (!dbus_connection_send (connection, reply, NULL))
@@ -243,23 +280,22 @@ vino_dbus_listener_handle_get_http_server_port (VinoDBusListener *listener,
     
   dbus_message_unref (reply);
 
-  dprintf (DBUS, "Successfully handled '%s' message: port = %d\n", dbus_message_get_member (message), port);
+  dprintf (DBUS, "Successfully handled '%s' message\n", dbus_message_get_member (message));
 
   return DBUS_HANDLER_RESULT_HANDLED;
 
  oom:
+
+  g_free (host);
   g_error (_("Out of memory handling '%s' message"), dbus_message_get_member (message));
   return DBUS_HANDLER_RESULT_NEED_MEMORY;
 }
-#endif /* VINO_ENABLE_HTTP_SERVER */
 
 static DBusHandlerResult
 vino_dbus_listener_message_handler (DBusConnection *connection,
                                     DBusMessage    *message,
                                     void           *user_data)
 {
-#define VINO_DBUS_INTERFACE "org.gnome.VinoScreen"
-
   VinoDBusListener *listener = VINO_DBUS_LISTENER (user_data);
 
   dprintf (DBUS, "D-Bus message: obj_path = '%s' interface = '%s' method = '%s' destination = '%s'\n",
@@ -270,22 +306,20 @@ vino_dbus_listener_message_handler (DBusConnection *connection,
 
   if (dbus_message_is_method_call (message,
                                    VINO_DBUS_INTERFACE,
-                                   "GetServerPort"))
+                                   "GetInternalData"))
+    {
+      return vino_dbus_listener_handle_get_internal_data (listener,
+                                                          connection,
+                                                          message);
+    }
+  if (dbus_message_is_method_call (message,
+                                   VINO_DBUS_INTERFACE,
+                                   "GetExternalPort"))
     {
       return vino_dbus_listener_handle_get_server_port (listener,
                                                         connection,
                                                         message);
     }
-#ifdef VINO_ENABLE_HTTP_SERVER
-  else if (dbus_message_is_method_call (message,
-                                   VINO_DBUS_INTERFACE,
-                                   "GetHttpServerPort"))
-    {
-      return vino_dbus_listener_handle_get_http_server_port (listener,
-                                                             connection,
-                                                             message);
-    }
-#endif
   else if (dbus_message_is_method_call (message,
                                         "org.freedesktop.DBus.Introspectable",
                                         "Introspect"))
@@ -298,24 +332,22 @@ vino_dbus_listener_message_handler (DBusConnection *connection,
     {
       return DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
     }
-
-#undef VINO_DBUS_INTERFACE
 }
 
 static void
-vino_dbus_listener_port_changed (VinoServer *server, VinoDBusListener *listener)
+vino_dbus_listener_info_changed (VinoServer *server, VinoDBusListener *listener)
 {
   DBusMessage *message;
   gchar *obj_path;
 
-  dprintf (DBUS, "Emitting ServerPortChanged signal\n");
+  dprintf (DBUS, "Emitting ServerInfoChanged signal\n");
 
   obj_path = g_strdup_printf ("/org/gnome/vino/screens/%d",
                               gdk_screen_get_number (vino_server_get_screen (server)));
 
   message = dbus_message_new_signal (obj_path,
-                                     "org.gnome.VinoScreen",
-                                     "ServerPortChanged");
+                                     VINO_DBUS_INTERFACE,
+                                     "ServerInfoChanged");
   g_free (obj_path);
 
   if (!message)
@@ -369,12 +401,8 @@ vino_dbus_listener_set_server (VinoDBusListener *listener,
   dprintf (DBUS, "Object registered at path '%s'\n", obj_path);
 
   g_signal_connect (server, "notify::alternative-port",
-		    G_CALLBACK (vino_dbus_listener_port_changed),
+		    G_CALLBACK (vino_dbus_listener_info_changed),
 		    listener);
-  g_signal_connect (server, "notify::use-alternative-port",
-		    G_CALLBACK (vino_dbus_listener_port_changed),
-		    listener);
-
   g_free (obj_path);
 }
 
@@ -428,7 +456,6 @@ vino_dbus_unref_connection (void)
 gboolean
 vino_dbus_request_name (void)
 {
-#define VINO_DBUS_BUS_NAME "org.gnome.Vino"
 
   DBusConnection *connection;
   DBusError       error;
@@ -459,6 +486,4 @@ vino_dbus_request_name (void)
 
   dprintf (DBUS, "Successfully acquired D-Bus name '%s'\n", VINO_DBUS_BUS_NAME);
   return TRUE;
-
-#undef VINO_DBUS_BUS_NAME
 }

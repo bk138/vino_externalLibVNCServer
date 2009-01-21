@@ -23,20 +23,14 @@
  */
 
 #include <config.h>
-
-#define _GNU_SOURCE 1
-
 #include <string.h>
-#include <libintl.h>
-#include <unistd.h>
-#include <netdb.h>
-#include <net/if.h>
-#include <ifaddrs.h>
 #include <gtk/gtk.h>
 #include <glade/glade.h>
 #include <gconf/gconf-client.h>
 #include <dbus/dbus-glib.h>
 #include <glib/gi18n.h>
+#include <libsoup/soup.h>
+#include "vino-message-box.h"
 
 #ifdef VINO_ENABLE_KEYRING
 #include <gnome-keyring.h>
@@ -52,16 +46,10 @@
 #define VINO_PREFS_VIEW_ONLY              VINO_PREFS_DIR "/view_only"
 #define VINO_PREFS_AUTHENTICATION_METHODS VINO_PREFS_DIR "/authentication_methods"
 #define VINO_PREFS_VNC_PASSWORD           VINO_PREFS_DIR "/vnc_password"
-#define VINO_PREFS_MAILTO                 VINO_PREFS_DIR "/mailto"
 #define VINO_PREFS_ICON_VISIBILITY        VINO_PREFS_DIR "/icon_visibility"
-#define VINO_PREFS_NETWORK_INTERFACE      VINO_PREFS_DIR "/network_interface"
-#define VINO_PREFS_ENCRYPTION             VINO_PREFS_DIR "/require_encryption"
-#define VINO_PREFS_USE_ALTERNATIVE_PORT   VINO_PREFS_DIR "/use_alternative_port"
-#define VINO_PREFS_ALTERNATIVE_PORT       VINO_PREFS_DIR "/alternative_port"
-#define VINO_PREFS_LOCK_SCREEN            VINO_PREFS_DIR "/lock_screen_on_disconnect"
-#define VINO_PREFS_DISABLE_BACKGROUND     VINO_PREFS_DIR "/disable_background"
+#define VINO_PREFS_USE_UPNP               VINO_PREFS_DIR "/use_upnp"
 
-#define N_LISTENERS                       13
+#define N_LISTENERS                       7
 
 #define VINO_DBUS_BUS_NAME  "org.gnome.Vino"
 #define VINO_DBUS_INTERFACE "org.gnome.VinoScreen"
@@ -69,44 +57,41 @@
 typedef struct {
   GladeXML    *xml;
   GConfClient *client;
-  char        *mailto;
 
   GtkWidget   *dialog;
   GtkWidget   *writability_warning;
-  GtkWidget   *send_email_button;
-  GtkWidget   *url_label;
   GtkWidget   *allowed_toggle;
-  GtkWidget   *prompt_enabled_toggle;
   GtkWidget   *view_only_toggle;
+  GtkWidget   *message;
+  GtkWidget   *prompt_enabled_toggle;
   GtkWidget   *password_toggle;
-  GtkWidget   *password_box;
   GtkWidget   *password_entry;
   GtkWidget   *icon_always_radio;
   GtkWidget   *icon_client_radio;
   GtkWidget   *icon_never_radio;
-  GtkWidget   *network_interface_combox;
-  GtkWidget   *network_interface_label;
-  GtkWidget   *encryption_toggle;
-  GtkWidget   *use_alternative_port_toggle;
-  GtkWidget   *alternative_port_entry;
-  GtkWidget   *lock_screen_toggle;
-  GtkWidget   *disable_background_toggle;
+  GtkWidget   *use_upnp_toggle;
 #ifdef VINO_ENABLE_LIBUNIQUE
   UniqueApp   *app;
 #endif
 
   DBusGConnection *connection;
-  DBusGProxy      *proxy_name, *proxy_port;
+  DBusGProxy      *proxy;
+  DBusGProxyCall  *call_id;
+
+  SoupSession     *session;
+  SoupMessage     *msg;
+  gint            port;
 
   guint        listeners [N_LISTENERS];
   int          n_listeners;
   int          expected_listeners;
 
   guint        use_password : 1;
+  guint        retrieving_info : 1;
 } VinoPreferencesDialog;
 
-static void
-vino_preferences_dialog_update_url_label (VinoPreferencesDialog *dialog);
+static void vino_preferences_dialog_update_message_box (VinoPreferencesDialog *dialog);
+
 
 static char *
 vino_preferences_dialog_get_password_from_keyring (VinoPreferencesDialog *dialog)
@@ -175,399 +160,21 @@ static void
 vino_preferences_dialog_update_for_allowed (VinoPreferencesDialog *dialog,
 					    gboolean               allowed)
 {
-  gtk_widget_set_sensitive (dialog->prompt_enabled_toggle, allowed);
-  gtk_widget_set_sensitive (dialog->view_only_toggle,      allowed);
-  gtk_widget_set_sensitive (dialog->send_email_button,     allowed);
-  gtk_widget_set_sensitive (dialog->password_toggle,       allowed);
-  gtk_widget_set_sensitive (dialog->password_box,          allowed ? dialog->use_password : FALSE);
-  gtk_widget_set_sensitive (dialog->icon_always_radio,     allowed);
-  gtk_widget_set_sensitive (dialog->icon_client_radio,     allowed);
-  gtk_widget_set_sensitive (dialog->icon_never_radio,      allowed);
-  gtk_widget_set_sensitive (dialog->network_interface_combox, allowed);
-  gtk_widget_set_sensitive (dialog->network_interface_label,  allowed);
-  gtk_widget_set_sensitive (dialog->encryption_toggle,     allowed);
-  gtk_widget_set_sensitive (dialog->use_alternative_port_toggle, allowed);
-  gtk_widget_set_sensitive (dialog->alternative_port_entry,      allowed &&
-			    gconf_client_get_bool (dialog->client, VINO_PREFS_USE_ALTERNATIVE_PORT, NULL));
-  gtk_widget_set_sensitive (dialog->lock_screen_toggle,          allowed);
-  gtk_widget_set_sensitive (dialog->disable_background_toggle,   allowed);
-}
-
-static GSList *
-vino_preferences_load_network_interfaces (void)
-{
-  struct ifaddrs *myaddrs, *ifa;
-  GSList *list = NULL;
-
-  /* Translators: 'All' means 'All network interfaces' */
-  list = g_slist_append (list, g_strdup (_("All")));
-
-  getifaddrs (&myaddrs);
-  for (ifa = myaddrs; ifa != NULL; ifa = ifa->ifa_next)
-    {
-      if (ifa->ifa_addr == NULL || ifa->ifa_name == NULL || (ifa->ifa_flags & IFF_UP) == 0) 
-        continue;
-
-      if (ifa->ifa_addr->sa_family == AF_INET || ifa->ifa_addr->sa_family == AF_INET6)
-        {
-          if (g_slist_find_custom (list, ifa->ifa_name, (GCompareFunc)g_strcasecmp) == NULL)
-            {
-              list  = g_slist_append (list, g_strdup (ifa->ifa_name));
-            }
-        }
-    }
-
-  freeifaddrs (myaddrs);
-  return list;
-}
-
-static void
-vino_preferences_dialog_network_interface_update_combox (VinoPreferencesDialog *dialog,
-                                                         const gchar *selected_iface,
-                                                         gboolean first_time)
-{
-  GSList *list;
-  gint    i, sel;
-  gchar  *iface_check;
-
-  list = vino_preferences_load_network_interfaces ();
-
-  if (selected_iface)
-    iface_check = g_strdup (selected_iface);
-  else
-    iface_check = gconf_client_get_string (dialog->client, VINO_PREFS_NETWORK_INTERFACE, NULL);
-
-  sel = 0;
-  for(i = 0; list; list = list->next, i++)
-    {
-      gchar *iface = list->data;
-
-      if (!iface)
-        continue;
-
-      if (first_time)
-	gtk_combo_box_append_text (GTK_COMBO_BOX (dialog->network_interface_combox), iface);
-            
-      if (iface_check && !g_strcasecmp (iface, iface_check))
-	  sel = i;
-
-      g_free (iface);
-    }
-
-  gtk_combo_box_set_active (GTK_COMBO_BOX (dialog->network_interface_combox), sel);
-  g_slist_free (list);
-  g_free (iface_check);
-}
-
-static void
-vino_preferences_dialog_network_interface_notify (GConfClient           *client,
-                                                  guint                  cnx_id,
-                                                  GConfEntry            *entry,
-                                                  VinoPreferencesDialog *dialog)
-{
-  gchar       *old_iface;
-  const gchar *new_iface;
-
-  if (!entry->value || entry->value->type != GCONF_VALUE_STRING)
-    return;
-
-  new_iface = gconf_value_get_string (entry->value);
-  old_iface = gtk_combo_box_get_active_text (GTK_COMBO_BOX (dialog->network_interface_combox));
-
-  if (old_iface && new_iface && g_strcasecmp (old_iface, new_iface) != 0)
-    vino_preferences_dialog_network_interface_update_combox (dialog, new_iface, FALSE);
-
-  g_free (old_iface);
-}
-
-static void
-vino_preferences_dialog_network_interface_changed (gpointer              unused,
-                                                   VinoPreferencesDialog *dialog)
-{
-  gchar *iface;
-
-  iface = gtk_combo_box_get_active_text (GTK_COMBO_BOX (dialog->network_interface_combox));
-
-  if (g_strcasecmp (iface, _("All")))
-    gconf_client_set_string (dialog->client, VINO_PREFS_NETWORK_INTERFACE, iface, NULL);
-  else
-    gconf_client_set_string (dialog->client, VINO_PREFS_NETWORK_INTERFACE, "", NULL);
-
-  g_free (iface);
-}
-
-static void
-vino_preferences_dialog_setup_network_interface_combox (VinoPreferencesDialog *dialog)
-{
-  dialog->network_interface_combox = glade_xml_get_widget (dialog->xml, "network_interface_combox");
-  dialog->network_interface_label = glade_xml_get_widget (dialog->xml, "network_interface_label");
-  g_assert (dialog->network_interface_combox != NULL);
-  vino_preferences_dialog_network_interface_update_combox (dialog, NULL, TRUE);
-
-  g_signal_connect (dialog->network_interface_combox, "changed",
-                    G_CALLBACK (vino_preferences_dialog_network_interface_changed), dialog);
-
-  if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_NETWORK_INTERFACE, NULL))
-    {
-      gtk_widget_set_sensitive (dialog->network_interface_combox, FALSE);
-      gtk_widget_set_sensitive (dialog->network_interface_label, FALSE);
-      gtk_widget_show (dialog->writability_warning);
-    }
-
-  dialog->listeners [dialog->n_listeners] =
-    gconf_client_notify_add (dialog->client, 
-                VINO_PREFS_NETWORK_INTERFACE,
-                (GConfClientNotifyFunc)vino_preferences_dialog_network_interface_notify,
-                dialog, NULL, NULL);
-  dialog->n_listeners++;
-}
-
-static void
-vino_preferences_dialog_encryption_toggled (GtkToggleButton       *toggle,
-					    VinoPreferencesDialog *dialog)
-{
-  gboolean encryption;
-
-  encryption = gtk_toggle_button_get_active (toggle);
-
-  gconf_client_set_bool (dialog->client, VINO_PREFS_ENCRYPTION, encryption, NULL);
-}
-
-static void
-vino_preferences_dialog_encryption_notify (GConfClient           *client,
-					   guint                  cnx_id,
-					   GConfEntry            *entry,
-					   VinoPreferencesDialog *dialog)
-{
-  gboolean encryption;
-
-  if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
-    return;
-
-  encryption = gconf_value_get_bool (entry->value) != FALSE;
-
-  if (encryption != gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->encryption_toggle)))
-    {
-      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->encryption_toggle), encryption);
-    }
+  gtk_widget_set_sensitive (dialog->view_only_toggle,         allowed);
+  gtk_widget_set_sensitive (dialog->prompt_enabled_toggle,    allowed);
+  gtk_widget_set_sensitive (dialog->password_toggle,          allowed);
+  gtk_widget_set_sensitive (dialog->password_entry,           allowed ? dialog->use_password : FALSE);
+  gtk_widget_set_sensitive (dialog->use_upnp_toggle,          allowed);
+  gtk_widget_set_sensitive (dialog->icon_always_radio,        allowed);
+  gtk_widget_set_sensitive (dialog->icon_client_radio,        allowed);
+  gtk_widget_set_sensitive (dialog->icon_never_radio,         allowed);
 }
 
 static gboolean
-vino_preferences_dialog_setup_encryption_toggle (VinoPreferencesDialog *dialog)
+delay_update_message (VinoPreferencesDialog *dialog)
 {
-  gboolean encryption;
-
-  dialog->encryption_toggle = glade_xml_get_widget (dialog->xml, "encryption_toggle");
-  g_assert (dialog->encryption_toggle != NULL);
-
-  encryption = gconf_client_get_bool (dialog->client, VINO_PREFS_ENCRYPTION, NULL);
-
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->encryption_toggle), encryption);
-
-  g_signal_connect (dialog->encryption_toggle, "toggled",
-		    G_CALLBACK (vino_preferences_dialog_encryption_toggled), dialog);
-
-  if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_ENCRYPTION, NULL))
-    {
-      gtk_widget_set_sensitive (dialog->encryption_toggle, FALSE);
-      gtk_widget_show (dialog->writability_warning);
-    }
-
-  dialog->listeners [dialog->n_listeners] = 
-    gconf_client_notify_add (dialog->client,
-			     VINO_PREFS_ENCRYPTION,
-			     (GConfClientNotifyFunc) vino_preferences_dialog_encryption_notify,
-			     dialog, NULL, NULL);
-  dialog->n_listeners++;
-
-  return encryption;
-}
-
-static void
-vino_preferences_dialog_use_alternative_port_toggled (GtkToggleButton       *toggle,
-						      VinoPreferencesDialog *dialog)
-{
-  gboolean use_alternative_port;
-
-  use_alternative_port = gtk_toggle_button_get_active (toggle);
-  gtk_widget_set_sensitive (dialog->alternative_port_entry, use_alternative_port);
-
-  gconf_client_set_bool (dialog->client, VINO_PREFS_USE_ALTERNATIVE_PORT, use_alternative_port, NULL);
-}
-
-static void
-vino_preferences_dialog_use_alternative_port_notify (GConfClient           *client,
-						     guint                  cnx_id,
-						     GConfEntry            *entry,
-						     VinoPreferencesDialog *dialog)
-{
-  gboolean use_alternative_port;
-
-  if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
-    return;
-
-  use_alternative_port = gconf_value_get_bool (entry->value) != FALSE;
-
-  if (use_alternative_port != gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->use_alternative_port_toggle)))
-    {
-      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->use_alternative_port_toggle), use_alternative_port);
-    }
-}
-
-static gboolean
-vino_preferences_dialog_setup_use_alternative_port_toggle (VinoPreferencesDialog *dialog)
-{
-  gboolean use_alternative_port;
-
-  dialog->use_alternative_port_toggle = glade_xml_get_widget (dialog->xml, "use_alternative_port_toggle");
-  g_assert (dialog->use_alternative_port_toggle != NULL);
-
-  use_alternative_port = gconf_client_get_bool (dialog->client, VINO_PREFS_USE_ALTERNATIVE_PORT, NULL);
-
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->use_alternative_port_toggle), use_alternative_port);
-  gtk_widget_set_sensitive (dialog->alternative_port_entry, use_alternative_port);
-
-  g_signal_connect (dialog->use_alternative_port_toggle, "toggled",
-		    G_CALLBACK (vino_preferences_dialog_use_alternative_port_toggled), dialog);
-
-  if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_USE_ALTERNATIVE_PORT, NULL))
-    {
-      gtk_widget_set_sensitive (dialog->use_alternative_port_toggle, FALSE);
-      gtk_widget_set_sensitive (dialog->alternative_port_entry, FALSE);
-      gtk_widget_show (dialog->writability_warning);
-    }
-
-  dialog->listeners [dialog->n_listeners] = 
-    gconf_client_notify_add (dialog->client,
-			     VINO_PREFS_USE_ALTERNATIVE_PORT,
-			     (GConfClientNotifyFunc) vino_preferences_dialog_use_alternative_port_notify,
-			     dialog, NULL, NULL);
-  dialog->n_listeners++;
-
-  return use_alternative_port;
-}
-
-static void
-vino_preferences_dialog_alternative_port_changed (GtkSpinButton         *button,
-						  VinoPreferencesDialog *dialog)
-{
-  gint alternative_port;
-
-  alternative_port = gtk_spin_button_get_value_as_int (button);
-
-  gconf_client_set_int (dialog->client, VINO_PREFS_ALTERNATIVE_PORT, alternative_port, NULL);
-}
-
-static void
-vino_preferences_dialog_alternative_port_notify (GConfClient           *client,
-						 guint                  cnx_id,
-						 GConfEntry            *entry,
-						 VinoPreferencesDialog *dialog)
-{
-  gint alternative_port;
-
-  if (!entry->value || entry->value->type != GCONF_VALUE_INT)
-    return;
-
-  alternative_port = gconf_value_get_int (entry->value);
-
-  if (alternative_port != gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (dialog->alternative_port_entry)))
-    {
-      gtk_spin_button_set_value (GTK_SPIN_BUTTON (dialog->alternative_port_entry), alternative_port);
-    }
-}
-
-static gint
-vino_preferences_dialog_setup_alternative_port_entry (VinoPreferencesDialog *dialog)
-{
-  gint alternative_port;
-
-  dialog->alternative_port_entry = glade_xml_get_widget (dialog->xml, "alternative_port_entry");
-  g_assert (dialog->alternative_port_entry != NULL);
-
-  alternative_port = gconf_client_get_int (dialog->client, VINO_PREFS_ALTERNATIVE_PORT, NULL);
-
-  gtk_spin_button_set_value (GTK_SPIN_BUTTON (dialog->alternative_port_entry), alternative_port);
-
-  g_signal_connect (dialog->alternative_port_entry, "value-changed",
-		    G_CALLBACK (vino_preferences_dialog_alternative_port_changed), dialog);
-
-  if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_ALTERNATIVE_PORT, NULL))
-    {
-      gtk_widget_set_sensitive (dialog->use_alternative_port_toggle, FALSE);
-      gtk_widget_set_sensitive (dialog->alternative_port_entry, FALSE);
-      gtk_widget_show (dialog->writability_warning);
-    }
-
-  dialog->listeners [dialog->n_listeners] = 
-    gconf_client_notify_add (dialog->client,
-			     VINO_PREFS_ALTERNATIVE_PORT,
-			     (GConfClientNotifyFunc) vino_preferences_dialog_alternative_port_notify,
-			     dialog, NULL, NULL);
-  dialog->n_listeners++;
-
-  return alternative_port;
-}
-
-static void
-vino_preferences_dialog_lock_screen_toggled (GtkToggleButton       *toggle,
-					     VinoPreferencesDialog *dialog)
-{
-  gboolean lock_screen;
-
-  lock_screen = gtk_toggle_button_get_active (toggle);
-
-  gconf_client_set_bool (dialog->client, VINO_PREFS_LOCK_SCREEN, lock_screen, NULL);
-}
-
-static void
-vino_preferences_dialog_lock_screen_notify (GConfClient           *client,
-					    guint                  cnx_id,
-					    GConfEntry            *entry,
-					    VinoPreferencesDialog *dialog)
-{
-  gboolean lock_screen;
-
-  if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
-    return;
-
-  lock_screen = gconf_value_get_bool (entry->value) != FALSE;
-
-  if (lock_screen != gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->lock_screen_toggle)))
-    {
-      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->lock_screen_toggle), lock_screen);
-    }
-}
-
-static gboolean
-vino_preferences_dialog_setup_lock_screen_toggle (VinoPreferencesDialog *dialog)
-{
-  gboolean lock_screen;
-
-  dialog->lock_screen_toggle = glade_xml_get_widget (dialog->xml, "lock_screen_toggle");
-  g_assert (dialog->lock_screen_toggle != NULL);
-
-  lock_screen = gconf_client_get_bool (dialog->client, VINO_PREFS_LOCK_SCREEN, NULL);
-
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->lock_screen_toggle), lock_screen);
-
-  g_signal_connect (dialog->lock_screen_toggle, "toggled",
-		    G_CALLBACK (vino_preferences_dialog_lock_screen_toggled), dialog);
-
-  if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_LOCK_SCREEN, NULL))
-    {
-      gtk_widget_set_sensitive (dialog->lock_screen_toggle, FALSE);
-      gtk_widget_show (dialog->writability_warning);
-    }
-
-  dialog->listeners [dialog->n_listeners] = 
-    gconf_client_notify_add (dialog->client,
-			     VINO_PREFS_LOCK_SCREEN,
-			     (GConfClientNotifyFunc) vino_preferences_dialog_lock_screen_notify,
-			     dialog, NULL, NULL);
-  dialog->n_listeners++;
-
-  return lock_screen;
+  vino_preferences_dialog_update_message_box (dialog);
+  return FALSE;
 }
 
 static void
@@ -581,6 +188,24 @@ vino_preferences_dialog_allowed_toggled (GtkToggleButton       *toggle,
   gconf_client_set_bool (dialog->client, VINO_PREFS_ENABLED, allowed, NULL);
 
   vino_preferences_dialog_update_for_allowed (dialog, allowed);
+  
+  /* ugly: here I delay the GetInfo for 3 seconds, time necessary to server starts */
+  if (allowed)
+    {
+      vino_message_box_show_image (VINO_MESSAGE_BOX (dialog->message));
+      vino_message_box_set_label (VINO_MESSAGE_BOX (dialog->message),
+                                  _("Checking the conectivity of this machine..."));
+      g_timeout_add_seconds (3, (GSourceFunc) delay_update_message, dialog);
+    }
+  else
+    {
+      if (dialog->retrieving_info)
+	{
+	  dialog->retrieving_info = FALSE;
+	  soup_session_cancel_message (dialog->session, dialog->msg, 408);
+	}
+      vino_preferences_dialog_update_message_box (dialog);
+    }
 }
 
 static void
@@ -853,7 +478,7 @@ vino_preferences_dialog_use_password_toggled (GtkToggleButton       *toggle,
 
   g_slist_free (auth_methods);
 
-  gtk_widget_set_sensitive (dialog->password_box, dialog->use_password);
+  gtk_widget_set_sensitive (dialog->password_entry, dialog->use_password);
 }
 
 static void
@@ -1025,9 +650,6 @@ vino_preferences_dialog_setup_password_entry (VinoPreferencesDialog *dialog)
   dialog->password_entry = glade_xml_get_widget (dialog->xml, "password_entry");
   g_assert (dialog->password_entry != NULL);
   
-  dialog->password_box = glade_xml_get_widget (dialog->xml, "password_box");
-  g_assert (dialog->password_box != NULL);
-
   password_in_keyring = TRUE;
 
   if (!(password = vino_preferences_dialog_get_password_from_keyring (dialog)))
@@ -1062,13 +684,13 @@ vino_preferences_dialog_setup_password_entry (VinoPreferencesDialog *dialog)
   g_signal_connect (dialog->password_entry, "changed",
 		    G_CALLBACK (vino_preferences_dialog_password_changed), dialog);
 
-  gtk_widget_set_sensitive (dialog->password_box, dialog->use_password);
+  gtk_widget_set_sensitive (dialog->password_entry, dialog->use_password);
 
   if (!password_in_keyring)
     {
       if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_VNC_PASSWORD, NULL))
         {
-          gtk_widget_set_sensitive (dialog->password_box, FALSE);
+          gtk_widget_set_sensitive (dialog->password_entry, FALSE);
           gtk_widget_show (dialog->writability_warning);
         }
 
@@ -1086,339 +708,62 @@ vino_preferences_dialog_setup_password_entry (VinoPreferencesDialog *dialog)
 }
 
 static void
-vino_preferences_dialog_disable_background_toggled (GtkToggleButton       *toggle,
-                                                    VinoPreferencesDialog *dialog)
+vino_preferences_dialog_use_upnp_toggled (GtkToggleButton       *toggle,
+					  VinoPreferencesDialog *dialog)
 {
-  gboolean disable_background;
+  gconf_client_set_bool (dialog->client,
+			 VINO_PREFS_USE_UPNP,
+			 gtk_toggle_button_get_active (toggle),
+			 NULL);
 
-  disable_background = gtk_toggle_button_get_active (toggle);
-
-  gconf_client_set_bool (dialog->client, VINO_PREFS_DISABLE_BACKGROUND, disable_background, NULL);
+  g_timeout_add_seconds (1, (GSourceFunc) delay_update_message, dialog);
 }
 
 static void
-vino_preferences_dialog_disable_background_notify (GConfClient           *client,
-                                                   guint                  cnx_id,
-                                                   GConfEntry            *entry,
-                                                   VinoPreferencesDialog *dialog)
+vino_preferences_dialog_use_upnp_notify (GConfClient           *client,
+					 guint                  cnx_id,
+					 GConfEntry            *entry,
+					 VinoPreferencesDialog *dialog)
 {
-  gboolean disable_background;
+  gboolean use_upnp;
 
   if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
     return;
 
-  disable_background = gconf_value_get_bool (entry->value) != FALSE;
+  use_upnp = gconf_value_get_bool (entry->value) != FALSE;
 
-  if (disable_background != gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->disable_background_toggle)))
+  if (use_upnp != gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->use_upnp_toggle)))
     {
-      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->disable_background_toggle), disable_background);
+      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->use_upnp_toggle), use_upnp);
     }
 }
 
-static gboolean
-vino_preferences_dialog_setup_disable_background_toggle (VinoPreferencesDialog *dialog)
+static void
+vino_preferences_dialog_setup_use_upnp_toggle (VinoPreferencesDialog *dialog)
 {
-  gboolean disable_background;
+  gboolean use_upnp;
 
-  dialog->disable_background_toggle = glade_xml_get_widget (dialog->xml, "disable_background_toggle");
-  g_assert (dialog->disable_background_toggle != NULL);
+  dialog->use_upnp_toggle = glade_xml_get_widget (dialog->xml, "use_upnp_toggle");
+  g_assert (dialog->use_upnp_toggle != NULL);
 
-  disable_background = gconf_client_get_bool (dialog->client, VINO_PREFS_DISABLE_BACKGROUND, NULL);
+  use_upnp = gconf_client_get_bool (dialog->client, VINO_PREFS_USE_UPNP, NULL);
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->use_upnp_toggle), use_upnp);
 
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->disable_background_toggle), disable_background);
+  g_signal_connect (dialog->use_upnp_toggle, "toggled",
+		    G_CALLBACK (vino_preferences_dialog_use_upnp_toggled), dialog);
 
-  g_signal_connect (dialog->disable_background_toggle, "toggled",
-		    G_CALLBACK (vino_preferences_dialog_disable_background_toggled), dialog);
-
-  if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_DISABLE_BACKGROUND, NULL))
+  if (!gconf_client_key_is_writable (dialog->client, VINO_PREFS_USE_UPNP, NULL))
     {
-      gtk_widget_set_sensitive (dialog->disable_background_toggle, FALSE);
+      gtk_widget_set_sensitive (dialog->use_upnp_toggle, FALSE);
       gtk_widget_show (dialog->writability_warning);
     }
 
   dialog->listeners [dialog->n_listeners] = 
     gconf_client_notify_add (dialog->client,
-			     VINO_PREFS_DISABLE_BACKGROUND,
-			     (GConfClientNotifyFunc) vino_preferences_dialog_disable_background_notify,
+			     VINO_PREFS_USE_UPNP,
+			     (GConfClientNotifyFunc) vino_preferences_dialog_use_upnp_notify,
 			     dialog, NULL, NULL);
   dialog->n_listeners++;
-
-  return disable_background;
-}
-
-static void
-vino_preferences_server_updated (DBusGProxy *proxy,
-                                 const char *name,
-                                 const char *prev_owner,
-                                 const char *new_owner,
-                                 gpointer user_data)
-{
-  if ( (new_owner) && (!strcmp (name, VINO_DBUS_BUS_NAME)) )
-    vino_preferences_dialog_update_url_label ( (VinoPreferencesDialog *) user_data);
-}
-
-static void
-vino_preferences_server_port_changed (DBusGProxy *proxy, gpointer user_data)
-{
-  vino_preferences_dialog_update_url_label ( (VinoPreferencesDialog *) user_data);
-}
-
-static void
-vino_preferences_start_listening (VinoPreferencesDialog *dialog)
-{
-  gchar       *obj_path;
-  GdkScreen   *screen;
-
-  dialog->proxy_name = dbus_g_proxy_new_for_name (dialog->connection,
-						  DBUS_SERVICE_DBUS,
-						  DBUS_PATH_DBUS,
-						  DBUS_INTERFACE_DBUS);
-  dbus_g_proxy_add_signal (dialog->proxy_name, "NameOwnerChanged",
-                           G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_INVALID);
-  dbus_g_proxy_connect_signal (dialog->proxy_name, "NameOwnerChanged",
-                          G_CALLBACK (vino_preferences_server_updated), dialog, NULL);
-
-  screen = gtk_window_get_screen (GTK_WINDOW (dialog->dialog));
-  obj_path = g_strdup_printf ("/org/gnome/vino/screens/%d",
-                              gdk_screen_get_number (screen));
-  dialog->proxy_port = dbus_g_proxy_new_for_name (dialog->connection,
-						  VINO_DBUS_BUS_NAME,
-						  obj_path,
-						  VINO_DBUS_INTERFACE);
-  g_free (obj_path);
-  dbus_g_proxy_add_signal (dialog->proxy_port, "ServerPortChanged", G_TYPE_INVALID);
-  dbus_g_proxy_connect_signal (dialog->proxy_port, "ServerPortChanged",
-                          G_CALLBACK (vino_preferences_server_port_changed), dialog, NULL);
-}
-
-static int
-vino_preferences_get_server_port (VinoPreferencesDialog *dialog)
-{
-  DBusGProxy  *proxy;
-  int          port;
-  GdkScreen   *screen;
-  char        *obj_path;
-#ifdef VINO_ENABLE_HTTP_SERVER
-  const char  *method = "GetHttpServerPort";
-#else
-  const char  *method = "GetServerPort";
-#endif
-  
-  screen = gtk_window_get_screen (GTK_WINDOW (dialog->dialog));
-  obj_path = g_strdup_printf ("/org/gnome/vino/screens/%d",
-                              gdk_screen_get_number (screen));
-
-  proxy = dbus_g_proxy_new_for_name (dialog->connection,
-                                     VINO_DBUS_BUS_NAME,
-                                     obj_path,
-                                     VINO_DBUS_INTERFACE);
-  g_free (obj_path);
-
-  if (!dbus_g_proxy_call (proxy, method, NULL,
-                          G_TYPE_INVALID,
-                          G_TYPE_INT, &port,
-                          G_TYPE_INVALID))
-    {
-      port = 0;
-    }
-
-  g_object_unref (proxy);
-  return port;
-}
-
-static char *
-vino_preferences_get_local_hostname (void)
-{
-  static char      local_host [NI_MAXHOST] = { 0, };
-  struct addrinfo  hints;
-  struct addrinfo *results;
-  char            *retval;
-
-  if (gethostname (local_host, NI_MAXHOST) == -1)
-    return NULL;
-
-  memset (&hints, 0, sizeof (hints));
-  hints.ai_flags = AI_CANONNAME;
-
-  results = NULL;
-  if (getaddrinfo (local_host,  NULL, &hints, &results) != 0)
-    return NULL;
-
-  retval = g_strdup (results ? results->ai_canonname : local_host);
-
-  if (results)
-    freeaddrinfo (results);
-
-  return retval;
-}
-
-static char *
-vino_preferences_dialog_get_server_command (VinoPreferencesDialog *dialog)
-{
-  char *local_host;
-  char *server_url;
-  int   server_port;
-
-  server_port = vino_preferences_get_server_port (dialog);
-
-  gtk_widget_set_sensitive (dialog->send_email_button, server_port);
-
-  if (server_port == 0)
-    return g_strdup (_("The service is not running"));
-
-  local_host = vino_preferences_get_local_hostname ();
-  if (!local_host)
-    local_host = g_strdup_printf ("localhost");
-
-#ifdef VINO_ENABLE_HTTP_SERVER
-  server_url = g_strdup_printf ("http://%s:%d", local_host, server_port);
-#else
-  server_url = g_strdup_printf ("vinagre %s::%d", local_host, server_port);
-#endif
-
-  g_free (local_host);
-
-  return server_url;
-}
-
-static char *
-vino_preferences_dialog_construct_mailto (VinoPreferencesDialog *dialog)
-{
-  GString *mailto;
-  char *command;
-
-  command = vino_preferences_dialog_get_server_command (dialog);
-
-  mailto = g_string_new ("mailto:");
-  if (dialog->mailto)
-    mailto = g_string_append (mailto, dialog->mailto);
-
-  mailto = g_string_append_c (mailto, '?');
-  g_string_append_printf (mailto, "Body=%s", command);
-
-  g_free (command);
-  return g_string_free (mailto, FALSE);
-}
-
-static void
-vino_preferences_dialog_update_url_label (VinoPreferencesDialog *dialog)
-{
-  char *command, *label;
-
-  command = vino_preferences_dialog_get_server_command (dialog);
-  label = g_strdup_printf ("<i>%s</i>", command);
-  
-  gtk_label_set_label (GTK_LABEL (dialog->url_label), label);
-  
-  g_free (command);
-  g_free (label);
-}
-
-static void
-vino_preferences_dialog_mailto_notify (GConfClient           *client,
-				       guint                  cnx_id,
-				       GConfEntry            *entry,
-				       VinoPreferencesDialog *dialog)
-{
-  const char *mailto;
-
-  if (!entry->value || entry->value->type != GCONF_VALUE_STRING)
-    return;
-
-  mailto = gconf_value_get_string (entry->value);
-
-  if (!mailto || mailto [0] == '\0' || mailto [0] == ' ')
-    {
-      g_free (dialog->mailto);
-      dialog->mailto = NULL;
-      vino_preferences_dialog_update_url_label (dialog);
-    }
-  else if (!dialog->mailto || (dialog->mailto && strcmp (dialog->mailto, mailto)))
-    {
-      g_free (dialog->mailto);
-      dialog->mailto = g_strdup (mailto);
-    }
-}
-
-static void
-vino_preferences_email_button_clicked (GtkButton *button,
-				       VinoPreferencesDialog *dialog)
-{
-  GError *error;
-  GdkScreen *screen;
-  char *mailto, *command;
-
-  error   = NULL;
-  screen  = gtk_widget_get_screen (GTK_WIDGET (button));
-  mailto  = vino_preferences_dialog_construct_mailto (dialog);
-  command = vino_preferences_dialog_get_server_command (dialog);
-
-  if (!gtk_show_uri (screen, mailto, GDK_CURRENT_TIME, &error))
-    {
-      GtkWidget *message_dialog;
-
-      message_dialog = gtk_message_dialog_new (GTK_WINDOW (dialog->dialog),
-					       GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-					       GTK_MESSAGE_ERROR,
-					       GTK_BUTTONS_CLOSE,
-					       _("There was an error showing the URL \"%s\""),
-					       command);
-      gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (message_dialog),
-						"%s",
-						error->message);
-
-      gtk_window_set_resizable (GTK_WINDOW (message_dialog), FALSE);
-
-      g_signal_connect (message_dialog, "response",
-			G_CALLBACK (gtk_widget_destroy),
-			NULL);
-
-      gtk_widget_show (message_dialog);
-      g_error_free (error);
-    }
-
-  g_free (mailto);
-  g_free (command);
-}
-
-static void
-vino_preferences_dialog_setup_url_labels (VinoPreferencesDialog *dialog)
-{
-  char *command, *label;
-  GtkWidget *image;
-
-  dialog->url_label = glade_xml_get_widget (dialog->xml, "url_label");
-  dialog->send_email_button = glade_xml_get_widget (dialog->xml, "send_email_button");
-  g_assert (dialog->url_label);
-
-  dialog->listeners [dialog->n_listeners] = 
-    gconf_client_notify_add (dialog->client,
-			     VINO_PREFS_MAILTO,
-			     (GConfClientNotifyFunc) vino_preferences_dialog_mailto_notify,
-			     dialog, NULL, NULL);
-  dialog->n_listeners++;
-  
-  dialog->mailto = gconf_client_get_string (dialog->client, VINO_PREFS_MAILTO, NULL);
-  if (!dialog->mailto || dialog->mailto [0] == '\0'|| dialog->mailto [0] == ' ')
-    {
-      g_free (dialog->mailto);
-      dialog->mailto = NULL;
-    }
-
-  command = vino_preferences_dialog_get_server_command (dialog);
-  label = g_strdup_printf ("<i>%s</i>", command);
-  
-  gtk_label_set_label (GTK_LABEL (dialog->url_label), label);
-
-  image = gtk_image_new_from_icon_name ("gnome-stock-mail-fwd", GTK_ICON_SIZE_BUTTON);
-  gtk_button_set_image (GTK_BUTTON (dialog->send_email_button), image);
-  g_signal_connect (dialog->send_email_button,
-		    "clicked",
-		    G_CALLBACK (vino_preferences_email_button_clicked),
-		    dialog);
-
-  g_free (command);
-  g_free (label);
 }
 
 static void
@@ -1431,6 +776,8 @@ vino_preferences_dialog_response (GtkWidget             *widget,
 
   if (response != GTK_RESPONSE_HELP)
     {
+      if (dialog->session)
+        soup_session_abort (dialog->session);
       gtk_widget_destroy (widget);
       return;
     }
@@ -1470,6 +817,202 @@ vino_preferences_dialog_destroyed (GtkWidget             *widget,
   gtk_main_quit ();
 }
 
+static void
+error_message (VinoPreferencesDialog *dialog)
+{
+  gchar *msg1, *msg2, *host, *url, *message;
+
+  if (!dbus_g_proxy_call (dialog->proxy,
+                          "GetInternalData",
+                          NULL,
+                          G_TYPE_INVALID,
+                          G_TYPE_STRING, &host,
+                          G_TYPE_INT, &dialog->port,
+                          G_TYPE_INVALID))
+    {
+      dialog->port = 5900;
+      host = g_strdup ("localhost");
+    }
+
+  url = g_strdup_printf ("<a href=\"vnc://%s::%d\">%s</a>", host, dialog->port, host);
+  msg1 = g_strdup (_("Your desktop is only reachable over the local network."));
+  msg2 = g_strdup_printf (_("Others can access your computer using the address %s."), url);
+  message = g_strjoin (" ", msg1, msg2, NULL);
+  vino_message_box_hide_image (VINO_MESSAGE_BOX (dialog->message));
+  vino_message_box_set_label (VINO_MESSAGE_BOX (dialog->message), message);
+  g_free (msg1);
+  g_free (msg2);
+  g_free (message);
+  g_free (url);
+  g_free (host);
+}
+
+static void
+got_status (SoupSession *session, SoupMessage *msg, VinoPreferencesDialog *dialog)
+{
+  gboolean       status;
+  GError         *error;
+  GHashTable     *hash;
+  GHashTableIter iter;
+  gpointer       key, value;
+  gchar          *ip, *message, *url;
+
+  error = NULL;
+  ip = NULL;
+  status = FALSE;
+
+  if (soup_xmlrpc_extract_method_response (msg->response_body->data,
+					   msg->response_body->length,
+					   &error,
+					   G_TYPE_HASH_TABLE, &hash,
+					   G_TYPE_INVALID))
+    {
+      g_hash_table_iter_init (&iter, hash);
+      while (g_hash_table_iter_next (&iter, &key, &value))
+	{
+	  if (!strcmp (key, "status"))
+	    {
+	      status = g_value_get_boolean (value);
+	      continue;
+	    }
+	  if (!strcmp (key, "ip"))
+	    {
+	      ip = g_strdup (g_value_get_string (value));
+	      continue;
+	    }
+	}
+      g_hash_table_destroy (hash);
+
+      if (status)
+	{
+	  url = g_strdup_printf ("<a href=\"vnc://%s::%d\">%s</a>", ip, dialog->port, ip);
+	  message = g_strdup_printf (_("Others can access your computer using the address %s."), url);
+	  vino_message_box_hide_image (VINO_MESSAGE_BOX (dialog->message));
+	  vino_message_box_set_label (VINO_MESSAGE_BOX (dialog->message), message);
+	  g_free (message);
+	  g_free (url);
+	}
+      else
+	error_message (dialog);
+
+      g_free (ip);
+    }
+  else
+    {
+      if (error)
+	{
+	  g_warning ("%s", error->message);
+	  g_error_free (error);
+	}
+      error_message (dialog);
+    }
+
+  dialog->retrieving_info = FALSE;
+}
+
+static gboolean
+request_timeout_cb (VinoPreferencesDialog *dialog)
+{
+  if (!dialog->retrieving_info)
+    return FALSE;
+
+  soup_session_cancel_message (dialog->session, dialog->msg, 408);
+  return FALSE;
+}
+
+#define TIMEOUT 6
+static void
+vino_preferences_dialog_update_message_box (VinoPreferencesDialog *dialog)
+{
+  gboolean allowed;
+
+  if (dialog->retrieving_info)
+    return;
+  dialog->retrieving_info = TRUE;
+
+  allowed = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->allowed_toggle));
+  if (!allowed)
+    {
+      vino_message_box_hide_image (VINO_MESSAGE_BOX (dialog->message));
+      vino_message_box_set_label (VINO_MESSAGE_BOX (dialog->message),
+				  _("Nobody can access your desktop."));
+      dialog->retrieving_info = FALSE;
+      return;
+    }
+
+  vino_message_box_show_image (VINO_MESSAGE_BOX (dialog->message));
+  vino_message_box_set_label (VINO_MESSAGE_BOX (dialog->message),
+			      _("Checking the conectivity of this machine..."));
+
+  dbus_g_proxy_call (dialog->proxy,
+                     "GetExternalPort",
+                     NULL,
+                     G_TYPE_INVALID,
+                     G_TYPE_INT, &dialog->port,
+                     G_TYPE_INVALID);
+
+  if (!dialog->session)
+    dialog->session = soup_session_async_new ();
+
+  dialog->msg = soup_xmlrpc_request_new ("http://blog.jorgepereira.com.br/jorge/org.gnome.vino.Service.php",
+					 "vino.check",
+					 G_TYPE_INT, dialog->port,
+					 G_TYPE_INT, TIMEOUT,
+					 G_TYPE_INVALID);
+  soup_session_queue_message (dialog->session,
+			      dialog->msg,
+			      (SoupSessionCallback)got_status,
+			      dialog);
+
+  g_timeout_add_seconds (TIMEOUT+1,
+			 (GSourceFunc) request_timeout_cb,
+			 dialog);
+}
+
+static void
+vino_preferences_dialog_setup_message_box (VinoPreferencesDialog *dialog)
+{
+  GtkWidget *message_box;
+
+  message_box = glade_xml_get_widget (dialog->xml, "message_box");
+  g_assert (message_box != NULL);
+
+  dialog->message = vino_message_box_new ();
+  gtk_box_pack_end (GTK_BOX (message_box), dialog->message, TRUE, TRUE, 0);
+  gtk_widget_show (dialog->message);
+
+  vino_preferences_dialog_update_message_box (dialog);
+}
+
+static void
+handle_server_info_message (DBusGProxy *proxy, VinoPreferencesDialog *dialog)
+{
+  vino_preferences_dialog_update_message_box (dialog);
+}
+
+static void
+vino_preferences_start_listening (VinoPreferencesDialog *dialog)
+{
+  gchar       *obj_path;
+  GdkScreen   *screen;
+
+  screen = gtk_window_get_screen (GTK_WINDOW (dialog->dialog));
+  obj_path = g_strdup_printf ("/org/gnome/vino/screens/%d",
+                              gdk_screen_get_number (screen));
+  dialog->proxy = dbus_g_proxy_new_for_name (dialog->connection,
+					     VINO_DBUS_BUS_NAME,
+					     obj_path,
+					     VINO_DBUS_INTERFACE);
+
+  g_free (obj_path);
+  dbus_g_proxy_add_signal (dialog->proxy, "ServerInfoChanged", G_TYPE_INVALID);
+  dbus_g_proxy_connect_signal (dialog->proxy,
+                               "ServerInfoChanged",
+                               G_CALLBACK (handle_server_info_message),
+                               dialog,
+                               NULL);
+}
+
 static gboolean
 vino_preferences_dialog_init (VinoPreferencesDialog *dialog)
 {
@@ -1505,6 +1048,23 @@ vino_preferences_dialog_init (VinoPreferencesDialog *dialog)
   dialog->client = gconf_client_get_default ();
   gconf_client_add_dir (dialog->client, VINO_PREFS_DIR, GCONF_CLIENT_PRELOAD_ONELEVEL, NULL);
 
+  dialog->writability_warning = glade_xml_get_widget (dialog->xml, "writability_warning");
+  g_assert (dialog->writability_warning != NULL);
+  gtk_widget_hide (dialog->writability_warning);
+
+  allowed = vino_preferences_dialog_setup_allowed_toggle (dialog);
+
+  vino_preferences_dialog_setup_view_only_toggle            (dialog);
+  vino_preferences_dialog_setup_prompt_enabled_toggle       (dialog);
+  vino_preferences_dialog_setup_password_toggle             (dialog);
+  vino_preferences_dialog_setup_password_entry              (dialog);
+  vino_preferences_dialog_setup_use_upnp_toggle             (dialog);
+  vino_preferences_dialog_setup_icon_visibility             (dialog);
+
+  g_assert (dialog->n_listeners == dialog->expected_listeners);
+
+  vino_preferences_dialog_update_for_allowed (dialog, allowed);
+
   dialog->connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
   if (!dialog->connection)
     {
@@ -1513,30 +1073,9 @@ vino_preferences_dialog_init (VinoPreferencesDialog *dialog)
       g_error_free (error);
       return FALSE;
     }
+  vino_preferences_start_listening (dialog);
 
-  vino_preferences_dialog_setup_url_labels (dialog);
-
-  dialog->writability_warning = glade_xml_get_widget (dialog->xml, "writability_warning");
-  g_assert (dialog->writability_warning != NULL);
-  gtk_widget_hide (dialog->writability_warning);
-
-  allowed = vino_preferences_dialog_setup_allowed_toggle (dialog);
-
-  vino_preferences_dialog_setup_prompt_enabled_toggle       (dialog);
-  vino_preferences_dialog_setup_view_only_toggle            (dialog);
-  vino_preferences_dialog_setup_password_toggle             (dialog);
-  vino_preferences_dialog_setup_password_entry              (dialog);
-  vino_preferences_dialog_setup_icon_visibility             (dialog);
-  vino_preferences_dialog_setup_network_interface_combox    (dialog);
-  vino_preferences_dialog_setup_encryption_toggle           (dialog);
-  vino_preferences_dialog_setup_alternative_port_entry      (dialog);
-  vino_preferences_dialog_setup_use_alternative_port_toggle (dialog);
-  vino_preferences_dialog_setup_lock_screen_toggle          (dialog);
-  vino_preferences_dialog_setup_disable_background_toggle   (dialog);
-
-  g_assert (dialog->n_listeners == dialog->expected_listeners);
-
-  vino_preferences_dialog_update_for_allowed (dialog, allowed);
+  vino_preferences_dialog_setup_message_box (dialog);
 
   gtk_widget_show (dialog->dialog);
 
@@ -1555,10 +1094,6 @@ vino_preferences_dialog_finalize (VinoPreferencesDialog *dialog)
   if (dialog->dialog)
     gtk_widget_destroy (dialog->dialog);
   dialog->dialog = NULL;
-
-  if (dialog->mailto)
-    g_free (dialog->mailto);
-  dialog->mailto = NULL;
 
   if (dialog->client)
     {
@@ -1588,13 +1123,13 @@ vino_preferences_dialog_finalize (VinoPreferencesDialog *dialog)
   dialog->app = NULL;
 #endif
 
-  if (dialog->proxy_name)
-    g_object_unref (dialog->proxy_name);
-  dialog->proxy_name = NULL;
+  if (dialog->session)
+    g_object_unref (dialog->session);
+  dialog->session = NULL;
 
-  if (dialog->proxy_port)
-    g_object_unref (dialog->proxy_port);
-  dialog->proxy_port = NULL;
+  if (dialog->proxy)
+    g_object_unref (dialog->proxy);
+  dialog->proxy = NULL;
 
   if (dialog->connection)
     dbus_g_connection_unref (dialog->connection);
@@ -1645,7 +1180,6 @@ main (int argc, char **argv)
       return 1;
     }
 
-  vino_preferences_start_listening (&dialog);
   gtk_main ();
 
   vino_preferences_dialog_finalize (&dialog);

@@ -85,6 +85,7 @@ int                  vino_server_get_alternative_port     (VinoServer     *serve
 void                 vino_server_set_alternative_port     (VinoServer     *server,
 							   int             alternative_port);
 int                  vino_server_get_port                 (VinoServer     *server);
+int                  vino_server_get_external_port        (VinoServer     *server);
 
 void                 vino_server_set_network_interface    (VinoServer     *server,
                                                            const char     *network_interface);
@@ -111,7 +112,7 @@ void                 vino_server_set_use_upnp              (VinoServer     *serv
 gboolean             vino_server_get_use_upnp              (VinoServer     *server);
 
 #include "vino-status-icon.h"
-VinoStatusIcon      *vino_server_get_status_icon          (VinoServer     *server);
+VinoStatusIcon      *vino_server_get_status_icon          (VinoServer      *server);
 
 G_CONST_RETURN char *vino_client_get_hostname (VinoClient *client);
 void                 vino_client_disconnect   (VinoClient *client);

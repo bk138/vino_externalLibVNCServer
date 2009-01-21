@@ -15,6 +15,9 @@ bin_PROGRAMS = vino-preferences
 
 vino_preferences_SOURCES = \
 	vino-preferences.c \
+	gedit-spinner.h gedit-spinner.c \
+	vino-message-box.h vino-message-box.c \
+	sexy-url-label.h sexy-url-label.c \
 	$(NULL)
 vino_preferences_LDADD = \
 	$(VINO_CAPPLET_LIBS) \
@@ -22,11 +25,6 @@ vino_preferences_LDADD = \
 	$(VINO_LIBUNIQUE_LIBS) \
 	$(X_LIBS) \
 	$(NULL)
-
-if !HAVE_GETIFADDRS
-INCLUDES += -I../server/libvncserver
-vino_preferences_LDADD += ../server/libvncserver/libifaddrs.la
-endif
 
 gladedir   = $(datadir)/vino
 glade_DATA = vino-preferences.glade

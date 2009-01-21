@@ -1545,6 +1545,7 @@ vino_server_set_use_alternative_port (VinoServer *server,
         }
 
       g_object_notify (G_OBJECT (server), "use-alternative-port");
+      g_object_notify (G_OBJECT (server), "alternative-port");
     }
 }
 
@@ -1773,6 +1774,16 @@ vino_server_get_port (VinoServer *server)
   return server->priv->rfb_screen->rfbPort;
 }
 
+int
+vino_server_get_external_port (VinoServer *server)
+{
+  g_return_val_if_fail (VINO_IS_SERVER (server), 0);
+
+  return server->priv->use_upnp && VINO_IS_UPNP (server->priv->upnp) ?
+           vino_upnp_get_external_port (server->priv->upnp) :
+           server->priv->rfb_screen->rfbPort;
+}
+
 gboolean
 vino_server_get_lock_screen (VinoServer *server)
 {
@@ -1796,7 +1807,6 @@ vino_server_set_lock_screen (VinoServer *server,
       g_object_notify (G_OBJECT (server), "lock-screen");
     }
 }
-
 
 VinoStatusIcon *
 vino_server_get_status_icon (VinoServer *server)

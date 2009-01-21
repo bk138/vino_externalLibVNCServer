@@ -46,10 +46,11 @@ fi
 GTK_VERSION=2.13.1
 GLIB_VERSION=2.17.0
 DBUS_VERSION=1.2.3
+SOUP_VERSION=2.24.0
 
 PKG_CHECK_MODULES(VINO_SERVER, glib-2.0 >= $GLIB_VERSION gtk+-x11-2.0 >= $GTK_VERSION gconf-2.0 libglade-2.0 dbus-1 >= $DBUS_VERSION dbus-glib-1 libgnomeui-2.0)
 
-PKG_CHECK_MODULES(VINO_CAPPLET, glib-2.0 >= $GLIB_VERSION gtk+-2.0 >= $GTK_VERSION gconf-2.0 libglade-2.0 dbus-1 >= $DBUS_VERSION dbus-glib-1)
+PKG_CHECK_MODULES(VINO_CAPPLET, glib-2.0 >= $GLIB_VERSION gtk+-2.0 >= $GTK_VERSION gconf-2.0 libglade-2.0 dbus-1 >= $DBUS_VERSION dbus-glib-1 libsoup-2.4 >= $SOUP_VERSION)
 
 PKG_CHECK_MODULES(VINO_TOOLS, glib-2.0 >= $GLIB_VERSION gconf-2.0 gobject-2.0 >= $GLIB_VERSION gnome-keyring-1)
 

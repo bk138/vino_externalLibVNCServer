@@ -1,3 +1,8 @@
+2009-01-21  Jonh Wendell  <jwendell@gnome.org>
+
+	* lots of files: Rewrite of capplet, hiding some advanced features.
+	Also, we check now if the machine can be accessed through the Internet.
+
 2009-01-08  Halton Huo <halton.huo@sun.com>
 
 	Use self-implmented getifaddrs() and freeifaddrs() when system like
