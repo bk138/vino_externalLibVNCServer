@@ -263,7 +263,7 @@ vino_dbus_listener_handle_get_internal_data (VinoDBusListener *listener,
     goto oom;
 
 #ifdef VINO_ENABLE_HTTP_SERVER
-  port = vino_get_http_server_port (listener->priv->server));
+  port = vino_get_http_server_port (listener->priv->server);
 #else
   port = vino_server_get_port (listener->priv->server);
 #endif
