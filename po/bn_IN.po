@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bn_IN\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&component=general\n"
-"POT-Creation-Date: 2009-01-05 20:07+0000\n"
-"PO-Revision-Date: 2009-01-20 16:54+0530\n"
+"POT-Creation-Date: 2009-01-21 16:02+0000\n"
+"PO-Revision-Date: 2009-01-22 12:59+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: Bengali INDIA <fedora-trans-bn_IN@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -19,21 +19,27 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. Translators: 'All' means 'All network interfaces'
-#: ../capplet/vino-preferences.c:203 ../capplet/vino-preferences.c:291
-msgid "All"
-msgstr "সকল"
+#. Open Link
+#: ../capplet/sexy-url-label.c:183
+#| msgid "Send this command by email"
+msgid "_Send address by email"
+msgstr "ই-মেইলের মাধ্যমে ঠিকানা পাঠিয়ে দিন (_S)"
 
-#: ../capplet/vino-preferences.c:1267
-msgid "The service is not running"
-msgstr "পরিসেবা বর্তমানে চলছে না"
+#. Copy Link Address
+#: ../capplet/sexy-url-label.c:195
+msgid "_Copy address to clipboard"
+msgstr "ক্লিপ-বোর্ডের মধ্যে ঠিকানা কপি করুন (_C)"
 
-#: ../capplet/vino-preferences.c:1364
+#: ../capplet/vino-message-box.c:103
 #, c-format
 msgid "There was an error showing the URL \"%s\""
 msgstr "URL \"%s\" প্রদর্শনে সমস্যা"
 
-#: ../capplet/vino-preferences.c:1450
+#: ../capplet/vino-preferences.c:197 ../capplet/vino-preferences.c:945
+msgid "Checking the conectivity of this machine..."
+msgstr "বর্তমান মেশিনের সংযোগ ব্যবস্থা পরীক্ষা করুন..."
+
+#: ../capplet/vino-preferences.c:797
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -42,7 +48,20 @@ msgstr ""
 "সহায়িকা প্রদর্শনে সমস্যা দেখা:\n"
 "%s"
 
-#: ../capplet/vino-preferences.c:1511 ../server/vino-dbus-listener.c:411
+#: ../capplet/vino-preferences.c:838
+msgid "Your desktop is only reachable over the local network."
+msgstr "শুধুমাত্র স্থানীয় নেটওয়ার্কের মাধ্যমে আপনার ডেস্কটপের সাথে সংযোগ স্থাপন করা সম্ভব।"
+
+#: ../capplet/vino-preferences.c:839 ../capplet/vino-preferences.c:889
+#, c-format
+msgid "Others can access your computer using the address %s."
+msgstr "%s ঠিকানার মাধ্যমে অন্যান্য ব্যক্তিরা আপনার কম্পিউটারের সাথে সংযোগ স্থাপন করতে পারবেন।"
+
+#: ../capplet/vino-preferences.c:938
+msgid "Nobody can access your desktop."
+msgstr "আপনার ডেস্কটপ অন্য কোনো ব্যক্তি দ্বারা ব্যবহারের জন্য উপলব্ধ করা হবে না।"
+
+#: ../capplet/vino-preferences.c:1071 ../server/vino-dbus-listener.c:439
 #: ../server/vino-server.c:156 ../server/vino-server.c:187
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
@@ -58,156 +77,113 @@ msgid "Set your remote desktop access preferences"
 msgstr "দূরবর্তী ডেস্কটপ ব্যবহার সংক্রান্ত পছন্দ নির্ধারণ করুন"
 
 #: ../capplet/vino-preferences.glade.h:1
-msgid "<b>Network</b>"
-msgstr "<b>নেটওয়ার্ক</b>"
+msgid " "
+msgstr " "
 
 #: ../capplet/vino-preferences.glade.h:2
+msgid "   "
+msgstr "   "
+
+#: ../capplet/vino-preferences.glade.h:3
+msgid "       "
+msgstr "       "
+
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Notification Area</b>"
 msgstr "<b>সূচনাপ্রদানের বিভাগ</b>"
 
-#: ../capplet/vino-preferences.glade.h:3
+#: ../capplet/vino-preferences.glade.h:5
 msgid "<b>Security</b>"
 msgstr "<b>নিরাপত্তা</b>"
 
-#: ../capplet/vino-preferences.glade.h:4
+#: ../capplet/vino-preferences.glade.h:6
 msgid "<b>Sharing</b>"
 msgstr "<b>শেয়ার ব্যবস্থা</b>"
 
-#: ../capplet/vino-preferences.glade.h:5
-msgid "A_sk you for confirmation"
-msgstr "নিশ্চিত করা হবে (_s)"
-
-#: ../capplet/vino-preferences.glade.h:6
-msgid "Advanced"
-msgstr "উন্নত বৈশিষ্ট্য"
-
+# msgstr "দূরবর্তী ডেস্কটপ সংক্রান্ত বৈশিষ্ট্যাবলী"
 #: ../capplet/vino-preferences.glade.h:7
+#| msgid "Some of these preferences are locked down"
+msgid "<i>Some of these preferences are locked down</i>"
+msgstr "<i>এর মধ্যে কিছু পছন্দ লক করা অাছে</i>"
+
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Al_ways display an icon"
 msgstr "সর্বদা আইকন প্রদর্শিত হবে (_w)"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:9
 msgid "Allow other users to _view your desktop"
 msgstr "অন্যান্য ব্যবহারকারীদেরকে অাপনার ডেস্কটপ দেখার অনুমতি প্রদান করুন (_v)"
 
-#: ../capplet/vino-preferences.glade.h:9
-msgid "Disable the _wallpaper when connected"
-msgstr "সংযুক্ত হলে ওয়াল-পেপার নিষ্ক্রিয় করা হবে (_w)"
-
-#: ../capplet/vino-preferences.glade.h:10
-msgid "Disable the wallpaper when successfull connection"
-msgstr "সাফল্যের সাথে সংযোগ স্থাপন হলে ওয়াল-পেপার নিষ্ক্রিয় করা হবে"
-
-#: ../capplet/vino-preferences.glade.h:11
-msgid "General"
-msgstr "সাধারণ"
-
 # msgstr "অন্যান্য ব্যবহারকারীদেরকে অাপনার ডেস্কটপ প্রত্যক্ষ করবার অনুমতি প্রদান করুন (_প)"
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.glade.h:10
 msgid "Remote Desktop Preferences"
 msgstr "দূরবর্তী ডেস্কটপ সংক্রান্ত পছন্দ"
 
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:11
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "দূরবর্তী ব্যবহারকারীরা, আপনার সিস্টেমের মাউজ ও কি-বোর্ড নিয়ন্ত্রণ করতে পারবেন"
 
-#: ../capplet/vino-preferences.glade.h:15
-msgid ""
-"Remote users' VNC clients accessing the desktop are required to support "
-"encryption"
-msgstr ""
-"ডেস্কটপ প্রয়োগকারী দূরবর্তী ব্যবহারকারীদের VNC ক্লায়েন্টগুলি দ্বারা এনক্রিপশন সমর্থনের "
-"ক্ষমতা উপস্থিত থাকা আবশ্যক"
+#: ../capplet/vino-preferences.glade.h:12
+msgid "The router must have the UPnP feature enabled"
+msgstr "রাউটারের মধ্যে UPnP বৈশিষ্ট্য সক্রিয় থাকা আবশ্যক"
 
-#: ../capplet/vino-preferences.glade.h:16
-msgid "Screen will be locked after the last remote client disconnect"
-msgstr "সর্বশেষ দূরবর্তী ক্লায়েন্ট বিচ্ছিন্ন হওয়ার পরে পর্দা লক করা হবে"
+#: ../capplet/vino-preferences.glade.h:13
+msgid "You will be queried to allow or to refuse every incoming connection"
+msgstr "আগমনকারী সকল সংযোগের অনুরোধ অনুমোদন অথবা প্রত্যাখ্যান করার পূর্বে জিজ্ঞাসা করা হবে"
 
-#: ../capplet/vino-preferences.glade.h:17
-msgid "Send this command by email"
-msgstr "ই-মেইলের মাধ্যমে এই কমান্ড প্রেরণ করা হবে"
-
-# msgstr "দূরবর্তী ডেস্কটপ সংক্রান্ত বৈশিষ্ট্যাবলী"
-#: ../capplet/vino-preferences.glade.h:18
-msgid "Some of these preferences are locked down"
-msgstr "এর মধ্যে কিছু পছন্দ লক করা অাছে"
-
-#: ../capplet/vino-preferences.glade.h:19
-msgid "The server will use another port, instead of the default (5900)"
-msgstr "ডিফল্ট পোর্টের (5900) পরিবর্তে সার্ভার একটি ভিন্ন পোর্টে অপেক্ষা করবে"
-
-# msgstr "এর মধ্যে কিছু বৈশিষ্ট্যাবলী লক করা অাছে"
-#: ../capplet/vino-preferences.glade.h:20
-msgid "Users can view your desktop using this command:"
-msgstr "ব্যবহারকারীরা এই কমান্ড ব্যবহার করে অাপনার ডেস্কটপ দেখতে পারবেন:"
-
-#: ../capplet/vino-preferences.glade.h:21
-msgid "When a user tries to view or control your desktop:"
-msgstr "কোনো ব্যবহারকারীর দ্বারা আপনার ডেস্কটপ প্রদর্শন অথবা নিয়ন্ত্রণের প্রচেষ্টা করা হলে:"
-
-#: ../capplet/vino-preferences.glade.h:22
-msgid "Which network interface we should listen to."
-msgstr "অপেক্ষা করার উদ্দেশ্যে চিহ্নিত নেটওয়ার্ক ইন্টারফেস।"
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:24
+#: ../capplet/vino-preferences.glade.h:14
 msgid "Your desktop will be shared"
 msgstr "অন্য ব্যবহারকারীদের সাথে আপনার ডেস্কটপ শেয়ার করা হবে"
 
-#: ../capplet/vino-preferences.glade.h:25
+#: ../capplet/vino-preferences.glade.h:15
 msgid "_Allow other users to control your desktop"
 msgstr "অন্যান্য ব্যবহারকারীর দ্বারা আপনার ডেস্কটপ নিয়ন্ত্রণের অনুমতি প্রদান করুন (_A)"
 
-#: ../capplet/vino-preferences.glade.h:26
-msgid "_Listen this interface:"
-msgstr "চিহ্নিত ইন্টারফেসে অপেক্ষা করা হবে: (_L)"
-
-#: ../capplet/vino-preferences.glade.h:27
-msgid "_Lock screen on disconnect"
-msgstr "বিচ্ছিন্ন করার পরে পর্দা লক করা হবে (_L)"
-
-#: ../capplet/vino-preferences.glade.h:28
+#: ../capplet/vino-preferences.glade.h:16
 msgid "_Never display an icon"
 msgstr "আইকন কখনো প্রদর্শিত হবে না (_N)"
 
-#: ../capplet/vino-preferences.glade.h:29
+#: ../capplet/vino-preferences.glade.h:17
 msgid "_Only display an icon when there is someone connected"
 msgstr "শুধুমাত্র সংযুক্ত ব্যবহারকারী উপস্থিত থাকলে আইকন প্রদর্শন করা হবে (_O)"
 
-# msgstr "অন্যান্য ব্যবহারকারীদেরকে অাপনার ডেস্কটপ নিয়ন্ত্রন করবার অনুমতি প্রদান করুন (_দ)"
-#: ../capplet/vino-preferences.glade.h:30
-msgid "_Password:"
-msgstr "পাসওয়ার্ড:(_P)"
-
-#: ../capplet/vino-preferences.glade.h:31
-msgid "_Require encryption"
-msgstr "এনক্রিপশন প্রয়োজন (_R)"
-
-#: ../capplet/vino-preferences.glade.h:32
+#: ../capplet/vino-preferences.glade.h:18
 msgid "_Require the user to enter this password:"
 msgstr "ব্যবহারকারীকে বাধ্যতামূলকভাবে পাসওয়ার্ড লিখতে হবে:(_R)"
 
-#: ../capplet/vino-preferences.glade.h:33
-msgid "_Use an alternative port:"
-msgstr "বিকল্প পোর্টে অপেক্ষা করা হবে: (_U)"
+#: ../capplet/vino-preferences.glade.h:19
+msgid "_Talk to the router and try to open the doors there"
+msgstr "রাউটারের সাথে সংযোগ করে প্রয়োজনীয় অনুমোদনের প্রচেষ্টা করা হবে (_T)"
 
-#: ../server/vino-dbus-listener.c:190 ../server/vino-dbus-listener.c:220
-#: ../server/vino-dbus-listener.c:251
+#: ../capplet/vino-preferences.glade.h:20
+msgid "_You must confirm each access to this machine"
+msgstr "বর্তমান মেশিনের সাথে সংযোগ স্থাপন করতে ইচ্ছুক প্রতিটি অনুরোধ অনুমোদন করা হবে (_Y)"
+
+#: ../capplet/vino-preferences.glade.h:21
+msgid "gtk-close"
+msgstr "gtk-close"
+
+#: ../capplet/vino-preferences.glade.h:22
+msgid "gtk-help"
+msgstr "gtk-help"
+
+#: ../server/vino-dbus-listener.c:219 ../server/vino-dbus-listener.c:249
+#: ../server/vino-dbus-listener.c:290
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "'%s' বার্তা ব্যবস্থাপনার সময় মেমরি পূরণ হয়ে গেছে"
 
-#: ../server/vino-dbus-listener.c:364
+#: ../server/vino-dbus-listener.c:396
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "অবজেক্ট পাথ '%s' নিবন্ধনকালে মেমরি পূর্ণ হয়ে গেছে"
 
-#: ../server/vino-dbus-listener.c:448
+#: ../server/vino-dbus-listener.c:475
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "D-Bus নাম '%s' প্রাপ্ত করতে ব্যর্থ\n"
 
-#: ../server/vino-dbus-listener.c:456
+#: ../server/vino-dbus-listener.c:483
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "দূরবর্তী ডেস্কটপ সার্ভার বর্তমানে চলছে: প্রস্থান করা হবে ...\n"
 
@@ -318,8 +294,9 @@ msgid ""
 "you want that accept connections only from some specific network interface. "
 "eg: eth0, wifi0, lo, ..."
 msgstr ""
-"মান নির্ধারিত না হলে, সার্ভার দ্বারা সকল নেটওয়ার্ক ইন্টারফেসে অপেক্ষা করা হবে। কোনো সুনির্দিষ্ট নেটওয়ার্ক ইন্টারফেস থেকে সংযোগ গ্রহণ করতে ইচ্ছুক হলে এই মান নির্ধারণ করুন"
-"উদাহরণ: eth0, wifi0, lo, ..."
+"মান নির্ধারিত না হলে, সার্ভার দ্বারা সকল নেটওয়ার্ক ইন্টারফেসে অপেক্ষা করা হবে। "
+"কোনো সুনির্দিষ্ট নেটওয়ার্ক ইন্টারফেস থেকে সংযোগ গ্রহণ করতে ইচ্ছুক হলে এই মান নির্ধারণ "
+"করুনউদাহরণ: eth0, wifi0, lo, ..."
 
 #: ../server/vino-server.schemas.in.h:6
 msgid ""
@@ -374,7 +351,9 @@ msgstr ""
 msgid ""
 "If true, we will use UPNP protocol to automatically forward the port used by "
 "vino in the router."
-msgstr "মান true (সত্য) হলে, vino দ্বারা ব্যবহার পোর্টকে স্বয়ংক্রিয়ভাবে রাউটারে অনুবর্তনের জন্য UPNP প্রোটোকল ব্যবহার করা হবে।"
+msgstr ""
+"মান true (সত্য) হলে, vino দ্বারা ব্যবহার পোর্টকে স্বয়ংক্রিয়ভাবে রাউটারে অনুবর্তনের "
+"জন্য UPNP প্রোটোকল ব্যবহার করা হবে।"
 
 #: ../server/vino-server.schemas.in.h:13
 msgid "Listen an alternative port"
