@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
-<!--Generated with glade3 3.4.5 on Fri Jan  9 12:24:40 2009 -->
+<!--Generated with glade3 3.4.5 on Thu Jan 22 10:53:57 2009 -->
 <glade-interface>
   <widget class="GtkDialog" id="vino_dialog">
     <property name="border_width">5</property>
@@ -145,7 +145,7 @@
                     <child>
                       <widget class="GtkLabel" id="label14">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">       </property>
+                        <property name="label">       </property>
                       </widget>
                       <packing>
                         <property name="expand">False</property>
@@ -153,7 +153,15 @@
                       </packing>
                     </child>
                     <child>
-                      <placeholder/>
+                      <widget class="GtkEventBox" id="event_box">
+                        <property name="visible">True</property>
+                        <child>
+                          <placeholder/>
+                        </child>
+                      </widget>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
                     </child>
                   </widget>
                   <packing>

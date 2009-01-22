@@ -1,5 +1,10 @@
 2009-01-22  Jonh Wendell  <jwendell@gnome.org>
 
+	* capplet/vino-preferences.[c,glade]:
+	Use an eventbox in the connectivity label, closes #568690.
+
+2009-01-22  Jonh Wendell  <jwendell@gnome.org>
+
 	* server/vino-status-icon.c (vino_status_icon_add_client):
 	Only show notification if the status icon is visible.
 	Closes Ubuntu #318708.

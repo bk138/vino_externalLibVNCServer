@@ -972,13 +972,13 @@ vino_preferences_dialog_update_message_box (VinoPreferencesDialog *dialog)
 static void
 vino_preferences_dialog_setup_message_box (VinoPreferencesDialog *dialog)
 {
-  GtkWidget *message_box;
+  GtkWidget *event_box;
 
-  message_box = glade_xml_get_widget (dialog->xml, "message_box");
-  g_assert (message_box != NULL);
+  event_box = glade_xml_get_widget (dialog->xml, "event_box");
+  g_assert (event_box != NULL);
 
   dialog->message = vino_message_box_new ();
-  gtk_box_pack_end (GTK_BOX (message_box), dialog->message, TRUE, TRUE, 0);
+  gtk_container_add (GTK_CONTAINER (event_box), dialog->message);
   gtk_widget_show (dialog->message);
 
   vino_preferences_dialog_update_message_box (dialog);
