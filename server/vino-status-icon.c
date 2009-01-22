@@ -480,13 +480,17 @@ vino_status_icon_add_client (VinoStatusIcon *icon,
 
   vino_status_icon_update_state (icon);
 
-  VinoStatusIconNotify *a;
-  a = g_new (VinoStatusIconNotify, 1);
-  a->icon   = icon;
-  a->client = client;
-  g_timeout_add (1000, 
-                 vino_status_icon_show_new_client_notification,
-                 (gpointer) a);
+  if (gtk_status_icon_get_visible (GTK_STATUS_ICON (icon)))
+    {
+      VinoStatusIconNotify *a;
+
+      a = g_new (VinoStatusIconNotify, 1);
+      a->icon   = icon;
+      a->client = client;
+      g_timeout_add_seconds (1, 
+                             vino_status_icon_show_new_client_notification,
+                             (gpointer) a);
+    }
 }
 
 gboolean

@@ -1,3 +1,9 @@
+2009-01-22  Jonh Wendell  <jwendell@gnome.org>
+
+	* server/vino-status-icon.c (vino_status_icon_add_client):
+	Only show notification if the status icon is visible.
+	Closes Ubuntu #318708.
+
 2009-01-22  Halton Huo <halton.huo@sun.com>
 
 	Fix typo. Closes #568646
