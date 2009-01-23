@@ -31,6 +31,7 @@
 #include <glib/gi18n.h>
 #include <libsoup/soup.h>
 #include "vino-message-box.h"
+#include "vino-url-webservice.h"
 
 #ifdef VINO_ENABLE_KEYRING
 #include <gnome-keyring.h>
@@ -194,7 +195,7 @@ vino_preferences_dialog_allowed_toggled (GtkToggleButton       *toggle,
     {
       vino_message_box_show_image (VINO_MESSAGE_BOX (dialog->message));
       vino_message_box_set_label (VINO_MESSAGE_BOX (dialog->message),
-                                  _("Checking the conectivity of this machine..."));
+                                  _("Checking the connectivity of this machine..."));
       g_timeout_add_seconds (3, (GSourceFunc) delay_update_message, dialog);
     }
   else
@@ -925,6 +926,7 @@ static void
 vino_preferences_dialog_update_message_box (VinoPreferencesDialog *dialog)
 {
   gboolean allowed;
+  gchar *url;
 
   if (dialog->retrieving_info)
     return;
@@ -940,9 +942,16 @@ vino_preferences_dialog_update_message_box (VinoPreferencesDialog *dialog)
       return;
     }
 
+  url = vino_url_webservice_get_random ();
+  if (!url)
+    {
+      error_message (dialog);
+      return;
+    }
+
   vino_message_box_show_image (VINO_MESSAGE_BOX (dialog->message));
   vino_message_box_set_label (VINO_MESSAGE_BOX (dialog->message),
-			      _("Checking the conectivity of this machine..."));
+			      _("Checking the connectivity of this machine..."));
 
   dbus_g_proxy_call (dialog->proxy,
                      "GetExternalPort",
@@ -954,7 +963,7 @@ vino_preferences_dialog_update_message_box (VinoPreferencesDialog *dialog)
   if (!dialog->session)
     dialog->session = soup_session_async_new ();
 
-  dialog->msg = soup_xmlrpc_request_new ("http://blog.jorgepereira.com.br/jorge/org.gnome.vino.Service.php",
+  dialog->msg = soup_xmlrpc_request_new (url,
 					 "vino.check",
 					 G_TYPE_INT, dialog->port,
 					 G_TYPE_INT, TIMEOUT,
@@ -967,6 +976,7 @@ vino_preferences_dialog_update_message_box (VinoPreferencesDialog *dialog)
   g_timeout_add_seconds (TIMEOUT+1,
 			 (GSourceFunc) request_timeout_cb,
 			 dialog);
+  g_free (url);
 }
 
 static void

@@ -1,3 +1,13 @@
+2009-01-23  Jonh Wendell  <jwendell@gnome.org>
+
+	Make use of a file containinig URLs of WebServices, instead of hard
+	code.
+	* capplet/webservices: The file with the URLs.
+	* capplet/vino-url-webservice.[ch]: Provide a function to retrieve
+	a URL from the file.
+	* capplet/vino-preferences.c: Use the function above instead of
+	hard coding the URL.
+
 2009-01-22  Jonh Wendell  <jwendell@gnome.org>
 
 	* capplet/vino-preferences.[c,glade]:

@@ -18,6 +18,7 @@ vino_preferences_SOURCES = \
 	gedit-spinner.h gedit-spinner.c \
 	vino-message-box.h vino-message-box.c \
 	sexy-url-label.h sexy-url-label.c \
+	vino-url-webservice.h vino-url-webservice.c \
 	$(NULL)
 vino_preferences_LDADD = \
 	$(VINO_CAPPLET_LIBS) \
@@ -27,7 +28,7 @@ vino_preferences_LDADD = \
 	$(NULL)
 
 gladedir   = $(datadir)/vino
-glade_DATA = vino-preferences.glade
+glade_DATA = vino-preferences.glade webservices
 
 desktopdir       = $(datadir)/applications
 desktop_in_files = vino-preferences.desktop.in
@@ -42,4 +43,5 @@ CLEANFILES = \
 EXTRA_DIST = \
 	vino-preferences.glade \
 	vino-preferences.desktop.in \
+	webservices \
 	$(NULL)
