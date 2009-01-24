@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&component=general\n"
-"POT-Creation-Date: 2009-01-21 16:02+0000\n"
-"PO-Revision-Date: 2009-01-23 16:47+0100\n"
+"POT-Creation-Date: 2009-01-23 17:26+0000\n"
+"PO-Revision-Date: 2009-01-24 11:55+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,6 @@ msgstr ""
 
 #. Open Link
 #: ../capplet/sexy-url-label.c:183
-#| msgid "Send this command by email"
 msgid "_Send address by email"
 msgstr "_Enviar dirección por correo-e"
 
@@ -38,11 +37,12 @@ msgstr "_Copiar la dirección al portapapeles"
 msgid "There was an error showing the URL \"%s\""
 msgstr "Hubo un error al mostrar el URL «%s»"
 
-#: ../capplet/vino-preferences.c:197 ../capplet/vino-preferences.c:945
-msgid "Checking the conectivity of this machine..."
-msgstr "Comprobando la conectividad de este equipo..."
+#: ../capplet/vino-preferences.c:198 ../capplet/vino-preferences.c:954
+#| msgid "Checking the conectivity of this machine..."
+msgid "Checking the connectivity of this machine..."
+msgstr "Comprobando la conectividad de este equipo…"
 
-#: ../capplet/vino-preferences.c:797
+#: ../capplet/vino-preferences.c:798
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -51,20 +51,20 @@ msgstr ""
 "Hubo un error al mostrar la ayuda:\n"
 "%s"
 
-#: ../capplet/vino-preferences.c:838
+#: ../capplet/vino-preferences.c:839
 msgid "Your desktop is only reachable over the local network."
 msgstr "Su escritorio sólo es accesible a través de la red local."
 
-#: ../capplet/vino-preferences.c:839 ../capplet/vino-preferences.c:889
+#: ../capplet/vino-preferences.c:840 ../capplet/vino-preferences.c:890
 #, c-format
 msgid "Others can access your computer using the address %s."
 msgstr "Otros podrán acceder a su equipo usando la dirección %s."
 
-#: ../capplet/vino-preferences.c:938
+#: ../capplet/vino-preferences.c:940
 msgid "Nobody can access your desktop."
 msgstr "Nadie puede acceder a su escritorio."
 
-#: ../capplet/vino-preferences.c:1071 ../server/vino-dbus-listener.c:439
+#: ../capplet/vino-preferences.c:1081 ../server/vino-dbus-listener.c:439
 #: ../server/vino-server.c:156 ../server/vino-server.c:187
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
@@ -104,7 +104,6 @@ msgid "<b>Sharing</b>"
 msgstr "<b>Compartición</b>"
 
 #: ../capplet/vino-preferences.glade.h:7
-#| msgid "Some of these preferences are locked down"
 msgid "<i>Some of these preferences are locked down</i>"
 msgstr "<i>Algunas de estas preferencias están bloqueadas</i>"
 
@@ -568,31 +567,31 @@ msgstr "Ay_uda"
 msgid "_About"
 msgstr "Acerca _de"
 
-#: ../server/vino-status-icon.c:580
+#: ../server/vino-status-icon.c:584
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Error al iniciar libnotify\n"
 
-#: ../server/vino-status-icon.c:600
+#: ../server/vino-status-icon.c:604
 msgid "Another user is viewing your desktop"
 msgstr "Otro usuario está viendo su escritorio"
 
-#: ../server/vino-status-icon.c:601
+#: ../server/vino-status-icon.c:605
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Un usuario en el equipo «%s» está viendo su escritorio remotamente."
 
-#: ../server/vino-status-icon.c:606
+#: ../server/vino-status-icon.c:610
 msgid "Another user is controlling your desktop"
 msgstr "Otro usuario está controlando su escritorio"
 
-#: ../server/vino-status-icon.c:607
+#: ../server/vino-status-icon.c:611
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr ""
 "Un usuario en el equipo «%s» está controlando su escritorio remotamente."
 
-#: ../server/vino-status-icon.c:629
+#: ../server/vino-status-icon.c:633
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Error al mostrar la burbuja de notificación: %s\n"
