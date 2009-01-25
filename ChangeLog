@@ -1,3 +1,8 @@
+2009-01-25  Jonh Wendell  <jwendell@gnome.org>
+
+	* capplet/vino-preferences.glade: Put a tooltip in the password entry
+	telling that the maximum size is 8 chars. Closes #569031.
+
 2009-01-23  Jonh Wendell  <jwendell@gnome.org>
 
 	Make use of a file containinig URLs of WebServices, instead of hard

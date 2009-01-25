@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
-<!--Generated with glade3 3.4.5 on Thu Jan 22 10:53:57 2009 -->
+<!--Generated with glade3 3.4.5 on Sun Jan 25 10:24:47 2009 -->
 <glade-interface>
   <widget class="GtkDialog" id="vino_dialog">
     <property name="border_width">5</property>
@@ -226,6 +226,8 @@
                       <widget class="GtkEntry" id="password_entry">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
+                        <property name="has_tooltip">True</property>
+                        <property name="tooltip" translatable="yes">Maximum size: 8 characters</property>
                         <property name="max_length">8</property>
                         <property name="visibility">False</property>
                       </widget>
