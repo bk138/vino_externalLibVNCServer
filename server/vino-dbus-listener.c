@@ -37,6 +37,7 @@
 #include <netdb.h>
 #include <net/if.h>
 #include <ifaddrs.h>
+#include <arpa/inet.h>
 
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
@@ -66,27 +67,83 @@ static void vino_dbus_listener_set_server (VinoDBusListener *listener,
                                            VinoServer       *server);
 
 static char *
-get_local_hostname (void)
+get_local_hostname (VinoDBusListener *listener)
 {
-  static char      local_host [NI_MAXHOST] = { 0, };
-  struct addrinfo  hints;
-  struct addrinfo *results;
-  char            *retval;
+  char                *retval, buf[INET6_ADDRSTRLEN];
+  struct ifaddrs      *myaddrs, *ifa; 
+  void                *sin;
+  const char          *server_iface;
+  GHashTable          *ipv4, *ipv6;
+  GHashTableIter      iter;
+  gpointer            key, value;
 
-  if (gethostname (local_host, NI_MAXHOST) == -1)
-    return NULL;
+  retval = NULL;
+  server_iface = vino_server_get_network_interface (listener->priv->server);
+  ipv4 = g_hash_table_new_full (g_str_hash, g_str_equal, NULL, g_free);
+  ipv6 = g_hash_table_new_full (g_str_hash, g_str_equal, NULL, g_free);
 
-  memset (&hints, 0, sizeof (hints));
-  hints.ai_flags = AI_CANONNAME;
+  getifaddrs (&myaddrs);
+  for (ifa = myaddrs; ifa != NULL; ifa = ifa->ifa_next)
+    {
+      if (ifa->ifa_addr == NULL || ifa->ifa_name == NULL || (ifa->ifa_flags & IFF_UP) == 0)
+	continue;
 
-  results = NULL;
-  if (getaddrinfo (local_host,  NULL, &hints, &results) != 0)
-    return NULL;
+      switch (ifa->ifa_addr->sa_family)
+	{
+	  case AF_INET:
+	    sin = &((struct sockaddr_in *)ifa->ifa_addr)->sin_addr;
+	    inet_ntop (AF_INET, sin, buf, INET6_ADDRSTRLEN);
+	    g_hash_table_insert (ipv4,
+				 ifa->ifa_name,
+				 g_strdup (buf));
+	    break;
 
-  retval = g_strdup (results ? results->ai_canonname : local_host);
+	  case AF_INET6:
+	    sin = &((struct sockaddr_in6 *)ifa->ifa_addr)->sin6_addr;
+	    inet_ntop (AF_INET6, sin, buf, INET6_ADDRSTRLEN);
+	    g_hash_table_insert (ipv6,
+				 ifa->ifa_name,
+				 g_strdup (buf));
+	    break;
+	  default: continue;
+	}
+    }
 
-  if (results)
-    freeaddrinfo (results);
+  if (server_iface && server_iface[0] != '\0')
+    {
+      if ((retval = g_strdup (g_hash_table_lookup (ipv4, server_iface))))
+	goto the_end;
+      if ((retval = g_strdup (g_hash_table_lookup (ipv6, server_iface))))
+	goto the_end;
+    }
+
+  g_hash_table_iter_init (&iter, ipv4);
+  while (g_hash_table_iter_next (&iter, &key, &value))
+    {
+      if (strcmp (key, "lo") == 0)
+	continue;
+      retval = g_strdup (value);
+      goto the_end;
+    }
+
+  g_hash_table_iter_init (&iter, ipv6);
+  while (g_hash_table_iter_next (&iter, &key, &value))
+    {
+      if (strcmp (key, "lo") == 0)
+	continue;
+      retval = g_strdup (value);
+      goto the_end;
+    }
+
+  if ((retval = g_strdup (g_hash_table_lookup (ipv4, "lo"))))
+    goto the_end;
+  if ((retval = g_strdup (g_hash_table_lookup (ipv6, "lo"))))
+    goto the_end;
+
+  the_end:
+  freeifaddrs (myaddrs); 
+  g_hash_table_destroy (ipv4);
+  g_hash_table_destroy (ipv6);
 
   return retval;
 }
@@ -268,7 +325,7 @@ vino_dbus_listener_handle_get_internal_data (VinoDBusListener *listener,
   port = vino_server_get_port (listener->priv->server);
 #endif
 
-  host = get_local_hostname ();
+  host = get_local_hostname (listener);
   if (!dbus_message_append_args (reply,
                                  DBUS_TYPE_STRING, &host,
                                  DBUS_TYPE_INT32, &port,

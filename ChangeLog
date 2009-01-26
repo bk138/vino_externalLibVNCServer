@@ -1,5 +1,10 @@
 2009-01-25  Jonh Wendell  <jwendell@gnome.org>
 
+	* server/vino-dbus-listener.c (get_local_hostname): Show an IP address
+	instead of the machine name.
+
+2009-01-25  Jonh Wendell  <jwendell@gnome.org>
+
 	* capplet/vino-preferences.glade: Put a tooltip in the password entry
 	telling that the maximum size is 8 chars. Closes #569031.
 
