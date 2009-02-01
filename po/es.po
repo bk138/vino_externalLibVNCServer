@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&component=general\n"
-"POT-Creation-Date: 2009-01-25 13:29+0000\n"
-"PO-Revision-Date: 2009-01-25 17:55+0100\n"
+"POT-Creation-Date: 2009-02-01 15:10+0000\n"
+"PO-Revision-Date: 2009-02-01 17:45+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -63,7 +63,7 @@ msgstr "Otros podrán acceder a su equipo usando la dirección %s."
 msgid "Nobody can access your desktop."
 msgstr "Nadie puede acceder a su escritorio."
 
-#: ../capplet/vino-preferences.c:1081 ../server/vino-dbus-listener.c:439
+#: ../capplet/vino-preferences.c:1081 ../server/vino-dbus-listener.c:496
 #: ../server/vino-server.c:156 ../server/vino-server.c:187
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
@@ -144,20 +144,21 @@ msgid "_Allow other users to control your desktop"
 msgstr "_Permitir a otros usuarios controlar tu escritorio"
 
 #: ../capplet/vino-preferences.glade.h:17
+#| msgid "Settings of network interface using for accept connections"
+msgid "_Configure network automatically to accept connections"
+msgstr "_Configurar la red automáticamente para aceptar conexiones"
+
+#: ../capplet/vino-preferences.glade.h:18
 msgid "_Never display an icon"
 msgstr "No mostrar un icono _nunca"
 
-#: ../capplet/vino-preferences.glade.h:18
+#: ../capplet/vino-preferences.glade.h:19
 msgid "_Only display an icon when there is someone connected"
 msgstr "Mostrar s_olo un icono cuando hay alguien conectado"
 
-#: ../capplet/vino-preferences.glade.h:19
+#: ../capplet/vino-preferences.glade.h:20
 msgid "_Require the user to enter this password:"
 msgstr "_Requerir que el usuario introduzca una contraseña:"
-
-#: ../capplet/vino-preferences.glade.h:20
-msgid "_Talk to the router and try to open the doors there"
-msgstr "_Hablar con el router e intentar abrir las puertas allí"
 
 #: ../capplet/vino-preferences.glade.h:21
 msgid "_You must confirm each access to this machine"
@@ -171,23 +172,23 @@ msgstr "gtk-close"
 msgid "gtk-help"
 msgstr "gtk-help"
 
-#: ../server/vino-dbus-listener.c:219 ../server/vino-dbus-listener.c:249
-#: ../server/vino-dbus-listener.c:290
+#: ../server/vino-dbus-listener.c:276 ../server/vino-dbus-listener.c:306
+#: ../server/vino-dbus-listener.c:347
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "Se agotó la memoria manejando el mensaje «%s»"
 
-#: ../server/vino-dbus-listener.c:396
+#: ../server/vino-dbus-listener.c:453
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "Se agotó la memoria registrando la ruta al objeto «%s»"
 
-#: ../server/vino-dbus-listener.c:475
+#: ../server/vino-dbus-listener.c:532
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Falló al adquirir el nombre D-Bus «%s»\n"
 
-#: ../server/vino-dbus-listener.c:483
+#: ../server/vino-dbus-listener.c:540
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "El servidor de Escritorio Remoto ya está en ejecución; saliendo …\n"
 
@@ -671,6 +672,9 @@ msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
 "ERROR: No tiene suficientes permisos para cambiar la contraseña de Vino.\n"
 
+#~ msgid "_Talk to the router and try to open the doors there"
+#~ msgstr "_Hablar con el router e intentar abrir las puertas allí"
+
 #~ msgid "All"
 #~ msgstr "Todas"
 
@@ -733,9 +737,6 @@ msgstr ""
 
 #~ msgid "_Use an alternative port:"
 #~ msgstr "_Usar un puerto alternativo:"
-
-#~ msgid "Settings of network interface using for accept connections"
-#~ msgstr "Ajustes de la interfaz de red usada para aceptar conexiones"
 
 #~ msgid "The server will only accept connections from localhost"
 #~ msgstr "El servidor sólo aceptará conexiones desde el equipo local"
