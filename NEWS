@@ -1,3 +1,23 @@
+Vino 2.25.90
+============
+
+  Fixes
+
+	+ Only show notification if the status icon is visible.
+	+ Fix drawing issues in the connectivity label.
+	+ Uses a file containing links to webservices, instead of use a hard
+	coded one.
+	+ Shows an IP address instead of the local hostname in the connectivity
+	label.
+
+  Translations
+
+	+ Runa Bhattacharjee (bn_IN)
+	+ Jorge González (es)
+	+ Changwoo Ryu (ko)
+	+ Kjartan Maraas (nb)
+	+ Daniel Nylander (sv)
+
 Vino 2.25.5
 ===========
 
