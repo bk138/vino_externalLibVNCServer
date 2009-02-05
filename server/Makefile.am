@@ -123,7 +123,7 @@ schemas_DATA     = $(schemas_in_files:.schemas.in=.schemas)
 vino-server.desktop.in: vino-server.desktop.in.in
 	sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@
 
-desktopdir      = $(datadir)/gnome/autostart
+desktopdir      = $(sysconfdir)/xdg/autostart
 desktop_in_files = vino-server.desktop.in
 desktop_DATA    = $(desktop_in_files:.desktop.in=.desktop)
 

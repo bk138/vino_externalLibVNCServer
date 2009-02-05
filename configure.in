@@ -372,6 +372,7 @@ Configure summary:
 	Compiler ...................:  ${CC} 
 	Compiler Flags .............:  ${CFLAGS}
 	Prefix......................:  ${prefix}
+	SysConfDir..................:  ${sysconfdir}
 
 	Avahi support ..............:  ${VINO_ENABLE_MDNS}
 	Notify support .............:  ${have_libnotify}
