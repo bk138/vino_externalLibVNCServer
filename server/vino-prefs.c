@@ -166,7 +166,7 @@ vino_prefs_network_interface_changed (GConfClient *client,
     return;
 
   if (network_interface && vino_network_interface &&
-      !g_strcasecmp (network_interface, vino_network_interface))
+      !strcmp (network_interface, vino_network_interface))
     return;
 
   if (vino_network_interface)
