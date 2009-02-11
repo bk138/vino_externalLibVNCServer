@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-23 20:51+0100\n"
-"PO-Revision-Date: 2009-01-23 21:39+0100\n"
+"POT-Creation-Date: 2009-02-11 15:05+0100\n"
+"PO-Revision-Date: 2009-02-11 15:06+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgid "Nobody can access your desktop."
 msgstr "Ingen kan komma åt ditt skrivbord."
 
 #: ../capplet/vino-preferences.c:1081
-#: ../server/vino-dbus-listener.c:439
+#: ../server/vino-dbus-listener.c:496
 #: ../server/vino-server.c:156
 #: ../server/vino-server.c:187
 #, c-format
@@ -113,75 +113,71 @@ msgid "Allow other users to _view your desktop"
 msgstr "Tillåt andra användare att _se ditt skrivbord"
 
 #: ../capplet/vino-preferences.glade.h:10
+msgid "Maximum size: 8 characters"
+msgstr "Maximal storlek: 8 tecken"
+
+#: ../capplet/vino-preferences.glade.h:11
 msgid "Remote Desktop Preferences"
 msgstr "Inställningar för fjärrskrivbord"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:12
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "Fjärranvändare kan styra din mus och tangentbord"
 
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.glade.h:13
 msgid "The router must have the UPnP feature enabled"
 msgstr "Routern måste ha UPnP-funktionen aktiverad"
 
-#: ../capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.glade.h:14
 msgid "You will be queried to allow or to refuse every incoming connection"
 msgstr "Du kommer att bli tillfrågad om att tillåta eller neka varje inkommande anslutning"
 
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:15
 msgid "Your desktop will be shared"
 msgstr "Ditt skrivbord kommer att delas ut"
 
-#: ../capplet/vino-preferences.glade.h:15
+#: ../capplet/vino-preferences.glade.h:16
 msgid "_Allow other users to control your desktop"
 msgstr "_Tillåt andra användare att styra ditt skrivbord"
 
-#: ../capplet/vino-preferences.glade.h:16
+#: ../capplet/vino-preferences.glade.h:17
+msgid "_Configure network automatically to accept connections"
+msgstr "_Konfigurera nätverket automatiskt för att acceptera anslutningar"
+
+#: ../capplet/vino-preferences.glade.h:18
 msgid "_Never display an icon"
 msgstr "Visa _aldrig en ikon"
 
-#: ../capplet/vino-preferences.glade.h:17
+#: ../capplet/vino-preferences.glade.h:19
 msgid "_Only display an icon when there is someone connected"
 msgstr "_Visa endast en ikon när någon är ansluten"
 
-#: ../capplet/vino-preferences.glade.h:18
+#: ../capplet/vino-preferences.glade.h:20
 msgid "_Require the user to enter this password:"
 msgstr "_Kräv att användaren anger detta lösenord:"
 
-#: ../capplet/vino-preferences.glade.h:19
-msgid "_Talk to the router and try to open the doors there"
-msgstr "_Prata med routern och försök att öppna dörrarna där"
-
-#: ../capplet/vino-preferences.glade.h:20
+#: ../capplet/vino-preferences.glade.h:21
 msgid "_You must confirm each access to this machine"
 msgstr "_Du måste bekräfta varje åtkomst till denna dator"
 
-#: ../capplet/vino-preferences.glade.h:21
-msgid "gtk-close"
-msgstr "Stäng"
-
-#: ../capplet/vino-preferences.glade.h:22
-msgid "gtk-help"
-msgstr "Hjälp"
-
-#: ../server/vino-dbus-listener.c:219
-#: ../server/vino-dbus-listener.c:249
-#: ../server/vino-dbus-listener.c:290
+#: ../server/vino-dbus-listener.c:276
+#: ../server/vino-dbus-listener.c:306
+#: ../server/vino-dbus-listener.c:347
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "Slut på minne vid hantering av \"%s\"-meddelande"
 
-#: ../server/vino-dbus-listener.c:396
+#: ../server/vino-dbus-listener.c:453
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "Slut på minne vid registrering av objektsökvägen \"%s\""
 
-#: ../server/vino-dbus-listener.c:475
+#: ../server/vino-dbus-listener.c:532
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Misslyckades med att få tag på D-Bus-namnet \"%s\"\n"
 
-#: ../server/vino-dbus-listener.c:483
+#: ../server/vino-dbus-listener.c:540
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "Fjärrskrivbordsservern kör redan. Avslutar...\n"
 
@@ -574,6 +570,12 @@ msgstr "VINO version %s\n"
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "FEL: Du har inte behörighet att ändra Vino-lösenordet.\n"
 
+#~ msgid "_Talk to the router and try to open the doors there"
+#~ msgstr "_Prata med routern och försök att öppna dörrarna där"
+#~ msgid "gtk-close"
+#~ msgstr "Stäng"
+#~ msgid "gtk-help"
+#~ msgstr "Hjälp"
 #~ msgid "<b>Network</b>"
 #~ msgstr "<b>Nätverk</b>"
 #~ msgid "A_sk you for confirmation"
