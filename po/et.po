@@ -8,14 +8,14 @@
 # Priit Laes <plaes plaes org>, 2005-2006.
 # Ain Vagula <avagula gmail com>, 2005.
 # Ivar Smolin <okul linux ee>, 2006-2008.
-# Mattias Põldaru <mahfiaz gmail com>, 2008.
+# Mattias Põldaru <mahfiaz gmail com>, 2008, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Vino HEAD\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&amp;component=general\n"
-"POT-Creation-Date: 2008-12-17 17:01+0000\n"
-"PO-Revision-Date: 2008-12-26 15:15+0300\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&component=general\n"
+"POT-Creation-Date: 2009-02-01 15:10+0000\n"
+"PO-Revision-Date: 2009-02-08 21:27+0300\n"
 "Last-Translator: Mattias Põldaru <mahfiaz gmail com>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "MIME-Version: 1.0\n"
@@ -23,22 +23,28 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. Translators: 'All' means 'All network interfaces'
-#: ../capplet/vino-preferences.c:203
-#: ../capplet/vino-preferences.c:291
-msgid "All"
-msgstr "Kõik"
+#. Open Link
+#: ../capplet/sexy-url-label.c:183
+#| msgid "Send this command by email"
+msgid "_Send address by email"
+msgstr "_Saada aadress e-postiga"
 
-#: ../capplet/vino-preferences.c:1267
-msgid "The service is not running"
-msgstr "Teenus ei tööta"
+#. Copy Link Address
+#: ../capplet/sexy-url-label.c:195
+msgid "_Copy address to clipboard"
+msgstr "_Kopeeri aadress"
 
-#: ../capplet/vino-preferences.c:1364
+#: ../capplet/vino-message-box.c:103
 #, c-format
 msgid "There was an error showing the URL \"%s\""
 msgstr "URLi \"%s\" kuvamisel esines viga"
 
-#: ../capplet/vino-preferences.c:1450
+#: ../capplet/vino-preferences.c:198
+#: ../capplet/vino-preferences.c:954
+msgid "Checking the connectivity of this machine..."
+msgstr "Selle masinaga ühendumise kontrollimine..."
+
+#: ../capplet/vino-preferences.c:798
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -47,8 +53,22 @@ msgstr ""
 "Abiteabe kuvamisel tekkis viga:\n"
 "%s"
 
-#: ../capplet/vino-preferences.c:1511
-#: ../server/vino-dbus-listener.c:411
+#: ../capplet/vino-preferences.c:839
+msgid "Your desktop is only reachable over the local network."
+msgstr "Sinu töölauda on võimalik vaadata ainult kohtvõrgust."
+
+#: ../capplet/vino-preferences.c:840
+#: ../capplet/vino-preferences.c:890
+#, c-format
+msgid "Others can access your computer using the address %s."
+msgstr "Teised pääsevad Sinu arvutile ligi kasutades aadressi %s."
+
+#: ../capplet/vino-preferences.c:940
+msgid "Nobody can access your desktop."
+msgstr "Keegi ei pääse su töölauale ligi."
+
+#: ../capplet/vino-preferences.c:1081
+#: ../server/vino-dbus-listener.c:496
 #: ../server/vino-server.c:156
 #: ../server/vino-server.c:187
 #, c-format
@@ -65,149 +85,118 @@ msgid "Set your remote desktop access preferences"
 msgstr "Kaugtöölaua ligipääsueelistuste määramine"
 
 #: ../capplet/vino-preferences.glade.h:1
-msgid "<b>Network</b>"
-msgstr "<b>Võrk</b>"
+msgid " "
+msgstr " "
 
 #: ../capplet/vino-preferences.glade.h:2
+msgid "   "
+msgstr "   "
+
+#: ../capplet/vino-preferences.glade.h:3
+msgid "       "
+msgstr "       "
+
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Notification Area</b>"
 msgstr "<b>Teavitusala</b>"
 
-#: ../capplet/vino-preferences.glade.h:3
+#: ../capplet/vino-preferences.glade.h:5
 msgid "<b>Security</b>"
 msgstr "<b>Turvalisus</b>"
 
-#: ../capplet/vino-preferences.glade.h:4
+#: ../capplet/vino-preferences.glade.h:6
 msgid "<b>Sharing</b>"
 msgstr "<b>Ühiskasutus</b>"
 
-#: ../capplet/vino-preferences.glade.h:5
-msgid "A_sk you for confirmation"
-msgstr "_Küsitakse kinnitust"
-
-#: ../capplet/vino-preferences.glade.h:6
-msgid "Advanced"
-msgstr "Laiendatud"
-
 #: ../capplet/vino-preferences.glade.h:7
+#| msgid "Some of these preferences are locked down"
+msgid "<i>Some of these preferences are locked down</i>"
+msgstr "<i>Mõned nendest eelistustest on lukustatud</i>"
+
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Al_ways display an icon"
 msgstr "_Ikooni kuvatakse alati"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:9
 msgid "Allow other users to _view your desktop"
 msgstr "Teistel kasutajatel on lubatud _vaadata Sinu töölauda"
 
-#: ../capplet/vino-preferences.glade.h:9
-msgid "Disable the _wallpaper when connected"
-msgstr "Ühendumisel keela _töölaua taust"
-
 #: ../capplet/vino-preferences.glade.h:10
-msgid "Disable the wallpaper when successfull connection"
-msgstr "Edukal ühendumisel keela töölaua taustapilt"
+msgid "Maximum size: 8 characters"
+msgstr "Suurim pikkus: 8 tähemärki"
 
 #: ../capplet/vino-preferences.glade.h:11
-msgid "General"
-msgstr "Üldine"
-
-#: ../capplet/vino-preferences.glade.h:12
 msgid "Remote Desktop Preferences"
 msgstr "Kaugtöölaua eelistused"
 
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:12
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "Kaugkasutajatel on lubatud sinu hiirt ja klaviatuuri juhtida"
 
+#: ../capplet/vino-preferences.glade.h:13
+msgid "The router must have the UPnP feature enabled"
+msgstr "Ruuteris peab UPnP võimalus olema lubatud"
+
+#: ../capplet/vino-preferences.glade.h:14
+msgid "You will be queried to allow or to refuse every incoming connection"
+msgstr "Iga sissetuleva ühenduse kohta küsitakse sinult, kas see lubada või keelduda"
+
 #: ../capplet/vino-preferences.glade.h:15
-msgid "Remote users' VNC clients accessing the desktop are required to support encryption"
-msgstr "Kaugkasutajatelt nõutakse töölauale ligipääsuks krüptimise tuge"
-
-#: ../capplet/vino-preferences.glade.h:16
-msgid "Screen will be locked after the last remote client disconnect"
-msgstr "Pärast viimase kaugkliendi lahtiühendamist ekraan lukustatakse"
-
-#: ../capplet/vino-preferences.glade.h:17
-msgid "Send this command by email"
-msgstr "Selle käsu saatmine e-postiga"
-
-#: ../capplet/vino-preferences.glade.h:18
-msgid "Some of these preferences are locked down"
-msgstr "Mõned nendest eelistustest on lukustatud"
-
-#: ../capplet/vino-preferences.glade.h:19
-msgid "The server will use another port, instead of the default (5900)"
-msgstr "Server kuulab vaikimisi pordi (5900) asemel alternatiivset porti"
-
-#: ../capplet/vino-preferences.glade.h:20
-msgid "Users can view your desktop using this command:"
-msgstr "Teised kasutajad saavad su töölauda vaadata selle käsuga:"
-
-#: ../capplet/vino-preferences.glade.h:21
-msgid "When a user tries to view or control your desktop:"
-msgstr "Kui kasutaja proovib Sinu töölauda vaadata, siis:"
-
-#: ../capplet/vino-preferences.glade.h:22
-msgid "Which network interface we should listen to."
-msgstr "Millist võrguliidest tuleks kuulata."
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:24
 msgid "Your desktop will be shared"
 msgstr "Sinu töölaud jagatakse ühiskasutuseks välja"
 
-#: ../capplet/vino-preferences.glade.h:25
+#: ../capplet/vino-preferences.glade.h:16
 msgid "_Allow other users to control your desktop"
 msgstr "_Teistel kasutajatel lubatakse juhtida Sinu töölauda"
 
-#: ../capplet/vino-preferences.glade.h:26
-msgid "_Listen this interface:"
-msgstr "_Kuulatakse võrguliidest:"
+#: ../capplet/vino-preferences.glade.h:17
+msgid "_Configure network automatically to accept connections"
+msgstr "_Võrgu automaatne seadistamine ühenduste vastuvõtmiseks"
 
-#: ../capplet/vino-preferences.glade.h:27
-msgid "_Lock screen on disconnect"
-msgstr "Pärast viimase kasutajaga ühenduse katkestamist ekraan _lukustatakse"
-
-#: ../capplet/vino-preferences.glade.h:28
+#: ../capplet/vino-preferences.glade.h:18
 msgid "_Never display an icon"
 msgstr "Ikooni _ei kuvata kunagi"
 
-#: ../capplet/vino-preferences.glade.h:29
+#: ../capplet/vino-preferences.glade.h:19
 msgid "_Only display an icon when there is someone connected"
 msgstr "Ikooni kuvatakse ainult siis, kui keegi on ü_hendatud"
 
-#: ../capplet/vino-preferences.glade.h:30
-msgid "_Password:"
-msgstr "_Parool:"
-
-#: ../capplet/vino-preferences.glade.h:31
-msgid "_Require encryption"
-msgstr "K_rüptimine on nõutud"
-
-#: ../capplet/vino-preferences.glade.h:32
+#: ../capplet/vino-preferences.glade.h:20
 msgid "_Require the user to enter this password:"
 msgstr "Nõutakse kasutajalt pa_rooli sisestamist:"
 
-#: ../capplet/vino-preferences.glade.h:33
-msgid "_Use an alternative port:"
-msgstr "Kasutatakse _alternatiivset porti:"
+#: ../capplet/vino-preferences.glade.h:21
+msgid "_You must confirm each access to this machine"
+msgstr "_Iga pöördumist sellesse masinasse peab kasutaja kinnitama"
 
-#: ../server/vino-dbus-listener.c:190
-#: ../server/vino-dbus-listener.c:220
-#: ../server/vino-dbus-listener.c:251
+#: ../capplet/vino-preferences.glade.h:22
+#, fuzzy
+msgid "gtk-close"
+msgstr ""
+
+#: ../capplet/vino-preferences.glade.h:23
+#, fuzzy
+msgid "gtk-help"
+msgstr ""
+
+#: ../server/vino-dbus-listener.c:276
+#: ../server/vino-dbus-listener.c:306
+#: ../server/vino-dbus-listener.c:347
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "Sõnumi '%s' käsitlemisel lõppes mälu"
 
-#: ../server/vino-dbus-listener.c:364
+#: ../server/vino-dbus-listener.c:453
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "Objektiraja '%s' registreerimisel lõppes mälu"
 
-#: ../server/vino-dbus-listener.c:448
+#: ../server/vino-dbus-listener.c:532
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Tõrge D-Bus nime '%s' saamisel\n"
 
-#: ../server/vino-dbus-listener.c:456
+#: ../server/vino-dbus-listener.c:540
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "Võrgutöölaua server juba töötab, töö lõpetatakse...\n"
 
@@ -237,6 +226,11 @@ msgstr "0"
 #, c-format
 msgid "%s's remote desktop on %s"
 msgstr "Kasutaja %s kaugtöölaud masinas %s"
+
+#: ../server/vino-prefs.c:579
+#, c-format
+msgid "Received signal %d, exiting...\n"
+msgstr "Vastu võeti signaal %d, väljumine...\n"
 
 #: ../server/vino-prompt.c:142
 msgid "Screen"
@@ -501,30 +495,30 @@ msgstr "A_bi"
 msgid "_About"
 msgstr "_Programmist lähemalt"
 
-#: ../server/vino-status-icon.c:580
+#: ../server/vino-status-icon.c:584
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Viga libnotify lähtestamisel\n"
 
-#: ../server/vino-status-icon.c:600
+#: ../server/vino-status-icon.c:604
 msgid "Another user is viewing your desktop"
 msgstr "Teine kasutaja vaatab Sinu töölauda"
 
-#: ../server/vino-status-icon.c:601
+#: ../server/vino-status-icon.c:605
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Kasutaja arvutist '%s' vaatab üle võrgu Sinu töölauda."
 
-#: ../server/vino-status-icon.c:606
+#: ../server/vino-status-icon.c:610
 msgid "Another user is controlling your desktop"
 msgstr "Teine kasutaja juhib Sinu töölauda"
 
-#: ../server/vino-status-icon.c:607
+#: ../server/vino-status-icon.c:611
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "Kasutaja arvutist '%s' juhib üle võrgu Sinu töölauda."
 
-#: ../server/vino-status-icon.c:629
+#: ../server/vino-status-icon.c:633
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Viga teavitusmulli kuvamisel: %s\n"
@@ -592,39 +586,3 @@ msgstr "VINO versioon %s\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "VIGA: Sul ei ole piisavalt õiguseid Vino parooli muutmiseks.\n"
-
-#~ msgid "The server will only accept connections from localhost"
-#~ msgstr "Server nõustub ainult kohalikust masinast loodud ühendustega"
-#~ msgid "_Only allow local connections"
-#~ msgstr "Ainult _kohalikud ühendused on lubatud"
-#~ msgid ""
-#~ "If true, the server will only accept connections from localhost and "
-#~ "network connections will be rejected. Set this option to true if you wish "
-#~ "to exclusively use a tunneling mechanism to access the server, such as "
-#~ "ssh."
-#~ msgstr ""
-#~ "Kui märgitud, siis võtab server vastu ainult kohalikust masinast "
-#~ "(localhost) algatatud ühendusi ja lükkab võrguühendused tagasi. See võti "
-#~ "tuleks märkida juhul, kui soovitakse kasutada tunneli kaudu (näiteks ssh) "
-#~ "loodud ühendusi."
-#~ msgid "Only allow local connections"
-#~ msgstr "Ainult kohalike ühenduste lubamine"
-#~ msgid ""
-#~ "Problem registering the remote desktop server with bonobo-activation; "
-#~ "exiting ...\n"
-#~ msgstr ""
-#~ "Probleem kaugtöölaua serveri registreerimisel bonobo-aktiveerimisega; töö "
-#~ "lõpetatakse...\n"
-#~ msgid "Remote desktop server died, restarting\n"
-#~ msgstr "Võrgutöölaua server on surnud ja käivitatakse uuesti\n"
-#~ msgid "Activation of %s failed: %s\n"
-#~ msgstr "Tõrge %s aktiveerimisel: %s\n"
-#~ msgid "Activation of %s failed: Unknown Error\n"
-#~ msgstr "Tõrge %s aktiveerimisel: Tundmatu viga\n"
-#~ msgid "Failed to activate remote desktop server: tried too many times\n"
-#~ msgstr "Tõrge võrgutöölaua aktiveerimisel: prooviti liiga palju kordi\n"
-#~ msgid "Starting remote desktop server"
-#~ msgstr "Kaugtöölauaserveri käivitamine"
-#~ msgid "Not starting remote desktop server"
-#~ msgstr "Kaugtöölauaserverit ei käivitata"
-
