@@ -1,3 +1,8 @@
+2009-02-12  Claude Paroz  <claude@2xlibre.net>
+
+	* capplet/vino-preferences.glade: Don't mark "spacing" labels as
+	translatable.
+
 2009-02-05  Jonh Wendell  <jwendell@gnome.org>
 
 	* server/Makefile.am: Install autostart desktop file in
