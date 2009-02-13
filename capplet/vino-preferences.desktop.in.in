@@ -1,6 +1,6 @@
 [Desktop Entry]
 _Name=Remote Desktop
-_Comment=Set your remote desktop access preferences
+_Comment=Choose how other users can remotely view your desktop
 Exec=vino-preferences
 Icon=preferences-desktop-remote-desktop
 Terminal=false

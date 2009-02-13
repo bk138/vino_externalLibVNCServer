@@ -1,5 +1,10 @@
 2009-02-13  Jonh Wendell  <jwendell@gnome.org>
 
+	* capplet/vino-preferences.desktop.in.in:
+	Changed the tooltip of capplet menu item. Closes #542338.
+
+2009-02-13  Jonh Wendell  <jwendell@gnome.org>
+
 	Moved ifaddrs.h and getifaddrs.c to their own directory, and only
 	#include them if system ifaddrs.h is not present.
 
