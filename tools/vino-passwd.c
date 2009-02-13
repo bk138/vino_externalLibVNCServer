@@ -119,7 +119,11 @@ vino_passwd_read (char *buff,
       else if (again && key == '\n')
         {
           g_printerr ("\n");
-          g_printerr (_("ERROR: Maximum length of password is %d characters. Please, re-enter the password.\n"), VINO_PASSWORD_MAXLEN);
+          g_printerr (ngettext ("ERROR: Maximum length of password is %d character. Please, re-enter the password.",
+                                "ERROR: Maximum length of password is %d characters. Please, re-enter the password.",
+                                VINO_PASSWORD_MAXLEN),
+                      VINO_PASSWORD_MAXLEN);
+          g_printerr ("\n");
           g_print ("%s", prompt_msg);
 
           pos   = 0;

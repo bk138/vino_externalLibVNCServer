@@ -1,3 +1,11 @@
+2009-02-13  Claude Paroz  <claude@2xlibre.net>
+
+	reviewed by: Jonh Wendell  <jwendell@gnome.org> 
+
+	* tools/vino-passwd.c: (vino_passwd_read): Use ngettext to handle
+	translation of "%d characters".
+	Closes #556767.
+
 2009-02-12  Claude Paroz  <claude@2xlibre.net>
 
 	* capplet/vino-preferences.glade: Don't mark "spacing" labels as
