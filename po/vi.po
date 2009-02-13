@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.25.90\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&component=general\n"
-"POT-Creation-Date: 2009-02-01 15:10+0000\n"
-"PO-Revision-Date: 2009-02-07 18:45+0930\n"
+"POT-Creation-Date: 2009-02-13 07:23+0000\n"
+"PO-Revision-Date: 2009-02-13 21:59+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,6 @@ msgstr ""
 
 #. Open Link
 #: ../capplet/sexy-url-label.c:183
-#| msgid "Send this command by email"
 msgid "_Send address by email"
 msgstr "_Gửi địa chỉ bằng thư"
 
@@ -30,9 +29,6 @@ msgstr "_Chép địa chỉ sang bảng nháp"
 
 #: ../capplet/vino-message-box.c:103
 #, c-format
-#| msgid ""
-#| "There was an error displaying help:\n"
-#| " %s"
 msgid "There was an error showing the URL \"%s\""
 msgstr "Gặp lỗi khi hiển thị địa chỉ URL « %s »"
 
@@ -82,101 +78,76 @@ msgid "Set your remote desktop access preferences"
 msgstr "Hãy đặt tùy thích truy cập màn hình làm việc từ xa"
 
 #: ../capplet/vino-preferences.glade.h:1
-msgid " "
-msgstr " "
-
-#: ../capplet/vino-preferences.glade.h:2
-#| msgid "    "
-msgid "   "
-msgstr "   "
-
-#: ../capplet/vino-preferences.glade.h:3
-#| msgid "        "
-msgid "       "
-msgstr "       "
-
-#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Notification Area</b>"
 msgstr "<b>Vùng thông báo</b>"
 
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:2
 msgid "<b>Security</b>"
 msgstr "<b>Bảo mật</b>"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:3
 msgid "<b>Sharing</b>"
 msgstr "<b>Chia sẻ</b>"
 
-#: ../capplet/vino-preferences.glade.h:7
-#| msgid "Some of these preferences are locked down"
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<i>Some of these preferences are locked down</i>"
 msgstr "<i>Vài tuỳ chọn vẫn còn bị khoá xuống</i>"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:5
 msgid "Al_ways display an icon"
 msgstr "_Luôn hiển thị biểu tượng"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:6
 msgid "Allow other users to _view your desktop"
 msgstr "Cho phép người khác _xem màn hình làm việc của bạn"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:7
 msgid "Maximum size: 8 characters"
 msgstr "Kích cỡ tối đa: 8 ký tự"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Remote Desktop Preferences"
 msgstr "Tùy thích màn hình làm việc từ xa"
 
-#: ../capplet/vino-preferences.glade.h:12
-#| msgid "If checked, remote users are able to control your mouse and keyboard"
+#: ../capplet/vino-preferences.glade.h:9
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "Người dùng từ xa có khả năng điều khiển con chuột và bàn phím của bạn"
 
-#: ../capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.glade.h:10
 msgid "The router must have the UPnP feature enabled"
 msgstr "Bộ tiếp hợp phải có tính năng UPnP được hiệu lực"
 
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:11
 msgid "You will be queried to allow or to refuse every incoming connection"
 msgstr "Bạn sẽ được nhắc cho phép hay từ chối mỗi kết nối gửi đến"
 
-#: ../capplet/vino-preferences.glade.h:15
-#| msgid "If checked, your desktop will be shared"
+#: ../capplet/vino-preferences.glade.h:12
 msgid "Your desktop will be shared"
 msgstr "Màn hình nền của bạn sẽ được chia sẻ"
 
-#: ../capplet/vino-preferences.glade.h:16
+#: ../capplet/vino-preferences.glade.h:13
 msgid "_Allow other users to control your desktop"
 msgstr "Cho _phép người dùng khác điều khiển màn hình làm việc của bạn"
 
-#: ../capplet/vino-preferences.glade.h:17
+#: ../capplet/vino-preferences.glade.h:14
 msgid "_Configure network automatically to accept connections"
 msgstr "_Cấu hình mạng để tự động chấp nhận kết nối"
 
-#: ../capplet/vino-preferences.glade.h:18
+#: ../capplet/vino-preferences.glade.h:15
 msgid "_Never display an icon"
 msgstr "Khô_ng bao giờ hiển thị biểu tượng"
 
-#: ../capplet/vino-preferences.glade.h:19
+#: ../capplet/vino-preferences.glade.h:16
 msgid "_Only display an icon when there is someone connected"
 msgstr "_Chỉ hiển thị biểu tượng khi có người dùng đã kết nối"
 
-#: ../capplet/vino-preferences.glade.h:20
+#: ../capplet/vino-preferences.glade.h:17
 msgid "_Require the user to enter this password:"
 msgstr "Đòi _hỏi người dùng nhập mật khẩu này:"
 
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:18
 msgid "_You must confirm each access to this machine"
 msgstr "_Nhắc tôi xác nhận mỗi lần truy cập đến máy này"
-
-#: ../capplet/vino-preferences.glade.h:22
-msgid "gtk-close"
-msgstr "gtk-close"
-
-#: ../capplet/vino-preferences.glade.h:23
-msgid "gtk-help"
-msgstr "gtk-help"
 
 #: ../server/vino-dbus-listener.c:276
 #: ../server/vino-dbus-listener.c:306
@@ -271,7 +242,6 @@ msgid "_Refuse"
 msgstr "_Từ chối"
 
 #: ../server/vino-server.desktop.in.in.h:1
-#| msgid "GNOME Remote Desktop"
 msgid "GNOME Remote Desktop Server"
 msgstr "Trình phục vụ Màn Hình Nền từ Xa GNOME"
 
@@ -398,16 +368,10 @@ msgid_plural "%d people are connected"
 msgstr[0] "%d người đang kết nối"
 
 #: ../server/vino-status-icon.c:207
-#| msgid ""
-#| "There was an error displaying preferences:\n"
-#| " %s"
 msgid "Error displaying preferences"
 msgstr "Gặp lỗi khi hiển thị tuỳ thích"
 
 #: ../server/vino-status-icon.c:226
-#| msgid ""
-#| "There was an error displaying help:\n"
-#| "%s"
 msgid "Error displaying help"
 msgstr "Gặp lỗi khi hiển thị trợ giúp"
 
@@ -540,55 +504,59 @@ msgstr "Bị thôi"
 
 #: ../tools/vino-passwd.c:122
 #, c-format
-msgid "ERROR: Maximum length of password is %d characters. Please, re-enter the password.\n"
-msgstr "LỖI: chiều dài tối đa của mật khẩu là %d ký tự. Hãy nhập lại mật khẩu.\n"
+#| msgid ""
+#| "ERROR: Maximum length of password is %d characters. Please, re-enter the "
+#| "password.\n"
+msgid "ERROR: Maximum length of password is %d character. Please, re-enter the password."
+msgid_plural "ERROR: Maximum length of password is %d characters. Please, re-enter the password."
+msgstr[0] "LỖI: chiều dài tối đa của mật khẩu là %d ký tự. Hãy nhập lại mật khẩu."
 
-#: ../tools/vino-passwd.c:152
+#: ../tools/vino-passwd.c:156
 #, c-format
 msgid "Changing Vino password.\n"
 msgstr "Đang thay đổi mật khẩu Vino.\n"
 
-#: ../tools/vino-passwd.c:154
+#: ../tools/vino-passwd.c:158
 msgid "Enter new Vino password: "
 msgstr "Nhập mật khẩu Vino mới: "
 
-#: ../tools/vino-passwd.c:157
+#: ../tools/vino-passwd.c:161
 msgid "Retype new Vino password: "
 msgstr "Gõ lại mật khẩu Vino mới: "
 
-#: ../tools/vino-passwd.c:163
+#: ../tools/vino-passwd.c:167
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: mật khẩu đã được cập nhật.\n"
 
-#: ../tools/vino-passwd.c:167
+#: ../tools/vino-passwd.c:171
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "Tiếc là hai mật khẩu không trùng nhau.\n"
 
-#: ../tools/vino-passwd.c:168
+#: ../tools/vino-passwd.c:172
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: mật khẩu chưa thay đổi.\n"
 
-#: ../tools/vino-passwd.c:183
+#: ../tools/vino-passwd.c:187
 msgid "Show Vino version"
 msgstr "Hiện phiên bản Vino"
 
-#: ../tools/vino-passwd.c:192
+#: ../tools/vino-passwd.c:196
 msgid "- Updates Vino password"
 msgstr "— Cập nhật mật khẩu Vino"
 
-#: ../tools/vino-passwd.c:202
+#: ../tools/vino-passwd.c:206
 msgid "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr "Hãy chạy câu lệnh thiết bị « vino-passwd --help » để thấy một danh sách đầy đủ các tuỳ chọn dòng lệnh sẵn sàng"
 
-#: ../tools/vino-passwd.c:209
+#: ../tools/vino-passwd.c:213
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "VINO phiên bản %s\n"
 
-#: ../tools/vino-passwd.c:218
+#: ../tools/vino-passwd.c:222
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "LỖI: bạn không có đủ quyền để thay đổi mật khẩu Vino.\n"
