@@ -1,3 +1,8 @@
+2009-02-13  Jonh Wendell  <jwendell@gnome.org>
+
+	Moved ifaddrs.h and getifaddrs.c to their own directory, and only
+	#include them if system ifaddrs.h is not present.
+
 2009-02-13  Claude Paroz  <claude@2xlibre.net>
 
 	reviewed by: Jonh Wendell  <jwendell@gnome.org> 

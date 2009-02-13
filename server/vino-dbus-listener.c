@@ -36,7 +36,6 @@
 #include <unistd.h>
 #include <netdb.h>
 #include <net/if.h>
-#include <ifaddrs.h>
 #include <arpa/inet.h>
 
 #include <dbus/dbus-glib.h>
@@ -45,6 +44,12 @@
 #include "vino-util.h"
 #ifdef VINO_ENABLE_HTTP_SERVER
 #include "vino-http.h"
+#endif
+
+#ifdef HAVE_IFADDRS_H
+#include <ifaddrs.h>
+#else
+#include "libvncserver/ifaddr/ifaddrs.h"
 #endif
 
 #define VINO_DBUS_INTERFACE "org.gnome.VinoScreen"

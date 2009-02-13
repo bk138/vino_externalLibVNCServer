@@ -1,6 +1,6 @@
 NULL =
 
-SUBDIRS = rfb
+SUBDIRS = ifaddr rfb
 
 noinst_LTLIBRARIES = libvncserver.la
 
@@ -38,11 +38,7 @@ libvncserver_la_LIBADD =	\
 	$(NULL)
 
 if !HAVE_GETIFADDRS
-noinst_LTLIBRARIES += libifaddrs.la
-libifaddrs_la_SOURCES = 	\
-	getifaddrs.c 		\
-	ifaddrs.h
-libvncserver_la_LIBADD += ./libifaddrs.la
+libvncserver_la_LIBADD += ifaddr/libifaddrs.la
 endif
 
 EXTRA_DIST =			\

@@ -71,7 +71,13 @@
 #endif
 
 #include <net/if.h>  // IFF_UP
-#include <ifaddrs.h> // getifaddrs()
+
+#ifdef HAVE_IFADDRS_H
+#include <ifaddrs.h>
+#else
+#include "ifaddr/ifaddrs.h"
+#endif
+
 
 #if defined(__linux__) && defined(NEED_TIMEVAL)
 struct timeval 
