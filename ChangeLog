@@ -1,5 +1,11 @@
 2009-02-13  Jonh Wendell  <jwendell@gnome.org>
 
+	* session/: Removed. It's unsed since 2.24, which makes use of new
+	gnome-session to control vino's life cycle. This avoids things like
+	bug #571751 being reported.
+
+2009-02-13  Jonh Wendell  <jwendell@gnome.org>
+
 	* capplet/vino-preferences.desktop.in.in:
 	Changed the tooltip of capplet menu item. Closes #542338.
 
