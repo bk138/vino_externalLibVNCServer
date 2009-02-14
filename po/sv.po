@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-11 15:05+0100\n"
-"PO-Revision-Date: 2009-02-11 15:06+0100\n"
+"POT-Creation-Date: 2009-02-14 09:25+0100\n"
+"PO-Revision-Date: 2009-02-14 09:26+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgid "Nobody can access your desktop."
 msgstr "Ingen kan komma åt ditt skrivbord."
 
 #: ../capplet/vino-preferences.c:1081
-#: ../server/vino-dbus-listener.c:496
+#: ../server/vino-dbus-listener.c:501
 #: ../server/vino-server.c:156
 #: ../server/vino-server.c:187
 #, c-format
@@ -68,116 +68,104 @@ msgid "Failed to open connection to bus: %s\n"
 msgstr "Misslyckades med att öppna anslutning mot bussen: %s\n"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+msgid "Choose how other users can remotely view your desktop"
+msgstr "Välj hur andra användare kan se ditt skrivbord"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:2
 #: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "Fjärrskrivbord"
 
-#: ../capplet/vino-preferences.desktop.in.in.h:2
-msgid "Set your remote desktop access preferences"
-msgstr "Ställ in dina inställningar för åtkomst till fjärrskrivbord"
-
 #: ../capplet/vino-preferences.glade.h:1
-msgid " "
-msgstr " "
-
-#: ../capplet/vino-preferences.glade.h:2
-msgid "   "
-msgstr "   "
-
-#: ../capplet/vino-preferences.glade.h:3
-msgid "       "
-msgstr "       "
-
-#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Notification Area</b>"
 msgstr "<b>Notifieringsyta</b>"
 
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:2
 msgid "<b>Security</b>"
 msgstr "<b>Säkerhet</b>"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:3
 msgid "<b>Sharing</b>"
 msgstr "<b>Delning</b>"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<i>Some of these preferences are locked down</i>"
 msgstr "<i>En del av dessa inställningar är låsta</i>"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:5
 msgid "Al_ways display an icon"
 msgstr "Visa all_tid en ikon"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:6
 msgid "Allow other users to _view your desktop"
 msgstr "Tillåt andra användare att _se ditt skrivbord"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:7
 msgid "Maximum size: 8 characters"
 msgstr "Maximal storlek: 8 tecken"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Remote Desktop Preferences"
 msgstr "Inställningar för fjärrskrivbord"
 
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.glade.h:9
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "Fjärranvändare kan styra din mus och tangentbord"
 
-#: ../capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.glade.h:10
 msgid "The router must have the UPnP feature enabled"
 msgstr "Routern måste ha UPnP-funktionen aktiverad"
 
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:11
 msgid "You will be queried to allow or to refuse every incoming connection"
 msgstr "Du kommer att bli tillfrågad om att tillåta eller neka varje inkommande anslutning"
 
-#: ../capplet/vino-preferences.glade.h:15
+#: ../capplet/vino-preferences.glade.h:12
 msgid "Your desktop will be shared"
 msgstr "Ditt skrivbord kommer att delas ut"
 
-#: ../capplet/vino-preferences.glade.h:16
+#: ../capplet/vino-preferences.glade.h:13
 msgid "_Allow other users to control your desktop"
 msgstr "_Tillåt andra användare att styra ditt skrivbord"
 
-#: ../capplet/vino-preferences.glade.h:17
+#: ../capplet/vino-preferences.glade.h:14
 msgid "_Configure network automatically to accept connections"
 msgstr "_Konfigurera nätverket automatiskt för att acceptera anslutningar"
 
-#: ../capplet/vino-preferences.glade.h:18
+#: ../capplet/vino-preferences.glade.h:15
 msgid "_Never display an icon"
 msgstr "Visa _aldrig en ikon"
 
-#: ../capplet/vino-preferences.glade.h:19
+#: ../capplet/vino-preferences.glade.h:16
 msgid "_Only display an icon when there is someone connected"
 msgstr "_Visa endast en ikon när någon är ansluten"
 
-#: ../capplet/vino-preferences.glade.h:20
+#: ../capplet/vino-preferences.glade.h:17
 msgid "_Require the user to enter this password:"
 msgstr "_Kräv att användaren anger detta lösenord:"
 
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:18
 msgid "_You must confirm each access to this machine"
 msgstr "_Du måste bekräfta varje åtkomst till denna dator"
 
-#: ../server/vino-dbus-listener.c:276
-#: ../server/vino-dbus-listener.c:306
-#: ../server/vino-dbus-listener.c:347
+#: ../server/vino-dbus-listener.c:281
+#: ../server/vino-dbus-listener.c:311
+#: ../server/vino-dbus-listener.c:352
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "Slut på minne vid hantering av \"%s\"-meddelande"
 
-#: ../server/vino-dbus-listener.c:453
+#: ../server/vino-dbus-listener.c:458
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "Slut på minne vid registrering av objektsökvägen \"%s\""
 
-#: ../server/vino-dbus-listener.c:532
+#: ../server/vino-dbus-listener.c:537
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Misslyckades med att få tag på D-Bus-namnet \"%s\"\n"
 
-#: ../server/vino-dbus-listener.c:540
+#: ../server/vino-dbus-listener.c:545
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "Fjärrskrivbordsservern kör redan. Avslutar...\n"
 
@@ -517,59 +505,69 @@ msgstr "Avbruten"
 
 #: ../tools/vino-passwd.c:122
 #, c-format
-msgid "ERROR: Maximum length of password is %d characters. Please, re-enter the password.\n"
-msgstr "FEL: Maximal längd för lösenord är %d tecken. Ange lösenordet igen.\n"
+msgid "ERROR: Maximum length of password is %d character. Please, re-enter the password."
+msgid_plural "ERROR: Maximum length of password is %d characters. Please, re-enter the password."
+msgstr[0] "FEL: Maximal längd för lösenord är %d tecken. Ange lösenordet igen."
+msgstr[1] "FEL: Maximal längd för lösenord är %d tecken. Ange lösenordet igen."
 
-#: ../tools/vino-passwd.c:152
+#: ../tools/vino-passwd.c:156
 #, c-format
 msgid "Changing Vino password.\n"
 msgstr "Ändrar Vino-lösenord.\n"
 
-#: ../tools/vino-passwd.c:154
+#: ../tools/vino-passwd.c:158
 msgid "Enter new Vino password: "
 msgstr "Ange nytt Vino-lösenord: "
 
-#: ../tools/vino-passwd.c:157
+#: ../tools/vino-passwd.c:161
 msgid "Retype new Vino password: "
 msgstr "Ange nytt Vino-lösenord igen: "
 
-#: ../tools/vino-passwd.c:163
+#: ../tools/vino-passwd.c:167
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: lösenordet uppdaterades.\n"
 
-#: ../tools/vino-passwd.c:167
+#: ../tools/vino-passwd.c:171
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "Tyvärr, lösenorden stämmer inte överens.\n"
 
-#: ../tools/vino-passwd.c:168
+#: ../tools/vino-passwd.c:172
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: lösenordet oförändrat.\n"
 
-#: ../tools/vino-passwd.c:183
+#: ../tools/vino-passwd.c:187
 msgid "Show Vino version"
 msgstr "Visa version av Vino"
 
-#: ../tools/vino-passwd.c:192
+#: ../tools/vino-passwd.c:196
 msgid "- Updates Vino password"
 msgstr "- Uppdaterar Vino-lösenordet"
 
-#: ../tools/vino-passwd.c:202
+#: ../tools/vino-passwd.c:206
 msgid "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr "Kör \"vino-passwd --help\" för att se en komplett lista över tillgängliga kommandoradsflaggor"
 
-#: ../tools/vino-passwd.c:209
+#: ../tools/vino-passwd.c:213
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "VINO version %s\n"
 
-#: ../tools/vino-passwd.c:218
+#: ../tools/vino-passwd.c:222
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "FEL: Du har inte behörighet att ändra Vino-lösenordet.\n"
 
+#~ msgid "Set your remote desktop access preferences"
+#~ msgstr "Ställ in dina inställningar för åtkomst till fjärrskrivbord"
+#~ msgid " "
+#~ msgstr " "
+#~ msgid "   "
+#~ msgstr "   "
+#~ msgid "       "
+#~ msgstr "       "
 #~ msgid "_Talk to the router and try to open the doors there"
 #~ msgstr "_Prata med routern och försök att öppna dörrarna där"
 #~ msgid "gtk-close"
