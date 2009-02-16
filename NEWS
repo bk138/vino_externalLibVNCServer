@@ -1,3 +1,36 @@
+Vino 2.25.91
+============
+
+  Fixes
+
+	+ Install autostart file in $sysconfdir/xgd/autostart. Usually you
+	should pass the argument --sysconfdir=/etc to configure (or autogen.sh)
+	script.
+	+ i18n related fixes.
+	+ Minor fixes.
+
+  Translations
+
+	+ xa (ast)
+	+ Alexander Shopov (bg)
+	+ Joan Duran (ca)
+	+ Ask Hjorth Larsen (da)
+	+ Jorge González (es)
+	+ Mattias Põldaru (et)
+	+ Iñaki Larrañaga Murgoitio (eu)
+	+ Gabor Kelemen (hu)
+	+ Wouter Bolsterlee (nl)
+	+ Manoj Kumar Giri (or)
+	+ Tomasz Dominikowski (pl)
+	+ Jonh Wendell (pt_BR)
+	+ Duarte Loreto (pt)
+	+ Adi Roiban (ro)
+	+ Daniel Nylander (sv)
+	+ Theppitak Karoonboonyanan (th)
+	+ Clytie Siddall (vi)
+	+ Chao-Hsiung Liao (zh_HK)
+	+ Chao-Hsiung Liao (zh_TW)
+
 Vino 2.25.90
 ============
 
