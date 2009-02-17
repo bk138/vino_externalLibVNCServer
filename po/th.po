@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.11.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-13 11:22+0700\n"
-"PO-Revision-Date: 2009-02-13 11:47+0700\n"
+"POT-Creation-Date: 2009-02-17 17:31+0700\n"
+"PO-Revision-Date: 2009-02-17 17:33+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -58,20 +58,20 @@ msgstr "ผู้อื่นสามารถเข้าถึงเครื
 msgid "Nobody can access your desktop."
 msgstr "ไม่มีใครสามารถเข้าถึงพื้นโต๊ะของคุณได้"
 
-#: ../capplet/vino-preferences.c:1081 ../server/vino-dbus-listener.c:496
+#: ../capplet/vino-preferences.c:1081 ../server/vino-dbus-listener.c:501
 #: ../server/vino-server.c:156 ../server/vino-server.c:187
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "ไม่สามารถเปิดการเชื่อมต่อไปยังบัส: %s\n"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+msgid "Choose how other users can remotely view your desktop"
+msgstr "เลือกว่าจะอนุญาตให้ผู้ใช้อื่นมองพื้นโต๊ะของคุณอย่างไร"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:2
 #: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "พื้นโต๊ะระยะไกล"
-
-#: ../capplet/vino-preferences.desktop.in.in.h:2
-msgid "Set your remote desktop access preferences"
-msgstr "ปรับแต่งการเข้าถึงพื้นโต๊ะของคุณจากระยะไกล"
 
 #: ../capplet/vino-preferences.glade.h:1
 msgid "<b>Notification Area</b>"
@@ -145,23 +145,23 @@ msgstr "ให้ผู้ใช้นั้น_ป้อนรหัสผ่�
 msgid "_You must confirm each access to this machine"
 msgstr "คุณต้องยืนยั_นการเข้าถึงเครื่องนี้ก่อนทุกครั้ง"
 
-#: ../server/vino-dbus-listener.c:276 ../server/vino-dbus-listener.c:306
-#: ../server/vino-dbus-listener.c:347
+#: ../server/vino-dbus-listener.c:281 ../server/vino-dbus-listener.c:311
+#: ../server/vino-dbus-listener.c:352
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "หน่วยความจำหมดขณะจัดการข้อความ '%s'"
 
-#: ../server/vino-dbus-listener.c:453
+#: ../server/vino-dbus-listener.c:458
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "หน่วยความจำหมดขณะลงทะเบียนพาธของออบเจ็กต์ '%s'"
 
-#: ../server/vino-dbus-listener.c:532
+#: ../server/vino-dbus-listener.c:537
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "ไม่สามารถขอใช้ชื่อ D-Bus '%s' ได้\n"
 
-#: ../server/vino-dbus-listener.c:540
+#: ../server/vino-dbus-listener.c:545
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "เซิร์ฟเวอร์พื้นโต๊ะระยะไกลกำลังทำงานอยู่แล้ว จะออกจากโปรแกรม ...\n"
 
@@ -559,60 +559,66 @@ msgstr "ยกเลิก"
 #: ../tools/vino-passwd.c:122
 #, c-format
 msgid ""
+"ERROR: Maximum length of password is %d character. Please, re-enter the "
+"password."
+msgid_plural ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
-"password.\n"
-msgstr "ข้อผิดพลาด: ความยาวสูงสุดของรหัสผ่านคือ %d อักขระ กรุณาป้อนรหัสผ่านใหม่\n"
+"password."
+msgstr[0] "ข้อผิดพลาด: ความยาวสูงสุดของรหัสผ่านคือ %d อักขระ กรุณาป้อนรหัสผ่านใหม่"
 
-#: ../tools/vino-passwd.c:152
+#: ../tools/vino-passwd.c:156
 #, c-format
 msgid "Changing Vino password.\n"
 msgstr "กำลังเปลี่ยนรหัสผ่าน Vino\n"
 
-#: ../tools/vino-passwd.c:154
+#: ../tools/vino-passwd.c:158
 msgid "Enter new Vino password: "
 msgstr "ตั้งรหัสผ่านใหม่สำหรับ Vino: "
 
-#: ../tools/vino-passwd.c:157
+#: ../tools/vino-passwd.c:161
 msgid "Retype new Vino password: "
 msgstr "พิมพ์รหัสผ่านใหม่สำหรับ Vino ซ้ำอีกครั้ง: "
 
-#: ../tools/vino-passwd.c:163
+#: ../tools/vino-passwd.c:167
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: ปรับข้อมูลรหัสผ่านเรียบร้อยแล้ว\n"
 
-#: ../tools/vino-passwd.c:167
+#: ../tools/vino-passwd.c:171
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "ขออภัย รหัสผ่านไม่ตรงกัน\n"
 
-#: ../tools/vino-passwd.c:168
+#: ../tools/vino-passwd.c:172
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: รหัสผ่านไม่มีการเปลี่ยนแปลง\n"
 
-#: ../tools/vino-passwd.c:183
+#: ../tools/vino-passwd.c:187
 msgid "Show Vino version"
 msgstr "แสดงรุ่นของ Vino"
 
-#: ../tools/vino-passwd.c:192
+#: ../tools/vino-passwd.c:196
 msgid "- Updates Vino password"
 msgstr "- เปลี่ยนรหัสผ่าน Vino"
 
-#: ../tools/vino-passwd.c:202
+#: ../tools/vino-passwd.c:206
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr "เรียก 'vino-passwd --help' เพื่อดูตัวเลือกบรรทัดคำสั่งที่ใช้ได้ทั้งหมด"
 
-#: ../tools/vino-passwd.c:209
+#: ../tools/vino-passwd.c:213
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "VINO รุ่น %s\n"
 
-#: ../tools/vino-passwd.c:218
+#: ../tools/vino-passwd.c:222
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "ข้อผิดพลาด: คุณไม่มีสิทธิ์เปลี่ยนรหัสผ่าน Vino\n"
+
+#~ msgid "Set your remote desktop access preferences"
+#~ msgstr "ปรับแต่งการเข้าถึงพื้นโต๊ะของคุณจากระยะไกล"
 
 #~ msgid "<b>Network</b>"
 #~ msgstr "<b>เครือข่าย</b>"
