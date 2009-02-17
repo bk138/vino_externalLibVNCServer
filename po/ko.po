@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-29 21:25+0900\n"
-"PO-Revision-Date: 2009-01-29 21:36+0900\n"
+"POT-Creation-Date: 2009-02-18 08:25+0900\n"
+"PO-Revision-Date: 2009-02-18 08:26+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team: GNOME Korea <gnome-kr-hackers@lists.kldp.net>\n"
 "MIME-Version: 1.0\n"
@@ -60,130 +60,110 @@ msgstr "다른 컴퓨터가 이 컴퓨터에 %s 주소로 연결할 수 있습�
 msgid "Nobody can access your desktop."
 msgstr "다른 컴퓨터에서 이 데스크탑에 연결할 수 없습니다."
 
-#: ../capplet/vino-preferences.c:1081 ../server/vino-dbus-listener.c:496
+#: ../capplet/vino-preferences.c:1081 ../server/vino-dbus-listener.c:501
 #: ../server/vino-server.c:156 ../server/vino-server.c:187
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "버스로 연결 열기 실패: %s\n"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+msgid "Choose how other users can remotely view your desktop"
+msgstr "다른 사용자가 데스크탑을 보는 방법을 설정합니다"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:2
 #: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "원격 데스크탑"
 
-#: ../capplet/vino-preferences.desktop.in.in.h:2
-msgid "Set your remote desktop access preferences"
-msgstr "원격 데스크탑 접근 설정을 합니다"
-
 #: ../capplet/vino-preferences.glade.h:1
-msgid " "
-msgstr " "
-
-#: ../capplet/vino-preferences.glade.h:2
-msgid "   "
-msgstr "   "
-
-#: ../capplet/vino-preferences.glade.h:3
-msgid "       "
-msgstr "       "
-
-#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Notification Area</b>"
 msgstr "<b>알림 영역</b>"
 
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:2
 msgid "<b>Security</b>"
 msgstr "<b>보안</b>"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:3
 msgid "<b>Sharing</b>"
 msgstr "<b>공유</b>"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<i>Some of these preferences are locked down</i>"
 msgstr "<i>몇몇 설정이 잠겨져 있습니다</i>"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:5
 msgid "Al_ways display an icon"
 msgstr "항상 아이콘 표시(_W)"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:6
 msgid "Allow other users to _view your desktop"
 msgstr "다른 사용자가 데스크탑을 볼 수 있도록 합니다(_V)"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:7
 msgid "Maximum size: 8 characters"
 msgstr "최대 크기: 8글자"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Remote Desktop Preferences"
 msgstr "원격 데스크탑 기본 설정"
 
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.glade.h:9
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "원격 사용자가 마우스와 키보드를 조작할 수 있습니다"
 
-#: ../capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.glade.h:10
 msgid "The router must have the UPnP feature enabled"
 msgstr "라우터에 UPnP 기능을 사용해야 합니다"
 
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:11
 msgid "You will be queried to allow or to refuse every incoming connection"
 msgstr "연결이 들어올 때마다 허용할 지 거부할 지 물음을 받습니다."
 
-#: ../capplet/vino-preferences.glade.h:15
+#: ../capplet/vino-preferences.glade.h:12
 msgid "Your desktop will be shared"
 msgstr "데스크탑을 공유합니다"
 
-#: ../capplet/vino-preferences.glade.h:16
+#: ../capplet/vino-preferences.glade.h:13
 msgid "_Allow other users to control your desktop"
 msgstr "다른 사용자가 데스크탑을 제어할 수 있음(_A)"
 
-#: ../capplet/vino-preferences.glade.h:17
+#: ../capplet/vino-preferences.glade.h:14
+msgid "_Configure network automatically to accept connections"
+msgstr "연결을 받아들이도록 자동 네트워크 설정(_C)"
+
+#: ../capplet/vino-preferences.glade.h:15
 msgid "_Never display an icon"
 msgstr "아이콘 표시하지 않기(_N)"
 
-#: ../capplet/vino-preferences.glade.h:18
+#: ../capplet/vino-preferences.glade.h:16
 msgid "_Only display an icon when there is someone connected"
 msgstr "누군가 연결했을 경우에만 아이콘 표시(_O)"
 
-#: ../capplet/vino-preferences.glade.h:19
+#: ../capplet/vino-preferences.glade.h:17
 msgid "_Require the user to enter this password:"
 msgstr "사용자가 이 암호를 입력(_R):"
 
-#: ../capplet/vino-preferences.glade.h:20
-msgid "_Talk to the router and try to open the doors there"
-msgstr "라우터에 이 연결을 허용하라고 지시(_T)"
-
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:18
 msgid "_You must confirm each access to this machine"
 msgstr "매번 이 컴퓨터에 연결할 때마다 확인(_Y)"
 
-#: ../capplet/vino-preferences.glade.h:22
-msgid "gtk-close"
-msgstr "gtk-close"
-
-#: ../capplet/vino-preferences.glade.h:23
-msgid "gtk-help"
-msgstr "gtk-help"
-
-#: ../server/vino-dbus-listener.c:276 ../server/vino-dbus-listener.c:306
-#: ../server/vino-dbus-listener.c:347
+#: ../server/vino-dbus-listener.c:281 ../server/vino-dbus-listener.c:311
+#: ../server/vino-dbus-listener.c:352
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "'%s' 메시지를 처리하는데 메모리 부족"
 
-#: ../server/vino-dbus-listener.c:453
+#: ../server/vino-dbus-listener.c:458
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "개체 경로 '%s'(을)를 등록하는데 메모리 부족"
 
-#: ../server/vino-dbus-listener.c:532
+#: ../server/vino-dbus-listener.c:537
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "D-Bus 이름 '%s'(을)를 얻는데 실패\n"
 
-#: ../server/vino-dbus-listener.c:540
+#: ../server/vino-dbus-listener.c:545
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "원격 데스크탑 서버가 이미 실행 중입니다. 마칩니다...\n"
 
@@ -289,7 +269,10 @@ msgid ""
 "If not set, the server will listen on all network interfaces. Set this if "
 "you want that accept connections only from some specific network interface. "
 "eg: eth0, wifi0, lo, ..."
-msgstr "설정하지 않으면 모든 네트워크 인터페이스에 대해 연결을 받아들입니다. 특정 네트워크 인터페이스에서만 연결을 받아들이려면 설정하십시오. 예: eth0, wifi0, lo, ..."
+msgstr ""
+"설정하지 않으면 모든 네트워크 인터페이스에 대해 연결을 받아들입니다. 특정 네"
+"트워크 인터페이스에서만 연결을 받아들이려면 설정하십시오. 예: eth0, wifi0, "
+"lo, ..."
 
 #: ../server/vino-server.schemas.in.h:6
 msgid ""
@@ -341,7 +324,8 @@ msgstr ""
 msgid ""
 "If true, we will use UPNP protocol to automatically forward the port used by "
 "vino in the router."
-msgstr "참이면 UPNP 프로토콜을 사용해 비노에서 사용할 포트를 라우터에서 포워딩합니다."
+msgstr ""
+"참이면 UPNP 프로토콜을 사용해 비노에서 사용할 포트를 라우터에서 포워딩합니다."
 
 #: ../server/vino-server.schemas.in.h:13
 msgid "Listen an alternative port"
@@ -582,60 +566,84 @@ msgstr "취소함"
 #: ../tools/vino-passwd.c:122
 #, c-format
 msgid ""
+"ERROR: Maximum length of password is %d character. Please, re-enter the "
+"password."
+msgid_plural ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
-"password.\n"
-msgstr "오류: 암호 길이는 최대 %d글자입니다. 암호를 다시 입력하십시오.\n"
+"password."
+msgstr[0] "오류: 암호 길이는 최대 %d글자입니다. 암호를 다시 입력하십시오."
 
-#: ../tools/vino-passwd.c:152
+#: ../tools/vino-passwd.c:156
 #, c-format
 msgid "Changing Vino password.\n"
 msgstr "비노 암호를 바꾸는 중입니다.\n"
 
-#: ../tools/vino-passwd.c:154
+#: ../tools/vino-passwd.c:158
 msgid "Enter new Vino password: "
 msgstr "새 비노 암호를 입력하십시오: "
 
-#: ../tools/vino-passwd.c:157
+#: ../tools/vino-passwd.c:161
 msgid "Retype new Vino password: "
 msgstr "새 비노 암호를 다시 입력하십시오: "
 
-#: ../tools/vino-passwd.c:163
+#: ../tools/vino-passwd.c:167
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: 암호를 성공적으로 바꿨습니다.\n"
 
-#: ../tools/vino-passwd.c:167
+#: ../tools/vino-passwd.c:171
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "암호가 맞지 않습니다.\n"
 
-#: ../tools/vino-passwd.c:168
+#: ../tools/vino-passwd.c:172
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: 암호를 바꾸지 않았습니다.\n"
 
-#: ../tools/vino-passwd.c:183
+#: ../tools/vino-passwd.c:187
 msgid "Show Vino version"
 msgstr "비노 버전 표시"
 
-#: ../tools/vino-passwd.c:192
+#: ../tools/vino-passwd.c:196
 msgid "- Updates Vino password"
 msgstr "- 비노 암호를 바꿉니다"
 
-#: ../tools/vino-passwd.c:202
+#: ../tools/vino-passwd.c:206
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr "명령행 옵션 목록을 보려면 'vino-passwd --help' 명령을 실행하십시오"
 
-#: ../tools/vino-passwd.c:209
+#: ../tools/vino-passwd.c:213
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "비노 버전 %s\n"
 
-#: ../tools/vino-passwd.c:218
+#: ../tools/vino-passwd.c:222
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "오류: 비노 암호를 바꿀 권한이 없습니다.\n"
+
+#~ msgid "Set your remote desktop access preferences"
+#~ msgstr "원격 데스크탑 접근 설정을 합니다"
+
+#~ msgid " "
+#~ msgstr " "
+
+#~ msgid "   "
+#~ msgstr "   "
+
+#~ msgid "       "
+#~ msgstr "       "
+
+#~ msgid "_Talk to the router and try to open the doors there"
+#~ msgstr "라우터에 이 연결을 허용하라고 지시(_T)"
+
+#~ msgid "gtk-close"
+#~ msgstr "gtk-close"
+
+#~ msgid "gtk-help"
+#~ msgstr "gtk-help"
 
 #~ msgid "<b>Network</b>"
 #~ msgstr "<b>네트워크</b>"
