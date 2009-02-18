@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vino 2.25.91\n"
+"Project-Id-Version: vino 2.25.92\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-14 17:46+0800\n"
-"PO-Revision-Date: 2009-02-14 17:47+0800\n"
+"POT-Creation-Date: 2009-02-18 16:56+0800\n"
+"PO-Revision-Date: 2009-02-18 16:57+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
 "MIME-Version: 1.0\n"
@@ -64,10 +64,8 @@ msgid "Failed to open connection to bus: %s\n"
 msgstr "開啟至 bus 的連線失敗：%s\n"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
-#, fuzzy
-#| msgid "Allow other users to _view your desktop"
 msgid "Choose how other users can remotely view your desktop"
-msgstr "允許其他使用者觀看你的桌面(_V)"
+msgstr "選擇其他使用者要以何種方式遠端觀看你的桌面"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:2
 #: ../server/vino-server.desktop.in.in.h:2
@@ -360,13 +358,14 @@ msgid ""
 "is set to true. Valid values are in the range from 5000 to 50000."
 msgstr "如‘use_alternative_port’鍵值設為 true 時，伺服器要監聽的連接埠。可用的數值範圍為 5000 到 50000。"
 
+# (pofilter) gconf: do not translate gconf attribute: "always", "client", "never"
 #: ../server/vino-server.schemas.in.h:23
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
 "\"always\" - The icon will be always there; \"client\" - You will see the "
 "icon only when there is someone connected, this is the default behavior; "
 "\"never\" - Never shows the icon."
-msgstr "這個設定鍵控制了狀態圖示的行為。一共有三種選項：「總是」─總是顯示圖示；「客戶端」─只在有人連線時才顯示圖示，這是預設的行為；「永遠不」─永遠不顯示圖示。"
+msgstr "這個設定鍵控制了狀態圖示的行為。一共有三種選項：「always」(總是)─ 總是顯示圖示；「client」(客戶端) ─ 只在有人連線時才顯示圖示，這是預設的行為；「never」(永不) ─ 永遠不顯示圖示。"
 
 #: ../server/vino-server.schemas.in.h:24
 msgid ""
@@ -539,18 +538,15 @@ msgid "Cancelled"
 msgstr "已取消"
 
 #: ../tools/vino-passwd.c:122
-#, fuzzy, c-format
-#| msgid ""
-#| "ERROR: Maximum length of password is %d characters. Please, re-enter the "
-#| "password.\n"
+#, c-format
 msgid ""
 "ERROR: Maximum length of password is %d character. Please, re-enter the "
 "password."
 msgid_plural ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
 "password."
-msgstr[0] "錯誤：密碼的最大長度為 %d 個字符。請重新輸入密碼。\n"
-msgstr[1] "錯誤：密碼的最大長度為 %d 個字符。請重新輸入密碼。\n"
+msgstr[0] "錯誤：密碼的最大長度為 %d 個字符。請重新輸入密碼。"
+msgstr[1] "錯誤：密碼的最大長度為 %d 個字符。請重新輸入密碼。"
 
 #: ../tools/vino-passwd.c:156
 #, c-format
