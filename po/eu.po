@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-13 15:57+0100\n"
-"PO-Revision-Date: 2009-02-13 15:57+0100\n"
+"POT-Creation-Date: 2009-02-19 20:12+0100\n"
+"PO-Revision-Date: 2009-02-19 20:13+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
@@ -66,13 +66,13 @@ msgid "Failed to open connection to bus: %s\n"
 msgstr "Huts egin du bus-arekin konektatzean: %s\n"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+msgid "Choose how other users can remotely view your desktop"
+msgstr "Aukeratu beste erabiltzaileek zure mahaigaina urrunetik nola ikusiko duten"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:2
 #: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "Urruneko mahaigaina"
-
-#: ../capplet/vino-preferences.desktop.in.in.h:2
-msgid "Set your remote desktop access preferences"
-msgstr "Ezarri urruneko mahaigaineko hobespenak"
 
 #: ../capplet/vino-preferences.glade.h:1
 msgid "<b>Notification Area</b>"
