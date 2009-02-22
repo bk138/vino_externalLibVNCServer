@@ -4,32 +4,45 @@
 # Li Shaojie <storm-119@163.com> ,2004.
 # Yang Zhang <zyangmath@gmail.com>, 2007.
 # Deng Xiyue <manphiz@gmail.com>, 2008.
-#
+# 甘露(Gan Lu) <rhythm.gan@gmail.com>, 2009
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-24 03:46+0000\n"
-"PO-Revision-Date: 2008-01-24 13:35+0800\n"
-"Last-Translator: Deng Xiyue <manphiz@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&component=general\n"
+"POT-Creation-Date: 2009-02-01 15:10+0000\n"
+"PO-Revision-Date: 2009-02-22 12:45+0700\n"
+"Last-Translator: 甘露(Gan Lu) <rhythm.gan@gmail.com>\n"
 "Language-Team: i18n_zh <i18n-zh@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../capplet/vino-preferences.c:1025 ../capplet/vino-preferences.c:1060
-#: ../capplet/vino-preferences.c:1118 ../server/vino-dbus-listener.c:374
-#: ../server/vino-server.c:148
+#. Open Link
+#: ../capplet/sexy-url-label.c:183
+#| msgid "Send this command by email"
+msgid "_Send address by email"
+msgstr "通过电子邮件发送地址(_S)"
+
+#. Copy Link Address
+#: ../capplet/sexy-url-label.c:195
+msgid "_Copy address to clipboard"
+msgstr "复制地址到剪贴板(_C)"
+
+#: ../capplet/vino-message-box.c:103
 #, c-format
-msgid "Failed to open connection to bus: %s\n"
-msgstr "打开到总线的连接失败：%s\n"
+#| msgid ""
+#| "There was an error displaying help:\n"
+#| " %s"
+msgid "There was an error showing the URL \"%s\""
+msgstr "显示 URL \"%s\" 时出错"
 
-#: ../capplet/vino-preferences.c:1327
-msgid "Send this command by email"
-msgstr "用电子邮件发送此命令"
+#: ../capplet/vino-preferences.c:198
+#: ../capplet/vino-preferences.c:954
+msgid "Checking the connectivity of this machine..."
+msgstr "正在检查本机器的联网状态..."
 
-#: ../capplet/vino-preferences.c:1362
+#: ../capplet/vino-preferences.c:798
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -38,7 +51,30 @@ msgstr ""
 "显示帮助时出错：\n"
 "%s"
 
+#: ../capplet/vino-preferences.c:839
+msgid "Your desktop is only reachable over the local network."
+msgstr "你的桌面仅可在本地网络中访问。"
+
+#: ../capplet/vino-preferences.c:840
+#: ../capplet/vino-preferences.c:890
+#, c-format
+msgid "Others can access your computer using the address %s."
+msgstr "其他人可以使用这个地址 %s 来访问你的电脑。"
+
+#: ../capplet/vino-preferences.c:940
+msgid "Nobody can access your desktop."
+msgstr "没有人可访问你的桌面。"
+
+#: ../capplet/vino-preferences.c:1081
+#: ../server/vino-dbus-listener.c:496
+#: ../server/vino-server.c:156
+#: ../server/vino-server.c:187
+#, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "打开到总线的连接失败：%s\n"
+
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+#: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "远程桌面"
 
@@ -47,140 +83,126 @@ msgid "Set your remote desktop access preferences"
 msgstr "设置您的远程桌面访问首选项"
 
 #: ../capplet/vino-preferences.glade.h:1
-msgid "<b>Network</b>"
-msgstr "<b>网络</b>"
+msgid " "
+msgstr " "
 
 #: ../capplet/vino-preferences.glade.h:2
+msgid "   "
+msgstr " "
+
+#: ../capplet/vino-preferences.glade.h:3
+msgid "       "
+msgstr " "
+
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Notification Area</b>"
 msgstr "<b>通知区域</b>"
 
-#: ../capplet/vino-preferences.glade.h:3
+#: ../capplet/vino-preferences.glade.h:5
 msgid "<b>Security</b>"
 msgstr "<b>安全</b>"
 
-#: ../capplet/vino-preferences.glade.h:4
+#: ../capplet/vino-preferences.glade.h:6
 msgid "<b>Sharing</b>"
 msgstr "<b>共享</b>"
 
-#: ../capplet/vino-preferences.glade.h:5
-msgid "A_sk you for confirmation"
-msgstr "请您确认(_S)"
-
-#: ../capplet/vino-preferences.glade.h:6
-msgid "Advanced"
-msgstr "高级"
-
 #: ../capplet/vino-preferences.glade.h:7
+#| msgid "Some of these preferences are locked down"
+msgid "<i>Some of these preferences are locked down</i>"
+msgstr "<i>某些首选项已被锁定</i>"
+
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Al_ways display an icon"
 msgstr "总是显示图标(_W)"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:9
 msgid "Allow other users to _view your desktop"
 msgstr "允许其他人查看您的桌面(_V)"
 
-#: ../capplet/vino-preferences.glade.h:9
-msgid "General"
-msgstr "常规"
-
 #: ../capplet/vino-preferences.glade.h:10
-msgid "If checked, remote users accessing the desktop are required to support encryption"
-msgstr "如果勾选，访问桌面的远程用户将需要支持加密。"
+msgid "Maximum size: 8 characters"
+msgstr "最大大小：8 个字符"
 
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:12
-msgid "If checked, remote users are able to control your mouse and keyboard"
-msgstr "如果勾选，远程用户将能够控制您的鼠标和键盘"
-
-#: ../capplet/vino-preferences.glade.h:13
-msgid "If checked, screen will be locked after the last remote client disconnect"
-msgstr "如果勾选，在最后一个远程客户端断开连接后屏幕将被锁定。"
-
-#: ../capplet/vino-preferences.glade.h:14
-msgid "If checked, the server will only accept connections from localhost"
-msgstr "如果勾选，服务器将只接受本地连接"
-
-#: ../capplet/vino-preferences.glade.h:15
-msgid "If checked, the server will use another port, instead of the default (5900)"
-msgstr "如果勾选，服务器将使用另一个端口，而不用默认端口(5900)。"
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:17
-msgid "If checked, your desktop will be shared"
-msgstr "如果勾选，您的桌面将被共享"
-
-#: ../capplet/vino-preferences.glade.h:18
+#: ../capplet/vino-preferences.glade.h:11
 msgid "Remote Desktop Preferences"
 msgstr "远程桌面首选项"
 
-#: ../capplet/vino-preferences.glade.h:19
-msgid "Some of these preferences are locked down"
-msgstr "某些首选项被锁定"
+#: ../capplet/vino-preferences.glade.h:12
+#| msgid "If checked, remote users are able to control your mouse and keyboard"
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr "远程用户将能够控制您的鼠标和键盘"
 
-#: ../capplet/vino-preferences.glade.h:20
-msgid "Users can view your desktop using this command:"
-msgstr "用户可以使用此命令查看您的桌面："
+#: ../capplet/vino-preferences.glade.h:13
+msgid "The router must have the UPnP feature enabled"
+msgstr "路由器必须启用 UPnP 功能"
 
-#: ../capplet/vino-preferences.glade.h:21
-msgid "When a user tries to view or control your desktop:"
-msgstr "当一个用户尝试查看或控制您的桌面："
+#: ../capplet/vino-preferences.glade.h:14
+msgid "You will be queried to allow or to refuse every incoming connection"
+msgstr "你将会被问到是否允许或拒绝每个进入的连接。"
 
-#: ../capplet/vino-preferences.glade.h:22
+#: ../capplet/vino-preferences.glade.h:15
+#| msgid "If checked, your desktop will be shared"
+msgid "Your desktop will be shared"
+msgstr "您的桌面将被共享"
+
+#: ../capplet/vino-preferences.glade.h:16
 msgid "_Allow other users to control your desktop"
 msgstr "允许其他用户控制您的桌面(_A)"
 
-#: ../capplet/vino-preferences.glade.h:23
-msgid "_Lock screen on disconnect"
-msgstr "断开连接时锁住屏幕(_L)"
+#: ../capplet/vino-preferences.glade.h:17
+msgid "_Configure network automatically to accept connections"
+msgstr "配置网络为自动接受连接(_C)"
 
-#: ../capplet/vino-preferences.glade.h:24
+#: ../capplet/vino-preferences.glade.h:18
 msgid "_Never display an icon"
 msgstr "从不显示图标(_N)"
 
-#: ../capplet/vino-preferences.glade.h:25
-msgid "_Only allow local connections"
-msgstr "只允许本地连接(_O)"
-
-#: ../capplet/vino-preferences.glade.h:26
+#: ../capplet/vino-preferences.glade.h:19
 msgid "_Only display an icon when there is someone connected"
 msgstr "仅在别人连接上时显示图标(_O)"
 
-#: ../capplet/vino-preferences.glade.h:27
-msgid "_Password:"
-msgstr "密码(_P)："
-
-#: ../capplet/vino-preferences.glade.h:28
-msgid "_Require encryption"
-msgstr "要求加密(_R)"
-
-#: ../capplet/vino-preferences.glade.h:29
+#: ../capplet/vino-preferences.glade.h:20
 msgid "_Require the user to enter this password:"
 msgstr "要求用户输入此密码(_R)："
 
-#: ../capplet/vino-preferences.glade.h:30
-msgid "_Use an alternative port:"
-msgstr "使用替代端口(_U)："
+#: ../capplet/vino-preferences.glade.h:21
+msgid "_You must confirm each access to this machine"
+msgstr "你必须为本机器确认每个访问(_Y)"
 
-#: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
-#: ../server/vino-dbus-listener.c:249
+#: ../capplet/vino-preferences.glade.h:22
+msgid "gtk-close"
+msgstr "gtk-close"
+
+#: ../capplet/vino-preferences.glade.h:23
+msgid "gtk-help"
+msgstr "gtk-help"
+
+#: ../server/vino-dbus-listener.c:276
+#: ../server/vino-dbus-listener.c:306
+#: ../server/vino-dbus-listener.c:347
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "处理消息“%s”时内存用尽"
 
-#: ../server/vino-dbus-listener.c:334
+#: ../server/vino-dbus-listener.c:453
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "注册对象路径“%s”时内存用尽"
 
-#: ../server/vino-dbus-listener.c:407
+#: ../server/vino-dbus-listener.c:532
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "获取 D-Bus 名称“%s”失败\n"
 
-#: ../server/vino-main.c:74
+#: ../server/vino-dbus-listener.c:540
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "远程桌面服务器已经在运行；退出...\n"
+
+#: ../server/vino-main.c:89
 msgid "GNOME Remote Desktop"
 msgstr "GNOME 远程桌面"
 
-#: ../server/vino-main.c:84
+#: ../server/vino-main.c:99
 msgid "Your XServer does not support the XTest extension - remote desktop access will be view-only\n"
 msgstr "您的 XServer 不支持 XTest 扩展 - 远程桌面访问只能查看\n"
 
@@ -202,6 +224,11 @@ msgstr "1"
 #, c-format
 msgid "%s's remote desktop on %s"
 msgstr "%s 的于 %s 上的远程桌面"
+
+#: ../server/vino-prefs.c:579
+#, c-format
+msgid "Received signal %d, exiting...\n"
+msgstr "已收到信号 %d，退出中...\n"
 
 #: ../server/vino-prompt.c:142
 msgid "Screen"
@@ -232,13 +259,20 @@ msgstr "您允许他们这样做吗？"
 msgid "Question"
 msgstr "问题"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
+#: ../server/vino-prompt.glade.h:5
+#: ../server/vino-util.c:64
 msgid "_Allow"
 msgstr "允许(_A)"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:6
+#: ../server/vino-util.c:65
 msgid "_Refuse"
 msgstr "拒绝(_R)"
+
+#: ../server/vino-server.desktop.in.in.h:1
+#| msgid "GNOME Remote Desktop"
+msgid "GNOME Remote Desktop Server"
+msgstr "GNOME 远程桌面服务器"
 
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -257,92 +291,96 @@ msgid "Enable remote desktop access"
 msgstr "启用远程桌面访问"
 
 #: ../server/vino-server.schemas.in.h:5
+msgid "If not set, the server will listen on all network interfaces. Set this if you want that accept connections only from some specific network interface. eg: eth0, wifi0, lo, ..."
+msgstr "如果空置，服务器将监听所有网络界面。设定该值，如果你只打算接收某些指定网络界面的连接，比如：eth0，wifi0，lo,..."
+
+#: ../server/vino-server.schemas.in.h:6
 msgid "If true, allows remote access to the desktop via the RFB protocol. Users on remote machines may then connect to the desktop using a vncviewer."
 msgstr "如果为 true，允许由 RFB 协议访问远程桌面。远程机器的的用户然后可以使用 vncviewer 连接桌面。"
 
-#: ../server/vino-server.schemas.in.h:6
+#: ../server/vino-server.schemas.in.h:7
 msgid "If true, remote users accessing the desktop are not allowed access until the user on the host machine approves the connection. Recommended especially when access is not password protected."
 msgstr "如果为 true，直到主机的用户批准了连接，远程用户才可以访问远程桌面。特别推荐使用于没有密码保护的访问。"
 
-#: ../server/vino-server.schemas.in.h:7
+#: ../server/vino-server.schemas.in.h:8
 msgid "If true, remote users accessing the desktop are only allowed to view the desktop. Remote users will not be able to use the mouse or keyboard."
 msgstr "如果为 true，远程用户访问桌面时只允许查看桌面。远程用户不能使用鼠标与键盘。"
 
-#: ../server/vino-server.schemas.in.h:8
+#: ../server/vino-server.schemas.in.h:9
 msgid "If true, remote users accessing the desktop are required to support encryption. It is highly recommended that you use a client which supports encryption unless the intervening network is trusted."
 msgstr "如果为 true，远程用户访问桌面时要求支持加密。强烈推荐您的客户端支持加密，除非中间网络足够可信任。"
 
-#: ../server/vino-server.schemas.in.h:9
+#: ../server/vino-server.schemas.in.h:10
 msgid "If true, screen will be locked after the last remote client disconnect."
 msgstr "如果为 true，在最后一个远程客户端断开连接后屏幕将被锁定。"
 
-#: ../server/vino-server.schemas.in.h:10
+#: ../server/vino-server.schemas.in.h:11
 msgid "If true, the server will listen to another port, instead of the default (5900). The port must be specified in the 'alternative_port' key."
 msgstr "若为 true，服务器将监听另一个端口，而不是默认的 5900。端口号必须在‘alternative_port’键中指定。"
 
-#: ../server/vino-server.schemas.in.h:11
-msgid "If true, the server will only accept connections from localhost and network connections will be rejected. Set this option to true if you wish to exclusively use a tunneling mechanism to access the server, such as ssh."
-msgstr "若为 true，服务器将只接受来自 localhost 的连接，来自网络的连接将被拒绝。如果您希望仅通过隧道机制，如 ssh，来访问服务器的话，将此选项设为 true。"
-
 #: ../server/vino-server.schemas.in.h:12
+msgid "If true, we will use UPNP protocol to automatically forward the port used by vino in the router."
+msgstr "如为 True，将使用协议自动转发在路由器中 vino 使用的端口。"
+
+#: ../server/vino-server.schemas.in.h:13
 msgid "Listen an alternative port"
 msgstr "监听替代端口"
 
-#: ../server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:14
 msgid "Lists the authentication methods with which remote users may access the desktop. There are two possible authentication methods; \"vnc\" causes the remote user to be prompted for a password (the password is specified by the vnc_password key) before connecting and \"none\" which allows any remote user to connect."
 msgstr "列出远程用户访问使用的验证方法。有两种可能的验证方法：“vnc”在连接之前提示远程用户输入密码(密码由 vnc_password 键指定)或者“没有密码”，允许任何远程用户连接。"
 
-#: ../server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:15
 msgid "Lock the screen when last user disconnect"
 msgstr "最后一个用户断开连接时锁住屏幕"
 
-#: ../server/vino-server.schemas.in.h:15
-msgid "Only allow local connections"
-msgstr "只允许本地连接"
-
 #: ../server/vino-server.schemas.in.h:16
+msgid "Network interface for listening"
+msgstr "监听网络界面"
+
+#: ../server/vino-server.schemas.in.h:17
 msgid "Only allow remote users to view the desktop"
 msgstr "仅允许远程用户查看桌面"
 
-#: ../server/vino-server.schemas.in.h:17
+#: ../server/vino-server.schemas.in.h:18
 msgid "Password required for \"vnc\" authentication"
 msgstr "“vnc”认证的密码"
 
-#: ../server/vino-server.schemas.in.h:18
+#: ../server/vino-server.schemas.in.h:19
 msgid "Prompt the user before completing a connection"
 msgstr "完成连接前提示用户"
 
-#: ../server/vino-server.schemas.in.h:19
+#: ../server/vino-server.schemas.in.h:20
 msgid "Require encryption"
 msgstr "请求加密"
 
-#: ../server/vino-server.schemas.in.h:20
+#: ../server/vino-server.schemas.in.h:21
 msgid "The password which the remote user will be prompted for if the \"vnc\" authentication method is used. The password specified by the key is base64 encoded."
 msgstr "远程用户会被提示输入的密码，如果“vnc”验证方法启用。此由键指定密码是基于 64 位编码。"
 
-#: ../server/vino-server.schemas.in.h:21
+#: ../server/vino-server.schemas.in.h:22
 msgid "The port which the server will listen to if the 'use_alternative_port' key is set to true. Valid values are in the range from 5000 to 50000."
 msgstr "这是在‘use_alternative_port’键被设定为 true 时服务器将监听的端口号。可取值的范围为从 5000 到 50000。"
 
-#: ../server/vino-server.schemas.in.h:22
+#: ../server/vino-server.schemas.in.h:23
 msgid "This key controls the behavior of the status icon. There are three options: \"always\" - The icon will be always there; \"client\" - You will see the icon only when there is someone connected, this is the default behavior; \"never\" - Never shows the icon."
 msgstr "此键值控制状态图标的行为。有三个选项：“总是” - 总是显示图标；“客户” - 您将仅在有人连接上的时候看到图标，这是默认行为；“从不” - 从不显示图标。"
 
-#: ../server/vino-server.schemas.in.h:23
+#: ../server/vino-server.schemas.in.h:24
 msgid "This key specifies the e-mail address to which the remote desktop URL should be sent if the user clicks on the URL in the Remote Desktop preferences dialog."
 msgstr "此键指定远程桌面 URL 应发送到的 E-mail 地址。用户在点击了远程桌面首选项设置对话框的内的 URL 时，会向此地址发送邮件。"
 
-#: ../server/vino-server.schemas.in.h:24
+#: ../server/vino-server.schemas.in.h:25
 msgid "When the status icon should be shown"
 msgstr "何时显示状态图标"
 
-#: ../server/vino-shell.c:76
-msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "远程桌面服务器已经在运行；退出...\n"
+#: ../server/vino-server.schemas.in.h:26
+msgid "When true, disable the background on receive valid session"
+msgstr "当为 True 时，在收到有效进程时禁用背景"
 
-#: ../server/vino-shell.c:79
-msgid "Problem registering the remote desktop server with bonobo-activation; exiting ...\n"
-msgstr "用 bonobo-activation 注册远程桌面服务器时发生问题；正在退出...\n"
+#: ../server/vino-server.schemas.in.h:27
+msgid "Whether we should use UPNP to forward the port in routers"
+msgstr "是否使用 UPNP 来转发路由器中的端口"
 
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
@@ -354,25 +392,21 @@ msgid "One person is connected"
 msgid_plural "%d people are connected"
 msgstr[0] "%d 位用户已连接"
 
-#: ../server/vino-status-icon.c:245
-#, c-format
-msgid ""
-"There was an error displaying preferences:\n"
-" %s"
-msgstr ""
-"显示首选项时出错：\n"
-" %s"
+#: ../server/vino-status-icon.c:207
+#| msgid ""
+#| "There was an error displaying preferences:\n"
+#| " %s"
+msgid "Error displaying preferences"
+msgstr "显示首选项时出错"
+
+#: ../server/vino-status-icon.c:226
+#| msgid ""
+#| "There was an error displaying help:\n"
+#| "%s"
+msgid "Error displaying help"
+msgstr "显示帮助时出错"
 
 #: ../server/vino-status-icon.c:253
-#, c-format
-msgid ""
-"There was an error displaying help:\n"
-" %s"
-msgstr ""
-"显示帮助时出错：\n"
-" %s"
-
-#: ../server/vino-status-icon.c:276
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -405,106 +439,212 @@ msgstr ""
 "51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:291
+#: ../server/vino-status-icon.c:268
 msgid "translator-credits"
-msgstr "Yang Zhang <zyangmath@gmail.com>, 2007"
+msgstr ""
+"Yang Zhang <zyangmath@gmail.com>, 2007\n"
+"甘露(Gan Lu) <rhythm.gan@gmail.com>"
 
-#: ../server/vino-status-icon.c:297
+#: ../server/vino-status-icon.c:274
 msgid "Share your desktop with other users"
 msgstr "与其它用户共享您的桌面"
 
-#: ../server/vino-status-icon.c:360
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:338
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "您确定要断开连接“%s”吗？"
 
-#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-icon.c:340
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "将要断开与来自“%s”的远程用户的连接。您确定吗？"
 
-#: ../server/vino-status-icon.c:367
+#: ../server/vino-status-icon.c:345
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "您确定要断开与所有客户端的连接吗？"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:346
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "将要断开与所有远程用户的连接。您确定吗？"
 
-#: ../server/vino-status-icon.c:380
+#: ../server/vino-status-icon.c:358
 msgid "Disconnect"
 msgstr "断开连接"
 
-#: ../server/vino-status-icon.c:406
+#: ../server/vino-status-icon.c:384
 msgid "_Preferences"
 msgstr "首选项(_P)"
 
-#: ../server/vino-status-icon.c:421
+#: ../server/vino-status-icon.c:399
 msgid "Disconnect all"
 msgstr "断开所有连接"
 
-#: ../server/vino-status-icon.c:444
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:423
 #, c-format
 msgid "Disconnect %s"
 msgstr "断开连接 %s"
 
-#: ../server/vino-status-icon.c:464
+#: ../server/vino-status-icon.c:443
 msgid "_Help"
 msgstr "帮助(_H)"
 
-#: ../server/vino-status-icon.c:472
+#: ../server/vino-status-icon.c:451
 msgid "_About"
 msgstr "关于(_A)"
 
-#: ../server/vino-status-icon.c:598
+#: ../server/vino-status-icon.c:584
+#, c-format
 msgid "Error initializing libnotify\n"
 msgstr "初始化 libnotify 出错\n"
 
-#: ../server/vino-status-icon.c:612
+#: ../server/vino-status-icon.c:604
 msgid "Another user is viewing your desktop"
 msgstr "其它用户正在查看您的桌面"
 
-#: ../server/vino-status-icon.c:613
+#: ../server/vino-status-icon.c:605
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "位于计算机“%s”上的用户正在远程查看您的桌面。"
 
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:610
 msgid "Another user is controlling your desktop"
 msgstr "其它用户正在控制您的桌面"
 
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:611
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "位于计算机“%s”上的用户正在远程控制您的桌面。"
 
-#: ../server/vino-status-icon.c:641
+#: ../server/vino-status-icon.c:633
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "显示气泡通知时出错：%s\n"
 
-#: ../session/vino-session.c:133
-msgid "Remote desktop server died, restarting\n"
-msgstr "远程桌面服务器宕机，重新启动\n"
+#: ../server/vino-util.c:115
+msgid "An error has occurred:"
+msgstr "发生了一个错误："
 
-#: ../session/vino-session.c:154
+#: ../tools/vino-passwd.c:115
 #, c-format
-msgid "Activation of %s failed: %s\n"
-msgstr "启动 %s 失败：%s\n"
+msgid "Cancelled"
+msgstr "已取消"
 
-#: ../session/vino-session.c:160
+#: ../tools/vino-passwd.c:122
 #, c-format
-msgid "Activation of %s failed: Unknown Error\n"
-msgstr "激活 %s 失败：未知错误\n"
+msgid "ERROR: Maximum length of password is %d characters. Please, re-enter the password.\n"
+msgstr "错误：密码的最大长度为 %d 字符。请重新输入密码。\n"
 
-#: ../session/vino-session.c:231
-msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "启动远程桌面服务器失败：尝试次数太多\n"
+#: ../tools/vino-passwd.c:152
+#, c-format
+msgid "Changing Vino password.\n"
+msgstr "正在更改 Vino 密码。\n"
 
-#: ../session/vino-session.c:295
-msgid "Starting remote desktop server"
-msgstr "启动远程桌面服务器"
+#: ../tools/vino-passwd.c:154
+msgid "Enter new Vino password: "
+msgstr "输入新的 Vino 密码："
 
-#: ../session/vino-session.c:300
-msgid "Not starting remote desktop server"
-msgstr "没有启动远程桌面服务器"
+#: ../tools/vino-passwd.c:157
+msgid "Retype new Vino password: "
+msgstr "再输一次新的 Vino 密码："
+
+#: ../tools/vino-passwd.c:163
+#, c-format
+msgid "vino-passwd: password updated successfully.\n"
+msgstr "vino-passwd：密码更新成功。\n"
+
+#: ../tools/vino-passwd.c:167
+#, c-format
+msgid "Sorry, passwords do not match.\n"
+msgstr "对不起，两次密码不一致。\n"
+
+#: ../tools/vino-passwd.c:168
+#, c-format
+msgid "vino-passwd: password unchanged.\n"
+msgstr "vino-passwd：密码没有更换。\n"
+
+#: ../tools/vino-passwd.c:183
+msgid "Show Vino version"
+msgstr "显示 Vino 版本"
+
+#: ../tools/vino-passwd.c:192
+msgid "- Updates Vino password"
+msgstr "- 更新 Vino密码"
+
+#: ../tools/vino-passwd.c:202
+msgid "Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr "运行 'vino-passwd --help' 查看可用命令行选项的全部清单"
+
+#: ../tools/vino-passwd.c:209
+#, c-format
+msgid "VINO Version %s\n"
+msgstr "VINO 版本 %s\n"
+
+#: ../tools/vino-passwd.c:218
+#, c-format
+msgid "ERROR: You do not have enough permissions to change Vino password.\n"
+msgstr "错误：你没有足够权限更改 Vino 密码。\n"
+
+#~ msgid "<b>Network</b>"
+#~ msgstr "<b>网络</b>"
+#~ msgid "A_sk you for confirmation"
+#~ msgstr "请您确认(_S)"
+#~ msgid "Advanced"
+#~ msgstr "高级"
+#~ msgid "General"
+#~ msgstr "常规"
+#~ msgid ""
+#~ "If checked, remote users accessing the desktop are required to support "
+#~ "encryption"
+#~ msgstr "如果勾选，访问桌面的远程用户将需要支持加密。"
+#~ msgid ""
+#~ "If checked, screen will be locked after the last remote client disconnect"
+#~ msgstr "如果勾选，在最后一个远程客户端断开连接后屏幕将被锁定。"
+#~ msgid "If checked, the server will only accept connections from localhost"
+#~ msgstr "如果勾选，服务器将只接受本地连接"
+#~ msgid ""
+#~ "If checked, the server will use another port, instead of the default "
+#~ "(5900)"
+#~ msgstr "如果勾选，服务器将使用另一个端口，而不用默认端口(5900)。"
+#~ msgid "Users can view your desktop using this command:"
+#~ msgstr "用户可以使用此命令查看您的桌面："
+#~ msgid "When a user tries to view or control your desktop:"
+#~ msgstr "当一个用户尝试查看或控制您的桌面："
+#~ msgid "_Lock screen on disconnect"
+#~ msgstr "断开连接时锁住屏幕(_L)"
+#~ msgid "_Only allow local connections"
+#~ msgstr "只允许本地连接(_O)"
+#~ msgid "_Password:"
+#~ msgstr "密码(_P)："
+#~ msgid "_Require encryption"
+#~ msgstr "要求加密(_R)"
+#~ msgid "_Use an alternative port:"
+#~ msgstr "使用替代端口(_U)："
+#~ msgid ""
+#~ "If true, the server will only accept connections from localhost and "
+#~ "network connections will be rejected. Set this option to true if you wish "
+#~ "to exclusively use a tunneling mechanism to access the server, such as "
+#~ "ssh."
+#~ msgstr ""
+#~ "若为 true，服务器将只接受来自 localhost 的连接，来自网络的连接将被拒绝。如"
+#~ "果您希望仅通过隧道机制，如 ssh，来访问服务器的话，将此选项设为 true。"
+#~ msgid "Only allow local connections"
+#~ msgstr "只允许本地连接"
+#~ msgid ""
+#~ "Problem registering the remote desktop server with bonobo-activation; "
+#~ "exiting ...\n"
+#~ msgstr "用 bonobo-activation 注册远程桌面服务器时发生问题；正在退出...\n"
+#~ msgid "Remote desktop server died, restarting\n"
+#~ msgstr "远程桌面服务器宕机，重新启动\n"
+#~ msgid "Activation of %s failed: %s\n"
+#~ msgstr "启动 %s 失败：%s\n"
+#~ msgid "Activation of %s failed: Unknown Error\n"
+#~ msgstr "激活 %s 失败：未知错误\n"
+#~ msgid "Failed to activate remote desktop server: tried too many times\n"
+#~ msgstr "启动远程桌面服务器失败：尝试次数太多\n"
+#~ msgid "Starting remote desktop server"
+#~ msgstr "启动远程桌面服务器"
+#~ msgid "Not starting remote desktop server"
+#~ msgstr "没有启动远程桌面服务器"
+
