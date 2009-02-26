@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-16 11:09-0300\n"
-"PO-Revision-Date: 2009-02-16 11:08-0300\n"
+"POT-Creation-Date: 2009-02-26 14:44-0300\n"
+"PO-Revision-Date: 2009-02-26 14:45-0300\n"
 "Last-Translator: Jonh Wendell <jwendell@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgstr "Outros usuários podem acessá-la através do endereço %s."
 
 #: ../capplet/vino-preferences.c:940
 msgid "Nobody can access your desktop."
-msgstr "Niguém pode acessar sua máquina."
+msgstr "Ninguém pode acessar sua máquina."
 
 #: ../capplet/vino-preferences.c:1081 ../server/vino-dbus-listener.c:501
 #: ../server/vino-server.c:156 ../server/vino-server.c:187
