@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-29 16:09+0100\n"
-"PO-Revision-Date: 2009-01-29 16:12+0100\n"
+"POT-Creation-Date: 2009-02-26 13:24+0100\n"
+"PO-Revision-Date: 2009-02-26 13:25+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -57,130 +57,111 @@ msgstr "Andre kan få tilgang til din datamaskin via adressen %s."
 msgid "Nobody can access your desktop."
 msgstr "Ingen har tilgang til ditt skrivebord."
 
-#: ../capplet/vino-preferences.c:1083 ../server/vino-dbus-listener.c:496
+#: ../capplet/vino-preferences.c:1083 ../server/vino-dbus-listener.c:501
 #: ../server/vino-server.c:156 ../server/vino-server.c:187
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Kunne ikke åpne tilkobling til buss: %s\n"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+msgid "Choose how other users can remotely view your desktop"
+msgstr "Velg hvordan andre eksterne brukere kan se ditt skrivebord"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:2
 #: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "Eksternt skrivebord"
 
-#: ../capplet/vino-preferences.desktop.in.in.h:2
-msgid "Set your remote desktop access preferences"
-msgstr "Sett brukervalg for tilgang til skrivebord eksternt"
-
 #: ../capplet/vino-preferences.glade.h:1
-msgid " "
-msgstr " "
-
-#: ../capplet/vino-preferences.glade.h:2
-msgid "   "
-msgstr "   "
-
-#: ../capplet/vino-preferences.glade.h:3
-msgid "       "
-msgstr "       "
-
-#: ../capplet/vino-preferences.glade.h:4
 msgid "<b>Notification Area</b>"
 msgstr "<b>Varslingsområde</b>"
 
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.glade.h:2
 msgid "<b>Security</b>"
 msgstr "<b>Sikkerhet</b>"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.glade.h:3
 msgid "<b>Sharing</b>"
 msgstr "<b>Deling</b>"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.glade.h:4
 msgid "<i>Some of these preferences are locked down</i>"
 msgstr "<i>Noen av disse brukervalgene er låst</i>"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:5
 msgid "Al_ways display an icon"
 msgstr "All_tid vis et ikon"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.glade.h:6
 msgid "Allow other users to _view your desktop"
 msgstr "La andre brukere _se ditt skrivebord"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.glade.h:7
 msgid "Maximum size: 8 characters"
 msgstr "Maksimal størrelse: 8 tegn"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Remote Desktop Preferences"
 msgstr "Brukervalg for eksternt skrivebord"
 
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.glade.h:9
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "Eksterne brukere kan kontrollere mus og tastatur"
 
-#: ../capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.glade.h:10
 msgid "The router must have the UPnP feature enabled"
 msgstr "Ruteren må ha UPnP-funksjonen slått på"
 
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:11
 msgid "You will be queried to allow or to refuse every incoming connection"
-msgstr "Du vil bli spurt om å tillate eller nekte alle innkommende tilkoblinger"
+msgstr ""
+"Du vil bli spurt om å tillate eller nekte alle innkommende tilkoblinger"
 
-#: ../capplet/vino-preferences.glade.h:15
+#: ../capplet/vino-preferences.glade.h:12
 msgid "Your desktop will be shared"
 msgstr "Ditt skrivebord vil bli delt"
 
-#: ../capplet/vino-preferences.glade.h:16
+#: ../capplet/vino-preferences.glade.h:13
 msgid "_Allow other users to control your desktop"
 msgstr "L_a andre brukere kontrollere ditt skrivebord"
 
-#: ../capplet/vino-preferences.glade.h:17
+#: ../capplet/vino-preferences.glade.h:14
+msgid "_Configure network automatically to accept connections"
+msgstr "_Konfigurer nettverket til å godta tilkoblinger automatisk"
+
+#: ../capplet/vino-preferences.glade.h:15
 msgid "_Never display an icon"
 msgstr "A_ldri vis et ikon"
 
-#: ../capplet/vino-preferences.glade.h:18
+#: ../capplet/vino-preferences.glade.h:16
 msgid "_Only display an icon when there is someone connected"
 msgstr "Kun vis ik_on når noen er tilkoblet"
 
-#: ../capplet/vino-preferences.glade.h:19
+#: ../capplet/vino-preferences.glade.h:17
 msgid "_Require the user to enter this password:"
 msgstr "K_rev at bruker oppgir dette passordet:"
 
-#: ../capplet/vino-preferences.glade.h:20
-msgid "_Talk to the router and try to open the doors there"
-msgstr "Snakk med ru_teren for å prøve å åpne dørene der"
-
-#: ../capplet/vino-preferences.glade.h:21
+#: ../capplet/vino-preferences.glade.h:18
 msgid "_You must confirm each access to this machine"
 msgstr "D_u må bekrefte hver tilgang til denne maskinen"
 
-#: ../capplet/vino-preferences.glade.h:22
-msgid "gtk-close"
-msgstr ""
-
-#: ../capplet/vino-preferences.glade.h:23
-msgid "gtk-help"
-msgstr ""
-
-#: ../server/vino-dbus-listener.c:276 ../server/vino-dbus-listener.c:306
-#: ../server/vino-dbus-listener.c:347
+#: ../server/vino-dbus-listener.c:281 ../server/vino-dbus-listener.c:311
+#: ../server/vino-dbus-listener.c:352
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "Slutt på minne under håndtering av «%s»-melding"
 
-#: ../server/vino-dbus-listener.c:453
+#: ../server/vino-dbus-listener.c:458
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "slutt på minne ved registrering av objektsti «%s»"
 
-#: ../server/vino-dbus-listener.c:532
+#: ../server/vino-dbus-listener.c:537
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Klarte ikke å hente D-Bus-navn «%s»\n"
 
-#: ../server/vino-dbus-listener.c:540
+#: ../server/vino-dbus-listener.c:545
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "Eksternt skrivebord kjører allerede; avslutter...\n"
 
@@ -591,61 +572,67 @@ msgstr "Avbrutt"
 #: ../tools/vino-passwd.c:122
 #, c-format
 msgid ""
+"ERROR: Maximum length of password is %d character. Please, re-enter the "
+"password."
+msgid_plural ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
-"password.\n"
-msgstr ""
+"password."
+msgstr[0] ""
 "FEIL: Maksimal lengde på passord er %d tegn. Vennligst skriv inn passordet "
-"på nytt.\n"
+"på nytt."
+msgstr[1] ""
+"FEIL: Maksimal lengde på passord er %d tegn. Vennligst skriv inn passordet "
+"på nytt."
 
-#: ../tools/vino-passwd.c:152
+#: ../tools/vino-passwd.c:156
 #, c-format
 msgid "Changing Vino password.\n"
 msgstr "Bytter passord for Vino.\n"
 
-#: ../tools/vino-passwd.c:154
+#: ../tools/vino-passwd.c:158
 msgid "Enter new Vino password: "
 msgstr "Oppgi nytt passord for Vino: "
 
-#: ../tools/vino-passwd.c:157
+#: ../tools/vino-passwd.c:161
 msgid "Retype new Vino password: "
 msgstr "Skriv nytt passord for Vino på nytt: "
 
-#: ../tools/vino-passwd.c:163
+#: ../tools/vino-passwd.c:167
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: oppdatering av passord fullført.\n"
 
-#: ../tools/vino-passwd.c:167
+#: ../tools/vino-passwd.c:171
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "Beklager. Passordene er ikke like.\n"
 
-#: ../tools/vino-passwd.c:168
+#: ../tools/vino-passwd.c:172
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: passord ikke endret.\n"
 
-#: ../tools/vino-passwd.c:183
+#: ../tools/vino-passwd.c:187
 msgid "Show Vino version"
 msgstr "Vis Vino-versjon"
 
-#: ../tools/vino-passwd.c:192
+#: ../tools/vino-passwd.c:196
 msgid "- Updates Vino password"
 msgstr "- Oppdaterer passord for Vino"
 
-#: ../tools/vino-passwd.c:202
+#: ../tools/vino-passwd.c:206
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr ""
 "Kjør «vino-passwd --help» for å se en full liste med tilgjengelige "
 "kommandolinjeflagg"
 
-#: ../tools/vino-passwd.c:209
+#: ../tools/vino-passwd.c:213
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "VINO Versjon %s\n"
 
-#: ../tools/vino-passwd.c:218
+#: ../tools/vino-passwd.c:222
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
