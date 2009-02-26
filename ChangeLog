@@ -1,3 +1,12 @@
+2009-02-26  Jonh Wendell  <jwendell@gnome.org>
+
+	* configure.in,
+	* server/Makefile.am,
+	* server/vino-upnp.c: Added dependency on NetworkManager. Monitor for
+	network state changes and redo the UPnP forward.
+	New configure flag: --enable-network-manager. If not set, enable it
+	anyway if NetworkManager libraries are found. Requires NM 0.7.
+
 2009-02-16  Jonh Wendell  <jwendell@gnome.org>
 
 	* configure.in: post-release bump version to 2.25.92

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008 Jonh Wendell
+ * Copyright (C) 2008,2009 Jonh Wendell
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -20,8 +20,17 @@
  *      Jonh Wendell <wendell@bani.com.br>
  */
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include <miniupnp/miniupnpc.h>
 #include <miniupnp/upnpcommands.h>
+
+#ifdef VINO_ENABLE_NETWORKMANAGER
+#include <dbus/dbus-glib.h>
+#include <NetworkManager/NetworkManager.h>
+#endif
 
 #include "vino-upnp.h"
 #include "vino-util.h"
@@ -33,6 +42,11 @@ struct _VinoUpnpPrivate
   char             lanaddr[16];
   gboolean         have_igd;
   int              port;
+  int              internal_port;
+#ifdef VINO_ENABLE_NETWORKMANAGER
+  DBusGConnection *bus;
+  DBusGProxy      *proxy;
+#endif
 };
 
 G_DEFINE_TYPE (VinoUpnp, vino_upnp, G_TYPE_OBJECT);
@@ -116,6 +130,20 @@ vino_upnp_dispose (GObject *object)
 
   vino_upnp_remove_port (upnp);
 
+#ifdef VINO_ENABLE_NETWORKMANAGER
+  if (upnp->priv->proxy)
+    {
+      g_object_unref (upnp->priv->proxy);
+      upnp->priv->proxy = NULL;
+    }
+
+  if (upnp->priv->bus)
+    {
+      dbus_g_connection_unref (upnp->priv->bus);
+      upnp->priv->bus = NULL;
+    }
+#endif
+
   G_OBJECT_CLASS (vino_upnp_parent_class)->dispose (object);
 }
 
@@ -130,6 +158,10 @@ vino_upnp_class_init (VinoUpnpClass *klass)
   g_type_class_add_private (gobject_class, sizeof (VinoUpnpPrivate));
 }
 
+#ifdef VINO_ENABLE_NETWORKMANAGER
+static void setup_network_monitor (VinoUpnp *upnp);
+#endif
+
 static void
 vino_upnp_init (VinoUpnp *upnp)
 {
@@ -139,6 +171,13 @@ vino_upnp_init (VinoUpnp *upnp)
   upnp->priv->data = NULL;
   upnp->priv->have_igd = FALSE;
   upnp->priv->port = -1;
+  upnp->priv->internal_port = -1;
+
+#ifdef VINO_ENABLE_NETWORKMANAGER
+  upnp->priv->bus = NULL;
+  upnp->priv->proxy = NULL;
+  setup_network_monitor (upnp);
+#endif
 }
 
 VinoUpnp *
@@ -229,6 +268,7 @@ vino_upnp_add_port (VinoUpnp *upnp, int port)
   if (err == 0)
     {
       upnp->priv->port = local_port;
+      upnp->priv->internal_port = port;
       dprintf (UPNP, "UPnP: Successfuly forwarded port %d\n", local_port);
     }
   else
@@ -267,6 +307,7 @@ vino_upnp_remove_port (VinoUpnp *upnp)
 
   g_free (port);
   upnp->priv->port = -1;
+  upnp->priv->internal_port = -1;
 }
 
 int
@@ -276,3 +317,53 @@ vino_upnp_get_external_port (VinoUpnp *upnp)
 
   return upnp->priv->port;
 }
+
+#ifdef VINO_ENABLE_NETWORKMANAGER
+static gboolean
+redo_forward (VinoUpnp *upnp)
+{
+  int port = upnp->priv->internal_port;
+
+  dprintf (UPNP, "UPnP: Doing the forward again\n");
+  upnp->priv->have_igd = FALSE;
+  vino_upnp_remove_port (upnp);
+  vino_upnp_add_port (upnp, port);
+
+  return FALSE;
+}
+
+static void
+state_changed_cb (DBusGProxy *proxy, guint state, VinoUpnp *upnp)
+{
+  dprintf (UPNP, "UPnP: Got the 'network state changed' signal. Status = %d\n", state);
+
+  if ((state == NM_STATE_CONNECTED) && (upnp->priv->internal_port != -1))
+    g_timeout_add_seconds (2, (GSourceFunc) redo_forward, upnp);
+}
+
+static void
+setup_network_monitor (VinoUpnp *upnp)
+{
+  GError *error = NULL;
+
+  upnp->priv->bus = dbus_g_bus_get (DBUS_BUS_SYSTEM, &error);
+  if (upnp->priv->bus == NULL)
+    {
+      g_warning ("Couldn't connect to system bus: %s", error->message);
+      g_error_free (error);
+      return;
+    }
+
+  upnp->priv->proxy = dbus_g_proxy_new_for_name (upnp->priv->bus,
+						 NM_DBUS_SERVICE,
+						 NM_DBUS_PATH,
+						 NM_DBUS_INTERFACE);
+
+  dbus_g_proxy_add_signal (upnp->priv->proxy, "StateChanged", G_TYPE_UINT, G_TYPE_INVALID);
+  dbus_g_proxy_connect_signal (upnp->priv->proxy,
+                               "StateChanged",
+                               G_CALLBACK (state_changed_cb),
+                               upnp,
+                               NULL);
+}
+#endif /* HAVE_NETWORKMANAGER */
