@@ -35,6 +35,8 @@ void vino_mdns_start (void);
 void vino_mdns_stop  (void);
 void vino_mdns_shutdown (void);
 
+const char *vino_mdns_get_hostname (void);
+
 G_END_DECLS
 
 #endif /* __VINO_MDNS_H__ */

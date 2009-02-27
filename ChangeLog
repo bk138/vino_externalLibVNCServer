@@ -1,3 +1,10 @@
+2009-02-27  Jonh Wendell  <jwendell@gnome.org>
+
+	* capplet/vino-preferences.c,
+	* server/vino-mdns.[ch],
+	* server/vino-dbus-listener.c:
+	Fixes #330691 – show .local hostname if avahi is present.
+
 2009-02-26  Jonh Wendell  <jwendell@gnome.org>
 
 	* configure.in,

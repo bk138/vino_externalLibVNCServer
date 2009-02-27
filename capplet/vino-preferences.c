@@ -821,31 +821,41 @@ vino_preferences_dialog_destroyed (GtkWidget             *widget,
 static void
 error_message (VinoPreferencesDialog *dialog)
 {
-  gchar *msg1, *msg2, *host, *url, *message;
+  gchar   *host, *avahi_host;
+  GString *message, *url;
+
+  url = g_string_new (NULL);
+  message = g_string_new (_("Your desktop is only reachable over the local network."));
 
   if (!dbus_g_proxy_call (dialog->proxy,
                           "GetInternalData",
                           NULL,
                           G_TYPE_INVALID,
                           G_TYPE_STRING, &host,
+                          G_TYPE_STRING, &avahi_host,
                           G_TYPE_INT, &dialog->port,
                           G_TYPE_INVALID))
     {
       dialog->port = 5900;
       host = g_strdup ("localhost");
+      avahi_host = NULL;
     }
 
-  url = g_strdup_printf ("<a href=\"vnc://%s::%d\">%s</a>", host, dialog->port, host);
-  msg1 = g_strdup (_("Your desktop is only reachable over the local network."));
-  msg2 = g_strdup_printf (_("Others can access your computer using the address %s."), url);
-  message = g_strjoin (" ", msg1, msg2, NULL);
+  
+  g_string_append_printf (url, "<a href=\"vnc://%s::%d\">%s</a>", host, dialog->port, host);
+
+  if (avahi_host && avahi_host[0])
+    g_string_append_printf (url, " , <a href=\"vnc://%s::%d\">%s</a>", avahi_host, dialog->port, avahi_host);
+
+  g_string_append_c (message, ' ');
+  g_string_append_printf (message, _("Others can access your computer using the address %s."), url->str);
   vino_message_box_hide_image (VINO_MESSAGE_BOX (dialog->message));
-  vino_message_box_set_label (VINO_MESSAGE_BOX (dialog->message), message);
-  g_free (msg1);
-  g_free (msg2);
-  g_free (message);
-  g_free (url);
+  vino_message_box_set_label (VINO_MESSAGE_BOX (dialog->message), message->str);
+
+  g_string_free (message, TRUE);
+  g_string_free (url, TRUE);
   g_free (host);
+  g_free (avahi_host);
 }
 
 static void
@@ -856,7 +866,7 @@ got_status (SoupSession *session, SoupMessage *msg, VinoPreferencesDialog *dialo
   GHashTable     *hash;
   GHashTableIter iter;
   gpointer       key, value;
-  gchar          *ip, *message, *url;
+  gchar          *ip;
 
   error = NULL;
   ip = NULL;
@@ -886,12 +896,37 @@ got_status (SoupSession *session, SoupMessage *msg, VinoPreferencesDialog *dialo
 
       if (status)
 	{
-	  url = g_strdup_printf ("<a href=\"vnc://%s::%d\">%s</a>", ip, dialog->port, ip);
-	  message = g_strdup_printf (_("Others can access your computer using the address %s."), url);
+	  gchar   *avahi_host, *host, *message;
+	  gint     port;
+	  GString *url;
+
+	  if (!dbus_g_proxy_call (dialog->proxy,
+                             "GetInternalData",
+                             NULL,
+                             G_TYPE_INVALID,
+                             G_TYPE_STRING, &host,
+                             G_TYPE_STRING, &avahi_host,
+                             G_TYPE_INT, &port,
+                             G_TYPE_INVALID))
+	    {
+	      host = NULL;
+	      avahi_host = NULL;
+	    }
+
+	  url = g_string_new (NULL);
+	  g_string_append_printf (url, "<a href=\"vnc://%s::%d\">%s</a>", ip, dialog->port, ip);
+
+	  if (avahi_host && avahi_host[0])
+	    g_string_append_printf (url, " , <a href=\"vnc://%s::%d\">%s</a>", avahi_host, port, avahi_host);
+
+	  message = g_strdup_printf (_("Others can access your computer using the address %s."), url->str);
 	  vino_message_box_hide_image (VINO_MESSAGE_BOX (dialog->message));
 	  vino_message_box_set_label (VINO_MESSAGE_BOX (dialog->message), message);
+
 	  g_free (message);
-	  g_free (url);
+	  g_string_free (url, TRUE);
+	  g_free (host);
+	  g_free (avahi_host);
 	}
       else
 	error_message (dialog);

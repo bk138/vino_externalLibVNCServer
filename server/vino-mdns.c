@@ -333,6 +333,12 @@ vino_mdns_shutdown (void)
   mdns_services = NULL;
 }
 
+const char *
+vino_mdns_get_hostname (void)
+{
+  return avahi_client_get_host_name_fqdn (mdns_client);
+}
+
 #else /* !defined (VINO_HAVE_AVAHI) */
 
 void 
@@ -354,6 +360,12 @@ vino_mdns_stop (void)
 void
 vino_mdns_shutdown (void)
 {
+}
+
+const char *
+vino_mdns_get_hostname (void)
+{
+  return "";
 }
 
 #endif /* VINO_HAVE_AVAHI */

@@ -42,6 +42,7 @@
 #include <dbus/dbus-glib-lowlevel.h>
 
 #include "vino-util.h"
+#include "vino-mdns.h"
 #ifdef VINO_ENABLE_HTTP_SERVER
 #include "vino-http.h"
 #endif
@@ -243,6 +244,7 @@ static const char * introspect_xml =
   "  <interface name=\"org.gnome.VinoScreen\">\n"
   "    <method name=\"GetInternalData\">\n"
   "      <arg name=\"hostname\" direction=\"out\" type=\"s\"/>\n"
+  "      <arg name=\"avahi_hostname\" direction=\"out\" type=\"s\"/>\n"
   "      <arg name=\"port\" direction=\"out\" type=\"d\"/>\n"
   "    </method>\n"
   "    <method name=\"GetExternalPort\">\n"
@@ -320,6 +322,7 @@ vino_dbus_listener_handle_get_internal_data (VinoDBusListener *listener,
   DBusMessage *reply;
   gint        port;
   char        *host = NULL;
+  const char  *avahi_host;
 
   if (!(reply = dbus_message_new_method_return (message)))
     goto oom;
@@ -331,8 +334,10 @@ vino_dbus_listener_handle_get_internal_data (VinoDBusListener *listener,
 #endif
 
   host = get_local_hostname (listener);
+  avahi_host = vino_mdns_get_hostname ();
   if (!dbus_message_append_args (reply,
                                  DBUS_TYPE_STRING, &host,
+                                 DBUS_TYPE_STRING, &avahi_host,
                                  DBUS_TYPE_INT32, &port,
                                  DBUS_TYPE_INVALID))
     goto oom;
