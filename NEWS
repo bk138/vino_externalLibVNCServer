@@ -1,3 +1,33 @@
+Vino 2.25.92
+============
+
+  Fixes
+
+	+ Added dependency on NetworkManager for monitoring when network
+	state changes. New configure flag: --enable-network-manager. If not
+	set, enable it anyway if NetworkManager libraries are found.
+	Requires NM 0.7.
+	+ #330691 – show .local hostname if avahi is present.
+
+  Translations
+
+	+ Ihar Hrachyshka (be@latin)
+	+ Joan Duran (ca)
+	+ David Lodge (en_GB)
+	+ Mattias Põldaru (et)
+	+ Iñaki Larrañaga Murgoitio (eu)
+	+ Ilkka Tuohela (fi)
+	+ Claude Paroz (fr)
+	+ Gabor Kelemen (hu)
+	+ Milo Casagrande (it)
+	+ Changwoo Ryu (ko)
+	+ Kjartan Maraas (nb)
+	+ Dr.T.vasudevan (ta)
+	+ Baris Cicek (tr)
+	+ 甘露(Gan Lu) (zh_CN)
+	+ Chao-Hsiung Liao (zh_HK)
+	+ Chao-Hsiung Liao (zh_TW)
+
 Vino 2.25.91
 ============
 
