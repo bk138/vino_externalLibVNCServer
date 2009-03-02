@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-26 14:44-0300\n"
-"PO-Revision-Date: 2009-02-26 14:45-0300\n"
+"POT-Creation-Date: 2009-03-02 10:03-0300\n"
+"PO-Revision-Date: 2009-03-02 10:07-0300\n"
 "Last-Translator: Jonh Wendell <jwendell@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -41,7 +41,7 @@ msgstr "_Copiar o endereço para a área de transferência"
 msgid "There was an error showing the URL \"%s\""
 msgstr "Ocorreu um erro ao exibir a URL \"%s\""
 
-#: ../capplet/vino-preferences.c:198 ../capplet/vino-preferences.c:954
+#: ../capplet/vino-preferences.c:198 ../capplet/vino-preferences.c:989
 msgid "Checking the connectivity of this machine..."
 msgstr "Verificando a conectividade desta máquina..."
 
@@ -54,20 +54,20 @@ msgstr ""
 "Ocorreu um erro ao exibir a ajuda:\n"
 "%s"
 
-#: ../capplet/vino-preferences.c:839
+#: ../capplet/vino-preferences.c:828
 msgid "Your desktop is only reachable over the local network."
 msgstr "Sua máquina é acessível somente através da rede local."
 
-#: ../capplet/vino-preferences.c:840 ../capplet/vino-preferences.c:890
+#: ../capplet/vino-preferences.c:851 ../capplet/vino-preferences.c:922
 #, c-format
 msgid "Others can access your computer using the address %s."
-msgstr "Outros usuários podem acessá-la através do endereço %s."
+msgstr "Outros usuários podem acessar seu computador através do endereço %s."
 
-#: ../capplet/vino-preferences.c:940
+#: ../capplet/vino-preferences.c:975
 msgid "Nobody can access your desktop."
 msgstr "Ninguém pode acessar sua máquina."
 
-#: ../capplet/vino-preferences.c:1081 ../server/vino-dbus-listener.c:501
+#: ../capplet/vino-preferences.c:1116 ../server/vino-dbus-listener.c:506
 #: ../server/vino-server.c:156 ../server/vino-server.c:187
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
@@ -156,23 +156,23 @@ msgstr "_Exigir que o usuário digite esta senha:"
 msgid "_You must confirm each access to this machine"
 msgstr "Você _deve confirmar cada acesso à esta máquina"
 
-#: ../server/vino-dbus-listener.c:281 ../server/vino-dbus-listener.c:311
-#: ../server/vino-dbus-listener.c:352
+#: ../server/vino-dbus-listener.c:283 ../server/vino-dbus-listener.c:313
+#: ../server/vino-dbus-listener.c:357
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "Memória insuficiente para lidar a mensagem \"%s\""
 
-#: ../server/vino-dbus-listener.c:458
+#: ../server/vino-dbus-listener.c:463
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "Memória insuficiente para registrar caminho do objeto \"%s\""
 
-#: ../server/vino-dbus-listener.c:537
+#: ../server/vino-dbus-listener.c:542
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Falha ao adquirir nome D-BUS \"%s\"\n"
 
-#: ../server/vino-dbus-listener.c:545
+#: ../server/vino-dbus-listener.c:550
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr ""
 "O servidor da Área de trabalho remota já está sendo executado; saindo...\n"
