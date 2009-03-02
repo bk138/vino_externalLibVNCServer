@@ -1,5 +1,11 @@
 2009-03-02  Jonh Wendell  <jwendell@gnome.org>
 
+	* configure.in: post-release bump version to 2.26.0
+
+==================== 2.25.92 =======================
+
+2009-03-02  Jonh Wendell  <jwendell@gnome.org>
+
 	* server/vino-upnp.c: More work on NetworkManager integration as
 	well be more careful when adding ports on the router.
 
