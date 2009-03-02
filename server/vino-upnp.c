@@ -24,6 +24,7 @@
 #include <config.h>
 #endif
 
+#include <string.h>
 #include <miniupnp/miniupnpc.h>
 #include <miniupnp/upnpcommands.h>
 
@@ -45,7 +46,7 @@ struct _VinoUpnpPrivate
   int              internal_port;
 #ifdef VINO_ENABLE_NETWORKMANAGER
   DBusGConnection *bus;
-  DBusGProxy      *proxy;
+  DBusGProxy      *proxy_nm, *proxy_name;
 #endif
 };
 
@@ -131,10 +132,16 @@ vino_upnp_dispose (GObject *object)
   vino_upnp_remove_port (upnp);
 
 #ifdef VINO_ENABLE_NETWORKMANAGER
-  if (upnp->priv->proxy)
+  if (upnp->priv->proxy_nm)
     {
-      g_object_unref (upnp->priv->proxy);
-      upnp->priv->proxy = NULL;
+      g_object_unref (upnp->priv->proxy_nm);
+      upnp->priv->proxy_nm = NULL;
+    }
+
+  if (upnp->priv->proxy_name)
+    {
+      g_object_unref (upnp->priv->proxy_name);
+      upnp->priv->proxy_name = NULL;
     }
 
   if (upnp->priv->bus)
@@ -174,8 +181,10 @@ vino_upnp_init (VinoUpnp *upnp)
   upnp->priv->internal_port = -1;
 
 #ifdef VINO_ENABLE_NETWORKMANAGER
+  upnp->priv->proxy_nm = NULL;
+  upnp->priv->proxy_name = NULL;
   upnp->priv->bus = NULL;
-  upnp->priv->proxy = NULL;
+
   setup_network_monitor (upnp);
 #endif
 }
@@ -233,7 +242,12 @@ vino_upnp_add_port (VinoUpnp *upnp, int port)
 					"TCP",
 					int_client_tmp,
 					int_port_tmp);
-      if (int_client_tmp[0])
+      if ( (strcmp (int_client_tmp, upnp->priv->lanaddr) == 0) && (strcmp (int_port_tmp, ext_port) == 0) )
+	{
+	  dprintf (UPNP, "UPnP: Found a previous redirect\n");
+	  break;
+	}
+      else if (int_client_tmp[0])
 	{
 	  dprintf (UPNP, "Failed, this port is already forwarded to %s:%s\n", int_client_tmp, int_port_tmp);
 	  g_free (ext_port);
@@ -342,6 +356,36 @@ state_changed_cb (DBusGProxy *proxy, guint state, VinoUpnp *upnp)
 }
 
 static void
+name_changed (DBusGProxy *proxy,
+	      const char *name,
+	      const char *prev_owner,
+	      const char *new_owner,
+	      VinoUpnp *upnp)
+{
+  if ( (new_owner) && (!strcmp (name, NM_DBUS_SERVICE)) )
+    {
+      dprintf (UPNP, "UPnP: Got the NetWorkManager d-bus name");
+
+      if (upnp->priv->proxy_nm)
+	g_object_unref (upnp->priv->proxy_nm);
+
+      upnp->priv->proxy_nm = dbus_g_proxy_new_for_name (upnp->priv->bus,
+							NM_DBUS_SERVICE,
+							NM_DBUS_PATH,
+							NM_DBUS_INTERFACE);
+
+      dbus_g_proxy_add_signal (upnp->priv->proxy_nm, "StateChanged", G_TYPE_UINT, G_TYPE_INVALID);
+      dbus_g_proxy_connect_signal (upnp->priv->proxy_nm,
+				   "StateChanged",
+				   G_CALLBACK (state_changed_cb),
+				   upnp,
+				   NULL);
+
+       g_timeout_add_seconds (2, (GSourceFunc) redo_forward, upnp);
+     }
+} 
+
+static void
 setup_network_monitor (VinoUpnp *upnp)
 {
   GError *error = NULL;
@@ -354,13 +398,25 @@ setup_network_monitor (VinoUpnp *upnp)
       return;
     }
 
-  upnp->priv->proxy = dbus_g_proxy_new_for_name (upnp->priv->bus,
-						 NM_DBUS_SERVICE,
-						 NM_DBUS_PATH,
-						 NM_DBUS_INTERFACE);
+  upnp->priv->proxy_name = dbus_g_proxy_new_for_name (upnp->priv->bus,
+						      DBUS_SERVICE_DBUS,
+						      DBUS_PATH_DBUS,
+						      DBUS_INTERFACE_DBUS);
+  dbus_g_proxy_add_signal (upnp->priv->proxy_name, "NameOwnerChanged",
+			   G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_INVALID);
+  dbus_g_proxy_connect_signal (upnp->priv->proxy_name,
+			       "NameOwnerChanged",
+			       G_CALLBACK (name_changed),
+			       upnp,
+			       NULL); 
 
-  dbus_g_proxy_add_signal (upnp->priv->proxy, "StateChanged", G_TYPE_UINT, G_TYPE_INVALID);
-  dbus_g_proxy_connect_signal (upnp->priv->proxy,
+  upnp->priv->proxy_nm = dbus_g_proxy_new_for_name (upnp->priv->bus,
+						    NM_DBUS_SERVICE,
+						    NM_DBUS_PATH,
+						    NM_DBUS_INTERFACE);
+
+  dbus_g_proxy_add_signal (upnp->priv->proxy_nm, "StateChanged", G_TYPE_UINT, G_TYPE_INVALID);
+  dbus_g_proxy_connect_signal (upnp->priv->proxy_nm,
                                "StateChanged",
                                G_CALLBACK (state_changed_cb),
                                upnp,
