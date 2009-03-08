@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=vino&component=general\n"
-"POT-Creation-Date: 2009-01-05 20:07+0000\n"
-"PO-Revision-Date: 2005-07-18 19:18+0300\n"
-"Last-Translator: Oldie <yonatanhak@yahoo.com>\n"
+"product=vino&component=Preferences Dialog\n"
+"POT-Creation-Date: 2009-03-07 16:21+0000\n"
+"PO-Revision-Date: 2009-03-08 01:16+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,21 +19,27 @@ msgstr ""
 "X-Generator: KBabel 1.10.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. Translators: 'All' means 'All network interfaces'
-#: ../capplet/vino-preferences.c:203 ../capplet/vino-preferences.c:291
-msgid "All"
-msgstr "כולם"
+#. Open Link
+#: ../capplet/sexy-url-label.c:183
+#| msgid "Send this command by email"
+msgid "_Send address by email"
+msgstr "_שלח כתובת בדוא\"ל"
 
-#: ../capplet/vino-preferences.c:1267
-msgid "The service is not running"
-msgstr "השירות אינו רץ"
+#. Copy Link Address
+#: ../capplet/sexy-url-label.c:195
+msgid "_Copy address to clipboard"
+msgstr "ה_עתק את הכתובת ללוח הגזירים"
 
-#: ../capplet/vino-preferences.c:1364
+#: ../capplet/vino-message-box.c:103
 #, c-format
 msgid "There was an error showing the URL \"%s\""
 msgstr "קרתה שגיאה בהצגת הכתובת \"%s\""
 
-#: ../capplet/vino-preferences.c:1450
+#: ../capplet/vino-preferences.c:198 ../capplet/vino-preferences.c:954
+msgid "Checking the connectivity of this machine..."
+msgstr "בודק את הקישוריות של מכונה זאת..."
+
+#: ../capplet/vino-preferences.c:798
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -42,166 +48,125 @@ msgstr ""
 "קרתה שגיאה, מציג עזרה:\n"
 "%s"
 
-#: ../capplet/vino-preferences.c:1511 ../server/vino-dbus-listener.c:411
+#: ../capplet/vino-preferences.c:839
+msgid "Your desktop is only reachable over the local network."
+msgstr "שולחן העבודה שלך זמין רק עבור הרשת המקומית."
+
+#: ../capplet/vino-preferences.c:840 ../capplet/vino-preferences.c:890
+#, c-format
+msgid "Others can access your computer using the address %s."
+msgstr "אחרים יכולים לגשת למחשב שלך באמצעות הכתובת %s."
+
+#: ../capplet/vino-preferences.c:940
+msgid "Nobody can access your desktop."
+msgstr "אף אחד לא יכול לגשת אל שולחן העבודה שלך."
+
+#: ../capplet/vino-preferences.c:1081 ../server/vino-dbus-listener.c:501
 #: ../server/vino-server.c:156 ../server/vino-server.c:187
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Failed to open connection to bus: %s\n"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+#| msgid "Allow other users to _view your desktop"
+msgid "Choose how other users can remotely view your desktop"
+msgstr "בחר כיצד משתמשים אחרים יכולים לצפות מרחוק בשולחן העבודה שלך"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:2
 #: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "שולחן עבודה מרוחק"
 
-#: ../capplet/vino-preferences.desktop.in.in.h:2
-msgid "Set your remote desktop access preferences"
-msgstr "קבע את אפשרויות הגישה לשולחן העבודה המרוחק"
-
 #: ../capplet/vino-preferences.glade.h:1
-msgid "<b>Network</b>"
-msgstr "‏<b>רשת</b>"
-
-#: ../capplet/vino-preferences.glade.h:2
 msgid "<b>Notification Area</b>"
 msgstr "<b>איזור התראות</b>"
 
-#: ../capplet/vino-preferences.glade.h:3
+#: ../capplet/vino-preferences.glade.h:2
 msgid "<b>Security</b>"
 msgstr "‏<b>אבטחה</b>"
 
-#: ../capplet/vino-preferences.glade.h:4
+#: ../capplet/vino-preferences.glade.h:3
 msgid "<b>Sharing</b>"
 msgstr "‏<b>שיתוף</b>"
 
+#: ../capplet/vino-preferences.glade.h:4
+#| msgid "Some of these preferences are locked down"
+msgid "<i>Some of these preferences are locked down</i>"
+msgstr "<i>כמה מאפשרויות אלו חסומות</i>"
+
 #: ../capplet/vino-preferences.glade.h:5
-msgid "A_sk you for confirmation"
-msgstr "עליו ל_בקש את אישורך"
-
-#: ../capplet/vino-preferences.glade.h:6
-msgid "Advanced"
-msgstr "מתקדם"
-
-#: ../capplet/vino-preferences.glade.h:7
 msgid "Al_ways display an icon"
 msgstr "הצ_ג איקון תמיד"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:6
 msgid "Allow other users to _view your desktop"
 msgstr "הרשה למשתמשים אחרים ל_ראות את שולחן העבודה שלך"
 
-#: ../capplet/vino-preferences.glade.h:9
-msgid "Disable the _wallpaper when connected"
-msgstr "החבא את _רקע שולחן העבודה כאשר מחובר"
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Maximum size: 8 characters"
+msgstr "הגודל המירבי: 8 תווים"
 
-#: ../capplet/vino-preferences.glade.h:10
-msgid "Disable the wallpaper when successfull connection"
-msgstr "החבא את _רקע שולחן העבודה כאשר מחובר בהצלחה"
-
-#: ../capplet/vino-preferences.glade.h:11
-msgid "General"
-msgstr "כללי"
-
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Remote Desktop Preferences"
 msgstr "אפשרויות שולחן עבודה מרוחק"
 
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:9
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "משתמשים מרוחקים יכולים לשלוט בעכבר ובמקלדת שלך"
 
-#: ../capplet/vino-preferences.glade.h:15
-msgid ""
-"Remote users' VNC clients accessing the desktop are required to support "
-"encryption"
-msgstr "משתמשים מרוחקים שניגשים לשולחן העבודה נדרשים לתמוך בהצפנה"
+#: ../capplet/vino-preferences.glade.h:10
+msgid "The router must have the UPnP feature enabled"
+msgstr "יש לאפשר את פונקציית ה־UPnP בנתב"
 
-#: ../capplet/vino-preferences.glade.h:16
-msgid "Screen will be locked after the last remote client disconnect"
-msgstr "הנסך ינעל לאחר התנתקות המשתמש המרוחק האחרון"
+#: ../capplet/vino-preferences.glade.h:11
+msgid "You will be queried to allow or to refuse every incoming connection"
+msgstr "אתה תשאל האם לאשר או לסרב כל חיבור נכנס"
 
-#: ../capplet/vino-preferences.glade.h:17
-msgid "Send this command by email"
-msgstr "שלח פקודה זו בדואר אלקטרוני"
-
-#: ../capplet/vino-preferences.glade.h:18
-msgid "Some of these preferences are locked down"
-msgstr "חלק מהאפשרויות חסומות לשינוי"
-
-#: ../capplet/vino-preferences.glade.h:19
-msgid "The server will use another port, instead of the default (5900)"
-msgstr "השרת ישתמש בשער שונה, במקום שער ברירת המחדל (5900)"
-
-#: ../capplet/vino-preferences.glade.h:20
-msgid "Users can view your desktop using this command:"
-msgstr "משתמשים יכולים לצפות בשולחן העבודה שלך על ידי שימוש בפקודה:"
-
-#: ../capplet/vino-preferences.glade.h:21
-msgid "When a user tries to view or control your desktop:"
-msgstr "כאשר משתמש מנסה לצפות או לשלוט בשולחן העבודה שלך:"
-
-#: ../capplet/vino-preferences.glade.h:22
-msgid "Which network interface we should listen to."
-msgstr "לאילו מנשקי רשת יש להאזין."
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:24
+#: ../capplet/vino-preferences.glade.h:12
 msgid "Your desktop will be shared"
 msgstr "שולחן העבודה שלך ישותף"
 
-#: ../capplet/vino-preferences.glade.h:25
+#: ../capplet/vino-preferences.glade.h:13
 msgid "_Allow other users to control your desktop"
 msgstr "_הרשה למשתמשים אחרים לשלוט בשולחן העבודה שלך"
 
-#: ../capplet/vino-preferences.glade.h:26
-msgid "_Listen this interface:"
-msgstr "ה_אזן למנשק זה:"
+#: ../capplet/vino-preferences.glade.h:14
+msgid "_Configure network automatically to accept connections"
+msgstr "ה_גדר את הרשת לקבלת חיבורים באופן אוטומטי"
 
-#: ../capplet/vino-preferences.glade.h:27
-msgid "_Lock screen on disconnect"
-msgstr "_נעל את המסך בהתנתקות"
-
-#: ../capplet/vino-preferences.glade.h:28
+#: ../capplet/vino-preferences.glade.h:15
 msgid "_Never display an icon"
 msgstr "_אל תציג איקון לעולם"
 
-#: ../capplet/vino-preferences.glade.h:29
+#: ../capplet/vino-preferences.glade.h:16
 msgid "_Only display an icon when there is someone connected"
 msgstr "הצג אי_קון רק כאשר מישהו מחובר"
 
-#: ../capplet/vino-preferences.glade.h:30
-msgid "_Password:"
-msgstr "_סיסמה:"
-
-#: ../capplet/vino-preferences.glade.h:31
-msgid "_Require encryption"
-msgstr "_דרוש הצפנה"
-
-#: ../capplet/vino-preferences.glade.h:32
+#: ../capplet/vino-preferences.glade.h:17
 msgid "_Require the user to enter this password:"
 msgstr "_דרוש מהמשתמש להקליד את הסיסמה:"
 
-#: ../capplet/vino-preferences.glade.h:33
-msgid "_Use an alternative port:"
-msgstr "ה_שתמש בשער שונה"
+#: ../capplet/vino-preferences.glade.h:18
+msgid "_You must confirm each access to this machine"
+msgstr "_עליך לאשר כל גישה למחשב זה"
 
-#: ../server/vino-dbus-listener.c:190 ../server/vino-dbus-listener.c:220
-#: ../server/vino-dbus-listener.c:251
+#: ../server/vino-dbus-listener.c:281 ../server/vino-dbus-listener.c:311
+#: ../server/vino-dbus-listener.c:352
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "Out of memory handling '%s' message"
 
-#: ../server/vino-dbus-listener.c:364
+#: ../server/vino-dbus-listener.c:458
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "Out of memory registering object path '%s'"
 
-#: ../server/vino-dbus-listener.c:448
+#: ../server/vino-dbus-listener.c:537
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Failed to acquire D-Bus name '%s'\n"
 
-#: ../server/vino-dbus-listener.c:456
+#: ../server/vino-dbus-listener.c:545
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "Remote Desktop server already running; exiting ...\n"
 
@@ -247,7 +212,7 @@ msgstr "מסך"
 
 #: ../server/vino-prompt.c:143
 msgid "The screen on which to display the prompt"
-msgstr "המסך שעליו יש להציג את הסמן-מנחה"
+msgstr "המסך שעליו יש להציג את הסמן־מנחה"
 
 #: ../server/vino-prompt.c:343
 #, c-format
@@ -523,6 +488,7 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "יאיר הרשקוביץ <yairhr@gmail.com>\n"
+"Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "\n"
 "פרוייקט תרגום GNOME לעברית:\n"
 "‏http://gnome-il.berlios.de"
@@ -540,7 +506,7 @@ msgstr "אתה בטוח שברצונך לנתק את '%s'?"
 #: ../server/vino-status-icon.c:340
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
-msgstr "המשתמש המרוחק מ-'%s' ינותק. אתה בטוח?"
+msgstr "המשתמש המרוחק מ־'%s' ינותק. אתה בטוח?"
 
 #: ../server/vino-status-icon.c:345
 msgid "Are you sure you want to disconnect all clients?"
@@ -576,37 +542,37 @@ msgstr "_עזרה"
 msgid "_About"
 msgstr "_אודות"
 
-#: ../server/vino-status-icon.c:580
+#: ../server/vino-status-icon.c:584
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Error initializing libnotify\n"
 
-#: ../server/vino-status-icon.c:600
+#: ../server/vino-status-icon.c:604
 msgid "Another user is viewing your desktop"
 msgstr "משתמש אחר צופה בשולחן העבודה שלך"
 
-#: ../server/vino-status-icon.c:601
+#: ../server/vino-status-icon.c:605
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "משתמש במחשב '%s' צופה מרחוק בשולחן העבודה שלך."
 
-#: ../server/vino-status-icon.c:606
+#: ../server/vino-status-icon.c:610
 msgid "Another user is controlling your desktop"
 msgstr "משתמש אחר שולט בשולחן העבודה שלך"
 
-#: ../server/vino-status-icon.c:607
+#: ../server/vino-status-icon.c:611
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "משתמש במחשב '%s' שולט מרחוק בשולחן העבודה שלך."
 
-#: ../server/vino-status-icon.c:629
+#: ../server/vino-status-icon.c:633
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Error while displaying notification bubble: %s\n"
 
 #: ../server/vino-util.c:115
 msgid "An error has occurred:"
-msgstr "קרתה שגיאה:"
+msgstr "ארעה שגיאה:"
 
 #: ../tools/vino-passwd.c:115
 #, c-format
@@ -616,63 +582,127 @@ msgstr "בוטל"
 #: ../tools/vino-passwd.c:122
 #, c-format
 msgid ""
+"ERROR: Maximum length of password is %d character. Please, re-enter the "
+"password."
+msgid_plural ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
-"password.\n"
-msgstr ""
-"ERROR: Maximum length of password is %d characters. Please, re-enter the "
-"password.\n"
+"password."
+msgstr[0] "שגיאה: אורך הסיסמה המירבי הוא תו אחד. אנא הכנס את הסיסמה מחדש."
+msgstr[1] "שגיאה: אורך הסיסמה המירבי הוא %d תווים. אנא הכנס את הסיסמה מחדש."
 
-#: ../tools/vino-passwd.c:152
+#: ../tools/vino-passwd.c:156
 #, c-format
 msgid "Changing Vino password.\n"
 msgstr "Changing Vino password.\n"
 
-#: ../tools/vino-passwd.c:154
+#: ../tools/vino-passwd.c:158
 msgid "Enter new Vino password: "
 msgstr "Enter new Vino password: "
 
-#: ../tools/vino-passwd.c:157
+#: ../tools/vino-passwd.c:161
 msgid "Retype new Vino password: "
 msgstr "Retype new Vino password: "
 
-#: ../tools/vino-passwd.c:163
+#: ../tools/vino-passwd.c:167
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: password updated successfully.\n"
 
-#: ../tools/vino-passwd.c:167
+#: ../tools/vino-passwd.c:171
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "Sorry, passwords do not match.\n"
 
-#: ../tools/vino-passwd.c:168
+#: ../tools/vino-passwd.c:172
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: password unchanged.\n"
 
-#: ../tools/vino-passwd.c:183
+#: ../tools/vino-passwd.c:187
 msgid "Show Vino version"
 msgstr "Show Vino version"
 
-#: ../tools/vino-passwd.c:192
+#: ../tools/vino-passwd.c:196
 msgid "- Updates Vino password"
 msgstr "- Updates Vino password"
 
-#: ../tools/vino-passwd.c:202
+#: ../tools/vino-passwd.c:206
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 
-#: ../tools/vino-passwd.c:209
+#: ../tools/vino-passwd.c:213
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "VINO Version %s\n"
 
-#: ../tools/vino-passwd.c:218
+#: ../tools/vino-passwd.c:222
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "ERROR: You do not have enough permissions to change Vino password.\n"
+
+#~ msgid "All"
+#~ msgstr "כולם"
+
+#~ msgid "The service is not running"
+#~ msgstr "השירות אינו רץ"
+
+#~ msgid "Set your remote desktop access preferences"
+#~ msgstr "קבע את אפשרויות הגישה לשולחן העבודה המרוחק"
+
+#~ msgid "<b>Network</b>"
+#~ msgstr "‏<b>רשת</b>"
+
+#~ msgid "A_sk you for confirmation"
+#~ msgstr "עליו ל_בקש את אישורך"
+
+#~ msgid "Advanced"
+#~ msgstr "מתקדם"
+
+#~ msgid "Disable the _wallpaper when connected"
+#~ msgstr "החבא את _רקע שולחן העבודה כאשר מחובר"
+
+#~ msgid "Disable the wallpaper when successfull connection"
+#~ msgstr "החבא את _רקע שולחן העבודה כאשר מחובר בהצלחה"
+
+#~ msgid "General"
+#~ msgstr "כללי"
+
+#~ msgid ""
+#~ "Remote users' VNC clients accessing the desktop are required to support "
+#~ "encryption"
+#~ msgstr "משתמשים מרוחקים שניגשים לשולחן העבודה נדרשים לתמוך בהצפנה"
+
+#~ msgid "Screen will be locked after the last remote client disconnect"
+#~ msgstr "הנסך ינעל לאחר התנתקות המשתמש המרוחק האחרון"
+
+#~ msgid "The server will use another port, instead of the default (5900)"
+#~ msgstr "השרת ישתמש בשער שונה, במקום שער ברירת המחדל (5900)"
+
+#~ msgid "Users can view your desktop using this command:"
+#~ msgstr "משתמשים יכולים לצפות בשולחן העבודה שלך על ידי שימוש בפקודה:"
+
+#~ msgid "When a user tries to view or control your desktop:"
+#~ msgstr "כאשר משתמש מנסה לצפות או לשלוט בשולחן העבודה שלך:"
+
+#~ msgid "Which network interface we should listen to."
+#~ msgstr "לאילו מנשקי רשת יש להאזין."
+
+#~ msgid "_Listen this interface:"
+#~ msgstr "ה_אזן למנשק זה:"
+
+#~ msgid "_Lock screen on disconnect"
+#~ msgstr "_נעל את המסך בהתנתקות"
+
+#~ msgid "_Password:"
+#~ msgstr "_סיסמה:"
+
+#~ msgid "_Require encryption"
+#~ msgstr "_דרוש הצפנה"
+
+#~ msgid "_Use an alternative port:"
+#~ msgstr "ה_שתמש בשער שונה"
 
 #~ msgid "The server will only accept connections from localhost"
 #~ msgstr "השרת יקבל חיבורים מקומיים בלבד"
