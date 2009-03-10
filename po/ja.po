@@ -1,15 +1,15 @@
 # Japanese messsage catalogue for vino
-# Copyright (C) 2004-2008 THE vino'S COPYRIGHT HOLDER
+# Copyright (C) 2004-2009 THE vino'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the vino package.
 # Satoru SATOH <ss@gnome.gr.jp>, 2004-2006.
-# Takeshi AIHANA <takeshi.aihana@gmail.com>, 2006-2008.
+# Takeshi AIHANA <takeshi.aihana@gmail.com>, 2006-2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-07 21:31+0900\n"
-"PO-Revision-Date: 2008-09-07 21:21+0900\n"
+"POT-Creation-Date: 2009-03-10 23:23+0900\n"
+"PO-Revision-Date: 2009-03-10 23:21+0900\n"
 "Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
 "Language-Team: Japanese <translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -17,18 +17,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1097 ../capplet/vino-preferences.c:1132
-#: ../capplet/vino-preferences.c:1190 ../server/vino-dbus-listener.c:374
-#: ../server/vino-server.c:151
+#. Open Link
+#: ../capplet/sexy-url-label.c:183
+msgid "_Send address by email"
+msgstr "アドレスを E-メールで送信する(_S)"
+
+#. Copy Link Address
+#: ../capplet/sexy-url-label.c:195
+msgid "_Copy address to clipboard"
+msgstr "アドレスをクリップボードへコピーする(_C)"
+
+#: ../capplet/vino-message-box.c:103
 #, c-format
-msgid "Failed to open connection to bus: %s\n"
-msgstr "バスへの接続を開けませんでした: %s\n"
+msgid "There was an error showing the URL \"%s\""
+msgstr "\"%s\" という UL を表示する際にエラーが発生しました"
 
-#: ../capplet/vino-preferences.c:1399
-msgid "Send this command by email"
-msgstr "このコマンドを E-メールで送信します"
+#: ../capplet/vino-preferences.c:198 ../capplet/vino-preferences.c:989
+msgid "Checking the connectivity of this machine..."
+msgstr "このマシンの接続情報を確認しています..."
 
-#: ../capplet/vino-preferences.c:1437
+#: ../capplet/vino-preferences.c:798
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -37,158 +45,124 @@ msgstr ""
 "ヘルプを表示する際にエラーが発生しました:\n"
 "%s"
 
+#: ../capplet/vino-preferences.c:828
+msgid "Your desktop is only reachable over the local network."
+msgstr "お使いのデスクトップにはローカル・ネットワーク内でのみ接続できます。"
+
+#: ../capplet/vino-preferences.c:851 ../capplet/vino-preferences.c:922
+#, c-format
+msgid "Others can access your computer using the address %s."
+msgstr ""
+"他の人達からは %s というアドレスであなたのデスクトップにアクセスできます。"
+
+#: ../capplet/vino-preferences.c:975
+msgid "Nobody can access your desktop."
+msgstr "誰もあなたのデスクトップにはアクセスできません。"
+
+#: ../capplet/vino-preferences.c:1116 ../server/vino-dbus-listener.c:506
+#: ../server/vino-server.c:156 ../server/vino-server.c:187
+#, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "バスへの接続を開けませんでした: %s\n"
+
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+msgid "Choose how other users can remotely view your desktop"
+msgstr "リモートからデスクトップを表示する方法を選択したり設定します"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:2
 #: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "リモート・デスクトップ"
 
-#: ../capplet/vino-preferences.desktop.in.in.h:2
-msgid "Set your remote desktop access preferences"
-msgstr "リモート・デスクトップへのアクセスを設定します"
-
 #: ../capplet/vino-preferences.glade.h:1
-msgid "<b>Network</b>"
-msgstr "<b>ネットワーク</b>"
-
-#: ../capplet/vino-preferences.glade.h:2
 msgid "<b>Notification Area</b>"
 msgstr "<b>通知スペース</b>"
 
-#: ../capplet/vino-preferences.glade.h:3
+#: ../capplet/vino-preferences.glade.h:2
 msgid "<b>Security</b>"
 msgstr "<b>セキュリティ</b>"
 
-#: ../capplet/vino-preferences.glade.h:4
+#: ../capplet/vino-preferences.glade.h:3
 msgid "<b>Sharing</b>"
 msgstr "<b>共有</b>"
 
+#: ../capplet/vino-preferences.glade.h:4
+msgid "<i>Some of these preferences are locked down</i>"
+msgstr "<i>いくつかの設定は変更不可になっています</i>"
+
 #: ../capplet/vino-preferences.glade.h:5
-msgid "A_sk you for confirmation"
-msgstr "承認を必要とする(_S)"
-
-#: ../capplet/vino-preferences.glade.h:6
-msgid "Advanced"
-msgstr "拡張"
-
-#: ../capplet/vino-preferences.glade.h:7
 msgid "Al_ways display an icon"
 msgstr "常にアイコンを表示する(_W)"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.glade.h:6
 msgid "Allow other users to _view your desktop"
 msgstr "他のユーザが自分のデスクトップを表示できる(_V)"
 
-#: ../capplet/vino-preferences.glade.h:9
-msgid "Disable the _wallpaper when connected"
-msgstr "接続したら背景を無効にする(_W)"
+#: ../capplet/vino-preferences.glade.h:7
+msgid "Maximum size: 8 characters"
+msgstr "最大文字数は８文字です"
 
-#: ../capplet/vino-preferences.glade.h:10
-msgid "Disable the wallpaper when successfull connection"
-msgstr "リモート・デスクトップに接続したら壁紙を無効にします"
-
-#: ../capplet/vino-preferences.glade.h:11
-msgid "General"
-msgstr "全般"
-
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.glade.h:8
 msgid "Remote Desktop Preferences"
 msgstr "リモート・デスクトップの設定"
 
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.glade.h:9
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "リモートのユーザがあなたのマウスとキーボードを制御できるようになります"
 
-#: ../capplet/vino-preferences.glade.h:15
-msgid ""
-"Remote users' VNC clients accessing the desktop are required to support "
-"encryption"
-msgstr ""
-"リモートのユーザがデスクトップにアクセスするには、その VNC クライアントが暗号"
-"化をサポートしている必要があります"
+#: ../capplet/vino-preferences.glade.h:10
+msgid "The router must have the UPnP feature enabled"
+msgstr "ルータで UPnP の機能を有効にしておいて下さい"
 
-#: ../capplet/vino-preferences.glade.h:16
-msgid "Screen will be locked after the last remote client disconnect"
-msgstr "最後のリモート・クライアントからの接続が切れたら画面をロックします"
+#: ../capplet/vino-preferences.glade.h:11
+msgid "You will be queried to allow or to refuse every incoming connection"
+msgstr "要求された接続を許可するかどうかを毎回確認します"
 
-#: ../capplet/vino-preferences.glade.h:17
-msgid "Some of these preferences are locked down"
-msgstr "設定のいくつかは変更不可となっています"
-
-#: ../capplet/vino-preferences.glade.h:18
-msgid "The server will only accept connections from localhost"
-msgstr "ローカルホストからのみ接続できるようになります"
-
-#: ../capplet/vino-preferences.glade.h:19
-msgid "The server will use another port, instead of the default (5900)"
-msgstr "デフォルトのポート (5900番) 以外のポートを利用できるようになります"
-
-#: ../capplet/vino-preferences.glade.h:20
-msgid "Users can view your desktop using this command:"
-msgstr "次のコマンドラインでお使いのデスクトップを表示できます:"
-
-#: ../capplet/vino-preferences.glade.h:21
-msgid "When a user tries to view or control your desktop:"
-msgstr "ユーザがデスクトップを参照したり操作しようとする時:"
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:23
+#: ../capplet/vino-preferences.glade.h:12
 msgid "Your desktop will be shared"
 msgstr "お使いのデスクトップを他のユーザと共有します"
 
-#: ../capplet/vino-preferences.glade.h:24
+#: ../capplet/vino-preferences.glade.h:13
 msgid "_Allow other users to control your desktop"
 msgstr "他のユーザがデスクトップを操作できる(_A)"
 
-#: ../capplet/vino-preferences.glade.h:25
-msgid "_Lock screen on disconnect"
-msgstr "最後の接続が終了したら画面をロックする(_L)"
+#: ../capplet/vino-preferences.glade.h:14
+msgid "_Configure network automatically to accept connections"
+msgstr "他から接続できるように自動的にネットワークを設定する(_C)"
 
-#: ../capplet/vino-preferences.glade.h:26
+#: ../capplet/vino-preferences.glade.h:15
 msgid "_Never display an icon"
 msgstr "アイコンを表示しない(_N)"
 
-#: ../capplet/vino-preferences.glade.h:27
-msgid "_Only allow local connections"
-msgstr "ローカルからのみ接続を許可する(_O)"
-
-#: ../capplet/vino-preferences.glade.h:28
+#: ../capplet/vino-preferences.glade.h:16
 msgid "_Only display an icon when there is someone connected"
 msgstr "誰かが接続した時にのみアイコンを表示する(_O)"
 
-#: ../capplet/vino-preferences.glade.h:29
-msgid "_Password:"
-msgstr "パスワード(_P):"
-
-#: ../capplet/vino-preferences.glade.h:30
-msgid "_Require encryption"
-msgstr "接続元に暗号化を要求する(_R)"
-
-#: ../capplet/vino-preferences.glade.h:31
+#: ../capplet/vino-preferences.glade.h:17
 msgid "_Require the user to enter this password:"
 msgstr "パスワードの入力を要求する(_R):"
 
-#: ../capplet/vino-preferences.glade.h:32
-msgid "_Use an alternative port:"
-msgstr "次のポートを利用する(_U):"
+#: ../capplet/vino-preferences.glade.h:18
+msgid "_You must confirm each access to this machine"
+msgstr "このマシンへの接続を毎回確認する(_Y)"
 
-#: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
-#: ../server/vino-dbus-listener.c:249
+#: ../server/vino-dbus-listener.c:283 ../server/vino-dbus-listener.c:313
+#: ../server/vino-dbus-listener.c:357
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "'%s' というメッセージを処理する際にメモリ不足が発生しました"
 
-#: ../server/vino-dbus-listener.c:334
+#: ../server/vino-dbus-listener.c:463
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "'%s' というオブジェクト・パスを登録する際にメモリ不足が発生しました"
 
-#: ../server/vino-dbus-listener.c:411
+#: ../server/vino-dbus-listener.c:542
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "'%s' という D-BUS の取得に失敗しました\n"
 
-#: ../server/vino-dbus-listener.c:419
+#: ../server/vino-dbus-listener.c:550
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "リモート・デスクトップ・サーバが既に起動中です: 終了します...\n"
 
@@ -222,6 +196,11 @@ msgstr "42"
 #, c-format
 msgid "%s's remote desktop on %s"
 msgstr "%s@%s さんのリモート・デスクトップ"
+
+#: ../server/vino-prefs.c:579
+#, c-format
+msgid "Received signal %d, exiting...\n"
+msgstr "シグナル %d を受け取ったので終了します...\n"
 
 #: ../server/vino-prompt.c:142
 msgid "Screen"
@@ -261,11 +240,11 @@ msgstr "許可しますか？"
 msgid "Question"
 msgstr "質問"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
 msgid "_Allow"
 msgstr "許可する(_A)"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
 msgid "_Refuse"
 msgstr "拒否する(_R)"
 
@@ -275,7 +254,7 @@ msgstr "GNOME リモート・デスクトップのサーバ"
 
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
-msgstr "許可される認証方法"
+msgstr "許可された認証方法"
 
 #: ../server/vino-server.schemas.in.h:2
 msgid "Alternative port number"
@@ -287,9 +266,20 @@ msgstr "リモート・デスクトップ URL の送信先メールアドレス"
 
 #: ../server/vino-server.schemas.in.h:4
 msgid "Enable remote desktop access"
-msgstr "リモート・デスクトップからのアクセスを有効にする"
+msgstr "リモート・デスクトップを有効にするかどうか"
 
 #: ../server/vino-server.schemas.in.h:5
+msgid ""
+"If not set, the server will listen on all network interfaces. Set this if "
+"you want that accept connections only from some specific network interface. "
+"eg: eth0, wifi0, lo, ..."
+msgstr ""
+"特に指定しない場合、リモート・デスクトップのサーバは全てのネットワーク・イン"
+"タフェースを監視します。もし特定のネットワーク・インタフェースからのみ接続を"
+"許可したいような場合は、ここにそのネットワークインタフェースを指定して下さい "
+"(例: eth0、wifi0、lo 等)。"
+
+#: ../server/vino-server.schemas.in.h:6
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
@@ -298,7 +288,7 @@ msgstr ""
 "ます。リモート・マシンのユーザは vncviewer を使ってデスクトップに接続できま"
 "す。"
 
-#: ../server/vino-server.schemas.in.h:6
+#: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
@@ -308,7 +298,7 @@ msgstr ""
 "でデスクトップに接続することはできません。特にアクセスがパスワードで保護され"
 "ていない場合に推奨します。"
 
-#: ../server/vino-server.schemas.in.h:7
+#: ../server/vino-server.schemas.in.h:8
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
@@ -316,7 +306,7 @@ msgstr ""
 "TRUE にすると、リモート・ユーザはデスクトップを参照することしかできなくなりま"
 "す。リモート・ユーザはマウスやキーボードを利用することはできません。"
 
-#: ../server/vino-server.schemas.in.h:8
+#: ../server/vino-server.schemas.in.h:9
 msgid ""
 "If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
@@ -327,13 +317,13 @@ msgstr ""
 "きるものでない限り、暗号化をサポートしているクライアントの使用を強く推奨しま"
 "す。"
 
-#: ../server/vino-server.schemas.in.h:9
+#: ../server/vino-server.schemas.in.h:10
 msgid "If true, screen will be locked after the last remote client disconnect."
 msgstr ""
 "TRUE にすると、最後のリモート・クライアントからの接続が切れた時に画面をロック"
 "します。"
 
-#: ../server/vino-server.schemas.in.h:10
+#: ../server/vino-server.schemas.in.h:11
 msgid ""
 "If true, the server will listen to another port, instead of the default "
 "(5900). The port must be specified in the 'alternative_port' key."
@@ -341,21 +331,19 @@ msgstr ""
 "TRUE にすると、サーバはデフォルトのポート (5900番) ではなく、もう一つ別のポー"
 "トを監視します。このポートは 'alternative port' キーで指定して下さい。"
 
-#: ../server/vino-server.schemas.in.h:11
-msgid ""
-"If true, the server will only accept connections from localhost and network "
-"connections will be rejected. Set this option to true if you wish to "
-"exclusively use a tunneling mechanism to access the server, such as ssh."
-msgstr ""
-"TRUE にすると、サーバはローカルホストからのみ接続を受け入れ、ネットワーク越し"
-"の接続は拒否します。ssh のようにトンネリングのメカニズムを用いてサーバに接続"
-"する場合は TRUE にして下さい。"
-
 #: ../server/vino-server.schemas.in.h:12
-msgid "Listen an alternative port"
-msgstr "別のポートを監視する"
+msgid ""
+"If true, we will use UPNP protocol to automatically forward the port used by "
+"vino in the router."
+msgstr ""
+"TRUE にすると、UPnP のプロトコルを利用して vino が使用しているルータ内のポー"
+"トを自動的にフォワードします。"
 
 #: ../server/vino-server.schemas.in.h:13
+msgid "Listen an alternative port"
+msgstr "別のポートを監視するかどうか"
+
+#: ../server/vino-server.schemas.in.h:14
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -363,44 +351,44 @@ msgid ""
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
 msgstr ""
-"リモートのユーザがデスクトップにアクセスする際の認証方法のリストvnc がリモー"
-"ト・ユーザにパスワード (vnc_password キーで指定) の入力を求めるか、none (認証"
-"なし; 任意のリモートユーザーが接続可能)の二つあります"
-
-#: ../server/vino-server.schemas.in.h:14
-msgid "Lock the screen when last user disconnect"
-msgstr "最後のユーザとの接続が切れた時に画面をロックする"
+"リモートのユーザがデスクトップにアクセスする際の認証方法のリストです。指定可"
+"能な値: \"vnc\" (接続する前に vnc_password キーで指定したパスワードの入力をリ"
+"モートのユーザに要求する)、\"none\" (誰でも認証なしで接続できる)"
 
 #: ../server/vino-server.schemas.in.h:15
-msgid "Only allow local connections"
-msgstr "ローカルからのみ接続を許可する"
+msgid "Lock the screen when last user disconnect"
+msgstr "接続が切れたら画面をロックするかどうか"
 
 #: ../server/vino-server.schemas.in.h:16
-msgid "Only allow remote users to view the desktop"
-msgstr "リモート・ユーザはデスクトップを見られるだけ"
+msgid "Network interface for listening"
+msgstr "監視するネットワークのインタフェース"
 
 #: ../server/vino-server.schemas.in.h:17
-msgid "Password required for \"vnc\" authentication"
-msgstr "\"vnc\" 認証時にパスワードが必須"
+msgid "Only allow remote users to view the desktop"
+msgstr "デスクトップの表示のみ許可するかどうか"
 
 #: ../server/vino-server.schemas.in.h:18
-msgid "Prompt the user before completing a connection"
-msgstr "接続する前にパスワード入力を求める"
+msgid "Password required for \"vnc\" authentication"
+msgstr "\"vnc\" の認証モードで使用するパスワード"
 
 #: ../server/vino-server.schemas.in.h:19
-msgid "Require encryption"
-msgstr "要暗号化"
+msgid "Prompt the user before completing a connection"
+msgstr "接続する前にパスワード入力を求めるかどうか"
 
 #: ../server/vino-server.schemas.in.h:20
+msgid "Require encryption"
+msgstr "暗号化するかどうか"
+
+#: ../server/vino-server.schemas.in.h:21
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
 msgstr ""
-"\"vnc\" 認証利用時にリモート・ユーザに入力を求めるパスワードはキーで指定され "
-"base64 エンコードされます。"
+"\"vnc\" の認証モードでリモート・ユーザに要求するパスワードを指定します。この"
+"内容は base64 エンコードされます。"
 
-#: ../server/vino-server.schemas.in.h:21
+#: ../server/vino-server.schemas.in.h:22
 msgid ""
 "The port which the server will listen to if the 'use_alternative_port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
@@ -408,7 +396,7 @@ msgstr ""
 "'use_alternative_port' キーが TRUE の場合に、サーバが監視するポート番号 "
 "(5000〜50000) です。"
 
-#: ../server/vino-server.schemas.in.h:22
+#: ../server/vino-server.schemas.in.h:23
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
 "\"always\" - The icon will be always there; \"client\" - You will see the "
@@ -419,22 +407,26 @@ msgstr ""
 "イコンを表示する)、\"client\" (誰かがデスクトップに接続したらアイコンを表示す"
 "る; これがデフォルトの設定)、\"never\" (アイコンは表示しない)"
 
-#: ../server/vino-server.schemas.in.h:23
+#: ../server/vino-server.schemas.in.h:24
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
-"このキーは、リモート・デスクトップ設定ダイアログでユーザをクリックすると、送"
-"信されるリモート・デスクトップ URL の送信先メールアドレスを指定します"
-
-#: ../server/vino-server.schemas.in.h:24
-msgid "When the status icon should be shown"
-msgstr "状態を表すアイコンを表示する時期"
+"リモート・デスクトップの設定ダイアログに表示されている URL をクリックして、そ"
+"れを E-メールで送信する宛先を指定します。"
 
 #: ../server/vino-server.schemas.in.h:25
+msgid "When the status icon should be shown"
+msgstr "ステータス・アイコンの表示方法"
+
+#: ../server/vino-server.schemas.in.h:26
 msgid "When true, disable the background on receive valid session"
-msgstr "TRUE にすると妥当なセッションに入ったら背景の画像を無効にする"
+msgstr "妥当なセッションに入ったら背景を無効にするかどうか"
+
+#: ../server/vino-server.schemas.in.h:27
+msgid "Whether we should use UPNP to forward the port in routers"
+msgstr "UPnP を使ってポートをフォワードするかどうか"
 
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
@@ -447,25 +439,15 @@ msgid_plural "%d people are connected"
 msgstr[0] " 1人のユーザが接続しています"
 msgstr[1] " %d人のユーザが接続しています"
 
-#: ../server/vino-status-icon.c:245
-#, c-format
-msgid ""
-"There was an error displaying preferences:\n"
-" %s"
-msgstr ""
-"設定ダイアログを表示する際にエラーが発生しました:\n"
-" %s"
+#: ../server/vino-status-icon.c:207
+msgid "Error displaying preferences"
+msgstr "設定ダイアログを表示する際にエラーが発生しました"
+
+#: ../server/vino-status-icon.c:226
+msgid "Error displaying help"
+msgstr "ヘルプを表示する際にエラーが発生しました"
 
 #: ../server/vino-status-icon.c:253
-#, c-format
-msgid ""
-"There was an error displaying help:\n"
-" %s"
-msgstr ""
-"ヘルプを表示する際にエラーが発生しました:\n"
-" %s"
-
-#: ../server/vino-status-icon.c:276
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -486,167 +468,181 @@ msgid ""
 msgstr ""
 "GNU 一般公衆利用許諾契約書の第二版の下でライセンス化されています。\n"
 "\n"
-"Vino はフリーソフトウェアです;フリーソフトウェア財団が提供する\n"
+"Vino はフリーソフトウェアです。フリーソフトウェア財団が提供する\n"
 "GNU 一般公衆利用許諾契約書の第二版、あるいはそれ以降の版が定める\n"
 "条項の下で本プログラムを再頒布または変更することができます。\n"
 "\n"
-"Vino は有用とは思いますが、その頒布にあたっては市場性及び特定の\n"
-"目的、その適合性についての暗黙の保証を含めて、いかなる保証も\n"
-"行ないません。詳細については GNU 一般公衆利用許諾契約書を\n"
-"ご覧下さい。\n"
+"Vino は有用とは思いますが、頒布にあたっては市場性または特定の目的に\n"
+"対する適合性についての暗黙の保証を含めて、いかなる保証も行ないません。\n"
+"詳細には GNU 一般公衆利用許諾契約書をご覧下さい。\n"
 "\n"
-"あなたは、本プログラムと一緒に GNU 一般公衆利用許諾契約書の写しを\n"
-"受け取っているはずです。そうでない場合は、Free Software Foundation,\n"
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA へ\n"
-"手紙を書いて下さい。\n"
+"あなたは本プログラムと一緒に GNU 一般公衆利用許諾契約書の写しを\n"
+"受け取っているはずです。そうでない場合は、Free Software Foundation, \n"
+"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA \n"
+"まで連絡して下さい。\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:291
+#: ../server/vino-status-icon.c:268
 msgid "translator-credits"
 msgstr ""
 "Satoru SATOH <ss@gnome.gr.jp>\n"
 "相花 毅 <takeshi.aihana@gmail.com>\n"
 "日本GNOMEユーザー会 http://www.gnome.gr.jp"
 
-#: ../server/vino-status-icon.c:297
+#: ../server/vino-status-icon.c:274
 msgid "Share your desktop with other users"
 msgstr "他のユーザとデスクトップを共有します"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:361
+#: ../server/vino-status-icon.c:338
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "本当に '%s' との接続を閉じますか？"
 
-#: ../server/vino-status-icon.c:363
+#: ../server/vino-status-icon.c:340
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "'%s' のリモート・ユーザに対する接続を閉じます。よろしいですか？"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:345
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "本当に全てのクライアントとの接続を閉じますか？"
 
-#: ../server/vino-status-icon.c:369
+#: ../server/vino-status-icon.c:346
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "全てのリモート・ユーザとの接続閉じます。よろしいですか？"
 
-#: ../server/vino-status-icon.c:381
+#: ../server/vino-status-icon.c:358
 msgid "Disconnect"
 msgstr "閉じる"
 
-#: ../server/vino-status-icon.c:407
+#: ../server/vino-status-icon.c:384
 msgid "_Preferences"
 msgstr "設定(_P)"
 
-#: ../server/vino-status-icon.c:422
+#: ../server/vino-status-icon.c:399
 msgid "Disconnect all"
 msgstr "全て閉じる"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:446
+#: ../server/vino-status-icon.c:423
 #, c-format
 msgid "Disconnect %s"
 msgstr "%s との接続を閉じる"
 
-#: ../server/vino-status-icon.c:466
+#: ../server/vino-status-icon.c:443
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
-#: ../server/vino-status-icon.c:474
+#: ../server/vino-status-icon.c:451
 msgid "_About"
 msgstr "情報(_A)"
 
-#: ../server/vino-status-icon.c:603
+#: ../server/vino-status-icon.c:584
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "libnotify を初期化する際にエラー\n"
 
-#: ../server/vino-status-icon.c:623
+#: ../server/vino-status-icon.c:604
 msgid "Another user is viewing your desktop"
 msgstr "他のユーザがデスクトップを参照しています"
 
-#: ../server/vino-status-icon.c:624
+#: ../server/vino-status-icon.c:605
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr ""
 "コンピュータ '%s' のユーザがあなたのデスクトップをリモートから参照しようとし"
 "ています。"
 
-#: ../server/vino-status-icon.c:629
+#: ../server/vino-status-icon.c:610
 msgid "Another user is controlling your desktop"
 msgstr "他のユーザがデスクトップを操作しています"
 
-#: ../server/vino-status-icon.c:630
+#: ../server/vino-status-icon.c:611
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr ""
 "コンピュータ '%s' のユーザがあなたのデスクトップをリモートから操作しようとし"
 "ています。"
 
-#: ../server/vino-status-icon.c:652
+#: ../server/vino-status-icon.c:633
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "通知ウィンドウを表示する際にエラー: %s\n"
 
+#: ../server/vino-util.c:115
+msgid "An error has occurred:"
+msgstr "エラーが発生しました:"
+
 #: ../tools/vino-passwd.c:115
 #, c-format
-msgid ""
-"ERROR: Maximum length of password is %d characters. Please, re-enter the "
-"password.\n"
-msgstr ""
-"エラー: パスワードとして入力できる文字は %d 文字までです (もう一度入力して下"
-"さい)\n"
+msgid "Cancelled"
+msgstr "キャンセルしました"
 
-#: ../tools/vino-passwd.c:145
+#: ../tools/vino-passwd.c:122
+#, c-format
+msgid ""
+"ERROR: Maximum length of password is %d character. Please, re-enter the "
+"password."
+msgid_plural ""
+"ERROR: Maximum length of password is %d characters. Please, re-enter the "
+"password."
+msgstr[0] ""
+"エラー: パスワードとして入力できるのは %d 文字までです (もう一度入力して下さ"
+"い)"
+msgstr[1] ""
+"エラー: パスワードとして入力できるのは %d 文字までです (もう一度入力して下さ"
+"い)"
+
+#: ../tools/vino-passwd.c:156
 #, c-format
 msgid "Changing Vino password.\n"
 msgstr "Vino のパスワードを変更します\n"
 
-#: ../tools/vino-passwd.c:147
+#: ../tools/vino-passwd.c:158
 msgid "Enter new Vino password: "
 msgstr "Vino の新しいパスワード: "
 
-#: ../tools/vino-passwd.c:150
+#: ../tools/vino-passwd.c:161
 msgid "Retype new Vino password: "
 msgstr "新しいパスワードの確認: "
 
-#: ../tools/vino-passwd.c:156
+#: ../tools/vino-passwd.c:167
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: パスワードを更新しました\n"
 
-#: ../tools/vino-passwd.c:160
+#: ../tools/vino-passwd.c:171
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "パスワードが一致しません\n"
 
-#: ../tools/vino-passwd.c:161
+#: ../tools/vino-passwd.c:172
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: パスワードを変更しませんでした\n"
 
-#: ../tools/vino-passwd.c:176
+#: ../tools/vino-passwd.c:187
 msgid "Show Vino version"
 msgstr "Vino のバージョンを表示する"
 
-#: ../tools/vino-passwd.c:185
+#: ../tools/vino-passwd.c:196
 msgid "- Updates Vino password"
 msgstr "- Vino のパスワードを更新する"
 
-#: ../tools/vino-passwd.c:195
+#: ../tools/vino-passwd.c:206
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr ""
 "'vino-passwd --help' を実行すると利用可能なコマンドライン・オプションの一覧が"
 "表示されます"
 
-#: ../tools/vino-passwd.c:202
+#: ../tools/vino-passwd.c:213
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "VINO のバージョンは %s\n"
 
-#: ../tools/vino-passwd.c:211
+#: ../tools/vino-passwd.c:222
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
