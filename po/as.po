@@ -4,193 +4,191 @@
 #
 # Amitakhya Phukan <aphukan@redhat.com>, 2008.
 # Amitakhya Phukan <amitakhya@svn.gnome.org>, 2008.
+# Amitakhya Phukan <aphukan@fedoraproject.org>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: as\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-01 12:32+0000\n"
-"PO-Revision-Date: 2008-02-05 16:27+0530\n"
-"Last-Translator: Amitakhya Phukan <amitakhya@svn.gnome.org>\n"
-"Language-Team: Assamese\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
+"cgi?product=vino&component=general\n"
+"POT-Creation-Date: 2009-02-13 15:02+0000\n"
+"PO-Revision-Date: 2009-03-15 21:14+0530\n"
+"Last-Translator: Amitakhya Phukan <aphukan@fedoraproject.org>\n"
+"Language-Team: Assamese <fedora-trans-as@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1)\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
 
-#: ../capplet/vino-preferences.c:1025 ../capplet/vino-preferences.c:1060
-#: ../capplet/vino-preferences.c:1118 ../server/vino-dbus-listener.c:374
-#: ../server/vino-server.c:148
-#, c-format
-msgid "Failed to open connection to bus: %s\n"
-msgstr "বাছ-ৰ সৈতে সংযোগ আৰম্ভ কৰোঁতে ব্যৰ্থ: %s\n"
+#. Open Link
+#: ../capplet/sexy-url-label.c:183
+#| msgid "Send this command by email"
+msgid "_Send address by email"
+msgstr "ঈ-মেইলৰ মাধ্যমে এই আদেশ প্ৰৰণ কৰা হ'ব"
 
-#: ../capplet/vino-preferences.c:1327
-msgid "Send this command by email"
-msgstr "ই-মেইলেৰ মাধ্যমে এই কমান্ড প্ৰেৰণ কৰা হ'ব"
+#. Copy Link Address
+#: ../capplet/sexy-url-label.c:195
+msgid "_Copy address to clipboard"
+msgstr "ক্লিপ-বোৰ্ডত ঠিকনা নকল কৰক (_C)"
 
-#: ../capplet/vino-preferences.c:1362
+#: ../capplet/vino-message-box.c:103, c-format
+#| msgid ""
+#| "There was an error displaying help:\n"
+#| " %s"
+msgid "There was an error showing the URL \"%s\""
+msgstr "URL \"%s\" প্ৰদৰ্শনত সমস্যা"
+
+#: ../capplet/vino-preferences.c:198 ../capplet/vino-preferences.c:954
+msgid "Checking the connectivity of this machine..."
+msgstr "বৰ্তমান মেশিনৰ সংযোগ ব্যৱস্থা পৰীক্ষা কৰক..."
+
+#: ../capplet/vino-preferences.c:798
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
 "%s"
 msgstr ""
-"সহায়িকা প্ৰদৰ্শনে সমস্যা দেখা:\n"
+"সহায়িকা প্ৰদৰ্শনত সমস্যা:\n"
 "%s"
 
+#: ../capplet/vino-preferences.c:839
+msgid "Your desktop is only reachable over the local network."
+msgstr "অকল স্থানীয় নেটৰ্কেৰ মাধ্যমে আপোনাৰ ডেস্কট'পৰ সৈতে সংযোগ স্থাপন কৰা সম্ভৱ ।"
+
+#: ../capplet/vino-preferences.c:840 ../capplet/vino-preferences.c:890
+#, c-format
+msgid "Others can access your computer using the address %s."
+msgstr ""
+"%s ঠিকনাৰ মাধ্যমে অনেন্য ব্যক্তিয়ে আপোনাৰ কম্পিউটাৰৰ সৈতে সংযোগ স্থাপন কৰিব "
+"পাৰিব ।"
+
+#: ../capplet/vino-preferences.c:940
+msgid "Nobody can access your desktop."
+msgstr "আপোনাৰ ডেস্কট'প অন্য কোনো ব্যক্তি দ্বাৰা ব্যৱহাৰৰ বাবে উপলব্ধ কৰা ন'হ'ব ।"
+
+#: ../capplet/vino-preferences.c:1081 ../server/vino-dbus-listener.c:501
+#: ../server/vino-server.c:156 ../server/vino-server.c:187
+#, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "bus ৰ সৈতে সংযোগ আৰম্ভ কৰোঁতে ব্যৰ্থ: %s\n"
+
 #: ../capplet/vino-preferences.desktop.in.in.h:1
-msgid "Remote Desktop"
-msgstr "দূৰবৰ্তী ডেস্কটপ"
+#| msgid "Allow other users to _view your desktop"
+msgid "Choose how other users can remotely view your desktop"
+msgstr "দূৰবৰ্তী ব্যৱহাৰকৰ্তাৰ বাবে আপোনাৰ ডেস্কট'প প্ৰদৰ্শনৰ প্ৰণালী নিৰ্ধাৰণ কৰক"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:2
-msgid "Set your remote desktop access preferences"
-msgstr "দূৰবৰ্তী ডেস্কটপ ব্যৱহাৰ সংক্ৰান্ত পছন্দ নিৰ্ধাৰণ কৰুন"
+#: ../server/vino-server.desktop.in.in.h:2
+msgid "Remote Desktop"
+msgstr "দূৰবৰ্তী ডেস্কট'প"
 
 #: ../capplet/vino-preferences.glade.h:1
-msgid "<b>Network</b>"
-msgstr "<b>নে'টৱৰ্ক</b>"
+msgid "<b>Notification Area</b>"
+msgstr "<b>সূচনাপ্ৰদানেৰ ক্ষেত্ৰ</b>"
 
 #: ../capplet/vino-preferences.glade.h:2
-msgid "<b>Notification Area</b>"
-msgstr "<b>Notification Area</b>"
-
-#: ../capplet/vino-preferences.glade.h:3
 msgid "<b>Security</b>"
 msgstr "<b>নিৰাপত্তা</b>"
 
-#: ../capplet/vino-preferences.glade.h:4
+#: ../capplet/vino-preferences.glade.h:3
 msgid "<b>Sharing</b>"
 msgstr "<b>শেয়াৰ ব্যৱস্থা</b>"
 
+#: ../capplet/vino-preferences.glade.h:4
+#| msgid "Some of these preferences are locked down"
+msgid "<i>Some of these preferences are locked down</i>"
+msgstr "<i>ইয়াত কিছু পছন্দ লক কৰা অাছে</i>"
+
 #: ../capplet/vino-preferences.glade.h:5
-msgid "A_sk you for confirmation"
-msgstr "নিশ্চিত কৰা হ'ব (_s)"
+msgid "Al_ways display an icon"
+msgstr "সদায়ে আইকন প্ৰদৰ্শিত হ'ব (_w)"
 
 #: ../capplet/vino-preferences.glade.h:6
-msgid "Advanced"
-msgstr "Advanced"
+msgid "Allow other users to _view your desktop"
+msgstr "অনেন্য ব্যৱহাৰকৰ্তাক আপোনাৰ ডেস্কট'প চোৱাৰ অনুমতি প্ৰদান কৰক (_v)"
 
 #: ../capplet/vino-preferences.glade.h:7
-msgid "Al_ways display an icon"
-msgstr "Al_ways display an icon"
+msgid "Maximum size: 8 characters"
+msgstr "সৰ্বোচ্চ মাপ: ৮ অক্ষৰ"
 
 #: ../capplet/vino-preferences.glade.h:8
-msgid "Allow other users to _view your desktop"
-msgstr "অন্যান্য ব্যৱহাৰকাৰীদেৰকে অাপনাৰ ডেস্কটপ দেখাৰ অনুমতি প্ৰদান কৰুন (_v)"
+msgid "Remote Desktop Preferences"
+msgstr "দূৰবৰ্তী ডেস্কট'প সংক্ৰান্ত পছন্দ"
 
 #: ../capplet/vino-preferences.glade.h:9
-msgid "General"
-msgstr "সাধাৰণ"
+#| msgid "If checked, remote users are able to control your mouse and keyboard"
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr "দূৰবৰ্তী ব্যৱহাৰকৰ্তাই, আপোনাৰ প্ৰণালীৰ মাউছ আৰু চাবিৰ ফলক নিয়ন্ত্ৰণ কৰিব পাৰিব"
 
 #: ../capplet/vino-preferences.glade.h:10
-msgid ""
-"If checked, remote users accessing the desktop are required to support "
-"encryption"
-msgstr ""
-"If checked, remote users accessing the desktop are required to support "
-"encryption"
+msgid "The router must have the UPnP feature enabled"
+msgstr "ৰাউটাৰত UPnP বৈশিষ্ট্য সক্ৰিয় থকা আৱশ্যক"
 
-#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:11
+msgid "You will be queried to allow or to refuse every incoming connection"
+msgstr ""
+"আগমনকাৰী সকলো সংযোগেৰ অনুৰোধ অনুমোদন অথবা প্ৰত্যাখ্যান কৰাৰ পূৰ্বে জিজ্ঞাসা কৰা হ'ব"
+
 #: ../capplet/vino-preferences.glade.h:12
-msgid "If checked, remote users are able to control your mouse and keyboard"
-msgstr "এবং"
+#| msgid "If checked, your desktop will be shared"
+msgid "Your desktop will be shared"
+msgstr "অন্য ব্যৱহাৰকৰ্তাৰ সৈতে আপোনাৰ ডেস্কট'প শেয়াৰ কৰা হ'ব"
 
 #: ../capplet/vino-preferences.glade.h:13
-msgid "If checked, screen will be locked after the last remote client disconnect"
-msgstr "পৰে শেষ"
+msgid "_Allow other users to control your desktop"
+msgstr "অনেন্য ব্যৱহাৰকৰ্তাৰ দ্বাৰা আপোনাৰ ডেস্কট'প নিয়ন্ত্ৰণেৰ অনুমতি প্ৰদান কৰক (_A)"
 
 #: ../capplet/vino-preferences.glade.h:14
-msgid "If checked, the server will only accept connections from localhost"
-msgstr "If checked, the server will only accept connections from localhost"
+msgid "_Configure network automatically to accept connections"
+msgstr "স্বয়ংক্ৰিয়ৰূপে সংযোগ গ্ৰহণ কৰাৰ উদ্দেশ্যে নেটৱৰ্ক বিনেস কৰক (_C)"
 
 #: ../capplet/vino-preferences.glade.h:15
-msgid "If checked, the server will use another port, instead of the default (5900)"
-msgstr "সৰ্বমোট ডিফল্ট"
+msgid "_Never display an icon"
+msgstr "আইকন কেতিয়াও প্ৰদৰ্শিত ন'হ'ব (_N)"
 
-#. tooltip in preferences applet
+#: ../capplet/vino-preferences.glade.h:16
+msgid "_Only display an icon when there is someone connected"
+msgstr "অকল সংযুক্ত ব্যৱহাৰকাৰী উপস্থিত থাকিলে আইকন প্ৰদৰ্শন কৰা হ'ব (_O)"
+
 #: ../capplet/vino-preferences.glade.h:17
-msgid "If checked, your desktop will be shared"
-msgstr "If checked, your desktop will be shared"
+msgid "_Require the user to enter this password:"
+msgstr "ব্যৱহাৰকৰ্তাকে বাধ্যতামূলকভাবে গুপ্তশব্দ লিখিব'লৈ হ'ব:(_R)"
 
 #: ../capplet/vino-preferences.glade.h:18
-msgid "Remote Desktop Preferences"
-msgstr "দূৰবৰ্তী ডেস্কটপ সংক্ৰান্ত পছন্দ"
+msgid "_You must confirm each access to this machine"
+msgstr "বৰ্তমান মেশিনৰ সৈতে সংযোগ স্থাপন কৰিব ইচ্ছুক প্ৰতিটি অনুৰোধ অনুমোদন কৰা হ'ব (_Y)"
 
-#: ../capplet/vino-preferences.glade.h:19
-msgid "Some of these preferences are locked down"
-msgstr "এৰ মধ্যে কিছু পছন্দ লক কৰা অাছে"
-
-#: ../capplet/vino-preferences.glade.h:20
-msgid "Users can view your desktop using this command:"
-msgstr "ব্যৱহাৰকাৰীৰা এই কমান্ড ব্যৱহাৰ কৰি অাপনাৰ ডেস্কটপ দেখতে পাৰবেন:"
-
-#: ../capplet/vino-preferences.glade.h:21
-msgid "When a user tries to view or control your desktop:"
-msgstr "কোনো ব্যৱহাৰকাৰীৰ দ্বাৰা আপনাৰ ডেস্কটপ প্ৰদৰ্শন অথবা নিয়ন্ত্ৰণেৰ প্ৰচেষ্টা কৰা হলে:"
-
-#: ../capplet/vino-preferences.glade.h:22
-msgid "_Allow other users to control your desktop"
-msgstr "অন্যান্য ব্যৱহাৰকাৰীৰ দ্বাৰা আপনাৰ ডেস্কটপ নিয়ন্ত্ৰণেৰ অনুমতি প্ৰদান কৰুন (_A)"
-
-#: ../capplet/vino-preferences.glade.h:23
-msgid "_Lock screen on disconnect"
-msgstr "লক কৰা হ'ব চলি আছে"
-
-#: ../capplet/vino-preferences.glade.h:24
-msgid "_Never display an icon"
-msgstr "কখনো নয়"
-
-#: ../capplet/vino-preferences.glade.h:25
-msgid "_Only allow local connections"
-msgstr "শুধুমাত্ৰ"
-
-#: ../capplet/vino-preferences.glade.h:26
-msgid "_Only display an icon when there is someone connected"
-msgstr "শুধুমাত্ৰ হলো সংযুক্ত"
-
-#: ../capplet/vino-preferences.glade.h:27
-msgid "_Password:"
-msgstr "পাসওয়াৰ্ড: (_P)"
-
-#: ../capplet/vino-preferences.glade.h:28
-msgid "_Require encryption"
-msgstr "_Require encryption"
-
-#: ../capplet/vino-preferences.glade.h:29
-msgid "_Require the user to enter this password:"
-msgstr "ব্যৱহাৰকাৰীকে বাধ্যতামূলকভাবে পাসওয়াৰ্ড লিখতে হ'ব:(_R)"
-
-#: ../capplet/vino-preferences.glade.h:30
-msgid "_Use an alternative port:"
-msgstr "_Use an alternative port:"
-
-#: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
-#: ../server/vino-dbus-listener.c:249
+#: ../server/vino-dbus-listener.c:281 ../server/vino-dbus-listener.c:311
+#: ../server/vino-dbus-listener.c:352
 #, c-format
 msgid "Out of memory handling '%s' message"
-msgstr "'%s' বাৰ্তা ব্যৱস্থাপনাৰ সময় মেমৰি পূৰণ হয়ে গেছে"
+msgstr "'%s' বাৰ্তা ব্যৱস্থাপনাৰ সময় মেমৰি পূৰণ হৈ গৈছে"
 
-#: ../server/vino-dbus-listener.c:334
+#: ../server/vino-dbus-listener.c:458
 #, c-format
 msgid "Out of memory registering object path '%s'"
-msgstr "অবজেক্ট পাথ '%s' নিবন্ধনকালে মেমৰি পূৰ্ণ হয়ে গেছে"
+msgstr "অবজেক্ট পাথ '%s' নিবন্ধনকালত মেমৰি পূৰ্ণ হৈ গৈছে"
 
-#: ../server/vino-dbus-listener.c:407
+#: ../server/vino-dbus-listener.c:537
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "D-Bus নাম '%s' প্ৰাপ্ত কৰোঁতে ব্যৰ্থ\n"
 
-#: ../server/vino-main.c:74
+#: ../server/vino-dbus-listener.c:545
+msgid "Remote Desktop server already running; exiting ...\n"
+msgstr "দূৰবৰ্তী ডেস্কট'প সেৱক বৰ্তমানে চলিছে: প্ৰস্থান কৰা হ'ব ...\n"
+
+#: ../server/vino-main.c:89
 msgid "GNOME Remote Desktop"
 msgstr "GNOME Remote Desktop"
 
-#: ../server/vino-main.c:84
+#: ../server/vino-main.c:99
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
-"অাপনাৰ XServer কোনো  XTest এক্সটেনশন সমৰ্থন কৰি না - দূৰবৰ্তী ডেস্কটপ ব্যৱহাৰেৰ "
-"সময়  শুধুমাত্ৰ প্ৰত্যক্ষ কৰা সম্ভব হ'ব\n"
+"আপোনাৰ XServer কোনো  XTest এক্সটেনশন সমৰ্থন নকৰে - দূৰবৰ্তী ডেস্কট'প ব্যৱহাৰৰ "
+"সময়  অকল প্ৰত্যক্ষ কৰা সম্ভৱ হ'ব\n"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -209,7 +207,12 @@ msgstr "vino-mdns:showusername"
 #: ../server/vino-mdns.c:71
 #, c-format
 msgid "%s's remote desktop on %s"
-msgstr "%s'ৰ দূৰবৰ্তী ডেস্কটপ, %s-ৰ উপৰ"
+msgstr "%s'ৰ দূৰবৰ্তী ডেস্কট'প, %s ৰ উপৰ"
+
+#: ../server/vino-prefs.c:579
+#, c-format
+msgid "Received signal %d, exiting...\n"
+msgstr "%d সিগনেল প্ৰাপ্ত হৈছে, প্ৰস্থান কৰা হ'ব...\n"
 
 #: ../server/vino-prompt.c:142
 msgid "Screen"
@@ -225,36 +228,42 @@ msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"'%s' কম্পিউটাৰেৰ এক ব্যৱহাৰকাৰী দূৰবৰ্তী অবস্থান থেকে অাপনাৰ ডেস্কটপ প্ৰত্যক্ষ অথবা "
-"নিয়ন্ত্ৰণ কৰাৰ চেষ্টা কৰছেন ।"
+"'%s' কম্পিউটাৰৰ এক ব্যৱহাৰকৰ্তা দূৰবৰ্তী অবস্থানৰ পৰা আপোনাৰ ডেস্কট'প প্ৰত্যক্ষ অথবা "
+"নিয়ন্ত্ৰণ কৰাৰ চেষ্টা কৰিছে  ।"
 
 #: ../server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>অন্য এক ব্যৱহাৰকাৰী অাপনাৰ ডেস্কটপ প্ৰত্যক্ষ কৰাৰ চেষ্টা কৰছেন ।</b></big>"
+msgstr ""
+"<big><b>অন্য এক ব্যৱহাৰকৰ্তা আপোনাৰ ডেস্কট'প প্ৰত্যক্ষ কৰাৰ চেষ্টা কৰিছে  ।</b></big>"
 
 #: ../server/vino-prompt.glade.h:2
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"অন্য কোনো কম্পিউটাৰেৰ এক ব্যৱহাৰকাৰী দূৰবৰ্তী অবস্থান থেকে অাপনাৰ ডেস্কটপ প্ৰত্যক্ষ "
-"অথবা নিয়ন্ত্ৰণ কৰাৰ চেষ্টা কৰছেন ।"
+"অন্য কোনো কম্পিউটাৰৰ এক ব্যৱহাৰকৰ্তা দূৰবৰ্তী অবস্থানৰ পৰা আপোনাৰ ডেস্কট'প প্ৰত্যক্ষ "
+"অথবা নিয়ন্ত্ৰণ কৰাৰ চেষ্টা কৰিছে  ।"
 
 #: ../server/vino-prompt.glade.h:3
 msgid "Do you want to allow them to do so?"
-msgstr "অাপনি কি তাদেৰকে এই কাজেৰ জন্য অনুমতি প্ৰদান কৰোঁতে ইচ্ছুক?"
+msgstr "আপুনি এই কামৰ বাবে আনক অনুমতি প্ৰদান কৰিবলৈ ইচ্ছুক?"
 
 #: ../server/vino-prompt.glade.h:4
 msgid "Question"
 msgstr "প্ৰশ্ন"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
+#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
 msgid "_Allow"
-msgstr "_Allow"
+msgstr "অনুমতি দিয়ক (_A)"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
+#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
 msgid "_Refuse"
 msgstr "প্ৰত্যাখ্যান কৰা হ'ব (_R)"
+
+#: ../server/vino-server.desktop.in.in.h:1
+#| msgid "GNOME Remote Desktop"
+msgid "GNOME Remote Desktop Server"
+msgstr "GNOME Remote Desktop Server"
 
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
@@ -266,71 +275,84 @@ msgstr "বিকল্প পোৰ্ট সংখ্যা"
 
 #: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr "দূৰবৰ্তী ডেস্কটপেৰ URL প্ৰেৰণেৰ উদ্দেশ্যে চিহ্নিত ই-মেইল ঠিকানা"
+msgstr "দূৰবৰ্তী ডেস্কট'পৰ URL প্ৰৰণেৰ উদ্দেশ্যে চিহ্নিত ঈ-মেইল ঠিকনা"
 
 #: ../server/vino-server.schemas.in.h:4
 msgid "Enable remote desktop access"
-msgstr "দূৰবৰ্তী অবস্থান থেকে ডেস্কটপ ব্যৱহাৰ সক্ৰিয় কৰা হ'ব"
+msgstr "দূৰবৰ্তী অবস্থানৰ পৰা ডেস্কট'প ব্যৱহাৰ সক্ৰিয় কৰা হ'ব"
 
 #: ../server/vino-server.schemas.in.h:5
+msgid ""
+"If not set, the server will listen on all network interfaces. Set this if "
+"you want that accept connections only from some specific network interface. "
+"eg: eth0, wifi0, lo, ..."
+msgstr ""
+"মান নিৰ্ধাৰিত ন'হ'লে, সেৱক দ্বাৰা সকলো নেটৱৰ্ক ইন্টাৰফেসে অপেক্ষা কৰা হ'ব । "
+"কোনো সুনিৰ্দিষ্ট নেটৱৰ্ক ইন্টাৰফেসৰ পৰা সংযোগ গ্ৰহণ কৰিব ইচ্ছুক হ'লে এই মান নিৰ্ধাৰণ কৰক "
+"উদাহৰণ: eth0, wifi0, lo, ..."
+
+#: ../server/vino-server.schemas.in.h:6
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
 msgstr ""
-"মান সত্য (true) হলে,  RFB প্ৰোটোকলেৰ মাধ্যমে দূৰবৰ্তী ডেস্কটপ ব্যৱহাৰ কৰাৰ অনুমতি "
-"প্ৰদান কৰা হ'ব । দূৰবৰ্তী মেশিনেৰ ব্যৱহাৰকাৰীৰা vncviewer-ৰ মাধ্যমে ডেস্কটপেৰ সৈতে "
-"সংযোগ কৰোঁতে পাৰবেন ।"
+"মান সত্য  হ'লে,  RFB প্ৰোটোকলেৰ মাধ্যমে দূৰবৰ্তী ডেস্কট'প ব্যৱহাৰ কৰাৰ অনুমতি "
+"প্ৰদান কৰা হ'ব  । দূৰবৰ্তী মেশিনৰ ব্যৱহাৰকৰ্তাৰা vncviewer ৰ মাধ্যমে ডেস্কট'পৰ সৈতে "
+"সংযোগ কৰোঁতে পাৰিব  ।"
 
-#: ../server/vino-server.schemas.in.h:6
+#: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
 msgstr ""
-"মান সত্য (true) হলে, হোস্ট মেশিনেৰ অনুমতি ছাড়া,  ডেস্কটপ ব্যৱহাৰ কৰোঁতে ইচ্ছুক দূৰবৰ্তী "
-"ব্যৱহাৰকাৰীদেৰ সংযোগ অনুমোদন কৰা হ'ব না । পাসওয়াৰ্ড দ্বাৰা সুৰক্ষিত না থাকলে এটা "
-"ব্যৱহাৰ কৰা বাঞ্ছনীয় ।"
+"মান সত্য  হ'লে, হোস্ট মেশিনৰ অনুমতি ছাড়া,  ডেস্কট'প ব্যৱহাৰ কৰোঁতে ইচ্ছুক "
+"দূৰবৰ্তী ব্যৱহাৰকৰ্তাৰ সংযোগ অনুমোদন কৰা ন'হ'ব  । গুপ্তশব্দ দ্বাৰা সুৰক্ষিত না "
+"থাকিলে এটা ব্যৱহাৰ কৰা বাঞ্ছনীয়  ।"
 
-#: ../server/vino-server.schemas.in.h:7
+#: ../server/vino-server.schemas.in.h:8
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
 msgstr ""
-"মান সত্য (true) হলে, দূৰবৰ্তী ব্যৱহাৰকাৰীৰা ডেস্কটপ শুধুমাত্ৰ প্ৰত্যক্ষ কৰোঁতে সক্ষম হ'বন । "
-"দূৰবৰ্তী ব্যৱহাৰকাৰীৰা মাউস অথবা কি-বোৰ্ড ব্যৱহাৰ কৰোঁতে সক্ষম হ'বন না ।"
+"মান সত্য  হ'লে, দূৰবৰ্তী ব্যৱহাৰকৰ্তাৰা ডেস্কট'প অকল প্ৰত্যক্ষ কৰোঁতে সক্ষম হ'বন "
+" । দূৰবৰ্তী ব্যৱহাৰকৰ্তাৰা মাউস অথবা চাবিৰ ফলক ব্যৱহাৰ কৰোঁতে সক্ষম হ'বন না  ।"
 
-#: ../server/vino-server.schemas.in.h:8
+#: ../server/vino-server.schemas.in.h:9
 msgid ""
 "If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
 msgstr ""
-"মান সত্য (true) হলে, দূৰবৰ্তী অবস্থান থেকে ডেস্কটপ ব্যৱহাৰকাৰীৰা এনক্ৰিপশন কৰোঁতে "
-"সক্ষম হ'বন । মধ্যবৰ্তী নেটওয়াৰ্ক যদি নিৰ্ভৰযোগ্য (trusted) না হয় তাহলে এনক্ৰিপশন "
-"সমৰ্থনকাৰী একটি ক্লায়েন্ট ব্যৱহাৰ কৰা বাঞ্ছনীয় ।"
-
-#: ../server/vino-server.schemas.in.h:9
-msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr "মান সত্য (true) হলে, সৰ্বশেষ দূৰবৰ্তী ক্লায়েন্ট বিচ্ছিন্ন হওয়াৰ পৰে পৰ্দা লক কৰা হ'ব ।"
+"মান সত্য  হ'লে, দূৰবৰ্তী অবস্থানৰ পৰা ডেস্কট'প ব্যৱহাৰকৰ্তাৰা এনক্ৰিপশন কৰোঁতে "
+"সক্ষম হ'বন  । মধ্যবৰ্তী নেটৱৰ্ক যদি নিৰ্ভৰযোগ্য (trusted) না হয় তাহ'লে এনক্ৰিপশন "
+"সমৰ্থনকাৰী একটি ক্লায়েন্ট ব্যৱহাৰ কৰা বাঞ্ছনীয়  ।"
 
 #: ../server/vino-server.schemas.in.h:10
-msgid ""
-"If true, the server will listen to another port, instead of the default "
-"(5900). The port must be specified in the 'alternative_port' key."
-msgstr "মান সত্য (true) হলে, ডিফল্ট পোৰ্টেৰ (5900) পৰিবৰ্তে সেৱক একটি ভিন্ন পোৰ্টে অপেক্ষা কৰবে । এই পোৰ্টটি 'alternative_port' কি দ্বাৰা নিৰ্দিষ্ট কৰা আবশ্যক ।"
+msgid "If true, screen will be locked after the last remote client disconnect."
+msgstr "মান সত্য  হ'লে, সৰ্বশেষ দূৰবৰ্তী ক্লায়েন্ট বিচ্ছিন্ন হোৱাৰ পৰে পৰ্দা লক কৰা হ'ব  ।"
 
 #: ../server/vino-server.schemas.in.h:11
 msgid ""
-"If true, the server will only accept connections from localhost and network "
-"connections will be rejected. Set this option to true if you wish to "
-"exclusively use a tunneling mechanism to access the server, such as ssh."
-msgstr "মান সত্য (true) হলে, সেৱক দ্বাৰা শুধুমাত্ৰ স্থানীয় হোস্টেৰ সৈতে সংযোগ স্থাপন কৰা হ'ব ও নেটওয়াৰ্ক থেকে প্ৰাপ্ত অনুৰোধ প্ৰত্যাখ্যান কৰা হ'ব । সেৱক ব্যৱহাৰেৰ জন্য বিশেষৰূপে টানেল ব্যৱস্থা যেমন ssh ব্যৱহাৰ কৰোঁতে ইচ্ছুক হলে এই বিকল্পেৰ মান true নিৰ্ধাৰণ কৰুন ।"
+"If true, the server will listen to another port, instead of the default "
+"(5900). The port must be specified in the 'alternative_port' key."
+msgstr ""
+"মান সত্য  হ'লে, অবিকল্পিত পোৰ্টেৰ (5900) পৰিবৰ্তে সেৱক একটি ভিন্ন পোৰ্টে অপেক্ষা "
+"কৰবে  । এই পোৰ্টটি 'alternative_port' চাবি দ্বাৰা নিৰ্দিষ্ট কৰা আৱশ্যক  ।"
 
 #: ../server/vino-server.schemas.in.h:12
+msgid ""
+"If true, we will use UPNP protocol to automatically forward the port used by "
+"vino in the router."
+msgstr ""
+"মান সত্য হ'লে, vino দ্বাৰা ব্যৱহাৰ পোৰ্টকে স্বয়ংক্ৰিয়ভাবে ৰাউটাৰে অনুবৰ্তনেৰ "
+"বাবে UPNP প্ৰোটোকল ব্যৱহাৰ কৰা হ'ব ।"
+
+#: ../server/vino-server.schemas.in.h:13
 msgid "Listen an alternative port"
 msgstr "বিকল্প পোৰ্টে অপেক্ষা কৰা হ'ব"
 
-#: ../server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:14
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -338,87 +360,89 @@ msgid ""
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
 msgstr ""
-"দূৰবৰ্তী ব্যৱহাৰকাৰীৰা যে সকল অনুমোদন প্ৰক্ৰিযাৰ মাধ্যমে ডেস্কটপ ব্যৱহাৰ কৰোঁতে সক্ষম "
-"হ'বন সেইটোক তালিকাভুক্ত কৰে । দুটি সম্ভাব্য অনুমোদন প্ৰক্ৰিয়া উপস্থিত অাছে; \"vnc\" -ৰ "
-"দ্বাৰা দূৰবৰ্তী ব্যৱহাৰকাৰীকে সংযোগেৰ পূৰ্বে পাসওয়াৰ্ড-ৰ জন্য অনুৰোধ কৰা হ'ব (এই "
-"পাসওযাৰ্ডটি vnc_password কি-ৰ দ্বাৰা নিৰ্ধাৰিত হয়) এবং \"none\" যাৰ দ্বাৰা যে "
-"কোনো দূৰবৰ্তী ব্যৱহাৰকাৰী সংযোগ কৰাৰ অনুমতি পাবেন ।"
-
-#: ../server/vino-server.schemas.in.h:14
-msgid "Lock the screen when last user disconnect"
-msgstr "সৰ্বশেষ ব্যৱহাৰকাৰী বিচ্ছিন্ন কৰাৰ পৰে পৰ্দা লক কৰা হ'ব"
+"দূৰবৰ্তী ব্যৱহাৰকৰ্তাৰা যি সকলো অনুমোদন প্ৰক্ৰিযাৰ মাধ্যমে ডেস্কট'প ব্যৱহাৰ কৰোঁতে সক্ষম "
+"হ'বন সেইটোক তালিকাভুক্ত কৰে  । দুটা সম্ভাব্য অনুমোদন প্ৰক্ৰিয়া উপস্থিত অাছে; \"vnc\" -"
+"ৰ দ্বাৰা দূৰবৰ্তী ব্যৱহাৰকৰ্তাকে সংযোগেৰ পূৰ্বে গুপ্তশব্দ ৰ বাবে অনুৰোধ কৰা হ'ব (এই "
+"পাসওযাৰ্ডটি vnc_password চাবি ৰ দ্বাৰা নিৰ্ধাৰিত হয়) আৰু \"none\" যাৰ দ্বাৰা যি "
+"কোনো দূৰবৰ্তী ব্যৱহাৰকৰ্তা সংযোগ কৰাৰ অনুমতি পাবেন  ।"
 
 #: ../server/vino-server.schemas.in.h:15
-msgid "Only allow local connections"
-msgstr "শুধুমাত্ৰ স্থানীয় সংযোগ অনুমোদন কৰা হ'ব"
+msgid "Lock the screen when last user disconnect"
+msgstr "সৰ্বশেষ ব্যৱহাৰকৰ্তা বিচ্ছিন্ন কৰাৰ পৰে পৰ্দা লক কৰা হ'ব"
 
 #: ../server/vino-server.schemas.in.h:16
-msgid "Only allow remote users to view the desktop"
-msgstr "শুধুমাত্ৰ দূৰবৰ্তী ব্যৱহাৰকাৰীদেৰকে ডেস্কটপ দেখাৰ অনুমোদন প্ৰদান কৰা হ'ব"
+msgid "Network interface for listening"
+msgstr "অপেক্ষা কৰাৰ বাবে চিহ্নিত নেটৱৰ্ক ইন্টাৰফেস"
 
 #: ../server/vino-server.schemas.in.h:17
-msgid "Password required for \"vnc\" authentication"
-msgstr "\"vnc\" অনুমোদন প্ৰক্ৰিয়াৰ জন্য পাসওয়াৰ্ড প্ৰয়োজন"
+msgid "Only allow remote users to view the desktop"
+msgstr "অকল দূৰবৰ্তী ব্যৱহাৰকৰ্তাৰকে ডেস্কট'প চোৱাৰ অনুমোদন প্ৰদান কৰা হ'ব"
 
 #: ../server/vino-server.schemas.in.h:18
-msgid "Prompt the user before completing a connection"
-msgstr "সংযোগ প্ৰক্ৰিয়া  সম্পন্ন কৰাৰ পূৰ্বে ব্যৱহাৰকাৰীদেৰকে সচেতন কৰা হ'ব"
+msgid "Password required for \"vnc\" authentication"
+msgstr "\"vnc\" অনুমোদন প্ৰক্ৰিয়াৰ বাবে গুপ্তশব্দ প্ৰয়োজন"
 
 #: ../server/vino-server.schemas.in.h:19
-msgid "Require encryption"
-msgstr "এনক্ৰিপশন আবশ্যক"
+msgid "Prompt the user before completing a connection"
+msgstr "সংযোগ প্ৰক্ৰিয়া  সম্পন্ন কৰাৰ পূৰ্বে ব্যৱহাৰকৰ্তাৰকে সচেতন কৰা হ'ব"
 
 #: ../server/vino-server.schemas.in.h:20
+msgid "Require encryption"
+msgstr "এনক্ৰিপশন আৱশ্যক"
+
+#: ../server/vino-server.schemas.in.h:21
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
 msgstr ""
-"\"vnc\" অনুমোদন  প্ৰক্ৰিয়া ব্যৱহাৰ কৰা হলে দূৰবৰ্তী ব্যৱহাৰকাৰীদেৰকে যে পাসওয়াৰ্ড "
-"লিখতে অনুৰোধ কৰা  হ'ব ।"
+"\"vnc\" অনুমোদন  প্ৰক্ৰিয়া ব্যৱহাৰ কৰা হ'লে দূৰবৰ্তী ব্যৱহাৰকৰ্তাৰকে যি গুপ্তশব্দ "
+"লিখিব'লৈ অনুৰোধ কৰা  হ'ব  ।"
 
-#: ../server/vino-server.schemas.in.h:21
+#: ../server/vino-server.schemas.in.h:22
 msgid ""
 "The port which the server will listen to if the 'use_alternative_port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
-msgstr "'use_alternative_port' কি-ৰ মান সত্য (true) হলে সেৱক দ্বাৰা যে পোৰ্টে অপেক্ষা কৰা হ'ব । বৈধ মান 5000 থেকে 50000-ৰ মধ্যে হওয়া আবশ্যক ।"
+msgstr ""
+"'use_alternative_port' চাবি ৰ মান সত্য হ'লে সেৱক দ্বাৰা যি পোৰ্টত অপেক্ষা "
+"কৰা হ'ব  । বৈধ মান 5000ৰ পৰা 50000-ত হোৱা আৱশ্যক  ।"
 
-#: ../server/vino-server.schemas.in.h:22
+#: ../server/vino-server.schemas.in.h:23
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
 "\"always\" - The icon will be always there; \"client\" - You will see the "
 "icon only when there is someone connected, this is the default behavior; "
 "\"never\" - Never shows the icon."
-msgstr "সৰ্বমোট তিন You হলো সংযুক্ত হলো ডিফল্ট কখনো নয়."
+msgstr ""
+"অবস্থাসূচক আইকনেৰ আচৰণ এই চাবি দ্বাৰা নিয়ন্ত্ৰণ কৰা হয়। এই ক্ষেত্ৰত তিনটি বিকল্প "
+"উপস্থিত আছে: \"always (সদায়ে)\" - আইকন সদায়ে প্ৰদৰ্শিত হ'ব; \"client (ক্লায়েন্ট)"
+"\" - কোনো সংযুক্ত ব্যৱহাৰকৰ্তা উপস্থিত থাকিলে আইকন প্ৰদৰ্শন কৰা হ'ব আৰু অবিকল্পিতৰূপে এই "
+"বিকল্প প্ৰয়োগ কৰা হয়; \"never (কেতিয়াও নহয়)\" - এই আইকন কেতিয়াও প্ৰদৰ্শন কৰা ন'হ'ব।"
 
-#: ../server/vino-server.schemas.in.h:23
+#: ../server/vino-server.schemas.in.h:24
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
-"দূৰবৰ্তী ডেস্কটপ-ৰ বৈশিষ্ট্যাবলী সংক্ৰান্ত ডায়লগ'ৰ উপৰ ব্যৱহাৰকাৰী ক্লিক কৰিলে, যে ঈ-"
-"মেইল ঠিকনাত দূৰবৰ্তী ডেস্কটপ-ৰ URL প্ৰেৰিত হ'ব, সেইটোক এই কি'ৰ দ্বাৰা চিহ্নিত হ'ব ।"
+"দূৰবৰ্তী ডেস্কট'প ৰ বৈশিষ্ট্যাবলী সংক্ৰান্ত ডায়লগ'ৰ উপৰ ব্যৱহাৰকৰ্তা ক্লিক কৰিলে, যি ঈ-"
+"মেইল ঠিকনাত দূৰবৰ্তী ডেস্কট'প ৰ URL প্ৰৰিত হ'ব, সেইটোক এই কি'ৰ দ্বাৰা চিহ্নিত হ'ব  ।"
 
-#: ../server/vino-server.schemas.in.h:24
+#: ../server/vino-server.schemas.in.h:25
 msgid "When the status icon should be shown"
-msgstr "When the status icon should be shown"
+msgstr "অবস্থাসূচক আইকন কোন সময়ত প্রদর্শন কৰা হ'ব"
 
-#: ../server/vino-shell.c:76
-msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "দূৰবৰ্তী ডেস্কটপ সেৱক বৰ্তমানে চলছে: প্ৰস্থান কৰা হ'ব ...\n"
+#: ../server/vino-server.schemas.in.h:26
+msgid "When true, disable the background on receive valid session"
+msgstr "মান সত্য হ'লে, বৈধ অধিবেশন প্ৰাপ্ত হ'লে পটভূমি নিষ্ক্ৰিয় কৰা হ'ব"
 
-#: ../server/vino-shell.c:79
-msgid ""
-"Problem registering the remote desktop server with bonobo-activation; "
-"exiting ...\n"
-msgstr ""
-"bonobo-activation ব্যৱহাৰ কৰি দূৰবৰ্তী ডেস্কটপ সেৱক নিবন্ধন কৰোঁতে সমস্যা হৈছে; "
-"প্ৰস্থান কৰা হ'ব ...\n"
+#: ../server/vino-server.schemas.in.h:27
+msgid "Whether we should use UPNP to forward the port in routers"
+msgstr "ৰাউটাৰত পোৰ্ট অনুবৰ্তনৰ বাবে UPNP ব্যৱহাৰ কৰা হ'ব নে নহয়"
 
 #: ../server/vino-status-icon.c:102
 msgid "Desktop sharing is enabled"
-msgstr "ডেস্কটপ"
+msgstr "ডেস্কটপ শেয়াৰ ব্যৱস্থা সক্ৰিয় কৰা হৈছে"
 
 #: ../server/vino-status-icon.c:110
 #, c-format
@@ -427,25 +451,21 @@ msgid_plural "%d people are connected"
 msgstr[0] "এজন সংযুক্ত"
 msgstr[1] "%d জন সংযুক্ত"
 
-#: ../server/vino-status-icon.c:245
-#, c-format
-msgid ""
-"There was an error displaying preferences:\n"
-" %s"
-msgstr ""
-"পছন্দ প্ৰদৰ্শনে সমস্যা দেখা দিয়েছে:\n"
-"%s"
+#: ../server/vino-status-icon.c:207
+#| msgid ""
+#| "There was an error displaying preferences:\n"
+#| " %s"
+msgid "Error displaying preferences"
+msgstr "পছন্দ মান প্ৰদৰ্শনত সমস্যা দেখা দিছে"
+
+#: ../server/vino-status-icon.c:226
+#| msgid ""
+#| "There was an error displaying help:\n"
+#| "%s"
+msgid "Error displaying help"
+msgstr "সহায়িকা প্ৰদৰ্শনত সমস্যা দেখা"
 
 #: ../server/vino-status-icon.c:253
-#, c-format
-msgid ""
-"There was an error displaying help:\n"
-" %s"
-msgstr ""
-"সহায়িকা প্ৰদৰ্শনে সমস্যা:\n"
-"%s"
-
-#: ../server/vino-status-icon.c:276
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -464,122 +484,274 @@ msgid ""
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
 "02110-1301, USA.\n"
 msgstr ""
-"GNU General Public License-ৰ ২-য় সংস্কৰণেৰ শৰ্তাধীন বিতৰিত\n"
+"Licensed under the GNU General Public License Version 2\n"
 "\n"
-"Vino একটি মুক্ত সফ্টওয়্যাৰ; Free Software Foundation দ্বাৰা প্ৰকাশিত GNU "
-"General Public License'ৰ শৰ্তানুযায়ী এটি বিতৰণ ও পৰিবৰ্তন কৰা যাবে; লাইসেন্সেৰ "
-"সংস্কৰণ ২ অথবা (আপনাৰ সুবিধানুযায়ী) ঊৰ্ধ্বতন কোনো সংস্কৰণেৰ অধীন ।"
+"Vino is free software; you can redistribute it and/or\n"
+"modify it under the terms of the GNU General Public License\n"
+"as published by the Free Software Foundation; either version 2\n"
+"of the License, or (at your option) any later version.\n"
 "\n"
-"Vino বিতৰণ কৰাৰ মূল উদ্দেশ্য যে ব্যৱহাৰকাৰীৰা এৰ দ্বাৰা উপকৃত হ'বন, কিন্তু "
-"এটিৰ জন্য কোনো সুস্পষ্ট ওয়াৰেন্টি উপস্থিত নেই; বাণিজ্যিক ও কোনো সুনিৰ্দিষ্ট কৰ্ম সাধনেৰ "
-"জন্য অন্তৰ্নিহীত ওয়াৰেন্টিও অনুপস্থিত । অধিক জানতে GNU General Public License পড়ুন ।\n"
+"Vino is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n"
+"GNU General Public License for more details.\n"
 "\n"
-"Vino-ৰ সৈতে GNU General Public License'ৰ একটি প্ৰতিলিপি উপলব্ধ হওয়া "
-"উচিত; না থাকলে নিম্নলিখিত ঠিকানায় লিখে সেইটোক সংগ্ৰহ কৰুন Free Software Foundation, "
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA\n"
+"You should have received a copy of the GNU General Public License\n"
+"along with this program; if not, write to the Free Software\n"
+"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+"02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:291
+#: ../server/vino-status-icon.c:268
 msgid "translator-credits"
 msgstr "অমিতাক্ষ ফুকন (aphukan@fedoraproject.org)"
 
-#: ../server/vino-status-icon.c:297
+#: ../server/vino-status-icon.c:274
 msgid "Share your desktop with other users"
-msgstr "অন্য ব্যৱহাৰকাৰীদেৰ সৈতে আপনাৰ ডেস্কটপ শেয়াৰ কৰুন"
+msgstr "অন্য ব্যৱহাৰকৰ্তাৰ সৈতে আপোনাৰ ডেস্কট'প শেয়াৰ কৰক"
 
-#: ../server/vino-status-icon.c:360
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:338
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
-msgstr "আপনি কি নিশ্চিতৰূপে '%s' থেকে সংযোগ বিচ্ছিন্ন কৰোঁতে ইচ্ছুক?"
+msgstr "আপুনি চাবি নিশ্চিতৰূপে '%s'ৰ পৰা সংযোগ বিচ্ছিন্ন কৰোঁতে ইচ্ছুক?"
 
-#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-icon.c:340
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
-msgstr "'%s' থেকে সংযুক্ত দূৰবৰ্তী ব্যৱহাৰকাৰীকে বিচ্ছিন্ন কৰা হ'ব । নিশ্চিত কি?"
+msgstr "'%s'ৰ পৰা সংযুক্ত দূৰবৰ্তী ব্যৱহাৰকৰ্তাকে বিচ্ছিন্ন কৰা হ'ব  । নিশ্চিত নেকি ?"
 
-#: ../server/vino-status-icon.c:367
+#: ../server/vino-status-icon.c:345
 msgid "Are you sure you want to disconnect all clients?"
-msgstr "আপনি কি নিশ্চিতৰূপে সব ক্লায়েন্টদেৰ সৈতে সংযোগ বিচ্ছিন্ন কৰোঁতে ইচ্ছুক?"
+msgstr "আপুনি চাবি নিশ্চিতৰূপে সকলো ক্লায়েন্টৰ সৈতে সংযোগ বিচ্ছিন্ন কৰোঁতে ইচ্ছুক?"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:346
 msgid "All remote users will be disconnected. Are you sure?"
-msgstr "সকল দূৰবৰ্তী ব্যৱহাৰকাৰীকে বিচ্ছিন্ন কৰা হ'ব । নিশ্চিত কি?"
+msgstr "সকলো দূৰবৰ্তী ব্যৱহাৰকৰ্তাকে বিচ্ছিন্ন কৰা হ'ব  । নিশ্চিত নেকি ?"
 
-#: ../server/vino-status-icon.c:380
+#: ../server/vino-status-icon.c:358
 msgid "Disconnect"
-msgstr "Disconnect"
+msgstr "বিচ্ছিন্ত কৰক"
 
-#: ../server/vino-status-icon.c:406
+#: ../server/vino-status-icon.c:384
 msgid "_Preferences"
 msgstr "পছন্দ (_P)"
 
-#: ../server/vino-status-icon.c:421
+#: ../server/vino-status-icon.c:399
 msgid "Disconnect all"
-msgstr "সকল বিচ্ছিন্ন কৰুন"
+msgstr "সকলো বিচ্ছিন্ন কৰক"
 
-#: ../server/vino-status-icon.c:444
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:423
 #, c-format
 msgid "Disconnect %s"
-msgstr "%s-কে বিচ্ছিন্ন কৰুন"
+msgstr "%s-কে বিচ্ছিন্ন কৰক"
 
-#: ../server/vino-status-icon.c:464
+#: ../server/vino-status-icon.c:443
 msgid "_Help"
 msgstr "সাহায্য (_H)"
 
-#: ../server/vino-status-icon.c:472
+#: ../server/vino-status-icon.c:451
 msgid "_About"
 msgstr "বিষয়ে (_A)"
 
-#: ../server/vino-status-icon.c:598
+#: ../server/vino-status-icon.c:584
+#, c-format
 msgid "Error initializing libnotify\n"
 msgstr "libnotify আৰম্ভ কৰোঁতে সমস্যা\n"
 
-#: ../server/vino-status-icon.c:612
+#: ../server/vino-status-icon.c:604
 msgid "Another user is viewing your desktop"
-msgstr "অন্য একজন ব্যৱহাৰকাৰী বৰ্তমানে আপনাৰ ডেস্কটপ দেখছেন"
+msgstr "অন্য একজন ব্যৱহাৰকৰ্তা বৰ্তমানে আপোনাৰ ডেস্কট'প চাইছে"
 
-#: ../server/vino-status-icon.c:613
+#: ../server/vino-status-icon.c:605
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
-msgstr "'%s' কম্পিউটাৰেৰ এক ব্যৱহাৰকাৰী দূৰবৰ্তী অবস্থান থেকে অাপনাৰ ডেস্কটপ প্ৰত্যক্ষ দেখছেন ।"
+msgstr ""
+"'%s' কম্পিউটাৰৰ এক ব্যৱহাৰকৰ্তা দূৰবৰ্তী অবস্থানৰ পৰা আপোনাৰ ডেস্কট'প প্ৰত্যক্ষ চাইছে "
+" ।"
 
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:610
 msgid "Another user is controlling your desktop"
-msgstr "অন্য একজন ব্যৱহাৰকাৰী আপনাৰ ডেস্কটপ নিয়ন্ত্ৰণ কৰছেন"
+msgstr "অন্য একজন ব্যৱহাৰকৰ্তা আপোনাৰ ডেস্কট'প নিয়ন্ত্ৰণ কৰিছে"
 
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:611
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr "'%s' কম্পিউটাৰেৰ এক ব্যৱহাৰকাৰী দূৰবৰ্তী অবস্থান থেকে অাপনাৰ ডেস্কটপ নিয়ন্ত্ৰণ কৰছেন ।"
+msgstr ""
+"'%s' কম্পিউটাৰৰ এক ব্যৱহাৰকৰ্তা দূৰবৰ্তী অবস্থানৰ পৰা আপোনাৰ ডেস্কট'প নিয়ন্ত্ৰণ কৰিছে ।"
 
-#: ../server/vino-status-icon.c:641
+#: ../server/vino-status-icon.c:633
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "সূচনাপ্ৰদানেৰ বাবল প্ৰদৰ্শন কৰোঁতে ব্যৰ্থ: %s\n"
 
-#: ../session/vino-session.c:133
-msgid "Remote desktop server died, restarting\n"
-msgstr "দূৰবৰ্তী ডেস্কটপ সেৱক বন্ধ হয়ে গেছে, পুনৰায অাৰম্ভ কৰা হচ্ছে\n"
+#: ../server/vino-util.c:115
+msgid "An error has occurred:"
+msgstr "ত্ৰুটি উৎপন্ন হৈছে:"
 
-#: ../session/vino-session.c:154
+#: ../tools/vino-passwd.c:115, c-format
+msgid "Cancelled"
+msgstr "বাতিল কৰা হৈছে"
+
+#: ../tools/vino-passwd.c:122
 #, c-format
-msgid "Activation of %s failed: %s\n"
-msgstr "%s সক্ৰিয় কৰা সম্ভব হয়নি: %s\n"
+msgid ""
+"ERROR: Maximum length of password is %d character. Please, re-enter the "
+"password."
+msgid_plural ""
+"ERROR: Maximum length of password is %d characters. Please, re-enter the "
+"password."
+msgstr[0] ""
+"ত্ৰুটি: গুপ্তশব্দৰ ক্ষেত্ৰত সৰ্বাধিক %d অক্ষৰ ব্যৱহাৰ কৰা যাব  । অনুগ্ৰহ কৰে "
+"গুপ্তশব্দ পুনঃ লিখক ।"
+msgstr[1] ""
+"ত্ৰুটি: গুপ্তশব্দেৰ ক্ষেত্ৰত সৰ্বাধিক %d অক্ষৰ ব্যৱহাৰ কৰা যাব  । অনুগ্ৰহ কৰি "
+"গুপ্তশব্দ পুনঃ লিখক ।"
 
-#: ../session/vino-session.c:160
+#: ../tools/vino-passwd.c:156
 #, c-format
-msgid "Activation of %s failed: Unknown Error\n"
-msgstr "%s সক্ৰিয় কৰা সম্ভব হয়নি: অজানা সমস্যা\n"
+msgid "Changing Vino password.\n"
+msgstr "Vino গুপ্তশব্দ পৰিবৰ্তন প্ৰণালী ।\n"
 
-#: ../session/vino-session.c:231
-msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "দূৰবৰ্তী ডেস্কটপ সেৱক আৰম্ভ কৰা যায়নি: অত্যাধিকবাৰ প্ৰয়াস কৰা হৈছে\n"
+#: ../tools/vino-passwd.c:158
+msgid "Enter new Vino password: "
+msgstr "নতুন Vino গুপ্তশব্দ লিখক: "
 
-#: ../session/vino-session.c:295
-msgid "Starting remote desktop server"
-msgstr "দূৰবৰ্তী ডেস্কটপ সেৱক আৰম্ভ কৰা হচ্ছে"
+#: ../tools/vino-passwd.c:161
+msgid "Retype new Vino password: "
+msgstr "নতুন Vino গুপ্তশব্দ পুনঃ লিখক: "
 
-#: ../session/vino-session.c:300
-msgid "Not starting remote desktop server"
-msgstr "দূৰবৰ্তী ডেস্কটপ সেৱক আৰম্ভ কৰা হচ্ছে না"
+#: ../tools/vino-passwd.c:167
+#, c-format
+msgid "vino-passwd: password updated successfully.\n"
+msgstr "vino-passwd: সাফল্যেৰ সৈতে গুপ্তশব্দ পৰিবৰ্তন কৰা হৈছে ।\n"
 
+#: ../tools/vino-passwd.c:171
+#, c-format
+msgid "Sorry, passwords do not match.\n"
+msgstr "দুঃখিত, দুটা গুপ্তশব্দ অমিল ।\n"
+
+#: ../tools/vino-passwd.c:172
+#, c-format
+msgid "vino-passwd: password unchanged.\n"
+msgstr "vino-passwd: গুপ্তশব্দ পৰিবৰ্তন কৰা নহয় ।\n"
+
+#: ../tools/vino-passwd.c:187
+msgid "Show Vino version"
+msgstr "Vino সংস্কৰণ প্ৰদৰ্শন কৰা হ'ব"
+
+#: ../tools/vino-passwd.c:196
+msgid "- Updates Vino password"
+msgstr "- Vino গুপ্তশব্দ পৰিবৰ্তন কৰিব ব্যৱহৃত"
+
+#: ../tools/vino-passwd.c:206
+msgid "Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr ""
+"আদেশ-শাৰীৰ পৰা ব্যৱহাৰযোগ্য বিকল্পসমূহৰ সম্পূৰ্ণ তালিকা চোৱাৰ বাবে 'vino-passwd --"
+"help' আদেশ প্ৰয়োগ কৰক"
+
+#: ../tools/vino-passwd.c:213
+#, c-format
+msgid "VINO Version %s\n"
+msgstr "VINO সংস্কৰণ %s\n"
+
+#: ../tools/vino-passwd.c:222
+#, c-format
+msgid "ERROR: You do not have enough permissions to change Vino password.\n"
+msgstr "ERROR: Vino গুপ্তশব্দ পৰিবৰ্তনেৰ বাবে পৰ্যাপ্ত অনুমতি আপোনাৰ নাই ।\n"
+
+#~ msgid "Set your remote desktop access preferences"
+#~ msgstr "দূৰবৰ্তী ডেস্কটপ ব্যৱহাৰ সংক্ৰান্ত পছন্দ নিৰ্ধাৰণ কৰুন"
+
+#~ msgid "<b>Network</b>"
+#~ msgstr "<b>নে'টৱৰ্ক</b>"
+
+#~ msgid "A_sk you for confirmation"
+#~ msgstr "নিশ্চিত কৰা হ'ব (_s)"
+
+#~ msgid "Advanced"
+#~ msgstr "Advanced"
+
+#~ msgid "General"
+#~ msgstr "সাধাৰণ"
+
+#~ msgid ""
+#~ "If checked, remote users accessing the desktop are required to support "
+#~ "encryption"
+#~ msgstr ""
+#~ "If checked, remote users accessing the desktop are required to support "
+#~ "encryption"
+
+#~ msgid ""
+#~ "If checked, screen will be locked after the last remote client disconnect"
+#~ msgstr "পৰে শেষ"
+
+#~ msgid "If checked, the server will only accept connections from localhost"
+#~ msgstr "If checked, the server will only accept connections from localhost"
+
+#~ msgid ""
+#~ "If checked, the server will use another port, instead of the default "
+#~ "(5900)"
+#~ msgstr "সৰ্বমোট ডিফল্ট"
+
+#~ msgid "Users can view your desktop using this command:"
+#~ msgstr "ব্যৱহাৰকাৰীৰা এই কমান্ড ব্যৱহাৰ কৰি অাপনাৰ ডেস্কটপ দেখতে পাৰবেন:"
+
+#~ msgid "When a user tries to view or control your desktop:"
+#~ msgstr ""
+#~ "কোনো ব্যৱহাৰকাৰীৰ দ্বাৰা আপনাৰ ডেস্কটপ প্ৰদৰ্শন অথবা নিয়ন্ত্ৰণেৰ প্ৰচেষ্টা কৰা হলে:"
+
+#~ msgid "_Lock screen on disconnect"
+#~ msgstr "লক কৰা হ'ব চলি আছে"
+
+#~ msgid "_Only allow local connections"
+#~ msgstr "শুধুমাত্ৰ"
+
+#~ msgid "_Password:"
+#~ msgstr "পাসওয়াৰ্ড: (_P)"
+
+#~ msgid "_Require encryption"
+#~ msgstr "_Require encryption"
+
+#~ msgid "_Use an alternative port:"
+#~ msgstr "_Use an alternative port:"
+
+#~ msgid ""
+#~ "If true, the server will only accept connections from localhost and "
+#~ "network connections will be rejected. Set this option to true if you wish "
+#~ "to exclusively use a tunneling mechanism to access the server, such as "
+#~ "ssh."
+#~ msgstr ""
+#~ "মান সত্য (true) হলে, সেৱক দ্বাৰা শুধুমাত্ৰ স্থানীয় হোস্টেৰ সৈতে সংযোগ স্থাপন কৰা "
+#~ "হ'ব ও নেটওয়াৰ্ক থেকে প্ৰাপ্ত অনুৰোধ প্ৰত্যাখ্যান কৰা হ'ব । সেৱক ব্যৱহাৰেৰ জন্য "
+#~ "বিশেষৰূপে টানেল ব্যৱস্থা যেমন ssh ব্যৱহাৰ কৰোঁতে ইচ্ছুক হলে এই বিকল্পেৰ মান true "
+#~ "নিৰ্ধাৰণ কৰুন ।"
+
+#~ msgid "Only allow local connections"
+#~ msgstr "শুধুমাত্ৰ স্থানীয় সংযোগ অনুমোদন কৰা হ'ব"
+
+#~ msgid ""
+#~ "Problem registering the remote desktop server with bonobo-activation; "
+#~ "exiting ...\n"
+#~ msgstr ""
+#~ "bonobo-activation ব্যৱহাৰ কৰি দূৰবৰ্তী ডেস্কটপ সেৱক নিবন্ধন কৰোঁতে সমস্যা হৈছে; "
+#~ "প্ৰস্থান কৰা হ'ব ...\n"
+
+#~ msgid "Remote desktop server died, restarting\n"
+#~ msgstr "দূৰবৰ্তী ডেস্কটপ সেৱক বন্ধ হয়ে গেছে, পুনৰায অাৰম্ভ কৰা হচ্ছে\n"
+
+#~ msgid "Activation of %s failed: %s\n"
+#~ msgstr "%s সক্ৰিয় কৰা সম্ভব হয়নি: %s\n"
+
+#~ msgid "Activation of %s failed: Unknown Error\n"
+#~ msgstr "%s সক্ৰিয় কৰা সম্ভব হয়নি: অজানা সমস্যা\n"
+
+#~ msgid "Failed to activate remote desktop server: tried too many times\n"
+#~ msgstr "দূৰবৰ্তী ডেস্কটপ সেৱক আৰম্ভ কৰা যায়নি: অত্যাধিকবাৰ প্ৰয়াস কৰা হৈছে\n"
+
+#~ msgid "Starting remote desktop server"
+#~ msgstr "দূৰবৰ্তী ডেস্কটপ সেৱক আৰম্ভ কৰা হচ্ছে"
+
+#~ msgid "Not starting remote desktop server"
+#~ msgstr "দূৰবৰ্তী ডেস্কটপ সেৱক আৰম্ভ কৰা হচ্ছে না"
