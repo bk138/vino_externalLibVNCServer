@@ -1,3 +1,9 @@
+2009-03-16  Jonh Wendell  <jwendell@gnome.org>
+
+	* configure.in: post-release bump version to 2.26.1
+
+==================== 2.26.0 =======================
+
 2009-03-02  Jonh Wendell  <jwendell@gnome.org>
 
 	* configure.in: post-release bump version to 2.26.0
