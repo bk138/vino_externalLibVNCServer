@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-26 13:24+0100\n"
-"PO-Revision-Date: 2009-02-26 13:25+0100\n"
+"POT-Creation-Date: 2009-04-05 12:06+0200\n"
+"PO-Revision-Date: 2009-04-05 12:09+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr "_Kopier adressen til utklippstavlen"
 msgid "There was an error showing the URL \"%s\""
 msgstr "Det oppsto en feil under visning av URL «%s»"
 
-#: ../capplet/vino-preferences.c:200 ../capplet/vino-preferences.c:956
+#: ../capplet/vino-preferences.c:200 ../capplet/vino-preferences.c:991
 msgid "Checking the connectivity of this machine..."
 msgstr "Sjekker konnektivitet for denne maskinen..."
 
@@ -44,20 +44,20 @@ msgstr ""
 "Det oppsto en feil under visning av hjelp:\n"
 "%s"
 
-#: ../capplet/vino-preferences.c:841
+#: ../capplet/vino-preferences.c:830
 msgid "Your desktop is only reachable over the local network."
 msgstr "Skrivebordet ditt kan kun nås over det lokale nettverket."
 
-#: ../capplet/vino-preferences.c:842 ../capplet/vino-preferences.c:892
+#: ../capplet/vino-preferences.c:853 ../capplet/vino-preferences.c:924
 #, c-format
 msgid "Others can access your computer using the address %s."
 msgstr "Andre kan få tilgang til din datamaskin via adressen %s."
 
-#: ../capplet/vino-preferences.c:942
+#: ../capplet/vino-preferences.c:977
 msgid "Nobody can access your desktop."
 msgstr "Ingen har tilgang til ditt skrivebord."
 
-#: ../capplet/vino-preferences.c:1083 ../server/vino-dbus-listener.c:501
+#: ../capplet/vino-preferences.c:1118 ../server/vino-dbus-listener.c:506
 #: ../server/vino-server.c:156 ../server/vino-server.c:187
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
@@ -145,23 +145,23 @@ msgstr "K_rev at bruker oppgir dette passordet:"
 msgid "_You must confirm each access to this machine"
 msgstr "D_u må bekrefte hver tilgang til denne maskinen"
 
-#: ../server/vino-dbus-listener.c:281 ../server/vino-dbus-listener.c:311
-#: ../server/vino-dbus-listener.c:352
+#: ../server/vino-dbus-listener.c:283 ../server/vino-dbus-listener.c:313
+#: ../server/vino-dbus-listener.c:357
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "Slutt på minne under håndtering av «%s»-melding"
 
-#: ../server/vino-dbus-listener.c:458
+#: ../server/vino-dbus-listener.c:463
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "slutt på minne ved registrering av objektsti «%s»"
 
-#: ../server/vino-dbus-listener.c:537
+#: ../server/vino-dbus-listener.c:542
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Klarte ikke å hente D-Bus-navn «%s»\n"
 
-#: ../server/vino-dbus-listener.c:545
+#: ../server/vino-dbus-listener.c:550
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "Eksternt skrivebord kjører allerede; avslutter...\n"
 
@@ -270,7 +270,7 @@ msgid ""
 "If not set, the server will listen on all network interfaces. Set this if "
 "you want that accept connections only from some specific network interface. "
 "eg: eth0, wifi0, lo, ..."
-msgstr ""
+msgstr "Tjeneren vil lytte på alle nettverksgrensesnitt hvis denne ikke er satt. Sett denne hvis du vil godta tilkoblinger kun fra spesifikke nettverksgrensesnitt som eth0, wifi0, lo ..."
 
 #: ../server/vino-server.schemas.in.h:6
 msgid ""
@@ -327,7 +327,7 @@ msgstr ""
 msgid ""
 "If true, we will use UPNP protocol to automatically forward the port used by "
 "vino in the router."
-msgstr ""
+msgstr "Sett denne til true for å bruke UPNP-protokollen til å videresende porten som brukes av vino automatisk i ruteren."
 
 #: ../server/vino-server.schemas.in.h:13
 msgid "Listen an alternative port"
