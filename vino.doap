@@ -1,0 +1,28 @@
+<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:gnome="http://api.gnome.org/doap-extensions#"
+         xmlns="http://usefulinc.com/ns/doap#">
+
+  <name xml:lang="en">vino</name>
+  <shortdesc xml:lang="en">GNOME Remote Desktop Server</shortdesc>
+  <download-page rdf:resource="http://download.gnome.org/sources/vino/" />
+  <bug-database rdf:resource="http://bugzilla.gnome.org/browse.cgi?product=vino" />
+
+  <category rdf:resource="http://api.gnome.org/doap-extensions#desktop" />
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Mark McLoughlin</foaf:name>
+      <foaf:mbox rdf:resource="mark@skynet.ie" />
+      <gnome:userid>markmc</gnome:userid>
+    </foaf:Person>
+  </maintainer>
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Jonh Wendell</foaf:name>
+      <foaf:mbox rdf:resource="jwendell@gnome.org" />
+      <gnome:userid>jwendell</gnome:userid>
+    </foaf:Person>
+  </maintainer>
+</Project>
