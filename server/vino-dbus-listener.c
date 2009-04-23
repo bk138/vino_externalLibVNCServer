@@ -41,6 +41,8 @@
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
 
+#include <dbus/dbus-glib-bindings.h>
+
 #include "vino-util.h"
 #include "vino-mdns.h"
 #ifdef VINO_ENABLE_HTTP_SERVER
@@ -68,6 +70,20 @@ enum
   PROP_0,
   PROP_SERVER
 };
+
+static gboolean
+vino_dbus_listener_get_external_port (VinoDBusListener *listener,
+                                      gdouble *ret,
+                                      GError **error);
+
+static gboolean
+vino_dbus_listener_get_internal_data (VinoDBusListener *listener,
+                                      char ** hostname,
+                                      char ** avahi_hostname,
+                                      gdouble * port,
+                                      GError **error);
+
+#include "dbus-interface-glue.h"
 
 static void vino_dbus_listener_set_server (VinoDBusListener *listener,
                                            VinoServer       *server);
@@ -199,6 +215,8 @@ vino_dbus_listener_init (VinoDBusListener *listener)
   listener->priv = G_TYPE_INSTANCE_GET_PRIVATE (listener, VINO_TYPE_DBUS_LISTENER, VinoDBusListenerPrivate);
 }
 
+static guint signal_server_info_changed = 0;
+
 static void
 vino_dbus_listener_class_init (VinoDBusListenerClass *klass)
 {
@@ -206,6 +224,14 @@ vino_dbus_listener_class_init (VinoDBusListenerClass *klass)
 
   object_class->get_property = vino_dbus_listener_get_property;
   object_class->set_property = vino_dbus_listener_set_property;
+
+  signal_server_info_changed = g_signal_new ("server_info_changed", 
+      G_OBJECT_CLASS_TYPE (klass), 
+      (G_SIGNAL_RUN_LAST | G_SIGNAL_DETAILED),
+      0,
+      NULL, NULL,
+      g_cclosure_marshal_VOID__VOID,
+      G_TYPE_NONE, 0);
 
   g_object_class_install_property (object_class,
 				   PROP_SERVER,
@@ -232,222 +258,59 @@ vino_dbus_listener_new (VinoServer *server)
                        NULL);
 }
 
-static const char * introspect_xml =
-  "<!DOCTYPE node PUBLIC \"-//freedesktop//DTD D-BUS Object Introspection 1.0//EN\"\n"
-  "                      \"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd\">\n"
-  "<node>\n"
-  "  <interface name=\"org.freedesktop.DBus.Introspectable\">\n"
-  "    <method name=\"Introspect\">\n"
-  "      <arg name=\"data\" direction=\"out\" type=\"s\"/>\n"
-  "    </method>\n"
-  "  </interface>\n"
-  "  <interface name=\"org.gnome.VinoScreen\">\n"
-  "    <method name=\"GetInternalData\">\n"
-  "      <arg name=\"hostname\" direction=\"out\" type=\"s\"/>\n"
-  "      <arg name=\"avahi_hostname\" direction=\"out\" type=\"s\"/>\n"
-  "      <arg name=\"port\" direction=\"out\" type=\"d\"/>\n"
-  "    </method>\n"
-  "    <method name=\"GetExternalPort\">\n"
-  "      <arg name=\"port\" direction=\"out\" type=\"d\"/>\n"
-  "    </method>\n"
-  "    <signal name=\"ServerInfoChanged\">\n"
-  "    </signal>\n"
-  "  </interface>\n"
-  "</node>\n";
-
-static DBusHandlerResult
-vino_dbus_listener_handle_introspect (VinoDBusListener *listener,
-                                      DBusConnection   *connection,
-                                      DBusMessage      *message)
+static gboolean
+vino_dbus_listener_get_external_port (VinoDBusListener *listener,
+                                      gdouble *ret,
+                                      GError **error)
 {
-  DBusMessage *reply;
+  *ret = vino_server_get_external_port (listener->priv->server);
 
-  if (!(reply = dbus_message_new_method_return (message)))
-    goto oom;
-
-  if (!dbus_message_append_args (reply,
-                                 DBUS_TYPE_STRING, &introspect_xml,
-                                 DBUS_TYPE_INVALID))
-    goto oom;
-
-  if (!dbus_connection_send (connection, reply, NULL))
-    goto oom;
-
-  dbus_message_unref (reply);
-
-  dprintf (DBUS, "Successfully handled '%s' message\n", dbus_message_get_member (message));
-
-  return DBUS_HANDLER_RESULT_HANDLED;
-
- oom:
-  g_error (_("Out of memory handling '%s' message"), dbus_message_get_member (message));
-  return DBUS_HANDLER_RESULT_NEED_MEMORY;
+  return TRUE;
 }
 
-static DBusHandlerResult
-vino_dbus_listener_handle_get_server_port (VinoDBusListener *listener,
-                                           DBusConnection   *connection,
-                                           DBusMessage      *message)
+
+static gboolean
+vino_dbus_listener_get_internal_data (VinoDBusListener *listener,
+                                      char ** hostname,
+                                      char ** avahi_hostname,
+                                      gdouble * port,
+                                      GError **error)
 {
-  DBusMessage *reply;
-  gint        port;
-
-  if (!(reply = dbus_message_new_method_return (message)))
-    goto oom;
-
-  port = vino_server_get_external_port (listener->priv->server);
-
-  if (!dbus_message_append_args (reply, DBUS_TYPE_INT32, &port, DBUS_TYPE_INVALID))
-    goto oom;
-
-  if (!dbus_connection_send (connection, reply, NULL))
-    goto oom;
-    
-  dbus_message_unref (reply);
-
-  dprintf (DBUS, "Successfully handled '%s' message\n", dbus_message_get_member (message));
-
-  return DBUS_HANDLER_RESULT_HANDLED;
-
- oom:
-  g_error (_("Out of memory handling '%s' message"), dbus_message_get_member (message));
-  return DBUS_HANDLER_RESULT_NEED_MEMORY;
-}
-
-static DBusHandlerResult
-vino_dbus_listener_handle_get_internal_data (VinoDBusListener *listener,
-                                             DBusConnection   *connection,
-                                             DBusMessage      *message)
-{
-  DBusMessage *reply;
-  gint        port;
-  char        *host = NULL;
-  const char  *avahi_host;
-
-  if (!(reply = dbus_message_new_method_return (message)))
-    goto oom;
-
 #ifdef VINO_ENABLE_HTTP_SERVER
-  port = vino_get_http_server_port (listener->priv->server);
+  *port = (gdouble)vino_get_http_server_port (listener->priv->server);
 #else
-  port = vino_server_get_port (listener->priv->server);
+  *port = (gdouble)vino_server_get_port (listener->priv->server);
 #endif
 
-  host = get_local_hostname (listener);
-  avahi_host = vino_mdns_get_hostname ();
-  if (!dbus_message_append_args (reply,
-                                 DBUS_TYPE_STRING, &host,
-                                 DBUS_TYPE_STRING, &avahi_host,
-                                 DBUS_TYPE_INT32, &port,
-                                 DBUS_TYPE_INVALID))
-    goto oom;
+  *hostname = get_local_hostname (listener);
 
-  if (!dbus_connection_send (connection, reply, NULL))
-    goto oom;
-    
-  dbus_message_unref (reply);
+  *avahi_hostname = g_strdup (vino_mdns_get_hostname ());
 
-  dprintf (DBUS, "Successfully handled '%s' message\n", dbus_message_get_member (message));
-
-  return DBUS_HANDLER_RESULT_HANDLED;
-
- oom:
-
-  g_free (host);
-  g_error (_("Out of memory handling '%s' message"), dbus_message_get_member (message));
-  return DBUS_HANDLER_RESULT_NEED_MEMORY;
-}
-
-static DBusHandlerResult
-vino_dbus_listener_message_handler (DBusConnection *connection,
-                                    DBusMessage    *message,
-                                    void           *user_data)
-{
-  VinoDBusListener *listener = VINO_DBUS_LISTENER (user_data);
-
-  dprintf (DBUS, "D-Bus message: obj_path = '%s' interface = '%s' method = '%s' destination = '%s'\n",
-           dbus_message_get_path (message),
-           dbus_message_get_interface (message),
-           dbus_message_get_member (message),
-           dbus_message_get_destination (message));
-
-  if (dbus_message_is_method_call (message,
-                                   VINO_DBUS_INTERFACE,
-                                   "GetInternalData"))
-    {
-      return vino_dbus_listener_handle_get_internal_data (listener,
-                                                          connection,
-                                                          message);
-    }
-  if (dbus_message_is_method_call (message,
-                                   VINO_DBUS_INTERFACE,
-                                   "GetExternalPort"))
-    {
-      return vino_dbus_listener_handle_get_server_port (listener,
-                                                        connection,
-                                                        message);
-    }
-  else if (dbus_message_is_method_call (message,
-                                        "org.freedesktop.DBus.Introspectable",
-                                        "Introspect"))
-    {
-      return vino_dbus_listener_handle_introspect (listener,
-                                                   connection,
-                                                   message);
-    }
-  else
-    {
-      return DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
-    }
+  return TRUE;
 }
 
 static void
-vino_dbus_listener_info_changed (VinoServer *server, GParamSpec *property, VinoDBusListener *listener)
+vino_dbus_listener_info_changed (VinoServer *server,
+                                 GParamSpec *property,
+                                 VinoDBusListener *listener)
 {
-  DBusMessage *message;
-  gchar *obj_path;
-
   dprintf (DBUS, "Emitting ServerInfoChanged signal\n");
-
-  obj_path = g_strdup_printf ("/org/gnome/vino/screens/%d",
-                              gdk_screen_get_number (vino_server_get_screen (server)));
-
-  message = dbus_message_new_signal (obj_path,
-                                     VINO_DBUS_INTERFACE,
-                                     "ServerInfoChanged");
-  g_free (obj_path);
-
-  if (!message)
-    {
-      g_warning ("Error creating signal\n");
-      return;
-    }
-
-  if (!dbus_connection_send (vino_dbus_get_connection (), message, NULL))
-    g_warning ("Error sending signal\n");
-
-  dbus_message_unref (message);
+  g_signal_emit (listener, signal_server_info_changed, 0);
 }
-
-static DBusObjectPathVTable vino_dbus_listener_vtable =
-{
-  NULL,                                  /* unregister_function */
-  &vino_dbus_listener_message_handler    /* message_function */
-};
 
 static void
 vino_dbus_listener_set_server (VinoDBusListener *listener,
                                VinoServer       *server)
 {
-  DBusConnection *connection;
-  GdkScreen      *screen;
-  char           *obj_path;
+  DBusGConnection *conn;
+  GdkScreen       *screen;
+  char            *obj_path;
 
   g_assert (listener->priv->server == NULL);
 
   listener->priv->server = server;
 
-  if (!(connection = vino_dbus_get_connection ()))
+  if (!(conn = vino_dbus_get_connection ()))
     return;
 
   screen = vino_server_get_screen (listener->priv->server);
@@ -455,21 +318,14 @@ vino_dbus_listener_set_server (VinoDBusListener *listener,
   obj_path = g_strdup_printf ("/org/gnome/vino/screens/%d",
                               gdk_screen_get_number (screen));
 
-  if (!dbus_connection_register_object_path (connection,
-                                             obj_path,
-                                             &vino_dbus_listener_vtable,
-                                             listener))
-    {
-      g_error (_("Out of memory registering object path '%s'"), obj_path);
-      g_free (obj_path);
-      return;
-    }
+  dbus_g_connection_register_g_object (conn, obj_path, G_OBJECT (listener));
 
   dprintf (DBUS, "Object registered at path '%s'\n", obj_path);
 
   g_signal_connect (server, "notify::alternative-port",
-		    G_CALLBACK (vino_dbus_listener_info_changed),
-		    listener);
+      G_CALLBACK (vino_dbus_listener_info_changed),
+      listener);
+
   g_free (obj_path);
 }
 
@@ -481,31 +337,29 @@ vino_dbus_listener_get_server (VinoDBusListener *listener)
   return listener->priv->server;
 }
 
-static DBusConnection *vino_dbus_connection = NULL;
+static DBusGConnection * vino_dbus_connection = NULL;
 static gboolean        vino_dbus_failed_to_connect = FALSE;
 
-DBusConnection *
+DBusGConnection *
 vino_dbus_get_connection (void)
 {
+  DBusConnection * dbus_conn;
   if (vino_dbus_connection == NULL && !vino_dbus_failed_to_connect)
     {
-      DBusError error;
+      GError * error = NULL;
 
-      dbus_error_init (&error);
-
-      if ((vino_dbus_connection = dbus_bus_get (DBUS_BUS_SESSION, &error)))
+      if ((vino_dbus_connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error)))
         {
           dprintf (DBUS, "Successfully connected to the message bus\n");
-
-          dbus_connection_setup_with_g_main (vino_dbus_connection, NULL);
-          dbus_connection_set_exit_on_disconnect (vino_dbus_connection, FALSE);
+          dbus_conn = dbus_g_connection_get_connection (vino_dbus_connection);
+          dbus_connection_set_exit_on_disconnect (dbus_conn, FALSE);
         }
       else
         {
           vino_dbus_failed_to_connect = TRUE;
-          g_printerr (_("Failed to open connection to bus: %s\n"),
-                      error.message);
-          dbus_error_free (&error);
+          g_printerr ("Failed to open connection to bus: %s\n",
+              error->message);
+          g_error_free (error);
         }
     }
 
@@ -516,7 +370,7 @@ void
 vino_dbus_unref_connection (void)
 {
   if (vino_dbus_connection != NULL)
-    dbus_connection_unref (vino_dbus_connection);
+    dbus_g_connection_unref (vino_dbus_connection);
   vino_dbus_connection = NULL;
 }
 
@@ -524,28 +378,33 @@ gboolean
 vino_dbus_request_name (void)
 {
 
-  DBusConnection *connection;
-  DBusError       error;
-  int             result;
+  DBusGConnection *connection;
+  GError *error = NULL;
+  DBusGProxy     *bus_proxy;
+  int request_name_result;
 
   if (!(connection = vino_dbus_get_connection ()))
     return FALSE;
 
-  dbus_error_init (&error);
+  dbus_g_object_type_install_info (VINO_TYPE_DBUS_LISTENER,
+      &dbus_glib_vino_dbus_listener_object_info);
 
-  result = dbus_bus_request_name (connection,
-				  VINO_DBUS_BUS_NAME,
-				  DBUS_NAME_FLAG_DO_NOT_QUEUE,
-				  &error);
-  if (dbus_error_is_set (&error))
+  bus_proxy = dbus_g_proxy_new_for_name (connection,
+      "org.freedesktop.DBus",
+      "/org/freedesktop/DBus",
+      "org.freedesktop.DBus");
+
+  if (!dbus_g_proxy_call(bus_proxy, "RequestName", &error, 
+      G_TYPE_STRING, VINO_DBUS_BUS_NAME, G_TYPE_UINT, 0, G_TYPE_INVALID,
+      G_TYPE_UINT, &request_name_result, G_TYPE_INVALID))
     {
-      g_printerr (_("Failed to acquire D-Bus name '%s'\n"),
-                  error.message);
-      dbus_error_free (&error);
-      return FALSE;
+      g_debug ("Failed to request name: %s",
+                error ? error->message : "No error given");
+      g_clear_error (&error);
+      return FALSE ;
     }
 
-  if (result == DBUS_REQUEST_NAME_REPLY_EXISTS)
+  if (request_name_result == DBUS_REQUEST_NAME_REPLY_EXISTS)
     {
       g_warning (_("Remote Desktop server already running; exiting ...\n"));
       return FALSE;

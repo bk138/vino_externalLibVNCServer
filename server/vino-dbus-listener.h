@@ -62,11 +62,12 @@ VinoServer        *vino_dbus_listener_get_server (VinoDBusListener *listener);
 
 G_END_DECLS
 
+#include <dbus/dbus-glib.h>
 #include <dbus/dbus.h>
 
 G_BEGIN_DECLS
 
-DBusConnection *vino_dbus_get_connection   (void);
+DBusGConnection *vino_dbus_get_connection   (void);
 void            vino_dbus_unref_connection (void);
 gboolean        vino_dbus_request_name     (void);
 
