@@ -402,7 +402,7 @@ vino_dbus_listener_message_handler (DBusConnection *connection,
 }
 
 static void
-vino_dbus_listener_info_changed (VinoServer *server, VinoDBusListener *listener)
+vino_dbus_listener_info_changed (VinoServer *server, GParamSpec *property, VinoDBusListener *listener)
 {
   DBusMessage *message;
   gchar *obj_path;
