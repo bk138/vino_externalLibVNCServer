@@ -117,7 +117,7 @@ vino_status_icon_update_state (VinoStatusIcon *icon)
   else
     visible = visible && (icon->priv->visibility == VINO_STATUS_ICON_VISIBILITY_ALWAYS);
 
-  gtk_status_icon_set_tooltip (GTK_STATUS_ICON (icon), tooltip);
+  gtk_status_icon_set_tooltip_text (GTK_STATUS_ICON (icon), tooltip);
   gtk_status_icon_set_visible (GTK_STATUS_ICON (icon), visible);
 
   g_free (tooltip);
