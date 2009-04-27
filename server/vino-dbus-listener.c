@@ -41,7 +41,6 @@
 
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
-
 #include <dbus/dbus-glib-bindings.h>
 
 #include "vino-util.h"
@@ -83,6 +82,13 @@ vino_dbus_listener_get_internal_data (VinoDBusListener *listener,
                                       char ** avahi_hostname,
                                       gdouble * port,
                                       GError **error);
+
+static gboolean
+vino_dbus_listener_share_with_tube (VinoDBusListener *listener,
+                                    const gchar * connection_path,
+                                    const gchar * tube_path,
+                                    GHashTable * properties,
+                                    GError **error);
 
 #include "dbus-interface-glue.h"
 
@@ -287,6 +293,16 @@ vino_dbus_listener_get_internal_data (VinoDBusListener *listener,
 
   *avahi_hostname = g_strdup (vino_mdns_get_hostname ());
 
+  return TRUE;
+}
+
+static gboolean
+vino_dbus_listener_share_with_tube (VinoDBusListener *listener,
+                                    const gchar * connection_path,
+                                    const gchar * tube_path,
+                                    GHashTable * properties,
+                                    GError **error)
+{
   return TRUE;
 }
 
