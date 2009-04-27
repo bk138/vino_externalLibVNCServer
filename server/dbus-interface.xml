@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<node>
+  <interface name="org.gnome.VinoScreen">
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="vino_dbus_listener"/>
+    <method name="GetInternalData">
+      <arg name="hostname" direction="out" type="s"/>
+      <arg name="avahi_hostname" direction="out" type="s"/>
+      <arg name="port" direction="out" type="d"/>
+    </method>
+    <method name="GetExternalPort">
+      <arg name="port" direction="out" type="d"/>
+    </method>
+    <signal name="ServerInfoChanged">
+    </signal>
+  </interface>
+</node>
