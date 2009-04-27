@@ -132,6 +132,13 @@ desktopdir      = $(sysconfdir)/xdg/autostart
 desktop_in_files = vino-server.desktop.in
 desktop_DATA    = $(desktop_in_files:.desktop.in=.desktop)
 
+servicedir = $(datadir)/dbus-1/services
+service_DATA = org.gnome.Vino.service
+
+org.gnome.Vino.service: org.gnome.Vino.service.in \
+		Makefile
+	@sed -e "s|[@]libexecdir[@]|$(libexecdir)|" $< > $@
+
 @INTLTOOL_DESKTOP_RULE@
 
 if GCONF_SCHEMAS_INSTALL
@@ -153,6 +160,7 @@ EXTRA_DIST = \
 	vino-server.schemas.in \
 	vino-marshal.list \
 	vino-server.desktop.in.in \
+	org.gnome.Vino.service.in \
 	$(NULL)
 
 BUILT_SOURCES = \
@@ -164,6 +172,7 @@ BUILT_SOURCES = \
 	$(NULL)
 
 CLEANFILES = \
+	$(service_DATA) \
 	vino-server.desktop     \
 	vino-server.desktop.in
 
