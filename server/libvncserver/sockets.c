@@ -249,7 +249,6 @@ rfbProcessNewConnection(rfbScreenInfoPtr rfbScreen, int insock)
 {
     const int one = 1;
     int sock = -1;
-    int i;
     
     if((sock = accept(insock, NULL, NULL)) < 0) {
       rfbLogPerror("rfbCheckFds: accept");
