@@ -14,14 +14,14 @@
   <maintainer>
     <foaf:Person>
       <foaf:name>Mark McLoughlin</foaf:name>
-      <foaf:mbox rdf:resource="mark@skynet.ie" />
+      <foaf:mbox rdf:resource="mailto:mark@skynet.ie" />
       <gnome:userid>markmc</gnome:userid>
     </foaf:Person>
   </maintainer>
   <maintainer>
     <foaf:Person>
       <foaf:name>Jonh Wendell</foaf:name>
-      <foaf:mbox rdf:resource="jwendell@gnome.org" />
+      <foaf:mbox rdf:resource="mailto:jwendell@gnome.org" />
       <gnome:userid>jwendell</gnome:userid>
     </foaf:Person>
   </maintainer>
