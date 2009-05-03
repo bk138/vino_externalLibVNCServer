@@ -637,9 +637,9 @@ vino_server_defer_client_auth (VinoServer *server,
 
   vino_server_set_client_on_hold (server, client, TRUE);
 
-  client->auth_timeout = g_timeout_add (VINO_SERVER_AUTH_DEFER_LEN * 1000,
-					(GSourceFunc) vino_server_auth_client_deferred,
-					client);
+  client->auth_timeout = g_timeout_add_seconds (VINO_SERVER_AUTH_DEFER_LEN,
+                                                (GSourceFunc) vino_server_auth_client_deferred,
+                                                client);
 }
 
 static char *
