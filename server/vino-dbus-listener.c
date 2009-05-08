@@ -126,7 +126,7 @@ get_local_hostname (VinoDBusListener *listener)
   g_hash_table_iter_init (&iter, ipv4);
   while (g_hash_table_iter_next (&iter, &key, &value))
     {
-      if (strcmp (key, "lo") == 0)
+      if (strncmp (key, "lo", 2) == 0)
 	continue;
       retval = g_strdup (value);
       goto the_end;
@@ -135,7 +135,7 @@ get_local_hostname (VinoDBusListener *listener)
   g_hash_table_iter_init (&iter, ipv6);
   while (g_hash_table_iter_next (&iter, &key, &value))
     {
-      if (strcmp (key, "lo") == 0)
+      if (strncmp (key, "lo", 2) == 0)
 	continue;
       retval = g_strdup (value);
       goto the_end;
