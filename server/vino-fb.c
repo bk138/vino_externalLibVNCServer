@@ -90,6 +90,7 @@ struct _VinoFBPrivate
 
   guint            use_x_shm : 1;
   guint            use_xdamage : 1;
+  guint            disable_xdamage : 1;
 
   guint            fb_image_is_x_shm_segment : 1;
   guint            scanline_is_x_shm_segment : 1;
@@ -100,7 +101,8 @@ struct _VinoFBPrivate
 enum
 {
   PROP_0,
-  PROP_SCREEN
+  PROP_SCREEN,
+  PROP_DISABLE_XDAMAGE
 };
 
 enum
@@ -697,6 +699,12 @@ vino_fb_init_xdamage (VinoFB *vfb)
   int       major, minor;
   XGCValues values;
 
+  if (vfb->priv->disable_xdamage)
+    {
+      dprintf (POLLING, "Not using XDamage extension, as requested via gconf key\n");
+      return;
+    }
+
   if (!XDamageQueryExtension (vfb->priv->xdisplay, &event_base, &error_base))
     return;
 
@@ -918,6 +926,9 @@ vino_fb_set_property (GObject      *object,
     case PROP_SCREEN:
       vino_fb_init_from_screen (vfb, g_value_get_object (value));
       break;
+    case PROP_DISABLE_XDAMAGE:
+      vfb->priv->disable_xdamage = g_value_get_boolean (value);
+      break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -936,6 +947,9 @@ vino_fb_get_property (GObject    *object,
     {
     case PROP_SCREEN:
       g_value_set_object (value, vfb->priv->screen);
+      break;
+    case PROP_DISABLE_XDAMAGE:
+      g_value_set_boolean (value, vfb->priv->disable_xdamage);
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -986,6 +1000,18 @@ vino_fb_class_init (VinoFBClass *klass)
                                                         G_PARAM_STATIC_NICK    |
                                                         G_PARAM_STATIC_BLURB));
 
+  g_object_class_install_property (gobject_class,
+				   PROP_DISABLE_XDAMAGE,
+				   g_param_spec_boolean ("disable-xdamage",
+							 "Disable XDamage",
+							 "Whether to disable XDamage",
+							 FALSE,
+                                                         G_PARAM_READWRITE      |
+                                                         G_PARAM_CONSTRUCT_ONLY |
+                                                         G_PARAM_STATIC_NAME    |
+                                                         G_PARAM_STATIC_NICK    |
+                                                         G_PARAM_STATIC_BLURB));
+
   signals [DAMAGE_NOTIFY] =
     g_signal_new ("damage-notify",
                   G_OBJECT_CLASS_TYPE (gobject_class),
@@ -1035,13 +1061,14 @@ vino_fb_get_type (void)
 
 
 VinoFB *
-vino_fb_new (GdkScreen *screen)
+vino_fb_new (GdkScreen *screen, gboolean disable_xdamage)
 {
   VinoFB *vfb;
 
   g_return_val_if_fail (GDK_IS_SCREEN (screen), NULL);
 
   vfb = g_object_new (VINO_TYPE_FB,
+		      "disable-xdamage", disable_xdamage,
 		      "screen", screen,
 		      NULL);
   if (vfb && !vfb->priv->fb_image)

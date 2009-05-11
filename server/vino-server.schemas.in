@@ -229,5 +229,22 @@
       </locale>
     </schema>
 
+    <schema>
+      <key>/schemas/desktop/gnome/remote_access/disable_xdamage</key>
+      <applyto>/desktop/gnome/remote_access/disable_xdamage</applyto>
+      <owner>gnome</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+         <short>Whether we should disable the XDamage extension of X.org</short>
+         <long>
+           If true, we will not use the XDamage extension of X.org. This extension
+           does not work properly on some video drivers when using 3D effects.
+           Disabling it will make vino work on these environments with a slower
+           rendering as side effect.
+         </long>
+      </locale>
+    </schema>
+
   </schemalist>  
 </gconfschemafile>

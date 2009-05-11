@@ -49,8 +49,9 @@
 #define VINO_PREFS_ICON_VISIBILITY        VINO_PREFS_DIR "/icon_visibility"
 #define VINO_PREFS_DISABLE_BACKGROUND     VINO_PREFS_DIR "/disable_background"
 #define VINO_PREFS_USE_UPNP               VINO_PREFS_DIR "/use_upnp"
+#define VINO_PREFS_DISABLE_XDAMAGE        VINO_PREFS_DIR "/disable_xdamage"
 
-#define VINO_N_LISTENERS                  13
+#define VINO_N_LISTENERS                  14
 
 #define VINO_PREFS_LOCKFILE               "vino-server.lock"
 
@@ -70,6 +71,7 @@ static int             vino_alternative_port     = VINO_SERVER_DEFAULT_PORT;
 static gboolean        vino_lock_screen          = FALSE;
 static gboolean        vino_disable_background   = FALSE;
 static gboolean        vino_use_upnp             = TRUE;
+static gboolean        vino_disable_xdamage      = FALSE;
 static VinoStatusIconVisibility vino_icon_visibility = VINO_STATUS_ICON_VISIBILITY_CLIENT;
 
 static void
@@ -467,6 +469,30 @@ vino_prefs_use_upnp_changed (GConfClient *client,
     vino_server_set_use_upnp (l->data, use_upnp);
 }
 
+static void
+vino_prefs_disable_xdamage_changed (GConfClient *client,
+                                    guint       cnxn_id,
+                                    GConfEntry  *entry)
+{
+  gboolean  disable_xdamage;
+  GSList   *l;
+
+  if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
+    return;
+
+  disable_xdamage = gconf_value_get_bool (entry->value) != FALSE;
+
+  if (vino_disable_xdamage == disable_xdamage)
+    return;
+
+  vino_disable_xdamage = disable_xdamage;
+
+  dprintf (PREFS, "Disable XDamage: %s\n", vino_disable_xdamage ? "(true)" : "(false)");
+
+  for (l = vino_servers; l; l = l->next)
+    vino_server_set_disable_xdamage (l->data, disable_xdamage);
+}
+
 void
 vino_prefs_create_server (GdkScreen *screen)
 {
@@ -488,6 +514,7 @@ vino_prefs_create_server (GdkScreen *screen)
 			 "lock-screen",          vino_lock_screen,
 			 "disable-background",   vino_disable_background,
 			 "use-upnp",             vino_use_upnp,
+			 "disable-xdamage",      vino_disable_xdamage,
 			 NULL);
 
   vino_servers = g_slist_prepend (vino_servers, server);
@@ -690,6 +717,11 @@ vino_prefs_init (gboolean view_only)
                                          NULL);
   dprintf (PREFS, "Use UPNP: %s\n", vino_use_upnp ? "(true)" : "(false)");
 
+  vino_disable_xdamage = gconf_client_get_bool (vino_client,
+                                                VINO_PREFS_DISABLE_XDAMAGE,
+                                                NULL);
+  dprintf (PREFS, "Disable XDamage: %s\n", vino_disable_xdamage ? "(true)" : "(false)");
+
   key_str = gconf_client_get_string (vino_client,
                                      VINO_PREFS_ICON_VISIBILITY,
                                      NULL);
@@ -792,6 +824,14 @@ vino_prefs_init (gboolean view_only)
     gconf_client_notify_add (vino_client,
 			     VINO_PREFS_USE_UPNP,
 			     (GConfClientNotifyFunc) vino_prefs_use_upnp_changed,
+			     NULL, NULL, NULL);
+
+  i++;
+
+  vino_listeners [i] =
+    gconf_client_notify_add (vino_client,
+			     VINO_PREFS_DISABLE_XDAMAGE,
+			     (GConfClientNotifyFunc) vino_prefs_disable_xdamage_changed,
 			     NULL, NULL, NULL);
 
   i++;

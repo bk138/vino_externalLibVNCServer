@@ -87,6 +87,7 @@ struct _VinoServerPrivate
   guint             lock_screen : 1;
   guint             disable_background : 1;
   guint             use_upnp : 1;
+  guint             disable_xdamage : 1;
 };
 
 struct _VinoClient
@@ -118,7 +119,8 @@ enum
   PROP_PORT,
   PROP_LOCK_SCREEN,
   PROP_DISABLE_BACKGROUND,
-  PROP_USE_UPNP
+  PROP_USE_UPNP,
+  PROP_DISABLE_XDAMAGE
 };
 
 static enum rfbNewClientAction vino_server_auth_client (VinoServer *server,
@@ -268,6 +270,29 @@ vino_server_get_use_upnp (VinoServer *server)
   g_return_val_if_fail (VINO_IS_SERVER (server), FALSE);
 
   return server->priv->use_upnp;
+}
+
+void
+vino_server_set_disable_xdamage (VinoServer *server,
+                                 gboolean disable_xdamage)
+{
+  g_return_if_fail (VINO_IS_SERVER (server));
+
+  disable_xdamage = disable_xdamage != FALSE;
+
+  if (server->priv->disable_xdamage != disable_xdamage)
+    {
+      server->priv->disable_xdamage = disable_xdamage;
+      g_object_notify (G_OBJECT (server), "disable-xdamage");
+    }
+}
+
+gboolean
+vino_server_get_disable_xdamage (VinoServer *server)
+{
+  g_return_val_if_fail (VINO_IS_SERVER (server), FALSE);
+
+  return server->priv->disable_xdamage;
 }
 
 static void
@@ -849,7 +874,7 @@ vino_server_setup_framebuffer (VinoServer *server)
   g_return_if_fail (server->priv->fb == NULL);
   g_return_if_fail (server->priv->cursor_data == NULL);
 
-  server->priv->fb = vino_fb_new (server->priv->screen);
+  server->priv->fb = vino_fb_new (server->priv->screen, server->priv->disable_xdamage);
 
   g_signal_connect_swapped (server->priv->fb, "size-changed",
 			    G_CALLBACK (vino_server_screen_size_changed),
@@ -1029,6 +1054,7 @@ vino_server_init_from_screen (VinoServer *server,
 
   server->priv->icon = vino_status_icon_new (server, server->priv->screen);
   server->priv->upnp = NULL;
+  server->priv->disable_xdamage = FALSE;
 }
 
 static void
@@ -1155,6 +1181,9 @@ vino_server_set_property (GObject      *object,
     case PROP_USE_UPNP:
       vino_server_set_use_upnp (server, g_value_get_boolean (value));
       break;
+    case PROP_DISABLE_XDAMAGE:
+      vino_server_set_disable_xdamage (server, g_value_get_boolean (value));
+      break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -1212,6 +1241,9 @@ vino_server_get_property (GObject    *object,
       break;
     case PROP_USE_UPNP:
       g_value_set_boolean (value, server->priv->use_upnp);
+      break;
+    case PROP_DISABLE_XDAMAGE:
+      g_value_set_boolean (value, server->priv->disable_xdamage);
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -1402,6 +1434,18 @@ vino_server_class_init (VinoServerClass *klass)
 				   g_param_spec_boolean ("use-upnp",
 							 "Use UPNP",
 							 "Whether to use UPNP",
+							 FALSE,
+                                                         G_PARAM_READWRITE   |
+                                                         G_PARAM_CONSTRUCT   |
+                                                         G_PARAM_STATIC_NAME |
+                                                         G_PARAM_STATIC_NICK |
+                                                         G_PARAM_STATIC_BLURB));
+
+  g_object_class_install_property (gobject_class,
+				   PROP_DISABLE_XDAMAGE,
+				   g_param_spec_boolean ("disable-xdamage",
+							 "Disable XDamage",
+							 "Whether to disable XDamage",
 							 FALSE,
                                                          G_PARAM_READWRITE   |
                                                          G_PARAM_CONSTRUCT   |

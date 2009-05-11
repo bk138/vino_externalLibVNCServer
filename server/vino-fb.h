@@ -56,7 +56,7 @@ struct _VinoFBClass
 
 GType         vino_fb_get_type           (void) G_GNUC_CONST;
 
-VinoFB       *vino_fb_new                (GdkScreen *screen);
+VinoFB       *vino_fb_new                (GdkScreen *screen, gboolean disable_xdamage);
 
 GdkScreen    *vino_fb_get_screen         (VinoFB    *vfb);
 char         *vino_fb_get_pixels         (VinoFB    *vfb);

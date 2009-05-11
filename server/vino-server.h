@@ -107,9 +107,13 @@ void                 vino_server_set_disable_background   (VinoServer     *serve
                                                            gboolean        disable_background);
 gboolean             vino_server_get_disable_background   (VinoServer     *server);
 
-void                 vino_server_set_use_upnp              (VinoServer     *server,
-                                                            gboolean        use_upnp);
-gboolean             vino_server_get_use_upnp              (VinoServer     *server);
+void                 vino_server_set_use_upnp             (VinoServer     *server,
+                                                           gboolean        use_upnp);
+gboolean             vino_server_get_use_upnp             (VinoServer     *server);
+
+void                 vino_server_set_disable_xdamage      (VinoServer     *server,
+                                                           gboolean        disable_xdamage);
+gboolean             vino_server_get_disable_xdamage      (VinoServer     *server);
 
 #include "vino-status-icon.h"
 VinoStatusIcon      *vino_server_get_status_icon          (VinoServer      *server);
