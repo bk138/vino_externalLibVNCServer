@@ -5,16 +5,18 @@
 # Alessio Frusciante <algol@firenze.linux.it>, 2004-2006.
 # Milo Casagrande <milo@ubuntu.com>, 2007-2009
 #
+# Luca Ferretti <elle.uca@libero.it>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-28 13:34-0500\n"
-"PO-Revision-Date: 2009-02-28 19:10+0100\n"
-"Last-Translator: Milo Casagrande <milo@ubuntu.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=vino&component=Preferences Dialog\n"
+"POT-Creation-Date: 2009-05-12 11:42+0000\n"
+"PO-Revision-Date: 2009-05-12 17:56+0200\n"
+"Last-Translator: Luca Ferretti <elle.uca@libero.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=UFT-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -61,7 +63,7 @@ msgid "Nobody can access your desktop."
 msgstr "Nessuno può accedere a questo desktop."
 
 #: ../capplet/vino-preferences.c:1116 ../server/vino-dbus-listener.c:506
-#: ../server/vino-server.c:156 ../server/vino-server.c:187
+#: ../server/vino-server.c:158 ../server/vino-server.c:189
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Apertura connessione al bus non riuscita: %s\n"
@@ -125,8 +127,7 @@ msgstr "Il router deve avere la funzionalità UPnP abilitata"
 # (ndt) suggerimento
 #: ../capplet/vino-preferences.glade.h:11
 msgid "You will be queried to allow or to refuse every incoming connection"
-msgstr ""
-"Verrà richiesto di accettare o rifiutare tutte le connessioni in arrivo"
+msgstr "Verrà richiesto di accettare o rifiutare tutte le connessioni in arrivo"
 
 # (ndt) suggerimento
 #: ../capplet/vino-preferences.glade.h:12
@@ -187,9 +188,7 @@ msgstr "Desktop remoto GNOME"
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
-msgstr ""
-"Lo XServer in uso non supporta l'estensione XTest - l'accesso remoto al "
-"desktop è in sola visualizzazione\n"
+msgstr "Lo XServer in uso non supporta l'estensione XTest - l'accesso remoto al desktop è in sola visualizzazione\n"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -210,7 +209,7 @@ msgstr "0"
 msgid "%s's remote desktop on %s"
 msgstr "Desktop remoto di %s su %s"
 
-#: ../server/vino-prefs.c:579
+#: ../server/vino-prefs.c:606
 #, c-format
 msgid "Received signal %d, exiting...\n"
 msgstr "Ricevuto il segnale %d, uscita...\n"
@@ -228,9 +227,7 @@ msgstr "Lo schermo su cui visualizzare il prompt"
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
-msgstr ""
-"Un utente del computer «%s» sta tentando di visualizzare o controllare "
-"questo desktop."
+msgstr "Un utente del computer «%s» sta tentando di visualizzare o controllare questo desktop."
 
 #: ../server/vino-prompt.glade.h:1
 msgid "<big><b>Another user is trying to view your desktop.</b></big>"
@@ -288,9 +285,9 @@ msgid ""
 "you want that accept connections only from some specific network interface. "
 "eg: eth0, wifi0, lo, ..."
 msgstr ""
-"Se non impostata, il server resterà in ascolto su tutte le interfacce di "
-"rete. Impostare per accettare le connessioni solo da alcune interfacce "
-"specifiche come: eth0, wifi0, lo..."
+"Se non impostata, il server resta in ascolto su tutte le interfacce di rete. "
+"Impostare per accettare le connessioni solo da alcune interfacce specifiche "
+"come: eth0, wifi0, lo..."
 
 #: ../server/vino-server.schemas.in.h:6
 msgid ""
@@ -306,33 +303,25 @@ msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
-msgstr ""
-"Se impostata a VERO, gli utenti che tentano di accedere al desktop non "
-"possono farlo finché l'utente sull'host non approva la connessione. "
-"Raccomandato in special modo quando l'accesso non è protetto da password."
+msgstr "Se impostata a VERO, gli utenti che tentano di accedere al desktop non possono farlo finché l'utente sull'host non approva la connessione. Raccomandato in special modo quando l'accesso non è protetto da password."
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
-msgstr ""
-"Se impostata a VERO, agli utenti remoti che accedono al desktop sarà "
-"consentita solo la vista del desktop. Non potranno usare mouse o tastiera."
+msgstr "Se impostata a VERO, agli utenti remoti che accedono al desktop è consentita solo la visualizzazione del desktop. Tali utenti non potranno usare il mouse o la tastiera."
 
 #: ../server/vino-server.schemas.in.h:9
 msgid ""
 "If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
-msgstr ""
-"Se impostata a VERO, gli utenti remoti che accedono al desktop devono "
-"supportare la cifratura. È caldamente consigliato usare un client che "
-"supporta la cifratura, a meno che non ci si trovi su una rete fidata."
+msgstr "Se impostata a VERO, gli utenti remoti che accedono al desktop devono supportare la cifratura. È caldamente consigliato usare un client che supporta la cifratura, a meno che non ci si trovi su una rete fidata."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid "If true, screen will be locked after the last remote client disconnect."
 msgstr ""
-"Se impostata a VERO, lo schermo verrà bloccato dopo la disconnessione "
+"Se impostata a VERO, lo schermo viene bloccato dopo la disconnessione "
 "dell'ultimo client remoto."
 
 #: ../server/vino-server.schemas.in.h:11
@@ -340,111 +329,105 @@ msgid ""
 "If true, the server will listen to another port, instead of the default "
 "(5900). The port must be specified in the 'alternative_port' key."
 msgstr ""
-"Se impostata a VERO, il server sarà in ascolto su una porta diversa da "
+"Se impostata a VERO, il server resta in ascolto su una porta diversa da "
 "quella predefinita (5900). La porta deve essere specificata nella chiave "
 "\"alternative_port\"."
 
 #: ../server/vino-server.schemas.in.h:12
 msgid ""
+"If true, we will not use the XDamage extension of X.org. This extension does "
+"not work properly on some video drivers when using 3D effects. Disabling it "
+"will make vino work on these environments with a slower rendering as side "
+"effect."
+msgstr "Se impostata a VERO, non viene utilizzata l'estensione XDamage di X.org. Questa estensione non funziona correttamente con alcuni driver video quando si usano gli effetti 3D. Disabilitandola è possibile far funzionare vino in tali ambianti, anche se con un rendering più lento."
+
+#: ../server/vino-server.schemas.in.h:13
+msgid ""
 "If true, we will use UPNP protocol to automatically forward the port used by "
 "vino in the router."
 msgstr ""
-"Se impostata a VERO verrà utilizzato il protocollo UPNP per inoltrare "
+"Se impostata a VERO, viene utilizzato il protocollo UPNP per inoltrare "
 "automaticamente la porta usata nel router dal programma."
 
-#: ../server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:14
 msgid "Listen an alternative port"
 msgstr "Ascolta una porta alternativa"
 
-#: ../server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:15
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
 "remote user to be prompted for a password (the password is specified by the "
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
-msgstr ""
-"Elenca i metodi di autenticazione tramite i quali gli utenti remoti possono "
-"accedere al desktop. Ci sono due possibili metodi: \"vnc\" chiede una "
-"password all'utente remoto (la password è specificata dalla chiave "
-"vnc_password) prima di connettersi e \"none\" che permette ad ogni utente "
-"remoto di connettersi."
+msgstr "Elenca i metodi di autenticazione tramite i quali gli utenti remoti possono accedere al desktop. Ci sono due possibili metodi: \"vnc\" chiede una password all'utente remoto (la password è specificata dalla chiave vnc_password) prima di connettersi e \"none\" che permette ad ogni utente remoto di connettersi."
 
-#: ../server/vino-server.schemas.in.h:15
+#: ../server/vino-server.schemas.in.h:16
 msgid "Lock the screen when last user disconnect"
 msgstr "Blocca lo schermo alla disconnessione dell'ultimo utente"
 
-#: ../server/vino-server.schemas.in.h:16
+#: ../server/vino-server.schemas.in.h:17
 msgid "Network interface for listening"
 msgstr "Interfaccia di rete per l'ascolto"
 
-#: ../server/vino-server.schemas.in.h:17
+#: ../server/vino-server.schemas.in.h:18
 msgid "Only allow remote users to view the desktop"
 msgstr "Consente agli utenti remoti di vedere solamente il desktop"
 
-#: ../server/vino-server.schemas.in.h:18
+#: ../server/vino-server.schemas.in.h:19
 msgid "Password required for \"vnc\" authentication"
 msgstr "Password richiesta per l'autenticazione \"vnc\""
 
-#: ../server/vino-server.schemas.in.h:19
+#: ../server/vino-server.schemas.in.h:20
 msgid "Prompt the user before completing a connection"
 msgstr "Chiede all'utente prima di completare una connessione"
 
-#: ../server/vino-server.schemas.in.h:20
+#: ../server/vino-server.schemas.in.h:21
 msgid "Require encryption"
 msgstr "Richiedi cifratura"
 
-#: ../server/vino-server.schemas.in.h:21
+#: ../server/vino-server.schemas.in.h:22
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
-msgstr ""
-"La password che verrà richiesta all'utente remoto se viene usato il metodo "
-"di autenticazione \"vnc\". La password specificata dalla chiave è codificata "
-"base64."
+msgstr "La password che verrà richiesta all'utente remoto se viene usato il metodo di autenticazione \"vnc\". La password specificata dalla chiave è codificata base64."
 
-#: ../server/vino-server.schemas.in.h:22
+#: ../server/vino-server.schemas.in.h:23
 msgid ""
 "The port which the server will listen to if the 'use_alternative_port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
-msgstr ""
-"La porta su cui il server starà in ascolto se la chiave "
-"\"use_alternative_port\" è impostata a VERO. I valori ammessi vanno da 5000 "
-"a 50000."
+msgstr "La porta su cui il server starà in ascolto se la chiave \"use_alternative_port\" è impostata a VERO. I valori ammessi vanno da 5000 a 50000."
 
 # GNOME-2-22
-#: ../server/vino-server.schemas.in.h:23
+#: ../server/vino-server.schemas.in.h:24
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
 "\"always\" - The icon will be always there; \"client\" - You will see the "
 "icon only when there is someone connected, this is the default behavior; "
 "\"never\" - Never shows the icon."
-msgstr ""
-"Questa chiave controlla il comportamento dell'icona di stato. Sono "
-"disponibili tre opzioni: \"always\" (l'icona è sempre presente), \"client"
-"\" (l'icona è visibile solo se qualcuno è connesso; questo è il "
-"comportamento predefinito), \"never\" (l'icona non è mai mostrata)."
+msgstr "Questa chiave controlla il comportamento dell'icona di stato. Sono disponibili tre opzioni: \"always\" (l'icona è sempre presente), \"client\" (l'icona è visibile solo se qualcuno è connesso; questo è il comportamento predefinito), \"never\" (l'icona non è mai mostrata)."
 
-#: ../server/vino-server.schemas.in.h:24
+#: ../server/vino-server.schemas.in.h:25
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
-msgstr ""
-"Questa chiave specifica l'indirizzo email al quale verrà mandato l'URL del "
-"desktop remoto se l'utente fa clic sull'URL nel dialogo delle preferenze di "
-"«Desktop remoto»."
+msgstr "Questa chiave specifica l'indirizzo email al quale verrà mandato l'URL del desktop remoto se l'utente fa clic sull'URL nel dialogo delle preferenze di «Desktop remoto»."
 
-#: ../server/vino-server.schemas.in.h:25
+#: ../server/vino-server.schemas.in.h:26
 msgid "When the status icon should be shown"
 msgstr "Quando mostrare l'icona di stato"
 
-#: ../server/vino-server.schemas.in.h:26
+#: ../server/vino-server.schemas.in.h:27
 msgid "When true, disable the background on receive valid session"
 msgstr "Se VERO, disabilita lo sfondo alla ricezione di una sessione valida"
 
-#: ../server/vino-server.schemas.in.h:27
+#: ../server/vino-server.schemas.in.h:28
+msgid "Whether we should disable the XDamage extension of X.org"
+msgstr "Indica se disabilitare l'estensione XDamage di X.org"
+
+#: ../server/vino-server.schemas.in.h:29
 msgid "Whether we should use UPNP to forward the port in routers"
 msgstr "Indica se usare UPNP per inoltrare la porta nei router"
 
@@ -606,12 +589,8 @@ msgid ""
 msgid_plural ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
 "password."
-msgstr[0] ""
-"Errore: la lunghezza massima della password è di %d carattere. Inserire "
-"nuovamente la password."
-msgstr[1] ""
-"Errore: la lunghezza massima della password è di %d caratteri. Inserire "
-"nuovamente la password."
+msgstr[0] "Errore: la lunghezza massima della password è di %d carattere. Inserire nuovamente la password."
+msgstr[1] "Errore: la lunghezza massima della password è di %d caratteri. Inserire nuovamente la password."
 
 #: ../tools/vino-passwd.c:156
 #, c-format
