@@ -1,32 +1,28 @@
-# translation of vino.HEAD.po to Greek
-# Translation of vino to Greek
-# This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) 2005, 2006, 2007 Free Software Foundation
-#
+# Greel translation of Vino
+# This file is distributed under the same license as the Vino package.
+# Copyright (C) 2005 - 2009 Free Software Foundation
 #
 # Kostas Papadimas <pkst@gnome.org>, 2004, 2008.
 # Nikos Charonitakis <charosn@her.forthnet.gr>, 2004.
 # Athanasios Lefteris <alefteris@gmail.com>, 2007.
 # Jennie Petoumenou <epetoumenou@gmail.com>, 2009.
+# Μάριος Ζηντίλης <m.zindilis@dmajor.org>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&component=general\n"
-"POT-Creation-Date: 2009-02-13 15:02+0000\n"
-"PO-Revision-Date: 2009-02-28 13:13+0100\n"
-"Last-Translator: Jennie Petoumenou <epetoumenou@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=vino&component=Preferences Dialog\n"
+"POT-Creation-Date: 2009-05-12 11:42+0000\n"
+"PO-Revision-Date: 2009-05-12 21:30+0300\n"
+"Last-Translator: Μάριος Ζηντίλης <m.zindilis@dmajor.org>\n"
 "Language-Team: Greek <team@gnome.gr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: KBabel 1.11.4\n"
-"X-Poedit-Language: Greek\n"
-"X-Poedit-Country: GREECE\n"
 
 #. Open Link
 #: ../capplet/sexy-url-label.c:183
-#| msgid "Send this command by email"
 msgid "_Send address by email"
 msgstr "Απο_στολή της διεύθυνσης μέσω email"
 
@@ -37,13 +33,10 @@ msgstr "_Αντιγραφή διεύθυνσης στο πρόχειρο"
 
 #: ../capplet/vino-message-box.c:103
 #, c-format
-#| msgid ""
-#| "There was an error displaying help:\n"
-#| " %s"
 msgid "There was an error showing the URL \"%s\""
 msgstr "Υπήρξε σφάλμα κατά την εμφάνιση της σελίδας \"%s\""
 
-#: ../capplet/vino-preferences.c:198 ../capplet/vino-preferences.c:954
+#: ../capplet/vino-preferences.c:198 ../capplet/vino-preferences.c:989
 msgid "Checking the connectivity of this machine..."
 msgstr "Έλεγχος των δυνατοτήτων σύνδεσης του συστήματος..."
 
@@ -56,31 +49,30 @@ msgstr ""
 "Υπήρξε σφάλμα κατά την εμφάνιση της βοήθειας:\n"
 "%s"
 
-#: ../capplet/vino-preferences.c:839
+#: ../capplet/vino-preferences.c:828
 msgid "Your desktop is only reachable over the local network."
 msgstr ""
 "Η πρόσβαση στην επιφάνεια εργασίας σας είναι δυνατή μόνο μέσω του τοπικού "
 "δικτύου."
 
-#: ../capplet/vino-preferences.c:840 ../capplet/vino-preferences.c:890
+#: ../capplet/vino-preferences.c:851 ../capplet/vino-preferences.c:922
 #, c-format
 msgid "Others can access your computer using the address %s."
 msgstr ""
 "Άλλοι χρήστες μπορούν να έχουν πρόσβαση στον υπολογιστή σας χρησιμοποιώντας "
 "τη διεύθυνση %s."
 
-#: ../capplet/vino-preferences.c:940
+#: ../capplet/vino-preferences.c:975
 msgid "Nobody can access your desktop."
 msgstr "Δεν επιτρέπεται σε κανέναν η πρόσβαση στην επιφάνεια εργασίας σας."
 
-#: ../capplet/vino-preferences.c:1081 ../server/vino-dbus-listener.c:501
-#: ../server/vino-server.c:156 ../server/vino-server.c:187
+#: ../capplet/vino-preferences.c:1116 ../server/vino-dbus-listener.c:506
+#: ../server/vino-server.c:158 ../server/vino-server.c:189
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Αποτυχία έναρξης επικοινωνίας με D-BUS: %s\n"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
-#| msgid "Allow other users to _view your desktop"
 msgid "Choose how other users can remotely view your desktop"
 msgstr ""
 "Επιλογή του τρόπου με τον οποίο άλλοι χρήστες θα βλέπουν απομακρυσμένα την "
@@ -104,7 +96,6 @@ msgid "<b>Sharing</b>"
 msgstr "<b>Κοινή χρήση</b>"
 
 #: ../capplet/vino-preferences.glade.h:4
-#| msgid "Some of these preferences are locked down"
 msgid "<i>Some of these preferences are locked down</i>"
 msgstr "<i>Μερικές από τις προτιμήσεις είναι κλειδωμένες</i>"
 
@@ -114,7 +105,8 @@ msgstr "Να ε_μφανίζεται πάντα ένα εικονίδιο"
 
 #: ../capplet/vino-preferences.glade.h:6
 msgid "Allow other users to _view your desktop"
-msgstr "Να επιτρέπεται σε άλλους χρήστες να _βλέπουν την επιφάνεια εργασίας σας"
+msgstr ""
+"Να επιτρέπεται σε άλλους χρήστες να _βλέπουν την επιφάνεια εργασίας σας"
 
 #: ../capplet/vino-preferences.glade.h:7
 msgid "Maximum size: 8 characters"
@@ -136,7 +128,8 @@ msgstr "Το UPnP πρέπει να είναι ενεργοποιημένο στ
 
 #: ../capplet/vino-preferences.glade.h:11
 msgid "You will be queried to allow or to refuse every incoming connection"
-msgstr "Θα σας ζητηθεί να επιτρέψετε ή να απορρίψετε όλες τις εισερχόμενες συνδέσεις"
+msgstr ""
+"Θα σας ζητηθεί να επιτρέψετε ή να απορρίψετε όλες τις εισερχόμενες συνδέσεις"
 
 #: ../capplet/vino-preferences.glade.h:12
 msgid "Your desktop will be shared"
@@ -144,7 +137,8 @@ msgstr "Θα υπάρχει κοινή χρήση της επιφάνειας ε
 
 #: ../capplet/vino-preferences.glade.h:13
 msgid "_Allow other users to control your desktop"
-msgstr "Να επι_τρέπεται σε άλλους χρήστες να ελέγχουν την επιφάνεια εργασίας σας"
+msgstr ""
+"Να επι_τρέπεται σε άλλους χρήστες να ελέγχουν την επιφάνεια εργασίας σας"
 
 #: ../capplet/vino-preferences.glade.h:14
 msgid "_Configure network automatically to accept connections"
@@ -166,23 +160,24 @@ msgstr "Να _απαιτείται η εισαγωγή αυτού του κωδ�
 msgid "_You must confirm each access to this machine"
 msgstr "Απαι_τείται επιβεβαίωση κάθε φορά που υπάρχει πρόσβαση στο σύστημα"
 
-#: ../server/vino-dbus-listener.c:281 ../server/vino-dbus-listener.c:311
-#: ../server/vino-dbus-listener.c:352
+#: ../server/vino-dbus-listener.c:283 ../server/vino-dbus-listener.c:313
+#: ../server/vino-dbus-listener.c:357
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "Η μνήμη εξαντλήθηκε κατά το χειρισμό του μηνύματος '%s'"
 
-#: ../server/vino-dbus-listener.c:458
+#: ../server/vino-dbus-listener.c:463
 #, c-format
 msgid "Out of memory registering object path '%s'"
-msgstr "Η μνήμη εξαντλήθηκε κατά τη καταχώρηση του μονοπατιού αντικειμένου '%s'"
+msgstr ""
+"Η μνήμη εξαντλήθηκε κατά τη καταχώρηση του μονοπατιού αντικειμένου '%s'"
 
-#: ../server/vino-dbus-listener.c:537
+#: ../server/vino-dbus-listener.c:542
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Αποτυχία στην προσπάθεια απόκτησης ονόματος D-Bus '%s'\n"
 
-#: ../server/vino-dbus-listener.c:545
+#: ../server/vino-dbus-listener.c:550
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr ""
 "Ο εξυπηρετητής απομακρυσμένης επιφάνειας εργασίας εκτελείται ήδη, γίνεται "
@@ -219,7 +214,7 @@ msgstr "vino-mdns:showusername"
 msgid "%s's remote desktop on %s"
 msgstr "Απομακρυσμένη επιφάνεια εργασίας του %s σε %s"
 
-#: ../server/vino-prefs.c:579
+#: ../server/vino-prefs.c:606
 #, c-format
 msgid "Received signal %d, exiting...\n"
 msgstr "Ελήφθη σήμα %d, έξοδος...\n"
@@ -359,17 +354,29 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:12
 msgid ""
+"If true, we will not use the XDamage extension of X.org. This extension does "
+"not work properly on some video drivers when using 3D effects. Disabling it "
+"will make vino work on these environments with a slower rendering as side "
+"effect."
+msgstr ""
+"Εάν είναι αληθές, δε θα χρησιμοποιείται η επέκταση XDamage του X.org. Αυτή η "
+"επέκταση δε λειτουργεί κανονικά με μερικούς οδηγούς γραφικών όταν "
+"χρησιμοποιούνται τρισδιάστατα εφέ. Η απενεργοποίησή της θα κάνει το vino να "
+"δουλεύει σε αυτά τα περιβάλλοντα, με παρενέργεια το αργότερο rendering."
+
+#: ../server/vino-server.schemas.in.h:13
+msgid ""
 "If true, we will use UPNP protocol to automatically forward the port used by "
 "vino in the router."
 msgstr ""
 "Αν είναι αληθές, θα χρησιμοποιείται το πρωτόκολλο UPNP για την αυτόματη "
 "προώθηση της θύρας που χρησιμοποιεί το vino στον εξυπηρετητή."
 
-#: ../server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:14
 msgid "Listen an alternative port"
 msgstr "Αναμονή σύνδεσης σε εναλλακτική θύρα"
 
-#: ../server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:15
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -383,33 +390,33 @@ msgstr ""
 "καθορίζεται από το κλειδί vnc_password), και \"none\" όπου και επιτρέπεται η "
 "ελεύθερη σύνδεση του χρήστη."
 
-#: ../server/vino-server.schemas.in.h:15
+#: ../server/vino-server.schemas.in.h:16
 msgid "Lock the screen when last user disconnect"
 msgstr "Κλείδωμα της οθόνης όταν αποσυνδέεται ο τελευταίος χρήστης"
 
-#: ../server/vino-server.schemas.in.h:16
+#: ../server/vino-server.schemas.in.h:17
 msgid "Network interface for listening"
 msgstr "Παρακολουθούμενη διεπαφή δικτύου"
 
-#: ../server/vino-server.schemas.in.h:17
+#: ../server/vino-server.schemas.in.h:18
 msgid "Only allow remote users to view the desktop"
 msgstr ""
 "Να επιτρέπεται στους απομακρυσμένους χρήστες να βλέπουν μόνο την επιφάνεια "
 "εργασίας"
 
-#: ../server/vino-server.schemas.in.h:18
+#: ../server/vino-server.schemas.in.h:19
 msgid "Password required for \"vnc\" authentication"
 msgstr "Απαιτείται κωδικός πρόσβασης για την πιστοποίηση \"vnc\""
 
-#: ../server/vino-server.schemas.in.h:19
+#: ../server/vino-server.schemas.in.h:20
 msgid "Prompt the user before completing a connection"
 msgstr "Ειδοποίηση του χρήστη πριν την ολοκλήρωση μιας σύνδεσης"
 
-#: ../server/vino-server.schemas.in.h:20
+#: ../server/vino-server.schemas.in.h:21
 msgid "Require encryption"
 msgstr "Απαιτείται κρυπτογράφηση"
 
-#: ../server/vino-server.schemas.in.h:21
+#: ../server/vino-server.schemas.in.h:22
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -419,7 +426,7 @@ msgstr ""
 "\"vnc\". Ο κωδικός που καθορίζεται από το κλειδί είναι κωδικοποιημένος με "
 "βάση το 64."
 
-#: ../server/vino-server.schemas.in.h:22
+#: ../server/vino-server.schemas.in.h:23
 msgid ""
 "The port which the server will listen to if the 'use_alternative_port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
@@ -428,7 +435,7 @@ msgstr ""
 "'use_alternative_port' είναι καθορισμένο σε αληθές. Έγκυρες τιμές "
 "κυμαίνονται από 5000 μέχρι 50000."
 
-#: ../server/vino-server.schemas.in.h:23
+#: ../server/vino-server.schemas.in.h:24
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
 "\"always\" - The icon will be always there; \"client\" - You will see the "
@@ -441,25 +448,30 @@ msgstr ""
 "η προεπιλεγμένη συμπεριφορά, και \"ποτέ\" - Ποτέ δεν θα εμφανίζεται το "
 "εικονίδιο."
 
-#: ../server/vino-server.schemas.in.h:24
+#: ../server/vino-server.schemas.in.h:25
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
 "Αυτό το κλειδί καθορίζει τη διεύθυνση e-mail στην οποία θα σταλεί το URL "
-"απομακρυσμένης επιφάνειας εργασίας αν ο χρήστης πατήσει στο URL στον "
-"διάλογο προτιμήσεων της Απομακρυσμένης Επιφάνειας."
+"απομακρυσμένης επιφάνειας εργασίας αν ο χρήστης πατήσει στο URL στον διάλογο "
+"προτιμήσεων της Απομακρυσμένης Επιφάνειας."
 
-#: ../server/vino-server.schemas.in.h:25
+#: ../server/vino-server.schemas.in.h:26
 msgid "When the status icon should be shown"
 msgstr "Πότε θα εμφανίζεται το εικονίδιο κατάστασης"
 
-#: ../server/vino-server.schemas.in.h:26
-msgid "When true, disable the background on receive valid session"
-msgstr "Εάν είναι αληθές, απενεργοποιείται το υπόβαθρο κατά τη λήψη έγκυρης συνόδου."
-
 #: ../server/vino-server.schemas.in.h:27
+msgid "When true, disable the background on receive valid session"
+msgstr ""
+"Εάν είναι αληθές, απενεργοποιείται το υπόβαθρο κατά τη λήψη έγκυρης συνόδου."
+
+#: ../server/vino-server.schemas.in.h:28
+msgid "Whether we should disable the XDamage extension of X.org"
+msgstr "Αν πρέπει να απενεργοποιηθεί η επέκταση XDamage του X.org"
+
+#: ../server/vino-server.schemas.in.h:29
 msgid "Whether we should use UPNP to forward the port in routers"
 msgstr ""
 "Αν πρέπει να χρησιμοποιείται το UPNP για την προώθηση της θύρας στους "
@@ -477,16 +489,10 @@ msgstr[0] "Ένα άτομο είναι συνδεμένο"
 msgstr[1] "%d άτομα είναι συνδεμένα"
 
 #: ../server/vino-status-icon.c:207
-#| msgid ""
-#| "There was an error displaying preferences:\n"
-#| " %s"
 msgid "Error displaying preferences"
 msgstr "Υπήρξε σφάλμα κατά την εμφάνιση των προτιμήσεων"
 
 #: ../server/vino-status-icon.c:226
-#| msgid ""
-#| "There was an error displaying help:\n"
-#| "%s"
 msgid "Error displaying help"
 msgstr "Υπήρξε σφάλμα κατά την εμφάνιση της βοήθειας"
 
@@ -537,7 +543,7 @@ msgstr ""
 " Νίκος Χαρωνιτάκης <charosn@her.forthnet.gr>\n"
 " Αθανάσιος Λευτέρης <alefteris@gmail.com>\n"
 " Νίκος Αγιαννιώτης <nickagian@gmail.com>\n"
-"Τζένη Πετούμενου <epetoumenou@gmail.com>\n"
+" Τζένη Πετούμενου <epetoumenou@gmail.com>\n"
 "\n"
 "Για περισσότερα δείτε http://www.gnome.gr/"
 
@@ -633,9 +639,6 @@ msgstr "Ακυρώθηκε"
 
 #: ../tools/vino-passwd.c:122
 #, c-format
-#| msgid ""
-#| "ERROR: Maximum length of password is %d characters. Please, re-enter the "
-#| "password.\n"
 msgid ""
 "ERROR: Maximum length of password is %d character. Please, re-enter the "
 "password."
@@ -643,11 +646,11 @@ msgid_plural ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
 "password."
 msgstr[0] ""
-"ΣΦΑΛΜΑ: Το μέγιστο μήκος του συνθηματικού είναι %d χαρακτήρας. "
-"Παρακαλώ, επαναπληκτρολογήστε το συνθηματικό."
+"ΣΦΑΛΜΑ: Το μέγιστο μήκος του συνθηματικού είναι %d χαρακτήρας. Παρακαλώ, "
+"επαναπληκτρολογήστε το συνθηματικό."
 msgstr[1] ""
-"ΣΦΑΛΜΑ: Το μέγιστο μήκος του συνθηματικού είναι %d χαρακτήρες. "
-"Παρακαλώ, επαναπληκτρολογήστε το συνθηματικό."
+"ΣΦΑΛΜΑ: Το μέγιστο μήκος του συνθηματικού είναι %d χαρακτήρες. Παρακαλώ, "
+"επαναπληκτρολογήστε το συνθηματικό."
 
 #: ../tools/vino-passwd.c:156
 #, c-format
@@ -686,7 +689,8 @@ msgid "- Updates Vino password"
 msgstr "- Ενημερώνει τον κωδικό πρόσβασης"
 
 #: ../tools/vino-passwd.c:206
-msgid "Run 'vino-passwd --help' to see a full list of available command line options"
+msgid ""
+"Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr ""
 "Εκτέλεση 'vino-passwd --help' για να εμφανιστεί η πλήρης λίστα των "
 "διαθέσιμων επιλογών της γραμμής εντολών"
@@ -700,6 +704,5 @@ msgstr "Έκδοση εφαρμογής %s\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
-"ΣΦΑΛΜΑ: Δεν διαθέτετε επαρκή δικαιώματα για να αλλάξετε τον κωδικό πρόσβασης του "
-"Vino.\n"
-
+"ΣΦΑΛΜΑ: Δεν διαθέτετε επαρκή δικαιώματα για να αλλάξετε τον κωδικό πρόσβασης "
+"του Vino.\n"
