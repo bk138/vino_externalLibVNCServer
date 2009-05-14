@@ -68,7 +68,6 @@ G_END_DECLS
 G_BEGIN_DECLS
 
 DBusGConnection *vino_dbus_get_connection   (void);
-void            vino_dbus_unref_connection (void);
 gboolean        vino_dbus_request_name     (void);
 
 G_END_DECLS

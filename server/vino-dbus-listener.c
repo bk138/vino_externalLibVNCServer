@@ -366,14 +366,6 @@ vino_dbus_get_connection (void)
   return vino_dbus_connection;
 }
 
-void
-vino_dbus_unref_connection (void)
-{
-  if (vino_dbus_connection != NULL)
-    dbus_g_connection_unref (vino_dbus_connection);
-  vino_dbus_connection = NULL;
-}
-
 gboolean
 vino_dbus_request_name (void)
 {
