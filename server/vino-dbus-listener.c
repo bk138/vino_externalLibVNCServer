@@ -55,7 +55,6 @@
 #include "libvncserver/ifaddr/ifaddrs.h"
 #endif
 
-#define VINO_DBUS_INTERFACE "org.gnome.VinoScreen"
 #define VINO_DBUS_BUS_NAME  "org.gnome.Vino"
 
 G_DEFINE_TYPE (VinoDBusListener, vino_dbus_listener, G_TYPE_OBJECT)
