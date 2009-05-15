@@ -69,6 +69,8 @@ vino_server_SOURCES = \
 	vino-status-icon.h \
 	vino-dbus-listener.c \
 	vino-dbus-listener.h \
+	vino-dbus-error.c \
+	vino-dbus-error.h \
 	vino-background.c \
 	vino-background.h \
 	vino-upnp.h \
@@ -76,6 +78,17 @@ vino_server_SOURCES = \
 	$(VINO_HTTP_SRC) \
 	$(CORBA_SRCLIST) \
 	$(NULL)
+
+if TELEPATHY_GLIB
+
+INCLUDES += $(TELEPATHY_GLIB_CFLAGS)
+vino_server_LDADD += $(TELEPATHY_GLIB_LIBS)
+vino_server_SOURCES += \
+	vino-tube-servers-manager.c vino-tube-servers-manager.h		\
+	vino-tube-server.c vino-tube-server.h				\
+	$(NULL)
+
+endif
 
 dbus-interface-glue.h: dbus-interface.xml
 	dbus-binding-tool --prefix=vino_dbus_listener --mode=glib-server dbus-interface.xml > dbus-interface-glue.h
