@@ -37,6 +37,7 @@
 #include <netdb.h>
 #include <net/if.h>
 #include <arpa/inet.h>
+#include <netinet/in.h>
 
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
