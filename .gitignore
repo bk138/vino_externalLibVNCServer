@@ -33,6 +33,7 @@ po/Makefile.in.in
 po/POTFILES
 po/stamp-it
 po/*.gmo
+po/vino.pot
 server/*.o
 server/.deps
 server/vino-enums.*
