@@ -4,19 +4,17 @@
 # Raphael Higino <In Memoriam>, 2004-2006.
 # Igor Pires Soares <igor@projetofedora.org>, 2007.
 # Leonardo Ferreira Fontenelle <leo.fontenelle@gmail.com>, 2007.
-# Jonh Wendell <wendell@bani.com.br>, 2007.
+# Jonh Wendell <wendell@bani.com.br>, 2007,2009.
 # Og Maciel <ogmaciel@gnome.org>, 2007-2008.
 # Vladimir Melo <vladimirmelo.psi@gmail.com>, 2008.
 # Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008.
 # Enrico Nicoletto <liverig@gmail.com>, 2008.
-#
-# Jonh Wendell <jwendell@gnome.org>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-02 10:03-0300\n"
-"PO-Revision-Date: 2009-03-02 10:07-0300\n"
+"POT-Creation-Date: 2009-05-17 12:08-0300\n"
+"PO-Revision-Date: 2009-05-17 12:03-0300\n"
 "Last-Translator: Jonh Wendell <jwendell@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -67,8 +65,8 @@ msgstr "Outros usuários podem acessar seu computador através do endereço %s."
 msgid "Nobody can access your desktop."
 msgstr "Ninguém pode acessar sua máquina."
 
-#: ../capplet/vino-preferences.c:1116 ../server/vino-dbus-listener.c:506
-#: ../server/vino-server.c:156 ../server/vino-server.c:187
+#: ../capplet/vino-preferences.c:1116 ../server/vino-dbus-listener.c:507
+#: ../server/vino-server.c:158 ../server/vino-server.c:189
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Falha ao abrir conexão com o serviço: %s\n"
@@ -156,23 +154,23 @@ msgstr "_Exigir que o usuário digite esta senha:"
 msgid "_You must confirm each access to this machine"
 msgstr "Você _deve confirmar cada acesso à esta máquina"
 
-#: ../server/vino-dbus-listener.c:283 ../server/vino-dbus-listener.c:313
-#: ../server/vino-dbus-listener.c:357
+#: ../server/vino-dbus-listener.c:284 ../server/vino-dbus-listener.c:314
+#: ../server/vino-dbus-listener.c:358
 #, c-format
 msgid "Out of memory handling '%s' message"
 msgstr "Memória insuficiente para lidar a mensagem \"%s\""
 
-#: ../server/vino-dbus-listener.c:463
+#: ../server/vino-dbus-listener.c:464
 #, c-format
 msgid "Out of memory registering object path '%s'"
 msgstr "Memória insuficiente para registrar caminho do objeto \"%s\""
 
-#: ../server/vino-dbus-listener.c:542
+#: ../server/vino-dbus-listener.c:543
 #, c-format
 msgid "Failed to acquire D-Bus name '%s'\n"
 msgstr "Falha ao adquirir nome D-BUS \"%s\"\n"
 
-#: ../server/vino-dbus-listener.c:550
+#: ../server/vino-dbus-listener.c:551
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr ""
 "O servidor da Área de trabalho remota já está sendo executado; saindo...\n"
@@ -208,7 +206,7 @@ msgstr "vino-mdns:showusername"
 msgid "%s's remote desktop on %s"
 msgstr "Área de trabalho remota de %s em %s"
 
-#: ../server/vino-prefs.c:579
+#: ../server/vino-prefs.c:606
 #, c-format
 msgid "Received signal %d, exiting...\n"
 msgstr "Sinal %d recebido, saindo...\n"
@@ -344,17 +342,29 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:12
 msgid ""
+"If true, we will not use the XDamage extension of X.org. This extension does "
+"not work properly on some video drivers when using 3D effects. Disabling it "
+"will make vino work on these environments with a slower rendering as side "
+"effect."
+msgstr ""
+"Se verdadeiro, não usaremos a extensão XDamage do X.org. Esta extensão não "
+"funciona corretamente em alguns drivers de vídeo quando se usa efeitos 3D. "
+"Desativá-la fará com que o Vino funcione corretamente nestes ambientes, com "
+"uma renderização mais lenta como efeito colateral."
+
+#: ../server/vino-server.schemas.in.h:13
+msgid ""
 "If true, we will use UPNP protocol to automatically forward the port used by "
 "vino in the router."
 msgstr ""
 "Se verdadeiro, usaremos o protocolo UPnP para automaticamente abrir a porta "
 "usada pelo vino no roteador."
 
-#: ../server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:14
 msgid "Listen an alternative port"
 msgstr "Escutar uma porta alternativa"
 
-#: ../server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:15
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -368,31 +378,31 @@ msgstr ""
 "pela chave vnc_password) antes de conectar e \"none\" que permite a qualquer "
 "usuário remoto conectar."
 
-#: ../server/vino-server.schemas.in.h:15
+#: ../server/vino-server.schemas.in.h:16
 msgid "Lock the screen when last user disconnect"
 msgstr "Bloquear a tela quando o último usuário se desconectar"
 
-#: ../server/vino-server.schemas.in.h:16
+#: ../server/vino-server.schemas.in.h:17
 msgid "Network interface for listening"
 msgstr "Interface de rede para escuta"
 
-#: ../server/vino-server.schemas.in.h:17
+#: ../server/vino-server.schemas.in.h:18
 msgid "Only allow remote users to view the desktop"
 msgstr "Permitir somente usuários remotos a ver a área de trabalho"
 
-#: ../server/vino-server.schemas.in.h:18
+#: ../server/vino-server.schemas.in.h:19
 msgid "Password required for \"vnc\" authentication"
 msgstr "Senha exigida para autenticação do \"vnc\""
 
-#: ../server/vino-server.schemas.in.h:19
+#: ../server/vino-server.schemas.in.h:20
 msgid "Prompt the user before completing a connection"
 msgstr "Notificar o usuário antes de completar uma conexão"
 
-#: ../server/vino-server.schemas.in.h:20
+#: ../server/vino-server.schemas.in.h:21
 msgid "Require encryption"
 msgstr "Exigir criptografia"
 
-#: ../server/vino-server.schemas.in.h:21
+#: ../server/vino-server.schemas.in.h:22
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -401,7 +411,7 @@ msgstr ""
 "A senha que será pedida ao usuário remoto se o método de autenticação \"vnc"
 "\" for usado. A senha especificada pela chave é codificada em base64."
 
-#: ../server/vino-server.schemas.in.h:22
+#: ../server/vino-server.schemas.in.h:23
 msgid ""
 "The port which the server will listen to if the 'use_alternative_port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
@@ -409,7 +419,7 @@ msgstr ""
 "A porta que o servidor escutará se a chave \"use_alternative_port\" estiver "
 "definida como verdadeira. Os valores válidos vão de 5000 a 50000."
 
-#: ../server/vino-server.schemas.in.h:23
+#: ../server/vino-server.schemas.in.h:24
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
 "\"always\" - The icon will be always there; \"client\" - You will see the "
@@ -421,7 +431,7 @@ msgstr ""
 "somente quando alguém estiver conectado, esse é o comportamento padrão; "
 "\"nunca\" - Nunca mostra o ícone."
 
-#: ../server/vino-server.schemas.in.h:24
+#: ../server/vino-server.schemas.in.h:25
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
@@ -431,16 +441,20 @@ msgstr ""
 "trabalho remota deve ser enviada se o usuário clicar nela no diálogo de "
 "preferências da Área de Trabalho Remota."
 
-#: ../server/vino-server.schemas.in.h:25
+#: ../server/vino-server.schemas.in.h:26
 msgid "When the status icon should be shown"
 msgstr "Quando o ícone de status deve ser mostrado"
 
-#: ../server/vino-server.schemas.in.h:26
+#: ../server/vino-server.schemas.in.h:27
 msgid "When true, disable the background on receive valid session"
 msgstr ""
 "Quando verdadeiro, desabilita o plano de fundo ao receber uma sessão válida"
 
-#: ../server/vino-server.schemas.in.h:27
+#: ../server/vino-server.schemas.in.h:28
+msgid "Whether we should disable the XDamage extension of X.org"
+msgstr "Se devemos desativar a extensão XDamage do X.Org"
+
+#: ../server/vino-server.schemas.in.h:29
 msgid "Whether we should use UPNP to forward the port in routers"
 msgstr "Se devemos usar UPnP para abrir a porta no roteador."
 
