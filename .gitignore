@@ -37,6 +37,7 @@ server/*.o
 server/.deps
 server/vino-enums.*
 server/vino-marshal.*
+server/dbus-interface-glue.h
 server/vino-server
 server/vino-server.desktop
 server/vino-server.desktop.in
