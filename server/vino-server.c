@@ -46,6 +46,8 @@
 #include <gnome-keyring.h>
 #endif
 
+G_DEFINE_TYPE (VinoServer, vino_server, G_TYPE_OBJECT);
+
 /* If an authentication attempt failes, delay the next
  * authentication attempt for 5 seconds.
  */
@@ -1252,7 +1254,7 @@ vino_server_get_property (GObject    *object,
 }
 
 static void
-vino_server_instance_init (VinoServer *server)
+vino_server_init (VinoServer *server)
 {
   server->priv = g_new0 (VinoServerPrivate, 1);
 }
@@ -1454,35 +1456,6 @@ vino_server_class_init (VinoServerClass *klass)
                                                          G_PARAM_STATIC_BLURB));
 
 }
-
-GType
-vino_server_get_type (void)
-{
-  static GType object_type = 0;
-
-  if (!object_type)
-    {
-      static const GTypeInfo object_info =
-	{
-	  sizeof (VinoServerClass),
-	  (GBaseInitFunc) NULL,
-	  (GBaseFinalizeFunc) NULL,
-	  (GClassInitFunc) vino_server_class_init,
-	  NULL,           /* class_finalize */
-	  NULL,           /* class_data */
-	  sizeof (VinoServer),
-	  0,              /* n_preallocs */
-	  (GInstanceInitFunc) vino_server_instance_init,
-	};
-      
-      object_type = g_type_register_static (G_TYPE_OBJECT,
-                                            "VinoServer",
-                                            &object_info, 0);
-    }
-
-  return object_type;
-}
-
 
 VinoServer *
 vino_server_new (GdkScreen *screen,
