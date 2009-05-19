@@ -78,6 +78,9 @@ gboolean             vino_server_get_prompt_enabled       (VinoServer     *serve
 void                 vino_server_set_view_only            (VinoServer     *server,
 							   gboolean        view_only);
 gboolean             vino_server_get_view_only            (VinoServer     *server);
+void                 vino_server_set_use_dbus_listener    (VinoServer     *server,
+                                                           gboolean        use_dbus_listener);
+gboolean             vino_server_get_use_dbus_listener    (VinoServer     *server);
 gboolean             vino_server_get_use_alternative_port (VinoServer     *server);
 void                 vino_server_set_use_alternative_port (VinoServer     *server,
 							   gboolean        use_alternative_port);

@@ -63,6 +63,7 @@ struct _VinoServerPrivate
   VinoPrompt       *prompt;
   VinoStatusIcon   *icon;
   VinoDBusListener *listener;
+  gboolean          use_dbus_listener;
   VinoUpnp         *upnp;
 
   GIOChannel       *io_channel[RFB_MAX_SOCKETLISTEN];
@@ -112,6 +113,7 @@ enum
   PROP_ON_HOLD,
   PROP_PROMPT_ENABLED,
   PROP_VIEW_ONLY,
+  PROP_USE_DBUS_LISTENER,
   PROP_NETWORK_INTERFACE,
   PROP_USE_ALTERNATIVE_PORT,
   PROP_ALTERNATIVE_PORT,
@@ -1045,8 +1047,6 @@ vino_server_init_from_screen (VinoServer *server,
 
   vino_mdns_add_service ("_rfb._tcp", rfb_screen->rfbPort);
 
-  server->priv->listener = vino_dbus_listener_new (server);
-
   cb = gtk_clipboard_get_for_display (gdk_screen_get_display (screen),
                                       GDK_SELECTION_CLIPBOARD);
   g_signal_connect (cb,
@@ -1156,6 +1156,9 @@ vino_server_set_property (GObject      *object,
     case PROP_VIEW_ONLY:
       vino_server_set_view_only (server, g_value_get_boolean (value));
       break;
+    case PROP_USE_DBUS_LISTENER:
+      vino_server_set_use_dbus_listener (server, g_value_get_boolean (value));
+      break;
     case PROP_NETWORK_INTERFACE:
       vino_server_set_network_interface (server, g_value_get_string (value));
       break;
@@ -1214,6 +1217,9 @@ vino_server_get_property (GObject    *object,
     case PROP_VIEW_ONLY:
       g_value_set_boolean (value, server->priv->view_only);
       break;
+    case PROP_USE_DBUS_LISTENER:
+      g_value_set_boolean (value, server->priv->use_dbus_listener);
+      break;
     case PROP_NETWORK_INTERFACE:
       g_value_set_string (value, server->priv->network_interface);
       break;
@@ -1254,6 +1260,17 @@ vino_server_get_property (GObject    *object,
 }
 
 static void
+vino_server_constructed (GObject *object)
+{
+  VinoServer *server = VINO_SERVER (object);
+
+  if (server->priv->use_dbus_listener)
+    server->priv->listener = vino_dbus_listener_new (server);
+  else
+    server->priv->listener = NULL;
+}
+
+static void
 vino_server_init (VinoServer *server)
 {
   server->priv = g_new0 (VinoServerPrivate, 1);
@@ -1266,6 +1283,7 @@ vino_server_class_init (VinoServerClass *klass)
   
   parent_class = g_type_class_peek_parent (klass);
   
+  gobject_class->constructed  = vino_server_constructed;
   gobject_class->finalize     = vino_server_finalize;
   gobject_class->set_property = vino_server_set_property;
   gobject_class->get_property = vino_server_get_property;
@@ -1317,6 +1335,17 @@ vino_server_class_init (VinoServerClass *klass)
                                                          G_PARAM_STATIC_NAME |
                                                          G_PARAM_STATIC_NICK |
                                                          G_PARAM_STATIC_BLURB));
+
+   g_object_class_install_property (gobject_class,
+				   PROP_USE_DBUS_LISTENER,
+				   g_param_spec_boolean ("use-dbus-listener",
+							 "Use the dbus listener",
+							 "Allow to use the dbus listener",
+							 TRUE,
+                                                         G_PARAM_READWRITE   |
+                                                         G_PARAM_CONSTRUCT   |
+                                                         G_PARAM_STATIC_STRINGS));
+
 
   g_object_class_install_property (gobject_class,
 				   PROP_NETWORK_INTERFACE,
@@ -1499,6 +1528,23 @@ vino_server_set_view_only (VinoServer *server,
 
       g_object_notify (G_OBJECT (server), "view-only");
     }
+}
+
+gboolean
+vino_server_get_use_dbus_listener (VinoServer *server)
+{
+  g_return_val_if_fail (VINO_IS_SERVER (server), FALSE);
+
+  return server->priv->use_dbus_listener;
+}
+
+void
+vino_server_set_use_dbus_listener (VinoServer *server,
+    gboolean use_dbus_listener)
+{
+  g_return_if_fail (VINO_IS_SERVER (server));
+
+  server->priv->use_dbus_listener = use_dbus_listener;
 }
 
 G_CONST_RETURN char *
