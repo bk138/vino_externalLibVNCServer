@@ -43,6 +43,12 @@
 #include <dbus/dbus-glib-lowlevel.h>
 #include <dbus/dbus-glib-bindings.h>
 
+#include "vino-dbus-error.h"
+
+#ifdef HAVE_TELEPATHY_GLIB
+#include "vino-tube-servers-manager.h"
+#endif
+
 #include "vino-util.h"
 #include "vino-mdns.h"
 #ifdef VINO_ENABLE_HTTP_SERVER
@@ -62,6 +68,9 @@ G_DEFINE_TYPE (VinoDBusListener, vino_dbus_listener, G_TYPE_OBJECT)
 struct _VinoDBusListenerPrivate
 {
   VinoServer *server;
+#ifdef HAVE_TELEPATHY_GLIB
+  VinoTubeServersManager *manager;
+#endif
 };
 
 enum
@@ -176,6 +185,22 @@ get_local_hostname (VinoDBusListener *listener)
   return retval;
 }
 
+#ifdef HAVE_TELEPATHY_GLIB
+static void
+vino_dbus_listener_dispose (GObject *object)
+{
+  VinoDBusListener *listener = VINO_DBUS_LISTENER (object);
+
+  if (listener->priv->manager != NULL)
+    {
+      g_object_unref (listener->priv->manager);
+      listener->priv->manager = NULL;
+    }
+
+  if (G_OBJECT_CLASS (vino_dbus_listener_parent_class)->dispose)
+    G_OBJECT_CLASS (vino_dbus_listener_parent_class)->dispose (object);
+}
+#endif
 
 static void
 vino_dbus_listener_set_property (GObject       *object,
@@ -219,6 +244,9 @@ static void
 vino_dbus_listener_init (VinoDBusListener *listener)
 {
   listener->priv = G_TYPE_INSTANCE_GET_PRIVATE (listener, VINO_TYPE_DBUS_LISTENER, VinoDBusListenerPrivate);
+#ifdef HAVE_TELEPATHY_GLIB
+  listener->priv->manager = vino_tube_servers_manager_new ();
+#endif
 }
 
 static guint signal_server_info_changed = 0;
@@ -228,6 +256,9 @@ vino_dbus_listener_class_init (VinoDBusListenerClass *klass)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
+#ifdef HAVE_TELEPATHY_GLIB
+  object_class->dispose = vino_dbus_listener_dispose;
+#endif
   object_class->get_property = vino_dbus_listener_get_property;
   object_class->set_property = vino_dbus_listener_set_property;
 
@@ -302,7 +333,15 @@ vino_dbus_listener_share_with_tube (VinoDBusListener *listener,
                                     GHashTable * properties,
                                     GError **error)
 {
-  return TRUE;
+#ifdef HAVE_TELEPATHY_GLIB
+  return vino_tube_servers_manager_share_with_tube (listener->priv->manager,
+      connection_path, tube_path, properties, error);
+#else
+  g_set_error (error, vino_dbus_error_quark (),
+      VINO_DBUS_ERROR_NOT_IMPLEMENTED,
+      "Tubes are not installed");
+  return FALSE;
+#endif
 }
 
 static void
