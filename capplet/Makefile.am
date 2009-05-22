@@ -2,7 +2,7 @@ NULL =
 
 INCLUDES = \
 	-DVINO_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"  \
-	-DVINO_GLADEDIR=\""$(datadir)/vino"\" \
+	-DVINO_UIDIR=\""$(datadir)/vino"\" \
 	-DVINO_ICONDIR=\""$(datadir)/pixmaps\"" \
 	$(VINO_CAPPLET_CFLAGS) \
 	$(VINO_KEYRING_CFLAGS) \
@@ -27,8 +27,8 @@ vino_preferences_LDADD = \
 	$(X_LIBS) \
 	$(NULL)
 
-gladedir   = $(datadir)/vino
-glade_DATA = vino-preferences.glade webservices
+uidir   = $(datadir)/vino
+ui_DATA = vino-preferences.ui webservices
 
 desktopdir       = $(datadir)/applications
 desktop_in_files = vino-preferences.desktop.in
@@ -41,7 +41,7 @@ CLEANFILES = \
 	$(NULL)
 
 EXTRA_DIST = \
-	vino-preferences.glade \
+	vino-preferences.ui \
 	vino-preferences.desktop.in \
 	webservices \
 	$(NULL)

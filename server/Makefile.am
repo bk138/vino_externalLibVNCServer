@@ -19,7 +19,7 @@ INCLUDES = \
 	-DVINO_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
 	-DVINO_ICONDIR=\""$(datadir)/pixmaps\"" \
 	-DVINO_CLIENTDIR=\""$(datadir)/vino"\" \
-	-DVINO_GLADEDIR=\""$(datadir)/vino"\" \
+	-DVINO_UIDIR=\""$(datadir)/vino"\" \
 	$(NULL)
 
 libexec_PROGRAMS = vino-server
@@ -167,11 +167,11 @@ else
 install-data-local:
 endif
 
-gladedir   = $(datadir)/vino
-glade_DATA = vino-prompt.glade
+uidir   = $(datadir)/vino
+ui_DATA = vino-prompt.ui
 
 EXTRA_DIST = \
-	vino-prompt.glade \
+	vino-prompt.ui \
 	vino-server.schemas.in \
 	vino-marshal.list \
 	vino-server.desktop.in.in \

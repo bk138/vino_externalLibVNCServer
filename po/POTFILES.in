@@ -4,13 +4,13 @@ capplet/sexy-url-label.c
 capplet/vino-message-box.c
 capplet/vino-preferences.c
 capplet/vino-preferences.desktop.in.in
-capplet/vino-preferences.glade
+[type: gettext/glade]capplet/vino-preferences.ui
 server/vino-dbus-listener.c
 server/vino-main.c
 server/vino-mdns.c
 server/vino-prefs.c
 server/vino-prompt.c
-server/vino-prompt.glade
+[type: gettext/glade]server/vino-prompt.ui
 server/vino-server.c
 server/vino-server.desktop.in.in
 server/vino-server.schemas.in

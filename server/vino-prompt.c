@@ -25,7 +25,6 @@
 #include "vino-prompt.h"
 
 #include <gtk/gtk.h>
-#include <glade/glade.h>
 #include "vino-util.h"
 #include "vino-enums.h"
 #include "vino-marshal.h"
@@ -264,11 +263,12 @@ vino_prompt_handle_dialog_response (VinoPrompt *prompt,
 
 static void
 vino_prompt_setup_icons (VinoPrompt *prompt,
-			 GladeXML   *xml)
+			 GtkBuilder *builder)
 {
 #define ICON_SIZE_STANDARD 48
 
-  prompt->priv->sharing_icon = glade_xml_get_widget (xml, "sharing_icon");
+  prompt->priv->sharing_icon = GTK_WIDGET (gtk_builder_get_object (builder,
+                                                                   "sharing_icon"));
   g_assert (prompt->priv->sharing_icon != NULL);
 
   gtk_window_set_icon_name (GTK_WINDOW (prompt->priv->dialog),
@@ -282,44 +282,46 @@ vino_prompt_setup_icons (VinoPrompt *prompt,
 static gboolean
 vino_prompt_setup_dialog (VinoPrompt *prompt)
 {
-#define VINO_GLADE_FILE "vino-prompt.glade"
+#define VINO_UI_FILE "vino-prompt.ui"
 
-  GladeXML   *xml;
-  const char *glade_file;
+  GtkBuilder *builder;
+  const char *ui_file;
   GtkWidget  *help_button;
-      
-  if (g_file_test (VINO_GLADE_FILE, G_FILE_TEST_EXISTS))
-    glade_file = VINO_GLADE_FILE;
+  GError     *error = NULL;
+
+  if (g_file_test (VINO_UI_FILE, G_FILE_TEST_EXISTS))
+    ui_file = VINO_UI_FILE;
   else
-    glade_file = VINO_GLADEDIR "/" VINO_GLADE_FILE;
+    ui_file = VINO_UIDIR "/" VINO_UI_FILE;
 
-  xml = glade_xml_new (glade_file, "vino_dialog", NULL);
-  if (!xml)
-    {
-      g_warning ("Unable to locate glade file '%s'", glade_file);
-      return FALSE;
-    }
+  builder = gtk_builder_new ();
+  if (!gtk_builder_add_from_file (builder, ui_file, &error))
+  {
+    g_warning ("Unable to locate ui file '%s'", ui_file);
+    g_error_free (error);
+    return FALSE;
+  }
 
-  prompt->priv->dialog = glade_xml_get_widget (xml, "vino_dialog");
+  prompt->priv->dialog = GTK_WIDGET (gtk_builder_get_object (builder, "vino_dialog"));
   g_assert (prompt->priv->dialog != NULL);
 
   g_signal_connect_swapped (prompt->priv->dialog, "response",
 			    G_CALLBACK (vino_prompt_handle_dialog_response), prompt);
 
-  vino_prompt_setup_icons (prompt, xml);
+  vino_prompt_setup_icons (prompt, builder);
 
-  prompt->priv->host_label = glade_xml_get_widget (xml, "host_label");
+  prompt->priv->host_label = GTK_WIDGET (gtk_builder_get_object (builder, "host_label"));
   g_assert (prompt->priv->host_label != NULL);
 
-  help_button = glade_xml_get_widget (xml, "help_button");
+  help_button = GTK_WIDGET (gtk_builder_get_object (builder, "help_button"));
   g_assert (help_button != NULL);
   gtk_widget_hide (help_button);
 
-  g_object_unref (xml);
+  g_object_unref (builder);
 
   return TRUE;
 
-#undef VINO_GLADE_FILE
+#undef VINO_UI_FILE
 }
 
 static gboolean

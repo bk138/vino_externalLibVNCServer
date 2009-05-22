@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<glade-interface>
+<interface>
   <!-- interface-requires gtk+ 2.16 -->
   <!-- interface-naming-policy toplevel-contextual -->
-  <widget class="GtkDialog" id="vino_dialog">
+  <object class="GtkDialog" id="vino_dialog">
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Remote Desktop Preferences</property>
     <property name="resizable">False</property>
@@ -11,39 +11,39 @@
     <property name="type_hint">dialog</property>
     <property name="has_separator">False</property>
     <child internal-child="vbox">
-      <widget class="GtkVBox" id="dialog-vbox1">
+      <object class="GtkVBox" id="dialog-vbox1">
         <property name="visible">True</property>
         <property name="spacing">2</property>
         <child>
-          <widget class="GtkVBox" id="vbox1">
+          <object class="GtkVBox" id="vbox1">
             <property name="visible">True</property>
             <property name="border_width">6</property>
             <property name="spacing">18</property>
             <child>
-              <widget class="GtkVBox" id="sharing_box">
+              <object class="GtkVBox" id="sharing_box">
                 <property name="visible">True</property>
                 <property name="spacing">3</property>
                 <child>
-                  <widget class="GtkLabel" id="label1">
+                  <object class="GtkLabel" id="label1">
                     <property name="visible">True</property>
                     <property name="xalign">0</property>
                     <property name="label" translatable="yes">&lt;b&gt;Sharing&lt;/b&gt;</property>
                     <property name="use_markup">True</property>
-                  </widget>
+                  </object>
                   <packing>
                     <property name="position">0</property>
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkHBox" id="writability_warning">
+                  <object class="GtkHBox" id="writability_warning">
                     <property name="no_show_all">True</property>
                     <property name="border_width">3</property>
                     <property name="spacing">6</property>
                     <child>
-                      <widget class="GtkLabel" id="label6">
+                      <object class="GtkLabel" id="label6">
                         <property name="visible">True</property>
                         <property name="label"> </property>
-                      </widget>
+                      </object>
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">False</property>
@@ -51,40 +51,40 @@
                       </packing>
                     </child>
                     <child>
-                      <widget class="GtkImage" id="image1">
+                      <object class="GtkImage" id="image1">
                         <property name="visible">True</property>
                         <property name="stock">gtk-dialog-warning</property>
-                      </widget>
+                      </object>
                       <packing>
                         <property name="expand">False</property>
                         <property name="position">1</property>
                       </packing>
                     </child>
                     <child>
-                      <widget class="GtkLabel" id="label8">
+                      <object class="GtkLabel" id="label8">
                         <property name="visible">True</property>
                         <property name="label" translatable="yes">&lt;i&gt;Some of these preferences are locked down&lt;/i&gt;</property>
                         <property name="use_markup">True</property>
-                      </widget>
+                      </object>
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">False</property>
                         <property name="position">2</property>
                       </packing>
                     </child>
-                  </widget>
+                  </object>
                   <packing>
                     <property name="position">1</property>
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkHBox" id="hbox1">
+                  <object class="GtkHBox" id="hbox1">
                     <property name="visible">True</property>
                     <child>
-                      <widget class="GtkLabel" id="label2">
+                      <object class="GtkLabel" id="label2">
                         <property name="visible">True</property>
                         <property name="label">   </property>
-                      </widget>
+                      </object>
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">False</property>
@@ -92,33 +92,33 @@
                       </packing>
                     </child>
                     <child>
-                      <widget class="GtkCheckButton" id="allowed_toggle">
+                      <object class="GtkCheckButton" id="allowed_toggle">
                         <property name="label" translatable="yes">Allow other users to _view your desktop</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="has_tooltip">True</property>
-                        <property name="tooltip" translatable="yes">Your desktop will be shared</property>
+                        <property name="tooltip-text" translatable="yes">Your desktop will be shared</property>
                         <property name="use_underline">True</property>
                         <property name="draw_indicator">True</property>
-                      </widget>
+                      </object>
                       <packing>
                         <property name="position">1</property>
                       </packing>
                     </child>
-                  </widget>
+                  </object>
                   <packing>
                     <property name="position">2</property>
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkHBox" id="hbox2">
+                  <object class="GtkHBox" id="hbox2">
                     <property name="visible">True</property>
                     <child>
-                      <widget class="GtkLabel" id="label3">
+                      <object class="GtkLabel" id="label3">
                         <property name="visible">True</property>
                         <property name="label">       </property>
-                      </widget>
+                      </object>
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">False</property>
@@ -126,33 +126,33 @@
                       </packing>
                     </child>
                     <child>
-                      <widget class="GtkCheckButton" id="view_only_toggle">
+                      <object class="GtkCheckButton" id="view_only_toggle">
                         <property name="label" translatable="yes">_Allow other users to control your desktop</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="has_tooltip">True</property>
-                        <property name="tooltip" translatable="yes">Remote users are able to control your mouse and keyboard</property>
+                        <property name="tooltip-text" translatable="yes">Remote users are able to control your mouse and keyboard</property>
                         <property name="use_underline">True</property>
                         <property name="draw_indicator">True</property>
-                      </widget>
+                      </object>
                       <packing>
                         <property name="position">1</property>
                       </packing>
                     </child>
-                  </widget>
+                  </object>
                   <packing>
                     <property name="position">3</property>
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkHBox" id="message_box">
+                  <object class="GtkHBox" id="message_box">
                     <property name="visible">True</property>
                     <child>
-                      <widget class="GtkLabel" id="label14">
+                      <object class="GtkLabel" id="label14">
                         <property name="visible">True</property>
                         <property name="label">       </property>
-                      </widget>
+                      </object>
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">False</property>
@@ -160,77 +160,77 @@
                       </packing>
                     </child>
                     <child>
-                      <widget class="GtkEventBox" id="event_box">
+                      <object class="GtkEventBox" id="event_box">
                         <property name="visible">True</property>
                         <child>
                           <placeholder/>
                         </child>
-                      </widget>
+                      </object>
                       <packing>
                         <property name="position">1</property>
                       </packing>
                     </child>
-                  </widget>
+                  </object>
                   <packing>
                     <property name="position">4</property>
                   </packing>
                 </child>
-              </widget>
+              </object>
               <packing>
                 <property name="position">0</property>
               </packing>
             </child>
             <child>
-              <widget class="GtkVBox" id="security_box">
+              <object class="GtkVBox" id="security_box">
                 <property name="visible">True</property>
                 <property name="spacing">3</property>
                 <child>
-                  <widget class="GtkLabel" id="label4">
+                  <object class="GtkLabel" id="label4">
                     <property name="visible">True</property>
                     <property name="xalign">0</property>
                     <property name="label" translatable="yes">&lt;b&gt;Security&lt;/b&gt;</property>
                     <property name="use_markup">True</property>
-                  </widget>
+                  </object>
                   <packing>
                     <property name="position">0</property>
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkHBox" id="hbox3">
+                  <object class="GtkHBox" id="hbox3">
                     <property name="visible">True</property>
                     <child>
-                      <widget class="GtkCheckButton" id="prompt_enabled_toggle">
+                      <object class="GtkCheckButton" id="prompt_enabled_toggle">
                         <property name="label" translatable="yes">_You must confirm each access to this machine</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="has_tooltip">True</property>
-                        <property name="tooltip" translatable="yes">You will be queried to allow or to refuse every incoming connection</property>
+                        <property name="tooltip-text" translatable="yes">You will be queried to allow or to refuse every incoming connection</property>
                         <property name="use_underline">True</property>
                         <property name="draw_indicator">True</property>
-                      </widget>
+                      </object>
                       <packing>
                         <property name="padding">12</property>
                         <property name="position">0</property>
                       </packing>
                     </child>
-                  </widget>
+                  </object>
                   <packing>
                     <property name="position">1</property>
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkHBox" id="hbox4">
+                  <object class="GtkHBox" id="hbox4">
                     <property name="visible">True</property>
                     <child>
-                      <widget class="GtkCheckButton" id="password_toggle">
+                      <object class="GtkCheckButton" id="password_toggle">
                         <property name="label" translatable="yes">_Require the user to enter this password:</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="use_underline">True</property>
                         <property name="draw_indicator">True</property>
-                      </widget>
+                      </object>
                       <packing>
                         <property name="expand">False</property>
                         <property name="padding">12</property>
@@ -238,76 +238,76 @@
                       </packing>
                     </child>
                     <child>
-                      <widget class="GtkEntry" id="password_entry">
+                      <object class="GtkEntry" id="password_entry">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="has_tooltip">True</property>
-                        <property name="tooltip" translatable="yes">Maximum size: 8 characters</property>
+                        <property name="tooltip-text" translatable="yes">Maximum size: 8 characters</property>
                         <property name="max_length">8</property>
                         <property name="visibility">False</property>
-                      </widget>
+                      </object>
                       <packing>
                         <property name="position">1</property>
                       </packing>
                     </child>
-                  </widget>
+                  </object>
                   <packing>
                     <property name="position">2</property>
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkHBox" id="hbox7">
+                  <object class="GtkHBox" id="hbox7">
                     <property name="visible">True</property>
                     <child>
-                      <widget class="GtkCheckButton" id="use_upnp_toggle">
+                      <object class="GtkCheckButton" id="use_upnp_toggle">
                         <property name="label" translatable="yes">_Configure network automatically to accept connections</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="has_tooltip">True</property>
-                        <property name="tooltip" translatable="yes">The router must have the UPnP feature enabled</property>
+                        <property name="tooltip-text" translatable="yes">The router must have the UPnP feature enabled</property>
                         <property name="use_underline">True</property>
                         <property name="draw_indicator">True</property>
-                      </widget>
+                      </object>
                       <packing>
                         <property name="padding">12</property>
                         <property name="position">0</property>
                       </packing>
                     </child>
-                  </widget>
+                  </object>
                   <packing>
                     <property name="position">3</property>
                   </packing>
                 </child>
-              </widget>
+              </object>
               <packing>
                 <property name="position">1</property>
               </packing>
             </child>
             <child>
-              <widget class="GtkVBox" id="notification_box">
+              <object class="GtkVBox" id="notification_box">
                 <property name="visible">True</property>
                 <property name="spacing">3</property>
                 <child>
-                  <widget class="GtkLabel" id="label12">
+                  <object class="GtkLabel" id="label12">
                     <property name="visible">True</property>
                     <property name="xalign">0</property>
                     <property name="label" translatable="yes">&lt;b&gt;Notification Area&lt;/b&gt;</property>
                     <property name="use_markup">True</property>
-                  </widget>
+                  </object>
                   <packing>
                     <property name="position">0</property>
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkHBox" id="hbox8">
+                  <object class="GtkHBox" id="hbox8">
                     <property name="visible">True</property>
                     <child>
-                      <widget class="GtkVBox" id="vbox2">
+                      <object class="GtkVBox" id="vbox2">
                         <property name="visible">True</property>
                         <property name="spacing">3</property>
                         <child>
-                          <widget class="GtkRadioButton" id="icon_always_radio">
+                          <object class="GtkRadioButton" id="icon_always_radio">
                             <property name="label" translatable="yes">Al_ways display an icon</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -315,13 +315,13 @@
                             <property name="use_underline">True</property>
                             <property name="active">True</property>
                             <property name="draw_indicator">True</property>
-                          </widget>
+                          </object>
                           <packing>
                             <property name="position">0</property>
                           </packing>
                         </child>
                         <child>
-                          <widget class="GtkRadioButton" id="icon_client_radio">
+                          <object class="GtkRadioButton" id="icon_client_radio">
                             <property name="label" translatable="yes">_Only display an icon when there is someone connected</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -330,13 +330,13 @@
                             <property name="active">True</property>
                             <property name="draw_indicator">True</property>
                             <property name="group">icon_always_radio</property>
-                          </widget>
+                          </object>
                           <packing>
                             <property name="position">1</property>
                           </packing>
                         </child>
                         <child>
-                          <widget class="GtkRadioButton" id="icon_never_radio">
+                          <object class="GtkRadioButton" id="icon_never_radio">
                             <property name="label" translatable="yes">_Never display an icon</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -345,69 +345,71 @@
                             <property name="active">True</property>
                             <property name="draw_indicator">True</property>
                             <property name="group">icon_always_radio</property>
-                          </widget>
+                          </object>
                           <packing>
                             <property name="position">2</property>
                           </packing>
                         </child>
-                      </widget>
+                      </object>
                       <packing>
                         <property name="padding">12</property>
                         <property name="position">0</property>
                       </packing>
                     </child>
-                  </widget>
+                  </object>
                   <packing>
                     <property name="position">1</property>
                   </packing>
                 </child>
-              </widget>
+              </object>
               <packing>
                 <property name="position">2</property>
               </packing>
             </child>
-          </widget>
+          </object>
           <packing>
             <property name="position">1</property>
           </packing>
         </child>
         <child internal-child="action_area">
-          <widget class="GtkHButtonBox" id="dialog-action_area1">
+          <object class="GtkHButtonBox" id="dialog-action_area1">
             <property name="visible">True</property>
             <child>
-              <widget class="GtkButton" id="button1">
+              <object class="GtkButton" id="button1">
                 <property name="label">gtk-help</property>
-                <property name="response_id">-11</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
-              </widget>
+              </object>
               <packing>
                 <property name="position">0</property>
               </packing>
             </child>
             <child>
-              <widget class="GtkButton" id="button2">
+              <object class="GtkButton" id="button2">
                 <property name="label">gtk-close</property>
-                <property name="response_id">-7</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
-              </widget>
+              </object>
               <packing>
                 <property name="position">1</property>
               </packing>
             </child>
-          </widget>
+          </object>
           <packing>
             <property name="expand">False</property>
             <property name="pack_type">end</property>
             <property name="position">0</property>
           </packing>
         </child>
-      </widget>
+      </object>
     </child>
-  </widget>
-</glade-interface>
+    <action-widgets>
+      <action-widget response="-11">button1</action-widget>
+      <action-widget response="-7">button2</action-widget>
+    </action-widgets>
+  </object>
+</interface>

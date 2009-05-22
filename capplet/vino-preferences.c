@@ -25,7 +25,6 @@
 #include <config.h>
 #include <string.h>
 #include <gtk/gtk.h>
-#include <glade/glade.h>
 #include <gconf/gconf-client.h>
 #include <dbus/dbus-glib.h>
 #include <glib/gi18n.h>
@@ -56,7 +55,7 @@
 #define VINO_DBUS_INTERFACE "org.gnome.VinoScreen"
 
 typedef struct {
-  GladeXML    *xml;
+  GtkBuilder  *builder;
   GConfClient *client;
 
   GtkWidget   *dialog;
@@ -233,7 +232,8 @@ vino_preferences_dialog_setup_allowed_toggle (VinoPreferencesDialog *dialog)
 {
   gboolean allowed;
 
-  dialog->allowed_toggle = glade_xml_get_widget (dialog->xml, "allowed_toggle");
+  dialog->allowed_toggle = GTK_WIDGET (gtk_builder_get_object (dialog->builder,
+                                                               "allowed_toggle"));
   g_assert (dialog->allowed_toggle != NULL);
 
   allowed = gconf_client_get_bool (dialog->client, VINO_PREFS_ENABLED, NULL);
@@ -293,7 +293,8 @@ vino_preferences_dialog_setup_prompt_enabled_toggle (VinoPreferencesDialog *dial
 {
   gboolean prompt_enabled;
 
-  dialog->prompt_enabled_toggle = glade_xml_get_widget (dialog->xml, "prompt_enabled_toggle");
+  dialog->prompt_enabled_toggle = GTK_WIDGET (gtk_builder_get_object (dialog->builder,
+                                                                      "prompt_enabled_toggle"));
   g_assert (dialog->prompt_enabled_toggle != NULL);
 
   prompt_enabled = gconf_client_get_bool (dialog->client, VINO_PREFS_PROMPT_ENABLED, NULL);
@@ -351,7 +352,8 @@ vino_preferences_dialog_setup_view_only_toggle (VinoPreferencesDialog *dialog)
 {
   gboolean view_only;
 
-  dialog->view_only_toggle = glade_xml_get_widget (dialog->xml, "view_only_toggle");
+  dialog->view_only_toggle = GTK_WIDGET (gtk_builder_get_object (dialog->builder,
+                                                                 "view_only_toggle"));
   g_assert (dialog->view_only_toggle != NULL);
 
   view_only = gconf_client_get_bool (dialog->client, VINO_PREFS_VIEW_ONLY, NULL);
@@ -418,11 +420,14 @@ vino_preferences_dialog_setup_icon_visibility (VinoPreferencesDialog *dialog)
 {
   gchar *value;
 
-  dialog->icon_always_radio = glade_xml_get_widget (dialog->xml, "icon_always_radio");
+  dialog->icon_always_radio = GTK_WIDGET (gtk_builder_get_object (dialog->builder,
+                                                                  "icon_always_radio"));
   g_assert (dialog->icon_always_radio != NULL);
-  dialog->icon_client_radio = glade_xml_get_widget (dialog->xml, "icon_client_radio");
+  dialog->icon_client_radio = GTK_WIDGET (gtk_builder_get_object (dialog->builder,
+                                                                  "icon_client_radio"));
   g_assert (dialog->icon_client_radio != NULL);
-  dialog->icon_never_radio = glade_xml_get_widget (dialog->xml, "icon_never_radio");
+  dialog->icon_never_radio = GTK_WIDGET (gtk_builder_get_object (dialog->builder,
+                                                                 "icon_never_radio"));
   g_assert (dialog->icon_never_radio != NULL);
 
   value = gconf_client_get_string (dialog->client, VINO_PREFS_ICON_VISIBILITY, NULL);
@@ -542,7 +547,8 @@ vino_preferences_dialog_get_use_password (VinoPreferencesDialog *dialog)
 static void
 vino_preferences_dialog_setup_password_toggle (VinoPreferencesDialog *dialog)
 {
-  dialog->password_toggle = glade_xml_get_widget (dialog->xml, "password_toggle");
+  dialog->password_toggle = GTK_WIDGET (gtk_builder_get_object (dialog->builder,
+                                                                "password_toggle"));
   g_assert (dialog->password_toggle != NULL);
 
   dialog->use_password = vino_preferences_dialog_get_use_password (dialog);
@@ -646,7 +652,8 @@ vino_preferences_dialog_setup_password_entry (VinoPreferencesDialog *dialog)
   char     *password;
   gboolean  password_in_keyring;
 
-  dialog->password_entry = glade_xml_get_widget (dialog->xml, "password_entry");
+  dialog->password_entry = GTK_WIDGET (gtk_builder_get_object (dialog->builder,
+                                                               "password_entry"));
   g_assert (dialog->password_entry != NULL);
   
   password_in_keyring = TRUE;
@@ -742,7 +749,8 @@ vino_preferences_dialog_setup_use_upnp_toggle (VinoPreferencesDialog *dialog)
 {
   gboolean use_upnp;
 
-  dialog->use_upnp_toggle = glade_xml_get_widget (dialog->xml, "use_upnp_toggle");
+  dialog->use_upnp_toggle = GTK_WIDGET (gtk_builder_get_object (dialog->builder,
+                                                                "use_upnp_toggle"));
   g_assert (dialog->use_upnp_toggle != NULL);
 
   use_upnp = gconf_client_get_bool (dialog->client, VINO_PREFS_USE_UPNP, NULL);
@@ -1017,7 +1025,7 @@ vino_preferences_dialog_setup_message_box (VinoPreferencesDialog *dialog)
 {
   GtkWidget *event_box;
 
-  event_box = glade_xml_get_widget (dialog->xml, "event_box");
+  event_box = GTK_WIDGET (gtk_builder_get_object (dialog->builder, "event_box"));
   g_assert (event_box != NULL);
 
   dialog->message = vino_message_box_new ();
@@ -1059,27 +1067,28 @@ vino_preferences_start_listening (VinoPreferencesDialog *dialog)
 static gboolean
 vino_preferences_dialog_init (VinoPreferencesDialog *dialog)
 {
-#define VINO_GLADE_FILE "vino-preferences.glade"
+#define VINO_UI_FILE "vino-preferences.ui"
 
-  const char *glade_file;
+  const char *ui_file;
   gboolean    allowed;
   GError     *error = NULL;
 
   dialog->expected_listeners = N_LISTENERS;
 
-  if (g_file_test (VINO_GLADE_FILE, G_FILE_TEST_EXISTS))
-    glade_file = VINO_GLADE_FILE;
+  if (g_file_test (VINO_UI_FILE, G_FILE_TEST_EXISTS))
+    ui_file = VINO_UI_FILE;
   else
-    glade_file = VINO_GLADEDIR "/" VINO_GLADE_FILE;
+    ui_file = VINO_UIDIR "/" VINO_UI_FILE;
 
-  dialog->xml = glade_xml_new (glade_file, "vino_dialog", NULL);
-  if (!dialog->xml)
+  dialog->builder = gtk_builder_new ();
+  if (!gtk_builder_add_from_file (dialog->builder, ui_file, &error))
     {
-      g_warning ("Unable to locate glade file '%s'", glade_file);
+      g_warning ("Unable to locate ui file '%s'", ui_file);
+      g_error_free (error);
       return FALSE;
     }
 
-  dialog->dialog = glade_xml_get_widget (dialog->xml, "vino_dialog");
+  dialog->dialog = GTK_WIDGET (gtk_builder_get_object (dialog->builder, "vino_dialog"));
   g_assert (dialog->dialog != NULL);
 
   g_signal_connect (dialog->dialog, "response",
@@ -1091,7 +1100,8 @@ vino_preferences_dialog_init (VinoPreferencesDialog *dialog)
   dialog->client = gconf_client_get_default ();
   gconf_client_add_dir (dialog->client, VINO_PREFS_DIR, GCONF_CLIENT_PRELOAD_ONELEVEL, NULL);
 
-  dialog->writability_warning = glade_xml_get_widget (dialog->xml, "writability_warning");
+  dialog->writability_warning = GTK_WIDGET (gtk_builder_get_object (dialog->builder,
+                                                                    "writability_warning"));
   g_assert (dialog->writability_warning != NULL);
   gtk_widget_hide (dialog->writability_warning);
 
@@ -1108,6 +1118,7 @@ vino_preferences_dialog_init (VinoPreferencesDialog *dialog)
 
   vino_preferences_dialog_update_for_allowed (dialog, allowed);
 
+  error = NULL;
   dialog->connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
   if (!dialog->connection)
     {
@@ -1128,7 +1139,7 @@ vino_preferences_dialog_init (VinoPreferencesDialog *dialog)
 
   return TRUE;
 
-#undef VINO_GLADE_FILE  
+#undef VINO_UI_FILE  
 }
 
 static void
@@ -1156,9 +1167,9 @@ vino_preferences_dialog_finalize (VinoPreferencesDialog *dialog)
       dialog->client = NULL;
     }
 
-  if (dialog->xml)
-    g_object_unref (dialog->xml);
-  dialog->xml = NULL;
+  if (dialog->builder)
+    g_object_unref (dialog->builder);
+  dialog->builder = NULL;
 
 #ifdef VINO_ENABLE_LIBUNIQUE
   if (dialog->app)
