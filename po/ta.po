@@ -4,20 +4,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
 # Jayaradha N <jaya@pune.redhat.com>, 2004.
-# Dr.T.Vasudevan <agnihot3@gmail.com>, 2007, 2008.
+# Dr.T.Vasudevan <agnihot3@gmail.com>, 2007, 2008, 2009.
 # Dr.T.vasudevan <agnihot3@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD.ta\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&component=Preferences Dialog\n"
 "POT-Creation-Date: 2009-03-09 07:07+0000\n"
-"PO-Revision-Date: 2009-03-09 13:24+0530\n"
-"Last-Translator: \n"
-"Language-Team:  <en@li.org>\n"
+"PO-Revision-Date: 2009-05-23 19:21+0530\n"
+"Last-Translator: Dr.T.Vasudevan <agnihot3@gmail.com>\n"
+"Language-Team: Tamil <kde-i18n-doc@lists.kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.2\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
 
@@ -25,7 +25,7 @@ msgstr ""
 #: ../capplet/sexy-url-label.c:183
 #| msgid "Send this command by email"
 msgid "_Send address by email"
-msgstr "மின்னஞ்சல் வழியாக அனுப்பவும் (_S)"
+msgstr "மின்னஞ்சல் வழியாக முகவரியை அனுப்பவும் (_S)"
 
 #. Copy Link Address
 #: ../capplet/sexy-url-label.c:195
