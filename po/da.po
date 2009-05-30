@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-15 13:49+0100\n"
-"PO-Revision-Date: 2009-02-15 12:37+0100\n"
+"POT-Creation-Date: 2009-05-30 22:11+0200\n"
+"PO-Revision-Date: 2009-05-15 00:38+0200\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -32,14 +32,14 @@ msgstr "_Send adresse via e-post"
 #. Copy Link Address
 #: ../capplet/sexy-url-label.c:195
 msgid "_Copy address to clipboard"
-msgstr "_Kopiér adresse til klippebord"
+msgstr "_Kopiér adresse til udklipsholderen"
 
 #: ../capplet/vino-message-box.c:103
 #, c-format
 msgid "There was an error showing the URL \"%s\""
 msgstr "Der opstod en fejl ved visning af URL'en \"%s\""
 
-#: ../capplet/vino-preferences.c:198 ../capplet/vino-preferences.c:954
+#: ../capplet/vino-preferences.c:198 ../capplet/vino-preferences.c:989
 msgid "Checking the connectivity of this machine..."
 msgstr "Kontrollerer denne maskines forbindelsesevner..."
 
@@ -52,21 +52,21 @@ msgstr ""
 "Der opstod en fejl ved visning af hjælp:\n"
 "%s"
 
-#: ../capplet/vino-preferences.c:839
+#: ../capplet/vino-preferences.c:828
 msgid "Your desktop is only reachable over the local network."
 msgstr "Dit skrivebord kan kun nås over det lokale netværk."
 
-#: ../capplet/vino-preferences.c:840 ../capplet/vino-preferences.c:890
+#: ../capplet/vino-preferences.c:851 ../capplet/vino-preferences.c:922
 #, c-format
 msgid "Others can access your computer using the address %s."
 msgstr "Andre kan tilgå din computer ved brug af adressen %s."
 
-#: ../capplet/vino-preferences.c:940
+#: ../capplet/vino-preferences.c:975
 msgid "Nobody can access your desktop."
 msgstr "Ingen kan tilgå dit skrivebord."
 
-#: ../capplet/vino-preferences.c:1081 ../server/vino-dbus-listener.c:501
-#: ../server/vino-server.c:156 ../server/vino-server.c:187
+#: ../capplet/vino-preferences.c:1116 ../server/vino-server.c:160
+#: ../server/vino-server.c:191
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Kunne ikke oprette forbindelse til bus: %s\n"
@@ -154,23 +154,7 @@ msgstr "_Påkræv at brugeren indtaster denne adgangskode:"
 msgid "_You must confirm each access to this machine"
 msgstr "_Du skal godkende hver tilgang til denne maskine"
 
-#: ../server/vino-dbus-listener.c:281 ../server/vino-dbus-listener.c:311
-#: ../server/vino-dbus-listener.c:352
-#, c-format
-msgid "Out of memory handling '%s' message"
-msgstr "Ikke mere fri hukommelse ved behandling af \"%s\"-signal"
-
-#: ../server/vino-dbus-listener.c:458
-#, c-format
-msgid "Out of memory registering object path '%s'"
-msgstr "Ikke mere fri hukommelse ved registrering af objektsti \"%s\""
-
-#: ../server/vino-dbus-listener.c:537
-#, c-format
-msgid "Failed to acquire D-Bus name '%s'\n"
-msgstr "Kunne ikke hente D-Bus navn \"%s\"\n"
-
-#: ../server/vino-dbus-listener.c:545
+#: ../server/vino-dbus-listener.c:402
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "Fjernskrivebordsserveren kører allerede; afslutter...\n"
 
@@ -205,7 +189,7 @@ msgstr "vino-mdns:showusername"
 msgid "%s's remote desktop on %s"
 msgstr "%s's fjernskrivebord på %s"
 
-#: ../server/vino-prefs.c:579
+#: ../server/vino-prefs.c:606
 #, c-format
 msgid "Received signal %d, exiting...\n"
 msgstr "Modtog signalet %d, afslutter...\n"
@@ -336,17 +320,25 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:12
 msgid ""
+"If true, we will not use the XDamage extension of X.org. This extension does "
+"not work properly on some video drivers when using 3D effects. Disabling it "
+"will make vino work on these environments with a slower rendering as side "
+"effect."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:13
+msgid ""
 "If true, we will use UPNP protocol to automatically forward the port used by "
 "vino in the router."
 msgstr ""
 "Hvis sand, vil vi bruge UPNP-protokollen til automatisk at viderestille "
 "porten brugt af vino i ruteren."
 
-#: ../server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:14
 msgid "Listen an alternative port"
 msgstr "Lyt på en alternativ port"
 
-#: ../server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:15
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -359,31 +351,31 @@ msgstr ""
 "spurgt efter en adgangskode (som angives i nøglen vnc_password) før "
 "tilslutning, og \"none\" tillader enhver fjernbruger at tilslutte."
 
-#: ../server/vino-server.schemas.in.h:15
+#: ../server/vino-server.schemas.in.h:16
 msgid "Lock the screen when last user disconnect"
 msgstr "Lås skærmen når sidste bruger afkobler"
 
-#: ../server/vino-server.schemas.in.h:16
+#: ../server/vino-server.schemas.in.h:17
 msgid "Network interface for listening"
 msgstr "Netværksgrænseflade at lytte på"
 
-#: ../server/vino-server.schemas.in.h:17
+#: ../server/vino-server.schemas.in.h:18
 msgid "Only allow remote users to view the desktop"
 msgstr "Tillad kun at fjernbrugere kan se skrivebordet"
 
-#: ../server/vino-server.schemas.in.h:18
+#: ../server/vino-server.schemas.in.h:19
 msgid "Password required for \"vnc\" authentication"
 msgstr "Adgangskode påkrævet for \"vnc\"-godkendelse"
 
-#: ../server/vino-server.schemas.in.h:19
+#: ../server/vino-server.schemas.in.h:20
 msgid "Prompt the user before completing a connection"
 msgstr "Spørg brugeren før tilslutning"
 
-#: ../server/vino-server.schemas.in.h:20
+#: ../server/vino-server.schemas.in.h:21
 msgid "Require encryption"
 msgstr "Påkræv kryptering"
 
-#: ../server/vino-server.schemas.in.h:21
+#: ../server/vino-server.schemas.in.h:22
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -392,7 +384,7 @@ msgstr ""
 "Den adgangskode som fjernbrugeren bliver spurgt efter hvis \"vnc\"-"
 "godkendelsesmetoden benyttes. Den angivne adgangskode skal være base64-kodet."
 
-#: ../server/vino-server.schemas.in.h:22
+#: ../server/vino-server.schemas.in.h:23
 msgid ""
 "The port which the server will listen to if the 'use_alternative_port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
@@ -400,7 +392,7 @@ msgstr ""
 "Porten som serveren vil lytte på hvis \"use_alternative_port\"-nøglen er sat "
 "til sand. Gyldige værdier er i området fra 5000 til 50000."
 
-#: ../server/vino-server.schemas.in.h:23
+#: ../server/vino-server.schemas.in.h:24
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
 "\"always\" - The icon will be always there; \"client\" - You will see the "
@@ -412,7 +404,7 @@ msgstr ""
 "hvis nogen er forbundet, dette er standardopførsel, \"never\" - Ikonet vil "
 "aldrig vises."
 
-#: ../server/vino-server.schemas.in.h:24
+#: ../server/vino-server.schemas.in.h:25
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
@@ -422,16 +414,20 @@ msgstr ""
 "sendes til hvis brugeren klikker på adressen under indstillingerne for "
 "fjernskrivebord."
 
-#: ../server/vino-server.schemas.in.h:25
+#: ../server/vino-server.schemas.in.h:26
 msgid "When the status icon should be shown"
 msgstr "Hvornår statusikonet skal vises"
 
-#: ../server/vino-server.schemas.in.h:26
+#: ../server/vino-server.schemas.in.h:27
 msgid "When true, disable the background on receive valid session"
 msgstr ""
 "Når \"true\", vil baggrunden deaktiveres ved modtagelse af gyldig session"
 
-#: ../server/vino-server.schemas.in.h:27
+#: ../server/vino-server.schemas.in.h:28
+msgid "Whether we should disable the XDamage extension of X.org"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:29
 msgid "Whether we should use UPNP to forward the port in routers"
 msgstr "Om vi skal bruge UPNP-protokollen til at viderestille porten i rutere"
 
@@ -653,6 +649,15 @@ msgstr "VINO, version %s\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "FEJL: Du har ikke rettigheder til at ændre Vino-kodeord.\n"
+
+#~ msgid "Out of memory handling '%s' message"
+#~ msgstr "Ikke mere fri hukommelse ved behandling af \"%s\"-signal"
+
+#~ msgid "Out of memory registering object path '%s'"
+#~ msgstr "Ikke mere fri hukommelse ved registrering af objektsti \"%s\""
+
+#~ msgid "Failed to acquire D-Bus name '%s'\n"
+#~ msgstr "Kunne ikke hente D-Bus navn \"%s\"\n"
 
 #~ msgid "Set your remote desktop access preferences"
 #~ msgstr "Angiv indstillinger for fjernadgang til skrivebordet"
