@@ -25,6 +25,7 @@
 #include <telepathy-glib/connection.h>
 #include <telepathy-glib/dbus.h>
 #include <telepathy-glib/util.h>
+#include <telepathy-glib/contact.h>
 
 
 #include "vino-tube-server.h"
@@ -39,6 +40,7 @@ G_DEFINE_TYPE (VinoTubeServer, vino_tube_server, VINO_TYPE_SERVER);
 struct _VinoTubeServerPrivate
 {
   TpChannel *tp_channel;
+  gchar *alias;
   gchar *connection_path;
   gchar *tube_path;
   GHashTable *channel_properties;
@@ -79,6 +81,12 @@ static void
 vino_tube_server_finalize (GObject *object)
 {
   VinoTubeServer *server = VINO_TUBE_SERVER (object);
+
+  if (server->priv->alias != NULL)
+    {
+      g_free (server->priv->alias);
+      server->priv->alias = NULL;
+    }
 
   if (server->priv->connection_path != NULL)
     {
@@ -272,11 +280,37 @@ vino_tube_server_offer_cb (TpChannel *proxy,
 }
 
 static void
+vino_tube_server_factory_handle_cb (TpConnection *connection,
+    guint n_contacts,
+    TpContact * const *contacts,
+    guint n_failed,
+    const TpHandle *failed,
+    const GError *error,
+    gpointer self,
+    GObject *weak_object)
+{
+  VinoTubeServer *server = VINO_TUBE_SERVER (self);
+  TpContact *contact;
+
+  if (error != NULL)
+    {
+      g_printerr ("Impossible to get the contact name: %s\n", error->message);
+      return;
+    }
+
+  contact = contacts[0];
+  server->priv->alias = g_strdup (tp_contact_get_alias (contact));
+}
+
+static void
 vino_tube_server_channel_ready (TpChannel *channel,
     const GError *error,
-    gpointer server)
+    gpointer object)
 {
-  TpConnection *tp_connection;
+  VinoTubeServer *server = VINO_TUBE_SERVER (object);
+  TpConnection *connection;
+  TpHandle handle;
+  TpContactFeature features[] = { TP_CONTACT_FEATURE_ALIAS };
   GHashTable *parameters;
   GValue address = {0,};
   gint port;
@@ -290,7 +324,13 @@ vino_tube_server_channel_ready (TpChannel *channel,
       return;
     }
 
-  g_object_get (channel, "connection", &tp_connection, NULL);
+  connection = tp_channel_borrow_connection (server->priv->tp_channel);
+
+  handle = tp_channel_get_handle (server->priv->tp_channel, NULL);
+
+  tp_connection_get_contacts_by_handle (connection, 1, &handle, 1,
+      features, vino_tube_server_factory_handle_cb,
+      server, NULL, NULL);
 
   port = vino_server_get_port (VINO_SERVER (server));
 
@@ -311,7 +351,6 @@ vino_tube_server_channel_ready (TpChannel *channel,
 
   g_value_unset (&address);
   g_hash_table_destroy (parameters);
-  g_object_unref (tp_connection);
 }
 
 static void
@@ -386,4 +425,11 @@ vino_tube_server_share_with_tube (VinoTubeServer *server,
   g_object_unref (tp_dbus_daemon);
 
   return TRUE;
+}
+
+const gchar*
+vino_tube_server_get_alias (VinoTubeServer *self)
+{
+  VinoTubeServer *server = VINO_TUBE_SERVER (self);
+  return (const gchar*)server->priv->alias;
 }

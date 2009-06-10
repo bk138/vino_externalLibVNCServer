@@ -33,6 +33,10 @@
 #include "vino-enums.h"
 #include "vino-util.h"
 
+#ifdef HAVE_TELEPATHY_GLIB
+#include "vino-tube-server.h"
+#endif
+
 struct _VinoStatusIconPrivate
 {
   GtkMenu    *menu;
@@ -332,19 +336,44 @@ vino_status_icon_disconnect_confirm (VinoStatusIconNotify *a)
     return;
   }
 
-  if (client != NULL)
+#ifdef HAVE_TELEPATHY_GLIB
+  if (VINO_IS_TUBE_SERVER (icon->priv->server))
     {
-      /* Translators: %s is a hostname */
-      primary_msg   = g_strdup_printf (_("Are you sure you want to disconnect '%s'?"),
-                                       vino_client_get_hostname (client));
-      secondary_msg = g_strdup_printf (_("The remote user from '%s' will be disconnected. Are you sure?"),
-                                       vino_client_get_hostname (client));
+      /* Translators: %s is the alias of the telepathy contact */
+      primary_msg   = g_strdup_printf
+          (_("Are you sure you want to disconnect '%s'?"),
+          vino_tube_server_get_alias (VINO_TUBE_SERVER
+          (icon->priv->server)));
+      secondary_msg = g_strdup_printf
+          (_("The remote user '%s' will be disconnected. Are you sure?"),
+          vino_tube_server_get_alias (VINO_TUBE_SERVER
+          (icon->priv->server)));
     }
   else
     {
-      primary_msg   = g_strdup (_("Are you sure you want to disconnect all clients?"));
-      secondary_msg = g_strdup (_("All remote users will be disconnected. Are you sure?"));
+#endif
+
+  if (client != NULL)
+    {
+      /* Translators: %s is a hostname */
+      primary_msg   = g_strdup_printf
+          (_("Are you sure you want to disconnect '%s'?"),
+          vino_client_get_hostname (client));
+      secondary_msg = g_strdup_printf
+          (_("The remote user from '%s' will be disconnected. Are you sure?"),
+          vino_client_get_hostname (client));
     }
+  else
+    {
+      primary_msg   = g_strdup
+          (_("Are you sure you want to disconnect all clients?"));
+      secondary_msg = g_strdup
+          (_("All remote users will be disconnected. Are you sure?"));
+    }
+
+#ifdef HAVE_TELEPATHY_GLIB
+    }
+#endif
 
   icon->priv->disconnect_dialog = gtk_message_dialog_new (NULL,
                                                           GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -419,8 +448,18 @@ vino_status_icon_popup_menu (GtkStatusIcon *status_icon,
       a->icon   = icon;
       a->client = client;
 
+#ifdef HAVE_TELEPATHY_GLIB
+      if (VINO_IS_TUBE_SERVER (icon->priv->server))
+        /* Translators: %s is the alias of the telepathy contact */
+        str = g_strdup_printf (_("Disconnect %s"),
+            vino_tube_server_get_alias (VINO_TUBE_SERVER
+            (icon->priv->server)));
+      else
+#endif
+
       /* Translators: %s is a hostname */
-      str = g_strdup_printf (_("Disconnect %s"), vino_client_get_hostname (client));
+      str = g_strdup_printf (_("Disconnect %s"),
+          vino_client_get_hostname (client));
 
       item  = gtk_image_menu_item_new_with_label (str);
       gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item),
@@ -599,18 +638,40 @@ vino_status_icon_show_new_client_notification (gpointer user_data)
       icon->priv->new_client_notification = NULL;
     }
 
-  if (vino_server_get_view_only (icon->priv->server))
+#ifdef HAVE_TELEPATHY_GLIB
+  if (VINO_IS_TUBE_SERVER (icon->priv->server))
     {
-      summary = _("Another user is viewing your desktop");
-      body = g_strdup_printf (_("A user on the computer '%s' is remotely viewing your desktop."),
-                              vino_client_get_hostname (client));
+       /* Translators: %s is the alias of the telepathy contact */
+      summary = _("Another user is controlling your desktop");
+      body = g_strdup_printf
+          (_("'%s' is remotely controlling your desktop."),
+          vino_tube_server_get_alias (VINO_TUBE_SERVER
+          (icon->priv->server)));
     }
   else
     {
-      summary = _("Another user is controlling your desktop");
-      body = g_strdup_printf (_("A user on the computer '%s' is remotely controlling your desktop."),
-                              vino_client_get_hostname (client));
+#endif
+
+  if (vino_server_get_view_only (icon->priv->server))
+    {
+      /* Translators: %s is a hostname */
+      summary = _("Another user is viewing your desktop");
+      body = g_strdup_printf
+          (_("A user on the computer '%s' is remotely viewing your desktop."),
+          vino_client_get_hostname (client));
     }
+  else
+    {
+      /* Translators: %s is a hostname */
+      summary = _("Another user is controlling your desktop");
+      body = g_strdup_printf
+          (_("A user on the computer '%s' is remotely controlling "
+          "your desktop."), vino_client_get_hostname (client));
+    }
+
+#ifdef HAVE_TELEPATHY_GLIB
+    }
+#endif
 
   icon->priv->new_client_notification =
     notify_notification_new_with_status_icon (summary,
