@@ -24,7 +24,6 @@
 #define __VINO_TUBE_SERVER_H__
 
 #include <glib-object.h>
-
 #include "vino-server.h"
 
 G_BEGIN_DECLS
@@ -63,6 +62,7 @@ GType vino_tube_server_get_type (void) G_GNUC_CONST;
 gboolean vino_tube_server_share_with_tube (VinoTubeServer *server,
      GError **error);
 const gchar* vino_tube_server_get_alias (VinoTubeServer *self);
+const gchar* vino_tube_server_get_avatar_filename (VinoTubeServer *self);
 
 G_END_DECLS
 

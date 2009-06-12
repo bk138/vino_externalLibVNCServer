@@ -612,6 +612,10 @@ vino_status_icon_show_new_client_notification (gpointer user_data)
   VinoStatusIcon *icon    = a->icon;
   VinoClient     *client  = a->client;
 
+#ifdef HAVE_TELEPATHY_GLIB
+  const gchar *filename = NULL;
+#endif
+
   if (vino_server_get_prompt_enabled (icon->priv->server))
   {
     g_free (user_data);
@@ -647,6 +651,17 @@ vino_status_icon_show_new_client_notification (gpointer user_data)
           (_("'%s' is remotely controlling your desktop."),
           vino_tube_server_get_alias (VINO_TUBE_SERVER
           (icon->priv->server)));
+      filename = vino_tube_server_get_avatar_filename (VINO_TUBE_SERVER
+          (icon->priv->server));
+
+      if (filename == NULL)
+        filename = "stock_person";
+
+      icon->priv->new_client_notification =
+          notify_notification_new_with_status_icon (summary,
+                                                    body,
+                                                    filename,
+                                                    GTK_STATUS_ICON (icon));
     }
   else
     {
@@ -669,15 +684,15 @@ vino_status_icon_show_new_client_notification (gpointer user_data)
           "your desktop."), vino_client_get_hostname (client));
     }
 
-#ifdef HAVE_TELEPATHY_GLIB
-    }
-#endif
-
   icon->priv->new_client_notification =
     notify_notification_new_with_status_icon (summary,
                                               body,
                                               "preferences-desktop-remote-desktop",
                                               GTK_STATUS_ICON (icon));
+
+#ifdef HAVE_TELEPATHY_GLIB
+    }
+#endif
 
   g_free (body);
 

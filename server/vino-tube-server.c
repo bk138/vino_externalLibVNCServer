@@ -31,6 +31,9 @@
 #include "vino-tube-server.h"
 #include "vino-dbus-error.h"
 
+#define MC_DBUS_SERVICE "org.freedesktop.Telepathy.MissionControl"
+#define MC_DBUS_SERVICE_PATH "/org/freedesktop/Telepathy/MissionControl"
+
 G_DEFINE_TYPE (VinoTubeServer, vino_tube_server, VINO_TYPE_SERVER);
 
 #define VINO_TUBE_SERVER_GET_PRIVATE(obj)\
@@ -44,6 +47,7 @@ struct _VinoTubeServerPrivate
   gchar *connection_path;
   gchar *tube_path;
   GHashTable *channel_properties;
+  gchar *filename;
 };
 
 enum
@@ -86,6 +90,12 @@ vino_tube_server_finalize (GObject *object)
     {
       g_free (server->priv->alias);
       server->priv->alias = NULL;
+    }
+
+  if (server->priv->filename != NULL)
+    {
+      g_free (server->priv->filename);
+      server->priv->filename = NULL;
     }
 
   if (server->priv->connection_path != NULL)
@@ -279,6 +289,59 @@ vino_tube_server_offer_cb (TpChannel *proxy,
     }
 }
 
+static gchar *
+vino_tube_server_contact_get_avatar_filename (TpContact *contact,
+    const gchar *token,
+    VinoTubeServer *self)
+{
+  TpConnection *connection;
+  gchar *avatar_path;
+  gchar *avatar_file;
+  gchar *token_escaped;
+  gchar *contact_escaped;
+  gchar *mc_account_unique_name;
+  GError *error = NULL;
+  DBusGProxy *proxy;
+
+  connection = tp_contact_get_connection (contact);
+
+  proxy = dbus_g_proxy_new_for_name (tp_get_bus (), MC_DBUS_SERVICE,
+      MC_DBUS_SERVICE_PATH, MC_DBUS_SERVICE);
+
+  /* Have to do that while waiting for mission control 5 because
+  there is no mc API in telepathy-glib */
+  if (!dbus_g_proxy_call (proxy, "GetAccountForConnection", &error,
+      G_TYPE_STRING, tp_proxy_get_object_path (connection),
+      G_TYPE_INVALID,
+      G_TYPE_STRING, &mc_account_unique_name,
+      G_TYPE_INVALID))
+    {
+      g_printerr ("Failed to request name: %s",
+          error ? error->message : "No error given");
+      g_clear_error (&error);
+      return NULL;
+    }
+
+  contact_escaped = tp_escape_as_identifier (tp_contact_get_identifier
+      (contact));
+
+  token_escaped = tp_escape_as_identifier (token);
+  connection = tp_contact_get_connection (contact);
+
+  avatar_path = g_build_filename (g_get_user_cache_dir (),
+      "Empathy", "avatars", mc_account_unique_name,
+      contact_escaped, NULL);
+
+  avatar_file = g_build_filename (avatar_path, token_escaped, NULL);
+
+  g_free (contact_escaped);
+  g_free (token_escaped);
+  g_free (avatar_path);
+  g_object_unref (proxy);
+
+  return avatar_file;
+}
+
 static void
 vino_tube_server_factory_handle_cb (TpConnection *connection,
     guint n_contacts,
@@ -291,6 +354,7 @@ vino_tube_server_factory_handle_cb (TpConnection *connection,
 {
   VinoTubeServer *server = VINO_TUBE_SERVER (self);
   TpContact *contact;
+  const gchar *token;
 
   if (error != NULL)
     {
@@ -300,6 +364,17 @@ vino_tube_server_factory_handle_cb (TpConnection *connection,
 
   contact = contacts[0];
   server->priv->alias = g_strdup (tp_contact_get_alias (contact));
+  token = tp_contact_get_avatar_token (contact);
+
+  if (!tp_strdiff (token, ""))
+    {
+      server->priv->filename = NULL;
+    }
+  else
+    {
+      server->priv->filename = vino_tube_server_contact_get_avatar_filename
+          (contact, token, self);
+    }
 }
 
 static void
@@ -310,7 +385,8 @@ vino_tube_server_channel_ready (TpChannel *channel,
   VinoTubeServer *server = VINO_TUBE_SERVER (object);
   TpConnection *connection;
   TpHandle handle;
-  TpContactFeature features[] = { TP_CONTACT_FEATURE_ALIAS };
+  TpContactFeature features[] = { TP_CONTACT_FEATURE_ALIAS,
+      TP_CONTACT_FEATURE_AVATAR_TOKEN };
   GHashTable *parameters;
   GValue address = {0,};
   gint port;
@@ -328,8 +404,8 @@ vino_tube_server_channel_ready (TpChannel *channel,
 
   handle = tp_channel_get_handle (server->priv->tp_channel, NULL);
 
-  tp_connection_get_contacts_by_handle (connection, 1, &handle, 1,
-      features, vino_tube_server_factory_handle_cb,
+  tp_connection_get_contacts_by_handle (connection, 1, &handle,
+      G_N_ELEMENTS(features), features, vino_tube_server_factory_handle_cb,
       server, NULL, NULL);
 
   port = vino_server_get_port (VINO_SERVER (server));
@@ -432,4 +508,11 @@ vino_tube_server_get_alias (VinoTubeServer *self)
 {
   VinoTubeServer *server = VINO_TUBE_SERVER (self);
   return (const gchar*)server->priv->alias;
+}
+
+const gchar*
+vino_tube_server_get_avatar_filename (VinoTubeServer *self)
+{
+  VinoTubeServer *server = VINO_TUBE_SERVER (self);
+  return (const gchar*)server->priv->filename;
 }
