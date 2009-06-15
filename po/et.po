@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: Vino HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&component=Preferences Dialog\n"
-"POT-Creation-Date: 2009-05-12 14:00+0000\n"
-"PO-Revision-Date: 2009-05-15 10:15+0300\n"
+"POT-Creation-Date: 2009-06-12 14:30+0000\n"
+"PO-Revision-Date: 2009-06-15 06:45+0300\n"
 "Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "MIME-Version: 1.0\n"
@@ -418,10 +418,13 @@ msgstr ""
 msgid "Share your desktop with other users"
 msgstr "Oma töölaua jagamine teistega"
 
-#. Translators: %s is a hostname
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Kas sa soovid '%s' ühenduse katkestada?"
+
+#, c-format
+msgid "The remote user '%s' will be disconnected. Are you sure?"
+msgstr "Kaugkasutaja '%s' ühendus katkestatakse. Oled sa kindel? "
 
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
@@ -444,6 +447,7 @@ msgstr "_Eelistused"
 msgid "Disconnect all"
 msgstr "Katkesta kõik"
 
+#. Translators: %s is the alias of the telepathy contact
 #. Translators: %s is a hostname
 #, c-format
 msgid "Disconnect %s"
@@ -459,15 +463,22 @@ msgstr "_Programmist lähemalt"
 msgid "Error initializing libnotify\n"
 msgstr "Viga libnotify lähtestamisel\n"
 
+#. Translators: %s is the alias of the telepathy contact
+#. Translators: %s is a hostname
+msgid "Another user is controlling your desktop"
+msgstr "Teine kasutaja juhib Sinu töölauda"
+
+#, c-format
+msgid "'%s' is remotely controlling your desktop."
+msgstr "'%s' juhib üle võrgu Sinu töölauda."
+
+#. Translators: %s is a hostname
 msgid "Another user is viewing your desktop"
 msgstr "Teine kasutaja vaatab Sinu töölauda"
 
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Kasutaja arvutist '%s' vaatab üle võrgu Sinu töölauda."
-
-msgid "Another user is controlling your desktop"
-msgstr "Teine kasutaja juhib Sinu töölauda"
 
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
