@@ -43,6 +43,7 @@ server/vino-server
 server/vino-server.desktop
 server/vino-server.desktop.in
 server/vino-server.schemas
+server/org.gnome.Vino.service
 server/libvncserver/*.o
 server/libvncserver/*.lo
 server/libvncserver/.deps
