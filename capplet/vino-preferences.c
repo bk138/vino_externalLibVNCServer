@@ -847,11 +847,13 @@ error_message (VinoPreferencesDialog *dialog)
       avahi_host = NULL;
     }
 
-  
   g_string_append_printf (url, "<a href=\"vnc://%s::%d\">%s</a>", host, dialog->port, host);
 
   if (avahi_host && avahi_host[0])
-    g_string_append_printf (url, " , <a href=\"vnc://%s::%d\">%s</a>", avahi_host, dialog->port, avahi_host);
+    {
+      g_string_append (url, _(" or "));
+      g_string_append_printf (url, "<a href=\"vnc://%s::%d\">%s</a>", avahi_host, dialog->port, avahi_host);
+    }
 
   g_string_append_c (message, ' ');
   g_string_append_printf (message, _("Others can access your computer using the address %s."), url->str);
@@ -923,7 +925,10 @@ got_status (SoupSession *session, SoupMessage *msg, VinoPreferencesDialog *dialo
 	  g_string_append_printf (url, "<a href=\"vnc://%s::%d\">%s</a>", ip, dialog->port, ip);
 
 	  if (avahi_host && avahi_host[0])
-	    g_string_append_printf (url, " , <a href=\"vnc://%s::%d\">%s</a>", avahi_host, port, avahi_host);
+	    {
+	      g_string_append (url, _(" or "));
+	      g_string_append_printf (url, "<a href=\"vnc://%s::%d\">%s</a>", avahi_host, port, avahi_host);
+	    }
 
 	  message = g_strdup_printf (_("Others can access your computer using the address %s."), url->str);
 	  vino_message_box_hide_image (VINO_MESSAGE_BOX (dialog->message));
