@@ -5,6 +5,8 @@ capplet/vino-message-box.c
 capplet/vino-preferences.c
 capplet/vino-preferences.desktop.in.in
 [type: gettext/glade]capplet/vino-preferences.ui
+server/smclient/eggdesktopfile.c
+server/smclient/eggsmclient.c
 server/vino-dbus-listener.c
 server/vino-main.c
 server/vino-mdns.c
