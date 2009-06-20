@@ -93,7 +93,7 @@ vino_server_SOURCES += \
 endif
 
 dbus-interface-glue.h: dbus-interface.xml
-	dbus-binding-tool --prefix=vino_dbus_listener --mode=glib-server dbus-interface.xml > dbus-interface-glue.h
+	dbus-binding-tool --prefix=vino_dbus_listener --mode=glib-server $< > dbus-interface-glue.h
 
 vino-marshal.h: vino-marshal.list $(GLIB_GENMARSHAL)
 	$(GLIB_GENMARSHAL) $< --header --prefix=vino_marshal > $@
