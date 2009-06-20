@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <!--*- mode: xml -*-->
 <interface>
+  <requires lib="gtk+" version="2.16"/>
   <object class="GtkDialog" id="vino_dialog">
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Question</property>
@@ -30,8 +31,11 @@
                   <object class="GtkLabel" id="warning_label">
                     <property name="visible">True</property>
                     <property name="xalign">0</property>
-                    <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;Another user is trying to view your desktop.&lt;/b&gt;&lt;/big&gt;</property>
-                    <property name="use_markup">True</property>
+                    <property name="label" translatable="yes">Another user is trying to view your desktop.</property>
+                    <attributes>
+                      <attribute name="weight" value="bold"/>
+                      <attribute name="scale" value="1.2"/>
+                    </attributes>
                     <property name="wrap">True</property>
                   </object>
                   <packing>
