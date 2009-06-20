@@ -236,9 +236,6 @@ vino_preferences_dialog_setup_allowed_toggle (VinoPreferencesDialog *dialog)
   dialog->allowed_toggle = glade_xml_get_widget (dialog->xml, "allowed_toggle");
   g_assert (dialog->allowed_toggle != NULL);
 
-  gtk_label_set_use_markup (GTK_LABEL (GTK_BIN (gtk_bin_get_child (GTK_BIN (dialog->allowed_toggle)))),
-                            TRUE);
-
   allowed = gconf_client_get_bool (dialog->client, VINO_PREFS_ENABLED, NULL);
 
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->allowed_toggle), allowed);
