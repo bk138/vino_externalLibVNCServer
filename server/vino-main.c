@@ -23,7 +23,10 @@
 
 #include <config.h>
 
+#include <glib.h>
+#include <glib/gi18n.h>
 #include <gtk/gtk.h>
+#include <locale.h>
 
 #include "vino-input.h"
 #include "vino-mdns.h"
@@ -31,8 +34,7 @@
 #include "vino-prefs.h"
 #include "vino-util.h"
 #include "vino-dbus-listener.h"
-#include <libgnome/libgnome.h>
-#include <libgnomeui/libgnomeui.h>
+#include "eggsmclient.h"
 
 #ifdef HAVE_GNUTLS
 #include <gnutls/gnutls.h>
@@ -50,28 +52,34 @@ vino_debug_gnutls (int         level,
 int
 main (int argc, char **argv)
 {
-  GdkDisplay *display;
-  gboolean    view_only;
-  int         i, n_screens;
-  GnomeClient *session;
-  char        *restart_argv [] = { *argv, 0 };
+  GOptionContext *context;
+  GdkDisplay     *display;
+  gboolean        view_only;
+  int             i, n_screens;
+  GError         *error = NULL;
+  EggSMClient    *client;
 
+  setlocale (LC_ALL, "");
   bindtextdomain (GETTEXT_PACKAGE, VINO_LOCALEDIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
 
-  gnome_program_init ("vino", VERSION,
-                      LIBGNOMEUI_MODULE,
-                      argc, argv,
-                      NULL);
+  context = g_option_context_new (_("- VNC Server for GNOME"));
+  g_option_context_add_group (context, gtk_get_option_group (TRUE));
+  g_option_context_add_group (context, egg_sm_client_get_option_group ());
+  g_option_context_parse (context, &argc, &argv, &error);
+  if (error)
+    {
+      g_print ("%s\n%s\n",
+	       error->message,
+	       _("Run 'vino-server --help' to see a full list of available command line options"));
+      g_error_free (error);
+      return 1;
+    }
 
-  session = gnome_master_client ();
-
-  gnome_client_set_restart_command (session, 2, restart_argv);
-  gnome_client_set_restart_style   (session, GNOME_RESTART_IMMEDIATELY);
-  gnome_client_set_priority        (session, 5);
-  g_signal_connect (session, "die",
-                    G_CALLBACK (gtk_main_quit), NULL);
+  client = egg_sm_client_get ();
+  g_signal_connect (client, "quit",
+		    G_CALLBACK (gtk_main_quit), NULL);
 
   vino_setup_debug_flags ();
 

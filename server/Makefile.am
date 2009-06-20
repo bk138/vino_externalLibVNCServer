@@ -1,10 +1,11 @@
 NULL =
 
-SUBDIRS = libvncserver miniupnp
+SUBDIRS = libvncserver miniupnp smclient
 
 INCLUDES = \
 	-I$(top_srcdir)/server/libvncserver \
 	-I$(top_srcdir)/server/miniupnp \
+	-I$(top_srcdir)/server/smclient \
 	$(VINO_SERVER_CFLAGS) \
 	$(VINO_DEBUG_CFLAGS) \
 	$(VINO_LIBNOTIFY_CFLAGS) \
@@ -34,6 +35,7 @@ vino_server_LDADD = \
 	$(X_LIBS) $(XTEST_LIBS) $(XSHM_LIBS) $(XDAMAGE_LIBS) \
 	$(top_builddir)/server/libvncserver/libvncserver.la \
 	$(top_builddir)/server/miniupnp/libminiupnp.la \
+	$(top_builddir)/server/smclient/libeggsmclient.la \
 	$(NULL)
 
 if HTTP_SERVER

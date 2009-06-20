@@ -55,6 +55,11 @@ server/miniupnp/*.lo
 server/miniupnp/.deps
 server/miniupnp/.libs
 server/miniupnp/libminiupnp.la
+server/smclient/*.o
+server/smclient/*.lo
+server/smclient/.deps
+server/smclient/.libs
+server/smclient/*.la
 tools/*.o
 tools/.deps
 tools/vino-passwd
