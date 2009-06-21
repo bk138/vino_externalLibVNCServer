@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&component=Preferences Dialog\n"
 "POT-Creation-Date: 2009-06-20 11:56+0000\n"
-"PO-Revision-Date: 2009-06-21 11:55+0200\n"
+"PO-Revision-Date: 2009-06-21 13:38+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -201,7 +201,7 @@ msgstr "Desactivar la conexión al administrador de sesiones"
 
 #: ../server/smclient/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr "Especifique el archivo que contiene la configuración guardada"
+msgstr "Especificar el archivo que contiene la configuración guardada"
 
 #: ../server/smclient/eggsmclient.c:228
 msgid "FILE"
@@ -209,7 +209,7 @@ msgstr "ARCHIVO"
 
 #: ../server/smclient/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr "Especifique el ID de gestión de la sesión"
+msgstr "Especificar el ID se gestión de sesión"
 
 #: ../server/smclient/eggsmclient.c:231
 msgid "ID"
