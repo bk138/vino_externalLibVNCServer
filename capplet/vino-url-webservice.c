@@ -36,7 +36,7 @@ vino_url_webservice_get_random (void)
   if (g_file_test (VINO_WEBSERVICE_FILE, G_FILE_TEST_EXISTS))
     filename = VINO_WEBSERVICE_FILE;
   else
-    filename = VINO_GLADEDIR G_DIR_SEPARATOR_S VINO_WEBSERVICE_FILE;
+    filename = VINO_UIDIR G_DIR_SEPARATOR_S VINO_WEBSERVICE_FILE;
 
   if (!g_file_get_contents (filename,
                             &file_contents,
