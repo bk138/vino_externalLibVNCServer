@@ -10,14 +10,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD.ta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-23 19:48+0530\n"
-"PO-Revision-Date: 2009-05-23 19:21+0530\n"
+"POT-Creation-Date: 2009-06-23 21:50+0530\n"
+"PO-Revision-Date: 2009-06-23 22:00+0530\n"
 "Last-Translator: Dr.T.Vasudevan <agnihot3@gmail.com>\n"
-"Language-Team: Tamil <kde-i18n-doc@lists.kde.org>\n"
+"Language-Team: Tamil <Ubuntu-l10n-tam@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.2\n"
+"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
 
@@ -36,11 +36,11 @@ msgstr "கிளிப்போர்டுக்கு முகவரிய�
 msgid "There was an error showing the URL \"%s\""
 msgstr "URLயை காட்டுவதில் பிழை இருந்தது \"%s\""
 
-#: ../capplet/vino-preferences.c:198 ../capplet/vino-preferences.c:989
+#: ../capplet/vino-preferences.c:197 ../capplet/vino-preferences.c:1000
 msgid "Checking the connectivity of this machine..."
 msgstr "இந்த கணினியிலை இணைப்பை சரிபார்க்கிறது..."
 
-#: ../capplet/vino-preferences.c:798
+#: ../capplet/vino-preferences.c:804
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -49,21 +49,25 @@ msgstr ""
 "உதவிக்காட்சியில் பிழை நேர்ந்துள்ளது:\n"
 "%s"
 
-#: ../capplet/vino-preferences.c:828
+#: ../capplet/vino-preferences.c:834
 msgid "Your desktop is only reachable over the local network."
 msgstr "உங்கள் பணிமேடை உள்ளமை பிணையத்தில் மட்டும் வேலை செய்யும்"
 
-#: ../capplet/vino-preferences.c:851 ../capplet/vino-preferences.c:922
+#: ../capplet/vino-preferences.c:854 ../capplet/vino-preferences.c:929
+msgid " or "
+msgstr "OR"
+
+#: ../capplet/vino-preferences.c:859 ../capplet/vino-preferences.c:933
 #, c-format
 msgid "Others can access your computer using the address %s."
 msgstr "முகவரி %sஐ பயன்படுத்தி உங்கள் கணினியை மற்றவர்கள் அணுக முடியும்."
 
-#: ../capplet/vino-preferences.c:975
+#: ../capplet/vino-preferences.c:986
 msgid "Nobody can access your desktop."
 msgstr "உங்கள் பணிமேடையை யாரும் அணுக முடியாது."
 
-#: ../capplet/vino-preferences.c:1116 ../server/vino-server.c:160
-#: ../server/vino-server.c:191
+#: ../capplet/vino-preferences.c:1130 ../server/vino-server.c:162
+#: ../server/vino-server.c:193
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "பஸ்ஸுக்கு இணைப்பை திறத்தல் தோல்வியுற்றது: %s\n"
@@ -77,87 +81,158 @@ msgstr "மற்ற பயனீட்டாளர் உங்கள் பண
 msgid "Remote Desktop"
 msgstr "தொலை பணிமேடை"
 
-#: ../capplet/vino-preferences.glade.h:1
-msgid "<b>Notification Area</b>"
-msgstr "<b>அறிவிப்பு பகுதி</b>"
-
-#: ../capplet/vino-preferences.glade.h:2
-msgid "<b>Security</b>"
-msgstr "<b>பாதுகாப்பு</b>"
-
-#: ../capplet/vino-preferences.glade.h:3
-msgid "<b>Sharing</b>"
-msgstr "<b>பகிர்வு</b>"
-
-#: ../capplet/vino-preferences.glade.h:4
-msgid "<i>Some of these preferences are locked down</i>"
-msgstr "<i>இவற்றில் சில  விருப்பங்கள் பூட்டப்பட்டுள்ளன</i>"
-
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.ui.h:1
 msgid "Al_ways display an icon"
 msgstr "எப்போதும் சின்னத்தை காட்டுக்"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.ui.h:2
 msgid "Allow other users to _view your desktop"
 msgstr "(_v)மற்ற பயனீட்டாளர் உங்கள் மேல் மேசையை பார்க்க அனுமதி"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.ui.h:3
 msgid "Maximum size: 8 characters"
 msgstr "அதிகபட்ச அளவு: 8 எழுத்துக்கள்"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.ui.h:4
+msgid "Notification Area"
+msgstr "அறிவிப்பு பகுதி"
+
+#: ../capplet/vino-preferences.ui.h:5
 msgid "Remote Desktop Preferences"
 msgstr "தொலை மேல்மேசை விருப்பங்கள்"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.ui.h:6
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "தொலைவிலிருக்கும் பயனர்கள் உங்கள் சுட்டி மற்றும் விசைப்பலகையை கட்டுப்படுத்த முடியும்"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.ui.h:7
+msgid "Security"
+msgstr "பாதுகாப்பு"
+
+#: ../capplet/vino-preferences.ui.h:8
+msgid "Sharing"
+msgstr "பகிர்வு"
+
+#: ../capplet/vino-preferences.ui.h:9
+msgid "Some of these preferences are locked down"
+msgstr "இவற்றில் சில  விருப்பங்கள் பூட்டப்பட்டுள்ளன"
+
+#: ../capplet/vino-preferences.ui.h:10
 msgid "The router must have the UPnP feature enabled"
 msgstr "ரௌடர் UPnP வசதியை செயல்படுத்தப்பட வேண்டும்"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.ui.h:11
 msgid "You will be queried to allow or to refuse every incoming connection"
 msgstr "உள்வரும் இணைப்பை நீங்கள் அனுமதிக்க அல்லது மறுக்க வினாவிடலாம்"
 
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.ui.h:12
 msgid "Your desktop will be shared"
 msgstr "உங்கள் பணிமேடை பகிர்ந்து கொள்ளப்படும்"
 
-#: ../capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.ui.h:13
 msgid "_Allow other users to control your desktop"
 msgstr "(_A)பயனர் உங்கள் மேல் மேசையை கட்டுப்படுத்துவதை அனுமதிக்கவும்"
 
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.ui.h:14
 msgid "_Configure network automatically to accept connections"
 msgstr "இணைப்புகளை ஏற்க பிணையத்தை தானாக கட்டமை (_C)"
 
-#: ../capplet/vino-preferences.glade.h:15
+#: ../capplet/vino-preferences.ui.h:15
 msgid "_Never display an icon"
 msgstr "_N சின்னத்தை ஒருபோதும் காட்டாதே"
 
-#: ../capplet/vino-preferences.glade.h:16
+#: ../capplet/vino-preferences.ui.h:16
 msgid "_Only display an icon when there is someone connected"
 msgstr " இணைப்பில் யாரேனும் இருக்தால் மட்டும்சின்னத்ததை காட்டுக "
 
-#: ../capplet/vino-preferences.glade.h:17
+#: ../capplet/vino-preferences.ui.h:17
 msgid "_Require the user to enter this password:"
 msgstr "(_R)பயனர் கடவுச்சொல்லை உள்ளிட வேண்டும்:"
 
-#: ../capplet/vino-preferences.glade.h:18
+#: ../capplet/vino-preferences.ui.h:18
 msgid "_You must confirm each access to this machine"
 msgstr "இந்த கணினியின் ஒவ்வொரு அணுகலையும் உறுதிப்படுத்தவும் (_Y)"
 
-#: ../server/vino-dbus-listener.c:402
+#: ../server/smclient/eggdesktopfile.c:165
+#, c-format
+msgid "File is not a valid .desktop file"
+msgstr "கோப்பு செல்லுபடியாகும்  .desktop கோப்பு அல்ல"
+
+#: ../server/smclient/eggdesktopfile.c:188
+#, c-format
+msgid "Unrecognized desktop file Version '%s'"
+msgstr "அடையாளம் காணா மேல்மேசை கோப்பு பதிப்பு '%s' "
+
+#: ../server/smclient/eggdesktopfile.c:958
+#, c-format
+msgid "Starting %s"
+msgstr "%s ஐ துவக்குகிறது"
+
+#: ../server/smclient/eggdesktopfile.c:1100
+#, c-format
+msgid "Application does not accept documents on command line"
+msgstr "பயன்பாடு கட்டளை வரியில் ஆவணங்களை ஒப்புக்கொள்ளாது"
+
+#: ../server/smclient/eggdesktopfile.c:1168
+#, c-format
+msgid "Unrecognized launch option: %d"
+msgstr "இனம் காணாத துவக்க தேர்வு: %d"
+
+#: ../server/smclient/eggdesktopfile.c:1373
+#, c-format
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr "'Type=Link' மேல்மேசை உள்ளீடுக்கு ஆவண யூஆர்ஐ ஐ கொடுக்க இயலாது"
+
+#: ../server/smclient/eggdesktopfile.c:1392
+#, c-format
+msgid "Not a launchable item"
+msgstr "துவக்க முடியாத உருப்படி"
+
+#: ../server/smclient/eggsmclient.c:225
+msgid "Disable connection to session manager"
+msgstr "அமர்வு மேலாளருக்கு இணைப்பை செயல் நீக்கு"
+
+#: ../server/smclient/eggsmclient.c:228
+msgid "Specify file containing saved configuration"
+msgstr "சேமித்த வடிவமைப்பு கூடிய கோப்பை குறிப்பிடுக"
+
+#: ../server/smclient/eggsmclient.c:228
+msgid "FILE"
+msgstr "FILE"
+
+#: ../server/smclient/eggsmclient.c:231
+msgid "Specify session management ID"
+msgstr "அமர்வு மேலாண்மை அடையாளத்தை குறிப்பிடுக"
+
+#: ../server/smclient/eggsmclient.c:231
+msgid "ID"
+msgstr "ஐடி (ID)"
+
+#: ../server/smclient/eggsmclient.c:252
+msgid "Session management options:"
+msgstr "அமர்வு மேலாண்மை தேர்வுகள்:"
+
+#: ../server/smclient/eggsmclient.c:253
+msgid "Show session management options"
+msgstr "அமர்வு மேலாணமை தேர்வுகளை காட்டு"
+
+#: ../server/vino-dbus-listener.c:456
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "தொலை மேல்மேசை சேவகன் ஏற்கெனவே இயங்குகிறது; வெளியேறுகிறது ...\n"
 
-#: ../server/vino-main.c:89
+#: ../server/vino-main.c:67
+msgid "- VNC Server for GNOME"
+msgstr "க்னோமுக்கு -VNC சேவையகம் "
+
+#: ../server/vino-main.c:75
+msgid "Run 'vino-server --help' to see a full list of available command line options"
+msgstr "'vino-passwd --help'ஐ இயக்கி முழு கட்டளை வரி விருப்பங்கள் பட்டியலை பார்க்கவும்"
+
+#: ../server/vino-main.c:97
 msgid "GNOME Remote Desktop"
 msgstr "க்நோம் தொலை மேசைச்சூழல்"
 
-#: ../server/vino-main.c:99
+#: ../server/vino-main.c:107
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -189,44 +264,44 @@ msgstr "%s இன் தொலை மேல்மேசை %s இல்"
 msgid "Received signal %d, exiting...\n"
 msgstr "பெறப்பட்ட சிக்னல் %d, வெளியேறுகிறது...\n"
 
-#: ../server/vino-prompt.c:142
+#: ../server/vino-prompt.c:141
 msgid "Screen"
 msgstr "திரை"
 
-#: ../server/vino-prompt.c:143
+#: ../server/vino-prompt.c:142
 msgid "The screen on which to display the prompt"
 msgstr "ப்ராம்டை காட்டவேண்டிய திரை"
 
-#: ../server/vino-prompt.c:343
+#: ../server/vino-prompt.c:345
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr "கணிப்பொறி '%s' இன் பயனர் உங்கள் மேல்மேசையை தொலைவிலிருந்து பார்க்க முயல்கிறார்"
 
-#: ../server/vino-prompt.glade.h:1
-msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>மற்ற பயனர் உங்கள் மேல் மேசையை பார்க்க முயல்கிறார்.</b></big>"
-
-#: ../server/vino-prompt.glade.h:2
+#: ../server/vino-prompt.ui.h:1
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
 msgstr "மற்ற பயனர் உங்கள் மேல் மேசையை பார்க்க முயல்கிறார்."
 
-#: ../server/vino-prompt.glade.h:3
+#: ../server/vino-prompt.ui.h:2
+msgid "Another user is trying to view your desktop."
+msgstr "மற்றொரு பயனர் உங்கள் மேல் மேசையை பார்க்க முயல்கிறார்."
+
+#: ../server/vino-prompt.ui.h:3
 msgid "Do you want to allow them to do so?"
 msgstr "அவரை அனுமதிக்க விரும்புகிறீர்களா?"
 
-#: ../server/vino-prompt.glade.h:4
+#: ../server/vino-prompt.ui.h:4
 msgid "Question"
 msgstr "கேள்வி"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:64
 msgid "_Allow"
 msgstr "(_A)அனுமதி"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:65
 msgid "_Refuse"
 msgstr "(_R)மறுக்கவும்"
 
@@ -256,9 +331,8 @@ msgid ""
 "you want that accept connections only from some specific network interface. "
 "eg: eth0, wifi0, lo, ..."
 msgstr ""
-"அமைக்கவில்லையானால் சேவையகம் எல்லா  வலைப்பின்னல் இடையகங்களிலும்செவிசாய்க்கும்."
-"குறிப்பிட்ட வலைப்பின்னல் இடையகத்துக்கு செவிசாய்க்க இதை அமைக்கவும்.  "
-"எ-டு: eth0, wifi0, lo, ..."
+"அமைக்கவில்லையானால் சேவையகம் எல்லா  வலைப்பின்னல் இடையகங்களிலும்செவிசாய்க்கும்.குறிப்பிட்ட "
+"வலைப்பின்னல் இடையகத்துக்கு செவிசாய்க்க இதை அமைக்கவும்.  எ-டு: eth0, wifi0, lo, ..."
 
 #: ../server/vino-server.schemas.in.h:6
 msgid ""
@@ -313,16 +387,18 @@ msgid ""
 "not work properly on some video drivers when using 3D effects. Disabling it "
 "will make vino work on these environments with a slower rendering as side "
 "effect."
-msgstr "உண்மையெனில் நாம் எக்ஸ்.ஆர்க் இன் எக்ஸ்டேமேஜ் நீட்சியை பயன்படுத்த மாட்டோம். இந்த நீட்சி"
-"முப்பரிமாண விளைவை பயன்படுத்தும்போது இது சில விடியோ இயக்கிகளுடன்தான் சரியாக வேலை செய்கிறது."
-"செயல் நீக்குவது வினோ இந்த சூழல்களில் மெதுவாக வேலை செய்யும் பக்க விளைவுடன் வேலை செய்யும்."
+msgstr ""
+"உண்மையெனில் நாம் எக்ஸ்.ஆர்க் இன் எக்ஸ்டேமேஜ் நீட்சியை பயன்படுத்த மாட்டோம். இந்த நீட்சிமுப்பரிமாண "
+"விளைவை பயன்படுத்தும்போது இது சில விடியோ இயக்கிகளுடன்தான் சரியாக வேலை செய்கிறது.செயல் "
+"நீக்குவது வினோ இந்த சூழல்களில் மெதுவாக வேலை செய்யும் பக்க விளைவுடன் வேலை செய்யும்."
 
 #: ../server/vino-server.schemas.in.h:13
 msgid ""
 "If true, we will use UPNP protocol to automatically forward the port used by "
 "vino in the router."
 msgstr ""
-"உண்மையெனில் நாம் யூபிஎன்பி நடபடியை பயன்படுத்தி தானியங்கியாக வினோ ரூட்டரில் பயன்படுத்திய துறையை மேலனுப்புவோம். "
+"உண்மையெனில் நாம் யூபிஎன்பி நடபடியை பயன்படுத்தி தானியங்கியாக வினோ ரூட்டரில் பயன்படுத்திய "
+"துறையை மேலனுப்புவோம். "
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Listen an alternative port"
@@ -418,26 +494,26 @@ msgstr "எக்ஸ்.ஆர்க் இன் எக்ஸ்டேமேஜ
 msgid "Whether we should use UPNP to forward the port in routers"
 msgstr "ரௌட்டர்களில் UPNPஐ பயன்படுத்தி முன்னனுப்ப வேண்டுமா"
 
-#: ../server/vino-status-icon.c:102
+#: ../server/vino-status-icon.c:106
 msgid "Desktop sharing is enabled"
 msgstr "மேல்மேசை பகிர்வு  செயற்படுத்ப்படடுள்ளதுய"
 
-#: ../server/vino-status-icon.c:110
+#: ../server/vino-status-icon.c:114
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
 msgstr[0] "ஒரு நபர் இணைக்கப்பட்டுள்ளார்"
 msgstr[1] "%d நபர்கள் இணைக்கப்பட்டுள்ளனர்"
 
-#: ../server/vino-status-icon.c:207
+#: ../server/vino-status-icon.c:211
 msgid "Error displaying preferences"
 msgstr "விருப்பங்களை காட்டுவதில் பிழை"
 
-#: ../server/vino-status-icon.c:226
+#: ../server/vino-status-icon.c:230
 msgid "Error displaying help"
 msgstr "உதவியை காட்டுவதில் பிழை"
 
-#: ../server/vino-status-icon.c:253
+#: ../server/vino-status-icon.c:257
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -474,83 +550,94 @@ msgstr ""
 " Fifth Floor, Boston, MA 02110-1301, USA \n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:268
+#: ../server/vino-status-icon.c:272
 msgid "translator-credits"
 msgstr "மொழிபெயர்ப்பாளர்-நன்றி அறிதல்"
 
-#: ../server/vino-status-icon.c:274
+#: ../server/vino-status-icon.c:278
 msgid "Share your desktop with other users"
 msgstr "மற்ற பயனர்களுடன் உங்கள் மேல் மேசையை பகிர்ந்து கொள்ளுங்கள்."
 
-#. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:338
+#: ../server/vino-status-icon.c:344 ../server/vino-status-icon.c:360
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "'%s'  ஐ துண்டிக்க நீங்கள் உறுதியாக இருக்கிறீர்களா?"
 
-#: ../server/vino-status-icon.c:340
+#: ../server/vino-status-icon.c:348, c-format
+msgid "The remote user '%s' will be disconnected. Are you sure?"
+msgstr "'%s'  இலிருந்து தொலை பயனர் துண்டிக்கப்படுவார். நீங்கள் உறுதியாக இருக்கிறீர்களா?"
+
+#: ../server/vino-status-icon.c:363
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "'%s'  இலிருந்து தொலை பயனர் துண்டிக்கப்படுவார். நீங்கள் உறுதியாக இருக்கிறீகளா?"
 
-#: ../server/vino-status-icon.c:345
+#: ../server/vino-status-icon.c:369
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "எல்லா பயனர்களையும் துண்டிக்க நீங்கள் உறுதியாக இருக்கிறீர்களா?"
 
-#: ../server/vino-status-icon.c:346
+#: ../server/vino-status-icon.c:371
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "எல்லா தொலை பயனர்களும் துண்டிக்கப்படுவார்கள். நீங்கள் உறுதியாக இருக்கிறீர்களா?"
 
-#: ../server/vino-status-icon.c:358
+#: ../server/vino-status-icon.c:387
 msgid "Disconnect"
 msgstr "துண்டிப்பு"
 
-#: ../server/vino-status-icon.c:384
+#: ../server/vino-status-icon.c:413
 msgid "_Preferences"
 msgstr "_ம முன்னுரிமைகள்"
 
-#: ../server/vino-status-icon.c:399
+#: ../server/vino-status-icon.c:428
 msgid "Disconnect all"
 msgstr "அனைத்தையும் துண்டிக்கவும்"
 
+#. Translators: %s is the alias of the telepathy contact
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:423
+#: ../server/vino-status-icon.c:454 ../server/vino-status-icon.c:461
 #, c-format
 msgid "Disconnect %s"
 msgstr "%s ஐ துண்டிக்கவும்"
 
-#: ../server/vino-status-icon.c:443
+#: ../server/vino-status-icon.c:482
 msgid "_Help"
 msgstr "_உதவி"
 
-#: ../server/vino-status-icon.c:451
+#: ../server/vino-status-icon.c:490
 msgid "_About"
 msgstr "_பற்றி"
 
-#: ../server/vino-status-icon.c:584
+#: ../server/vino-status-icon.c:627
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "libnotify ஐ ஆரம்பிப்ப்பதில் பிழை \n"
 
-#: ../server/vino-status-icon.c:604
+#. Translators: %s is the alias of the telepathy contact
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:649 ../server/vino-status-icon.c:681
+msgid "Another user is controlling your desktop"
+msgstr "பயனர் உங்கள் மேல் மேசையை கட்டுப்படுத்துகிறார்"
+
+#: ../server/vino-status-icon.c:651, c-format
+msgid "'%s' is remotely controlling your desktop."
+msgstr "'%s' தொலைவிலிருந்து உங்கள் மேல் மேசையை கட்டுப்படுத்துகிறார்"
+
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:673
 msgid "Another user is viewing your desktop"
 msgstr "மற்ற பயனர் உங்கள் மேல் மேசையை பார்க்கிறார்."
 
-#: ../server/vino-status-icon.c:605
+#: ../server/vino-status-icon.c:675
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "'%s'  கணினியில் உள்ள மற்றொரு பயனர் உங்கள் மேல் மேசையை பார்க்கிறார்."
 
-#: ../server/vino-status-icon.c:610
-msgid "Another user is controlling your desktop"
-msgstr "பயனர் உங்கள் மேல் மேசையை கட்டுப்படுத்துகிறார்"
-
-#: ../server/vino-status-icon.c:611
+#: ../server/vino-status-icon.c:683
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "'%s'  கணினியில் உள்ள மற்றொரு பயனர் உங்கள் மேல் மேசையை கட்டுப்படுத்துகிறார்"
 
-#: ../server/vino-status-icon.c:633
+#: ../server/vino-status-icon.c:709
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "அறிக்கை குமிழை காட்டுவதில் பிழை : %s\n"
@@ -572,10 +659,8 @@ msgid ""
 msgid_plural ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
 "password."
-msgstr[0] ""
-"பிழை: கடவுச்சொல்லின் அதிகபட்ச அளவு %d எழுத்து. கடவுச்சொல்லை மீண்டும் உள்ளிடவும்."
-msgstr[1] ""
-"பிழை: கடவுச்சொல்லின் அதிகபட்ச அளவு %d எழுத்துக்கள். கடவுச்சொல்லை மீண்டும் உள்ளிடவும்."
+msgstr[0] "பிழை: கடவுச்சொல்லின் அதிகபட்ச அளவு %d எழுத்து. கடவுச்சொல்லை மீண்டும் உள்ளிடவும்."
+msgstr[1] "பிழை: கடவுச்சொல்லின் அதிகபட்ச அளவு %d எழுத்துக்கள். கடவுச்சொல்லை மீண்டும் உள்ளிடவும்."
 
 #: ../tools/vino-passwd.c:156
 #, c-format
@@ -614,8 +699,7 @@ msgid "- Updates Vino password"
 msgstr "- Vino கடவுச்சொல்லை மேம்படுத்துகிறது"
 
 #: ../tools/vino-passwd.c:206
-msgid ""
-"Run 'vino-passwd --help' to see a full list of available command line options"
+msgid "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr "'vino-passwd --help'ஐ இயக்கி முழு கட்டளை வரி விருப்பங்களை பார்க்கவும்"
 
 #: ../tools/vino-passwd.c:213
