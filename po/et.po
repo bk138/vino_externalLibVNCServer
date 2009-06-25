@@ -15,9 +15,9 @@ msgstr ""
 "Project-Id-Version: Vino HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&component=Preferences Dialog\n"
-"POT-Creation-Date: 2009-06-12 14:30+0000\n"
-"PO-Revision-Date: 2009-06-15 06:45+0300\n"
-"Last-Translator: Ivar Smolin <okul@linux.ee>\n"
+"POT-Creation-Date: 2009-06-20 11:56+0000\n"
+"PO-Revision-Date: 2009-06-24 23:03+0300\n"
+"Last-Translator: Mattias Põldaru <mahfiaz gmail com>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -50,6 +50,9 @@ msgstr ""
 msgid "Your desktop is only reachable over the local network."
 msgstr "Sinu töölauda on võimalik vaadata ainult kohtvõrgust."
 
+msgid " or "
+msgstr " või "
+
 #, c-format
 msgid "Others can access your computer using the address %s."
 msgstr "Teised pääsevad Sinu arvutile ligi kasutades aadressi %s."
@@ -67,18 +70,6 @@ msgstr "Määrab kuidas teised kasutajad sinu töölauda vaadata tohivad"
 msgid "Remote Desktop"
 msgstr "Kaugtöölaud"
 
-msgid "<b>Notification Area</b>"
-msgstr "<b>Teavitusala</b>"
-
-msgid "<b>Security</b>"
-msgstr "<b>Turvalisus</b>"
-
-msgid "<b>Sharing</b>"
-msgstr "<b>Ühiskasutus</b>"
-
-msgid "<i>Some of these preferences are locked down</i>"
-msgstr "<i>Mõned nendest eelistustest on lukustatud</i>"
-
 msgid "Al_ways display an icon"
 msgstr "_Ikooni kuvatakse alati"
 
@@ -88,11 +79,27 @@ msgstr "Teistel kasutajatel on lubatud _vaadata Sinu töölauda"
 msgid "Maximum size: 8 characters"
 msgstr "Suurim pikkus: 8 tähemärki"
 
+#| msgid "<b>Notification Area</b>"
+msgid "Notification Area"
+msgstr "Teateala"
+
 msgid "Remote Desktop Preferences"
 msgstr "Kaugtöölaua eelistused"
 
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "Kaugkasutajatel on lubatud sinu hiirt ja klaviatuuri juhtida"
+
+#| msgid "<b>Security</b>"
+msgid "Security"
+msgstr "Turvalisus"
+
+#| msgid "<b>Sharing</b>"
+msgid "Sharing"
+msgstr "Ühiskasutus"
+
+#| msgid "<i>Some of these preferences are locked down</i>"
+msgid "Some of these preferences are locked down"
+msgstr "Mõned nendest eelistustest on lukustatud"
 
 msgid "The router must have the UPnP feature enabled"
 msgstr "Ruuteris peab UPnP võimalus olema lubatud"
@@ -122,8 +129,69 @@ msgstr "Nõutakse kasutajalt pa_rooli sisestamist:"
 msgid "_You must confirm each access to this machine"
 msgstr "_Iga pöördumist sellesse masinasse peab kasutaja kinnitama"
 
+#, c-format
+msgid "File is not a valid .desktop file"
+msgstr "See pole korrektne .desktop fail"
+
+#, c-format
+msgid "Unrecognized desktop file Version '%s'"
+msgstr "Töölauafaili versioon '%s' on tundmatu"
+
+#, c-format
+msgid "Starting %s"
+msgstr "Käivitamine: %s"
+
+#, c-format
+msgid "Application does not accept documents on command line"
+msgstr "Rakendus ei ava käsurealt dokumenti"
+
+#, c-format
+msgid "Unrecognized launch option: %d"
+msgstr "Tundmatu käivitusvalik: %d"
+
+#, c-format
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr "Dokumentide URI'sid pole võimalik edastada 'Type=Link' töölauakirjesse"
+
+#, c-format
+msgid "Not a launchable item"
+msgstr "Element pole käivitatav"
+
+msgid "Disable connection to session manager"
+msgstr "Ühenduse keelamine seansihalduriga"
+
+msgid "Specify file containing saved configuration"
+msgstr "Määra salvestatud häälestust sisaldav fail"
+
+msgid "FILE"
+msgstr "FAIL"
+
+msgid "Specify session management ID"
+msgstr "Määra seansihalduse ID"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Session management options:"
+msgstr "Seansihalduse valikud:"
+
+msgid "Show session management options"
+msgstr "Seansihalduse valikuid näidatakse"
+
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "Võrgutöölaua server juba töötab, töö lõpetatakse...\n"
+
+msgid "- VNC Server for GNOME"
+msgstr "- VNC server GNOME jaoks"
+
+#| msgid ""
+#| "Run 'vino-passwd --help' to see a full list of available command line "
+#| "options"
+msgid ""
+"Run 'vino-server --help' to see a full list of available command line options"
+msgstr ""
+"Käivita 'vino-server --help', et näha kogu nimekirja saadaolevatest käsurea "
+"valikutest"
 
 msgid "GNOME Remote Desktop"
 msgstr "GNOME Kaugtöölaud"
@@ -169,15 +237,16 @@ msgid ""
 msgstr ""
 "Kasutaja arvutist '%s' proovib üle võrgu vaadata või kasutada Sinu töölauda."
 
-msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>Veel üks kasutaja proovib vaadata Sinu töölauda.</b></big>"
-
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
 msgstr ""
 "Kasutaja teisest arvutist proovib üle võrgu vaadata või kasutada Sinu "
 "töölauda."
+
+#| msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgid "Another user is trying to view your desktop."
+msgstr "Üks kasutaja proovib vaadata sinu töölauda."
 
 msgid "Do you want to allow them to do so?"
 msgstr "Kas sa lubad tal seda teha?"
@@ -549,14 +618,3 @@ msgstr "VINO versioon %s\n"
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "VIGA: Sul ei ole piisavalt õiguseid Vino parooli muutmiseks.\n"
 
-#~ msgid "Out of memory handling '%s' message"
-#~ msgstr "Sõnumi '%s' käsitlemisel lõppes mälu"
-
-#~ msgid "Out of memory registering object path '%s'"
-#~ msgstr "Objektiraja '%s' registreerimisel lõppes mälu"
-
-#~ msgid "Failed to acquire D-Bus name '%s'\n"
-#~ msgstr "Tõrge D-Bus nime '%s' saamisel\n"
-
-#~ msgid "Set your remote desktop access preferences"
-#~ msgstr "Kaugtöölaua ligipääsueelistuste määramine"
