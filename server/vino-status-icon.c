@@ -33,10 +33,6 @@
 #include "vino-enums.h"
 #include "vino-util.h"
 
-#ifdef HAVE_TELEPATHY_GLIB
-#include "vino-tube-server.h"
-#endif
-
 struct _VinoStatusIconPrivate
 {
   GtkMenu    *menu;
@@ -336,23 +332,6 @@ vino_status_icon_disconnect_confirm (VinoStatusIconNotify *a)
     return;
   }
 
-#ifdef HAVE_TELEPATHY_GLIB
-  if (VINO_IS_TUBE_SERVER (icon->priv->server))
-    {
-      /* Translators: %s is the alias of the telepathy contact */
-      primary_msg   = g_strdup_printf
-          (_("Are you sure you want to disconnect '%s'?"),
-          vino_tube_server_get_alias (VINO_TUBE_SERVER
-          (icon->priv->server)));
-      secondary_msg = g_strdup_printf
-          (_("The remote user '%s' will be disconnected. Are you sure?"),
-          vino_tube_server_get_alias (VINO_TUBE_SERVER
-          (icon->priv->server)));
-    }
-  else
-    {
-#endif
-
   if (client != NULL)
     {
       /* Translators: %s is a hostname */
@@ -370,10 +349,6 @@ vino_status_icon_disconnect_confirm (VinoStatusIconNotify *a)
       secondary_msg = g_strdup
           (_("All remote users will be disconnected. Are you sure?"));
     }
-
-#ifdef HAVE_TELEPATHY_GLIB
-    }
-#endif
 
   icon->priv->disconnect_dialog = gtk_message_dialog_new (NULL,
                                                           GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -447,15 +422,6 @@ vino_status_icon_popup_menu (GtkStatusIcon *status_icon,
       a = g_new (VinoStatusIconNotify, 1);
       a->icon   = icon;
       a->client = client;
-
-#ifdef HAVE_TELEPATHY_GLIB
-      if (VINO_IS_TUBE_SERVER (icon->priv->server))
-        /* Translators: %s is the alias of the telepathy contact */
-        str = g_strdup_printf (_("Disconnect %s"),
-            vino_tube_server_get_alias (VINO_TUBE_SERVER
-            (icon->priv->server)));
-      else
-#endif
 
       /* Translators: %s is a hostname */
       str = g_strdup_printf (_("Disconnect %s"),
@@ -612,10 +578,6 @@ vino_status_icon_show_new_client_notification (gpointer user_data)
   VinoStatusIcon *icon    = a->icon;
   VinoClient     *client  = a->client;
 
-#ifdef HAVE_TELEPATHY_GLIB
-  const gchar *filename = NULL;
-#endif
-
   if (vino_server_get_prompt_enabled (icon->priv->server))
   {
     g_free (user_data);
@@ -642,31 +604,6 @@ vino_status_icon_show_new_client_notification (gpointer user_data)
       icon->priv->new_client_notification = NULL;
     }
 
-#ifdef HAVE_TELEPATHY_GLIB
-  if (VINO_IS_TUBE_SERVER (icon->priv->server))
-    {
-       /* Translators: %s is the alias of the telepathy contact */
-      summary = _("Another user is controlling your desktop");
-      body = g_strdup_printf
-          (_("'%s' is remotely controlling your desktop."),
-          vino_tube_server_get_alias (VINO_TUBE_SERVER
-          (icon->priv->server)));
-      filename = vino_tube_server_get_avatar_filename (VINO_TUBE_SERVER
-          (icon->priv->server));
-
-      if (filename == NULL)
-        filename = "stock_person";
-
-      icon->priv->new_client_notification =
-          notify_notification_new_with_status_icon (summary,
-                                                    body,
-                                                    filename,
-                                                    GTK_STATUS_ICON (icon));
-    }
-  else
-    {
-#endif
-
   if (vino_server_get_view_only (icon->priv->server))
     {
       /* Translators: %s is a hostname */
@@ -689,10 +626,6 @@ vino_status_icon_show_new_client_notification (gpointer user_data)
                                               body,
                                               "preferences-desktop-remote-desktop",
                                               GTK_STATUS_ICON (icon));
-
-#ifdef HAVE_TELEPATHY_GLIB
-    }
-#endif
 
   g_free (body);
 
