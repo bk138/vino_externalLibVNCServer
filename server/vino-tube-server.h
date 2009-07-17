@@ -24,6 +24,8 @@
 #define __VINO_TUBE_SERVER_H__
 
 #include <glib-object.h>
+
+#include "vino-types.h"
 #include "vino-server.h"
 
 G_BEGIN_DECLS
@@ -40,7 +42,6 @@ G_BEGIN_DECLS
 #define VINO_TUBE_SERVER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), \
     VINO_TYPE_TUBE_SERVER, VinoTubeServerClass))
 
-typedef struct _VinoTubeServer VinoTubeServer;
 typedef struct _VinoTubeServerClass VinoTubeServerClass;
 typedef struct _VinoTubeServerPrivate VinoTubeServerPrivate;
 
