@@ -1566,14 +1566,6 @@ vino_server_set_display_status_icon (VinoServer *server,
   server->priv->display_status_icon = display_status_icon;
 }
 
-gboolean
-vino_server_get_use_dbus_listener (VinoServer *server)
-{
-  g_return_val_if_fail (VINO_IS_SERVER (server), FALSE);
-
-  return server->priv->use_dbus_listener;
-}
-
 void
 vino_server_set_use_dbus_listener (VinoServer *server,
     gboolean use_dbus_listener)

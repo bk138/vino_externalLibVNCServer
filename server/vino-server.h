@@ -83,7 +83,6 @@ void                 vino_server_set_display_status_icon  (VinoServer     *serve
                                                            gboolean        display_status_icon);
 void                 vino_server_set_use_dbus_listener    (VinoServer     *server,
                                                            gboolean        use_dbus_listener);
-gboolean             vino_server_get_use_dbus_listener    (VinoServer     *server);
 gboolean             vino_server_get_use_alternative_port (VinoServer     *server);
 void                 vino_server_set_use_alternative_port (VinoServer     *server,
 							   gboolean        use_alternative_port);
