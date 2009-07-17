@@ -88,6 +88,8 @@ vino_server_LDADD += $(TELEPATHY_GLIB_LIBS)
 vino_server_SOURCES += \
 	vino-tube-servers-manager.c vino-tube-servers-manager.h		\
 	vino-tube-server.c vino-tube-server.h				\
+	vino-status-tube-icon.c vino-status-tube-icon.h			\
+	vino-types.h \
 	$(NULL)
 
 endif
@@ -106,6 +108,7 @@ vino_enum_headers = \
 	$(top_srcdir)/server/vino-server.h \
 	$(top_srcdir)/server/vino-prompt.h \
 	$(top_srcdir)/server/vino-status-icon.h \
+	$(top_srcdir)/server/vino-status-tube-icon.h \
 	$(NULL)
 
 vino-enums.c: @REBUILD@ $(vino_enum_headers)
