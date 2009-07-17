@@ -27,6 +27,7 @@
 
 #include "vino-types.h"
 #include "vino-server.h"
+#include "vino-status-tube-icon.h"
 
 G_BEGIN_DECLS
 
@@ -64,6 +65,8 @@ gboolean vino_tube_server_share_with_tube (VinoTubeServer *server,
      GError **error);
 const gchar* vino_tube_server_get_alias (VinoTubeServer *self);
 const gchar* vino_tube_server_get_avatar_filename (VinoTubeServer *self);
+void vino_tube_server_close_tube (VinoTubeServer *server);
+void vino_tube_server_fire_closed (VinoTubeServer *server);
 
 G_END_DECLS
 

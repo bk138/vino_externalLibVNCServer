@@ -20,6 +20,8 @@
  *      Arnaud Maillet <arnaud.maillet@collabora.co.uk>
  */
 
+#include <glib/gi18n.h>
+
 #include <telepathy-glib/gtypes.h>
 #include <telepathy-glib/channel.h>
 #include <telepathy-glib/connection.h>
@@ -48,6 +50,9 @@ struct _VinoTubeServerPrivate
   gchar *tube_path;
   GHashTable *channel_properties;
   gchar *filename;
+  gulong signal_invalidated_id;
+  VinoStatusTubeIcon *icon_tube;
+  TpTubeChannelState state;
 };
 
 enum
@@ -71,10 +76,19 @@ vino_tube_server_dispose (GObject *object)
 {
   VinoTubeServer *server = VINO_TUBE_SERVER (object);
 
+  g_signal_handler_disconnect (G_OBJECT (server->priv->tp_channel),
+      server->priv->signal_invalidated_id);
+
   if (server->priv->tp_channel != NULL)
     {
       g_object_unref (server->priv->tp_channel);
       server->priv->tp_channel = NULL;
+    }
+
+  if (server->priv->icon_tube != NULL)
+    {
+      g_object_unref (server->priv->icon_tube);
+      server->priv->icon_tube = NULL;
     }
 
   if (G_OBJECT_CLASS (vino_tube_server_parent_class)->dispose)
@@ -124,7 +138,7 @@ vino_tube_server_finalize (GObject *object)
 
 static void
 vino_tube_server_set_connection_path (VinoTubeServer *server,
-    const gchar    *connection_path)
+    const gchar *connection_path)
 {
   g_return_if_fail (VINO_IS_TUBE_SERVER (server));
 
@@ -208,6 +222,8 @@ vino_tube_server_init (VinoTubeServer *self)
   self->priv = VINO_TUBE_SERVER_GET_PRIVATE (self);
   self->priv->tp_channel = NULL;
   self->priv->channel_properties = NULL;
+  self->priv->icon_tube = NULL;
+  self->priv->state = TP_TUBE_CHANNEL_STATE_NOT_OFFERED;
 }
 
 static void
@@ -263,6 +279,26 @@ vino_tube_server_class_init (VinoTubeServerClass *klass)
   g_type_class_add_private (klass, sizeof (VinoTubeServerPrivate));
 }
 
+void
+vino_tube_server_fire_closed (VinoTubeServer *server)
+{
+  VinoTubeServer *self = VINO_TUBE_SERVER (server);
+
+  g_debug ("Tube is closed\n");
+  g_signal_emit (G_OBJECT (self), signals[DISCONNECTED], 0);
+}
+
+void
+vino_tube_server_close_tube (VinoTubeServer *server)
+{
+  VinoTubeServer *self = VINO_TUBE_SERVER (server);
+
+  tp_cli_channel_call_close (self->priv->tp_channel, -1,
+          NULL, NULL, NULL, NULL);
+
+  vino_tube_server_fire_closed (self);
+}
+
 static void
 vino_tube_server_invalidated_cb (TpProxy *proxy,
     guint domain,
@@ -271,8 +307,61 @@ vino_tube_server_invalidated_cb (TpProxy *proxy,
     gpointer server)
 {
   VinoTubeServer *self = VINO_TUBE_SERVER (server);
-  g_debug ("Tube is closed\n");
-  g_signal_emit (G_OBJECT (self), signals[DISCONNECTED], 0);
+  const gchar *summary;
+  gchar *body;
+
+  summary = _("Share my desktop information");
+
+  if (self->priv->state == TP_TUBE_CHANNEL_STATE_REMOTE_PENDING)
+      body = g_strdup_printf
+          (_("'%s' rejected the desktop sharing invitation."),
+          vino_tube_server_get_alias (self));
+  else
+      body = g_strdup_printf
+          (_("'%s' disconnected"),
+          vino_tube_server_get_alias (self));
+
+  vino_status_tube_icon_show_notif (self->priv->icon_tube, summary,
+      (const gchar *)body, TRUE);
+
+  g_free (body);
+
+  self->priv->state = TP_TUBE_CHANNEL_STATE_NOT_OFFERED;
+}
+
+static void
+vino_tube_server_state_changed (TpChannel *channel,
+    guint state,
+    gpointer object,
+    GObject *weak_object)
+{
+  VinoTubeServer *server = VINO_TUBE_SERVER (object);
+  const gchar *summary;
+  gchar *body;
+
+  summary = _("Share my desktop information");
+
+  switch (state)
+    {
+      case TP_TUBE_CHANNEL_STATE_OPEN:
+        body = g_strdup_printf
+            (_("'%s' is remotely controlling your desktop."),
+            vino_tube_server_get_alias (server));
+        vino_status_tube_icon_show_notif (server->priv->icon_tube, summary,
+            (const gchar*) body, FALSE);
+        g_free (body);
+        server->priv->state = TP_TUBE_STATE_OPEN;
+        break;
+      case TP_TUBE_CHANNEL_STATE_REMOTE_PENDING:
+        body =  g_strdup_printf
+            (_("Waiting for '%s' to connect to the screen."),
+            vino_tube_server_get_alias (server));
+        vino_status_tube_icon_show_notif (server->priv->icon_tube, summary,
+            (const gchar*) body, FALSE);
+        g_free (body);
+        server->priv->state = TP_TUBE_STATE_REMOTE_PENDING;
+        break;
+    }
 }
 
 static void
@@ -390,6 +479,8 @@ vino_tube_server_channel_ready (TpChannel *channel,
   GHashTable *parameters;
   GValue address = {0,};
   gint port;
+  GdkScreen *screen;
+  GError *error_failed = NULL;
 
   parameters = g_hash_table_new (g_str_hash, g_str_equal);
 
@@ -398,6 +489,25 @@ vino_tube_server_channel_ready (TpChannel *channel,
       g_printerr ("Impossible to create the channel: %s\n",
           error->message);
       return;
+    }
+
+  screen = gdk_screen_get_default ();
+  server->priv->icon_tube = vino_status_tube_icon_new (server,
+      screen);
+
+  vino_status_tube_icon_set_visibility (server->priv->icon_tube,
+      VINO_STATUS_TUBE_ICON_VISIBILITY_ALWAYS);
+
+  tp_cli_channel_interface_tube_connect_to_tube_channel_state_changed
+      (channel, vino_tube_server_state_changed, server, NULL, NULL,
+      &error_failed);
+
+  if (error_failed != NULL)
+    {
+      g_printerr ("Failed to connect state channel: %s\n",
+          error_failed->message);
+      g_clear_error (&error_failed);
+      return ;
     }
 
   connection = tp_channel_borrow_connection (server->priv->tp_channel);
@@ -412,8 +522,8 @@ vino_tube_server_channel_ready (TpChannel *channel,
 
   g_debug ("-- Creation of a VinoTubeServer!! port : %d --\n", port);
 
-  g_signal_connect (G_OBJECT (channel), "invalidated",
-      G_CALLBACK (vino_tube_server_invalidated_cb), server);
+  server->priv->signal_invalidated_id = g_signal_connect (G_OBJECT (channel),
+      "invalidated", G_CALLBACK (vino_tube_server_invalidated_cb), server);
 
   g_value_init (&address, TP_STRUCT_TYPE_SOCKET_ADDRESS_IPV4);
   g_value_take_boxed (&address, dbus_g_type_specialized_construct
