@@ -25,8 +25,10 @@
 #include <dbus/dbus-glib.h>
 
 #include "vino-tube-servers-manager.h"
+#include "vino-server.h"
 #include "vino-tube-server.h"
 #include "vino-dbus-error.h"
+#include "vino-status-tube-icon.h"
 
 G_DEFINE_TYPE (VinoTubeServersManager, vino_tube_servers_manager,
     G_TYPE_OBJECT);
@@ -98,7 +100,7 @@ vino_tube_servers_manager_share_with_tube
   VinoTubeServer *server;
   GdkDisplay *display;
   GdkScreen *screen;
-  VinoStatusIcon *icon;
+
   /* the server is listenning only on lo as only the tube is supposed to
   connect to it */
   gchar * network_interface = "lo";
@@ -107,6 +109,7 @@ vino_tube_servers_manager_share_with_tube
   screen = gdk_display_get_default_screen (display);
 
   server = g_object_new (VINO_TYPE_TUBE_SERVER,
+      "display-status-icon",  0,
       "use-dbus-listener",    0,
       "prompt-enabled",       0,
       "view-only",            0,
@@ -131,9 +134,6 @@ vino_tube_servers_manager_share_with_tube
 
   g_signal_connect (G_OBJECT (server), "disconnected", G_CALLBACK
       (vino_tube_servers_manager_disconnected_cb), self);
-
-  icon = vino_server_get_status_icon (VINO_SERVER(server));
-  vino_status_icon_set_visibility (icon, VINO_STATUS_ICON_VISIBILITY_CLIENT);
 
   self->priv->alternative_port++;
 
