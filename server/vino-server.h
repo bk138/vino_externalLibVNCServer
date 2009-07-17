@@ -26,6 +26,8 @@
 #include <glib-object.h>
 #include <gdk/gdk.h>
 
+#include "vino-types.h"
+
 G_BEGIN_DECLS
 
 #define VINO_SERVER_DEFAULT_PORT  5900
@@ -40,7 +42,6 @@ G_BEGIN_DECLS
 #define VINO_IS_SERVER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), VINO_TYPE_SERVER))
 #define VINO_SERVER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), VINO_TYPE_SERVER, VinoServerClass))
 
-typedef struct _VinoServer        VinoServer;
 typedef struct _VinoServerClass   VinoServerClass;
 typedef struct _VinoServerPrivate VinoServerPrivate;
 typedef struct _VinoClient        VinoClient;
