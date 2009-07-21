@@ -79,6 +79,8 @@ gboolean             vino_server_get_prompt_enabled       (VinoServer     *serve
 void                 vino_server_set_view_only            (VinoServer     *server,
 							   gboolean        view_only);
 gboolean             vino_server_get_view_only            (VinoServer     *server);
+void                 vino_server_set_display_status_icon  (VinoServer     *server,
+                                                           gboolean        display_status_icon);
 void                 vino_server_set_use_dbus_listener    (VinoServer     *server,
                                                            gboolean        use_dbus_listener);
 gboolean             vino_server_get_use_dbus_listener    (VinoServer     *server);

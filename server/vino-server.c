@@ -62,6 +62,7 @@ struct _VinoServerPrivate
   VinoCursorData   *cursor_data;
   VinoPrompt       *prompt;
   VinoStatusIcon   *icon;
+  gboolean          display_status_icon;
   VinoDBusListener *listener;
   gboolean          use_dbus_listener;
   VinoUpnp         *upnp;
@@ -113,6 +114,7 @@ enum
   PROP_ON_HOLD,
   PROP_PROMPT_ENABLED,
   PROP_VIEW_ONLY,
+  PROP_DISPLAY_STATUS_ICON,
   PROP_USE_DBUS_LISTENER,
   PROP_NETWORK_INTERFACE,
   PROP_USE_ALTERNATIVE_PORT,
@@ -303,7 +305,8 @@ static void
 vino_server_client_accepted (VinoServer *server,
                              VinoClient *client)
 {
-  vino_status_icon_add_client (server->priv->icon, client);
+  if (server->priv->display_status_icon)
+    vino_status_icon_add_client (server->priv->icon, client);
 
   vino_server_unlock_screen ();
 
@@ -316,12 +319,15 @@ static void
 vino_server_client_disconnected (VinoServer *server,
                                  VinoClient *client)
 {
-  if (vino_status_icon_remove_client (server->priv->icon, client))
+  if (server->priv->display_status_icon)
     {
-      vino_server_lock_screen (server);
+      if (vino_status_icon_remove_client (server->priv->icon, client))
+        {
+          vino_server_lock_screen (server);
 
-      if (vino_server_get_disable_background (server))
-	vino_background_draw (TRUE);
+          if (vino_server_get_disable_background (server))
+            vino_background_draw (TRUE);
+        }
     }
 }
 
@@ -1054,7 +1060,6 @@ vino_server_init_from_screen (VinoServer *server,
                     G_CALLBACK (vino_server_clipboard_cb),
                     server);
 
-  server->priv->icon = vino_status_icon_new (server, server->priv->screen);
   server->priv->upnp = NULL;
   server->priv->disable_xdamage = FALSE;
 }
@@ -1156,6 +1161,9 @@ vino_server_set_property (GObject      *object,
     case PROP_VIEW_ONLY:
       vino_server_set_view_only (server, g_value_get_boolean (value));
       break;
+    case PROP_DISPLAY_STATUS_ICON:
+      vino_server_set_display_status_icon (server, g_value_get_boolean (value));
+      break;
     case PROP_USE_DBUS_LISTENER:
       vino_server_set_use_dbus_listener (server, g_value_get_boolean (value));
       break;
@@ -1217,6 +1225,9 @@ vino_server_get_property (GObject    *object,
     case PROP_VIEW_ONLY:
       g_value_set_boolean (value, server->priv->view_only);
       break;
+    case PROP_DISPLAY_STATUS_ICON:
+      g_value_set_boolean (value, server->priv->display_status_icon);
+      break;
     case PROP_USE_DBUS_LISTENER:
       g_value_set_boolean (value, server->priv->use_dbus_listener);
       break;
@@ -1268,6 +1279,12 @@ vino_server_constructed (GObject *object)
     server->priv->listener = vino_dbus_listener_new (server);
   else
     server->priv->listener = NULL;
+
+  if (server->priv->display_status_icon)
+    server->priv->icon = vino_status_icon_new (server, server->priv->screen);
+  else
+    server->priv->icon = NULL;
+
 }
 
 static void
@@ -1335,6 +1352,16 @@ vino_server_class_init (VinoServerClass *klass)
                                                          G_PARAM_STATIC_NAME |
                                                          G_PARAM_STATIC_NICK |
                                                          G_PARAM_STATIC_BLURB));
+
+   g_object_class_install_property (gobject_class,
+				   PROP_DISPLAY_STATUS_ICON,
+				   g_param_spec_boolean ("display-status-icon",
+							 "Display the status icon",
+							 "Allow to display the status icon",
+							 TRUE,
+                                                         G_PARAM_READWRITE   |
+                                                         G_PARAM_CONSTRUCT   |
+                                                         G_PARAM_STATIC_STRINGS));
 
    g_object_class_install_property (gobject_class,
 				   PROP_USE_DBUS_LISTENER,
@@ -1528,6 +1555,15 @@ vino_server_set_view_only (VinoServer *server,
 
       g_object_notify (G_OBJECT (server), "view-only");
     }
+}
+
+void
+vino_server_set_display_status_icon (VinoServer *server,
+    gboolean display_status_icon)
+{
+  g_return_if_fail (VINO_IS_SERVER (server));
+
+  server->priv->display_status_icon = display_status_icon;
 }
 
 gboolean
