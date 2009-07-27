@@ -179,6 +179,7 @@ EXTRA_DIST = \
 	vino-marshal.list \
 	vino-server.desktop.in.in \
 	org.gnome.Vino.service.in \
+	dbus-interface.xml \
 	$(NULL)
 
 BUILT_SOURCES = \
