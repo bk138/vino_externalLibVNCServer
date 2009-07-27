@@ -1,3 +1,36 @@
+Vino 2.27.5
+===========
+
+  Features and Fixes
+	+ Added an (GConf) option to disable XDamage extension. See #533613.
+	+ Added Telepathy tubes support, allowing you to share the desktop
+	with an IM buddy. (Arnaud Maillet)
+	+ Dropped libgnome dependency. Using EggSmClient.
+	+ Migrate from libglade to GtkBuilder. (Javier Jardón)
+	+ Many small bug fixes.
+
+  Translations
+
+	+ Alexander Shopov (bg)
+	+ A S Alam (pa)
+	+ Ask H. Larsen (da)
+	+ Chao-Hsiung Liao (zh_HK) (zh_TW)
+	+ Claude Paroz (fr)
+	+ Daniel Nylander (sv)
+	+ drtvasudevan (ta)
+	+ Gabor Kelemen (hu)
+	+ Ihar Hrachyshka (be)
+	+ Ivar Smolin (et)
+	+ Jonh Wendell (pt_BR)
+	+ Jorge Gonzalez (es)
+	+ Laurent Coudeur (fr)
+	+ Luca Ferretti (it)
+	+ Marios Zindilis (el)
+	+ Matej Urban (sl)
+	+ Mattias Põldaru (et)
+	+ Maxim V. Dziumanenko (uk)
+	+ Yaron Shahrabani (he)
+
 Vino 2.26.1
 ===========
 
