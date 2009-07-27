@@ -17,5 +17,7 @@ server/vino-server.c
 server/vino-server.desktop.in.in
 server/vino-server.schemas.in
 server/vino-status-icon.c
+server/vino-status-tube-icon.c
+server/vino-tube-server.c
 server/vino-util.c
 tools/vino-passwd.c
