@@ -25,6 +25,9 @@ INCLUDES = \
 libexec_PROGRAMS = vino-server
 
 vino_server_LDADD = \
+	$(top_builddir)/server/libvncserver/libvncserver.la \
+	$(top_builddir)/server/miniupnp/libminiupnp.la \
+	$(top_builddir)/server/smclient/libeggsmclient.la \
 	$(VINO_SERVER_LIBS) \
 	$(VINO_LIBNOTIFY_LIBS) \
 	$(VINO_KEYRING_LIBS) \
@@ -33,9 +36,6 @@ vino_server_LDADD = \
 	$(LIBGNUTLS_LIBS) \
 	$(LIBGCRYPT_LIBS) \
 	$(X_LIBS) $(XTEST_LIBS) $(XSHM_LIBS) $(XDAMAGE_LIBS) \
-	$(top_builddir)/server/libvncserver/libvncserver.la \
-	$(top_builddir)/server/miniupnp/libminiupnp.la \
-	$(top_builddir)/server/smclient/libeggsmclient.la \
 	$(NULL)
 
 if HTTP_SERVER
