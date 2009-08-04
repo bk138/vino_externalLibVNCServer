@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&component=Preferences Dialog\n"
-"POT-Creation-Date: 2009-06-20 11:56+0000\n"
-"PO-Revision-Date: 2009-06-21 13:38+0200\n"
+"POT-Creation-Date: 2009-07-27 19:15+0000\n"
+"PO-Revision-Date: 2009-08-04 19:20+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -67,8 +67,8 @@ msgstr "Otros podrán acceder a su equipo usando la dirección %s."
 msgid "Nobody can access your desktop."
 msgstr "Nadie puede acceder a su escritorio."
 
-#: ../capplet/vino-preferences.c:1130 ../server/vino-server.c:162
-#: ../server/vino-server.c:193
+#: ../capplet/vino-preferences.c:1130 ../server/vino-server.c:164
+#: ../server/vino-server.c:195
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Falló al abrir conexión con bus: %s\n"
@@ -95,7 +95,6 @@ msgid "Maximum size: 8 characters"
 msgstr "Tamaño máximo: 8 caracteres"
 
 #: ../capplet/vino-preferences.ui.h:4
-#| msgid "<b>Notification Area</b>"
 msgid "Notification Area"
 msgstr "Área de notificación"
 
@@ -108,17 +107,14 @@ msgid "Remote users are able to control your mouse and keyboard"
 msgstr "Los usuarios remotos pueden controlar el teclado y el ratón"
 
 #: ../capplet/vino-preferences.ui.h:7
-#| msgid "<b>Security</b>"
 msgid "Security"
 msgstr "Seguridad"
 
 #: ../capplet/vino-preferences.ui.h:8
-#| msgid "<b>Sharing</b>"
 msgid "Sharing"
 msgstr "Compartir"
 
 #: ../capplet/vino-preferences.ui.h:9
-#| msgid "<i>Some of these preferences are locked down</i>"
 msgid "Some of these preferences are locked down"
 msgstr "Algunas de estas preferencias están bloqueadas"
 
@@ -232,9 +228,6 @@ msgid "- VNC Server for GNOME"
 msgstr " - Cliente VNC para GNOME"
 
 #: ../server/vino-main.c:75
-#| msgid ""
-#| "Run 'vino-passwd --help' to see a full list of available command line "
-#| "options"
 msgid ""
 "Run 'vino-server --help' to see a full list of available command line options"
 msgstr ""
@@ -303,7 +296,6 @@ msgstr ""
 "su escritorio."
 
 #: ../server/vino-prompt.ui.h:2
-#| msgid "<big><b>Another user is trying to view your desktop.</b></big>"
 msgid "Another user is trying to view your desktop."
 msgstr "Otro usuario está intentando ver su escritorio."
 
@@ -528,26 +520,26 @@ msgstr "Indica si se debe desactivar la extensión XDamage de X.org"
 msgid "Whether we should use UPNP to forward the port in routers"
 msgstr "Indica si se debe usar UPNP para reenviar el puerto en routers"
 
-#: ../server/vino-status-icon.c:106
+#: ../server/vino-status-icon.c:102 ../server/vino-status-tube-icon.c:95
 msgid "Desktop sharing is enabled"
 msgstr "La compartición del escritorio está activada"
 
-#: ../server/vino-status-icon.c:114
+#: ../server/vino-status-icon.c:110
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
 msgstr[0] "Una persona está conectada"
 msgstr[1] "%d personas están conectadas"
 
-#: ../server/vino-status-icon.c:211
+#: ../server/vino-status-icon.c:207 ../server/vino-status-tube-icon.c:175
 msgid "Error displaying preferences"
 msgstr "Error al mostrar las preferencias"
 
-#: ../server/vino-status-icon.c:230
+#: ../server/vino-status-icon.c:226 ../server/vino-status-tube-icon.c:191
 msgid "Error displaying help"
 msgstr "Error al mostrar la ayuda"
 
-#: ../server/vino-status-icon.c:257
+#: ../server/vino-status-icon.c:253
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -582,102 +574,122 @@ msgstr ""
 "02110-1301 EE.UU.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:272
+#: ../server/vino-status-icon.c:268
 msgid "translator-credits"
 msgstr ""
 "Jorge González <jorgegonz@svn.gnome.org>, 2007-2009\n"
 "Francisco Javier F. Serrador <serrador@openshine.com>, 2004-2006"
 
-#: ../server/vino-status-icon.c:278
+#: ../server/vino-status-icon.c:274
 msgid "Share your desktop with other users"
 msgstr "Comparta su escritorio con otros usuarios"
 
-#: ../server/vino-status-icon.c:344 ../server/vino-status-icon.c:360
+#: ../server/vino-status-icon.c:339 ../server/vino-status-tube-icon.c:223
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "¿Seguro que quiere desconectar a «%s»?"
 
-#: ../server/vino-status-icon.c:348
-#, c-format
-msgid "The remote user '%s' will be disconnected. Are you sure?"
-msgstr "Se desconectará al usuario remoto «%s». ¿Está seguro?"
-
-#: ../server/vino-status-icon.c:363
+#: ../server/vino-status-icon.c:342
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "El usuario remoto de «%s» será desconectado. ¿Está seguro?"
 
-#: ../server/vino-status-icon.c:369
+#: ../server/vino-status-icon.c:348
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "¿Seguro que quiere desconectar todos los clientes?"
 
-#: ../server/vino-status-icon.c:371
+#: ../server/vino-status-icon.c:350
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Todos los usuarios remotos serán desconectados. ¿Está seguro?"
 
-#: ../server/vino-status-icon.c:387
+#: ../server/vino-status-icon.c:362 ../server/vino-status-tube-icon.c:237
 msgid "Disconnect"
 msgstr "Desconectar"
 
-#: ../server/vino-status-icon.c:413
+#: ../server/vino-status-icon.c:388 ../server/vino-status-tube-icon.c:262
 msgid "_Preferences"
 msgstr "_Preferencias"
 
-#: ../server/vino-status-icon.c:428
+#: ../server/vino-status-icon.c:403
 msgid "Disconnect all"
 msgstr "Desconectar todos"
 
-#. Translators: %s is the alias of the telepathy contact
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:454 ../server/vino-status-icon.c:461
+#. Translators: %s is the alias of the telepathy contact
+#: ../server/vino-status-icon.c:427 ../server/vino-status-tube-icon.c:275
 #, c-format
 msgid "Disconnect %s"
 msgstr "Desconectar %s"
 
-#: ../server/vino-status-icon.c:482
+#: ../server/vino-status-icon.c:448 ../server/vino-status-tube-icon.c:294
 msgid "_Help"
 msgstr "Ay_uda"
 
-#: ../server/vino-status-icon.c:490
+#: ../server/vino-status-icon.c:456
 msgid "_About"
 msgstr "Acerca _de"
 
-#: ../server/vino-status-icon.c:627
+#: ../server/vino-status-icon.c:589 ../server/vino-status-tube-icon.c:391
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Error al iniciar libnotify\n"
 
-#. Translators: %s is the alias of the telepathy contact
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:649 ../server/vino-status-icon.c:681
-msgid "Another user is controlling your desktop"
-msgstr "Otro usuario está controlando su escritorio"
-
-#: ../server/vino-status-icon.c:651
-#, c-format
-msgid "'%s' is remotely controlling your desktop."
-msgstr "«%s» está controlando su escritorio remotamente."
-
-#. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:673
+#: ../server/vino-status-icon.c:610
 msgid "Another user is viewing your desktop"
 msgstr "Otro usuario está viendo su escritorio"
 
-#: ../server/vino-status-icon.c:675
+#: ../server/vino-status-icon.c:612
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Un usuario en el equipo «%s» está viendo su escritorio remotamente."
 
-#: ../server/vino-status-icon.c:683
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:618
+msgid "Another user is controlling your desktop"
+msgstr "Otro usuario está controlando su escritorio"
+
+#: ../server/vino-status-icon.c:620
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr ""
 "Un usuario en el equipo «%s» está controlando su escritorio remotamente."
 
-#: ../server/vino-status-icon.c:709
+#: ../server/vino-status-icon.c:642 ../server/vino-status-tube-icon.c:422
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Error al mostrar la burbuja de notificación: %s\n"
+
+#: ../server/vino-status-tube-icon.c:226
+#, c-format
+msgid "The remote user '%s' will be disconnected. Are you sure?"
+msgstr "Se desconectará al usuario remoto «%s». ¿Está seguro?"
+
+#: ../server/vino-tube-server.c:313 ../server/vino-tube-server.c:342
+#| msgid "Share your desktop with other users"
+msgid "Share my desktop information"
+msgstr "Compartir la información de mi escritorio"
+
+#: ../server/vino-tube-server.c:317
+#, c-format
+msgid "'%s' rejected the desktop sharing invitation."
+msgstr "«%s» rechazó la invitación para compartir."
+
+#: ../server/vino-tube-server.c:321
+#, c-format
+#| msgid "Disconnect"
+msgid "'%s' disconnected"
+msgstr "«%s» desconectado"
+
+#: ../server/vino-tube-server.c:348
+#, c-format
+msgid "'%s' is remotely controlling your desktop."
+msgstr "«%s» está controlando su escritorio remotamente."
+
+#: ../server/vino-tube-server.c:357
+#, c-format
+msgid "Waiting for '%s' to connect to the screen."
+msgstr "Esperando a que «%s» se conecte a la pantalla."
 
 #: ../server/vino-util.c:115
 msgid "An error has occurred:"
