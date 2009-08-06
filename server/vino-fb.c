@@ -444,7 +444,7 @@ vino_fb_poll_screen (VinoFB *vfb)
 	screen_damaged = TRUE;
     }
   
-  vfb->priv->n_scanline = ++vfb->priv->n_scanline % N_SCANLINES;
+  vfb->priv->n_scanline = (vfb->priv->n_scanline + 1) % N_SCANLINES;
 
   if (!already_damaged && screen_damaged)
     emit_damage_notify (vfb);
