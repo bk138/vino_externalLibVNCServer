@@ -1,4 +1,4 @@
-# translation of vino-master-po-gl.po to Galician
+# translation of vino.master.po to Galician
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
@@ -13,10 +13,10 @@
 # Antón Méixome <meixome@mancomun.org>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: vino-master-po-gl\n"
+"Project-Id-Version: vino.master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-06 19:07+0200\n"
-"PO-Revision-Date: 2009-07-10 08:49+0200\n"
+"POT-Creation-Date: 2009-08-12 13:35+0200\n"
+"PO-Revision-Date: 2009-08-07 15:03+0200\n"
 "Last-Translator: Antón Méixome <meixome@mancomun.org>\n"
 "Language-Team: Galician <gnome@mancomun.org>\n"
 "MIME-Version: 1.0\n"
@@ -577,7 +577,9 @@ msgstr ""
 #. Translators comment: put your own name here to appear in the about dialog.
 #: ../server/vino-status-icon.c:268
 msgid "translator-credits"
-msgstr "Suso Baleato <suso.baleato@xunta.es>"
+msgstr ""
+"Suso Baleato <suso.baleato@xunta.es>\n"
+"Antón Méixome <meixome@mancomun.org>"
 
 #: ../server/vino-status-icon.c:274
 msgid "Share your desktop with other users"
@@ -667,19 +669,18 @@ msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "O usuario remoto de '%s' será desconectado. Está seguro?"
 
 #: ../server/vino-tube-server.c:313 ../server/vino-tube-server.c:342
-#, fuzzy
 msgid "Share my desktop information"
-msgstr "Comparta o seu escritorio con outros usuarios"
+msgstr "Compartir a información do meu escritorio"
 
 #: ../server/vino-tube-server.c:317
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
-msgstr ""
+msgstr "'%s' rexeitou a invitación a compartir o escritorio."
 
 #: ../server/vino-tube-server.c:321
-#, fuzzy, c-format
+#, c-format
 msgid "'%s' disconnected"
-msgstr "Desconectar"
+msgstr "'%s' desconectada"
 
 #: ../server/vino-tube-server.c:348
 #, c-format
@@ -689,7 +690,7 @@ msgstr "'%s' está a controlar remotamente o seu escritorio."
 #: ../server/vino-tube-server.c:357
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
-msgstr ""
+msgstr "Agardando por '%s' para conectar á pantalla."
 
 #: ../server/vino-util.c:115
 msgid "An error has occurred:"
