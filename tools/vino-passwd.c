@@ -147,7 +147,7 @@ vino_passwd_read (char *buff,
   fflush (stdout);
 }
 
-static void
+static int
 vino_passwd_change (GConfClient *conf)
 {
   gchar password1[VINO_PASSWORD_MAXLEN + 1];
@@ -165,11 +165,13 @@ vino_passwd_change (GConfClient *conf)
     {
       vino_passwd_set_password (conf, password1);
       g_print (_("vino-passwd: password updated successfully.\n"));
+      return 0;
     }
   else
     {
       g_printerr (_("Sorry, passwords do not match.\n"));
       g_printerr (_("vino-passwd: password unchanged.\n"));
+      return 1;
     }
 }
 
@@ -230,11 +232,10 @@ main(int argc, char *argv[])
   conf = gconf_client_get_default ();
 
   if (gconf_client_key_is_writable (conf, VINO_PREFS_VNC_PASSWORD, NULL))
-    vino_passwd_change (conf);
+    return vino_passwd_change (conf);
   else
-    g_printerr (_("ERROR: You do not have enough permissions to change Vino password.\n"));
-
-  g_object_unref (conf);
-
-  return 0;
+    {
+      g_printerr (_("ERROR: You do not have enough permissions to change Vino password.\n"));
+      return 1;
+    }
 }
