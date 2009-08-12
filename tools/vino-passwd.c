@@ -173,6 +173,17 @@ vino_passwd_change (GConfClient *conf)
     }
 }
 
+static void
+gconf_error_handle (GConfClient *client, GError *error)
+{
+  g_print (_("Error while communicating with GConf. Are you logged into a GNOME session?"));
+  g_print ("\n");
+  g_print (_("Error message:"));
+  g_print ("\n\n%s\n\n", error->message);
+
+  exit (1);
+}
+
 int 
 main(int argc, char *argv[])
 {
@@ -214,6 +225,8 @@ main(int argc, char *argv[])
      return 0;
    }
 
+  g_type_init ();
+  gconf_client_set_global_default_error_handler (gconf_error_handle);
   conf = gconf_client_get_default ();
 
   if (gconf_client_key_is_writable (conf, VINO_PREFS_VNC_PASSWORD, NULL))
