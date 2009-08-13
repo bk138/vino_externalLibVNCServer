@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-29 01:17+0200\n"
-"PO-Revision-Date: 2009-07-29 11:25+0100\n"
+"POT-Creation-Date: 2009-08-13 09:44+0200\n"
+"PO-Revision-Date: 2009-08-13 09:45+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -636,34 +636,44 @@ msgstr "Ange nytt Vino-lösenord igen: "
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: lösenordet uppdaterades.\n"
 
-#: ../tools/vino-passwd.c:171
+#: ../tools/vino-passwd.c:172
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "Tyvärr, lösenorden stämmer inte överens.\n"
 
-#: ../tools/vino-passwd.c:172
+#: ../tools/vino-passwd.c:173
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: lösenordet oförändrat.\n"
 
-#: ../tools/vino-passwd.c:187
+#: ../tools/vino-passwd.c:181
+#, c-format
+msgid "Error while communicating with GConf. Are you logged into a GNOME session?"
+msgstr "Fel vid kommunikation med GConf. Är du inloggad i en GNOME-session?"
+
+#: ../tools/vino-passwd.c:183
+#, c-format
+msgid "Error message:"
+msgstr "Felmeddelande:"
+
+#: ../tools/vino-passwd.c:200
 msgid "Show Vino version"
 msgstr "Visa version av Vino"
 
-#: ../tools/vino-passwd.c:196
+#: ../tools/vino-passwd.c:209
 msgid "- Updates Vino password"
 msgstr "- Uppdaterar Vino-lösenordet"
 
-#: ../tools/vino-passwd.c:206
+#: ../tools/vino-passwd.c:219
 msgid "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr "Kör \"vino-passwd --help\" för att se en komplett lista över tillgängliga kommandoradsflaggor"
 
-#: ../tools/vino-passwd.c:213
+#: ../tools/vino-passwd.c:226
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "VINO version %s\n"
 
-#: ../tools/vino-passwd.c:222
+#: ../tools/vino-passwd.c:238
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "FEL: Du har inte behörighet att ändra Vino-lösenordet.\n"
