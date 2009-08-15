@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-12 12:13+0300\n"
-"PO-Revision-Date: 2009-08-12 12:20+0300\n"
+"POT-Creation-Date: 2009-08-15 12:41+0300\n"
+"PO-Revision-Date: 2009-08-15 12:41+0300\n"
 "Last-Translator: Tommi Vainikainen <thv@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -714,36 +714,47 @@ msgstr "Toista uusi vinon salasana:"
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: salasanan vaihto onnistui.\n"
 
-#: ../tools/vino-passwd.c:171
+#: ../tools/vino-passwd.c:172
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "Annetut salasanat eivät täsmää.\n"
 
-#: ../tools/vino-passwd.c:172
+#: ../tools/vino-passwd.c:173
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: salasanaa ei vaihdettu.\n"
 
-#: ../tools/vino-passwd.c:187
+#: ../tools/vino-passwd.c:181
+#, c-format
+msgid ""
+"Error while communicating with GConf. Are you logged into a GNOME session?"
+msgstr "Virhe GConf-yhteydessä. Oletko kirjautunut sisään Gnome-istuntoon?"
+
+#: ../tools/vino-passwd.c:183
+#, c-format
+msgid "Error message:"
+msgstr "Virheilmoitus:"
+
+#: ../tools/vino-passwd.c:200
 msgid "Show Vino version"
 msgstr "Näytä vinon versio"
 
-#: ../tools/vino-passwd.c:196
+#: ../tools/vino-passwd.c:209
 msgid "- Updates Vino password"
 msgstr "- Päivittää vinon salasanan"
 
-#: ../tools/vino-passwd.c:206
+#: ../tools/vino-passwd.c:219
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr ""
 "Suorita ”vino-passwd --help” jos haluat nähdä kaikki mahdolliset valitsimet"
 
-#: ../tools/vino-passwd.c:213
+#: ../tools/vino-passwd.c:226
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "VINO version %s\n"
 
-#: ../tools/vino-passwd.c:222
+#: ../tools/vino-passwd.c:238
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "VIRHE: oikeutesi eivät riitä vinon salasanan vaihtamiseen.\n"
