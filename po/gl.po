@@ -1,4 +1,4 @@
-# translation of vino.master.po to Galician
+# translation of vino-master-po-gl-22006.po to Galician
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
@@ -13,10 +13,10 @@
 # Antón Méixome <meixome@mancomun.org>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: vino.master\n"
+"Project-Id-Version: vino-master-po-gl-22006\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-12 13:35+0200\n"
-"PO-Revision-Date: 2009-08-07 15:03+0200\n"
+"POT-Creation-Date: 2009-08-19 13:44+0200\n"
+"PO-Revision-Date: 2009-08-19 09:24+0200\n"
 "Last-Translator: Antón Méixome <meixome@mancomun.org>\n"
 "Language-Team: Galician <gnome@mancomun.org>\n"
 "MIME-Version: 1.0\n"
@@ -578,8 +578,9 @@ msgstr ""
 #: ../server/vino-status-icon.c:268
 msgid "translator-credits"
 msgstr ""
-"Suso Baleato <suso.baleato@xunta.es>\n"
-"Antón Méixome <meixome@mancomun.org>"
+"Suso Baleato <suso.baleato@xunta.es>,2009;\n"
+"Fran Dieguez <fran.dieguez@glug.es>, 2009;\n"
+"Antón Méixome <meixome@mancomun.org>,2009."
 
 #: ../server/vino-status-icon.c:274
 msgid "Share your desktop with other users"
@@ -734,37 +735,50 @@ msgstr "Escriba o contrasinal do Vino novo outra vez: "
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: o contrasinal do vino foi actualizado con éxito.\n"
 
-#: ../tools/vino-passwd.c:171
+#: ../tools/vino-passwd.c:172
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "Desculpe, os contrasinais non coinciden.\n"
 
-#: ../tools/vino-passwd.c:172
+#: ../tools/vino-passwd.c:173
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: o contrasinal non cambiou.\n"
 
-#: ../tools/vino-passwd.c:187
+#: ../tools/vino-passwd.c:181
+#, c-format
+msgid ""
+"Error while communicating with GConf. Are you logged into a GNOME session?"
+msgstr ""
+"Ocorreu un erro ao comunicarse con GConf. Ten vostede unha sesión de GNOME "
+"iniciada?"
+
+#: ../tools/vino-passwd.c:183
+#, c-format
+msgid "Error message:"
+msgstr "Mensaxe de erro:"
+
+#: ../tools/vino-passwd.c:200
 msgid "Show Vino version"
 msgstr "Mostrar a versión do Vino"
 
-#: ../tools/vino-passwd.c:196
+#: ../tools/vino-passwd.c:209
 msgid "- Updates Vino password"
 msgstr "- Actualiza o contrasinal do Vino"
 
-#: ../tools/vino-passwd.c:206
+#: ../tools/vino-passwd.c:219
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr ""
 "Execute 'vino-passwd --help' para ver unha lista completa das opcións da "
 "liña de ordes dispoñíbeis"
 
-#: ../tools/vino-passwd.c:213
+#: ../tools/vino-passwd.c:226
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "Versión do Vino %s\n"
 
-#: ../tools/vino-passwd.c:222
+#: ../tools/vino-passwd.c:238
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
