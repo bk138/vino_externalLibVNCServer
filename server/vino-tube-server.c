@@ -33,9 +33,6 @@
 #include "vino-tube-server.h"
 #include "vino-dbus-error.h"
 
-#define MC_DBUS_SERVICE "org.freedesktop.Telepathy.MissionControl"
-#define MC_DBUS_SERVICE_PATH "/org/freedesktop/Telepathy/MissionControl"
-
 G_DEFINE_TYPE (VinoTubeServer, vino_tube_server, VINO_TYPE_SERVER);
 
 #define VINO_TUBE_SERVER_GET_PRIVATE(obj)\
@@ -383,50 +380,40 @@ vino_tube_server_contact_get_avatar_filename (TpContact *contact,
     const gchar *token,
     VinoTubeServer *self)
 {
-  TpConnection *connection;
   gchar *avatar_path;
   gchar *avatar_file;
   gchar *token_escaped;
-  gchar *contact_escaped;
-  gchar *mc_account_unique_name;
-  GError *error = NULL;
-  DBusGProxy *proxy;
+  TpConnection *connection;
+  gchar *cm;
+  gchar *protocol;
+
+  if (contact == NULL)
+    return NULL;
+
+  token_escaped = tp_escape_as_identifier (token);
 
   connection = tp_contact_get_connection (contact);
 
-  proxy = dbus_g_proxy_new_for_name (tp_get_bus (), MC_DBUS_SERVICE,
-      MC_DBUS_SERVICE_PATH, MC_DBUS_SERVICE);
-
-  /* Have to do that while waiting for mission control 5 because
-  there is no mc API in telepathy-glib */
-  if (!dbus_g_proxy_call (proxy, "GetAccountForConnection", &error,
-      G_TYPE_STRING, tp_proxy_get_object_path (connection),
-      G_TYPE_INVALID,
-      G_TYPE_STRING, &mc_account_unique_name,
-      G_TYPE_INVALID))
+  if (!tp_connection_parse_object_path (connection, &protocol, &cm))
     {
-      g_printerr ("Failed to request name: %s",
-          error ? error->message : "No error given");
-      g_clear_error (&error);
+      g_printerr ("Impossible to parse object path\n");
       return NULL;
     }
 
-  contact_escaped = tp_escape_as_identifier (tp_contact_get_identifier
-      (contact));
-
-  token_escaped = tp_escape_as_identifier (token);
-  connection = tp_contact_get_connection (contact);
-
   avatar_path = g_build_filename (g_get_user_cache_dir (),
-      "Empathy", "avatars", mc_account_unique_name,
-      contact_escaped, NULL);
+      "telepathy",
+      "avatars",
+      cm,
+      protocol,
+      NULL);
+  g_mkdir_with_parents (avatar_path, 0700);
 
   avatar_file = g_build_filename (avatar_path, token_escaped, NULL);
 
-  g_free (contact_escaped);
   g_free (token_escaped);
   g_free (avatar_path);
-  g_object_unref (proxy);
+  g_free (cm);
+  g_free (protocol);
 
   return avatar_file;
 }
