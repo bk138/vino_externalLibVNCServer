@@ -1,3 +1,24 @@
+Vino 2.27.91
+============
+
+  Fixes
+	+ (vino-passwd): Do not crash if a GConf server is not available.
+	+ Improvements in Telepathy tubes (Arnaud Maillet).
+
+  Translations:
+	+ Alexander Shopov (bg)
+	+ Antón Méixome (gl)
+	+ Claude Paroz (fr)
+	+ Daniel Nylander (sv)
+	+ Gintautas Miliauskas (lt)
+	+ Jochen Skulj (de)
+	+ Jorge González (es)
+	+ Mattias Põldaru (et)
+	+ Runa Bhattacharjee (bn_IN)
+	+ Seán de Búrca (ga)
+	+ Tommi Vainikainen (fi)
+
+
 Vino 2.27.90
 ============
 
