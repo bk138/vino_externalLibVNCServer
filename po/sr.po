@@ -1,5 +1,5 @@
 # Serbian translation of vino
-# Courtesy of Prevod.org team (http://prevod.org/) -- 2003, 2004, 2005, 2006, 2007.
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2003 - 2009.
 #
 # This file is distributed under the same license as the vino package.
 #
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&component=Preferences Dialog\n"
-"POT-Creation-Date: 2009-05-16 12:00+0000\n"
+"POT-Creation-Date: 2009-08-27 16:11+0000\n"
 "PO-Revision-Date: 2009-05-12 20:22+0200\n"
 "Last-Translator: Бранко Кокановић <branko.kokanovic@gmail.com>\n"
 "Language-Team: Serbian (sr) <gnom@prevod.org>\n"
@@ -38,11 +38,11 @@ msgstr "_Умножи адресу у списак исечака"
 msgid "There was an error showing the URL \"%s\""
 msgstr "Дошло је до грешке током приказа адресе „%s“"
 
-#: ../capplet/vino-preferences.c:198 ../capplet/vino-preferences.c:989
+#: ../capplet/vino-preferences.c:197 ../capplet/vino-preferences.c:1000
 msgid "Checking the connectivity of this machine..."
 msgstr "Проверавам повезивост овог рачунара..."
 
-#: ../capplet/vino-preferences.c:798
+#: ../capplet/vino-preferences.c:804
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -51,21 +51,25 @@ msgstr ""
 "Дошло је до грешке при приказивању помоћи:\n"
 "%s"
 
-#: ../capplet/vino-preferences.c:828
+#: ../capplet/vino-preferences.c:834
 msgid "Your desktop is only reachable over the local network."
 msgstr "Ваша радна површ је доступна само преко локалне мреже."
 
-#: ../capplet/vino-preferences.c:851 ../capplet/vino-preferences.c:922
+#: ../capplet/vino-preferences.c:854 ../capplet/vino-preferences.c:929
+msgid " or "
+msgstr " или "
+
+#: ../capplet/vino-preferences.c:859 ../capplet/vino-preferences.c:933
 #, c-format
 msgid "Others can access your computer using the address %s."
 msgstr "Остали могу приступити овом рачунару користећи адресу %s."
 
-#: ../capplet/vino-preferences.c:975
+#: ../capplet/vino-preferences.c:986
 msgid "Nobody can access your desktop."
 msgstr "Нико не може да приступи вашој радној површи."
 
-#: ../capplet/vino-preferences.c:1116 ../server/vino-dbus-listener.c:507
-#: ../server/vino-server.c:158 ../server/vino-server.c:189
+#: ../capplet/vino-preferences.c:1130 ../server/vino-server.c:164
+#: ../server/vino-server.c:195
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Не могу да отворим везу са сабирницом: %s\n"
@@ -80,103 +84,161 @@ msgstr ""
 msgid "Remote Desktop"
 msgstr "Удаљена радна површ"
 
-#: ../capplet/vino-preferences.glade.h:1
-msgid "<b>Notification Area</b>"
-msgstr "<b>Обавештајна зона</b>"
-
-#: ../capplet/vino-preferences.glade.h:2
-msgid "<b>Security</b>"
-msgstr "<b>Безбедност</b>"
-
-#: ../capplet/vino-preferences.glade.h:3
-msgid "<b>Sharing</b>"
-msgstr "<b>Дељење</b>"
-
-#: ../capplet/vino-preferences.glade.h:4
-msgid "<i>Some of these preferences are locked down</i>"
-msgstr "<i>Неке од ових поставки су закључане</i>"
-
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.ui.h:1
 msgid "Al_ways display an icon"
 msgstr "У_век приказуј иконицу"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.ui.h:2
 msgid "Allow other users to _view your desktop"
 msgstr "Допусти осталим _корисницима да гледају вашу радну површ"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.ui.h:3
 msgid "Maximum size: 8 characters"
 msgstr "Највећа дужина: 8 карактера"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.ui.h:4
+msgid "Notification Area"
+msgstr "Обавештајна зона"
+
+#: ../capplet/vino-preferences.ui.h:5
 msgid "Remote Desktop Preferences"
 msgstr "Поставке удаљене радне површи"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.ui.h:6
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "Удаљени корисници могу да контролишу миша и тастатуру"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.ui.h:7
+msgid "Security"
+msgstr "Безбедност"
+
+#: ../capplet/vino-preferences.ui.h:8
+msgid "Sharing"
+msgstr "Дељење"
+
+#: ../capplet/vino-preferences.ui.h:9
+msgid "Some of these preferences are locked down"
+msgstr "Неке од ових поставки су закључане"
+
+#: ../capplet/vino-preferences.ui.h:10
 msgid "The router must have the UPnP feature enabled"
 msgstr "Рутер мора да има омогућен УПнП"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.ui.h:11
 msgid "You will be queried to allow or to refuse every incoming connection"
 msgstr "Бићете упитани да дозволите или одбијете сваку надолазећу везу"
 
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.ui.h:12
 msgid "Your desktop will be shared"
 msgstr "Приступ радној површи ће бити дељен"
 
-#: ../capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.ui.h:13
 msgid "_Allow other users to control your desktop"
 msgstr "_Допусти осталим корисницима да управљају вашом радном површи"
 
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.ui.h:14
 msgid "_Configure network automatically to accept connections"
 msgstr "_Подеси мрежу да аутоматски прихвата везе"
 
-#: ../capplet/vino-preferences.glade.h:15
+#: ../capplet/vino-preferences.ui.h:15
 msgid "_Never display an icon"
 msgstr "_Не приказуј иконицу"
 
-#: ../capplet/vino-preferences.glade.h:16
+#: ../capplet/vino-preferences.ui.h:16
 msgid "_Only display an icon when there is someone connected"
 msgstr "Прикажи иконицу _само када је неко повезан"
 
-#: ../capplet/vino-preferences.glade.h:17
+#: ../capplet/vino-preferences.ui.h:17
 msgid "_Require the user to enter this password:"
 msgstr "_Захтевај да корисник унесе ову лозинку:"
 
-#: ../capplet/vino-preferences.glade.h:18
+#: ../capplet/vino-preferences.ui.h:18
 msgid "_You must confirm each access to this machine"
 msgstr "_Ви морате одобрити сваки приступ овом рачунару"
 
-#: ../server/vino-dbus-listener.c:284 ../server/vino-dbus-listener.c:314
-#: ../server/vino-dbus-listener.c:358
+#: ../server/smclient/eggdesktopfile.c:165
 #, c-format
-msgid "Out of memory handling '%s' message"
-msgstr "Понестало меморије при обради поруке „%s“"
+msgid "File is not a valid .desktop file"
+msgstr "Ово није исправна .desktop датотека"
 
-#: ../server/vino-dbus-listener.c:464
+#: ../server/smclient/eggdesktopfile.c:188
 #, c-format
-msgid "Out of memory registering object path '%s'"
-msgstr "Понестало меморије при регистрацији путање објекта „%s“"
+msgid "Unrecognized desktop file Version '%s'"
+msgstr "Неје препознато издање десктоп датотеке„%s“"
 
-#: ../server/vino-dbus-listener.c:543
+#: ../server/smclient/eggdesktopfile.c:958
 #, c-format
-msgid "Failed to acquire D-Bus name '%s'\n"
-msgstr "Неуспешно прибављање D-Bus назива „%s“\n"
+msgid "Starting %s"
+msgstr "Започињем %s"
 
-#: ../server/vino-dbus-listener.c:551
+#: ../server/smclient/eggdesktopfile.c:1100
+#, c-format
+msgid "Application does not accept documents on command line"
+msgstr "Програм не прихвата документе из командне линије"
+
+#: ../server/smclient/eggdesktopfile.c:1168
+#, c-format
+msgid "Unrecognized launch option: %d"
+msgstr "Непозната опција при покретању: %d"
+
+#: ../server/smclient/eggdesktopfile.c:1373
+#, c-format
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr ""
+"Не могу да унесем адресу документа у „Type=Link“ унос десктоп "
+"датотеке"
+
+#: ../server/smclient/eggdesktopfile.c:1392
+#, c-format
+msgid "Not a launchable item"
+msgstr "Не можете да покренете ову ставку"
+
+#: ../server/smclient/eggsmclient.c:225
+msgid "Disable connection to session manager"
+msgstr "Онемогући везу са управником сесије"
+
+#: ../server/smclient/eggsmclient.c:228
+msgid "Specify file containing saved configuration"
+msgstr "Изаберите датотеку која садржи сачувана подешавања"
+
+#: ../server/smclient/eggsmclient.c:228
+msgid "FILE"
+msgstr "ДАТОТЕКА"
+
+#: ../server/smclient/eggsmclient.c:231
+msgid "Specify session management ID"
+msgstr "Унесите ИБ управника сесијом"
+
+#: ../server/smclient/eggsmclient.c:231
+msgid "ID"
+msgstr "ИБ"
+
+#: ../server/smclient/eggsmclient.c:252
+msgid "Session management options:"
+msgstr "Опције управника сесијом"
+
+#: ../server/smclient/eggsmclient.c:253
+msgid "Show session management options"
+msgstr "Приказује опције управника сесијом"
+
+#: ../server/vino-dbus-listener.c:456
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "Сервер удаљене радне површи је већ покренут; завршавам...\n"
 
-#: ../server/vino-main.c:89
+#: ../server/vino-main.c:67
+msgid "- VNC Server for GNOME"
+msgstr "- Гномов VNC сервер"
+
+#: ../server/vino-main.c:75
+msgid ""
+"Run 'vino-server --help' to see a full list of available command line options"
+msgstr "Покрените „vino-server --help“ за пуну листу доступних опција"
+
+#: ../server/vino-main.c:97
 msgid "GNOME Remote Desktop"
 msgstr "Гномова удаљена радна површ"
 
-#: ../server/vino-main.c:99
+#: ../server/vino-main.c:107
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -209,15 +271,15 @@ msgstr "Удаљена радна површ корисника %s на %s"
 msgid "Received signal %d, exiting...\n"
 msgstr "Примљен је сигнал %d, излазим...\n"
 
-#: ../server/vino-prompt.c:142
+#: ../server/vino-prompt.c:141
 msgid "Screen"
 msgstr "Екран"
 
-#: ../server/vino-prompt.c:143
+#: ../server/vino-prompt.c:142
 msgid "The screen on which to display the prompt"
 msgstr "Екран на ком да прикаже упит"
 
-#: ../server/vino-prompt.c:343
+#: ../server/vino-prompt.c:345
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -226,11 +288,7 @@ msgstr ""
 "Корисник рачунара „%s“ покушава да издалека прегледа или управља вашом "
 "радном површи."
 
-#: ../server/vino-prompt.glade.h:1
-msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>Други корисник покушава да гледа вашу радну површ.</b></big>"
-
-#: ../server/vino-prompt.glade.h:2
+#: ../server/vino-prompt.ui.h:1
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
@@ -238,19 +296,23 @@ msgstr ""
 "Корисник другог рачунара покушава да гледа или управља вашом радном површи "
 "издалека."
 
-#: ../server/vino-prompt.glade.h:3
+#: ../server/vino-prompt.ui.h:2
+msgid "Another user is trying to view your desktop."
+msgstr "Други корисник покушава да гледа вашу радну површ."
+
+#: ../server/vino-prompt.ui.h:3
 msgid "Do you want to allow them to do so?"
 msgstr "Желите ли да му то допустите?"
 
-#: ../server/vino-prompt.glade.h:4
+#: ../server/vino-prompt.ui.h:4
 msgid "Question"
 msgstr "Питање"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:64
 msgid "_Allow"
 msgstr "_Допусти"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:65
 msgid "_Refuse"
 msgstr "_Одбиј"
 
@@ -454,7 +516,7 @@ msgstr "Да ли искључити XDamage додатак X.org-а"
 msgid "Whether we should use UPNP to forward the port in routers"
 msgstr "Да ли треба да се користи УПнП да се проследи порт на рутерима"
 
-#: ../server/vino-status-icon.c:102
+#: ../server/vino-status-icon.c:102 ../server/vino-status-tube-icon.c:95
 msgid "Desktop sharing is enabled"
 msgstr "Дељени приступ радној површи је омогућен"
 
@@ -467,11 +529,11 @@ msgstr[1] "%d особе су повезане"
 msgstr[2] "%d особа је повезано"
 
 # bug: don't use spaces for alignment
-#: ../server/vino-status-icon.c:207
+#: ../server/vino-status-icon.c:207 ../server/vino-status-tube-icon.c:175
 msgid "Error displaying preferences"
 msgstr "Дошло је до грешке при приказивању поставки"
 
-#: ../server/vino-status-icon.c:226
+#: ../server/vino-status-icon.c:226 ../server/vino-status-tube-icon.c:191
 msgid "Error displaying help"
 msgstr "Дошло је до грешке при приказивању помоћи"
 
@@ -521,78 +583,109 @@ msgstr ""
 msgid "Share your desktop with other users"
 msgstr "Делите вашу радну површ са другима"
 
-#. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:338
+#: ../server/vino-status-icon.c:339 ../server/vino-status-tube-icon.c:223
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Да ли сигурно желите да искључите „%s“?"
 
-#: ../server/vino-status-icon.c:340
+#: ../server/vino-status-icon.c:342
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Удаљени корисник са „%s“ ће бити искључен. Јесте ли сигурни?"
 
-#: ../server/vino-status-icon.c:345
+#: ../server/vino-status-icon.c:348
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Сигурно желите да искључите све клијенте?"
 
-#: ../server/vino-status-icon.c:346
+#: ../server/vino-status-icon.c:350
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Сви удаљени корисници ће бити искључени. Јесте ли сигурни?"
 
-#: ../server/vino-status-icon.c:358
+#: ../server/vino-status-icon.c:362 ../server/vino-status-tube-icon.c:237
 msgid "Disconnect"
 msgstr "Искључи"
 
-#: ../server/vino-status-icon.c:384
+#: ../server/vino-status-icon.c:388 ../server/vino-status-tube-icon.c:262
 msgid "_Preferences"
 msgstr "_Поставке"
 
-#: ../server/vino-status-icon.c:399
+#: ../server/vino-status-icon.c:403
 msgid "Disconnect all"
 msgstr "Искључи све"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:423
+#. Translators: %s is the alias of the telepathy contact
+#: ../server/vino-status-icon.c:427 ../server/vino-status-tube-icon.c:275
 #, c-format
 msgid "Disconnect %s"
 msgstr "Искључи %s"
 
-#: ../server/vino-status-icon.c:443
+#: ../server/vino-status-icon.c:448 ../server/vino-status-tube-icon.c:294
 msgid "_Help"
 msgstr "_Помоћ"
 
-#: ../server/vino-status-icon.c:451
+#: ../server/vino-status-icon.c:456
 msgid "_About"
 msgstr "_О програму"
 
-#: ../server/vino-status-icon.c:584
+#: ../server/vino-status-icon.c:589 ../server/vino-status-tube-icon.c:391
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Грешка при успостављању libnotify-а\n"
 
-#: ../server/vino-status-icon.c:604
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:610
 msgid "Another user is viewing your desktop"
 msgstr "Неки корисник прегледа већ вашу радну површ"
 
-#: ../server/vino-status-icon.c:605
+#: ../server/vino-status-icon.c:612
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Корисник рачунара „%s“ издалека прегледа вашу радну површ."
 
-#: ../server/vino-status-icon.c:610
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:618
 msgid "Another user is controlling your desktop"
 msgstr "Неки корисник већ управља вашом радном површи"
 
-#: ../server/vino-status-icon.c:611
+#: ../server/vino-status-icon.c:620
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "Корисник рачунара „%s“ издалека управља вашом радном површи."
 
-#: ../server/vino-status-icon.c:633
+#: ../server/vino-status-icon.c:642 ../server/vino-status-tube-icon.c:422
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Грешка при приказивању обавештајног облачића: %s\n"
+
+#: ../server/vino-status-tube-icon.c:226
+#, c-format
+msgid "The remote user '%s' will be disconnected. Are you sure?"
+msgstr "Удаљени корисник са „%s“ ће бити искључен. Да га искључим?"
+
+#: ../server/vino-tube-server.c:310 ../server/vino-tube-server.c:339
+msgid "Share my desktop information"
+msgstr "Подели податке из моје радне површи"
+
+#: ../server/vino-tube-server.c:314
+#, c-format
+msgid "'%s' rejected the desktop sharing invitation."
+msgstr "„%s“ је одбио да подели своју радну површ."
+
+#: ../server/vino-tube-server.c:318
+#, c-format
+msgid "'%s' disconnected"
+msgstr "„%s“ је искључен"
+
+#: ../server/vino-tube-server.c:345
+#, c-format
+msgid "'%s' is remotely controlling your desktop."
+msgstr "„%s“ издалека управља вашом радном површином."
+
+#: ../server/vino-tube-server.c:354
+#, c-format
+msgid "Waiting for '%s' to connect to the screen."
+msgstr "Чекам да се „%s“ повеже на екран."
 
 #: ../server/vino-util.c:115
 msgid "An error has occurred:"
@@ -636,38 +729,59 @@ msgstr "Унеси лозинку поново: "
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: лозинка је успешно ажурирана.\n"
 
-#: ../tools/vino-passwd.c:171
+#: ../tools/vino-passwd.c:172
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "Лозинке се не поклапају.\n"
 
-#: ../tools/vino-passwd.c:172
+#: ../tools/vino-passwd.c:173
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: лозинка није промењена.\n"
 
-#: ../tools/vino-passwd.c:187
+#: ../tools/vino-passwd.c:181
+#, c-format
+msgid ""
+"Error while communicating with GConf. Are you logged into a GNOME session?"
+msgstr ""
+"Грешка у повезивању са GConf-ом. Да ли сте пријављени у Гномову сесију?"
+
+#: ../tools/vino-passwd.c:183
+#, c-format
+msgid "Error message:"
+msgstr "Порука грешке:"
+
+#: ../tools/vino-passwd.c:200
 msgid "Show Vino version"
 msgstr "Прикажи издање програма Вино"
 
-#: ../tools/vino-passwd.c:196
+#: ../tools/vino-passwd.c:209
 msgid "- Updates Vino password"
 msgstr "- Ажурира лозинку програма Вино"
 
-#: ../tools/vino-passwd.c:206
+#: ../tools/vino-passwd.c:219
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr "Покрените 'vino-passwd --help' да приказ пуне листе доступних опција"
 
-#: ../tools/vino-passwd.c:213
+#: ../tools/vino-passwd.c:226
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "ВИНО издање %s\n"
 
-#: ../tools/vino-passwd.c:222
+#: ../tools/vino-passwd.c:238
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "ГРЕШКА: Немате дозволу да промените лозинку програма Вино.\n"
+
+#~ msgid "Out of memory handling '%s' message"
+#~ msgstr "Понестало меморије при обради поруке „%s“"
+
+#~ msgid "Out of memory registering object path '%s'"
+#~ msgstr "Понестало меморије при регистрацији путање објекта „%s“"
+
+#~ msgid "Failed to acquire D-Bus name '%s'\n"
+#~ msgstr "Неуспешно прибављање D-Bus назива „%s“\n"
 
 #~ msgid "Set your remote desktop access preferences"
 #~ msgstr "Поставке за приступ вашој удаљеној радној површи"
