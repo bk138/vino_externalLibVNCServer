@@ -40,6 +40,7 @@ in order to get debug spew from various parts of the code:
                 client connects
   + "dbus"    - information about D-BUS stuff
   + "upnp"    - information about UPNP stuff
+  + "tube"    - information about Telepathy Tubes stuff
 
 
   When tracking down performance problems, I've found strace very

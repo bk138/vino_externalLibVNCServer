@@ -43,7 +43,8 @@ vino_setup_debug_flags (void)
       { "prompt",  VINO_DEBUG_PROMPT },
       { "http",    VINO_DEBUG_HTTP },
       { "dbus",    VINO_DEBUG_DBUS },
-      { "upnp",    VINO_DEBUG_UPNP }
+      { "upnp",    VINO_DEBUG_UPNP },
+      { "tube",    VINO_DEBUG_TUBE }
     };
   
   env_str = g_getenv ("VINO_SERVER_DEBUG");
