@@ -426,9 +426,9 @@ vino_dbus_request_name (void)
 {
 
   DBusGConnection *connection;
-  GError *error = NULL;
-  DBusGProxy     *bus_proxy;
-  int request_name_result;
+  DBusGProxy      *bus_proxy;
+  guint           request_name_result;
+  GError          *error = NULL;
 
   if (!(connection = vino_dbus_get_connection ()))
     return FALSE;
@@ -441,9 +441,14 @@ vino_dbus_request_name (void)
       "/org/freedesktop/DBus",
       "org.freedesktop.DBus");
 
-  if (!dbus_g_proxy_call(bus_proxy, "RequestName", &error, 
-      G_TYPE_STRING, VINO_DBUS_BUS_NAME, G_TYPE_UINT, 0, G_TYPE_INVALID,
-      G_TYPE_UINT, &request_name_result, G_TYPE_INVALID))
+  if (!dbus_g_proxy_call (bus_proxy,
+			  "RequestName",
+			  &error,
+			  G_TYPE_STRING, VINO_DBUS_BUS_NAME,
+			  G_TYPE_UINT, DBUS_NAME_FLAG_DO_NOT_QUEUE,
+			  G_TYPE_INVALID,
+			  G_TYPE_UINT, &request_name_result,
+			  G_TYPE_INVALID))
     {
       g_debug ("Failed to request name: %s",
                 error ? error->message : "No error given");
