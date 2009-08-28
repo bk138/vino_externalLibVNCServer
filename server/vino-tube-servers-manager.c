@@ -29,6 +29,7 @@
 #include "vino-tube-server.h"
 #include "vino-dbus-error.h"
 #include "vino-status-tube-icon.h"
+#include "vino-util.h"
 
 G_DEFINE_TYPE (VinoTubeServersManager, vino_tube_servers_manager,
     G_TYPE_OBJECT);
@@ -55,7 +56,7 @@ vino_tube_servers_manager_dispose (GObject *object)
   g_slist_free (self->priv->vino_tube_servers);
   self->priv->vino_tube_servers = NULL;
 
-  g_debug ("Destruction of the VinoTubeServersManager\n");
+  dprintf (TUBE, "Destruction of the VinoTubeServersManager\n");
 
   if (G_OBJECT_CLASS (vino_tube_servers_manager_parent_class)->dispose)
     G_OBJECT_CLASS (vino_tube_servers_manager_parent_class)->dispose (object);
@@ -66,7 +67,7 @@ vino_tube_servers_manager_class_init (VinoTubeServersManagerClass *klass)
 {
   GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
 
-  g_debug ("Creation of the VinoTubeServersManager\n");
+  dprintf (TUBE, "Creation of the VinoTubeServersManager\n");
 
   gobject_class->dispose = vino_tube_servers_manager_dispose;
 

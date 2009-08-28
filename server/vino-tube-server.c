@@ -32,6 +32,7 @@
 
 #include "vino-tube-server.h"
 #include "vino-dbus-error.h"
+#include "vino-util.h"
 
 G_DEFINE_TYPE (VinoTubeServer, vino_tube_server, VINO_TYPE_SERVER);
 
@@ -127,7 +128,7 @@ vino_tube_server_finalize (GObject *object)
       server->priv->channel_properties = NULL;
     }
 
-  g_debug ("-- Destruction of a VinoTubeServer --\n");
+  dprintf (TUBE, "Destruction of a VinoTubeServer\n");
 
   if (G_OBJECT_CLASS (vino_tube_server_parent_class)->finalize)
     G_OBJECT_CLASS (vino_tube_server_parent_class)->finalize (object);
@@ -281,7 +282,7 @@ vino_tube_server_fire_closed (VinoTubeServer *server)
 {
   VinoTubeServer *self = VINO_TUBE_SERVER (server);
 
-  g_debug ("Tube is closed\n");
+  dprintf (TUBE, "Tube is closed\n");
   g_signal_emit (G_OBJECT (self), signals[DISCONNECTED], 0);
 }
 
@@ -369,8 +370,7 @@ vino_tube_server_offer_cb (TpChannel *proxy,
 {
   if (error != NULL)
     {
-      g_printerr ("Impossible to offer the stream tube: %s\n",
-          error->message);
+      dprintf (TUBE, "Impossible to offer the stream tube: %s\n", error->message);
       return;
     }
 }
@@ -396,7 +396,7 @@ vino_tube_server_contact_get_avatar_filename (TpContact *contact,
 
   if (!tp_connection_parse_object_path (connection, &protocol, &cm))
     {
-      g_printerr ("Impossible to parse object path\n");
+      dprintf (TUBE, "Impossible to parse object path\n");
       return NULL;
     }
 
@@ -434,7 +434,7 @@ vino_tube_server_factory_handle_cb (TpConnection *connection,
 
   if (error != NULL)
     {
-      g_printerr ("Impossible to get the contact name: %s\n", error->message);
+      dprintf (TUBE, "Impossible to get the contact name: %s\n", error->message);
       return;
     }
 
@@ -473,8 +473,7 @@ vino_tube_server_channel_ready (TpChannel *channel,
 
   if (error != NULL)
     {
-      g_printerr ("Impossible to create the channel: %s\n",
-          error->message);
+      dprintf (TUBE, "Impossible to create the channel: %s\n", error->message);
       return;
     }
 
@@ -491,8 +490,7 @@ vino_tube_server_channel_ready (TpChannel *channel,
 
   if (error_failed != NULL)
     {
-      g_printerr ("Failed to connect state channel: %s\n",
-          error_failed->message);
+      dprintf (TUBE, "Failed to connect state channel: %s\n", error_failed->message);
       g_clear_error (&error_failed);
       return ;
     }
@@ -507,7 +505,7 @@ vino_tube_server_channel_ready (TpChannel *channel,
 
   port = vino_server_get_port (VINO_SERVER (server));
 
-  g_debug ("-- Creation of a VinoTubeServer!! port : %d --\n", port);
+  dprintf (TUBE, "Creation of a VinoTubeServer, port : %d\n", port);
 
   server->priv->signal_invalidated_id = g_signal_connect (G_OBJECT (channel),
       "invalidated", G_CALLBACK (vino_tube_server_invalidated_cb), server);
@@ -536,7 +534,7 @@ vino_tube_server_connection_ready (TpConnection *connection,
 
   if (connection == NULL)
     {
-      g_printerr ("The connection is not ready: %s\n", error->message);
+      dprintf (TUBE, "The connection is not ready: %s\n", error->message);
       return ;
     }
 
@@ -546,8 +544,7 @@ vino_tube_server_connection_ready (TpConnection *connection,
 
   if (server->priv->tp_channel == NULL)
     {
-      g_printerr ("Error requesting tp channel: %s\n",
-          error_failed->message);
+      dprintf (TUBE, "Error requesting tp channel: %s\n", error_failed->message);
       g_clear_error (&error_failed);
       return ;
     }
@@ -568,8 +565,7 @@ vino_tube_server_share_with_tube (VinoTubeServer *server,
 
   if (tp_dbus_daemon == NULL)
     {
-      g_printerr ("Error requesting dbus daemon: %s\n",
-          error_failed->message);
+      dprintf (TUBE, "Error requesting dbus daemon: %s\n", error_failed->message);
       g_clear_error (&error_failed);
       g_set_error (error, vino_dbus_error_quark (),
           VINO_DBUS_ERROR_FAILED,
@@ -582,8 +578,7 @@ vino_tube_server_share_with_tube (VinoTubeServer *server,
 
   if (tp_connection == NULL)
     {
-      g_printerr ("Error requesting tp connection: %s\n",
-          error_failed->message);
+      dprintf (TUBE, "Error requesting tp connection: %s\n", error_failed->message);
       g_clear_error (&error_failed);
       g_set_error (error, vino_dbus_error_quark (),
           VINO_DBUS_ERROR_FAILED,

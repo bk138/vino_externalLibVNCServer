@@ -371,7 +371,7 @@ static void
 vino_status_tube_icon_show_invalidated_notif_closed
     (VinoStatusTubeIcon *icon)
 {
-  g_debug ("Notification was closed");
+  dprintf (TUBE, "Notification was closed");
   vino_tube_server_fire_closed (icon->priv->server);
 }
 #endif
