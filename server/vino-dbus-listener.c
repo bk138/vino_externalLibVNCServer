@@ -377,9 +377,10 @@ vino_dbus_listener_set_server (VinoDBusListener *listener,
 
   dprintf (DBUS, "Object registered at path '%s'\n", obj_path);
 
-  g_signal_connect (server, "notify::alternative-port",
-      G_CALLBACK (vino_dbus_listener_info_changed),
-      listener);
+  g_signal_connect (server,
+		    "notify::alternative-port",
+		    G_CALLBACK (vino_dbus_listener_info_changed),
+		    listener);
 
   g_free (obj_path);
 }
@@ -392,30 +393,30 @@ vino_dbus_listener_get_server (VinoDBusListener *listener)
   return listener->priv->server;
 }
 
-static DBusGConnection * vino_dbus_connection = NULL;
+static DBusGConnection *vino_dbus_connection = NULL;
 static gboolean        vino_dbus_failed_to_connect = FALSE;
 
 DBusGConnection *
 vino_dbus_get_connection (void)
 {
-  DBusConnection * dbus_conn;
   if (vino_dbus_connection == NULL && !vino_dbus_failed_to_connect)
     {
-      GError * error = NULL;
+      GError *error = NULL;
 
       if ((vino_dbus_connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error)))
-        {
-          dprintf (DBUS, "Successfully connected to the message bus\n");
-          dbus_conn = dbus_g_connection_get_connection (vino_dbus_connection);
-          dbus_connection_set_exit_on_disconnect (dbus_conn, FALSE);
-        }
+	{
+	  DBusConnection * dbus_conn;
+
+	  dprintf (DBUS, "Successfully connected to the message bus\n");
+	  dbus_conn = dbus_g_connection_get_connection (vino_dbus_connection);
+	  dbus_connection_set_exit_on_disconnect (dbus_conn, FALSE);
+	}
       else
-        {
-          vino_dbus_failed_to_connect = TRUE;
-          g_printerr ("Failed to open connection to bus: %s\n",
-              error->message);
-          g_error_free (error);
-        }
+	{
+	  vino_dbus_failed_to_connect = TRUE;
+	  dprintf (DBUS, "Failed to open connection to bus: %s\n", error->message);
+	  g_error_free (error);
+	}
     }
 
   return vino_dbus_connection;
@@ -434,7 +435,7 @@ vino_dbus_request_name (void)
     return FALSE;
 
   dbus_g_object_type_install_info (VINO_TYPE_DBUS_LISTENER,
-      &dbus_glib_vino_dbus_listener_object_info);
+				   &dbus_glib_vino_dbus_listener_object_info);
 
   bus_proxy = dbus_g_proxy_new_for_name (connection,
       "org.freedesktop.DBus",
@@ -450,10 +451,9 @@ vino_dbus_request_name (void)
 			  G_TYPE_UINT, &request_name_result,
 			  G_TYPE_INVALID))
     {
-      g_debug ("Failed to request name: %s",
-                error ? error->message : "No error given");
+      dprintf (DBUS, "Failed to request DBUS name: %s", error ? error->message : "No error given");
       g_clear_error (&error);
-      return FALSE ;
+      return FALSE;
     }
 
   if (request_name_result == DBUS_REQUEST_NAME_REPLY_EXISTS)
