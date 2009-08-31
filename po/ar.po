@@ -1,50 +1,46 @@
 # translation of vino.HEAD.po to Arabic
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-#
 # Ayman Hourieh <aymanh@gmail.com>, 2004.
 # Djihed Afifi <djihed@gmail.com>, 2006.
-# Khaled Hosny <khaledhosny@eglug.org>, 2006, 2007.
+# Khaled Hosny <khaledhosny@eglug.org>, 2006, 2007, 2009.
 # Usama Akkad <uak@aya.sy>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=vino&component=Preferences Dialog\n"
-"POT-Creation-Date: 2009-03-17 14:18+0000\n"
-"PO-Revision-Date: 2008-09-19 00:33+0300\n"
-"Last-Translator: Usama Akkad <uak@aya.sy>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-31 21:08+0200\n"
+"PO-Revision-Date: 2009-08-31 21:08+0300\n"
+"Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : "
-"3\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Virtaal 0.4.0\n"
 
 #. Open Link
 #: ../capplet/sexy-url-label.c:183
-#, fuzzy
 msgid "_Send address by email"
-msgstr "أرسِل هذا الأمر بالبريد الإلكتروني"
+msgstr "أرسِل العنوان بالبريد الإل_كتروني"
 
 #. Copy Link Address
 #: ../capplet/sexy-url-label.c:195
 msgid "_Copy address to clipboard"
-msgstr ""
+msgstr "ا_نسخ العنوان إلى الحافظة"
 
 #: ../capplet/vino-message-box.c:103
-#, fuzzy, c-format
+#, c-format
 msgid "There was an error showing the URL \"%s\""
-msgstr ""
-"حدث خطأ عند عرض المساعدة:\n"
-" %s"
+msgstr "حدث خطأ عند عرض المسار \"%s\""
 
-#: ../capplet/vino-preferences.c:198 ../capplet/vino-preferences.c:989
+#: ../capplet/vino-preferences.c:197 ../capplet/vino-preferences.c:1000
 msgid "Checking the connectivity of this machine..."
-msgstr ""
+msgstr "يفحص الاتصال بهذا الجهاز..."
 
-#: ../capplet/vino-preferences.c:798
+#: ../capplet/vino-preferences.c:804
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -53,133 +49,191 @@ msgstr ""
 "حدث خطأ عند عرض المساعدة:\n"
 "%s"
 
-#: ../capplet/vino-preferences.c:828
+#: ../capplet/vino-preferences.c:834
 msgid "Your desktop is only reachable over the local network."
-msgstr ""
+msgstr "جهازك متاح عبر الشبكة المحلية فقط."
 
-#: ../capplet/vino-preferences.c:851 ../capplet/vino-preferences.c:922
+#: ../capplet/vino-preferences.c:854 ../capplet/vino-preferences.c:929
+msgid " or "
+msgstr " أو "
+
+#: ../capplet/vino-preferences.c:859 ../capplet/vino-preferences.c:933
 #, c-format
 msgid "Others can access your computer using the address %s."
-msgstr ""
+msgstr "يستطيع الآخرون الدخول إلى حاسوبك باستخدام العنوان %s."
 
-#: ../capplet/vino-preferences.c:975
+#: ../capplet/vino-preferences.c:986
 msgid "Nobody can access your desktop."
-msgstr ""
+msgstr "لا يستطيع أحد الدخول إلى حاسوبك."
 
-#: ../capplet/vino-preferences.c:1116 ../server/vino-dbus-listener.c:506
-#: ../server/vino-server.c:156 ../server/vino-server.c:187
+#: ../capplet/vino-preferences.c:1130 ../server/vino-server.c:164
+#: ../server/vino-server.c:194
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "فشل فتح اتصال مع الناقل: %s\n"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
-#, fuzzy
 msgid "Choose how other users can remotely view your desktop"
-msgstr "اسمح للمستخدمين الآخرين ب_عرض سطح مكتبك"
+msgstr "اختر كيف يستطيع المستخدمين الآخرين عرض سطح مكتبك عن بعد"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:2
 #: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "سطح مكتب بعيد"
 
-#: ../capplet/vino-preferences.glade.h:1
-msgid "<b>Notification Area</b>"
-msgstr "<b>مساحة التبليغ</b>"
-
-#: ../capplet/vino-preferences.glade.h:2
-msgid "<b>Security</b>"
-msgstr "<b>الأمن</b>"
-
-#: ../capplet/vino-preferences.glade.h:3
-msgid "<b>Sharing</b>"
-msgstr "<b>المشاركة</b>"
-
-#: ../capplet/vino-preferences.glade.h:4
-#, fuzzy
-msgid "<i>Some of these preferences are locked down</i>"
-msgstr "بعض هذه التّفضيلات مقفل"
-
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.ui.h:1
 msgid "Al_ways display an icon"
 msgstr "دائما ا_عرض أيقونة"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.ui.h:2
 msgid "Allow other users to _view your desktop"
 msgstr "اسمح للمستخدمين الآخرين ب_عرض سطح مكتبك"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.ui.h:3
 msgid "Maximum size: 8 characters"
-msgstr ""
+msgstr "الحجم الأقصى: 8 حروف"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.ui.h:4
+msgid "Notification Area"
+msgstr "مساحة التبليغ"
+
+#: ../capplet/vino-preferences.ui.h:5
 msgid "Remote Desktop Preferences"
 msgstr "تفضيلات سطح المكتب البعيد"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.ui.h:6
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "المستخدمون البعيدون يمكنهم التحكم بفأرتك و لوحة مفاتيحك"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.ui.h:7
+msgid "Security"
+msgstr "الأمن"
+
+#: ../capplet/vino-preferences.ui.h:8
+msgid "Sharing"
+msgstr "المشاركة"
+
+#: ../capplet/vino-preferences.ui.h:9
+msgid "Some of these preferences are locked down"
+msgstr "بعض هذه التّفضيلات موصد"
+
+#: ../capplet/vino-preferences.ui.h:10
 msgid "The router must have the UPnP feature enabled"
-msgstr ""
+msgstr "يجب أن تكون خاصية UPnP مفعلة في المسيّر (router)"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.ui.h:11
 msgid "You will be queried to allow or to refuse every incoming connection"
-msgstr ""
+msgstr "ستُسأل للسماح أو رفض كل اتصال وارد"
 
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.ui.h:12
 msgid "Your desktop will be shared"
 msgstr "سيتشارك سطح مكتبك"
 
-#: ../capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.ui.h:13
 msgid "_Allow other users to control your desktop"
 msgstr "ا_سمح للمستخدمين الآخرين بالتّحكّم بسطح مكتبك."
 
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.ui.h:14
 msgid "_Configure network automatically to accept connections"
-msgstr ""
+msgstr "ا_ضبط الشبكة لتقبل الاتصالات تلقائيا"
 
-#: ../capplet/vino-preferences.glade.h:15
+#: ../capplet/vino-preferences.ui.h:15
 msgid "_Never display an icon"
 msgstr "_لاتعرض الأيقونة أبدًا"
 
-#: ../capplet/vino-preferences.glade.h:16
+#: ../capplet/vino-preferences.ui.h:16
 msgid "_Only display an icon when there is someone connected"
 msgstr "ا_عرض ايقونة فقط عندا يكون أحدهم متصلا"
 
-#: ../capplet/vino-preferences.glade.h:17
+#: ../capplet/vino-preferences.ui.h:17
 msgid "_Require the user to enter this password:"
 msgstr "ا_طلب من المستخدم ادخال كلمة السر هذه:"
 
-#: ../capplet/vino-preferences.glade.h:18
+#: ../capplet/vino-preferences.ui.h:18
 msgid "_You must confirm each access to this machine"
-msgstr ""
+msgstr "يجب أن _تؤكد كل اتصال بهذا الجهاز"
 
-#: ../server/vino-dbus-listener.c:283 ../server/vino-dbus-listener.c:313
-#: ../server/vino-dbus-listener.c:357
+#: ../server/smclient/eggdesktopfile.c:165
 #, c-format
-msgid "Out of memory handling '%s' message"
-msgstr "نفذت الذّاكرة أثناء التعامل مع الرسالة '%s' "
+msgid "File is not a valid .desktop file"
+msgstr "ليس الملف ملف .desktop سليم"
 
-#: ../server/vino-dbus-listener.c:463
+#: ../server/smclient/eggdesktopfile.c:188
 #, c-format
-msgid "Out of memory registering object path '%s'"
-msgstr "نفذت الذّاكرة أثناء تسجيل مسار الكائن '%s'"
+msgid "Unrecognized desktop file Version '%s'"
+msgstr "إصدارة ملف سطح مكتب غير معروفة '%s'"
 
-#: ../server/vino-dbus-listener.c:542
+#: ../server/smclient/eggdesktopfile.c:958
 #, c-format
-msgid "Failed to acquire D-Bus name '%s'\n"
-msgstr "فشل الحصول على اسم D-Bus '%s'\n"
+msgid "Starting %s"
+msgstr "يبدأ %s"
 
-#: ../server/vino-dbus-listener.c:550
+#: ../server/smclient/eggdesktopfile.c:1100
+#, c-format
+msgid "Application does not accept documents on command line"
+msgstr "التطبيق لا يقبل مستندات في سطر الأوامر"
+
+#: ../server/smclient/eggdesktopfile.c:1168
+#, c-format
+msgid "Unrecognized launch option: %d"
+msgstr "خيار إطلاق غير معروف %d"
+
+#: ../server/smclient/eggdesktopfile.c:1373
+#, c-format
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr "تعذّر تمرير مسار المستند إلى مُدخلة سطح مكتب من نوع 'Type=Link'"
+
+#: ../server/smclient/eggdesktopfile.c:1392
+#, c-format
+msgid "Not a launchable item"
+msgstr "عنصر لا يُطلق"
+
+#: ../server/smclient/eggsmclient.c:225
+msgid "Disable connection to session manager"
+msgstr "عطّل الاتصال بمدير الجلسات"
+
+#: ../server/smclient/eggsmclient.c:228
+msgid "Specify file containing saved configuration"
+msgstr "حدد ملفا يحتوي الإعدادات المحفوظة"
+
+#: ../server/smclient/eggsmclient.c:228
+msgid "FILE"
+msgstr "FILE"
+
+#: ../server/smclient/eggsmclient.c:231
+msgid "Specify session management ID"
+msgstr "حدد رقم معرّف إدارة الجلسات"
+
+#: ../server/smclient/eggsmclient.c:231
+msgid "ID"
+msgstr "ID"
+
+#: ../server/smclient/eggsmclient.c:252
+msgid "Session management options:"
+msgstr "خيارات إدارة الجلسات:"
+
+#: ../server/smclient/eggsmclient.c:253
+msgid "Show session management options"
+msgstr "اعرض خيارات إدارة الجلسات"
+
+#: ../server/vino-dbus-listener.c:461
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "خادوم سطح المكتب البعيد يعمل حاليًا، خروج...\n"
 
-#: ../server/vino-main.c:89
+#: ../server/vino-main.c:67
+msgid "- VNC Server for GNOME"
+msgstr "- خادوم VNC لجنوم"
+
+#: ../server/vino-main.c:75
+msgid ""
+"Run 'vino-server --help' to see a full list of available command line options"
+msgstr "شغّل 'vinno-server --help' لرؤية قائمة كاملة لخيارات سطر الأوامر."
+
+#: ../server/vino-main.c:97
 msgid "GNOME Remote Desktop"
 msgstr "سطح مكتب جنوم عن بعيد"
 
-#: ../server/vino-main.c:99
+#: ../server/vino-main.c:107
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -204,49 +258,49 @@ msgstr "0"
 msgid "%s's remote desktop on %s"
 msgstr "سطح المكتب البعيد لـ %s على %s"
 
-#: ../server/vino-prefs.c:579
+#: ../server/vino-prefs.c:606
 #, c-format
 msgid "Received signal %d, exiting...\n"
-msgstr ""
+msgstr "استلمت إشارة %d، سأخرج...\n"
 
-#: ../server/vino-prompt.c:142
+#: ../server/vino-prompt.c:141
 msgid "Screen"
 msgstr "الشّاشة"
 
-#: ../server/vino-prompt.c:143
+#: ../server/vino-prompt.c:142
 msgid "The screen on which to display the prompt"
 msgstr "الشّاشة التي سيعرض عليها المحثّ"
 
-#: ../server/vino-prompt.c:343
+#: ../server/vino-prompt.c:345
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr "يحاول مستخدم على الحاسوب '%s' عرض أو التّحكم بسطح مكتبك عن بعد."
 
-#: ../server/vino-prompt.glade.h:1
-msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>يحاول مستخدم آخر عرض سطح مكتبك.</b></big>"
-
-#: ../server/vino-prompt.glade.h:2
+#: ../server/vino-prompt.ui.h:1
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
 msgstr "يحاول مستخدم على حاسوب آخر عرض أو التّحكم بسطح مكتبك عن بعد."
 
-#: ../server/vino-prompt.glade.h:3
+#: ../server/vino-prompt.ui.h:2
+msgid "Another user is trying to view your desktop."
+msgstr "يحاول مستخدم آخر عرض سطح مكتبك."
+
+#: ../server/vino-prompt.ui.h:3
 msgid "Do you want to allow them to do so?"
 msgstr "أتريد السّماح لهم بفعل ذلك؟"
 
-#: ../server/vino-prompt.glade.h:4
+#: ../server/vino-prompt.ui.h:4
 msgid "Question"
 msgstr "السّؤال"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:65
 msgid "_Allow"
 msgstr "ا_سمح"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:66
 msgid "_Refuse"
 msgstr "ا_رفض"
 
@@ -326,15 +380,23 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:12
 msgid ""
+"If true, we will not use the XDamage extension of X.org. This extension does "
+"not work properly on some video drivers when using 3D effects. Disabling it "
+"will make vino work on these environments with a slower rendering as side "
+"effect."
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:13
+msgid ""
 "If true, we will use UPNP protocol to automatically forward the port used by "
 "vino in the router."
 msgstr ""
 
-#: ../server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:14
 msgid "Listen an alternative port"
 msgstr "استمع لمنفذ بديل"
 
-#: ../server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:15
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -347,31 +409,31 @@ msgstr ""
 "كلمة سر (تحدّد كلمة السر بمفتاح vnc_password( قبل الاتّصال، و \"none\" التي "
 "تسمح لأي مستخدم بعيد بالاتّصال."
 
-#: ../server/vino-server.schemas.in.h:15
+#: ../server/vino-server.schemas.in.h:16
 msgid "Lock the screen when last user disconnect"
 msgstr "اغلق الشاشة عند اغلاق آخر مستخدم للاتصال"
 
-#: ../server/vino-server.schemas.in.h:16
+#: ../server/vino-server.schemas.in.h:17
 msgid "Network interface for listening"
 msgstr ""
 
-#: ../server/vino-server.schemas.in.h:17
+#: ../server/vino-server.schemas.in.h:18
 msgid "Only allow remote users to view the desktop"
 msgstr "اسمح للمستخدمين البعيدين بعرض سطح المكتب فقط"
 
-#: ../server/vino-server.schemas.in.h:18
+#: ../server/vino-server.schemas.in.h:19
 msgid "Password required for \"vnc\" authentication"
 msgstr "كلمة السر مطلوبة لتوثّق \"vnc\""
 
-#: ../server/vino-server.schemas.in.h:19
+#: ../server/vino-server.schemas.in.h:20
 msgid "Prompt the user before completing a connection"
 msgstr "اسأل المستخدم قبل إكمال اتصال"
 
-#: ../server/vino-server.schemas.in.h:20
-msgid "Require encryption"
-msgstr "التّشفير مطلوب"
-
 #: ../server/vino-server.schemas.in.h:21
+msgid "Require encryption"
+msgstr "التعمية مطلوبة"
+
+#: ../server/vino-server.schemas.in.h:22
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -380,7 +442,7 @@ msgstr ""
 "كلمة السر التي سيُساءل المستخدم عنها إذا استخدمت طريقة توثّق \"vnc\". كلمة "
 "السر المحدّدة بالمفتاح مرمّزة بترميز قاعدة 64."
 
-#: ../server/vino-server.schemas.in.h:22
+#: ../server/vino-server.schemas.in.h:23
 msgid ""
 "The port which the server will listen to if the 'use_alternative_port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
@@ -388,7 +450,7 @@ msgstr ""
 "المنفذ الذي سيستمع إليه الخادوم إذا ضبط مفتاح 'use_alternative_port' كصحيح. "
 "القيم المقبولة في المدى 5000 إلى 50000."
 
-#: ../server/vino-server.schemas.in.h:23
+#: ../server/vino-server.schemas.in.h:24
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
 "\"always\" - The icon will be always there; \"client\" - You will see the "
@@ -399,7 +461,7 @@ msgstr ""
 "\"client\" (فقط عندما يكون أحدهم متصلا - و هذا هو الإفتراضي)، \"never"
 "\"  (أبدا)"
 
-#: ../server/vino-server.schemas.in.h:24
+#: ../server/vino-server.schemas.in.h:25
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
@@ -408,19 +470,23 @@ msgstr ""
 "يحدّد هذا المفتاح عنوان البريد الإلكتروني الذي سيتمّ إرسال عنوان سطح المكتب "
 "البعيد إليه إذا نقر المستخدم على العنوان في حوار تفضيلات سطح المكتب البعيد."
 
-#: ../server/vino-server.schemas.in.h:25
+#: ../server/vino-server.schemas.in.h:26
 msgid "When the status icon should be shown"
 msgstr "متى يجب إظهار أيقونة التنبيه"
 
-#: ../server/vino-server.schemas.in.h:26
+#: ../server/vino-server.schemas.in.h:27
 msgid "When true, disable the background on receive valid session"
 msgstr "إذا صحيح, عطل خلفية الشاشة عند تلقي جلسة صالحة"
 
-#: ../server/vino-server.schemas.in.h:27
+#: ../server/vino-server.schemas.in.h:28
+msgid "Whether we should disable the XDamage extension of X.org"
+msgstr ""
+
+#: ../server/vino-server.schemas.in.h:29
 msgid "Whether we should use UPNP to forward the port in routers"
 msgstr ""
 
-#: ../server/vino-status-icon.c:102
+#: ../server/vino-status-icon.c:102 ../server/vino-status-tube-icon.c:95
 msgid "Desktop sharing is enabled"
 msgstr "مشاركة سطح المكتب مفعّلة"
 
@@ -428,24 +494,20 @@ msgstr "مشاركة سطح المكتب مفعّلة"
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
-msgstr[0] "شخص واحد متّصل"
-msgstr[1] "شخصيّن متّصلين"
-msgstr[2] "%d أشخاص متّصلين"
-msgstr[3] "%d شخصاَ متّصلا"
+msgstr[0] "لا أشخاص متّصلين"
+msgstr[1] "شخص واحد متّصل"
+msgstr[2] "شخصيّن متّصلين"
+msgstr[3] "%d أشخاص متّصلين"
+msgstr[4] "%d شخصا متّصلا"
+msgstr[5] "%d شخص متّصل"
 
-#: ../server/vino-status-icon.c:207
-#, fuzzy
+#: ../server/vino-status-icon.c:207 ../server/vino-status-tube-icon.c:175
 msgid "Error displaying preferences"
-msgstr ""
-"حدث خطأ عند عرض التفضيلات: \n"
-" %s"
+msgstr "حدث خطأ عند عرض التفضيلات"
 
-#: ../server/vino-status-icon.c:226
-#, fuzzy
+#: ../server/vino-status-icon.c:226 ../server/vino-status-tube-icon.c:191
 msgid "Error displaying help"
-msgstr ""
-"حدث خطأ عند عرض المساعدة:\n"
-"%s"
+msgstr "حدث خطأ عند عرض المساعدة"
 
 #: ../server/vino-status-icon.c:253
 msgid ""
@@ -496,100 +558,133 @@ msgstr ""
 msgid "Share your desktop with other users"
 msgstr "شارِك سطح مكتبك مع المستخدمين الآخرين"
 
-#. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:338
+#: ../server/vino-status-icon.c:339 ../server/vino-status-tube-icon.c:223
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "أمتأكّدٌ أنّك تريد قطع اتصال '%s'؟"
 
-#: ../server/vino-status-icon.c:340
+#: ../server/vino-status-icon.c:342
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "سيقطع اتصال المستخدم عن بعد من '%s'. أمتأكّد؟"
 
-#: ../server/vino-status-icon.c:345
+#: ../server/vino-status-icon.c:348
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "أمتأكد من أنك تريد قطع اتصّال كل العملاء؟"
 
-#: ../server/vino-status-icon.c:346
+#: ../server/vino-status-icon.c:350
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "سيقطع اتصال كل المستخدمين عن بعد. أمتأكّد؟"
 
-#: ../server/vino-status-icon.c:358
+#: ../server/vino-status-icon.c:362 ../server/vino-status-tube-icon.c:237
 msgid "Disconnect"
 msgstr "اقطع الاتصال"
 
-#: ../server/vino-status-icon.c:384
+#: ../server/vino-status-icon.c:388 ../server/vino-status-tube-icon.c:262
 msgid "_Preferences"
 msgstr "_تفضيلات"
 
-#: ../server/vino-status-icon.c:399
+#: ../server/vino-status-icon.c:403
 msgid "Disconnect all"
 msgstr "اقطع الكلّ"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:423
+#. Translators: %s is the alias of the telepathy contact
+#: ../server/vino-status-icon.c:427 ../server/vino-status-tube-icon.c:275
 #, c-format
 msgid "Disconnect %s"
 msgstr "ا_قطع اتصال %s"
 
-#: ../server/vino-status-icon.c:443
+#: ../server/vino-status-icon.c:448 ../server/vino-status-tube-icon.c:294
 msgid "_Help"
 msgstr "م_ساعدة"
 
-#: ../server/vino-status-icon.c:451
+#: ../server/vino-status-icon.c:456
 msgid "_About"
 msgstr "_حوْل"
 
-#: ../server/vino-status-icon.c:584
+#: ../server/vino-status-icon.c:589 ../server/vino-status-tube-icon.c:391
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "خطأ أثناء بدأ libnotify\n"
 
-#: ../server/vino-status-icon.c:604
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:610
 msgid "Another user is viewing your desktop"
 msgstr "يشاهد مستخدم آخر سطح مكتبك"
 
-#: ../server/vino-status-icon.c:605
+#: ../server/vino-status-icon.c:612
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "يُشاهد مستخدم على الحاسوب '%s' سطح مكتبك عن بعد."
 
-#: ../server/vino-status-icon.c:610
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:618
 msgid "Another user is controlling your desktop"
 msgstr "يتحكّم مستخدم آخر بسطح مكتبك"
 
-#: ../server/vino-status-icon.c:611
+#: ../server/vino-status-icon.c:620
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "تحكّم مستخدم على الحاسوب '%s' بسطح مكتبك عن بعد."
 
-#: ../server/vino-status-icon.c:633
+#: ../server/vino-status-icon.c:642 ../server/vino-status-tube-icon.c:422
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "خطأ أثناء عرض فقّاعة التبليغ: %s\n"
 
-#: ../server/vino-util.c:115
+#: ../server/vino-status-tube-icon.c:226
+#, c-format
+msgid "The remote user '%s' will be disconnected. Are you sure?"
+msgstr "سيُقطع اتصال المستخدم عن بعد من '%s'. أمتأكّد؟"
+
+#: ../server/vino-tube-server.c:311 ../server/vino-tube-server.c:340
+msgid "Share my desktop information"
+msgstr "شارِك معلومات سطح مكتبي"
+
+#: ../server/vino-tube-server.c:315
+#, c-format
+msgid "'%s' rejected the desktop sharing invitation."
+msgstr "رفض '%s' دعوة مشاركة سطح المكتب."
+
+#: ../server/vino-tube-server.c:319
+#, c-format
+msgid "'%s' disconnected"
+msgstr "‏'%s' قطع الاتصال"
+
+#: ../server/vino-tube-server.c:346
+#, c-format
+msgid "'%s' is remotely controlling your desktop."
+msgstr "يتحكّم '%s' بسطح مكتبك عن بعد."
+
+#: ../server/vino-tube-server.c:355
+#, c-format
+msgid "Waiting for '%s' to connect to the screen."
+msgstr "في انتظار اتصال '%s' بالشاشة."
+
+#: ../server/vino-util.c:116
 msgid "An error has occurred:"
-msgstr ""
+msgstr "حدث خطأ:"
 
 #: ../tools/vino-passwd.c:115
 #, c-format
 msgid "Cancelled"
-msgstr ""
+msgstr "أُلغِيَ"
 
 #: ../tools/vino-passwd.c:122
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "ERROR: Maximum length of password is %d character. Please, re-enter the "
 "password."
 msgid_plural ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
 "password."
-msgstr[0] "خطأ: أقصى طول لكلمة السر هو %d محارف. أعد إدخال كلمة السر.\n"
-msgstr[1] "خطأ: أقصى طول لكلمة السر هو %d محارف. أعد إدخال كلمة السر.\n"
-msgstr[2] "خطأ: أقصى طول لكلمة السر هو %d محارف. أعد إدخال كلمة السر.\n"
-msgstr[3] "خطأ: أقصى طول لكلمة السر هو %d محارف. أعد إدخال كلمة السر.\n"
+msgstr[0] "خطأ: أقصى طول لكلمة السر هو %d حرف. أعد إدخال كلمة السر."
+msgstr[1] "خطأ: أقصى طول لكلمة السر هو حرف واحد. أعد إدخال كلمة السر."
+msgstr[2] "خطأ: أقصى طول لكلمة السر هو حرفين. أعد إدخال كلمة السر."
+msgstr[3] "خطأ: أقصى طول لكلمة السر هو %d حروف. أعد إدخال كلمة السر."
+msgstr[4] "خطأ: أقصى طول لكلمة السر هو %d حرفا. أعد إدخال كلمة السر."
+msgstr[5] "خطأ: أقصى طول لكلمة السر هو %d حرف. أعد إدخال كلمة السر."
 
 #: ../tools/vino-passwd.c:156
 #, c-format
@@ -609,38 +704,58 @@ msgstr "أعد كتابة كلمة سر فينو الجديدة:"
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "passwd-فينو: حُدثت كلمة السر بنجاح.\n"
 
-#: ../tools/vino-passwd.c:171
+#: ../tools/vino-passwd.c:172
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "آسف, كلمتا السر غير متطابقتين.\n"
 
-#: ../tools/vino-passwd.c:172
+#: ../tools/vino-passwd.c:173
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "passwd-فينو: كلمة السر لم تتغير.\n"
 
-#: ../tools/vino-passwd.c:187
+#: ../tools/vino-passwd.c:181
+#, c-format
+msgid ""
+"Error while communicating with GConf. Are you logged into a GNOME session?"
+msgstr "حدث خطأ أثناء الاتصال ب GConf. هل أنت والج إلى جنوم؟"
+
+#: ../tools/vino-passwd.c:183
+#, c-format
+msgid "Error message:"
+msgstr "رسالة الخطأ:"
+
+#: ../tools/vino-passwd.c:200
 msgid "Show Vino version"
 msgstr "اعرض إصدار فينو"
 
-#: ../tools/vino-passwd.c:196
+#: ../tools/vino-passwd.c:209
 msgid "- Updates Vino password"
 msgstr "- يحدث كلمة سر فينو"
 
-#: ../tools/vino-passwd.c:206
+#: ../tools/vino-passwd.c:219
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr "اأمر بـ'vino-passwd --help' لرؤية قائمة كاملة بخيارات سطر الأوامر"
 
-#: ../tools/vino-passwd.c:213
+#: ../tools/vino-passwd.c:226
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "إصدارة فينو %s\n"
 
-#: ../tools/vino-passwd.c:222
+#: ../tools/vino-passwd.c:238
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "خطأ: ليس لديك أذون كافية لتغيير كلمة سر فينو. \n"
+
+#~ msgid "Out of memory handling '%s' message"
+#~ msgstr "نفذت الذّاكرة أثناء التعامل مع الرسالة '%s' "
+
+#~ msgid "Out of memory registering object path '%s'"
+#~ msgstr "نفذت الذّاكرة أثناء تسجيل مسار الكائن '%s'"
+
+#~ msgid "Failed to acquire D-Bus name '%s'\n"
+#~ msgstr "فشل الحصول على اسم D-Bus '%s'\n"
 
 #~ msgid "Set your remote desktop access preferences"
 #~ msgstr "اضبط تفضيلات النفاذ لسطح المكتب البعيد"
