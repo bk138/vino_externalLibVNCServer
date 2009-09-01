@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-06 22:09+0200\n"
-"PO-Revision-Date: 2009-08-06 22:12+0200\n"
+"POT-Creation-Date: 2009-09-01 14:34+0200\n"
+"PO-Revision-Date: 2009-09-01 14:40+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -62,7 +62,7 @@ msgid "Nobody can access your desktop."
 msgstr "Ingen har tilgang til ditt skrivebord."
 
 #: ../capplet/vino-preferences.c:1130 ../server/vino-server.c:164
-#: ../server/vino-server.c:195
+#: ../server/vino-server.c:194
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Kunne ikke åpne tilkobling til buss: %s\n"
@@ -157,7 +157,7 @@ msgstr "Filen er ikke en gyldig .desktop-fil"
 #: ../server/smclient/eggdesktopfile.c:188
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr ""
+msgstr "Ikke gjenkjent Version «%s» i .desktop-fil"
 
 #: ../server/smclient/eggdesktopfile.c:958
 #, c-format
@@ -167,30 +167,30 @@ msgstr "Starter %s"
 #: ../server/smclient/eggdesktopfile.c:1100
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr ""
+msgstr "Programmet tar ikke dokumenter på kommandolinjen"
 
 #: ../server/smclient/eggdesktopfile.c:1168
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr ""
+msgstr "Ikke gjenkjent oppstartsflagg: %d"
 
 #: ../server/smclient/eggdesktopfile.c:1373
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr ""
+msgstr "Kan ikke gi dokument-URIer til en .desktop-oppføring med «Type=Link»"
 
 #: ../server/smclient/eggdesktopfile.c:1392
 #, c-format
 msgid "Not a launchable item"
-msgstr ""
+msgstr "Ikke en oppstartbar oppføring"
 
 #: ../server/smclient/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr ""
+msgstr "Slå av tilkobling til sesjonshåndterer"
 
 #: ../server/smclient/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr ""
+msgstr "Oppgi fil med lagret konfigurasjon"
 
 #: ../server/smclient/eggsmclient.c:228
 msgid "FILE"
@@ -198,7 +198,7 @@ msgstr "FIL"
 
 #: ../server/smclient/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr ""
+msgstr "Oppgi sesjonshåndterings-ID"
 
 #: ../server/smclient/eggsmclient.c:231
 msgid "ID"
@@ -206,30 +206,32 @@ msgstr "ID"
 
 #: ../server/smclient/eggsmclient.c:252
 msgid "Session management options:"
-msgstr ""
+msgstr "Alternativer for sesjonshåndtering:"
 
 #: ../server/smclient/eggsmclient.c:253
 msgid "Show session management options"
-msgstr ""
+msgstr "Vis alternativer for sesjonshåndtering"
 
-#: ../server/vino-dbus-listener.c:456
+#: ../server/vino-dbus-listener.c:461
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "Eksternt skrivebord kjører allerede; avslutter...\n"
 
-#: ../server/vino-main.c:69
+#: ../server/vino-main.c:67
 msgid "- VNC Server for GNOME"
 msgstr "- VNC-tjener for GNOME"
 
-#: ../server/vino-main.c:77
+#: ../server/vino-main.c:75
 msgid ""
 "Run 'vino-server --help' to see a full list of available command line options"
-msgstr "Kjør «vino-server --help» for å se en full liste med tilgjengelige kommandolinjeflagg"
+msgstr ""
+"Kjør «vino-server --help» for å se en full liste med tilgjengelige "
+"kommandolinjeflagg"
 
-#: ../server/vino-main.c:99
+#: ../server/vino-main.c:97
 msgid "GNOME Remote Desktop"
 msgstr "Eksternt skrivebord"
 
-#: ../server/vino-main.c:109
+#: ../server/vino-main.c:107
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -297,11 +299,11 @@ msgstr "Vil du la dem gjøre dette?"
 msgid "Question"
 msgstr "Spørsmål"
 
-#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:65
 msgid "_Allow"
 msgstr "Till_at"
 
-#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:66
 msgid "_Refuse"
 msgstr "_Nekt"
 
@@ -644,31 +646,31 @@ msgstr "Feil under visning av meldingsboble: %s\n"
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "Ekstern bruker «%s» vil bli frakoblet. Er du sikker?"
 
-#: ../server/vino-tube-server.c:313 ../server/vino-tube-server.c:342
+#: ../server/vino-tube-server.c:311 ../server/vino-tube-server.c:340
 msgid "Share my desktop information"
 msgstr "Del min skrivebordsinformasjon"
 
-#: ../server/vino-tube-server.c:317
+#: ../server/vino-tube-server.c:315
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
 msgstr "«%s» godtok ikke invitasjon til deling av skrivebord."
 
-#: ../server/vino-tube-server.c:321
+#: ../server/vino-tube-server.c:319
 #, c-format
 msgid "'%s' disconnected"
 msgstr "«%s» koblet fra"
 
-#: ../server/vino-tube-server.c:348
+#: ../server/vino-tube-server.c:346
 #, c-format
 msgid "'%s' is remotely controlling your desktop."
 msgstr "Ekstern bruker «%s» kontrollerer ditt skrivebord."
 
-#: ../server/vino-tube-server.c:357
+#: ../server/vino-tube-server.c:355
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "Venter på at «%s» skal koble til skjermen."
 
-#: ../server/vino-util.c:115
+#: ../server/vino-util.c:116
 msgid "An error has occurred:"
 msgstr "En feil har oppstått:"
 
@@ -710,37 +712,48 @@ msgstr "Skriv nytt passord for Vino på nytt: "
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: oppdatering av passord fullført.\n"
 
-#: ../tools/vino-passwd.c:171
+#: ../tools/vino-passwd.c:172
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "Beklager. Passordene er ikke like.\n"
 
-#: ../tools/vino-passwd.c:172
+#: ../tools/vino-passwd.c:173
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: passord ikke endret.\n"
 
-#: ../tools/vino-passwd.c:187
+#: ../tools/vino-passwd.c:181
+#, c-format
+msgid ""
+"Error while communicating with GConf. Are you logged into a GNOME session?"
+msgstr "Feil ved kommunikasjon med GConf. Er du logget inn i en GNOME sesjon?"
+
+#: ../tools/vino-passwd.c:183
+#, c-format
+msgid "Error message:"
+msgstr "Feilmelding."
+
+#: ../tools/vino-passwd.c:200
 msgid "Show Vino version"
 msgstr "Vis Vino-versjon"
 
-#: ../tools/vino-passwd.c:196
+#: ../tools/vino-passwd.c:209
 msgid "- Updates Vino password"
 msgstr "- Oppdaterer passord for Vino"
 
-#: ../tools/vino-passwd.c:206
+#: ../tools/vino-passwd.c:219
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr ""
 "Kjør «vino-passwd --help» for å se en full liste med tilgjengelige "
 "kommandolinjeflagg"
 
-#: ../tools/vino-passwd.c:213
+#: ../tools/vino-passwd.c:226
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "VINO Versjon %s\n"
 
-#: ../tools/vino-passwd.c:222
+#: ../tools/vino-passwd.c:238
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
