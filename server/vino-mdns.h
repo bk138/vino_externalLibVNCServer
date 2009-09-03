@@ -31,7 +31,7 @@ G_BEGIN_DECLS
 void vino_mdns_add_service (const char *type,
                             int         port);
 
-void vino_mdns_start (void);
+void vino_mdns_start (const char *iface);
 void vino_mdns_stop  (void);
 void vino_mdns_shutdown (void);
 

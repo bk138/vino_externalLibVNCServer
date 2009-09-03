@@ -27,6 +27,7 @@
 
 #ifdef VINO_HAVE_AVAHI
 
+#include <net/if.h>
 #include <string.h>
 #include <avahi-client/publish.h>
 #include <avahi-common/alternative.h>
@@ -43,6 +44,7 @@ static AvahiGLibPoll   *mdns_glib_poll = NULL;
 static AvahiClient     *mdns_client = NULL;
 static AvahiEntryGroup *mdns_entry_group = NULL;
 char                   *mdns_service_name = NULL; 
+char                   *iface_name = NULL;
 
 static const char *
 vino_mdns_get_service_name (void)
@@ -130,11 +132,22 @@ vino_mdns_add_service_foreach (char            *type,
 {
   int port;
   int ret;
+  int iface;
 
   port = GPOINTER_TO_INT (value);
 
+  if (iface_name && iface_name[0])
+    {
+      if (if_nametoindex (iface_name) == 0)
+	iface = AVAHI_IF_UNSPEC;
+      else
+	iface = if_nametoindex (iface_name);
+    }
+  else
+    iface = AVAHI_IF_UNSPEC;
+
   ret = avahi_entry_group_add_service (mdns_entry_group, 
-                                       AVAHI_IF_UNSPEC, 
+                                       iface,
                                        AVAHI_PROTO_UNSPEC, 
                                        0,
                                        vino_mdns_get_service_name (), 
@@ -203,7 +216,7 @@ vino_mdns_restart (void)
     avahi_client_free (mdns_client);
   mdns_client = NULL;
 
-  vino_mdns_start ();
+  vino_mdns_start (iface_name);
 }
 
 static void
@@ -269,7 +282,7 @@ vino_mdns_add_service (const char *type,
 }
 
 void
-vino_mdns_start ()
+vino_mdns_start (const char *iface)
 {
   dprintf (MDNS, "Starting MDNS support.\n");
 
@@ -278,6 +291,9 @@ vino_mdns_start ()
 
   if (mdns_services == NULL)
     return; /* no services */
+
+  g_free (iface_name);
+  iface_name = g_strdup (iface);
 
   if (mdns_glib_poll == NULL)
     {
@@ -307,6 +323,9 @@ vino_mdns_stop (void)
   if (mdns_service_name != NULL)
     g_free (mdns_service_name);
   mdns_service_name = NULL;
+
+  g_free (iface_name);
+  iface_name = NULL;
 
   if (mdns_entry_group != NULL)
     avahi_entry_group_free (mdns_entry_group);
@@ -348,7 +367,7 @@ vino_mdns_add_service (const char *type,
 }
 
 void
-vino_mdns_start (void)
+vino_mdns_start (const char *iface)
 {
 }
 

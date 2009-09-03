@@ -95,7 +95,7 @@ vino_prefs_enabled_changed (GConfClient *client,
   dprintf (PREFS, "Access enabled changed: %s\n", vino_enabled ? "(true)" : "(false)");
 
   if (vino_enabled)
-    vino_mdns_start ();
+    vino_mdns_start (vino_network_interface);
   else
     vino_mdns_stop ();
 
@@ -299,7 +299,7 @@ vino_prefs_restart_mdns (VinoServer *server, gpointer data)
 {
   vino_mdns_stop ();
   vino_mdns_add_service ("_rfb._tcp", vino_server_get_port (server));
-  vino_mdns_start ();
+  vino_mdns_start (vino_network_interface);
 }
 
 static void
@@ -519,10 +519,11 @@ vino_prefs_create_server (GdkScreen *screen)
 
   vino_servers = g_slist_prepend (vino_servers, server);
   if (vino_enabled)
-    vino_mdns_start ();
+    vino_mdns_start (vino_network_interface);
 
   g_signal_connect (server, "notify::alternative-port", G_CALLBACK (vino_prefs_restart_mdns), NULL);
   g_signal_connect (server, "notify::use-alternative-port", G_CALLBACK(vino_prefs_restart_mdns), NULL);
+  g_signal_connect (server, "notify::network-interface", G_CALLBACK (vino_prefs_restart_mdns), NULL);
 
   icon = vino_server_get_status_icon (server);
   vino_status_icon_set_visibility (icon, vino_icon_visibility);
