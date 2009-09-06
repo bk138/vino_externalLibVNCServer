@@ -81,22 +81,22 @@ enum
 
 static gboolean
 vino_dbus_listener_get_external_port (VinoDBusListener *listener,
-                                      gdouble *ret,
-                                      GError **error);
+                                      gint             *ret,
+                                      GError           **error);
 
 static gboolean
 vino_dbus_listener_get_internal_data (VinoDBusListener *listener,
-                                      char ** hostname,
-                                      char ** avahi_hostname,
-                                      gdouble * port,
-                                      GError **error);
+                                      char             **hostname,
+                                      char             **avahi_hostname,
+                                      gint             *port,
+                                      GError           **error);
 
 static gboolean
 vino_dbus_listener_share_with_tube (VinoDBusListener *listener,
-                                    const gchar * connection_path,
-                                    const gchar * tube_path,
-                                    GHashTable * properties,
-                                    GError **error);
+                                    const gchar      *connection_path,
+                                    const gchar      *tube_path,
+                                    GHashTable       *properties,
+                                    GError           **error);
 
 #include "dbus-interface-glue.h"
 
@@ -297,8 +297,8 @@ vino_dbus_listener_new (VinoServer *server)
 
 static gboolean
 vino_dbus_listener_get_external_port (VinoDBusListener *listener,
-                                      gdouble *ret,
-                                      GError **error)
+                                      gint             *ret,
+                                      GError           **error)
 {
   *ret = vino_server_get_external_port (listener->priv->server);
 
@@ -308,19 +308,18 @@ vino_dbus_listener_get_external_port (VinoDBusListener *listener,
 
 static gboolean
 vino_dbus_listener_get_internal_data (VinoDBusListener *listener,
-                                      char ** hostname,
-                                      char ** avahi_hostname,
-                                      gdouble * port,
-                                      GError **error)
+                                      char             **hostname,
+                                      char             **avahi_hostname,
+                                      gint             *port,
+                                      GError           **error)
 {
 #ifdef VINO_ENABLE_HTTP_SERVER
-  *port = (gdouble)vino_get_http_server_port (listener->priv->server);
+  *port = vino_get_http_server_port (listener->priv->server);
 #else
-  *port = (gdouble)vino_server_get_port (listener->priv->server);
+  *port = vino_server_get_port (listener->priv->server);
 #endif
 
   *hostname = get_local_hostname (listener);
-
   *avahi_hostname = g_strdup (vino_mdns_get_hostname ());
 
   return TRUE;

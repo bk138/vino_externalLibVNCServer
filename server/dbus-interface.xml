@@ -5,10 +5,10 @@
     <method name="GetInternalData">
       <arg name="hostname" direction="out" type="s"/>
       <arg name="avahi_hostname" direction="out" type="s"/>
-      <arg name="port" direction="out" type="d"/>
+      <arg name="port" direction="out" type="i"/>
     </method>
     <method name="GetExternalPort">
-      <arg name="port" direction="out" type="d"/>
+      <arg name="port" direction="out" type="i"/>
     </method>
     <method name="ShareWithTube">
       <arg name="connection" direction="in" type="o"/>
