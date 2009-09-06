@@ -45,6 +45,16 @@ void
 vncRandomBytes(unsigned char *bytes)
 {
 #ifdef HAVE_GCRYPT
+    static rfbBool gcrypt_init = FALSE;
+
+    if (!gcrypt_init) {
+      if (!gcry_check_version(NULL)) /* version mismatch */
+        exit(1);
+      gcry_control(GCRYCTL_DISABLE_SECMEM, 0);
+      gcry_control(GCRYCTL_INITIALIZATION_FINISHED, 0);
+      gcrypt_init = TRUE;
+    }
+
     gcry_randomize(bytes, CHALLENGESIZE, GCRY_STRONG_RANDOM);
 #else
     int i;
