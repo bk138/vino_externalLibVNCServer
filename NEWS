@@ -1,3 +1,34 @@
+Vino 2.27.92
+============
+
+  Fixes
+
+	+ Fix a regression that allows more than one instance of the server to run.
+	+ Use vino's debug framework instead of g_printerr (mainly in tube code).
+	+ Make Avahi use the network interface defined in vino preferences.
+	+ Use integer (instead of double) as the port parameter in dbus calls.
+	  (This fix 'localhost' appearing in preferences applet)
+	+ Fixed a warning in libgcrypt initialization.
+
+  Translations
+	+ A S Alam (pa)
+	+ Baris Cicek (tr)
+	+ Changwoo Ryu (ko)
+	+ Chao-Hsiung Liao (zh_HK) (zh_TW)
+	+ Duarte Loreto (pt)
+	+ G Karunakar (hi)
+	+ ifelix (ta)
+	+ Inaki Larranaga Murgoitio (eu)
+	+ Ivar Smolin (et)
+	+ Jamil Ahmed (bn)
+	+ Jonh Wendell (pt_BR)
+	+ Khaled Hosny (ar)
+	+ Kjartan Maraas (nb)
+	+ Miloš Popović (sr) (sr@latin)
+	+ Sandeep Shedmake (mr)
+	+ Sweta Kothari (gu)
+	+ Tomasz Dominikowski (pl)
+
 Vino 2.27.91
 ============
 
