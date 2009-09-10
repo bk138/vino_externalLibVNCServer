@@ -1,31 +1,30 @@
-# translation of vino.HEAD.hi.po to Hindi
-# translation of hi.po to Hindi
+# translation of vino.master.po to Hindi
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Rajesh Ranjan <rranjan@redhat.com>, 2005, 2006.
 #
+# Rajesh Ranjan <rranjan@redhat.com>, 2005, 2006.
+# Rajesh Ranjan <rajesh672@gmail.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: vino.HEAD.hi\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-06 19:10+0530\n"
-"PO-Revision-Date: 2009-09-06 19:20+0530\n"
-"Last-Translator: G Karunakar <karunakar@indlinux.org>\n"
-"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Project-Id-Version: vino.master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&component=Preferences Dialog\n"
+"POT-Creation-Date: 2009-09-06 14:11+0000\n"
+"PO-Revision-Date: 2009-09-10 11:53+0530\n"
+"Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
+"Language-Team: Hindi <hindi.sf.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 "\n"
 "\n"
 "\n"
 
 #. Open Link
 #: ../capplet/sexy-url-label.c:183
-#, fuzzy
 msgid "_Send address by email"
-msgstr "ईमेल से समादेश भेजें"
+msgstr "ईडाक से पता भेजें (_S)"
 
 #. Copy Link Address
 #: ../capplet/sexy-url-label.c:195
@@ -33,14 +32,13 @@ msgid "_Copy address to clipboard"
 msgstr "पता क्लिपबोर्ड पर नकल करें (_C)"
 
 #: ../capplet/vino-message-box.c:103
-#, fuzzy, c-format
+#, c-format
 msgid "There was an error showing the URL \"%s\""
-msgstr ""
-"कडी \"%s\" दिखाने में गलती हुई थी"
+msgstr "URL \"%s\" दिखाने में त्रुटि थी"
 
 #: ../capplet/vino-preferences.c:197 ../capplet/vino-preferences.c:1000
 msgid "Checking the connectivity of this machine..."
-msgstr ""
+msgstr "इस मशीन का कनेक्शन जाँच रहा है..."
 
 #: ../capplet/vino-preferences.c:804
 #, c-format
@@ -53,7 +51,7 @@ msgstr ""
 
 #: ../capplet/vino-preferences.c:834
 msgid "Your desktop is only reachable over the local network."
-msgstr ""
+msgstr "आपका डेस्कटॉप केवल स्थानीय संजाल पर पहुँच योग्य है."
 
 #: ../capplet/vino-preferences.c:854 ../capplet/vino-preferences.c:929
 msgid " or "
@@ -62,22 +60,21 @@ msgstr " या "
 #: ../capplet/vino-preferences.c:859 ../capplet/vino-preferences.c:933
 #, c-format
 msgid "Others can access your computer using the address %s."
-msgstr ""
+msgstr "दूसरे आपके कंप्यूटर की पहुँच %s पता के प्रयोग से कर सकते हैं."
 
 #: ../capplet/vino-preferences.c:986
 msgid "Nobody can access your desktop."
-msgstr ""
+msgstr "कोई भी आपके डेस्कटॉप की पहुँच नहीं ले सकता है."
 
 #: ../capplet/vino-preferences.c:1130 ../server/vino-server.c:164
 #: ../server/vino-server.c:194
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
-msgstr ""
+msgstr "बस में कनेक्शन खोलने में विफल: %s\n"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
-#, fuzzy
 msgid "Choose how other users can remotely view your desktop"
-msgstr "आपके डेस्कटॉप देखने के लिये अन्य उपयोक्ता को अनुमति दें (_v)"
+msgstr "चुनें कि कैसे दूसरे उपयोक्ता आपके डेस्कटॉप को दूरस्थ रूप से देख सकते हैं"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:2
 #: ../server/vino-server.desktop.in.in.h:2
@@ -98,7 +95,7 @@ msgstr "अधिक्तम आकार: 8 अक्षर"
 
 #: ../capplet/vino-preferences.ui.h:4
 msgid "Notification Area"
-msgstr ""
+msgstr "नोटिफिकेशन क्षेत्र"
 
 #: ../capplet/vino-preferences.ui.h:5
 msgid "Remote Desktop Preferences"
@@ -106,7 +103,7 @@ msgstr "दूरस्थ डेस्कटॉप प्राथमिकत�
 
 #: ../capplet/vino-preferences.ui.h:6
 msgid "Remote users are able to control your mouse and keyboard"
-msgstr ""
+msgstr "दूरस्थ उपयोक्ता आपके माउस और कुंजीपट का प्रयोग करने में समर्थ हैं"
 
 #: ../capplet/vino-preferences.ui.h:7
 msgid "Security"
@@ -122,15 +119,15 @@ msgstr "इनमें से कुछ वरीयतायें लॉक �
 
 #: ../capplet/vino-preferences.ui.h:10
 msgid "The router must have the UPnP feature enabled"
-msgstr ""
+msgstr "रॉटर में UPnP फीचर सक्रिय होना चाहिए"
 
 #: ../capplet/vino-preferences.ui.h:11
 msgid "You will be queried to allow or to refuse every incoming connection"
-msgstr ""
+msgstr "आप हर आगत कनेक्शन को स्वीकार करने या अस्वीकार करने के लिए पूछा जाएगा"
 
 #: ../capplet/vino-preferences.ui.h:12
 msgid "Your desktop will be shared"
-msgstr ""
+msgstr "आपका डेस्कटॉप साझा किया जाएगा"
 
 #: ../capplet/vino-preferences.ui.h:13
 msgid "_Allow other users to control your desktop"
@@ -138,15 +135,15 @@ msgstr "अपने डेस्कटॉप का नियंत्रण �
 
 #: ../capplet/vino-preferences.ui.h:14
 msgid "_Configure network automatically to accept connections"
-msgstr ""
+msgstr "कनेक्शन स्वीकार करने के लिए संजाल को स्वतः विन्यस्त करें (_C)"
 
 #: ../capplet/vino-preferences.ui.h:15
 msgid "_Never display an icon"
-msgstr ""
+msgstr "कभी प्रतीक मत दिखाएं (_N)"
 
 #: ../capplet/vino-preferences.ui.h:16
 msgid "_Only display an icon when there is someone connected"
-msgstr ""
+msgstr "केवल कोई प्रतीक दिखाएँ जब कोई कनेक्डेट है (_O)"
 
 #: ../capplet/vino-preferences.ui.h:17
 msgid "_Require the user to enter this password:"
@@ -154,17 +151,17 @@ msgstr "इस शब्दकूट को उपयोक्ता द्व�
 
 #: ../capplet/vino-preferences.ui.h:18
 msgid "_You must confirm each access to this machine"
-msgstr ""
+msgstr "आपको इस मशीन को हर पहुँच को संपुष्ट करना चाहिए (_Y)"
 
 #: ../server/smclient/eggdesktopfile.c:165
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr ""
+msgstr "फ़ाइल वैध .desktop फ़ाइल नहीं है"
 
 #: ../server/smclient/eggdesktopfile.c:188
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr ""
+msgstr "अपरिचित डेस्कटॉप फ़ाइल संस्करण '%s'"
 
 #: ../server/smclient/eggdesktopfile.c:958
 #, c-format
@@ -174,30 +171,30 @@ msgstr "चालू %s"
 #: ../server/smclient/eggdesktopfile.c:1100
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr ""
+msgstr "कमांड लाइन पर अनुप्रयोग दस्तावेज़ स्वीकार नहीं करता है"
 
 #: ../server/smclient/eggdesktopfile.c:1168
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr ""
+msgstr "अपरिचित लॉन्च विकल्प: %d"
 
 #: ../server/smclient/eggdesktopfile.c:1373
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr ""
+msgstr "दस्तावेज़ URI को 'Type=Link' डेस्कटॉप प्रविष्टि में भेज नहीं सकता है"
 
 #: ../server/smclient/eggdesktopfile.c:1392
 #, c-format
 msgid "Not a launchable item"
-msgstr ""
+msgstr "चलाने योग्य प्रोग्राम नहीं है"
 
 #: ../server/smclient/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr ""
+msgstr "सत्र प्रबंधक में संबंधन निष्क्रिय करें"
 
 #: ../server/smclient/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr ""
+msgstr "सहेजा विन्यास समाहित करता फ़ाइल निर्दिष्ट करें"
 
 #: ../server/smclient/eggsmclient.c:228
 msgid "FILE"
@@ -205,7 +202,7 @@ msgstr "FILE"
 
 #: ../server/smclient/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr ""
+msgstr "सत्र प्रबंधन ID निर्दिष्ट करें"
 
 #: ../server/smclient/eggsmclient.c:231
 msgid "ID"
@@ -213,29 +210,27 @@ msgstr "ID"
 
 #: ../server/smclient/eggsmclient.c:252
 msgid "Session management options:"
-msgstr ""
+msgstr "सत्र प्रबंधन विकल्प:"
 
 #: ../server/smclient/eggsmclient.c:253
 msgid "Show session management options"
-msgstr ""
+msgstr "दिखाएँ सत्र प्रबंधन विकल्प"
 
-#: ../server/vino-dbus-listener.c:461
+#: ../server/vino-dbus-listener.c:460
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "दूरस्थ डेस्कटॉप सर्वर पहले से चल रहा है; निकल रहा है ...\n"
 
 #: ../server/vino-main.c:67
 msgid "- VNC Server for GNOME"
-msgstr ""
+msgstr "- VNC सर्वर गनोम के लिए"
 
 #: ../server/vino-main.c:75
-msgid ""
-"Run 'vino-server --help' to see a full list of available command line options"
-msgstr ""
+msgid "Run 'vino-server --help' to see a full list of available command line options"
+msgstr "'vino-server --help' चलाएँ कमांड लाइन विकल्प की पूरी सूची देखने के लिए"
 
 #: ../server/vino-main.c:97
-#, fuzzy
 msgid "GNOME Remote Desktop"
-msgstr "दूरस्थ डेस्कटॉप"
+msgstr "गनोम दूरस्थ डेस्कटॉप"
 
 #: ../server/vino-main.c:107
 msgid ""
@@ -267,7 +262,7 @@ msgstr "%s का दूरस्थ डेस्कटॉप %s पर"
 #: ../server/vino-prefs.c:607
 #, c-format
 msgid "Received signal %d, exiting...\n"
-msgstr ""
+msgstr "संकेत %d पा रहा है, बाहर निकल रहा है...\n"
 
 #: ../server/vino-prompt.c:141
 msgid "Screen"
@@ -290,8 +285,7 @@ msgstr ""
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
-msgstr ""
-"एक उपयोक्ता या अन्य कंप्यूटर आपके टेस्कटॉप को दूरस्थ रूप से देखना व नियंत्रित करना चाहता है."
+msgstr "एक उपयोक्ता या अन्य कंप्यूटर आपके टेस्कटॉप को दूरस्थ रूप से देखना व नियंत्रित करना चाहता है."
 
 #: ../server/vino-prompt.ui.h:2
 msgid "Another user is trying to view your desktop."
@@ -314,7 +308,6 @@ msgid "_Refuse"
 msgstr "ठुकरायें (_R)"
 
 #: ../server/vino-server.desktop.in.in.h:1
-#, fuzzy
 msgid "GNOME Remote Desktop Server"
 msgstr "GNOME दूरस्थ डेस्कटॉप सर्वर"
 
@@ -324,7 +317,7 @@ msgstr "प्रमाणीकरण विधि को अनुमति �
 
 #: ../server/vino-server.schemas.in.h:2
 msgid "Alternative port number"
-msgstr ""
+msgstr "वैकल्पिक पोर्ट संख्या"
 
 #: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
@@ -360,7 +353,6 @@ msgstr ""
 "नहीं है."
 
 #: ../server/vino-server.schemas.in.h:8
-#, fuzzy
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
@@ -404,7 +396,7 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Listen an alternative port"
-msgstr ""
+msgstr "वैकल्पिक पोर्ट पर सुनें"
 
 #: ../server/vino-server.schemas.in.h:15
 msgid ""
@@ -425,7 +417,7 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:17
 msgid "Network interface for listening"
-msgstr ""
+msgstr "सुनने के लिए संजाल अंतरफलक"
 
 #: ../server/vino-server.schemas.in.h:18
 msgid "Only allow remote users to view the desktop"
@@ -456,7 +448,7 @@ msgstr ""
 msgid ""
 "The port which the server will listen to if the 'use_alternative_port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
-msgstr ""
+msgstr "पोर्ट जिसको सर्वर सुनेगा यदि 'use_alternative_port' कुंजी को सही पर सेट किया गया है. वैध मान 5000 से 50000 के बीच के परिसर में है."
 
 #: ../server/vino-server.schemas.in.h:24
 msgid ""
@@ -477,34 +469,34 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:26
 msgid "When the status icon should be shown"
-msgstr ""
+msgstr "कब स्थिति प्रतीक दिखना चाहिए"
 
 #: ../server/vino-server.schemas.in.h:27
 msgid "When true, disable the background on receive valid session"
-msgstr ""
+msgstr "जब सही है, वैध सत्र पाने के लिए पृष्ठभूमि निष्क्रिय करें"
 
 #: ../server/vino-server.schemas.in.h:28
 msgid "Whether we should disable the XDamage extension of X.org"
-msgstr ""
+msgstr "क्या हमें X.org के XDamage विस्तार को निष्क्रिय करना चाहिए"
 
 #: ../server/vino-server.schemas.in.h:29
 msgid "Whether we should use UPNP to forward the port in routers"
-msgstr ""
+msgstr "क्या हमें UPNP को रॉटर में पोर्ट को अग्रेषित करना चाहिए"
 
 #: ../server/vino-status-icon.c:102 ../server/vino-status-tube-icon.c:95
 msgid "Desktop sharing is enabled"
-msgstr ""
+msgstr "डेस्कटॉप साझा करना सक्रिय है"
 
 #: ../server/vino-status-icon.c:110
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "एक व्यक्ति कनेक्टेड है"
+msgstr[1] "%d व्यक्ति कनेक्टेड है"
 
 #: ../server/vino-status-icon.c:207 ../server/vino-status-tube-icon.c:175
 msgid "Error displaying preferences"
-msgstr ""
+msgstr "वरीयता दिखाने में त्रुटि"
 
 #: ../server/vino-status-icon.c:226 ../server/vino-status-tube-icon.c:191
 msgid "Error displaying help"
@@ -529,6 +521,22 @@ msgid ""
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
 "02110-1301, USA.\n"
 msgstr ""
+"GNU जनरल पब्लिक लाइसेंस संस्करण 2 के अंतर्गत लाइसेंसप्रदत्त\n"
+"\n"
+"Vino फ्री सॉफ्टवेयर है; आप इसे पुनर्वितरित कर सकते हैं और/या\n"
+"इसे GNU जनरल पब्लिक लाइसेंस के शर्त के अधीन रूपांतरित कर सकते हैं\n"
+"जैसा कि फ्री सॉफ्टवेयर फाउंडेशन के द्वारा प्रकाशित किया गया है; या तो लाइसेंस का संस्करण 2\n"
+"या कोई पश्चातवर्ती संस्करण (आपके विकल्प अनुसार).\n"
+"\n"
+"Vino प्रोग्राम को इस आशा से वितरित किया गया है कि यह उपयोगी होगा,\n"
+"लेकिन बिना किसी वारंटी के; यहां तक कि बिना किसी मर्केंटेबिलिटी या खास उद्देश्य\n"
+"के लिए फिटनेस की वारंटी के. GNU जनरल पब्लिक लाइसेंस\n"
+"को अधिक विस्तार के लिए देखें.\n"
+"\n"
+"आपको GNU जनरल पब्लिक लाइसेंस की एक कॉपी इस\n"
+"प्रोग्राम के साथ प्राप्त करनी चाहिए; यदि नहीं, Free Software \n"
+"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,\n"
+"MA 02110-1301, USA को लिखें.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
 #: ../server/vino-status-icon.c:268
@@ -542,24 +550,24 @@ msgstr "अपना डेस्कटॉप दूसरों के सा�
 #: ../server/vino-status-icon.c:339 ../server/vino-status-tube-icon.c:223
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
-msgstr ""
+msgstr "क्या आप '%s' को डिसकनेक्ट करना चाहते हैं?"
 
 #: ../server/vino-status-icon.c:342
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
-msgstr ""
+msgstr "'%s' से रिमोट प्रयोक्ता डिसकनेक्टेड किया जायेगा. क्या आप निश्चित करें?"
 
 #: ../server/vino-status-icon.c:348
 msgid "Are you sure you want to disconnect all clients?"
-msgstr ""
+msgstr "क्या आप सभी क्लाइंट को विसंबंधित करना चाहते हैं?"
 
 #: ../server/vino-status-icon.c:350
 msgid "All remote users will be disconnected. Are you sure?"
-msgstr ""
+msgstr "सभी रिमोट प्रयोक्ता विसंबंधित किए जाएंगे. क्या आप निश्चित हैं?"
 
 #: ../server/vino-status-icon.c:362 ../server/vino-status-tube-icon.c:237
 msgid "Disconnect"
-msgstr ""
+msgstr "डिसकनेक्ट करें"
 
 #: ../server/vino-status-icon.c:388 ../server/vino-status-tube-icon.c:262
 msgid "_Preferences"
@@ -567,14 +575,14 @@ msgstr "वरीयताएँ"
 
 #: ../server/vino-status-icon.c:403
 msgid "Disconnect all"
-msgstr ""
+msgstr "सभी विसंबंधित करें"
 
 #. Translators: %s is a hostname
 #. Translators: %s is the alias of the telepathy contact
 #: ../server/vino-status-icon.c:427 ../server/vino-status-tube-icon.c:275
 #, c-format
 msgid "Disconnect %s"
-msgstr ""
+msgstr "%s विसंबंधित करें"
 
 #: ../server/vino-status-icon.c:448 ../server/vino-status-tube-icon.c:294
 msgid "_Help"
@@ -587,78 +595,70 @@ msgstr "के बारे में (_A)"
 #: ../server/vino-status-icon.c:589 ../server/vino-status-tube-icon.c:391
 #, c-format
 msgid "Error initializing libnotify\n"
-msgstr ""
+msgstr "libnotify आरंभ करने में त्रुटि\n"
 
 #. Translators: %s is a hostname
 #: ../server/vino-status-icon.c:610
-#, fuzzy
 msgid "Another user is viewing your desktop"
-msgstr "आपके डेस्कटॉप देखने के लिये अन्य उपयोक्ता को अनुमति दें (_v)"
+msgstr "अन्य उपयोक्ता आपका डेस्कटॉप देख रहा है"
 
 #: ../server/vino-status-icon.c:612
-#, fuzzy, c-format
+#, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
-msgstr ""
-"'%s' कंप्यूटर पर एक उपयोक्ता आपके डेस्कटॉप को दूरस्थ रूप से देखना या नियंत्रित करना चाहता "
-"है."
+msgstr "'%s' कंप्यूटर पर एक उपयोक्ता आपके डेस्कटॉप को दूरस्थ रूप से देख रहा है."
 
 #. Translators: %s is a hostname
 #: ../server/vino-status-icon.c:618
-#, fuzzy
 msgid "Another user is controlling your desktop"
-msgstr "अपने डेस्कटॉप का नियंत्रण दूसरे उपयोक्ता को दें (_A)"
+msgstr "आपके डेस्कटॉप को दूसरा उपयोक्ता नियंत्रित कर रहा है"
 
 #: ../server/vino-status-icon.c:620
-#, fuzzy, c-format
+#, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr ""
-"'%s' कंप्यूटर पर एक उपयोक्ता आपके डेस्कटॉप को दूरस्थ रूप से देखना या नियंत्रित करना चाहता "
-"है."
+msgstr "'%s' कंप्यूटर पर एक उपयोक्ता आपके डेस्कटॉप को दूरस्थ रूप से नियंत्रित कर रहा है."
 
 #: ../server/vino-status-icon.c:642 ../server/vino-status-tube-icon.c:422
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
-msgstr ""
+msgstr "अधिसूचना बबल दिखाने के दौरान त्रुटि: %s\n"
 
 #: ../server/vino-status-tube-icon.c:226
 #, c-format
 msgid "The remote user '%s' will be disconnected. Are you sure?"
-msgstr ""
+msgstr "दूरस्थ उपयोक्ता '%s' डिसकनेक्टेड किया जाएगा. क्या आप निश्चित हैं?"
 
 #: ../server/vino-tube-server.c:311 ../server/vino-tube-server.c:340
 msgid "Share my desktop information"
-msgstr ""
+msgstr "मेरे डेस्कटॉप की सूचना साझा करें"
 
 #: ../server/vino-tube-server.c:315
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
-msgstr ""
+msgstr "'%s' ने डेस्कटॉप साझा करने का आमंत्रण अस्वीकार कर दिया."
 
 #: ../server/vino-tube-server.c:319
 #, c-format
 msgid "'%s' disconnected"
-msgstr ""
+msgstr "'%s' डिसकनेक्डेट"
 
 #: ../server/vino-tube-server.c:346
-#, fuzzy, c-format
+#, c-format
 msgid "'%s' is remotely controlling your desktop."
-msgstr ""
-"'%s' कंप्यूटर पर एक उपयोक्ता आपके डेस्कटॉप को दूरस्थ रूप से देखना या नियंत्रित करना चाहता "
-"है."
+msgstr "'%s' आपके डेस्कटॉप को दूरस्थ रूप से नियंत्रित कर रहा है."
 
 #: ../server/vino-tube-server.c:355
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
-msgstr ""
+msgstr "'%s' के लिए प्रतीक्षारत स्क्रीन पर कनेक्ट करने के लिए."
 
 #: ../server/vino-util.c:116
 msgid "An error has occurred:"
-msgstr ""
+msgstr "एक त्रुटि हुई:"
 
 #: ../tools/vino-passwd.c:115
 #, c-format
 msgid "Cancelled"
-msgstr ""
+msgstr "रद्द किया"
 
 #: ../tools/vino-passwd.c:122
 #, c-format
@@ -668,68 +668,66 @@ msgid ""
 msgid_plural ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
 "password."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "त्रुटि: कूटशब्द की अधिकतम लंबाई %d वर्ण है. कृपया कूटशब्द फिर दाखिल करें."
+msgstr[1] "त्रुटि: कूटशब्द की अधिकतम लंबाई %d वर्णों की है. कृपया कूटशब्द फिर दाखिल करें."
 
 #: ../tools/vino-passwd.c:156
 #, c-format
 msgid "Changing Vino password.\n"
-msgstr ""
+msgstr "विनो कूटशब्द बदल रहा है.\n"
 
 #: ../tools/vino-passwd.c:158
 msgid "Enter new Vino password: "
-msgstr ""
+msgstr "नया वीनो कूटशब्द दाखिल करें: "
 
 #: ../tools/vino-passwd.c:161
 msgid "Retype new Vino password: "
-msgstr ""
+msgstr "नया वीनो कूटशब्द फिर टाइप करें: "
 
 #: ../tools/vino-passwd.c:167
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
-msgstr ""
+msgstr "vino-passwd: कूटशब्द सफलतापूर्वक अद्यतन.\n"
 
 #: ../tools/vino-passwd.c:172
 #, c-format
 msgid "Sorry, passwords do not match.\n"
-msgstr ""
+msgstr "माफ करें, कूटशब्द मेल नहीं खाता है.\n"
 
 #: ../tools/vino-passwd.c:173
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
-msgstr ""
+msgstr "vino-passwd: कूटशब्द अपरिवर्तित.\n"
 
 #: ../tools/vino-passwd.c:181
 #, c-format
-msgid ""
-"Error while communicating with GConf. Are you logged into a GNOME session?"
-msgstr ""
+msgid "Error while communicating with GConf. Are you logged into a GNOME session?"
+msgstr "GConf के साथ संचार करने के दौरान त्रुटि. क्या आप गनोम सत्र में लॉगिन हैं?"
 
 #: ../tools/vino-passwd.c:183
 #, c-format
 msgid "Error message:"
-msgstr ""
+msgstr "त्रुटि संदेश:"
 
 #: ../tools/vino-passwd.c:200
 msgid "Show Vino version"
-msgstr ""
+msgstr "वीनो संस्करण दिखाएँ"
 
 #: ../tools/vino-passwd.c:209
 msgid "- Updates Vino password"
-msgstr ""
+msgstr "- वीनो कूटशब्द अद्यतन करता है"
 
 #: ../tools/vino-passwd.c:219
-msgid ""
-"Run 'vino-passwd --help' to see a full list of available command line options"
-msgstr ""
+msgid "Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr "'vino-passwd --help' चलाएँ उपलब्ध कमांड लाइन विकल्प की पूरी सूची के लिए"
 
 #: ../tools/vino-passwd.c:226
 #, c-format
 msgid "VINO Version %s\n"
-msgstr ""
+msgstr "VINO संस्करण %s\n"
 
 #: ../tools/vino-passwd.c:238
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
-msgstr ""
+msgstr "त्रुटि: आपके पास वीनो कूटशब्द बदलने के लिए पर्याप्त अनुमति नहीं है.\n"
 
