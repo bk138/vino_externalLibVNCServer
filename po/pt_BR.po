@@ -7,15 +7,16 @@
 # Jonh Wendell <wendell@bani.com.br>, 2007,2009.
 # Og Maciel <ogmaciel@gnome.org>, 2007-2008.
 # Vladimir Melo <vladimirmelo.psi@gmail.com>, 2008.
-# Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008.
 # Enrico Nicoletto <liverig@gmail.com>, 2008.
+# Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008, 2009.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-25 12:03-0300\n"
-"PO-Revision-Date: 2009-08-25 12:03-0300\n"
-"Last-Translator: Jonh Wendell <jwendell@gnome.org>\n"
+"POT-Creation-Date: 2009-09-11 19:01-0300\n"
+"PO-Revision-Date: 2009-09-11 19:01-0300\n"
+"Last-Translator: Fábio Nogueira <fnogueira@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -70,7 +71,7 @@ msgid "Nobody can access your desktop."
 msgstr "Ninguém pode acessar sua máquina."
 
 #: ../capplet/vino-preferences.c:1130 ../server/vino-server.c:164
-#: ../server/vino-server.c:195
+#: ../server/vino-server.c:194
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Falha ao abrir conexão com o serviço: %s\n"
@@ -166,7 +167,7 @@ msgstr "O arquivo não é um arquivo .desktop válido"
 #: ../server/smclient/eggdesktopfile.c:188
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "Arquivo desktop não reconhecido, Versão '%s'"
+msgstr "Arquivo desktop não reconhecido, Versão \"%s\""
 
 #: ../server/smclient/eggdesktopfile.c:958
 #, c-format
@@ -187,8 +188,8 @@ msgstr "Opção de execução não reconhecida: %d"
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
-"Impossível passar URIs de documento para uma entrada do tipo 'Type=Link' em "
-"um arquivo desktop"
+"Impossível passar URIs de documento para uma entrada do tipo \"Type=Link\" "
+"em um arquivo desktop"
 
 #: ../server/smclient/eggdesktopfile.c:1392
 #, c-format
@@ -223,7 +224,7 @@ msgstr "Opções do gerenciamento de sessão:"
 msgid "Show session management options"
 msgstr "Mostra as opções do gerenciamento de sessão"
 
-#: ../server/vino-dbus-listener.c:456
+#: ../server/vino-dbus-listener.c:460
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr ""
 "O servidor da Área de trabalho remota já está sendo executado; saindo...\n"
@@ -248,15 +249,15 @@ msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
-"Seu servidor X não suporta a extensão XTest - o acesso à área de trabalho "
-"remota será apenas para visualização\n"
+"Seu servidor X não tem suporte a extensão XTest - o acesso à área de "
+"trabalho remota será apenas para visualização\n"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
 #. * "1" if "%s's remote desktop" doesn't make sense in
 #. * your language.
 #.
-#: ../server/vino-mdns.c:59
+#: ../server/vino-mdns.c:61
 msgid "vino-mdns:showusername"
 msgstr "vino-mdns:showusername"
 
@@ -265,12 +266,12 @@ msgstr "vino-mdns:showusername"
 #. * translated "vino-mdns:showusername" to anything
 #. * other than "1"
 #.
-#: ../server/vino-mdns.c:71
+#: ../server/vino-mdns.c:73
 #, c-format
 msgid "%s's remote desktop on %s"
 msgstr "Área de trabalho remota de %s em %s"
 
-#: ../server/vino-prefs.c:606
+#: ../server/vino-prefs.c:607
 #, c-format
 msgid "Received signal %d, exiting...\n"
 msgstr "Sinal %d recebido, saindo...\n"
@@ -312,11 +313,11 @@ msgstr "Você deseja permitir que eles façam isso?"
 msgid "Question"
 msgstr "Pergunta"
 
-#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:65
 msgid "_Allow"
 msgstr "_Permitir"
 
-#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:66
 msgid "_Refuse"
 msgstr "_Recusar"
 
@@ -680,31 +681,31 @@ msgstr "Erro ao exibir a mensagem de notificação: %s\n"
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "O usuário remoto \"%s\" será desconectado. Você tem certeza?"
 
-#: ../server/vino-tube-server.c:310 ../server/vino-tube-server.c:339
+#: ../server/vino-tube-server.c:311 ../server/vino-tube-server.c:340
 msgid "Share my desktop information"
 msgstr "Compartilhando minha área de trabalho"
 
-#: ../server/vino-tube-server.c:314
+#: ../server/vino-tube-server.c:315
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
-msgstr "'%s' rejeitou seu convite para compartilhamento da área de trabalho."
+msgstr "\"%s\" rejeitou seu convite para compartilhamento da área de trabalho."
 
-#: ../server/vino-tube-server.c:318
+#: ../server/vino-tube-server.c:319
 #, c-format
 msgid "'%s' disconnected"
-msgstr "'%s' desconectou"
+msgstr "\"%s\" desconectou"
 
-#: ../server/vino-tube-server.c:345
+#: ../server/vino-tube-server.c:346
 #, c-format
 msgid "'%s' is remotely controlling your desktop."
 msgstr "\"%s\" está controlando sua área de trabalho remotamente."
 
-#: ../server/vino-tube-server.c:354
+#: ../server/vino-tube-server.c:355
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "Esperando \"%s\" conectar-se."
 
-#: ../server/vino-util.c:115
+#: ../server/vino-util.c:116
 msgid "An error has occurred:"
 msgstr "Ocorreu um erro:"
 
