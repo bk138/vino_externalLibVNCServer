@@ -1,36 +1,46 @@
-# translation of vino.HEAD.ml.po to Malayalam
+# translation of vino.master.ml.po to
 # This file is distributed under the same license as the vino package.
 # Copyright (C) 2006-2008 vino'S COPYRIGHT HOLDER.
 # Ani Peter <apeter@redhat.com>, 2006.
 # പ്രവീണ്‍ <pravin.vet@gmail.com>,2008
 msgid ""
 msgstr ""
-"Project-Id-Version: vino.HEAD.ml\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-05 12:25+0000\n"
-"PO-Revision-Date: 2008-09-17 22:56+0530\n"
-"Last-Translator: പ്രവീണ്‍ <pravin.vet@gmail.com>\n"
-"Language-Team: Malayalam <smc-discuss@googlegroups.com>\n"
+"Project-Id-Version: vino.master.ml\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&component=Preferences Dialog\n"
+"POT-Creation-Date: 2009-08-12 18:01+0000\n"
+"PO-Revision-Date: 2009-09-11 23:24+0530\n"
+"Last-Translator: \n"
+"Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../capplet/vino-preferences.c:1097
-#: ../capplet/vino-preferences.c:1132
-#: ../capplet/vino-preferences.c:1190
-#: ../server/vino-dbus-listener.c:374
-#: ../server/vino-server.c:151
+#. Open Link
+#: ../capplet/sexy-url-label.c:183
+#| msgid "Send this command by email"
+msgid "_Send address by email"
+msgstr "_വിലാസം ഈമെയില്‍ വഴി അയയ്കുക"
+
+#. Copy Link Address
+#: ../capplet/sexy-url-label.c:195
+msgid "_Copy address to clipboard"
+msgstr "വിലാസം ക്ലിപ്ബോര്‍ഡിലേക്ക് _പകര്‍ത്തുക"
+
+#: ../capplet/vino-message-box.c:103
 #, c-format
-msgid "Failed to open connection to bus: %s\n"
-msgstr "പാതയിലേക്കുള്ള ബന്ധം സ്ഥാപിയ്കുവാന്‍ കഴിയുന്നില്ല:%s\n"
+#| msgid ""
+#| "There was an error displaying help:\n"
+#| " %s"
+msgid "There was an error showing the URL \"%s\""
+msgstr "URL \"%s\" പ്രദര്‍ശിപ്പിക്കുന്നതില്‍ പിശക്"
 
-#: ../capplet/vino-preferences.c:1399
-msgid "Send this command by email"
-msgstr "ഈ നിര്‍ദ്ദേശം ഈമെയില്‍ വഴി അയയ്കുക"
+#: ../capplet/vino-preferences.c:197 ../capplet/vino-preferences.c:1000
+msgid "Checking the connectivity of this machine..."
+msgstr "ഈ സിസ്റ്റത്തിന്റെ കണക്ഷന്‍ പരിശോധിക്കുന്നു..."
 
-#: ../capplet/vino-preferences.c:1437
+#: ../capplet/vino-preferences.c:804
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -39,165 +49,203 @@ msgstr ""
 "സഹായം ലഭ്യമാക്കുന്നതില്‍ പിശക്:\n"
 "%s"
 
+#: ../capplet/vino-preferences.c:834
+msgid "Your desktop is only reachable over the local network."
+msgstr "നിങ്ങളുടെ പണിയിടം ലോക്കല്‍ നെറ്റ്‌വര്‍ക്കില്‍ മാത്രമേ ലഭ്യമുള്ളൂ."
+
+#: ../capplet/vino-preferences.c:854 ../capplet/vino-preferences.c:929
+msgid " or "
+msgstr " അല്ലെങ്കില്‍ "
+
+#: ../capplet/vino-preferences.c:859 ../capplet/vino-preferences.c:933
+#, c-format
+msgid "Others can access your computer using the address %s."
+msgstr "മറ്റുള്ളവര്‍ക്കു് നിങ്ങളുടെ കമ്പ്യൂട്ടറിലേക്ക് %s വിലാസം ഉപയോഗിച്ചു് പ്രവേശിക്കുവാന്‍ സാധിക്കുന്നു."
+
+#: ../capplet/vino-preferences.c:986
+msgid "Nobody can access your desktop."
+msgstr "നിങ്ങളുടെ പണിയിടത്തിലേക്ക് ആര്‍ക്കും പ്രവേശിക്കുവാന്‍ സാധ്യമല്ല."
+
+#: ../capplet/vino-preferences.c:1130 ../server/vino-server.c:164
+#: ../server/vino-server.c:195
+#, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "പാതയിലേക്കുള്ള ബന്ധം സ്ഥാപിയ്കുവാന്‍ കഴിയുന്നില്ല:%s\n"
+
 #: ../capplet/vino-preferences.desktop.in.in.h:1
+#| msgid "Allow other users to _view your desktop"
+msgid "Choose how other users can remotely view your desktop"
+msgstr "മറ്റുളള ഉപയോക്താക്കള്‍ക്ക് നിങ്ങളുടെ പണിയിടം കാണുന്നതെങ്ങനെയെന്നു് തെരഞ്ഞെടുക്കുക"
+
+#: ../capplet/vino-preferences.desktop.in.in.h:2
 #: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "വിദൂരത്തിലുളള പണിയിടം"
 
-#: ../capplet/vino-preferences.desktop.in.in.h:2
-msgid "Set your remote desktop access preferences"
-msgstr "നിങ്ങളുടെ വിദൂരത്തിലുളള പണിയിടം ലഭ്യമാക്കുന്നതിനുളള മുന്‍ഗണനകള്‍ ക്രമീകരിക്കുക"
-
-#: ../capplet/vino-preferences.glade.h:1
-msgid "<b>Network</b>"
-msgstr "<b>ശൃംഖല</b>"
-
-#: ../capplet/vino-preferences.glade.h:2
-msgid "<b>Notification Area</b>"
-msgstr "<b>അറിയിപ്പുകള്‍ക്കുള്ള ഇടം</b>"
-
-#: ../capplet/vino-preferences.glade.h:3
-msgid "<b>Security</b>"
-msgstr "<b>സുരക്ഷിതത്വം</b>"
-
-#: ../capplet/vino-preferences.glade.h:4
-msgid "<b>Sharing</b>"
-msgstr "<b>പങ്കിടല്‍/b>"
-
-#: ../capplet/vino-preferences.glade.h:5
-msgid "A_sk you for confirmation"
-msgstr "നിങ്ങളില്‍ നിന്നും ഉറപ്പ് വരുത്തുന്നു (_s)"
-
-#: ../capplet/vino-preferences.glade.h:6
-msgid "Advanced"
-msgstr "സങ്കീര്‍ണമായ"
-
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.ui.h:1
 msgid "Al_ways display an icon"
 msgstr "എപ്പോഴും വേണ്ട ചിഹ്നം കാട്ടുക‌ _w"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.ui.h:2
 msgid "Allow other users to _view your desktop"
 msgstr "മറ്റുളള ഉപയോക്താക്കള്‍ക്ക് നിങ്ങളുടെ പണിയിടം കാണുവാന്‍ അനുവദിക്കുക (_v)"
 
-#: ../capplet/vino-preferences.glade.h:9
-msgid "Disable the _wallpaper when connected"
-msgstr "ഘടിപ്പിക്കുന്നതോടെ പശ്ചാത്തലചിത്രം നിര്‍വ്വീര്യമാക്കുക _w"
+#: ../capplet/vino-preferences.ui.h:3
+msgid "Maximum size: 8 characters"
+msgstr "ഏറ്റവും കൂടിയ വ്യാപ്തി: 8 അക്ഷരങ്ങള്‍"
 
-#: ../capplet/vino-preferences.glade.h:10
-msgid "Disable the wallpaper when successfull connection"
-msgstr "വിജയകരമായി ഘടിപ്പിക്കുന്നതോടെ പശ്ചാത്തലചിത്രം നിര്‍വ്വീര്യമാക്കുക"
+#: ../capplet/vino-preferences.ui.h:4
+#| msgid "<b>Notification Area</b>"
+msgid "Notification Area"
+msgstr "അറിയിപ്പുകള്‍ക്കുള്ള ഇടം"
 
-#: ../capplet/vino-preferences.glade.h:11
-msgid "General"
-msgstr "സാധാ"
-
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.ui.h:5
 msgid "Remote Desktop Preferences"
 msgstr "വിദൂരത്തിലുളള പണിയിടം മുന്‍ഗണനകള്‍"
 
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.ui.h:6
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "വിദൂര ഉപയോക്താക്കള്‍ക്ക് നിങ്ങളുടെ മൗസും കീബോഡും ഉപയോഗിക്കാനാകും"
 
-#: ../capplet/vino-preferences.glade.h:15
-msgid "Remote users' VNC clients accessing the desktop are required to support encryption"
-msgstr "പണിയിടം ഉപയോഗിക്കുന്ന വിദൂര ഉപയോക്താവിന്റെ  VNCക്ലയന്റുമാര്‍ എന്‍ക്രിപ്ഷന്‍ പിന്തുണയ്ക്കേണ്ടതുണ്ടു്"
+#: ../capplet/vino-preferences.ui.h:7
+#| msgid "<b>Security</b>"
+msgid "Security"
+msgstr "സുരക്ഷ"
 
-#: ../capplet/vino-preferences.glade.h:16
-msgid "Screen will be locked after the last remote client disconnect"
-msgstr "അവസാന വിദൂര ക്ലയന്റും ഡിസ്കണക്റ്റ് ചെയ്യുന്നതോടെ സ്ക്രീന്‍ പൂട്ടപ്പെടും"
+#: ../capplet/vino-preferences.ui.h:8
+#| msgid "<b>Sharing</b>"
+msgid "Sharing"
+msgstr "പങ്കിടല്‍"
 
-#: ../capplet/vino-preferences.glade.h:17
+#: ../capplet/vino-preferences.ui.h:9
 msgid "Some of these preferences are locked down"
 msgstr "ഇവയില്‍ ചില മുന്‍ഗണനകള്‍ ലോക്ക്ഡ് ഡൌണ്‍ ആണ്"
 
-#: ../capplet/vino-preferences.glade.h:18
-msgid "The server will only accept connections from localhost"
-msgstr "ലൊക്കല്‍ ഹോസ്റ്റുമായുള്ള ബന്ധം മാത്രമേ സര്‍വര്‍ അനുവധിക്കുകയുള്ളൂ"
+#: ../capplet/vino-preferences.ui.h:10
+msgid "The router must have the UPnP feature enabled"
+msgstr "റൌട്ടറില്‍ UPnP വിശേഷത സജ്ജമാക്കേണ്ടതാണു്"
 
-#: ../capplet/vino-preferences.glade.h:19
-msgid "The server will use another port, instead of the default (5900)"
-msgstr "തനത്(5900) പോര്‍ട്ടിന് പകരം,സര്‍വര്‍ മറ്റൊരു പോര്‍ട്ട് ഉപയോഗിക്കുന്നതായിരിക്കും"
+#: ../capplet/vino-preferences.ui.h:11
+msgid "You will be queried to allow or to refuse every incoming connection"
+msgstr "അകത്തേക്കുള്ള എല്ലാ കണക്ഷനുകളും സ്വീകരിക്കുന്നതിനും നിരസിക്കുന്നതിനും നിങ്ങളെ ചോദ്യം ചെയ്യുന്നു"
 
-#: ../capplet/vino-preferences.glade.h:20
-msgid "Users can view your desktop using this command:"
-msgstr "ഉപയോക്താക്കള്‍ക്ക് ഈ നിര്‍ദ്ദേശം ഉപയോഗിച്ച് താങ്കളുടെ പണിയിടം കാണാന്‍ സാധ്യമാണ്:"
-
-#: ../capplet/vino-preferences.glade.h:21
-msgid "When a user tries to view or control your desktop:"
-msgstr "ഒരു ഉപയോക്താവ് നിങ്ങളുടെ പണിയിടം കാണുവാനോ നിയന്ത്രിക്കുവാനോ ശ്രമിക്കുന്പോള്‍:"
-
-#. tooltip in preferences applet
-#: ../capplet/vino-preferences.glade.h:23
+#: ../capplet/vino-preferences.ui.h:12
 msgid "Your desktop will be shared"
 msgstr "നിങ്ങളുടെ പണിയിടം പങ്കുവയ്കപ്പെടും"
 
-#: ../capplet/vino-preferences.glade.h:24
+#: ../capplet/vino-preferences.ui.h:13
 msgid "_Allow other users to control your desktop"
 msgstr "മറ്റുളള ഉപയോക്താക്കള്‍ക്ക് നിങ്ങളുടെ പണിയിടം നിയന്ത്രിക്കുവാന്‍ അനുവദിക്കുക (_A)"
 
-#: ../capplet/vino-preferences.glade.h:25
-msgid "_Lock screen on disconnect"
-msgstr "_Lബന്ധം വിച്ഛേദിക്കുന്നതോടെ സ്ക്രീന്‍ പൂട്ടുക"
+#: ../capplet/vino-preferences.ui.h:14
+msgid "_Configure network automatically to accept connections"
+msgstr "കണക്ഷനുകള്‍ സ്വയമായി സ്വീകരിക്കുന്നതിനായി നെറ്റ്‌വര്‍ക്ക് _ക്രമീകരിക്കുക"
 
-#: ../capplet/vino-preferences.glade.h:26
+#: ../capplet/vino-preferences.ui.h:15
 msgid "_Never display an icon"
 msgstr "യാതൊരു ചിഹ്നവും കാണിക്കണ്ട"
 
-#: ../capplet/vino-preferences.glade.h:27
-msgid "_Only allow local connections"
-msgstr "_Oപ്രാദേശിക ബന്ധങ്ങള്‍ മാത്രം അനുവധിക്കുക"
-
-#: ../capplet/vino-preferences.glade.h:28
+#: ../capplet/vino-preferences.ui.h:16
 msgid "_Only display an icon when there is someone connected"
 msgstr "‌_Oആരെങ്കിലും ബന്ധപ്പെട്ടിരിക്കുമ്പോള്‍ മാത്രം ചിഹ്നം കാണിക്കുക"
 
-#: ../capplet/vino-preferences.glade.h:29
-msgid "_Password:"
-msgstr "പാസ്‍വേര്‍ഡ് (_P):"
-
-#: ../capplet/vino-preferences.glade.h:30
-msgid "_Require encryption"
-msgstr "എന്‍ക്രിപ്ഷന്‍ ആവശ്യമുണ്ട്_R"
-
-#: ../capplet/vino-preferences.glade.h:31
+#: ../capplet/vino-preferences.ui.h:17
 msgid "_Require the user to enter this password:"
 msgstr "ഉപയോക്താവ് ഈ പാസ്‍വേര്‍ഡ് എന്‍റര്‍ ചെയ്യേണ്ടതാണ് (_R):"
 
-#: ../capplet/vino-preferences.glade.h:32
-msgid "_Use an alternative port:"
-msgstr "_Uമറ്റൊരു പോര്‍ട്ട് ഉപയോഗിക്കുക"
+#: ../capplet/vino-preferences.ui.h:18
+msgid "_You must confirm each access to this machine"
+msgstr "ഈ സിസ്റ്റമിലേക്കുള്ള ഓരോ പ്രവേശനവും _ഉറപ്പാക്കണം"
 
-#: ../server/vino-dbus-listener.c:188
-#: ../server/vino-dbus-listener.c:218
-#: ../server/vino-dbus-listener.c:249
+#: ../server/smclient/eggdesktopfile.c:165
 #, c-format
-msgid "Out of memory handling '%s' message"
-msgstr "'%s' സന്ദേശം ഉള്‍ക്കൊള്ളിക്കന്‍ മതിയായ മെമ്മറി ഇല്ല"
+msgid "File is not a valid .desktop file"
+msgstr "ഫയല്‍ ശരിയായൊരു .desktop ഫയലല്ല."
 
-#: ../server/vino-dbus-listener.c:334
+#: ../server/smclient/eggdesktopfile.c:188
 #, c-format
-msgid "Out of memory registering object path '%s'"
-msgstr "'%s'എന്ന ഒബ്ജെക്റ്റ് പാത്ത് രെജിസ്റ്റര്‍ ചെയ്യാന്‍ വേണ്ട മെമ്മറി ഇല്ല"
+msgid "Unrecognized desktop file Version '%s'"
+msgstr "അപരിചിതമായ ‍ഡസ്ക്ടോപ്പ് ഫയല്‍ പതിപ്പു് '%s'"
 
-#: ../server/vino-dbus-listener.c:411
+#: ../server/smclient/eggdesktopfile.c:958
 #, c-format
-msgid "Failed to acquire D-Bus name '%s'\n"
-msgstr "'%s' എന്ന പേരിലുള്ള D-പാതയില്‍ എത്താന്‍ കഴിയുന്നില്ല\n"
+msgid "Starting %s"
+msgstr "%s ആരംഭിക്കുന്നു"
 
-#: ../server/vino-dbus-listener.c:419
+#: ../server/smclient/eggdesktopfile.c:1100
+#, c-format
+msgid "Application does not accept documents on command line"
+msgstr "കമാന്‍ഡ് ലൈനില്‍ പ്രയോഗം രേഖകള്‍ സ്വീകരിക്കുന്നില്ല"
+
+#: ../server/smclient/eggdesktopfile.c:1168
+#, c-format
+msgid "Unrecognized launch option: %d"
+msgstr "ലഭ്യമാക്കുവാനുള്ള അപരിചിതമായ ഐച്ഛികം: %d"
+
+#: ../server/smclient/eggdesktopfile.c:1373
+#, c-format
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr "'Type=Link' ഡസ്ക്ടോപ്പ് എന്‍ട്രിയിലേക്ക് രേഖയ്ക്കുള്ള URIകള്‍ നല്‍കുവാന്‍ സാധ്യമല്ല"
+
+#: ../server/smclient/eggdesktopfile.c:1392
+#, c-format
+msgid "Not a launchable item"
+msgstr "ലഭ്യമാക്കുവാന്‍ സാധിക്കുന്ന വസ്തുവല്ല"
+
+#: ../server/smclient/eggsmclient.c:225
+msgid "Disable connection to session manager"
+msgstr "സെഷന്‍ മാനേജറിലേക്കുള്ള കണക്ഷന്‍ പ്രവര്‍ത്തന രഹിതമാക്കുക"
+
+#: ../server/smclient/eggsmclient.c:228
+msgid "Specify file containing saved configuration"
+msgstr "സൂക്ഷിച്ചിട്ടുള്ള ക്രമീകരണമടങ്ങുന്ന ഫയല്‍ വ്യക്തമാക്കുക"
+
+#: ../server/smclient/eggsmclient.c:228
+msgid "FILE"
+msgstr "FILE"
+
+#: ../server/smclient/eggsmclient.c:231
+msgid "Specify session management ID"
+msgstr "സെഷന്‍ മാനേജ്മെന്റ് ID വ്യക്തമാക്കുക"
+
+#: ../server/smclient/eggsmclient.c:231
+msgid "ID"
+msgstr "ID"
+
+#: ../server/smclient/eggsmclient.c:252
+msgid "Session management options:"
+msgstr "സെഷന്‍ മാനേജ്മെന്റ് ഐച്ഛികങ്ങള്‍:"
+
+#: ../server/smclient/eggsmclient.c:253
+msgid "Show session management options"
+msgstr "സെഷന്‍ മാനേജ്മെന്റ് ഐച്ഛികങ്ങള്‍ കാണിക്കുക"
+
+#: ../server/vino-dbus-listener.c:456
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "വിദൂര പണിയിടം നിലവില്‍ പ്രവര്‍ത്തിക്കുന്നു; പുറത്തേക്ക് പോകുന്നു...\n"
 
-#: ../server/vino-main.c:89
+#: ../server/vino-main.c:67
+msgid "- VNC Server for GNOME"
+msgstr "- ഗ്നോമിനുള്ള വിഎന്‍സി സര്‍വര്‍"
+
+#: ../server/vino-main.c:75
+#| msgid ""
+#| "Run 'vino-passwd --help' to see a full list of available command line "
+#| "options"
+msgid "Run 'vino-server --help' to see a full list of available command line options"
+msgstr "ലഭ്യമായ ആജ്ഞാമേഘലാ ഉത്തരവുകള്‍ ഏതൊക്കെയെന്നറിയാന്‍ 'vino-server --help പ്രവര്‍ത്തിപ്പിക്കുക"
+
+#: ../server/vino-main.c:97
 msgid "GNOME Remote Desktop"
 msgstr "ഗ്നോം വിദൂര പണിയിടം"
 
-#: ../server/vino-main.c:99
-msgid "Your XServer does not support the XTest extension - remote desktop access will be view-only\n"
-msgstr "നിങ്ങളുടെ Xserver, XTest extension പിന്തുണയ്ക്കുന്നില്ല - വിദൂര പണിയിടം കാണുവാന്‍-മാത്രം ആയിരിക്കും\n"
+#: ../server/vino-main.c:107
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"നിങ്ങളുടെ Xserver, XTest extension പിന്തുണയ്ക്കുന്നില്ല - വിദൂര പണിയിടം കാണുവാന്‍-മാത്രം "
+"ആയിരിക്കും\n"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -218,42 +266,52 @@ msgstr "vino-mdns:showusername"
 msgid "%s's remote desktop on %s"
 msgstr "%s-ന്‍റെ %s-ലെ വിദൂര പണിയിടം"
 
-#: ../server/vino-prompt.c:142
+#: ../server/vino-prefs.c:606
+#, c-format
+msgid "Received signal %d, exiting...\n"
+msgstr "%d സിഗ്നല്‍ ലഭിച്ചു, പുറത്തു് കടക്കുന്നു...\n"
+
+#: ../server/vino-prompt.c:141
 msgid "Screen"
 msgstr "സ്ക്രീന്‍"
 
-#: ../server/vino-prompt.c:143
+#: ../server/vino-prompt.c:142
 msgid "The screen on which to display the prompt"
 msgstr "ഏത് സ്ക്രീന്‍ ഉപയോഗിക്കണമെന്ന കാണിക്കുക (പ്രോമ്പ്റ്റ് ഉളള സ്ക്രീന്‍)"
 
-#: ../server/vino-prompt.c:343
+#: ../server/vino-prompt.c:345
 #, c-format
-msgid "A user on the computer '%s' is trying to remotely view or control your desktop."
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
 msgstr "കംപ്യൂട്ടര്‍ '%s'-ലുളള ഉപയോക്താവ് നിങ്ങളുടെ പണിയിടം കാണുന്നതിനോ നിയന്ത്രിക്കുന്നതിനോ ശ്രമിക്കുന്നു."
 
-#: ../server/vino-prompt.glade.h:1
-msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>മറ്റൊരു ഉപയോക്താവ് നിങ്ങളുടെ പണിയിടം കാണുന്നതിനായി ശ്രമിക്കുന്നു.</b></big>"
+#: ../server/vino-prompt.ui.h:1
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"മറ്റൊരു കംപ്യൂട്ടറിലുളള ഉപയോക്താവ് നിങ്ങളുടെ പണിയിടം കാണുന്നതിനോ നിയന്ത്രിക്കുന്നതിനോ "
+"ശ്രമിക്കുന്നു."
 
-#: ../server/vino-prompt.glade.h:2
-msgid "A user on another computer is trying to remotely view or control your desktop."
-msgstr "മറ്റൊരു കംപ്യൂട്ടറിലുളള ഉപയോക്താവ് നിങ്ങളുടെ പണിയിടം കാണുന്നതിനോ നിയന്ത്രിക്കുന്നതിനോ ശ്രമിക്കുന്നു."
+#: ../server/vino-prompt.ui.h:2
+#| msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgid "Another user is trying to view your desktop."
+msgstr "മറ്റൊരു ഉപയോക്താവ് നിങ്ങളുടെ പണിയിടം കാണുന്നതിനായി ശ്രമിക്കുന്നു."
 
-#: ../server/vino-prompt.glade.h:3
+#: ../server/vino-prompt.ui.h:3
 msgid "Do you want to allow them to do so?"
 msgstr "നിങ്ങള്‍ക്ക് ഇതിനായി ഇവരെ അനുവദിക്കണമോ?"
 
-#: ../server/vino-prompt.glade.h:4
+#: ../server/vino-prompt.ui.h:4
 msgid "Question"
 msgstr "ചോദ്യം"
 
-#: ../server/vino-prompt.glade.h:5
-#: ../server/vino-util.c:63
+#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:64
 msgid "_Allow"
 msgstr "അനുവദിക്കുക (_A)"
 
-#: ../server/vino-prompt.glade.h:6
-#: ../server/vino-util.c:64
+#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:65
 msgid "_Refuse"
 msgstr "നിഷേധിക്കുക (_R)"
 
@@ -278,90 +336,181 @@ msgid "Enable remote desktop access"
 msgstr "വിദൂരത്തുളള പണിയിടം പ്രവേശനം സജ്ജമാക്കുക"
 
 #: ../server/vino-server.schemas.in.h:5
-msgid "If true, allows remote access to the desktop via the RFB protocol. Users on remote machines may then connect to the desktop using a vncviewer."
-msgstr "ഉത്തരം ശരി എന്നാണെങ്കില്‍, RFB സന്പ്രദായം വഴി ഡസ്ക്-ടോപ്പിലേക്ക് വിദൂരത്തുളള കംപ്യൂട്ടറുകള്‍ക്ക്  പ്രവേശനത്തിനുളള അനുവാദം നല്‍കുക. ഒരു vncviewer ഉപയോഗിച്ച് പിന്നീട് ഇവയ്ക് ഡസ്ക്-ടോപ്പിലേക്ക് കണക്ട് ചെയ്യാവുന്നതാണ്. "
+msgid ""
+"If not set, the server will listen on all network interfaces. Set this if "
+"you want that accept connections only from some specific network interface. "
+"eg: eth0, wifi0, lo, ..."
+msgstr ""
+"സജ്ജമല്ലെങ്കില്‍, സര്‍വര്‍ എല്ലാ നെറ്റ്‌വര്‍ക്ക് ഇന്റര്‍ഫെയിസുകളിലും ശ്രദ്ധിക്കുന്നു. ഏതെങ്കിലും "
+"പ്രത്യേക നെറ്റ്‌വര്‍ക്ക് ഇന്റര്‍ഫെയിസില്‍ നിന്നും മാത്രം നിങ്ങള്‍ക്കു് കണക്ഷന്‍ സ്വീകരിച്ചാല്‍ "
+"മതിയെങ്കില്‍, ഇതു് സജ്ജമാക്കുക."
+"ഉദാ: eth0, wifi0, lo, ..."
 
 #: ../server/vino-server.schemas.in.h:6
-msgid "If true, remote users accessing the desktop are not allowed access until the user on the host machine approves the connection. Recommended especially when access is not password protected."
-msgstr "സത്യമെങ്കില്‍, വിദൂര ഉപയോക്താവിനെ ആഥിതേയന്‍ ബന്ധപ്പെടാന്‍ അനുവദിക്കുന്നത് വരെ കാത്ത് നിര്‍ത്തുക. പ്രധാനമായി അടയാളവാക്കിനാല്‍ സംരക്ഷിയ്ക്കപ്പെടാത്ത ബന്ധമാണെങ്കില്‍."
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+"ഉത്തരം ശരി എന്നാണെങ്കില്‍, RFB സന്പ്രദായം വഴി ഡസ്ക്-ടോപ്പിലേക്ക് വിദൂരത്തുളള കംപ്യൂട്ടറുകള്‍ക്ക്  "
+"പ്രവേശനത്തിനുളള അനുവാദം നല്‍കുക. ഒരു vncviewer ഉപയോഗിച്ച് പിന്നീട് ഇവയ്ക് ഡസ്ക്-ടോപ്പിലേക്ക് "
+"കണക്ട് ചെയ്യാവുന്നതാണ്. "
 
 #: ../server/vino-server.schemas.in.h:7
-msgid "If true, remote users accessing the desktop are only allowed to view the desktop. Remote users will not be able to use the mouse or keyboard."
-msgstr "സത്യമെങ്കില്‍, വിദൂര ഉപയോക്താവിന് പണിയിടം കാണുവാന്‍ മാത്രം അനുവദിച്ചിരിക്കുന്നു. വിദൂര ഉപയോക്താവിന് കീബോഡോ മൗസോ ഉപയോഗിക്കാന്‍ കഴിയുകയില്ല."
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"സത്യമെങ്കില്‍, വിദൂര ഉപയോക്താവിനെ ആഥിതേയന്‍ ബന്ധപ്പെടാന്‍ അനുവദിക്കുന്നത് വരെ കാത്ത് നിര്‍ത്തുക. "
+"പ്രധാനമായി അടയാളവാക്കിനാല്‍ സംരക്ഷിയ്ക്കപ്പെടാത്ത ബന്ധമാണെങ്കില്‍."
 
 #: ../server/vino-server.schemas.in.h:8
-msgid "If true, remote users accessing the desktop are required to support encryption. It is highly recommended that you use a client which supports encryption unless the intervening network is trusted."
-msgstr "സത്യമെങ്കില്‍, പണിയിടം ഉപ്യോഗിക്കാന്‍ കഴിയുന്ന വിദൂര ഉപയോക്താക്കക്ക് എന്‍ക്രിപ്ഷന് കഴിയാണം. കടന്നുവരുന്ന ശൃംഘല വിശ്വസിക്കാവുന്നതല്ലെങ്കില്‍ എന്‍ക്രിപ്ഷന്‍ സപ്പോര്‍ട്ട് ചെയ്യുന്ന ഒരു ക്ലയന്റിനെ മാത്രം ഉപയോഗിക്കുക."
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote users will not be able to use the mouse or keyboard."
+msgstr ""
+"സത്യമെങ്കില്‍, വിദൂര ഉപയോക്താവിന് പണിയിടം കാണുവാന്‍ മാത്രം അനുവദിച്ചിരിക്കുന്നു. വിദൂര "
+"ഉപയോക്താവിന് കീബോഡോ മൗസോ ഉപയോഗിക്കാന്‍ കഴിയുകയില്ല."
 
 #: ../server/vino-server.schemas.in.h:9
+msgid ""
+"If true, remote users accessing the desktop are required to support "
+"encryption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+"സത്യമെങ്കില്‍, പണിയിടം ഉപ്യോഗിക്കാന്‍ കഴിയുന്ന വിദൂര ഉപയോക്താക്കക്ക് എന്‍ക്രിപ്ഷന് കഴിയാണം. "
+"കടന്നുവരുന്ന ശൃംഘല വിശ്വസിക്കാവുന്നതല്ലെങ്കില്‍ എന്‍ക്രിപ്ഷന്‍ സപ്പോര്‍ട്ട് ചെയ്യുന്ന ഒരു ക്ലയന്റിനെ മാത്രം "
+"ഉപയോഗിക്കുക."
+
+#: ../server/vino-server.schemas.in.h:10
 msgid "If true, screen will be locked after the last remote client disconnect."
 msgstr "സത്യമെങ്കില്‍, അവസാന ഉപയോക്താവും ബന്ധം വിച്ഛേദിക്കുന്നതോടെ സ്ക്രീന്‍ പൂട്ടപ്പെടും."
 
-#: ../server/vino-server.schemas.in.h:10
-msgid "If true, the server will listen to another port, instead of the default (5900). The port must be specified in the 'alternative_port' key."
-msgstr "സത്യമെങ്കില്‍, തനത് (5900) പോര്‍ട്ടിന് പകരം,സര്‍വര്‍ മറ്റൊരു പോര്‍ട്ട് ശ്രദ്ധിക്കും. ആ പോര്‍ട്ട് 'alternative_port' കീയില്‍ വ്യക്തമാക്കിയിരിക്കണം."
-
 #: ../server/vino-server.schemas.in.h:11
-msgid "If true, the server will only accept connections from localhost and network connections will be rejected. Set this option to true if you wish to exclusively use a tunneling mechanism to access the server, such as ssh."
-msgstr "സത്യമെങ്കില്‍, സര്‍വര്‍ ലോക്കല്‍ഹോസ്റ്റില്‍ നീന്നുള്ള ബന്ധങ്ങള്‍ മാത്രം സ്വീകരിക്കുകയും ശൃംഘലാബന്ധങ്ങളെല്ലാം നിരസിക്കുകയും ചെയ്യും. Set this option to true if you wish to exclusively use a tunneling mechanism to access the server, such as ssh."
+msgid ""
+"If true, the server will listen to another port, instead of the default "
+"(5900). The port must be specified in the 'alternative_port' key."
+msgstr ""
+"സത്യമെങ്കില്‍, തനത് (5900) പോര്‍ട്ടിന് പകരം,സര്‍വര്‍ മറ്റൊരു പോര്‍ട്ട് ശ്രദ്ധിക്കും. ആ പോര്‍ട്ട് "
+"'alternative_port' കീയില്‍ വ്യക്തമാക്കിയിരിക്കണം."
 
 #: ../server/vino-server.schemas.in.h:12
+msgid ""
+"If true, we will not use the XDamage extension of X.org. This extension does "
+"not work properly on some video drivers when using 3D effects. Disabling it "
+"will make vino work on these environments with a slower rendering as side "
+"effect."
+msgstr ""
+"true എങ്കില്‍, X.org-ന്റെ XDamage എക്സ്റ്റെന്‍ഷന്‍ നമ്മള്‍ ഉപയോഗിക്കുകയില്ല. "
+"ത്രിഡി സംവിധാനങ്ങള്‍ ഉപയോഗിക്കുമ്പോള്‍, ചില വീഡിയോ ഡ്രൈവറുകളില്‍ ഈ "
+"എക്സ്റ്റെന്‍ഷന്‍ ശരിയായി പ്രവര്‍ത്തിക്കുന്നതല്ല. ഇവ പ്രവര്‍ത്തന രഹിതമാക്കിയാല്‍, "
+"ഈ സാഹചര്യങ്ങളില്‍ വിനോ പ്രവര്‍ത്തിക്കുന്നു, പക്ഷേ ചില തടസ്സങ്ങളുണ്ടാവാം."
+
+#: ../server/vino-server.schemas.in.h:13
+msgid ""
+"If true, we will use UPNP protocol to automatically forward the port used by "
+"vino in the router."
+msgstr ""
+"true എങ്കില്‍, റൌട്ടറില്‍ വിനോ ഉപയോഗിക്കുന്ന പോര്‍ട്ട് സ്വയമായി ഫോര്‍വേഡ് ചെയ്യുന്നതിനു് "
+"നമ്മള്‍ UPNP സമ്പ്രദായം ഉപയോഗിക്കുന്നു."
+
+#: ../server/vino-server.schemas.in.h:14
 msgid "Listen an alternative port"
 msgstr "മറ്റൊരു പോര്‍ട്ട് ശ്രദ്ധിക്കുക"
 
-#: ../server/vino-server.schemas.in.h:13
-msgid "Lists the authentication methods with which remote users may access the desktop. There are two possible authentication methods; \"vnc\" causes the remote user to be prompted for a password (the password is specified by the vnc_password key) before connecting and \"none\" which allows any remote user to connect."
+#: ../server/vino-server.schemas.in.h:15
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
 msgstr ""
+"റിമോട്ട് ഉപയോക്താക്കള്‍ക്കു് പണിയിടത്തിലേക്കു് പ്രവേശിക്കുവാന്‍ സഹായിക്കുന്ന "
+"ആധികാരികത ഉറപ്പാക്കല്‍ സംവിധാനങ്ങള്‍ ലഭ്യമാക്കുക. രണ്ടു് മാര്‍ഗ്ഗങ്ങള്‍ക്കാണു് "
+"സാധ്യത; കണക്ട് ചെയ്യുന്നതിനു് മുമ്പു് \"vnc\" റിമോട്ട് ഉപയോക്താവിനോടു് "
+"അടയാളവാക്ക് ആവശ്യപ്പെടുന്നു (vnc_password കീയാണു് അടയാളവാക്കു് നല്‍കുന്നതു്), "
+"കണക്ട് ചെയ്യുന്നതിനു് ഏതു് റിമോട്ട് ഉപയോക്താവിനെയും അനുവദിക്കുന്നതിനുള്ള\"none\"."
 
-#: ../server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:16
 msgid "Lock the screen when last user disconnect"
 msgstr "അവസാന ഉപയോക്താവും ബന്ധം വിച്ഛേദിക്കുമ്പോള്‍ സ്ക്രീന്‍ പൂട്ടുക"
 
-#: ../server/vino-server.schemas.in.h:15
-msgid "Only allow local connections"
-msgstr "പ്രാധേശിക ബന്ധങ്ങള്‍ മാത്രം അനുവദിക്കുക"
+#: ../server/vino-server.schemas.in.h:17
+msgid "Network interface for listening"
+msgstr "ശ്രദ്ധിക്കുന്നതിനുള്ള നെറ്റ്‌വര്‍ക്ക് ഇന്റര്‍ഫെയിസ്"
 
-#: ../server/vino-server.schemas.in.h:16
+#: ../server/vino-server.schemas.in.h:18
 msgid "Only allow remote users to view the desktop"
 msgstr "വിദൂരത്തുളള ഉപയോക്താക്കള്‍ക്ക് മാത്രം പണിയിടം കാണുന്നതിന് അനുവദിക്കുക"
 
-#: ../server/vino-server.schemas.in.h:17
+#: ../server/vino-server.schemas.in.h:19
 msgid "Password required for \"vnc\" authentication"
 msgstr "\"vnc\" ഓഥമന്‍റിക്കേഷന് പാസ്‍വേര്‍ഡ് ആവശ്യമുണ്ട്"
 
-#: ../server/vino-server.schemas.in.h:18
+#: ../server/vino-server.schemas.in.h:20
 msgid "Prompt the user before completing a connection"
 msgstr "ഒരു കണക്ഷന്‍ പൂര്‍ത്തിയാക്കുന്നതിന് മുന്പ് ഉപയോക്താവിനെ അറിയിക്കുക"
 
-#: ../server/vino-server.schemas.in.h:19
+#: ../server/vino-server.schemas.in.h:21
 msgid "Require encryption"
 msgstr "എന്‍ക്രിപ്ഷന്‍ ആവശ്യമുണ്ട്"
 
-#: ../server/vino-server.schemas.in.h:20
-msgid "The password which the remote user will be prompted for if the \"vnc\" authentication method is used. The password specified by the key is base64 encoded."
-msgstr ""
-
-#: ../server/vino-server.schemas.in.h:21
-msgid "The port which the server will listen to if the 'use_alternative_port' key is set to true. Valid values are in the range from 5000 to 50000."
-msgstr ""
-
 #: ../server/vino-server.schemas.in.h:22
-msgid "This key controls the behavior of the status icon. There are three options: \"always\" - The icon will be always there; \"client\" - You will see the icon only when there is someone connected, this is the default behavior; \"never\" - Never shows the icon."
-msgstr "ഈ കീ സ്ഥിതിചിഹ്നത്തിന്റെ രീതി നിയന്ത്രിക്കുന്നു.മൂന്ന് വഴികളാണ് ഉള്ളത്: \"എപ്പോഴും\" - ചിഹ്നം എപ്പോഴും അവിടെയുണ്ടാകും; \"ക്ലയന്റ്\" - ആരെങ്കിലും ബന്ധപ്പെട്ടിരിക്കുമ്പോള്‍ മാത്രം ചിഹ്നം കാണിക്കുന്നു,ഇതാണ് തനത് രീതി; \"ഒരിയ്ക്കലും\" - ഒരിയ്ക്കലും ചിഹ്നം കാണിക്കില്ല."
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+"\"vnc\" ആധികാരികത ഉറപ്പാക്കല്‍ സംവിധാനം ഉപയോഗിക്കുമ്പോള്‍ റിമോട്ട് ഉപയോക്താവിനോടു് "
+"ആവശ്യപ്പെടുന്ന അടയാളവാക്കു്. കീ വ്യക്തമാക്കിയിരിക്കുന്ന അടയാളവാക്കു് base64 "
+"എന്‍കോഡഡ് ആണു്."
 
 #: ../server/vino-server.schemas.in.h:23
-msgid "This key specifies the e-mail address to which the remote desktop URL should be sent if the user clicks on the URL in the Remote Desktop preferences dialog."
-msgstr "ഈ കീ,വിദൂര പണിടമുന്‍ഗണനാ ഡയലോഗിലുള്ള URLല്‍ ഉപയോക്താവ് ക്ലിക് ചെയ്യുമ്പോള്‍ ഏത് മിന്നഞ്ചലിലേക്കാണ് പണിയിട URL അയയ്ക്കേണ്ടതെന്ന് സൂചിപ്പിക്കുന്നു"
+msgid ""
+"The port which the server will listen to if the 'use_alternative_port' key "
+"is set to true. Valid values are in the range from 5000 to 50000."
+msgstr ""
+"'use_alternative_port' കീ true ആയി സജ്ജമെങ്കില്‍, സര്‍വര്‍ ശ്രദ്ധിക്കുന്ന പോര്‍ട്ട്. "
+"5000 മുതല്‍ 50000 വരെയുള്ള പരിധിയിലുള്ളതാണു് ശരിയായ മൂല്ല്യങ്ങള്‍."
 
 #: ../server/vino-server.schemas.in.h:24
+msgid ""
+"This key controls the behavior of the status icon. There are three options: "
+"\"always\" - The icon will be always there; \"client\" - You will see the "
+"icon only when there is someone connected, this is the default behavior; "
+"\"never\" - Never shows the icon."
+msgstr ""
+"ഈ കീ സ്ഥിതിചിഹ്നത്തിന്റെ രീതി നിയന്ത്രിക്കുന്നു.മൂന്ന് വഴികളാണ് ഉള്ളത്: \"എപ്പോഴും\" - ചിഹ്നം "
+"എപ്പോഴും അവിടെയുണ്ടാകും; \"ക്ലയന്റ്\" - ആരെങ്കിലും ബന്ധപ്പെട്ടിരിക്കുമ്പോള്‍ മാത്രം ചിഹ്നം "
+"കാണിക്കുന്നു,ഇതാണ് തനത് രീതി; \"ഒരിയ്ക്കലും\" - ഒരിയ്ക്കലും ചിഹ്നം കാണിക്കില്ല."
+
+#: ../server/vino-server.schemas.in.h:25
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+"ഈ കീ,വിദൂര പണിടമുന്‍ഗണനാ ഡയലോഗിലുള്ള URLല്‍ ഉപയോക്താവ് ക്ലിക് ചെയ്യുമ്പോള്‍ ഏത് മിന്നഞ്ചലിലേക്കാണ് "
+"പണിയിട URL അയയ്ക്കേണ്ടതെന്ന് സൂചിപ്പിക്കുന്നു"
+
+#: ../server/vino-server.schemas.in.h:26
 msgid "When the status icon should be shown"
 msgstr "അവസ്ഥാചിഹ്നങ്ങള്‍ എപ്പോള്‍ കാണിക്കണം"
 
-#: ../server/vino-server.schemas.in.h:25
+#: ../server/vino-server.schemas.in.h:27
 msgid "When true, disable the background on receive valid session"
 msgstr "സത്യമാണെങ്കില്‍, ഒരു വാളിഡ് സെഷന്‍ തുടങ്ങുമ്പോള്‍ പശ്ചാത്തലം നിര്‍വീര്യമാക്കുക"
 
-#: ../server/vino-status-icon.c:102
+#: ../server/vino-server.schemas.in.h:28
+msgid "Whether we should disable the XDamage extension of X.org"
+msgstr "X.org-ന്റെ XDamage എക്സ്റ്റെന്‍ഷന്‍ പ്രവര്‍ത്തന രഹിതമാക്കണമോ എന്നു്"
+
+#: ../server/vino-server.schemas.in.h:29
+msgid "Whether we should use UPNP to forward the port in routers"
+msgstr "റൌട്ടറുകളില്‍ പോര്‍ട്ട് ഫോര്‍വേഡ് ചെയ്യുന്നതിനു് UPNP ഉപയോഗിക്കണമോ എന്നു്"
+
+#: ../server/vino-status-icon.c:102 ../server/vino-status-tube-icon.c:95
 msgid "Desktop sharing is enabled"
 msgstr "പണിയിടം പങ്കിടാനാകും"
 
@@ -372,25 +521,21 @@ msgid_plural "%d people are connected"
 msgstr[0] "ഒരാള്‍ ശൃംഖലയിലുണ്ട്"
 msgstr[1] "%d ആളുകള്‍ ശൃംഖലയിലുണ്ട്"
 
-#: ../server/vino-status-icon.c:245
-#, c-format
-msgid ""
-"There was an error displaying preferences:\n"
-" %s"
-msgstr ""
-"മുന്‍ഗണനകള്‍ പ്രദര്‍ശിപ്പിക്കുന്നതില്‍ പിശക്:\n"
-"%s"
+#: ../server/vino-status-icon.c:207 ../server/vino-status-tube-icon.c:175
+#| msgid ""
+#| "There was an error displaying preferences:\n"
+#| " %s"
+msgid "Error displaying preferences"
+msgstr "മുന്‍ഗണനകള്‍ പ്രദര്‍ശിപ്പിക്കുന്നതില്‍ പിശക്"
+
+#: ../server/vino-status-icon.c:226 ../server/vino-status-tube-icon.c:191
+#| msgid ""
+#| "There was an error displaying help:\n"
+#| "%s"
+msgid "Error displaying help"
+msgstr "സഹായം ലഭ്യമാക്കുന്നതില്‍ പിശക്"
 
 #: ../server/vino-status-icon.c:253
-#, c-format
-msgid ""
-"There was an error displaying help:\n"
-" %s"
-msgstr ""
-"സഹായം പ്രദര്‍ശിപ്പിക്കുന്നതില്‍ പിശക്:\n"
-"%s"
-
-#: ../server/vino-status-icon.c:276
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -409,143 +554,222 @@ msgid ""
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
 "02110-1301, USA.\n"
 msgstr ""
+"ഗ്നു ജനറല്‍ പബ്ലിക് ലൈസന്‍സ് ലക്കം 2 അനുസരിച്ചുള്ള ലൈസന്‍സ്\n"
+"\n"
+"വിനോ ഒരു സ്വതന്ത്ര സോഫ്റ്റ്‌വെയറാണു്, നിങ്ങള്‍ക്കതു് പുനര്‍വിതരണം \n"
+"നടത്തുകയോ സ്വതന്ത്ര സോഫ്റ്റ്‌വെയര്‍ ഫൌണ്ടേഷന്‍ പ്രസിദ്ധീകരിച്ച ഗ്നു ജനറല്‍ പബ്ലിക് \n"
+"ലൈസന്‍സ് ലക്കം 2 അല്ലെങ്കില്‍ അതിനേക്കാള്‍ പുതിയ പതിപ്പോ (നിങ്ങളുടെ ഇഷ്ടപ്രകാരം)\n"
+"പ്രകാരം ഭേദഗതി വരുത്താവുന്നതോ ആണു്.\n"
+"\n"
+"വിനോ നിങ്ങള്‍ക്കു് പ്രയോജനപ്പെടും എന്ന പ്രതീക്ഷയില്‍ വിതരണം ചെയ്യുന്നതാണു്.\n"
+"പക്ഷേ, ഇതിന് ഒരു വാറണ്ടിയും ലഭ്യമല്ല; വ്യാപാരയോഗ്യതയോ ഒരു പ്രത്യേക കാര്യത്തിനു്\n"
+"ചേരുന്നതാണെന്നോ ഉള്ള പരോക്ഷമായ ഒരു വാറണ്ടി പോലും ഇല്ല. കൂടുതല്‍ വിവരങ്ങള്‍ക്കു്\n"
+"ഗ്നു ജനറല്‍ പബ്ലിക് ലൈസന്‍സ് കാണുക. \n"
+"\n"
+"നിങ്ങള്‍ക്കു് ഗ്നോം ടെര്‍മിനലിനൊപ്പം ഗ്നു ജനറല്‍ പബ്ലിക് ലൈസന്‍സിന്റെ \n"
+"ഒരു പകര്‍പ്പു് ലഭിച്ചിട്ടുണ്ടായിരിയ്ക്കണം; ഇല്ലെങ്കില്‍, ഈ വിലാസത്തിലേയ്ക്കെഴുതുക:\n"
+"Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,\n"
+"MA 02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:291
+#: ../server/vino-status-icon.c:268
 msgid "translator-credits"
-msgstr "അനി പീറ്റര്‍ <apeter@redhat.com>\n"
+msgstr ""
+"അനി പീറ്റര്‍ <apeter@redhat.com>\n"
 "പ്രവീണ്‍ <pravin.vet@gmail.com>"
 
-#: ../server/vino-status-icon.c:297
+#: ../server/vino-status-icon.c:274
 msgid "Share your desktop with other users"
 msgstr "നിങ്ങളുടെ പണിയിടം മറ്റെല്ലാ ഉപയോക്താക്കളുമായും പങ്കിടുക"
 
-#. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:361
+#: ../server/vino-status-icon.c:339 ../server/vino-status-tube-icon.c:223
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "'%s'-നെ വിച്ഛേദിയ്ക്കണമെന്ന് ഉറപ്പാണോ?"
 
-#: ../server/vino-status-icon.c:363
+#: ../server/vino-status-icon.c:342
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "'%s'-ല്‍ നിന്നുള്ള വിദൂര ഉപയോക്താവുമായുള്ള ബന്ധം വിച്ഛേദിക്കപ്പെടും.വേണോ?"
 
-#: ../server/vino-status-icon.c:368
+#: ../server/vino-status-icon.c:348
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "എല്ലാ ക്ലയന്റുകളുമായുമുള്ള ബന്ധം വിച്ഛേദിക്കണമെന്ന് ഉറപ്പാണോ?"
 
-#: ../server/vino-status-icon.c:369
+#: ../server/vino-status-icon.c:350
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "എല്ലാ വിദൂര ഉപയോക്താക്കളുമായുള്ള ബന്ധവും വിച്ഛേദിയ്ക്കപ്പെടും.വേണോ?"
 
-#: ../server/vino-status-icon.c:381
+#: ../server/vino-status-icon.c:362 ../server/vino-status-tube-icon.c:237
 msgid "Disconnect"
 msgstr "വിച്ഛേദിക്കുക"
 
-#: ../server/vino-status-icon.c:407
+#: ../server/vino-status-icon.c:388 ../server/vino-status-tube-icon.c:262
 msgid "_Preferences"
 msgstr "മുന്‍ഗണനകള്‍ _P"
 
-#: ../server/vino-status-icon.c:422
+#: ../server/vino-status-icon.c:403
 msgid "Disconnect all"
 msgstr "എല്ലാം വിച്ഛേദിക്കുക"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:446
+#. Translators: %s is the alias of the telepathy contact
+#: ../server/vino-status-icon.c:427 ../server/vino-status-tube-icon.c:275
 #, c-format
 msgid "Disconnect %s"
 msgstr "വിച്ഛേദിക്കുക %s"
 
-#: ../server/vino-status-icon.c:466
+#: ../server/vino-status-icon.c:448 ../server/vino-status-tube-icon.c:294
 msgid "_Help"
 msgstr "_സഹായം"
 
-#: ../server/vino-status-icon.c:474
+#: ../server/vino-status-icon.c:456
 msgid "_About"
 msgstr "_സംബന്ധിച്ചു്"
 
-#: ../server/vino-status-icon.c:603
+#: ../server/vino-status-icon.c:589 ../server/vino-status-tube-icon.c:391
 #, c-format
 msgid "Error initializing libnotify\n"
-msgstr ""
-"libnotify"
-" തുടങ്ങുന്നതില്‍ പിശക്\n"
+msgstr "libnotify തുടങ്ങുന്നതില്‍ പിശക്\n"
 
-#: ../server/vino-status-icon.c:623
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:610
 msgid "Another user is viewing your desktop"
 msgstr "മറ്റൊരുപയോക്താവ് നിങ്ങളുടെ പണിയിടം കാണുന്നു"
 
-#: ../server/vino-status-icon.c:624
+#: ../server/vino-status-icon.c:612
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "കംപ്യൂട്ടര്‍ '%s'-ലുളള ഉപയോക്താവ് നിങ്ങളുടെ പണിയിടം കാണുന്നു."
 
-#: ../server/vino-status-icon.c:629
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:618
 msgid "Another user is controlling your desktop"
 msgstr "മറ്റൊരുപയോക്താവ് നിങ്ങളുടെ കമ്പ്യൂട്ടര്‍ നിയന്ത്രിക്കുന്നു"
 
-#: ../server/vino-status-icon.c:630
+#: ../server/vino-status-icon.c:620
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "കംപ്യൂട്ടര്‍ '%s'-ലുളള ഉപയോക്താവ് നിങ്ങളുടെ പണിയിടം നിയന്ത്രിക്കുന്നു"
 
-#: ../server/vino-status-icon.c:652
+#: ../server/vino-status-icon.c:642 ../server/vino-status-tube-icon.c:422
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "അറിയിപ്പ് കുമിള കാണിക്കുന്നതില്‍ പിശക്: %s\n"
 
+#: ../server/vino-status-tube-icon.c:226
+#, c-format
+#| msgid "The remote user from '%s' will be disconnected. Are you sure?"
+msgid "The remote user '%s' will be disconnected. Are you sure?"
+msgstr "വിദൂര ഉപയോക്താവു '%s' വിച്ഛേദിക്കപ്പെടും.വേണോ?"
+
+#: ../server/vino-tube-server.c:313 ../server/vino-tube-server.c:342
+#| msgid "Share your desktop with other users"
+msgid "Share my desktop information"
+msgstr "പണിയിടം വിവരം പങ്കിടുക"
+
+#: ../server/vino-tube-server.c:317
+#, c-format
+msgid "'%s' rejected the desktop sharing invitation."
+msgstr "'%s' പണിയിടം പങ്കിടുന്നതിനുള്ള ക്ഷണം നിരസിച്ചു."
+
+#: ../server/vino-tube-server.c:321
+#, c-format
+#| msgid "Disconnect"
+msgid "'%s' disconnected"
+msgstr "'%s' വിഛേദിച്ചു"
+
+#: ../server/vino-tube-server.c:348
+#, c-format
+#| msgid "A user on the computer '%s' is remotely controlling your desktop."
+msgid "'%s' is remotely controlling your desktop."
+msgstr "'%s' നിങ്ങളുടെ പണിയിടം നിയന്ത്രിക്കുന്നു."
+
+#: ../server/vino-tube-server.c:357
+#, c-format
+msgid "Waiting for '%s' to connect to the screen."
+msgstr "സ്ക്രീനിലേക്ക് കണക്ട് ചെയ്യുന്നതിനായി '%s'-നായി കാത്തിരിക്കുന്നു."
+
+#: ../server/vino-util.c:115
+msgid "An error has occurred:"
+msgstr "ഒരു പിശകുണ്ടായിരിക്കുന്നു:"
+
 #: ../tools/vino-passwd.c:115
 #, c-format
-msgid "ERROR: Maximum length of password is %d characters. Please, re-enter the password.\n"
-msgstr "പിശക്: അടയാളവാക്കില്‍ %d അക്ഷരങ്ങളേ പറ്റൂ.ദയവായി അടയാളവാക്ക്  ആവര്‍ത്തിയ്ക്കുക.\n"
+msgid "Cancelled"
+msgstr "റദ്ദാക്കിയിരിക്കുന്നു"
 
-#: ../tools/vino-passwd.c:145
+#: ../tools/vino-passwd.c:122
+#, c-format
+#| msgid ""
+#| "ERROR: Maximum length of password is %d characters. Please, re-enter the "
+#| "password.\n"
+msgid ""
+"ERROR: Maximum length of password is %d character. Please, re-enter the "
+"password."
+msgid_plural ""
+"ERROR: Maximum length of password is %d characters. Please, re-enter the "
+"password."
+msgstr[0] "പിശക്: അടയാളവാക്കില്‍ %d അക്ഷരങ്ങളേ പറ്റൂ.ദയവായി അടയാളവാക്ക്  ആവര്‍ത്തിയ്ക്കുക."
+msgstr[1] "പിശക്: അടയാളവാക്കില്‍ %d അക്ഷരങ്ങളേ പറ്റൂ.ദയവായി അടയാളവാക്ക്  ആവര്‍ത്തിയ്ക്കുക."
+
+#: ../tools/vino-passwd.c:156
 #, c-format
 msgid "Changing Vino password.\n"
 msgstr "വീനോ അടയാളവാക്ക് മാറ്റുന്നു.\n"
 
-#: ../tools/vino-passwd.c:147
+#: ../tools/vino-passwd.c:158
 msgid "Enter new Vino password: "
 msgstr "പുതിയ അടയാളവാക്ക്:"
 
-#: ../tools/vino-passwd.c:150
+#: ../tools/vino-passwd.c:161
 msgid "Retype new Vino password: "
 msgstr "പുതിയ അടയാളവാക്ക് വീണ്ടും:"
 
-#: ../tools/vino-passwd.c:156
+#: ../tools/vino-passwd.c:167
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: അടയാളവാക്ക് മാറ്റിയിരിക്കുന്നു.\n"
 
-#: ../tools/vino-passwd.c:160
+#: ../tools/vino-passwd.c:172
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "ക്ഷമിയ്ക്കണം, അടയാളവാക്കുകള്‍ ഒന്നല്ല.\n"
 
-#: ../tools/vino-passwd.c:161
+#: ../tools/vino-passwd.c:173
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: അടയാളവാക്കിന് മാറ്റമില്ല.\n"
 
-#: ../tools/vino-passwd.c:176
+#: ../tools/vino-passwd.c:181
+#, c-format
+msgid "Error while communicating with GConf. Are you logged into a GNOME session?"
+msgstr "GConf-മായി ബന്ധപ്പെടുമ്പോള്‍ പിശക്. നിങ്ങള്‍ ഒരു ഗ്നോം സെഷനില്‍ ലോഗിന്‍ ചെയ്തിട്ടുണ്ടോ?"
+
+#: ../tools/vino-passwd.c:183
+#, c-format
+msgid "Error message:"
+msgstr "പിശക് സന്ദേശം:"
+
+#: ../tools/vino-passwd.c:200
 msgid "Show Vino version"
 msgstr "ഏത് വീനോ പതിപ്പാണെന്ന് കാട്ടുക"
 
-#: ../tools/vino-passwd.c:185
+#: ../tools/vino-passwd.c:209
 msgid "- Updates Vino password"
 msgstr "- വീനോ അടയാളവാക്ക് അപ്ഡേറ്റ് ചെയ്യുന്നു"
 
-#: ../tools/vino-passwd.c:195
+#: ../tools/vino-passwd.c:219
 msgid "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr "ലഭ്യമായ ആജ്ഞാമേഘലാ ഉത്തരവുകള്‍ ഏതൊക്കെയെന്നറിയാന്‍  'vino-passwd --help' പ്രവര്‍ത്തിപ്പിക്കുക"
 
-#: ../tools/vino-passwd.c:202
+#: ../tools/vino-passwd.c:226
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "വീനോ പതിപ്പ് %s\n"
 
-#: ../tools/vino-passwd.c:211
+#: ../tools/vino-passwd.c:238
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "പിശക്:നിങ്ങള്‍ക്ക് വീനോയുടെ അടയാളവാക്ക് മാറ്റുവാന്‍വേണ്ട അനുവാധമില്ല.\n"
+
