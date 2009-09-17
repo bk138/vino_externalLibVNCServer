@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-01 15:22+0300\n"
+"POT-Creation-Date: 2009-09-17 19:17+0300\n"
 "PO-Revision-Date: 2009-07-01 18:34+0300\n"
 "Last-Translator: Maxim Dziumanenko <dziumanenko@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -62,8 +62,8 @@ msgstr "Інші можуть отримати доступ до комп'юте
 msgid "Nobody can access your desktop."
 msgstr "Ніхто не може отримати доступ до комп'ютера."
 
-#: ../capplet/vino-preferences.c:1130 ../server/vino-server.c:162
-#: ../server/vino-server.c:193
+#: ../capplet/vino-preferences.c:1130 ../server/vino-server.c:164
+#: ../server/vino-server.c:194
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Не вдається відкрити з'єднання з шиною: %s\n"
@@ -177,7 +177,9 @@ msgstr "Нерозпізнаний параметр запуску: %d"
 #: ../server/smclient/eggdesktopfile.c:1373
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "Не вдається передати URI-посилання документу у записі 'Type=Link' desktop-файлу"
+msgstr ""
+"Не вдається передати URI-посилання документу у записі 'Type=Link' desktop-"
+"файлу"
 
 #: ../server/smclient/eggdesktopfile.c:1392
 #, c-format
@@ -212,7 +214,7 @@ msgstr "Параметри керування сеансами:"
 msgid "Show session management options"
 msgstr "Показати параметри керування сеансами"
 
-#: ../server/vino-dbus-listener.c:456
+#: ../server/vino-dbus-listener.c:460
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "Сервер віддаленого робочого столу вже запущено; завершення ...\n"
 
@@ -223,7 +225,8 @@ msgstr "- сервер VNC для GNOME"
 #: ../server/vino-main.c:75
 msgid ""
 "Run 'vino-server --help' to see a full list of available command line options"
-msgstr "Запустіть 'vino-server  --help' для перегляду повного списку параметрів"
+msgstr ""
+"Запустіть 'vino-server  --help' для перегляду повного списку параметрів"
 
 #: ../server/vino-main.c:97
 msgid "GNOME Remote Desktop"
@@ -242,7 +245,7 @@ msgstr ""
 #. * "1" if "%s's remote desktop" doesn't make sense in
 #. * your language.
 #.
-#: ../server/vino-mdns.c:59
+#: ../server/vino-mdns.c:61
 msgid "vino-mdns:showusername"
 msgstr "0"
 
@@ -251,12 +254,12 @@ msgstr "0"
 #. * translated "vino-mdns:showusername" to anything
 #. * other than "1"
 #.
-#: ../server/vino-mdns.c:71
+#: ../server/vino-mdns.c:73
 #, c-format
 msgid "%s's remote desktop on %s"
 msgstr "Віддалений робочий стіл користувача %s на %s"
 
-#: ../server/vino-prefs.c:606
+#: ../server/vino-prefs.c:607
 #, c-format
 msgid "Received signal %d, exiting...\n"
 msgstr "Отримано сигнал %d, завершення...\n"
@@ -298,11 +301,11 @@ msgstr "Бажаєте дозволити це йому?"
 msgid "Question"
 msgstr "Запитання"
 
-#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:65
 msgid "_Allow"
 msgstr "_Дозволити"
 
-#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:66
 msgid "_Refuse"
 msgstr "_Відмовити"
 
@@ -335,8 +338,8 @@ msgid ""
 "eg: eth0, wifi0, lo, ..."
 msgstr ""
 "Якщо не встановлено, сервер буде очікувати з'єднання на усіх мережних "
-"інтерфейсах. Встановіть цей параметр, якщо хочете приймати з'єднання "
-"лише від певного мережного інтерфейсу, наприклад: eth0, wifi0, lo, ..."
+"інтерфейсах. Встановіть цей параметр, якщо хочете приймати з'єднання лише "
+"від певного мережного інтерфейсу, наприклад: eth0, wifi0, lo, ..."
 
 #: ../server/vino-server.schemas.in.h:6
 msgid ""
@@ -398,9 +401,10 @@ msgid ""
 "will make vino work on these environments with a slower rendering as side "
 "effect."
 msgstr ""
-"Якщо встановлено, не буде використовуватись розширення XDamage у X.org. Це розширення не "
-"працює коректно на деяких відео-драйверах при вмиканні 3D-ефектів. Його вимикання "
-"дасть змогу vino працювати з цими розширеннями, проте повільніше."
+"Якщо встановлено, не буде використовуватись розширення XDamage у X.org. Це "
+"розширення не працює коректно на деяких відео-драйверах при вмиканні 3D-"
+"ефектів. Його вимикання дасть змогу vino працювати з цими розширеннями, "
+"проте повільніше."
 
 #: ../server/vino-server.schemas.in.h:13
 msgid ""
@@ -504,13 +508,14 @@ msgstr "Чи слід вимкнути розирення XDamage у X.org"
 
 #: ../server/vino-server.schemas.in.h:29
 msgid "Whether we should use UPNP to forward the port in routers"
-msgstr "Чи слід використовувати UPNP для перенаправлення портів маршрутизаторів"
+msgstr ""
+"Чи слід використовувати UPNP для перенаправлення портів маршрутизаторів"
 
-#: ../server/vino-status-icon.c:106
+#: ../server/vino-status-icon.c:102 ../server/vino-status-tube-icon.c:95
 msgid "Desktop sharing is enabled"
 msgstr "Увімкнено спільний доступ до робочого столу"
 
-#: ../server/vino-status-icon.c:114
+#: ../server/vino-status-icon.c:110
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
@@ -518,16 +523,15 @@ msgstr[0] "Підключена %d особа"
 msgstr[1] "Підключено %d осіб"
 msgstr[2] "Підключено %d осіб"
 
-#: ../server/vino-status-icon.c:211
+#: ../server/vino-status-icon.c:207 ../server/vino-status-tube-icon.c:175
 msgid "Error displaying preferences"
-msgstr ""
-"Помилка при показі параметрі"
+msgstr "Помилка при показі параметрі"
 
-#: ../server/vino-status-icon.c:230
+#: ../server/vino-status-icon.c:226 ../server/vino-status-tube-icon.c:191
 msgid "Error displaying help"
 msgstr "Помилка при показі довідки"
 
-#: ../server/vino-status-icon.c:257
+#: ../server/vino-status-icon.c:253
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -561,101 +565,119 @@ msgstr ""
 "02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:272
+#: ../server/vino-status-icon.c:268
 msgid "translator-credits"
 msgstr "Максим Дзюманенко <dziumanenko@gmail.com>"
 
-#: ../server/vino-status-icon.c:278
+#: ../server/vino-status-icon.c:274
 msgid "Share your desktop with other users"
 msgstr "Спільний доступ до робочого столу"
 
-#: ../server/vino-status-icon.c:344 ../server/vino-status-icon.c:360
+#: ../server/vino-status-icon.c:339 ../server/vino-status-tube-icon.c:223
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Справді хочете відключити '%s'?"
 
-#: ../server/vino-status-icon.c:348
-#, c-format
-msgid "The remote user '%s' will be disconnected. Are you sure?"
-msgstr "Віддалений користувач з '%s' буде відключений. Продовжити?"
-
-#: ../server/vino-status-icon.c:363
+#: ../server/vino-status-icon.c:342
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Віддалений користувач з '%s' буде відключений. Продовжити?"
 
-#: ../server/vino-status-icon.c:369
+#: ../server/vino-status-icon.c:348
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Справді бажаєте відключити усіх клієнтів?"
 
-#: ../server/vino-status-icon.c:371
+#: ../server/vino-status-icon.c:350
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Усі віддалені користувачі будуть відключені. Продовжити?"
 
-#: ../server/vino-status-icon.c:387
+#: ../server/vino-status-icon.c:362 ../server/vino-status-tube-icon.c:237
 msgid "Disconnect"
 msgstr "Відключити"
 
-#: ../server/vino-status-icon.c:413
+#: ../server/vino-status-icon.c:388 ../server/vino-status-tube-icon.c:262
 msgid "_Preferences"
 msgstr "_Параметри"
 
-#: ../server/vino-status-icon.c:428
+#: ../server/vino-status-icon.c:403
 msgid "Disconnect all"
 msgstr "Відключити усіх"
 
-#. Translators: %s is the alias of the telepathy contact
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:454 ../server/vino-status-icon.c:461
+#. Translators: %s is the alias of the telepathy contact
+#: ../server/vino-status-icon.c:427 ../server/vino-status-tube-icon.c:275
 #, c-format
 msgid "Disconnect %s"
 msgstr "Відключити %s"
 
-#: ../server/vino-status-icon.c:482
+#: ../server/vino-status-icon.c:448 ../server/vino-status-tube-icon.c:294
 msgid "_Help"
 msgstr "_Довідка"
 
-#: ../server/vino-status-icon.c:490
+#: ../server/vino-status-icon.c:456
 msgid "_About"
 msgstr "_Про програму"
 
-#: ../server/vino-status-icon.c:627
+#: ../server/vino-status-icon.c:589 ../server/vino-status-tube-icon.c:391
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Помилка ініціалізації libnotify\n"
 
-#. Translators: %s is the alias of the telepathy contact
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:649 ../server/vino-status-icon.c:681
-msgid "Another user is controlling your desktop"
-msgstr "Інший користувач контролює ваш робочий стіл"
-
-#: ../server/vino-status-icon.c:651
-#, c-format
-msgid "'%s' is remotely controlling your desktop."
-msgstr "'%s' віддалено контролює ваш робочий стіл."
-
-#. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:673
+#: ../server/vino-status-icon.c:610
 msgid "Another user is viewing your desktop"
 msgstr "Інший користувач переглядає ваш робочий стіл"
 
-#: ../server/vino-status-icon.c:675
+#: ../server/vino-status-icon.c:612
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Користувач на комп'ютері '%s' віддалено переглядає ваш робочий стіл."
 
-#: ../server/vino-status-icon.c:683
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:618
+msgid "Another user is controlling your desktop"
+msgstr "Інший користувач контролює ваш робочий стіл"
+
+#: ../server/vino-status-icon.c:620
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "Користувач на комп'ютері '%s' віддалено контролює ваш робочий стіл."
 
-#: ../server/vino-status-icon.c:709
+#: ../server/vino-status-icon.c:642 ../server/vino-status-tube-icon.c:422
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Помилка при показі вікна сповіщення: %s\n"
 
-#: ../server/vino-util.c:115
+#: ../server/vino-status-tube-icon.c:226
+#, c-format
+msgid "The remote user '%s' will be disconnected. Are you sure?"
+msgstr "Віддалений користувач з '%s' буде відключений. Продовжити?"
+
+#: ../server/vino-tube-server.c:311 ../server/vino-tube-server.c:340
+msgid "Share my desktop information"
+msgstr "Інформація про спільний доступ до мого робочого столу"
+
+#: ../server/vino-tube-server.c:315
+#, c-format
+msgid "'%s' rejected the desktop sharing invitation."
+msgstr "'%s' відмовив у з'єднанні для доступу до спільного робочого столу."
+
+#: ../server/vino-tube-server.c:319
+#, c-format
+msgid "'%s' disconnected"
+msgstr "«%s» вимкнено"
+
+#: ../server/vino-tube-server.c:346
+#, c-format
+msgid "'%s' is remotely controlling your desktop."
+msgstr "«%s» віддалено контролює ваш робочий стіл."
+
+#: ../server/vino-tube-server.c:355
+#, c-format
+msgid "Waiting for '%s' to connect to the screen."
+msgstr "Очікування «%s» для з'єднання з віддаленим робочим столом."
+
+#: ../server/vino-util.c:116
 msgid "An error has occurred:"
 msgstr "Помилка:"
 
@@ -694,37 +716,47 @@ msgstr "Повторіть пароль Vino: "
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: пароль успішно оновлено.\n"
 
-#: ../tools/vino-passwd.c:171
+#: ../tools/vino-passwd.c:172
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "Паролі не збігаються.\n"
 
-#: ../tools/vino-passwd.c:172
+#: ../tools/vino-passwd.c:173
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: пароль не змінено.\n"
 
-#: ../tools/vino-passwd.c:187
+#: ../tools/vino-passwd.c:181
+#, c-format
+msgid ""
+"Error while communicating with GConf. Are you logged into a GNOME session?"
+msgstr ""
+"Помилка під час зв'язку з GConf. Ви увійшли у сеанс GNOME?"
+
+#: ../tools/vino-passwd.c:183
+#, c-format
+msgid "Error message:"
+msgstr "Повідомлення про помилку:"
+
+#: ../tools/vino-passwd.c:200
 msgid "Show Vino version"
 msgstr "Показати версію Vino"
 
-#: ../tools/vino-passwd.c:196
+#: ../tools/vino-passwd.c:209
 msgid "- Updates Vino password"
 msgstr "- оновлення паролю Vino"
 
-#: ../tools/vino-passwd.c:206
+#: ../tools/vino-passwd.c:219
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr "Запустіть 'vino-passwd --help' для перегляду повного списку параметрів"
 
-#: ../tools/vino-passwd.c:213
+#: ../tools/vino-passwd.c:226
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "VINO версія %s\n"
 
-#: ../tools/vino-passwd.c:222
+#: ../tools/vino-passwd.c:238
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "ПОМИЛКА: немає достатньо прав доступу для зміни паролю Vino.\n"
-
-
