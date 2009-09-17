@@ -6,15 +6,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&component=general\n"
-"POT-Creation-Date: 2009-02-13 15:02+0000\n"
-"PO-Revision-Date: 2009-02-17 03:16+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=vino&component=Preferences Dialog\n"
+"POT-Creation-Date: 2009-09-07 11:44+0000\n"
+"PO-Revision-Date: 2009-09-17 22:16+0300\n"
 "Last-Translator: Adi Roiban <adi@roiban.ro>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n == 1 ? 0: (((n % 100 > 19) || ((n % 100 == 0) && (n != 0))) ? 2: 1));\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 ? 0: (((n % 100 > 19) || ((n % 100 "
+"== 0) && (n != 0))) ? 2: 1));\n"
 
 #. Open Link
 #: ../capplet/sexy-url-label.c:183
@@ -31,12 +33,11 @@ msgstr "_Copiază adrese în clipboard"
 msgid "There was an error showing the URL \"%s\""
 msgstr "S-a produs o eroare la afișarea URL-ului „%s”"
 
-#: ../capplet/vino-preferences.c:198
-#: ../capplet/vino-preferences.c:954
+#: ../capplet/vino-preferences.c:197 ../capplet/vino-preferences.c:1000
 msgid "Checking the connectivity of this machine..."
 msgstr "Se verifică conectivitatea acestui calculator..."
 
-#: ../capplet/vino-preferences.c:798
+#: ../capplet/vino-preferences.c:804
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -45,145 +46,209 @@ msgstr ""
 "A intervenit o eroare la afișarea ajutorului:\n"
 "%s"
 
-#: ../capplet/vino-preferences.c:839
+#: ../capplet/vino-preferences.c:834
 msgid "Your desktop is only reachable over the local network."
 msgstr "Calculatorul e accesibil doar din rețeaua locală."
 
-#: ../capplet/vino-preferences.c:840
-#: ../capplet/vino-preferences.c:890
+#: ../capplet/vino-preferences.c:854 ../capplet/vino-preferences.c:929
+msgid " or "
+msgstr " sau "
+
+#: ../capplet/vino-preferences.c:859 ../capplet/vino-preferences.c:933
 #, c-format
 msgid "Others can access your computer using the address %s."
 msgstr "Alții pot accesa calculatorul folosind adresa %s."
 
-#: ../capplet/vino-preferences.c:940
+#: ../capplet/vino-preferences.c:986
 msgid "Nobody can access your desktop."
 msgstr "Nimeni nu poate accesa calculatorul."
 
-#: ../capplet/vino-preferences.c:1081
-#: ../server/vino-dbus-listener.c:501
-#: ../server/vino-server.c:156
-#: ../server/vino-server.c:187
+#: ../capplet/vino-preferences.c:1130 ../server/vino-server.c:164
+#: ../server/vino-server.c:194
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Conexiunea la magistrală a eșuat: %s\n"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
-#| msgid "Allow other users to _view your desktop"
 msgid "Choose how other users can remotely view your desktop"
-msgstr "Alegeți modul în care alți utilizatori pot vedea de la distanță desktopul dumneavoastră"
+msgstr ""
+"Alegeți modul în care alți utilizatori pot vedea de la distanță desktopul "
+"dumneavoastră"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:2
 #: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "Desktop la distanță"
 
-#: ../capplet/vino-preferences.glade.h:1
-msgid "<b>Notification Area</b>"
-msgstr "<b>Zonă notificare</b>"
-
-#: ../capplet/vino-preferences.glade.h:2
-msgid "<b>Security</b>"
-msgstr "<b>Securitate</b>"
-
-#: ../capplet/vino-preferences.glade.h:3
-msgid "<b>Sharing</b>"
-msgstr "<b>Partajare</b>"
-
-#: ../capplet/vino-preferences.glade.h:4
-msgid "<i>Some of these preferences are locked down</i>"
-msgstr "<i>O parte din aceste preferințe sunt blocate</i>"
-
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.ui.h:1
 msgid "Al_ways display an icon"
 msgstr "Afișea_ză întotdeauna o iconiță"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.ui.h:2
 msgid "Allow other users to _view your desktop"
 msgstr "Permite altor utilizatori să _vadă desktopul"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.ui.h:3
 msgid "Maximum size: 8 characters"
 msgstr "Mărime maximă: 8 caractere"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.ui.h:4
+msgid "Notification Area"
+msgstr "Zonă notificare"
+
+#: ../capplet/vino-preferences.ui.h:5
 msgid "Remote Desktop Preferences"
 msgstr "Preferințe desktop la distanță"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.ui.h:6
 msgid "Remote users are able to control your mouse and keyboard"
-msgstr "Utilizatorii la distanță pot controla mausul și tastatura dumneavoastră"
+msgstr ""
+"Utilizatorii la distanță pot controla mausul și tastatura dumneavoastră"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.ui.h:7
+msgid "Security"
+msgstr "Securitate"
+
+#: ../capplet/vino-preferences.ui.h:8
+msgid "Sharing"
+msgstr "Partajare"
+
+#: ../capplet/vino-preferences.ui.h:9
+msgid "Some of these preferences are locked down"
+msgstr "O parte din aceste preferințe sunt blocate"
+
+#: ../capplet/vino-preferences.ui.h:10
 msgid "The router must have the UPnP feature enabled"
 msgstr "Ruterul trebuie să aibă activată funcționalitatea UPnP"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.ui.h:11
 msgid "You will be queried to allow or to refuse every incoming connection"
 msgstr "Vi se va cere să permiteți sau să refuzați orice cerere de conexiune"
 
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.ui.h:12
 msgid "Your desktop will be shared"
 msgstr "Desktopul dumneavoastră va fi partajat"
 
-#: ../capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.ui.h:13
 msgid "_Allow other users to control your desktop"
 msgstr "Permite _altor utilizatori controlul desktopului"
 
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.ui.h:14
 msgid "_Configure network automatically to accept connections"
 msgstr "_Configurează rețeaua să accepte automat conexiuni"
 
-#: ../capplet/vino-preferences.glade.h:15
+#: ../capplet/vino-preferences.ui.h:15
 msgid "_Never display an icon"
 msgstr "_Nu afișa niciodată o iconiță"
 
-#: ../capplet/vino-preferences.glade.h:16
+#: ../capplet/vino-preferences.ui.h:16
 msgid "_Only display an icon when there is someone connected"
 msgstr "Afișează _o iconiță doar când cineva este conectat"
 
-#: ../capplet/vino-preferences.glade.h:17
+#: ../capplet/vino-preferences.ui.h:17
 msgid "_Require the user to enter this password:"
 msgstr "Ce_re utilizatorului să introducă această parolă:"
 
-#: ../capplet/vino-preferences.glade.h:18
+#: ../capplet/vino-preferences.ui.h:18
 msgid "_You must confirm each access to this machine"
 msgstr "_Trebuie să confirmați orice accesare pe aceast calculator"
 
-#: ../server/vino-dbus-listener.c:281
-#: ../server/vino-dbus-listener.c:311
-#: ../server/vino-dbus-listener.c:352
+#: ../server/smclient/eggdesktopfile.c:165
 #, c-format
-msgid "Out of memory handling '%s' message"
-msgstr "Memorie depășită la operarea mesajului „%s”"
+msgid "File is not a valid .desktop file"
+msgstr "Fișierul nu este un fișier .desktop valid"
 
-#: ../server/vino-dbus-listener.c:458
+#: ../server/smclient/eggdesktopfile.c:188
 #, c-format
-msgid "Out of memory registering object path '%s'"
-msgstr "Memorie depășită la înregistrarea caii obiect „%s”"
+msgid "Unrecognized desktop file Version '%s'"
+msgstr "Versiune nerecunoscută de fișier desktop „%s”"
 
-#: ../server/vino-dbus-listener.c:537
+#: ../server/smclient/eggdesktopfile.c:958
 #, c-format
-msgid "Failed to acquire D-Bus name '%s'\n"
-msgstr "Obținere nume D-Bus „%s” eșuată\n"
+msgid "Starting %s"
+msgstr "Se pornește %s"
 
-#: ../server/vino-dbus-listener.c:545
+#: ../server/smclient/eggdesktopfile.c:1100
+#, c-format
+msgid "Application does not accept documents on command line"
+msgstr "Aplicația nu acceptă documente în linia de comandă"
+
+#: ../server/smclient/eggdesktopfile.c:1168
+#, c-format
+msgid "Unrecognized launch option: %d"
+msgstr "Opțiune nerecunoscută de lansare: %d"
+
+#: ../server/smclient/eggdesktopfile.c:1373
+#, c-format
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr "Nu se poate trimte un URI de document unei intrări desktop „Type=Link”"
+
+#: ../server/smclient/eggdesktopfile.c:1392
+#, c-format
+msgid "Not a launchable item"
+msgstr "Nu este un element lansabil"
+
+#: ../server/smclient/eggsmclient.c:225
+msgid "Disable connection to session manager"
+msgstr "Dezactivează conexiunea la administrarea sesiunii"
+
+#: ../server/smclient/eggsmclient.c:228
+msgid "Specify file containing saved configuration"
+msgstr "Specifică fișierul conținând configurația salvată"
+
+#: ../server/smclient/eggsmclient.c:228
+msgid "FILE"
+msgstr "FIȘIERE"
+
+#: ../server/smclient/eggsmclient.c:231
+msgid "Specify session management ID"
+msgstr "Specifică ID-ul de administrare sesiune"
+
+#: ../server/smclient/eggsmclient.c:231
+msgid "ID"
+msgstr "ID"
+
+#: ../server/smclient/eggsmclient.c:252
+msgid "Session management options:"
+msgstr "Opțiuni de administrare de sesiune:"
+
+#: ../server/smclient/eggsmclient.c:253
+msgid "Show session management options"
+msgstr "Afișează opțiunile de administrare a sesiunii"
+
+#: ../server/vino-dbus-listener.c:460
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "Serverul „Desktop la distanță” este deja pornit, se iese...\n"
 
-#: ../server/vino-main.c:89
+#: ../server/vino-main.c:67
+msgid "- VNC Server for GNOME"
+msgstr "- Server VNC pentru GNOME"
+
+#: ../server/vino-main.c:75
+msgid ""
+"Run 'vino-server --help' to see a full list of available command line options"
+msgstr ""
+"Rulați „vino-server --help” pentru a vedea lista completă cu opțiunile "
+"liniei de comandă"
+
+#: ../server/vino-main.c:97
 msgid "GNOME Remote Desktop"
 msgstr "Desktop la distanță GNOME"
 
-#: ../server/vino-main.c:99
-msgid "Your XServer does not support the XTest extension - remote desktop access will be view-only\n"
-msgstr "Acest server X nu suportă extensia XTest, accesul la desktopul la distanță va fi de tip doar vizualizare\n"
+#: ../server/vino-main.c:107
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"Acest server X nu suportă extensia XTest, accesul la desktopul la distanță "
+"va fi de tip doar vizualizare\n"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
 #. * "1" if "%s's remote desktop" doesn't make sense in
 #. * your language.
 #.
-#: ../server/vino-mdns.c:59
+#: ../server/vino-mdns.c:61
 msgid "vino-mdns:showusername"
 msgstr "vino-mdns:showusername"
 
@@ -192,52 +257,58 @@ msgstr "vino-mdns:showusername"
 #. * translated "vino-mdns:showusername" to anything
 #. * other than "1"
 #.
-#: ../server/vino-mdns.c:71
+#: ../server/vino-mdns.c:73
 #, c-format
 msgid "%s's remote desktop on %s"
 msgstr "%s desktop la distanță pe %s"
 
-#: ../server/vino-prefs.c:579
+#: ../server/vino-prefs.c:607
 #, c-format
 msgid "Received signal %d, exiting...\n"
 msgstr "S-a primit semnal %d, se iese...\n"
 
-#: ../server/vino-prompt.c:142
+#: ../server/vino-prompt.c:141
 msgid "Screen"
 msgstr "Ecran"
 
-#: ../server/vino-prompt.c:143
+#: ../server/vino-prompt.c:142
 msgid "The screen on which to display the prompt"
 msgstr "Ecranul pe care se va afișa promptul"
 
-#: ../server/vino-prompt.c:343
+#: ../server/vino-prompt.c:345
 #, c-format
-msgid "A user on the computer '%s' is trying to remotely view or control your desktop."
-msgstr "Un utilizator al calculatorului „%s” încearcă să acceseze sau să controleze de la distanță desktopul."
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Un utilizator al calculatorului „%s” încearcă să acceseze sau să controleze "
+"de la distanță desktopul."
 
-#: ../server/vino-prompt.glade.h:1
-msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>Un alt utilizator încearcă să acceseze desktopul.</b></big>"
+#: ../server/vino-prompt.ui.h:1
+msgid ""
+"A user on another computer is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Un utilizator al unui alt calculator încearcă să acceseze sau să controleze "
+"de la distanță desktopul."
 
-#: ../server/vino-prompt.glade.h:2
-msgid "A user on another computer is trying to remotely view or control your desktop."
-msgstr "Un utilizator al unui alt calculator încearcă să acceseze sau să controleze de la distanță desktopul."
+#: ../server/vino-prompt.ui.h:2
+msgid "Another user is trying to view your desktop."
+msgstr "Un alt utilizator încearcă să vizualizeze desktopul."
 
-#: ../server/vino-prompt.glade.h:3
+#: ../server/vino-prompt.ui.h:3
 msgid "Do you want to allow them to do so?"
 msgstr "Doriți să le permiteți acest lucru?"
 
-#: ../server/vino-prompt.glade.h:4
+#: ../server/vino-prompt.ui.h:4
 msgid "Question"
 msgstr "Întrebare"
 
-#: ../server/vino-prompt.glade.h:5
-#: ../server/vino-util.c:64
+#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:65
 msgid "_Allow"
 msgstr "_Permite"
 
-#: ../server/vino-prompt.glade.h:6
-#: ../server/vino-util.c:65
+#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:66
 msgid "_Refuse"
 msgstr "_Refuză"
 
@@ -262,98 +333,185 @@ msgid "Enable remote desktop access"
 msgstr "Activare acces de tip desktop la distanță"
 
 #: ../server/vino-server.schemas.in.h:5
-msgid "If not set, the server will listen on all network interfaces. Set this if you want that accept connections only from some specific network interface. eg: eth0, wifi0, lo, ..."
-msgstr "Dacă nu este definit, serverul va folosi toate interfețele de rețea. Definiți dacă doriți să acceptați conexiuni doar pe anumite interfețe de rețea. ex: eth0, wiki0, lo0, ..."
+msgid ""
+"If not set, the server will listen on all network interfaces. Set this if "
+"you want that accept connections only from some specific network interface. "
+"eg: eth0, wifi0, lo, ..."
+msgstr ""
+"La dezactivare, serverul va folosi toate interfețele de rețea. Activați dacă "
+"doriți să acceptați conexiuni doar pe anumite interfețe de rețea. ex: eth0, "
+"wiki0, lo0, ..."
 
 #: ../server/vino-server.schemas.in.h:6
-msgid "If true, allows remote access to the desktop via the RFB protocol. Users on remote machines may then connect to the desktop using a vncviewer."
-msgstr "La activare, permite accesul la distanță la desktop utilizând protocolul RFB, Utilizatorii la distanță se vor putea conecta utilizând vncviewer."
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+"La activare, permite accesul la distanță la desktop utilizând protocolul "
+"RFB, Utilizatorii la distanță se vor putea conecta utilizând vncviewer."
 
 #: ../server/vino-server.schemas.in.h:7
-msgid "If true, remote users accessing the desktop are not allowed access until the user on the host machine approves the connection. Recommended especially when access is not password protected."
-msgstr "La activare, utilizatorii la distanță nu vor putea accesa desktopul decât după ce utilizatorul de pe calculatorul gazdă le aprobă conexiunea. Definirea este recomandată în special atunci când accesul nu este protejat prin parolă."
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"La activare, utilizatorii la distanță nu vor putea accesa desktopul decât "
+"după ce utilizatorul de pe calculatorul gazdă le aprobă conexiunea. "
+"Definirea este recomandată în special atunci când accesul nu este protejat "
+"prin parolă."
 
 #: ../server/vino-server.schemas.in.h:8
-msgid "If true, remote users accessing the desktop are only allowed to view the desktop. Remote users will not be able to use the mouse or keyboard."
-msgstr "Dacă este selectat, utilizatorilor de la distanță le este permis doar vizualizarea desktopului. Utilizatorii de la distanță nu vor putea folosi mausul sau tastatura."
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote users will not be able to use the mouse or keyboard."
+msgstr ""
+"Dacă este selectat, utilizatorilor de la distanță le este permis doar "
+"vizualizarea desktopului. Utilizatorii de la distanță nu vor putea folosi "
+"mausul sau tastatura."
 
 #: ../server/vino-server.schemas.in.h:9
-msgid "If true, remote users accessing the desktop are required to support encryption. It is highly recommended that you use a client which supports encryption unless the intervening network is trusted."
-msgstr "Dacă este selectat, utilizatorii de la distanță ce accesează destkopul sunt nevoiți să suporte critpare. Este recomandat să folosiți un client care să suporte criptare."
+msgid ""
+"If true, remote users accessing the desktop are required to support "
+"encryption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+"Dacă este selectat, utilizatorii de la distanță ce accesează destkopul sunt "
+"nevoiți să suporte critpare. Este recomandat să folosiți un client care să "
+"suporte criptare."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr "Dacă este selectat, ecranul va fi blocat după deconectarea ultimului client de la distanță."
+msgstr ""
+"Dacă este selectat, ecranul va fi blocat după deconectarea ultimului client "
+"de la distanță."
 
 #: ../server/vino-server.schemas.in.h:11
-msgid "If true, the server will listen to another port, instead of the default (5900). The port must be specified in the 'alternative_port' key."
-msgstr "Dacă este selectat, serverul va folosi un alt port, în locul celui implicit (5900). Portul trebuie specificat de cheia „alternative_port”."
+msgid ""
+"If true, the server will listen to another port, instead of the default "
+"(5900). The port must be specified in the 'alternative_port' key."
+msgstr ""
+"Dacă este selectat, serverul va folosi un alt port, în locul celui implicit "
+"(5900). Portul trebuie specificat de cheia „alternative_port”."
 
 #: ../server/vino-server.schemas.in.h:12
-msgid "If true, we will use UPNP protocol to automatically forward the port used by vino in the router."
-msgstr "Dacă este adevărat, va fi folosit protocolul UPNP pentru a trimite automat către ruter portul folosit de Vino."
+msgid ""
+"If true, we will not use the XDamage extension of X.org. This extension does "
+"not work properly on some video drivers when using 3D effects. Disabling it "
+"will make vino work on these environments with a slower rendering as side "
+"effect."
+msgstr ""
+"Dacă este activat, nu se va folosi extensia XDamage a X.org. Această "
+"extensie nu funcționează corespunzător cu unele drivere video atunci când se "
+"folosesc efecte 3D. Dezactivarea va face ca vino să funcționeze în aceste "
+"medii cu o încetinire în randare ca efect secundar."
 
 #: ../server/vino-server.schemas.in.h:13
+msgid ""
+"If true, we will use UPNP protocol to automatically forward the port used by "
+"vino in the router."
+msgstr ""
+"Dacă este adevărat, va fi folosit protocolul UPNP pentru a trimite automat "
+"către ruter portul folosit de Vino."
+
+#: ../server/vino-server.schemas.in.h:14
 msgid "Listen an alternative port"
 msgstr "Folosește un port alternativ"
 
-#: ../server/vino-server.schemas.in.h:14
-msgid "Lists the authentication methods with which remote users may access the desktop. There are two possible authentication methods; \"vnc\" causes the remote user to be prompted for a password (the password is specified by the vnc_password key) before connecting and \"none\" which allows any remote user to connect."
-msgstr "Listează metodele de autentificare prin care utilizatorii la distanță vă pot accesa desktopul. Există două metode de autentificare posibile: „vnc” (care cere utilizatorului la distanță parola specificată în cheia „vnc_password” și „none” care permite conectarea oricărui utilizator la distanță."
-
 #: ../server/vino-server.schemas.in.h:15
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+"Listează metodele de autentificare prin care utilizatorii la distanță vă pot "
+"accesa desktopul. Există două metode de autentificare posibile: „vnc” (care "
+"cere utilizatorului la distanță parola specificată în cheia „vnc_password” "
+"și „none” care permite conectarea oricărui utilizator la distanță."
+
+#: ../server/vino-server.schemas.in.h:16
 msgid "Lock the screen when last user disconnect"
 msgstr "Blochează ecranul la deconectarea ultimului utilizator"
 
-#: ../server/vino-server.schemas.in.h:16
+#: ../server/vino-server.schemas.in.h:17
 msgid "Network interface for listening"
 msgstr "Interfață de rețea folosită"
 
-#: ../server/vino-server.schemas.in.h:17
+#: ../server/vino-server.schemas.in.h:18
 msgid "Only allow remote users to view the desktop"
 msgstr "Permite doar vizualizarea desktopului utilizatorilor la distanță"
 
-#: ../server/vino-server.schemas.in.h:18
+#: ../server/vino-server.schemas.in.h:19
 msgid "Password required for \"vnc\" authentication"
 msgstr "Cere parolă la autentificarea „vnc”"
 
-#: ../server/vino-server.schemas.in.h:19
+#: ../server/vino-server.schemas.in.h:20
 msgid "Prompt the user before completing a connection"
 msgstr "Avertizează utilizatorul înainte de încheierea conexiunii"
 
-#: ../server/vino-server.schemas.in.h:20
+#: ../server/vino-server.schemas.in.h:21
 msgid "Require encryption"
 msgstr "Cere criptare"
 
-#: ../server/vino-server.schemas.in.h:21
-msgid "The password which the remote user will be prompted for if the \"vnc\" authentication method is used. The password specified by the key is base64 encoded."
-msgstr "Parola cerută utilizatorilor la distanță când se utilizează metoda de autentificare „vnc”. Parola specificată de cheie este codate base64."
-
 #: ../server/vino-server.schemas.in.h:22
-msgid "The port which the server will listen to if the 'use_alternative_port' key is set to true. Valid values are in the range from 5000 to 50000."
-msgstr "Portul folosit de server în cazul în care cheia „use_alternative_port” este activată. Valorile valide sunt între 5000 și 50000."
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+"Parola cerută utilizatorilor la distanță când se utilizează metoda de "
+"autentificare „vnc”. Parola specificată de cheie este codate base64."
 
 #: ../server/vino-server.schemas.in.h:23
-msgid "This key controls the behavior of the status icon. There are three options: \"always\" - The icon will be always there; \"client\" - You will see the icon only when there is someone connected, this is the default behavior; \"never\" - Never shows the icon."
-msgstr "Această cheie controlează comportamentul pictogramei de stare. Există trei opțiuni: „always” - iconița va fi în permanență afișată; „client” - Veți vedea iconița doar când este cineva conectat, aceasta este valoare implicită; „never” - Nu afișa niciodată iconița."
+msgid ""
+"The port which the server will listen to if the 'use_alternative_port' key "
+"is set to true. Valid values are in the range from 5000 to 50000."
+msgstr ""
+"Portul folosit de server în cazul în care cheia „use_alternative_port” este "
+"activată. Valorile valide sunt între 5000 și 50000."
 
 #: ../server/vino-server.schemas.in.h:24
-msgid "This key specifies the e-mail address to which the remote desktop URL should be sent if the user clicks on the URL in the Remote Desktop preferences dialog."
-msgstr "Această cheie specifică adresa de mail la care se va trimite URL-ul desktopului la distanță când utilizatorul dă click pe URL-ul din fereastra cu preferințe „Desktop la distanță”."
+msgid ""
+"This key controls the behavior of the status icon. There are three options: "
+"\"always\" - The icon will be always there; \"client\" - You will see the "
+"icon only when there is someone connected, this is the default behavior; "
+"\"never\" - Never shows the icon."
+msgstr ""
+"Această cheie controlează comportamentul pictogramei de stare. Există trei "
+"opțiuni: „always” - iconița va fi în permanență afișată; „client” - Veți "
+"vedea iconița doar când este cineva conectat, aceasta este valoare "
+"implicită; „never” - Nu afișa niciodată iconița."
 
 #: ../server/vino-server.schemas.in.h:25
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+"Această cheie specifică adresa de mail la care se va trimite URL-ul "
+"desktopului la distanță când utilizatorul dă click pe URL-ul din fereastra "
+"cu preferințe „Desktop la distanță”."
+
+#: ../server/vino-server.schemas.in.h:26
 msgid "When the status icon should be shown"
 msgstr "Când să fie afișată iconița de stare"
 
-#: ../server/vino-server.schemas.in.h:26
-msgid "When true, disable the background on receive valid session"
-msgstr "Dacă este adevărat, dezactivează fundalul la primirea unei sesiuni valide"
-
 #: ../server/vino-server.schemas.in.h:27
+msgid "When true, disable the background on receive valid session"
+msgstr ""
+"Dacă este adevărat, dezactivează fundalul la primirea unei sesiuni valide"
+
+#: ../server/vino-server.schemas.in.h:28
+msgid "Whether we should disable the XDamage extension of X.org"
+msgstr "Dacă să fie dezactivată extensia XDamage a X.org"
+
+#: ../server/vino-server.schemas.in.h:29
 msgid "Whether we should use UPNP to forward the port in routers"
 msgstr "Dacă să fie folosit UPNP pentru trimiterea portului către rutere"
 
-#: ../server/vino-status-icon.c:102
+#: ../server/vino-status-icon.c:102 ../server/vino-status-tube-icon.c:95
 msgid "Desktop sharing is enabled"
 msgstr "Partajarea desktopului este activată"
 
@@ -365,11 +523,11 @@ msgstr[0] "Este conectată o persoană"
 msgstr[1] "Sunt conectate %d persoane"
 msgstr[2] "Sunt conectate %d de persoane"
 
-#: ../server/vino-status-icon.c:207
+#: ../server/vino-status-icon.c:207 ../server/vino-status-tube-icon.c:175
 msgid "Error displaying preferences"
 msgstr "Eroare la afișarea preferințelor"
 
-#: ../server/vino-status-icon.c:226
+#: ../server/vino-status-icon.c:226 ../server/vino-status-tube-icon.c:191
 msgid "Error displaying help"
 msgstr "Eroare la afișarea ajutorului"
 
@@ -394,14 +552,21 @@ msgid ""
 msgstr ""
 "Licențiat sub Licența publică generale GNU versiuena 2\n"
 "\n"
-"Vino este un program liber; îl puteți redistribui și/sau modifica în conformitate\n"
+"Vino este un program liber; îl puteți redistribui și/sau modifica în "
+"conformitate\n"
 "cu termenii Licenței Publice Generale GNU așa cum este publicată de Free\n"
-"Software Foundation; fie versiunea 2 a Licenței, fie (la latitudinea dumneavoastră)\n"
-"orice versiune ulterioară.Vino este distribuit cu speranța că va fi util, dar\n"
-"FĂRĂ NICI O GARANȚIE, fără garanție implicită de vandabilitate și conformitate\n"
-"unui anumit scop. Citiți Licența Publică Generală GNU pentru detalii.Ar trebui\n"
-"să fi primit o copie a Licenței Publice Generale GNU împreună cu acest program;\n"
-"dacă nu, scrieți Free Software Foundation, Inc., 59 Temple Place, Suite 330,\n"
+"Software Foundation; fie versiunea 2 a Licenței, fie (la latitudinea "
+"dumneavoastră)\n"
+"orice versiune ulterioară.Vino este distribuit cu speranța că va fi util, "
+"dar\n"
+"FĂRĂ NICI O GARANȚIE, fără garanție implicită de vandabilitate și "
+"conformitate\n"
+"unui anumit scop. Citiți Licența Publică Generală GNU pentru detalii.Ar "
+"trebui\n"
+"să fi primit o copie a Licenței Publice Generale GNU împreună cu acest "
+"program;\n"
+"dacă nu, scrieți Free Software Foundation, Inc., 59 Temple Place, Suite "
+"330,\n"
 "Boston, MA 02111-1307 USA\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
@@ -417,80 +582,119 @@ msgstr ""
 msgid "Share your desktop with other users"
 msgstr "Partajează desktopul cu alți utilizatori"
 
-#. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:338
+#: ../server/vino-status-icon.c:339 ../server/vino-status-tube-icon.c:223
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Doriți să deconectați „%s”?"
 
-#: ../server/vino-status-icon.c:340
+#: ../server/vino-status-icon.c:342
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
-msgstr "Utilizatorul la distanță de la „%s” va fi deconectat. Doriți să continuați această acțiune?"
+msgstr ""
+"Utilizatorul la distanță de la „%s” va fi deconectat. Doriți să continuați "
+"această acțiune?"
 
-#: ../server/vino-status-icon.c:345
+#: ../server/vino-status-icon.c:348
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Doriți să deconectați toți clienții?"
 
-#: ../server/vino-status-icon.c:346
+#: ../server/vino-status-icon.c:350
 msgid "All remote users will be disconnected. Are you sure?"
-msgstr "Toți utilizatorii de la distanță vor fi deconectați. Doriți să continuați această acțiune?"
+msgstr ""
+"Toți utilizatorii de la distanță vor fi deconectați. Doriți să continuați "
+"această acțiune?"
 
-#: ../server/vino-status-icon.c:358
+#: ../server/vino-status-icon.c:362 ../server/vino-status-tube-icon.c:237
 msgid "Disconnect"
 msgstr "Deconectează"
 
-#: ../server/vino-status-icon.c:384
+#: ../server/vino-status-icon.c:388 ../server/vino-status-tube-icon.c:262
 msgid "_Preferences"
 msgstr "_Preferințe"
 
-#: ../server/vino-status-icon.c:399
+#: ../server/vino-status-icon.c:403
 msgid "Disconnect all"
 msgstr "Deconectează tot"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:423
+#. Translators: %s is the alias of the telepathy contact
+#: ../server/vino-status-icon.c:427 ../server/vino-status-tube-icon.c:275
 #, c-format
 msgid "Disconnect %s"
 msgstr "Deconectează %s"
 
-#: ../server/vino-status-icon.c:443
+#: ../server/vino-status-icon.c:448 ../server/vino-status-tube-icon.c:294
 msgid "_Help"
 msgstr "_Ajutor"
 
-#: ../server/vino-status-icon.c:451
+#: ../server/vino-status-icon.c:456
 msgid "_About"
 msgstr "_Despre"
 
-#: ../server/vino-status-icon.c:584
+#: ../server/vino-status-icon.c:589 ../server/vino-status-tube-icon.c:391
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Eroare inițializare libnotify\n"
 
-#: ../server/vino-status-icon.c:604
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:610
 msgid "Another user is viewing your desktop"
 msgstr "Un alt utilizator vizualizează desktopul"
 
-#: ../server/vino-status-icon.c:605
+#: ../server/vino-status-icon.c:612
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
-msgstr "Un utilizator de pe calculatorul „%s” vizualizează de la distanță desktopul"
+msgstr ""
+"Un utilizator de pe calculatorul „%s” vizualizează de la distanță desktopul"
 
-#: ../server/vino-status-icon.c:610
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:618
 msgid "Another user is controlling your desktop"
 msgstr "Un alt utilizator controlează desktopul"
 
-#: ../server/vino-status-icon.c:611
+#: ../server/vino-status-icon.c:620
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr "Un utilizator de pe calculatorul „%s” controlează de la distanță desktopul"
+msgstr ""
+"Un utilizator de pe calculatorul „%s” controlează de la distanță desktopul"
 
-#: ../server/vino-status-icon.c:633
+#: ../server/vino-status-icon.c:642 ../server/vino-status-tube-icon.c:422
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Eroare la afișarea balonului de notificare: %s\n"
 
-#: ../server/vino-util.c:115
+#: ../server/vino-status-tube-icon.c:226
+#, c-format
+msgid "The remote user '%s' will be disconnected. Are you sure?"
+msgstr ""
+"Utilizatorul la distanță „%s” va fi deconectat. Doriți să continuați această "
+"acțiune?"
+
+#: ../server/vino-tube-server.c:311 ../server/vino-tube-server.c:340
+msgid "Share my desktop information"
+msgstr "Partajează informațiile desktopului"
+
+#: ../server/vino-tube-server.c:315
+#, c-format
+msgid "'%s' rejected the desktop sharing invitation."
+msgstr "„%s” a respins invitația de partajare a desktopului."
+
+#: ../server/vino-tube-server.c:319
+#, c-format
+msgid "'%s' disconnected"
+msgstr "„%s” deconectat"
+
+#: ../server/vino-tube-server.c:346
+#, c-format
+msgid "'%s' is remotely controlling your desktop."
+msgstr "„%s” controlează de la distanță desktopul."
+
+#: ../server/vino-tube-server.c:355
+#, c-format
+msgid "Waiting for '%s' to connect to the screen."
+msgstr "Se așteapta ca „%s” să se conecteze la ecran."
+
+#: ../server/vino-util.c:116
 msgid "An error has occurred:"
 msgstr "S-a produs o eroare:"
 
@@ -501,14 +705,18 @@ msgstr "Anulat"
 
 #: ../tools/vino-passwd.c:122
 #, c-format
-#| msgid ""
-#| "ERROR: Maximum length of password is %d characters. Please, re-enter the "
-#| "password.\n"
-msgid "ERROR: Maximum length of password is %d character. Please, re-enter the password."
-msgid_plural "ERROR: Maximum length of password is %d characters. Please, re-enter the password."
-msgstr[0] "Eroare: Lungimea maximă a parolei este %d caracter. Reintroduceți parola."
-msgstr[1] "Eroare: Lungimea maximă a parolei este %d caractere. Reintroduceți parola."
-msgstr[2] "Eroare: Lungimea maximă a parolei este %d de caractere. Reintroduceți parola."
+msgid ""
+"ERROR: Maximum length of password is %d character. Please, re-enter the "
+"password."
+msgid_plural ""
+"ERROR: Maximum length of password is %d characters. Please, re-enter the "
+"password."
+msgstr[0] ""
+"Eroare: Lungimea maximă a parolei este %d caracter. Reintroduceți parola."
+msgstr[1] ""
+"Eroare: Lungimea maximă a parolei este %d caractere. Reintroduceți parola."
+msgstr[2] ""
+"Eroare: Lungimea maximă a parolei este %d de caractere. Reintroduceți parola."
 
 #: ../tools/vino-passwd.c:156
 #, c-format
@@ -528,40 +736,64 @@ msgstr "Reintroduceți parola Vino nouă: "
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: parola a fost actualizată cu succes.\n"
 
-#: ../tools/vino-passwd.c:171
+#: ../tools/vino-passwd.c:172
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "Parolele nu se potrivesc.\n"
 
-#: ../tools/vino-passwd.c:172
+#: ../tools/vino-passwd.c:173
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: parola nu a fost schimbată.\n"
 
-#: ../tools/vino-passwd.c:187
+#: ../tools/vino-passwd.c:181
+#, c-format
+msgid ""
+"Error while communicating with GConf. Are you logged into a GNOME session?"
+msgstr ""
+"Eroare la comunicarea cu GConf. Sunteți conectați într-o sesiune GNOME?"
+
+#: ../tools/vino-passwd.c:183
+#, c-format
+msgid "Error message:"
+msgstr "Mesaj eroare:"
+
+#: ../tools/vino-passwd.c:200
 msgid "Show Vino version"
 msgstr "Afișează versiunea Vino"
 
-#: ../tools/vino-passwd.c:196
+#: ../tools/vino-passwd.c:209
 msgid "- Updates Vino password"
 msgstr "- actualizează parola Vino"
 
-#: ../tools/vino-passwd.c:206
-msgid "Run 'vino-passwd --help' to see a full list of available command line options"
-msgstr "Rulați „vino-passwd --help” pentru a vedea lista completă cu opțiunile liniei de comandă"
+#: ../tools/vino-passwd.c:219
+msgid ""
+"Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr ""
+"Rulați „vino-passwd --help” pentru a vedea lista completă cu opțiunile "
+"liniei de comandă"
 
-#: ../tools/vino-passwd.c:213
+#: ../tools/vino-passwd.c:226
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "Versiune Vino %s\n"
 
-#: ../tools/vino-passwd.c:222
+#: ../tools/vino-passwd.c:238
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "EROARE: Nu aveți suficiente permisiuni pentru a schimba parola Vino.\n"
 
+#~ msgid "Out of memory handling '%s' message"
+#~ msgstr "Memorie depășită la operarea mesajului „%s”"
+
+#~ msgid "Out of memory registering object path '%s'"
+#~ msgstr "Memorie depășită la înregistrarea caii obiect „%s”"
+
+#~ msgid "Failed to acquire D-Bus name '%s'\n"
+#~ msgstr "Obținere nume D-Bus „%s” eșuată\n"
+
 #~ msgid "Set your remote desktop access preferences"
 #~ msgstr "Definiți opțiunile de accesare a de la distanță a desktopului"
+
 #~ msgid " "
 #~ msgstr " "
-
