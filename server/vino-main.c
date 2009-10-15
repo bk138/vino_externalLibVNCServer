@@ -78,6 +78,7 @@ main (int argc, char **argv)
     }
 
   client = egg_sm_client_get ();
+  egg_sm_client_set_mode (EGG_SM_CLIENT_MODE_NO_RESTART);
   g_signal_connect (client, "quit",
 		    G_CALLBACK (gtk_main_quit), NULL);
 
