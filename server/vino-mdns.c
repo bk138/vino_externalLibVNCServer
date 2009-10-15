@@ -27,6 +27,7 @@
 
 #ifdef VINO_HAVE_AVAHI
 
+#include <sys/socket.h>
 #include <net/if.h>
 #include <string.h>
 #include <avahi-client/publish.h>
