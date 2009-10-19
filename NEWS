@@ -1,3 +1,17 @@
+Vino 2.28.1
+===========
+
+  Fixes
+
+	- Fix build in OpenBSD
+	- Don't use restart feature of session manager
+
+  Translations:
+
+	+ Leonid Kanter (ru)
+	+ Takeshi AIHANA (ja)
+	+ Tomasz Dominikowski (pl)
+
 Vino 2.28.0
 ===========
 
