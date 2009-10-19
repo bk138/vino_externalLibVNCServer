@@ -356,7 +356,7 @@ vino_mdns_shutdown (void)
 const char *
 vino_mdns_get_hostname (void)
 {
-  return avahi_client_get_host_name_fqdn (mdns_client);
+  return mdns_client ? avahi_client_get_host_name_fqdn (mdns_client) : "";
 }
 
 #else /* !defined (VINO_HAVE_AVAHI) */
