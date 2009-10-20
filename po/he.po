@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&component=Preferences Dialog\n"
-"POT-Creation-Date: 2009-06-20 11:56+0000\n"
-"PO-Revision-Date: 2009-07-07 16:35+0200\n"
+"POT-Creation-Date: 2009-09-14 11:42+0000\n"
+"PO-Revision-Date: 2009-10-20 10:30+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew\n"
 "MIME-Version: 1.0\n"
@@ -67,8 +67,8 @@ msgid "Nobody can access your desktop."
 msgstr "אף אחד לא יכול לגשת אל שולחן העבודה שלך."
 
 #: ../capplet/vino-preferences.c:1130
-#: ../server/vino-server.c:162
-#: ../server/vino-server.c:193
+#: ../server/vino-server.c:164
+#: ../server/vino-server.c:194
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Failed to open connection to bus: %s\n"
@@ -95,7 +95,6 @@ msgid "Maximum size: 8 characters"
 msgstr "הגודל המירבי: 8 תווים"
 
 #: ../capplet/vino-preferences.ui.h:4
-#| msgid "<b>Notification Area</b>"
 msgid "Notification Area"
 msgstr "איזור התרעות"
 
@@ -108,17 +107,14 @@ msgid "Remote users are able to control your mouse and keyboard"
 msgstr "משתמשים מרוחקים יכולים לשלוט בעכבר ובמקלדת שלך"
 
 #: ../capplet/vino-preferences.ui.h:7
-#| msgid "<b>Security</b>"
 msgid "Security"
 msgstr "אבטחה"
 
 #: ../capplet/vino-preferences.ui.h:8
-#| msgid "<b>Sharing</b>"
 msgid "Sharing"
 msgstr "שיתוף"
 
 #: ../capplet/vino-preferences.ui.h:9
-#| msgid "<i>Some of these preferences are locked down</i>"
 msgid "Some of these preferences are locked down"
 msgstr "כמה מאפשרויות אלו חסומות"
 
@@ -221,7 +217,7 @@ msgstr "Session management options:"
 msgid "Show session management options"
 msgstr "Show session management options"
 
-#: ../server/vino-dbus-listener.c:456
+#: ../server/vino-dbus-listener.c:460
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "Remote Desktop server already running; exiting ...\n"
 
@@ -230,9 +226,6 @@ msgid "- VNC Server for GNOME"
 msgstr "- VNC Server for GNOME"
 
 #: ../server/vino-main.c:75
-#| msgid ""
-#| "Run 'vino-passwd --help' to see a full list of available command line "
-#| "options"
 msgid "Run 'vino-server --help' to see a full list of available command line options"
 msgstr "Run 'vino-server --help' to see a full list of available command line options"
 
@@ -249,7 +242,7 @@ msgstr "השרת הגרפי (XServer) שלך אינו תומך בהרחבת XTes
 #. * "1" if "%s's remote desktop" doesn't make sense in
 #. * your language.
 #.
-#: ../server/vino-mdns.c:59
+#: ../server/vino-mdns.c:61
 msgid "vino-mdns:showusername"
 msgstr "1"
 
@@ -258,12 +251,12 @@ msgstr "1"
 #. * translated "vino-mdns:showusername" to anything
 #. * other than "1"
 #.
-#: ../server/vino-mdns.c:71
+#: ../server/vino-mdns.c:73
 #, c-format
 msgid "%s's remote desktop on %s"
 msgstr "%s's remote desktop on %s"
 
-#: ../server/vino-prefs.c:606
+#: ../server/vino-prefs.c:607
 #, c-format
 msgid "Received signal %d, exiting...\n"
 msgstr "Received signal %d, exiting...\n"
@@ -286,7 +279,6 @@ msgid "A user on another computer is trying to remotely view or control your des
 msgstr "משתמש העובד במחשב אחר מנסה לצפות או לשלוט מרחוק בשולחן העבודה שלך."
 
 #: ../server/vino-prompt.ui.h:2
-#| msgid "<big><b>Another user is trying to view your desktop.</b></big>"
 msgid "Another user is trying to view your desktop."
 msgstr "משתמש נוסף מנסה לצפות בשולחן העבודה שלך"
 
@@ -299,12 +291,12 @@ msgid "Question"
 msgstr "שאלה"
 
 #: ../server/vino-prompt.ui.h:5
-#: ../server/vino-util.c:64
+#: ../server/vino-util.c:65
 msgid "_Allow"
 msgstr "_הרשה"
 
 #: ../server/vino-prompt.ui.h:6
-#: ../server/vino-util.c:65
+#: ../server/vino-util.c:66
 msgid "_Refuse"
 msgstr "_סרב"
 
@@ -428,26 +420,29 @@ msgstr "Whether we should disable the XDamage extension of X.org"
 msgid "Whether we should use UPNP to forward the port in routers"
 msgstr "Whether we should use UPNP to forward the port in routers"
 
-#: ../server/vino-status-icon.c:106
+#: ../server/vino-status-icon.c:102
+#: ../server/vino-status-tube-icon.c:95
 msgid "Desktop sharing is enabled"
 msgstr "שיתוף שולחן העבודה מופעל"
 
-#: ../server/vino-status-icon.c:114
+#: ../server/vino-status-icon.c:110
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
 msgstr[0] "משתמש אחד מחובר"
 msgstr[1] "%d משתמשים מחוברים"
 
-#: ../server/vino-status-icon.c:211
+#: ../server/vino-status-icon.c:207
+#: ../server/vino-status-tube-icon.c:175
 msgid "Error displaying preferences"
 msgstr "שגיאה בהצגת ההעדפות"
 
-#: ../server/vino-status-icon.c:230
+#: ../server/vino-status-icon.c:226
+#: ../server/vino-status-tube-icon.c:191
 msgid "Error displaying help"
 msgstr "שגיאה בהצגת העזרה"
 
-#: ../server/vino-status-icon.c:257
+#: ../server/vino-status-icon.c:253
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -484,7 +479,7 @@ msgstr ""
 "02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:272
+#: ../server/vino-status-icon.c:268
 msgid "translator-credits"
 msgstr ""
 "יאיר הרשקוביץ <yairhr@gmail.com>\n"
@@ -493,102 +488,125 @@ msgstr ""
 "פרוייקט תרגום GNOME לעברית:\n"
 "‏http://gnome-il.berlios.de"
 
-#: ../server/vino-status-icon.c:278
+#: ../server/vino-status-icon.c:274
 msgid "Share your desktop with other users"
 msgstr "שתף את שולחן העבודה שלך עם משתמשים אחרים"
 
-#: ../server/vino-status-icon.c:344
-#: ../server/vino-status-icon.c:360
+#: ../server/vino-status-icon.c:339
+#: ../server/vino-status-tube-icon.c:223
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "אתה בטוח שברצונך לנתק את '%s'?"
 
-#: ../server/vino-status-icon.c:348
-#, c-format
-#| msgid "The remote user from '%s' will be disconnected. Are you sure?"
-msgid "The remote user '%s' will be disconnected. Are you sure?"
-msgstr "המשתמש המרוחק '%s' ינותק. האם אתה בטוח?"
-
-#: ../server/vino-status-icon.c:363
+#: ../server/vino-status-icon.c:342
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "המשתמש המרוחק מ־'%s' ינותק. אתה בטוח?"
 
-#: ../server/vino-status-icon.c:369
+#: ../server/vino-status-icon.c:348
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "אתה בטוח שברצונך לנתק את כל הלקוחות?"
 
-#: ../server/vino-status-icon.c:371
+#: ../server/vino-status-icon.c:350
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "כל המשתמשים המרוחקים ינותקו. אתה בטוח?"
 
-#: ../server/vino-status-icon.c:387
+#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-tube-icon.c:237
 msgid "Disconnect"
 msgstr "נתק"
 
-#: ../server/vino-status-icon.c:413
+#: ../server/vino-status-icon.c:388
+#: ../server/vino-status-tube-icon.c:262
 msgid "_Preferences"
 msgstr "הע_דפות"
 
-#: ../server/vino-status-icon.c:428
+#: ../server/vino-status-icon.c:403
 msgid "Disconnect all"
 msgstr "נתק את כולם"
 
-#. Translators: %s is the alias of the telepathy contact
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:454
-#: ../server/vino-status-icon.c:461
+#. Translators: %s is the alias of the telepathy contact
+#: ../server/vino-status-icon.c:427
+#: ../server/vino-status-tube-icon.c:275
 #, c-format
 msgid "Disconnect %s"
 msgstr "נתק את %s"
 
-#: ../server/vino-status-icon.c:482
+#: ../server/vino-status-icon.c:448
+#: ../server/vino-status-tube-icon.c:294
 msgid "_Help"
 msgstr "_עזרה"
 
-#: ../server/vino-status-icon.c:490
+#: ../server/vino-status-icon.c:456
 msgid "_About"
 msgstr "_אודות"
 
-#: ../server/vino-status-icon.c:627
+#: ../server/vino-status-icon.c:589
+#: ../server/vino-status-tube-icon.c:391
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Error initializing libnotify\n"
 
-#. Translators: %s is the alias of the telepathy contact
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:649
-#: ../server/vino-status-icon.c:681
-msgid "Another user is controlling your desktop"
-msgstr "משתמש אחר שולט בשולחן העבודה שלך"
-
-#: ../server/vino-status-icon.c:651
-#, c-format
-#| msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgid "'%s' is remotely controlling your desktop."
-msgstr "‏'%s' שולט מרחוק בשולחן העבודה שלך."
-
-#. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:673
+#: ../server/vino-status-icon.c:610
 msgid "Another user is viewing your desktop"
 msgstr "משתמש אחר צופה בשולחן העבודה שלך"
 
-#: ../server/vino-status-icon.c:675
+#: ../server/vino-status-icon.c:612
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "משתמש במחשב '%s' צופה מרחוק בשולחן העבודה שלך."
 
-#: ../server/vino-status-icon.c:683
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:618
+msgid "Another user is controlling your desktop"
+msgstr "משתמש אחר שולט בשולחן העבודה שלך"
+
+#: ../server/vino-status-icon.c:620
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "משתמש במחשב '%s' שולט מרחוק בשולחן העבודה שלך."
 
-#: ../server/vino-status-icon.c:709
+#: ../server/vino-status-icon.c:642
+#: ../server/vino-status-tube-icon.c:422
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Error while displaying notification bubble: %s\n"
 
-#: ../server/vino-util.c:115
+#: ../server/vino-status-tube-icon.c:226
+#, c-format
+msgid "The remote user '%s' will be disconnected. Are you sure?"
+msgstr "המשתמש המרוחק '%s' ינותק. האם אתה בטוח?"
+
+#: ../server/vino-tube-server.c:311
+#: ../server/vino-tube-server.c:340
+#| msgid "Share your desktop with other users"
+msgid "Share my desktop information"
+msgstr "שיתוף נתונים אודות שולחן העבודה שלי"
+
+#: ../server/vino-tube-server.c:315
+#, c-format
+msgid "'%s' rejected the desktop sharing invitation."
+msgstr "‏'%s' דחה את ההזמנה לשיתוף שולחן העבודה."
+
+#: ../server/vino-tube-server.c:319
+#, c-format
+#| msgid "Disconnect"
+msgid "'%s' disconnected"
+msgstr "‏'%s' נותק"
+
+#: ../server/vino-tube-server.c:346
+#, c-format
+msgid "'%s' is remotely controlling your desktop."
+msgstr "‏'%s' שולט מרחוק בשולחן העבודה שלך."
+
+#: ../server/vino-tube-server.c:355
+#, c-format
+msgid "Waiting for '%s' to connect to the screen."
+msgstr "ממתין ל־'%s' כדי שיתחבר למסך."
+
+#: ../server/vino-util.c:116
 msgid "An error has occurred:"
 msgstr "ארעה שגיאה:"
 
@@ -622,34 +640,44 @@ msgstr "Retype new Vino password: "
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: password updated successfully.\n"
 
-#: ../tools/vino-passwd.c:171
+#: ../tools/vino-passwd.c:172
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "Sorry, passwords do not match.\n"
 
-#: ../tools/vino-passwd.c:172
+#: ../tools/vino-passwd.c:173
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: password unchanged.\n"
 
-#: ../tools/vino-passwd.c:187
+#: ../tools/vino-passwd.c:181
+#, c-format
+msgid "Error while communicating with GConf. Are you logged into a GNOME session?"
+msgstr "Error while communicating with GConf. Are you logged into a GNOME session?"
+
+#: ../tools/vino-passwd.c:183
+#, c-format
+msgid "Error message:"
+msgstr "Error message:"
+
+#: ../tools/vino-passwd.c:200
 msgid "Show Vino version"
 msgstr "Show Vino version"
 
-#: ../tools/vino-passwd.c:196
+#: ../tools/vino-passwd.c:209
 msgid "- Updates Vino password"
 msgstr "- Updates Vino password"
 
-#: ../tools/vino-passwd.c:206
+#: ../tools/vino-passwd.c:219
 msgid "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr "Run 'vino-passwd --help' to see a full list of available command line options"
 
-#: ../tools/vino-passwd.c:213
+#: ../tools/vino-passwd.c:226
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "VINO Version %s\n"
 
-#: ../tools/vino-passwd.c:222
+#: ../tools/vino-passwd.c:238
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "ERROR: You do not have enough permissions to change Vino password.\n"
