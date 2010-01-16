@@ -101,10 +101,10 @@ dbus-interface-glue.h: dbus-interface.xml
 	dbus-binding-tool --prefix=vino_dbus_listener --mode=glib-server $< > dbus-interface-glue.h
 
 vino-marshal.h: vino-marshal.list $(GLIB_GENMARSHAL)
-	$(GLIB_GENMARSHAL) $< --header --prefix=vino_marshal > $@
+	$(AM_V_GEN)$(GLIB_GENMARSHAL) $< --header --prefix=vino_marshal > $@
 
 vino-marshal.c: vino-marshal.list $(GLIB_GENMARSHAL)
-	echo "#include \"vino-marshal.h\"" > $@ && \
+	$(AM_V_GEN)echo "#include \"vino-marshal.h\"" > $@ && \
 	$(GLIB_GENMARSHAL) $< --body --prefix=vino_marshal >> $@
 
 vino_enum_headers = \
@@ -115,7 +115,7 @@ vino_enum_headers = \
 	$(NULL)
 
 vino-enums.c: @REBUILD@ $(vino_enum_headers)
-	glib-mkenums    --fhead "#include <glib-object.h>\n" \
+	$(AM_V_GEN)glib-mkenums    --fhead "#include <glib-object.h>\n" \
 			--fhead "#include \"vino-enums.h\"\n\n" \
 			--fprod "\n/* enumerations from \"@filename@\" */" \
 			--fprod "\n#include \"@filename@\"\n" \
@@ -130,7 +130,7 @@ vino-enums.c: @REBUILD@ $(vino_enum_headers)
 		$(vino_enum_headers) > $@
 
 vino-enums.h: @REBUILD@ $(vino_enum_headers)
-	glib-mkenums    --fhead "#ifndef __VINO_ENUMS_H__\n" \
+	$(AM_V_GEN)glib-mkenums    --fhead "#ifndef __VINO_ENUMS_H__\n" \
 			--fhead "#define __VINO_ENUMS_H__ 1\n\n" \
 			--fhead "G_BEGIN_DECLS\n\n" \
 			--ftail "G_END_DECLS\n\n" \
@@ -147,7 +147,7 @@ schemas_DATA     = $(schemas_in_files:.schemas.in=.schemas)
 @INTLTOOL_SCHEMAS_RULE@
 
 vino-server.desktop.in: vino-server.desktop.in.in
-	sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@
+	$(AM_V_GEN)sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@
 
 desktopdir      = $(sysconfdir)/xdg/autostart
 desktop_in_files = vino-server.desktop.in
