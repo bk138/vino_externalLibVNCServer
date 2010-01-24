@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-12 03:27+0200\n"
-"PO-Revision-Date: 2009-09-12 02:22+0200\n"
+"POT-Creation-Date: 2010-01-24 18:26+0100\n"
+"PO-Revision-Date: 2010-01-24 18:26+0100\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -221,7 +221,7 @@ msgstr "Indstillinger for sessionshåndtering:"
 msgid "Show session management options"
 msgstr "Vis indstillinger for sessionshåndtering"
 
-#: ../server/vino-dbus-listener.c:460
+#: ../server/vino-dbus-listener.c:461
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "Fjernskrivebordsserveren kører allerede; afslutter...\n"
 
@@ -236,11 +236,11 @@ msgstr ""
 "Kør \"vino-server --help\" for at se en fuld liste over tilgængelige "
 "kommandolinjetilvalg"
 
-#: ../server/vino-main.c:97
+#: ../server/vino-main.c:98
 msgid "GNOME Remote Desktop"
 msgstr "GNOME Fjernskrivebord"
 
-#: ../server/vino-main.c:107
+#: ../server/vino-main.c:108
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -253,7 +253,7 @@ msgstr ""
 #. * "1" if "%s's remote desktop" doesn't make sense in
 #. * your language.
 #.
-#: ../server/vino-mdns.c:61
+#: ../server/vino-mdns.c:62
 msgid "vino-mdns:showusername"
 msgstr "vino-mdns:showusername"
 
@@ -262,7 +262,7 @@ msgstr "vino-mdns:showusername"
 #. * translated "vino-mdns:showusername" to anything
 #. * other than "1"
 #.
-#: ../server/vino-mdns.c:73
+#: ../server/vino-mdns.c:74
 #, c-format
 msgid "%s's remote desktop on %s"
 msgstr "%s's fjernskrivebord på %s"
@@ -307,7 +307,7 @@ msgstr "Vil du tillade dem at gøre dette?"
 
 #: ../server/vino-prompt.ui.h:4
 msgid "Question"
-msgstr "Spørgmål"
+msgstr "Spørgsmål"
 
 #: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:65
 msgid "_Allow"
