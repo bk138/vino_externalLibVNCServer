@@ -20,7 +20,6 @@
 #include <glib/gi18n.h>
 #include <sexy-url-label.h>
 #include "vino-message-box.h"
-#include "gedit-spinner.h"
 
 struct _VinoMessageBoxPrivate
 {
@@ -197,9 +196,8 @@ vino_message_box_show_image (VinoMessageBox *box)
     }
 
 
-  box->priv->image = gedit_spinner_new ();
-  gedit_spinner_set_size (GEDIT_SPINNER (box->priv->image), GTK_ICON_SIZE_MENU);
-  gedit_spinner_start (GEDIT_SPINNER (box->priv->image));
+  box->priv->image = gtk_spinner_new ();
+  gtk_spinner_start (GTK_SPINNER (box->priv->image));
 
   gtk_box_pack_start (GTK_BOX (box->priv->main_hbox), box->priv->image, FALSE, FALSE, 2);
   gtk_box_reorder_child (GTK_BOX (box->priv->main_hbox), box->priv->image, 0);
