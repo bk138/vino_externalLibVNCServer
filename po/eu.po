@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
-# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2004, 2006, 2007, 2008, 2009.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2004, 2006, 2007, 2008, 2009, 2010.
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-08-27 18:11+0200\n"
-"PO-Revision-Date: 2009-08-27 18:19+0200\n"
+"PO-Revision-Date: 2010-03-24 16:56+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr "_Kopiatu helbidea arbelean"
 #: ../capplet/vino-message-box.c:103
 #, c-format
 msgid "There was an error showing the URL \"%s\""
-msgstr "Errorea gertatzu da URL hau erakustean: \"%s\""
+msgstr "Errorea gertatu da URL hau erakustean: \"%s\""
 
 #: ../capplet/vino-preferences.c:197 ../capplet/vino-preferences.c:1000
 msgid "Checking the connectivity of this machine..."
@@ -43,7 +43,7 @@ msgid ""
 "There was an error displaying help:\n"
 "%s"
 msgstr ""
-"Errorea gertatzu da laguntza bistaratzean:\n"
+"Errorea gertatu da laguntza bistaratzean:\n"
 "%s"
 
 #: ../capplet/vino-preferences.c:834
@@ -136,7 +136,7 @@ msgstr "_Konfiguratu sarea automatikoki konexioak onartzeko"
 
 #: ../capplet/vino-preferences.ui.h:15
 msgid "_Never display an icon"
-msgstr " _Inoiz ez bistaratu ikonoa"
+msgstr "_Inoiz ez bistaratu ikonoa"
 
 #: ../capplet/vino-preferences.ui.h:16
 msgid "_Only display an icon when there is someone connected"
@@ -352,7 +352,7 @@ msgid ""
 "when access is not password protected."
 msgstr ""
 "Egia bada, mahaigainera sarbidetzen saiatzen diren urruneko "
-"erabiltzaileakezin izango dira konektatu ostalaria den ordenagailuko "
+"erabiltzaileak ezin izango dira konektatu ostalaria den ordenagailuko "
 "erabiltzaileak konexioa baimendu bitartean. Sarbidea pasahitzik gabe "
 "babestua ez dagoen kasuetan aholkatzen da bereziki."
 
@@ -372,8 +372,8 @@ msgid ""
 "encryption unless the intervening network is trusted."
 msgstr ""
 "Egia bada, mahaigainera sarbidetzen diren urruneko erabiltzaileek "
-"enkriptazio euskarria eduki beharko dute. Oso aholkagarria da enkriptazio "
-"euskarria duen bezeroa erabiltzea, sareko segurtasun maila konfidantzakoa "
+"enkriptazio euskarria eduki beharko dute. Oso gomendagarria da enkriptazio "
+"euskarria duen bezeroa erabiltzea, sareko segurtasun maila konfiantzakoa "
 "izandakoan ezik."
 
 #: ../server/vino-server.schemas.in.h:10
@@ -523,11 +523,11 @@ msgstr[1] "%d pertsona konektatu dira"
 
 #: ../server/vino-status-icon.c:207 ../server/vino-status-tube-icon.c:175
 msgid "Error displaying preferences"
-msgstr "Errorea gertatzu da hobespenak bistaratzean"
+msgstr "Errorea gertatu da hobespenak bistaratzean"
 
 #: ../server/vino-status-icon.c:226 ../server/vino-status-tube-icon.c:191
 msgid "Error displaying help"
-msgstr "Errorea gertatzu da laguntza bistaratzean"
+msgstr "Errorea gertatu da laguntza bistaratzean"
 
 #: ../server/vino-status-icon.c:253
 msgid ""
