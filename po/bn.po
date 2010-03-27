@@ -5,15 +5,15 @@
 # Runa Bhattacharjee <runa@bengalinux.org>, 2004.
 # Runa Bhattacharjee <runabh@gmail.com>, 2007.
 # Runa Bhattacharjee <runab@redhat.com>, 2008, 2009.
-# Israt Jahan <israt@ankur.org.bd>, 2009.
+# Israt Jahan <israt@ankur.org.bd>, 2009, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: bn\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&component=Preferences Dialog\n"
-"POT-Creation-Date: 2009-09-04 01:54+0000\n"
-"PO-Revision-Date: 2009-09-03 14:42+0700\n"
+"POT-Creation-Date: 2009-09-14 11:42+0000\n"
+"PO-Revision-Date: 2010-03-25 14:42+0600\n"
 "Last-Translator: Israt Jahan <israt@ankur.org.bd>\n"
 "Language-Team: Bengali <ankur-bd-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -225,7 +225,7 @@ msgstr "সেশন ব্যবস্থাপনা সংক্রান্�
 msgid "Show session management options"
 msgstr "সেশন ব্যবস্থাপনা সংক্রান্ত অপশন প্রদর্শন করা হবে"
 
-#: ../server/vino-dbus-listener.c:461
+#: ../server/vino-dbus-listener.c:460
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "দূরবর্তী ডেস্কটপ সার্ভার বর্তমানে চলছে; প্রস্থান করা হচ্ছে ...\n"
 
@@ -572,7 +572,8 @@ msgstr ""
 #. Translators comment: put your own name here to appear in the about dialog.
 #: ../server/vino-status-icon.c:268
 msgid "translator-credits"
-msgstr "রুণা ভট্টাচার্য্য (runabh@gmail.com)"
+msgstr "অঙ্কুর প্রকল্পের পক্ষে, রুণা ভট্টাচার্য্য (runabh@gmail.com)\n"
+"ইসরাত জাহান <israt@ankur.org.bd>"
 
 #: ../server/vino-status-icon.c:274
 msgid "Share your desktop with other users"
