@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-27 18:11+0200\n"
-"PO-Revision-Date: 2010-03-24 16:56+0100\n"
+"POT-Creation-Date: 2010-03-27 18:53+0100\n"
+"PO-Revision-Date: 2010-03-27 18:54+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
@@ -64,7 +64,7 @@ msgid "Nobody can access your desktop."
 msgstr "Inork ezin du zure mahaigaina atzitu."
 
 #: ../capplet/vino-preferences.c:1130 ../server/vino-server.c:164
-#: ../server/vino-server.c:195
+#: ../server/vino-server.c:194
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Huts egin du bus-arekin konektatzean: %s\n"
@@ -213,7 +213,7 @@ msgstr "Saio-kudeatzailearen aukerak:"
 msgid "Show session management options"
 msgstr "Erakutsi saio-kudeatzailearen aukerak"
 
-#: ../server/vino-dbus-listener.c:456
+#: ../server/vino-dbus-listener.c:461
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "Urruneko mahaigaineko zerbitzaria jadanik exekutatzen ari da: irtetzen ...\n"
 
@@ -225,11 +225,11 @@ msgstr "- VNC zerbitzaria GNOMErako"
 msgid "Run 'vino-server --help' to see a full list of available command line options"
 msgstr "Exekutatu 'vino-server --help' komando-lerroko aukeren zerrenda osoa ikusteko"
 
-#: ../server/vino-main.c:97
+#: ../server/vino-main.c:98
 msgid "GNOME Remote Desktop"
 msgstr "GNOMEren urruneko mahaigaina"
 
-#: ../server/vino-main.c:107
+#: ../server/vino-main.c:108
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -242,7 +242,7 @@ msgstr ""
 #. * "1" if "%s's remote desktop" doesn't make sense in
 #. * your language.
 #.
-#: ../server/vino-mdns.c:59
+#: ../server/vino-mdns.c:62
 msgid "vino-mdns:showusername"
 msgstr "0"
 
@@ -251,12 +251,12 @@ msgstr "0"
 #. * translated "vino-mdns:showusername" to anything
 #. * other than "1"
 #.
-#: ../server/vino-mdns.c:71
+#: ../server/vino-mdns.c:74
 #, c-format
 msgid "%s's remote desktop on %s"
 msgstr "%s(r)en urruneko mahaigaina %s(e)n"
 
-#: ../server/vino-prefs.c:606
+#: ../server/vino-prefs.c:607
 #, c-format
 msgid "Received signal %d, exiting...\n"
 msgstr "%d seinalea jaso da, irtetzen...\n"
@@ -298,11 +298,11 @@ msgstr "Baimentzea nahi duzu hori egiteko?"
 msgid "Question"
 msgstr "Galdera"
 
-#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:65
 msgid "_Allow"
 msgstr "_Baimendu"
 
-#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:66
 msgid "_Refuse"
 msgstr "_Debekatu"
 
@@ -351,10 +351,10 @@ msgid ""
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
 msgstr ""
-"Egia bada, mahaigainera sarbidetzen saiatzen diren urruneko "
-"erabiltzaileak ezin izango dira konektatu ostalaria den ordenagailuko "
-"erabiltzaileak konexioa baimendu bitartean. Sarbidea pasahitzik gabe "
-"babestua ez dagoen kasuetan aholkatzen da bereziki."
+"Egia bada, mahaigainera sarbidetzen saiatzen diren urruneko erabiltzaileak "
+"ezin izango dira konektatu ostalaria den ordenagailuko erabiltzaileak "
+"konexioa baimendu bitartean. Sarbidea pasahitzik gabe babestua ez dagoen "
+"kasuetan aholkatzen da bereziki."
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
@@ -398,8 +398,8 @@ msgid ""
 "effect."
 msgstr ""
 "TRUE (egia) bada, ez da X.org-ko XDamage hedapena erabiliko. Hedapen honek "
-"ez du ongi funtzionatzen bideo kontrolatzaile batzuekin 3D efektuak erabiltzean. "
-"Hau desgaitzean, vino motelago errendatuko da ingurune horietan."
+"ez du ongi funtzionatzen bideo kontrolatzaile batzuekin 3D efektuak "
+"erabiltzean. Hau desgaitzean, vino motelago errendatuko da ingurune horietan."
 
 #: ../server/vino-server.schemas.in.h:13
 msgid ""
@@ -658,31 +658,31 @@ msgstr "Errorea jakinarazpeneko burbuila bistaratzean: %s\n"
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "Urruneko '%s'(e)ko erabiltzailea deskonektatu egingo da. Ziur zaude?"
 
-#: ../server/vino-tube-server.c:310 ../server/vino-tube-server.c:339
+#: ../server/vino-tube-server.c:311 ../server/vino-tube-server.c:340
 msgid "Share my desktop information"
 msgstr "Partekatu nire mahaigaineko informazioa"
 
-#: ../server/vino-tube-server.c:314
+#: ../server/vino-tube-server.c:315
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
 msgstr "'%s'(e)k ukatu egin du mahaigaina partekatzeko gonbidapena."
 
-#: ../server/vino-tube-server.c:318
+#: ../server/vino-tube-server.c:319
 #, c-format
 msgid "'%s' disconnected"
 msgstr "'%s' deskonektatuta"
 
-#: ../server/vino-tube-server.c:345
+#: ../server/vino-tube-server.c:346
 #, c-format
 msgid "'%s' is remotely controlling your desktop."
 msgstr "'%s' zure mahaigaina urrunetik kontrolatzen ari da."
 
-#: ../server/vino-tube-server.c:354
+#: ../server/vino-tube-server.c:355
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
-msgstr "'%s'(r)en zai pantailara konektatzeko."
+msgstr "'%s'(r)en zain pantailara konektatzeko."
 
-#: ../server/vino-util.c:115
+#: ../server/vino-util.c:116
 msgid "An error has occurred:"
 msgstr "Errore bat gertatu da:"
 
@@ -737,7 +737,9 @@ msgstr "vino-passwd: pasahitza aldatu gabe.\n"
 #: ../tools/vino-passwd.c:181
 #, c-format
 msgid "Error while communicating with GConf. Are you logged into a GNOME session?"
-msgstr "Errorea gertatu da GConf-ekin komunikatzean. GNOMEko saio batean hasita zaude?"
+msgstr ""
+"Errorea gertatu da GConf-ekin komunikatzean. GNOMEko saio batean hasita "
+"zaude?"
 
 #: ../tools/vino-passwd.c:183
 #, c-format
