@@ -5,8 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vino.master.gu\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&component=Preferences Dialog\n"
-"POT-Creation-Date: 2009-08-12 18:01+0000\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=vino&component=Preferences Dialog\n"
+"POT-Creation-Date: 2010-03-27 17:48+0000\n"
 "PO-Revision-Date: 2009-08-28 12:23+0530\n"
 "Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
 "Language-Team: Gujarati\n"
@@ -68,7 +69,7 @@ msgid "Nobody can access your desktop."
 msgstr "કોઇપણ તમારા ડેસ્કટોપમાં પ્રવેશ કરી શકતા નથી."
 
 #: ../capplet/vino-preferences.c:1130 ../server/vino-server.c:164
-#: ../server/vino-server.c:195
+#: ../server/vino-server.c:194
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "બસ સાથેનું જોડાણ ખોલવામાં નિષ્ફળ: %s\n"
@@ -95,7 +96,6 @@ msgid "Maximum size: 8 characters"
 msgstr "મહત્તમ માપ : ૮ અક્ષરો"
 
 #: ../capplet/vino-preferences.ui.h:4
-#| msgid "<b>Notification Area</b>"
 msgid "Notification Area"
 msgstr "સૂચન વિસ્તાર"
 
@@ -108,17 +108,14 @@ msgid "Remote users are able to control your mouse and keyboard"
 msgstr "દૂરસ્થ વપરાશકર્તાઓ તમારું માઉસ અને કીબોર્ડ નિયંત્રિત કરવા માટે સમર્થ છે"
 
 #: ../capplet/vino-preferences.ui.h:7
-#| msgid "<b>Security</b>"
 msgid "Security"
 msgstr "સુરક્ષા"
 
 #: ../capplet/vino-preferences.ui.h:8
-#| msgid "<b>Sharing</b>"
 msgid "Sharing"
 msgstr "ભાગીદારી"
 
 #: ../capplet/vino-preferences.ui.h:9
-#| msgid "<i>Some of these preferences are locked down</i>"
 msgid "Some of these preferences are locked down"
 msgstr "તેમાંની અમુક પસંદગીઓને તાળુ લગાવી દેવામાં આવ્યું"
 
@@ -221,7 +218,7 @@ msgstr "સત્ર વ્યવસ્થાપન વિકલ્પો:"
 msgid "Show session management options"
 msgstr "સત્ર વ્યવસ્થાપન વિકલ્પોને બતાવો"
 
-#: ../server/vino-dbus-listener.c:456
+#: ../server/vino-dbus-listener.c:461
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "રીમોટ ડેસ્કટોપ સર્વર પહેલાથી જ ચાલુ છે; બહાર નીકળી રહ્યા છીએ ...\n"
 
@@ -230,17 +227,15 @@ msgid "- VNC Server for GNOME"
 msgstr "- GNOME માટે VNC સર્વર"
 
 #: ../server/vino-main.c:75
-#| msgid ""
-#| "Run 'vino-passwd --help' to see a full list of available command line "
-#| "options"
-msgid "Run 'vino-server --help' to see a full list of available command line options"
+msgid ""
+"Run 'vino-server --help' to see a full list of available command line options"
 msgstr "ઉપલબ્ધ આદેશવાક્ય વિકલ્પોની સંપૂર્ણ યાદી જોવા માટે 'vino-server --help' ચલાવો"
 
-#: ../server/vino-main.c:97
+#: ../server/vino-main.c:98
 msgid "GNOME Remote Desktop"
 msgstr "જીનોમ દૂરસ્થ ડેસ્કટોપ"
 
-#: ../server/vino-main.c:107
+#: ../server/vino-main.c:108
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -253,7 +248,7 @@ msgstr ""
 #. * "1" if "%s's remote desktop" doesn't make sense in
 #. * your language.
 #.
-#: ../server/vino-mdns.c:59
+#: ../server/vino-mdns.c:62
 msgid "vino-mdns:showusername"
 msgstr "vino-mdns:showusername"
 
@@ -262,12 +257,12 @@ msgstr "vino-mdns:showusername"
 #. * translated "vino-mdns:showusername" to anything
 #. * other than "1"
 #.
-#: ../server/vino-mdns.c:71
+#: ../server/vino-mdns.c:74
 #, c-format
 msgid "%s's remote desktop on %s"
 msgstr "%s નું દૂરસ્થ ડેસ્કટોપ %s પર"
 
-#: ../server/vino-prefs.c:606
+#: ../server/vino-prefs.c:607
 #, c-format
 msgid "Received signal %d, exiting...\n"
 msgstr "મળેલ સંકેત %d, અસ્તિત્વ ધરાવે છે...\n"
@@ -298,7 +293,6 @@ msgstr ""
 "પ્રયત્ન કરે છે."
 
 #: ../server/vino-prompt.ui.h:2
-#| msgid "<big><b>Another user is trying to view your desktop.</b></big>"
 msgid "Another user is trying to view your desktop."
 msgstr "બીજો વપરાશકર્તા તમારી ડેસ્કટોપ જોવાનો પ્રયત્ન કરે છે."
 
@@ -310,11 +304,11 @@ msgstr "શું તમે એમને આ કરવા માટેની પ
 msgid "Question"
 msgstr "પ્રશ્ન"
 
-#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:65
 msgid "_Allow"
 msgstr "પરવાનગી આપો (_A)"
 
-#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:66
 msgid "_Refuse"
 msgstr "જવા દો (_R)"
 
@@ -403,10 +397,9 @@ msgid ""
 "will make vino work on these environments with a slower rendering as side "
 "effect."
 msgstr ""
-"જો true હોય તો, આપણે X.org નાં XDamage એક્સટેન્શનને વાપરશું નહિં. આ એક્સટેન્શન "
-"અમુક વીડિયો ડ્રાઇવરો પર યોગ્ય રીતે કામ કરતા નથી જ્યારે 3D અસરોને વાપરી રહ્યા હોય. "
-"તે બીજી અસર તરીકે ધીમી રેન્ડરીંગ સાથે આ પર્યાવરણો પર vino કામ બનાવશે તેને નિષ્ક્રિય કરી "
-"રહ્યા છે."
+"જો true હોય તો, આપણે X.org નાં XDamage એક્સટેન્શનને વાપરશું નહિં. આ એક્સટેન્શન અમુક "
+"વીડિયો ડ્રાઇવરો પર યોગ્ય રીતે કામ કરતા નથી જ્યારે 3D અસરોને વાપરી રહ્યા હોય. તે બીજી "
+"અસર તરીકે ધીમી રેન્ડરીંગ સાથે આ પર્યાવરણો પર vino કામ બનાવશે તેને નિષ્ક્રિય કરી રહ્યા છે."
 
 #: ../server/vino-server.schemas.in.h:13
 msgid ""
@@ -651,38 +644,34 @@ msgstr "bubble વિશે સૂચન દર્શાવતી વખતે �
 
 #: ../server/vino-status-tube-icon.c:226
 #, c-format
-#| msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "દૂરસ્થ વપરાશકર્તાઓ '%s' નું જોડાણ તૂટી જશે. શું તમે ચોક્કસ છો?"
 
-#: ../server/vino-tube-server.c:313 ../server/vino-tube-server.c:342
-#| msgid "Share your desktop with other users"
+#: ../server/vino-tube-server.c:311 ../server/vino-tube-server.c:340
 msgid "Share my desktop information"
 msgstr "મારી ડેસ્કટોપ જાણકારીને વહેંચો"
 
-#: ../server/vino-tube-server.c:317
+#: ../server/vino-tube-server.c:315
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
 msgstr "'%s' એ ડેસ્કટોપ વહેંચવાનાં આમંત્રણને રદ કરેલ છે."
 
-#: ../server/vino-tube-server.c:321
+#: ../server/vino-tube-server.c:319
 #, c-format
-#| msgid "Disconnect"
 msgid "'%s' disconnected"
 msgstr "'%s' જોડાણ તૂટી ગયેલ છે"
 
-#: ../server/vino-tube-server.c:348
+#: ../server/vino-tube-server.c:346
 #, c-format
-#| msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgid "'%s' is remotely controlling your desktop."
 msgstr "'%s' એ તમારા ડેસ્કટોપનું દૂરસ્થ રીતે નિયંત્રમ કરી રહ્યુ છે."
 
-#: ../server/vino-tube-server.c:357
+#: ../server/vino-tube-server.c:355
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "સ્ક્રીન નું જોડાણ કરવા '%s' માટે રાહ જોઇ રહ્યા છે."
 
-#: ../server/vino-util.c:115
+#: ../server/vino-util.c:116
 msgid "An error has occurred:"
 msgstr "ભૂલ ઉત્પન્ન થયેલ છે:"
 
@@ -699,8 +688,10 @@ msgid ""
 msgid_plural ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
 "password."
-msgstr[0] "ભૂલ: પાસવર્ડની મહત્તમ લંબાઈ %d અક્ષર છે. મહેરબાની કરીને, પાસવર્ડ પુનઃ-દાખલ કરો."
-msgstr[1] "ભૂલ: પાસવર્ડની મહત્તમ લંબાઈ %d અક્ષરોની છે. મહેરબાની કરીને, પાસવર્ડ પુનઃ-દાખલ કરો."
+msgstr[0] ""
+"ભૂલ: પાસવર્ડની મહત્તમ લંબાઈ %d અક્ષર છે. મહેરબાની કરીને, પાસવર્ડ પુનઃ-દાખલ કરો."
+msgstr[1] ""
+"ભૂલ: પાસવર્ડની મહત્તમ લંબાઈ %d અક્ષરોની છે. મહેરબાની કરીને, પાસવર્ડ પુનઃ-દાખલ કરો."
 
 #: ../tools/vino-passwd.c:156
 #, c-format
@@ -732,8 +723,10 @@ msgstr "vino-passwd: પાસવર્ડ બદલાયેલ નથી.\n"
 
 #: ../tools/vino-passwd.c:181
 #, c-format
-msgid "Error while communicating with GConf. Are you logged into a GNOME session?"
-msgstr "જ્યારે GConf સાથે વાતચીત કરી રહ્યા હોય ત્યારે ભૂલ. શું તમે GNOME સત્ર માં પ્રવેશ કરવાનાં છો?"
+msgid ""
+"Error while communicating with GConf. Are you logged into a GNOME session?"
+msgstr ""
+"જ્યારે GConf સાથે વાતચીત કરી રહ્યા હોય ત્યારે ભૂલ. શું તમે GNOME સત્ર માં પ્રવેશ કરવાનાં છો?"
 
 #: ../tools/vino-passwd.c:183
 #, c-format
@@ -749,7 +742,8 @@ msgid "- Updates Vino password"
 msgstr "- Vino પાસવર્ડ સુધારે છે"
 
 #: ../tools/vino-passwd.c:219
-msgid "Run 'vino-passwd --help' to see a full list of available command line options"
+msgid ""
+"Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr "ઉપલબ્ધ આદેશવાક્ય વિકલ્પોની સંપૂર્ણ યાદી જોવા માટે 'vino-passwd --help' ચલાવો"
 
 #: ../tools/vino-passwd.c:226
@@ -761,4 +755,3 @@ msgstr "VINO આવૃત્તિ %s\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "ભૂલ: તમારી પાસે Vino પાસવર્ડ બદલવા માટે પૂરતી પરવાનગીઓ નથી.\n"
-
