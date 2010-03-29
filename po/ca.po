@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-21 01:08+0200\n"
-"PO-Revision-Date: 2009-09-09 21:10+0100\n"
+"POT-Creation-Date: 2010-03-29 19:38+0200\n"
+"PO-Revision-Date: 2010-03-29 20:23+0200\n"
 "Last-Translator: Joan Duran <jodufi@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
@@ -215,7 +215,7 @@ msgstr "Opcions del gestor de sessió:"
 msgid "Show session management options"
 msgstr "Mostra les opcions del gestor de sessió"
 
-#: ../server/vino-dbus-listener.c:460
+#: ../server/vino-dbus-listener.c:461
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr ""
 "El servidor de l'escriptori remot ja s'està executant; s'està sortint...\n"
@@ -231,11 +231,11 @@ msgstr ""
 "Executeu «vino-server --help» per a veure una llista completa de les opcions "
 "disponibles de la línia d'ordres"
 
-#: ../server/vino-main.c:97
+#: ../server/vino-main.c:98
 msgid "GNOME Remote Desktop"
 msgstr "Escriptori remot del GNOME"
 
-#: ../server/vino-main.c:107
+#: ../server/vino-main.c:108
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -248,7 +248,7 @@ msgstr ""
 #. * "1" if "%s's remote desktop" doesn't make sense in
 #. * your language.
 #.
-#: ../server/vino-mdns.c:61
+#: ../server/vino-mdns.c:62
 msgid "vino-mdns:showusername"
 msgstr "vino-mdns:showusername"
 
@@ -257,7 +257,7 @@ msgstr "vino-mdns:showusername"
 #. * translated "vino-mdns:showusername" to anything
 #. * other than "1"
 #.
-#: ../server/vino-mdns.c:73
+#: ../server/vino-mdns.c:74
 #, c-format
 msgid "%s's remote desktop on %s"
 msgstr "Escriptori remot de %s a %s"
@@ -378,7 +378,7 @@ msgid ""
 "encryption unless the intervening network is trusted."
 msgstr ""
 "Si s'habilita, els usuaris remots que accedeixin a l'escriptori se'ls "
-"requerirà que puguin xifrar la connexió. Es molt recomanable que feu servir "
+"requerirà que puguin xifrar la connexió. És molt recomanable que feu servir "
 "clients que permetin el xifratge si no és que la xarxa on es faci servir "
 "sigui fiable."
 
@@ -428,7 +428,7 @@ msgid ""
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
 msgstr ""
-"Llista els mètodes d'autenticació amb els què els usuaris remots poden "
+"Llista els mètodes d'autenticació amb els quals els usuaris remots poden "
 "accedir a l'escriptori. Hi ha dos possibles mètodes d'autenticació: «vnc» "
 "farà que abans de connectar es demani una contrasenya a l'usuari remot (la "
 "contrasenya s'especifica amb la clau vnc_password), i «none» permetrà que "
@@ -495,9 +495,9 @@ msgid ""
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
-"Aquesta clau especifica l'adreça de correu a la qual s'hauria d'enviar la "
-"URL de l'escriptori remot, si l'usuari fa clic a la URL en el quadre de "
-"diàleg de preferències de l'escriptori remot"
+"Aquesta clau especifica l'adreça de correu a la qual s'hauria d'enviar "
+"l'URL de l'escriptori remot, si l'usuari fa clic a l'URL en el quadre de "
+"diàleg de preferències de l'escriptori remot."
 
 #: ../server/vino-server.schemas.in.h:26
 msgid "When the status icon should be shown"
@@ -563,7 +563,7 @@ msgstr ""
 "de la Llicència com (si ho preferiu) qualsevol versió posterior.\n"
 "\n"
 "Aquest programa es distribueix amb l'esperança que serà útil, \n"
-"però SENSE CAP GARANTIA; ni tant sols amb la garantia de \n"
+"però SENSE CAP GARANTIA; ni tan sols amb la garantia de \n"
 "COMERCIALITZACIÓ, o VALIDESA PER A PROPÒSITS DETERMINATS. Vegeu\n"
 "la Llicència general pública de GNU per a més detalls. \n"
 "\n"
@@ -687,7 +687,7 @@ msgstr "«%s» està controlant el vostre escriptori remotament."
 #: ../server/vino-tube-server.c:355
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
-msgstr "S'està esperant a «%s» per a connectar a la pantalla."
+msgstr "S'està esperant «%s» per a connectar a la pantalla."
 
 #: ../server/vino-util.c:116
 msgid "An error has occurred:"
