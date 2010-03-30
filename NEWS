@@ -1,3 +1,29 @@
+Vino 2.28.2
+===========
+
+  Fixes:
+
+	- Check if mDNS is active before asking for a local hostname.
+
+
+  Translations:
+
+	+ Fran Diéguez (gl)
+	+ Inaki Larranaga Murgoitio (eu)
+	+ Jamil Ahmed (bn)
+	+ Jordi Serratosa (ca)
+	+ Kenneth Nielsen (da)
+	+ Kjartan Maraas (nb)
+	+ Peteris Krisjanis (lv)
+	+ Piotr Drąg (pl)
+	+ Sweta Kothari (gu)
+	+ Tao Wei (zh_CN)
+	+ Thomas Thurman (en@shaw)
+	+ Torstein Adolf Winterseth (nn)
+	+ Wouter Bolsterlee (nl)
+	+ Xandru Armesto Fernandez (ast)
+	+ Yaron Shahrabani (he)
+
 Vino 2.28.1
 ===========
 
