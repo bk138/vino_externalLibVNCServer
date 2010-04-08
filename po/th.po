@@ -1,15 +1,16 @@
 # Thai translation of vino.
-# Copyright (C) 2005-2009 Free Software Foundation, Inc.
+# Copyright (C) 2005-2010 Free Software Foundation, Inc.
 # This file is distributed under the same license as the vino package.
-# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2005-2009.
+# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2005-2010.
 #
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino 2.11.2\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-17 17:31+0700\n"
-"PO-Revision-Date: 2009-02-17 17:33+0700\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=vino&component=Preferences Dialog\n"
+"POT-Creation-Date: 2010-03-27 17:48+0000\n"
+"PO-Revision-Date: 2010-04-08 18:20+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -32,11 +33,11 @@ msgstr "_คัดลอกที่อยู่เข้าคลิปบอ�
 msgid "There was an error showing the URL \"%s\""
 msgstr "เกิดข้อผิดพลาดขณะแสดง URL \"%s\""
 
-#: ../capplet/vino-preferences.c:198 ../capplet/vino-preferences.c:954
+#: ../capplet/vino-preferences.c:197 ../capplet/vino-preferences.c:1000
 msgid "Checking the connectivity of this machine..."
 msgstr "กำลังตรวจสอบการเชื่อมต่อของเครื่องนี้..."
 
-#: ../capplet/vino-preferences.c:798
+#: ../capplet/vino-preferences.c:804
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -45,21 +46,25 @@ msgstr ""
 "เกิดข้อผิดพลาดขณะแสดงวิธีใช้:\n"
 "%s"
 
-#: ../capplet/vino-preferences.c:839
+#: ../capplet/vino-preferences.c:834
 msgid "Your desktop is only reachable over the local network."
 msgstr "พื้นโต๊ะของคุณสามารถเข้าถึงได้ในเครือข่ายเฉพาะที่นี้เท่านั้น"
 
-#: ../capplet/vino-preferences.c:840 ../capplet/vino-preferences.c:890
+#: ../capplet/vino-preferences.c:854 ../capplet/vino-preferences.c:929
+msgid " or "
+msgstr " หรือ "
+
+#: ../capplet/vino-preferences.c:859 ../capplet/vino-preferences.c:933
 #, c-format
 msgid "Others can access your computer using the address %s."
 msgstr "ผู้อื่นสามารถเข้าถึงเครื่องของคุณได้โดยใช้ที่อยู่ %s"
 
-#: ../capplet/vino-preferences.c:940
+#: ../capplet/vino-preferences.c:986
 msgid "Nobody can access your desktop."
 msgstr "ไม่มีใครสามารถเข้าถึงพื้นโต๊ะของคุณได้"
 
-#: ../capplet/vino-preferences.c:1081 ../server/vino-dbus-listener.c:501
-#: ../server/vino-server.c:156 ../server/vino-server.c:187
+#: ../capplet/vino-preferences.c:1130 ../server/vino-server.c:164
+#: ../server/vino-server.c:194
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "ไม่สามารถเปิดการเชื่อมต่อไปยังบัส: %s\n"
@@ -73,103 +78,159 @@ msgstr "เลือกว่าจะอนุญาตให้ผู้ใช
 msgid "Remote Desktop"
 msgstr "พื้นโต๊ะระยะไกล"
 
-#: ../capplet/vino-preferences.glade.h:1
-msgid "<b>Notification Area</b>"
-msgstr "<b>พื้นที่แจ้งเหตุ</b>"
-
-#: ../capplet/vino-preferences.glade.h:2
-msgid "<b>Security</b>"
-msgstr "<b>ระบบรักษาความปลอดภัย</b>"
-
-#: ../capplet/vino-preferences.glade.h:3
-msgid "<b>Sharing</b>"
-msgstr "<b>การแบ่งใช้</b>"
-
-#: ../capplet/vino-preferences.glade.h:4
-msgid "<i>Some of these preferences are locked down</i>"
-msgstr "<i>การปรับแต่งบางส่วนถูกล็อคไว้ไม่ให้เปลี่ยน</i>"
-
-#: ../capplet/vino-preferences.glade.h:5
+#: ../capplet/vino-preferences.ui.h:1
 msgid "Al_ways display an icon"
 msgstr "แสดงไอคอนเ_สมอ"
 
-#: ../capplet/vino-preferences.glade.h:6
+#: ../capplet/vino-preferences.ui.h:2
 msgid "Allow other users to _view your desktop"
 msgstr "อนุญาตให้ผู้ใช้อื่น_มองพื้นโต๊ะของคุณ"
 
-#: ../capplet/vino-preferences.glade.h:7
+#: ../capplet/vino-preferences.ui.h:3
 msgid "Maximum size: 8 characters"
 msgstr "ความยาวสูงสุด: 8 ตัวอักษร"
 
-#: ../capplet/vino-preferences.glade.h:8
+#: ../capplet/vino-preferences.ui.h:4
+msgid "Notification Area"
+msgstr "พื้นที่แจ้งเหตุ"
+
+#: ../capplet/vino-preferences.ui.h:5
 msgid "Remote Desktop Preferences"
 msgstr "ปรับแต่งพื้นโต๊ะระยะไกล"
 
-#: ../capplet/vino-preferences.glade.h:9
+#: ../capplet/vino-preferences.ui.h:6
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "ผู้ใช้จากเครื่องอื่นสามารถควบคุมเมาส์และแป้นพิมพ์ของคุณได้"
 
-#: ../capplet/vino-preferences.glade.h:10
+#: ../capplet/vino-preferences.ui.h:7
+msgid "Security"
+msgstr "ระบบรักษาความปลอดภัย"
+
+#: ../capplet/vino-preferences.ui.h:8
+msgid "Sharing"
+msgstr "การแบ่งใช้"
+
+#: ../capplet/vino-preferences.ui.h:9
+msgid "Some of these preferences are locked down"
+msgstr "การปรับแต่งบางส่วนถูกล็อคไว้ไม่ให้เปลี่ยน"
+
+#: ../capplet/vino-preferences.ui.h:10
 msgid "The router must have the UPnP feature enabled"
 msgstr "เราเตอร์ต้องเปิดใช้ความสามารถ UPnP ด้วย"
 
-#: ../capplet/vino-preferences.glade.h:11
+#: ../capplet/vino-preferences.ui.h:11
 msgid "You will be queried to allow or to refuse every incoming connection"
 msgstr "คุณจะได้รับการขออนุญาตเชื่อมต่อทุกครั้ง"
 
-#: ../capplet/vino-preferences.glade.h:12
+#: ../capplet/vino-preferences.ui.h:12
 msgid "Your desktop will be shared"
 msgstr "พื้นโต๊ะของคุณจะถูกเปิดให้ผู้อื่นใช้ร่วมด้วย"
 
-#: ../capplet/vino-preferences.glade.h:13
+#: ../capplet/vino-preferences.ui.h:13
 msgid "_Allow other users to control your desktop"
 msgstr "อนุญาตให้ผู้ใช้อื่น_ควบคุมพื้นโต๊ะของคุณ"
 
-#: ../capplet/vino-preferences.glade.h:14
+#: ../capplet/vino-preferences.ui.h:14
 msgid "_Configure network automatically to accept connections"
 msgstr "_ตั้งค่าเครือข่ายให้ยอมรับการเชื่อมต่อโดยอัตโนมัติ"
 
-#: ../capplet/vino-preferences.glade.h:15
+#: ../capplet/vino-preferences.ui.h:15
 msgid "_Never display an icon"
 msgstr "ไ_ม่แสดงไอคอน"
 
-#: ../capplet/vino-preferences.glade.h:16
+#: ../capplet/vino-preferences.ui.h:16
 msgid "_Only display an icon when there is someone connected"
 msgstr "แสดงไอคอนเมื่อมีผู้เ_ชื่อมต่อเท่านั้น"
 
-#: ../capplet/vino-preferences.glade.h:17
+#: ../capplet/vino-preferences.ui.h:17
 msgid "_Require the user to enter this password:"
 msgstr "ให้ผู้ใช้นั้น_ป้อนรหัสผ่านนี้:"
 
-#: ../capplet/vino-preferences.glade.h:18
+#: ../capplet/vino-preferences.ui.h:18
 msgid "_You must confirm each access to this machine"
 msgstr "คุณต้องยืนยั_นการเข้าถึงเครื่องนี้ก่อนทุกครั้ง"
 
-#: ../server/vino-dbus-listener.c:281 ../server/vino-dbus-listener.c:311
-#: ../server/vino-dbus-listener.c:352
+#: ../server/smclient/eggdesktopfile.c:165
 #, c-format
-msgid "Out of memory handling '%s' message"
-msgstr "หน่วยความจำหมดขณะจัดการข้อความ '%s'"
+msgid "File is not a valid .desktop file"
+msgstr "แฟ้มนี้ไม่ใช่แฟ้ม .desktop ที่ใช้ได้"
 
-#: ../server/vino-dbus-listener.c:458
+#: ../server/smclient/eggdesktopfile.c:188
 #, c-format
-msgid "Out of memory registering object path '%s'"
-msgstr "หน่วยความจำหมดขณะลงทะเบียนพาธของออบเจ็กต์ '%s'"
+msgid "Unrecognized desktop file Version '%s'"
+msgstr "ไม่รู้จักแฟ้มเดสก์ท็อปรุ่น '%s'"
 
-#: ../server/vino-dbus-listener.c:537
+#: ../server/smclient/eggdesktopfile.c:958
 #, c-format
-msgid "Failed to acquire D-Bus name '%s'\n"
-msgstr "ไม่สามารถขอใช้ชื่อ D-Bus '%s' ได้\n"
+msgid "Starting %s"
+msgstr "กำลังเริ่ม %s"
 
-#: ../server/vino-dbus-listener.c:545
+#: ../server/smclient/eggdesktopfile.c:1100
+#, c-format
+msgid "Application does not accept documents on command line"
+msgstr "โปรแกรมไม่รับเอกสารในบรรทัดคำสั่ง"
+
+#: ../server/smclient/eggdesktopfile.c:1168
+#, c-format
+msgid "Unrecognized launch option: %d"
+msgstr "ไม่รู้จักตัวเลือกของการเรียกโปรแกรม: %d"
+
+#: ../server/smclient/eggdesktopfile.c:1373
+#, c-format
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr "ไม่สามารถส่ง URI ของเอกสารไปยังรายการเดสก์ท็อปที่มี 'Type=Link'"
+
+#: ../server/smclient/eggdesktopfile.c:1392
+#, c-format
+msgid "Not a launchable item"
+msgstr "ไม่ใช่รายการที่เรียกทำงานได้"
+
+#: ../server/smclient/eggsmclient.c:225
+msgid "Disable connection to session manager"
+msgstr "ปิดใช้การเชื่อมต่อไปยังโปรแกรมจัดการวาระ"
+
+#: ../server/smclient/eggsmclient.c:228
+msgid "Specify file containing saved configuration"
+msgstr "ระบุแฟ้มที่บันทึกค่าตั้งไว้"
+
+#: ../server/smclient/eggsmclient.c:228
+msgid "FILE"
+msgstr "FILE"
+
+#: ../server/smclient/eggsmclient.c:231
+msgid "Specify session management ID"
+msgstr "ระบุหมายเลขการจัดการวาระ"
+
+#: ../server/smclient/eggsmclient.c:231
+msgid "ID"
+msgstr "ID"
+
+#: ../server/smclient/eggsmclient.c:252
+msgid "Session management options:"
+msgstr "ตัวเลือกเกี่ยวกับการจัดการวาระ:"
+
+#: ../server/smclient/eggsmclient.c:253
+msgid "Show session management options"
+msgstr "แสดงตัวเลือกเกี่ยวกับการจัดการวาระ"
+
+#: ../server/vino-dbus-listener.c:461
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "เซิร์ฟเวอร์พื้นโต๊ะระยะไกลกำลังทำงานอยู่แล้ว จะออกจากโปรแกรม ...\n"
 
-#: ../server/vino-main.c:89
+#: ../server/vino-main.c:67
+msgid "- VNC Server for GNOME"
+msgstr "- เซิร์ฟเวอร์ VNC สำหรับ GNOME"
+
+#: ../server/vino-main.c:75
+msgid ""
+"Run 'vino-server --help' to see a full list of available command line options"
+msgstr "เรียก 'vino-server --help' เพื่อดูตัวเลือกบรรทัดคำสั่งที่ใช้ได้ทั้งหมด"
+
+#: ../server/vino-main.c:98
 msgid "GNOME Remote Desktop"
 msgstr "พื้นโต๊ะระยะไกลของ GNOME"
 
-#: ../server/vino-main.c:99
+#: ../server/vino-main.c:108
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -182,7 +243,7 @@ msgstr ""
 #. * "1" if "%s's remote desktop" doesn't make sense in
 #. * your language.
 #.
-#: ../server/vino-mdns.c:59
+#: ../server/vino-mdns.c:62
 msgid "vino-mdns:showusername"
 msgstr "0"
 
@@ -191,54 +252,54 @@ msgstr "0"
 #. * translated "vino-mdns:showusername" to anything
 #. * other than "1"
 #.
-#: ../server/vino-mdns.c:71
+#: ../server/vino-mdns.c:74
 #, c-format
 msgid "%s's remote desktop on %s"
 msgstr "พื้นโต๊ะระยะไกลของ %s ที่เครื่อง %s"
 
-#: ../server/vino-prefs.c:579
+#: ../server/vino-prefs.c:607
 #, c-format
 msgid "Received signal %d, exiting...\n"
 msgstr "ได้รับสัญญาณ %d, ขอออกจากโปรแกรม...\n"
 
-#: ../server/vino-prompt.c:142
+#: ../server/vino-prompt.c:141
 msgid "Screen"
 msgstr "หน้าจอ"
 
-#: ../server/vino-prompt.c:143
+#: ../server/vino-prompt.c:142
 msgid "The screen on which to display the prompt"
 msgstr "หน้าจอที่จะแสดงคำถาม"
 
-#: ../server/vino-prompt.c:343
+#: ../server/vino-prompt.c:345
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr "มีผู้ใช้จากเครื่อง '%s' กำลังพยายามมองหรือควบคุมพื้นโต๊ะของคุณจากระยะไกล"
 
-#: ../server/vino-prompt.glade.h:1
-msgid "<big><b>Another user is trying to view your desktop.</b></big>"
-msgstr "<big><b>มีผู้ใช้อื่นกำลังพยายามมองพื้นโต๊ะของคุณ</b></big>"
-
-#: ../server/vino-prompt.glade.h:2
+#: ../server/vino-prompt.ui.h:1
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
 msgstr "มีผู้ใช้จากเครื่องอื่นกำลังพยายามมองหรือควบคุมพื้นโต๊ะของคุณจากระยะไกล"
 
-#: ../server/vino-prompt.glade.h:3
+#: ../server/vino-prompt.ui.h:2
+msgid "Another user is trying to view your desktop."
+msgstr "มีผู้ใช้อื่นกำลังพยายามมองพื้นโต๊ะของคุณ"
+
+#: ../server/vino-prompt.ui.h:3
 msgid "Do you want to allow them to do so?"
 msgstr "คุณจะอนุญาตหรือไม่?"
 
-#: ../server/vino-prompt.glade.h:4
+#: ../server/vino-prompt.ui.h:4
 msgid "Question"
 msgstr "คำถาม"
 
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:64
+#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:65
 msgid "_Allow"
 msgstr "_อนุญาต"
 
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:65
+#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:66
 msgid "_Refuse"
 msgstr "_ปฏิเสธ"
 
@@ -320,15 +381,27 @@ msgstr ""
 
 #: ../server/vino-server.schemas.in.h:12
 msgid ""
+"If true, we will not use the XDamage extension of X.org. This extension does "
+"not work properly on some video drivers when using 3D effects. Disabling it "
+"will make vino work on these environments with a slower rendering as side "
+"effect."
+msgstr ""
+"ถ้าเป็นจริง จะไม่ใช้ส่วนขยาย XDamage ของ X.org "
+"ส่วนขยายนี้จะทำงานได้ไม่สมบูรณ์กับไดรเวอร์การ์ดจอบางตัวเมื่อใช้เอฟเฟกต์ 3D "
+"การปิดส่วนขยายนี้จะทำให้ vino ทำงานได้ในสภาพแวดล้อมเหล่านี้ "
+"โดยอาจแสดงผลได้ช้าลงเป็นผลข้างเคียง"
+
+#: ../server/vino-server.schemas.in.h:13
+msgid ""
 "If true, we will use UPNP protocol to automatically forward the port used by "
 "vino in the router."
 msgstr "ถ้าเป็นจริง จะใช้โพรโทคอล UPNP ในการส่งต่อพอร์ตที่ vino ใช้จากเราเตอร์"
 
-#: ../server/vino-server.schemas.in.h:13
+#: ../server/vino-server.schemas.in.h:14
 msgid "Listen an alternative port"
 msgstr "รอรับการเชื่อมต่อที่พอร์ตอื่น"
 
-#: ../server/vino-server.schemas.in.h:14
+#: ../server/vino-server.schemas.in.h:15
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -340,31 +413,31 @@ msgstr ""
 "ค่าที่เป็นไปได้มีสองค่า; \"vnc\" จะถามรหัสผ่านกับผู้ใช้ระยะไกล (ตัวรหัสผ่านจะเก็บไว้ที่คีย์ "
 "vnc_password) ก่อนเชื่อมต่อ และ \"none\" จะอนุญาตให้ผู้ใช้ระยะไกลที่ไหนก็ได้เชื่อมต่อทั้งหมด"
 
-#: ../server/vino-server.schemas.in.h:15
+#: ../server/vino-server.schemas.in.h:16
 msgid "Lock the screen when last user disconnect"
 msgstr "ล็อคหน้าจอเมื่อผู้ใช้คนสุดท้ายตัดการติดต่อ"
 
-#: ../server/vino-server.schemas.in.h:16
+#: ../server/vino-server.schemas.in.h:17
 msgid "Network interface for listening"
 msgstr "อินเทอร์เฟซเครือข่ายที่จะรอรับการเชื่อมต่อ"
 
-#: ../server/vino-server.schemas.in.h:17
+#: ../server/vino-server.schemas.in.h:18
 msgid "Only allow remote users to view the desktop"
 msgstr "อนุญาตให้ผู้ใช้ระยะไกลมองพื้นโต๊ะได้เท่านั้น"
 
-#: ../server/vino-server.schemas.in.h:18
+#: ../server/vino-server.schemas.in.h:19
 msgid "Password required for \"vnc\" authentication"
 msgstr "รหัสผ่านสำหรับการตรวจสอบสิทธิ์แบบ \"vnc\""
 
-#: ../server/vino-server.schemas.in.h:19
+#: ../server/vino-server.schemas.in.h:20
 msgid "Prompt the user before completing a connection"
 msgstr "ถามผู้ใช้ก่อนเชื่อมต่อ"
 
-#: ../server/vino-server.schemas.in.h:20
+#: ../server/vino-server.schemas.in.h:21
 msgid "Require encryption"
 msgstr "บังคับการเข้ารหัส"
 
-#: ../server/vino-server.schemas.in.h:21
+#: ../server/vino-server.schemas.in.h:22
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -373,7 +446,7 @@ msgstr ""
 "รหัสผ่านที่ผู้ใช้ระยะไกลจะถูกถามเมื่อใช้การตรวจสอบสิทธิ์แบบ \"vnc\" "
 "รหัสผ่านที่เก็บในคีย์นี้จะลงรหัสไว้แบบ base64"
 
-#: ../server/vino-server.schemas.in.h:22
+#: ../server/vino-server.schemas.in.h:23
 msgid ""
 "The port which the server will listen to if the 'use_alternative_port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
@@ -381,7 +454,7 @@ msgstr ""
 "พอร์ตที่เซิร์ฟเวอร์จะรอรับการเชื่อมต่อ ถ้ามีการกำหนดคีย์ 'use_alternate_port' เป็นจริง "
 "ค่าที่ใช้การได้จะอยู่ในช่วงจาก 5000 ถึง 50000"
 
-#: ../server/vino-server.schemas.in.h:23
+#: ../server/vino-server.schemas.in.h:24
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
 "\"always\" - The icon will be always there; \"client\" - You will see the "
@@ -392,7 +465,7 @@ msgstr ""
 "\"client\" - แสดงไอคอนเมื่อมีผู้เชื่อมต่อเท่านั้น ซึ่งค่านี้เป็นค่าปริยาย, \"never\" - "
 "ไม่ต้องแสดงไอคอน"
 
-#: ../server/vino-server.schemas.in.h:24
+#: ../server/vino-server.schemas.in.h:25
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
@@ -401,19 +474,23 @@ msgstr ""
 "คีย์นี้ระบุที่อยู่อีเมลที่จะส่ง URL ของพื้นโต๊ะระยะไกลไปให้ ถ้าผู้ใช้คลิกที่ URL "
 "ในไดอะล็อกปรับแต่งพื้นโต๊ะระยะไกล"
 
-#: ../server/vino-server.schemas.in.h:25
+#: ../server/vino-server.schemas.in.h:26
 msgid "When the status icon should be shown"
 msgstr "จะแสดงไอคอนสถานะเมื่อใด"
 
-#: ../server/vino-server.schemas.in.h:26
+#: ../server/vino-server.schemas.in.h:27
 msgid "When true, disable the background on receive valid session"
 msgstr "ถ้าเป็นค่าจริง จะปิดการใช้ภาพพื้นหลังเมื่อรับการเชื่อมต่อวาระเรียบร้อย"
 
-#: ../server/vino-server.schemas.in.h:27
+#: ../server/vino-server.schemas.in.h:28
+msgid "Whether we should disable the XDamage extension of X.org"
+msgstr "จะปิดส่วนขยาย XDamage ของ X.org หรือไม่"
+
+#: ../server/vino-server.schemas.in.h:29
 msgid "Whether we should use UPNP to forward the port in routers"
 msgstr "จะใช้ UPNP ในการส่งต่อพอร์ตจากเราเตอร์หรือไม่"
 
-#: ../server/vino-status-icon.c:102
+#: ../server/vino-status-icon.c:102 ../server/vino-status-tube-icon.c:95
 msgid "Desktop sharing is enabled"
 msgstr "เปิดพื้นโต๊ะให้ใช้ร่วมอยู่"
 
@@ -423,11 +500,11 @@ msgid "One person is connected"
 msgid_plural "%d people are connected"
 msgstr[0] "เชื่อมต่ออยู่ %d คน"
 
-#: ../server/vino-status-icon.c:207
+#: ../server/vino-status-icon.c:207 ../server/vino-status-tube-icon.c:175
 msgid "Error displaying preferences"
 msgstr "เกิดข้อผิดพลาดขณะแสดงค่าปรับแต่ง"
 
-#: ../server/vino-status-icon.c:226
+#: ../server/vino-status-icon.c:226 ../server/vino-status-tube-icon.c:191
 msgid "Error displaying help"
 msgstr "เกิดข้อผิดพลาดขณะแสดงวิธีใช้"
 
@@ -474,80 +551,111 @@ msgstr "เทพพิทักษ์ การุญบุญญานัน�
 msgid "Share your desktop with other users"
 msgstr "แบ่งพื้นโต๊ะของคุณให้ผู้อื่นใช้ร่วม"
 
-#. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:338
+#: ../server/vino-status-icon.c:339 ../server/vino-status-tube-icon.c:223
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "ยืนยันที่จะตัดการเชื่อมต่อกับ '%s' หรือไม่?"
 
-#: ../server/vino-status-icon.c:340
+#: ../server/vino-status-icon.c:342
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "ผู้ใช้ระยะไกลจากเครื่อง '%s' จะถูกตัดการเชื่อมต่อ คุณแน่ใจหรือไม่?"
 
-#: ../server/vino-status-icon.c:345
+#: ../server/vino-status-icon.c:348
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "ยืนยันที่จะตัดการเชื่อมต่อกับทุกเครื่องหรือไม่?"
 
-#: ../server/vino-status-icon.c:346
+#: ../server/vino-status-icon.c:350
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "ผู้ใช้ระยะไกลทั้งหมดจะถูกตัดการเชื่อมต่อ คุณแน่ใจหรือไม่?"
 
-#: ../server/vino-status-icon.c:358
+#: ../server/vino-status-icon.c:362 ../server/vino-status-tube-icon.c:237
 msgid "Disconnect"
 msgstr "ตัดการเชื่อมต่อ"
 
-#: ../server/vino-status-icon.c:384
+#: ../server/vino-status-icon.c:388 ../server/vino-status-tube-icon.c:262
 msgid "_Preferences"
 msgstr "_ปรับแต่ง"
 
-#: ../server/vino-status-icon.c:399
+#: ../server/vino-status-icon.c:403
 msgid "Disconnect all"
 msgstr "ตัดการเชื่อมต่อทั้งหมด"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:423
+#. Translators: %s is the alias of the telepathy contact
+#: ../server/vino-status-icon.c:427 ../server/vino-status-tube-icon.c:275
 #, c-format
 msgid "Disconnect %s"
 msgstr "ตัดการเชื่อมต่อกับ %s"
 
-#: ../server/vino-status-icon.c:443
+#: ../server/vino-status-icon.c:448 ../server/vino-status-tube-icon.c:294
 msgid "_Help"
 msgstr "_วิธีใช้"
 
-#: ../server/vino-status-icon.c:451
+#: ../server/vino-status-icon.c:456
 msgid "_About"
 msgstr "เ_กี่ยวกับ"
 
-#: ../server/vino-status-icon.c:584
+#: ../server/vino-status-icon.c:589 ../server/vino-status-tube-icon.c:391
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "เกิดข้อผิดพลาดขณะตั้งต้น libnotify\n"
 
-#: ../server/vino-status-icon.c:604
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:610
 msgid "Another user is viewing your desktop"
 msgstr "มีผู้ใช้อื่นกำลังมองพื้นโต๊ะของคุณ"
 
-#: ../server/vino-status-icon.c:605
+#: ../server/vino-status-icon.c:612
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "มีผู้ใช้จากเครื่อง '%s' กำลังมองพื้นโต๊ะของคุณจากระยะไกล"
 
-#: ../server/vino-status-icon.c:610
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:618
 msgid "Another user is controlling your desktop"
 msgstr "มีผู้ใช้อื่นกำลังควบคุมพื้นโต๊ะของคุณ"
 
-#: ../server/vino-status-icon.c:611
+#: ../server/vino-status-icon.c:620
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "มีผู้ใช้จากเครื่อง '%s' กำลังควบคุมพื้นโต๊ะของคุณจากระยะไกล"
 
-#: ../server/vino-status-icon.c:633
+#: ../server/vino-status-icon.c:642 ../server/vino-status-tube-icon.c:422
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "เกิดข้อผิดพลาดขณะแสดงกรอบคำพูดแจ้งเหตุ: %s\n"
 
-#: ../server/vino-util.c:115
+#: ../server/vino-status-tube-icon.c:226
+#, c-format
+msgid "The remote user '%s' will be disconnected. Are you sure?"
+msgstr "ผู้ใช้ระยะไกล '%s' จะถูกตัดการเชื่อมต่อ คุณแน่ใจหรือไม่?"
+
+#: ../server/vino-tube-server.c:311 ../server/vino-tube-server.c:340
+msgid "Share my desktop information"
+msgstr "แบ่งพื้นโต๊ะของข้าพเจ้าให้ผู้อื่นใช้ร่วม"
+
+#: ../server/vino-tube-server.c:315
+#, c-format
+msgid "'%s' rejected the desktop sharing invitation."
+msgstr "'%s' ปฏิเสธคำเชิญให้แบ่งปันพื้นโต๊ะ"
+
+#: ../server/vino-tube-server.c:319
+#, c-format
+msgid "'%s' disconnected"
+msgstr "'%s' ตัดการเชื่อมต่อแล้ว"
+
+#: ../server/vino-tube-server.c:346
+#, c-format
+msgid "'%s' is remotely controlling your desktop."
+msgstr "'%s' กำลังควบคุมพื้นโต๊ะของคุณจากระยะไกล"
+
+#: ../server/vino-tube-server.c:355
+#, c-format
+msgid "Waiting for '%s' to connect to the screen."
+msgstr "กำลังรอให้ '%s' เชื่อมต่อมาที่หน้าจอ"
+
+#: ../server/vino-util.c:116
 msgid "An error has occurred:"
 msgstr "เกิดข้อผิดพลาด:"
 
@@ -584,38 +692,58 @@ msgstr "พิมพ์รหัสผ่านใหม่สำหรับ Vi
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: ปรับข้อมูลรหัสผ่านเรียบร้อยแล้ว\n"
 
-#: ../tools/vino-passwd.c:171
+#: ../tools/vino-passwd.c:172
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "ขออภัย รหัสผ่านไม่ตรงกัน\n"
 
-#: ../tools/vino-passwd.c:172
+#: ../tools/vino-passwd.c:173
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: รหัสผ่านไม่มีการเปลี่ยนแปลง\n"
 
-#: ../tools/vino-passwd.c:187
+#: ../tools/vino-passwd.c:181
+#, c-format
+msgid ""
+"Error while communicating with GConf. Are you logged into a GNOME session?"
+msgstr "เกิดข้อผิดพลาดขณะสื่อสารกับ GConf คุณได้เข้าระบบด้วยวาระ GNOME หรือเปล่า?"
+
+#: ../tools/vino-passwd.c:183
+#, c-format
+msgid "Error message:"
+msgstr "ข้อความข้อผิดพลาด:"
+
+#: ../tools/vino-passwd.c:200
 msgid "Show Vino version"
 msgstr "แสดงรุ่นของ Vino"
 
-#: ../tools/vino-passwd.c:196
+#: ../tools/vino-passwd.c:209
 msgid "- Updates Vino password"
 msgstr "- เปลี่ยนรหัสผ่าน Vino"
 
-#: ../tools/vino-passwd.c:206
+#: ../tools/vino-passwd.c:219
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr "เรียก 'vino-passwd --help' เพื่อดูตัวเลือกบรรทัดคำสั่งที่ใช้ได้ทั้งหมด"
 
-#: ../tools/vino-passwd.c:213
+#: ../tools/vino-passwd.c:226
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "VINO รุ่น %s\n"
 
-#: ../tools/vino-passwd.c:222
+#: ../tools/vino-passwd.c:238
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "ข้อผิดพลาด: คุณไม่มีสิทธิ์เปลี่ยนรหัสผ่าน Vino\n"
+
+#~ msgid "Out of memory handling '%s' message"
+#~ msgstr "หน่วยความจำหมดขณะจัดการข้อความ '%s'"
+
+#~ msgid "Out of memory registering object path '%s'"
+#~ msgstr "หน่วยความจำหมดขณะลงทะเบียนพาธของออบเจ็กต์ '%s'"
+
+#~ msgid "Failed to acquire D-Bus name '%s'\n"
+#~ msgstr "ไม่สามารถขอใช้ชื่อ D-Bus '%s' ได้\n"
 
 #~ msgid "Set your remote desktop access preferences"
 #~ msgstr "ปรับแต่งการเข้าถึงพื้นโต๊ะของคุณจากระยะไกล"
