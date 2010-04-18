@@ -1,16 +1,16 @@
 # Italian translation of vino.
-# Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
+# Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
 # This file is distributed under the same license as the vino package.
 # Alessio Frusciante <algol@firenze.linux.it>, 2004, 2005, 2006.
 # Milo Casagrande <milo@ubuntu.com>, 2007, 2008, 2009.
-# Luca Ferretti <elle.uca@infinito.it>, 2004, 2008, 2009.
+# Luca Ferretti <lferrett@gnome.org>, 2004, 2008, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&component=Preferences Dialog\n"
 "POT-Creation-Date: 2009-08-12 18:01+0000\n"
-"PO-Revision-Date: 2009-09-18 15:35+0200\n"
-"Last-Translator: Luca Ferretti <elle.uca@libero.it>\n"
+"PO-Revision-Date: 2010-04-18 11:40+0200\n"
+"Last-Translator: Luca Ferretti <lferrett@gnome.org>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -234,7 +234,7 @@ msgstr "Il server di «Desktop remoto» è già in esecuzione; uscita...\n"
 
 #: ../server/vino-main.c:67
 msgid "- VNC Server for GNOME"
-msgstr "- Server VCN per GNOME"
+msgstr "- Server VNC per GNOME"
 
 #: ../server/vino-main.c:75
 #| msgid ""
@@ -588,13 +588,13 @@ msgstr ""
 #: ../server/vino-status-icon.c:268
 msgid "translator-credits"
 msgstr ""
+"Luca Ferretti <lferrett@gnome.org>\n"
 "Milo Casagrande <milo@ubuntu.com>\n"
-"Alessio Frusciante <algol@firenze.linux.it>\n"
-"Luca Ferretti <elle.uca@libero.it>"
+"Alessio Frusciante <algol@firenze.linux.it>"
 
 #: ../server/vino-status-icon.c:274
 msgid "Share your desktop with other users"
-msgstr "Condividi il tuo desktop con altri utenti "
+msgstr "Condivide il proprio desktop con altri utenti"
 
 #: ../server/vino-status-icon.c:339 ../server/vino-status-tube-icon.c:223
 #, c-format
@@ -688,11 +688,12 @@ msgstr "Informazioni sulla condivisione desktop"
 msgid "'%s' rejected the desktop sharing invitation."
 msgstr "«%s» ha rifiutato l'invito alla condivisione del desktop."
 
+# risolto problema maschio/femmina
 #: ../server/vino-tube-server.c:321
 #, c-format
 #| msgid "Disconnect"
 msgid "'%s' disconnected"
-msgstr "«%s» disconnesso"
+msgstr "«%s» ha chiuso la connessione"
 
 #: ../server/vino-tube-server.c:348
 #, c-format
@@ -703,7 +704,7 @@ msgstr "«%s» sta controllando questo desktop da remoto."
 #: ../server/vino-tube-server.c:357
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
-msgstr "In attesa di «%s» per connettersi allo schermo."
+msgstr "In attesa che «%s» si connetta allo schermo."
 
 #: ../server/vino-util.c:115
 msgid "An error has occurred:"
@@ -791,6 +792,4 @@ msgstr "Vino versione %s\n"
 #: ../tools/vino-passwd.c:238
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
-msgstr ""
-"Errore: non si dispone dei permessi sufficienti per modificare la password "
-"di Vino.\n"
+msgstr "Errore: permessi non sufficienti per modificare la password di Vino.\n"
