@@ -4,14 +4,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
-"Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2009-11-06 19:17+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&component=Preferences Dialog\n"
+"POT-Creation-Date: 2010-04-26 02:39+0000\n"
+"PO-Revision-Date: 2010-05-12 18:38 -0400\n"
 "Last-Translator: Thomas Thurman <tthurman@gnome.org>\n"
-"Language-Team: Shavian <ubuntu-l10n-en-shaw@lists.launchpad.net>\n"
+"Language-Team: Shavian <ubuntu-l10n-en-shaw@launchpad.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n!=1\n"
+"Plural-Forms: nplurals=2; plural=n!=1;\n"
 
 #. Open Link
 #: ../capplet/sexy-url-label.c:183
@@ -23,8 +24,8 @@ msgstr "_𐑕𐑧𐑯𐑛 𐑩𐑛𐑮𐑧𐑕 𐑚𐑲 𐑰𐑥𐑱𐑤"
 msgid "_Copy address to clipboard"
 msgstr "_𐑒𐑪𐑐𐑦 𐑩𐑛𐑮𐑧𐑕 𐑑 𐑒𐑤𐑦𐑐𐑚𐑹𐑛"
 
-#: ../capplet/vino-message-box.c:103
 #, c-format
+#: ../capplet/vino-message-box.c:103
 msgid "There was an error showing the URL \"%s\""
 msgstr "𐑞𐑺 𐑢𐑪𐑟 𐑩𐑯 𐑻𐑼 𐑖𐑴𐑦𐑙 𐑞 URL \"%s\""
 
@@ -32,14 +33,10 @@ msgstr "𐑞𐑺 𐑢𐑪𐑟 𐑩𐑯 𐑻𐑼 𐑖𐑴𐑦𐑙 𐑞 URL \"%s\"
 msgid "Checking the connectivity of this machine..."
 msgstr "𐑗𐑧𐑒𐑦𐑙 𐑞 𐑒𐑩𐑯𐑧𐑒𐑑𐑦𐑝𐑦𐑑𐑰 𐑝 𐑞𐑦𐑕 𐑥𐑩𐑖𐑰𐑯..."
 
-#: ../capplet/vino-preferences.c:804
 #, c-format
-msgid ""
-"There was an error displaying help:\n"
-"%s"
-msgstr ""
-"𐑞𐑺 𐑢𐑪𐑟 𐑩𐑯 𐑻𐑼 𐑛𐑦𐑕𐑐𐑤𐑱𐑦𐑙 𐑣𐑧𐑤𐑐:\n"
-"%s"
+#: ../capplet/vino-preferences.c:804
+msgid "There was an error displaying help:\n%s"
+msgstr "𐑞𐑺 𐑢𐑪𐑟 𐑩𐑯 𐑻𐑼 𐑛𐑦𐑕𐑐𐑤𐑱𐑦𐑙 𐑣𐑧𐑤𐑐:\n%s"
 
 #: ../capplet/vino-preferences.c:834
 msgid "Your desktop is only reachable over the local network."
@@ -49,8 +46,8 @@ msgstr "𐑿𐑼 𐑛𐑧𐑕𐑒𐑑𐑪𐑐 𐑦𐑟 𐑴𐑯𐑤𐑦 𐑮𐑰
 msgid " or "
 msgstr " 𐑹 "
 
-#: ../capplet/vino-preferences.c:859 ../capplet/vino-preferences.c:933
 #, c-format
+#: ../capplet/vino-preferences.c:859 ../capplet/vino-preferences.c:933
 msgid "Others can access your computer using the address %s."
 msgstr "𐑳𐑞𐑼𐑟 𐑒𐑨𐑯 𐑨𐑒𐑕𐑧𐑕 𐑿𐑼 𐑒𐑩𐑥𐑐𐑿𐑑𐑼 𐑿𐑟𐑦𐑙 𐑞 𐑩𐑛𐑮𐑧𐑕 %s."
 
@@ -58,9 +55,9 @@ msgstr "𐑳𐑞𐑼𐑟 𐑒𐑨𐑯 𐑨𐑒𐑕𐑧𐑕 𐑿𐑼 𐑒𐑩𐑥
 msgid "Nobody can access your desktop."
 msgstr "𐑯𐑴𐑚𐑪𐑛𐑦 𐑒𐑨𐑯 𐑨𐑒𐑕𐑧𐑕 𐑿𐑼 𐑛𐑧𐑕𐑒𐑑𐑪𐑐."
 
+#, c-format
 #: ../capplet/vino-preferences.c:1130 ../server/vino-server.c:164
 #: ../server/vino-server.c:194
-#, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "𐑓𐑱𐑤𐑛 𐑑 𐑴𐑐𐑩𐑯 𐑒𐑩𐑯𐑧𐑒𐑖𐑩𐑯 𐑑 𐑚𐑳𐑕: %s\n"
 
@@ -72,6 +69,11 @@ msgstr "𐑗𐑵𐑟 𐑣𐑬 𐑳𐑞𐑼 𐑿𐑟𐑼𐑟 𐑒𐑨𐑯 𐑮�
 #: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
 msgstr "𐑮𐑦𐑥𐑴𐑑 𐑛𐑧𐑕𐑒𐑑𐑪𐑐"
+
+#, fuzzy
+#: ../capplet/vino-preferences.ui.h:1
+msgid "Al_ways display an icon"
+msgstr "Al_ways 𐑛𐑩𐑕𐑐𐑤𐑱 𐑩𐑯 𐑲𐑒𐑪𐑯"
 
 #: ../capplet/vino-preferences.ui.h:2
 msgid "Allow other users to _view your desktop"
@@ -105,6 +107,11 @@ msgstr "𐑖𐑺𐑦𐑙"
 msgid "Some of these preferences are locked down"
 msgstr "𐑕𐑳𐑥 𐑝 𐑞𐑰𐑟 𐑐𐑮𐑧𐑓𐑼𐑩𐑯𐑕𐑩𐑟 𐑸 𐑤𐑪𐑒𐑑 𐑛𐑬𐑯"
 
+#, fuzzy
+#: ../capplet/vino-preferences.ui.h:10
+msgid "The router must have the UPnP feature enabled"
+msgstr "𐑞 𐑮𐑵𐑑𐑼 𐑥𐑳𐑕𐑑 𐑣𐑨𐑝 𐑞 UPnP 𐑓𐑰𐑗𐑼 𐑦𐑯𐑱𐑚𐑩𐑤𐑛"
+
 #: ../capplet/vino-preferences.ui.h:11
 msgid "You will be queried to allow or to refuse every incoming connection"
 msgstr "𐑿 𐑢𐑦𐑤 𐑚𐑰 𐑒𐑢𐑽𐑦𐑛 𐑑 𐑩𐑤𐑬 𐑹 𐑑 𐑮𐑧𐑓𐑿𐑕 𐑧𐑝𐑮𐑦 𐑦𐑯𐑒𐑳𐑥𐑦𐑙 𐑒𐑩𐑯𐑧𐑒𐑖𐑩𐑯"
@@ -137,30 +144,42 @@ msgstr "_𐑮𐑦𐑒𐑢𐑲𐑼 𐑞 𐑿𐑟𐑼 𐑑 𐑧𐑯𐑑𐑼 𐑞�
 msgid "_You must confirm each access to this machine"
 msgstr "_𐑿 𐑥𐑳𐑕𐑑 𐑒𐑪𐑯𐑓𐑻𐑥 𐑰𐑗 𐑨𐑒𐑕𐑧𐑕 𐑑 𐑞𐑦𐑕 𐑥𐑩𐑖𐑰𐑯"
 
-#: ../server/smclient/eggdesktopfile.c:165
 #, c-format
+#: ../server/smclient/eggdesktopfile.c:165
 msgid "File is not a valid .desktop file"
 msgstr "𐑓𐑲𐑤 𐑦𐑟 𐑯𐑪𐑑 𐑩 𐑝𐑨𐑤𐑦𐑛 .desktop 𐑓𐑲𐑤"
 
-#: ../server/smclient/eggdesktopfile.c:188
 #, c-format
+#: ../server/smclient/eggdesktopfile.c:188
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "𐑩𐑯𐑮𐑧𐑒𐑩𐑜𐑯𐑲𐑟𐑛 𐑛𐑧𐑕𐑒𐑑𐑪𐑐 𐑓𐑲𐑤 𐑝𐑻𐑠𐑩𐑯 '%s'"
 
-#: ../server/smclient/eggdesktopfile.c:958
 #, c-format
+#: ../server/smclient/eggdesktopfile.c:958
 msgid "Starting %s"
 msgstr "𐑕𐑑𐑸𐑑𐑦𐑙 %s"
 
-#: ../server/smclient/eggdesktopfile.c:1100
 #, c-format
+#: ../server/smclient/eggdesktopfile.c:1100
 msgid "Application does not accept documents on command line"
 msgstr "𐑩𐑐𐑤𐑦𐑒𐑱𐑕𐑩𐑯 𐑛𐑳𐑟 𐑯𐑪𐑑 𐑨𐑒𐑕𐑧𐑐𐑑 𐑛𐑪𐑒𐑿𐑥𐑩𐑯𐑑𐑕 𐑪𐑯 𐑒𐑩𐑥𐑭𐑯𐑛 𐑤𐑲𐑯"
 
-#: ../server/smclient/eggdesktopfile.c:1168
 #, c-format
+#: ../server/smclient/eggdesktopfile.c:1168
 msgid "Unrecognized launch option: %d"
 msgstr "𐑩𐑯𐑮𐑧𐑒𐑩𐑜𐑯𐑲𐑟𐑛 𐑤𐑷𐑯𐑗 𐑪𐑐𐑖𐑩𐑯: %d"
+
+#, c-format
+#, fuzzy
+#: ../server/smclient/eggdesktopfile.c:1373
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr "𐑒𐑭𐑯𐑑 𐑐𐑭𐑕 𐑛𐑪𐑒𐑿𐑥𐑩𐑯𐑑 URIs 𐑑 𐑩 '𐑑𐑲𐑐=𐑤𐑦𐑙𐑒' 𐑛𐑧𐑕𐑒𐑑𐑪𐑐 𐑧𐑯𐑑𐑮𐑦"
+
+#, c-format
+#, fuzzy
+#: ../server/smclient/eggdesktopfile.c:1392
+msgid "Not a launchable item"
+msgstr "𐑯𐑪𐑑 𐑩 launchable 𐑲𐑑𐑩𐑥"
 
 #: ../server/smclient/eggsmclient.c:225
 msgid "Disable connection to session manager"
@@ -194,22 +213,52 @@ msgstr "𐑖𐑴 𐑕𐑧𐑖𐑩𐑯 𐑥𐑨𐑯𐑩𐑡𐑥𐑩𐑯𐑑 𐑪�
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "𐑮𐑦𐑥𐑴𐑑 𐑛𐑧𐑕𐑒𐑑𐑪𐑐 𐑕𐑻𐑝𐑼 𐑷𐑤𐑮𐑧𐑛𐑦 𐑮𐑳𐑯𐑦𐑙; 𐑧𐑜𐑟𐑦𐑑𐑦𐑙 ...\n"
 
+#, fuzzy
+#: ../server/vino-main.c:67
+msgid "- VNC Server for GNOME"
+msgstr "- VNC 𐑕𐑻𐑝𐑼 𐑓𐑹 𐑯𐑴𐑥"
+
+#, fuzzy
+#: ../server/vino-main.c:75
+msgid ""
+"Run 'vino-server --help' to see a full list of available command line options"
+msgstr "𐑮𐑳𐑯 'vino-𐑕𐑻𐑝𐑼 --𐑣𐑧𐑤𐑐' 𐑑 𐑕𐑰 𐑩 𐑓𐑫𐑤 𐑤𐑦𐑕𐑑 𐑝 𐑩𐑝𐑱𐑤𐑩𐑚𐑩𐑤 𐑒𐑩𐑥𐑭𐑯𐑛 𐑤𐑲𐑯 𐑪𐑐𐑖𐑩𐑯𐑟"
+
 #: ../server/vino-main.c:98
 msgid "GNOME Remote Desktop"
 msgstr "·𐑜𐑯𐑴𐑥 𐑮𐑦𐑥𐑴𐑑 𐑛𐑧𐑕𐑒𐑑𐑪𐑐"
+
+#, fuzzy
+#: ../server/vino-main.c:108
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"𐑿𐑼 XServer 𐑛𐑳𐑟 𐑯𐑪𐑑 𐑕𐑩𐑐𐑹𐑑 𐑞 XTest 𐑩𐑒𐑕𐑑𐑧𐑯𐑖𐑩𐑯 - 𐑮𐑦𐑥𐑴𐑑 𐑛𐑧𐑕𐑒𐑑𐑪𐑐 𐑨𐑒𐑕𐑧𐑕 𐑢𐑦𐑤 𐑚𐑰 "
+"𐑝𐑿-𐑴𐑯𐑤𐑦\n"
+
+#.
+#. * Translators: translate "vino-mdns:showusername" to
+#. * "1" if "%s's remote desktop" doesn't make sense in
+#. * your language.
+#.
+#, fuzzy
+#: ../server/vino-mdns.c:62
+msgid "vino-mdns:showusername"
+msgstr "vino-mdns:showusername"
 
 #.
 #. * Translators: this string is used ONLY if you
 #. * translated "vino-mdns:showusername" to anything
 #. * other than "1"
 #.
-#: ../server/vino-mdns.c:74
 #, c-format
+#: ../server/vino-mdns.c:74
 msgid "%s's remote desktop on %s"
 msgstr "%s'𐑕 𐑮𐑦𐑥𐑴𐑑 𐑛𐑧𐑕𐑒𐑑𐑪𐑐 𐑪𐑯 %s"
 
-#: ../server/vino-prefs.c:607
 #, c-format
+#: ../server/vino-prefs.c:607
 msgid "Received signal %d, exiting...\n"
 msgstr "𐑮𐑦𐑕𐑰𐑝𐑛 𐑕𐑦𐑜𐑯𐑩𐑤 %d, 𐑧𐑜𐑟𐑦𐑑𐑦𐑙...\n"
 
@@ -221,8 +270,8 @@ msgstr "𐑕𐑒𐑮𐑰𐑯"
 msgid "The screen on which to display the prompt"
 msgstr "𐑞 𐑕𐑒𐑮𐑰𐑯 𐑪𐑯 𐑢𐑦𐑗 𐑑 𐑛𐑦𐑕𐑐𐑤𐑱 𐑞 𐑐𐑮𐑪𐑥𐑐𐑑"
 
-#: ../server/vino-prompt.c:345
 #, c-format
+#: ../server/vino-prompt.c:345
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
@@ -230,8 +279,7 @@ msgstr "𐑩 𐑿𐑟𐑼 𐑪𐑯 𐑞 𐑒𐑩𐑥𐑐𐑿𐑑𐑼 '%s' 𐑦�
 
 #: ../server/vino-prompt.ui.h:1
 msgid ""
-"A user on another computer is trying to remotely view or control your "
-"desktop."
+"A user on another computer is trying to remotely view or control your desktop."
 msgstr "𐑩 𐑿𐑟𐑼 𐑪𐑯 𐑩𐑯𐑳𐑞𐑼 𐑒𐑩𐑥𐑐𐑿𐑑𐑼 𐑦𐑟 𐑑𐑮𐑲𐑦𐑙 𐑑 𐑮𐑦𐑥𐑴𐑑𐑤𐑦 𐑝𐑿 𐑹 𐑒𐑩𐑯𐑑𐑮𐑴𐑤 𐑿𐑼 𐑛𐑧𐑕𐑒𐑑𐑪𐑐."
 
 #: ../server/vino-prompt.ui.h:2
@@ -274,11 +322,31 @@ msgstr "𐑰𐑥𐑱𐑤 𐑩𐑛𐑮𐑧𐑕 𐑑 𐑢𐑦𐑗 𐑞 𐑮𐑦�
 msgid "Enable remote desktop access"
 msgstr "𐑦𐑯𐑱𐑚𐑩𐑤 𐑮𐑦𐑥𐑴𐑑 𐑛𐑧𐑕𐑒𐑑𐑪𐑐 𐑨𐑒𐑕𐑧𐑕"
 
+#, fuzzy
+#: ../server/vino-server.schemas.in.h:5
+msgid ""
+"If not set, the server will listen on all network interfaces. Set this if you "
+"want that accept connections only from some specific network interface. eg: "
+"eth0, wifi0, lo, ..."
+msgstr ""
+"𐑦𐑓 𐑯𐑪𐑑 𐑕𐑧𐑑, 𐑞 𐑕𐑻𐑝𐑼 𐑢𐑦𐑤 𐑤𐑦𐑕𐑩𐑯 𐑪𐑯 𐑷𐑤 𐑯𐑧𐑑𐑢𐑻𐑒 𐑦𐑯𐑑𐑼𐑓𐑱𐑕𐑩𐑟. 𐑕𐑧𐑑 𐑞𐑦𐑕 𐑦𐑓 𐑿 𐑢𐑪𐑯𐑑 𐑞𐑨𐑑 "
+"𐑨𐑒𐑕𐑧𐑐𐑑 𐑒𐑩𐑯𐑧𐑒𐑖𐑩𐑯𐑟 𐑴𐑯𐑤𐑦 𐑓𐑮𐑪𐑥 𐑕𐑳𐑥 𐑕𐑐𐑩𐑕𐑦𐑓𐑦𐑒 𐑯𐑧𐑑𐑢𐑻𐑒 𐑦𐑯𐑑𐑼𐑓𐑱𐑕. eg: eth0, wifi0, 𐑤𐑴, "
+"..."
+
+#, fuzzy
+#: ../server/vino-server.schemas.in.h:6
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+"𐑦𐑓 𐑑𐑮𐑵, 𐑩𐑤𐑬𐑟 𐑮𐑦𐑥𐑴𐑑 𐑨𐑒𐑕𐑧𐑕 𐑑 𐑞 𐑛𐑧𐑕𐑒𐑑𐑪𐑐 𐑝𐑲𐑩 𐑞 RFB 𐑐𐑮𐑴𐑑𐑩𐑒𐑪𐑤. 𐑿𐑟𐑼𐑟 𐑪𐑯 𐑮𐑦𐑥𐑴𐑑 𐑥𐑩𐑖𐑰𐑯𐑟 "
+"𐑥𐑱 𐑞𐑧𐑯 𐑒𐑩𐑯𐑧𐑒𐑑 𐑑 𐑞 𐑛𐑧𐑕𐑒𐑑𐑪𐑐 𐑿𐑟𐑦𐑙 𐑩 vncviewer."
+
 #: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
-"user on the host machine approves the connection. Recommended especially "
-"when access is not password protected."
+"user on the host machine approves the connection. Recommended especially when "
+"access is not password protected."
 msgstr ""
 "𐑦𐑓 𐑑𐑮𐑵, 𐑮𐑦𐑥𐑴𐑑 𐑿𐑟𐑼𐑟 𐑨𐑒𐑕𐑧𐑕𐑦𐑙 𐑞 𐑛𐑧𐑕𐑒𐑑𐑪𐑐 𐑸 𐑯𐑪𐑑 𐑩𐑤𐑬𐑛 𐑨𐑒𐑕𐑧𐑕 𐑳𐑯𐑑𐑦𐑤 𐑞 𐑿𐑟𐑼 𐑪𐑯 𐑞 𐑣𐑴𐑕𐑑 "
 "𐑥𐑩𐑖𐑰𐑯 𐑩𐑐𐑮𐑵𐑝𐑟 𐑞 𐑒𐑩𐑯𐑧𐑒𐑖𐑩𐑯. 𐑮𐑧𐑒𐑩𐑥𐑧𐑯𐑛𐑩𐑛 𐑦𐑕𐑐𐑧𐑖𐑩𐑤𐑦 𐑢𐑧𐑯 𐑨𐑒𐑕𐑧𐑕 𐑦𐑟 𐑯𐑪𐑑 𐑐𐑭𐑕𐑢𐑼𐑛 "
@@ -299,11 +367,12 @@ msgid ""
 "encryption unless the intervening network is trusted."
 msgstr ""
 "𐑦𐑓 𐑑𐑮𐑵, 𐑮𐑦𐑥𐑴𐑑 𐑿𐑟𐑼𐑟 𐑨𐑒𐑕𐑧𐑕𐑦𐑙 𐑞 𐑛𐑧𐑕𐑒𐑑𐑪𐑐 𐑸 𐑮𐑦𐑒𐑢𐑲𐑼𐑛 𐑑 𐑕𐑩𐑐𐑹𐑑 𐑦𐑯𐑒𐑮𐑦𐑐𐑖𐑩𐑯. 𐑦𐑑 𐑦𐑟 𐑣𐑲𐑤𐑦 "
-"𐑮𐑧𐑒𐑩𐑥𐑧𐑯𐑛𐑩𐑛 𐑞𐑨𐑑 𐑿 𐑿𐑟 𐑩 𐑒𐑤𐑲𐑩𐑯𐑑 𐑢𐑦𐑗 𐑕𐑩𐑐𐑹𐑑𐑕 𐑦𐑯𐑒𐑮𐑦𐑐𐑖𐑩𐑯 𐑳𐑯𐑤𐑧𐑕 𐑞 𐑦𐑯𐑑𐑻𐑝𐑰𐑯𐑦𐑙 𐑯𐑧𐑑𐑢𐑻𐑒 "
-"𐑦𐑟 𐑑𐑮𐑳𐑕𐑑𐑩𐑛."
+"𐑮𐑧𐑒𐑩𐑥𐑧𐑯𐑛𐑩𐑛 𐑞𐑨𐑑 𐑿 𐑿𐑟 𐑩 𐑒𐑤𐑲𐑩𐑯𐑑 𐑢𐑦𐑗 𐑕𐑩𐑐𐑹𐑑𐑕 𐑦𐑯𐑒𐑮𐑦𐑐𐑖𐑩𐑯 𐑳𐑯𐑤𐑧𐑕 𐑞 𐑦𐑯𐑑𐑻𐑝𐑰𐑯𐑦𐑙 𐑯𐑧𐑑𐑢𐑻𐑒 𐑦𐑟 "
+"𐑑𐑮𐑳𐑕𐑑𐑩𐑛."
 
 #: ../server/vino-server.schemas.in.h:10
-msgid "If true, screen will be locked after the last remote client disconnect."
+msgid ""
+"If true, screen will be locked after the last remote client disconnect."
 msgstr "𐑦𐑓 𐑑𐑮𐑵, 𐑕𐑒𐑮𐑰𐑯 𐑢𐑦𐑤 𐑚𐑰 𐑤𐑪𐑒𐑑 𐑭𐑓𐑑𐑼 𐑞 𐑤𐑭𐑕𐑑 𐑮𐑦𐑥𐑴𐑑 𐑒𐑤𐑲𐑩𐑯𐑑 𐑛𐑦𐑕𐑒𐑩𐑯𐑧𐑒𐑑."
 
 #: ../server/vino-server.schemas.in.h:11
@@ -311,12 +380,47 @@ msgid ""
 "If true, the server will listen to another port, instead of the default "
 "(5900). The port must be specified in the 'alternative_port' key."
 msgstr ""
-"𐑦𐑓 𐑑𐑮𐑵, 𐑞 𐑕𐑻𐑝𐑼 𐑢𐑦𐑤 𐑤𐑦𐑕𐑩𐑯 𐑑 𐑩𐑯𐑳𐑞𐑼 𐑐𐑹𐑑, 𐑦𐑯𐑕𐑑𐑧𐑛 𐑝 𐑞 𐑛𐑦𐑓𐑷𐑤𐑑 (5900). 𐑞 𐑐𐑹𐑑 𐑥𐑳𐑕𐑑 "
-"𐑚𐑰 𐑕𐑐𐑧𐑕𐑦𐑓𐑲𐑛 𐑦𐑯 𐑞 'alternative_port' 𐑒𐑰."
+"𐑦𐑓 𐑑𐑮𐑵, 𐑞 𐑕𐑻𐑝𐑼 𐑢𐑦𐑤 𐑤𐑦𐑕𐑩𐑯 𐑑 𐑩𐑯𐑳𐑞𐑼 𐑐𐑹𐑑, 𐑦𐑯𐑕𐑑𐑧𐑛 𐑝 𐑞 𐑛𐑦𐑓𐑷𐑤𐑑 (5900). 𐑞 𐑐𐑹𐑑 𐑥𐑳𐑕𐑑 𐑚𐑰 "
+"𐑕𐑐𐑧𐑕𐑦𐑓𐑲𐑛 𐑦𐑯 𐑞 'alternative_port' 𐑒𐑰."
+
+#, fuzzy
+#: ../server/vino-server.schemas.in.h:12
+msgid ""
+"If true, we will not use the XDamage extension of X.org. This extension does "
+"not work properly on some video drivers when using 3D effects. Disabling it "
+"will make vino work on these environments with a slower rendering as side "
+"effect."
+msgstr ""
+"𐑦𐑓 𐑑𐑮𐑵, 𐑢𐑰 𐑢𐑦𐑤 𐑯𐑪𐑑 𐑿𐑟 𐑞 XDamage 𐑩𐑒𐑕𐑑𐑧𐑯𐑖𐑩𐑯 𐑝 𐑧𐑒𐑕.𐑹𐑜. 𐑞𐑦𐑕 𐑩𐑒𐑕𐑑𐑧𐑯𐑖𐑩𐑯 𐑛𐑳𐑟 𐑯𐑪𐑑 𐑢𐑻𐑒 "
+"𐑐𐑮𐑪𐑐𐑼𐑤𐑦 𐑪𐑯 𐑕𐑳𐑥 𐑝𐑦𐑛𐑦𐑴 𐑛𐑮𐑲𐑝𐑻𐑟 𐑢𐑧𐑯 𐑿𐑟𐑦𐑙 3D 𐑦𐑓𐑧𐑒𐑑𐑕. 𐑛𐑦𐑕𐑱𐑚𐑤𐑦𐑙 𐑦𐑑 𐑢𐑦𐑤 𐑥𐑱𐑒 vino 𐑢𐑻𐑒 "
+"𐑪𐑯 𐑞𐑰𐑟 𐑦𐑯𐑝𐑲𐑮𐑩𐑯𐑥𐑩𐑯𐑑𐑕 𐑢𐑦𐑞 𐑩 𐑕𐑤𐑴𐑼 𐑮𐑧𐑯𐑛𐑻𐑦𐑙 𐑨𐑟 𐑕𐑲𐑛 𐑦𐑓𐑧𐑒𐑑."
+
+#, fuzzy
+#: ../server/vino-server.schemas.in.h:13
+msgid ""
+"If true, we will use UPNP protocol to automatically forward the port used by "
+"vino in the router."
+msgstr ""
+"𐑦𐑓 𐑑𐑮𐑵, 𐑢𐑰 𐑢𐑦𐑤 𐑿𐑕 UPNP 𐑐𐑮𐑴𐑑𐑩𐑒𐑪𐑤 𐑑 𐑷𐑑𐑩𐑥𐑨𐑑𐑦𐑒𐑤𐑦 𐑓𐑹𐑢𐑼𐑛 𐑞 𐑐𐑹𐑑 𐑿𐑕𐑑 𐑚𐑲 vino 𐑦𐑯 𐑞 "
+"𐑮𐑵𐑑𐑼."
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Listen an alternative port"
 msgstr "𐑤𐑦𐑕𐑩𐑯 𐑩𐑯 𐑷𐑤𐑑𐑻𐑯𐑩𐑑𐑦𐑝 𐑐𐑹𐑑"
+
+#, fuzzy
+#: ../server/vino-server.schemas.in.h:15
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc_password key) before connecting and \"none\" which allows any remote user "
+"to connect."
+msgstr ""
+"𐑤𐑦𐑕𐑑𐑕 𐑞 𐑷𐑔𐑧𐑯𐑑𐑦𐑒𐑱𐑖𐑩𐑯 𐑥𐑧𐑔𐑩𐑛𐑟 𐑢𐑦𐑞 𐑢𐑦𐑗 𐑮𐑦𐑥𐑴𐑑 𐑿𐑟𐑼𐑟 𐑥𐑱 𐑨𐑒𐑕𐑧𐑕 𐑞 𐑛𐑧𐑕𐑒𐑑𐑪𐑐. 𐑞𐑺 𐑸 𐑑𐑵 "
+"𐑐𐑪𐑕𐑩𐑚𐑩𐑤 𐑷𐑔𐑧𐑯𐑑𐑦𐑒𐑱𐑖𐑩𐑯 𐑥𐑧𐑔𐑩𐑛𐑟; \"vnc\" 𐑒𐑷𐑟𐑩𐑟 𐑞 𐑮𐑦𐑥𐑴𐑑 𐑿𐑟𐑼 𐑑 𐑚𐑰 𐑐𐑮𐑪𐑥𐑐𐑑𐑩𐑛 𐑓𐑹 𐑩 "
+"𐑐𐑭𐑕𐑢𐑼𐑛 (𐑞 𐑐𐑭𐑕𐑢𐑼𐑛 𐑦𐑟 𐑕𐑐𐑧𐑕𐑦𐑓𐑲𐑛 𐑚𐑲 𐑞 vnc_password 𐑒𐑰) 𐑚𐑦𐑓𐑹 𐑒𐑩𐑯𐑧𐑒𐑑𐑦𐑙 𐑯 \"𐑯𐑳𐑯\" "
+"𐑢𐑦𐑗 𐑩𐑤𐑬𐑟 𐑧𐑯𐑦 𐑮𐑦𐑥𐑴𐑑 𐑿𐑟𐑼 𐑑 𐑒𐑩𐑯𐑧𐑒𐑑."
 
 #: ../server/vino-server.schemas.in.h:16
 msgid "Lock the screen when last user disconnect"
@@ -330,6 +434,11 @@ msgstr "𐑯𐑧𐑑𐑢𐑻𐑒 𐑦𐑯𐑑𐑼𐑓𐑱𐑕 𐑓𐑹 𐑤𐑦�
 msgid "Only allow remote users to view the desktop"
 msgstr "𐑴𐑯𐑤𐑦 𐑩𐑤𐑬 𐑮𐑦𐑥𐑴𐑑 𐑿𐑟𐑼𐑟 𐑑 𐑝𐑿 𐑞 𐑛𐑧𐑕𐑒𐑑𐑪𐑐"
 
+#, fuzzy
+#: ../server/vino-server.schemas.in.h:19
+msgid "Password required for \"vnc\" authentication"
+msgstr "𐑐𐑭𐑕𐑢𐑼𐑛 𐑮𐑦𐑒𐑢𐑲𐑼𐑛 𐑓𐑹 \"vnc\" 𐑷𐑔𐑧𐑯𐑑𐑦𐑒𐑱𐑖𐑩𐑯"
+
 #: ../server/vino-server.schemas.in.h:20
 msgid "Prompt the user before completing a connection"
 msgstr "𐑐𐑮𐑪𐑥𐑐𐑑 𐑞 𐑿𐑟𐑼 𐑚𐑦𐑓𐑹 𐑒𐑩𐑥𐑐𐑤𐑰𐑑𐑦𐑙 𐑩 𐑒𐑩𐑯𐑧𐑒𐑖𐑩𐑯"
@@ -338,10 +447,20 @@ msgstr "𐑐𐑮𐑪𐑥𐑐𐑑 𐑞 𐑿𐑟𐑼 𐑚𐑦𐑓𐑹 𐑒𐑩𐑥
 msgid "Require encryption"
 msgstr "𐑮𐑦𐑒𐑢𐑲𐑼 𐑦𐑯𐑒𐑮𐑦𐑐𐑖𐑩𐑯"
 
+#, fuzzy
+#: ../server/vino-server.schemas.in.h:22
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded."
+msgstr ""
+"𐑞 𐑐𐑭𐑕𐑢𐑼𐑛 𐑢𐑦𐑗 𐑞 𐑮𐑦𐑥𐑴𐑑 𐑿𐑟𐑼 𐑢𐑦𐑤 𐑚𐑰 𐑐𐑮𐑪𐑥𐑐𐑑𐑩𐑛 𐑓𐑹 𐑦𐑓 𐑞 \"vnc\" 𐑷𐑔𐑧𐑯𐑑𐑦𐑒𐑱𐑖𐑩𐑯 𐑥𐑧𐑔𐑩𐑛 𐑦𐑟 "
+"𐑿𐑟𐑛. 𐑞 𐑐𐑭𐑕𐑢𐑼𐑛 𐑕𐑐𐑧𐑕𐑦𐑓𐑲𐑛 𐑚𐑲 𐑞 𐑒𐑰 𐑦𐑟 base64 𐑧𐑯𐑒𐑴𐑛𐑩𐑛."
+
 #: ../server/vino-server.schemas.in.h:23
 msgid ""
-"The port which the server will listen to if the 'use_alternative_port' key "
-"is set to true. Valid values are in the range from 5000 to 50000."
+"The port which the server will listen to if the 'use_alternative_port' key is "
+"set to true. Valid values are in the range from 5000 to 50000."
 msgstr ""
 "𐑞 𐑐𐑹𐑑 𐑢𐑦𐑗 𐑞 𐑕𐑻𐑝𐑼 𐑢𐑦𐑤 𐑤𐑦𐑕𐑩𐑯 𐑑 𐑦𐑓 𐑞 'use_alternative_port' 𐑒𐑰 𐑦𐑟 𐑕𐑧𐑑 𐑑 𐑑𐑮𐑵. "
 "𐑝𐑨𐑤𐑦𐑛 𐑝𐑨𐑤𐑿𐑟 𐑸 𐑦𐑯 𐑞 𐑮𐑱𐑯𐑡 𐑓𐑮𐑪𐑥 5000 𐑑 50000."
@@ -363,8 +482,8 @@ msgid ""
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
 msgstr ""
-"𐑞𐑦𐑕 𐑒𐑰 𐑕𐑐𐑧𐑕𐑦𐑓𐑲𐑟 𐑞 𐑧-𐑥𐑱𐑤 𐑩𐑛𐑮𐑧𐑕 𐑑 𐑢𐑦𐑗 𐑞 𐑮𐑦𐑥𐑴𐑑 𐑛𐑧𐑕𐑒𐑑𐑪𐑐 URL 𐑖𐑫𐑛 𐑚𐑰 𐑕𐑧𐑯𐑑 𐑦𐑓 𐑞 "
-"𐑿𐑟𐑼 𐑒𐑤𐑦𐑒𐑕 𐑪𐑯 𐑞 URL 𐑦𐑯 𐑞 𐑮𐑦𐑥𐑴𐑑 𐑛𐑧𐑕𐑒𐑑𐑪𐑐 𐑐𐑮𐑧𐑓𐑼𐑩𐑯𐑕𐑩𐑟 𐑛𐑲𐑩𐑤𐑪𐑜."
+"𐑞𐑦𐑕 𐑒𐑰 𐑕𐑐𐑧𐑕𐑦𐑓𐑲𐑟 𐑞 𐑧-𐑥𐑱𐑤 𐑩𐑛𐑮𐑧𐑕 𐑑 𐑢𐑦𐑗 𐑞 𐑮𐑦𐑥𐑴𐑑 𐑛𐑧𐑕𐑒𐑑𐑪𐑐 URL 𐑖𐑫𐑛 𐑚𐑰 𐑕𐑧𐑯𐑑 𐑦𐑓 𐑞 𐑿𐑟𐑼 "
+"𐑒𐑤𐑦𐑒𐑕 𐑪𐑯 𐑞 URL 𐑦𐑯 𐑞 𐑮𐑦𐑥𐑴𐑑 𐑛𐑧𐑕𐑒𐑑𐑪𐑐 𐑐𐑮𐑧𐑓𐑼𐑩𐑯𐑕𐑩𐑟 𐑛𐑲𐑩𐑤𐑪𐑜."
 
 #: ../server/vino-server.schemas.in.h:26
 msgid "When the status icon should be shown"
@@ -374,12 +493,22 @@ msgstr "𐑢𐑧𐑯 𐑞 𐑕𐑑𐑱𐑑𐑫𐑕 𐑲𐑒𐑪𐑯 𐑖𐑫𐑛
 msgid "When true, disable the background on receive valid session"
 msgstr "𐑢𐑧𐑯 𐑑𐑮𐑵, 𐑛𐑦𐑕𐑱𐑚𐑩𐑤 𐑞 𐑚𐑨𐑒𐑜𐑮𐑬𐑯𐑛 𐑪𐑯 𐑮𐑦𐑕𐑰𐑝 𐑝𐑨𐑤𐑦𐑛 𐑕𐑧𐑖𐑩𐑯"
 
+#, fuzzy
+#: ../server/vino-server.schemas.in.h:28
+msgid "Whether we should disable the XDamage extension of X.org"
+msgstr "𐑢𐑧𐑞𐑼 𐑢𐑰 𐑖𐑫𐑛 𐑛𐑦𐑕𐑱𐑚𐑩𐑤 𐑞 XDamage 𐑩𐑒𐑕𐑑𐑧𐑯𐑖𐑩𐑯 𐑝 𐑧𐑒𐑕.𐑹𐑜"
+
+#, fuzzy
+#: ../server/vino-server.schemas.in.h:29
+msgid "Whether we should use UPNP to forward the port in routers"
+msgstr "𐑢𐑧𐑞𐑼 𐑢𐑰 𐑖𐑫𐑛 𐑿𐑕 UPNP 𐑑 𐑓𐑹𐑢𐑼𐑛 𐑞 𐑐𐑹𐑑 𐑦𐑯 𐑮𐑵𐑑𐑼𐑟"
+
 #: ../server/vino-status-icon.c:102 ../server/vino-status-tube-icon.c:95
 msgid "Desktop sharing is enabled"
 msgstr "𐑛𐑧𐑕𐑒𐑑𐑪𐑐 𐑖𐑺𐑦𐑙 𐑦𐑟 𐑦𐑯𐑱𐑚𐑩𐑤𐑛"
 
-#: ../server/vino-status-icon.c:110
 #, c-format
+#: ../server/vino-status-icon.c:110
 msgid "One person is connected"
 msgid_plural "%d people are connected"
 msgstr[0] "𐑢𐑳𐑯 𐑐𐑻𐑕𐑩𐑯 𐑦𐑟 𐑒𐑩𐑯𐑧𐑒𐑑𐑩𐑛"
@@ -393,6 +522,31 @@ msgstr "𐑻𐑼 𐑛𐑦𐑕𐑐𐑤𐑱𐑦𐑙 𐑐𐑮𐑧𐑓𐑼𐑩𐑯�
 msgid "Error displaying help"
 msgstr "𐑻𐑼 𐑛𐑦𐑕𐑐𐑤𐑱𐑦𐑙 𐑣𐑧𐑤𐑐"
 
+#, fuzzy
+#: ../server/vino-status-icon.c:253
+msgid ""
+"Licensed under the GNU General Public License Version 2\n\nVino is free "
+"software; you can redistribute it and/or\nmodify it under the terms of the "
+"GNU General Public License\nas published by the Free Software Foundation; "
+"either version 2\nof the License, or (at your option) any later "
+"version.\n\nVino is distributed in the hope that it will be useful,\nbut "
+"WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY "
+"or FITNESS FOR A PARTICULAR PURPOSE. See the\nGNU General Public License for "
+"more details.\n\nYou should have received a copy of the GNU General Public "
+"License\nalong with this program; if not, write to the Free "
+"Software\nFoundation, Inc., 51 Franklin Street, Fifth Floor, Boston, "
+"MA\n02110-1301, USA.\n"
+msgstr ""
+"𐑤𐑲𐑕𐑩𐑯𐑕𐑑 𐑳𐑯𐑛𐑼 𐑞 ·𐑜𐑯𐑿 𐑡𐑧𐑯𐑼𐑩𐑤 𐑐𐑳𐑚𐑤𐑦𐑒 𐑤𐑲𐑕𐑩𐑯𐑕 𐑝𐑻𐑠𐑩𐑯 2\n\nVino 𐑦𐑟 𐑓𐑮𐑰 𐑕𐑪𐑓𐑑𐑢𐑺; 𐑿 𐑒𐑨𐑯 "
+"𐑮𐑰𐑛𐑦𐑕𐑑𐑮𐑦𐑚𐑿𐑑 𐑦𐑑 𐑯/𐑹\n𐑥𐑪𐑛𐑦𐑓𐑲 𐑦𐑑 𐑳𐑯𐑛𐑼 𐑞 𐑑𐑻𐑥𐑟 𐑝 𐑞 ·𐑜𐑯𐑿 𐑡𐑧𐑯𐑼𐑩𐑤 𐑐𐑳𐑚𐑤𐑦𐑒 𐑤𐑲𐑕𐑩𐑯𐑕\n𐑨𐑟 "
+"𐑐𐑳𐑚𐑤𐑦𐑖𐑑 𐑚𐑲 𐑞 𐑓𐑮𐑰 𐑕𐑪𐑓𐑑𐑢𐑺 𐑓𐑬𐑯𐑛𐑱𐑖𐑩𐑯; 𐑲𐑞𐑼 𐑝𐑻𐑠𐑩𐑯 2\n𐑝 𐑞 𐑤𐑲𐑕𐑩𐑯𐑕, 𐑹 (𐑨𐑑 𐑿𐑼 𐑪𐑐𐑖𐑩𐑯) "
+"𐑧𐑯𐑦 𐑤𐑱𐑑𐑼 𐑝𐑻𐑠𐑩𐑯.\n\nVino 𐑦𐑟 𐑛𐑦𐑕𐑑𐑮𐑦𐑚𐑿𐑑𐑩𐑛 𐑦𐑯 𐑞 𐑣𐑴𐑐 𐑞𐑨𐑑 𐑦𐑑 𐑢𐑦𐑤 𐑚𐑰 𐑿𐑕𐑓𐑩𐑤,\n𐑚𐑳𐑑 "
+"𐑢𐑦𐑞𐑬𐑑 𐑧𐑯𐑦 𐑢𐑪𐑮𐑩𐑯𐑑𐑰; 𐑢𐑦𐑞𐑬𐑑 𐑰𐑝𐑩𐑯 𐑞 𐑦𐑥𐑐𐑤𐑲𐑛 𐑢𐑪𐑮𐑩𐑯𐑑𐑰 𐑝\nMERCHANTABILITY 𐑹 𐑓𐑦𐑑𐑯𐑩𐑕 𐑓𐑹 "
+"𐑩 𐑐𐑼𐑑𐑦𐑒𐑿𐑤𐑼 𐑐𐑻𐑐𐑩𐑕. 𐑕𐑰 𐑞\n·𐑜𐑯𐑿 𐑡𐑧𐑯𐑼𐑩𐑤 𐑐𐑳𐑚𐑤𐑦𐑒 𐑤𐑲𐑕𐑩𐑯𐑕 𐑓𐑹 𐑥𐑹 𐑛𐑰𐑑𐑱𐑤𐑟.\n\n𐑿 𐑖𐑫𐑛 𐑣𐑨𐑝 "
+"𐑮𐑦𐑕𐑰𐑝𐑛 𐑩 𐑒𐑪𐑐𐑦 𐑝 𐑞 ·𐑜𐑯𐑿 𐑡𐑧𐑯𐑼𐑩𐑤 𐑐𐑳𐑚𐑤𐑦𐑒 𐑤𐑲𐑕𐑩𐑯𐑕\n𐑩𐑤𐑪𐑙 𐑢𐑦𐑞 𐑞𐑦𐑕 𐑐𐑮𐑴𐑜𐑮𐑨𐑥; 𐑦𐑓 𐑯𐑪𐑑, "
+"𐑮𐑲𐑑 𐑑 𐑞 𐑓𐑮𐑰 𐑕𐑪𐑓𐑑𐑢𐑺\n𐑓𐑬𐑯𐑛𐑱𐑖𐑩𐑯, 𐑦𐑙𐑒., 51 𐑓𐑮𐑨𐑙𐑒𐑤𐑦𐑯 𐑕𐑑𐑮𐑰𐑑, 𐑓𐑦𐑓𐑔 𐑓𐑤𐑹, ·𐑚𐑪𐑕𐑑𐑩𐑯, "
+"𐑥𐑶\n02110-1301, 𐑘𐑵𐑧𐑕𐑱.\n"
+
 #. Translators comment: put your own name here to appear in the about dialog.
 #: ../server/vino-status-icon.c:268
 msgid "translator-credits"
@@ -402,13 +556,13 @@ msgstr "·𐑑𐑪𐑥𐑩𐑕 ·𐑔𐑻𐑥𐑩𐑯"
 msgid "Share your desktop with other users"
 msgstr "𐑖𐑺 𐑿𐑼 𐑛𐑧𐑕𐑒𐑑𐑪𐑐 𐑢𐑦𐑞 𐑳𐑞𐑼 𐑿𐑟𐑼𐑟"
 
-#: ../server/vino-status-icon.c:339 ../server/vino-status-tube-icon.c:223
 #, c-format
+#: ../server/vino-status-icon.c:339 ../server/vino-status-tube-icon.c:223
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "𐑸 𐑿 𐑖𐑫𐑼 𐑿 𐑢𐑪𐑯𐑑 𐑑 𐑛𐑦𐑕𐑒𐑩𐑯𐑧𐑒𐑑 '%s'?"
 
-#: ../server/vino-status-icon.c:342
 #, c-format
+#: ../server/vino-status-icon.c:342
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "𐑞 𐑮𐑦𐑥𐑴𐑑 𐑿𐑟𐑼 𐑓𐑮𐑪𐑥 '%s' 𐑢𐑦𐑤 𐑚𐑰 𐑛𐑦𐑕𐑒𐑩𐑯𐑧𐑒𐑑𐑩𐑛. 𐑸 𐑿 𐑖𐑫𐑼?"
 
@@ -434,8 +588,8 @@ msgstr "𐑛𐑦𐑕𐑒𐑩𐑯𐑧𐑒𐑑 𐑷𐑤"
 
 #. Translators: %s is a hostname
 #. Translators: %s is the alias of the telepathy contact
-#: ../server/vino-status-icon.c:427 ../server/vino-status-tube-icon.c:275
 #, c-format
+#: ../server/vino-status-icon.c:427 ../server/vino-status-tube-icon.c:275
 msgid "Disconnect %s"
 msgstr "𐑛𐑦𐑕𐑒𐑩𐑯𐑧𐑒𐑑 %s"
 
@@ -447,13 +601,19 @@ msgstr "_𐑣𐑧𐑤𐑐"
 msgid "_About"
 msgstr "_𐑩𐑚𐑬𐑑"
 
+#, c-format
+#, fuzzy
+#: ../server/vino-status-icon.c:589 ../server/vino-status-tube-icon.c:391
+msgid "Error initializing libnotify\n"
+msgstr "𐑻𐑼 initializing libnotify\n"
+
 #. Translators: %s is a hostname
 #: ../server/vino-status-icon.c:610
 msgid "Another user is viewing your desktop"
 msgstr "𐑩𐑯𐑳𐑞𐑼 𐑿𐑟𐑼 𐑦𐑟 𐑝𐑿𐑦𐑙 𐑿𐑼 𐑛𐑧𐑕𐑒𐑑𐑪𐑐"
 
-#: ../server/vino-status-icon.c:612
 #, c-format
+#: ../server/vino-status-icon.c:612
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "𐑩 𐑿𐑟𐑼 𐑪𐑯 𐑞 𐑒𐑩𐑥𐑐𐑿𐑑𐑼 '%s' 𐑦𐑟 𐑮𐑦𐑥𐑴𐑑𐑤𐑦 𐑝𐑿𐑦𐑙 𐑿𐑼 𐑛𐑧𐑕𐑒𐑑𐑪𐑐."
 
@@ -462,18 +622,18 @@ msgstr "𐑩 𐑿𐑟𐑼 𐑪𐑯 𐑞 𐑒𐑩𐑥𐑐𐑿𐑑𐑼 '%s' 𐑦�
 msgid "Another user is controlling your desktop"
 msgstr "𐑩𐑯𐑳𐑞𐑼 𐑿𐑟𐑼 𐑦𐑟 𐑒𐑩𐑯𐑑𐑮𐑴𐑤𐑦𐑙 𐑿𐑼 𐑛𐑧𐑕𐑒𐑑𐑪𐑐"
 
-#: ../server/vino-status-icon.c:620
 #, c-format
+#: ../server/vino-status-icon.c:620
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "𐑩 𐑿𐑟𐑼 𐑪𐑯 𐑞 𐑒𐑩𐑥𐑐𐑿𐑑𐑼 '%s' 𐑦𐑟 𐑮𐑦𐑥𐑴𐑑𐑤𐑦 𐑒𐑩𐑯𐑑𐑮𐑴𐑤𐑦𐑙 𐑿𐑼 𐑛𐑧𐑕𐑒𐑑𐑪𐑐."
 
-#: ../server/vino-status-icon.c:642 ../server/vino-status-tube-icon.c:422
 #, c-format
+#: ../server/vino-status-icon.c:642 ../server/vino-status-tube-icon.c:422
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "𐑻𐑼 𐑢𐑲𐑤 𐑛𐑦𐑕𐑐𐑤𐑱𐑦𐑙 𐑯𐑴𐑑𐑦𐑓𐑦𐑒𐑱𐑖𐑩𐑯 𐑚𐑳𐑚𐑩𐑤: %s\n"
 
-#: ../server/vino-status-tube-icon.c:226
 #, c-format
+#: ../server/vino-status-tube-icon.c:226
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "𐑞 𐑮𐑦𐑥𐑴𐑑 𐑿𐑟𐑼 '%s' 𐑢𐑦𐑤 𐑚𐑰 𐑛𐑦𐑕𐑒𐑩𐑯𐑧𐑒𐑑𐑩𐑛. 𐑸 𐑿 𐑖𐑫𐑼?"
 
@@ -481,23 +641,23 @@ msgstr "𐑞 𐑮𐑦𐑥𐑴𐑑 𐑿𐑟𐑼 '%s' 𐑢𐑦𐑤 𐑚𐑰 𐑛�
 msgid "Share my desktop information"
 msgstr "𐑖𐑺 𐑥𐑲 𐑛𐑧𐑕𐑒𐑑𐑪𐑐 𐑦𐑯𐑓𐑼𐑥𐑱𐑖𐑩𐑯"
 
-#: ../server/vino-tube-server.c:315
 #, c-format
+#: ../server/vino-tube-server.c:315
 msgid "'%s' rejected the desktop sharing invitation."
 msgstr "'%s' 𐑮𐑦𐑡𐑧𐑒𐑑𐑧𐑛 𐑞 𐑛𐑧𐑕𐑒𐑑𐑪𐑐 𐑖𐑺𐑦𐑙 𐑦𐑯𐑝𐑦𐑑𐑱𐑖𐑩𐑯."
 
-#: ../server/vino-tube-server.c:319
 #, c-format
+#: ../server/vino-tube-server.c:319
 msgid "'%s' disconnected"
 msgstr "'%s' 𐑛𐑦𐑕𐑒𐑩𐑯𐑧𐑒𐑑𐑩𐑛"
 
-#: ../server/vino-tube-server.c:346
 #, c-format
+#: ../server/vino-tube-server.c:346
 msgid "'%s' is remotely controlling your desktop."
 msgstr "'%s' 𐑦𐑟 𐑮𐑦𐑥𐑴𐑑𐑤𐑦 𐑒𐑩𐑯𐑑𐑮𐑴𐑤𐑦𐑙 𐑿𐑼 𐑛𐑧𐑕𐑒𐑑𐑪𐑐."
 
-#: ../server/vino-tube-server.c:355
 #, c-format
+#: ../server/vino-tube-server.c:355
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "𐑢𐑱𐑑𐑦𐑙 𐑓𐑹 '%s' 𐑑 𐑒𐑩𐑯𐑧𐑒𐑑 𐑑 𐑞 𐑕𐑒𐑮𐑰𐑯."
 
@@ -505,13 +665,13 @@ msgstr "𐑢𐑱𐑑𐑦𐑙 𐑓𐑹 '%s' 𐑑 𐑒𐑩𐑯𐑧𐑒𐑑 𐑑 �
 msgid "An error has occurred:"
 msgstr "𐑩𐑯 𐑻𐑼 𐑣𐑨𐑟 𐑪𐑒𐑻𐑛:"
 
-#: ../tools/vino-passwd.c:115
 #, c-format
+#: ../tools/vino-passwd.c:115
 msgid "Cancelled"
 msgstr "𐑒𐑨𐑯𐑕𐑩𐑤𐑛"
 
-#: ../tools/vino-passwd.c:122
 #, c-format
+#: ../tools/vino-passwd.c:122
 msgid ""
 "ERROR: Maximum length of password is %d character. Please, re-enter the "
 "password."
@@ -521,12 +681,76 @@ msgid_plural ""
 msgstr[0] "𐑻𐑼: 𐑥𐑨𐑒𐑕𐑦𐑥𐑩𐑥 𐑤𐑧𐑙𐑔 𐑝 𐑐𐑭𐑕𐑢𐑼𐑛 𐑦𐑟 %d 𐑒𐑸𐑩𐑒𐑑𐑼. 𐑐𐑤𐑰𐑟, 𐑮𐑰-𐑧𐑯𐑑𐑼 𐑞 𐑐𐑭𐑕𐑢𐑼𐑛."
 msgstr[1] "𐑻𐑼: 𐑥𐑨𐑒𐑕𐑦𐑥𐑩𐑥 𐑤𐑧𐑙𐑔 𐑝 𐑐𐑭𐑕𐑢𐑼𐑛 𐑦𐑟 %d 𐑒𐑸𐑩𐑒𐑑𐑼𐑟. 𐑐𐑤𐑰𐑟, 𐑮𐑰-𐑧𐑯𐑑𐑼 𐑞 𐑐𐑭𐑕𐑢𐑼𐑛."
 
-#: ../tools/vino-passwd.c:172
 #, c-format
+#, fuzzy
+#: ../tools/vino-passwd.c:156
+msgid "Changing Vino password.\n"
+msgstr "𐑗𐑱𐑯𐑡𐑦𐑙 Vino 𐑐𐑭𐑕𐑢𐑼𐑛.\n"
+
+#, fuzzy
+#: ../tools/vino-passwd.c:158
+msgid "Enter new Vino password: "
+msgstr "𐑧𐑯𐑑𐑼 𐑯𐑿 Vino 𐑐𐑭𐑕𐑢𐑼𐑛: "
+
+#, fuzzy
+#: ../tools/vino-passwd.c:161
+msgid "Retype new Vino password: "
+msgstr "Retype 𐑯𐑿 Vino 𐑐𐑭𐑕𐑢𐑼𐑛: "
+
+#, c-format
+#, fuzzy
+#: ../tools/vino-passwd.c:167
+msgid "vino-passwd: password updated successfully.\n"
+msgstr "vino-passwd: 𐑐𐑭𐑕𐑢𐑼𐑛 𐑳𐑐𐑛𐑱𐑑𐑩𐑛 𐑕𐑩𐑒𐑕𐑧𐑕𐑓𐑩𐑤𐑦.\n"
+
+#, c-format
+#: ../tools/vino-passwd.c:172
 msgid "Sorry, passwords do not match.\n"
 msgstr "𐑕𐑪𐑮𐑦, 𐑐𐑭𐑕𐑢𐑼𐑛𐑟 𐑛𐑵 𐑯𐑪𐑑 𐑥𐑨𐑗.\n"
 
-#: ../tools/vino-passwd.c:183
 #, c-format
+#, fuzzy
+#: ../tools/vino-passwd.c:173
+msgid "vino-passwd: password unchanged.\n"
+msgstr "vino-passwd: 𐑐𐑭𐑕𐑢𐑼𐑛 𐑩𐑯𐑗𐑱𐑯𐑡𐑛.\n"
+
+#, c-format
+#, fuzzy
+#: ../tools/vino-passwd.c:181
+msgid ""
+"Error while communicating with GConf. Are you logged into a GNOME session?"
+msgstr "𐑻𐑼 𐑢𐑲𐑤 𐑒𐑩𐑥𐑿𐑯𐑦𐑒𐑱𐑑𐑦𐑙 𐑢𐑦𐑞 GConf. 𐑸 𐑿 𐑤𐑪𐑜𐑛 𐑦𐑯𐑑𐑫 𐑩 𐑯𐑴𐑥 𐑕𐑧𐑖𐑩𐑯?"
+
+#, c-format
+#: ../tools/vino-passwd.c:183
 msgid "Error message:"
 msgstr "𐑻𐑼 𐑥𐑧𐑕𐑦𐑡:"
+
+#, fuzzy
+#: ../tools/vino-passwd.c:200
+msgid "Show Vino version"
+msgstr "𐑖𐑴 Vino 𐑝𐑻𐑠𐑩𐑯"
+
+#, fuzzy
+#: ../tools/vino-passwd.c:209
+msgid "- Updates Vino password"
+msgstr "- 𐑳𐑐𐑛𐑱𐑑𐑕 Vino 𐑐𐑭𐑕𐑢𐑼𐑛"
+
+#, fuzzy
+#: ../tools/vino-passwd.c:219
+msgid ""
+"Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr "𐑮𐑳𐑯 'vino-passwd --𐑣𐑧𐑤𐑐' 𐑑 𐑕𐑰 𐑩 𐑓𐑫𐑤 𐑤𐑦𐑕𐑑 𐑝 𐑩𐑝𐑱𐑤𐑩𐑚𐑩𐑤 𐑒𐑩𐑥𐑭𐑯𐑛 𐑤𐑲𐑯 𐑪𐑐𐑖𐑩𐑯𐑟"
+
+#, c-format
+#, fuzzy
+#: ../tools/vino-passwd.c:226
+msgid "VINO Version %s\n"
+msgstr "VINO 𐑝𐑻𐑠𐑩𐑯 %s\n"
+
+#, c-format
+#, fuzzy
+#: ../tools/vino-passwd.c:238
+msgid "ERROR: You do not have enough permissions to change Vino password.\n"
+msgstr "𐑻𐑼: 𐑿 𐑛𐑵 𐑯𐑪𐑑 𐑣𐑨𐑝 𐑦𐑯𐑳𐑓 𐑐𐑻𐑥𐑦𐑖𐑪𐑯𐑟 𐑑 𐑗𐑱𐑯𐑡 Vino 𐑐𐑭𐑕𐑢𐑼𐑛.\n"
+
