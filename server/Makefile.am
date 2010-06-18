@@ -154,9 +154,9 @@ desktop_in_files = vino-server.desktop.in
 desktop_DATA    = $(desktop_in_files:.desktop.in=.desktop)
 
 servicedir = $(datadir)/dbus-1/services
-service_DATA = org.gnome.Vino.service
+service_DATA = org.freedesktop.Telepathy.Client.Vino.service
 
-org.gnome.Vino.service: org.gnome.Vino.service.in \
+org.freedesktop.Telepathy.Client.Vino.service: org.freedesktop.Telepathy.Client.Vino.service.in \
 		Makefile
 	@sed -e "s|[@]libexecdir[@]|$(libexecdir)|" $< > $@
 
@@ -181,7 +181,7 @@ EXTRA_DIST = \
 	vino-server.schemas.in \
 	vino-marshal.list \
 	vino-server.desktop.in.in \
-	org.gnome.Vino.service.in \
+	org.freedesktop.Telepathy.Client.Vino.service.in \
 	dbus-interface.xml \
 	Vino.client \
 	$(NULL)
