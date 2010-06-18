@@ -92,6 +92,9 @@ vino_server_SOURCES += \
 	vino-types.h \
 	$(NULL)
 
+clientfiledir = $(datarootdir)/telepathy/clients
+clientfile_DATA = Vino.client
+
 endif
 
 dbus-interface-glue.h: dbus-interface.xml
@@ -180,6 +183,7 @@ EXTRA_DIST = \
 	vino-server.desktop.in.in \
 	org.gnome.Vino.service.in \
 	dbus-interface.xml \
+	Vino.client \
 	$(NULL)
 
 BUILT_SOURCES = \
