@@ -57,13 +57,6 @@ struct _VinoTubeServersManagerClass
 GType vino_tube_servers_manager_get_type (void) G_GNUC_CONST;
 VinoTubeServersManager* vino_tube_servers_manager_new (void);
 
-gboolean vino_tube_servers_manager_share_with_tube
-    (VinoTubeServersManager * object,
-    const gchar *connection_path,
-    const gchar *tube_path,
-    GHashTable *channel_properties,
-    GError **error);
-
 G_END_DECLS
 
 #endif

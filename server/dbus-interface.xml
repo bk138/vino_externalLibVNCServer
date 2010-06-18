@@ -10,11 +10,6 @@
     <method name="GetExternalPort">
       <arg name="port" direction="out" type="i"/>
     </method>
-    <method name="ShareWithTube">
-      <arg name="connection" direction="in" type="o"/>
-      <arg name="tube" direction="in" type="o"/>
-      <arg name="properties" direction="in" type="a{sv}"/>
-    </method>
     <signal name="ServerInfoChanged">
     </signal>
   </interface>

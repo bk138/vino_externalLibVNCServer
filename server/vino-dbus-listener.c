@@ -92,13 +92,6 @@ vino_dbus_listener_get_internal_data (VinoDBusListener *listener,
                                       gint             *port,
                                       GError           **error);
 
-static gboolean
-vino_dbus_listener_share_with_tube (VinoDBusListener *listener,
-                                    const gchar      *connection_path,
-                                    const gchar      *tube_path,
-                                    GHashTable       *properties,
-                                    GError           **error);
-
 #include "dbus-interface-glue.h"
 
 static void vino_dbus_listener_set_server (VinoDBusListener *listener,
@@ -324,24 +317,6 @@ vino_dbus_listener_get_internal_data (VinoDBusListener *listener,
   *avahi_hostname = g_strdup (vino_mdns_get_hostname ());
 
   return TRUE;
-}
-
-static gboolean
-vino_dbus_listener_share_with_tube (VinoDBusListener *listener,
-                                    const gchar * connection_path,
-                                    const gchar * tube_path,
-                                    GHashTable * properties,
-                                    GError **error)
-{
-#ifdef HAVE_TELEPATHY_GLIB
-  return vino_tube_servers_manager_share_with_tube (listener->priv->manager,
-      connection_path, tube_path, properties, error);
-#else
-  g_set_error (error, vino_dbus_error_quark (),
-      VINO_DBUS_ERROR_NOT_IMPLEMENTED,
-      "Tubes are not installed");
-  return FALSE;
-#endif
 }
 
 static void
