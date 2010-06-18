@@ -211,8 +211,7 @@ handle_channels_cb (TpSimpleHandler *handler,
       "disable-background",   0,
       "use-upnp",             0,
       "connection",           connection,
-      "tube-path",            tp_proxy_get_object_path (channel),
-      "channel-properties",   tp_channel_borrow_immutable_properties (channel),
+      "tube",                 channel,
       NULL);
 
   self->priv->vino_tube_servers = g_slist_prepend

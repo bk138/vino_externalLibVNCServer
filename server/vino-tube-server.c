@@ -45,8 +45,6 @@ struct _VinoTubeServerPrivate
   TpChannel *tp_channel;
   gchar *alias;
   TpConnection *connection;
-  gchar *tube_path;
-  GHashTable *channel_properties;
   gchar *filename;
   gulong signal_invalidated_id;
   VinoStatusTubeIcon *icon_tube;
@@ -63,8 +61,7 @@ enum
 {
   PROP_0,
   PROP_CONNECTION,
-  PROP_TUBE_PATH,
-  PROP_CHANNEL_PROPERTIES
+  PROP_TUBE
 };
 
 static guint signals[LAST_SIGNAL] = { 0 };
@@ -116,18 +113,6 @@ vino_tube_server_finalize (GObject *object)
       server->priv->connection = NULL;
     }
 
-  if (server->priv->tube_path != NULL)
-    {
-      g_free (server->priv->tube_path);
-      server->priv->tube_path = NULL;
-    }
-
-  if (server->priv->channel_properties != NULL)
-    {
-      g_hash_table_destroy (server->priv->channel_properties);
-      server->priv->channel_properties = NULL;
-    }
-
   dprintf (TUBE, "Destruction of a VinoTubeServer\n");
 
   if (G_OBJECT_CLASS (vino_tube_server_parent_class)->finalize)
@@ -144,22 +129,12 @@ vino_tube_server_set_connection (VinoTubeServer *server,
 }
 
 static void
-vino_tube_server_set_tube_path (VinoTubeServer *server,
-    const gchar *tube_path)
+vino_tube_server_set_tube (VinoTubeServer *server,
+    TpChannel *tube)
 {
   g_return_if_fail (VINO_IS_TUBE_SERVER (server));
 
-  server->priv->tube_path = g_strdup (tube_path);
-}
-
-static void
-vino_tube_server_set_channel_properties (VinoTubeServer *server,
-    GHashTable *channel_properties)
-{
-  g_return_if_fail (VINO_IS_TUBE_SERVER (server));
-
-  server->priv->channel_properties = g_boxed_copy
-      (TP_HASH_TYPE_STRING_VARIANT_MAP, channel_properties);
+  server->priv->tp_channel = g_object_ref (tube);
 }
 
 static void
@@ -176,12 +151,8 @@ vino_tube_server_set_property (GObject *object,
       vino_tube_server_set_connection (server,
           g_value_get_object (value));
       break;
-    case PROP_TUBE_PATH:
-      vino_tube_server_set_tube_path (server, g_value_get_string (value));
-      break;
-    case PROP_CHANNEL_PROPERTIES:
-      vino_tube_server_set_channel_properties (server,
-          g_value_get_boxed (value));
+    case PROP_TUBE:
+      vino_tube_server_set_tube (server, g_value_get_object (value));
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -202,11 +173,8 @@ vino_tube_server_get_property (GObject *object,
     case PROP_CONNECTION:
       g_value_set_object (value, server->priv->connection);
       break;
-    case PROP_TUBE_PATH:
-      g_value_set_string (value, server->priv->tube_path);
-      break;
-    case PROP_CHANNEL_PROPERTIES:
-      g_value_set_boxed (value, server->priv->channel_properties);
+    case PROP_TUBE:
+      g_value_set_object (value, server->priv->tp_channel);
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -219,7 +187,6 @@ vino_tube_server_init (VinoTubeServer *self)
 {
   self->priv = VINO_TUBE_SERVER_GET_PRIVATE (self);
   self->priv->tp_channel = NULL;
-  self->priv->channel_properties = NULL;
   self->priv->icon_tube = NULL;
   self->priv->state = TP_TUBE_CHANNEL_STATE_NOT_OFFERED;
 }
@@ -255,21 +222,11 @@ vino_tube_server_class_init (VinoTubeServerClass *klass)
       G_PARAM_STATIC_STRINGS));
 
   g_object_class_install_property (gobject_class,
-      PROP_TUBE_PATH,
-      g_param_spec_string ("tube-path",
-      "Tube path",
-      "Tube path of the stream tube",
-      NULL,
-      G_PARAM_READWRITE   |
-      G_PARAM_CONSTRUCT   |
-      G_PARAM_STATIC_STRINGS));
-
-  g_object_class_install_property (gobject_class,
-      PROP_CHANNEL_PROPERTIES,
-      g_param_spec_boxed ("channel-properties",
-      "Channel properties",
-      "Channel properties of the stream tube",
-      TP_HASH_TYPE_STRING_VARIANT_MAP,
+      PROP_TUBE,
+      g_param_spec_object ("tube",
+      "TpChannel",
+      "Channel of the stream tube",
+      TP_TYPE_CHANNEL,
       G_PARAM_READWRITE   |
       G_PARAM_CONSTRUCT   |
       G_PARAM_STATIC_STRINGS));
@@ -530,23 +487,11 @@ vino_tube_server_connection_ready (TpConnection *connection,
     gpointer object)
 {
   VinoTubeServer *server = VINO_TUBE_SERVER (object);
-  GError *error_failed = NULL;
 
   if (connection == NULL)
     {
       dprintf (TUBE, "The connection is not ready: %s\n", error->message);
-      return ;
-    }
-
-  server->priv->tp_channel = tp_channel_new_from_properties (connection,
-      server->priv->tube_path, server->priv->channel_properties,
-      &error_failed);
-
-  if (server->priv->tp_channel == NULL)
-    {
-      dprintf (TUBE, "Error requesting tp channel: %s\n", error_failed->message);
-      g_clear_error (&error_failed);
-      return ;
+      return;
     }
 
   tp_channel_call_when_ready (server->priv->tp_channel,
