@@ -44,7 +44,7 @@ struct _VinoTubeServerPrivate
 {
   TpChannel *tp_channel;
   gchar *alias;
-  gchar *connection_path;
+  TpConnection *connection;
   gchar *tube_path;
   GHashTable *channel_properties;
   gchar *filename;
@@ -62,7 +62,7 @@ enum
 enum
 {
   PROP_0,
-  PROP_CONNECTION_PATH,
+  PROP_CONNECTION,
   PROP_TUBE_PATH,
   PROP_CHANNEL_PROPERTIES
 };
@@ -110,10 +110,10 @@ vino_tube_server_finalize (GObject *object)
       server->priv->filename = NULL;
     }
 
-  if (server->priv->connection_path != NULL)
+  if (server->priv->connection != NULL)
     {
-      g_free (server->priv->connection_path);
-      server->priv->connection_path = NULL;
+      g_object_unref (server->priv->connection);
+      server->priv->connection = NULL;
     }
 
   if (server->priv->tube_path != NULL)
@@ -135,12 +135,12 @@ vino_tube_server_finalize (GObject *object)
 }
 
 static void
-vino_tube_server_set_connection_path (VinoTubeServer *server,
-    const gchar *connection_path)
+vino_tube_server_set_connection (VinoTubeServer *server,
+    TpConnection *connection)
 {
   g_return_if_fail (VINO_IS_TUBE_SERVER (server));
 
-  server->priv->connection_path = g_strdup (connection_path);
+  server->priv->connection = g_object_ref (connection);
 }
 
 static void
@@ -172,9 +172,9 @@ vino_tube_server_set_property (GObject *object,
 
   switch (prop_id)
     {
-    case PROP_CONNECTION_PATH:
-      vino_tube_server_set_connection_path (server,
-          g_value_get_string (value));
+    case PROP_CONNECTION:
+      vino_tube_server_set_connection (server,
+          g_value_get_object (value));
       break;
     case PROP_TUBE_PATH:
       vino_tube_server_set_tube_path (server, g_value_get_string (value));
@@ -199,8 +199,8 @@ vino_tube_server_get_property (GObject *object,
 
   switch (prop_id)
     {
-    case PROP_CONNECTION_PATH:
-      g_value_set_string (value, server->priv->connection_path);
+    case PROP_CONNECTION:
+      g_value_set_object (value, server->priv->connection);
       break;
     case PROP_TUBE_PATH:
       g_value_set_string (value, server->priv->tube_path);
@@ -245,11 +245,11 @@ vino_tube_server_class_init (VinoTubeServerClass *klass)
       0);
 
   g_object_class_install_property (gobject_class,
-      PROP_CONNECTION_PATH,
-      g_param_spec_string ("connection-path",
-      "Connection path",
-      "Connection path of the stream tube",
-      NULL,
+      PROP_CONNECTION,
+      g_param_spec_object ("connection",
+      "TpConnection",
+      "Connection of the stream tube",
+      TP_TYPE_CONNECTION,
       G_PARAM_READWRITE   |
       G_PARAM_CONSTRUCT   |
       G_PARAM_STATIC_STRINGS));
@@ -558,7 +558,6 @@ vino_tube_server_share_with_tube (VinoTubeServer *server,
     GError **error)
 {
   TpDBusDaemon *tp_dbus_daemon;
-  TpConnection *tp_connection;
   GError *error_failed = NULL;
 
   tp_dbus_daemon = tp_dbus_daemon_dup (&error_failed);
@@ -573,23 +572,9 @@ vino_tube_server_share_with_tube (VinoTubeServer *server,
       return FALSE;
     }
 
-  tp_connection = tp_connection_new (tp_dbus_daemon, NULL,
-      server->priv->connection_path, &error_failed);
-
-  if (tp_connection == NULL)
-    {
-      dprintf (TUBE, "Error requesting tp connection: %s\n", error_failed->message);
-      g_clear_error (&error_failed);
-      g_set_error (error, vino_dbus_error_quark (),
-          VINO_DBUS_ERROR_FAILED,
-          "Error requesting tp connection");
-      return FALSE;
-    }
-
-  tp_connection_call_when_ready (tp_connection,
+  tp_connection_call_when_ready (server->priv->connection,
       vino_tube_server_connection_ready, server);
 
-  g_object_unref (tp_connection);
   g_object_unref (tp_dbus_daemon);
 
   return TRUE;

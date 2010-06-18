@@ -210,7 +210,7 @@ handle_channels_cb (TpSimpleHandler *handler,
       "lock-screen",          0,
       "disable-background",   0,
       "use-upnp",             0,
-      "connection-path",      tp_proxy_get_object_path (connection),
+      "connection",           connection,
       "tube-path",            tp_proxy_get_object_path (channel),
       "channel-properties",   tp_channel_borrow_immutable_properties (channel),
       NULL);
