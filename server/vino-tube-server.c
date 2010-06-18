@@ -410,13 +410,10 @@ vino_tube_server_factory_handle_cb (TpConnection *connection,
     }
 }
 
-static void
-vino_tube_server_channel_ready (TpChannel *channel,
-    const GError *error,
-    gpointer object)
+gboolean
+vino_tube_server_share_with_tube (VinoTubeServer *server,
+    GError **error)
 {
-  VinoTubeServer *server = VINO_TUBE_SERVER (object);
-  TpConnection *connection;
   TpHandle handle;
   TpContactFeature features[] = { TP_CONTACT_FEATURE_ALIAS,
       TP_CONTACT_FEATURE_AVATAR_TOKEN };
@@ -424,15 +421,8 @@ vino_tube_server_channel_ready (TpChannel *channel,
   GValue address = {0,};
   gint port;
   GdkScreen *screen;
-  GError *error_failed = NULL;
 
   parameters = g_hash_table_new (g_str_hash, g_str_equal);
-
-  if (error != NULL)
-    {
-      dprintf (TUBE, "Impossible to create the channel: %s\n", error->message);
-      return;
-    }
 
   screen = gdk_screen_get_default ();
   server->priv->icon_tube = vino_status_tube_icon_new (server,
@@ -442,21 +432,18 @@ vino_tube_server_channel_ready (TpChannel *channel,
       VINO_STATUS_TUBE_ICON_VISIBILITY_ALWAYS);
 
   tp_cli_channel_interface_tube_connect_to_tube_channel_state_changed
-      (channel, vino_tube_server_state_changed, server, NULL, NULL,
-      &error_failed);
+      (server->priv->tp_channel, vino_tube_server_state_changed, server,
+       NULL, NULL, error);
 
-  if (error_failed != NULL)
+  if (error != NULL)
     {
-      dprintf (TUBE, "Failed to connect state channel: %s\n", error_failed->message);
-      g_clear_error (&error_failed);
-      return ;
+      dprintf (TUBE, "Failed to connect state channel\n");
+      return FALSE;
     }
-
-  connection = tp_channel_borrow_connection (server->priv->tp_channel);
 
   handle = tp_channel_get_handle (server->priv->tp_channel, NULL);
 
-  tp_connection_get_contacts_by_handle (connection, 1, &handle,
+  tp_connection_get_contacts_by_handle (server->priv->connection, 1, &handle,
       G_N_ELEMENTS(features), features, vino_tube_server_factory_handle_cb,
       server, NULL, NULL);
 
@@ -464,63 +451,22 @@ vino_tube_server_channel_ready (TpChannel *channel,
 
   dprintf (TUBE, "Creation of a VinoTubeServer, port : %d\n", port);
 
-  server->priv->signal_invalidated_id = g_signal_connect (G_OBJECT (channel),
-      "invalidated", G_CALLBACK (vino_tube_server_invalidated_cb), server);
+  server->priv->signal_invalidated_id = g_signal_connect (
+      server->priv->tp_channel, "invalidated",
+      G_CALLBACK (vino_tube_server_invalidated_cb), server);
 
   g_value_init (&address, TP_STRUCT_TYPE_SOCKET_ADDRESS_IPV4);
   g_value_take_boxed (&address, dbus_g_type_specialized_construct
       (TP_STRUCT_TYPE_SOCKET_ADDRESS_IPV4));
   dbus_g_type_struct_set (&address, 0, "127.0.0.1", 1, port, G_MAXUINT);
 
-  tp_cli_channel_type_stream_tube_call_offer (channel,
+  tp_cli_channel_type_stream_tube_call_offer (server->priv->tp_channel,
       -1, TP_SOCKET_ADDRESS_TYPE_IPV4, &address,
      TP_SOCKET_ACCESS_CONTROL_LOCALHOST, parameters,
      vino_tube_server_offer_cb, server, NULL, NULL);
 
   g_value_unset (&address);
   g_hash_table_destroy (parameters);
-}
-
-static void
-vino_tube_server_connection_ready (TpConnection *connection,
-    const GError *error,
-    gpointer object)
-{
-  VinoTubeServer *server = VINO_TUBE_SERVER (object);
-
-  if (connection == NULL)
-    {
-      dprintf (TUBE, "The connection is not ready: %s\n", error->message);
-      return;
-    }
-
-  tp_channel_call_when_ready (server->priv->tp_channel,
-      vino_tube_server_channel_ready, server);
-}
-
-gboolean
-vino_tube_server_share_with_tube (VinoTubeServer *server,
-    GError **error)
-{
-  TpDBusDaemon *tp_dbus_daemon;
-  GError *error_failed = NULL;
-
-  tp_dbus_daemon = tp_dbus_daemon_dup (&error_failed);
-
-  if (tp_dbus_daemon == NULL)
-    {
-      dprintf (TUBE, "Error requesting dbus daemon: %s\n", error_failed->message);
-      g_clear_error (&error_failed);
-      g_set_error (error, vino_dbus_error_quark (),
-          VINO_DBUS_ERROR_FAILED,
-          "Error requesting dbus daemon");
-      return FALSE;
-    }
-
-  tp_connection_call_when_ready (server->priv->connection,
-      vino_tube_server_connection_ready, server);
-
-  g_object_unref (tp_dbus_daemon);
 
   return TRUE;
 }
