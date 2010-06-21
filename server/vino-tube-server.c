@@ -268,13 +268,13 @@ vino_tube_server_invalidated_cb (TpProxy *proxy,
   summary = _("Share my desktop information");
 
   if (self->priv->state == TP_TUBE_CHANNEL_STATE_REMOTE_PENDING)
-      body = g_strdup_printf
-          (_("'%s' rejected the desktop sharing invitation."),
-          vino_tube_server_get_alias (self));
+      /* Translators: '%s' is the name of a contact, buddy coming from Empathy */
+      body = g_strdup_printf (_("'%s' rejected the desktop sharing invitation."),
+			      vino_tube_server_get_alias (self));
   else
-      body = g_strdup_printf
-          (_("'%s' disconnected"),
-          vino_tube_server_get_alias (self));
+      /* Translators: '%s' is the name of a contact, buddy coming from Empathy */
+      body = g_strdup_printf (_("'%s' disconnected"),
+			      vino_tube_server_get_alias (self));
 
   vino_status_tube_icon_show_notif (self->priv->icon_tube, summary,
       (const gchar *)body, TRUE);
@@ -299,18 +299,18 @@ vino_tube_server_state_changed (TpChannel *channel,
   switch (state)
     {
       case TP_TUBE_CHANNEL_STATE_OPEN:
-        body = g_strdup_printf
-            (_("'%s' is remotely controlling your desktop."),
-            vino_tube_server_get_alias (server));
+        /* Translators: '%s' is the name of a contact, buddy coming from Empathy */
+        body = g_strdup_printf (_("'%s' is remotely controlling your desktop."),
+				vino_tube_server_get_alias (server));
         vino_status_tube_icon_show_notif (server->priv->icon_tube, summary,
             (const gchar*) body, FALSE);
         g_free (body);
         server->priv->state = TP_TUBE_STATE_OPEN;
         break;
       case TP_TUBE_CHANNEL_STATE_REMOTE_PENDING:
-        body =  g_strdup_printf
-            (_("Waiting for '%s' to connect to the screen."),
-            vino_tube_server_get_alias (server));
+        /* Translators: '%s' is the name of a contact, buddy coming from Empathy */
+        body =  g_strdup_printf (_("Waiting for '%s' to connect to the screen."),
+				 vino_tube_server_get_alias (server));
         vino_status_tube_icon_show_notif (server->priv->icon_tube, summary,
             (const gchar*) body, FALSE);
         g_free (body);
