@@ -16,7 +16,6 @@ bin_PROGRAMS = vino-preferences
 vino_preferences_SOURCES = \
 	vino-preferences.c \
 	vino-message-box.h vino-message-box.c \
-	sexy-url-label.h sexy-url-label.c \
 	vino-url-webservice.h vino-url-webservice.c \
 	$(NULL)
 vino_preferences_LDADD = \

@@ -18,7 +18,6 @@
  */
 
 #include <glib/gi18n.h>
-#include <sexy-url-label.h>
 #include "vino-message-box.h"
 
 struct _VinoMessageBoxPrivate
@@ -79,12 +78,12 @@ vino_message_box_init (VinoMessageBox *box)
   box->priv->main_hbox = gtk_info_bar_get_content_area (GTK_INFO_BAR (box));
   box->priv->image = NULL;
 
-  box->priv->label = sexy_url_label_new ();
+  box->priv->label = gtk_label_new (NULL);
   gtk_misc_set_alignment (GTK_MISC (box->priv->label), 0.0, 0.0);
   gtk_label_set_line_wrap (GTK_LABEL (box->priv->label), TRUE);
   gtk_label_set_selectable (GTK_LABEL (box->priv->label), TRUE);
   g_signal_connect (box->priv->label,
-                    "url_activated",
+                    "activate-link",
                     G_CALLBACK (url_activated_cb),
                     NULL);
 
@@ -121,7 +120,7 @@ vino_message_box_set_label (VinoMessageBox *box, const gchar *label)
 {
   g_return_if_fail (VINO_IS_MESSAGE_BOX (box));
 
-  sexy_url_label_set_markup (SEXY_URL_LABEL (box->priv->label), label);
+  gtk_label_set_markup (GTK_LABEL (box->priv->label), label);
 }
 
 void
