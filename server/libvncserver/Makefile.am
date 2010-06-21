@@ -37,7 +37,7 @@ libvncserver_la_LIBADD =	\
 	$(LIBGCRYPT_LIBS)	\
 	$(NULL)
 
-if !HAVE_GETIFADDRS
+if SELF_IFADDRS
 libvncserver_la_LIBADD += ifaddr/libifaddrs.la
 endif
 

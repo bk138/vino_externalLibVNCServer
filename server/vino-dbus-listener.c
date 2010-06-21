@@ -62,6 +62,12 @@
 #include "libvncserver/ifaddr/ifaddrs.h"
 #endif
 
+#ifdef RFC2553
+#define ADDR_FAMILY_MEMBER ss_family
+#else
+#define ADDR_FAMILY_MEMBER sa_family
+#endif
+
 #define VINO_DBUS_BUS_NAME  "org.gnome.Vino"
 
 G_DEFINE_TYPE (VinoDBusListener, vino_dbus_listener, G_TYPE_OBJECT)
@@ -119,7 +125,7 @@ get_local_hostname (VinoDBusListener *listener)
       if (ifa->ifa_addr == NULL || ifa->ifa_name == NULL || (ifa->ifa_flags & IFF_UP) == 0)
 	continue;
 
-      switch (ifa->ifa_addr->sa_family)
+      switch (ifa->ifa_addr->ADDR_FAMILY_MEMBER)
 	{
 	  case AF_INET:
 	    sin = &((struct sockaddr_in *)ifa->ifa_addr)->sin_addr;

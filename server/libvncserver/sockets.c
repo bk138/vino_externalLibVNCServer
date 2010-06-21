@@ -78,6 +78,11 @@
 #include "ifaddr/ifaddrs.h"
 #endif
 
+#ifdef RFC2553
+#define ADDR_FAMILY_MEMBER ss_family
+#else
+#define ADDR_FAMILY_MEMBER sa_family
+#endif
 
 #if defined(__linux__) && defined(NEED_TIMEVAL)
 struct timeval 
@@ -621,7 +626,7 @@ ListenOnTCPPort(rfbScreenInfoPtr rfbScreen, int port, const char *netIface)
     if (ifa->ifa_addr == NULL || (ifa->ifa_flags & IFF_UP) == 0) 
       continue;
 
-    if (ifa->ifa_addr->sa_family == AF_INET) {
+    if (ifa->ifa_addr->ADDR_FAMILY_MEMBER == AF_INET) {
       struct sockaddr_in *s4 = (struct sockaddr_in*)ifa->ifa_addr;
       s4->sin_port           = htons(port);
 
@@ -635,11 +640,11 @@ ListenOnTCPPort(rfbScreenInfoPtr rfbScreen, int port, const char *netIface)
       }
     }
 #ifdef ENABLE_IPV6            
-    if (ifa->ifa_addr->sa_family == AF_INET6) {
+    if (ifa->ifa_addr->ADDR_FAMILY_MEMBER == AF_INET6) {
       struct sockaddr_in6 *s6 = (struct sockaddr_in6*)ifa->ifa_addr;
       s6->sin6_port           = htons(port);
 
-      if (inet_ntop(ifa->ifa_addr->sa_family, (struct sockaddr*)&s6->sin6_addr, buf, sizeof(buf)) == NULL) {
+      if (inet_ntop(ifa->ifa_addr->ADDR_FAMILY_MEMBER, (struct sockaddr*)&s6->sin6_addr, buf, sizeof(buf)) == NULL) {
         rfbLog("%s: inet_ntop failed!\n", ifa->ifa_name);
         continue; 
       }
