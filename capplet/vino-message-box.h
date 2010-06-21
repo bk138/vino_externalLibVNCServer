@@ -37,12 +37,12 @@ typedef struct _VinoMessageBoxPrivate VinoMessageBoxPrivate;
 
 struct _VinoMessageBoxClass
 {
-  GtkHBoxClass parent_class;
+  GtkInfoBarClass parent_class;
 };
 
 struct _VinoMessageBox
 {
-  GtkHBox parent_instance;
+  GtkInfoBar parent_instance;
   VinoMessageBoxPrivate *priv;
 };
 

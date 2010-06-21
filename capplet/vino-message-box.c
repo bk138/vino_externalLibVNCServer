@@ -26,56 +26,9 @@ struct _VinoMessageBoxPrivate
   GtkWidget *main_hbox;
   GtkWidget *label;
   GtkWidget *image;
-  gboolean  changing_style;
 };
 
-G_DEFINE_TYPE (VinoMessageBox, vino_message_box, GTK_TYPE_HBOX);
-
-static gboolean
-paint_message_area (GtkWidget      *widget,
-		            GdkEventExpose *event,
-		            gpointer        user_data)
-{
-	gtk_paint_flat_box (widget->style,
-			    widget->window,
-			    GTK_STATE_NORMAL,
-			    GTK_SHADOW_OUT,
-			    NULL,
-			    widget,
-			    "tooltip",
-			    widget->allocation.x + 1,
-			    widget->allocation.y + 1,
-			    widget->allocation.width - 2,
-			    widget->allocation.height - 2);
-
-	return FALSE;
-}
-
-static void
-style_set (GtkWidget        *widget,
-	       GtkStyle         *prev_style,
-	       VinoMessageBox   *box)
-{
-	GtkWidget *window;
-	GtkStyle *style;
-
-	if (box->priv->changing_style)
-		return;
-
-	/* This is a hack needed to use the tooltip background color */
-	window = gtk_window_new (GTK_WINDOW_POPUP);
-	gtk_widget_set_name (window, "gtk-tooltip");
-	gtk_widget_ensure_style (window);
-	style = gtk_widget_get_style (window);
-
-	box->priv->changing_style = TRUE;
-	gtk_widget_set_style (GTK_WIDGET (box), style);
-	box->priv->changing_style = FALSE;
-
-	gtk_widget_destroy (window);
-
-	gtk_widget_queue_draw (GTK_WIDGET (box));
-}
+G_DEFINE_TYPE (VinoMessageBox, vino_message_box, GTK_TYPE_INFO_BAR);
 
 static void
 url_activated_cb(GtkWidget *url_label, const gchar *url)
@@ -123,7 +76,7 @@ vino_message_box_init (VinoMessageBox *box)
 {
   box->priv = G_TYPE_INSTANCE_GET_PRIVATE (box, VINO_TYPE_MESSAGE_BOX, VinoMessageBoxPrivate);
 
-  box->priv->main_hbox = gtk_hbox_new (FALSE, 0);
+  box->priv->main_hbox = gtk_info_bar_get_content_area (GTK_INFO_BAR (box));
   box->priv->image = NULL;
 
   box->priv->label = sexy_url_label_new ();
@@ -135,22 +88,9 @@ vino_message_box_init (VinoMessageBox *box)
                     G_CALLBACK (url_activated_cb),
                     NULL);
 
-  gtk_container_set_border_width (GTK_CONTAINER (box->priv->main_hbox), 4);
-  gtk_widget_set_app_paintable (GTK_WIDGET (box), TRUE);
-
-  g_signal_connect (box,
-			        "expose-event",
-			        G_CALLBACK (paint_message_area),
-			        NULL);
-
-  g_signal_connect (box->priv->main_hbox,
-			        "style-set",
-			        G_CALLBACK (style_set),
-			        box);
-
-  gtk_box_pack_start (GTK_BOX (box), box->priv->main_hbox, TRUE, TRUE, 0);
-  gtk_box_pack_start (GTK_BOX (box->priv->main_hbox), box->priv->label, TRUE, TRUE, 2);
-  gtk_widget_show_all (box->priv->main_hbox);
+  gtk_widget_show (box->priv->label);
+  gtk_info_bar_set_message_type (GTK_INFO_BAR (box), GTK_MESSAGE_INFO);
+  gtk_container_add (GTK_CONTAINER (box->priv->main_hbox), box->priv->label);
 }
 
 static void
