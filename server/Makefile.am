@@ -16,6 +16,7 @@ INCLUDES = \
 	$(LIBGNUTLS_CFLAGS) \
 	$(LIBGCRYPT_CFLAGS) \
 	$(WARN_CFLAGS) \
+	$(DISABLE_DEPRECATED) \
 	-DVINO_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
 	-DVINO_ICONDIR=\""$(datadir)/pixmaps\"" \
 	-DVINO_CLIENTDIR=\""$(datadir)/vino"\" \

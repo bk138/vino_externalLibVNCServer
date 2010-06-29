@@ -9,6 +9,7 @@ INCLUDES = \
 	$(VINO_HTTP_CFLAGS) \
 	$(VINO_LIBUNIQUE_CFLAGS) \
 	$(WARN_CFLAGS) \
+	$(DISABLE_DEPRECATED) \
 	$(NULL)
 
 bin_PROGRAMS = vino-preferences

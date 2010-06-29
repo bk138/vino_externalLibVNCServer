@@ -4,6 +4,7 @@ INCLUDES = \
 	-DVINO_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
 	$(VINO_TOOLS_CFLAGS) \
 	$(WARN_CFLAGS) \
+	$(DISABLE_DEPRECATED) \
 	$(NULL)
 
 bin_PROGRAMS = vino-passwd
