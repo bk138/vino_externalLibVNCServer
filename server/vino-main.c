@@ -39,7 +39,7 @@
 #ifdef HAVE_GNUTLS
 #include <gnutls/gnutls.h>
 
-#ifdef G_ENABLE_DEBUG
+#ifdef GNOME_ENABLE_DEBUG
 static void
 vino_debug_gnutls (int         level,
 		   const char *str)
@@ -85,7 +85,7 @@ main (int argc, char **argv)
   vino_setup_debug_flags ();
 
 #ifdef HAVE_GNUTLS
-#ifdef G_ENABLE_DEBUG
+#ifdef GNOME_ENABLE_DEBUG
   if (_vino_debug_flags & VINO_DEBUG_TLS)
     {
       gnutls_global_set_log_level (10);

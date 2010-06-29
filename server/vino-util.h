@@ -50,7 +50,7 @@ typedef enum
   VINO_DEBUG_TUBE    = 1 << 10
 } VinoDebugFlags;
 
-#ifdef G_ENABLE_DEBUG
+#ifdef GNOME_ENABLE_DEBUG
 
 #include <stdio.h>
 
@@ -70,7 +70,7 @@ extern VinoDebugFlags _vino_debug_flags;
 
 void vino_setup_debug_flags (void);
 
-#else /* if !defined (G_ENABLE_DEBUG) */
+#else /* if !defined (GNOME_ENABLE_DEBUG) */
 
 #ifdef G_HAVE_ISO_VARARGS
 #  define dprintf(...)
@@ -80,7 +80,7 @@ void vino_setup_debug_flags (void);
 
 #define vino_setup_debug_flags()
 
-#endif /* G_ENABLE_DEBUG */
+#endif /* GNOME_ENABLE_DEBUG */
 
 void  vino_init_stock_items	(void);
 

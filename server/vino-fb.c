@@ -181,7 +181,7 @@ vino_fb_get_image (VinoFB          *vfb,
 
   if ((error = gdk_error_trap_pop ()))
     {
-#ifdef G_ENABLE_DEBUG
+#ifdef GNOME_ENABLE_DEBUG
       char error_text [64];
 
       XGetErrorText (vfb->priv->xdisplay, error, error_text, 63);
@@ -612,7 +612,7 @@ vino_fb_xdamage_idle_handler (VinoFB *vfb)
 
   if ((error = gdk_error_trap_pop ()))
     {
-#ifdef G_ENABLE_DEBUG
+#ifdef GNOME_ENABLE_DEBUG
       char error_text [64];
 
       XGetErrorText (vfb->priv->xdisplay, error, error_text, 63);
@@ -1180,7 +1180,7 @@ vino_fb_debug_dump_damage (VinoFB       *vfb,
 			   GdkRectangle *rects,
 			   int           n_rects)
 {
-#ifdef G_ENABLE_DEBUG
+#ifdef GNOME_ENABLE_DEBUG
   if (_vino_debug_flags & VINO_DEBUG_POLLING)
     {
       GdkRectangle clipbox;

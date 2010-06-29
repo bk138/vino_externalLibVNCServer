@@ -25,7 +25,7 @@
 #include "vino-util.h"
 #include <gtk/gtk.h>
 
-#ifdef G_ENABLE_DEBUG
+#ifdef GNOME_ENABLE_DEBUG
 VinoDebugFlags _vino_debug_flags = VINO_DEBUG_NONE;
 
 void
@@ -54,7 +54,7 @@ vino_setup_debug_flags (void)
 					       debug_keys,
 					       G_N_ELEMENTS (debug_keys));
 }
-#endif /* G_ENABLE_DEBUG */
+#endif /* GNOME_ENABLE_DEBUG */
 
 static struct VinoStockItem
 {

@@ -7,7 +7,6 @@ INCLUDES = \
 	-I$(top_srcdir)/server/miniupnp \
 	-I$(top_srcdir)/server/smclient \
 	$(VINO_SERVER_CFLAGS) \
-	$(VINO_DEBUG_CFLAGS) \
 	$(VINO_LIBNOTIFY_CFLAGS) \
 	$(VINO_KEYRING_CFLAGS) \
 	$(VINO_HTTP_CFLAGS) \

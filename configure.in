@@ -13,6 +13,7 @@ dnl make sure we keep ACLOCAL_FLAGS around for maintainer builds to work
 AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
 
 GNOME_COMPILE_WARNINGS([maximum])
+GNOME_DEBUG_CHECK
 GNOME_MAINTAINER_MODE_DEFINES
 
 LT_PREREQ([2.2.6])
@@ -388,19 +389,6 @@ fi
 if test "x$have_libunique" = "xyes" ; then
   AC_DEFINE(VINO_ENABLE_LIBUNIQUE, [], [Set if we should use libunique])
 fi
-
-dnl --enable-debug=(yes|minimum|no)
-AC_ARG_ENABLE(debug, [  --enable-debug=[no/yes] turn on debugging [default=no]],,enable_debug=minimum)
-if test "$enable_debug" = "yes"; then
-  VINO_DEBUG_CFLAGS="-DG_ENABLE_DEBUG"
-else
-  if test "x$enable_debug" = "xno"; then
-    VINO_DEBUG_CFLAGS="-DG_DISABLE_ASSERT -DG_DISABLE_CHECKS"
-  else
-    VINO_DEBUG_CFLAGS=""
-  fi
-fi
-AC_SUBST(VINO_DEBUG_CFLAGS)
 
 AM_GCONF_SOURCE_2
 
