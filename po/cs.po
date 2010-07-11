@@ -12,10 +12,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=vino&component=Preferences Dialog\n"
-"POT-Creation-Date: 2009-09-18 13:36+0000\n"
-"PO-Revision-Date: 2009-09-06 15:16+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-07-11 16:36+0200\n"
+"PO-Revision-Date: 2010-06-28 19:16+0200\n"
 "Last-Translator: Pavel Šefránek <pavel.sefranek@gmail.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,17 +24,7 @@ msgstr ""
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 
-#. Open Link
-#: ../capplet/sexy-url-label.c:183
-msgid "_Send address by email"
-msgstr "Ode_slat adresu e-mailem"
-
-#. Copy Link Address
-#: ../capplet/sexy-url-label.c:195
-msgid "_Copy address to clipboard"
-msgstr "_Zkopírovat adresu do schránky"
-
-#: ../capplet/vino-message-box.c:103
+#: ../capplet/vino-message-box.c:54
 #, c-format
 msgid "There was an error showing the URL \"%s\""
 msgstr "Nepodařilo se otevřít adresu „%s“"
@@ -224,9 +213,9 @@ msgstr "Nastavení sezení:"
 msgid "Show session management options"
 msgstr "Zobrazit volby správy sezení"
 
-#: ../server/vino-dbus-listener.c:460
+#: ../server/vino-dbus-listener.c:442
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "Server vzdálené pracovní plochy již běží; končím ...\n"
+msgstr "Server vzdálené pracovní plochy již běží; končí se…\n"
 
 #: ../server/vino-main.c:67
 msgid "- VNC Server for GNOME"
@@ -237,12 +226,12 @@ msgid ""
 "Run 'vino-server --help' to see a full list of available command line options"
 msgstr "Více informací získáte příkazem „vino-server --help“"
 
-#: ../server/vino-main.c:97
+#: ../server/vino-main.c:98
 msgid "GNOME Remote Desktop"
 msgstr "Vzdálená plocha GNOME"
 
 # FIXME: s/XServer/X server/
-#: ../server/vino-main.c:107
+#: ../server/vino-main.c:108
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -255,7 +244,7 @@ msgstr ""
 #. * "1" if "%s's remote desktop" doesn't make sense in
 #. * your language.
 #.
-#: ../server/vino-mdns.c:61
+#: ../server/vino-mdns.c:62
 msgid "vino-mdns:showusername"
 msgstr "1"
 
@@ -265,7 +254,7 @@ msgstr "1"
 #. * translated "vino-mdns:showusername" to anything
 #. * other than "1"
 #.
-#: ../server/vino-mdns.c:73
+#: ../server/vino-mdns.c:74
 #, c-format
 msgid "%s's remote desktop on %s"
 msgstr "Vzdálená plocha %s na %s"
@@ -670,26 +659,30 @@ msgstr "Nastal problém při pokusu zobrazit oznámení: %s\n"
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "Vzdálený uživatel z „%s“ bude odpojen. Jste si jisti?"
 
-#: ../server/vino-tube-server.c:311 ../server/vino-tube-server.c:340
+#: ../server/vino-tube-server.c:268 ../server/vino-tube-server.c:297
 msgid "Share my desktop information"
 msgstr "Sdílejte informace o své ploše s dalšími uživateli"
 
-#: ../server/vino-tube-server.c:315
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:272
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
 msgstr "Uživatel na počítači „%s“ odmítl vaši pozvánku."
 
-#: ../server/vino-tube-server.c:319
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:276
 #, c-format
 msgid "'%s' disconnected"
 msgstr "Uživatel na počítači „%s“ se odpojil"
 
-#: ../server/vino-tube-server.c:346
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:303
 #, c-format
 msgid "'%s' is remotely controlling your desktop."
 msgstr "Uživatel na počítači „%s“ vzdáleně ovládá vaši pracovní plochu."
 
-#: ../server/vino-tube-server.c:355
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:312
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr ""
@@ -780,6 +773,12 @@ msgstr ""
 "CHYBA: nemáte dostatečná oprávnění, abyste mohli změnit heslo k aplikaci "
 "Vino.\n"
 
+#~ msgid "_Send address by email"
+#~ msgstr "Ode_slat adresu e-mailem"
+
+#~ msgid "_Copy address to clipboard"
+#~ msgstr "_Zkopírovat adresu do schránky"
+
 #~ msgid "Out of memory handling '%s' message"
 #~ msgstr "Paměť byla vyčerpána při zpracovávání zprávy „%s“"
 
@@ -788,4 +787,3 @@ msgstr ""
 
 #~ msgid "Failed to acquire D-Bus name '%s'\n"
 #~ msgstr "Nemohu získat název D-Bus „%s“\n"
-
