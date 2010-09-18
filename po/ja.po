@@ -1,33 +1,25 @@
 # Japanese messsage catalogue for vino
-# Copyright (C) 2004-2009 THE vino'S COPYRIGHT HOLDER
+# Copyright (C) 2004-2010 THE vino'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the vino package.
 # Satoru SATOH <ss@gnome.gr.jp>, 2004-2006.
 # Takeshi AIHANA <takeshi.aihana@gmail.com>, 2006-2009.
+# Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-13 06:29+0900\n"
-"PO-Revision-Date: 2009-10-13 06:29+0900\n"
-"Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=vino&component=Preferences Dialog\n"
+"POT-Creation-Date: 2010-08-30 13:34+0000\n"
+"PO-Revision-Date: 2010-09-17 13:53+0900\n"
+"Last-Translator: Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>\n"
 "Language-Team: Japanese <translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#. Open Link
-#: ../capplet/sexy-url-label.c:183
-msgid "_Send address by email"
-msgstr "アドレスを E-メールで送信する(_S)"
-
-#. Copy Link Address
-#: ../capplet/sexy-url-label.c:195
-msgid "_Copy address to clipboard"
-msgstr "アドレスをクリップボードへコピーする(_C)"
-
-#: ../capplet/vino-message-box.c:103
+#: ../capplet/vino-message-box.c:54
 #, c-format
 msgid "There was an error showing the URL \"%s\""
 msgstr "\"%s\" という UL を表示する際にエラーが発生しました"
@@ -88,7 +80,7 @@ msgstr "他のユーザが自分のデスクトップを表示できる(_V)"
 
 #: ../capplet/vino-preferences.ui.h:3
 msgid "Maximum size: 8 characters"
-msgstr "最大文字数は８文字です"
+msgstr "最大文字数は8文字です"
 
 #: ../capplet/vino-preferences.ui.h:4
 msgid "Notification Area"
@@ -116,7 +108,7 @@ msgstr "いくつかの設定は変更不可になっています"
 
 #: ../capplet/vino-preferences.ui.h:10
 msgid "The router must have the UPnP feature enabled"
-msgstr "ルータで UPnP の機能を有効にしておいて下さい"
+msgstr "ルータで UPnP の機能を有効にしておいてください"
 
 #: ../capplet/vino-preferences.ui.h:11
 msgid "You will be queried to allow or to refuse every incoming connection"
@@ -213,7 +205,7 @@ msgstr "セッション管理のオプション:"
 msgid "Show session management options"
 msgstr "セッション管理のオプションを表示する"
 
-#: ../server/vino-dbus-listener.c:460
+#: ../server/vino-dbus-listener.c:442
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr "リモート・デスクトップ・サーバが既に起動中です: 終了します...\n"
 
@@ -228,11 +220,11 @@ msgstr ""
 "'vino-server --help' を実行すると利用可能なコマンドライン・オプションの一覧が"
 "表示されます"
 
-#: ../server/vino-main.c:97
+#: ../server/vino-main.c:98
 msgid "GNOME Remote Desktop"
 msgstr "GNOME リモート・デスクトップ"
 
-#: ../server/vino-main.c:107
+#: ../server/vino-main.c:108
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -245,7 +237,7 @@ msgstr ""
 #. * "1" if "%s's remote desktop" doesn't make sense in
 #. * your language.
 #.
-#: ../server/vino-mdns.c:61
+#: ../server/vino-mdns.c:62
 msgid "vino-mdns:showusername"
 msgstr "42"
 
@@ -254,7 +246,7 @@ msgstr "42"
 #. * translated "vino-mdns:showusername" to anything
 #. * other than "1"
 #.
-#: ../server/vino-mdns.c:73
+#: ../server/vino-mdns.c:74
 #, c-format
 msgid "%s's remote desktop on %s"
 msgstr "%s@%s さんのリモート・デスクトップ"
@@ -295,7 +287,7 @@ msgstr "別のユーザがお使いのデスクトップを参照しているよ
 
 #: ../server/vino-prompt.ui.h:3
 msgid "Do you want to allow them to do so?"
-msgstr "許可しますか？"
+msgstr "許可しますか?"
 
 #: ../server/vino-prompt.ui.h:4
 msgid "Question"
@@ -335,10 +327,10 @@ msgid ""
 "you want that accept connections only from some specific network interface. "
 "eg: eth0, wifi0, lo, ..."
 msgstr ""
-"特に指定しない場合、リモート・デスクトップのサーバは全てのネットワーク・イン"
-"タフェースを監視します。もし特定のネットワーク・インタフェースからのみ接続を"
-"許可したいような場合は、ここにそのネットワークインタフェースを指定して下さい "
-"(例: eth0、wifi0、lo 等)。"
+"特に指定しない場合、リモート・デスクトップのサーバはすべてのネットワーク・イ"
+"ンタフェースを監視します。もし特定のネットワーク・インタフェースからのみ接続"
+"を許可したいような場合は、ここにそのネットワークインタフェースを指定してくだ"
+"さい (例: eth0、wifi0、lo 等)。"
 
 #: ../server/vino-server.schemas.in.h:6
 msgid ""
@@ -389,8 +381,8 @@ msgid ""
 "If true, the server will listen to another port, instead of the default "
 "(5900). The port must be specified in the 'alternative_port' key."
 msgstr ""
-"TRUE にすると、サーバはデフォルトのポート (5900番) ではなく、もう一つ別のポー"
-"トを監視します。このポートは 'alternative port' キーで指定して下さい。"
+"true にすると、サーバはデフォルトのポート (5900番) ではなく、もう一つ別のポー"
+"トを監視します。このポートは 'alternative_port' キーで指定してください。"
 
 #: ../server/vino-server.schemas.in.h:12
 msgid ""
@@ -513,8 +505,7 @@ msgstr "デスクトップの共有が可能になりました"
 #, c-format
 msgid "One person is connected"
 msgid_plural "%d people are connected"
-msgstr[0] " 1人のユーザが接続しています"
-msgstr[1] " %d人のユーザが接続しています"
+msgstr[0] " %d人のユーザが接続しています"
 
 #: ../server/vino-status-icon.c:207 ../server/vino-status-tube-icon.c:175
 msgid "Error displaying preferences"
@@ -551,12 +542,12 @@ msgstr ""
 "\n"
 "Vino は有用とは思いますが、頒布にあたっては市場性または特定の目的に\n"
 "対する適合性についての暗黙の保証を含めて、いかなる保証も行ないません。\n"
-"詳細には GNU 一般公衆利用許諾契約書をご覧下さい。\n"
+"詳細には GNU 一般公衆利用許諾契約書をご覧ください。\n"
 "\n"
 "あなたは本プログラムと一緒に GNU 一般公衆利用許諾契約書の写しを\n"
 "受け取っているはずです。そうでない場合は、Free Software Foundation, \n"
 "Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA \n"
-"まで連絡して下さい。\n"
+"まで連絡してください。\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
 #: ../server/vino-status-icon.c:268
@@ -564,7 +555,8 @@ msgid "translator-credits"
 msgstr ""
 "Satoru SATOH <ss@gnome.gr.jp>\n"
 "相花 毅 <takeshi.aihana@gmail.com>\n"
-"日本GNOMEユーザー会 http://www.gnome.gr.jp"
+"草野 貴之 <AE5T-KSN@asahi-net.or.jp>\n"
+"日本GNOMEユーザー会 <http://www.gnome.gr.jp/>"
 
 #: ../server/vino-status-icon.c:274
 msgid "Share your desktop with other users"
@@ -573,20 +565,20 @@ msgstr "他のユーザとデスクトップを共有します"
 #: ../server/vino-status-icon.c:339 ../server/vino-status-tube-icon.c:223
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
-msgstr "本当に '%s' との接続を閉じますか？"
+msgstr "本当に '%s' との接続を閉じますか?"
 
 #: ../server/vino-status-icon.c:342
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
-msgstr "'%s' のリモート・ユーザに対する接続を閉じます。よろしいですか？"
+msgstr "'%s' のリモート・ユーザに対する接続を閉じます。よろしいですか?"
 
 #: ../server/vino-status-icon.c:348
 msgid "Are you sure you want to disconnect all clients?"
-msgstr "本当に全てのクライアントとの接続を閉じますか？"
+msgstr "本当にすべてのクライアントとの接続を閉じますか?"
 
 #: ../server/vino-status-icon.c:350
 msgid "All remote users will be disconnected. Are you sure?"
-msgstr "全てのリモート・ユーザとの接続閉じます。よろしいですか？"
+msgstr "すべてのリモート・ユーザとの接続閉じます。よろしいですか?"
 
 #: ../server/vino-status-icon.c:362 ../server/vino-status-tube-icon.c:237
 msgid "Disconnect"
@@ -598,7 +590,7 @@ msgstr "設定(_P)"
 
 #: ../server/vino-status-icon.c:403
 msgid "Disconnect all"
-msgstr "全て閉じる"
+msgstr "すべて閉じる"
 
 #. Translators: %s is a hostname
 #. Translators: %s is the alias of the telepathy contact
@@ -652,28 +644,32 @@ msgstr "通知ウィンドウを表示する際にエラー: %s\n"
 #: ../server/vino-status-tube-icon.c:226
 #, c-format
 msgid "The remote user '%s' will be disconnected. Are you sure?"
-msgstr "リモート・ユーザの '%s' に対する接続を閉じますが、よろしいですか？"
+msgstr "リモート・ユーザの '%s' に対する接続を閉じますが、よろしいですか?"
 
-#: ../server/vino-tube-server.c:311 ../server/vino-tube-server.c:340
+#: ../server/vino-tube-server.c:268 ../server/vino-tube-server.c:297
 msgid "Share my desktop information"
 msgstr "デスクトップ共有の情報"
 
-#: ../server/vino-tube-server.c:315
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:272
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
 msgstr "'%s' はデスクトップの共有に対する招待を拒否しました"
 
-#: ../server/vino-tube-server.c:319
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:276
 #, c-format
 msgid "'%s' disconnected"
 msgstr "'%s' との接続を閉じました"
 
-#: ../server/vino-tube-server.c:346
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:303
 #, c-format
 msgid "'%s' is remotely controlling your desktop."
 msgstr "リモート・ユーザの '%s' はあなたのデスクトップに接続中です"
 
-#: ../server/vino-tube-server.c:355
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:312
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "'%s' がスクリーンに接続するまで待機します"
@@ -696,11 +692,8 @@ msgid_plural ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
 "password."
 msgstr[0] ""
-"エラー: パスワードとして入力できるのは %d 文字までです (もう一度入力して下さ"
-"い)"
-msgstr[1] ""
-"エラー: パスワードとして入力できるのは %d 文字までです (もう一度入力して下さ"
-"い)"
+"エラー: パスワードとして入力できるのは %d 文字までです (もう一度入力してくだ"
+"さい)"
 
 #: ../tools/vino-passwd.c:156
 #, c-format
@@ -736,7 +729,7 @@ msgid ""
 "Error while communicating with GConf. Are you logged into a GNOME session?"
 msgstr ""
 "GConf との通信でエラーが発生しました (GNOME セッションに正しくログインしてい"
-"ますか？)"
+"ますか?)"
 
 #: ../tools/vino-passwd.c:183
 #, c-format
@@ -768,3 +761,9 @@ msgstr "VINO のバージョンは %s\n"
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
 "エラー: あなたには Vino のパスワードを変更するために必要な権限がありません\n"
+
+#~ msgid "_Send address by email"
+#~ msgstr "アドレスを E-メールで送信する(_S)"
+
+#~ msgid "_Copy address to clipboard"
+#~ msgstr "アドレスをクリップボードへコピーする(_C)"
