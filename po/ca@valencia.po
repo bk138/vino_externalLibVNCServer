@@ -8,26 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-21 22:37+0200\n"
+"POT-Creation-Date: 2010-10-29 21:50+0100\n"
 "PO-Revision-Date: 2010-03-29 20:23+0200\n"
 "Last-Translator: Joan Duran <jodufi@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#. Open Link
-#: ../capplet/sexy-url-label.c:183
-msgid "_Send address by email"
-msgstr "_Envia l'adreça per correu"
-
-#. Copy Link Address
-#: ../capplet/sexy-url-label.c:195
-msgid "_Copy address to clipboard"
-msgstr "_Copia l'adreça al porta-retalls"
-
-#: ../capplet/vino-message-box.c:103
+#: ../capplet/vino-message-box.c:54
 #, c-format
 msgid "There was an error showing the URL \"%s\""
 msgstr "S'ha produït un error en mostrar l'URL «%s»"
@@ -83,7 +74,7 @@ msgstr "Mostra sempre una _icona"
 
 #: ../capplet/vino-preferences.ui.h:2
 msgid "Allow other users to _view your desktop"
-msgstr "Permet que altres usuaris _visualitzen el meu escriptori"
+msgstr "Permet que altres usuaris _visualitzin el meu escriptori"
 
 #: ../capplet/vino-preferences.ui.h:3
 msgid "Maximum size: 8 characters"
@@ -215,7 +206,7 @@ msgstr "Opcions del gestor de sessió:"
 msgid "Show session management options"
 msgstr "Mostra les opcions del gestor de sessió"
 
-#: ../server/vino-dbus-listener.c:461
+#: ../server/vino-dbus-listener.c:442
 msgid "Remote Desktop server already running; exiting ...\n"
 msgstr ""
 "El servidor de l'escriptori remot ja s'està executant; s'està eixint...\n"
@@ -444,7 +435,7 @@ msgstr "Interfície de xarxa on escoltar"
 
 #: ../server/vino-server.schemas.in.h:18
 msgid "Only allow remote users to view the desktop"
-msgstr "Permet només que els usuaris remots visualitzen l'escriptori"
+msgstr "Permet només que els usuaris remots visualitzin l'escriptori"
 
 #: ../server/vino-server.schemas.in.h:19
 msgid "Password required for \"vnc\" authentication"
@@ -465,8 +456,8 @@ msgid ""
 "encoded."
 msgstr ""
 "La contrasenya que es demanarà a l'usuari remot si es fa servir el mètode "
-"d'autenticació «vnc». La contrasenya especificada en esta clau es codifica en "
-"base64."
+"d'autenticació «vnc». La contrasenya especificada en esta clau es codifica "
+"en base64."
 
 #: ../server/vino-server.schemas.in.h:23
 msgid ""
@@ -485,9 +476,9 @@ msgid ""
 "\"never\" - Never shows the icon."
 msgstr ""
 "Esta clau controla el comportament de la icona d'estat. Hi ha tres opcions: "
-"«always» - Sempre es veurà la icona. «client» només - veureu la icona quan hi "
-"haja algú connectat, és el comportament predeterminat. «mai» - no mostres mai "
-"la icona."
+"«always» - Sempre es veurà la icona. «client» només - veureu la icona quan "
+"hi haja algú connectat, és el comportament predeterminat. «mai» - no mostres "
+"mai la icona."
 
 #: ../server/vino-server.schemas.in.h:25
 msgid ""
@@ -653,7 +644,8 @@ msgstr "Un altre usuari està controlant el vostre escriptori"
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr ""
-"Un usuari de l'ordinador «%s» està controlant el vostre escriptori remotament."
+"Un usuari de l'ordinador «%s» està controlant el vostre escriptori "
+"remotament."
 
 #: ../server/vino-status-icon.c:642 ../server/vino-status-tube-icon.c:422
 #, c-format
@@ -665,26 +657,30 @@ msgstr "S'ha produït un error en mostrar la notificació: %s\n"
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "Es desconnectarà l'usuari remot «%s». N'esteu segur?"
 
-#: ../server/vino-tube-server.c:311 ../server/vino-tube-server.c:340
+#: ../server/vino-tube-server.c:268 ../server/vino-tube-server.c:297
 msgid "Share my desktop information"
 msgstr "Compartiu la informació de l'escriptori"
 
-#: ../server/vino-tube-server.c:315
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:272
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
 msgstr "«%s» ha refusat la invitació de compartició de l'escriptori."
 
-#: ../server/vino-tube-server.c:319
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:276
 #, c-format
 msgid "'%s' disconnected"
 msgstr "«%s» desconnectat"
 
-#: ../server/vino-tube-server.c:346
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:303
 #, c-format
 msgid "'%s' is remotely controlling your desktop."
 msgstr "«%s» està controlant el vostre escriptori remotament."
 
-#: ../server/vino-tube-server.c:355
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:312
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "S'està esperant «%s» per a connectar a la pantalla."
@@ -779,6 +775,12 @@ msgstr "Vino versió %s\n"
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
 "ERROR: No teniu suficients permisos per a canviar la contrasenya del Vino.\n"
+
+#~ msgid "_Send address by email"
+#~ msgstr "_Envia l'adreça per correu"
+
+#~ msgid "_Copy address to clipboard"
+#~ msgstr "_Copia l'adreça al porta-retalls"
 
 #~ msgid "Out of memory handling '%s' message"
 #~ msgstr "No hi ha hagut prou memòria per a gestionar el missatge «%s»"
