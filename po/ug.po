@@ -7,13 +7,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=vino&component=Preferences Dialog\n"
-"POT-Creation-Date: 2010-10-20 13:02+0000\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&component=Preferences Dialog\n"
+"POT-Creation-Date: 2010-10-29 21:08+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sahran <sahran@live.com>\n"
-"Language-Team: GNOME Uighur Translation Project <gnome-uighur@yahoogroups."
-"com>\n"
+"Language-Team: GNOME Uighur Translation Project <gnome-uighur@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -33,8 +31,7 @@ msgstr "مەزكۇر كومپيۇتېرنىڭ باغلىنىش ئۇچۇرلىر�
 msgid ""
 "There was an error displaying help:\n"
 "%s"
-msgstr ""
-"ياردەمنى كۆرسىتىشتە خاتالىق كۆرۈلدى: \n"
+msgstr "ياردەمنى كۆرسىتىشتە خاتالىق كۆرۈلدى: \n"
 "%s"
 
 #: ../capplet/vino-preferences.c:834
@@ -67,7 +64,7 @@ msgstr "يىراقتىكى ئۈستەلئۈستىنى كۆرسىتىش ئۇسۇ�
 #: ../capplet/vino-preferences.desktop.in.in.h:2
 #: ../server/vino-server.desktop.in.in.h:2
 msgid "Remote Desktop"
-msgstr "يىراقتىكى ئۈستەلئۈستى"
+msgstr "Desktop يىراقتىكى"
 
 #: ../capplet/vino-preferences.ui.h:1
 msgid "Al_ways display an icon"
@@ -75,7 +72,7 @@ msgstr "سىنبەلگىنى ھەمىشە كۆرسەت(_W)"
 
 #: ../capplet/vino-preferences.ui.h:2
 msgid "Allow other users to _view your desktop"
-msgstr "باشقىلارنىڭ كومپيۇتېرىڭىزنى كۆرۈشىگە يول قويىدۇ"
+msgstr "باشقىلارنىڭ كومپيۇتېرىڭىزنى كۆرۈشىگە رۇخسەت قىلىش(_V)"
 
 #: ../capplet/vino-preferences.ui.h:3
 msgid "Maximum size: 8 characters"
@@ -119,7 +116,7 @@ msgstr "كومپيۇتېرىڭىز ھەمبەھىرلىنىدۇ"
 
 #: ../capplet/vino-preferences.ui.h:13
 msgid "_Allow other users to control your desktop"
-msgstr "باشقا ئىشلەتكۈچىلەرنىڭ كومپيۇتېرىڭىزنى تىزگىنلىشىگە يول قويۇڭ(_A)"
+msgstr "باشقا ئىشلەتكۈچىلەرنىڭ كومپيۇتېرىڭىزنى كونترول قىلىشىغا رۇخسەت قىلىڭ(_A)"
 
 #: ../capplet/vino-preferences.ui.h:14
 msgid "_Configure network automatically to accept connections"
@@ -127,7 +124,7 @@ msgstr "تورنى باغلىنىشنى ئاپتوماتىك قوبۇل قىلى
 
 #: ../capplet/vino-preferences.ui.h:15
 msgid "_Never display an icon"
-msgstr "سىنبەلگىنى ھەرگىز كۆرسەتمە(_A)"
+msgstr "سىنبەلگىنى ھەرگىز كۆرسەتمە(_N)"
 
 #: ../capplet/vino-preferences.ui.h:16
 msgid "_Only display an icon when there is someone connected"
@@ -135,7 +132,7 @@ msgstr "باغلىنىش بولغاندىلا سىنبەلگىنى كۆرسەت(
 
 #: ../capplet/vino-preferences.ui.h:17
 msgid "_Require the user to enter this password:"
-msgstr "ئىشلەتكۈچىنىڭ ئىم كىرگۈزۈشىنى سورا(_R)"
+msgstr "ئىشلەتكۈچىنىڭ ئىمىنى كىرگۈزۈشىنى سوراش(_R)"
 
 #: ../capplet/vino-preferences.ui.h:18
 msgid "_You must confirm each access to this machine"
@@ -149,7 +146,7 @@ msgstr "ھۆججەت ئىناۋەتلىك .desktop ھۆججىتى ئەمەس."
 #: ../server/smclient/eggdesktopfile.c:188
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "ئىناۋەتسىز ئۈستەلئۈستى ھۆججەت نەشرى '%s'"
+msgstr "ئۈستەل يۈزى ھۆججەت نەشرى '%s' ئىناۋەتسىز"
 
 #: ../server/smclient/eggdesktopfile.c:958
 #, c-format
@@ -159,7 +156,7 @@ msgstr "%s قوزغىلىۋاتىدۇ"
 #: ../server/smclient/eggdesktopfile.c:1100
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "قوللىنىشچان پروگرامما بۇيرۇق قۇرىدا پۈتۈككە يول قويمايدۇ"
+msgstr "پروگرامما بۇيرۇق قۇرىدا پۈتۈكلەرنى قوبۇل قىلمايدۇ"
 
 #: ../server/smclient/eggdesktopfile.c:1168
 #, c-format
@@ -169,7 +166,7 @@ msgstr "تونۇمايدىغان ئىجرا تاللانمىسى: %d"
 #: ../server/smclient/eggdesktopfile.c:1373
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "URI پۈتۈكنى 'Type=Link' ئۈستەل يۈزى تۈرىگە يوللىيالمىدى."
+msgstr "پۈتۈك URI نى 'Type=Link' ئۈستەليۈزى تۈرىگە يوللىيالمىدى."
 
 #: ../server/smclient/eggdesktopfile.c:1392
 #, c-format
@@ -178,7 +175,7 @@ msgstr "ئىجراچان تۈر ئەمەس"
 
 #: ../server/smclient/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr "ئەڭگىمە باشقۇرغۇچقا باغلىنىشنى چەكلە"
+msgstr "ئەڭگىمە باشقۇرغۇغا باغلىنىشنى چەكلە"
 
 #: ../server/smclient/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
@@ -190,23 +187,23 @@ msgstr "ھۆججەت"
 
 #: ../server/smclient/eggsmclient.c:231
 msgid "Specify session management ID"
-msgstr "ئەڭگىمە باشقۇرغۇچ كىملىكىنى بەلگىلە"
+msgstr "ئەڭگىمە باشقۇرغۇ ID سېنى بەلگىلە"
 
 #: ../server/smclient/eggsmclient.c:231
 msgid "ID"
-msgstr "ID "
+msgstr "ID"
 
 #: ../server/smclient/eggsmclient.c:252
 msgid "Session management options:"
-msgstr "ئەڭگىمە باشقۇرغۇچ تاللانمىلىرى:"
+msgstr "ئەڭگىمە باشقۇرغۇ تاللانمىلىرى:"
 
 #: ../server/smclient/eggsmclient.c:253
 msgid "Show session management options"
-msgstr "ئەڭگىمە باشقۇرغۇچ تاللانمىلىرىنى كۆرسەت"
+msgstr "ئەڭگىمە باشقۇرغۇ تاللانمىلىرى كۆرسەت"
 
 #: ../server/vino-dbus-listener.c:442
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "يىراقتىكى ئۈستەلئۈستى مۇلازىمېتىرى ئىجرا قىلىنىۋاتىدۇ؛ چېكىنىۋاتىدۇ…\n"
+msgstr "يىراقتىكى ئۈستەلئۈستى مۇلازىمېتىرى ئاللىقاچان يۈرگۈزىلىۋاتىدۇ؛ چېكىنىۋاتىدۇ.....\n"
 
 #: ../server/vino-main.c:67
 msgid "- VNC Server for GNOME"
@@ -215,9 +212,7 @@ msgstr "GNOME نىڭ VNC مۇلازىمېتىرى"
 #: ../server/vino-main.c:75
 msgid ""
 "Run 'vino-server --help' to see a full list of available command line options"
-msgstr ""
-"«vino-server --help» ئىجرا قىلىنسا بۇيرۇق قۇرى تاللانمىسىنى ئىشلىتىشنىڭ تولۇق "
-"تىزىملىكى كۆرۈنىدۇ."
+msgstr "«vino-server --help» ئىجرا قىلىنسا بۇيرۇق قۇرى تاللانمىسىنى ئىشلىتىشنىڭ تولۇق تىزىملىكى كۆرۈنىدۇ."
 
 #: ../server/vino-main.c:98
 msgid "GNOME Remote Desktop"
@@ -227,9 +222,7 @@ msgstr "GNOME يىراقتىكى ئۈستەلئۈستى"
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
-msgstr ""
-"سىزنىڭ XServer ئىڭىز Xtest نىڭ تولۇقلىمىسىنى قوللىمايدۇ - يىراقتىكى "
-"كومپيۇتېرنى پەقەت كۆرۈشكىلا بولىدۇ\n"
+msgstr "سىزنىڭ XServer ئىڭىز Xtest نىڭ تولۇقلىمىسىنى قوللىمايدۇ - يىراقتىكى كومپيۇتېرنى پەقەت كۆرۈشكىلا بولىدۇ\n"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -261,24 +254,20 @@ msgstr "ئېكران"
 
 #: ../server/vino-prompt.c:142
 msgid "The screen on which to display the prompt"
-msgstr "ئەسكەرتىشنى كۆرسىتىدىغان ئېكران"
+msgstr "كىرگۈزۈشنى كۆرسىتىدىغان ئېكران"
 
 #: ../server/vino-prompt.c:345
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
-msgstr ""
-"كومپيۇتېر %s ئۈستىدىكى مەلۇم ئىشلەتكۈچى يىراقتىن سىزنىڭ كومپيۇتېرىڭىزنى "
-"كۆرمەكچى ياكى كونترول قىلماقچى"
+msgstr "كومپيۇتېر %s ئۈستىدىكى مەلۇم ئىشلەتكۈچى يىراقتىن سىزنىڭ كومپيۇتېرىڭىزنى كۆرمەكچى ياكى كونترول قىلماقچى"
 
 #: ../server/vino-prompt.ui.h:1
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
-msgstr ""
-"باشقا كومپيۇتېردىكى مەلۇم ئىشلەتكۈچى يىراقتىن كومپيۇتېرىڭىزنى كۆرمەكچى ياكى "
-"تىزگىنلىمەكچى."
+msgstr "باشقا كومپيۇتېر ئۈستىدىكى مەلۇم ئىشلەتكۈچى يىراقتىن سىزنىڭ كومپيۇتېرىڭىزنى كۆرمەكچى ياكى كونترول قىلماقچى"
 
 #: ../server/vino-prompt.ui.h:2
 msgid "Another user is trying to view your desktop."
@@ -294,11 +283,11 @@ msgstr "سوئال"
 
 #: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:65
 msgid "_Allow"
-msgstr "يول قوي(_A)"
+msgstr "يول قويۇش(_A)"
 
 #: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:66
 msgid "_Refuse"
-msgstr "رەت قىل(_R)"
+msgstr "رەت قىلىش(_R)"
 
 #: ../server/vino-server.desktop.in.in.h:1
 msgid "GNOME Remote Desktop Server"
@@ -306,7 +295,7 @@ msgstr "GNOME يىراقتىكى ئۈستەلئۈستى مۇلازىمېتىرى
 
 #: ../server/vino-server.schemas.in.h:1
 msgid "Allowed authentication methods"
-msgstr "رۇخسەت قىلىنغان دەلىللەش ئۇسۇللىرى"
+msgstr "رۇخسەت قىلىنغان تەكشۈرۈش ئۇسۇللىرى"
 
 #: ../server/vino-server.schemas.in.h:2
 msgid "Alternative port number"
@@ -314,72 +303,54 @@ msgstr "باشقا ئېغىز نومۇرى"
 
 #: ../server/vino-server.schemas.in.h:3
 msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr "يىراقتىكى ئۈستەلئۈستىنىڭ URL نى ئەۋەتىدىغان ئېلخەت مەنزىلى"
+msgstr "ئادرېس E-mail يىراقتىكى كومپيۇتېرنىڭ ئادرېسى ئەۋەتىلمەكچى بولغان"
 
 #: ../server/vino-server.schemas.in.h:4
 msgid "Enable remote desktop access"
-msgstr "يىراقتىكى ئۈستەلئۈستى زىيارىتىنى قوزغات"
+msgstr "يىراقتىكى كومپيۇتېرغا كىرىشكە رۇخسەت قىلىش"
 
 #: ../server/vino-server.schemas.in.h:5
 msgid ""
 "If not set, the server will listen on all network interfaces. Set this if "
 "you want that accept connections only from some specific network interface. "
 "eg: eth0, wifi0, lo, ..."
-msgstr ""
-"ئەگەر بېكىتىلمىسە، مۇلازىمېتىر بارلىق تور ئارايۈزىنى تىڭشايدۇ. ئەگەر "
-"بەلگىلەنگەن تور ئارايۈزىدە تىڭشىماقچى بولسىڭىز بۇنى بېكىتىڭ. قىممەتلەر eth0, "
-"wifi0, lo, ..."
+msgstr "ئەگەر بېكىتىلمىسە، مۇلازىمېتىر بارلىق تور ئارايۈزىنى تىڭشايدۇ. ئەگەر بەلگىلەنگەن تور ئارايۈزىدە تىڭشىماقچى بولسىڭىز بۇنى بېكىتىڭ. قىممەتلەر eth0, wifi0, lo, ..."
 
 #: ../server/vino-server.schemas.in.h:6
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a vncviewer."
-msgstr ""
-"ئەگەر true بولسا، كومپيۇتېرغا كىرىش RFB كېلىشىمى ئارقىلىق رۇخسەت قىلىنىدۇ. "
-"يىراقتىكى كومپيۇتېردىكى ئىشلەتكۈچىلەر بۇ چاغدا vncviwer ئارقىلىق ئۇلىيالايدۇ."
+msgstr "ئەگەر true بولسا،  كومپيۇتېرغا كىرىش RFB protocol ئارقىلىق رۇخسەت قىلىنىدۇ.يىراقتىكى كومپيۇتېردىكى ئىشلەتكۈچىلەر بۇ چاغدا vncviwer ئارقىلىق ئۇلىيالايدۇ"
 
 #: ../server/vino-server.schemas.in.h:7
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
-msgstr ""
-"ئەگەر true بولسا، يىراقتىكى ئىشلەتكۈچىلەر ساھىبخانا كومپيۇتېر ئۈستىدىكى "
-"ئىشلەتكۈچى رۇخسەت قىلمىغۇچە كىرەلمەيدۇ. ئىم بىلەن قوغدالمىغان ئەھۋالدا بۇنى "
-"ئىشلىتىش ئالاھىدە تەلەپ قىلىنىدۇ"
+msgstr "ئەگەر true بولسا،  يىراقتىكى ئىشلەتكۈچىلەر ساھىبخانا كومپيۇتېر ئۈستىدىكى ئىشلەتكۈچى رۇخسەت قىلمىغۇچە كىرەلمەيدۇ. مەخپىي شىفىر بىلەن قوغدالمىغان ئەھۋالدا بۇنى ئىشلىتىش ئالاھىدە تەلەپ قىلىنىدۇ"
 
 #: ../server/vino-server.schemas.in.h:8
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
-msgstr ""
-"ئەگەر true بولسا، يىراقتىكى ئىشلەتكۈچى ئۈستەليۈزىنى كۆرەلەيدۇ. چاشقىنەك ۋە "
-"ھەرپتاختىنى ئىشلىتەلمەيدۇ."
+msgstr "ئەگەر true بولسا، يىراقتىكى ئىشلەتكۈچى ئۈستەليۈزىنى كۆرەلەيدۇ. چاشقىنەك ۋە ھەرپتاختىنى ئىشلىتەلمەيدۇ."
 
 #: ../server/vino-server.schemas.in.h:9
 msgid ""
 "If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
 "encryption unless the intervening network is trusted."
-msgstr ""
-"ئەگەر true بولسا، يىراقتىكى ئىشلەتكۈچى ئۈستەلئۈستىنى زىيارەت قىلغاندا "
-"شىفىرلاشنى قوللاش تەلەپ قىلىنىدۇ. خېرىدار تەرەپ پروگراممىڭىزنىڭ شىفىرلاشنى "
-"قوللىشىنى كۈچلۈك تەۋسىيە قىلىمىز، ئارىلىقتىكى تور يېتەرلىك ئىشەنچلىك بولسا "
-"بۇ باشقا گەپ."
+msgstr "ئەگەر true بولسا، يىراقتىكى ئىشلەتكۈچى ئۈستەلئۈستىنى زىيارەت قىلغاندا شىفىرلاشنى قوللاش تەلەپ قىلىنىدۇ. خېرىدار تەرەپ پروگراممىڭىزنىڭ شىفىرلاشنى قوللىشىنى كۈچلۈك تەۋسىيە قىلىمىز، ئارىلىقتىكى تور يېتەرلىك ئىشەنچلىك بولسا بۇ باشقا گەپ."
 
 #: ../server/vino-server.schemas.in.h:10
 msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr ""
-"ئەگەر true بولسا، ئەڭ ئاخىرقى يىراقتىكى ئىشلەتكۈچى ئۈزۈلگەندىن كېيىن ئېكران "
-"قۇلۇپلىنىدۇ."
+msgstr "ئەگەر true بولسا، ئەڭ ئاخىرقى يىراقتىكى ئىشلەتكۈچى ئۈزۈلگەندىن كېيىن ئېكران قۇلۇپلىنىدۇ."
 
 #: ../server/vino-server.schemas.in.h:11
 msgid ""
 "If true, the server will listen to another port, instead of the default "
 "(5900). The port must be specified in the 'alternative_port' key."
-msgstr ""
-"ئەگەر true بولسا، مۇلازىمېتىر كۆڭۈلدىكى ئېغىز(5900) دا تىڭشىماي، باشقا بىر "
-"ئېغىزدا تىڭشايدۇ."
+msgstr "ئەگەر true بولسا، مۇلازىمېتىر كۆڭۈلدىكى ئېغىز(5900) دا تىڭشىماي، باشقا بىر ئېغىزدا تىڭشايدۇ."
 
 #: ../server/vino-server.schemas.in.h:12
 msgid ""
@@ -387,19 +358,13 @@ msgid ""
 "not work properly on some video drivers when using 3D effects. Disabling it "
 "will make vino work on these environments with a slower rendering as side "
 "effect."
-msgstr ""
-"ئەگەر true بولسا، بىز X.org نىڭ XDamage كېڭەيتىلمىسىنى ئىشلەتمەيمىز. بۇ "
-"كېڭەيتىلمە بەزى كۆرسىتىش كارتىسىدا 3D (ئۈچ ئۆلچەملىك) ئۈنۈمنى نورمال "
-"ئىشلەتكىلى بولمايدۇ. ئۇ چەكلەنسە vino بۇ مۇھىتلاردا خىزمەت قىلالايدۇ ئەمما "
-"رەڭلەش ئاستىراق بولىدۇ."
+msgstr "ئەگەر true بولسا، بىز X.org نىڭ XDamage كېڭەيتىلمىسىنى ئىشلەتمەيمىز. بۇ كېڭەيتىلمە بەزى كۆرسىتىش كارتىسىدا 3D (ئۈچ ئۆلچەملىك) ئۈنۈمنى نورمال ئىشلەتكىلى بولمايدۇ. ئۇ چەكلەنسە vino بۇ مۇھىتلاردا خىزمەت قىلالايدۇ ئەمما رەڭلەش ئاستىراق بولىدۇ."
 
 #: ../server/vino-server.schemas.in.h:13
 msgid ""
 "If true, we will use UPNP protocol to automatically forward the port used by "
 "vino in the router."
-msgstr ""
-"ئەگەر true بولسا، UPNP كېلىشىمىنى ئىشلىتىپ router (يول تاللىغۇچ) تىكى vino "
-"ئىشلەتكەن ئېغىزغا ئۆزلۈكىدىن جاۋاب قايتۇرىدۇ."
+msgstr "ئەگەر true بولسا، UPNP كېلىشىمىنى ئىشلىتىپ router (يول تاللىغۇچ) تىكى vino ئىشلەتكەن ئېغىزغا ئۆزلۈكىدىن جاۋاب قايتۇرىدۇ."
 
 #: ../server/vino-server.schemas.in.h:14
 msgid "Listen an alternative port"
@@ -412,12 +377,7 @@ msgid ""
 "remote user to be prompted for a password (the password is specified by the "
 "vnc_password key) before connecting and \"none\" which allows any remote "
 "user to connect."
-msgstr ""
-"يىراقتىكى ئىشلەتكۈچىلەرنىڭ كومپيۇتېرغا كىرىشىدىكى دەلىللەش ئۇسۇللىرىنى "
-"كۆرسىتىدۇ. بۇ يەردە ئىككى خىل دەلىللەش ئۇسۇلى مەۋجۇت؛ \"vnc\" ئۇلىنىشتىن "
-"بۇرۇن يىراقتىكى ئىشلەتكۈچىلەرنىڭ ئىم كىرگۈزۈشىنى سورايدۇ (ئىم \"vnc_password"
-"\" تەرىپىدىن بەلگىلىنىدۇ) ياكى \"none\" (يوق ھەر) قانداق ئىشلەتكۈچىنىڭ "
-"ئۇلىنىشىغا يول قويىدۇ."
+msgstr "يىراقتىكى ئىشلەتكۈچىلەرنىڭ كومپيۇتېرغا كىرىشىدىكى تەكشۈرۈش ئۇسۇللىرى. بۇ يەردە ئىككى خىل تەكشۈرۈش ئۇسۇلى مەۋجۇت؛ \"vnc\" ئۇلىنىشتىن بۇرۇن يىراقتىكى ئىشلەتكۈچىلەرنىڭ ئىمىنى كىرگۈزۈشىنى سورايدۇ (ئىم \"vnc_password\" تەرىپىدىن بەلگىلىنىدۇ)\"none\"  ھەرقانداق ئىشلەتكۈچىنىڭ ئۇلىشىغا رۇخسەت قىلىدۇ"
 
 #: ../server/vino-server.schemas.in.h:16
 msgid "Lock the screen when last user disconnect"
@@ -429,36 +389,32 @@ msgstr "تىڭشايدىغان تور ئارايۈزى(تور كارتىسى)"
 
 #: ../server/vino-server.schemas.in.h:18
 msgid "Only allow remote users to view the desktop"
-msgstr "يىراقتىكى ئىشلەتكۈچىلەرنىڭ ئۈستەلئۈستىنىلا كۆرۈشىگە يول قويىدۇ"
+msgstr "يىراقتىكى ئىشلەتكۈچىلەرنىڭ پەقەت كۆرۈشىگىلا رۇخسەت قىلىش"
 
 #: ../server/vino-server.schemas.in.h:19
 msgid "Password required for \"vnc\" authentication"
-msgstr "ئۇسۇلى ئۈچۈن مەخپىي شىفىر تەلەپ قىلىنىدۇ \"vnc\""
+msgstr "ئۇسۇلى ئۈچۈن ئىم تەلەپ قىلىنىدۇ \"vnc\""
 
 #: ../server/vino-server.schemas.in.h:20
 msgid "Prompt the user before completing a connection"
-msgstr "ئۇلىنىشنى تاماملاشتىن ئىلگىرى ئىشلەتكۈچىگە ئەسكەرت"
+msgstr "ئۇلىنىشنى ئاخىرلاشتۇرۇشتىن بۇرۇن ئىشلەتكۈچىنى سوراش"
 
 #: ../server/vino-server.schemas.in.h:21
 msgid "Require encryption"
-msgstr "شىفىرلاش زۆرۈر"
+msgstr "نى تەلەپ قىلىش encryption"
 
 #: ../server/vino-server.schemas.in.h:22
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
 "encoded."
-msgstr ""
-"ئەگەر \"vnc\" دەلىللەش ئۇسۇلى قوللىنىلسا يىراقتىكى ئىشلەتكۈچىگە ئىم كىرگۈزۈش "
-"ئەسكەرتىلىدۇ. بۇ ئاچقۇچ ئىمنىڭ base64 كودلانغانلىقىنى كۆرسىتىدۇ."
+msgstr "ئەگەر \"vnc\" تەكشۈرۈش ئۇسۇلى قوللىنىلسا يىراقتىكى ئىشلەتكۈچىنىڭ مەخپىي كودىنى كىرگۈزۈلۈشى سورىلىدۇ. بۇ ئاچقۇچ ئىمنىڭ base64 دا كودلانغانلىقىنى كۆرسىتىدۇ"
 
 #: ../server/vino-server.schemas.in.h:23
 msgid ""
 "The port which the server will listen to if the 'use_alternative_port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
-msgstr ""
-"بۇ 'use_alternative_port' ئاچقۇچى true قىلىپ تەڭشەلسە مۇلازىمېتىر "
-"تىڭشايدىغان ئېغىز نومۇرى. قىممەت ئېلىش دائىرىسى 5000 دىن 50000 غىچە بولىدۇ."
+msgstr "بۇ 'use_alternative_port' ئاچقۇچى true قىلىپ تەڭشەلسە مۇلازىمېتىر تىڭشايدىغان ئېغىز نومۇرى. قىممەت ئېلىش دائىرىسى 5000 دىن 50000 غىچە بولىدۇ."
 
 #: ../server/vino-server.schemas.in.h:24
 msgid ""
@@ -466,21 +422,14 @@ msgid ""
 "\"always\" - The icon will be always there; \"client\" - You will see the "
 "icon only when there is someone connected, this is the default behavior; "
 "\"never\" - Never shows the icon."
-msgstr ""
-"بۇ ئاچقۇچ ھالەت سىنبەلگىسىنىڭ ھەرىكىتىنى تىزگىنلەيدۇ. ئۈچ تاللانما بار: "
-"«ھەمىشە» - سىنبەلگە كۆرسىتىدۇ؛ «خېرىدار» - پەقەت باشقىلار باغلانغاندىلا ئاندىن "
-"سىنبەلگىنى كۆرەلەيسىز، بۇ كۆڭۈلدىكى مەشغۇلات؛ «ھەرگىز» - سىنبەلگىنى ھەرگىز "
-"كۆرسەتمەيدۇ."
+msgstr "بۇ ئاچقۇچ ھالەت سىنبەلگىسىنىڭ ھەرىكىتىنى تىزگىنلەيدۇ. ئۈچ تاللانما بار: «ھەمىشە» - سىنبەلگە كۆرسىتىدۇ؛ «خېرىدار» - پەقەت باشقىلار باغلانغاندىلا ئاندىن سىنبەلگىنى كۆرەلەيسىز، بۇ كۆڭۈلدىكى مەشغۇلات؛ «ھەرگىز» - سىنبەلگىنى ھەرگىز كۆرسەتمەيدۇ."
 
 #: ../server/vino-server.schemas.in.h:25
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Remote Desktop preferences "
 "dialog."
-msgstr ""
-"بۇ ئاچقۇچ ئەگەر مەلۇم ئىشلەتكۈچى يىراقتىكى ئۈستەلئۈستى مايىللىق سۆزلەشكۈدىكى "
-"ئادرېسنى چەككەندە يىراقتىكى ئۈستەلئۈستىنىڭ URL نى ئەۋەتىدىغان ئېلخەت "
-"ئادرېسىنى بەلگىلەيدۇ."
+msgstr "بۇ ئاچقۇچ ئەگەر مەلۇم ئىشلەتكۈچى يىراقتىكى desktop مايىللىقى سۆزلەشكۈسىدىكى ئادرېسنى يىراقتىكى desktop نىڭ URL نى ئەۋەتىدىغان e-mail ئادرېسىنى بەلگىلەيدۇ"
 
 #: ../server/vino-server.schemas.in.h:26
 msgid "When the status icon should be shown"
@@ -534,27 +483,22 @@ msgid ""
 "along with this program; if not, write to the Free Software\n"
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
 "02110-1301, USA.\n"
-msgstr ""
-"GNU ئادەتتىكى ئاممىۋى ئىجازەتنامە ئىككىنچى نەشرى بويىچە ئىجازەت بېرىلدى\n"
+msgstr "GNU ئادەتتىكى ئاممىۋى ئىجازەتنامە ئىككىنچى نەشرى بويىچە ئىجازەت بېرىلدى\n"
 "\n"
-"Vino ئەركىن يۇمشاق دېتال؛ سىز ئەركىن يۇمشاق دېتال ۋەخپىسى تارقاتقان GNU "
-"ئادەتتىكى ئاممىۋى ئىجازەتنامە بويىچە ئۇنى قايتا تارقىتالايسىز ياكى "
-"ئۆزگەرتەلەيسىز؛ سىز شۇ ئىجازەت كېلىشىمىنىڭ ئىككىنچى نەشرى ياكى يۇقىرى "
-"نەشرىنى ئىشلەتسىڭىز بولىدۇ.\n"
+"Vino ئەركىن يۇمشاق دېتال؛ سىز ئەركىن يۇمشاق دېتال ۋەخپىسى تارقاتقان GNU ئادەتتىكى ئاممىۋى ئىجازەتنامە بويىچە ئۇنى قايتا تارقىتالايسىز ياكى ئۆزگەرتەلەيسىز؛ سىز شۇ ئىجازەت كېلىشىمىنىڭ ئىككىنچى نەشرى ياكى يۇقىرى نەشرىنى ئىشلەتسىڭىز بولىدۇ.\n"
 "\n"
-"Vino نى تارقىتىشتىكى مەقسەت سىزگە قۇلايلىق ئېلىپ كېلىش، ئەمما سودا ياكى "
-"باشقا ئالاھىدە قوللىنىشقا نىسبەتەن ھېچقانداق كاپالەت يوق.  GNU ئادەتتىكى "
-"ئاممىۋى ئىجازەت كېلىشىمىنى كۆرۈپ تېخىمۇ كۆپ تەپسىلاتقا ئېرىشىڭ.\n"
+"Vino نى تارقىتىشتىكى مەقسەت سىزگە قۇلايلىق ئېلىپ كېلىش، ئەمما سودا ياكى باشقا ئالاھىدە قوللىنىشقا نىسبەتەن ھېچقانداق كاپالەت يوق.  GNU ئادەتتىكى ئاممىۋى ئىجازەت كېلىشىمىنى كۆرۈپ تېخىمۇ كۆپ تەپسىلاتقا ئېرىشىڭ.\n"
 "\n"
-"مەزكۇر پروگرامما بىلەن بىرگە ئادەتتىكى ئاممىۋى ئىجازەتنامە(GNU General "
-"Public) ئىجازەتنامىسى چوقۇم بىرگە بولىدۇ. ئۇنداق بولمىسا ئەركىن يۇمشاق دېتال "
-"ۋەخپىسىگە خەت يېزىڭ. ئادرېسى: 51 Franklin Street, Fifth Floor, Boston, MA\n"
+"مەزكۇر پروگرامما بىلەن بىرگە ئادەتتىكى ئاممىۋى ئىجازەتنامە(GNU General Public) ئىجازەتنامىسى چوقۇم بىرگە بولىدۇ. ئۇنداق بولمىسا ئەركىن يۇمشاق دېتال ۋەخپىسىگە خەت يېزىڭ. ئادرېسى: 51 Franklin Street, Fifth Floor, Boston, MA\n"
 "02110-1301\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
 #: ../server/vino-status-icon.c:268
 msgid "translator-credits"
-msgstr "تەرجىمان تۆھپىكارلار"
+msgstr "Sahran <sahran@live.com>\n"
+"Gheyret T.Kenji <gheyret@yahoo.com>\n"
+"Zeper <zeper@msn.com>\n"
+"Abduxukur Abdurixit <abduxukur.abdurixit@t-systems.ch>"
 
 #: ../server/vino-status-icon.c:274
 msgid "Share your desktop with other users"
@@ -613,13 +557,12 @@ msgstr "libnotify دەسلەپلەشتۈرۈشتە خاتالىق كۆرۈلدى
 #. Translators: %s is a hostname
 #: ../server/vino-status-icon.c:610
 msgid "Another user is viewing your desktop"
-msgstr "باشقا بىر ئىشلەتكۈچى ئۈستەلۈستىڭىزنى كۆرۈۋاتىدۇ."
+msgstr "باشقا بىر ئىشلەتكۈچى ئۈستەلئۈستىڭىزنى كۆرۈۋاتىدۇ."
 
 #: ../server/vino-status-icon.c:612
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
-msgstr ""
-"'%s' كومپيۇتېردىكى بىر ئىشلەتكۈچى ئۈستەلئۈستىڭىزنى يىراقتىن كۆرۈۋاتىدۇ."
+msgstr "'%s' كومپيۇتېردىكى بىر ئىشلەتكۈچى ئۈستەلئۈستىڭىزنى يىراقتىن كۆرۈۋاتىدۇ."
 
 #. Translators: %s is a hostname
 #: ../server/vino-status-icon.c:618
@@ -629,8 +572,7 @@ msgstr "باشقا بىر ئىشلەتكۈچى كومپيۇتېرىڭىزنى ي
 #: ../server/vino-status-icon.c:620
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr ""
-"'%s' كومپيۇتېردىكى بىر ئىشلەتكۈچى كومپيۇتېرىڭىزنى يىراقتىن باشقۇرۇۋاتىدۇ."
+msgstr "'%s' كومپيۇتېردىكى بىر ئىشلەتكۈچى كومپيۇتېرىڭىزنى يىراقتىن باشقۇرۇۋاتىدۇ."
 
 #: ../server/vino-status-icon.c:642 ../server/vino-status-tube-icon.c:422
 #, c-format
@@ -687,9 +629,7 @@ msgid ""
 msgid_plural ""
 "ERROR: Maximum length of password is %d characters. Please, re-enter the "
 "password."
-msgstr[0] ""
-"خاتالىق: ئىمنىڭ ئۇزۇنلۇقى ئەڭ ئۇزۇن بولغاندا %d ھەرپ بولىدۇ. ئىمىنى قايتا "
-"كىرگۈزۈڭ."
+msgstr[0] "خاتالىق: ئىمنىڭ ئۇزۇنلۇقى ئەڭ ئۇزۇن بولغاندا %d ھەرپ بولىدۇ. ئىمىنى قايتا كىرگۈزۈڭ."
 
 #: ../tools/vino-passwd.c:156
 #, c-format
@@ -723,9 +663,7 @@ msgstr "vino-passwd: ئىم ئۆزگەرمىدى.\n"
 #, c-format
 msgid ""
 "Error while communicating with GConf. Are you logged into a GNOME session?"
-msgstr ""
-"GConf بىلەن ئالاقىلىشىۋاتقاندا خاتالىق كۆرۈلدى. GNOME ئەڭگىمەسىگە تىزىمغا "
-"كىردىڭىزمۇ؟"
+msgstr "GConf بىلەن ئالاقىلىشىۋاتقاندا خاتالىق كۆرۈلدى. GNOME ئەڭگىمەسىگە تىزىمغا كىردىڭىزمۇ؟"
 
 #: ../tools/vino-passwd.c:183
 #, c-format
@@ -743,9 +681,7 @@ msgstr "-Vino نىڭ ئىمىنى يېڭىلايدۇ"
 #: ../tools/vino-passwd.c:219
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
-msgstr ""
-"'vino-passwd --help' نى ئىجرا قىلىپ بۇيرۇق قۇرىنىڭ ئىشلەتكىلى بولىدىغان "
-"تاللانمىسىنىڭ ھەممىسىنى كۆرگىلى بولىدۇ"
+msgstr "'vino-passwd --help' نى ئىجرا قىلىپ بۇيرۇق قۇرىنىڭ ئىشلەتكىلى بولىدىغان تاللانمىسىنىڭ ھەممىسىنى كۆرگىلى بولىدۇ"
 
 #: ../tools/vino-passwd.c:226
 #, c-format
