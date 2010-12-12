@@ -145,7 +145,7 @@ msgstr ""
 
 #: ../capplet/vino-preferences.ui.h:14
 msgid "_Configure network automatically to accept connections"
-msgstr "_Ρύθμιση του δικτύου έτσι ώστε να συνδέεται αυτόματα"
+msgstr "_Ρύθμιση του δικτύου έτσι ώστε να συνδέεται αυτόματα από το Διαδίκτυο"
 
 #: ../capplet/vino-preferences.ui.h:15
 msgid "_Never display an icon"
