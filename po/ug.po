@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&component=Preferences Dialog\n"
-"POT-Creation-Date: 2010-11-13 22:00+0000\n"
+"POT-Creation-Date: 2010-11-20 12:05+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sahran <sahran@live.com>\n"
 "Language-Team: GNOME Uighur Translation Project <gnome-uighur@yahoogroups.com>\n"
@@ -146,7 +146,7 @@ msgstr "ھۆججەت ئىناۋەتلىك .desktop ھۆججىتى ئەمەس."
 #: ../server/smclient/eggdesktopfile.c:188
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "ئۈستەل يۈزى ھۆججەت نەشرى '%s' ئىناۋەتسىز"
+msgstr "تونۇيالمىغان ئۈستەلئۈستى ھۆججەت نەشرى '%s'"
 
 #: ../server/smclient/eggdesktopfile.c:958
 #, c-format
@@ -156,7 +156,7 @@ msgstr "%s قوزغىلىۋاتىدۇ"
 #: ../server/smclient/eggdesktopfile.c:1100
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "پروگرامما بۇيرۇق قۇرىدا پۈتۈكلەرنى قوبۇل قىلمايدۇ"
+msgstr "پروگرامما بۇيرۇق قۇرىدا پۈتۈكنى قوبۇل قىلالمايدۇ"
 
 #: ../server/smclient/eggdesktopfile.c:1168
 #, c-format
@@ -166,7 +166,7 @@ msgstr "تونۇمايدىغان ئىجرا تاللانمىسى: %d"
 #: ../server/smclient/eggdesktopfile.c:1373
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "پۈتۈك URI نى 'Type=Link' ئۈستەليۈزى تۈرىگە يوللىيالمىدى."
+msgstr "URI پۈتۈكنى 'Type=Link' ئۈستەلئۈستى تۈرىگە يوللىيالمىدى."
 
 #: ../server/smclient/eggdesktopfile.c:1392
 #, c-format
@@ -175,15 +175,15 @@ msgstr "ئىجراچان تۈر ئەمەس"
 
 #: ../server/smclient/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr "ئەڭگىمە باشقۇرغۇغا باغلىنىشنى چەكلە"
+msgstr "ئەڭگىمە باشقۇرغۇچقا باغلىنىشنى چەكلە"
 
 #: ../server/smclient/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
-msgstr "بەلگىلەنگەن سەپلىمە ساقلانغان ھۆججەت"
+msgstr "سەپلىمە ساقلانغان ھۆججەتنى بەلگىلە"
 
 #: ../server/smclient/eggsmclient.c:228
 msgid "FILE"
-msgstr "ھۆججەت"
+msgstr "FILE"
 
 #: ../server/smclient/eggsmclient.c:231
 msgid "Specify session management ID"
@@ -333,7 +333,7 @@ msgstr "ئەگەر true بولسا،  يىراقتىكى ئىشلەتكۈچىل�
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
-msgstr "ئەگەر true بولسا، يىراقتىكى ئىشلەتكۈچى ئۈستەليۈزىنى كۆرەلەيدۇ. چاشقىنەك ۋە ھەرپتاختىنى ئىشلىتەلمەيدۇ."
+msgstr "ئەگەر true بولسا، يىراقتىكى ئىشلەتكۈچى ئۈستەلۇستىنى كۆرەلەيدۇ. چاشقىنەك ۋە ھەرپتاختىنى ئىشلىتەلمەيدۇ."
 
 #: ../server/vino-server.schemas.in.h:9
 msgid ""
@@ -495,10 +495,8 @@ msgstr "GNU ئادەتتىكى ئاممىۋى ئىجازەتنامە ئىككى�
 #. Translators comment: put your own name here to appear in the about dialog.
 #: ../server/vino-status-icon.c:268
 msgid "translator-credits"
-msgstr "Sahran <sahran@live.com>\n"
-"Gheyret T.Kenji <gheyret@yahoo.com>\n"
-"Zeper <zeper@msn.com>\n"
-"Abduxukur Abdurixit <abduxukur.abdurixit@t-systems.ch>"
+msgstr "Gheyret Kenji <gheyret@gmail.com>\n"
+"Sahran<sahran@live.com>"
 
 #: ../server/vino-status-icon.c:274
 msgid "Share your desktop with other users"
@@ -619,7 +617,7 @@ msgstr "خاتالىق يۈز بەردى:"
 #: ../tools/vino-passwd.c:115
 #, c-format
 msgid "Cancelled"
-msgstr "ۋاز كەچتى"
+msgstr "ئەمەلدىن قالدۇرۇلدى"
 
 #: ../tools/vino-passwd.c:122
 #, c-format
