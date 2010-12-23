@@ -405,7 +405,12 @@ vino_status_tube_icon_show_notif (VinoStatusTubeIcon *icon,
       filename = "stock_person";
 
   icon->priv->new_client_notification =
+#ifdef VINO_HAS_LIBNOTIFY_0_7
       notify_notification_new (summary, body, filename);
+#else
+      notify_notification_new_with_status_icon (summary, body,
+      filename, GTK_STATUS_ICON (icon));
+#endif
 
   notify_notification_set_timeout (icon->priv->new_client_notification,
       NOTIFICATION_TIMEOUT * 1000);

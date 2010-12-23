@@ -622,9 +622,16 @@ vino_status_icon_show_new_client_notification (gpointer user_data)
     }
 
   icon->priv->new_client_notification =
+#ifdef VINO_HAS_LIBNOTIFY_0_7
     notify_notification_new (summary,
                              body,
                              "preferences-desktop-remote-desktop");
+#else
+    notify_notification_new_with_status_icon (summary,
+                                              body,
+                                              "preferences-desktop-remote-desktop",
+                                              GTK_STATUS_ICON (icon));
+#endif
 
   g_free (body);
 

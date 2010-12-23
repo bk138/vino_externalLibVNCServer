@@ -105,6 +105,11 @@ fi
 
 if test "x$have_libnotify" = "xyes" ; then
     AC_DEFINE(VINO_ENABLE_LIBNOTIFY, [], [Set if we should use libnotify])
+    PKG_CHECK_EXISTS(libnotify >= 0.7.0,
+                     have_libnotify_0_7=yes, have_libnotify_0_7=no)
+    if test "x$have_libnotify_0_7" = "xyes" ; then
+        AC_DEFINE(VINO_HAS_LIBNOTIFY_0_7, [], [Set if libnotify 0.7.0 or greater is available])
+    fi
 fi
 
 dnl -- check for NetworkManager -----------------------------------------------
