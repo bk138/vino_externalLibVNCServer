@@ -2,39 +2,31 @@
 # Copyright (C) 2004-06 Free Software Foundation, Inc.
 # Chi-Wei Chen <michelin@seed.net.tw>, 2004.
 # Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>, 2009.
+# Wei-Lun Chao <chaoweilun@gmail.com>, 2010.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: vino 2.27.5\n"
+"Project-Id-Version: vino 2.32.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-06 15:45+0800\n"
-"PO-Revision-Date: 2009-09-06 15:47+0800\n"
-"Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
+"POT-Creation-Date: 2011-01-23 14:49+0800\n"
+"PO-Revision-Date: 2011-01-23 14:49+0800\n"
+"Last-Translator: Wei-Lun Chao <chaoweilun@gmail.com>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Virtaal 0.4.0\n"
 
-#. Open Link
-#: ../capplet/sexy-url-label.c:183
-msgid "_Send address by email"
-msgstr "以電子郵件傳送位址(_S)"
-
-#. Copy Link Address
-#: ../capplet/sexy-url-label.c:195
-msgid "_Copy address to clipboard"
-msgstr "複製位址至剪貼簿(_C)"
-
-#: ../capplet/vino-message-box.c:103
+#: ../capplet/vino-message-box.c:54
 #, c-format
 msgid "There was an error showing the URL \"%s\""
 msgstr "顯示網止「%s」時發生錯誤。"
 
 #: ../capplet/vino-preferences.c:197 ../capplet/vino-preferences.c:1000
 msgid "Checking the connectivity of this machine..."
-msgstr "正在檢查這個機器的連線能力..."
+msgstr "正在檢查這個機器的連線能力…"
 
 #: ../capplet/vino-preferences.c:804
 #, c-format
@@ -147,7 +139,7 @@ msgstr "使用者需要輸入密碼(_R):"
 
 #: ../capplet/vino-preferences.ui.h:18
 msgid "_You must confirm each access to this machine"
-msgstr "你必須確認每次對這台機器的連線(_Y)"
+msgstr "你必須確認每次對這臺機器的連線(_Y)"
 
 #: ../server/smclient/eggdesktopfile.c:165
 #, c-format
@@ -212,9 +204,9 @@ msgstr "作業階段管理選項："
 msgid "Show session management options"
 msgstr "顯示作業階段管理選項"
 
-#: ../server/vino-dbus-listener.c:461
+#: ../server/vino-dbus-listener.c:442
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "遠端桌面伺服端已運行；準備離開...\n"
+msgstr "遠端桌面伺服端已運行；準備離開…\n"
 
 #: ../server/vino-main.c:67
 msgid "- VNC Server for GNOME"
@@ -225,11 +217,11 @@ msgid ""
 "Run 'vino-server --help' to see a full list of available command line options"
 msgstr "執行‘vino-server --help‘ 以查看所有可用的命令列選項清單"
 
-#: ../server/vino-main.c:97
+#: ../server/vino-main.c:98
 msgid "GNOME Remote Desktop"
 msgstr "GNOME 遠端桌面"
 
-#: ../server/vino-main.c:107
+#: ../server/vino-main.c:108
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -240,7 +232,7 @@ msgstr "你的 X Server 不支援 XTest 延伸功能 ─ 只可以觀看遠端�
 #. * "1" if "%s's remote desktop" doesn't make sense in
 #. * your language.
 #.
-#: ../server/vino-mdns.c:61
+#: ../server/vino-mdns.c:62
 msgid "vino-mdns:showusername"
 msgstr "vino-mdns:showusername"
 
@@ -249,7 +241,7 @@ msgstr "vino-mdns:showusername"
 #. * translated "vino-mdns:showusername" to anything
 #. * other than "1"
 #.
-#: ../server/vino-mdns.c:73
+#: ../server/vino-mdns.c:74
 #, c-format
 msgid "%s's remote desktop on %s"
 msgstr "%s 的遠端桌面於 %s"
@@ -257,7 +249,7 @@ msgstr "%s 的遠端桌面於 %s"
 #: ../server/vino-prefs.c:607
 #, c-format
 msgid "Received signal %d, exiting...\n"
-msgstr "收到信號 %d，正在離開...\n"
+msgstr "收到信號 %d，正在離開…\n"
 
 #: ../server/vino-prompt.c:141
 msgid "Screen"
@@ -278,7 +270,7 @@ msgstr "在電腦‘%s’上的使用者正嘗試觀看或控制你的桌面"
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
-msgstr "在另一台電腦上的使用者正嘗試觀看或控制你的桌面。"
+msgstr "在另一臺電腦上的使用者正嘗試觀看或控制你的桌面。"
 
 #: ../server/vino-prompt.ui.h:2
 msgid "Another user is trying to view your desktop."
@@ -502,7 +494,7 @@ msgstr ""
 "Vino 為自由軟件；你可根據據自由軟件\n"
 "基金會所發表的 GNU 通用公共授權條款(\n"
 "可選用第二版或以後的任何版本)規定，\n"
-"將本程式再散佈或修改，或兩者同時進行。\n"
+"將本程式再散布或修改，或兩者同時進行。\n"
 "\n"
 "Vino 係基於使用目的而加以散布，然而\n"
 "不負任何擔保責任；亦無對適售性或\n"
@@ -598,7 +590,7 @@ msgstr "其他使用者正在控制你的桌面"
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "在電腦‘%s’上的使用者正遠端控制你的桌面。"
 
-#: ../server/vino-status-icon.c:642 ../server/vino-status-tube-icon.c:422
+#: ../server/vino-status-icon.c:648 ../server/vino-status-tube-icon.c:426
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "顯示通知氣泡視窗時發生錯誤：%s\n"
@@ -608,26 +600,30 @@ msgstr "顯示通知氣泡視窗時發生錯誤：%s\n"
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "遠端使用者「%s」會被斷線。你確定嗎？"
 
-#: ../server/vino-tube-server.c:311 ../server/vino-tube-server.c:340
+#: ../server/vino-tube-server.c:268 ../server/vino-tube-server.c:297
 msgid "Share my desktop information"
 msgstr "分享我的桌面資訊"
 
-#: ../server/vino-tube-server.c:315
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:272
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
 msgstr "「%s」拒絕了桌面分享邀請。"
 
-#: ../server/vino-tube-server.c:319
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:276
 #, c-format
 msgid "'%s' disconnected"
 msgstr "「%s」已斷線"
 
-#: ../server/vino-tube-server.c:346
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:303
 #, c-format
 msgid "'%s' is remotely controlling your desktop."
 msgstr "「%s」正在遠端控制你的桌面。"
 
-#: ../server/vino-tube-server.c:355
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:312
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "正在等候「%s」連線至畫面。"
@@ -713,6 +709,12 @@ msgstr "VINO %s 版\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "錯誤：你沒有足夠的權限來改變 Vino 密碼。\n"
+
+#~ msgid "_Send address by email"
+#~ msgstr "以電子郵件傳送位址(_S)"
+
+#~ msgid "_Copy address to clipboard"
+#~ msgstr "複製位址至剪貼簿(_C)"
 
 #~ msgid "Out of memory handling '%s' message"
 #~ msgstr "處理‘%s’訊息耗盡記憶體"
@@ -813,7 +815,7 @@ msgstr "錯誤：你沒有足夠的權限來改變 Vino 密碼。\n"
 #~ msgid ""
 #~ "Problem registering the remote desktop server with bonobo-activation; "
 #~ "exiting ...\n"
-#~ msgstr "向 bonobo-activation 註冊遠端桌面伺服端時發生問題；準備離開...\n"
+#~ msgstr "向 bonobo-activation 註冊遠端桌面伺服端時發生問題；準備離開…\n"
 
 #~ msgid "Remote desktop server died, restarting\n"
 #~ msgstr "遠端桌面伺服端消失，重新啟動\n"
