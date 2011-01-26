@@ -10,20 +10,20 @@
 # Suso Baleato <suso.baleato@xunta.es>, 2009.
 # Fran Dieguez <fran.dieguez@glug.es>, 2009.
 # Antón Méixome <meixome@mancomun.org>, 2009.
-# Fran Diéguez <frandieguez@ubuntu.com>, 2009, 2010.
+# Fran Diéguez <frandieguez@ubuntu.com>, 2009, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino-master-po-gl-22006\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-21 16:24+0200\n"
-"PO-Revision-Date: 2010-07-21 16:26+0200\n"
+"POT-Creation-Date: 2011-01-27 00:44+0100\n"
+"PO-Revision-Date: 2011-01-23 23:53+0100\n"
 "Last-Translator: Fran Diéguez <frandieguez@ubuntu.com>\n"
 "Language-Team: Galician <gnome-gl-list@gnome.org>\n"
+"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: gl\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
@@ -34,7 +34,7 @@ msgstr "Produciuse un erro ao mostrar o URL «%s»"
 
 #: ../capplet/vino-preferences.c:197 ../capplet/vino-preferences.c:1000
 msgid "Checking the connectivity of this machine..."
-msgstr "Verificando a conectividade desta máquina..."
+msgstr "Verificando a conectividade desta máquina…"
 
 #: ../capplet/vino-preferences.c:804
 #, c-format
@@ -173,7 +173,7 @@ msgstr "O aplicativo non acepta documentos na liña de ordes"
 #: ../server/smclient/eggdesktopfile.c:1168
 #, c-format
 msgid "Unrecognized launch option: %d"
-msgstr "Descoñécese a opción de lanzamento: %d"
+msgstr "Opción de inicio non recoñecida: %d"
 
 #: ../server/smclient/eggdesktopfile.c:1373
 #, c-format
@@ -184,7 +184,7 @@ msgstr ""
 #: ../server/smclient/eggdesktopfile.c:1392
 #, c-format
 msgid "Not a launchable item"
-msgstr "Non é un elemento lanzábel"
+msgstr "Non é un elemento iniciábel"
 
 #: ../server/smclient/eggsmclient.c:225
 msgid "Disable connection to session manager"
@@ -216,7 +216,7 @@ msgstr "Mostrar as opción da xestión de sesión"
 
 #: ../server/vino-dbus-listener.c:442
 msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "O servidor de Escritorio remoto xa está en execución; saíndo ...\n"
+msgstr "O servidor de Escritorio remoto xa está en execución; saíndo …\n"
 
 #: ../server/vino-main.c:67
 msgid "- VNC Server for GNOME"
@@ -263,7 +263,7 @@ msgstr "escritorio remoto de %s en %s"
 #: ../server/vino-prefs.c:607
 #, c-format
 msgid "Received signal %d, exiting...\n"
-msgstr "Recibiuse o sinal %d, saíndo...\n"
+msgstr "Recibiuse o sinal %d, saíndo…\n"
 
 #: ../server/vino-prompt.c:141
 msgid "Screen"
@@ -389,7 +389,7 @@ msgid ""
 "If true, the server will listen to another port, instead of the default "
 "(5900). The port must be specified in the 'alternative_port' key."
 msgstr ""
-"Se é verdadeiro, o servidor escoitará outro porto en vez do predefinido "
+"Se é verdadeiro, o servidor escoitará outro porto en vez do predeterminado "
 "(5900). O porto terá que especificarse na chave 'alternative_port'."
 
 #: ../server/vino-server.schemas.in.h:12
@@ -481,8 +481,8 @@ msgid ""
 msgstr ""
 "Esta chave controla o comportamento da icona de estado. Hai tres opcións: "
 "\"always\" - A icona estará sempre aí; \"client\" - Verá a icona só se hai "
-"alguén conectado, este é o comportamento predefinido; \"never\" - Non mostra "
-"nunca a icona."
+"alguén conectado, este é o comportamento predeterminado; \"never\" - Non "
+"mostra nunca a icona."
 
 #: ../server/vino-server.schemas.in.h:25
 msgid ""
@@ -656,7 +656,7 @@ msgstr ""
 "Un usuario do computador «%s» está controlando o seu escritorio de forma "
 "remota."
 
-#: ../server/vino-status-icon.c:642 ../server/vino-status-tube-icon.c:422
+#: ../server/vino-status-icon.c:648 ../server/vino-status-tube-icon.c:426
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Produciuse un erro ao mostrar a burbulla de notificación: %s\n"
