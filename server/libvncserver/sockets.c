@@ -583,6 +583,7 @@ ListenOnTCPPort(rfbScreenInfoPtr rfbScreen, int port, const char *netIface)
   if(netIface == NULL || strlen(netIface) == 0)
   {
 #ifdef ENABLE_IPV6
+    int sock6 = -1;
     struct sockaddr_in6 s6;
 
     memset(&s6, 0, sizeof(s6));
@@ -590,10 +591,10 @@ ListenOnTCPPort(rfbScreenInfoPtr rfbScreen, int port, const char *netIface)
     s6.sin6_port   = htons(port);
     s6.sin6_addr   = in6addr_any;
 
-    sock = NewSocketListenTCP ((struct sockaddr*)&s6, sizeof(s6));
-    rfbLog("Listening IPv{4,6}://*:%d\n", port);
+    sock6 = NewSocketListenTCP ((struct sockaddr*)&s6, sizeof(s6));
+    rfbLog("Listening IPv6://[::]:%d\n", port);
 #endif
-    if(sock < 0) {
+
       struct sockaddr_in s4;
 
       memset(&s4, 0, sizeof(s4));
@@ -603,15 +604,23 @@ ListenOnTCPPort(rfbScreenInfoPtr rfbScreen, int port, const char *netIface)
 
       sock = NewSocketListenTCP ((struct sockaddr*)&s4, sizeof(s4));
       rfbLog("Listening IPv4://0.0.0.0:%d\n", port);
-    }
 
+#ifdef ENABLE_IPV6
+    if(sock6 > 0) {
+       psock[*ptot] = sock6;
+      *ptot        += 1;
+    }
+#endif
     if(sock > 0) {
-      psock[0] = sock;
-     *ptot     = 1;
-      return TRUE;
+       psock[*ptot] = sock;
+      *ptot        += 1;
     }
 
-    rfbLog("Problems in NewSocketListenTCP(), sock=%d\n", sock);
+    if (*ptot)
+      return TRUE;
+
+    /* no need to log sock/sock6, both are -1 here */
+    rfbLog("Problems in NewSocketListenTCP()\n");
     return FALSE;
   }
 
@@ -680,6 +689,15 @@ NewSocketListenTCP(struct sockaddr *addr, socklen_t len)
       close(sock);
       return -1;
     }
+
+#ifdef ENABLE_IPV6
+    if (addr->sa_family == AF_INET6) {
+#if defined(IPPROTO_IPV6) && defined(IPV6_V6ONLY)
+      setsockopt(sock, IPPROTO_IPV6, IPV6_V6ONLY, (char *)&one, sizeof(one));
+      /* we cannot really check for errors here */
+#endif
+    }
+#endif
 
     if (bind(sock, addr, len) < 0) {
       close(sock);
