@@ -97,7 +97,7 @@ vino_prefs_enabled_changed (GConfClient *client,
   if (vino_enabled)
     vino_mdns_start (vino_network_interface);
   else
-    vino_mdns_stop ();
+    exit (0);
 
   for (l = vino_servers; l; l = l->next)
     vino_server_set_on_hold (l->data, !enabled);
