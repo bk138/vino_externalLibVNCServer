@@ -1163,6 +1163,10 @@ rfbSendFramebufferUpdate(rfbClientPtr cl,
         cl->rfbRawBytesEquivalent += (sz_rfbFramebufferUpdateRectHeader
                                       + w * (cl->format.bitsPerPixel / 8) * h);
 
+        /* Validate the rectangle given by the update packet. */
+        if (w + x > cl->screen->width || h + y > cl->screen->height)
+            goto tx_error;
+
         switch (cl->preferredEncoding) {
         case rfbEncodingRaw:
             if (!rfbSendRectEncodingRaw(cl, x, y, w, h))
