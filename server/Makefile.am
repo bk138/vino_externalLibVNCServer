@@ -1,9 +1,8 @@
 NULL =
 
-SUBDIRS = libvncserver miniupnp smclient
+SUBDIRS = miniupnp smclient
 
 INCLUDES = \
-	-I$(top_srcdir)/server/libvncserver \
 	-I$(top_srcdir)/server/miniupnp \
 	-I$(top_srcdir)/server/smclient \
 	$(VINO_SERVER_CFLAGS) \
@@ -14,6 +13,7 @@ INCLUDES = \
 	$(AVAHI_CFLAGS) \
 	$(LIBGNUTLS_CFLAGS) \
 	$(LIBGCRYPT_CFLAGS) \
+	$(LIBVNCSERVER_CFLAGS) \
 	$(WARN_CFLAGS) \
 	$(DISABLE_DEPRECATED) \
 	-DVINO_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
@@ -25,7 +25,6 @@ INCLUDES = \
 libexec_PROGRAMS = vino-server
 
 vino_server_LDADD = \
-	$(top_builddir)/server/libvncserver/libvncserver.la \
 	$(top_builddir)/server/miniupnp/libminiupnp.la \
 	$(top_builddir)/server/smclient/libeggsmclient.la \
 	$(VINO_SERVER_LIBS) \
@@ -35,6 +34,7 @@ vino_server_LDADD = \
 	$(VINO_NETWORKMANAGER_LIBS) \
 	$(LIBGNUTLS_LIBS) \
 	$(LIBGCRYPT_LIBS) \
+	$(LIBVNCSERVER_LIBS) \
 	$(X_LIBS) $(XTEST_LIBS) $(XSHM_LIBS) $(XDAMAGE_LIBS) \
 	$(NULL)
 
