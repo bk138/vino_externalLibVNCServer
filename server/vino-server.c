@@ -987,9 +987,7 @@ vino_server_init_from_screen (VinoServer *server,
                     g_get_host_name (),
                     NULL);
 
-  rfbSetDesktopName(rfb_screen, name);
-
-  g_free (name);
+  server->priv->rfb_screen->desktopName = name;
 
   /* libvncserver NOTE:
    *   DeferUpdateTime is the number of milliseconds to wait
@@ -1089,8 +1087,12 @@ vino_server_finalize (GObject *object)
       server->priv->io_channel[i] = NULL;
     }
   
-  if (server->priv->rfb_screen)
+  if (server->priv->rfb_screen) {
+    /* We have to free desktopName before cause we assigned it a
+       dynamically alloc'd string in vino_server_init_from_screen() */
+    g_free((char*)server->priv->rfb_screen->desktopName);
     rfbScreenCleanup (server->priv->rfb_screen);
+  }
   server->priv->rfb_screen = NULL;
 
   /* ClientGoneHook should get invoked for each
