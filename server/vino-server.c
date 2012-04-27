@@ -1870,7 +1870,7 @@ vino_server_get_external_port (VinoServer *server)
 
   return server->priv->use_upnp && VINO_IS_UPNP (server->priv->upnp) ?
            vino_upnp_get_external_port (server->priv->upnp) :
-           server->priv->rfb_screen->rfbPort;
+           server->priv->rfb_screen->port;
 }
 
 gboolean
