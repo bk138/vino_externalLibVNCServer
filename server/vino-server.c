@@ -242,7 +242,7 @@ vino_server_control_upnp (VinoServer *server)
     {
       if (!server->priv->upnp)
 	server->priv->upnp = vino_upnp_new ();
-      vino_upnp_add_port (server->priv->upnp, server->priv->rfb_screen->rfbPort);
+      vino_upnp_add_port (server->priv->upnp, server->priv->rfb_screen->port);
     }
   else
     if (server->priv->upnp)
@@ -1001,13 +1001,13 @@ vino_server_init_from_screen (VinoServer *server,
   rfb_screen->rfbDeferUpdateTime = 0;
   rfb_screen->netIface           = server->priv->network_interface;
   rfb_screen->autoPort           = TRUE;
-  rfb_screen->rfbPort            = VINO_SERVER_DEFAULT_PORT;
+  rfb_screen->port            = VINO_SERVER_DEFAULT_PORT;
   rfb_screen->rfbAlwaysShared    = TRUE;
 
   if (server->priv->use_alternative_port)
     {
       rfb_screen->autoPort = FALSE;
-      rfb_screen->rfbPort  = server->priv->alternative_port;
+      rfb_screen->port  = server->priv->alternative_port;
     }
 
   rfbInitServer (rfb_screen);
@@ -1049,7 +1049,7 @@ vino_server_init_from_screen (VinoServer *server,
   server->priv->http = vino_http_get (rfb_screen->rfbPort);
 #endif
 
-  vino_mdns_add_service ("_rfb._tcp", rfb_screen->rfbPort);
+  vino_mdns_add_service ("_rfb._tcp", rfb_screen->port);
 
   cb = gtk_clipboard_get_for_display (gdk_screen_get_display (screen),
                                       GDK_SELECTION_CLIPBOARD);
@@ -1248,7 +1248,7 @@ vino_server_get_property (GObject    *object,
       g_value_set_int (value, server->priv->alternative_port);
       break;
     case PROP_PORT:
-      g_value_set_int (value, server->priv->rfb_screen->rfbPort);
+      g_value_set_int (value, server->priv->rfb_screen->port);
       break;
     case PROP_LOCK_SCREEN:
       g_value_set_boolean (value, server->priv->lock_screen);
@@ -1860,7 +1860,7 @@ vino_server_get_port (VinoServer *server)
 {
   g_return_val_if_fail (VINO_IS_SERVER (server), 0);
 
-  return server->priv->rfb_screen->rfbPort;
+  return server->priv->rfb_screen->port;
 }
 
 int
