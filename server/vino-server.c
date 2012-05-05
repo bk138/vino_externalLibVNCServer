@@ -514,7 +514,7 @@ vino_server_handle_new_client (rfbClientPtr rfb_client)
   if (!server->priv->fb)
     {
       vino_server_setup_framebuffer (server);
-      rfb_client->format = server->priv->rfb_screen->rfbServerFormat;
+      rfb_client->format = server->priv->rfb_screen->serverFormat;
     }
 
   client = g_new0 (VinoClient, 1);
@@ -828,7 +828,7 @@ vino_server_init_pixel_format (VinoServer       *server,
 			       rfbScreenInfoPtr  rfb_screen)
 
 {
-  rfbPixelFormat *format = &rfb_screen->rfbServerFormat;
+  rfbPixelFormat *format = &rfb_screen->serverFormat;
   gulong          red_mask, green_mask, blue_mask;
 
   rfb_screen->bitsPerPixel       = vino_fb_get_bits_per_pixel (server->priv->fb);
@@ -1005,7 +1005,7 @@ vino_server_init_from_screen (VinoServer *server,
   rfb_screen->netIface           = server->priv->network_interface;
   rfb_screen->autoPort           = TRUE;
   rfb_screen->port            = VINO_SERVER_DEFAULT_PORT;
-  rfb_screen->rfbAlwaysShared    = TRUE;
+  rfb_screen->alwaysShared    = TRUE;
 
   if (server->priv->use_alternative_port)
     {
