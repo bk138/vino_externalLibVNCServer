@@ -876,7 +876,10 @@ vino_server_screen_size_changed (VinoServer *server)
   rfbNewFramebuffer (server->priv->rfb_screen,
 		     vino_fb_get_pixels (server->priv->fb),
 		     gdk_screen_get_width (server->priv->screen),
-		     gdk_screen_get_height (server->priv->screen));
+		     gdk_screen_get_height (server->priv->screen),
+		     8,  /* bits per sample, overwritten by vino_server_init_pixel_format() anyway */
+		     3,
+		     vino_fb_get_bits_per_pixel(server->priv->fb)/8);
 
   vino_server_init_pixel_format (server, server->priv->rfb_screen);
 }
@@ -899,7 +902,10 @@ vino_server_setup_framebuffer (VinoServer *server)
   rfbNewFramebuffer (server->priv->rfb_screen,
                      vino_fb_get_pixels (server->priv->fb),
                      gdk_screen_get_width (server->priv->screen),
-                     gdk_screen_get_height (server->priv->screen));
+                     gdk_screen_get_height (server->priv->screen),
+		     8,  /* bits per sample, overwritten by vino_server_init_pixel_format() anyway */
+		     3,
+		     vino_fb_get_bits_per_pixel(server->priv->fb)/8);
   
   vino_server_init_pixel_format (server, server->priv->rfb_screen);
 
