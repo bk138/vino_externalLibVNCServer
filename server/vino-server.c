@@ -1001,7 +1001,7 @@ vino_server_init_from_screen (VinoServer *server,
    *   setting autoPort enables autoProbing a port between
    *   5900-6000
    */
-  rfb_screen->rfbDeferUpdateTime = 0;
+  rfb_screen->deferUpdateTime = 0;
   rfb_screen->netIface           = server->priv->network_interface;
   rfb_screen->autoPort           = TRUE;
   rfb_screen->port            = VINO_SERVER_DEFAULT_PORT;
