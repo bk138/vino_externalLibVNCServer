@@ -399,7 +399,7 @@ vino_server_update_client (rfbClientPtr rfb_client)
     {
       rfbCursorPtr rfb_cursor;
 
-      rfb_cursor = rfbMakeXCursor (width, height, cursor_source, cursor_mask);
+      rfb_cursor = rfbMakeXCursor (width, height, (char*)cursor_source, (char*)cursor_mask);
 
       /* make sure the old cursor get cleaned up if set */
       if(rfb_client->screen->cursor)
